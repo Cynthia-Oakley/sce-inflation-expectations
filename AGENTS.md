@@ -2,7 +2,7 @@
 
 适用范围：`socioverse_challenge/` 内的研究、代码与文档。
 
-1. 开工前读 `README.md`、`docs/PROJECT_CHARTER.md`、`docs/RESEARCH_PROTOCOL.md`、`docs/DECISIONS.md`。本目录是工作入口，`../socialverse/` 与 `../指标跟踪/` 是只读背景资料。
+1. 开工前读 `README.md`、`docs/PROJECT_CHARTER.md`、`docs/INDEX_SELECTION.md`、`docs/RESEARCH_PROTOCOL.md`、`docs/DECISIONS.md`。本目录是工作入口，`../socialverse/` 与 `../指标跟踪/` 是只读背景资料。
 2. 每项任务在交接时写清：目标、输入及来源、输出路径、已验证事实、未验证假设、下一步、阻塞项。不同 Agent 不得暗中更换目标变量、样本窗口、信息截止时点或测试集。
 3. 事实引用原始来源及核查日期。旧报告与网站不一致时先核查原始来源，标记旧判断已过期；推测写成推测。
 4. 历史预测的每条输入必须有 `observed_at`、`published_at`、`as_of`、来源和版本；只允许 `published_at <= as_of` 的输入进入当期模拟。未知发布时间不得当作已知。

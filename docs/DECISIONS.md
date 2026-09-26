@@ -7,7 +7,7 @@
 - **D001**：追指数参赛研究与金融交易 Agent 平台分开管理。依据：导师沟通记录见 `../../socialverse/resource-research/07-参赛定位与下一步.md`；后者仍是待立项方向。
 - **D002**：赛道 A 是工作假设；以官方挑战赛要求组织研究包。依据：[官方赛事页](https://socioverse.fudan-disc.com/challenge/)。
 - **D003**：本地开发以 SocioVerse2 公开 **v0.2.0** 与官方离线示例为基准。依据：[官方发布说明](https://socioverse.fudan-disc.com/docs/getting-started/releases/)。9 月 24 日“尚未公开”的旧判断作废。
-- **D004**：WWTW 保持候选，不把整个调查项目称为一条指数。国家、题目和比例口径由数据审计及导师意见确定。依据：[Ipsos 官方页](https://www.ipsos.com/en/what-worries-world)。
+- **D004**：从教授给的“指标跟踪”清单选择目标；`ECO-0078`、`ECO-0086`、`IDX-0100` 先并行审计。WWTW 只是 `IDX-0100` 的指数类信号候选，不把整个调查项目称为一条指数。依据：[候选初筛](INDEX_SELECTION.md)。
 
 ## 需要填写后才能锁定的记录
 
