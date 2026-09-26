@@ -1,6 +1,6 @@
 # 本目录的 Agent 协作规则
 
-适用范围：`index-nowcasting/` 内的研究、代码与文档。
+适用范围：`socioverse_challenge/` 内的研究、代码与文档。
 
 1. 开工前读 `README.md`、`docs/PROJECT_CHARTER.md`、`docs/RESEARCH_PROTOCOL.md`、`docs/DECISIONS.md`。本目录是工作入口，`../socialverse/` 与 `../指标跟踪/` 是只读背景资料。
 2. 每项任务在交接时写清：目标、输入及来源、输出路径、已验证事实、未验证假设、下一步、阻塞项。不同 Agent 不得暗中更换目标变量、样本窗口、信息截止时点或测试集。
