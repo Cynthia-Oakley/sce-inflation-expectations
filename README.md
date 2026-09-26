@@ -1,6 +1,6 @@
 # 指数调查模拟项目｜工作入口
 
-更新：2026-09-26。此目录是“追指数”参赛研究的唯一工作入口；旧资料保留在 `../socialverse/` 和 `../指标跟踪/`，不把近 3 GB 的参考文件复制进开发仓库。
+更新：2026-09-26。此目录是“追指数”参赛研究的唯一工作入口；旧资料保留在 `../socioverse/` 和 `../指标跟踪/`，不把近 3 GB 的参考文件复制进开发仓库。
 
 ## 先读三份文件
 
@@ -15,7 +15,7 @@
 ## 项目边界
 
 - **当前主线**：将 ConsumerSim 的“人群—信息—问卷回答—加权聚合”范式迁移到一个明确的调查统计量，完成 SocioVerse Challenge 2026 赛道 A 的可复现 study。
-- **长期方向**：金融交易 Agent 平台是另一项目。它的资料在 `../socialverse/financial-market-simulation-proposal.md`，不进入本项目的 10 月交付范围。
+- **长期方向**：金融交易 Agent 平台是另一项目。它的资料在 `../socioverse/financial-market-simulation-proposal.md`，不进入本项目的 10 月交付范围。
 - **资料库**：`../指标跟踪/` 是候选指标与方法学缓存，不是可直接用于历史回测的 point-in-time 数据库。
 
 ## 当前状态
@@ -31,6 +31,6 @@
 - [SocioVerse2 发布说明](https://socioverse.fudan-disc.com/docs/getting-started/releases/)
 - [SocioVerse2 安装指南](https://socioverse.fudan-disc.com/docs/getting-started/installation/)
 - [Ipsos WWTW 2026-09 官方页](https://www.ipsos.com/en/what-worries-world)
-- 本地旧资料：[ConsumerSim 精读](../指标跟踪/ConsumerSim_精读笔记.md)、[旧路线图](../socialverse/resource-research/09-项目路线图.md)、[IDX-0100 方法学缓存](../指标跟踪/methodology/IDX-0100/methodology.md)
+- 本地旧资料：[ConsumerSim 精读](../指标跟踪/ConsumerSim_精读笔记.md)、[旧路线图](../socioverse/resource-research/09-项目路线图.md)、[IDX-0100 方法学缓存](../指标跟踪/methodology/IDX-0100/methodology.md)
 
 旧报告是调研记录，不自动成为当前事实。官方版本、数据与软件接口变动时，更新决策记录和本页状态。
