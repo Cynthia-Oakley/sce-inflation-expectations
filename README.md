@@ -10,7 +10,7 @@
 
 选题前再读 [指数候选初筛](docs/INDEX_SELECTION.md)。
 
-后续协作遵守 [AGENTS.md](AGENTS.md) 和 [版本管理规范](CONTRIBUTING.md)；每项重要选择写进 [决策记录](docs/DECISIONS.md)。当前执行事项见 [下一轮任务板](docs/NEXT_ACTIONS.md)。
+后续协作遵守 [AGENTS.md](AGENTS.md) 和 [版本管理规范](CONTRIBUTING.md)；每项重要选择写进 [决策记录](docs/DECISIONS.md)。现在要报名，先看 [报名与开题的最短路径](docs/REGISTRATION_PLAN.md)；技术执行事项见 [下一轮任务板](docs/NEXT_ACTIONS.md)。
 
 ## 项目边界
 
