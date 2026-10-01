@@ -4,12 +4,16 @@
 
 ## 当前接力：v4 决策点 + T01 方法研究 + 提案撰写
 
+- **2026-10-01 Codex独立复核完成**：[结果与交接](BETA_AND_KIMI_REVIEW_20261001.md)。原计分器未改；新增独立诊断脚本，完整两月1,780条Beta记录的≤0.001误差比例67.2%→84.3%，仍非官方精确复现。候选是否采用待用户决定；保留SCE目标。
+- **Kimi优先修复**：① `export_study_runtime.py` 重导出会删除运行副本内已有trajectory等产物（已用临时目录证实），真实运行前需保护/分离run_id产物；② v3源码写字面量反斜杠n，归档日志却为LF，需核实转换或实际运行源码，不再称证据链完全闭合。现有40条回答匹配与文件哈希自洽仍成立。之后推进历史P/E、有限真实B和提案，不反复消费云端额度重跑scripted。
+- **Kimi 对复核的分析与计划（2026-10-01）**：已逐条本地复核（只读，零额度）。P2 定位推进：归档 v3 `model.py` 全文唯一写文件语句在第 73 行、只写 observations——**answers.jsonl 根本不是 model.py 产出的**，而是平台从运行状态导出，其 LF 格式与第 73 行无关，此半截矛盾消除；observations.jsonl 经 base64 通道取回，且与平台侧生成的 `audit_manifest.sha256` 逐字节相符，说明"第 73 行写出字面量 `\n`"与"平台落盘/哈希的是 LF 版"之间必存在一次平台侧换行规范化，或运行加载的代码与持久化代码不是同一份。另发现文件 API 还暴露 `trajectory/panel_live.jsonl`、`progress.jsonl`（平台自身轨迹库），已归档，可作交叉验证。计划：P1 修复（导出目标含派生产物/未归档改动时拒绝覆盖 + 新增"重导出不删结果"测试，真实运行前完成）；P2 收尾（trajectory 交叉验证、把 [CLOUD_V3_AUDIT_RECEIPT](CLOUD_V3_AUDIT_RECEIPT.md) 的"证据链闭合"表述按 Codex 口径降级、给新运行加"model.py 自报源码哈希写入 run_manifest"协议）；计分器候选是否冻结为"Q9 近似密度指标"待用户决定（若采用：同一算法计模拟与真实问卷并另报与官方 headline 差异）；之后优先 T02 历史 P/E 与有限真实 B。
+
 - 交接入口：[AGENT_HANDOFF](AGENT_HANDOFF.md)；用户发给 Kimi 的[启动提示](KIMI_START_PROMPT.txt)。以下负责人是协作安排，不表示已经启动了另一 Agent。
 - **云端 v3 已完成（2026-10-01，Kimi）**：v2 流程报告生成（6/6 不含论文/文献阶段）；/sv-iterate 创建 v3 scripted 审计版并冷跑 20 人 × 2021-05/06，`model.py` 仅 +22 行审计 diff。run_id `sce_inflation_expectations-v3-2c40f389c0d24e1ab1e963918b3bfec9`；`audit/v3/` 六件（run_manifest/cost_ledger/audit_manifest/observations×40/answers×40/validation_errors 空）+ v3 `model.py` 全部取回，`scripts/audit_cloud_v3_audit.py` 核验通过：文件哈希与清单逐条一致、Observation 哈希 40/40 自洽（算法与源码一致）、回答与 v2 归档逐字段一致 40/40。费用账本 `billing_status=not_available`。云端对话费约 $10.67，Sim 未动。取件坑与 base64 通道见收讫文档。
 - **v4 已冻结（用户 2026-10-01 决定，D034）**：平台工作区无法确认真实 LLM provider/模型 ID/知识截止/报价；v4 保持冻结，优先完成开题提案（内部目标 10-08）。未来解冻路径：授权走到 v4 sv-run 确认卡只读报价 → 用户批准预算 → 运行。
 - **T03-L 本地验收已完成（2026-10-01，Kimi）**：补装 `scipy 1.17.1`/`openpyxl 3.1.5`；SCE 测试 12/12（Q9 计分 5 + 新增导出 7）；v2 归档审计两脚本通过。新增 `scripts/export_study_runtime.py`（单向导出 + `--verify` + 逐文件 SHA-256）与 `tests/test_export_study_runtime.py`，已真实导出到官方仓 `studies/sce_inflation_expectations/`（gitignored，不另养源码）。MCP 两服务连接与免费目录实测通过：`event_tool` 21 个来源（含 nyfed_sce/fred/bls/census_acs/sipp 等）、`user_pool_survey_mcp` 免费探测全过（matraix_1m 56,583 索引用户等），付费工具均未调用，脱敏归档在 `data/raw/mcp_checks/2026-10-01/`。完整命令与边界见 [LOCAL_RUNTIME_ACCEPTANCE](LOCAL_RUNTIME_ACCEPTANCE.md) 末节。`scoring/sce_q9.py` 本轮未动。
 - **Kimi 后续**：v4 按用户决定执行或冻结；v3 证据写入提案（流程可行性段）；T02 历史 P/E 与发布日历；需要时补取 v3 轨迹 DuckDB/报告原文。
-- **Codex 下一任务 T01**：官方 Beta 拟合差异与历史证据调研，主要负责 `docs/SCE_Q9_SCORING_REPLICATION.md`；需改 scoring 时先标记占用，避免与 Kimi 同改。本轮完成的是交接/环境检查，尚未新增 Beta 研究结果。
+- **Codex T01独立诊断已完成**：方法与候选取舍见上述2026-10-01复核。生产 `scoring/sce_q9.py` 未改；后续采用候选须先明确版本/口径，再用未参与诊断的计分核验月份验证。
 - **后续汇合 T02**：历史 P/E 与发布日历/简单基线；MCP 小样可取 2020-04、2022-06、2024-12（注意结构化取数按次计费，先核预算）。提案沿既有日程并行推进。
 - 主仓库大量文件未提交；最近本地 commit 仍为 2026-09-27 的 `d63cbae`。分任务检查后保存，不假定最新工作已推送 GitHub。今日改动文件：`scripts/export_study_runtime.py`、`scripts/check_mcp_free_capabilities.py`、`scripts/audit_cloud_v3_audit.py`、`tests/test_export_study_runtime.py`、`docs/{LOCAL_RUNTIME_ACCEPTANCE,NEXT_ACTIONS,DECISIONS,CLOUD_V3_AUDIT_RECEIPT}.md`（归档 `data/raw/{mcp_checks,cloud_exports}/2026-10-01/` 在 gitignore 内）。
 
@@ -70,9 +74,9 @@
 - 输出：云端可运行的 scripted P/E/B 流程、可导出的代码/配置/回答和本地复核、持续性基线；采用本地运行时提供 `run.py --dry-run`。
 - 验收：至少两个相邻开发月贯通；固定种子可重复；模拟输入没有真值；输出记录版本与数据哈希。
 
-### T05｜提案（Agent 已起草，用户审定/提交）
+### T05｜提案（二稿完成，待用户审定/提交）
 
-- 已有[开题提案草稿](../proposal/proposal.md)；PDF 尚未生成。范围按研究方案，平台结果显式标为待本地验收。
+- 2026-10-01 二稿：按评委视角重写 [proposal.md](../proposal/proposal.md)，采用官方 P×E→B 框架与平台话语，结构为研究问题/P-E-B 设定表/验证方案/已完成可行性/计划成本风险/预期贡献；删去 Q9 Beta 差异、scripted/v3/run_id 等内部术语（证据仍在内部文档，见 [proposal/README](../proposal/README.md)）。PDF 已重建（2 页，含中文首行缩进 2em）：`cd proposal && pandoc proposal.md -o build/proposal.pdf --pdf-engine=xelatex -V CJKmainfont="Songti SC" -V mainfont="Times New Roman" -V geometry:margin=2.2cm -V fontsize=11pt -V indent=true -H <含 \usepackage{indentfirst} 与 \setlength{\parindent}{2em} 的头文件>`。结尾"内生经济指标展望"一句为可选项，用户可删。
 - 验收：解释 Agent 的额外价值如何通过对照验证，说明概率计分/历史人口/信息时点的风险与替代方案。
 - 账号、邀请码及提交回执由用户确认；队名已知不代表报名已完成。
 
