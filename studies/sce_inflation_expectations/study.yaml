@@ -1,0 +1,22 @@
+# Draft metadata only. P/E/B artifacts and the runner are not implemented yet.
+study_id: sce_inflation_expectations
+title: 基于 SocioVerse2 的美国家庭通胀预期模拟与重建
+research_question: 在控制历史信息可得时点后，异质家庭智能体能否重建 SCE 一年期通胀预期及人群差异？
+hypothesis: 人口异质性与价格信息可能改善模拟；其增益须通过同输入基线与消融检验。
+study_type: longitudinal
+n_steps: 1  # Scaffold default; formal month mapping and evaluation window are not frozen.
+seed: 42
+time_unit: month
+step_meaning: 每步对应一个 SCE 调查目标月；预测信息截止规则在正式配置中冻结。
+environment_ref: environment/environment.json
+population_ref: population/population.json
+simulation_ref: simulation/simulation.json
+resources_ref: resources.json
+domain: inflation-expectations
+tags: [SCE, survey, inflation, household]
+status: draft
+reference: false
+rerunnable: false
+created_by: project-scaffold
+run_note:
+  zh: 仅目录与研究元信息；尚不能运行 SCE 模拟。
