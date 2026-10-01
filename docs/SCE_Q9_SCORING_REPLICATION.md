@@ -1,5 +1,7 @@
 # SCE Q9 计分复现：已验证范围与剩余差异
 
+**2026-10-01 独立复核更新**：见 [Beta差异与Kimi重点审计](BETA_AND_KIMI_REVIEW_20261001.md)。未修改原计分器；独立候选在原两个月1,780条Beta记录上的个人均值误差≤0.001比例由67.2%提升到84.3%。定位到零档CDF拟合点、形状下界、尾部内限、多解及局部数值问题，但未完成官方精确复现，未批准替换主计分。下文保留2026-09-30原始结果。
+
 核查日期：2026-09-30。状态：**部分复现**。本地代码在 `studies/sce_inflation_expectations/scoring/sce_q9.py`；真实数据的只读核验命令为 `python3 scripts/audit_sce_q9_scoring.py --months 202001 202206`。聚合诊断保存在被 Git 忽略的 `outputs/sce_q9_replication_audit.json`；原始微观表不进入 Agent 输入，也不加入 Git。
 
 ## 需要的材料
