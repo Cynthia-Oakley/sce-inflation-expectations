@@ -1,0 +1,129 @@
+{
+  "dataset_id": "sce_bls_initial_release_e_2021_05_06_v1",
+  "status": "historical_official_release_evidence",
+  "description": "U.S. macro signals transcribed from dated BLS archived news releases. These are release-text figures, not values copied from today's FRED snapshot. Each source PDF was downloaded on 2026-09-29 and hashed locally; the historical release date and release ID appear on page 1.",
+  "target_months": [
+    {
+      "target_month": "2021-05",
+      "as_of": "2021-04-30T23:59:59-04:00",
+      "as_of_timezone": "America/New_York",
+      "signals": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_03_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 2.6,
+          "unit": "percent",
+          "reference_period": "2021-03",
+          "observed_at": null,
+          "published_at": "2021-04-13T08:30:00-04:00",
+          "source": "U.S. Bureau of Labor Statistics, Consumer Price Index - March 2021",
+          "source_version": "USDL-21-0651",
+          "vintage_basis": "dated_initial_news_release_pdf",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+          "source_page": 1,
+          "local_source_path": "data/raw/bls_2021_initial_releases/cpi_2021_03_released_2021_04_13.pdf",
+          "local_source_sha256": "940c8c8215ac8575f769a977d1442659402c5d95435c6eb8b2cce23ee0490998",
+          "eligibility": "eligible",
+          "retrieved_at": "2026-09-29T15:32:31.886370+00:00"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_03_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.6,
+          "unit": "percent",
+          "reference_period": "2021-03",
+          "observed_at": null,
+          "published_at": "2021-04-13T08:30:00-04:00",
+          "source": "U.S. Bureau of Labor Statistics, Consumer Price Index - March 2021",
+          "source_version": "USDL-21-0651",
+          "vintage_basis": "dated_initial_news_release_pdf",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+          "source_page": 1,
+          "local_source_path": "data/raw/bls_2021_initial_releases/cpi_2021_03_released_2021_04_13.pdf",
+          "local_source_sha256": "940c8c8215ac8575f769a977d1442659402c5d95435c6eb8b2cce23ee0490998",
+          "eligibility": "eligible",
+          "retrieved_at": "2026-09-29T15:32:31.886370+00:00"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_03_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 6.0,
+          "unit": "percent",
+          "reference_period": "2021-03",
+          "observed_at": null,
+          "published_at": "2021-04-02T08:30:00-04:00",
+          "source": "U.S. Bureau of Labor Statistics, The Employment Situation - March 2021",
+          "source_version": "USDL-21-0582",
+          "vintage_basis": "dated_initial_news_release_pdf",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_04022021.pdf",
+          "source_page": 1,
+          "local_source_path": "data/raw/bls_2021_initial_releases/employment_2021_03_released_2021_04_02.pdf",
+          "local_source_sha256": "709b1087bdc9132adc10d398cdcfad2d903a2236619e7ceff5c4174ad0fcfe1a",
+          "eligibility": "eligible",
+          "retrieved_at": "2026-09-29T15:32:33.486357+00:00"
+        }
+      ]
+    },
+    {
+      "target_month": "2021-06",
+      "as_of": "2021-05-31T23:59:59-04:00",
+      "as_of_timezone": "America/New_York",
+      "signals": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_04_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 4.2,
+          "unit": "percent",
+          "reference_period": "2021-04",
+          "observed_at": null,
+          "published_at": "2021-05-12T08:30:00-04:00",
+          "source": "U.S. Bureau of Labor Statistics, Consumer Price Index - April 2021",
+          "source_version": "USDL-21-0857",
+          "vintage_basis": "dated_initial_news_release_pdf",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+          "source_page": 1,
+          "local_source_path": "data/raw/bls_2021_initial_releases/cpi_2021_04_released_2021_05_12.pdf",
+          "local_source_sha256": "72792e24291bf737600e6c65746183f7444b86cd3edfb0beadcad2875c963e32",
+          "eligibility": "eligible",
+          "retrieved_at": "2026-09-29T15:32:35.635438+00:00"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_04_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.8,
+          "unit": "percent",
+          "reference_period": "2021-04",
+          "observed_at": null,
+          "published_at": "2021-05-12T08:30:00-04:00",
+          "source": "U.S. Bureau of Labor Statistics, Consumer Price Index - April 2021",
+          "source_version": "USDL-21-0857",
+          "vintage_basis": "dated_initial_news_release_pdf",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+          "source_page": 1,
+          "local_source_path": "data/raw/bls_2021_initial_releases/cpi_2021_04_released_2021_05_12.pdf",
+          "local_source_sha256": "72792e24291bf737600e6c65746183f7444b86cd3edfb0beadcad2875c963e32",
+          "eligibility": "eligible",
+          "retrieved_at": "2026-09-29T15:32:35.635438+00:00"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_04_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 6.1,
+          "unit": "percent",
+          "reference_period": "2021-04",
+          "observed_at": null,
+          "published_at": "2021-05-07T08:30:00-04:00",
+          "source": "U.S. Bureau of Labor Statistics, The Employment Situation - April 2021",
+          "source_version": "USDL-21-0816",
+          "vintage_basis": "dated_initial_news_release_pdf",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+          "source_page": 1,
+          "local_source_path": "data/raw/bls_2021_initial_releases/employment_2021_04_released_2021_05_07.pdf",
+          "local_source_sha256": "66f7a721e3fb577be33ce133a856cb54c4bb33b9a12d2dc72e0ab025548ed843",
+          "eligibility": "eligible",
+          "retrieved_at": "2026-09-29T15:32:37.440773+00:00"
+        }
+      ]
+    }
+  ]
+}

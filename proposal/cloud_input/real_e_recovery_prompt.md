@@ -1,0 +1,5 @@
+我们确认此前 `fred` 当前快照缺少发布时间和历史版本，将它们标为 `unknown_as_of` 并隔离是正确的。现在请继续同一 SCE study：我上传了 `sce_2021_05_06_bls_release_e.json`，它从 BLS 当期归档 CPI/就业新闻稿提取了六条真实历史宏观信号。四份原始 PDF 的 URL、首页发布时刻、版本号和本地哈希都在 JSON 中；如已附上 PDF，请直接核对首页。
+
+请先显示你实际读取的 JSON 条数、两个目标月的 `as_of`、六条 `value/measure/reference_period/published_at/source_version/source_url`，逐条核验 `published_at <= as_of`，并核对 PDF 首页数值。将这份冻结 JSON 物化为两个 Environment 快照：step 0 对应 2021-05、step 1 对应 2021-06；若采用官方 information broadcast，分别在 `at_step=0/1`、`ttl=1` 注入对应月份的三条宏观信号。请显示实际生成的 `environment/environment.json`、注册的 environment provider，以及每月任选一名 Agent 在 `observe_batch` 中**真正收到**的宏观信息。附件被读取但未进入观察值不算完成。**仅这些合格 BLS 信号进入 B**；原先 FRED 回包保留在审计记录，不进入 B。CPI 的 2.6/4.2 是未季调同比百分比，0.6/0.8 是季调环比百分比，不能标成 `CPIAUCSL` 指数。
+
+随后沿用已导入的 20 位合成家庭与 Q8/Q9 规则，对 2021-05、2021-06 先跑确定性的 20×2 scripted 流程；若之前已跑 synthetic E，请创建新版本并保留旧结果。请在执行前显示配置及费用确认；运行后导出 40 条原始回答、P/E 快照、B 脚本、prompt、校验失败、成本与 study ID。结果名称写“真实历史 BLS E + 合成 P 的流程试验”。若平台不接受这份外部 E 文件，请报告具体失败环节和可修改的 study 文件/字段；不要直接退回 synthetic E，除非只是测试导入故障。

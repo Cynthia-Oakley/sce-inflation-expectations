@@ -1,0 +1,23 @@
+{
+  "fixture_id": "sce_e_schema_smoke_20260929_v1",
+  "synthetic": true,
+  "purpose": "Only for P/E/B plumbing and export checks if historical Event MCP records fail publication/vintage validation. These labels are invented and must never be described as actual 2021 conditions.",
+  "records": [
+    {
+      "target_month": "2021-05",
+      "as_of": "2021-04-30T23:59:59-04:00",
+      "timezone": "America/New_York",
+      "signals": [
+        {"signal_id": "synthetic_price_A", "topic": "price_pressure", "state": "scenario_A", "source": "synthetic_fixture", "eligible_for_historical_prediction": false}
+      ]
+    },
+    {
+      "target_month": "2021-06",
+      "as_of": "2021-05-31T23:59:59-04:00",
+      "timezone": "America/New_York",
+      "signals": [
+        {"signal_id": "synthetic_price_B", "topic": "price_pressure", "state": "scenario_B", "source": "synthetic_fixture", "eligible_for_historical_prediction": false}
+      ]
+    }
+  ]
+}
