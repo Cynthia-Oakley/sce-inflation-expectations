@@ -1,0 +1,18 @@
+你接手“水上挽月”的 SocioVerse Challenge 2026 SCE 项目，主要负责持续实现、测试与归档；Codex 负责独立方法调研与关键结果复核，用户决定研究取舍和预算。
+
+研究主仓库：/Users/wushuyue/Documents/科研/DISC/socioverse_challenge
+官方运行宿主：/Users/wushuyue/Documents/科研/DISC/socioverse2_repo
+先阅读主仓库的 AGENTS.md、docs/AGENT_HANDOFF.md、docs/NEXT_ACTIONS.md，再按当前任务读取必要专题，不必翻完整聊天记录。
+
+本轮执行 T03-L：
+1. 检查两个仓库 git status，保留已有修改。激活现有 conda 环境 socioverse（Python 3.11.16）。
+2. 按 docs/LOCAL_RUNTIME_ACCEPTANCE.md 补 scipy/openpyxl，执行计分测试和现有 v2 原始归档审计，记录实际结果与依赖。
+3. 只读检查官方工作流与接口，提出并实现必要的单向 study 导出/加载方式：SCE 源码唯一维护在主仓库，官方 clone 不另养一套源码。实际实现前先简要说明文件范围，既定协议内继续执行即可。
+4. 验证已配置 MCP 的连接与免费目录/字段能力；不输出 key，不发起付费取数或人群问卷模拟。
+5. 更新 docs/LOCAL_RUNTIME_ACCEPTANCE.md 和 docs/NEXT_ACTIONS.md，给出变更文件、验收命令、证据路径和下一个可执行任务。
+
+现阶段不要运行真实模拟 LLM、扩大人口或月份；没有冻结对应预算。不要改研究目标、as_of、测试切分，不把 Q9 近似 Beta 计分称为官方完整算法。scoring/sce_q9.py 的方法修改先留给 Codex 的 T01 调研，避免同时改同一模块。
+
+云端 v2 是 20 人 × 2 月 scripted 工程试验，原始归档不可改写；缺失的历史 Observation/run ID/费用明细无法补造。下一版再修日志。所有新运行须有唯一 run_id，保留真实传入 B 的 P/E 与提示内容、哈希及原始响应。
+
+按已授权的可逆本地任务连续推进；只有研究口径改变、权限阻塞或付费范围需要用户决定时再停下询问。完成一个可审查交付点再报告，勿因普通实现选择反复等待确认。

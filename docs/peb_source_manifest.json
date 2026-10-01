@@ -1,0 +1,74 @@
+[
+  {
+    "local_path": "data/raw/sce_p_sources/micro_2017_2019.xlsx",
+    "url": "https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-complete-17-19.xlsx",
+    "bytes": 54192088,
+    "sha256": "a88e5a225c9a566dd8cdfdd77abef9ac456eb52d1a120c5ec208184a88c745c9",
+    "retrieved_at": "2026-09-29T09:50:18.898162+00:00",
+    "historical_first_published_at": null,
+    "use": "Current SCE 2017-2019 microdata snapshot for later population audit; not qualified as a 2021 vintage"
+  },
+  {
+    "local_path": "data/raw/sce_p_sources/chart_guide.pdf",
+    "url": "https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/glossary/frbny-sce-chartglossary.pdf",
+    "bytes": 248640,
+    "sha256": "ee5c88618dae047948eaf528999b22d02ba38a80502b4eb5c8346983cbfb2881",
+    "retrieved_at": "2026-09-29T09:50:20.698763+00:00",
+    "historical_first_published_at": null,
+    "use": "Official SCE chart definitions and point-prediction method"
+  },
+  {
+    "local_path": "data/raw/acs_2019_docs/pums_data_dictionary_2019.pdf",
+    "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2019.pdf",
+    "bytes": 336480,
+    "sha256": "4dbac7d646d0315a50cb22198b549d3b0f757a131d7d7cce25cebf62a94ad668",
+    "retrieved_at": "2026-09-29T09:53:05.169405+00:00",
+    "historical_first_published_at": null,
+    "use": "Current 2019 ACS PUMS coding reference; 2019 PUMS product released 2020-10-15, current PDF version history not verified"
+  },
+  {
+    "local_path": "data/raw/acs_2019_docs/pums_readme_2019.pdf",
+    "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/ACS2019_PUMS_README.pdf",
+    "bytes": 220662,
+    "sha256": "7ed2a8c1677a19adc334d4deea05f5bd8f9a65ad9205a9be186b6f62d2024640",
+    "retrieved_at": "2026-09-29T09:53:06.949418+00:00",
+    "historical_first_published_at": null,
+    "use": "Current 2019 ACS PUMS usage notes"
+  },
+  {
+    "local_path": "data/raw/bls_2021_initial_releases/cpi_2021_03_released_2021_04_13.pdf",
+    "url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+    "bytes": 521936,
+    "sha256": "940c8c8215ac8575f769a977d1442659402c5d95435c6eb8b2cce23ee0490998",
+    "retrieved_at": "2026-09-29T15:32:31.886370+00:00",
+    "historical_first_published_at": "2021-04-13T08:30:00-04:00",
+    "use": "BLS dated first release for 2021-05/06 SCE historical E; release ID and 8:30 ET embargo on page 1"
+  },
+  {
+    "local_path": "data/raw/bls_2021_initial_releases/employment_2021_03_released_2021_04_02.pdf",
+    "url": "https://www.bls.gov/news.release/archives/empsit_04022021.pdf",
+    "bytes": 427993,
+    "sha256": "709b1087bdc9132adc10d398cdcfad2d903a2236619e7ceff5c4174ad0fcfe1a",
+    "retrieved_at": "2026-09-29T15:32:33.486357+00:00",
+    "historical_first_published_at": "2021-04-02T08:30:00-04:00",
+    "use": "BLS dated first release for 2021-05/06 SCE historical E; release ID and 8:30 ET embargo on page 1"
+  },
+  {
+    "local_path": "data/raw/bls_2021_initial_releases/cpi_2021_04_released_2021_05_12.pdf",
+    "url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+    "bytes": 562652,
+    "sha256": "72792e24291bf737600e6c65746183f7444b86cd3edfb0beadcad2875c963e32",
+    "retrieved_at": "2026-09-29T15:32:35.635438+00:00",
+    "historical_first_published_at": "2021-05-12T08:30:00-04:00",
+    "use": "BLS dated first release for 2021-05/06 SCE historical E; release ID and 8:30 ET embargo on page 1"
+  },
+  {
+    "local_path": "data/raw/bls_2021_initial_releases/employment_2021_04_released_2021_05_07.pdf",
+    "url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+    "bytes": 470891,
+    "sha256": "66f7a721e3fb577be33ce133a856cb54c4bb33b9a12d2dc72e0ab025548ed843",
+    "retrieved_at": "2026-09-29T15:32:37.440773+00:00",
+    "historical_first_published_at": "2021-05-07T08:30:00-04:00",
+    "use": "BLS dated first release for 2021-05/06 SCE historical E; release ID and 8:30 ET embargo on page 1"
+  }
+]

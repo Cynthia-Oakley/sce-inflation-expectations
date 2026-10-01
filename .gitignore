@@ -20,3 +20,18 @@ runs/
 artifacts/
 *.zip
 *.mp4
+
+# SCE derived data and generated study artifacts
+data/interim/
+data/processed/
+data/evaluation/
+studies/*/trajectory/*
+!studies/*/trajectory/README.md
+studies/*/versions/
+studies/*/versions.json
+studies/*/population/roster.jsonl
+studies/*/population/population.json
+studies/*/grounding/data/
+studies/*/reports/generated/
+proposal/build/
+submission/build/

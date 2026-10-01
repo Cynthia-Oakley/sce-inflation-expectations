@@ -1,38 +1,50 @@
-# 指数调查模拟项目｜工作入口
+# 水上挽月｜SocioVerse Challenge 2026
 
-更新：2026-09-26。此目录是“追指数”参赛研究的唯一工作入口；旧资料保留在 `../socioverse/` 和 `../指标跟踪/`，不把近 3 GB 的参考文件复制进开发仓库。
+更新：2026-10-01。方向：**赛道 A · 美国 SCE 居民一年期通胀预期模拟与重建**。
 
-## 先读三份文件
+本仓库 `socioverse_challenge/` 是研究协议、版本归档与本地验证入口；远端为 [私有比赛仓库](https://github.com/Cynthia-Oakley/socioverse-challenge-2026)。队伍名已由用户确定；报名提交、邀请码与平台权限尚未在本仓库核验。
 
-1. [研究定义与当前判断](docs/PROJECT_CHARTER.md)：任务边界、事实与待验证假设。
-2. [研究与评测协议](docs/RESEARCH_PROTOCOL.md)：目标变量、时点隔离、基线和验收条件。
-3. [路线图](docs/ROADMAP.md)：10 月 9 日提案与 10 月 31 日终稿之前的交付门槛。
+## 从这里开始
 
-选题前再读 [指数候选初筛](docs/INDEX_SELECTION.md)。
+**新 Agent 接力入口：[项目交接](docs/AGENT_HANDOFF.md)**。用户可将[启动提示词](docs/KIMI_START_PROMPT.txt)发给已配置的 Claude Code + Kimi；[本地验收记录](docs/LOCAL_RUNTIME_ACCEPTANCE.md)说明已通过与尚缺内容。
 
-比较不同生成机制时，先看 [两份候选清单的分类与分布](docs/INDEX_TAXONOMY_AUDIT.md)。
+1. [项目结构与目录职责](docs/PROJECT_STRUCTURE.md)：文件放哪里、官方 study 如何对应、提交怎样打包。
+2. [推进日程](docs/ROADMAP.md)：阶段、依赖、日期与验收门槛；这是唯一日程来源。
+3. [当前任务板](docs/NEXT_ACTIONS.md)：实际进度与下一步；从第一项未完成任务开始。
+4. [SCE 研究方案](docs/SCE_PROJECT_PLAN.md)：P/E/B、目标变量、数据和实验设计。
 
-后续协作遵守 [AGENTS.md](AGENTS.md) 和 [版本管理规范](CONTRIBUTING.md)；每项重要选择写进 [决策记录](docs/DECISIONS.md)。现在要报名，先看 [报名与开题的最短路径](docs/REGISTRATION_PLAN.md)；技术执行事项见 [下一轮任务板](docs/NEXT_ACTIONS.md)。
+后续 Agent 先读 [AGENTS.md](AGENTS.md)；开发与 Git 规则见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-## 项目边界
+当前执行建议：**云端 v2 作为已归档小样，开始本地开发验收；Codex 负责独立调研与复核，Kimi 负责实现和测试**。2026-10-01 已通过本地官方规则式 demo，SCE 专用依赖、MCP 连通性和真实 B 尚待验收。历史[云端预试验方案](docs/CLOUD_PILOT_PLAN.md)及[上传材料](proposal/cloud_input/README.md)继续保留。已有全国真值核验不等于全部历史输入已可用。
 
-- **当前主线**：将 ConsumerSim 的“人群—信息—问卷回答—加权聚合”范式迁移到一个明确的调查统计量，完成 SocioVerse Challenge 2026 赛道 A 的可复现 study。
-- **长期方向**：金融交易 Agent 平台是另一项目。它的资料在 `../socioverse/financial-market-simulation-proposal.md`，不进入本项目的 10 月交付范围。
-- **资料库**：`../指标跟踪/` 是候选指标与方法学缓存，不是可直接用于历史回测的 point-in-time 数据库。
+**2026-09-30 当前入口：**平台 v2 的两月 scripted 流程与配置已取回核对，见[首试记录](docs/CLOUD_V2_PILOT_RECEIPT.md)。[Q9 计分首轮复现](docs/SCE_Q9_SCORING_REPLICATION.md)已完成：单档/双档个人派生值基本精确，广义 Beta 仍是有误差的近似；暂不把它作为官方 headline 上传平台。下一步按[任务板](docs/NEXT_ACTIONS.md)完善计分与历史 P/E，下一次运行前补齐直接输入审计。已有[开题提案草稿](proposal/proposal.md)。
 
-## 当前状态
+## 当前成果与缺口
 
-- 候选：正在比较 `ECO-0078`、`ECO-0086`、`IDX-0100` 等清单内目标，**尚未定题**。其中 Ipsos *What Worries the World* 是调查项目而非单一官方指数。
-- 比赛：提案截至 **2026-10-09 23:59（北京时间）**，最终提交截至 **2026-10-31 23:59（北京时间）**。
-- 平台：SocioVerse2 **v0.2.0 已于 2026-09-25 公开**；`2026-09-24` 的旧笔记中“开源包不可用”的判断已过期。官方离线示例可作为环境验收。
-- Git：本目录只保存研究设计、代码、允许再分发的小型派生数据和复现说明。原始 PDF、缓存、大体积数据、密钥与运行产物不入库。
+- 已完成：SCE 2020–2024 年 60 个月公开微观数据审计、官方主统计量与点预测的跨人聚合核验。
+- 已建立：`studies/sce_inflation_expectations/` 目录骨架和 draft 元信息；**尚不能运行完整 SCE 模拟**。
+- 待完成：十区间概率的个人密度拟合、历史 P/E 可得性、发布日历、平台离线集成、基线和真实模型实验。
+- 尚无 Agent 预测效果；实验窗口、模型、预算仍未冻结。BIE 企业预期只保留为后续扩展。
 
-## 证据入口
+## 项目区域
 
-- [Challenge 官方页](https://socioverse.fudan-disc.com/challenge/)
-- [SocioVerse2 发布说明](https://socioverse.fudan-disc.com/docs/getting-started/releases/)
-- [SocioVerse2 安装指南](https://socioverse.fudan-disc.com/docs/getting-started/installation/)
-- [Ipsos WWTW 2026-09 官方页](https://www.ipsos.com/en/what-worries-world)
-- 本地旧资料：[ConsumerSim 精读](../指标跟踪/ConsumerSim_精读笔记.md)、[旧路线图](../socioverse/resource-research/09-项目路线图.md)、[IDX-0100 方法学缓存](../指标跟踪/methodology/IDX-0100/methodology.md)
+- `docs/`：研究依据、协议、决策和进度。
+- `studies/sce_inflation_expectations/`：本项目唯一的 P/E/B 实现与研究包。
+- `data/`：本地数据与来源登记；原始、受限和派生实数文件默认不入 Git。
+- `scripts/`：取数、审计、打包等辅助入口；现有 `audit_sce_sources.py` 保留。
+- `tests/`：将来放计分、时间隔离、确定性运行等关键测试。
+- `proposal/`、`submission/`：提案源稿与最终提交清单。
+- `outputs/`：临时审计产物；正式仿真输出按 study 内的目录规则管理。
 
-旧报告是调研记录，不自动成为当前事实。官方版本、数据与软件接口变动时，更新决策记录和本页状态。
+完整树和未来文件状态见 [目录说明](docs/PROJECT_STRUCTURE.md)。
+
+## 专题索引
+
+- [研究边界](docs/PROJECT_CHARTER.md) · [评测协议](docs/RESEARCH_PROTOCOL.md) · [决策记录](docs/DECISIONS.md)
+- [数据实测审计](docs/SCE_DATA_AUDIT.md) · [学校取数清单](docs/SCE_DATA_REQUESTS.md) · [MCP 与 PMI 核查](docs/SOCIOVERSE_MCP_AND_PMI.md)
+- [报名说明](docs/REGISTRATION_PLAN.md) · [交付清单](submission/README.md)
+- 历史选题依据：[指数初筛](docs/INDEX_SELECTION.md)、[分类审计](docs/INDEX_TAXONOMY_AUDIT.md)。保留追溯，不再并行开发。
+
+`../socioverse/`、`../指标跟踪/` 是只读参考库；`../socioverse2_repo/` 是官方代码参考与本地工作流宿主，不纳入本仓库、不作为最终复现必须存在的相邻目录。SCE 源码仍唯一维护在本仓库。`assets/路线图-中文版.png` 是早期静态图，当前安排以 ROADMAP 为准。
+
+比赛硬截止：提案 **2026-10-09 23:59**，终稿 **2026-10-31 23:59**，北京时间。依据：[赛事官网](https://socioverse.fudan-disc.com/challenge/)，本次核查 2026-09-28。
