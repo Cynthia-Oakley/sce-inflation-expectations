@@ -10,6 +10,7 @@
 - **Q9 计分方针已定（用户 2026-10-02，D039）**：统一采用明确命名的近似密度指标，同一算法处理真实与模拟问卷，论文明确说明近似性质并报告与官方 headline 差异。具体冻结哪一版算法（原实现/候选变体）按 Codex 建议在未参与诊断的核验月份复查后确定，不由测试表现反向选择。待办：选定复查月份 → 实现冻结版计分模块与差异报告。
 - **Kimi 后续**：T02 主体已完成（P 核验 + 核验月 E 日历，见 [T02_PE_ACCEPTANCE](T02_PE_ACCEPTANCE.md)），收尾待办为就业/住房问卷码表映射、正式窗口月份补齐、脚本固化；有限真实 B 试验准备；提案待用户审定（结尾内生指标展望句去留未定）。
 - **Sim 主路径已定（用户 2026-10-02，D040）**：Sim 探索与正式运行云端平台优先，v4 解冻按 D034 报价确认卡路径；本地 harness（socioverse2_repo + 自带 API）降为后备。不耗平台额度的准备工作（persona 提示词设计、Q8/Q9 回答格式稳定性小样测试）可先行。GitHub 远端已同步至 `59cd61c`。
+- **v4 已配置未运行（2026-10-02 晚，D041）**：经 webbridge 逐步操作用户浏览器（每步用户确认），v4 从 v3 创建并切换 `llm_kind="openai"`（试钉 gpt-4o-mini）、LLM 决策代码已写入 model.py 并通过语法校验；**未运行、未扣 Sim 费**。运行冻结原因更新：① 运行前报价确认不可得（平台刻意不公开模型/单价）；② 平台自述 v4 运行时审计接线未完成；③ 三轮对话 $6.78 后余额 **$-0.20** 透支。**下一动作（用户）：点工作台"申请额度"或邮件 billing@socioverse.fudan-disc.com 申请追加额度**；额度回正后一轮指令完成审计接线确认 + sv-run 确认卡。完整记录见 [CLOUD_V4_PREP_RECEIPT](CLOUD_V4_PREP_RECEIPT.md)。
 
 - 交接入口：[AGENT_HANDOFF](AGENT_HANDOFF.md)；用户发给 Kimi 的[启动提示](KIMI_START_PROMPT.txt)。以下负责人是协作安排，不表示已经启动了另一 Agent。
 - **云端 v3 已完成（2026-10-01，Kimi）**：v2 流程报告生成（6/6 不含论文/文献阶段）；/sv-iterate 创建 v3 scripted 审计版并冷跑 20 人 × 2021-05/06，`model.py` 仅 +22 行审计 diff。run_id `sce_inflation_expectations-v3-2c40f389c0d24e1ab1e963918b3bfec9`；`audit/v3/` 六件（run_manifest/cost_ledger/audit_manifest/observations×40/answers×40/validation_errors 空）+ v3 `model.py` 全部取回，`scripts/audit_cloud_v3_audit.py` 核验通过：文件哈希与清单逐条一致、Observation 哈希 40/40 自洽（算法与源码一致）、回答与 v2 归档逐字段一致 40/40。费用账本 `billing_status=not_available`。云端对话费约 $10.67，Sim 未动。取件坑与 base64 通道见收讫文档。
