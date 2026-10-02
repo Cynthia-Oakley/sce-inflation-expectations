@@ -1,12 +1,14 @@
 # 当前任务板
 
-更新：2026-10-01（T03-L 完成；云端 v3 审计版完成并取回核验，见 [CLOUD_V3_AUDIT_RECEIPT](CLOUD_V3_AUDIT_RECEIPT.md) 与 D031–D033）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
+更新：2026-10-02（Kimi P1/P2 修复完成；Q9 近似计分方针由用户确定，见 D039）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
 
 ## 当前接力：v4 决策点 + T01 方法研究 + 提案撰写
 
 - **2026-10-01 Codex独立复核完成**：[结果与交接](BETA_AND_KIMI_REVIEW_20261001.md)。原计分器未改；新增独立诊断脚本，完整两月1,780条Beta记录的≤0.001误差比例67.2%→84.3%，仍非官方精确复现。候选是否采用待用户决定；保留SCE目标。
 - **Kimi优先修复**：① `export_study_runtime.py` 重导出会删除运行副本内已有trajectory等产物（已用临时目录证实），真实运行前需保护/分离run_id产物；② v3源码写字面量反斜杠n，归档日志却为LF，需核实转换或实际运行源码，不再称证据链完全闭合。现有40条回答匹配与文件哈希自洽仍成立。之后推进历史P/E、有限真实B和提案，不反复消费云端额度重跑scripted。
-- **Kimi 对复核的分析与计划（2026-10-01）**：已逐条本地复核（只读，零额度）。P2 定位推进：归档 v3 `model.py` 全文唯一写文件语句在第 73 行、只写 observations——**answers.jsonl 根本不是 model.py 产出的**，而是平台从运行状态导出，其 LF 格式与第 73 行无关，此半截矛盾消除；observations.jsonl 经 base64 通道取回，且与平台侧生成的 `audit_manifest.sha256` 逐字节相符，说明"第 73 行写出字面量 `\n`"与"平台落盘/哈希的是 LF 版"之间必存在一次平台侧换行规范化，或运行加载的代码与持久化代码不是同一份。另发现文件 API 还暴露 `trajectory/panel_live.jsonl`、`progress.jsonl`（平台自身轨迹库），已归档，可作交叉验证。计划：P1 修复（导出目标含派生产物/未归档改动时拒绝覆盖 + 新增"重导出不删结果"测试，真实运行前完成）；P2 收尾（trajectory 交叉验证、把 [CLOUD_V3_AUDIT_RECEIPT](CLOUD_V3_AUDIT_RECEIPT.md) 的"证据链闭合"表述按 Codex 口径降级、给新运行加"model.py 自报源码哈希写入 run_manifest"协议）；计分器候选是否冻结为"Q9 近似密度指标"待用户决定（若采用：同一算法计模拟与真实问卷并另报与官方 headline 差异）；之后优先 T02 历史 P/E 与有限真实 B。
+- **Kimi P1/P2 已完成（2026-10-02，D039）**：① P1：`export_study_runtime.py` 重导出遇目标副本派生产物/改动即拒绝并列清单，`--force` 显式覆盖；新增 4 项测试，全套 16/16 通过；官方仓运行副本 `--verify` 仍通过。② P2：answers.jsonl 确认为平台自运行状态导出（非 model.py 产出，矛盾消除一半）；observations.jsonl 与平台 audit_manifest 哈希一致但与归档源码存在一层未记录换行转换，保留为格式层缺口；平台轨迹库 `panel_live.jsonl` 与 answers/observations 内容 40/40 一致（独立佐证）；[CLOUD_V3_AUDIT_RECEIPT](CLOUD_V3_AUDIT_RECEIPT.md) 结论已降级，运行证据链附加协议（封存源码哈希、行为函数自报哈希、记录转换、轨迹库交叉核对）已入 [RESEARCH_PROTOCOL](RESEARCH_PROTOCOL.md) 第 6 节。
+- **Q9 计分方针已定（用户 2026-10-02，D039）**：统一采用明确命名的近似密度指标，同一算法处理真实与模拟问卷，论文明确说明近似性质并报告与官方 headline 差异。具体冻结哪一版算法（原实现/候选变体）按 Codex 建议在未参与诊断的核验月份复查后确定，不由测试表现反向选择。待办：选定复查月份 → 实现冻结版计分模块与差异报告。
+- **Kimi 后续**：T02 历史 P/E 与发布日历；有限真实 B 试验准备（v4 仍冻结，等用户预算决定）；提案待用户审定（结尾内生指标展望句去留未定）。
 
 - 交接入口：[AGENT_HANDOFF](AGENT_HANDOFF.md)；用户发给 Kimi 的[启动提示](KIMI_START_PROMPT.txt)。以下负责人是协作安排，不表示已经启动了另一 Agent。
 - **云端 v3 已完成（2026-10-01，Kimi）**：v2 流程报告生成（6/6 不含论文/文献阶段）；/sv-iterate 创建 v3 scripted 审计版并冷跑 20 人 × 2021-05/06，`model.py` 仅 +22 行审计 diff。run_id `sce_inflation_expectations-v3-2c40f389c0d24e1ab1e963918b3bfec9`；`audit/v3/` 六件（run_manifest/cost_ledger/audit_manifest/observations×40/answers×40/validation_errors 空）+ v3 `model.py` 全部取回，`scripts/audit_cloud_v3_audit.py` 核验通过：文件哈希与清单逐条一致、Observation 哈希 40/40 自洽（算法与源码一致）、回答与 v2 归档逐字段一致 40/40。费用账本 `billing_status=not_available`。云端对话费约 $10.67，Sim 未动。取件坑与 base64 通道见收讫文档。

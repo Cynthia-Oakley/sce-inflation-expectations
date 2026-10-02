@@ -1,12 +1,14 @@
 # 云端 v3 scripted 审计版记录
 
 > 2026-10-01 Codex独立复核补注：下述文件哈希自洽/回答一致检查已复跑通过，但归档`model.py:73`写入字面量`\\n`，取回JSONL为正常LF；临时隔离执行已复现差异。缺少转换记录或实际运行源码版本说明，因此“运行时代码—原始日志”链条仍待补证，不能仅凭现有哈希称完全闭合。详见 [独立审计](BETA_AND_KIMI_REVIEW_20261001.md)。原始归档未改。
+>
+> 2026-10-02 Kimi 复核补注（P2 收尾）：① `answers.jsonl` 并非 `model.py` 写出——归档源码全文唯一写文件语句在第 73 行、只写 observations；answers 由平台从运行状态导出，其 LF 格式与第 73 行无关，此半截差异消除。② `observations.jsonl` 与平台侧生成的 `audit_manifest.sha256` 逐字节相符，而按归档源码第 73 行执行只会写出字面量 `\n`——说明平台在“执行 → 落盘/哈希”之间存在一次换行规范化，或实际执行代码与持久化代码不是同一份；该格式层断点保留为缺口。③ 内容层获独立 corroboration：平台自身轨迹库 `api_files/trajectory/panel_live.jsonl`（60 行 = 20 agent × 3 step，step 0 为初始状态）中，`action_payload` 与 answers 40/40 一致、`state.signals` 与 observations 的 signals 40/40 一致。**结论：v3 的 Observation/回答内容有平台独立记录佐证；仅 sidecar 文件的换行框架存在未解释的平台侧转换。**后续运行按 [研究协议](RESEARCH_PROTOCOL.md) 第 6 节附加协议执行（运行前封存源码哈希、行为函数自报哈希写入 run_manifest、记录全部转换）。
 
 核查日：2026-10-01。操作：Kimi 经 kimi-webbridge 使用用户已登录浏览器会话（用户授权 D031）；云端写入前均已报备意图。前序 v2 见 [CLOUD_V2_PILOT_RECEIPT](CLOUD_V2_PILOT_RECEIPT.md)。
 
 ## 结论
 
-**v3 完成了 v2 缺失的运行时证据链：唯一 run_id、40 条实际传入 `decide_batch` 的 Observation（含逐条 SHA-256）、40 条原始回答、费用账本与哈希清单，全部取回并本地核验通过。v3 回答与 v2 归档逐字段一致，确认 scripted B 在同 P/E/seed 下可精确复现。v4（真实 LLM）仍冻结：平台工作区无法给出模型 ID/报价。**
+**v3 补齐了 v2 缺失的运行时证据：唯一 run_id、40 条实际传入 `decide_batch` 的 Observation（含逐条 SHA-256）、40 条原始回答、费用账本与哈希清单，全部取回；回答与 v2 归档逐字段一致，确认 scripted B 在同 P/E/seed 下可精确复现；Observation/回答内容与平台自身轨迹库独立记录 40/40 一致。已知缺口：sidecar 文件换行格式与归档源码存在一层未记录的平台侧转换（见文首补注），故不称证据链完全闭合。v4（真实 LLM）仍冻结：平台工作区无法给出模型 ID/报价。**
 
 ## 过程与费用
 

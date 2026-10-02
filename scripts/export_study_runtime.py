@@ -13,6 +13,7 @@ Usage (from anywhere; paths are resolved from this file):
 
     python scripts/export_study_runtime.py              # export
     python scripts/export_study_runtime.py --verify     # check the copy
+    python scripts/export_study_runtime.py --force      # export, discarding derived content
     python scripts/export_study_runtime.py --target-root /path/to/studies
 
 Guarantees:
@@ -20,6 +21,11 @@ Guarantees:
 - The target directory is replaced only if it was created by this exporter
   (marker: ``RUNTIME_EXPORT.json`` with a matching ``exporter`` field) or does
   not exist. Anything else is left untouched and the script exits non-zero.
+- Re-export never deletes derived content: if the existing copy contains files
+  not recorded in its manifest (run outputs, local edits) or altered recorded
+  files, the export refuses and lists them. Rerun with ``--force`` only when
+  that content is truly disposable. Ignorable noise (``.DS_Store``,
+  ``__pycache__``/``*.pyc``) never blocks.
 - Derived/volatile content is not exported: ``__pycache__``/``.DS_Store``,
   ``runs/``, ``versions/`` + ``versions.json``, ``trajectory/`` and
   ``reports/generated/`` contents, ``*.duckdb``. Placeholder READMEs are kept.
@@ -127,7 +133,36 @@ def _build_manifest(files: list[Path], source: Path, target: Path) -> dict:
     }
 
 
-def export(target_root: Path) -> Path:
+def _is_noise(rel: str) -> bool:
+    parts = rel.split("/")
+    return (
+        parts[-1] == ".DS_Store"
+        or "__pycache__" in parts
+        or rel.endswith(".pyc")
+    )
+
+
+def _diff_against_manifest(target: Path, manifest: dict) -> dict:
+    """Compare an existing copy with its manifest; noise files are ignored."""
+    recorded: dict[str, str] = manifest.get("files", {})
+    diff: dict[str, list[str]] = {"missing": [], "altered": [], "extra": []}
+    for rel, expected in recorded.items():
+        path = target / rel
+        if not path.is_file():
+            diff["missing"].append(rel)
+        elif _sha256(path) != expected:
+            diff["altered"].append(rel)
+    for p in sorted(target.rglob("*")):
+        if not p.is_file():
+            continue
+        rel = str(p.relative_to(target)).replace("\\", "/")
+        if p.name == MANIFEST_NAME or rel in recorded or _is_noise(rel):
+            continue
+        diff["extra"].append(rel)
+    return diff
+
+
+def export(target_root: Path, force: bool = False) -> Path:
     if not (SOURCE_DIR / "study.yaml").is_file():
         sys.exit(f"source study not found or missing study.yaml: {SOURCE_DIR}")
     target = target_root / STUDY_ID
@@ -141,6 +176,19 @@ def export(target_root: Path) -> Path:
             sys.exit(
                 f"{target} exists and was not created by this exporter; "
                 "refusing to overwrite. Move it away or export elsewhere."
+            )
+        diff = _diff_against_manifest(target, marker)
+        blockers = diff["altered"] + diff["extra"]
+        if blockers and not force:
+            lines = "\n".join(
+                [f"  altered: {rel}" for rel in diff["altered"]]
+                + [f"  extra:   {rel}" for rel in diff["extra"]]
+            )
+            sys.exit(
+                f"{target} contains derived or edited content that re-export "
+                f"would delete:\n{lines}\n"
+                "Archive it first (run outputs belong in per-run_id directories), "
+                "or rerun with --force if it is truly disposable."
             )
         shutil.rmtree(target)
     target.mkdir(parents=True)
@@ -176,22 +224,12 @@ def verify(target_root: Path) -> int:
         print(f"no export manifest at {manifest_path}; nothing to verify")
         return 1
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    recorded: dict[str, str] = manifest.get("files", {})
-    problems: list[str] = []
-    for rel, expected in recorded.items():
-        path = target / rel
-        if not path.is_file():
-            problems.append(f"missing: {rel}")
-        elif _sha256(path) != expected:
-            problems.append(f"altered: {rel}")
-    extras = [
-        str(p.relative_to(target))
-        for p in target.rglob("*")
-        if p.is_file()
-        and p.name != MANIFEST_NAME
-        and str(p.relative_to(target)) not in recorded
-    ]
-    problems.extend(f"extra: {rel}" for rel in sorted(extras))
+    diff = _diff_against_manifest(target, manifest)
+    problems = (
+        [f"missing: {rel}" for rel in diff["missing"]]
+        + [f"altered: {rel}" for rel in diff["altered"]]
+        + [f"extra: {rel}" for rel in diff["extra"]]
+    )
     if problems:
         print(f"verify FAILED for {target} ({len(problems)} problem(s)):")
         for line in problems:
@@ -210,10 +248,12 @@ def main(argv: list[str] | None = None) -> int:
                     help=f"runtime studies root (default: {DEFAULT_TARGET_ROOT})")
     ap.add_argument("--verify", action="store_true",
                     help="check the exported copy against its manifest; do not write")
+    ap.add_argument("--force", action="store_true",
+                    help="replace the copy even if it holds derived/edited content")
     args = ap.parse_args(argv)
     if args.verify:
         return verify(args.target_root)
-    export(args.target_root)
+    export(args.target_root, force=args.force)
     return 0
 
 

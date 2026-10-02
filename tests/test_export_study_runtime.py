@@ -74,6 +74,44 @@ class ExportStudyRuntimeTest(unittest.TestCase):
         self.export()
         self.assertEqual(export_study_runtime.verify(self.target_root), 0)
 
+    def test_reexport_refuses_to_delete_derived_artifacts(self):
+        target = self.export()
+        valuable = target / "trajectory" / "valuable_run.json"
+        valuable.write_text('{"run_id": "precious"}\n', encoding="utf-8")
+        with self.assertRaises(SystemExit) as ctx:
+            export_study_runtime.export(self.target_root)
+        self.assertNotEqual(ctx.exception.code, 0)
+        self.assertTrue(valuable.is_file())
+        self.assertEqual(json.loads(valuable.read_text(encoding="utf-8"))["run_id"],
+                         "precious")
+
+    def test_reexport_refuses_to_delete_edited_files(self):
+        target = self.export()
+        scored = target / "scoring" / "sce_q9.py"
+        scored.write_text(scored.read_text(encoding="utf-8") + "\n# local edit\n",
+                          encoding="utf-8")
+        with self.assertRaises(SystemExit) as ctx:
+            export_study_runtime.export(self.target_root)
+        self.assertNotEqual(ctx.exception.code, 0)
+        self.assertIn("local edit", scored.read_text(encoding="utf-8"))
+
+    def test_reexport_force_replaces_derived_artifacts(self):
+        target = self.export()
+        valuable = target / "trajectory" / "valuable_run.json"
+        valuable.write_text('{"run_id": "disposable"}\n', encoding="utf-8")
+        export_study_runtime.export(self.target_root, force=True)
+        self.assertFalse(valuable.exists())
+        self.assertEqual(export_study_runtime.verify(self.target_root), 0)
+
+    def test_reexport_ignores_noise_files(self):
+        target = self.export()
+        (target / ".DS_Store").write_bytes(b"\x00\x01")
+        cache = target / "scoring" / "__pycache__"
+        cache.mkdir()
+        (cache / "sce_q9.cpython-311.pyc").write_bytes(b"\x00")
+        self.export()
+        self.assertEqual(export_study_runtime.verify(self.target_root), 0)
+
 
 if __name__ == "__main__":
     unittest.main()
