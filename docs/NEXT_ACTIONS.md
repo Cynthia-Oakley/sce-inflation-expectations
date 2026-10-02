@@ -8,7 +8,8 @@
 - **Kimi优先修复**：① `export_study_runtime.py` 重导出会删除运行副本内已有trajectory等产物（已用临时目录证实），真实运行前需保护/分离run_id产物；② v3源码写字面量反斜杠n，归档日志却为LF，需核实转换或实际运行源码，不再称证据链完全闭合。现有40条回答匹配与文件哈希自洽仍成立。之后推进历史P/E、有限真实B和提案，不反复消费云端额度重跑scripted。
 - **Kimi P1/P2 已完成（2026-10-02，D039）**：① P1：`export_study_runtime.py` 重导出遇目标副本派生产物/改动即拒绝并列清单，`--force` 显式覆盖；新增 4 项测试，全套 16/16 通过；官方仓运行副本 `--verify` 仍通过。② P2：answers.jsonl 确认为平台自运行状态导出（非 model.py 产出，矛盾消除一半）；observations.jsonl 与平台 audit_manifest 哈希一致但与归档源码存在一层未记录换行转换，保留为格式层缺口；平台轨迹库 `panel_live.jsonl` 与 answers/observations 内容 40/40 一致（独立佐证）；[CLOUD_V3_AUDIT_RECEIPT](CLOUD_V3_AUDIT_RECEIPT.md) 结论已降级，运行证据链附加协议（封存源码哈希、行为函数自报哈希、记录转换、轨迹库交叉核对）已入 [RESEARCH_PROTOCOL](RESEARCH_PROTOCOL.md) 第 6 节。
 - **Q9 计分方针已定（用户 2026-10-02，D039）**：统一采用明确命名的近似密度指标，同一算法处理真实与模拟问卷，论文明确说明近似性质并报告与官方 headline 差异。具体冻结哪一版算法（原实现/候选变体）按 Codex 建议在未参与诊断的核验月份复查后确定，不由测试表现反向选择。待办：选定复查月份 → 实现冻结版计分模块与差异报告。
-- **Kimi 后续**：T02 历史 P/E 与发布日历；有限真实 B 试验准备（v4 仍冻结，等用户预算决定）；提案待用户审定（结尾内生指标展望句去留未定）。
+- **Kimi 后续**：T02 历史 P/E 与发布日历（下一主线，云端零费用）；有限真实 B 试验准备；提案待用户审定（结尾内生指标展望句去留未定）。
+- **Sim 主路径已定（用户 2026-10-02，D040）**：Sim 探索与正式运行云端平台优先，v4 解冻按 D034 报价确认卡路径；本地 harness（socioverse2_repo + 自带 API）降为后备。不耗平台额度的准备工作（persona 提示词设计、Q8/Q9 回答格式稳定性小样测试）可先行。GitHub 远端已同步至 `59cd61c`。
 
 - 交接入口：[AGENT_HANDOFF](AGENT_HANDOFF.md)；用户发给 Kimi 的[启动提示](KIMI_START_PROMPT.txt)。以下负责人是协作安排，不表示已经启动了另一 Agent。
 - **云端 v3 已完成（2026-10-01，Kimi）**：v2 流程报告生成（6/6 不含论文/文献阶段）；/sv-iterate 创建 v3 scripted 审计版并冷跑 20 人 × 2021-05/06，`model.py` 仅 +22 行审计 diff。run_id `sce_inflation_expectations-v3-2c40f389c0d24e1ab1e963918b3bfec9`；`audit/v3/` 六件（run_manifest/cost_ledger/audit_manifest/observations×40/answers×40/validation_errors 空）+ v3 `model.py` 全部取回，`scripts/audit_cloud_v3_audit.py` 核验通过：文件哈希与清单逐条一致、Observation 哈希 40/40 自洽（算法与源码一致）、回答与 v2 归档逐字段一致 40/40。费用账本 `billing_status=not_available`。云端对话费约 $10.67，Sim 未动。取件坑与 base64 通道见收讫文档。
