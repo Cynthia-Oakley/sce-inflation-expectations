@@ -31,6 +31,10 @@ studies/*/versions/
 studies/*/versions.json
 studies/*/population/roster.jsonl
 studies/*/population/population.json
+# SCE study: the 20-person pilot population is a fixed audited input (cloud v3 archive),
+# maintained as source here, not a derived artifact.
+!studies/sce_inflation_expectations/population/roster.jsonl
+!studies/sce_inflation_expectations/population/population.json
 studies/*/grounding/data/
 studies/*/reports/generated/
 proposal/build/

@@ -1,22 +1,46 @@
-# Draft metadata only. P/E/B artifacts and the runner are not implemented yet.
-study_id: sce_inflation_expectations
-title: 基于 SocioVerse2 的美国家庭通胀预期模拟与重建
-research_question: 在控制历史信息可得时点后，异质家庭智能体能否重建 SCE 一年期通胀预期及人群差异？
-hypothesis: 人口异质性与价格信息可能改善模拟；其增益须通过同输入基线与消融检验。
-study_type: longitudinal
-n_steps: 1  # Scaffold default; formal month mapping and evaluation window are not frozen.
-seed: 42
-time_unit: month
-step_meaning: 每步对应一个 SCE 调查目标月；预测信息截止规则在正式配置中冻结。
-environment_ref: environment/environment.json
-population_ref: population/population.json
-simulation_ref: simulation/simulation.json
-resources_ref: resources.json
-domain: inflation-expectations
-tags: [SCE, survey, inflation, household]
-status: draft
-reference: false
-rerunnable: false
-created_by: project-scaffold
-run_note:
-  zh: 仅目录与研究元信息；尚不能运行 SCE 模拟。
+{
+  "study_id": "sce_inflation_expectations",
+  "title": "基于 SocioVerse2 的美国家庭通胀预期模拟与重建（SCE）",
+  "research_question": "在控制历史信息可得时点后，异质家庭智能体能否重建 SCE 一年期通胀预期及人群差异？",
+  "hypothesis": "人口异质性与价格信息可能改善模拟；其增益须通过同输入基线与消融检验。",
+  "title_i18n": {
+    "zh": "基于 SocioVerse2 的美国家庭通胀预期模拟与重建（SCE）",
+    "en": "Simulating US household inflation expectations (SCE) on SocioVerse2"
+  },
+  "study_type": "longitudinal",
+  "n_steps": 2,
+  "seed": 42,
+  "time_unit": "month",
+  "step_meaning": "每步对应一个 SCE 调查目标月（当前开发窗口：2021-05、2021-06）；预测信息截止规则见研究协议。",
+  "key_attributes": ["point_pct", "validation_status", "q9_sum"],
+  "metrics": ["q8_point_median_demo", "q9_valid_fraction", "q9_density_eligible_count", "panel_size"],
+  "metric_descriptions": {
+    "q8_point_median_demo": "全体 Agent 当年 12 个月通胀点预期的中位数（百分点；scripted 规则或 LLM 回答，非官方 SCE 估计量）",
+    "q9_valid_fraction": "通过 Q9 语法门（十档各 0-100、总和 100、不归一化）的回答占比（0-1）",
+    "q9_density_eligible_count": "通过 Q9 语法门、可进入个人密度计分的回答条数",
+    "panel_size": "当月作答 Agent 数"
+  },
+  "display_metrics": ["q8_point_median_demo", "q9_valid_fraction"],
+  "environment_ref": "environment/environment.json",
+  "population_ref": "population/population.json",
+  "simulation_ref": "simulation/simulation.json",
+  "resources_ref": "resources.json",
+  "domain": "inflation-expectations",
+  "tags": ["SCE", "survey", "inflation", "household", "from-scratch"],
+  "legacy_simulator": "from_scratch",
+  "provider_refs": [
+    "sce_inflation_expectations.environment",
+    "sce_inflation_expectations.population",
+    "sce_inflation_expectations.decision",
+    "sce_inflation_expectations.collector"
+  ],
+  "adjustable_params": ["llm_kind (scripted/openai)", "model", "temperature", "max_calls", "seed"],
+  "status": "local-dev",
+  "reference": false,
+  "rerunnable": true,
+  "created_by": "socioverse_challenge (水上挽月)",
+  "run_note": {
+    "zh": "本地开发窗口 2021-05/06，20 人合成画像；scripted 为流程校验规则，非 SCE 估计量。真实 LLM 运行须显式预算与确认。",
+    "en": "Local dev window 2021-05/06 with 20 synthetic personas; scripted mode is process validation only, not an SCE estimator."
+  }
+}

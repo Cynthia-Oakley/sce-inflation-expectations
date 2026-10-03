@@ -1,0 +1,99 @@
+{
+  "study_id": "sce_inflation_expectations",
+  "query": "美国 SCE 一年期通胀预期：2021-05/2021-06 两个开发月，20 人合成面板 scripted 流程实验",
+  "updated_at": "2026-09-29T13:40:11Z",
+  "method_notes": "synthetic-panel process smoke test; Event fred probe returned no publication/vintage fields, so all fred values are isolated unknown_as_of and synthetic E is the only permitted fallback input.",
+  "implementation_refs": [
+    {
+      "title": "SCE core questionnaire (uploaded reference)",
+      "url": "user-upload://questionnaire.pdf",
+      "takeaway": "Q8 direction plus magnitude precedes Q9 ten fixed probability bins; preserve the questionnaire order.",
+      "accessed": "2026-09-29"
+    },
+    {
+      "title": "SCE chart guide (uploaded reference)",
+      "url": "user-upload://chart_guide.pdf",
+      "takeaway": "Official expected inflation uses an individual generalized-beta fitted mean then the cross-respondent median; point predictions use an interpolated grouped-data median.",
+      "accessed": "2026-09-29"
+    }
+  ],
+  "facts": [
+    {
+      "id": "f-synthetic-p-20",
+      "claim": "Uploaded P contains 20 synthetic household-head-style rows, each weight 1, with four regions represented by five rows each.",
+      "value": 20,
+      "unit": "synthetic personas",
+      "as_of": "2026-09-29",
+      "basis": "sourced",
+      "source": {
+        "title": "sce_20_synthetic_personas.csv and persona_fixture_dictionary.md",
+        "url": "user-upload://sce_20_synthetic_personas.csv",
+        "via": "user",
+        "accessed": "2026-09-29"
+      },
+      "applies_to": [
+        "population.personas"
+      ],
+      "note": "Schema/process evidence only; not official SCE population or weights."
+    },
+    {
+      "id": "f-event-fred-apr-returned",
+      "claim": "Event probe returned FRED April 2021 snapshot values CPIAUCSL=266.614 and UNRATE=6.1, but no publication or vintage fields.",
+      "value": {
+        "CPIAUCSL": 266.614,
+        "UNRATE": 6.1
+      },
+      "unit": "source-native snapshot values",
+      "as_of": "2021-04-30T23:59:59-04:00",
+      "basis": "sourced",
+      "source": {
+        "title": "Event MCP get_source_detail fred 2021-04",
+        "url": "mcp://event_tool/get_source_detail",
+        "via": "event_service",
+        "accessed": "2026-09-29"
+      },
+      "applies_to": [
+        "environment.probe_audit"
+      ],
+      "note": "Returned by service but isolated as unknown_as_of; not allowed into B."
+    },
+    {
+      "id": "f-event-fred-may-returned",
+      "claim": "Event probe returned FRED May 2021 snapshot values CPIAUCSL=268.383 and UNRATE=5.8, but no publication or vintage fields.",
+      "value": {
+        "CPIAUCSL": 268.383,
+        "UNRATE": 5.8
+      },
+      "unit": "source-native snapshot values",
+      "as_of": "2021-05-31T23:59:59-04:00",
+      "basis": "sourced",
+      "source": {
+        "title": "Event MCP get_source_detail fred 2021-05",
+        "url": "mcp://event_tool/get_source_detail",
+        "via": "event_service",
+        "accessed": "2026-09-29"
+      },
+      "applies_to": [
+        "environment.probe_audit"
+      ],
+      "note": "Returned by service but isolated as unknown_as_of; not allowed into B."
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "a-synthetic-p-not-representative",
+      "claim": "The 20 uploaded personas are synthetic fixtures and do not represent US residents or official SCE weights.",
+      "rationale": "The uploader and dictionary explicitly label them synthetic and process-only."
+    },
+    {
+      "id": "a-event-no-vintage",
+      "claim": "FRED probe values without published_at/release_date/vintage/source_version cannot pass strict point-in-time admission.",
+      "rationale": "The study specification requires publication and historical-version evidence; the actual payload metadata was empty."
+    },
+    {
+      "id": "a-synthetic-e-fallback",
+      "claim": "If no Event signal passes historical eligibility, the two synthetic E records are used only for schema smoke testing.",
+      "rationale": "The uploaded E fixture explicitly marks scenario_A/B as invented and ineligible for historical prediction."
+    }
+  ]
+}

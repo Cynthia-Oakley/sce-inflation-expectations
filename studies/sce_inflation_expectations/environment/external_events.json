@@ -1,0 +1,91 @@
+{
+  "study_id": "sce_inflation_expectations",
+  "provider": "user_uploaded_bls_initial_release_json",
+  "dataset_id": "sce_bls_initial_release_e_2021_05_06_v1",
+  "status": "historical_official_release_evidence",
+  "requested_months": [
+    "2021-05",
+    "2021-06"
+  ],
+  "records_by_step": {
+    "0": [
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_03_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 2.6,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-13T08:30:00-04:00",
+        "source_version": "USDL-21-0651",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+        "eligibility": "eligible"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_mom_sa_2021_03_initial",
+        "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+        "value": 0.6,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-13T08:30:00-04:00",
+        "source_version": "USDL-21-0651",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+        "eligibility": "eligible"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2021_03_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.0,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-02T08:30:00-04:00",
+        "source_version": "USDL-21-0582",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_04022021.pdf",
+        "eligibility": "eligible"
+      }
+    ],
+    "1": [
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_04_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 4.2,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_mom_sa_2021_04_initial",
+        "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+        "value": 0.8,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2021_04_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.1,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-07T08:30:00-04:00",
+        "source_version": "USDL-21-0816",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+        "eligibility": "eligible"
+      }
+    ]
+  },
+  "as_of": {
+    "0": "2021-04-30T23:59:59-04:00 America/New_York",
+    "1": "2021-05-31T23:59:59-04:00 America/New_York"
+  },
+  "fred_isolation": {
+    "status": "unknown_as_of",
+    "used_in_b": false,
+    "reason": "Event payload lacked published_at/release_date/vintage/source_version."
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "study_id": "sce_inflation_expectations",
+  "layers": [
+    {
+      "name": "bls_macro_release_signals",
+      "modality": "physical",
+      "scope": "macro",
+      "dynamics": "scheduled",
+      "source": "uploads/_new/sce_2021_05_06_bls_release_e.json",
+      "schema_ref": null,
+      "description": "Three eligible BLS initial-release macro signals for the current target month."
+    },
+    {
+      "name": "bls_release_information",
+      "modality": "information",
+      "scope": "macro",
+      "dynamics": "scheduled",
+      "source": "uploads/_new/sce_2021_05_06_bls_release_e.json",
+      "schema_ref": null,
+      "description": "Macro broadcast carrying the same three BLS signals; ttl=1."
+    },
+    {
+      "name": "agent_profile_context",
+      "modality": "physical",
+      "scope": "local",
+      "dynamics": "static",
+      "source": "uploads/_new/sce_20_synthetic_personas.csv",
+      "schema_ref": null,
+      "description": "Fixed synthetic profile fields used only for B mapping."
+    }
+  ],
+  "scheduled_events": [],
+  "information_program": {
+    "broadcasts": [
+      {
+        "message_id": "bls-2021-05",
+        "content": "BLS initial releases available by 2021-05 as_of: CPI-U Mar 2021: +2.6% y/y NSA; CPI-U Mar 2021: +0.6% m/m SA; unemployment Mar 2021: 6.0% SA.",
+        "channel": "official_bls_release",
+        "at_step": 0,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-06",
+        "content": "BLS initial releases available by 2021-06 as_of: CPI-U Apr 2021: +4.2% y/y NSA; CPI-U Apr 2021: +0.8% m/m SA; unemployment Apr 2021: 6.1% SA.",
+        "channel": "official_bls_release",
+        "at_step": 1,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      }
+    ]
+  },
+  "provider_ref": "sce_inflation_expectations.environment",
+  "provider_args": {
+    "signals_by_step": {
+      "0": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_03_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 2.6,
+          "unit": "percent",
+          "reference_period": "2021-03",
+          "published_at": "2021-04-13T08:30:00-04:00",
+          "source_version": "USDL-21-0651",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_03_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.6,
+          "unit": "percent",
+          "reference_period": "2021-03",
+          "published_at": "2021-04-13T08:30:00-04:00",
+          "source_version": "USDL-21-0651",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_03_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 6.0,
+          "unit": "percent",
+          "reference_period": "2021-03",
+          "published_at": "2021-04-02T08:30:00-04:00",
+          "source_version": "USDL-21-0582",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_04022021.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "1": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_04_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 4.2,
+          "unit": "percent",
+          "reference_period": "2021-04",
+          "published_at": "2021-05-12T08:30:00-04:00",
+          "source_version": "USDL-21-0857",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_04_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.8,
+          "unit": "percent",
+          "reference_period": "2021-04",
+          "published_at": "2021-05-12T08:30:00-04:00",
+          "source_version": "USDL-21-0857",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_04_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 6.1,
+          "unit": "percent",
+          "reference_period": "2021-04",
+          "published_at": "2021-05-07T08:30:00-04:00",
+          "source_version": "USDL-21-0816",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+          "eligibility": "eligible"
+        }
+      ]
+    },
+    "persona_by_id": {
+      "smoke_001": {
+        "weight": 1,
+        "age_group": "18-34",
+        "education_group": "some_college",
+        "household_income_band": "under_35k",
+        "region": "Northeast",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "smoke_002": {
+        "weight": 1,
+        "age_group": "35-44",
+        "education_group": "bachelors",
+        "household_income_band": "75k_to_125k",
+        "region": "Northeast",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "smoke_003": {
+        "weight": 1,
+        "age_group": "45-54",
+        "education_group": "high_school_or_less",
+        "household_income_band": "35k_to_75k",
+        "region": "Northeast",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "smoke_004": {
+        "weight": 1,
+        "age_group": "55-64",
+        "education_group": "postgraduate",
+        "household_income_band": "125k_plus",
+        "region": "Northeast",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "smoke_005": {
+        "weight": 1,
+        "age_group": "65_plus",
+        "education_group": "high_school_or_less",
+        "household_income_band": "35k_to_75k",
+        "region": "Northeast",
+        "housing_tenure": "owner",
+        "employment_status": "retired"
+      },
+      "smoke_006": {
+        "weight": 1,
+        "age_group": "18-34",
+        "education_group": "bachelors",
+        "household_income_band": "35k_to_75k",
+        "region": "Midwest",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "smoke_007": {
+        "weight": 1,
+        "age_group": "35-44",
+        "education_group": "some_college",
+        "household_income_band": "75k_to_125k",
+        "region": "Midwest",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "smoke_008": {
+        "weight": 1,
+        "age_group": "45-54",
+        "education_group": "high_school_or_less",
+        "household_income_band": "under_35k",
+        "region": "Midwest",
+        "housing_tenure": "renter",
+        "employment_status": "unemployed"
+      },
+      "smoke_009": {
+        "weight": 1,
+        "age_group": "55-64",
+        "education_group": "bachelors",
+        "household_income_band": "75k_to_125k",
+        "region": "Midwest",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "smoke_010": {
+        "weight": 1,
+        "age_group": "65_plus",
+        "education_group": "some_college",
+        "household_income_band": "35k_to_75k",
+        "region": "Midwest",
+        "housing_tenure": "owner",
+        "employment_status": "retired"
+      },
+      "smoke_011": {
+        "weight": 1,
+        "age_group": "18-34",
+        "education_group": "high_school_or_less",
+        "household_income_band": "under_35k",
+        "region": "South",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "smoke_012": {
+        "weight": 1,
+        "age_group": "35-44",
+        "education_group": "bachelors",
+        "household_income_band": "75k_to_125k",
+        "region": "South",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "smoke_013": {
+        "weight": 1,
+        "age_group": "45-54",
+        "education_group": "some_college",
+        "household_income_band": "35k_to_75k",
+        "region": "South",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "smoke_014": {
+        "weight": 1,
+        "age_group": "55-64",
+        "education_group": "high_school_or_less",
+        "household_income_band": "under_35k",
+        "region": "South",
+        "housing_tenure": "renter",
+        "employment_status": "out_of_labor_force"
+      },
+      "smoke_015": {
+        "weight": 1,
+        "age_group": "65_plus",
+        "education_group": "postgraduate",
+        "household_income_band": "125k_plus",
+        "region": "South",
+        "housing_tenure": "owner",
+        "employment_status": "retired"
+      },
+      "smoke_016": {
+        "weight": 1,
+        "age_group": "18-34",
+        "education_group": "bachelors",
+        "household_income_band": "35k_to_75k",
+        "region": "West",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "smoke_017": {
+        "weight": 1,
+        "age_group": "35-44",
+        "education_group": "postgraduate",
+        "household_income_band": "125k_plus",
+        "region": "West",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "smoke_018": {
+        "weight": 1,
+        "age_group": "45-54",
+        "education_group": "some_college",
+        "household_income_band": "75k_to_125k",
+        "region": "West",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "smoke_019": {
+        "weight": 1,
+        "age_group": "55-64",
+        "education_group": "bachelors",
+        "household_income_band": "35k_to_75k",
+        "region": "West",
+        "housing_tenure": "owner",
+        "employment_status": "unemployed"
+      },
+      "smoke_020": {
+        "weight": 1,
+        "age_group": "65_plus",
+        "education_group": "high_school_or_less",
+        "household_income_band": "under_35k",
+        "region": "West",
+        "housing_tenure": "renter",
+        "employment_status": "retired"
+      }
+    },
+    "evidence_class": "historical_official_release_evidence",
+    "excluded_sources": [
+      "fred",
+      "nyfed_sce",
+      "nyt_archive"
+    ]
+  }
+}

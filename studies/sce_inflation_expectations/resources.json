@@ -1,0 +1,119 @@
+{
+  "study_id": "sce_inflation_expectations",
+  "mcp_servers": [
+    {
+      "name": "event_tool",
+      "transport": "http",
+      "command": null,
+      "args": [],
+      "url": null,
+      "env": {},
+      "description": "Event MCP; this study used only the recorded fred probe and excludes nyfed_sce/default/all."
+    }
+  ],
+  "datasets": [
+    {
+      "name": "sce_cloud_input",
+      "path": "uploads/_new/sce_cloud_input.md",
+      "kind": "other",
+      "description": "User-supplied SCE pilot protocol and constraints."
+    },
+    {
+      "name": "sce_synthetic_personas",
+      "path": "uploads/_new/sce_20_synthetic_personas.csv",
+      "kind": "csv",
+      "description": "20 synthetic household-head-style personas; not official SCE microdata."
+    },
+    {
+      "name": "persona_fixture_dictionary",
+      "path": "uploads/_new/persona_fixture_dictionary.md",
+      "kind": "other",
+      "description": "User-supplied synthetic persona field dictionary."
+    },
+    {
+      "name": "sce_synthetic_environment",
+      "path": "uploads/_new/sce_2_month_synthetic_environment.json",
+      "kind": "json",
+      "description": "Synthetic E schema-smoke fallback; not historical 2021 evidence."
+    },
+    {
+      "name": "experiment_log_template",
+      "path": "uploads/_new/experiment_log_template.md",
+      "kind": "other",
+      "description": "Blank experiment log template."
+    },
+    {
+      "name": "sce_questionnaire",
+      "path": "uploads/_new/questionnaire.pdf",
+      "kind": "other",
+      "description": "Uploaded SCE core questionnaire reference for Q8/Q9 semantics."
+    },
+    {
+      "name": "sce_chart_guide",
+      "path": "uploads/_new/chart_guide.pdf",
+      "kind": "other",
+      "description": "Uploaded SCE chart guide for headline and point-prediction boundaries."
+    },
+    {
+      "name": "sce_methodology",
+      "path": "uploads/_new/methodology.pdf",
+      "kind": "other",
+      "description": "Uploaded methodology reference; intentionally not used in this stage per user instruction."
+    },
+    {
+      "name": "p_input_research",
+      "path": "uploads/_new/P_INPUT_RESEARCH.md",
+      "kind": "other",
+      "description": "User-supplied P timing and synthetic-pilot research notes."
+    },
+    {
+      "name": "b_sce_survey_spec",
+      "path": "uploads/_new/B_SCE_SURVEY_SPEC.md",
+      "kind": "other",
+      "description": "User-supplied B/Q8/Q9 validation and scoring boundaries."
+    },
+    {
+      "name": "e_event_mcp_spec",
+      "path": "uploads/_new/E_EVENT_MCP_SPEC.md",
+      "kind": "other",
+      "description": "User-supplied Event MCP and point-in-time eligibility specification."
+    },
+    {
+      "name": "after_plan_prompt",
+      "path": "uploads/_new/after_plan_prompt.md",
+      "kind": "other",
+      "description": "User-supplied post-plan execution checklist."
+    },
+    {
+      "name": "sce_bls_release_e",
+      "path": "studies/sce_inflation_expectations/uploads/sce_2021_05_06_bls_release_e.json",
+      "kind": "json",
+      "description": "Frozen six-signal BLS initial-release E package used by v2."
+    },
+    {
+      "name": "cpi_2021_03_release",
+      "path": "studies/sce_inflation_expectations/uploads/cpi_2021_03_released_2021_04_13.pdf",
+      "kind": "other",
+      "description": "BLS initial CPI March 2021 release evidence."
+    },
+    {
+      "name": "cpi_2021_04_release",
+      "path": "studies/sce_inflation_expectations/uploads/cpi_2021_04_released_2021_05_12.pdf",
+      "kind": "other",
+      "description": "BLS initial CPI April 2021 release evidence."
+    },
+    {
+      "name": "employment_2021_03_release",
+      "path": "studies/sce_inflation_expectations/uploads/employment_2021_03_released_2021_04_02.pdf",
+      "kind": "other",
+      "description": "BLS initial Employment Situation March 2021 release evidence."
+    },
+    {
+      "name": "employment_2021_04_release",
+      "path": "studies/sce_inflation_expectations/uploads/employment_2021_04_released_2021_05_07.pdf",
+      "kind": "other",
+      "description": "BLS initial Employment Situation April 2021 release evidence."
+    }
+  ],
+  "tools": []
+}

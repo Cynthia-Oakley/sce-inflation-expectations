@@ -1,0 +1,12 @@
+"""SCE inflation-expectations study. Importing the package registers its four abc
+implementations (env/pop/decision/collector) so engine.build_simulator can resolve them.
+
+The only maintained source lives here in socioverse_challenge; the copy under
+socioverse2_repo/studies/ is a one-way runtime export (scripts/export_study_runtime.py).
+"""
+
+from __future__ import annotations
+
+from . import model  # noqa: F401  (side effect: @register decorators run)
+
+__all__ = ["model"]

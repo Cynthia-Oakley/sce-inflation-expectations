@@ -1,8 +1,12 @@
 # 当前任务板
 
-更新：2026-10-02（Kimi P1/P2 修复完成；Q9 近似计分方针由用户确定，见 D039）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
+更新：2026-10-03（Kimi 完成本地 harness 实现与离线验收；Codex 完成本地模拟模型选型调研）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
 
 ## 当前接力：v4 决策点 + T01 方法研究 + 提案撰写
+
+- **2026-10-03 本地 harness 已实现并离线验收（Kimi）**：SCE study 首次在主仓库获得完整可运行实现——`studies/sce_inflation_expectations/model.py`（四个 abc + 双模 B：scripted 与云端 v3 逐字段一致；openai 真实 LLM 带全量审计 sidecar：提示词+原始响应+哈希、requested/returned model、request_id、fingerprint、usage、重试与错误逐条落盘；Q9 校验不归一化、失败不回退规则、SDK 内置重试关闭、调用次数/费用双闸门、超长提示拒绝）+ `__init__.py` + environment/population/simulation/grounding/resources 配置件 + JSON 格式 study.yaml。入口：`scripts/run_sce_local.py`（自动单向导出→官方仓运行副本执行，轨迹按 run_id 独立 duckdb，运行配置只写 run_manifest 不回写副本，P1 导出保护不阻塞复跑）；`scripts/sce_llm_probe.py`（--list-models 免费目录核对 / --sample N 计数小样，需 --confirm-spend）；`scripts/audit_local_scripted_replay.py`（与 v3 归档逐字段复算）。**验收结果**：两次本地 scripted 运行 answers 40/40、observations 40/40 与云端 v3 归档完全一致（replay_audit_vs_v3.json verdict=PASS）；单元测试 31/31 通过（含 mock-openai 的有效/重试/失败/闸门分支）。证据：`outputs/local_runs/sce-local-scripted-20261003T003537Z-8e6b2f5b/`。**下一步（待用户动作）**：用户在官方仓 `.env` 放入 DeepSeek key 并确认 $0.30 预算 → --list-models 目录核对 → --sample 2 两条小样 → 40 条开发小试。model.py 的 openai 路径真实连通性尚未实测（openai 包未装，装前与用户确认 `pip install -e ".[llm]"`）。
+
+- **2026-10-03 最新接力，覆盖下方旧选型说法**：[模型核查与 Kimi 接入清单](MODEL_SELECTION_20261003.md)已完成。用户确认已有 Kimi/DeepSeek API；建议首轮复用 DeepSeek `deepseek-flash`（当前映射 V4.1-Flash、显式关闭思考），2 条接入小样后考虑原 20×2 开发小试；建议预算 $0.30，**尚未批准/运行**。Qwen2.5-72B 在硅基流动仍有公开价；GPT-4o 固定 API 版本仍列在官方目录，地区/账号可用性另核；旧 `deepseek-chat=V3` 与“2024 都是严格盲测”表述已更正。Kimi 下一步做本地客户端审计接线与离线 mock；服务目录、实际模型回包/usage、预算确认完成后再调用。正式模型/测试期与计分配置均未改变。
 
 - **2026-10-01 Codex独立复核完成**：[结果与交接](BETA_AND_KIMI_REVIEW_20261001.md)。原计分器未改；新增独立诊断脚本，完整两月1,780条Beta记录的≤0.001误差比例67.2%→84.3%，仍非官方精确复现。候选是否采用待用户决定；保留SCE目标。
 - **Kimi优先修复**：① `export_study_runtime.py` 重导出会删除运行副本内已有trajectory等产物（已用临时目录证实），真实运行前需保护/分离run_id产物；② v3源码写字面量反斜杠n，归档日志却为LF，需核实转换或实际运行源码，不再称证据链完全闭合。现有40条回答匹配与文件哈希自洽仍成立。之后推进历史P/E、有限真实B和提案，不反复消费云端额度重跑scripted。

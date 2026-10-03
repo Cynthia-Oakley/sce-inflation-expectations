@@ -1,0 +1,399 @@
+{
+  "study_id": "sce_inflation_expectations",
+  "personas": [
+    {
+      "agent_id": "smoke_001",
+      "attributes": {
+        "age_group": "18-34",
+        "education_group": "some_college",
+        "household_income_band": "under_35k",
+        "region": "Northeast",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_002",
+      "attributes": {
+        "age_group": "35-44",
+        "education_group": "bachelors",
+        "household_income_band": "75k_to_125k",
+        "region": "Northeast",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_003",
+      "attributes": {
+        "age_group": "45-54",
+        "education_group": "high_school_or_less",
+        "household_income_band": "35k_to_75k",
+        "region": "Northeast",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_004",
+      "attributes": {
+        "age_group": "55-64",
+        "education_group": "postgraduate",
+        "household_income_band": "125k_plus",
+        "region": "Northeast",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_005",
+      "attributes": {
+        "age_group": "65_plus",
+        "education_group": "high_school_or_less",
+        "household_income_band": "35k_to_75k",
+        "region": "Northeast",
+        "housing_tenure": "owner",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_006",
+      "attributes": {
+        "age_group": "18-34",
+        "education_group": "bachelors",
+        "household_income_band": "35k_to_75k",
+        "region": "Midwest",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_007",
+      "attributes": {
+        "age_group": "35-44",
+        "education_group": "some_college",
+        "household_income_band": "75k_to_125k",
+        "region": "Midwest",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_008",
+      "attributes": {
+        "age_group": "45-54",
+        "education_group": "high_school_or_less",
+        "household_income_band": "under_35k",
+        "region": "Midwest",
+        "housing_tenure": "renter",
+        "employment_status": "unemployed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_009",
+      "attributes": {
+        "age_group": "55-64",
+        "education_group": "bachelors",
+        "household_income_band": "75k_to_125k",
+        "region": "Midwest",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_010",
+      "attributes": {
+        "age_group": "65_plus",
+        "education_group": "some_college",
+        "household_income_band": "35k_to_75k",
+        "region": "Midwest",
+        "housing_tenure": "owner",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_011",
+      "attributes": {
+        "age_group": "18-34",
+        "education_group": "high_school_or_less",
+        "household_income_band": "under_35k",
+        "region": "South",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_012",
+      "attributes": {
+        "age_group": "35-44",
+        "education_group": "bachelors",
+        "household_income_band": "75k_to_125k",
+        "region": "South",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_013",
+      "attributes": {
+        "age_group": "45-54",
+        "education_group": "some_college",
+        "household_income_band": "35k_to_75k",
+        "region": "South",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_014",
+      "attributes": {
+        "age_group": "55-64",
+        "education_group": "high_school_or_less",
+        "household_income_band": "under_35k",
+        "region": "South",
+        "housing_tenure": "renter",
+        "employment_status": "out_of_labor_force"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_015",
+      "attributes": {
+        "age_group": "65_plus",
+        "education_group": "postgraduate",
+        "household_income_band": "125k_plus",
+        "region": "South",
+        "housing_tenure": "owner",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_016",
+      "attributes": {
+        "age_group": "18-34",
+        "education_group": "bachelors",
+        "household_income_band": "35k_to_75k",
+        "region": "West",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_017",
+      "attributes": {
+        "age_group": "35-44",
+        "education_group": "postgraduate",
+        "household_income_band": "125k_plus",
+        "region": "West",
+        "housing_tenure": "owner",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_018",
+      "attributes": {
+        "age_group": "45-54",
+        "education_group": "some_college",
+        "household_income_band": "75k_to_125k",
+        "region": "West",
+        "housing_tenure": "renter",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_019",
+      "attributes": {
+        "age_group": "55-64",
+        "education_group": "bachelors",
+        "household_income_band": "35k_to_75k",
+        "region": "West",
+        "housing_tenure": "owner",
+        "employment_status": "unemployed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "smoke_020",
+      "attributes": {
+        "age_group": "65_plus",
+        "education_group": "high_school_or_less",
+        "household_income_band": "under_35k",
+        "region": "West",
+        "housing_tenure": "renter",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    }
+  ],
+  "interaction": {
+    "kind": "none",
+    "edges": null,
+    "adjacency_ref": null
+  },
+  "propagation": "independent",
+  "provider_ref": "sce_inflation_expectations.population",
+  "provider_args": {
+    "source": "uploads/_new/sce_20_synthetic_personas.csv",
+    "p_version": "p_pilot_20260929_v1",
+    "household_head": true,
+    "normalized_weight": 0.05
+  },
+  "materialized_count": 20
+}
