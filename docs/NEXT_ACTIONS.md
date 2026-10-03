@@ -111,3 +111,10 @@
 - T08：论文、必要消融、复现包与演示，依赖 T07；清单见 `submission/README.md`。
 
 交接时写：任务编号、已改文件、命令/证据、剩余缺口。任务板只记录结果；不要把研究长文再复制到这里。
+
+### T02 补充｜SCE 逐期波动统计（2026-10-03 完成，人口模拟设计实测依据）
+
+- 新交付：`scripts/analyze_sce_wave_stats.py`（纯 pandas，参数化 `--months`，默认主窗口 202011–202112，背景全 2020–2024）+ 输出 `studies/sce_inflation_expectations/reports/POPULATION_WAVE_STATS.{md,json}`（所有聚合未加权/加权双版）。
+- 三个设计问题实测结论：① core 层分层最有效维度为 employment（组间方差占比 1.85%、组间中位数极差 6.3pp）/ education / age，income 次之，region/numeracy 最弱；任一单维组间方差占比 ≤1.2%，分层价值在覆盖组间差而非降总方差。② normal 层外推平稳性成立：Q9_mean within-person 相邻月自相关 0.597（加权，n=57,717 对），但只能外推结构不能外推水平（2021 年 Q9_mean 从 4.4 升至 6.8）。③ B 线（≤M−12 旧人口）可用但不应裸用：income/employment 的 lag-12 TVD 均值 0.032–0.038（加权 0.034–0.041），建议按年校准；housing 表观漂移为小样本噪声（月 n≈150）。
+- 编码核实：`Q8v2` 本文件仅 1(up)/2(down) 两码、无"持平"码（以 `Q8v2part2` 符号佐证）；`Q8v2part2` 有个别录入异常值（最大 10000，|x|>100 已剔除并计数）。
+- 复算：`/Users/wushuyue/anaconda3/envs/socioverse/bin/python scripts/analyze_sce_wave_stats.py`；2021-06 Q9_mean 加权/未加权均值已独立复算一致。无 git commit。
