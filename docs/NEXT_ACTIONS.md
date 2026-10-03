@@ -1,8 +1,10 @@
 # 当前任务板
 
-更新：2026-10-03（Kimi 完成本地 harness 实现与离线验收；Codex 完成本地模拟模型选型调研）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
+更新：2026-10-03（Kimi 完成本地 harness 实现、离线验收与首次真实 LLM 20×2 小试；Codex 完成模型选型调研）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
 
 ## 当前接力：v4 决策点 + T01 方法研究 + 提案撰写
+
+- **2026-10-03 真实 LLM 首轮已完成（Kimi，D043）**：用户批准装 llm 扩展 + $0.30 预算上限。`--list-models` 目录核对通过（端点含 deepseek-flash/v4-pro，与选型文档一致）；`--sample 2` 两条一次有效、估费 $0.0007；**20 人 × 2021-05/06 正式开发小试完成**：40/40 一次通过 Q9 语法门（零重试零错误），点预期中位数 3.0（05）/4.0（06），40 次调用估费 **$0.014**。run_id `sce-local-openai-20261003T011717Z-427a1baf`，审计链完整（llm_calls 40 行全含提示词/原始响应/usage）。期间修复一处工程问题：运行产物（含 duckdb 与引擎 live 文件）全部迁入按 run_id 的审计目录，运行副本保持纯净，--force 重导出不再能误删产物。性质登记为历史回顾性条件模拟（不声称盲测/严格复现）。下一步：正式对比等冻结计分路径（Codex 复查月份）；temperature/提示词消融先冻结设计。
 
 - **2026-10-03 本地 harness 已实现并离线验收（Kimi）**：SCE study 首次在主仓库获得完整可运行实现——`studies/sce_inflation_expectations/model.py`（四个 abc + 双模 B：scripted 与云端 v3 逐字段一致；openai 真实 LLM 带全量审计 sidecar：提示词+原始响应+哈希、requested/returned model、request_id、fingerprint、usage、重试与错误逐条落盘；Q9 校验不归一化、失败不回退规则、SDK 内置重试关闭、调用次数/费用双闸门、超长提示拒绝）+ `__init__.py` + environment/population/simulation/grounding/resources 配置件 + JSON 格式 study.yaml。入口：`scripts/run_sce_local.py`（自动单向导出→官方仓运行副本执行，轨迹按 run_id 独立 duckdb，运行配置只写 run_manifest 不回写副本，P1 导出保护不阻塞复跑）；`scripts/sce_llm_probe.py`（--list-models 免费目录核对 / --sample N 计数小样，需 --confirm-spend）；`scripts/audit_local_scripted_replay.py`（与 v3 归档逐字段复算）。**验收结果**：两次本地 scripted 运行 answers 40/40、observations 40/40 与云端 v3 归档完全一致（replay_audit_vs_v3.json verdict=PASS）；单元测试 31/31 通过（含 mock-openai 的有效/重试/失败/闸门分支）。证据：`outputs/local_runs/sce-local-scripted-20261003T003537Z-8e6b2f5b/`。**下一步（待用户动作）**：用户在官方仓 `.env` 放入 DeepSeek key 并确认 $0.30 预算 → --list-models 目录核对 → --sample 2 两条小样 → 40 条开发小试。model.py 的 openai 路径真实连通性尚未实测（openai 包未装，装前与用户确认 `pip install -e ".[llm]"`）。
 

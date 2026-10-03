@@ -27,7 +27,7 @@
   - **Qwen2.5-72B-Instruct**：硅基流动公开页面数据仍列出文本型号及价格；Together Turbo 端点已停服。开放权重版本与托管端点需分别登记。
   - 决策点：模型选型是研究口径问题，由用户定（建议先在开发月小样上测格式稳定性再定）。
 - 待办：端点连通 probe → Q9 十档格式稳定性测试（非负/总和 100/可解析）→ 冻结 temperature、max_tokens、重试规则。
-- **2026-10-03 进展**：probe 与小样入口已实现（`scripts/sce_llm_probe.py`：--list-models 免费目录核对；--sample N 计数小样，retry_max=0、exactly N 次计费调用、需 --confirm-spend）；决策层默认值 temperature=0、max_tokens=1024、retry_max=1（待小样后冻结）。真实连通待用户放 key。
+- **2026-10-03 进展**：probe 与小样入口已实现（`scripts/sce_llm_probe.py`）并**已实测通过**：--list-models 目录核对（deepseek-flash / deepseek-v4-pro，与选型文档一致）；--sample 2 两条一次有效；随后 20×2 正式小试 40/40 一次通过 Q9 门（D043）。配置现状：temperature=0、max_tokens=1024、retry_max=1、extra_body 关闭思考、JSON 模式——格式稳定性已验，但是否冻结为主运行配置待与用户/Codex 确认（temperature 0.5 的行为小试是候选消融）。
 
 ### 2. Population 机制
 
