@@ -34,9 +34,12 @@ def _load_archive_answers() -> dict[tuple[str, int], dict]:
 def _load_local_answers(run_id: str) -> dict[tuple[str, int], dict]:
     import duckdb
 
-    store = OFFICIAL_ROOT / "studies" / "sce_inflation_expectations" / "trajectory" / f"{run_id}.duckdb"
+    store = REPO_ROOT / "outputs" / "local_runs" / run_id / "study.duckdb"
+    if not store.exists():  # runs before 2026-10-03 kept the store in the runtime copy
+        store = (OFFICIAL_ROOT / "studies" / "sce_inflation_expectations"
+                 / "trajectory" / f"{run_id}.duckdb")
     if not store.exists():
-        sys.exit(f"store not found: {store}")
+        sys.exit(f"store not found for run {run_id} (checked audit dir and runtime copy)")
     con = duckdb.connect(str(store), read_only=True)
     rows = con.execute(
         "SELECT agent_id, step, action_payload FROM panel WHERE step > 0 ORDER BY step, agent_id"

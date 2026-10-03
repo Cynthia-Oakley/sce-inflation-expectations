@@ -133,7 +133,11 @@ def main(argv: list[str] | None = None) -> int:
     # runtime copy: the copy must stay byte-identical to the export so the one-way
     # export guard (P1) never trips on run records.
 
-    store_path = runtime_dir / "trajectory" / f"{run_id}.duckdb"
+    # Run outputs live entirely in the per-run audit dir (store included): the runtime
+    # copy stays pristine, and even a --force re-export can never destroy run evidence
+    # (P1 lesson, 2026-10-02). Engine live-view files (progress/panel_live/parquet)
+    # are written next to the store, so they land here too.
+    store_path = audit_dir / "study.duckdb"
     store_path.parent.mkdir(parents=True, exist_ok=True)
     sim = build_simulator(env_bundle=env_b, pop_bundle=pop_b, sim_config=sim_c,
                           store_path=store_path)
