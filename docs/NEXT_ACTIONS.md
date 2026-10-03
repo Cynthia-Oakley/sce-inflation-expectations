@@ -4,6 +4,8 @@
 
 ## 当前接力：v4 决策点 + T01 方法研究 + 提案撰写
 
+- **2026-10-03 E authoring 完成（Kimi 实现代理）**：`scripts/build_sce_environment.py` 参数化物化 E——取数通道为 httpx+浏览器头走本机代理（curl 被 Akamai 403）；发布日期逐稿自证（稿内 embargo 行=归档 URL 日期），34 份首发稿 PDF 归档 `data/raw/bls_initial_releases/<ref>/`（manifest 含 SHA-256/USDL/4 值转录引文）。产出主窗（2021-01..12，12 步，非农为新增加的第 4 信号）与前瞻段（2026-06..10，5 步）两套 environment/simulation 配置，官方 schema 校验通过，targets 新机制（{target_month, as_of} 按 conceptual step 索引）已接入 provider_args。测试 54/54（新增 12 例）。报告：[ENVIRONMENT_AUTHORING_REPORT](../studies/sce_inflation_expectations/reports/ENVIRONMENT_AUTHORING_REPORT.md)；开发窗配置未动。
+
 - **2026-10-03 Codex 计分器新月份复查完成（D044）**：先封存方案与两版代码，再对 2020-04/2021-10/2022-12 全月 3,741 条问卷对照；2,784 条 Beta 的≤0.001比例 71.98%→87.07%，MAE 0.074535→0.046990，三个共同样本月度中位数误差均下降，预设条件全通过。**建议冻结候选为 `sce_q9_approx_v1`**；开放连续子组 MAE/p95 略有/明显恶化，需报告；仍为近似指标。见 [结果与 Kimi 集成验收清单](SCORER_HOLDOUT_REVIEW_20261003.md)及[运行前方案](SCORER_HOLDOUT_PLAN_20261003.md)。原两版源码未改；Kimi 移植后对封存结果逐行核验，同一冻结版计分真实和模拟问卷。三个月成为选型验证集，不再称独立最终测试。
 
 - **2026-10-03 正式实验框架定案（用户，D045）**：四段时间（主窗口 2021 全年 12 月微观级 = 10/7 必交付；延伸段 2022-01..2025-10 随后；前瞻段 2026 汇总级 = 06–08 回测 + **09/10 封存预测须在官方发布前完成**）+ A/B 两线（A = 当月微观 P 基准，B = ≤M−12 旧微观 P 外推，A−B = 信息时效效应）+ 测试切分变更（取消留出测试月，连续窗口连续评估）。配置冻结：temperature=0.5、计分器（D044）、提示词版本待开发月调试后锁。预算约束解除。详见 [ROADMAP](ROADMAP.md) 顶部修订块。

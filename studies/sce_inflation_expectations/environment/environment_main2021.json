@@ -1,0 +1,758 @@
+{
+  "study_id": "sce_inflation_expectations",
+  "layers": [
+    {
+      "name": "bls_macro_release_signals",
+      "modality": "physical",
+      "scope": "macro",
+      "dynamics": "scheduled",
+      "source": "environment/external_events_environment_main2021.json",
+      "schema_ref": null,
+      "description": "Four eligible BLS initial-release macro signals (CPI y/y NSA, CPI m/m SA, unemployment rate SA, nonfarm payrolls SA) for the current target month."
+    },
+    {
+      "name": "bls_release_information",
+      "modality": "information",
+      "scope": "macro",
+      "dynamics": "scheduled",
+      "source": "environment/external_events_environment_main2021.json",
+      "schema_ref": null,
+      "description": "Macro broadcast carrying the same four BLS signals; ttl=1."
+    },
+    {
+      "name": "agent_profile_context",
+      "modality": "physical",
+      "scope": "local",
+      "dynamics": "static",
+      "source": "uploads/_new/sce_20_synthetic_personas.csv",
+      "schema_ref": null,
+      "description": "Fixed synthetic profile fields used only for B mapping."
+    }
+  ],
+  "scheduled_events": [],
+  "information_program": {
+    "broadcasts": [
+      {
+        "message_id": "bls-2021-01",
+        "content": "BLS initial releases available by 2021-01 as_of: CPI-U Nov 2020: +1.2% y/y NSA; CPI-U Nov 2020: +0.2% m/m SA; unemployment Nov 2020: 6.7% SA; nonfarm payrolls Nov 2020: +245k SA.",
+        "channel": "official_bls_release",
+        "at_step": 0,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-02",
+        "content": "BLS initial releases available by 2021-02 as_of: CPI-U Dec 2020: +1.4% y/y NSA; CPI-U Dec 2020: +0.4% m/m SA; unemployment Dec 2020: 6.7% SA; nonfarm payrolls Dec 2020: -140k SA.",
+        "channel": "official_bls_release",
+        "at_step": 1,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-03",
+        "content": "BLS initial releases available by 2021-03 as_of: CPI-U Jan 2021: +1.4% y/y NSA; CPI-U Jan 2021: +0.3% m/m SA; unemployment Jan 2021: 6.3% SA; nonfarm payrolls Jan 2021: +49k SA.",
+        "channel": "official_bls_release",
+        "at_step": 2,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-04",
+        "content": "BLS initial releases available by 2021-04 as_of: CPI-U Feb 2021: +1.7% y/y NSA; CPI-U Feb 2021: +0.4% m/m SA; unemployment Feb 2021: 6.2% SA; nonfarm payrolls Feb 2021: +379k SA.",
+        "channel": "official_bls_release",
+        "at_step": 3,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-05",
+        "content": "BLS initial releases available by 2021-05 as_of: CPI-U Mar 2021: +2.6% y/y NSA; CPI-U Mar 2021: +0.6% m/m SA; unemployment Mar 2021: 6.0% SA; nonfarm payrolls Mar 2021: +916k SA.",
+        "channel": "official_bls_release",
+        "at_step": 4,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-06",
+        "content": "BLS initial releases available by 2021-06 as_of: CPI-U Apr 2021: +4.2% y/y NSA; CPI-U Apr 2021: +0.8% m/m SA; unemployment Apr 2021: 6.1% SA; nonfarm payrolls Apr 2021: +266k SA.",
+        "channel": "official_bls_release",
+        "at_step": 5,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-07",
+        "content": "BLS initial releases available by 2021-07 as_of: CPI-U May 2021: +5.0% y/y NSA; CPI-U May 2021: +0.6% m/m SA; unemployment May 2021: 5.8% SA; nonfarm payrolls May 2021: +559k SA.",
+        "channel": "official_bls_release",
+        "at_step": 6,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-08",
+        "content": "BLS initial releases available by 2021-08 as_of: CPI-U Jun 2021: +5.4% y/y NSA; CPI-U Jun 2021: +0.9% m/m SA; unemployment Jun 2021: 5.9% SA; nonfarm payrolls Jun 2021: +850k SA.",
+        "channel": "official_bls_release",
+        "at_step": 7,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-09",
+        "content": "BLS initial releases available by 2021-09 as_of: CPI-U Jul 2021: +5.4% y/y NSA; CPI-U Jul 2021: +0.5% m/m SA; unemployment Jul 2021: 5.4% SA; nonfarm payrolls Jul 2021: +943k SA.",
+        "channel": "official_bls_release",
+        "at_step": 8,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-10",
+        "content": "BLS initial releases available by 2021-10 as_of: CPI-U Aug 2021: +5.3% y/y NSA; CPI-U Aug 2021: +0.3% m/m SA; unemployment Aug 2021: 5.2% SA; nonfarm payrolls Aug 2021: +235k SA.",
+        "channel": "official_bls_release",
+        "at_step": 9,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-11",
+        "content": "BLS initial releases available by 2021-11 as_of: CPI-U Sep 2021: +5.4% y/y NSA; CPI-U Sep 2021: +0.4% m/m SA; unemployment Sep 2021: 4.8% SA; nonfarm payrolls Sep 2021: +194k SA.",
+        "channel": "official_bls_release",
+        "at_step": 10,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      },
+      {
+        "message_id": "bls-2021-12",
+        "content": "BLS initial releases available by 2021-12 as_of: CPI-U Oct 2021: +6.2% y/y NSA; CPI-U Oct 2021: +0.9% m/m SA; unemployment Oct 2021: 4.6% SA; nonfarm payrolls Oct 2021: +531k SA.",
+        "channel": "official_bls_release",
+        "at_step": 11,
+        "ttl": 1,
+        "audience": "all",
+        "note": "Historical official release evidence; not FRED and not SCE result."
+      }
+    ]
+  },
+  "provider_ref": "sce_inflation_expectations.environment",
+  "provider_args": {
+    "targets": [
+      {
+        "target_month": "2021-01",
+        "as_of": "2020-12-31T23:59:59-05:00"
+      },
+      {
+        "target_month": "2021-02",
+        "as_of": "2021-01-31T23:59:59-05:00"
+      },
+      {
+        "target_month": "2021-03",
+        "as_of": "2021-02-28T23:59:59-05:00"
+      },
+      {
+        "target_month": "2021-04",
+        "as_of": "2021-03-31T23:59:59-04:00"
+      },
+      {
+        "target_month": "2021-05",
+        "as_of": "2021-04-30T23:59:59-04:00"
+      },
+      {
+        "target_month": "2021-06",
+        "as_of": "2021-05-31T23:59:59-04:00"
+      },
+      {
+        "target_month": "2021-07",
+        "as_of": "2021-06-30T23:59:59-04:00"
+      },
+      {
+        "target_month": "2021-08",
+        "as_of": "2021-07-31T23:59:59-04:00"
+      },
+      {
+        "target_month": "2021-09",
+        "as_of": "2021-08-31T23:59:59-04:00"
+      },
+      {
+        "target_month": "2021-10",
+        "as_of": "2021-09-30T23:59:59-04:00"
+      },
+      {
+        "target_month": "2021-11",
+        "as_of": "2021-10-31T23:59:59-04:00"
+      },
+      {
+        "target_month": "2021-12",
+        "as_of": "2021-11-30T23:59:59-05:00"
+      }
+    ],
+    "signals_by_step": {
+      "0": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_11_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 1.2,
+          "unit": "percent",
+          "reference_period": "2020-11",
+          "published_at": "2020-12-10T08:30:00-05:00",
+          "source_version": "USDL-20-2218",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2020_11_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.2,
+          "unit": "percent",
+          "reference_period": "2020-11",
+          "published_at": "2020-12-10T08:30:00-05:00",
+          "source_version": "USDL-20-2218",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2020_11_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 6.7,
+          "unit": "percent",
+          "reference_period": "2020-11",
+          "published_at": "2020-12-04T08:30:00-05:00",
+          "source_version": "USDL-20-2184",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_12042020.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2020_11_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 245,
+          "unit": "thousands",
+          "reference_period": "2020-11",
+          "published_at": "2020-12-04T08:30:00-05:00",
+          "source_version": "USDL-20-2184",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_12042020.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "1": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_12_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 1.4,
+          "unit": "percent",
+          "reference_period": "2020-12",
+          "published_at": "2021-01-13T08:30:00-05:00",
+          "source_version": "USDL-21-0024",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2020_12_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.4,
+          "unit": "percent",
+          "reference_period": "2020-12",
+          "published_at": "2021-01-13T08:30:00-05:00",
+          "source_version": "USDL-21-0024",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2020_12_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 6.7,
+          "unit": "percent",
+          "reference_period": "2020-12",
+          "published_at": "2021-01-08T08:30:00-05:00",
+          "source_version": "USDL-21-0002",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_01082021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2020_12_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": -140,
+          "unit": "thousands",
+          "reference_period": "2020-12",
+          "published_at": "2021-01-08T08:30:00-05:00",
+          "source_version": "USDL-21-0002",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_01082021.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "2": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_01_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 1.4,
+          "unit": "percent",
+          "reference_period": "2021-01",
+          "published_at": "2021-02-10T08:30:00-05:00",
+          "source_version": "USDL-21-0226",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_01_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.3,
+          "unit": "percent",
+          "reference_period": "2021-01",
+          "published_at": "2021-02-10T08:30:00-05:00",
+          "source_version": "USDL-21-0226",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_01_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 6.3,
+          "unit": "percent",
+          "reference_period": "2021-01",
+          "published_at": "2021-02-05T08:30:00-05:00",
+          "source_version": "USDL-21-0158",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_02052021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2021_01_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 49,
+          "unit": "thousands",
+          "reference_period": "2021-01",
+          "published_at": "2021-02-05T08:30:00-05:00",
+          "source_version": "USDL-21-0158",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_02052021.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "3": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_02_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 1.7,
+          "unit": "percent",
+          "reference_period": "2021-02",
+          "published_at": "2021-03-10T08:30:00-05:00",
+          "source_version": "USDL-21-0390",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_02_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.4,
+          "unit": "percent",
+          "reference_period": "2021-02",
+          "published_at": "2021-03-10T08:30:00-05:00",
+          "source_version": "USDL-21-0390",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_02_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 6.2,
+          "unit": "percent",
+          "reference_period": "2021-02",
+          "published_at": "2021-03-05T08:30:00-05:00",
+          "source_version": "USDL-21-0365",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_03052021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2021_02_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 379,
+          "unit": "thousands",
+          "reference_period": "2021-02",
+          "published_at": "2021-03-05T08:30:00-05:00",
+          "source_version": "USDL-21-0365",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_03052021.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "4": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_03_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 2.6,
+          "unit": "percent",
+          "reference_period": "2021-03",
+          "published_at": "2021-04-13T08:30:00-04:00",
+          "source_version": "USDL-21-0651",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_03_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.6,
+          "unit": "percent",
+          "reference_period": "2021-03",
+          "published_at": "2021-04-13T08:30:00-04:00",
+          "source_version": "USDL-21-0651",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_03_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 6,
+          "unit": "percent",
+          "reference_period": "2021-03",
+          "published_at": "2021-04-02T08:30:00-04:00",
+          "source_version": "USDL-21-0582",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_04022021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2021_03_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 916,
+          "unit": "thousands",
+          "reference_period": "2021-03",
+          "published_at": "2021-04-02T08:30:00-04:00",
+          "source_version": "USDL-21-0582",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_04022021.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "5": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_04_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 4.2,
+          "unit": "percent",
+          "reference_period": "2021-04",
+          "published_at": "2021-05-12T08:30:00-04:00",
+          "source_version": "USDL-21-0857",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_04_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.8,
+          "unit": "percent",
+          "reference_period": "2021-04",
+          "published_at": "2021-05-12T08:30:00-04:00",
+          "source_version": "USDL-21-0857",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_04_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 6.1,
+          "unit": "percent",
+          "reference_period": "2021-04",
+          "published_at": "2021-05-07T08:30:00-04:00",
+          "source_version": "USDL-21-0816",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2021_04_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 266,
+          "unit": "thousands",
+          "reference_period": "2021-04",
+          "published_at": "2021-05-07T08:30:00-04:00",
+          "source_version": "USDL-21-0816",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "6": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_05_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 5,
+          "unit": "percent",
+          "reference_period": "2021-05",
+          "published_at": "2021-06-10T08:30:00-04:00",
+          "source_version": "USDL-21-1018",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_05_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.6,
+          "unit": "percent",
+          "reference_period": "2021-05",
+          "published_at": "2021-06-10T08:30:00-04:00",
+          "source_version": "USDL-21-1018",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_05_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 5.8,
+          "unit": "percent",
+          "reference_period": "2021-05",
+          "published_at": "2021-06-04T08:30:00-04:00",
+          "source_version": "USDL-21-0980",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_06042021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2021_05_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 559,
+          "unit": "thousands",
+          "reference_period": "2021-05",
+          "published_at": "2021-06-04T08:30:00-04:00",
+          "source_version": "USDL-21-0980",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_06042021.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "7": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_06_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 5.4,
+          "unit": "percent",
+          "reference_period": "2021-06",
+          "published_at": "2021-07-13T08:30:00-04:00",
+          "source_version": "USDL-21-1313",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_07132021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_06_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.9,
+          "unit": "percent",
+          "reference_period": "2021-06",
+          "published_at": "2021-07-13T08:30:00-04:00",
+          "source_version": "USDL-21-1313",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_07132021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_06_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 5.9,
+          "unit": "percent",
+          "reference_period": "2021-06",
+          "published_at": "2021-07-02T08:30:00-04:00",
+          "source_version": "USDL-21-1224",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_07022021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2021_06_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 850,
+          "unit": "thousands",
+          "reference_period": "2021-06",
+          "published_at": "2021-07-02T08:30:00-04:00",
+          "source_version": "USDL-21-1224",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_07022021.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "8": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_07_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 5.4,
+          "unit": "percent",
+          "reference_period": "2021-07",
+          "published_at": "2021-08-11T08:30:00-04:00",
+          "source_version": "USDL-21-1467",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_08112021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_07_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.5,
+          "unit": "percent",
+          "reference_period": "2021-07",
+          "published_at": "2021-08-11T08:30:00-04:00",
+          "source_version": "USDL-21-1467",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_08112021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_07_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 5.4,
+          "unit": "percent",
+          "reference_period": "2021-07",
+          "published_at": "2021-08-06T08:30:00-04:00",
+          "source_version": "USDL-21-1434",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_08062021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2021_07_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 943,
+          "unit": "thousands",
+          "reference_period": "2021-07",
+          "published_at": "2021-08-06T08:30:00-04:00",
+          "source_version": "USDL-21-1434",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_08062021.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "9": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_08_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 5.3,
+          "unit": "percent",
+          "reference_period": "2021-08",
+          "published_at": "2021-09-14T08:30:00-04:00",
+          "source_version": "USDL-21-1644",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_09142021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_08_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.3,
+          "unit": "percent",
+          "reference_period": "2021-08",
+          "published_at": "2021-09-14T08:30:00-04:00",
+          "source_version": "USDL-21-1644",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_09142021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_08_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 5.2,
+          "unit": "percent",
+          "reference_period": "2021-08",
+          "published_at": "2021-09-03T08:30:00-04:00",
+          "source_version": "USDL-21-1571",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_09032021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2021_08_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 235,
+          "unit": "thousands",
+          "reference_period": "2021-08",
+          "published_at": "2021-09-03T08:30:00-04:00",
+          "source_version": "USDL-21-1571",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_09032021.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "10": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_09_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 5.4,
+          "unit": "percent",
+          "reference_period": "2021-09",
+          "published_at": "2021-10-13T08:30:00-04:00",
+          "source_version": "USDL-21-1831",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_10132021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_09_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.4,
+          "unit": "percent",
+          "reference_period": "2021-09",
+          "published_at": "2021-10-13T08:30:00-04:00",
+          "source_version": "USDL-21-1831",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_10132021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_09_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 4.8,
+          "unit": "percent",
+          "reference_period": "2021-09",
+          "published_at": "2021-10-08T08:30:00-04:00",
+          "source_version": "USDL-21-1799",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_10082021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2021_09_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 194,
+          "unit": "thousands",
+          "reference_period": "2021-09",
+          "published_at": "2021-10-08T08:30:00-04:00",
+          "source_version": "USDL-21-1799",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_10082021.pdf",
+          "eligibility": "eligible"
+        }
+      ],
+      "11": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_10_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 6.2,
+          "unit": "percent",
+          "reference_period": "2021-10",
+          "published_at": "2021-11-10T08:30:00-05:00",
+          "source_version": "USDL-21-1973",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_11102021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_10_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.9,
+          "unit": "percent",
+          "reference_period": "2021-10",
+          "published_at": "2021-11-10T08:30:00-05:00",
+          "source_version": "USDL-21-1973",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_11102021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_10_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 4.6,
+          "unit": "percent",
+          "reference_period": "2021-10",
+          "published_at": "2021-11-05T08:30:00-04:00",
+          "source_version": "USDL-21-1930",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_11052021.pdf",
+          "eligibility": "eligible"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2021_10_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 531,
+          "unit": "thousands",
+          "reference_period": "2021-10",
+          "published_at": "2021-11-05T08:30:00-04:00",
+          "source_version": "USDL-21-1930",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_11052021.pdf",
+          "eligibility": "eligible"
+        }
+      ]
+    },
+    "evidence_class": "historical_official_release_evidence",
+    "excluded_sources": [
+      "fred",
+      "nyfed_sce",
+      "nyt_archive"
+    ]
+  }
+}
