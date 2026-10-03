@@ -69,6 +69,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--price-in", type=float, default=None, help="USD per 1M input tokens")
     ap.add_argument("--price-out", type=float, default=None, help="USD per 1M output tokens")
     ap.add_argument("--cost-cap-usd", type=float, default=None)
+    ap.add_argument("--population", default=None,
+                    help="population artifact to run on, relative to the exported study dir "
+                         "(default: population/population.json, the 20-person pilot). "
+                         "e.g. population/population_real100.json")
     ap.add_argument("--confirm-spend", action="store_true",
                     help="required with --llm openai: confirms paid API calls are authorized")
     args = ap.parse_args(argv)
@@ -98,7 +102,11 @@ def main(argv: list[str] | None = None) -> int:
     p = study_paths(runtime_dir)
     study = load_study_yaml(p["study"])
     env_b = validate_handoff(p["environment"], EnvironmentBundle)
-    pop_b = validate_handoff(p["population"], PopulationBundle)
+    pop_path = (runtime_dir / args.population) if args.population else p["population"]
+    if not pop_path.is_file():
+        sys.exit(f"population artifact not found in the exported copy: {pop_path}\n"
+                 "(build it first, e.g. scripts/build_sce_population.py)")
+    pop_b = validate_handoff(pop_path, PopulationBundle)
     sim_c = validate_handoff(p["simulation"], SimulationConfig)
 
     run_id = args.run_id or (f"sce-local-{args.llm}-"
@@ -108,6 +116,13 @@ def main(argv: list[str] | None = None) -> int:
 
     env_b.provider_args["audit_dir"] = str(audit_dir)
     env_b.provider_args["run_id"] = run_id
+    # Bind E's persona view to the population actually being run (the bundle's baked-in
+    # persona_by_id belongs to the 20-person pilot; real-P runs need their own profiles).
+    env_b.provider_args["persona_by_id"] = {
+        pp.agent_id: {**pp.attributes,
+                      "weight": int(pp.weight) if float(pp.weight).is_integer() else pp.weight}
+        for pp in pop_b.personas
+    }
 
     decision_args = {**sim_c.decision_args, "llm_kind": args.llm,
                      "run_id": run_id, "audit_dir": str(audit_dir)}
@@ -179,10 +194,11 @@ def main(argv: list[str] | None = None) -> int:
         "artifact_sha256": {
             "study.yaml": _sha256(p["study"]),
             "environment.json": _sha256(p["environment"]),
-            "population.json": _sha256(p["population"]),
+            "population": _sha256(pop_path),
             "roster.jsonl": _sha256(p["roster"]),
             "simulation.json": _sha256(p["simulation"]),
         },
+        "population_artifact": str(pop_path.relative_to(runtime_dir)),
         "git": {"research_repo": _git_state(REPO_ROOT), "official_clone": _git_state(OFFICIAL_ROOT)},
         "store_path": str(store_path),
         "cost": sim.decision.cost_summary() if hasattr(sim.decision, "cost_summary") else None,

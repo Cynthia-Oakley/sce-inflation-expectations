@@ -67,25 +67,56 @@ Q9_BIN_LABELS = [
     "-12% or less (deflation of 12% or more)",
 ]
 
+# Persona profile text. Keys cover BOTH the 20-persona synthetic pilot (codes
+# like "under_35k") and the real SCE micro-data sampling labels produced by
+# scripts/build_sce_population.py (codes like "under_50k", mapped from the real
+# _EDU_CAT/_HH_INC_CAT categories, and Q10/Q43 employment/housing codes).
+# Old keys must stay: the pilot population.json still uses them.
 _PROFILE_TEXT = {
     "household_income_band": {
+        # synthetic pilot (4 bands)
         "under_35k": "under $35,000",
         "35k_to_75k": "between $35,000 and $75,000",
         "75k_to_125k": "between $75,000 and $125,000",
         "125k_plus": "over $125,000",
+        # real SCE _HH_INC_CAT (3 bands)
+        "under_50k": "under $50,000",
+        "50k_to_100k": "between $50,000 and $100,000",
+        "over_100k": "over $100,000",
     },
     "education_group": {
+        # synthetic pilot
         "high_school_or_less": "high school or less",
         "some_college": "some college",
         "bachelors": "a bachelor's degree",
         "postgraduate": "a postgraduate degree",
+        # real SCE _EDU_CAT (3 categories; "College" = college graduate, no
+        # postgraduate split exists in the real derived column)
+        "high_school": "a high school diploma or less",
+        "college": "a college degree",
     },
-    "housing_tenure": {"renter": "renting your home", "owner": "owning your home"},
+    "housing_tenure": {
+        "renter": "renting your home",
+        "owner": "owning your home",
+        # real SCE Q43 code 3 ("Other", e.g. living with family rent-free)
+        "other": "in other housing arrangements",
+    },
     "employment_status": {
+        # synthetic pilot
         "employed": "currently employed",
         "unemployed": "currently unemployed",
         "retired": "retired",
+        # real SCE Q10 codes (questionnaire p.11-12); "unemployed" above covers
+        # codes 3 (not working, would like to work) and 4 (temporarily laid off)
+        "on_leave": "on sick or other leave from work",
+        "disabled": "permanently disabled or unable to work",
+        "student": "a student",
+        "homemaker": "a homemaker",
+        "other": "in some other employment situation",
     },
+    # _NUM_CAT is the SCE numeracy category (High/Low), NOT household size;
+    # the real whitelist columns contain no household-size variable.
+    "numeracy": {"high": "high", "low": "low"},
 }
 
 
@@ -240,9 +271,13 @@ def _persona_sentence(profile: dict[str, Any]) -> str:
         str(profile.get("housing_tenure", "")), "unknown housing situation")
     emp = _PROFILE_TEXT["employment_status"].get(
         str(profile.get("employment_status", "")), "unknown employment status")
-    return (f"You are a U.S. household head, age group {profile.get('age_group', 'unknown')}, "
-            f"with {edu}, household income {inc}, living in the {profile.get('region', 'unknown')} "
-            f"region, {ten}, {emp}.")
+    sentence = (f"You are a U.S. household head, age group {profile.get('age_group', 'unknown')}, "
+                f"with {edu}, household income {inc}, living in the {profile.get('region', 'unknown')} "
+                f"region, {ten}, {emp}.")
+    num = _PROFILE_TEXT["numeracy"].get(str(profile.get("numeracy", "")))
+    if num:
+        sentence += (f" Your score on the survey's numeracy assessment was {num}.")
+    return sentence
 
 
 def _signal_lines(signals: list[dict[str, Any]]) -> str:

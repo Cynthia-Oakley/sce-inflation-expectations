@@ -1,0 +1,2077 @@
+{
+  "study_id": "sce_inflation_expectations",
+  "personas": [
+    {
+      "agent_id": "sce_u70118889",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "Midwest",
+        "state": "IL",
+        "numeracy": "low",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70117487",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "FL",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121573",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Northeast",
+        "state": "CT",
+        "numeracy": "high",
+        "employment_status": "retired",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121137",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "GA",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120752",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "DE",
+        "numeracy": "high",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119502",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Midwest",
+        "state": "OH",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118821",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "over_100k",
+        "region": "Midwest",
+        "state": "WI",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118557",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "TX",
+        "numeracy": "low",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70124214",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "high_school",
+        "household_income_band": "under_50k",
+        "region": "Midwest",
+        "state": "OH",
+        "numeracy": "high",
+        "employment_status": "retired",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70117578",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Northeast",
+        "state": "PA",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70117533",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "Northeast",
+        "state": "PA",
+        "numeracy": "low",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118672",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "West",
+        "state": "AZ",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120700",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Midwest",
+        "state": "IL",
+        "numeracy": "high",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120965",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Northeast",
+        "state": "NY",
+        "numeracy": "low",
+        "employment_status": "unemployed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70125706",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "TX",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70117503",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "FL",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120412",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "Midwest",
+        "state": "MI",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70124172",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "MS",
+        "numeracy": "low",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120722",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "some_college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "IN",
+        "numeracy": "high",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70124553",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "some_college",
+        "household_income_band": "over_100k",
+        "region": "Northeast",
+        "state": "CT",
+        "numeracy": "low",
+        "employment_status": "employed",
+        "housing_tenure": "other"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121602",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "IN",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "renter"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70117194",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "GA",
+        "numeracy": "high",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119772",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "LA",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70124218",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "some_college",
+        "household_income_band": "over_100k",
+        "region": "West",
+        "state": "WA",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70122516",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "Midwest",
+        "state": "WI",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "renter"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119703",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "high_school",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "TX",
+        "numeracy": "low",
+        "employment_status": "homemaker"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120657",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Midwest",
+        "state": "MN",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70122482",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Northeast",
+        "state": "NY",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118630",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "under_50k",
+        "region": "Northeast",
+        "state": "NY",
+        "numeracy": "high",
+        "employment_status": "unemployed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70123157",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Northeast",
+        "state": "NH",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "renter"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118761",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Northeast",
+        "state": "CT",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70122734",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "under_50k",
+        "region": "West",
+        "state": "CA",
+        "numeracy": "low",
+        "employment_status": "employed",
+        "housing_tenure": "renter"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70122574",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "IL",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121371",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "OH",
+        "numeracy": "low",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70117738",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "IL",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70124684",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "IN",
+        "numeracy": "high",
+        "employment_status": "retired",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119105",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "OK",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70123144",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "some_college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "LA",
+        "numeracy": "high",
+        "employment_status": "retired",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118451",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "South",
+        "state": "LA",
+        "numeracy": "low",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121818",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "NC",
+        "numeracy": "high",
+        "employment_status": "other",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70122781",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "high_school",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "IL",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120308",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "West",
+        "state": "CA",
+        "numeracy": "high",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118327",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "Midwest",
+        "state": "WI",
+        "numeracy": "low",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70117793",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "NC",
+        "numeracy": "high",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120899",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "West",
+        "state": "WA",
+        "numeracy": "high",
+        "employment_status": "unemployed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121778",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "high_school",
+        "household_income_band": "50k_to_100k",
+        "region": "Northeast",
+        "state": "NJ",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118460",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "South",
+        "state": "LA",
+        "numeracy": "low",
+        "employment_status": "unemployed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118808",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "high_school",
+        "household_income_band": "under_50k",
+        "region": "South",
+        "state": "TX",
+        "numeracy": "low",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70124613",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "under_50k",
+        "region": "South",
+        "state": "FL",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70122892",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "VA",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119816",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "high_school",
+        "household_income_band": "under_50k",
+        "region": "Midwest",
+        "state": "MI",
+        "numeracy": "high",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70123034",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "high_school",
+        "household_income_band": "over_100k",
+        "region": "West",
+        "state": "OR",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70122699",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Midwest",
+        "state": "WI",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "renter"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120588",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "Midwest",
+        "state": "OK",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121434",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "some_college",
+        "household_income_band": "over_100k",
+        "region": "West",
+        "state": "CO",
+        "numeracy": "high",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118366",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Midwest",
+        "state": "IN",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119953",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "under_50k",
+        "region": "Midwest",
+        "state": "IL",
+        "numeracy": "high",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119833",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "some_college",
+        "household_income_band": "50k_to_100k",
+        "region": "Northeast",
+        "state": "NJ",
+        "numeracy": "low",
+        "employment_status": "unemployed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70124698",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "MO",
+        "numeracy": "low",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70123148",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "high_school",
+        "household_income_band": "50k_to_100k",
+        "region": "West",
+        "state": "CA",
+        "numeracy": "low",
+        "employment_status": "unemployed",
+        "housing_tenure": "renter"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121494",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "50k_to_100k",
+        "region": "Northeast",
+        "state": "NY",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120716",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "high_school",
+        "household_income_band": "under_50k",
+        "region": "Northeast",
+        "state": "NJ",
+        "numeracy": "low",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70122333",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "West",
+        "state": "CA",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118029",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "MN",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120946",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "TX",
+        "numeracy": "high",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70122110",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "West",
+        "state": "OR",
+        "numeracy": "low",
+        "employment_status": "disabled",
+        "housing_tenure": "renter"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70123442",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "West",
+        "state": "OR",
+        "numeracy": "low",
+        "employment_status": "employed",
+        "housing_tenure": "renter"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121458",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "TN",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118249",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "TX",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120607",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "under_50k",
+        "region": "Northeast",
+        "state": "NY",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70122094",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "IL",
+        "numeracy": "high",
+        "employment_status": "homemaker",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70120622",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "West",
+        "state": "AZ",
+        "numeracy": "low",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70125636",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "West",
+        "state": "CA",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70123386",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "NC",
+        "numeracy": "high",
+        "employment_status": "retired",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70124682",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Northeast",
+        "state": "PA",
+        "numeracy": "high",
+        "employment_status": "unemployed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119565",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "some_college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "OH",
+        "numeracy": "low",
+        "employment_status": "homemaker"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121374",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "some_college",
+        "household_income_band": "50k_to_100k",
+        "region": "Northeast",
+        "state": "NJ",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121165",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "some_college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "SC",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121340",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "West",
+        "state": "AZ",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70124265",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Northeast",
+        "state": "CT",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70123412",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "IL",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70122782",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "FL",
+        "numeracy": "low",
+        "employment_status": "employed",
+        "housing_tenure": "renter"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119467",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "GA",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70125748",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "West",
+        "state": "AZ",
+        "numeracy": "low",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70125579",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "TN",
+        "numeracy": "high",
+        "employment_status": "retired",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118593",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Northeast",
+        "state": "NY",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70117818",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "OH",
+        "numeracy": "low",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118867",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "some_college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "MI",
+        "numeracy": "low",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119686",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "some_college",
+        "household_income_band": "over_100k",
+        "region": "West",
+        "state": "CO",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119773",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "high_school",
+        "household_income_band": "50k_to_100k",
+        "region": "South",
+        "state": "FL",
+        "numeracy": "high",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118179",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "South",
+        "state": "OK",
+        "numeracy": "low",
+        "employment_status": "retired"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70123222",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "TX",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70123182",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "over_100k",
+        "region": "South",
+        "state": "FL",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70124900",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "West",
+        "state": "CA",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121197",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "under_50k",
+        "region": "South",
+        "state": "AL",
+        "numeracy": "low",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70117253",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "some_college",
+        "household_income_band": "50k_to_100k",
+        "region": "West",
+        "state": "WA",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70118945",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "50k_to_100k",
+        "region": "Midwest",
+        "state": "IA",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70121828",
+      "attributes": {
+        "age_group": "Over 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "West",
+        "state": "NV",
+        "numeracy": "high",
+        "employment_status": "retired",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70124367",
+      "attributes": {
+        "age_group": "40 to 60",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "Midwest",
+        "state": "IL",
+        "numeracy": "high",
+        "employment_status": "employed",
+        "housing_tenure": "owner"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    },
+    {
+      "agent_id": "sce_u70119723",
+      "attributes": {
+        "age_group": "Under 40",
+        "education_group": "college",
+        "household_income_band": "over_100k",
+        "region": "West",
+        "state": "HI",
+        "numeracy": "high",
+        "employment_status": "employed"
+      },
+      "group_key": null,
+      "weight": 1.0,
+      "init_state": {
+        "target_month": "",
+        "direction": "",
+        "point_pct": 0.0,
+        "q9_valid": false
+      }
+    }
+  ],
+  "interaction": {
+    "kind": "none",
+    "edges": null,
+    "adjacency_ref": null
+  },
+  "propagation": "independent",
+  "provider_ref": "sce_inflation_expectations.population",
+  "provider_args": {
+    "source": "frbny_sce_public_microdata_2020_2024",
+    "p_version": "p_real100_202105m202106_seed42_v1",
+    "household_head": true,
+    "normalized_weight": 1.0,
+    "sampling": {
+      "seed": 42,
+      "target_months": [
+        202105,
+        202106
+      ],
+      "panel_mode": true,
+      "n_sampled": 100,
+      "candidate_pool": {
+        "per_month_rows": {
+          "202105": 1234,
+          "202106": 1297
+        },
+        "panel_intersection": 1070
+      }
+    }
+  },
+  "materialized_count": 100
+}
