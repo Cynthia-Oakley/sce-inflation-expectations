@@ -47,6 +47,10 @@ TARGETS = {
     0: {"target_month": "2021-05", "as_of": "2021-04-30T23:59:59-04:00"},
     1: {"target_month": "2021-06", "as_of": "2021-05-31T23:59:59-04:00"},
 }
+# Dev-window default; longer windows pass provider_args.targets (same dict shape,
+# indexed by conceptual step). The Core records t=0 as initialization, so runtime
+# decision t=k maps to conceptual step k-1.
+DEFAULT_TARGETS = [TARGETS[0], TARGETS[1]]
 
 # Q9 acceptance gate for LLM replies: each bin within [0, 100] and the sum equal
 # to 100 within this tolerance. Out-of-gate replies are kept raw and marked
@@ -129,6 +133,17 @@ def _target_for_runtime_step(step: int) -> dict[str, str]:
     return TARGETS[max(0, min(1, step - 1))]
 
 
+def _target_from_observation(ob: Observation) -> dict[str, str]:
+    """Target month/as_of as the environment actually served them (window-length
+    agnostic); falls back to the dev-window constant only if absent."""
+    info = ob.macro_information or {}
+    month = info.get("target_month")
+    as_of = info.get("as_of")
+    if month and as_of:
+        return {"target_month": month, "as_of": as_of}
+    return _target_for_runtime_step(ob.step)
+
+
 def self_reported_code_sha256() -> str:
     """SHA-256 of this source file, self-reported (RESEARCH_PROTOCOL §6 addendum)."""
     return hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
@@ -169,6 +184,8 @@ class SCEEnvironmentProvider(EnvironmentProvider):
         self.bundle = bundle
         self.signals_by_step = bundle.provider_args.get("signals_by_step", {})
         self.persona_by_id = bundle.provider_args.get("persona_by_id", {})
+        self.targets: list[dict[str, str]] = list(
+            bundle.provider_args.get("targets") or DEFAULT_TARGETS)
         self.answers: dict[str, dict[str, Any]] = {}
         self.current_signals: list[dict[str, Any]] = []
         self.current_step = 0
@@ -192,12 +209,13 @@ class SCEEnvironmentProvider(EnvironmentProvider):
         self._active_broadcasts = []
 
     def advance_to(self, t: int) -> list[Any]:
-        conceptual = max(0, min(1, t - 1))
+        conceptual = max(0, min(len(self.targets) - 1, t - 1))
         self.current_step = conceptual
         self.current_signals = list(self.signals_by_step.get(str(conceptual), []))
         self._active_broadcasts = [
             {"message_id": b.message_id, "content": b.content, "channel": b.channel,
-             "target_month": TARGETS.get(b.at_step, TARGETS[1])["target_month"]}
+             "target_month": (self.targets[b.at_step] if b.at_step < len(self.targets)
+                              else self.targets[-1])["target_month"]}
             for b in self.bundle.information_program.broadcasts
             if b.is_macro and b.at_step == conceptual and b.ttl == 1
         ]
@@ -209,7 +227,7 @@ class SCEEnvironmentProvider(EnvironmentProvider):
             self.answers[action.agent_id] = payload
 
     def observe_batch(self, agent_ids: list[str], t: int, round_idx: int = 0) -> list[Observation]:
-        target = TARGETS[self.current_step]
+        target = self.targets[self.current_step]
         info = {
             "target_month": target["target_month"],
             "as_of": target["as_of"],
@@ -253,7 +271,7 @@ class SCEEnvironmentProvider(EnvironmentProvider):
     def snapshot(self) -> dict[str, Any]:
         return {
             "conceptual_step": self.current_step,
-            "target_month": TARGETS[self.current_step]["target_month"],
+            "target_month": self.targets[self.current_step]["target_month"],
             "signals": list(self.current_signals),
             "answered_agents": len(self.answers),
         }
@@ -503,7 +521,7 @@ class SCEDecision(DecisionModel):
     def _decide_scripted(self, obs: list[Observation]) -> list[Action]:
         actions: list[Action] = []
         for ob in obs:
-            target = _target_for_runtime_step(ob.step)
+            target = _target_from_observation(ob)
             signals = ob.macro_information.get("signals", [])
             profile = ob.local_physical.get("profile", {})
             inflation = next((float(s["value"]) for s in signals if "12-month" in s.get("measure", "")), 2.0)
@@ -604,7 +622,7 @@ class SCEDecision(DecisionModel):
         return row
 
     def _decide_openai_one(self, ob: Observation) -> Action:
-        target = _target_for_runtime_step(ob.step)
+        target = _target_from_observation(ob)
         messages = build_sce_messages(ob)
         base_payload: dict[str, Any] = {
             "agent_id": ob.agent_id,

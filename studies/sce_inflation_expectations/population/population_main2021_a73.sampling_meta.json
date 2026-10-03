@@ -1,0 +1,244 @@
+{
+  "study_id": "sce_inflation_expectations",
+  "built_at_utc": "2026-10-03T03:59:49.071117+00:00",
+  "seed": 42,
+  "target_months": [
+    202101,
+    202102,
+    202103,
+    202104,
+    202105,
+    202106,
+    202107,
+    202108,
+    202109,
+    202110,
+    202111,
+    202112
+  ],
+  "panel_mode": true,
+  "n_sampled": 73,
+  "candidate_pool": {
+    "per_month_rows": {
+      "202101": 1259,
+      "202102": 1243,
+      "202103": 1221,
+      "202104": 1243,
+      "202105": 1234,
+      "202106": 1297,
+      "202107": 1239,
+      "202108": 1265,
+      "202109": 1261,
+      "202110": 1283,
+      "202111": 1281,
+      "202112": 1283
+    },
+    "panel_intersection": 73
+  },
+  "sampled_userids": [
+    70121517,
+    70120988,
+    70121790,
+    70121752,
+    70121657,
+    70121542,
+    70121513,
+    70121494,
+    70121974,
+    70121063,
+    70120949,
+    70121095,
+    70122123,
+    70122319,
+    70121756,
+    70121811,
+    70122101,
+    70122225,
+    70121495,
+    70121876,
+    70121845,
+    70121872,
+    70121778,
+    70121655,
+    70122010,
+    70122179,
+    70121806,
+    70122169,
+    70112584,
+    70121286,
+    70121656,
+    70121579,
+    70121970,
+    70121184,
+    70122027,
+    70121969,
+    70121137,
+    70122064,
+    70121614,
+    70121794,
+    70121583,
+    70122008,
+    70121562,
+    70121180,
+    70121650,
+    70121980,
+    70121602,
+    70121920,
+    70121830,
+    70122227,
+    70122113,
+    70120958,
+    70121960,
+    70121828,
+    70122118,
+    70121762,
+    70121888,
+    70121857,
+    70121864,
+    70121940,
+    70122199,
+    70122110,
+    70121530,
+    70121984,
+    70121909,
+    70121573,
+    70121536,
+    70121673,
+    70121163,
+    70121672,
+    70121977,
+    70121555,
+    70121967
+  ],
+  "source_files": [
+    {
+      "path": "data/raw/sce_audit_20260928/micro_2020_2024.xlsx",
+      "sha256": "1b57ffb75c2170d767f46a001002db8c40c228fe5691f6dd19e39777ffe469c6",
+      "rows_total": 71976
+    }
+  ],
+  "whitelist_note": "persona attributes use only profile categorical columns (_AGE_CAT/_EDU_CAT/_HH_INC_CAT/_REGION_CAT/_NUM_CAT/_STATE), Q10 employment dummies and Q43 housing tenure; weight, Q8v2, Q9_* and all other answer columns never enter attributes",
+  "field_mappings": {
+    "employment_status": {
+      "source": "Q10_1..Q10_10 dummies",
+      "questionnaire": "Q10, questionnaire.pdf p.11-12",
+      "code_map": {
+        "1": "employed",
+        "2": "employed",
+        "3": "unemployed",
+        "4": "unemployed",
+        "5": "on_leave",
+        "7": "retired",
+        "6": "disabled",
+        "8": "student",
+        "9": "homemaker",
+        "10": "other"
+      },
+      "multi_select_priority": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        6,
+        8,
+        9,
+        10
+      ]
+    },
+    "housing_tenure": {
+      "source": "Q43 (rotating module, ~12% of respondents/month)",
+      "questionnaire": "Q43, questionnaire.pdf p.32",
+      "code_map": {
+        "1": "owner",
+        "2": "renter",
+        "3": "other"
+      },
+      "borrow_window_months": 6,
+      "coverage": {
+        "target_month": 73
+      }
+    },
+    "numeracy": {
+      "source": "_NUM_CAT (derived numeracy category; NOT household size)"
+    },
+    "tenure_column": "micro-data 'tenure' = SCE panel tenure in months (methodology.pdf); recorded here, not a persona attribute"
+  },
+  "attribute_distributions": {
+    "age_group": {
+      "40 to 60": 25,
+      "Over 60": 30,
+      "Under 40": 18
+    },
+    "education_group": {
+      "college": 41,
+      "high_school": 7,
+      "some_college": 25
+    },
+    "household_income_band": {
+      "50k_to_100k": 31,
+      "over_100k": 25,
+      "under_50k": 17
+    },
+    "region": {
+      "Midwest": 17,
+      "Northeast": 17,
+      "South": 24,
+      "West": 15
+    },
+    "state": {
+      "AL": 2,
+      "AZ": 2,
+      "CA": 7,
+      "CO": 1,
+      "CT": 3,
+      "FL": 4,
+      "GA": 2,
+      "IL": 2,
+      "IN": 1,
+      "KS": 2,
+      "LA": 1,
+      "MI": 2,
+      "MN": 3,
+      "MO": 1,
+      "MS": 1,
+      "MT": 1,
+      "NC": 2,
+      "NE": 2,
+      "NJ": 2,
+      "NM": 1,
+      "NV": 1,
+      "NY": 7,
+      "OH": 2,
+      "OK": 2,
+      "OR": 1,
+      "PA": 4,
+      "RI": 1,
+      "TN": 1,
+      "TX": 7,
+      "VA": 2,
+      "WA": 1,
+      "WI": 2
+    },
+    "numeracy": {
+      "high": 58,
+      "low": 15
+    },
+    "employment_status": {
+      "disabled": 3,
+      "employed": 38,
+      "homemaker": 2,
+      "retired": 23,
+      "student": 3,
+      "unemployed": 4
+    },
+    "housing_tenure": {
+      "owner": 59,
+      "renter": 14
+    }
+  },
+  "panel_tenure_months_distribution": {
+    "12": 73
+  }
+}

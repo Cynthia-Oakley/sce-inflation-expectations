@@ -73,6 +73,14 @@ def main(argv: list[str] | None = None) -> int:
                     help="population artifact to run on, relative to the exported study dir "
                          "(default: population/population.json, the 20-person pilot). "
                          "e.g. population/population_real100.json")
+    ap.add_argument("--environment", default=None,
+                    help="environment artifact, relative to the exported study dir "
+                         "(default: environment/environment.json, the 2-month dev window). "
+                         "e.g. environment/environment_main2021.json")
+    ap.add_argument("--simulation", default=None,
+                    help="simulation config, relative to the exported study dir "
+                         "(default: simulation/simulation.json). "
+                         "e.g. simulation/simulation_main2021.json")
     ap.add_argument("--confirm-spend", action="store_true",
                     help="required with --llm openai: confirms paid API calls are authorized")
     args = ap.parse_args(argv)
@@ -101,13 +109,15 @@ def main(argv: list[str] | None = None) -> int:
     runtime_dir = OFFICIAL_ROOT / "studies" / STUDY_ID
     p = study_paths(runtime_dir)
     study = load_study_yaml(p["study"])
-    env_b = validate_handoff(p["environment"], EnvironmentBundle)
+    env_path = (runtime_dir / args.environment) if args.environment else p["environment"]
+    sim_path = (runtime_dir / args.simulation) if args.simulation else p["simulation"]
     pop_path = (runtime_dir / args.population) if args.population else p["population"]
-    if not pop_path.is_file():
-        sys.exit(f"population artifact not found in the exported copy: {pop_path}\n"
-                 "(build it first, e.g. scripts/build_sce_population.py)")
+    for path, what in ((env_path, "environment"), (sim_path, "simulation"), (pop_path, "population")):
+        if not path.is_file():
+            sys.exit(f"{what} artifact not found in the exported copy: {path}")
+    env_b = validate_handoff(env_path, EnvironmentBundle)
     pop_b = validate_handoff(pop_path, PopulationBundle)
-    sim_c = validate_handoff(p["simulation"], SimulationConfig)
+    sim_c = validate_handoff(sim_path, SimulationConfig)
 
     run_id = args.run_id or (f"sce-local-{args.llm}-"
                              f"{datetime.now(timezone.utc):%Y%m%dT%H%M%SZ}-{uuid.uuid4().hex[:8]}")
@@ -193,12 +203,14 @@ def main(argv: list[str] | None = None) -> int:
         "model_code_sha256_self_reported": self_reported_code_sha256(),
         "artifact_sha256": {
             "study.yaml": _sha256(p["study"]),
-            "environment.json": _sha256(p["environment"]),
+            "environment": _sha256(env_path),
             "population": _sha256(pop_path),
             "roster.jsonl": _sha256(p["roster"]),
-            "simulation.json": _sha256(p["simulation"]),
+            "simulation": _sha256(sim_path),
         },
         "population_artifact": str(pop_path.relative_to(runtime_dir)),
+        "environment_artifact": str(env_path.relative_to(runtime_dir)),
+        "simulation_artifact": str(sim_path.relative_to(runtime_dir)),
         "git": {"research_repo": _git_state(REPO_ROOT), "official_clone": _git_state(OFFICIAL_ROOT)},
         "store_path": str(store_path),
         "cost": sim.decision.cost_summary() if hasattr(sim.decision, "cost_summary") else None,

@@ -83,6 +83,25 @@ def _llm_rows(audit_dir: Path):
     return [json.loads(l) for l in path.read_text(encoding="utf-8").splitlines()]
 
 
+class GeneralizedTargetsTest(unittest.TestCase):
+    def test_custom_targets_drive_observation_and_decision(self):
+        bundle = EnvironmentBundle.model_validate(
+            json.loads((STUDY_DIR / "environment" / "environment.json").read_text(encoding="utf-8")))
+        bundle.provider_args["targets"] = [
+            {"target_month": "2021-05", "as_of": "2021-04-30T23:59:59-04:00"},
+            {"target_month": "2021-06", "as_of": "2021-05-31T23:59:59-04:00"},
+            {"target_month": "2021-07", "as_of": "2021-06-30T23:59:59-04:00"},
+        ]
+        env = SCEEnvironmentProvider(bundle)
+        env.reset(42)
+        ob = _obs(env, t=3)
+        self.assertEqual(ob.macro_information["target_month"], "2021-07")
+        action = SCEDecision(seed=42).decide_batch([ob], {})[0]
+        self.assertEqual(action.payload["target_month"], "2021-07")
+        self.assertEqual(action.payload["as_of"], "2021-06-30T23:59:59-04:00")
+        self.assertEqual(action.payload["e_snapshot_id"], "bls_initial_release_e_2021-07")
+
+
 class ScriptedParityTest(unittest.TestCase):
     """Golden values from the cloud v3 archive (2026-10-01, 40 answers)."""
 
