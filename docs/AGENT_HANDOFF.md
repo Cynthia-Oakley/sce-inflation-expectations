@@ -1,5 +1,7 @@
 # SCE 项目交接入口
 
+> **2026-10-03 用户最新方向澄清**：先读 [A/B 两线研究定义](A_B_RESEARCH_DESIGN.md)（D048）。A是已知信息下的历史微观重建，B是t→t+1预测；下文旧交接中的事前可得性禁令不能一概套到A线。实时实现进度见任务板，旧文“尚未运行LLM/未冻结计分”等表述仅为历史记录。
+
 更新：2026-10-01。读者：用户、Codex、负责实现的 Claude Code + Kimi。本文中的“Kimi”指用户已配置成功的 Claude Code + Kimi API，不假定已使用原生 Kimi Code CLI。
 
 这是新 Agent 的背景与任务入口；实时进度以 [NEXT_ACTIONS](NEXT_ACTIONS.md) 为准，日期以 [ROADMAP](ROADMAP.md) 为准。本文不替代原始证据或研究协议。

@@ -4,6 +4,8 @@
 
 ## 当前接力：v4 决策点 + T01 方法研究 + 提案撰写
 
+- **2026-10-03 用户澄清主线（D048，覆盖此前过度预测化解释）**：[A/B 两线定义](A_B_RESEARCH_DESIGN.md)：A=利用已知人口/宏观信息重建历史微观结构，B=只用t期可得信息预测t+1。A可用当期边际/宏观约束，评价须区分约束与未参与拟合的微观结构；两线不强求E相同。SCE发布前封存只是一种验证方式。Kimi先继续字段/计分导出等具体修复，再分别列两线输入、约束、生成对象与验证量；本轮未改运行配置。
+
 - **2026-10-03 Codex Core/Normal 独立复审完成（D047，方案未替用户冻结）**：见 [复审与 Kimi 执行清单](CORE_NORMAL_REVIEW_20261003.md)。主要修复：Q8 真值误取方向码、Q9 纳入绑在 Q8 非缺失上；Q43 是入组题，历史前向可恢复 2021 人月 99.64% 记录覆盖；冻结 scorer 3,741 行全等价，但 study 独立导入失败（外层 scripts 依赖）。建议粗分层+持续 ID/逐月 active，normal 明确权重与估计器，B 禁用当期真实边际校准。**SCE 9 月结果预计 10/7 23:00 北京发布，内部建议 10/6 18:00 完成封存**，官方日历证据见 ROADMAP 顶部。用户的2.24pp已复现为个体Q9 MedAE；模拟横截面离散度明显偏低，先修评价再做开发月受控消融。原实现与运行均未改。
 
 - **2026-10-03 E authoring 完成（Kimi 实现代理）**：`scripts/build_sce_environment.py` 参数化物化 E——取数通道为 httpx+浏览器头走本机代理（curl 被 Akamai 403）；发布日期逐稿自证（稿内 embargo 行=归档 URL 日期），34 份首发稿 PDF 归档 `data/raw/bls_initial_releases/<ref>/`（manifest 含 SHA-256/USDL/4 值转录引文）。产出主窗（2021-01..12，12 步，非农为新增加的第 4 信号）与前瞻段（2026-06..10，5 步）两套 environment/simulation 配置，官方 schema 校验通过，targets 新机制（{target_month, as_of} 按 conceptual step 索引）已接入 provider_args。测试 54/54（新增 12 例）。报告：[ENVIRONMENT_AUTHORING_REPORT](../studies/sce_inflation_expectations/reports/ENVIRONMENT_AUTHORING_REPORT.md)；开发窗配置未动。
