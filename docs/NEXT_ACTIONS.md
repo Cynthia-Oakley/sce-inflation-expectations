@@ -4,6 +4,8 @@
 
 ## 当前接力：v4 决策点 + T01 方法研究 + 提案撰写
 
+- **2026-10-03 计分器冻结完成（D044，解除 10/5 对比的最大阻塞）**：Codex 预注册留出方案（2020-04/2021-10/2022-12），Kimi 原样运行通过全部八项规则（Beta MAE 0.047 vs 0.075，≤0.001 比例 87% vs 72%）；冻结实现 `scoring/sce_q9_frozen.py`（原版分发 + 钉版候选替换 Beta 分支，provenance 自报哈希有测试守门）。真实与模拟问卷统一此算法，官方差异另报。提案"已完成的可行性验证"段也已更新（真实模型小试 + 真实人口抽样的评审口径表述）。
+
 - **2026-10-03 P 真实抽样完成（Kimi + 实现代理）**：`scripts/build_sce_population.py`（panel 模式：只取所有目标月都在的 userid，seed 确定、来源文件哈希、分布元数据；白名单测试守门）。**100 人 × 202105+202106** 已生成：`studies/sce_inflation_expectations/population/population_real100.json` + roster + sampling_meta（两月交集池 1070，抽 100）。就业 = Q10_1..10 多选（问卷 p.11–12，每月必答，全覆盖）；住房 = Q43（p.32，**旋转模块每月仅约 12% 人被问**），±6 月借用后覆盖 42%（58/100 无该属性，prompt 回退 unknown）——**住房维度完整性受 SCE 设计限制，若要扩白名单属协议变更，待用户定**。两个语义纠正：`_NUM_CAT` 实为 numeracy（High/Low）非家庭人口；xlsx `tenure` 为面板受访月数非住房。prompt 映射只增不删（旧 20 人试点 prompt 字节不变）。运行器已接 `--population`，并按所跑人口动态绑定 E 的 persona 视图（weight 整数化保持试点字节级复算 PASS）。报告：[POPULATION_SAMPLING_REPORT](../studies/sce_inflation_expectations/reports/POPULATION_SAMPLING_REPORT.md)。测试 38/38；真实 100 人 scripted 干跑 200/200 有效。10/5 正式运行的模拟 vs 真实对比仍需评价层提取真实回答（weight/Q8v2/Q9 只在评价层，脚本未做，列入 10/4-5 任务）。
 
 - **2026-10-03 真实 LLM 首轮已完成（Kimi，D043）**：用户批准装 llm 扩展 + $0.30 预算上限。`--list-models` 目录核对通过（端点含 deepseek-flash/v4-pro，与选型文档一致）；`--sample 2` 两条一次有效、估费 $0.0007；**20 人 × 2021-05/06 正式开发小试完成**：40/40 一次通过 Q9 语法门（零重试零错误），点预期中位数 3.0（05）/4.0（06），40 次调用估费 **$0.014**。run_id `sce-local-openai-20261003T011717Z-427a1baf`，审计链完整（llm_calls 40 行全含提示词/原始响应/usage）。期间修复一处工程问题：运行产物（含 duckdb 与引擎 live 文件）全部迁入按 run_id 的审计目录，运行副本保持纯净，--force 重导出不再能误删产物。性质登记为历史回顾性条件模拟（不声称盲测/严格复现）。下一步：正式对比等冻结计分路径（Codex 复查月份）；temperature/提示词消融先冻结设计。
