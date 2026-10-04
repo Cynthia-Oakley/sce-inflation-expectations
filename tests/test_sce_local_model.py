@@ -372,6 +372,17 @@ class PromptV2Test(unittest.TestCase):
         ob = _obs(env, t=1)
         self.assertEqual(ob.macro_information["events"][0]["headline"], "H")
 
+    def test_v2_event_abstracts_opt_in(self):
+        ob = _v2_obs()
+        ob.macro_information["events"][0]["abstract"] = "Prices rose sharply."
+        plain = build_sce_messages_v2(ob)[0]["content"]
+        self.assertNotIn("Prices rose sharply.", plain)
+        self.assertNotIn("brief summaries", plain)
+        rich = build_sce_messages_v2(ob, include_event_abstracts=True)[0]["content"]
+        self.assertIn("with brief summaries", rich)
+        self.assertIn('- May 12: "Jump in Consumer Prices" — Prices rose sharply.',
+                      rich)
+
 
 if __name__ == "__main__":
     unittest.main()

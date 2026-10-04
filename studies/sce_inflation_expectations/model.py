@@ -422,12 +422,15 @@ def _trend_line(title: str, prefix: str, style: str,
     return f"- {title}: {', '.join(values)}"
 
 
-def build_sce_messages_v2(ob: Observation) -> list[dict[str, str]]:
+def build_sce_messages_v2(ob: Observation,
+                          include_event_abstracts: bool = False,
+                          ) -> list[dict[str, str]]:
     """English Q8/Q9 prompt v2: persona + compact E v2 rendering.
 
     Same whitelist and the same Q8/Q9 JSON contract as v1; only the
     presentation of the environment changes. The agent's own prior answer
-    is deliberately absent (D049b).
+    is deliberately absent (D049b). With include_event_abstracts, each
+    headline is followed by its NYT abstract when present.
     """
     info = ob.macro_information
     profile = ob.local_physical.get("profile", {})
@@ -478,8 +481,13 @@ def build_sce_messages_v2(ob: Observation) -> list[dict[str, str]]:
     trends = [line for line in
               (_trend_line(t, p, st, latest, history) for t, p, st in _TREND_LINES)
               if line]
-    news = [f"- {_news_date_label(e['pub_date'])}: \"{e['headline']}\""
-            for e in info.get("events", [])]
+    news = []
+    for e in info.get("events", []):
+        line = f"- {_news_date_label(e['pub_date'])}: \"{e['headline']}\""
+        abstract = (e.get("abstract") or "").strip()
+        if include_event_abstracts and abstract:
+            line += f" — {abstract}"
+        news.append(line)
 
     blocks = []
     if release_lines:
@@ -488,7 +496,9 @@ def build_sce_messages_v2(ob: Observation) -> list[dict[str, str]]:
         blocks.append("Recent trends (each lists the past 12 monthly releases, "
                       "oldest to newest):\n" + "\n".join(trends))
     if news:
-        blocks.append("Recent news headlines:\n" + "\n".join(news))
+        header = ("Recent news headlines (with brief summaries):"
+                  if include_event_abstracts else "Recent news headlines:")
+        blocks.append(header + "\n" + "\n".join(news))
     env_block = "\n\n".join(blocks)
 
     bin_lines = "\n".join(f'  "bin{i + 1}": probability that inflation will be {label}'
@@ -791,7 +801,11 @@ class SCEDecision(DecisionModel):
     def _decide_openai_one(self, ob: Observation) -> Action:
         target = _target_from_observation(ob)
         if self.prompt_version.startswith("sce-q8-q9-v2"):
-            messages = build_sce_messages_v2(ob)
+            messages = build_sce_messages_v2(
+                ob,
+                include_event_abstracts=self.prompt_version.startswith(
+                    "sce-q8-q9-v2-abstract"),
+            )
         else:
             messages = build_sce_messages(ob)
         base_payload: dict[str, Any] = {
