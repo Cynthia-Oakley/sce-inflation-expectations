@@ -23,8 +23,9 @@ what keeps Covid human-interest noise out of the ledger.
 The top tier (front_page+strong) is NEVER capped: every A1 article that hits
 a strong keyword is kept (user 2026-10-04). Lower tiers fill the remaining
 budget up to --max-per-month (default 30; the observed top-tier maximum over
-2020-10..2021-12 is 19). A lower tier overflowing the remaining budget keeps
-its most recent items; final output is chronological.
+2020-10..2021-12 is 19). Within a lower tier, articles with more distinct
+matched keywords win the budget (hit density as a relevance proxy, user
+2026-10-04), recency breaks ties; final output is chronological.
 
 Selection is deliberately inclusive at the strong tier (user 2026-10-03:
 宁宽勿漏, minor noise is acceptable); the ledger keeps headline + abstract
@@ -55,21 +56,44 @@ ROOT = Path(__file__).resolve().parents[1]
 
 ARCHIVE_URL = "https://api.nytimes.com/svc/archive/v1/{y}/{m}.json?api-key={key}"
 
-# inflation-relevance keywords, case-insensitive substring match on
-# headline + abstract + snippet.
+# inflation-relevance keywords, case-insensitive word-boundary prefix match
+# on headline + abstract + snippet.
 # STRONG = price/macro-specific; a strong hit alone (no front page) suffices.
-# BROAD = pandemic/reopening context; only counts together with front-page
-# placement (otherwise every Covid human-interest story would qualify).
+# BROAD = generic macro/pandemic context; only counts together with
+# front-page placement (otherwise Covid human-interest and any story that
+# mentions "the economy" would qualify).
 STRONG_KEYWORDS = [
-    "inflation", "consumer price", "price increase", "prices rose",
-    "rising prices", "gasoline", "gas price", "oil price", "crude oil",
+    # inflation headline terms — verb-attached forms keep the uncapped
+    # front-page+strong tier free of metaphorical/static "price" usage;
+    # downward-direction forms cover the 2020 deflation scare
+    "inflation", "deflation", "consumer price", "price increase",
+    "prices rose", "rising prices", "prices fell", "falling prices",
+    "price drop", "price cut",
+    # energy & oil
+    "gasoline", "gas price", "oil price", "crude oil", "opec", "oil market",
+    # supply chain & goods
     "supply chain", "supply-chain", "shortage", "shipping", "port of",
-    "semiconductor", "chip shortage", "lumber", "used car", "tariff",
-    "trade war", "stimulus", "jobs report", "jobless", "unemployment",
-    "federal reserve", "interest rate", "wage", "rent", "food price",
-    "grocery", "economic rebound", "economic recovery", "economy",
+    "semiconductor", "chip shortage", "lumber", "used car",
+    # commodities & food
+    "commodity", "commodities", "grain", "wheat", "soybean",
+    "food price", "grocery",
+    # housing (2021 boom was central to the inflation narrative)
+    "rent", "home price", "housing market", "mortgage",
+    # wholesale / upstream pipeline
+    "producer price", "wholesale price",
+    # trade & tariffs
+    "tariff", "trade war",
+    # fiscal policy (US transfer form = checks/benefits, not vouchers)
+    "stimulus", "stimulus check", "fiscal policy", "relief package",
+    "spending bill", "infrastructure bill", "unemployment benefits",
+    # labor market & monetary policy
+    "jobs report", "jobless", "unemployment", "wage",
+    "federal reserve", "interest rate",
+    # macro trajectory (specific phrases only; bare "economy" is BROAD)
+    "economic rebound", "economic recovery",
 ]
 BROAD_KEYWORDS = [
+    "economy",
     "pandemic", "covid", "coronavirus", "vaccine", "delta variant",
     "shutdown", "reopen", "relief check",
 ]
@@ -211,10 +235,11 @@ def select_events(docs: list[dict], month: str, archive_sha: str,
             "source": "NYT Archive API",
             "archive_sha256": archive_sha,
         })
-    # Rank 0 (front_page+strong) is never capped: every A1 article hitting a
-    # strong keyword is kept. Lower ranks fill the remaining budget up to
-    # max_per_month; overflow keeps the MOST RECENT items (freshest events
-    # matter most for the survey month). Final output is chronological.
+    # Rank 0 (front_page+strong) is never capped. Lower ranks fill the
+    # remaining budget up to max_per_month; within a rank, keyword-dense
+    # articles win (more distinct matched keywords = more likely genuinely
+    # inflation-relevant, less likely a passing mention), recency breaks
+    # ties. Final output is chronological.
     by_rank: dict[int, list[dict]] = {0: [], 1: [], 2: [], 3: []}
     for e in events:
         by_rank[_TIER_RANK[e["tier"]]].append(e)
@@ -223,8 +248,13 @@ def select_events(docs: list[dict], month: str, archive_sha: str,
         remaining = max_per_month - len(selected)
         if remaining <= 0:
             break
-        pool = sorted(by_rank[rank], key=lambda e: e["pub_date"])
-        selected.extend(pool[-remaining:] if len(pool) > remaining else pool)
+        # within a tier prefer keyword-dense articles (more distinct matched
+        # keywords = more likely genuinely inflation-relevant); recency
+        # breaks ties (stable sort keeps newest-first within equal hits)
+        pool = sorted(by_rank[rank], key=lambda e: e["pub_date"],
+                      reverse=True)
+        pool = sorted(pool, key=lambda e: -len(e["matched_keywords"]))
+        selected.extend(pool[:remaining])
     selected.sort(key=lambda e: e["pub_date"])
     return selected
 

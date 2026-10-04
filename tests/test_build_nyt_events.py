@@ -95,6 +95,36 @@ class TestClassifyDoc(unittest.TestCase):
         self.assertIn("rent", matched)
         self.assertIn("gas price", matched)
 
+    def test_expanded_domains_match(self):
+        cases = [
+            ("Commodity Prices Surge Across the Board", "commodity"),
+            ("Wheat and Grain Costs Climb", "wheat"),
+            ("Home Prices Jump in Hot Housing Market", "home price"),
+            ("Producer Prices Point to Pipeline Pressure", "producer price"),
+            ("Deflation Fears Grip Markets", "deflation"),
+            ("Prices Fell for a Third Month", "prices fell"),
+            ("OPEC Agrees to Raise Output", "opec"),
+            ("Infrastructure Bill Clears the Senate", "infrastructure bill"),
+            ("Stimulus Checks Reach Households", "stimulus check"),
+        ]
+        for headline, kw in cases:
+            with self.subTest(headline=headline):
+                tier, matched = bne.classify_doc(doc(headline={"main": headline}))
+                self.assertEqual(tier, "strong_keyword")
+                self.assertIn(kw, matched)
+
+    def test_economy_alone_is_broad(self):
+        # bare "economy" demoted: non-A1 generic-economy story is excluded,
+        # A1 version lands in front_page+broad
+        off = doc(headline={"main": "A Small Town Economy Rebounds"})
+        self.assertEqual(bne.classify_doc(off), (None, []))
+        on = doc(print_section="A", print_page="1",
+                 headline={"main": "The Economy at a Crossroads"})
+        self.assertEqual(bne.classify_doc(on), ("front_page+broad", ["economy"]))
+        # but the specific phrase stays strong
+        specific = doc(headline={"main": "The Economic Recovery Is on Track"})
+        self.assertEqual(bne.classify_doc(specific)[0], "strong_keyword")
+
 
 class TestSelectEvents(unittest.TestCase):
     def test_dedupe_sort_cap(self):
@@ -170,6 +200,26 @@ class TestSelectEvents(unittest.TestCase):
         out = bne.select_events(docs, "2021-06", "sha", max_per_month=5)
         self.assertEqual(len(out), 20)
         self.assertTrue(all(e["tier"] == "front_page+strong" for e in out))
+
+    def test_hit_density_wins_within_tier(self):
+        # budget 1: older 3-keyword article beats newer 1-keyword article
+        dense = doc(headline={"main": "Inflation and Gasoline Squeeze"},
+                    abstract="Supply chain shortages push consumer prices.",
+                    pub_date="2021-06-02T00:00:00+0000", web_url="https://x/dense")
+        thin = doc(headline={"main": "Inflation watch"},
+                   pub_date="2021-06-28T00:00:00+0000", web_url="https://x/thin")
+        out = bne.select_events([thin, dense], "2021-06", "sha",
+                                max_per_month=1)
+        self.assertEqual([e["web_url"] for e in out], ["https://x/dense"])
+
+    def test_recency_breaks_hit_ties(self):
+        # equal hit counts: the most recent article wins the budget
+        old = doc(headline={"main": "Inflation rises"},
+                  pub_date="2021-06-02T00:00:00+0000", web_url="https://x/old")
+        new = doc(headline={"main": "Inflation jumps"},
+                  pub_date="2021-06-28T00:00:00+0000", web_url="https://x/new")
+        out = bne.select_events([old, new], "2021-06", "sha", max_per_month=1)
+        self.assertEqual([e["web_url"] for e in out], ["https://x/new"])
 
 
 if __name__ == "__main__":
