@@ -43,18 +43,35 @@ class TestBuildWindowV2(unittest.TestCase):
         cls.events = cls.result["external_events"]["events_by_step"]
 
     def test_record_composition(self):
-        # 4 v1 headline + 5 components + 11 history + 2 gasoline
+        # 4 v1 headline + 5 components + 2 gasoline (latest)
+        # + 6 history series x 11 refs (D049a/D051)
         for step in ("0", "1"):
-            self.assertEqual(len(self.records[step]), 22)
+            self.assertEqual(len(self.records[step]), 77)
         roles = [r["role"] for r in self.records["0"]]
         self.assertEqual(roles.count("latest_release"), 11)
-        self.assertEqual(roles.count("history"), 11)
+        self.assertEqual(roles.count("history"), 66)
 
     def test_history_refs_contiguous_and_ordered(self):
         hist = [r for r in self.records["0"] if r["role"] == "history"]
-        refs = [r["reference_period"] for r in hist]
-        self.assertEqual(refs, [v2.shift_month("2021-04", -k)
-                                for k in range(11, 0, -1)])
+        expected_refs = [v2.shift_month("2021-04", -k) for k in range(11, 0, -1)]
+        series: dict[str, list[str]] = {}
+        for r in hist:
+            key = r["signal_id"].rsplit("_20", 1)[0]
+            series.setdefault(key, []).append(r["reference_period"])
+        self.assertEqual(len(series), 6)
+        for key, refs in series.items():
+            self.assertEqual(refs, expected_refs, key)
+
+    def test_history_spot_values(self):
+        # step 0 (target 2021-05, ref 2021-04): history refs 2020-05..2021-03
+        hist = {(r["signal_id"].rsplit("_20", 1)[0], r["reference_period"]): r["value"]
+                for r in self.records["0"] if r["role"] == "history"}
+        # pandemic-era first releases (the values available at the time)
+        self.assertEqual(hist[("bls_unemployment_rate_sa", "2020-05")], 13.3)
+        self.assertEqual(hist[("bls_cpi_u_all_items_yoy_nsa", "2021-03")], 2.6)
+        self.assertEqual(hist[("bls_cpi_energy_yoy_nsa", "2021-03")], 13.2)
+        self.assertAlmostEqual(
+            hist[("eia_gasoline_retail_regular_mean", "2021-03")], 2.81)
 
     def test_everything_published_before_as_of(self):
         for step, target in enumerate(self.targets):
@@ -69,7 +86,8 @@ class TestBuildWindowV2(unittest.TestCase):
     def test_component_values_match_raw(self):
         comps = {r["signal_id"].split("_nsa_")[0]: r["value"]
                  for r in self.records["0"] if r["signal_id"].startswith("bls_cpi_")
-                 and "component" not in r["signal_id"]}
+                 and "component" not in r["signal_id"]
+                 and r["role"] == "latest_release"}
         # 2021-04 ref (for target 2021-05): food 2.4, energy 25.1 (from archive)
         self.assertEqual(comps["bls_cpi_food_yoy"], 2.4)
         self.assertEqual(comps["bls_cpi_energy_yoy"], 25.1)
@@ -95,7 +113,8 @@ class TestBuildWindowV2(unittest.TestCase):
 
     def test_gasoline_present(self):
         gas = [r for r in self.records["0"]
-               if r["signal_id"].startswith("eia_gasoline")]
+               if r["signal_id"].startswith("eia_gasoline")
+               and r["role"] == "latest_release"]
         self.assertEqual(len(gas), 2)
         level = next(r for r in gas if r["unit"] == "dollars_per_gallon")
         self.assertGreater(level["value"], 1.0)

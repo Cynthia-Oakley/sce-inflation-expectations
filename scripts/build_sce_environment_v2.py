@@ -16,8 +16,10 @@ For every target month M (R = M-1, as_of = CPI release day of R):
   1. CPI component latest values (first-release, from the archived PDFs via
      extract_cpi_components.py): food, food at home, energy, shelter, gasoline
      12-month changes — the prices households actually perceive.
-  2. Headline CPI y/y history: the trailing first-release values for refs
-     R-11..R-1 (sequence, not just the latest point).
+  2. History sequences (D049a/D051), trailing 11 first-release values each
+     (refs R-11..R-1): headline CPI y/y; unemployment rate; CPI component
+     y/y for food, energy, shelter; retail gasoline monthly mean level.
+     Nonfarm payrolls stays latest-only (abstract for households).
   3. Retail gasoline price (EIA via FRED GASREGW): monthly mean level + y/y
      change for ref R; published_at = last weekly observation + 3 days
      (documented conservative convention; EIA releases weekly prices within
@@ -166,6 +168,62 @@ def cpi_history_yoy(refs: list[str], raw_root: Path, fetch: bool,
     return out
 
 
+def _unemployment_rate_only(text: str, ref: str) -> dict:
+    """Extract only the unemployment rate from an employment release.
+    Pandemic-era reports break v1.transcribe_empsit's nonfarm patterns
+    (e.g. 2020-04 "fell by 20.5 million"), but the history sequence only
+    needs the unemployment rate (D051)."""
+    y, m = (int(x) for x in ref.split("-"))
+    c = v1._compact(text)
+    month = v1.MONTH_NAME[m - 1].lower()
+    both_m = re.search(
+        rf"nonfarmpayrollemployment\(?([+-]?[\d,]+)\)?andtheunemploymentrate"
+        rf"\(?([\d.]+)percent\)?changedlittlein{month}", c)
+    if both_m:
+        return {"value": float(both_m.group(2)),
+                "usdl": re.search(r"usdl-(\d{2}-\d{4})", c).group(1)}
+    unemp_m = re.search(
+        rf"unemploymentrate(?:fell|rose|declined|edgeddown|edgedup).*?to"
+        rf"([\d.]+)percent", c)
+    if not unemp_m:
+        unemp_m = re.search(
+            r"unemploymentrate(?:wasunchanged|changedlittle|waslittlechanged)"
+            r"(?:at|from)([\d.]+)percent", c)
+    if not unemp_m:
+        raise ValueError(f"unemployment rate sentence not found for {ref}")
+    return {"value": float(unemp_m.group(1)),
+            "usdl": re.search(r"usdl-(\d{2}-\d{4})", c).group(1)}
+
+
+def empsit_history_unemployment(refs: list[str], raw_root: Path, fetch: bool,
+                                proxy: str) -> dict[str, dict]:
+    """First-release unemployment rate for each ref, from the archived PDFs
+    (D051: history sequence for the macro backdrop households perceive)."""
+    out = {}
+    for ref in refs:
+        info = v1.ensure_release("empsit", ref, raw_root / ref, fetch, proxy)
+        emp = _unemployment_rate_only(v1._first_pages_text(info["path"]), ref)
+        out[ref] = {
+            "value": v1._clean_value(emp["value"]),
+            "published_at": _pub_et(info["release_date"]),
+            "source_version": f"USDL-{emp['usdl']}",
+            "source_url": v1.ARCHIVE_URL["empsit"].format(
+                mmddyyyy=info["release_date"].strftime("%m%d%Y")),
+            "source_sha256": hashlib.sha256(info["path"].read_bytes()).hexdigest(),
+        }
+    return out
+
+
+# component signals that also get an 11-month history sequence (D051);
+# food_at_home stays latest-only (redundant with food), gasoline is covered
+# by the retail-price level sequence
+HISTORY_COMPONENTS = {
+    "cpi_food_yoy": COMPONENT_MEASURES["cpi_food_yoy"],
+    "cpi_energy_yoy": COMPONENT_MEASURES["cpi_energy_yoy"],
+    "cpi_shelter_yoy": COMPONENT_MEASURES["cpi_shelter_yoy"],
+}
+
+
 def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
                     proxy: str) -> dict:
     base = v1.build_window(targets, raw_root, fetch, proxy)  # skeleton only
@@ -177,6 +235,8 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
     all_history_refs = sorted({shift_month(reference_period_v2(t), -k)
                                for t in targets for k in range(1, 12)})
     history = cpi_history_yoy(all_history_refs, raw_root, fetch, proxy)
+    emp_history = empsit_history_unemployment(all_history_refs, raw_root,
+                                              fetch, proxy)
 
     signals_by_step: dict[str, list[dict]] = {}
     events_by_step: dict[str, list[dict]] = {}
@@ -233,7 +293,9 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
                 "role": "latest_release",
             })
 
-        # 2. headline CPI y/y history (R-11..R-1)
+        # 2. history sequences (R-11..R-1, D049a/D051): headline CPI y/y,
+        #    unemployment rate, food/energy/shelter component y/y, gasoline
+        #    retail monthly mean level
         for k in range(11, 0, -1):
             h_ref = shift_month(ref, -k)
             h = history[h_ref]
@@ -249,6 +311,52 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
                 "source_url": h["source_url"],
                 "eligibility": "eligible",
                 "role": "history",
+            })
+            ue = emp_history[h_ref]
+            records.append({
+                "signal_id": f"bls_unemployment_rate_sa_{h_ref.replace('-', '_')}_initial",
+                "measure": "Civilian unemployment rate, seasonally adjusted",
+                "value": ue["value"],
+                "unit": "percent",
+                "reference_period": h_ref,
+                "published_at": ue["published_at"],
+                "source_version": ue["source_version"],
+                "source_url": ue["source_url"],
+                "eligibility": "eligible",
+                "role": "history",
+            })
+            for sig, measure in HISTORY_COMPONENTS.items():
+                c = components[h_ref][sig]
+                records.append({
+                    "signal_id": f"bls_{sig}_nsa_{h_ref.replace('-', '_')}_initial",
+                    "measure": measure,
+                    "value": c["value"],
+                    "unit": "percent",
+                    "reference_period": h_ref,
+                    "published_at": h["published_at"],  # same CPI release
+                    "source_version": h["source_version"],
+                    "source_url": h["source_url"],
+                    "eligibility": "eligible",
+                    "role": "history",
+                })
+            g_h = gasoline[h_ref]
+            gas_pub_h = (date.fromisoformat(g_h["last_obs_date"])
+                         + timedelta(days=3)).isoformat() + "T17:00:00"
+            records.append({
+                "signal_id": f"eia_gasoline_retail_regular_mean_{h_ref.replace('-', '_')}",
+                "measure": ("U.S. regular all formulations retail gasoline price, "
+                            "monthly mean of weekly observations"),
+                "value": g_h["price_mean"],
+                "unit": "dollars_per_gallon",
+                "reference_period": h_ref,
+                "published_at": datetime.fromisoformat(gas_pub_h).replace(
+                    tzinfo=v1.RELEASE_TZ).isoformat(),
+                "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+                "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+                "eligibility": "eligible",
+                "role": "history",
+                "note": ("monthly mean of weekly Monday observations; "
+                         "published_at = last weekly obs + 3 days (conservative)"),
             })
 
         # 3. retail gasoline (level + y/y) for ref R
@@ -321,7 +429,9 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
     bundle["provider_args"]["e_version"] = "v2"
     bundle["provider_args"]["e_v2_layers"] = [
         "bls_headline_4_signals", "bls_cpi_components_5",
-        "bls_cpi_yoy_history_11m", "eia_gasoline_retail_level_yoy",
+        "eia_gasoline_retail_level_yoy",
+        "bls_cpi_yoy_history_11m", "bls_unemployment_history_11m",
+        "bls_cpi_component_history_3x11m", "eia_gasoline_level_history_11m",
         "nyt_salient_events_m_minus_1_through_as_of",
     ]
     bundle["information_program"]["broadcasts"] = broadcasts
@@ -337,8 +447,10 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
          "modality": "physical", "scope": "macro", "dynamics": "scheduled",
          "source": "data/raw/bls_initial_releases/",
          "schema_ref": None,
-         "description": ("Trailing 11 first-release CPI all-items y/y values "
-                         "per step (sequence, D049a).")},
+         "description": ("Trailing 11 first-release history sequences per step "
+                         "(D049a/D051): CPI all-items y/y, unemployment rate, "
+                         "CPI food/energy/shelter y/y, gasoline retail monthly "
+                         "mean level.")},
         {"name": "eia_gasoline_retail_price",
          "modality": "physical", "scope": "macro", "dynamics": "scheduled",
          "source": "data/raw/eia_gasoline/gasoline_retail_regular_weekly.csv",
