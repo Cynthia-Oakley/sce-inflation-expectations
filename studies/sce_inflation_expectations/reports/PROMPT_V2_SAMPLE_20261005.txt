@@ -1,0 +1,71 @@
+You are a U.S. household head, age group Over 60, with some college, household income under $50,000, living in the Midwest region, owning your home, retired. Your score on the survey's numeracy assessment was low.
+
+You are answering a monthly survey in June 2021. You only know information that was publicly available by June 10, 2021.
+
+Recent official statistics:
+- Consumer Price Index (May 2021): +5.0% compared with a year earlier; +0.6% in May alone
+- Unemployment rate (May 2021): 5.8%; U.S. employers added 559,000 jobs
+- Prices you may notice compared with a year ago: gasoline +56.2%, energy +28.5%, food +2.2%, groceries (food at home) +0.7%, rent and shelter +2.2%. A gallon of regular gasoline costs about $2.98.
+
+Recent trends (each lists the past 12 monthly releases, oldest to newest):
+- CPI inflation (12-month %): 0.6, 1.0, 1.3, 1.4, 1.2, 1.2, 1.4, 1.4, 1.7, 2.6, 4.2, 5.0
+- Unemployment rate (%): 11.1, 10.2, 8.4, 7.9, 6.9, 6.7, 6.7, 6.3, 6.2, 6.0, 6.1, 5.8
+- Regular gasoline price ($/gallon): 2.08, 2.18, 2.18, 2.18, 2.16, 2.11, 2.19, 2.33, 2.50, 2.81, 2.86, 2.98
+- Food prices (12-month %): 4.5, 4.1, 4.1, 3.9, 3.9, 3.7, 3.9, 3.8, 3.6, 3.5, 2.4, 2.2
+- Energy prices (12-month %): -12.6, -11.2, -9.0, -7.7, -9.2, -9.4, -7.0, -3.6, 2.4, 13.2, 25.1, 28.5
+- Rent/shelter prices (12-month %): 2.4, 2.3, 2.3, 2.0, 2.0, 1.9, 1.8, 1.6, 1.5, 1.7, 2.1, 2.2
+
+Recent news headlines:
+- May 2: "‘We’re Suffering’: How Remote Work Is Killing Manhattan’s Storefronts"
+- May 3: "Widespread Commodity Shortages Raise Inflation Fears"
+- May 7: "Biden and Republicans Spar Over Unemployment as Job Gains Disappoint"
+- May 7: "Despite Chip Shortage, Chip Innovation Is Booming"
+- May 7: "New ideas are flooding into the semiconductor industry even as chip shortages remain."
+- May 10: "Biden Defends Unemployment Benefits, Provided Workers Accept Job Offers"
+- May 12: "Jump in Consumer Prices Raises Stakes in Inflation Debate"
+- May 12: "Gasoline Buying Fever Rages as Pipeline Company Begins Restart"
+- May 12: "Panicking About That Jobs Report? Breathe. Look at the Data."
+- May 17: "Inflation Fears Abound as Gas and Lumber Shortages Bite. Should the Fed Worry?"
+- May 18: "Texas, Indiana and Oklahoma join states cutting off pandemic unemployment benefits."
+- May 21: "Soaring Prices Herald Boom Time for Steel Makers"
+- May 22: "Defying Critics, Biden and the Fed Insist the Economic Recovery Is on Track"
+- May 24: "The pandemic has taken a devastating toll on undocumented women in New York."
+- May 30: "The Luckiest Workers in America? Teenagers."
+- Jun 1: "How the World Ran Out of Everything"
+- Jun 1: "N.Y.C. Mayor’s Race Tightens Ahead of Crucial In-Person Debate"
+- Jun 1: "OPEC Plus agrees to add production as oil prices climb."
+- Jun 2: "Stimulus Checks Substantially Reduced Hardship, Study Shows"
+- Jun 3: "The U.S. Economy Is Sending Confusing Signals. What’s Going On?"
+- Jun 3: "Wage Growth Is Holding Up in Aftermath of the Economic Crash"
+- Jun 3: "G.M. will increase production of cars and trucks as the chip shortage eases."
+- Jun 4: "To Keep Their Son Alive, They Sleep in Shifts. And Hope a Nurse Shows Up."
+- Jun 4: "Was the Jobs Report Good? It’s in the Eye of the Beholder."
+- Jun 5: "U.S. Waged Secret Legal Battle to Obtain Emails of 4 Times Reporters"
+- Jun 5: "Federal Unemployment Aid Is Now a Political Lightning Rod"
+- Jun 6: "Republicans, Don’t Ignore the Evidence on ‘Labor Shortages’"
+- Jun 7: "Offshore Wind Farms Show What Biden’s Climate Plan Is Up Against"
+- Jun 10: "Prices Jumped 5% in May From Year Earlier, Stoking Debate in Washington"
+- Jun 10: "Despite economic recovery, the European Central Bank keeps its policies steady."
+
+Question 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,
+in percent? Give a single signed number (negative means deflation).
+
+Question 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in
+each of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must
+sum to exactly 100.
+  "bin1": probability that inflation will be 12% or more
+  "bin2": probability that inflation will be between 8% and 12%
+  "bin3": probability that inflation will be between 4% and 8%
+  "bin4": probability that inflation will be between 2% and 4%
+  "bin5": probability that inflation will be between 0% and 2%
+  "bin6": probability that inflation will be between -2% and 0%
+  "bin7": probability that inflation will be between -4% and -2%
+  "bin8": probability that inflation will be between -8% and -4%
+  "bin9": probability that inflation will be between -12% and -8%
+  "bin10": probability that inflation will be -12% or less (deflation of 12% or more)
+
+Reply with ONLY a JSON object of the form:
+{"point_pct": <number>, "q9": {"bin1": <0-100>, "bin2": <0-100>, ..., "bin10": <0-100>},
+ "reason": "<one or two short sentences>"}
+
+=== chars: 4903  approx tokens: 1225

@@ -20,7 +20,7 @@ from socioverse.schemas import EnvironmentBundle  # noqa: E402
 
 from studies.sce_inflation_expectations.model import (  # noqa: E402
     Q9_KEYS, SCEDecision, SCEEnvironmentProvider, build_sce_messages,
-    parse_sce_response, validate_sce_bins,
+    build_sce_messages_v2, parse_sce_response, validate_sce_bins,
 )
 
 STUDY_DIR = REPO_ROOT / "studies" / "sce_inflation_expectations"
@@ -277,6 +277,100 @@ class PromptTest(unittest.TestCase):
         self.assertIn("under $35,000", text)  # smoke_001 income band
         self.assertNotIn("weight", text.lower())
         self.assertNotIn("SCE", text)  # no survey results leak
+
+
+def _v2_obs():
+    latest = [
+        {"signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_05_initial",
+         "value": 5.0, "reference_period": "2021-05",
+         "role": "latest_release", "unit": "percent"},
+        {"signal_id": "bls_cpi_u_all_items_mom_sa_2021_05_initial",
+         "value": 0.6, "reference_period": "2021-05",
+         "role": "latest_release", "unit": "percent"},
+        {"signal_id": "bls_unemployment_rate_sa_2021_05_initial",
+         "value": 5.8, "reference_period": "2021-05",
+         "role": "latest_release", "unit": "percent"},
+        {"signal_id": "bls_nonfarm_payroll_change_sa_2021_05_initial",
+         "value": 559, "reference_period": "2021-05",
+         "role": "latest_release", "unit": "thousands"},
+        {"signal_id": "bls_cpi_gasoline_yoy_nsa_2021_05_initial",
+         "value": 56.2, "reference_period": "2021-05",
+         "role": "latest_release", "unit": "percent"},
+        {"signal_id": "eia_gasoline_retail_regular_mean_2021_05",
+         "value": 2.985, "reference_period": "2021-05",
+         "role": "latest_release", "unit": "dollars_per_gallon"},
+    ]
+    history = [
+        {"signal_id": f"bls_cpi_u_all_items_yoy_nsa_2020_{13 - k:02d}_initial",
+         "value": float(k), "reference_period": f"2020-{13 - k:02d}",
+         "role": "history", "unit": "percent"}
+        for k in range(11, 0, -1)
+    ]
+    events = [{"pub_date": "2021-05-12",
+               "headline": "Jump in Consumer Prices",
+               "tier": "front_page+strong"}]
+    return SimpleNamespace(
+        agent_id="a1",
+        macro_information={"target_month": "2021-06",
+                           "as_of": "2021-06-10T23:59:59-04:00",
+                           "signals": latest + history, "events": events},
+        local_physical={"profile": {}})
+
+
+class PromptV2Test(unittest.TestCase):
+    def test_v2_structure(self):
+        text = build_sce_messages_v2(_v2_obs())[0]["content"]
+        self.assertIn("June 2021", text)
+        self.assertIn("June 10, 2021", text)
+        self.assertIn("+5.0% compared with a year earlier", text)
+        self.assertIn("added 559,000 jobs", text)
+        self.assertIn("gasoline +56.2%", text)
+        self.assertIn("costs about $2.98", text)
+        self.assertIn('- May 12: "Jump in Consumer Prices"', text)
+        self.assertIn('"bin10"', text)
+        # D049b: the agent's own prior answer is never injected
+        self.assertNotIn("Last month you gave", text)
+        self.assertNotIn("weight", text.lower())
+        self.assertNotIn("SCE", text)
+
+    def test_v2_trend_line_has_12_points(self):
+        text = build_sce_messages_v2(_v2_obs())[0]["content"]
+        line = next(l for l in text.splitlines()
+                    if l.startswith("- CPI inflation"))
+        values = line.split(":", 1)[1].split(",")
+        self.assertEqual(len(values), 12)  # 11 history + latest
+        self.assertEqual(values[0].strip(), "11.0")
+        self.assertEqual(values[-1].strip(), "5.0")
+
+    def test_v2_graceful_on_v1_environment(self):
+        # v1 env signals carry no role/events; renderer must degrade cleanly
+        env = _env()
+        ob = _obs(env, t=1)
+        text = build_sce_messages_v2(ob)[0]["content"]
+        self.assertIn("Recent official statistics:", text)
+        self.assertNotIn("Recent trends", text)
+        self.assertNotIn("Recent news headlines", text)
+
+    def test_v2_selected_by_prompt_version(self):
+        with tempfile.TemporaryDirectory() as td:
+            decision, fake = _openai_decision(
+                [_fake_response(json.dumps(
+                    {"point_pct": 2.5,
+                     "q9": {f"bin{i}": 10 for i in range(1, 11)},
+                     "reason": "ok"}))],
+                Path(td), prompt_version="sce-q8-q9-v2")
+            env = _env()
+            decision.decide_batch([_obs(env, t=1)], 1)
+            sent = fake.kwargs_log[0]["messages"][0]["content"]
+            self.assertIn("Recent official statistics:", sent)
+
+    def test_environment_events_flow_into_observation(self):
+        env = _env()
+        env.events_by_step = {"0": [{"pub_date": "2021-05-12",
+                                     "headline": "H", "tier": "strong_keyword"}]}
+        env.reset(42)
+        ob = _obs(env, t=1)
+        self.assertEqual(ob.macro_information["events"][0]["headline"], "H")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,15 @@
 # 当前任务板
 
-更新：2026-10-04（Kimi 完成 D050 as_of 口径变更 + D051 历史序列扩至 6 条；E v2 环境定稿重建，每步 77 信号 + 30 事件）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
+更新：2026-10-05（Kimi 完成 D052 提示词 v2 渲染器落地与真实样例定稿；此前 D050/D051 E v2 已重建，每步 77 信号 + 30 事件）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
 
 ## 当前接力：v4 决策点 + T01 方法研究 + 提案撰写
+
+- **2026-10-05 D052 提示词 v2 渲染器落地（Kimi，用户已定版过目）**：
+  ① **实现**：`studies/sce_inflation_expectations/model.py` 新增 `build_sce_messages_v2(ob)`（约 160 行），`SCEEnvironmentProvider` 接入 `events_by_step`（reset/advance_to/observe_batch 的 macro_information 新增 "events" 键）；`_decide_openai_one` 按 `prompt_version.startswith("sce-q8-q9-v2")` 选择渲染器，**v1 渲染器原样保留**（旧开发窗 replay 不受影响，但 observations 会多出空 "events" 键，属预期）。
+  ② **渲染四块**：最新发布（CPI 同比/环比、失业率+非农、可感知价格行+汽油单价）→ 趋势（6 条 × 12 点=11 历史+最新，`_trend_line` 要求 hist 非空否则返回 None 防单点假趋势）→ 新闻（30 条 `- May 3: "标题"`，无 URL/摘要）→ Q8/Q9 问题块与 v1 逐字节同契约。按 D049b **已移除"上月自己的回答"注入**。
+  ③ **真实样例定稿**：`studies/sce_inflation_expectations/reports/PROMPT_V2_SAMPLE_20261005.txt`（2021-06、真实 persona sce_u70118889，4,903 字符 ≈ 1,225 tokens，用户已看过样例并确认风格）。
+  ④ **测试**：新增 `PromptV2Test` 5 用例（结构/12 点趋势/v1 环境优雅降级/prompt_version 选择/events 流入 observation），单文件 21/21，全量 106/106。
+  ⑤ **未冻结**：按 D045c，提示词 v2 需开发月（2021-05/06）真实 LLM 验证后才冻结为正式配置，随后主窗口 2021 全年整窗重跑；同质化问题（D051 已入档：模拟月内 std 0.27–0.81pp vs 真实 5.5–7.5pp）在同一轮开发月验证中一并评估。运行前需核实 `run_sce_local.py` 的 decision_args 传参入口如何带 `prompt_version="sce-q8-q9-v2"`；真实 LLM 运行涉及费用，需用户确认预算。
 
 - **2026-10-04 D051 E v2 历史序列扩展到 6 条（Kimi，用户选定"加 5 条"）**：
   ① **新口径**：每步历史序列从"仅 CPI 总量 11 个月"扩为 6 条 × 11 个月——CPI 总量同比、失业率、食品/能源/住所分项同比、汽油零售价月均价水平；非农保留最新值（机制上对居民太抽象）。每步记录数 22→**77**（11 最新 + 66 历史）+ 30 事件。

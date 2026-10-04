@@ -183,11 +183,13 @@ class SCEEnvironmentProvider(EnvironmentProvider):
     def __init__(self, bundle: EnvironmentBundle):
         self.bundle = bundle
         self.signals_by_step = bundle.provider_args.get("signals_by_step", {})
+        self.events_by_step = bundle.provider_args.get("events_by_step", {})
         self.persona_by_id = bundle.provider_args.get("persona_by_id", {})
         self.targets: list[dict[str, str]] = list(
             bundle.provider_args.get("targets") or DEFAULT_TARGETS)
         self.answers: dict[str, dict[str, Any]] = {}
         self.current_signals: list[dict[str, Any]] = []
+        self.current_events: list[dict[str, Any]] = []
         self.current_step = 0
         self._active_broadcasts: list[dict[str, Any]] = []
         self.audit_dir = Path(bundle.provider_args["audit_dir"]) if bundle.provider_args.get("audit_dir") else None
@@ -206,12 +208,14 @@ class SCEEnvironmentProvider(EnvironmentProvider):
         self.answers = {}
         self.current_step = 0
         self.current_signals = list(self.signals_by_step.get("0", []))
+        self.current_events = list(self.events_by_step.get("0", []))
         self._active_broadcasts = []
 
     def advance_to(self, t: int) -> list[Any]:
         conceptual = max(0, min(len(self.targets) - 1, t - 1))
         self.current_step = conceptual
         self.current_signals = list(self.signals_by_step.get(str(conceptual), []))
+        self.current_events = list(self.events_by_step.get(str(conceptual), []))
         self._active_broadcasts = [
             {"message_id": b.message_id, "content": b.content, "channel": b.channel,
              "target_month": (self.targets[b.at_step] if b.at_step < len(self.targets)
@@ -232,6 +236,7 @@ class SCEEnvironmentProvider(EnvironmentProvider):
             "target_month": target["target_month"],
             "as_of": target["as_of"],
             "signals": list(self.current_signals),
+            "events": list(self.current_events),
             "broadcasts": list(self._active_broadcasts),
             "evidence_class": "historical_official_release_evidence",
             "excluded_fred": True,
@@ -341,6 +346,168 @@ each of the following ten ranges? Give each a probability from 0 to 100; the ten
 sum to exactly 100.
 {bin_lines}
 {prior_block}
+Reply with ONLY a JSON object of the form:
+{{"point_pct": <number>, "q9": {{"bin1": <0-100>, "bin2": <0-100>, ..., "bin10": <0-100>}},
+ "reason": "<one or two short sentences>"}}"""
+    return [{"role": "user", "content": user}]
+
+
+# ---------------------------------------------------------------------------
+# Prompt v2 (D049a/c/d + D050 + D051): compact natural-language rendering of
+# the full E v2 environment - latest releases, 6 rolling trend lines, NYT
+# salient headlines. Per D049b the agent's own prior answer is NOT injected;
+# cross-month persistence comes from the trend sequences themselves.
+# ---------------------------------------------------------------------------
+_MONTH_FULL = ["January", "February", "March", "April", "May", "June",
+               "July", "August", "September", "October", "November", "December"]
+
+# (title, signal prefix, value style). History refs R-11..R-1 plus the latest
+# release appended = 12 monthly points, oldest to newest.
+_TREND_LINES = [
+    ("CPI inflation (12-month %)", "bls_cpi_u_all_items_yoy_nsa", "pct"),
+    ("Unemployment rate (%)", "bls_unemployment_rate_sa", "pct"),
+    ("Regular gasoline price ($/gallon)", "eia_gasoline_retail_regular_mean", "usd"),
+    ("Food prices (12-month %)", "bls_cpi_food_yoy_nsa", "pct"),
+    ("Energy prices (12-month %)", "bls_cpi_energy_yoy_nsa", "pct"),
+    ("Rent/shelter prices (12-month %)", "bls_cpi_shelter_yoy_nsa", "pct"),
+]
+
+
+def _month_label(ref: str) -> str:
+    y, m = ref.split("-")
+    return f"{_MONTH_FULL[int(m) - 1]} {y}"
+
+
+def _news_date_label(iso_date: str) -> str:
+    y, m, d = (int(x) for x in iso_date[:10].split("-"))
+    return f"{_MONTH_FULL[m - 1][:3]} {d}"
+
+
+def _full_date_label(iso: str) -> str:
+    y, m, d = (int(x) for x in iso[:10].split("-"))
+    return f"{_MONTH_FULL[m - 1]} {d}, {y}"
+
+
+def _find_signal(signals: list[dict[str, Any]], prefix: str) -> dict[str, Any] | None:
+    return next((s for s in signals
+                 if s.get("signal_id", "").startswith(prefix)), None)
+
+
+def _fmt_signed_pct(v: Any) -> str:
+    v = float(v)
+    return f"{v:+.1f}"
+
+
+def _fmt_trend_value(v: Any, style: str) -> str:
+    v = float(v)
+    if style == "usd":
+        return f"{v:.2f}"
+    return f"{v:.1f}"
+
+
+def _trend_line(title: str, prefix: str, style: str,
+                latest: list[dict[str, Any]],
+                history: list[dict[str, Any]]) -> str | None:
+    hist = sorted((s for s in history
+                   if s.get("signal_id", "").startswith(prefix)),
+                  key=lambda s: s["reference_period"])
+    if not hist:
+        return None  # a trend line needs actual history, not one point
+    last = _find_signal(latest, prefix)
+    values = [_fmt_trend_value(s["value"], style) for s in hist]
+    if last is not None:
+        values.append(_fmt_trend_value(last["value"], style))
+    if not values:
+        return None
+    return f"- {title}: {', '.join(values)}"
+
+
+def build_sce_messages_v2(ob: Observation) -> list[dict[str, str]]:
+    """English Q8/Q9 prompt v2: persona + compact E v2 rendering.
+
+    Same whitelist and the same Q8/Q9 JSON contract as v1; only the
+    presentation of the environment changes. The agent's own prior answer
+    is deliberately absent (D049b).
+    """
+    info = ob.macro_information
+    profile = ob.local_physical.get("profile", {})
+    signals = info.get("signals", [])
+    latest = [s for s in signals if s.get("role") != "history"]
+    history = [s for s in signals if s.get("role") == "history"]
+
+    cpi_y = _find_signal(latest, "bls_cpi_u_all_items_yoy")
+    cpi_m = _find_signal(latest, "bls_cpi_u_all_items_mom")
+    ue = _find_signal(latest, "bls_unemployment_rate")
+    nf = _find_signal(latest, "bls_nonfarm_payroll")
+    gas = _find_signal(latest, "eia_gasoline_retail_regular_mean")
+    ref_label = _month_label(cpi_y["reference_period"]) if cpi_y else ""
+    ref_month_short = ref_label.split()[0] if ref_label else ""
+
+    release_lines = []
+    if cpi_y:
+        seg = (f"- Consumer Price Index ({ref_label}): "
+               f"{_fmt_signed_pct(cpi_y['value'])}% compared with a year earlier")
+        if cpi_m:
+            seg += (f"; {_fmt_signed_pct(cpi_m['value'])}% in "
+                    f"{ref_month_short} alone")
+        release_lines.append(seg)
+    if ue:
+        seg = f"- Unemployment rate ({ref_label}): {float(ue['value']):g}%"
+        if nf:
+            n = int(round(float(nf["value"]) * 1000))
+            seg += (f"; U.S. employers added {n:,} jobs" if n >= 0
+                    else f"; U.S. employers cut {abs(n):,} jobs")
+        release_lines.append(seg)
+    comp_parts = []
+    for prefix, label in (("bls_cpi_gasoline_yoy", "gasoline"),
+                          ("bls_cpi_energy_yoy", "energy"),
+                          ("bls_cpi_food_yoy", "food"),
+                          ("bls_cpi_food_at_home_yoy", "groceries (food at home)"),
+                          ("bls_cpi_shelter_yoy", "rent and shelter")):
+        c = _find_signal(latest, prefix)
+        if c:
+            comp_parts.append(f"{label} {_fmt_signed_pct(c['value'])}%")
+    if comp_parts:
+        seg = ("- Prices you may notice compared with a year ago: "
+               + ", ".join(comp_parts) + ".")
+        if gas:
+            seg += (f" A gallon of regular gasoline costs about "
+                    f"${float(gas['value']):.2f}.")
+        release_lines.append(seg)
+
+    trends = [line for line in
+              (_trend_line(t, p, st, latest, history) for t, p, st in _TREND_LINES)
+              if line]
+    news = [f"- {_news_date_label(e['pub_date'])}: \"{e['headline']}\""
+            for e in info.get("events", [])]
+
+    blocks = []
+    if release_lines:
+        blocks.append("Recent official statistics:\n" + "\n".join(release_lines))
+    if trends:
+        blocks.append("Recent trends (each lists the past 12 monthly releases, "
+                      "oldest to newest):\n" + "\n".join(trends))
+    if news:
+        blocks.append("Recent news headlines:\n" + "\n".join(news))
+    env_block = "\n\n".join(blocks)
+
+    bin_lines = "\n".join(f'  "bin{i + 1}": probability that inflation will be {label}'
+                          for i, label in enumerate(Q9_BIN_LABELS))
+    user = f"""{_persona_sentence(profile)}
+
+You are answering a monthly survey in {_month_label(info.get('target_month', ''))}. \
+You only know information that was publicly available by {_full_date_label(info.get('as_of', ''))}.
+
+{env_block}
+
+Question 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,
+in percent? Give a single signed number (negative means deflation).
+
+Question 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in
+each of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must
+sum to exactly 100.
+{bin_lines}
+
 Reply with ONLY a JSON object of the form:
 {{"point_pct": <number>, "q9": {{"bin1": <0-100>, "bin2": <0-100>, ..., "bin10": <0-100>}},
  "reason": "<one or two short sentences>"}}"""
@@ -623,7 +790,10 @@ class SCEDecision(DecisionModel):
 
     def _decide_openai_one(self, ob: Observation) -> Action:
         target = _target_from_observation(ob)
-        messages = build_sce_messages(ob)
+        if self.prompt_version.startswith("sce-q8-q9-v2"):
+            messages = build_sce_messages_v2(ob)
+        else:
+            messages = build_sce_messages(ob)
         base_payload: dict[str, Any] = {
             "agent_id": ob.agent_id,
             "target_month": target["target_month"],
