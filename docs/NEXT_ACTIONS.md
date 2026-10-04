@@ -1,8 +1,27 @@
 # 当前任务板
 
-更新：2026-10-03（Kimi 完成本地 harness 实现、离线验收与首次真实 LLM 20×2 小试；Codex 完成模型选型调研）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
+更新：2026-10-04（Kimi 完成 E v2 三源：CPI 分项 140/140、EIA 汽油、NYT 事件层定版，环境 v2 已重建，测试 95/95）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
 
 ## 当前接力：v4 决策点 + T01 方法研究 + 提案撰写
+
+- **2026-10-04 E v2 三源全部落地、环境 v2 重建完成（Kimi）**：
+  ① **CPI 分项 140/140 清零 handoff**：`scripts/extract_cpi_components.py` 重写模式集（命名分组 verb/num + `_since_is_12m` 校验 + `_ARTIFACT_FIXES` 修复 pypdf 断词 "Th e"/"f ood"/"e nergy"），28 份首发 PDF × 5 分量（食品/在家食品/能源/住所/汽油 12 月同比）全提取，每条带原文引文+页码+sha256 → `data/raw/bls_initial_releases/components_cpi.jsonl`；历史序列所需 refs 2019-12..2020-10 共 11 份 PDF 已补抓归档（2020-05 谷底 0.1 与史实吻合）。
+  ② **EIA 汽油零售价接入**：`scripts/fetch_eia_gasoline.py`（FRED GASREGW，源头 EIA，免 key，周度周一观测）404 周 2019-01..2026-09 → `data/raw/eia_gasoline/gasoline_retail_regular_weekly.csv`(+.sha256) 与月度 `..._monthly.jsonl`（月均价+同比+完整溯源）。
+  ③ **NYT 事件层定版**：`scripts/build_nyt_events.py` 强/弱双词表 + **词边界匹配**（修复 "rent"~"apparently/Republican"、"wage"~"waging" 子串误命中——此前抽查的加沙/枪击噪音实由此引入）；四层优先级 front_page+strong > strong_keyword > front_page+broad > front_page，仅弱词非头版丢弃；每月 15 条、超额留最新、输出按时间序。匹配面=标题+摘要+snippet（与进模型上下文的内容一致）。15 个月缓存重建台账 225 条（`data/raw/nyt_archive/events_ledger.jsonl`，重建零网络零费用）。抽查：2021-05 选中 CPI 冲击(05-12)/Colonial Pipeline 汽油抢购(05-12)/大宗商品短缺(05-03)/失业辩论(05-07)；2021-10 选中港口危机(10-10)/通胀警告(10-01)/CPI 再跳(10-13)/油价(10-31)，旧噪音清除。
+  ④ **环境 v2 重建**：`scripts/build_sce_environment_v2.py` 每步 22 条信号（4 个 v1 头条 + 5 分项 + 11 条历史序列 + 2 条汽油：月均价+同比）+ 15 条事件；分项 source_url 修复为复用同稿头条 CPI 的真实归档 URL（原实现拼文件名产假 URL）；published_at < as_of 硬校验全通过。产出 `studies/sce_inflation_expectations/environment/environment_main2021_v2.json`、`external_events_environment_main2021_v2.json`、`simulation/simulation_main2021_v2.json`。
+  ⑤ **测试 95/95 全绿**（新增/更新：build_nyt_events 16、extract_cpi_components 13+全归档回归、fetch_eia_gasoline、build_sce_environment_v2 集成）。
+  ⑥ **未做**：提示词 v2（等用户审阅 `studies/sce_inflation_expectations/reports/PROMPT_IO_REVIEW_20261003.md` 后共同定）；2026 前瞻窗 v2 环境（主窗稳定后扩展）；B 线人口外推配置（契约已定，实现未启动）。
+
+- **2026-10-03 深夜 Kimi 完成 Codex 复审四项具体修复（D047 执行）**：① **评价真值修复**：`scripts/build_sce_evaluation_truth.py` 改用 Q8v2part2（带符号数值；Q8v2 实为 1/2 方向码）+ Q8/Q9 独立有效掩码（Q9 纳入不再绑 Q8 非缺失）+ Q8 聚合用此前验收的 mid-distribution 插值；**12 个月 × 点估计/密度双指标与官方 headline 对账全部归零差**（真值文件 `data/evaluation/sce_truth_main2021.json` 已重生成，gitignored）。
+  ② **修正后主窗口对比**（73×12 run `sce-local-openai-20261003T055121Z-1dc7cd15` × 冻结计分器）：逐人 Q9 MedAE 2.243pp（与 Codex 复算一致）、Q8 点估计 MedAE 2.200pp；聚合月 MAE 点 1.86 / 密度 2.17pp；**真实受访者自身 Q8−Q9 内部不一致 median +0.49/mean +2.53pp，模拟为 +1.39/+1.38（同向同量级）**——不一致本身是真实行为特征，不应强制两题一致；真正缺口是水平整体偏低 ~2pp 与横截面分歧不足（模拟月内 std 0.27–0.81 vs 真实 5.5–7.5）。
+  ③ **住房 Q43 更正**：确认为仅问新入组者（问卷 p.27/32；实测每个 userid 仅一条 Q43 记录、从未改答）；`build_sce_population.py` 删除 ±6 月向未来借用，改为入组回答前向沿用（2021 人月覆盖 99.64%，73 人主窗口 panel 全部 2021-01 入组当月作答、信息年龄 0），元数据记录 source_month/info_age/D3 迁居标记；测试 7/7，dev100 与 main73 人口已重建。
+  ④ **计分器自包含迁移**：纯 Beta 拟合内核原样迁入 `studies/sce_inflation_expectations/scoring/beta_fit_kernel.py`（算法/参数一字未改，与 diagnose_sce_beta.py 的 fit 函数体逐字节一致），`sce_q9_frozen.py` 改本地导入；**3,741 条封存行逐条等价（状态 0 不一致、数值最大差 0）**，study 目录复制到 /tmp 隔离导入测试通过，provenance 钉版哈希已更新且 live==pinned。scorer 测试 3/3。
+  ⑤ **POPULATION_WAVE_STATS 更正并重生成**：Q9 十档表头改为正确档界（≥12/8–12/4–8/2–4/0–2/−2–0/−4–−2/−8–−4/−12–−8/≤−12）；TVD vs 窗口均值参数从全 60 月更正为 14 月主窗口；组间方差占比表述改为实测（全期最高 1.9%/主窗口 2.1%），"个体内"更正为"组内个体间"；自相关 0.597 降级为描述性线索；轮换表新增"重返"列并注明左截断/事后退出口径；16 条无权重行保留两套计数；housing 漂移解释与 B 线校准频率表述按复审软化（TVD 阈值降为告警参考）。
+  **A/B 契约草案已列**：[A_B_LINE_CONTRACTS](A_B_LINE_CONTRACTS.md)（两线各自的输入/约束/生成对象/独立验证量/来源，按 D048 修正解释：A 线可用当期人口与宏观约束、A−B 不解释为纯信息时效效应、封存为可选验证非死线）。**未动任何运行配置、未运行实验**；提示词 v2 暂缓（用户先审阅当期提示词/输入/输出/分布）。下一步待用户确认契约草案 → core 规模零 LLM 抽样精度试验 → normal estimator 定义。
+
+- **2026-10-03 深夜 用户定案 E 的机制聚焦（D049a–d）**：① E 加历史序列（采纳）；② 不注入"上月自己的回答"（否决，持续性由 E 序列内生）；③ SCE≠CCI 的机制区分——通胀预期由居民可感知价格（食品/房租/油气/供应链）驱动而非个人财务状况，E 聚焦改为可感知价格分项+汽油价格，分歧来源设计为差异化价格暴露与注意力（租客→房租、驾车者→油价、低收入→食品）；④ **事件层纳入 E**——疫情供应链、地缘冲突推油价、贸易摩擦关税等重大供给事件以居民语言进入信息环境，逐条登记日期与报道证据；10/15 前用零成本公开渠道，Event MCP 付费新闻层降级为后续增强。开题报告 §一/§二/§四/§五 已按此改写（含住房 99.6% 覆盖更正、全年回测基线与两个缺口的靶点定位）。**重做清单（详见下条接力）**：E v2（分项转录+序列化+事件层台账）→ 提示词 v2 → 开发月验证 → 冻结 → 主窗口整窗重跑；73×12 运行保留为 v1 基线。
+
+- **2026-10-03 深夜 双 key 就位并验证（Kimi）**：NYT Archive API key 存于主仓库 `.env`（`NYT_ARCHIVE_API_KEY=...`，gitignored），实测 2021-06 拉取 4,260 篇文章元数据（带 pub_date，走本机代理）；OpenRouter key 存于官方仓 `.env`（`OPENROUTER_API_KEY=...`，gitignored），鉴权直连通过，模型目录 466 个，候选全在列：openai/gpt-4o-2024-{05-13,08-06,11-20}（日期钉版，知识盲版对照首选）、qwen/qwen-2.5-72b-instruct、meta-llama/llama-3.1-70b/8b-instruct、deepseek/deepseek-chat-v3-0324。OpenRouter 为 OpenAI 兼容端点（https://openrouter.ai/api/v1），注意：extra_body 的 thinking 参数是 DeepSeek 私有，OpenRouter 渠道不可传。审阅材料已生成：`studies/sce_inflation_expectations/reports/PROMPT_IO_REVIEW_20261003.md`（v1 提示词全文/代表回答/逐月对照）。**进行中**：E v2 数据层 `scripts/extract_cpi_components.py` 已跑通 59/85（食品/在家食品/能源/住所/汽油五分量 12 月同比，每值带引文+页码+PDF哈希），剩余 26 条已定位三类措辞变体（2026 新稿 "for the 12 months ending"/"over the last year"、2021 合并句 "energy...12-months, and the food index increased X percent"、2021-03 括号式 "(+1.7 percent)" 与 Table A 列序变化——Table A 的"最后一个数字=12月同比"假设在部分版式不成立，y/y 是三个 >100 指数水平值之后的第一个数），待适配；EIA 汽油周度零售价接入未做；NYT 事件层拉取脚本未写（通道已就绪）。未提交 git 的本轮改动较多，待用户过目后统一提交。
 
 - **2026-10-03 用户澄清主线（D048，覆盖此前过度预测化解释）**：[A/B 两线定义](A_B_RESEARCH_DESIGN.md)：A=利用已知人口/宏观信息重建历史微观结构，B=只用t期可得信息预测t+1。A可用当期边际/宏观约束，评价须区分约束与未参与拟合的微观结构；两线不强求E相同。SCE发布前封存只是一种验证方式。Kimi先继续字段/计分导出等具体修复，再分别列两线输入、约束、生成对象与验证量；本轮未改运行配置。
 
