@@ -62,7 +62,7 @@
       "dynamics": "scheduled",
       "source": "data/raw/nyt_archive/events_ledger.jsonl",
       "schema_ref": null,
-      "description": "NYT front-page (A1) + inflation-keyword events, headline + abstract, pub month M-1 (D049d)."
+      "description": "NYT front-page (A1) + inflation-keyword events, headline + abstract, published M-1-01 through the CPI release day inside M (D049d/D050)."
     }
   ],
   "scheduled_events": [],
@@ -70,7 +70,7 @@
     "broadcasts": [
       {
         "message_id": "bls-2021-01",
-        "content": "BLS initial releases available by 2021-01 as_of: CPI-U Nov 2020: +1.2% y/y NSA; CPI-U Nov 2020: +0.2% m/m SA; unemployment Nov 2020: 6.7% SA; nonfarm payrolls Nov 2020: +245k SA.",
+        "content": "BLS initial releases available by 2021-01 as_of: CPI-U Dec 2020: +1.4% y/y NSA; CPI-U Dec 2020: +0.4% m/m SA; unemployment Dec 2020: 6.7% SA; nonfarm payrolls Dec 2020: -140k SA.",
         "channel": "official_bls_release",
         "at_step": 0,
         "ttl": 1,
@@ -79,7 +79,7 @@
       },
       {
         "message_id": "bls-2021-02",
-        "content": "BLS initial releases available by 2021-02 as_of: CPI-U Dec 2020: +1.4% y/y NSA; CPI-U Dec 2020: +0.4% m/m SA; unemployment Dec 2020: 6.7% SA; nonfarm payrolls Dec 2020: -140k SA.",
+        "content": "BLS initial releases available by 2021-02 as_of: CPI-U Jan 2021: +1.4% y/y NSA; CPI-U Jan 2021: +0.3% m/m SA; unemployment Jan 2021: 6.3% SA; nonfarm payrolls Jan 2021: +49k SA.",
         "channel": "official_bls_release",
         "at_step": 1,
         "ttl": 1,
@@ -88,7 +88,7 @@
       },
       {
         "message_id": "bls-2021-03",
-        "content": "BLS initial releases available by 2021-03 as_of: CPI-U Jan 2021: +1.4% y/y NSA; CPI-U Jan 2021: +0.3% m/m SA; unemployment Jan 2021: 6.3% SA; nonfarm payrolls Jan 2021: +49k SA.",
+        "content": "BLS initial releases available by 2021-03 as_of: CPI-U Feb 2021: +1.7% y/y NSA; CPI-U Feb 2021: +0.4% m/m SA; unemployment Feb 2021: 6.2% SA; nonfarm payrolls Feb 2021: +379k SA.",
         "channel": "official_bls_release",
         "at_step": 2,
         "ttl": 1,
@@ -97,7 +97,7 @@
       },
       {
         "message_id": "bls-2021-04",
-        "content": "BLS initial releases available by 2021-04 as_of: CPI-U Feb 2021: +1.7% y/y NSA; CPI-U Feb 2021: +0.4% m/m SA; unemployment Feb 2021: 6.2% SA; nonfarm payrolls Feb 2021: +379k SA.",
+        "content": "BLS initial releases available by 2021-04 as_of: CPI-U Mar 2021: +2.6% y/y NSA; CPI-U Mar 2021: +0.6% m/m SA; unemployment Mar 2021: 6.0% SA; nonfarm payrolls Mar 2021: +916k SA.",
         "channel": "official_bls_release",
         "at_step": 3,
         "ttl": 1,
@@ -106,7 +106,7 @@
       },
       {
         "message_id": "bls-2021-05",
-        "content": "BLS initial releases available by 2021-05 as_of: CPI-U Mar 2021: +2.6% y/y NSA; CPI-U Mar 2021: +0.6% m/m SA; unemployment Mar 2021: 6.0% SA; nonfarm payrolls Mar 2021: +916k SA.",
+        "content": "BLS initial releases available by 2021-05 as_of: CPI-U Apr 2021: +4.2% y/y NSA; CPI-U Apr 2021: +0.8% m/m SA; unemployment Apr 2021: 6.1% SA; nonfarm payrolls Apr 2021: +266k SA.",
         "channel": "official_bls_release",
         "at_step": 4,
         "ttl": 1,
@@ -115,7 +115,7 @@
       },
       {
         "message_id": "bls-2021-06",
-        "content": "BLS initial releases available by 2021-06 as_of: CPI-U Apr 2021: +4.2% y/y NSA; CPI-U Apr 2021: +0.8% m/m SA; unemployment Apr 2021: 6.1% SA; nonfarm payrolls Apr 2021: +266k SA.",
+        "content": "BLS initial releases available by 2021-06 as_of: CPI-U May 2021: +5.0% y/y NSA; CPI-U May 2021: +0.6% m/m SA; unemployment May 2021: 5.8% SA; nonfarm payrolls May 2021: +559k SA.",
         "channel": "official_bls_release",
         "at_step": 5,
         "ttl": 1,
@@ -124,7 +124,7 @@
       },
       {
         "message_id": "bls-2021-07",
-        "content": "BLS initial releases available by 2021-07 as_of: CPI-U May 2021: +5.0% y/y NSA; CPI-U May 2021: +0.6% m/m SA; unemployment May 2021: 5.8% SA; nonfarm payrolls May 2021: +559k SA.",
+        "content": "BLS initial releases available by 2021-07 as_of: CPI-U Jun 2021: +5.4% y/y NSA; CPI-U Jun 2021: +0.9% m/m SA; unemployment Jun 2021: 5.9% SA; nonfarm payrolls Jun 2021: +850k SA.",
         "channel": "official_bls_release",
         "at_step": 6,
         "ttl": 1,
@@ -133,7 +133,7 @@
       },
       {
         "message_id": "bls-2021-08",
-        "content": "BLS initial releases available by 2021-08 as_of: CPI-U Jun 2021: +5.4% y/y NSA; CPI-U Jun 2021: +0.9% m/m SA; unemployment Jun 2021: 5.9% SA; nonfarm payrolls Jun 2021: +850k SA.",
+        "content": "BLS initial releases available by 2021-08 as_of: CPI-U Jul 2021: +5.4% y/y NSA; CPI-U Jul 2021: +0.5% m/m SA; unemployment Jul 2021: 5.4% SA; nonfarm payrolls Jul 2021: +943k SA.",
         "channel": "official_bls_release",
         "at_step": 7,
         "ttl": 1,
@@ -142,7 +142,7 @@
       },
       {
         "message_id": "bls-2021-09",
-        "content": "BLS initial releases available by 2021-09 as_of: CPI-U Jul 2021: +5.4% y/y NSA; CPI-U Jul 2021: +0.5% m/m SA; unemployment Jul 2021: 5.4% SA; nonfarm payrolls Jul 2021: +943k SA.",
+        "content": "BLS initial releases available by 2021-09 as_of: CPI-U Aug 2021: +5.3% y/y NSA; CPI-U Aug 2021: +0.3% m/m SA; unemployment Aug 2021: 5.2% SA; nonfarm payrolls Aug 2021: +235k SA.",
         "channel": "official_bls_release",
         "at_step": 8,
         "ttl": 1,
@@ -151,7 +151,7 @@
       },
       {
         "message_id": "bls-2021-10",
-        "content": "BLS initial releases available by 2021-10 as_of: CPI-U Aug 2021: +5.3% y/y NSA; CPI-U Aug 2021: +0.3% m/m SA; unemployment Aug 2021: 5.2% SA; nonfarm payrolls Aug 2021: +235k SA.",
+        "content": "BLS initial releases available by 2021-10 as_of: CPI-U Sep 2021: +5.4% y/y NSA; CPI-U Sep 2021: +0.4% m/m SA; unemployment Sep 2021: 4.8% SA; nonfarm payrolls Sep 2021: +194k SA.",
         "channel": "official_bls_release",
         "at_step": 9,
         "ttl": 1,
@@ -160,7 +160,7 @@
       },
       {
         "message_id": "bls-2021-11",
-        "content": "BLS initial releases available by 2021-11 as_of: CPI-U Sep 2021: +5.4% y/y NSA; CPI-U Sep 2021: +0.4% m/m SA; unemployment Sep 2021: 4.8% SA; nonfarm payrolls Sep 2021: +194k SA.",
+        "content": "BLS initial releases available by 2021-11 as_of: CPI-U Oct 2021: +6.2% y/y NSA; CPI-U Oct 2021: +0.9% m/m SA; unemployment Oct 2021: 4.6% SA; nonfarm payrolls Oct 2021: +531k SA.",
         "channel": "official_bls_release",
         "at_step": 10,
         "ttl": 1,
@@ -169,7 +169,7 @@
       },
       {
         "message_id": "bls-2021-12",
-        "content": "BLS initial releases available by 2021-12 as_of: CPI-U Oct 2021: +6.2% y/y NSA; CPI-U Oct 2021: +0.9% m/m SA; unemployment Oct 2021: 4.6% SA; nonfarm payrolls Oct 2021: +531k SA.",
+        "content": "BLS initial releases available by 2021-12 as_of: CPI-U Nov 2021: +6.8% y/y NSA; CPI-U Nov 2021: +0.8% m/m SA; unemployment Nov 2021: 4.2% SA; nonfarm payrolls Nov 2021: +210k SA.",
         "channel": "official_bls_release",
         "at_step": 11,
         "ttl": 1,
@@ -183,323 +183,55 @@
     "targets": [
       {
         "target_month": "2021-01",
-        "as_of": "2020-12-31T23:59:59-05:00"
+        "as_of": "2021-01-13T23:59:59-05:00"
       },
       {
         "target_month": "2021-02",
-        "as_of": "2021-01-31T23:59:59-05:00"
+        "as_of": "2021-02-10T23:59:59-05:00"
       },
       {
         "target_month": "2021-03",
-        "as_of": "2021-02-28T23:59:59-05:00"
+        "as_of": "2021-03-10T23:59:59-05:00"
       },
       {
         "target_month": "2021-04",
-        "as_of": "2021-03-31T23:59:59-04:00"
+        "as_of": "2021-04-13T23:59:59-04:00"
       },
       {
         "target_month": "2021-05",
-        "as_of": "2021-04-30T23:59:59-04:00"
+        "as_of": "2021-05-12T23:59:59-04:00"
       },
       {
         "target_month": "2021-06",
-        "as_of": "2021-05-31T23:59:59-04:00"
+        "as_of": "2021-06-10T23:59:59-04:00"
       },
       {
         "target_month": "2021-07",
-        "as_of": "2021-06-30T23:59:59-04:00"
+        "as_of": "2021-07-13T23:59:59-04:00"
       },
       {
         "target_month": "2021-08",
-        "as_of": "2021-07-31T23:59:59-04:00"
+        "as_of": "2021-08-11T23:59:59-04:00"
       },
       {
         "target_month": "2021-09",
-        "as_of": "2021-08-31T23:59:59-04:00"
+        "as_of": "2021-09-14T23:59:59-04:00"
       },
       {
         "target_month": "2021-10",
-        "as_of": "2021-09-30T23:59:59-04:00"
+        "as_of": "2021-10-13T23:59:59-04:00"
       },
       {
         "target_month": "2021-11",
-        "as_of": "2021-10-31T23:59:59-04:00"
+        "as_of": "2021-11-10T23:59:59-05:00"
       },
       {
         "target_month": "2021-12",
-        "as_of": "2021-11-30T23:59:59-05:00"
+        "as_of": "2021-12-10T23:59:59-05:00"
       }
     ],
     "signals_by_step": {
       "0": [
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_11_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 1.2,
-          "unit": "percent",
-          "reference_period": "2020-11",
-          "published_at": "2020-12-10T08:30:00-05:00",
-          "source_version": "USDL-20-2218",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
-          "eligibility": "eligible",
-          "role": "latest_release"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_mom_sa_2020_11_initial",
-          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
-          "value": 0.2,
-          "unit": "percent",
-          "reference_period": "2020-11",
-          "published_at": "2020-12-10T08:30:00-05:00",
-          "source_version": "USDL-20-2218",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
-          "eligibility": "eligible",
-          "role": "latest_release"
-        },
-        {
-          "signal_id": "bls_unemployment_rate_sa_2020_11_initial",
-          "measure": "Civilian unemployment rate, seasonally adjusted",
-          "value": 6.7,
-          "unit": "percent",
-          "reference_period": "2020-11",
-          "published_at": "2020-12-04T08:30:00-05:00",
-          "source_version": "USDL-20-2184",
-          "source_url": "https://www.bls.gov/news.release/archives/empsit_12042020.pdf",
-          "eligibility": "eligible",
-          "role": "latest_release"
-        },
-        {
-          "signal_id": "bls_nonfarm_payroll_change_sa_2020_11_initial",
-          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
-          "value": 245,
-          "unit": "thousands",
-          "reference_period": "2020-11",
-          "published_at": "2020-12-04T08:30:00-05:00",
-          "source_version": "USDL-20-2184",
-          "source_url": "https://www.bls.gov/news.release/archives/empsit_12042020.pdf",
-          "eligibility": "eligible",
-          "role": "latest_release"
-        },
-        {
-          "signal_id": "bls_cpi_food_yoy_nsa_2020_11_initial",
-          "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
-          "value": 3.7,
-          "unit": "percent",
-          "reference_period": "2020-11",
-          "published_at": "2020-12-10T08:30:00-05:00",
-          "source_version": "USDL-20-2218",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
-          "eligibility": "eligible",
-          "role": "latest_release"
-        },
-        {
-          "signal_id": "bls_cpi_food_at_home_yoy_nsa_2020_11_initial",
-          "measure": "CPI-U food at home 12-month percent change, not seasonally adjusted",
-          "value": 3.6,
-          "unit": "percent",
-          "reference_period": "2020-11",
-          "published_at": "2020-12-10T08:30:00-05:00",
-          "source_version": "USDL-20-2218",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
-          "eligibility": "eligible",
-          "role": "latest_release"
-        },
-        {
-          "signal_id": "bls_cpi_energy_yoy_nsa_2020_11_initial",
-          "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
-          "value": -9.4,
-          "unit": "percent",
-          "reference_period": "2020-11",
-          "published_at": "2020-12-10T08:30:00-05:00",
-          "source_version": "USDL-20-2218",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
-          "eligibility": "eligible",
-          "role": "latest_release"
-        },
-        {
-          "signal_id": "bls_cpi_shelter_yoy_nsa_2020_11_initial",
-          "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
-          "value": 1.9,
-          "unit": "percent",
-          "reference_period": "2020-11",
-          "published_at": "2020-12-10T08:30:00-05:00",
-          "source_version": "USDL-20-2218",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
-          "eligibility": "eligible",
-          "role": "latest_release"
-        },
-        {
-          "signal_id": "bls_cpi_gasoline_yoy_nsa_2020_11_initial",
-          "measure": "CPI-U gasoline (all types) 12-month percent change, not seasonally adjusted",
-          "value": -19.3,
-          "unit": "percent",
-          "reference_period": "2020-11",
-          "published_at": "2020-12-10T08:30:00-05:00",
-          "source_version": "USDL-20-2218",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
-          "eligibility": "eligible",
-          "role": "latest_release"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2019_12_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 2.3,
-          "unit": "percent",
-          "reference_period": "2019-12",
-          "published_at": "2020-01-14T08:30:00-05:00",
-          "source_version": "USDL-20-0044",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_01142020.pdf",
-          "eligibility": "eligible",
-          "role": "history"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_01_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 2.5,
-          "unit": "percent",
-          "reference_period": "2020-01",
-          "published_at": "2020-02-13T08:30:00-05:00",
-          "source_version": "USDL-20-0245",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_02132020.pdf",
-          "eligibility": "eligible",
-          "role": "history"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_02_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 2.3,
-          "unit": "percent",
-          "reference_period": "2020-02",
-          "published_at": "2020-03-11T08:30:00-04:00",
-          "source_version": "USDL-20-0402",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_03112020.pdf",
-          "eligibility": "eligible",
-          "role": "history"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_03_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 1.5,
-          "unit": "percent",
-          "reference_period": "2020-03",
-          "published_at": "2020-04-10T08:30:00-04:00",
-          "source_version": "USDL-20-0568",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_04102020.pdf",
-          "eligibility": "eligible",
-          "role": "history"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_04_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 0.3,
-          "unit": "percent",
-          "reference_period": "2020-04",
-          "published_at": "2020-05-12T08:30:00-04:00",
-          "source_version": "USDL-20-0918",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_05122020.pdf",
-          "eligibility": "eligible",
-          "role": "history"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_05_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 0.1,
-          "unit": "percent",
-          "reference_period": "2020-05",
-          "published_at": "2020-06-10T08:30:00-04:00",
-          "source_version": "USDL-20-1186",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_06102020.pdf",
-          "eligibility": "eligible",
-          "role": "history"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_06_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 0.6,
-          "unit": "percent",
-          "reference_period": "2020-06",
-          "published_at": "2020-07-14T08:30:00-04:00",
-          "source_version": "USDL-20-1376",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_07142020.pdf",
-          "eligibility": "eligible",
-          "role": "history"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_07_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 1,
-          "unit": "percent",
-          "reference_period": "2020-07",
-          "published_at": "2020-08-12T08:30:00-04:00",
-          "source_version": "USDL-20-1552",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_08122020.pdf",
-          "eligibility": "eligible",
-          "role": "history"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_08_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 1.3,
-          "unit": "percent",
-          "reference_period": "2020-08",
-          "published_at": "2020-09-11T08:30:00-04:00",
-          "source_version": "USDL-20-1693",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_09112020.pdf",
-          "eligibility": "eligible",
-          "role": "history"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_09_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 1.4,
-          "unit": "percent",
-          "reference_period": "2020-09",
-          "published_at": "2020-10-13T08:30:00-04:00",
-          "source_version": "USDL-20-1925",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_10132020.pdf",
-          "eligibility": "eligible",
-          "role": "history"
-        },
-        {
-          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_10_initial",
-          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
-          "value": 1.2,
-          "unit": "percent",
-          "reference_period": "2020-10",
-          "published_at": "2020-11-12T08:30:00-05:00",
-          "source_version": "USDL-20-2089",
-          "source_url": "https://www.bls.gov/news.release/archives/cpi_11122020.pdf",
-          "eligibility": "eligible",
-          "role": "history"
-        },
-        {
-          "signal_id": "eia_gasoline_retail_regular_mean_2020_11",
-          "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
-          "value": 2.108,
-          "unit": "dollars_per_gallon",
-          "reference_period": "2020-11",
-          "published_at": "2020-12-03T17:00:00-05:00",
-          "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
-          "source_url": "https://fred.stlouisfed.org/series/GASREGW",
-          "eligibility": "eligible",
-          "role": "latest_release",
-          "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
-        },
-        {
-          "signal_id": "eia_gasoline_retail_regular_yoy_2020_11",
-          "measure": "Retail gasoline price 12-month percent change (monthly means)",
-          "value": -18.8,
-          "unit": "percent",
-          "reference_period": "2020-11",
-          "published_at": "2020-12-03T17:00:00-05:00",
-          "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
-          "source_url": "https://fred.stlouisfed.org/series/GASREGW",
-          "eligibility": "eligible",
-          "role": "latest_release",
-          "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
-        }
-      ],
-      "1": [
         {
           "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_12_initial",
           "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
@@ -767,7 +499,7 @@
           "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
         }
       ],
-      "2": [
+      "1": [
         {
           "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_01_initial",
           "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
@@ -1035,7 +767,7 @@
           "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
         }
       ],
-      "3": [
+      "2": [
         {
           "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_02_initial",
           "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
@@ -1303,7 +1035,7 @@
           "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
         }
       ],
-      "4": [
+      "3": [
         {
           "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_03_initial",
           "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
@@ -1571,7 +1303,7 @@
           "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
         }
       ],
-      "5": [
+      "4": [
         {
           "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_04_initial",
           "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
@@ -1839,7 +1571,7 @@
           "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
         }
       ],
-      "6": [
+      "5": [
         {
           "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_05_initial",
           "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
@@ -2107,7 +1839,7 @@
           "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
         }
       ],
-      "7": [
+      "6": [
         {
           "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_06_initial",
           "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
@@ -2375,7 +2107,7 @@
           "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
         }
       ],
-      "8": [
+      "7": [
         {
           "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_07_initial",
           "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
@@ -2643,7 +2375,7 @@
           "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
         }
       ],
-      "9": [
+      "8": [
         {
           "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_08_initial",
           "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
@@ -2911,7 +2643,7 @@
           "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
         }
       ],
-      "10": [
+      "9": [
         {
           "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_09_initial",
           "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
@@ -3179,7 +2911,7 @@
           "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
         }
       ],
-      "11": [
+      "10": [
         {
           "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_10_initial",
           "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
@@ -3446,6 +3178,274 @@
           "role": "latest_release",
           "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
         }
+      ],
+      "11": [
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_11_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 6.8,
+          "unit": "percent",
+          "reference_period": "2021-11",
+          "published_at": "2021-12-10T08:30:00-05:00",
+          "source_version": "USDL-21-2101",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102021.pdf",
+          "eligibility": "eligible",
+          "role": "latest_release"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_mom_sa_2021_11_initial",
+          "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+          "value": 0.8,
+          "unit": "percent",
+          "reference_period": "2021-11",
+          "published_at": "2021-12-10T08:30:00-05:00",
+          "source_version": "USDL-21-2101",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102021.pdf",
+          "eligibility": "eligible",
+          "role": "latest_release"
+        },
+        {
+          "signal_id": "bls_unemployment_rate_sa_2021_11_initial",
+          "measure": "Civilian unemployment rate, seasonally adjusted",
+          "value": 4.2,
+          "unit": "percent",
+          "reference_period": "2021-11",
+          "published_at": "2021-12-03T08:30:00-05:00",
+          "source_version": "USDL-21-2075",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_12032021.pdf",
+          "eligibility": "eligible",
+          "role": "latest_release"
+        },
+        {
+          "signal_id": "bls_nonfarm_payroll_change_sa_2021_11_initial",
+          "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+          "value": 210,
+          "unit": "thousands",
+          "reference_period": "2021-11",
+          "published_at": "2021-12-03T08:30:00-05:00",
+          "source_version": "USDL-21-2075",
+          "source_url": "https://www.bls.gov/news.release/archives/empsit_12032021.pdf",
+          "eligibility": "eligible",
+          "role": "latest_release"
+        },
+        {
+          "signal_id": "bls_cpi_food_yoy_nsa_2021_11_initial",
+          "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+          "value": 6.1,
+          "unit": "percent",
+          "reference_period": "2021-11",
+          "published_at": "2021-12-10T08:30:00-05:00",
+          "source_version": "USDL-21-2101",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102021.pdf",
+          "eligibility": "eligible",
+          "role": "latest_release"
+        },
+        {
+          "signal_id": "bls_cpi_food_at_home_yoy_nsa_2021_11_initial",
+          "measure": "CPI-U food at home 12-month percent change, not seasonally adjusted",
+          "value": 6.4,
+          "unit": "percent",
+          "reference_period": "2021-11",
+          "published_at": "2021-12-10T08:30:00-05:00",
+          "source_version": "USDL-21-2101",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102021.pdf",
+          "eligibility": "eligible",
+          "role": "latest_release"
+        },
+        {
+          "signal_id": "bls_cpi_energy_yoy_nsa_2021_11_initial",
+          "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+          "value": 33.3,
+          "unit": "percent",
+          "reference_period": "2021-11",
+          "published_at": "2021-12-10T08:30:00-05:00",
+          "source_version": "USDL-21-2101",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102021.pdf",
+          "eligibility": "eligible",
+          "role": "latest_release"
+        },
+        {
+          "signal_id": "bls_cpi_shelter_yoy_nsa_2021_11_initial",
+          "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+          "value": 3.8,
+          "unit": "percent",
+          "reference_period": "2021-11",
+          "published_at": "2021-12-10T08:30:00-05:00",
+          "source_version": "USDL-21-2101",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102021.pdf",
+          "eligibility": "eligible",
+          "role": "latest_release"
+        },
+        {
+          "signal_id": "bls_cpi_gasoline_yoy_nsa_2021_11_initial",
+          "measure": "CPI-U gasoline (all types) 12-month percent change, not seasonally adjusted",
+          "value": 58.1,
+          "unit": "percent",
+          "reference_period": "2021-11",
+          "published_at": "2021-12-10T08:30:00-05:00",
+          "source_version": "USDL-21-2101",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_12102021.pdf",
+          "eligibility": "eligible",
+          "role": "latest_release"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_12_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 1.4,
+          "unit": "percent",
+          "reference_period": "2020-12",
+          "published_at": "2021-01-13T08:30:00-05:00",
+          "source_version": "USDL-21-0024",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+          "eligibility": "eligible",
+          "role": "history"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_01_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 1.4,
+          "unit": "percent",
+          "reference_period": "2021-01",
+          "published_at": "2021-02-10T08:30:00-05:00",
+          "source_version": "USDL-21-0226",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+          "eligibility": "eligible",
+          "role": "history"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_02_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 1.7,
+          "unit": "percent",
+          "reference_period": "2021-02",
+          "published_at": "2021-03-10T08:30:00-05:00",
+          "source_version": "USDL-21-0390",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+          "eligibility": "eligible",
+          "role": "history"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_03_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 2.6,
+          "unit": "percent",
+          "reference_period": "2021-03",
+          "published_at": "2021-04-13T08:30:00-04:00",
+          "source_version": "USDL-21-0651",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+          "eligibility": "eligible",
+          "role": "history"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_04_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 4.2,
+          "unit": "percent",
+          "reference_period": "2021-04",
+          "published_at": "2021-05-12T08:30:00-04:00",
+          "source_version": "USDL-21-0857",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+          "eligibility": "eligible",
+          "role": "history"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_05_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 5,
+          "unit": "percent",
+          "reference_period": "2021-05",
+          "published_at": "2021-06-10T08:30:00-04:00",
+          "source_version": "USDL-21-1018",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+          "eligibility": "eligible",
+          "role": "history"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_06_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 5.4,
+          "unit": "percent",
+          "reference_period": "2021-06",
+          "published_at": "2021-07-13T08:30:00-04:00",
+          "source_version": "USDL-21-1313",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_07132021.pdf",
+          "eligibility": "eligible",
+          "role": "history"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_07_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 5.4,
+          "unit": "percent",
+          "reference_period": "2021-07",
+          "published_at": "2021-08-11T08:30:00-04:00",
+          "source_version": "USDL-21-1467",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_08112021.pdf",
+          "eligibility": "eligible",
+          "role": "history"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_08_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 5.3,
+          "unit": "percent",
+          "reference_period": "2021-08",
+          "published_at": "2021-09-14T08:30:00-04:00",
+          "source_version": "USDL-21-1644",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_09142021.pdf",
+          "eligibility": "eligible",
+          "role": "history"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_09_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 5.4,
+          "unit": "percent",
+          "reference_period": "2021-09",
+          "published_at": "2021-10-13T08:30:00-04:00",
+          "source_version": "USDL-21-1831",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_10132021.pdf",
+          "eligibility": "eligible",
+          "role": "history"
+        },
+        {
+          "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_10_initial",
+          "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+          "value": 6.2,
+          "unit": "percent",
+          "reference_period": "2021-10",
+          "published_at": "2021-11-10T08:30:00-05:00",
+          "source_version": "USDL-21-1973",
+          "source_url": "https://www.bls.gov/news.release/archives/cpi_11102021.pdf",
+          "eligibility": "eligible",
+          "role": "history"
+        },
+        {
+          "signal_id": "eia_gasoline_retail_regular_mean_2021_11",
+          "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+          "value": 3.395,
+          "unit": "dollars_per_gallon",
+          "reference_period": "2021-11",
+          "published_at": "2021-12-02T17:00:00-05:00",
+          "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+          "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+          "eligibility": "eligible",
+          "role": "latest_release",
+          "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+        },
+        {
+          "signal_id": "eia_gasoline_retail_regular_yoy_2021_11",
+          "measure": "Retail gasoline price 12-month percent change (monthly means)",
+          "value": 61.0,
+          "unit": "percent",
+          "reference_period": "2021-11",
+          "published_at": "2021-12-02T17:00:00-05:00",
+          "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+          "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+          "eligibility": "eligible",
+          "role": "latest_release",
+          "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+        }
       ]
     },
     "evidence_class": "historical_official_release_evidence",
@@ -3595,71 +3595,6 @@
           ]
         },
         {
-          "event_id": "dd51044eec39607c",
-          "pub_date": "2020-12-23",
-          "tier": "strong_keyword",
-          "headline": "House Hunting in South Africa: A Mountainside Perch for $760,000",
-          "abstract": "Reduced interest rates and transfer duties are luring buyers back to the housing market in South Africa, but the path to recovery remains rocky.",
-          "section_name": "Real Estate",
-          "web_url": "https://www.nytimes.com/2020/12/23/realestate/house-hunting-in-south-africa-a-mountainside-perch-for-760000.html",
-          "matched_keywords": [
-            "housing market",
-            "interest rate"
-          ]
-        },
-        {
-          "event_id": "697056b835e8531d",
-          "pub_date": "2020-12-23",
-          "tier": "strong_keyword",
-          "headline": "Actors and Writers and Now, Congressional Lobbyists",
-          "abstract": "Be an #ArtsHero started with a failed effort to extend unemployment benefits. It’s gone on to be a prime proponent of the message: Cultural work is labor.",
-          "section_name": "Theater",
-          "web_url": "https://www.nytimes.com/2020/12/23/theater/be-an-arts-hero.html",
-          "matched_keywords": [
-            "unemployment benefits",
-            "unemployment"
-          ]
-        },
-        {
-          "event_id": "f0a5df50cba2e63d",
-          "pub_date": "2020-12-23",
-          "tier": "strong_keyword",
-          "headline": "Rental protections, nursing home funding, food stamps: Here’s what’s included in the stimulus bill.",
-          "abstract": "The $900 billion stimulus bill passed by Congress this week is meant to address the needs of millions of Americans who have weathered the effects of the coronavirus pandemic for months, even as many federal programs to provide aid ran thin or expired.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2020/12/23/us/politics/rental-protections-nursing-home-funding-food-stamps-heres-whats-included-in-the-stimulus-bill.html",
-          "matched_keywords": [
-            "rent",
-            "stimulus"
-          ]
-        },
-        {
-          "event_id": "a6d79c984628bf73",
-          "pub_date": "2020-12-23",
-          "tier": "strong_keyword",
-          "headline": "How Trump Has Jeopardized Stimulus Relief",
-          "abstract": "The president’s demand that Congress amend a giant coronavirus relief and government spending bill has raised the unexpected prospect that help may no longer be days away.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2020/12/23/us/politics/trump-covid-stimulus.html",
-          "matched_keywords": [
-            "stimulus",
-            "spending bill"
-          ]
-        },
-        {
-          "event_id": "eb4e9972dbfd9ad9",
-          "pub_date": "2020-12-25",
-          "tier": "strong_keyword",
-          "headline": "Unemployment Aid Set to Lapse Saturday as Trump’s Plans for Relief Bill Remain Unclear",
-          "abstract": "At least a temporary lapse in expanded unemployment benefits for millions of Americans is now inevitable because of President Trump’s delay in signing a $900 billion pandemic relief bill.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2020/12/25/us/politics/unemployment-pandemic-aid-trump.html",
-          "matched_keywords": [
-            "unemployment benefits",
-            "unemployment"
-          ]
-        },
-        {
           "event_id": "bc521d499aa0ce20",
           "pub_date": "2020-12-26",
           "tier": "front_page+strong",
@@ -3668,19 +3603,6 @@
           "section_name": "Arts",
           "web_url": "https://www.nytimes.com/2020/12/26/arts/unemployed-performer-theatre-arts.html",
           "matched_keywords": [
-            "unemployment"
-          ]
-        },
-        {
-          "event_id": "2e74d22aacac16e4",
-          "pub_date": "2020-12-26",
-          "tier": "strong_keyword",
-          "headline": "Jobless Benefits Run Out as Trump Resists Signing Relief Bill",
-          "abstract": "Millions of Americans lost crucial unemployment coverage as President Trump continued to criticize the bill that would keep pandemic aid from lapsing.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2020/12/26/us/politics/trump-unemployment-coronavirus-aid.html",
-          "matched_keywords": [
-            "jobless",
             "unemployment"
           ]
         },
@@ -3839,9 +3761,7 @@
             "stimulus",
             "stimulus check"
           ]
-        }
-      ],
-      "1": [
+        },
         {
           "event_id": "65d6b5c77e7ac328",
           "pub_date": "2021-01-05",
@@ -3904,6 +3824,32 @@
           "matched_keywords": [
             "jobless",
             "unemployment"
+          ]
+        },
+        {
+          "event_id": "247f2c6c2b3851ed",
+          "pub_date": "2021-01-09",
+          "tier": "front_page+strong",
+          "headline": "Facing Intensifying Crises, Biden Pledges Action to Address Economy and Pandemic",
+          "abstract": "With job losses, record coronavirus numbers and politics in turmoil after the storming of the Capitol, the president-elect pressed for quick passage of a stimulus package to help struggling Americans.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/01/08/us/politics/biden-economy-pandemic.html",
+          "matched_keywords": [
+            "stimulus"
+          ]
+        }
+      ],
+      "1": [
+        {
+          "event_id": "65d6b5c77e7ac328",
+          "pub_date": "2021-01-05",
+          "tier": "front_page+strong",
+          "headline": "Warning of Shortages, Researchers Look to Stretch Vaccine Supply",
+          "abstract": "The N.I.H. and Moderna are examining whether doses of Moderna’s coronavirus vaccine can be halved to double the supply, while scientists look for other ways to extend availability.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/01/05/us/politics/coronavirus-vaccine-supply.html",
+          "matched_keywords": [
+            "shortage"
           ]
         },
         {
@@ -4160,68 +4106,6 @@
           ]
         },
         {
-          "event_id": "4ace4c93fcb2c838",
-          "pub_date": "2021-01-29",
-          "tier": "strong_keyword",
-          "headline": "Electric Cars Are Coming, and Fast. Is the Nation’s Grid Up to It?",
-          "abstract": "GM’s decision this week to phase out gasoline vehicles is the latest in a major shift that will mean drastic new demands on electric utilities. Here are four things that will need to happen.",
-          "section_name": "Climate",
-          "web_url": "https://www.nytimes.com/2021/01/29/climate/gm-electric-cars-power-grid.html",
-          "matched_keywords": [
-            "gasoline"
-          ]
-        },
-        {
-          "event_id": "4150aa3d6be2e0b9",
-          "pub_date": "2021-01-29",
-          "tier": "strong_keyword",
-          "headline": "Grape-Nuts, Supermarket Mainstay, Is No Longer So Easy to Find",
-          "abstract": "A supply shortage of the venerable, if polarizing, cereal has customers scouring online for boxes, sometimes listed at inflated prices.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/01/29/business/grape-nuts-shortage.html",
-          "matched_keywords": [
-            "shortage"
-          ]
-        },
-        {
-          "event_id": "c3ce381dfb0b4e80",
-          "pub_date": "2021-01-30",
-          "tier": "strong_keyword",
-          "headline": "How to Refurbish a Rental Without Doing Too Much Damage",
-          "abstract": "But before you get started, check your lease to see what’s permitted.",
-          "section_name": "Real Estate",
-          "web_url": "https://www.nytimes.com/2021/01/30/realestate/Diy-rental-makeover.html",
-          "matched_keywords": [
-            "rent"
-          ]
-        },
-        {
-          "event_id": "8f14853075f6edf3",
-          "pub_date": "2021-01-31",
-          "tier": "strong_keyword",
-          "headline": "Wall Street Makes Unprecedented Push to Get Out the Vote",
-          "abstract": "Business leaders want their employees to have a say in helping decide who will steer New York City’s economic recovery as its new mayor.",
-          "section_name": "New York",
-          "web_url": "https://www.nytimes.com/2021/01/31/nyregion/wall-street-voting-mayor.html",
-          "matched_keywords": [
-            "economic recovery"
-          ]
-        },
-        {
-          "event_id": "55e8cf569072e10c",
-          "pub_date": "2021-01-31",
-          "tier": "strong_keyword",
-          "headline": "Ten G.O.P. senators sketch out their own proposed relief bill in a letter to Biden.",
-          "abstract": "Republican moderates said they could go along with many of the president's proposals if some, like unemployment aid and direct payments, were scaled back.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2021/01/31/us/gop-covid-relief-plan.html",
-          "matched_keywords": [
-            "unemployment"
-          ]
-        }
-      ],
-      "2": [
-        {
           "event_id": "08111c3a0fa97a1b",
           "pub_date": "2021-02-01",
           "tier": "front_page+strong",
@@ -4332,31 +4216,80 @@
             "stimulus",
             "wage"
           ]
-        },
+        }
+      ],
+      "2": [
         {
-          "event_id": "700a1a9415a27971",
-          "pub_date": "2021-02-11",
-          "tier": "strong_keyword",
-          "headline": "Many Jobless Workers Aren’t Getting Help",
-          "abstract": "The unemployment insurance system needs a major overhaul.",
-          "section_name": "Opinion",
-          "web_url": "https://www.nytimes.com/2021/02/11/opinion/unemployment-insurance-biden.html",
+          "event_id": "08111c3a0fa97a1b",
+          "pub_date": "2021-02-01",
+          "tier": "front_page+strong",
+          "headline": "Republicans Pitch Biden on Smaller Aid Plan as Democrats Prepare to Act Alone",
+          "abstract": "The president met at the White House with Republican senators seeking a much smaller stimulus plan, but congressional Democrats pressed forward to force through his $1.9 trillion measure, if necessary.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/02/01/us/politics/republicans-biden-coronavirus-stimulus.html",
           "matched_keywords": [
-            "jobless",
-            "unemployment"
+            "stimulus"
           ]
         },
         {
-          "event_id": "31e2f31ef76cc72e",
-          "pub_date": "2021-02-12",
-          "tier": "strong_keyword",
-          "headline": "Tax season has started. Here’s what you need to know.",
-          "abstract": "Millions of people received stimulus payments and unemployment assistance last year — but they are treated differently for tax purposes. ",
+          "event_id": "99f598ff8a47bd91",
+          "pub_date": "2021-02-05",
+          "tier": "front_page+strong",
+          "headline": "Anemic Jobs Report Reaffirms Pandemic’s Grip on Economy",
+          "abstract": "With a gain of 49,000 jobs in January, and with few of those in the private sector, the labor market offers little relief to the nearly 10 million Americans who are unemployed.",
           "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/02/12/business/irs-accepting-tax-returns.html",
+          "web_url": "https://www.nytimes.com/2021/02/05/business/economy/january-2021-jobs-report.html",
           "matched_keywords": [
-            "stimulus",
-            "unemployment"
+            "jobs report"
+          ]
+        },
+        {
+          "event_id": "2c521b88fb210781",
+          "pub_date": "2021-02-06",
+          "tier": "front_page+strong",
+          "headline": "With Economy in ‘Crisis,’ Biden Is Ready to Bypass G.O.P. on Stimulus",
+          "abstract": "President Biden said the economy was in trouble and warned Republicans that he would move ahead with a $1.9 trillion aid package with or without their support.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/02/05/business/biden-stimulus.html",
+          "matched_keywords": [
+            "stimulus"
+          ]
+        },
+        {
+          "event_id": "b763b96e174b4760",
+          "pub_date": "2021-02-06",
+          "tier": "front_page+strong",
+          "headline": "Pandemic’s Toll on Housing: Falling Behind, Doubling Up",
+          "abstract": "Eviction moratoriums don’t keep arrears from piling up, and aid to renters may not reach the most vulnerable.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/02/06/business/economy/housing-insecurity.html",
+          "matched_keywords": [
+            "rent"
+          ]
+        },
+        {
+          "event_id": "1c74ce37ef29d423",
+          "pub_date": "2021-02-08",
+          "tier": "front_page+strong",
+          "headline": "‘We Are Forgotten’: Grocery Workers Hope for Higher Pay and Vaccinations",
+          "abstract": "Booming business during the pandemic hasn’t always meant better wages, and they have largely been left off vaccine priority lists.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/02/08/business/grocery-workers-hero-pay-vaccines.html",
+          "matched_keywords": [
+            "grocery",
+            "wage"
+          ]
+        },
+        {
+          "event_id": "6d36dd49b34d87ad",
+          "pub_date": "2021-02-09",
+          "tier": "front_page+strong",
+          "headline": "‘The Death Market’: Oxygen Shortage Leaves Mexicans to Die at Home",
+          "abstract": "With hospitals overrun, Mexicans fighting the coronavirus at home face a deadly hurdle: a lack of oxygen tanks.",
+          "section_name": "World",
+          "web_url": "https://www.nytimes.com/2021/02/09/world/americas/mexico-covid-oxygen-shortage.html",
+          "matched_keywords": [
+            "shortage"
           ]
         },
         {
@@ -4412,58 +4345,6 @@
           ]
         },
         {
-          "event_id": "9067967ca23d9ac2",
-          "pub_date": "2021-02-16",
-          "tier": "strong_keyword",
-          "headline": "Workers not getting enough stimulus help is a larger concern than potentially overheating the economy, officials say.",
-          "abstract": "As President Biden presses ahead with plans for a $1.9 trillion stimulus package, he and his top economic advisers are brushing aside warnings that acting aggressively to stimulate a struggling economy will bring a return of the monstrous price increases that plagued the nation in the 1970s.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2021/02/16/us/politics/workers-not-getting-enough-stimulus-help-is-a-larger-concern-than-potentially-overheating-the-economy-officials-say.html",
-          "matched_keywords": [
-            "price increase",
-            "stimulus"
-          ]
-        },
-        {
-          "event_id": "569aa328dc83e919",
-          "pub_date": "2021-02-17",
-          "tier": "strong_keyword",
-          "headline": "Europe’s next pandemic question: How to pay for it all.",
-          "abstract": "Billions of euros are being deployed to nationalize payrolls, suppress bankruptcies and avoid mass unemployment as Europe battles the pandemic. Trillions more are being earmarked for stimulus to stoke a desperately needed recovery.",
-          "section_name": "World",
-          "web_url": "https://www.nytimes.com/2021/02/17/world/europes-next-pandemic-question-how-to-pay-for-it-all.html",
-          "matched_keywords": [
-            "stimulus",
-            "unemployment"
-          ]
-        },
-        {
-          "event_id": "1a1a18f472857050",
-          "pub_date": "2021-02-18",
-          "tier": "strong_keyword",
-          "headline": "Jobless Claims Show Little Sign That Layoffs Are Easing",
-          "abstract": "After declining from a spike a few weeks ago, new filings for benefits have leveled off, offsetting other indications of economic recovery.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/02/18/business/unemployment-claims.html",
-          "matched_keywords": [
-            "jobless",
-            "economic recovery"
-          ]
-        },
-        {
-          "event_id": "2efde2950fa186eb",
-          "pub_date": "2021-02-18",
-          "tier": "strong_keyword",
-          "headline": "Global Chip Shortage Challenges Biden’s Hope for Manufacturing Revival",
-          "abstract": "A global shortage of a key component for cars and electronics has shuttered American factories and set off fierce competition to secure supplies.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/02/18/business/economy/chip-shortage-semiconductors-manufacturing-biden.html",
-          "matched_keywords": [
-            "shortage",
-            "chip shortage"
-          ]
-        },
-        {
           "event_id": "c58ec9c2130d247c",
           "pub_date": "2021-02-19",
           "tier": "front_page+strong",
@@ -4504,19 +4385,6 @@
           ]
         },
         {
-          "event_id": "16a7a97babde4f7e",
-          "pub_date": "2021-02-24",
-          "tier": "strong_keyword",
-          "headline": "Amid Shortfalls, Biden Signs Executive Order to Bolster Critical Supply Chains",
-          "abstract": "The order is intended to help insulate the economy from future shortages of critical imported components by making the United States less reliant on foreign supplies.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/02/24/business/biden-supply-chain-executive-order.html",
-          "matched_keywords": [
-            "supply chain",
-            "shortage"
-          ]
-        },
-        {
           "event_id": "e80d148a8b324e12",
           "pub_date": "2021-02-25",
           "tier": "front_page+strong",
@@ -4536,19 +4404,6 @@
           "abstract": "The parliamentarian ruled that the provision, which would gradually increase the wage to $15 an hour, violated the strict budgetary rules that limit what can be included in the package.",
           "section_name": "U.S.",
           "web_url": "https://www.nytimes.com/2021/02/25/us/politics/federal-minimum-wage.html",
-          "matched_keywords": [
-            "stimulus",
-            "wage"
-          ]
-        },
-        {
-          "event_id": "f11f163163fea47d",
-          "pub_date": "2021-02-26",
-          "tier": "strong_keyword",
-          "headline": "Democrats scramble to salvage a minimum wage proposal ahead of the House vote on Biden’s stimulus plan.",
-          "abstract": "A day after a key Senate official ruled that a provision increasing the federal minimum wage would need to be removed as written from President Biden’s $1.9 trillion stimulus plan, Democrats were scrambling to salvage the critical progressive priority.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2021/02/26/us/democrats-scramble-to-salvage-a-minimum-wage-proposal-ahead-of-the-house-vote-on-bidens-stimulus-plan.html",
           "matched_keywords": [
             "stimulus",
             "wage"
@@ -4604,6 +4459,148 @@
           "matched_keywords": [
             "shortage",
             "wage"
+          ]
+        },
+        {
+          "event_id": "7870f8a97c316903",
+          "pub_date": "2021-03-01",
+          "tier": "front_page+strong",
+          "headline": "After Stimulus, Biden to Tackle Another Politically Tricky Issue: Infrastructure",
+          "abstract": "Strengthening the country’s highways, bridges and broadband networks has broad popular support, but Washington remains bitterly divided on the details.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/03/01/business/infrastructure-biden-stimulus.html",
+          "matched_keywords": [
+            "stimulus"
+          ]
+        },
+        {
+          "event_id": "dd5a7f1f4c9d1dc2",
+          "pub_date": "2021-03-04",
+          "tier": "front_page+strong",
+          "headline": "Democrats Narrow Stimulus Payments as Biden Works to Keep Aid Plan on Track",
+          "abstract": "President Biden blessed the plan to lower the income cap for Americans receiving checks of up to $1,400, a crucial concession to moderates whose backing is needed to pass the bill.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/03/03/us/politics/stimulus-checks-income-cap-biden.html",
+          "matched_keywords": [
+            "stimulus"
+          ]
+        },
+        {
+          "event_id": "ba1dd5a7c5dfcbb4",
+          "pub_date": "2021-03-04",
+          "tier": "strong_keyword",
+          "headline": "Why the markets are stressed at the prospect of an economic rebound.",
+          "abstract": "The market conniptions of recent days are a direct result of several developments that point to the brightening prospects of economic recovery. Vaccinations are rising, retail sales and industrial production have been surprisingly solid and, perhaps most important, the Biden administration is expected to push its $1.9 trillion stimulus plan through Congress in the coming days.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/03/04/business/why-the-markets-are-stressed-at-the-prospect-of-an-economic-rebound.html",
+          "matched_keywords": [
+            "stimulus",
+            "economic rebound",
+            "economic recovery"
+          ]
+        },
+        {
+          "event_id": "f4c4b104c0f6771e",
+          "pub_date": "2021-03-05",
+          "tier": "front_page+strong",
+          "headline": "Job Market Picks Up Strength, Led by Food and Drink",
+          "abstract": "U.S. employers added 379,000 to their payrolls in February, increasing hopes that vaccinations and reopenings are giving the economic recovery a firmer grip.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/03/05/business/economy/february-2021-jobs-report.html",
+          "matched_keywords": [
+            "economic recovery"
+          ]
+        },
+        {
+          "event_id": "830aa718fe76e1a9",
+          "pub_date": "2021-03-05",
+          "tier": "strong_keyword",
+          "headline": "Democrats reach compromise with Manchin on jobless aid, allowing stimulus vote to continue.",
+          "abstract": "Senate Democrats agreed to a $300 weekly unemployment benefit through Sept. 6 in order to appease Senator Joe Manchin III of West Virginia, a crucial swing vote.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/03/05/us/stimulus-unemployment.html",
+          "matched_keywords": [
+            "stimulus",
+            "jobless",
+            "unemployment"
+          ]
+        },
+        {
+          "event_id": "f43c9a274bf15685",
+          "pub_date": "2021-03-05",
+          "tier": "strong_keyword",
+          "headline": "Biden Presses Economic Aid Plan, Rejecting Inflation Fears",
+          "abstract": "Despite a better-than-expected jobs report, administration officials stressed that millions of workers still needed help from a proposed $1.9 trillion stimulus package.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/03/05/business/economy/biden-economic-aid-stimulus-inflation.html",
+          "matched_keywords": [
+            "inflation",
+            "stimulus",
+            "jobs report"
+          ]
+        },
+        {
+          "event_id": "a866f70b0eb97384",
+          "pub_date": "2021-03-06",
+          "tier": "front_page+strong",
+          "headline": "Senate Is on Track for Stimulus Vote After Democrats Agree to Trim Jobless Aid",
+          "abstract": "Bowing to moderates who said the jobless aid was too generous, Democrats dropped their bid to raise a weekly federal unemployment benefit to $400 from $300.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/03/05/us/politics/senate-stimulus-bill.html",
+          "matched_keywords": [
+            "stimulus",
+            "jobless",
+            "unemployment"
+          ]
+        },
+        {
+          "event_id": "adf4a371eec9960a",
+          "pub_date": "2021-03-06",
+          "tier": "front_page+strong",
+          "headline": "‘I’ve Never Seen Anything Like This’: Chaos Strikes Global Shipping",
+          "abstract": "The pandemic has disrupted international trade, driving up the cost of shipping goods and adding a fresh challenge to the global economic recovery.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/03/06/business/global-shipping.html",
+          "matched_keywords": [
+            "shipping",
+            "economic recovery"
+          ]
+        },
+        {
+          "event_id": "8d50e82097a1b006",
+          "pub_date": "2021-03-06",
+          "tier": "front_page+strong",
+          "headline": "How One Firm Put an ‘Extraordinary Burden’ on the U.S.’s Troubled Stockpile",
+          "abstract": "The shortage of lifesaving medical equipment last year was a searing example of the government’s failed coronavirus response. As health workers resorted to wearing trash bags, one Maryland company profited by selling anthrax vaccines to the country’s emergency reserve.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/03/06/us/emergent-biosolutions-anthrax-coronavirus.html",
+          "matched_keywords": [
+            "shortage"
+          ]
+        },
+        {
+          "event_id": "5c0e7cebce001fca",
+          "pub_date": "2021-03-07",
+          "tier": "front_page+strong",
+          "headline": "In the Stimulus Bill, a Policy Revolution in Aid for Children",
+          "abstract": "The $1.9 trillion pandemic relief package moving through Congress advances an idea that Democrats have been nurturing for decades: establishing a guaranteed income for families with children.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/03/07/us/politics/child-tax-credit-stimulus.html",
+          "matched_keywords": [
+            "stimulus",
+            "relief package"
+          ]
+        },
+        {
+          "event_id": "e4c0185e8316a3d2",
+          "pub_date": "2021-03-10",
+          "tier": "front_page+strong",
+          "headline": "Inflation Fear Lurks, Even as Officials Say Not to Worry",
+          "abstract": "Prices have yet to show much movement, but the prospect of an unbridled economy’s surging back from the pandemic has unsettled the markets.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/03/10/business/economy/inflation-markets-federal-reserve.html",
+          "matched_keywords": [
+            "inflation"
           ]
         }
       ],
@@ -4801,71 +4798,6 @@
           ]
         },
         {
-          "event_id": "097002b6b0747c8f",
-          "pub_date": "2021-03-17",
-          "tier": "strong_keyword",
-          "headline": "Indianapolis Man Killed 4 After Fight Over Stimulus Check, Police Say",
-          "abstract": "A 7-year-old was among those killed. A man found hiding in a friend’s attic by a SWAT team is expected to face murder and robbery charges, officials said.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2021/03/16/us/indianapolis-stimulus-shooting-arrest.html",
-          "matched_keywords": [
-            "stimulus",
-            "stimulus check"
-          ]
-        },
-        {
-          "event_id": "62eb4f53523afad2",
-          "pub_date": "2021-03-17",
-          "tier": "strong_keyword",
-          "headline": "The Fight for (and Against) a $15 Minimum Wage",
-          "abstract": "After an increase failed to make it into the stimulus package, we look at the shifting political and economic arguments surrounding the issue.",
-          "section_name": "Podcasts",
-          "web_url": "https://www.nytimes.com/2021/03/17/podcasts/the-daily/minimum-wage-stimulus-package.html",
-          "matched_keywords": [
-            "stimulus",
-            "wage"
-          ]
-        },
-        {
-          "event_id": "5c173f95db57cc09",
-          "pub_date": "2021-03-17",
-          "tier": "strong_keyword",
-          "headline": "The Fed projects low interest rates for years.",
-          "abstract": "The Federal Reserve released projections showing its interest rates holding at near-zero for years, even as economic growth picks up in the near term.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/03/17/business/federal-reserve-meeting.html",
-          "matched_keywords": [
-            "federal reserve",
-            "interest rate"
-          ]
-        },
-        {
-          "event_id": "6c2023a6f8e69f39",
-          "pub_date": "2021-03-19",
-          "tier": "strong_keyword",
-          "headline": "The Endless Stream",
-          "abstract": "Ludwig Ahgren will keep streaming until we all subscribe to his Twitch channel. But please: “Don’t use your stimulus check on me,” he said.",
-          "section_name": "Style",
-          "web_url": "https://www.nytimes.com/2021/03/18/style/ludwig-ahgren-twitch-livestream.html",
-          "matched_keywords": [
-            "stimulus",
-            "stimulus check"
-          ]
-        },
-        {
-          "event_id": "77f053cf48ee49bd",
-          "pub_date": "2021-03-22",
-          "tier": "strong_keyword",
-          "headline": "The federal government’s stimulus checks may also be propping up the stock market.",
-          "abstract": "For a decade before the pandemic, small investors accounted for roughly a tenth of trading activity in the stock market. But in the last year, they have become responsible for close to a quarter, according to Goldman Sachs analysts.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/03/22/business/the-federal-governments-stimulus-checks-may-also-be-propping-up-the-stock-market.html",
-          "matched_keywords": [
-            "stimulus",
-            "stimulus check"
-          ]
-        },
-        {
           "event_id": "34fa740673d15de7",
           "pub_date": "2021-03-23",
           "tier": "front_page+strong",
@@ -4875,32 +4807,6 @@
           "web_url": "https://www.nytimes.com/2021/03/23/us/boulder-colorado-shooting.html",
           "matched_keywords": [
             "grocery"
-          ]
-        },
-        {
-          "event_id": "c2d5675e9942fe53",
-          "pub_date": "2021-03-23",
-          "tier": "strong_keyword",
-          "headline": "Stimulus check for less than expected? The I.R.S. says some delays are tied to spousal debts.",
-          "abstract": "Married people who filed their returns jointly may receive their stimulus in two separate installments if their tax return includes something called an injured spouse claim.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/03/23/business/stimulus-checks-half-spousal-debt.html",
-          "matched_keywords": [
-            "stimulus",
-            "stimulus check"
-          ]
-        },
-        {
-          "event_id": "7ba00dc323f4083f",
-          "pub_date": "2021-03-23",
-          "tier": "strong_keyword",
-          "headline": "Powell Downplays Inflation Risks as Yellen Foreshadows Future Spending",
-          "abstract": "The nation’s two most powerful economic policy officials testified together for the first time, reviewing the state of the economic recovery.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/03/23/business/economy/powell-yellen-testimony-inflation.html",
-          "matched_keywords": [
-            "inflation",
-            "economic recovery"
           ]
         },
         {
@@ -4955,19 +4861,6 @@
           ]
         },
         {
-          "event_id": "ab9e85bd15e2b721",
-          "pub_date": "2021-03-25",
-          "tier": "strong_keyword",
-          "headline": "Larry Summers Warned About Inflation. Fed Officials Push Back.",
-          "abstract": "Mr. Summers, the former Treasury secretary, and other economists say $1.9 trillion more in pandemic relief might overdo it. The Federal Reserve’s vice chair and a regional president disagreed.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/03/25/business/economy/larry-summers-federal-reserve.html",
-          "matched_keywords": [
-            "inflation",
-            "federal reserve"
-          ]
-        },
-        {
           "event_id": "fa4f0006256df4bc",
           "pub_date": "2021-03-29",
           "tier": "front_page+strong",
@@ -4991,9 +4884,7 @@
             "unemployment benefits",
             "unemployment"
           ]
-        }
-      ],
-      "4": [
+        },
         {
           "event_id": "0f93b83820c561bd",
           "pub_date": "2021-04-02",
@@ -5097,6 +4988,34 @@
             "consumer price",
             "prices rose"
           ]
+        }
+      ],
+      "4": [
+        {
+          "event_id": "0f93b83820c561bd",
+          "pub_date": "2021-04-02",
+          "tier": "front_page+strong",
+          "headline": "Strong U.S. Job Growth in March Fuels Optimism on Recovery",
+          "abstract": "The gain of 916,000 was the biggest since August, and unemployment fell to 6 percent. Barring a setback in fighting the virus, the outlook is bullish.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/04/02/business/economy/jobs-report-march.html",
+          "matched_keywords": [
+            "unemployment"
+          ]
+        },
+        {
+          "event_id": "5ac5b75017b0b900",
+          "pub_date": "2021-04-12",
+          "tier": "strong_keyword",
+          "headline": "Amid a chip shortage, the White House gathers business leaders to discuss supplies.",
+          "abstract": "The global semiconductor shortage has disrupted auto production in the United States and elsewhere.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/04/12/business/semiconductor-chip-shortage.html",
+          "matched_keywords": [
+            "shortage",
+            "semiconductor",
+            "chip shortage"
+          ]
         },
         {
           "event_id": "932defa2cc06b5d5",
@@ -5125,45 +5044,6 @@
           ]
         },
         {
-          "event_id": "4c64ed3c68708d83",
-          "pub_date": "2021-04-15",
-          "tier": "strong_keyword",
-          "headline": "The semiconductor shortage is affecting industries far beyond cars and computing.",
-          "abstract": "Shortages of semiconductors, fueled by pandemic interruptions and production issues at multibillion-dollar chip factories, have sent shock waves through the economy. Questions about chips are reverberating among both businesses and policymakers trying to navigate the world’s dependence on the small components.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/04/15/business/the-semiconductor-shortage-is-affecting-industries-far-beyond-cars-and-computing.html",
-          "matched_keywords": [
-            "shortage",
-            "semiconductor"
-          ]
-        },
-        {
-          "event_id": "99db6f72c74ed397",
-          "pub_date": "2021-04-15",
-          "tier": "strong_keyword",
-          "headline": "Week’s unemployment claims fall to lowest level of the pandemic.",
-          "abstract": "Applications for jobless claims have been stubbornly high for months, but reopenings have bolstered confidence in a dynamic recovery.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/04/15/business/economy/weekly-unemployment-claims.html",
-          "matched_keywords": [
-            "jobless",
-            "unemployment"
-          ]
-        },
-        {
-          "event_id": "7f852b0cb0836115",
-          "pub_date": "2021-04-15",
-          "tier": "strong_keyword",
-          "headline": "Retail spending rose nearly 10 percent in March as relief payments hit bank accounts.",
-          "abstract": "Stimulus checks and vaccinations have American consumers feeling increasingly optimistic.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/04/15/business/march-retail-sales.html",
-          "matched_keywords": [
-            "stimulus",
-            "stimulus check"
-          ]
-        },
-        {
           "event_id": "c1fa71b61ffd3aa1",
           "pub_date": "2021-04-16",
           "tier": "strong_keyword",
@@ -5179,32 +5059,6 @@
           ]
         },
         {
-          "event_id": "31bfc5a5d1348d90",
-          "pub_date": "2021-04-16",
-          "tier": "strong_keyword",
-          "headline": "Unemployment Is High. Why Are Businesses Struggling to Hire?",
-          "abstract": "Health concerns, expanded jobless benefits and still being needed at home are among the reasons would-be workers might be staying away.",
-          "section_name": "The Upshot",
-          "web_url": "https://www.nytimes.com/2021/04/16/upshot/unemployment-pandemic-worker-shortages.html",
-          "matched_keywords": [
-            "jobless",
-            "unemployment"
-          ]
-        },
-        {
-          "event_id": "907d421351f7e7fc",
-          "pub_date": "2021-04-21",
-          "tier": "strong_keyword",
-          "headline": "How to Deal With the Rental Car Crunch",
-          "abstract": "The pandemic has wreaked havoc in the rental car industry, leading to a shortage of cars and sticker shock for travelers. Here are some tips for finding an affordable one.",
-          "section_name": "Travel",
-          "web_url": "https://www.nytimes.com/2021/04/21/travel/rental-car-shortage.html",
-          "matched_keywords": [
-            "shortage",
-            "rent"
-          ]
-        },
-        {
           "event_id": "c7c1e7e2a2b597aa",
           "pub_date": "2021-04-22",
           "tier": "front_page+strong",
@@ -5214,19 +5068,6 @@
           "web_url": "https://www.nytimes.com/2021/04/21/books/philip-roth-blake-bailey.html",
           "matched_keywords": [
             "shipping"
-          ]
-        },
-        {
-          "event_id": "aeee16249fbc2ffc",
-          "pub_date": "2021-04-22",
-          "tier": "strong_keyword",
-          "headline": "To meet Biden’s climate goals, the cars Americans drive need to change.",
-          "abstract": "Americans still buy roughly 17 million gasoline-burning vehicles each year. Each of those cars and light trucks can be expected to stick around for 10 or 20 years as they are sold and resold in used car markets. And even after that, the United States exports hundreds of thousands of older used cars annually to countries such as Mexico or Iraq, where the vehicles can last even longer with repeated repairs.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2021/04/22/us/politics/to-meet-bidens-climate-goals-the-cars-americans-drive-need-to-change.html",
-          "matched_keywords": [
-            "gasoline",
-            "used car"
           ]
         },
         {
@@ -5360,32 +5201,6 @@
             "shortage"
           ]
         },
-        {
-          "event_id": "23904a7380a97416",
-          "pub_date": "2021-04-30",
-          "tier": "strong_keyword",
-          "headline": "‘It’s highway robbery’: Tesla’s price increases on solar shingles irk customers.",
-          "abstract": "Tesla’s solar ambitions date to 2015 when it announced that it would sell panels and home batteries alongside its electric cars. A year later, Elon Musk, the company’s chief executive, promised that Tesla’s new shingles would turbocharge installations by attracting homeowners who found solar panels ugly.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/04/30/business/its-highway-robbery-teslas-price-increases-on-solar-shingles-irk-customers.html",
-          "matched_keywords": [
-            "price increase"
-          ]
-        },
-        {
-          "event_id": "1954f1d415b38b0e",
-          "pub_date": "2021-04-30",
-          "tier": "strong_keyword",
-          "headline": "Think Outside the Brunch for Mother’s Day",
-          "abstract": "You can do better than grocery store flowers and a card, can’t you?",
-          "section_name": "Parenting",
-          "web_url": "https://www.nytimes.com/2021/04/30/parenting/creative-gift-ideas-mothers-day.html",
-          "matched_keywords": [
-            "grocery"
-          ]
-        }
-      ],
-      "5": [
         {
           "event_id": "fda9c294689876df",
           "pub_date": "2021-05-02",
@@ -5572,31 +5387,129 @@
             "gasoline",
             "shortage"
           ]
-        },
+        }
+      ],
+      "5": [
         {
-          "event_id": "9d748a92263e479b",
-          "pub_date": "2021-05-13",
-          "tier": "strong_keyword",
-          "headline": "What Do Used Car Prices Say About Biden’s Agenda?",
-          "abstract": "What did we learn from April's inflation report? Not much.",
-          "section_name": "Opinion",
-          "web_url": "https://www.nytimes.com/2021/05/13/opinion/inflation-fears.html",
+          "event_id": "fda9c294689876df",
+          "pub_date": "2021-05-02",
+          "tier": "front_page+strong",
+          "headline": "‘We’re Suffering’: How Remote Work Is Killing Manhattan’s Storefronts",
+          "abstract": "Landlords cut small retailers a break on rent during the pandemic, but stores are still struggling because too few office workers and tourists have returned.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/05/02/business/economy/remote-work-manhattan-storefronts.html",
           "matched_keywords": [
-            "inflation",
-            "used car"
+            "rent"
           ]
         },
         {
-          "event_id": "4f43d2dea300cc7e",
-          "pub_date": "2021-05-14",
-          "tier": "strong_keyword",
-          "headline": "Your Car, Toaster, Even Washing Machine, Can’t Work Without Them. And There’s a Global Shortage.",
-          "abstract": "This is what supply chain fragility looks like.",
-          "section_name": "Opinion",
-          "web_url": "https://www.nytimes.com/2021/05/14/opinion/semicondctor-shortage-biden-ford.html",
+          "event_id": "fc4802132f3f1cc5",
+          "pub_date": "2021-05-03",
+          "tier": "front_page+strong",
+          "headline": "Widespread Commodity Shortages Raise Inflation Fears",
+          "abstract": "For products as diverse as lumber and microchips, price increases are filtering through the economy.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/05/03/business/economy/commodity-shortages-inflation.html",
           "matched_keywords": [
-            "supply chain",
-            "shortage"
+            "inflation",
+            "price increase",
+            "shortage",
+            "lumber",
+            "commodity"
+          ]
+        },
+        {
+          "event_id": "932ac48feac3fd64",
+          "pub_date": "2021-05-07",
+          "tier": "front_page+strong",
+          "headline": "Biden and Republicans Spar Over Unemployment as Job Gains Disappoint",
+          "abstract": "The president said he saw no measurable evidence that a $300 federal boost in unemployment benefits was hurting the labor market, amid criticism from conservatives and business groups.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/05/07/business/biden-republicans-jobs.html",
+          "matched_keywords": [
+            "unemployment benefits",
+            "unemployment"
+          ]
+        },
+        {
+          "event_id": "327647e268f2ddf5",
+          "pub_date": "2021-05-07",
+          "tier": "strong_keyword",
+          "headline": "Despite Chip Shortage, Chip Innovation Is Booming",
+          "abstract": "While a variety of industries struggle with supplies, semiconductor experts say there are plenty of new ideas and, most surprising, start-ups.",
+          "section_name": "Technology",
+          "web_url": "https://www.nytimes.com/2021/05/07/technology/semiconductor-chip-innovation-boom.html",
+          "matched_keywords": [
+            "shortage",
+            "semiconductor",
+            "chip shortage"
+          ]
+        },
+        {
+          "event_id": "bc898c10ad1f62d8",
+          "pub_date": "2021-05-07",
+          "tier": "strong_keyword",
+          "headline": "New ideas are flooding into the semiconductor industry even as chip shortages remain.",
+          "abstract": "Even as a chip shortage is causing trouble for all sorts of industries, the semiconductor field is entering a surprising new era of creativity, from industry giants to innovative start-ups seeing a spike in funding from venture capitalists that traditionally avoided chip makers, Don Clark reports for The New York Times.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/05/07/business/new-ideas-are-flooding-into-the-semiconductor-industry-even-as-chip-shortages-remain.html",
+          "matched_keywords": [
+            "shortage",
+            "semiconductor",
+            "chip shortage"
+          ]
+        },
+        {
+          "event_id": "8bf3e005cca10ead",
+          "pub_date": "2021-05-10",
+          "tier": "strong_keyword",
+          "headline": "Biden Defends Unemployment Benefits, Provided Workers Accept Job Offers",
+          "abstract": "The president’s comments and a raft of policy announcements were a pushback to Republican criticism of his economic plan after a disappointing jobs report on Friday.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/05/10/business/economy/biden-unemployment-benefits.html",
+          "matched_keywords": [
+            "unemployment benefits",
+            "jobs report",
+            "unemployment"
+          ]
+        },
+        {
+          "event_id": "858ee083c1d654b0",
+          "pub_date": "2021-05-12",
+          "tier": "front_page+strong",
+          "headline": "Jump in Consumer Prices Raises Stakes in Inflation Debate",
+          "abstract": "The increase in the Labor Department’s Consumer Price Index was well above forecasts. A top Fed official acknowledged the surprise but said, “This is one data point.”",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/05/12/business/inflation-consumer-price-index-april.html",
+          "matched_keywords": [
+            "inflation",
+            "consumer price"
+          ]
+        },
+        {
+          "event_id": "6fbe13e2889baff3",
+          "pub_date": "2021-05-12",
+          "tier": "front_page+strong",
+          "headline": "Gasoline Buying Fever Rages as Pipeline Company Begins Restart",
+          "abstract": "While drivers scrambled for fuel, Colonial Pipeline said supplies would resume flowing from Texas to the East Coast in the coming days.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/05/12/business/energy-environment/pipeline-shutdown-latest-news.html",
+          "matched_keywords": [
+            "gasoline"
+          ]
+        },
+        {
+          "event_id": "36dd7d9bc024943c",
+          "pub_date": "2021-05-12",
+          "tier": "strong_keyword",
+          "headline": "Panicking About That Jobs Report? Breathe. Look at the Data.",
+          "abstract": "Federal unemployment benefits are an unlikely reason for the underwhelming April jobs numbers.",
+          "section_name": "Opinion",
+          "web_url": "https://www.nytimes.com/2021/05/12/opinion/panicking-about-that-jobs-report-breathe-look-at-the-data.html",
+          "matched_keywords": [
+            "unemployment benefits",
+            "jobs report",
+            "unemployment"
           ]
         },
         {
@@ -5626,32 +5539,6 @@
             "unemployment benefits",
             "jobless",
             "unemployment"
-          ]
-        },
-        {
-          "event_id": "3dc3075004b77c6e",
-          "pub_date": "2021-05-18",
-          "tier": "strong_keyword",
-          "headline": "How all the talk about inflation could complicate matters for the Fed.",
-          "abstract": "Federal Reserve officials believe low and stable price expectations give them room to heal the job market. But what if outlooks change?",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/05/18/business/how-all-the-talk-about-inflation-could-complicate-matters-for-the-fed.html",
-          "matched_keywords": [
-            "inflation",
-            "federal reserve"
-          ]
-        },
-        {
-          "event_id": "3485dbb21889b767",
-          "pub_date": "2021-05-19",
-          "tier": "strong_keyword",
-          "headline": "A Fed vice chair says trying to choke off inflation could ‘constrain’ the recovery.",
-          "abstract": "Randal K. Quarles, the Federal Reserve’s vice chair for supervision, said that the Fed needs to balance risks and that slowing down the recovery early would be a bad idea.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/05/19/business/economy/federal-reserve-quarles-inflation.html",
-          "matched_keywords": [
-            "inflation",
-            "federal reserve"
           ]
         },
         {
@@ -5694,57 +5581,6 @@
           ]
         },
         {
-          "event_id": "f14d107d2fa4ae11",
-          "pub_date": "2021-05-24",
-          "tier": "strong_keyword",
-          "headline": "Biden and the Fed say the economic recovery is on the right track, but critics have doubts.",
-          "abstract": "McDonald’s, Chipotle and Amazon are all raising pay as companies try to fill jobs faster than they can find workers. Airplane tickets and hotel rooms are becoming more expensive as demand rebounds thanks to newly widespread vaccinations. Supply shortages are making it tougher to buy a house or a new car.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2021/05/24/us/biden-and-the-fed-say-the-economic-recovery-is-on-the-right-track-but-critics-have-doubts.html",
-          "matched_keywords": [
-            "shortage",
-            "economic recovery"
-          ]
-        },
-        {
-          "event_id": "61f6493d268f187a",
-          "pub_date": "2021-05-27",
-          "tier": "strong_keyword",
-          "headline": "G.M. will restart several plants idled by the global chip shortage.",
-          "abstract": "Production will resume at four factories in North America: one in Michigan, one in Canada and two in Mexico. G.M. shares jumped on the news.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/05/27/business/general-motors-chip-shortage-factories.html",
-          "matched_keywords": [
-            "shortage",
-            "chip shortage"
-          ]
-        },
-        {
-          "event_id": "d09f72511f2ae7bd",
-          "pub_date": "2021-05-28",
-          "tier": "strong_keyword",
-          "headline": "Prices jumped 3.6 percent in April, the fastest pace in 13 years.",
-          "abstract": "The Federal Reserve’s preferred price gauge is rising briskly at time when inflation dominates political and economic discussions.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/05/28/business/inflation-consumer-prices.html",
-          "matched_keywords": [
-            "inflation",
-            "federal reserve"
-          ]
-        },
-        {
-          "event_id": "3f52ffd431baa8d1",
-          "pub_date": "2021-05-29",
-          "tier": "strong_keyword",
-          "headline": "Desperately Seeking Lifeguards for Hamptons Pools",
-          "abstract": "The shortage could mean a summer without water aerobics, lap swims and pool parties for children.",
-          "section_name": "Style",
-          "web_url": "https://www.nytimes.com/2021/05/29/style/hamptons-lifeguards.html",
-          "matched_keywords": [
-            "shortage"
-          ]
-        },
-        {
           "event_id": "5fc896bc0f09674e",
           "pub_date": "2021-05-30",
           "tier": "front_page+strong",
@@ -5756,32 +5592,6 @@
             "wage"
           ]
         },
-        {
-          "event_id": "cc6966f740ba69ce",
-          "pub_date": "2021-05-31",
-          "tier": "strong_keyword",
-          "headline": "The Vogueing Protesters of Bogotá",
-          "abstract": "“We were scared, but the people and the love from the public was our gasoline to go up there and confront the police,” said one.",
-          "section_name": "Style",
-          "web_url": "https://www.nytimes.com/2021/05/31/style/colombia-protests-bogota-dancers.html",
-          "matched_keywords": [
-            "gasoline"
-          ]
-        },
-        {
-          "event_id": "5d1d947e753c8ce1",
-          "pub_date": "2021-05-31",
-          "tier": "strong_keyword",
-          "headline": "How the ‘Wandering Meatloaf’ Got Its Rock-Hard Teeth",
-          "abstract": "The dentition of the gumboot chiton, a lumbering mollusk, contains a super-hard mineral never before seen in a living animal.",
-          "section_name": "Science",
-          "web_url": "https://www.nytimes.com/2021/05/31/science/mollusk-wandering-meatloaf-santabarbaraite.html",
-          "matched_keywords": [
-            "lumber"
-          ]
-        }
-      ],
-      "6": [
         {
           "event_id": "91fbf81f4b7875db",
           "pub_date": "2021-06-01",
@@ -5817,19 +5627,6 @@
           "matched_keywords": [
             "oil price",
             "opec"
-          ]
-        },
-        {
-          "event_id": "97c60bd409483786",
-          "pub_date": "2021-06-01",
-          "tier": "strong_keyword",
-          "headline": "Americans Don’t Want to Return to Low Wage Jobs",
-          "abstract": "There’s no true “labor shortage.” Just bad jobs.",
-          "section_name": "Opinion",
-          "web_url": "https://www.nytimes.com/2021/06/01/opinion/labor-shortage-jobs-biden-covid.html",
-          "matched_keywords": [
-            "shortage",
-            "wage"
           ]
         },
         {
@@ -5986,6 +5783,109 @@
             "interest rate",
             "economic recovery"
           ]
+        }
+      ],
+      "6": [
+        {
+          "event_id": "91fbf81f4b7875db",
+          "pub_date": "2021-06-01",
+          "tier": "front_page+strong",
+          "headline": "How the World Ran Out of Everything",
+          "abstract": "Global shortages of many goods reflect the disruption of the pandemic combined with decades of companies limiting their inventories.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/06/01/business/coronavirus-global-shortages.html",
+          "matched_keywords": [
+            "shortage"
+          ]
+        },
+        {
+          "event_id": "d62aada4c618bd7b",
+          "pub_date": "2021-06-01",
+          "tier": "front_page+strong",
+          "headline": "N.Y.C. Mayor’s Race Tightens Ahead of Crucial In-Person Debate",
+          "abstract": "Democratic hopefuls sharpened attack lines as they tried to draw contrasts on critical issues like policing and the city’s economic recovery.",
+          "section_name": "New York",
+          "web_url": "https://www.nytimes.com/2021/06/01/nyregion/mayor-race-debate-nyc.html",
+          "matched_keywords": [
+            "economic recovery"
+          ]
+        },
+        {
+          "event_id": "8696b2aa48f26168",
+          "pub_date": "2021-06-02",
+          "tier": "strong_keyword",
+          "headline": "Stimulus Checks Substantially Reduced Hardship, Study Shows",
+          "abstract": "Researchers found that sharp declines in food shortages, financial instability and anxiety coincided with the two most recent rounds of payments.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/06/02/us/politics/stimulus-checks-economic-hardship.html",
+          "matched_keywords": [
+            "shortage",
+            "stimulus",
+            "stimulus check"
+          ]
+        },
+        {
+          "event_id": "6b66cefcb796e98c",
+          "pub_date": "2021-06-04",
+          "tier": "front_page+strong",
+          "headline": "To Keep Their Son Alive, They Sleep in Shifts. And Hope a Nurse Shows Up.",
+          "abstract": "A nursing shortage — driven by the pandemic — has made life miserable for parents with profoundly disabled children. “What if I’m so exhausted that I make a mistake?”",
+          "section_name": "Health",
+          "web_url": "https://www.nytimes.com/2021/06/04/health/nursing-shortage-disabled-children.html",
+          "matched_keywords": [
+            "shortage"
+          ]
+        },
+        {
+          "event_id": "5849bdb9e20b1f0d",
+          "pub_date": "2021-06-05",
+          "tier": "front_page+strong",
+          "headline": "U.S. Waged Secret Legal Battle to Obtain Emails of 4 Times Reporters",
+          "abstract": "The push began in the Trump administration and continued under President Biden, and the Justice Department obtained a gag order to keep it from public view.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/06/04/us/politics/times-reporter-emails-gag-order-trump-google.html",
+          "matched_keywords": [
+            "wage"
+          ]
+        },
+        {
+          "event_id": "189bf20182496f1c",
+          "pub_date": "2021-06-06",
+          "tier": "strong_keyword",
+          "headline": "Republicans, Don’t Ignore the Evidence on ‘Labor Shortages’",
+          "abstract": "The latest jobs report shows just how misguided their plans to cut unemployment benefits are.",
+          "section_name": "Opinion",
+          "web_url": "https://www.nytimes.com/2021/06/06/opinion/jobs-report-wages-unemployment-covid.html",
+          "matched_keywords": [
+            "shortage",
+            "unemployment benefits",
+            "jobs report",
+            "unemployment"
+          ]
+        },
+        {
+          "event_id": "f10bb82c75477a99",
+          "pub_date": "2021-06-07",
+          "tier": "front_page+strong",
+          "headline": "Offshore Wind Farms Show What Biden’s Climate Plan Is Up Against",
+          "abstract": "The U.S. has fallen way behind Europe partly because of an old shipping law and opposition from homeowners and fishing groups.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/06/07/business/energy-environment/offshore-wind-biden-climate-change.html",
+          "matched_keywords": [
+            "shipping"
+          ]
+        },
+        {
+          "event_id": "22d3935d5499aa99",
+          "pub_date": "2021-06-10",
+          "tier": "front_page+strong",
+          "headline": "Prices Jumped 5% in May From Year Earlier, Stoking Debate in Washington",
+          "abstract": "The Consumer Price Index showed the strongest year-over-year reading since 2008, and a core index popped the most since 1992.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/06/10/business/consumer-price-index-may-2021.html",
+          "matched_keywords": [
+            "consumer price"
+          ]
         },
         {
           "event_id": "b53bf47ed82142ee",
@@ -6028,32 +5928,6 @@
           ]
         },
         {
-          "event_id": "16c749a5db4477e8",
-          "pub_date": "2021-06-16",
-          "tier": "strong_keyword",
-          "headline": "Here is where inflation stands.",
-          "abstract": "A jump in consumer prices is sure to come up at a news conference on Wednesday after the central bank’s meeting.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/06/16/business/inflation-federal-reserve.html",
-          "matched_keywords": [
-            "inflation",
-            "consumer price"
-          ]
-        },
-        {
-          "event_id": "faeb4a8993de3317",
-          "pub_date": "2021-06-16",
-          "tier": "strong_keyword",
-          "headline": "The U.S. avoided one housing crisis, but another could be looming.",
-          "abstract": "The United States averted the direst predictions about what the pandemic would do to the housing market. An eviction wave never materialized and the share of people behind on mortgages recently returned to its prepandemic level.",
-          "section_name": "World",
-          "web_url": "https://www.nytimes.com/2021/06/16/world/the-us-avoided-one-housing-crisis-but-another-could-be-looming.html",
-          "matched_keywords": [
-            "housing market",
-            "mortgage"
-          ]
-        },
-        {
           "event_id": "a7b3d12b00659136",
           "pub_date": "2021-06-21",
           "tier": "front_page+strong",
@@ -6080,98 +5954,6 @@
             "stimulus check"
           ]
         },
-        {
-          "event_id": "f4d903b02f8ce11c",
-          "pub_date": "2021-06-21",
-          "tier": "strong_keyword",
-          "headline": "The Week Inflation Panic Died",
-          "abstract": "Don't worry: Lumber is falling and the Fed is on the case.",
-          "section_name": "Opinion",
-          "web_url": "https://www.nytimes.com/2021/06/21/opinion/inflation-economy-biden-fed.html",
-          "matched_keywords": [
-            "inflation",
-            "lumber"
-          ]
-        },
-        {
-          "event_id": "871961ef80d0a41d",
-          "pub_date": "2021-06-22",
-          "tier": "strong_keyword",
-          "headline": "What lumber can tell us about the economy right now.",
-          "abstract": "The drop in lumber prices, as production ramps up and orders fall, gives credence to the argument that the rise in inflation is a result of mismatches in supply and demand.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/06/22/business/lumber-prices-inflation.html",
-          "matched_keywords": [
-            "inflation",
-            "lumber"
-          ]
-        },
-        {
-          "event_id": "44442b801cd4a42e",
-          "pub_date": "2021-06-24",
-          "tier": "strong_keyword",
-          "headline": "The Bank of England stands pat as its inflation hawk dissents.",
-          "abstract": "Andy Haldane, who is stepping down as the central bank’s chief economist after a three-decade career, has been concerned about rising prices.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/06/24/business/bank-england-interest-rates-inflation.html",
-          "matched_keywords": [
-            "inflation",
-            "rising prices"
-          ]
-        },
-        {
-          "event_id": "212e3ca13a11f1f7",
-          "pub_date": "2021-06-25",
-          "tier": "strong_keyword",
-          "headline": "A survey finds support for halting federal unemployment benefits.",
-          "abstract": "A slim majority of respondents said it was time for supplementary payments to end, backing a position taken by many Republicans.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/06/25/business/economy/unemployment-benefits-survey.html",
-          "matched_keywords": [
-            "unemployment benefits",
-            "unemployment"
-          ]
-        },
-        {
-          "event_id": "323883d00b75ed8d",
-          "pub_date": "2021-06-29",
-          "tier": "strong_keyword",
-          "headline": "OPEC and Allies Hold the Cards as Prices and Demand Rise",
-          "abstract": "In the short run, trends in the oil market may be favoring large producers like Saudi Arabia and Russia.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/06/29/business/opec-plus-meeting-preview.html",
-          "matched_keywords": [
-            "opec",
-            "oil market"
-          ]
-        },
-        {
-          "event_id": "1107ba03f99528ef",
-          "pub_date": "2021-06-30",
-          "tier": "strong_keyword",
-          "headline": "Fed Unity Cracks as Inflation Rises and Officials Debate Future",
-          "abstract": "Federal Reserve officials are debating what to do as price risks loom, even as its leaders and the White House say today’s surge will most likely cool.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/06/30/business/economy/inflation-federal-reserve.html",
-          "matched_keywords": [
-            "inflation",
-            "federal reserve"
-          ]
-        },
-        {
-          "event_id": "2eb708d10ba7625a",
-          "pub_date": "2021-06-30",
-          "tier": "strong_keyword",
-          "headline": "Washington Heights: The ‘Last Bastion of Affordability’ in Manhattan",
-          "abstract": "The neighborhood, celebrated for its large Dominican community, is also known for spacious apartments, moderate rents and ample green spaces.",
-          "section_name": "Real Estate",
-          "web_url": "https://www.nytimes.com/2021/06/30/realestate/washington-heights-last-bastion-of-affordability-manhattan.html",
-          "matched_keywords": [
-            "rent"
-          ]
-        }
-      ],
-      "7": [
         {
           "event_id": "4c75c6a638b9823f",
           "pub_date": "2021-07-02",
@@ -6385,6 +6167,131 @@
             "unemployment benefits",
             "unemployment"
           ]
+        }
+      ],
+      "7": [
+        {
+          "event_id": "4c75c6a638b9823f",
+          "pub_date": "2021-07-02",
+          "tier": "front_page+strong",
+          "headline": "U.S. Added 850,000 Jobs in June, and Wages Rose",
+          "abstract": "The resurgent economy delivered the strongest one-month employment gain since last summer, the latest promising signal about the recovery.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/07/02/business/economy/june-2021-jobs-report.html",
+          "matched_keywords": [
+            "wage"
+          ]
+        },
+        {
+          "event_id": "9c5cc3a6e340e631",
+          "pub_date": "2021-07-02",
+          "tier": "strong_keyword",
+          "headline": "June Jobs Report Delivers Good News and Big Questions for Washington",
+          "abstract": "Payrolls surged and wages climbed, both positives for President Biden and the Federal Reserve. But stagnant labor market participation highlights a key risk.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/07/02/business/economy/jobs-economy-covid.html",
+          "matched_keywords": [
+            "jobs report",
+            "wage",
+            "federal reserve"
+          ]
+        },
+        {
+          "event_id": "8dd793c0d6c8c201",
+          "pub_date": "2021-07-03",
+          "tier": "front_page+strong",
+          "headline": "Pandemic Wave of Automation May Be Bad News for Workers",
+          "abstract": "The need for social distancing led restaurants and grocery stores to seek technological help. That may improve productivity, but could also cost jobs.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/07/03/business/economy/automation-workers-robots-pandemic.html",
+          "matched_keywords": [
+            "grocery"
+          ]
+        },
+        {
+          "event_id": "55784b775c7a5e25",
+          "pub_date": "2021-07-04",
+          "tier": "front_page+strong",
+          "headline": "A Diamond Rush in South Africa, Born of Desperation and Distrust",
+          "abstract": "When rumors of a diamond find hit social media, thousands of jobless South Africans rushed to a sleepy village. The government’s claim that the discovery was actually quartz was met with suspicion.",
+          "section_name": "World",
+          "web_url": "https://www.nytimes.com/2021/07/04/world/africa/south-africa-diamond-rush.html",
+          "matched_keywords": [
+            "jobless"
+          ]
+        },
+        {
+          "event_id": "5186557158e0dd80",
+          "pub_date": "2021-07-05",
+          "tier": "front_page+strong",
+          "headline": "As Lebanon’s Crisis Deepens, Lines for Fuel Grow, and Food and Medicine Are Scarce",
+          "abstract": "The World Bank said the financial crisis could rank among the world’s three worst since the mid-1800s. The currency has lost more than 90 percent of its value and unemployment has skyrocketed.",
+          "section_name": "World",
+          "web_url": "https://www.nytimes.com/2021/07/05/world/middleeast/lebanon-economic-crisis.html",
+          "matched_keywords": [
+            "unemployment"
+          ]
+        },
+        {
+          "event_id": "6acba4b59050f6ea",
+          "pub_date": "2021-07-05",
+          "tier": "front_page+strong",
+          "headline": "How Bad Are U.S. Wildfires? Even Hawaii Is Battling a Surge.",
+          "abstract": "It’s among the wettest places on the planet, but shifts in rainfall, invasive grasses and a housing shortage are driving a wildfire spike on the islands.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/07/05/us/hawaii-wildfires.html",
+          "matched_keywords": [
+            "shortage"
+          ]
+        },
+        {
+          "event_id": "7fb8a796e7fcf1b7",
+          "pub_date": "2021-07-06",
+          "tier": "front_page+strong",
+          "headline": "Rising Oil and Gas Prices Add to U.S. Economic Challenges",
+          "abstract": "Experts say a period of costlier fuel is likely to be brief. But if consumers start to assume otherwise, it could mean problems for Biden and the Fed.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/07/06/business/economy/gas-oil-biden-economy.html",
+          "matched_keywords": [
+            "gas price"
+          ]
+        },
+        {
+          "event_id": "7daaad0225f6f630",
+          "pub_date": "2021-07-12",
+          "tier": "front_page+strong",
+          "headline": "The Rationing of a Last-Resort Covid Treatment",
+          "abstract": "While ventilator shortages have been largely averted in the U.S., this lifesaving therapy is scarce. How to choose which critically ill patients get it?",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/07/12/us/covid-treatment-ecmo.html",
+          "matched_keywords": [
+            "shortage"
+          ]
+        },
+        {
+          "event_id": "8e8071800bb66dd3",
+          "pub_date": "2021-07-13",
+          "tier": "front_page+strong",
+          "headline": "Prices Pop Again, and Fed and White House Seek to Ease Inflation Fears",
+          "abstract": "The Consumer Price Index spiked, climbing 5.4 percent in the year through June as used-car prices picked up rapidly.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/07/13/business/economy/consumer-price-index-june-2021.html",
+          "matched_keywords": [
+            "inflation",
+            "consumer price"
+          ]
+        },
+        {
+          "event_id": "7d2b2544fa59c58c",
+          "pub_date": "2021-07-13",
+          "tier": "front_page+strong",
+          "headline": "Schools Are Receiving $129 Billion in Stimulus Aid. Where Is It Going?",
+          "abstract": "There’s money for summer schools, tutors and field trips, but other urgent needs will not be addressed.",
+          "section_name": "Education",
+          "web_url": "https://www.nytimes.com/2021/07/13/education/school-budget-stimulus.html",
+          "matched_keywords": [
+            "stimulus"
+          ]
         },
         {
           "event_id": "f4760ceddcdcfd93",
@@ -6396,32 +6303,6 @@
           "web_url": "https://www.nytimes.com/2021/07/14/world/europe/climate-change-carbon-green-new-deal.html",
           "matched_keywords": [
             "tariff"
-          ]
-        },
-        {
-          "event_id": "bbf17f1df04a0689",
-          "pub_date": "2021-07-15",
-          "tier": "strong_keyword",
-          "headline": "Inflation? Not in Japan. And That Could Hold a Warning for the U.S.",
-          "abstract": "If the United States’ bout of rising prices soon eases, its economy could fall back into the cycle of weak inflation that preceded the pandemic — a situation much like Japan’s.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/07/15/business/economy/inflation-us-japan.html",
-          "matched_keywords": [
-            "inflation",
-            "rising prices"
-          ]
-        },
-        {
-          "event_id": "73b8057933b62cd9",
-          "pub_date": "2021-07-15",
-          "tier": "strong_keyword",
-          "headline": "‘The Market Is Insane’: Cars Are Sold Even Before They Hit the Lot",
-          "abstract": "A shortage of computer chips is keeping automakers from producing enough cars to meet rising demand. Used cars are scarce, too.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/07/15/business/car-sales-chip-shortage.html",
-          "matched_keywords": [
-            "shortage",
-            "used car"
           ]
         },
         {
@@ -6439,32 +6320,6 @@
           ]
         },
         {
-          "event_id": "d3bc701c45e5f7ba",
-          "pub_date": "2021-07-17",
-          "tier": "strong_keyword",
-          "headline": "Should You Worry About Inflation? Experts Weigh In.",
-          "abstract": "Most agree the recent spike in prices is linked to the economic recovery. When it will fade, and by how much, are less clear.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/07/17/business/dealbook/inflation-questions-experts.html",
-          "matched_keywords": [
-            "inflation",
-            "economic recovery"
-          ]
-        },
-        {
-          "event_id": "b8a3d582d099ed79",
-          "pub_date": "2021-07-21",
-          "tier": "strong_keyword",
-          "headline": "Chip shortages force German carmakers to throttle production even as demand recovers.",
-          "abstract": "BMW’s production fell short by 10,000 vehicles for the week, and Daimler had to briefly stop assembly lines at a plant in Germany.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/07/21/business/BMW-Daimler-semiconductor-chips.html",
-          "matched_keywords": [
-            "shortage",
-            "chip shortage"
-          ]
-        },
-        {
           "event_id": "bf026c3cadf60130",
           "pub_date": "2021-07-22",
           "tier": "strong_keyword",
@@ -6476,19 +6331,6 @@
             "inflation",
             "rent",
             "federal reserve"
-          ]
-        },
-        {
-          "event_id": "69572b95dcf78b2a",
-          "pub_date": "2021-07-28",
-          "tier": "strong_keyword",
-          "headline": "Ford profit drops 50 percent because of a global chip shortage.",
-          "abstract": "Ford has had to halt or slow production of highly profitable models like the F-150 pickup truck and various sport-utility vehicles.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/07/28/business/ford-q2-earnings.html",
-          "matched_keywords": [
-            "shortage",
-            "chip shortage"
           ]
         },
         {
@@ -6543,20 +6385,6 @@
             "interest rate"
           ]
         },
-        {
-          "event_id": "84bc8e28d6d8ada5",
-          "pub_date": "2021-07-31",
-          "tier": "strong_keyword",
-          "headline": "For Tenants Nationwide, a Scramble to Pay Months of Rent or Face Eviction",
-          "abstract": "A federal eviction moratorium is scheduled to end on Saturday. Many tenants are packing up and facing an uncertain future.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2021/07/31/us/eviction-moratorium-rent.html",
-          "matched_keywords": [
-            "rent"
-          ]
-        }
-      ],
-      "8": [
         {
           "event_id": "350e53c0719b0b83",
           "pub_date": "2021-08-02",
@@ -6721,18 +6549,94 @@
             "inflation",
             "consumer price"
           ]
+        }
+      ],
+      "8": [
+        {
+          "event_id": "350e53c0719b0b83",
+          "pub_date": "2021-08-02",
+          "tier": "front_page+strong",
+          "headline": "Where a Vast Global Vaccination Program Went Wrong",
+          "abstract": "After months of struggle, the U.N.-backed Covax alliance will soon have many more doses, promising relief for vaccine shortages in poorer countries. But it faces a deepening crisis: difficulties getting shots into arms as the Delta variant spreads.",
+          "section_name": "World",
+          "web_url": "https://www.nytimes.com/2021/08/02/world/europe/covax-covid-vaccine-problems-africa.html",
+          "matched_keywords": [
+            "shortage"
+          ]
         },
         {
-          "event_id": "adebaeb628daeb3d",
-          "pub_date": "2021-08-13",
-          "tier": "strong_keyword",
-          "headline": "Wonking Out: Who Knew Used Cars and Shipping Containers Would Matter So Much?",
-          "abstract": "Economic notes from inside Plato’s Cave. ",
-          "section_name": "Opinion",
-          "web_url": "https://www.nytimes.com/2021/08/13/opinion/us-transitory-core-inflation.html",
+          "event_id": "12daac494928eda2",
+          "pub_date": "2021-08-03",
+          "tier": "front_page+strong",
+          "headline": "What’s in the $1 Trillion Infrastructure Bill",
+          "abstract": "The sprawling, 2,702-page bill includes historic investments in traditional projects as well as broadband expansion and funds for some climate projects.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/08/02/us/politics/infrastructure-bill.html",
           "matched_keywords": [
-            "shipping",
-            "used car"
+            "infrastructure bill"
+          ]
+        },
+        {
+          "event_id": "eb25528106929108",
+          "pub_date": "2021-08-04",
+          "tier": "strong_keyword",
+          "headline": "A top Fed official says rate increases could be warranted in 2023.",
+          "abstract": "Richard Clarida, the vice chair for monetary policy, said he expected inflation and the unemployment rate to reach the Federal Reserve’s goals by the end of next year.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/08/04/business/federal-reserve-inflation-interest-rates.html",
+          "matched_keywords": [
+            "inflation",
+            "unemployment",
+            "federal reserve"
+          ]
+        },
+        {
+          "event_id": "eb00f28e0c3b1a29",
+          "pub_date": "2021-08-06",
+          "tier": "front_page+strong",
+          "headline": "Jobs Surge in July Offers Fresh Sign of Economic Recovery",
+          "abstract": "The gain of 943,000 was the best showing in nearly a year, and unemployment was 5.4 percent, the lowest since the pandemic began.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/08/06/business/economy/july-2021-jobs-report.html",
+          "matched_keywords": [
+            "unemployment",
+            "economic recovery"
+          ]
+        },
+        {
+          "event_id": "033e2c1b97aa4b61",
+          "pub_date": "2021-08-07",
+          "tier": "front_page+strong",
+          "headline": "Back to Normal? It’s a Tall Order as New York City Restaurants Struggle.",
+          "abstract": "Diners are flocking back this summer, but owners still have trouble hiring, stocking kitchens and paying rent. And an uncertain autumn looms.",
+          "section_name": "Food",
+          "web_url": "https://www.nytimes.com/2021/08/07/dining/new-york-restaurants-covid-reopenings.html",
+          "matched_keywords": [
+            "rent"
+          ]
+        },
+        {
+          "event_id": "d913b8fba270f11a",
+          "pub_date": "2021-08-07",
+          "tier": "front_page+strong",
+          "headline": "For G.O.P., Infrastructure Bill Is a Chance to Inch Away From Trump",
+          "abstract": "The former president’s efforts to bring down the bipartisan deal fell mostly on deaf ears among Republicans, signaling his waning influence on Capitol Hill. Can it last?",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/08/07/us/politics/republicans-infrastructure-bill.html",
+          "matched_keywords": [
+            "infrastructure bill"
+          ]
+        },
+        {
+          "event_id": "83f400e3235f01aa",
+          "pub_date": "2021-08-10",
+          "tier": "front_page+strong",
+          "headline": "Senate Passes $1 Trillion Infrastructure Bill, Handing Biden a Bipartisan Win",
+          "abstract": "The approval came after months of negotiations and despite deficit concerns, reflecting an appetite in both parties for the long-awaited spending package.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/08/10/us/politics/infrastructure-bill-passes.html",
+          "matched_keywords": [
+            "infrastructure bill"
           ]
         },
         {
@@ -6760,19 +6664,6 @@
           "matched_keywords": [
             "shortage",
             "chip shortage"
-          ]
-        },
-        {
-          "event_id": "ad92ad976a663d03",
-          "pub_date": "2021-08-19",
-          "tier": "strong_keyword",
-          "headline": "President Biden encourages some states to further extend unemployment benefits.",
-          "abstract": "His administration suggested that some states should use relief funds to extend weekly payments for the long-term unemployed.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/08/19/business/economy/unemployment-benefits-extend.html",
-          "matched_keywords": [
-            "unemployment benefits",
-            "unemployment"
           ]
         },
         {
@@ -6902,44 +6793,6 @@
             "shortage"
           ]
         },
-        {
-          "event_id": "d7635388f32632fd",
-          "pub_date": "2021-08-31",
-          "tier": "strong_keyword",
-          "headline": "The Economy Is Booming but Far From Normal, Posing a Challenge for Biden",
-          "abstract": "High inflation, ghostly downtowns and a resurgent virus have rattled consumers and created new obstacles as the president tries to push his broader economic agenda.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/08/31/business/economy/biden-economy.html",
-          "matched_keywords": [
-            "inflation"
-          ]
-        },
-        {
-          "event_id": "2617e6700d8d756c",
-          "pub_date": "2021-08-31",
-          "tier": "strong_keyword",
-          "headline": "Wall Street Sees Nothing but Good News, Even When It’s Bad",
-          "abstract": "With expectations that interest rates will stay down and government spending will stay up, the stock market has learned to live with the pandemic, even as cases increase.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/08/31/business/stock-market-record.html",
-          "matched_keywords": [
-            "interest rate"
-          ]
-        },
-        {
-          "event_id": "6be00d7fc7747ca9",
-          "pub_date": "2021-08-31",
-          "tier": "strong_keyword",
-          "headline": "The Red Tape That Could Cost Millions of Americans Their Homes",
-          "abstract": "Congress allocated enough money to stave off a wave of evictions, but it's not being sent to renters fast enough.",
-          "section_name": "Opinion",
-          "web_url": "https://www.nytimes.com/2021/08/31/opinion/eviction-moratorium-rental-assistance.html",
-          "matched_keywords": [
-            "rent"
-          ]
-        }
-      ],
-      "9": [
         {
           "event_id": "6a423282a9e3b7bd",
           "pub_date": "2021-09-02",
@@ -7083,6 +6936,34 @@
             "supply chain",
             "shipping"
           ]
+        }
+      ],
+      "9": [
+        {
+          "event_id": "cf2c7690c86f89a7",
+          "pub_date": "2021-09-07",
+          "tier": "front_page+strong",
+          "headline": "800,000 New Yorkers Just Lost Federal Unemployment Benefits",
+          "abstract": "Many pandemic-era federal programs expired on Sunday, leaving jobless New Yorkers with more modest state unemployment benefits, or no aid at all.",
+          "section_name": "New York",
+          "web_url": "https://www.nytimes.com/2021/09/07/nyregion/nyc-federal-unemployment-benefits.html",
+          "matched_keywords": [
+            "unemployment benefits",
+            "jobless",
+            "unemployment"
+          ]
+        },
+        {
+          "event_id": "94c3e01c4f816f0a",
+          "pub_date": "2021-09-10",
+          "tier": "front_page+strong",
+          "headline": "Biden’s New Vaccine Push Is a Fight for the U.S. Economy",
+          "abstract": "The effort reflects the continuing and evolving threat the coronavirus pandemic poses to the economic recovery.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/09/09/us/politics/biden-vaccines-economy.html",
+          "matched_keywords": [
+            "economic recovery"
+          ]
         },
         {
           "event_id": "40eaceb4bb9766ba",
@@ -7134,19 +7015,6 @@
           ]
         },
         {
-          "event_id": "04829e835a2a482d",
-          "pub_date": "2021-09-20",
-          "tier": "strong_keyword",
-          "headline": "Global Supply Shortages Reach All the Way to a Haitian Aid Group",
-          "abstract": "Continuing disruption to factory production and bottlenecks in shipping are leaving nonprofit groups short of goods for vulnerable communities worldwide.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/09/20/business/supply-chain-shortages-nonprofits.html",
-          "matched_keywords": [
-            "shortage",
-            "shipping"
-          ]
-        },
-        {
           "event_id": "e0f6060eb4526eb6",
           "pub_date": "2021-09-22",
           "tier": "front_page+strong",
@@ -7157,71 +7025,6 @@
           "matched_keywords": [
             "federal reserve",
             "interest rate"
-          ]
-        },
-        {
-          "event_id": "ed827c93b7a0a855",
-          "pub_date": "2021-09-23",
-          "tier": "strong_keyword",
-          "headline": "Turkey’s currency hits a new low after a surprise interest rate cut.",
-          "abstract": "The country’s central bank lowered the interest rate to 18 percent, below the annual rate of inflation, which was 19.3 percent in August.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/09/23/business/turkish-lira-today.html",
-          "matched_keywords": [
-            "inflation",
-            "interest rate"
-          ]
-        },
-        {
-          "event_id": "a59d0a8056e8d740",
-          "pub_date": "2021-09-23",
-          "tier": "strong_keyword",
-          "headline": "A record number of cargo ships off the California coast shows a crack in the supply chain.",
-          "abstract": "Sixty-one vessels were anchored offshore on Thursday waiting to unload cargo at the Port of Los Angeles and the Port of Long Beach, down from 73 on Sunday.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/09/23/business/cargo-ships-supply-chain.html",
-          "matched_keywords": [
-            "supply chain",
-            "port of"
-          ]
-        },
-        {
-          "event_id": "f7266c3ea2e0cd0c",
-          "pub_date": "2021-09-24",
-          "tier": "strong_keyword",
-          "headline": "In Race for 5G, Alarm and Security Services Get Stuck in the Middle",
-          "abstract": "Covid-19 shutdowns and chip shortages have made it more difficult to upgrade devices and meet a deadline set by AT&T.",
-          "section_name": "Technology",
-          "web_url": "https://www.nytimes.com/2021/09/24/technology/att-5g-race.html",
-          "matched_keywords": [
-            "shortage",
-            "chip shortage"
-          ]
-        },
-        {
-          "event_id": "55cda56abb21d027",
-          "pub_date": "2021-09-24",
-          "tier": "strong_keyword",
-          "headline": "In Britain, Rising Prices and Shortages Evoke 1970s-Style Jitters",
-          "abstract": "The nation’s economy is very different from the bleak days of the 70s, but certain parallels are unnerving Britons and loom as a potential headache for Prime Minister Boris Johnson.",
-          "section_name": "World",
-          "web_url": "https://www.nytimes.com/2021/09/24/world/europe/britain-shortages-economy-1970s.html",
-          "matched_keywords": [
-            "rising prices",
-            "shortage"
-          ]
-        },
-        {
-          "event_id": "a929947fd53d34d6",
-          "pub_date": "2021-09-27",
-          "tier": "strong_keyword",
-          "headline": "Wall Street Scans the Lots as Used Cars Prod Inflation",
-          "abstract": "The Manheim Used Vehicle Value Index, an obscure tracker of wholesale used-car prices, has become closely watched by the finance world’s high rollers.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/09/27/business/used-cars-inflation.html",
-          "matched_keywords": [
-            "inflation",
-            "used car"
           ]
         },
         {
@@ -7249,19 +7052,6 @@
           ]
         },
         {
-          "event_id": "b4e1736912a26a58",
-          "pub_date": "2021-09-28",
-          "tier": "strong_keyword",
-          "headline": "Oil prices near a three-year high as an energy crunch looms.",
-          "abstract": "Analysts say soaring natural gas prices are helping push oil futures higher, as Brent crude briefly topped $80 a barrel.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/09/28/business/oil-natural-gas-energy-prices.html",
-          "matched_keywords": [
-            "gas price",
-            "oil price"
-          ]
-        },
-        {
           "event_id": "e02e41688ab1f656",
           "pub_date": "2021-09-29",
           "tier": "front_page+strong",
@@ -7285,47 +7075,6 @@
             "spending bill"
           ]
         },
-        {
-          "event_id": "2def9c2c82c6cbf4",
-          "pub_date": "2021-09-29",
-          "tier": "strong_keyword",
-          "headline": "The world’s top central bankers see supply chain problems prolonging inflation.",
-          "abstract": "The heads of the Federal Reserve, European Central Bank, Bank of England and Bank of Japan spoke on a joint panel Wednesday.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/09/29/business/central-bankers-supply-chains-inflation.html",
-          "matched_keywords": [
-            "inflation",
-            "supply chain",
-            "federal reserve"
-          ]
-        },
-        {
-          "event_id": "d3560c89915835d7",
-          "pub_date": "2021-09-29",
-          "tier": "strong_keyword",
-          "headline": "Republicans at Odds Over Infrastructure Bill as Vote Approaches",
-          "abstract": "With a bipartisan infrastructure bill set for a Thursday vote in the House, a campaign by business groups and some Senate Republicans to secure G.O.P. support may be the measure’s last hope.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2021/09/29/us/politics/republicans-infrastructure-bill.html",
-          "matched_keywords": [
-            "infrastructure bill"
-          ]
-        },
-        {
-          "event_id": "52e0c755da76eba7",
-          "pub_date": "2021-09-30",
-          "tier": "strong_keyword",
-          "headline": "Pelosi declares infrastructure bill on track, as Congress races to avert a government shutdown.",
-          "abstract": "The House and Senate were both expected to pass short-term spending bills to fund the government, but a planned vote on a $1 trillion infrastructure bill was in limbo amid deep party divisions.",
-          "section_name": "U.S.",
-          "web_url": "https://www.nytimes.com/2021/09/30/us/politics/government-shutdown-congress-infrastructure.html",
-          "matched_keywords": [
-            "spending bill",
-            "infrastructure bill"
-          ]
-        }
-      ],
-      "10": [
         {
           "event_id": "2aa99754b14a321b",
           "pub_date": "2021-10-01",
@@ -7361,20 +7110,6 @@
           "web_url": "https://www.nytimes.com/2021/10/01/business/economy/inflation-supply-chain.html",
           "matched_keywords": [
             "inflation"
-          ]
-        },
-        {
-          "event_id": "6d7e5739cfcada6c",
-          "pub_date": "2021-10-01",
-          "tier": "strong_keyword",
-          "headline": "Chip Shortage Makes Big Dent in Automakers’ U.S. Sales",
-          "abstract": "General Motors, Toyota, Honda, Stellantis and Nissan reported recent declines as problems in the global supply chain held down output and inventories.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/10/01/business/auto-sales-gm-honda-toyota.html",
-          "matched_keywords": [
-            "supply chain",
-            "shortage",
-            "chip shortage"
           ]
         },
         {
@@ -7586,19 +7321,184 @@
             "supply chain",
             "port of"
           ]
+        }
+      ],
+      "10": [
+        {
+          "event_id": "2aa99754b14a321b",
+          "pub_date": "2021-10-01",
+          "tier": "front_page+strong",
+          "headline": "House Delays Vote on Infrastructure Bill as Democrats Feud",
+          "abstract": "A liberal revolt left Democrats short of votes, but leaders insisted they would bring up the measure again on Friday, giving them more time to reach a deal on a separate climate and safety net bill.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/09/30/us/politics/infrastructure-democrats-pelosi.html",
+          "matched_keywords": [
+            "infrastructure bill"
+          ]
         },
         {
-          "event_id": "c1395e5ea27c9b04",
-          "pub_date": "2021-10-18",
-          "tier": "strong_keyword",
-          "headline": "A regional Fed analysis suggests Biden’s stimulus is temporarily stoking inflation.",
-          "abstract": "The American Rescue Plan could be pushing inflation up slightly and temporarily, a Federal Reserve Bank of San Francisco analysis said.",
+          "event_id": "57677bffb04ae1fb",
+          "pub_date": "2021-10-01",
+          "tier": "front_page+strong",
+          "headline": "‘Everything Going the Wrong Way’: Dollar Stores Hit a Pandemic Downturn",
+          "abstract": "Their business model is being tested by worker burnout, pressure to raise wages, supply chain problems and growing local opposition.",
           "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/10/18/business/economy/fed-inflation-stimulus-biden.html",
+          "web_url": "https://www.nytimes.com/2021/09/30/business/dollar-stores-struggling-pandemic.html",
+          "matched_keywords": [
+            "supply chain",
+            "wage"
+          ]
+        },
+        {
+          "event_id": "569dc1e924d701f4",
+          "pub_date": "2021-10-01",
+          "tier": "front_page+strong",
+          "headline": "Inflation Warning Signs Flash Red, Posing Challenge for Washington",
+          "abstract": "Inflation, once expected to fade quickly, is proving more stubborn. That ramps up tension among officials as they wait for pressures to fade.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/10/01/business/economy/inflation-supply-chain.html",
+          "matched_keywords": [
+            "inflation"
+          ]
+        },
+        {
+          "event_id": "fe4a117b28e9b440",
+          "pub_date": "2021-10-02",
+          "tier": "front_page+strong",
+          "headline": "Biden Pulls Back on Infrastructure Bill, Tying It to Social Policy Measure",
+          "abstract": "After pressing toward a vote, Democratic leaders accepted “reality” that the bill could not pass before a broad climate change and safety net measure comes together.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/10/01/us/politics/biden-democrats-infrastructure.html",
+          "matched_keywords": [
+            "infrastructure bill"
+          ]
+        },
+        {
+          "event_id": "8a235d57a7418d6a",
+          "pub_date": "2021-10-04",
+          "tier": "front_page+strong",
+          "headline": "U.S. Signals No Thaw in Trade Relations With China",
+          "abstract": "The Biden administration said it would not immediately remove the Trump administration’s tariffs and would require that Beijing uphold its trade commitments.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/10/04/business/economy/us-china-trade.html",
+          "matched_keywords": [
+            "tariff"
+          ]
+        },
+        {
+          "event_id": "95481a4349d04c5f",
+          "pub_date": "2021-10-04",
+          "tier": "front_page+strong",
+          "headline": "Energy Prices Spike as Producers Worry Over Pandemic and Climate",
+          "abstract": "Even as more costly fuel poses political risks for President Biden, oil companies and OPEC are not eager to produce more because they worry prices will drop.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/10/04/business/energy-environment/oil-and-gas-prices-clean-energy.html",
+          "matched_keywords": [
+            "opec"
+          ]
+        },
+        {
+          "event_id": "eb1173f760af5939",
+          "pub_date": "2021-10-06",
+          "tier": "front_page+strong",
+          "headline": "How Other Nations Pay for Child Care. The U.S. Is an Outlier.",
+          "abstract": "Rich countries contribute an average of $14,000 per year for a toddler’s care, compared with $500 in the U.S. The Democrats’ spending bill tries to shrink the gap.",
+          "section_name": "The Upshot",
+          "web_url": "https://www.nytimes.com/2021/10/06/upshot/child-care-biden.html",
+          "matched_keywords": [
+            "spending bill"
+          ]
+        },
+        {
+          "event_id": "f3a4ba0a1d9b1909",
+          "pub_date": "2021-10-07",
+          "tier": "front_page+strong",
+          "headline": "How a Vaccine Mandate Could Worsen a Shortage of Home Care Aides",
+          "abstract": "Some 250,000 home health care workers must get the coronavirus vaccine by Friday, but tens of thousands of them have yet to receive it.",
+          "section_name": "New York",
+          "web_url": "https://www.nytimes.com/2021/10/07/nyregion/ny-vaccine-mandate-home-care-aides.html",
+          "matched_keywords": [
+            "shortage"
+          ]
+        },
+        {
+          "event_id": "efcfd134727681ed",
+          "pub_date": "2021-10-08",
+          "tier": "front_page+strong",
+          "headline": "Jobs Report Offers Little Reassurance on U.S. Economy",
+          "abstract": "The gain of 194,000 in September showed the continuing grip of the latest coronavirus wave, though unemployment fell to 4.8 percent.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/10/08/business/economy/jobs-report-september-2021.html",
+          "matched_keywords": [
+            "jobs report",
+            "unemployment"
+          ]
+        },
+        {
+          "event_id": "547a3951449528d3",
+          "pub_date": "2021-10-09",
+          "tier": "front_page+strong",
+          "headline": "When Child Care Costs Twice as Much as the Mortgage",
+          "abstract": "President Biden’s social policy legislation aims to address a problem that weighs on many families — and the teachers and child care centers serving them.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/10/09/us/politics/child-care-costs-wages-legislation.html",
+          "matched_keywords": [
+            "mortgage"
+          ]
+        },
+        {
+          "event_id": "a8ee5ab8ac53a2aa",
+          "pub_date": "2021-10-10",
+          "tier": "front_page+strong",
+          "headline": "‘It’s Not Sustainable’: What America’s Port Crisis Looks Like Up Close",
+          "abstract": "An enduring traffic jam at the Port of Savannah reveals why the chaos in global shipping is likely to persist.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/10/11/business/supply-chain-crisis-savannah-port.html",
+          "matched_keywords": [
+            "shipping",
+            "port of"
+          ]
+        },
+        {
+          "event_id": "db84b7f31dd3fab4",
+          "pub_date": "2021-10-12",
+          "tier": "front_page+strong",
+          "headline": "World’s Growth Cools and the Rich-Poor Divide Widens",
+          "abstract": "The International Monetary Fund says the persistence of the coronavirus and global supply chain crisis weighs on economies.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/10/12/business/economy/imf-world-economic-outlook.html",
+          "matched_keywords": [
+            "supply chain"
+          ]
+        },
+        {
+          "event_id": "8136db7a448e4ec9",
+          "pub_date": "2021-10-13",
+          "tier": "front_page+strong",
+          "headline": "Consumer Prices Jump Again, Presenting a Dilemma for Washington",
+          "abstract": "Consumer Price Index data from the Labor Department showed that prices kept climbing in September, as supply chain snarls and rising rents fueled rapid inflation.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/10/13/business/economy/september-2021-cpi-inflation.html",
           "matched_keywords": [
             "inflation",
-            "stimulus",
-            "federal reserve"
+            "consumer price",
+            "supply chain",
+            "rent"
+          ]
+        },
+        {
+          "event_id": "31409c9762b1b6bb",
+          "pub_date": "2021-10-13",
+          "tier": "strong_keyword",
+          "headline": "The Fed prepared to slow support for the economy and worried about supply chain disruption at its last meeting.",
+          "abstract": "Federal Reserve officials are preparing to slow bond buying and are divided over when they might need to raise interest rates as inflation bites.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/10/13/business/economy/fed-meeting-minutes-september-2021.html",
+          "matched_keywords": [
+            "inflation",
+            "supply chain",
+            "federal reserve",
+            "interest rate"
           ]
         },
         {
@@ -7627,20 +7527,6 @@
             "unemployment",
             "economic rebound",
             "economic recovery"
-          ]
-        },
-        {
-          "event_id": "a40a799e9c0cd15c",
-          "pub_date": "2021-10-21",
-          "tier": "strong_keyword",
-          "headline": "Trade Troubles: Learning About the Global Supply Chain and Why It’s Broken",
-          "abstract": "In this lesson plan, students will explore how delays, product shortages and rising prices are linked to a crisis in international trade.",
-          "section_name": "The Learning Network",
-          "web_url": "https://www.nytimes.com/2021/10/21/learning/lesson-plans/trade-troubles-learning-about-the-global-supply-chain-and-why-its-broken.html",
-          "matched_keywords": [
-            "rising prices",
-            "supply chain",
-            "shortage"
           ]
         },
         {
@@ -7698,29 +7584,131 @@
           ]
         },
         {
-          "event_id": "e2d331719e9affb5",
-          "pub_date": "2021-10-29",
-          "tier": "strong_keyword",
-          "headline": "The Fed’s favorite inflation index remained at 30-year high as pay surged.",
-          "abstract": "The Federal Reserve is closely watching inflation, and the numbers have been sharply elevated in recent months.",
+          "event_id": "a9f725918c556140",
+          "pub_date": "2021-11-02",
+          "tier": "front_page+strong",
+          "headline": "How Car Shortages Are Putting the World’s Economy at Risk",
+          "abstract": "Because so many jobs depend on automaking, the industry’s production problems are causing the pain to ripple.",
           "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/10/29/business/economy/september-pce-inflation.html",
+          "web_url": "https://www.nytimes.com/2021/11/02/business/car-shortage-global-economy.html",
+          "matched_keywords": [
+            "shortage"
+          ]
+        },
+        {
+          "event_id": "5456b9b3cecd3468",
+          "pub_date": "2021-11-03",
+          "tier": "front_page+strong",
+          "headline": "Fed Takes First Step Toward End of Pandemic Measures",
+          "abstract": "The Federal Reserve is dealing with high inflation at a time when millions of workers remain on the job market’s sidelines. Wednesday’s announcement that it will slow bond purchases is a step toward more normal monetary policy.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/11/03/business/economy/fed-taper-bond-buying.html",
           "matched_keywords": [
             "inflation",
             "federal reserve"
           ]
         },
         {
-          "event_id": "31a358ed1a4cd60a",
-          "pub_date": "2021-10-31",
+          "event_id": "a2f5c0e997e59eb7",
+          "pub_date": "2021-11-05",
+          "tier": "front_page+strong",
+          "headline": "House Passes $1 Trillion Infrastructure Bill, Putting Social Policy Bill on Hold",
+          "abstract": "Progressives who had threatened to sink the measure agreed to support it after extracting a promise from moderates that they would ultimately back the social safety net and climate bill.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/11/05/us/politics/house-infrastructure-reconciliation.html",
+          "matched_keywords": [
+            "infrastructure bill"
+          ]
+        },
+        {
+          "event_id": "c5cf8227609e8f90",
+          "pub_date": "2021-11-05",
           "tier": "strong_keyword",
-          "headline": "Angling for a Merry ‘Fishmas’ Despite Global Shipping Delays",
-          "abstract": "The travails of a Chicago fishing company’s advent calendar highlight the supply chain hurdles for businesses trying to deliver items in time for the holidays.",
+          "headline": "Wages are rising, but can they keep up with inflation?",
+          "abstract": "In the tug of war between wage growth and rising prices, it is not yet clear who is winning. It could matter for the Federal Reserve.",
           "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/10/31/business/economy/global-shipping-delays.html",
+          "web_url": "https://www.nytimes.com/2021/11/05/business/economy/wages-inflation.html",
+          "matched_keywords": [
+            "inflation",
+            "rising prices",
+            "wage",
+            "federal reserve"
+          ]
+        },
+        {
+          "event_id": "b78fa8e7adcf31cf",
+          "pub_date": "2021-11-06",
+          "tier": "front_page+strong",
+          "headline": "Americans Are Flush With Cash and Jobs. They Also Think the Economy Is Awful.",
+          "abstract": "The psychological effects of inflation seem to have the upper hand.",
+          "section_name": "The Upshot",
+          "web_url": "https://www.nytimes.com/2021/11/06/upshot/inflation-psychology-economy.html",
+          "matched_keywords": [
+            "inflation"
+          ]
+        },
+        {
+          "event_id": "fb3c5de2bc173f61",
+          "pub_date": "2021-11-06",
+          "tier": "front_page+strong",
+          "headline": "How a $1 Trillion Infrastructure Bill Survived an Intraparty Brawl",
+          "abstract": "Speaker Nancy Pelosi agreed to a deal proposed by the Congressional Black Caucus, mobilizing one faction of Democratic lawmakers to win over two others.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/11/06/us/politics/infrastructure-black-caucus-vote.html",
+          "matched_keywords": [
+            "infrastructure bill"
+          ]
+        },
+        {
+          "event_id": "d69dbda6551319eb",
+          "pub_date": "2021-11-08",
+          "tier": "front_page+strong",
+          "headline": "Retailers Scramble to Attract Workers Ahead of the Holidays",
+          "abstract": "Signing bonuses, higher wages, even college tuition. Companies are using perks to entice new employees in an industry that has been battered by the pandemic.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/11/08/business/retail-hiring-holidays-workers.html",
+          "matched_keywords": [
+            "wage"
+          ]
+        },
+        {
+          "event_id": "6356c3dd40ae5e2a",
+          "pub_date": "2021-11-09",
+          "tier": "front_page+strong",
+          "headline": "The Biggest Kink in America’s Supply Chain: Not Enough Truckers",
+          "abstract": "Long hours and uncomfortable working conditions are leading to a shortage of truck drivers, which has compounded shipping delays in the United States.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/11/09/us/politics/trucker-shortage-supply-chain.html",
           "matched_keywords": [
             "supply chain",
+            "shortage",
             "shipping"
+          ]
+        },
+        {
+          "event_id": "335deae9455412d0",
+          "pub_date": "2021-11-10",
+          "tier": "front_page+strong",
+          "headline": "Fastest Inflation in 31 Years Puts More Heat on Washington",
+          "abstract": "The Consumer Price Index rose 6.2 percent in October from a year earlier, its sharpest increase since 1990. That is bad news for President Biden and the Federal Reserve.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/11/10/business/economy/consumer-price-inflation-october.html",
+          "matched_keywords": [
+            "inflation",
+            "consumer price",
+            "federal reserve"
+          ]
+        },
+        {
+          "event_id": "b10aa716edb67c73",
+          "pub_date": "2021-11-10",
+          "tier": "front_page+strong",
+          "headline": "House Republicans Who Backed Infrastructure Bill Face Vicious Backlash",
+          "abstract": "The 13 Republican lawmakers who broke with their party to support a $1 trillion bipartisan public works bill have drawn anger and threats from their colleagues and constituents.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/11/10/us/politics/republicans-backlash-infrastructure-bill.html",
+          "matched_keywords": [
+            "infrastructure bill"
           ]
         }
       ],
@@ -7943,19 +7931,6 @@
           ]
         },
         {
-          "event_id": "0380f886644cd8b3",
-          "pub_date": "2021-11-22",
-          "tier": "strong_keyword",
-          "headline": "Behind the Powell pick: a bet the economy has room to grow and inflation will fade.",
-          "abstract": "President Biden views the incumbent Fed chair as sharing his values on price growth and the pursuit of a lower unemployment rate to help Black, Hispanic and other marginalized workers.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/11/22/business/economy/biden-powell-economy.html",
-          "matched_keywords": [
-            "inflation",
-            "unemployment"
-          ]
-        },
-        {
           "event_id": "27fd6f625f2eba32",
           "pub_date": "2021-11-23",
           "tier": "front_page+strong",
@@ -7966,19 +7941,6 @@
           "matched_keywords": [
             "shortage",
             "wage"
-          ]
-        },
-        {
-          "event_id": "f23bac3f185d5fa5",
-          "pub_date": "2021-11-23",
-          "tier": "strong_keyword",
-          "headline": "As Inflation Surges, Pakistan Seeks a $6 Billion I.M.F. Lifeline",
-          "abstract": "Rising prices and a weakened currency are straining households, intensifying pressure on Prime Minister Imran Khan to find solutions.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/11/23/business/economy/pakistan-imf-economy.html",
-          "matched_keywords": [
-            "inflation",
-            "rising prices"
           ]
         },
         {
@@ -8008,19 +7970,6 @@
           ]
         },
         {
-          "event_id": "90ccc96a15c43432",
-          "pub_date": "2021-11-24",
-          "tier": "strong_keyword",
-          "headline": "Initial unemployment claims last week fell to a half-century low.",
-          "abstract": "On a seasonally adjusted basis, the figure fell to 199,000, a milestone in the economic recovery from the shock of the pandemic.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/11/24/business/economy/jobless-unemployment-claims.html",
-          "matched_keywords": [
-            "unemployment",
-            "economic recovery"
-          ]
-        },
-        {
           "event_id": "2406af70f7d9ecff",
           "pub_date": "2021-11-27",
           "tier": "front_page+strong",
@@ -8034,19 +7983,6 @@
           ]
         },
         {
-          "event_id": "d4acd93599e1c7fb",
-          "pub_date": "2021-11-28",
-          "tier": "strong_keyword",
-          "headline": "A Wine Rack on Rails? U.K. Businesses Seek Solutions to Shortages.",
-          "abstract": "Two months after concerns about gas and food stocks caused ripples of anxiety, Britain continues to face problems in its supply chain. Distributors and retailers are looking for creative fixes.",
-          "section_name": "World",
-          "web_url": "https://www.nytimes.com/2021/11/28/world/europe/uk-supply-shortages.html",
-          "matched_keywords": [
-            "supply chain",
-            "shortage"
-          ]
-        },
-        {
           "event_id": "f0e4038d8f23ce82",
           "pub_date": "2021-11-29",
           "tier": "front_page+strong",
@@ -8056,32 +7992,6 @@
           "web_url": "https://www.nytimes.com/2021/11/29/us/politics/taliban-afghanistan-911-families-frozen-funds.html",
           "matched_keywords": [
             "federal reserve"
-          ]
-        },
-        {
-          "event_id": "5a56a3a2f115dd6b",
-          "pub_date": "2021-11-29",
-          "tier": "strong_keyword",
-          "headline": "Made in the U.S.A., but With a Supply-Chain Reboot",
-          "abstract": "Facing delays, shortages and higher prices for raw materials, small manufacturers are finding new sources. Not all are able to pass along the costs.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/11/29/business/economy/supply-chain-inflation.html",
-          "matched_keywords": [
-            "supply-chain",
-            "shortage"
-          ]
-        },
-        {
-          "event_id": "748151756ac5369d",
-          "pub_date": "2021-11-29",
-          "tier": "strong_keyword",
-          "headline": "The Biden administration, under fire for supply chain woes, says stores will be fully stocked for the holidays.",
-          "abstract": "President Biden has made a push to unclog ports, address trucker shortages and take other steps to alleviate the pressure created by consumers looking to buy couches, cars and electronics instead of eating out or going to theme parks.",
-          "section_name": "Business Day",
-          "web_url": "https://www.nytimes.com/2021/11/29/business/biden-supply-chain-shortages.html",
-          "matched_keywords": [
-            "supply chain",
-            "shortage"
           ]
         },
         {
@@ -8109,6 +8019,81 @@
             "inflation",
             "federal reserve"
           ]
+        },
+        {
+          "event_id": "75195db559ed05dc",
+          "pub_date": "2021-12-01",
+          "tier": "front_page+strong",
+          "headline": "While Politics Consume School Board Meetings, a Very Different Crisis Festers",
+          "abstract": "In a wealthy suburban Philadelphia district, schools are struggling with shortages of all sorts. Behavioral problems have mushroomed. “We are in triage mode,” one teacher said.",
+          "section_name": "U.S.",
+          "web_url": "https://www.nytimes.com/2021/12/01/us/central-bucks-school-board-politics-pennsylvania.html",
+          "matched_keywords": [
+            "shortage"
+          ]
+        },
+        {
+          "event_id": "824e08d71059aa64",
+          "pub_date": "2021-12-02",
+          "tier": "front_page+strong",
+          "headline": "A Car a Minute Used to Flow Through Here, but Chaos Now Reigns",
+          "abstract": "A shipping terminal in Kansas reveals the fundamental problem — no one can plan, and no one is sure what will happen next.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/12/02/business/supply-chain-car-shipping.html",
+          "matched_keywords": [
+            "shipping"
+          ]
+        },
+        {
+          "event_id": "ceb08d2f14db94e7",
+          "pub_date": "2021-12-03",
+          "tier": "front_page+strong",
+          "headline": "November Jobs Report Shows Weak Hiring but a Surge in the Labor Force",
+          "abstract": "Employers reported adding 210,000 jobs, the year’s weakest showing, but there were also bright spots. The mixed picture complicated policy prospects.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/12/03/business/economy/november-2021-jobs-report.html",
+          "matched_keywords": [
+            "jobs report"
+          ]
+        },
+        {
+          "event_id": "a659aaa790eecf11",
+          "pub_date": "2021-12-05",
+          "tier": "strong_keyword",
+          "headline": "N.Y.C. companies that don’t rely on the global supply chain are faring quite well.",
+          "abstract": "Clogged ports. Product shortages overseas. Overburdened container ships. Price increases.",
+          "section_name": "New York",
+          "web_url": "https://www.nytimes.com/2021/12/06/nyregion/nyc-companies-that-dont-rely-on-the-global-supply-chain-are-faring-quite-well.html",
+          "matched_keywords": [
+            "price increase",
+            "supply chain",
+            "shortage"
+          ]
+        },
+        {
+          "event_id": "6412d9c9bf044c89",
+          "pub_date": "2021-12-10",
+          "tier": "front_page+strong",
+          "headline": "Consumer Prices Rose at Fastest Pace Since 1982, Pressuring Washington",
+          "abstract": "The Consumer Price Index is rising sharply, a concern for Washington policymakers and a sign of the rising costs facing American households.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/12/10/business/cpi-inflation-november-2021.html",
+          "matched_keywords": [
+            "consumer price",
+            "prices rose"
+          ]
+        },
+        {
+          "event_id": "5ebb4d31d67e0f24",
+          "pub_date": "2021-12-10",
+          "tier": "front_page+strong",
+          "headline": "How’s the Economy? Biden Sees a Boom. Many Americans Don’t.",
+          "abstract": "The president has struggled to sell strong growth and job gains to a public that appears more concerned about rising prices — and remains anxious about Covid.",
+          "section_name": "Business Day",
+          "web_url": "https://www.nytimes.com/2021/12/10/business/biden-economy-growth-jobs.html",
+          "matched_keywords": [
+            "rising prices"
+          ]
         }
       ]
     },
@@ -8118,7 +8103,7 @@
       "bls_cpi_components_5",
       "bls_cpi_yoy_history_11m",
       "eia_gasoline_retail_level_yoy",
-      "nyt_salient_events_m_minus_1"
+      "nyt_salient_events_m_minus_1_through_as_of"
     ]
   }
 }

@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
 """Build the E v2 information environment for sce_inflation_expectations.
 
-E v2 (D049a/c/d) extends the frozen v1 layer (4 BLS headline signals per step)
-with, for every target month M (release reference period R = M-2, as_of = end
-of M-1 23:59:59 ET):
+E v2 (D049a/c/d + D050) extends the frozen v1 layer (4 BLS headline signals
+per step). Timing convention (D050, user 2026-10-04): for target month M the
+newest reference period is R = M-1 and as_of = the day the R CPI is released
+inside month M, 23:59:59 ET. This matches the median real SCE respondent:
+measured on the 2021 microdata, the median interview day is the 15th
+(P25=8th, P75=21st), while the jobs report for M-1 comes out on the first
+Friday of M and the CPI for M-1 on ~the 10th-13th — so the median respondent
+answers after both releases. (v1 used R = M-2 with as_of = end of M-1, i.e.
+the information set of someone answering on the 1st.)
+
+For every target month M (R = M-1, as_of = CPI release day of R):
 
   1. CPI component latest values (first-release, from the archived PDFs via
      extract_cpi_components.py): food, food at home, energy, shelter, gasoline
@@ -15,11 +23,14 @@ of M-1 23:59:59 ET):
      (documented conservative convention; EIA releases weekly prices within
      days of the Monday observation).
   4. NYT salient events (build_nyt_events.py ledger): headline + abstract for
-     events published in month M-1, i.e. strictly before as_of.
+     events published from M-1-01 through the as_of day (i.e. all of month M-1
+     plus early M up to the CPI release). Tier front_page+strong uncapped,
+     other tiers share a budget of 30, hit-density first then recency.
 
 Every record carries reference_period / published_at / source and a hard
 assert guarantees published_at < as_of. The v1 bundle is rebuilt in memory
-(v1.build_window) and extended — v1 output files are never touched.
+(v1.build_window) as a skeleton and its signals/as_of/broadcasts are
+replaced with the v2 timing — v1 output files are never touched.
 
     python scripts/build_sce_environment_v2.py \
         --targets 2021-01..2021-12 \
@@ -40,6 +51,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 import build_sce_environment as v1  # noqa: E402
+import build_nyt_events as nyt  # noqa: E402
 
 STUDY_ID = v1.STUDY_ID
 STUDY_DIR = v1.STUDY_DIR
@@ -62,6 +74,34 @@ def shift_month(month: str, k: int) -> str:
     y, m = (int(x) for x in month.split("-"))
     total = y * 12 + (m - 1) + k
     return f"{total // 12:04d}-{total % 12 + 1:02d}"
+
+
+def reference_period_v2(target_month: str) -> str:
+    """Newest available reference period = M-1 (D050 median-respondent
+    timing; v1 used M-2)."""
+    return shift_month(target_month, -1)
+
+
+EVENT_BUDGET = 30  # lower tiers share this; front_page+strong is uncapped
+
+
+def _merge_event_pool(pool: list[dict], budget: int) -> list[dict]:
+    """Select from a combined event pool with the same rules as
+    build_nyt_events: tier front_page+strong never capped; lower tiers fill
+    the budget hit-density first, recency breaks ties."""
+    by_rank: dict[int, list[dict]] = {0: [], 1: [], 2: [], 3: []}
+    for e in pool:
+        by_rank[nyt._TIER_RANK[e["tier"]]].append(e)
+    selected = sorted(by_rank[0], key=lambda e: e["pub_date"])
+    for rank in (1, 2, 3):
+        remaining = budget - len(selected)
+        if remaining <= 0:
+            break
+        p = sorted(by_rank[rank], key=lambda e: e["pub_date"], reverse=True)
+        p = sorted(p, key=lambda e: -len(e["matched_keywords"]))
+        selected.extend(p[:remaining])
+    selected.sort(key=lambda e: e["pub_date"])
+    return selected
 
 
 def _pub_et(d: date) -> str:
@@ -128,26 +168,47 @@ def cpi_history_yoy(refs: list[str], raw_root: Path, fetch: bool,
 
 def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
                     proxy: str) -> dict:
-    base = v1.build_window(targets, raw_root, fetch, proxy)
+    base = v1.build_window(targets, raw_root, fetch, proxy)  # skeleton only
     components = load_components()
     gasoline = load_gasoline_weekly()
     events_by_month = load_nyt_events()
 
     # history refs needed across the whole window (R-11..R-1 for each step)
-    all_history_refs = sorted({shift_month(v1.reference_period(t), -k)
+    all_history_refs = sorted({shift_month(reference_period_v2(t), -k)
                                for t in targets for k in range(1, 12)})
     history = cpi_history_yoy(all_history_refs, raw_root, fetch, proxy)
 
     signals_by_step: dict[str, list[dict]] = {}
     events_by_step: dict[str, list[dict]] = {}
     as_of_by_step: dict[str, str] = {}
+    broadcasts = []
 
     for step, target in enumerate(targets):
-        ref = v1.reference_period(target)
-        as_of = datetime.fromisoformat(v1.as_of_for(target))
+        ref = reference_period_v2(target)
+
+        # 0. four BLS headline signals for ref M-1; as_of = the day the CPI
+        #    for M-1 is released inside month M, 23:59:59 ET (D050)
+        cpi_info = v1.ensure_release("cpi", ref, raw_root / ref, fetch, proxy)
+        emp_info = v1.ensure_release("empsit", ref, raw_root / ref, fetch,
+                                     proxy)
+        cpi = v1.transcribe_cpi(v1._first_pages_text(cpi_info["path"]), ref)
+        emp = v1.transcribe_empsit(v1._first_pages_text(emp_info["path"]), ref)
+        pub_cpi = v1.published_at_for(cpi_info["release_date"])
+        pub_emp = v1.published_at_for(emp_info["release_date"])
+        rd = cpi_info["release_date"]
+        as_of = datetime(rd.year, rd.month, rd.day, 23, 59, 59,
+                         tzinfo=v1.RELEASE_TZ)
+        if not datetime.fromisoformat(pub_emp) < as_of:
+            raise ValueError(
+                f"employment release for {ref} not before as_of {as_of}")
+        url_cpi = v1.ARCHIVE_URL["cpi"].format(
+            mmddyyyy=rd.strftime("%m%d%Y"))
+        url_emp = v1.ARCHIVE_URL["empsit"].format(
+            mmddyyyy=emp_info["release_date"].strftime("%m%d%Y"))
         records = [dict(r, role="latest_release")
-                   for r in base["bundle"]["provider_args"]
-                              ["signals_by_step"][str(step)]]
+                   for r in v1._signals_for_ref(ref, cpi, emp, url_cpi, url_emp,
+                                                pub_cpi, pub_emp)]
+        broadcasts.append(v1._broadcast(step, target, ref, cpi, emp))
 
         # 1. CPI components (same release as the headline CPI record)
         ref_components = components.get(ref)
@@ -235,26 +296,35 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
         signals_by_step[str(step)] = records
         as_of_by_step[str(step)] = as_of.isoformat()
 
-        # 4. NYT salient events from month M-1 (all strictly before as_of)
-        ev_month = shift_month(target, -1)
-        evs = []
-        for e in events_by_month.get(ev_month, []):
-            if date.fromisoformat(e["pub_date"]) > as_of.date():
+        # 4. NYT salient events: all of month M-1 plus early M up to as_of
+        #    (the CPI release day inside M); tier front_page+strong uncapped,
+        #    lower tiers share EVENT_BUDGET (hit-density first, then recency).
+        as_of_date = as_of.date()
+        pool = list(events_by_month.get(shift_month(target, -1), []))
+        pool.extend(e for e in events_by_month.get(target, [])
+                    if date.fromisoformat(e["pub_date"]) <= as_of_date)
+        for e in pool:
+            if date.fromisoformat(e["pub_date"]) > as_of_date:
                 raise ValueError(f"event {e['event_id']} after as_of")
-            evs.append({k: e[k] for k in
-                        ("event_id", "pub_date", "tier", "headline", "abstract",
-                         "section_name", "web_url", "matched_keywords")})
+        evs = [{k: e[k] for k in
+                ("event_id", "pub_date", "tier", "headline", "abstract",
+                 "section_name", "web_url", "matched_keywords")}
+               for e in _merge_event_pool(pool, EVENT_BUDGET)]
         events_by_step[str(step)] = evs
 
     bundle = base["bundle"]
     bundle["provider_args"]["signals_by_step"] = signals_by_step
     bundle["provider_args"]["events_by_step"] = events_by_step
+    bundle["provider_args"]["targets"] = [
+        {"target_month": t, "as_of": as_of_by_step[str(i)]}
+        for i, t in enumerate(targets)]
     bundle["provider_args"]["e_version"] = "v2"
     bundle["provider_args"]["e_v2_layers"] = [
         "bls_headline_4_signals", "bls_cpi_components_5",
         "bls_cpi_yoy_history_11m", "eia_gasoline_retail_level_yoy",
-        "nyt_salient_events_m_minus_1",
+        "nyt_salient_events_m_minus_1_through_as_of",
     ]
+    bundle["information_program"]["broadcasts"] = broadcasts
     bundle["layers"] = bundle["layers"] + [
         {"name": "bls_cpi_component_signals",
          "modality": "physical", "scope": "macro", "dynamics": "scheduled",
@@ -280,7 +350,8 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
          "source": "data/raw/nyt_archive/events_ledger.jsonl",
          "schema_ref": None,
          "description": ("NYT front-page (A1) + inflation-keyword events, "
-                         "headline + abstract, pub month M-1 (D049d).")},
+                         "headline + abstract, published M-1-01 through the "
+                         "CPI release day inside M (D049d/D050).")},
     ]
 
     external_events = base["external_events"]
@@ -288,6 +359,7 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
         "_v1", "_v2")
     external_events["records_by_step"] = signals_by_step
     external_events["events_by_step"] = events_by_step
+    external_events["as_of"] = as_of_by_step
     external_events["e_version"] = "v2"
 
     return {"bundle": bundle, "external_events": external_events,

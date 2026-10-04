@@ -56,6 +56,10 @@ PATTERNS: dict[str, list[str]] = {
     "cpi_food_yoy": [
         rf"[Tt]he food index (?P<verb>{VERB_RE}) (?:by )?(?P<num>\d+\.\d) percent(?!\s+in\b)(?=[^.]*(?:12.?months|12-month))",
         rf"12.?months, and the food index (?P<verb>{VERB_RE}) (?:by )?(?P<num>\d+\.\d) percent(?: over that period)?(?!\s+in\b)",
+        # 2021-11 roundup style: "... over the last 12 months, while the energy
+        # index rose 33.3 percent over the last year, and the food index
+        # increased 6.1 percent." (12-month context precedes the value)
+        rf"over the (?:last|past) 12.?months[^%]{{0,200}}?[Tt]he food index (?P<verb>{VERB_RE}) (?:by )?(?P<num>\d+\.\d) percent(?!\s+in\b)",
         rf"[Tt]he food index (?P<verb>{VERB_RE}) (?:by )?(?P<num>\d+\.\d) percent over the (?:last|past)",
     ],
     "cpi_food_at_home_yoy": [
@@ -75,6 +79,9 @@ PATTERNS: dict[str, list[str]] = {
         rf"[Ss]helter index (?P<verb>{VERB_RE}) (?:by )?(?P<num>\d+\.\d) percent over the 12-month span",
         # 2020-08: value first, 12-month context trails in the same sentence
         rf"[Ss]helter index (?P<verb>{VERB_RE}) (?:by )?(?P<num>\d+\.\d) percent, and the [^%]{{0,120}}?over the (?:last|past) 12 months",
+        # 2021-11: "The shelter index rose 3.8 percent, the largest 12-month
+        # increase since the period ending June 2007."
+        rf"[Tt]he shelter index (?P<verb>{VERB_RE}) (?:by )?(?P<num>\d+\.\d) percent, the largest 12-month",
     ],
     # gasoline y/y often appears only in Table A; text pattern first.
     "cpi_gasoline_yoy": [

@@ -1,8 +1,16 @@
 # 当前任务板
 
-更新：2026-10-04（Kimi 完成 E v2 三源：CPI 分项 140/140、EIA 汽油、NYT 事件层定版，环境 v2 已重建，测试 95/95）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
+更新：2026-10-04（Kimi 完成 D050 as_of 口径变更——对齐中位真实受访者；E v2 环境按新口径重建，CPI 分项 145/145）。只推进 SCE；队伍名为水上挽月。日期以 [ROADMAP](ROADMAP.md) 为准。每项任务只标真实进度。
 
 ## 当前接力：v4 决策点 + T01 方法研究 + 提案撰写
+
+- **2026-10-04 D050 as_of 口径变更完成（Kimi，用户提出的信息时差修正）**：
+  ① **实证依据**：SCE 微观 `survey_date` 实测 2021 年全部 15,109 人月——中位访谈日每月 15 号（P25=8、P75=21；≤13 号 45.1%、≤15 号 51.7%），晚于 M−1 期 CPI（每月 10–13 号发布）与就业报告（M 月第一个周五）→ 中位真实受访者填答时已看到 M−1 期数据，旧口径（as_of=t−1 月末）使模拟者系统性少看一期。
+  ② **新口径**：目标月 M 的最新参考期 R=M−1，as_of = R 期 CPI 首发日当天 23:59:59 ET；就业首发日恒早于 CPI 发布日自动合规，published_at < as_of 硬校验不变。已写入 [RESEARCH_PROTOCOL](RESEARCH_PROTOCOL.md) §1 与 [proposal](../proposal/proposal.md) 时点隔离段。
+  ③ **事件层联动**：NYT 事件窗从"仅 M−1 全月"扩为"M−1 全月 + M 月 1 日至 as_of 日"；front_page+strong 层不截断，低层按命中密度+时间补至 30 条预算（token 量基本持平）。
+  ④ **数据补齐**：补抓 ref 2021-11 的 CPI/就业首发 PDF；`extract_cpi_components.py` 补两条措辞变体模式（2021-11 roundup 句式 "over the last 12 months...and the food index increased 6.1 percent" 与 "shelter index rose 3.8 percent, the largest 12-month increase"），**分项提取 145/145 零 handoff**。
+  ⑤ **环境 v2 按新口径重建**：`scripts/build_sce_environment_v2.py` 主循环改为独立转录（不再从 v1 skeleton 拷贝 as_of/signals/broadcasts），bundle targets、information_program.broadcasts、external_events.as_of 全部覆盖为新口径；每步 22 信号 + 30 事件，产出三件套同路径。测试更新：历史序列起点 2021-04、分项断言改用 2021-04 实测值（food 2.4/energy 25.1）、事件断言改为月份∈{M−1,M} 且 pub_date≤as_of、新增 as_of=CPI 发布日断言。
+  ⑥ **影响范围**：提示词 v2 的输入将变为 M−1 期最新数据 + 当月上旬新闻（与真实受访者一致）；v1 环境产物与历史验收文档不改写；主窗口正式运行前配置需重新冻结（开发月验证后整窗重跑）。
 
 - **2026-10-04 E v2 三源全部落地、环境 v2 重建完成（Kimi）**：
   ① **CPI 分项 140/140 清零 handoff**：`scripts/extract_cpi_components.py` 重写模式集（命名分组 verb/num + `_since_is_12m` 校验 + `_ARTIFACT_FIXES` 修复 pypdf 断词 "Th e"/"f ood"/"e nergy"），28 份首发 PDF × 5 分量（食品/在家食品/能源/住所/汽油 12 月同比）全提取，每条带原文引文+页码+sha256 → `data/raw/bls_initial_releases/components_cpi.jsonl`；历史序列所需 refs 2019-12..2020-10 共 11 份 PDF 已补抓归档（2020-05 谷底 0.1 与史实吻合）。

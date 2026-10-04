@@ -53,7 +53,7 @@ class TestBuildWindowV2(unittest.TestCase):
     def test_history_refs_contiguous_and_ordered(self):
         hist = [r for r in self.records["0"] if r["role"] == "history"]
         refs = [r["reference_period"] for r in hist]
-        self.assertEqual(refs, [v2.shift_month("2021-03", -k)
+        self.assertEqual(refs, [v2.shift_month("2021-04", -k)
                                 for k in range(11, 0, -1)])
 
     def test_everything_published_before_as_of(self):
@@ -70,14 +70,28 @@ class TestBuildWindowV2(unittest.TestCase):
         comps = {r["signal_id"].split("_nsa_")[0]: r["value"]
                  for r in self.records["0"] if r["signal_id"].startswith("bls_cpi_")
                  and "component" not in r["signal_id"]}
-        # 2021-03 ref (for target 2021-05): food 3.5, energy 13.2 (from archive)
-        self.assertEqual(comps["bls_cpi_food_yoy"], 3.5)
-        self.assertEqual(comps["bls_cpi_energy_yoy"], 13.2)
+        # 2021-04 ref (for target 2021-05): food 2.4, energy 25.1 (from archive)
+        self.assertEqual(comps["bls_cpi_food_yoy"], 2.4)
+        self.assertEqual(comps["bls_cpi_energy_yoy"], 25.1)
 
-    def test_events_from_m_minus_1(self):
+    def test_events_m_minus_1_through_as_of(self):
+        # D050: events span month M-1 plus early M up to the as_of day (the
+        # CPI release day inside M); all pub_dates are strictly before as_of.
+        as_of = datetime.fromisoformat(
+            self.result["external_events"]["as_of"]["0"])
+        months = set()
         for e in self.events["0"]:
-            self.assertEqual(e["month"] if "month" in e else
-                             e["pub_date"][:7], "2021-04")
+            months.add(e["pub_date"][:7])
+            self.assertLessEqual(e["pub_date"], as_of.date().isoformat())
+        self.assertEqual(months, {"2021-04", "2021-05"})
+
+    def test_as_of_is_cpi_release_day(self):
+        # step 0 (target 2021-05): as_of = the day the 2021-04 CPI was
+        # released, 2021-05-12 23:59:59 ET (D050)
+        as_of = self.result["external_events"]["as_of"]["0"]
+        self.assertTrue(as_of.startswith("2021-05-12T23:59:59"), as_of)
+        targets = self.result["bundle"]["provider_args"]["targets"]
+        self.assertEqual(targets[0]["as_of"], as_of)
 
     def test_gasoline_present(self):
         gas = [r for r in self.records["0"]
