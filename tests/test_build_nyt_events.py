@@ -161,6 +161,16 @@ class TestSelectEvents(unittest.TestCase):
         out = bne.select_events(docs, "2021-06", "sha", max_per_month=3)
         self.assertEqual(len(out), 3)
 
+    def test_top_tier_never_capped(self):
+        # 20 front_page+strong docs exceed max_per_month but must all survive
+        docs = [doc(print_section="A", print_page="1",
+                    headline={"main": f"Inflation story {d}"},
+                    pub_date=f"2021-06-{d:02d}T00:00:00+0000",
+                    web_url=f"https://x/{d}") for d in range(1, 21)]
+        out = bne.select_events(docs, "2021-06", "sha", max_per_month=5)
+        self.assertEqual(len(out), 20)
+        self.assertTrue(all(e["tier"] == "front_page+strong" for e in out))
+
 
 if __name__ == "__main__":
     unittest.main()

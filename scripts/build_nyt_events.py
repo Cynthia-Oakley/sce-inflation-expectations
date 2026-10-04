@@ -20,6 +20,12 @@ Selection tiers, in priority order:
 A broad-only hit away from the front page is NOT selected — that rule is
 what keeps Covid human-interest noise out of the ledger.
 
+The top tier (front_page+strong) is NEVER capped: every A1 article that hits
+a strong keyword is kept (user 2026-10-04). Lower tiers fill the remaining
+budget up to --max-per-month (default 30; the observed top-tier maximum over
+2020-10..2021-12 is 19). A lower tier overflowing the remaining budget keeps
+its most recent items; final output is chronological.
+
 Selection is deliberately inclusive at the strong tier (user 2026-10-03:
 宁宽勿漏, minor noise is acceptable); the ledger keeps headline + abstract
 only, sized for short model contexts. Each event records pub_date, tier,
@@ -205,15 +211,15 @@ def select_events(docs: list[dict], month: str, archive_sha: str,
             "source": "NYT Archive API",
             "archive_sha256": archive_sha,
         })
-    # selection priority follows _TIER_RANK; a tier overflowing the
-    # remaining budget keeps its MOST RECENT items (freshest events matter
-    # most for the survey month). Final output is chronological for
-    # readability.
+    # Rank 0 (front_page+strong) is never capped: every A1 article hitting a
+    # strong keyword is kept. Lower ranks fill the remaining budget up to
+    # max_per_month; overflow keeps the MOST RECENT items (freshest events
+    # matter most for the survey month). Final output is chronological.
     by_rank: dict[int, list[dict]] = {0: [], 1: [], 2: [], 3: []}
     for e in events:
         by_rank[_TIER_RANK[e["tier"]]].append(e)
-    selected: list[dict] = []
-    for rank in (0, 1, 2, 3):
+    selected: list[dict] = sorted(by_rank[0], key=lambda e: e["pub_date"])
+    for rank in (1, 2, 3):
         remaining = max_per_month - len(selected)
         if remaining <= 0:
             break
@@ -228,7 +234,9 @@ def main(argv: list[str] | None = None) -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--months", default=DEFAULT_MONTHS,
                     help=f"month range YYYY-MM..YYYY-MM (default {DEFAULT_MONTHS})")
-    ap.add_argument("--max-per-month", type=int, default=15)
+    ap.add_argument("--max-per-month", type=int, default=30,
+                    help="budget for ranks 1-3; rank 0 (front_page+strong) "
+                         "is always kept in full (default 30)")
     ap.add_argument("--sleep", type=float, default=13.0,
                     help="seconds between API calls (archive limit is 5/min)")
     ap.add_argument("--refresh", action="store_true", help="re-fetch cached months")
