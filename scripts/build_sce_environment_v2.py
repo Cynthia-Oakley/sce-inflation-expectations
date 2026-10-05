@@ -24,10 +24,10 @@ For every target month M (R = M-1, as_of = CPI release day of R):
      change for ref R; published_at = last weekly observation + 3 days
      (documented conservative convention; EIA releases weekly prices within
      days of the Monday observation).
-  4. NYT salient events (build_nyt_events.py ledger): headline + abstract for
-     events published from M-1-01 through the as_of day (i.e. all of month M-1
-     plus early M up to the CPI release). Tier front_page+strong uncapped,
-     other tiers share a budget of 30, hit-density first then recency.
+  4. NYT salient events: M-1 uses the completed-month ledger; early M is
+     selected from the raw Archive API cache after filtering to as_of, so
+     later M articles cannot affect early-M ranking. Tier front_page+strong
+     uncapped; lower tiers share a budget of 30.
 
 Every record carries reference_period / published_at / source and a hard
 assert guarantees published_at < as_of. The v1 bundle is rebuilt in memory
@@ -60,6 +60,7 @@ STUDY_DIR = v1.STUDY_DIR
 COMPONENTS_JSONL = REPO_ROOT / "data/raw/bls_initial_releases/components_cpi.jsonl"
 GAS_WEEKLY_CSV = REPO_ROOT / "data/raw/eia_gasoline/gasoline_retail_regular_weekly.csv"
 NYT_LEDGER = REPO_ROOT / "data/raw/nyt_archive/events_ledger.jsonl"
+NYT_RAW_DIR = REPO_ROOT / "data/raw/nyt_archive"
 
 COMPONENT_MEASURES = {
     "cpi_food_yoy": "CPI-U food 12-month percent change, not seasonally adjusted",
@@ -148,6 +149,26 @@ def load_nyt_events() -> dict[str, list[dict]]:
         e = json.loads(line)
         by_month.setdefault(e["month"], []).append(e)
     return by_month
+
+
+def load_nyt_events_until(month: str, cutoff: date) -> list[dict]:
+    """Rank current-month news after filtering the raw archive by the cutoff.
+
+    The preselected monthly ledger was ranked using articles from the whole
+    month, including articles published after an early-month as_of. Filtering
+    that ledger later would leak future article availability into selection.
+    The raw NYT pub_date is UTC; its date component is used conservatively,
+    so some late-evening ET articles on the cutoff day may be excluded.
+    """
+    path = NYT_RAW_DIR / f"{month}.json"
+    if not path.is_file():
+        raise FileNotFoundError(f"NYT raw month needed for PIT selection: {path}")
+    payload = path.read_bytes()
+    docs = json.loads(payload)["response"]["docs"]
+    early = [doc for doc in docs
+             if (doc.get("pub_date") or "")[:10] <= cutoff.isoformat()]
+    return nyt.select_events(early, month, hashlib.sha256(payload).hexdigest(),
+                             EVENT_BUDGET)
 
 
 def cpi_history_yoy(refs: list[str], raw_root: Path, fetch: bool,
@@ -353,8 +374,9 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
                     tzinfo=v1.RELEASE_TZ).isoformat(),
                 "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
                 "source_url": "https://fred.stlouisfed.org/series/GASREGW",
-                "eligibility": "eligible",
+                "eligibility": "vintage_unverified",
                 "role": "history",
+                "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
                 "note": ("monthly mean of weekly Monday observations; "
                          "published_at = last weekly obs + 3 days (conservative)"),
             })
@@ -372,8 +394,9 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
             "published_at": gas_pub_dt.isoformat(),
             "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
             "source_url": "https://fred.stlouisfed.org/series/GASREGW",
-            "eligibility": "eligible",
+            "eligibility": "vintage_unverified",
             "role": "latest_release",
+            "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
             "note": ("monthly mean of weekly Monday observations; "
                      "published_at = last weekly obs + 3 days (conservative)"),
         }
@@ -409,8 +432,7 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
         #    lower tiers share EVENT_BUDGET (hit-density first, then recency).
         as_of_date = as_of.date()
         pool = list(events_by_month.get(shift_month(target, -1), []))
-        pool.extend(e for e in events_by_month.get(target, [])
-                    if date.fromisoformat(e["pub_date"]) <= as_of_date)
+        pool.extend(load_nyt_events_until(target, as_of_date))
         for e in pool:
             if date.fromisoformat(e["pub_date"]) > as_of_date:
                 raise ValueError(f"event {e['event_id']} after as_of")
@@ -418,6 +440,9 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
                 ("event_id", "pub_date", "tier", "headline", "abstract",
                  "section_name", "web_url", "matched_keywords")}
                for e in _merge_event_pool(pool, EVENT_BUDGET)]
+        for event in evs:
+            event["text_vintage_status"] = "unverified_archive_snapshot"
+            event["selection_cutoff"] = as_of_date.isoformat()
         events_by_step[str(step)] = evs
 
     bundle = base["bundle"]
@@ -427,6 +452,13 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
         {"target_month": t, "as_of": as_of_by_step[str(i)]}
         for i, t in enumerate(targets)]
     bundle["provider_args"]["e_version"] = "v2"
+    bundle["provider_args"]["evidence_class"] = "mixed_source_vintage_status"
+    bundle["provider_args"]["source_status"] = {
+        "bls": "archived_initial_release_verified",
+        "eia_gasoline": "current_fred_snapshot_vintage_unverified",
+        "nyt": "archive_metadata_text_vintage_unverified",
+    }
+    bundle["provider_args"]["excluded_sources"] = ["nyfed_sce"]
     bundle["provider_args"]["e_v2_layers"] = [
         "bls_headline_4_signals", "bls_cpi_components_5",
         "eia_gasoline_retail_level_yoy",
@@ -459,11 +491,12 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
                          "price (EIA via FRED GASREGW).")},
         {"name": "nyt_salient_events",
          "modality": "information", "scope": "macro", "dynamics": "scheduled",
-         "source": "data/raw/nyt_archive/events_ledger.jsonl",
+         "source": "data/raw/nyt_archive/",
          "schema_ref": None,
          "description": ("NYT front-page (A1) + inflation-keyword events, "
                          "headline + abstract, published M-1-01 through the "
-                         "CPI release day inside M (D049d/D050).")},
+                         "CPI release day inside M; current month is ranked "
+                         "only after the as_of date filter (D049d/D050).")},
     ]
 
     external_events = base["external_events"]
@@ -473,6 +506,7 @@ def build_window_v2(targets: list[str], raw_root: Path, fetch: bool,
     external_events["events_by_step"] = events_by_step
     external_events["as_of"] = as_of_by_step
     external_events["e_version"] = "v2"
+    external_events["status"] = "mixed_source_vintage_status"
 
     return {"bundle": bundle, "external_events": external_events,
             "targets": targets}

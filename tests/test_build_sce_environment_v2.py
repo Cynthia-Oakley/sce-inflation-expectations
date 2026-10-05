@@ -23,6 +23,8 @@ INPUTS_PRESENT = (
     and v2.COMPONENTS_JSONL.is_file()
     and v2.GAS_WEEKLY_CSV.is_file()
     and v2.NYT_LEDGER.is_file()
+    and (v2.NYT_RAW_DIR / "2021-05.json").is_file()
+    and (v2.NYT_RAW_DIR / "2021-06.json").is_file()
 )
 
 
@@ -82,6 +84,32 @@ class TestBuildWindowV2(unittest.TestCase):
                                 r["signal_id"])
             for e in self.events[str(step)]:
                 self.assertLessEqual(e["pub_date"], as_of.date().isoformat())
+
+    def test_mixed_source_status_is_explicit(self):
+        args = self.result["bundle"]["provider_args"]
+        self.assertEqual(args["evidence_class"], "mixed_source_vintage_status")
+        self.assertEqual(args["excluded_sources"], ["nyfed_sce"])
+        self.assertIn("vintage_unverified", args["source_status"]["eia_gasoline"])
+        for step in ("0", "1"):
+            gasoline = [r for r in self.records[step]
+                        if r["signal_id"].startswith("eia_gasoline")]
+            self.assertEqual(len(gasoline), 13)
+            self.assertTrue(all(r["eligibility"] == "vintage_unverified"
+                                for r in gasoline))
+            self.assertTrue(all(e["text_vintage_status"] == "unverified_archive_snapshot"
+                                for e in self.events[step]))
+
+    def test_current_month_news_is_ranked_after_cutoff(self):
+        # A full-month top-30 ledger has only 14 pre-cutoff May entries. The
+        # raw pre-cutoff re-ranking keeps 30 eligible May entries available
+        # before the combined two-month event budget is applied.
+        cutoff = datetime.fromisoformat(
+            self.result["external_events"]["as_of"]["0"]).date()
+        early = v2.load_nyt_events_until("2021-05", cutoff)
+        ledger = [e for e in v2.load_nyt_events()["2021-05"]
+                  if e["pub_date"] <= cutoff.isoformat()]
+        self.assertGreater(len(early), len(ledger))
+        self.assertTrue(all(e["pub_date"] <= cutoff.isoformat() for e in early))
 
     def test_component_values_match_raw(self):
         comps = {r["signal_id"].split("_nsa_")[0]: r["value"]

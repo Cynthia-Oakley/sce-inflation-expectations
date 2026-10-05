@@ -238,8 +238,11 @@ class SCEEnvironmentProvider(EnvironmentProvider):
             "signals": list(self.current_signals),
             "events": list(self.current_events),
             "broadcasts": list(self._active_broadcasts),
-            "evidence_class": "historical_official_release_evidence",
-            "excluded_fred": True,
+            "evidence_class": self.bundle.provider_args.get(
+                "evidence_class", "historical_official_release_evidence"),
+            "source_status": self.bundle.provider_args.get("source_status", {}),
+            "excluded_fred": "fred" in self.bundle.provider_args.get(
+                "excluded_sources", ["fred"]),
         }
         out = []
         for aid in agent_ids:

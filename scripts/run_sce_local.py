@@ -33,6 +33,11 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 OFFICIAL_ROOT = REPO_ROOT.parent / "socioverse2_repo"
 STUDY_ID = "sce_inflation_expectations"
+LLM_PROMPT_VERSIONS = (
+    "sce-q8-q9-llm-en-v1",
+    "sce-q8-q9-v2",
+    "sce-q8-q9-v2-abstract",
+)
 
 
 def _git_state(root: Path) -> dict:
@@ -60,6 +65,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--force-export", action="store_true",
                     help="pass --force to export_study_runtime.py (discards derived content)")
     ap.add_argument("--model", default=None, help="requested LLM model (openai mode)")
+    ap.add_argument("--prompt-version", choices=LLM_PROMPT_VERSIONS,
+                    default="sce-q8-q9-llm-en-v1",
+                    help="LLM prompt renderer; defaults to the existing v1 behavior")
     ap.add_argument("--max-calls", type=int, default=100, help="hard LLM call budget")
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--max-tokens", type=int, default=1024)
@@ -118,6 +126,10 @@ def main(argv: list[str] | None = None) -> int:
     env_b = validate_handoff(env_path, EnvironmentBundle)
     pop_b = validate_handoff(pop_path, PopulationBundle)
     sim_c = validate_handoff(sim_path, SimulationConfig)
+    targets = env_b.provider_args.get("targets") or []
+    if sim_c.n_steps != len(targets):
+        sys.exit(f"simulation has {sim_c.n_steps} steps but environment has "
+                 f"{len(targets)} targets; use a matching development artifact")
 
     run_id = args.run_id or (f"sce-local-{args.llm}-"
                              f"{datetime.now(timezone.utc):%Y%m%dT%H%M%SZ}-{uuid.uuid4().hex[:8]}")
@@ -142,7 +154,7 @@ def main(argv: list[str] | None = None) -> int:
         if not model:
             sys.exit("--llm openai needs --model (pin the requested model explicitly).")
         decision_args.update({
-            "prompt_version": "sce-q8-q9-llm-en-v1",
+            "prompt_version": args.prompt_version,
             "model": model,
             "temperature": args.temperature,
             "max_tokens": args.max_tokens,

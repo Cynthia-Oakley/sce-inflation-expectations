@@ -1,0 +1,21 @@
+{
+  "study_id": "sce_inflation_expectations",
+  "n_steps": 2,
+  "seed": 42,
+  "warm_start": null,
+  "decision_ref": "sce_inflation_expectations.decision",
+  "decision_args": {
+    "llm_kind": "scripted",
+    "prompt_version": "sce-q8-q9-scripted-v1",
+    "model_version": "deterministic-scripted-v1",
+    "seed": 42
+  },
+  "collector_ref": "sce_inflation_expectations.collector",
+  "collector_args": {},
+  "interaction_rounds": 1,
+  "engine_args": {
+    "memory_window": 12
+  },
+  "store_ref": "duckdb",
+  "store_args": {}
+}

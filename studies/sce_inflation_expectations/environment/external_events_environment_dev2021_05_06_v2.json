@@ -1,0 +1,2843 @@
+{
+  "study_id": "sce_inflation_expectations",
+  "provider": "user_uploaded_bls_initial_release_json",
+  "dataset_id": "sce_bls_initial_release_e_2021_05_2021_06_v2",
+  "status": "mixed_source_vintage_status",
+  "requested_months": [
+    "2021-05",
+    "2021-06"
+  ],
+  "records_by_step": {
+    "0": [
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_04_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 4.2,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_mom_sa_2021_04_initial",
+        "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+        "value": 0.8,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2021_04_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.1,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-07T08:30:00-04:00",
+        "source_version": "USDL-21-0816",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_nonfarm_payroll_change_sa_2021_04_initial",
+        "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+        "value": 266,
+        "unit": "thousands",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-07T08:30:00-04:00",
+        "source_version": "USDL-21-0816",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2021_04_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 2.4,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_food_at_home_yoy_nsa_2021_04_initial",
+        "measure": "CPI-U food at home 12-month percent change, not seasonally adjusted",
+        "value": 1.2,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2021_04_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": 25.1,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2021_04_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.1,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_gasoline_yoy_nsa_2021_04_initial",
+        "measure": "CPI-U gasoline (all types) 12-month percent change, not seasonally adjusted",
+        "value": 49.6,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_05_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 0.1,
+        "unit": "percent",
+        "reference_period": "2020-05",
+        "published_at": "2020-06-10T08:30:00-04:00",
+        "source_version": "USDL-20-1186",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_06102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_05_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 13.3,
+        "unit": "percent",
+        "reference_period": "2020-05",
+        "published_at": "2020-06-05T08:30:00-04:00",
+        "source_version": "USDL-20-1140",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_06052020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_05_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 4.0,
+        "unit": "percent",
+        "reference_period": "2020-05",
+        "published_at": "2020-06-10T08:30:00-04:00",
+        "source_version": "USDL-20-1186",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_06102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_05_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -18.9,
+        "unit": "percent",
+        "reference_period": "2020-05",
+        "published_at": "2020-06-10T08:30:00-04:00",
+        "source_version": "USDL-20-1186",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_06102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_05_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.5,
+        "unit": "percent",
+        "reference_period": "2020-05",
+        "published_at": "2020-06-10T08:30:00-04:00",
+        "source_version": "USDL-20-1186",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_06102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_05",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 1.869,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-05",
+        "published_at": "2020-05-28T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_06_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 0.6,
+        "unit": "percent",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-14T08:30:00-04:00",
+        "source_version": "USDL-20-1376",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_07142020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_06_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 11.1,
+        "unit": "percent",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-02T08:30:00-04:00",
+        "source_version": "USDL-20-1310",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_07022020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_06_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 4.5,
+        "unit": "percent",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-14T08:30:00-04:00",
+        "source_version": "USDL-20-1376",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_07142020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_06_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -12.6,
+        "unit": "percent",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-14T08:30:00-04:00",
+        "source_version": "USDL-20-1376",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_07142020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_06_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.4,
+        "unit": "percent",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-14T08:30:00-04:00",
+        "source_version": "USDL-20-1376",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_07142020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_06",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.082,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-02T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_07_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1,
+        "unit": "percent",
+        "reference_period": "2020-07",
+        "published_at": "2020-08-12T08:30:00-04:00",
+        "source_version": "USDL-20-1552",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_08122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_07_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 10.2,
+        "unit": "percent",
+        "reference_period": "2020-07",
+        "published_at": "2020-08-07T08:30:00-04:00",
+        "source_version": "USDL-20-1503",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_08072020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_07_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 4.1,
+        "unit": "percent",
+        "reference_period": "2020-07",
+        "published_at": "2020-08-12T08:30:00-04:00",
+        "source_version": "USDL-20-1552",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_08122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_07_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -11.2,
+        "unit": "percent",
+        "reference_period": "2020-07",
+        "published_at": "2020-08-12T08:30:00-04:00",
+        "source_version": "USDL-20-1552",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_08122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_07_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.3,
+        "unit": "percent",
+        "reference_period": "2020-07",
+        "published_at": "2020-08-12T08:30:00-04:00",
+        "source_version": "USDL-20-1552",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_08122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_07",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.183,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-07",
+        "published_at": "2020-07-30T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_08_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.3,
+        "unit": "percent",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-11T08:30:00-04:00",
+        "source_version": "USDL-20-1693",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_09112020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_08_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 8.4,
+        "unit": "percent",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-04T08:30:00-04:00",
+        "source_version": "USDL-20-1650",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_09042020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_08_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 4.1,
+        "unit": "percent",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-11T08:30:00-04:00",
+        "source_version": "USDL-20-1693",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_09112020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_08_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -9.0,
+        "unit": "percent",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-11T08:30:00-04:00",
+        "source_version": "USDL-20-1693",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_09112020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_08_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.3,
+        "unit": "percent",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-11T08:30:00-04:00",
+        "source_version": "USDL-20-1693",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_09112020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_08",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.182,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-03T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_09_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.4,
+        "unit": "percent",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-13T08:30:00-04:00",
+        "source_version": "USDL-20-1925",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_10132020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_09_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 7.9,
+        "unit": "percent",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-02T08:30:00-04:00",
+        "source_version": "USDL-20-1838",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_10022020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_09_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.9,
+        "unit": "percent",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-13T08:30:00-04:00",
+        "source_version": "USDL-20-1925",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_10132020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_09_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -7.7,
+        "unit": "percent",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-13T08:30:00-04:00",
+        "source_version": "USDL-20-1925",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_10132020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_09_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.0,
+        "unit": "percent",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-13T08:30:00-04:00",
+        "source_version": "USDL-20-1925",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_10132020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_09",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.183,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-01T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_10_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.2,
+        "unit": "percent",
+        "reference_period": "2020-10",
+        "published_at": "2020-11-12T08:30:00-05:00",
+        "source_version": "USDL-20-2089",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_11122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_10_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.9,
+        "unit": "percent",
+        "reference_period": "2020-10",
+        "published_at": "2020-11-06T08:30:00-05:00",
+        "source_version": "USDL-20-2033",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_11062020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_10_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.9,
+        "unit": "percent",
+        "reference_period": "2020-10",
+        "published_at": "2020-11-12T08:30:00-05:00",
+        "source_version": "USDL-20-2089",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_11122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_10_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -9.2,
+        "unit": "percent",
+        "reference_period": "2020-10",
+        "published_at": "2020-11-12T08:30:00-05:00",
+        "source_version": "USDL-20-2089",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_11122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_10_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.0,
+        "unit": "percent",
+        "reference_period": "2020-10",
+        "published_at": "2020-11-12T08:30:00-05:00",
+        "source_version": "USDL-20-2089",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_11122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_10",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.158,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-10",
+        "published_at": "2020-10-29T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_11_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.2,
+        "unit": "percent",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-10T08:30:00-05:00",
+        "source_version": "USDL-20-2218",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_11_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.7,
+        "unit": "percent",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-04T08:30:00-05:00",
+        "source_version": "USDL-20-2184",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_12042020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_11_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.7,
+        "unit": "percent",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-10T08:30:00-05:00",
+        "source_version": "USDL-20-2218",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_11_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -9.4,
+        "unit": "percent",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-10T08:30:00-05:00",
+        "source_version": "USDL-20-2218",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_11_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 1.9,
+        "unit": "percent",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-10T08:30:00-05:00",
+        "source_version": "USDL-20-2218",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_11",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.108,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-03T17:00:00-05:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_12_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.4,
+        "unit": "percent",
+        "reference_period": "2020-12",
+        "published_at": "2021-01-13T08:30:00-05:00",
+        "source_version": "USDL-21-0024",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_12_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.7,
+        "unit": "percent",
+        "reference_period": "2020-12",
+        "published_at": "2021-01-08T08:30:00-05:00",
+        "source_version": "USDL-21-0002",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_01082021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_12_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.9,
+        "unit": "percent",
+        "reference_period": "2020-12",
+        "published_at": "2021-01-13T08:30:00-05:00",
+        "source_version": "USDL-21-0024",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_12_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -7.0,
+        "unit": "percent",
+        "reference_period": "2020-12",
+        "published_at": "2021-01-13T08:30:00-05:00",
+        "source_version": "USDL-21-0024",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_12_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 1.8,
+        "unit": "percent",
+        "reference_period": "2020-12",
+        "published_at": "2021-01-13T08:30:00-05:00",
+        "source_version": "USDL-21-0024",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_12",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.195,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-12",
+        "published_at": "2020-12-31T17:00:00-05:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_01_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.4,
+        "unit": "percent",
+        "reference_period": "2021-01",
+        "published_at": "2021-02-10T08:30:00-05:00",
+        "source_version": "USDL-21-0226",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2021_01_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.3,
+        "unit": "percent",
+        "reference_period": "2021-01",
+        "published_at": "2021-02-05T08:30:00-05:00",
+        "source_version": "USDL-21-0158",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_02052021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2021_01_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.8,
+        "unit": "percent",
+        "reference_period": "2021-01",
+        "published_at": "2021-02-10T08:30:00-05:00",
+        "source_version": "USDL-21-0226",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2021_01_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -3.6,
+        "unit": "percent",
+        "reference_period": "2021-01",
+        "published_at": "2021-02-10T08:30:00-05:00",
+        "source_version": "USDL-21-0226",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2021_01_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 1.6,
+        "unit": "percent",
+        "reference_period": "2021-01",
+        "published_at": "2021-02-10T08:30:00-05:00",
+        "source_version": "USDL-21-0226",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2021_01",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.334,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2021-01",
+        "published_at": "2021-01-28T17:00:00-05:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_02_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.7,
+        "unit": "percent",
+        "reference_period": "2021-02",
+        "published_at": "2021-03-10T08:30:00-05:00",
+        "source_version": "USDL-21-0390",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2021_02_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.2,
+        "unit": "percent",
+        "reference_period": "2021-02",
+        "published_at": "2021-03-05T08:30:00-05:00",
+        "source_version": "USDL-21-0365",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_03052021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2021_02_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.6,
+        "unit": "percent",
+        "reference_period": "2021-02",
+        "published_at": "2021-03-10T08:30:00-05:00",
+        "source_version": "USDL-21-0390",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2021_02_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": 2.4,
+        "unit": "percent",
+        "reference_period": "2021-02",
+        "published_at": "2021-03-10T08:30:00-05:00",
+        "source_version": "USDL-21-0390",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2021_02_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 1.5,
+        "unit": "percent",
+        "reference_period": "2021-02",
+        "published_at": "2021-03-10T08:30:00-05:00",
+        "source_version": "USDL-21-0390",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2021_02",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.501,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2021-02",
+        "published_at": "2021-02-25T17:00:00-05:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_03_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 2.6,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-13T08:30:00-04:00",
+        "source_version": "USDL-21-0651",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2021_03_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-02T08:30:00-04:00",
+        "source_version": "USDL-21-0582",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_04022021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2021_03_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.5,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-13T08:30:00-04:00",
+        "source_version": "USDL-21-0651",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2021_03_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": 13.2,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-13T08:30:00-04:00",
+        "source_version": "USDL-21-0651",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2021_03_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 1.7,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-13T08:30:00-04:00",
+        "source_version": "USDL-21-0651",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2021_03",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.81,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-01T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2021_04",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.858,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2021-04",
+        "published_at": "2021-04-29T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "latest_release",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_yoy_2021_04",
+        "measure": "Retail gasoline price 12-month percent change (monthly means)",
+        "value": 55.3,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-04-29T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "latest_release",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      }
+    ],
+    "1": [
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_05_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 5,
+        "unit": "percent",
+        "reference_period": "2021-05",
+        "published_at": "2021-06-10T08:30:00-04:00",
+        "source_version": "USDL-21-1018",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_mom_sa_2021_05_initial",
+        "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+        "value": 0.6,
+        "unit": "percent",
+        "reference_period": "2021-05",
+        "published_at": "2021-06-10T08:30:00-04:00",
+        "source_version": "USDL-21-1018",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2021_05_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 5.8,
+        "unit": "percent",
+        "reference_period": "2021-05",
+        "published_at": "2021-06-04T08:30:00-04:00",
+        "source_version": "USDL-21-0980",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_06042021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_nonfarm_payroll_change_sa_2021_05_initial",
+        "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+        "value": 559,
+        "unit": "thousands",
+        "reference_period": "2021-05",
+        "published_at": "2021-06-04T08:30:00-04:00",
+        "source_version": "USDL-21-0980",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_06042021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2021_05_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 2.2,
+        "unit": "percent",
+        "reference_period": "2021-05",
+        "published_at": "2021-06-10T08:30:00-04:00",
+        "source_version": "USDL-21-1018",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_food_at_home_yoy_nsa_2021_05_initial",
+        "measure": "CPI-U food at home 12-month percent change, not seasonally adjusted",
+        "value": 0.7,
+        "unit": "percent",
+        "reference_period": "2021-05",
+        "published_at": "2021-06-10T08:30:00-04:00",
+        "source_version": "USDL-21-1018",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2021_05_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": 28.5,
+        "unit": "percent",
+        "reference_period": "2021-05",
+        "published_at": "2021-06-10T08:30:00-04:00",
+        "source_version": "USDL-21-1018",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2021_05_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.2,
+        "unit": "percent",
+        "reference_period": "2021-05",
+        "published_at": "2021-06-10T08:30:00-04:00",
+        "source_version": "USDL-21-1018",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_gasoline_yoy_nsa_2021_05_initial",
+        "measure": "CPI-U gasoline (all types) 12-month percent change, not seasonally adjusted",
+        "value": 56.2,
+        "unit": "percent",
+        "reference_period": "2021-05",
+        "published_at": "2021-06-10T08:30:00-04:00",
+        "source_version": "USDL-21-1018",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+        "eligibility": "eligible",
+        "role": "latest_release"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_06_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 0.6,
+        "unit": "percent",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-14T08:30:00-04:00",
+        "source_version": "USDL-20-1376",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_07142020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_06_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 11.1,
+        "unit": "percent",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-02T08:30:00-04:00",
+        "source_version": "USDL-20-1310",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_07022020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_06_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 4.5,
+        "unit": "percent",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-14T08:30:00-04:00",
+        "source_version": "USDL-20-1376",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_07142020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_06_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -12.6,
+        "unit": "percent",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-14T08:30:00-04:00",
+        "source_version": "USDL-20-1376",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_07142020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_06_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.4,
+        "unit": "percent",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-14T08:30:00-04:00",
+        "source_version": "USDL-20-1376",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_07142020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_06",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.082,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-06",
+        "published_at": "2020-07-02T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_07_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1,
+        "unit": "percent",
+        "reference_period": "2020-07",
+        "published_at": "2020-08-12T08:30:00-04:00",
+        "source_version": "USDL-20-1552",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_08122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_07_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 10.2,
+        "unit": "percent",
+        "reference_period": "2020-07",
+        "published_at": "2020-08-07T08:30:00-04:00",
+        "source_version": "USDL-20-1503",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_08072020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_07_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 4.1,
+        "unit": "percent",
+        "reference_period": "2020-07",
+        "published_at": "2020-08-12T08:30:00-04:00",
+        "source_version": "USDL-20-1552",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_08122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_07_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -11.2,
+        "unit": "percent",
+        "reference_period": "2020-07",
+        "published_at": "2020-08-12T08:30:00-04:00",
+        "source_version": "USDL-20-1552",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_08122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_07_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.3,
+        "unit": "percent",
+        "reference_period": "2020-07",
+        "published_at": "2020-08-12T08:30:00-04:00",
+        "source_version": "USDL-20-1552",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_08122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_07",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.183,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-07",
+        "published_at": "2020-07-30T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_08_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.3,
+        "unit": "percent",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-11T08:30:00-04:00",
+        "source_version": "USDL-20-1693",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_09112020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_08_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 8.4,
+        "unit": "percent",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-04T08:30:00-04:00",
+        "source_version": "USDL-20-1650",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_09042020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_08_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 4.1,
+        "unit": "percent",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-11T08:30:00-04:00",
+        "source_version": "USDL-20-1693",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_09112020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_08_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -9.0,
+        "unit": "percent",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-11T08:30:00-04:00",
+        "source_version": "USDL-20-1693",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_09112020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_08_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.3,
+        "unit": "percent",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-11T08:30:00-04:00",
+        "source_version": "USDL-20-1693",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_09112020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_08",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.182,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-08",
+        "published_at": "2020-09-03T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_09_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.4,
+        "unit": "percent",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-13T08:30:00-04:00",
+        "source_version": "USDL-20-1925",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_10132020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_09_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 7.9,
+        "unit": "percent",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-02T08:30:00-04:00",
+        "source_version": "USDL-20-1838",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_10022020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_09_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.9,
+        "unit": "percent",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-13T08:30:00-04:00",
+        "source_version": "USDL-20-1925",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_10132020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_09_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -7.7,
+        "unit": "percent",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-13T08:30:00-04:00",
+        "source_version": "USDL-20-1925",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_10132020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_09_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.0,
+        "unit": "percent",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-13T08:30:00-04:00",
+        "source_version": "USDL-20-1925",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_10132020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_09",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.183,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-09",
+        "published_at": "2020-10-01T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_10_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.2,
+        "unit": "percent",
+        "reference_period": "2020-10",
+        "published_at": "2020-11-12T08:30:00-05:00",
+        "source_version": "USDL-20-2089",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_11122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_10_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.9,
+        "unit": "percent",
+        "reference_period": "2020-10",
+        "published_at": "2020-11-06T08:30:00-05:00",
+        "source_version": "USDL-20-2033",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_11062020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_10_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.9,
+        "unit": "percent",
+        "reference_period": "2020-10",
+        "published_at": "2020-11-12T08:30:00-05:00",
+        "source_version": "USDL-20-2089",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_11122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_10_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -9.2,
+        "unit": "percent",
+        "reference_period": "2020-10",
+        "published_at": "2020-11-12T08:30:00-05:00",
+        "source_version": "USDL-20-2089",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_11122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_10_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.0,
+        "unit": "percent",
+        "reference_period": "2020-10",
+        "published_at": "2020-11-12T08:30:00-05:00",
+        "source_version": "USDL-20-2089",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_11122020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_10",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.158,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-10",
+        "published_at": "2020-10-29T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_11_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.2,
+        "unit": "percent",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-10T08:30:00-05:00",
+        "source_version": "USDL-20-2218",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_11_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.7,
+        "unit": "percent",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-04T08:30:00-05:00",
+        "source_version": "USDL-20-2184",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_12042020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_11_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.7,
+        "unit": "percent",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-10T08:30:00-05:00",
+        "source_version": "USDL-20-2218",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_11_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -9.4,
+        "unit": "percent",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-10T08:30:00-05:00",
+        "source_version": "USDL-20-2218",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_11_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 1.9,
+        "unit": "percent",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-10T08:30:00-05:00",
+        "source_version": "USDL-20-2218",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_11",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.108,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-11",
+        "published_at": "2020-12-03T17:00:00-05:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_12_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.4,
+        "unit": "percent",
+        "reference_period": "2020-12",
+        "published_at": "2021-01-13T08:30:00-05:00",
+        "source_version": "USDL-21-0024",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2020_12_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.7,
+        "unit": "percent",
+        "reference_period": "2020-12",
+        "published_at": "2021-01-08T08:30:00-05:00",
+        "source_version": "USDL-21-0002",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_01082021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2020_12_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.9,
+        "unit": "percent",
+        "reference_period": "2020-12",
+        "published_at": "2021-01-13T08:30:00-05:00",
+        "source_version": "USDL-21-0024",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2020_12_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -7.0,
+        "unit": "percent",
+        "reference_period": "2020-12",
+        "published_at": "2021-01-13T08:30:00-05:00",
+        "source_version": "USDL-21-0024",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2020_12_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 1.8,
+        "unit": "percent",
+        "reference_period": "2020-12",
+        "published_at": "2021-01-13T08:30:00-05:00",
+        "source_version": "USDL-21-0024",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2020_12",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.195,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2020-12",
+        "published_at": "2020-12-31T17:00:00-05:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_01_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.4,
+        "unit": "percent",
+        "reference_period": "2021-01",
+        "published_at": "2021-02-10T08:30:00-05:00",
+        "source_version": "USDL-21-0226",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2021_01_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.3,
+        "unit": "percent",
+        "reference_period": "2021-01",
+        "published_at": "2021-02-05T08:30:00-05:00",
+        "source_version": "USDL-21-0158",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_02052021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2021_01_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.8,
+        "unit": "percent",
+        "reference_period": "2021-01",
+        "published_at": "2021-02-10T08:30:00-05:00",
+        "source_version": "USDL-21-0226",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2021_01_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": -3.6,
+        "unit": "percent",
+        "reference_period": "2021-01",
+        "published_at": "2021-02-10T08:30:00-05:00",
+        "source_version": "USDL-21-0226",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2021_01_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 1.6,
+        "unit": "percent",
+        "reference_period": "2021-01",
+        "published_at": "2021-02-10T08:30:00-05:00",
+        "source_version": "USDL-21-0226",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2021_01",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.334,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2021-01",
+        "published_at": "2021-01-28T17:00:00-05:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_02_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 1.7,
+        "unit": "percent",
+        "reference_period": "2021-02",
+        "published_at": "2021-03-10T08:30:00-05:00",
+        "source_version": "USDL-21-0390",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2021_02_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.2,
+        "unit": "percent",
+        "reference_period": "2021-02",
+        "published_at": "2021-03-05T08:30:00-05:00",
+        "source_version": "USDL-21-0365",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_03052021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2021_02_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.6,
+        "unit": "percent",
+        "reference_period": "2021-02",
+        "published_at": "2021-03-10T08:30:00-05:00",
+        "source_version": "USDL-21-0390",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2021_02_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": 2.4,
+        "unit": "percent",
+        "reference_period": "2021-02",
+        "published_at": "2021-03-10T08:30:00-05:00",
+        "source_version": "USDL-21-0390",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2021_02_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 1.5,
+        "unit": "percent",
+        "reference_period": "2021-02",
+        "published_at": "2021-03-10T08:30:00-05:00",
+        "source_version": "USDL-21-0390",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2021_02",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.501,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2021-02",
+        "published_at": "2021-02-25T17:00:00-05:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_03_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 2.6,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-13T08:30:00-04:00",
+        "source_version": "USDL-21-0651",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2021_03_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-02T08:30:00-04:00",
+        "source_version": "USDL-21-0582",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_04022021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2021_03_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 3.5,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-13T08:30:00-04:00",
+        "source_version": "USDL-21-0651",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2021_03_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": 13.2,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-13T08:30:00-04:00",
+        "source_version": "USDL-21-0651",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2021_03_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 1.7,
+        "unit": "percent",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-13T08:30:00-04:00",
+        "source_version": "USDL-21-0651",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2021_03",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.81,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2021-03",
+        "published_at": "2021-04-01T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_04_initial",
+        "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+        "value": 4.2,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_unemployment_rate_sa_2021_04_initial",
+        "measure": "Civilian unemployment rate, seasonally adjusted",
+        "value": 6.1,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-07T08:30:00-04:00",
+        "source_version": "USDL-21-0816",
+        "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_food_yoy_nsa_2021_04_initial",
+        "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+        "value": 2.4,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_energy_yoy_nsa_2021_04_initial",
+        "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+        "value": 25.1,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "bls_cpi_shelter_yoy_nsa_2021_04_initial",
+        "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+        "value": 2.1,
+        "unit": "percent",
+        "reference_period": "2021-04",
+        "published_at": "2021-05-12T08:30:00-04:00",
+        "source_version": "USDL-21-0857",
+        "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+        "eligibility": "eligible",
+        "role": "history"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2021_04",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.858,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2021-04",
+        "published_at": "2021-04-29T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "history",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_mean_2021_05",
+        "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+        "value": 2.985,
+        "unit": "dollars_per_gallon",
+        "reference_period": "2021-05",
+        "published_at": "2021-06-03T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "latest_release",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      },
+      {
+        "signal_id": "eia_gasoline_retail_regular_yoy_2021_05",
+        "measure": "Retail gasoline price 12-month percent change (monthly means)",
+        "value": 59.7,
+        "unit": "percent",
+        "reference_period": "2021-05",
+        "published_at": "2021-06-03T17:00:00-04:00",
+        "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+        "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+        "eligibility": "vintage_unverified",
+        "role": "latest_release",
+        "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+        "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)"
+      }
+    ]
+  },
+  "as_of": {
+    "0": "2021-05-12T23:59:59-04:00",
+    "1": "2021-06-10T23:59:59-04:00"
+  },
+  "fred_isolation": {
+    "status": "unknown_as_of",
+    "used_in_b": false,
+    "reason": "Event payload lacked published_at/release_date/vintage/source_version."
+  },
+  "events_by_step": {
+    "0": [
+      {
+        "event_id": "0f93b83820c561bd",
+        "pub_date": "2021-04-02",
+        "tier": "front_page+strong",
+        "headline": "Strong U.S. Job Growth in March Fuels Optimism on Recovery",
+        "abstract": "The gain of 916,000 was the biggest since August, and unemployment fell to 6 percent. Barring a setback in fighting the virus, the outlook is bullish.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/04/02/business/economy/jobs-report-march.html",
+        "matched_keywords": [
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "5ac5b75017b0b900",
+        "pub_date": "2021-04-12",
+        "tier": "strong_keyword",
+        "headline": "Amid a chip shortage, the White House gathers business leaders to discuss supplies.",
+        "abstract": "The global semiconductor shortage has disrupted auto production in the United States and elsewhere.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/04/12/business/semiconductor-chip-shortage.html",
+        "matched_keywords": [
+          "shortage",
+          "semiconductor",
+          "chip shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "932defa2cc06b5d5",
+        "pub_date": "2021-04-15",
+        "tier": "front_page+strong",
+        "headline": "Signs of Economic Hope Are Growing, Some With Superlatives",
+        "abstract": "Soaring retail sales and a sharp drop in jobless claims are the latest reflection of a quickening recovery and suggest a year of remarkable growth.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/04/15/business/economy/economy-retail-sales-unemployment-pandemic.html",
+        "matched_keywords": [
+          "jobless"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "26f6ebb8a6252a54",
+        "pub_date": "2021-04-15",
+        "tier": "strong_keyword",
+        "headline": "‘It’s a Roller-Coaster Ride’: Global Chip Shortage Is Making Industries Sweat",
+        "abstract": "The internet-connected world is completely dependent on the production of semiconductors. That’s become a problem now that supplies are running short.",
+        "section_name": "Technology",
+        "web_url": "https://www.nytimes.com/2021/04/15/technology/computer-chip-semiconductor-shortage.html",
+        "matched_keywords": [
+          "shortage",
+          "semiconductor",
+          "chip shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "c1fa71b61ffd3aa1",
+        "pub_date": "2021-04-16",
+        "tier": "strong_keyword",
+        "headline": "The Fed’s newest governor sees America’s inflation pop as temporary.",
+        "abstract": "Christopher Waller said he expected inflation to ease once stimulus checks have been spent and supply chain problems are addressed.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/04/16/business/economy/christopher-waller-inflation.html",
+        "matched_keywords": [
+          "inflation",
+          "supply chain",
+          "stimulus",
+          "stimulus check"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "c7c1e7e2a2b597aa",
+        "pub_date": "2021-04-22",
+        "tier": "front_page+strong",
+        "headline": "Sexual Assault Allegations Against Biographer Halt Shipping of His Roth Book",
+        "abstract": "W.W. Norton, citing the accusations that the author, Blake Bailey, faces, said it would stop shipping and promoting his new best-selling book.",
+        "section_name": "Books",
+        "web_url": "https://www.nytimes.com/2021/04/21/books/philip-roth-blake-bailey.html",
+        "matched_keywords": [
+          "shipping"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "f517c12612c7b008",
+        "pub_date": "2021-04-23",
+        "tier": "front_page+strong",
+        "headline": "A Tiny Part’s Big Ripple: Global Chip Shortage Hobbles the Auto Industry",
+        "abstract": "Almost every carmaker has had to curtail production, hampering the economic recovery.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/04/23/business/auto-semiconductors-general-motors-mercedes.html",
+        "matched_keywords": [
+          "shortage",
+          "chip shortage",
+          "economic recovery"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "5c64efb227cab39f",
+        "pub_date": "2021-04-25",
+        "tier": "front_page+strong",
+        "headline": "Federal Aid to Renters Moves Slowly, Leaving Many at Risk",
+        "abstract": "Congress allocated $25 billion in December and another $21 billion in March to help people who fell behind on rent during the pandemic. Little has reached landlords or tenants.",
+        "section_name": "U.S.",
+        "web_url": "https://www.nytimes.com/2021/04/25/us/politics/rental-assistance-pandemic.html",
+        "matched_keywords": [
+          "rent"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "cba9d7ef14dc4668",
+        "pub_date": "2021-04-26",
+        "tier": "strong_keyword",
+        "headline": "5 Takeaways From the New Food Allergy Law",
+        "abstract": "Sesame becomes a “major allergen,” joining milk, eggs, fish, shellfish, tree nuts, peanuts, wheat and soybeans.",
+        "section_name": "Well",
+        "web_url": "https://www.nytimes.com/2021/04/26/well/eat/food-allergy-law-sesame.html",
+        "matched_keywords": [
+          "wheat",
+          "soybean"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "fbdf20748e332da6",
+        "pub_date": "2021-04-27",
+        "tier": "strong_keyword",
+        "headline": "Biden Orders $15 Minimum Wage for Federal Contractors",
+        "abstract": "The current minimum, $10.95, has prevailed since an executive order in 2014, including adjustments in the interim for inflation.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/04/27/business/economy/biden-minimum-wage-federal-contractors.html",
+        "matched_keywords": [
+          "inflation",
+          "wage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "459b3503807121e6",
+        "pub_date": "2021-04-28",
+        "tier": "strong_keyword",
+        "headline": "Fed Leaves Interest Rates Unchanged as Economy Begins to Heal",
+        "abstract": "The Federal Reserve said the economy had “strengthened” but opted to continue providing support while playing down a rise in inflation.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/04/28/business/economy/fed-leaves-interest-rates-unchanged-as-economy-begins-to-heal.html",
+        "matched_keywords": [
+          "inflation",
+          "federal reserve",
+          "interest rate"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "08f914bc0d7a7d08",
+        "pub_date": "2021-04-28",
+        "tier": "strong_keyword",
+        "headline": "The Fed’s patient approach could be tested soon.",
+        "abstract": "As unemployment drops and inflation picks up, the Fed could face growing calls to dial back its economic support.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/04/28/business/fed-meeting-interest-rates.html",
+        "matched_keywords": [
+          "inflation",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "ed96b578abcfb6b8",
+        "pub_date": "2021-04-28",
+        "tier": "strong_keyword",
+        "headline": "A key question: How much inflation is too much?",
+        "abstract": "The Fed thinks price increases will be temporary. Some economists are worried they won’t be.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/04/28/business/federal-reserve-inflation.html",
+        "matched_keywords": [
+          "inflation",
+          "price increase"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "4a279cfa11613c23",
+        "pub_date": "2021-04-28",
+        "tier": "strong_keyword",
+        "headline": "Global chip shortage will slash Ford’s production by about half in the second quarter.",
+        "abstract": "Ford expects the shortage to lower its operating profit this year by $2.5 billion, to between $5.5 billion to $6.5 billion.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/04/28/business/ford-profit-earnings.html",
+        "matched_keywords": [
+          "shortage",
+          "chip shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "2cb5cc84f8f3ff6e",
+        "pub_date": "2021-04-29",
+        "tier": "strong_keyword",
+        "headline": "Auto sales helped get the American economy off to a good start in 2021.",
+        "abstract": "Stimulus payments, pent-up demand and low interest rates lifted sales and prices.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/04/29/business/auto-sales-gdp.html",
+        "matched_keywords": [
+          "stimulus",
+          "interest rate"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "22e788069e0b4ed5",
+        "pub_date": "2021-04-30",
+        "tier": "strong_keyword",
+        "headline": "Renovating Your Kitchen This Summer? Proceed With Caution.",
+        "abstract": "Supply chain problems and labor shortages have made home improvement projects even more complicated.",
+        "section_name": "Real Estate",
+        "web_url": "https://www.nytimes.com/2021/04/30/realestate/kitchen-renovation.html",
+        "matched_keywords": [
+          "supply chain",
+          "shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "fda9c294689876df",
+        "pub_date": "2021-05-02",
+        "tier": "front_page+strong",
+        "headline": "‘We’re Suffering’: How Remote Work Is Killing Manhattan’s Storefronts",
+        "abstract": "Landlords cut small retailers a break on rent during the pandemic, but stores are still struggling because too few office workers and tourists have returned.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/02/business/economy/remote-work-manhattan-storefronts.html",
+        "matched_keywords": [
+          "rent"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "fc4802132f3f1cc5",
+        "pub_date": "2021-05-03",
+        "tier": "front_page+strong",
+        "headline": "Widespread Commodity Shortages Raise Inflation Fears",
+        "abstract": "For products as diverse as lumber and microchips, price increases are filtering through the economy.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/03/business/economy/commodity-shortages-inflation.html",
+        "matched_keywords": [
+          "inflation",
+          "price increase",
+          "shortage",
+          "lumber",
+          "commodity"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "d46397ac7820b240",
+        "pub_date": "2021-05-06",
+        "tier": "strong_keyword",
+        "headline": "Who’s Afraid of the Big Bad Boom?",
+        "abstract": "Rising prices here and there aren’t a sign of runaway inflation.",
+        "section_name": "Opinion",
+        "web_url": "https://www.nytimes.com/2021/05/06/opinion/us-inflation-federal-reserve.html",
+        "matched_keywords": [
+          "inflation",
+          "rising prices"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "932ac48feac3fd64",
+        "pub_date": "2021-05-07",
+        "tier": "front_page+strong",
+        "headline": "Biden and Republicans Spar Over Unemployment as Job Gains Disappoint",
+        "abstract": "The president said he saw no measurable evidence that a $300 federal boost in unemployment benefits was hurting the labor market, amid criticism from conservatives and business groups.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/07/business/biden-republicans-jobs.html",
+        "matched_keywords": [
+          "unemployment benefits",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "327647e268f2ddf5",
+        "pub_date": "2021-05-07",
+        "tier": "strong_keyword",
+        "headline": "Despite Chip Shortage, Chip Innovation Is Booming",
+        "abstract": "While a variety of industries struggle with supplies, semiconductor experts say there are plenty of new ideas and, most surprising, start-ups.",
+        "section_name": "Technology",
+        "web_url": "https://www.nytimes.com/2021/05/07/technology/semiconductor-chip-innovation-boom.html",
+        "matched_keywords": [
+          "shortage",
+          "semiconductor",
+          "chip shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "bc898c10ad1f62d8",
+        "pub_date": "2021-05-07",
+        "tier": "strong_keyword",
+        "headline": "New ideas are flooding into the semiconductor industry even as chip shortages remain.",
+        "abstract": "Even as a chip shortage is causing trouble for all sorts of industries, the semiconductor field is entering a surprising new era of creativity, from industry giants to innovative start-ups seeing a spike in funding from venture capitalists that traditionally avoided chip makers, Don Clark reports for The New York Times.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/07/business/new-ideas-are-flooding-into-the-semiconductor-industry-even-as-chip-shortages-remain.html",
+        "matched_keywords": [
+          "shortage",
+          "semiconductor",
+          "chip shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "d853ede923ef291f",
+        "pub_date": "2021-05-07",
+        "tier": "strong_keyword",
+        "headline": "The weak jobs report could help the Fed justify its patient approach to its policies.",
+        "abstract": "Officials have said that they want to see real, not just forecast, progress toward full employment and stable inflation.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/07/business/jobs-report-fed-interest-rates.html",
+        "matched_keywords": [
+          "inflation",
+          "jobs report"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "ae2d148ad2582c6b",
+        "pub_date": "2021-05-07",
+        "tier": "strong_keyword",
+        "headline": "Biden and Republicans spar over unemployment as the jobs report disappoints.",
+        "abstract": "Biden administration officials say there is no evidence that hiring has been slowed by the additional $300 per week that unemployed Americans are currently eligible to receive.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/07/business/biden-economy.html",
+        "matched_keywords": [
+          "jobs report",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "8bf3e005cca10ead",
+        "pub_date": "2021-05-10",
+        "tier": "strong_keyword",
+        "headline": "Biden Defends Unemployment Benefits, Provided Workers Accept Job Offers",
+        "abstract": "The president’s comments and a raft of policy announcements were a pushback to Republican criticism of his economic plan after a disappointing jobs report on Friday.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/10/business/economy/biden-unemployment-benefits.html",
+        "matched_keywords": [
+          "unemployment benefits",
+          "jobs report",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "06af4ac33ead8996",
+        "pub_date": "2021-05-11",
+        "tier": "strong_keyword",
+        "headline": "Semiconductor makers and users form a group to push for chip funding.",
+        "abstract": "The new coalition comes amid a global semiconductor shortage that has caused disruptions throughout the economy.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/11/business/semiconductor-shortage.html",
+        "matched_keywords": [
+          "shortage",
+          "semiconductor"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "858ee083c1d654b0",
+        "pub_date": "2021-05-12",
+        "tier": "front_page+strong",
+        "headline": "Jump in Consumer Prices Raises Stakes in Inflation Debate",
+        "abstract": "The increase in the Labor Department’s Consumer Price Index was well above forecasts. A top Fed official acknowledged the surprise but said, “This is one data point.”",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/12/business/inflation-consumer-price-index-april.html",
+        "matched_keywords": [
+          "inflation",
+          "consumer price"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "6fbe13e2889baff3",
+        "pub_date": "2021-05-12",
+        "tier": "front_page+strong",
+        "headline": "Gasoline Buying Fever Rages as Pipeline Company Begins Restart",
+        "abstract": "While drivers scrambled for fuel, Colonial Pipeline said supplies would resume flowing from Texas to the East Coast in the coming days.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/12/business/energy-environment/pipeline-shutdown-latest-news.html",
+        "matched_keywords": [
+          "gasoline"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "36dd7d9bc024943c",
+        "pub_date": "2021-05-12",
+        "tier": "strong_keyword",
+        "headline": "Panicking About That Jobs Report? Breathe. Look at the Data.",
+        "abstract": "Federal unemployment benefits are an unlikely reason for the underwhelming April jobs numbers.",
+        "section_name": "Opinion",
+        "web_url": "https://www.nytimes.com/2021/05/12/opinion/panicking-about-that-jobs-report-breathe-look-at-the-data.html",
+        "matched_keywords": [
+          "unemployment benefits",
+          "jobs report",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      },
+      {
+        "event_id": "b7c546f6b1412564",
+        "pub_date": "2021-05-12",
+        "tier": "strong_keyword",
+        "headline": "Panic buying worsens gas shortages throughout the Southeast as officials ask for calm.",
+        "abstract": "Several thousand gas stations across the nation have run out of fuel, and hundreds of others are limiting sales. “The oil and gasoline is there,” one energy expert said.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/12/business/energy-environment/gas-shortage.html",
+        "matched_keywords": [
+          "gasoline",
+          "shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-05-12"
+      }
+    ],
+    "1": [
+      {
+        "event_id": "fda9c294689876df",
+        "pub_date": "2021-05-02",
+        "tier": "front_page+strong",
+        "headline": "‘We’re Suffering’: How Remote Work Is Killing Manhattan’s Storefronts",
+        "abstract": "Landlords cut small retailers a break on rent during the pandemic, but stores are still struggling because too few office workers and tourists have returned.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/02/business/economy/remote-work-manhattan-storefronts.html",
+        "matched_keywords": [
+          "rent"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "fc4802132f3f1cc5",
+        "pub_date": "2021-05-03",
+        "tier": "front_page+strong",
+        "headline": "Widespread Commodity Shortages Raise Inflation Fears",
+        "abstract": "For products as diverse as lumber and microchips, price increases are filtering through the economy.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/03/business/economy/commodity-shortages-inflation.html",
+        "matched_keywords": [
+          "inflation",
+          "price increase",
+          "shortage",
+          "lumber",
+          "commodity"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "932ac48feac3fd64",
+        "pub_date": "2021-05-07",
+        "tier": "front_page+strong",
+        "headline": "Biden and Republicans Spar Over Unemployment as Job Gains Disappoint",
+        "abstract": "The president said he saw no measurable evidence that a $300 federal boost in unemployment benefits was hurting the labor market, amid criticism from conservatives and business groups.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/07/business/biden-republicans-jobs.html",
+        "matched_keywords": [
+          "unemployment benefits",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "327647e268f2ddf5",
+        "pub_date": "2021-05-07",
+        "tier": "strong_keyword",
+        "headline": "Despite Chip Shortage, Chip Innovation Is Booming",
+        "abstract": "While a variety of industries struggle with supplies, semiconductor experts say there are plenty of new ideas and, most surprising, start-ups.",
+        "section_name": "Technology",
+        "web_url": "https://www.nytimes.com/2021/05/07/technology/semiconductor-chip-innovation-boom.html",
+        "matched_keywords": [
+          "shortage",
+          "semiconductor",
+          "chip shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "bc898c10ad1f62d8",
+        "pub_date": "2021-05-07",
+        "tier": "strong_keyword",
+        "headline": "New ideas are flooding into the semiconductor industry even as chip shortages remain.",
+        "abstract": "Even as a chip shortage is causing trouble for all sorts of industries, the semiconductor field is entering a surprising new era of creativity, from industry giants to innovative start-ups seeing a spike in funding from venture capitalists that traditionally avoided chip makers, Don Clark reports for The New York Times.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/07/business/new-ideas-are-flooding-into-the-semiconductor-industry-even-as-chip-shortages-remain.html",
+        "matched_keywords": [
+          "shortage",
+          "semiconductor",
+          "chip shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "8bf3e005cca10ead",
+        "pub_date": "2021-05-10",
+        "tier": "strong_keyword",
+        "headline": "Biden Defends Unemployment Benefits, Provided Workers Accept Job Offers",
+        "abstract": "The president’s comments and a raft of policy announcements were a pushback to Republican criticism of his economic plan after a disappointing jobs report on Friday.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/10/business/economy/biden-unemployment-benefits.html",
+        "matched_keywords": [
+          "unemployment benefits",
+          "jobs report",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "858ee083c1d654b0",
+        "pub_date": "2021-05-12",
+        "tier": "front_page+strong",
+        "headline": "Jump in Consumer Prices Raises Stakes in Inflation Debate",
+        "abstract": "The increase in the Labor Department’s Consumer Price Index was well above forecasts. A top Fed official acknowledged the surprise but said, “This is one data point.”",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/12/business/inflation-consumer-price-index-april.html",
+        "matched_keywords": [
+          "inflation",
+          "consumer price"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "6fbe13e2889baff3",
+        "pub_date": "2021-05-12",
+        "tier": "front_page+strong",
+        "headline": "Gasoline Buying Fever Rages as Pipeline Company Begins Restart",
+        "abstract": "While drivers scrambled for fuel, Colonial Pipeline said supplies would resume flowing from Texas to the East Coast in the coming days.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/12/business/energy-environment/pipeline-shutdown-latest-news.html",
+        "matched_keywords": [
+          "gasoline"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "36dd7d9bc024943c",
+        "pub_date": "2021-05-12",
+        "tier": "strong_keyword",
+        "headline": "Panicking About That Jobs Report? Breathe. Look at the Data.",
+        "abstract": "Federal unemployment benefits are an unlikely reason for the underwhelming April jobs numbers.",
+        "section_name": "Opinion",
+        "web_url": "https://www.nytimes.com/2021/05/12/opinion/panicking-about-that-jobs-report-breathe-look-at-the-data.html",
+        "matched_keywords": [
+          "unemployment benefits",
+          "jobs report",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "d1749285558864db",
+        "pub_date": "2021-05-17",
+        "tier": "strong_keyword",
+        "headline": "Inflation Fears Abound as Gas and Lumber Shortages Bite. Should the Fed Worry?",
+        "abstract": "Federal Reserve officials believe low and stable price expectations give them room to heal the job market. But what if outlooks change?",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/17/business/economy/fed-inflation.html",
+        "matched_keywords": [
+          "inflation",
+          "shortage",
+          "lumber",
+          "federal reserve"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "59cb1e20c16475ab",
+        "pub_date": "2021-05-18",
+        "tier": "strong_keyword",
+        "headline": "Texas, Indiana and Oklahoma join states cutting off pandemic unemployment benefits.",
+        "abstract": "The Republican-run states are joining a movement based on the contention that jobless pay is deterring people from seeking work.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/18/business/economy/texas-indiana-oklahoma-unemployment-benefits.html",
+        "matched_keywords": [
+          "unemployment benefits",
+          "jobless",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "aae3fee02a078ab2",
+        "pub_date": "2021-05-21",
+        "tier": "front_page+strong",
+        "headline": "Soaring Prices Herald Boom Time for Steel Makers",
+        "abstract": "A rebounding economy and Trump-era tariffs have helped drive the price of domestic steel to record highs.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/21/business/steel-prices-boom.html",
+        "matched_keywords": [
+          "tariff"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "52985a96ad0f4b2e",
+        "pub_date": "2021-05-22",
+        "tier": "front_page+strong",
+        "headline": "Defying Critics, Biden and the Fed Insist the Economic Recovery Is on Track",
+        "abstract": "Confidence from the White House runs counter to warnings from Republicans, some investors and even a few liberal economists.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/22/business/biden-economy.html",
+        "matched_keywords": [
+          "economic recovery"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "3a4d3a72e0d25d8f",
+        "pub_date": "2021-05-24",
+        "tier": "strong_keyword",
+        "headline": "The pandemic has taken a devastating toll on undocumented women in New York.",
+        "abstract": "The nearly half a million undocumented immigrants who live in New York City were devastated by the pandemic, stricken by the virus and the economic fallout it caused and ineligible for stimulus checks and the unemployment benefits that kept many New Yorkers afloat.",
+        "section_name": "World",
+        "web_url": "https://www.nytimes.com/2021/05/24/world/the-pandemic-has-taken-a-devastating-toll-on-undocumented-women-in-new-york.html",
+        "matched_keywords": [
+          "stimulus",
+          "stimulus check",
+          "unemployment benefits",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "5fc896bc0f09674e",
+        "pub_date": "2021-05-30",
+        "tier": "front_page+strong",
+        "headline": "The Luckiest Workers in America? Teenagers.",
+        "abstract": "Teens are picking up jobs — and higher wages — as companies scramble to hire. But that trend could have a downside.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/05/30/business/economy/pandemic-jobs-teenagers.html",
+        "matched_keywords": [
+          "wage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "91fbf81f4b7875db",
+        "pub_date": "2021-06-01",
+        "tier": "front_page+strong",
+        "headline": "How the World Ran Out of Everything",
+        "abstract": "Global shortages of many goods reflect the disruption of the pandemic combined with decades of companies limiting their inventories.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/06/01/business/coronavirus-global-shortages.html",
+        "matched_keywords": [
+          "shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "d62aada4c618bd7b",
+        "pub_date": "2021-06-01",
+        "tier": "front_page+strong",
+        "headline": "N.Y.C. Mayor’s Race Tightens Ahead of Crucial In-Person Debate",
+        "abstract": "Democratic hopefuls sharpened attack lines as they tried to draw contrasts on critical issues like policing and the city’s economic recovery.",
+        "section_name": "New York",
+        "web_url": "https://www.nytimes.com/2021/06/01/nyregion/mayor-race-debate-nyc.html",
+        "matched_keywords": [
+          "economic recovery"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "19e01c0e5f7be61c",
+        "pub_date": "2021-06-01",
+        "tier": "strong_keyword",
+        "headline": "OPEC Plus agrees to add production as oil prices climb.",
+        "abstract": "The member states of the Organization of the Petroleum Exporting Countries and allied producers like Russia confirmed a plan to increase output in June and July, reflecting growing demand for petroleum.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/06/01/business/Opec-plus-oil-prices.html",
+        "matched_keywords": [
+          "oil price",
+          "opec"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "8696b2aa48f26168",
+        "pub_date": "2021-06-02",
+        "tier": "strong_keyword",
+        "headline": "Stimulus Checks Substantially Reduced Hardship, Study Shows",
+        "abstract": "Researchers found that sharp declines in food shortages, financial instability and anxiety coincided with the two most recent rounds of payments.",
+        "section_name": "U.S.",
+        "web_url": "https://www.nytimes.com/2021/06/02/us/politics/stimulus-checks-economic-hardship.html",
+        "matched_keywords": [
+          "shortage",
+          "stimulus",
+          "stimulus check"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "afdc2c4978cb3bdb",
+        "pub_date": "2021-06-03",
+        "tier": "strong_keyword",
+        "headline": "The U.S. Economy Is Sending Confusing Signals. What’s Going On?",
+        "abstract": "The ebbing of the pandemic has brought price increases, supply bottlenecks and labor shortages. Key indicators will show whether it’s just a stage.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/06/03/business/economy/us-economic-recovery.html",
+        "matched_keywords": [
+          "price increase",
+          "shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "fdba76b853df6556",
+        "pub_date": "2021-06-03",
+        "tier": "strong_keyword",
+        "headline": "Wage Growth Is Holding Up in Aftermath of the Economic Crash",
+        "abstract": "The pay increases are giving Democrats a bragging point. But it comes with risks: Gains could fade, or spark quicker price inflation.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/06/03/business/economy/wage-growth-pandemic.html",
+        "matched_keywords": [
+          "inflation",
+          "wage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "3c6eef63b0ba2529",
+        "pub_date": "2021-06-03",
+        "tier": "strong_keyword",
+        "headline": "G.M. will increase production of cars and trucks as the chip shortage eases.",
+        "abstract": "The automaker said its financial results in the first half of the year would be “significantly better” than it had previously forecast.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/06/03/business/general-motors-chip-shortage.html",
+        "matched_keywords": [
+          "shortage",
+          "chip shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "6b66cefcb796e98c",
+        "pub_date": "2021-06-04",
+        "tier": "front_page+strong",
+        "headline": "To Keep Their Son Alive, They Sleep in Shifts. And Hope a Nurse Shows Up.",
+        "abstract": "A nursing shortage — driven by the pandemic — has made life miserable for parents with profoundly disabled children. “What if I’m so exhausted that I make a mistake?”",
+        "section_name": "Health",
+        "web_url": "https://www.nytimes.com/2021/06/04/health/nursing-shortage-disabled-children.html",
+        "matched_keywords": [
+          "shortage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "44ce54f63f2e8659",
+        "pub_date": "2021-06-04",
+        "tier": "strong_keyword",
+        "headline": "Was the Jobs Report Good? It’s in the Eye of the Beholder.",
+        "abstract": "With Americans divided over who bears credit for the economic recovery, we spoke with our reporter Ben Casselman about the latest job numbers.",
+        "section_name": "U.S.",
+        "web_url": "https://www.nytimes.com/2021/06/04/us/politics/biden-democrats-unemployment.html",
+        "matched_keywords": [
+          "jobs report",
+          "economic recovery"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "5849bdb9e20b1f0d",
+        "pub_date": "2021-06-05",
+        "tier": "front_page+strong",
+        "headline": "U.S. Waged Secret Legal Battle to Obtain Emails of 4 Times Reporters",
+        "abstract": "The push began in the Trump administration and continued under President Biden, and the Justice Department obtained a gag order to keep it from public view.",
+        "section_name": "U.S.",
+        "web_url": "https://www.nytimes.com/2021/06/04/us/politics/times-reporter-emails-gag-order-trump-google.html",
+        "matched_keywords": [
+          "wage"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "1452cb39a98da6be",
+        "pub_date": "2021-06-05",
+        "tier": "strong_keyword",
+        "headline": "Federal Unemployment Aid Is Now a Political Lightning Rod",
+        "abstract": "Republican-led states are cutting off relief months ahead of schedule, citing openings aplenty. Some jobless workers face hardships and tough choices.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/06/05/business/economy/unemployment-benefits-cutoff.html",
+        "matched_keywords": [
+          "jobless",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "189bf20182496f1c",
+        "pub_date": "2021-06-06",
+        "tier": "strong_keyword",
+        "headline": "Republicans, Don’t Ignore the Evidence on ‘Labor Shortages’",
+        "abstract": "The latest jobs report shows just how misguided their plans to cut unemployment benefits are.",
+        "section_name": "Opinion",
+        "web_url": "https://www.nytimes.com/2021/06/06/opinion/jobs-report-wages-unemployment-covid.html",
+        "matched_keywords": [
+          "shortage",
+          "unemployment benefits",
+          "jobs report",
+          "unemployment"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "f10bb82c75477a99",
+        "pub_date": "2021-06-07",
+        "tier": "front_page+strong",
+        "headline": "Offshore Wind Farms Show What Biden’s Climate Plan Is Up Against",
+        "abstract": "The U.S. has fallen way behind Europe partly because of an old shipping law and opposition from homeowners and fishing groups.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/06/07/business/energy-environment/offshore-wind-biden-climate-change.html",
+        "matched_keywords": [
+          "shipping"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "22d3935d5499aa99",
+        "pub_date": "2021-06-10",
+        "tier": "front_page+strong",
+        "headline": "Prices Jumped 5% in May From Year Earlier, Stoking Debate in Washington",
+        "abstract": "The Consumer Price Index showed the strongest year-over-year reading since 2008, and a core index popped the most since 1992.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/06/10/business/consumer-price-index-may-2021.html",
+        "matched_keywords": [
+          "consumer price"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      },
+      {
+        "event_id": "6c2dd97efeccfa2a",
+        "pub_date": "2021-06-10",
+        "tier": "strong_keyword",
+        "headline": "Despite economic recovery, the European Central Bank keeps its policies steady.",
+        "abstract": "The bank said it would hold interest rates at record low levels while continuing to buy bonds in its pandemic response program.",
+        "section_name": "Business Day",
+        "web_url": "https://www.nytimes.com/2021/06/10/business/european-central-bank-interest-rates.html",
+        "matched_keywords": [
+          "interest rate",
+          "economic recovery"
+        ],
+        "text_vintage_status": "unverified_archive_snapshot",
+        "selection_cutoff": "2021-06-10"
+      }
+    ]
+  },
+  "e_version": "v2"
+}
