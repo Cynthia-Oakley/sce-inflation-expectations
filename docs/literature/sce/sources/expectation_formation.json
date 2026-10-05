@@ -1,0 +1,370 @@
+{
+  "checked_on": "2026-10-05",
+  "scope": "家庭通胀预期形成；精选经验学习、信息扩散/刚性与随机信息干预",
+  "sources": [
+    {
+      "id": "mn_learning_inflation_experiences_2016",
+      "title": "Learning from Inflation Experiences",
+      "authors": [
+        "Ulrike Malmendier",
+        "Stefan Nagel"
+      ],
+      "year": 2016,
+      "source_url": "https://academic.oup.com/qje/article-abstract/131/1/53/2461168",
+      "open_access_url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+      "source_type": "期刊论文；作者公开稿",
+      "access_level": "全文已读：Berkeley 作者稿（首页 March 2011）；另核对 QJE 元数据/摘要。不是2016年最终排版全文。",
+      "evidence_locations": [
+        {
+          "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+          "page_or_section": "pp. 1–4",
+          "claim": "经验学习的识别思路：用出生队列经历差异与共同时间环境区分；不属于随机处理。"
+        },
+        {
+          "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+          "page_or_section": "pp. 13–20，尤其表 1",
+          "claim": "美国消费者通胀预期微观调查与 1953–2009 CPI 历史相联；估计长期通胀经历与预期差异的关系，并讨论近期经历对较年轻队列的影响。"
+        }
+      ],
+      "findings": [
+        "长期个人通胀经历与消费者预期的队列差异相关，经历影响可以持续；不同队列对近期经验的权重不同。",
+        "经验解释的是持久的信念状态及其异质性，不是上月问卷答案的逐字记忆。"
+      ],
+      "limitations": [
+        "队列经历未随机分配；结果依赖经验度量和学习模型设定，不能据此断言因果系数适用于本项目模型。",
+        "消费者预期调查与本项目合成 Agent 不同；作者稿是期刊发表前版本。"
+      ],
+      "project_use": [
+        "支持把有来源的终身通胀经历作为候选信念状态，检验年龄/队列差异。",
+        "不支持默认把上一月个人 SCE 回答写入 E。"
+      ],
+      "checked_on": "2026-10-05",
+      "version_note": "下载的 InflExp_4.pdf 首页标注 March 2011；初稿笔记误标2013，已按原文更正。期刊发表于2016年。",
+      "local_archives": [
+        {
+          "theme": "expectation_formation",
+          "source_id": "mn_learning_inflation_experiences_2016",
+          "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+          "local_path": "data/raw/literature/sce/20261005/expectation_formation/malmendier_nagel_author_2011.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+          "status": "downloaded",
+          "bytes": 378713,
+          "sha256": "e5ed3f496b327b8f068d2c9745eced0caae79f4c671d266262fb7d5a5278b0cd",
+          "read_version": "March 2011 author draft; QJE publication 2016",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ]
+    },
+    {
+      "id": "carroll_epidemiology_expectations_2003",
+      "title": "Macroeconomic Expectations of Households and Professional Forecasters",
+      "authors": [
+        "Christopher D. Carroll"
+      ],
+      "year": 2003,
+      "source_url": "https://academic.oup.com/qje/article-abstract/118/1/269/1917034",
+      "open_access_url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+      "source_type": "期刊论文；作者公开稿",
+      "access_level": "全文已读：作者公开稿；另核对 QJE 官方页面。",
+      "evidence_locations": [
+        {
+          "url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+          "page_or_section": "pp. 1–2",
+          "claim": "提出家庭通过新闻逐步吸收专业预测的“流行病式”传播机制。"
+        },
+        {
+          "url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+          "page_or_section": "pp. 8–14",
+          "claim": "以密歇根家庭调查和 Survey of Professional Forecasters 汇总序列估计传播，并讨论报纸新闻量；模型隐含每季度约四分之一家庭接收新信息。"
+        },
+        {
+          "url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+          "page_or_section": "pp. 18–19",
+          "claim": "结论指出需要微观家庭层面的检验和更好的信息吸收率模型。"
+        }
+      ],
+      "findings": [
+        "家庭总体预期可比专业预测更新慢，新闻传播提供一种汇总层面的解释。",
+        "信息传播速度是可变机制，不意味着所有家庭直接读取或理解专业预测。"
+      ],
+      "limitations": [
+        "对汇总时间序列的结构模型拟合，不是随机新闻曝光，也不能识别单个家庭如何形成预期。",
+        "数据主要覆盖 1981Q3–2000Q2，新闻环境、题目和当前 SCE/LLM 场景不同。"
+      ],
+      "project_use": [
+        "把共享信息如何传达、是否被吸收作为可检验因素。",
+        "不能把估计的信息扩散率直接用作 Agent 更新概率。"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "expectation_formation",
+          "source_id": "carroll_epidemiology_expectations_2003",
+          "url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+          "local_path": "data/raw/literature/sce/20261005/expectation_formation/carroll_epidemiology.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+          "status": "downloaded",
+          "bytes": 329653,
+          "sha256": "41945e578755c5cf4d6ba9a3a63908f6485c6217c650eb0baa90e08b01bce6de",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central_metadata_check.json"
+        }
+      ]
+    },
+    {
+      "id": "coibion_gorodnichenko_information_rigidity_2015",
+      "title": "Information Rigidity and the Expectations Formation Process: A Simple Framework and New Facts",
+      "authors": [
+        "Olivier Coibion",
+        "Yuriy Gorodnichenko"
+      ],
+      "year": 2015,
+      "source_url": "https://www.aeaweb.org/articles?id=10.1257/aer.20110306",
+      "open_access_url": "https://www.nber.org/papers/w16537",
+      "source_type": "期刊论文；NBER 工作论文",
+      "access_level": "仅读官方期刊与 NBER 摘要；NBER PDF 全文访问被拒，未据摘要外内容报告样本或系数。",
+      "evidence_locations": [
+        {
+          "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20110306",
+          "page_or_section": "AEA 官方摘要",
+          "claim": "作者提出用预测误差/修订事实检验信息刚性，并在美国及国际、多类预测者数据中报告广泛且随状态变化的信息刚性。"
+        },
+        {
+          "url": "https://www.nber.org/papers/w16537",
+          "page_or_section": "NBER 工作论文摘要",
+          "claim": "官方摘要对框架及证据的概述；未将全文表格或详细识别纳入本笔记。"
+        }
+      ],
+      "findings": [
+        "官方摘要支持信息吸收不完全且随状态变化这一一般框架。"
+      ],
+      "limitations": [
+        "没有读取全文，故不报告具体样本构成、参数、表格或稳健性结果。",
+        "宏观预测者信息刚性不直接证明本项目 LLM 的水平偏低或分布过窄；滞后方向取决于旧信念与新信息的相对位置。"
+      ],
+      "project_use": [
+        "可据此提出“是否更新、更新多少”的可证伪对照，不应将理论参数直接赋给 Agent。"
+      ],
+      "checked_on": "2026-10-05"
+    },
+    {
+      "id": "cavallo_cruces_perez_truglia_supermarket_prices_2017",
+      "title": "Inflation Expectations, Learning, and Supermarket Prices: Evidence from Survey Experiments",
+      "authors": [
+        "Alberto Cavallo",
+        "Guillermo Cruces",
+        "Ricardo Perez-Truglia"
+      ],
+      "year": 2017,
+      "source_url": "https://www.aeaweb.org/articles?id=10.1257/mac.20150147",
+      "open_access_url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+      "source_type": "期刊论文；哈佛商学院机构库全文",
+      "access_level": "全文已读：机构库收录的期刊全文；另核对 AEA 官方摘要/元数据。",
+      "evidence_locations": [
+        {
+          "url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+          "page_or_section": "期刊页码 pp. 4–8",
+          "claim": "在线随机信息实验的设计：分别提供 CPI 或超市商品价格信息，比较之后的总体通胀判断；包含对虚假/假设信号的检验。"
+        },
+        {
+          "url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+          "page_or_section": "期刊页码 pp. 14–17",
+          "claim": "美国在线实验样本为 3,945 人；随机统计与商品价格信息影响总体预期，实验回答分布向信息信号收敛。"
+        },
+        {
+          "url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+          "page_or_section": "期刊页码 pp. 20–32",
+          "claim": "后续实验比较实际商品价格与受访者记忆/显著性，显示可回忆的价格信号能明显影响总体判断。"
+        }
+      ],
+      "findings": [
+        "随机给定的 CPI 与具体商品价格信息会改变受访者报告的总体通胀判断；在部分处理比较中答案分布变窄。",
+        "家庭可能以熟悉、易记的价格作总体通胀推断；作者将其与有限统计推理、可得性等解释联系起来。"
+      ],
+      "limitations": [
+        "在线实验和调查提示不同于自然购物或 SCE 全国样本；美国实验时期为低通胀时期，阿根廷高通胀样本不可简单外推。",
+        "跨国信息权重差异不是随机化通胀环境；具体产品价格与每个美国家庭的实际篮子并不等价。"
+      ],
+      "project_use": [
+        "支持把生活价格经历作为有来源、可操纵的候选信息，并与共同宏观简报分开测试。",
+        "生活价格/记忆不是上次问卷答案；文献不提供本项目应使用的群体平移幅度。"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "expectation_formation",
+          "source_id": "cavallo_cruces_perez_truglia_supermarket_prices_2017",
+          "url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+          "local_path": "data/raw/literature/sce/20261005/expectation_formation/cavallo_etal_published_2017.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+          "status": "downloaded",
+          "bytes": 913716,
+          "sha256": "14715bce203c4f47395796e754c2c891a3770386ce804375541536cb6890309c",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ]
+    },
+    {
+      "id": "armantier_et_al_price_information_experiment_2016",
+      "title": "The Price Is Right: Updating of Inflation Expectations in a Randomized Price Information Experiment",
+      "authors": [
+        "Olivier Armantier",
+        "Scott Nelson",
+        "Giorgio Topa",
+        "Wilbert van der Klaauw",
+        "Basit Zafar"
+      ],
+      "year": 2016,
+      "source_url": "https://doi.org/10.1162/REST_a_00499",
+      "open_access_url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+      "source_type": "纽约联储 Staff Report 543；后发表于 Review of Economics and Statistics",
+      "access_level": "全文已读：纽约联储 Staff Report 543（2012/2013 工作版本）；另核对期刊 DOI/纽约联储官方页面。非期刊最终排版版。",
+      "evidence_locations": [
+        {
+          "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+          "page_or_section": "Staff Report pp. 2–4",
+          "claim": "2011 年 RAND American Life Panel 在线样本：771 人受邀、735 人参与、667 人可分析；随机分信息组与控制组，告知食品价格历史或专业预测。"
+        },
+        {
+          "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+          "page_or_section": "Staff Report pp. 8–13",
+          "claim": "测量点预测及概率密度；报告信息后更新方向、不同初始不确定性下的响应与“总体通胀/你所支付价格”的措辞差异。"
+        },
+        {
+          "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+          "page_or_section": "Staff Report pp. 31–35",
+          "claim": "讨论异质响应和实验限制，包括未观察个人消费篮子、长期后续信念/反应路径无法充分检验。"
+        }
+      ],
+      "findings": [
+        "随机信息使受访者通常朝信号方向修订预期；先验概率密度较不精确/较不确定者反应更大。",
+        "提供信号后群体回答趋向中心；问个人支付价格与问总体通胀会产生不同报告。"
+      ],
+      "limitations": [
+        "2011 年、选择性 RAND/Michigan 调查参与者及短期线上实验；人工提供信息的吸收未必等于自然信息获取。",
+        "缺少个人消费篮子与长期跟踪，不能判定每个更新是否更准确或持久；密度收敛不证明项目中的窄分布正确。"
+      ],
+      "project_use": [
+        "适合设计同一人信息前后、先验不确定性分组及问题措辞检查。",
+        "应分别报告点预期与个人密度，避免混淆个人不确定性和人群异质性。"
+      ],
+      "checked_on": "2026-10-05",
+      "version_note": "本地 Staff Report 543 首页：January 2012，Revised January 2013。作者名单按该稿首页；2016年期刊版本另列在 source_url。",
+      "local_archives": [
+        {
+          "theme": "expectation_formation",
+          "source_id": "armantier_et_al_price_information_experiment_2016",
+          "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+          "local_path": "data/raw/literature/sce/20261005/expectation_formation/armantier_nyfed_sr543.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+          "status": "downloaded",
+          "bytes": 272942,
+          "sha256": "799283eeef2ed8c5e4616cf8c8ea1f571db632341059505f741665c8051d3d96",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ]
+    },
+    {
+      "id": "coibion_gorodnichenko_weber_fed_communications_2022",
+      "title": "Monetary Policy Communications and Their Effects on Household Inflation Expectations",
+      "authors": [
+        "Olivier Coibion",
+        "Yuriy Gorodnichenko",
+        "Michael Weber"
+      ],
+      "year": 2022,
+      "source_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/718982",
+      "open_access_url": "https://www.nber.org/papers/w25482",
+      "source_type": "期刊论文；NBER 工作论文",
+      "access_level": "已读 JPE 官方摘要、NBER 工作论文摘要及作者总结；未能读取全文 PDF，不报告摘要之外的详细表格。",
+      "evidence_locations": [
+        {
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/718982",
+          "page_or_section": "JPE 官方摘要",
+          "claim": "期刊摘要报告约 20,000 名美国参与者、8 种随机沟通处理，比较联储声明、目标信息及新闻式表述对预期的影响。"
+        },
+        {
+          "url": "https://www.nber.org/papers/w25482",
+          "page_or_section": "NBER 工作论文摘要",
+          "claim": "作者工作论文页概述实验与对家庭支出的相关分析。"
+        },
+        {
+          "url": "https://cepr.org/voxeu/columns/monetary-policy-communications-and-their-effects-household-inflation-expectations",
+          "page_or_section": "作者撰写的 VoxEU 总结",
+          "claim": "作者总结称 FOMC 新闻式文章的平均作用约为目标/完整声明的一半；这是作者摘要性说明，未替代全文检查。"
+        }
+      ],
+      "findings": [
+        "随机沟通内容能够因果改变家庭平均通胀预期；JPE 摘要称完整 FOMC 声明与单独提供联储 2% 目标的平均效应大致相当，新闻式 FOMC 信息影响较小。",
+        "说明官方措辞和传播方式值得分开检验，而不是证明本项目共同 Fed 输入造成低值。"
+      ],
+      "limitations": [
+        "全文未读，具体样本招募、处理细节、异质性和持久性不在本记录可支持范围内。",
+        "随机沟通识别的是给定信息的短期实验效果，不能直接外推到本项目 LLM 或 SCE 实际受访者；在线参与者与 Nielsen 支出样本也存在选择性。"
+      ],
+      "project_use": [
+        "固定事实内容后，对来源标签、央行原文与中性摘要进行随机呈现对照。",
+        "不根据其结果预设新闻摘要会削弱或增强模型回答，先检验当前模型是否响应。"
+      ],
+      "checked_on": "2026-10-05"
+    },
+    {
+      "id": "weber_et_al_learning_inflation_settings_2025",
+      "title": "Tell Me Something I Don’t Already Know: Learning in Low- and High-Inflation Settings",
+      "authors": [
+        "Michael Weber",
+        "Bernardo Candia",
+        "Hassan Afrouzi",
+        "Tiziano Ropele",
+        "Rodrigo Lluberas",
+        "Serafin Frache",
+        "Brent Meyer",
+        "Saten Kumar",
+        "Yuriy Gorodnichenko",
+        "Dimitris Georgarakos",
+        "Olivier Coibion",
+        "Geoff Kenny",
+        "Jorge Ponce"
+      ],
+      "year": 2025,
+      "source_url": "https://onlinelibrary.wiley.com/doi/full/10.3982/ECTA22764",
+      "open_access_url": "https://www.econometricsociety.org/publications/econometrica/2025/01/01/Tell-Me-Something-I-Dont-Already-Know-Learning-in-Low-and-High-Inflation-Settings/file/ecta200738.pdf",
+      "source_type": "期刊论文；Econometrica 开放全文",
+      "access_level": "全文已读：Wiley/Econometric Society 官方期刊版本 HTML 与 PDF。",
+      "evidence_locations": [
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.3982/ECTA22764",
+          "page_or_section": "§§ 2–4；数据与实验样本说明",
+          "claim": "汇总不同国家/时期的随机信息试验；美国 Nielsen Homescan 家庭面板在 2018、2019 与 2021–2023 多轮调查，作者报告为数万家庭量级。"
+        },
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.3982/ECTA22764",
+          "page_or_section": "结果部分及跨时期讨论",
+          "claim": "家庭/企业对给定信息的响应会随较高通胀环境下降；作者讨论公众注意和媒体关注作为候选解释。"
+        },
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.3982/ECTA22764",
+          "page_or_section": "局限讨论与相关脚注",
+          "claim": "注意变化与信息供给难以完全分离；通胀水平、波动和新闻环境随时期同时变化。"
+        }
+      ],
+      "findings": [
+        "随机信息试验支持给定时期的信息可以改变预期；跨时期的平均响应强弱不同。",
+        "作者将公众注意/媒体信息供给列作通胀环境变化下学习差异的解释线索，但没有把其作为完全分离识别的唯一机制。"
+      ],
+      "limitations": [
+        "跨时期比较不是随机分配通胀环境；通胀水平与波动、信息供给及其他宏观变化并行。",
+        "Nielsen Homescan 样本为有线上购物/扫码记录特征的家庭面板，不代表所有家庭；各国题目、时期和信息处理也不同。",
+        "该文不能提供固定的个体更新系数，也不证明低注意导致更低或更窄的模拟回答。"
+      ],
+      "project_use": [
+        "注意可随宏观显著性变化，模拟中不应先验固定成普遍且不变的属性。",
+        "为固定 P/E 的信息更新对照提供较新实验依据；将随机处理效果和跨时期机制解释分开。"
+      ],
+      "checked_on": "2026-10-05"
+    }
+  ]
+}

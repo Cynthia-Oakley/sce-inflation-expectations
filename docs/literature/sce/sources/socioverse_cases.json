@@ -1,0 +1,253 @@
+{
+  "checked_on": "2026-10-05",
+  "scope": "literature review, no case execution",
+  "sources": [
+    {
+      "id": "cs_huang_2026",
+      "title": "Uncovering Salience-Driven Dynamics in Consumer Confidence with Generative Social Simulation",
+      "authors": [
+        "Yixu Huang",
+        "Yunlu Yin",
+        "Jiayu Lin",
+        "Xinnong Zhang",
+        "Jia Wang",
+        "Siyuan Wang",
+        "Xuanjing Huang",
+        "Liyin Jin",
+        "Zhongyu Wei"
+      ],
+      "year": 2026,
+      "source_url": "https://arxiv.org/html/2606.30395v1",
+      "open_access_url": "https://arxiv.org/html/2606.30395v1",
+      "source_type": "preprint",
+      "access_level": "full_text",
+      "evidence_locations": [
+        "§4.2–4.6",
+        "Appendix F",
+        "§3.5"
+      ],
+      "findings": [
+        "微观人口、个体信息解释、统计扩展与惯性校准分开",
+        "Q9语义不同于该文三分类调查分布"
+      ],
+      "limitations": [
+        "回顾性拟合包含校准，不能等同纯模型回答效果",
+        "本轮未复现作者完整实验"
+      ],
+      "project_use": [
+        "分别评价原始Core、扩展与校准",
+        "校准量与独立评价量分开"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "filename": "consumer_sim_v1.pdf",
+          "url": "https://arxiv.org/pdf/2606.30395v1",
+          "sha256": "5b7bf75fb3ff46206649fa85810a608e64be2c1323688370e140e9cb69513dee",
+          "bytes": 6244963,
+          "status": "downloaded",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_sim_v1.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sv2_zhang_2026",
+      "title": "SocioVerse2: A Longitudinal Dynamic Social Simulation Framework under a Human-AI Co-evolutionary Paradigm",
+      "authors": [
+        "Xinnong Zhang",
+        "Jiayu Lin",
+        "Jia Wang",
+        "et al."
+      ],
+      "year": 2026,
+      "source_url": "https://arxiv.org/html/2609.24911v1",
+      "open_access_url": "https://arxiv.org/html/2609.24911v1",
+      "source_type": "preprint",
+      "access_level": "full_text",
+      "evidence_locations": [
+        "§5.4.2 and Appendix A.7",
+        "§5.4.3 and Appendix A.8",
+        "§5.2.1"
+      ],
+      "findings": [
+        "PMI将主体经营状态更新与问卷作答分开",
+        "汽车份额结果包含事后校准，标为重建",
+        "机制替换可用规则决策作对照"
+      ],
+      "limitations": [
+        "模型截止日期是作者报告，不能自动验证本项目模型",
+        "未独立运行参考案例"
+      ],
+      "project_use": [
+        "价格体验中间状态",
+        "规则基线和独立留出",
+        "重建与预测标签分别声明"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "filename": "socioverse2_v1.pdf",
+          "url": "https://arxiv.org/pdf/2609.24911v1",
+          "sha256": "3131dd982402edfc7b03d1de4103d720af9352484aee460833495ea36434faf9",
+          "bytes": 2674134,
+          "status": "downloaded",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/socioverse2_v1.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sv_docs_consumer_2026",
+      "title": "消费者信心——当纵向轴是信息而不是时间",
+      "authors": [
+        "SocioVerse2 team"
+      ],
+      "year": 2026,
+      "source_url": "https://socioverse.fudan-disc.com/docs/zh/examples/consumer-confidence/",
+      "open_access_url": "https://socioverse.fudan-disc.com/docs/zh/examples/consumer-confidence/",
+      "source_type": "official_documentation",
+      "access_level": "full_text",
+      "evidence_locations": [
+        "P/E/B",
+        "Results caveats",
+        "Grounding"
+      ],
+      "findings": [
+        "同一目标月的多信息截止点展示信息敏感性",
+        "演示披露指标过滤与未校准水平"
+      ],
+      "limitations": [
+        "小型工程演示不等于全国准确性验证"
+      ],
+      "project_use": [
+        "固定P、固定目标的E对照",
+        "来源与假设分开记录"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "filename": "consumer_confidence.html",
+          "url": "https://socioverse.fudan-disc.com/docs/zh/examples/consumer-confidence/",
+          "sha256": "2733798595515d1e24fa4deda236270add8b9f82cba89beb8f58ba2d54f63a4f",
+          "bytes": 55615,
+          "status": "downloaded",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_confidence.html"
+        }
+      ]
+    },
+    {
+      "id": "sv_docs_hisim_2026",
+      "title": "混合舆论动态——同一内核上的LLM与ABM混合人群",
+      "authors": [
+        "SocioVerse2 team"
+      ],
+      "year": 2026,
+      "source_url": "https://socioverse.fudan-disc.com/docs/zh/examples/hisim-roe/",
+      "open_access_url": "https://socioverse.fudan-disc.com/docs/zh/examples/hisim-roe/",
+      "source_type": "official_documentation",
+      "access_level": "full_text",
+      "evidence_locations": [
+        "Two behavior paths",
+        "Results",
+        "v0.2.0 artifact note"
+      ],
+      "findings": [
+        "核心与普通人群更新机制不同",
+        "规则侧可以收缩总体分布"
+      ],
+      "limitations": [
+        "网络舆论机制不能视为家庭调查的既有行为事实"
+      ],
+      "project_use": [
+        "分别看Core和Normal分布",
+        "不将统计填补冒称互动仿真"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "filename": "hisim_roe.html",
+          "url": "https://socioverse.fudan-disc.com/docs/zh/examples/hisim-roe/",
+          "sha256": "12e36df528deef114876cb7925834584c1a3d9c0e1efb7f37e72a5c615b6c2ad",
+          "bytes": 57227,
+          "status": "downloaded",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/hisim_roe.html"
+        }
+      ]
+    },
+    {
+      "id": "cs_rewrite_fbe0cdc4",
+      "title": "ConsumerSim core pipeline clean rewrite",
+      "authors": [
+        "RunRiotComeOn / Fudan DISC Lab"
+      ],
+      "year": 2026,
+      "source_url": "https://github.com/RunRiotComeOn/ConsumerSim-Consumer-Confidence-Forecast/tree/fbe0cdc4916d72a359f14fd48ab178139c23337d",
+      "open_access_url": "https://github.com/RunRiotComeOn/ConsumerSim-Consumer-Confidence-Forecast/tree/fbe0cdc4916d72a359f14fd48ab178139c23337d",
+      "source_type": "source_code",
+      "access_level": "source_code",
+      "evidence_locations": [
+        "README core scope",
+        "consumer_pipeline/information.py",
+        "consumer_pipeline/debias.py"
+      ],
+      "findings": [
+        "公开核心源码已可阅读",
+        "残差校准不同于论文惯性混合",
+        "指标过滤字段为observed_at"
+      ],
+      "limitations": [
+        "README排除了论文验证任务",
+        "observed_at与当时公开版本不能自动等同",
+        "默认local为规则演示"
+      ],
+      "project_use": [
+        "参考模块契约但不替换当前实现",
+        "另验发布日期/vintage",
+        "更新旧资源可得性认识"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "filename": "consumer_sim_readme_fbe0cdc4.md",
+          "url": "https://raw.githubusercontent.com/RunRiotComeOn/ConsumerSim-Consumer-Confidence-Forecast/fbe0cdc4916d72a359f14fd48ab178139c23337d/README.md",
+          "sha256": "52ef656fe51a0b80d810f36cad7b3fbeaca5730da87ebc1735e509f572762726",
+          "bytes": 11636,
+          "status": "downloaded",
+          "source_commit": "fbe0cdc4916d72a359f14fd48ab178139c23337d",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_sim_readme_fbe0cdc4.md"
+        },
+        {
+          "filename": "consumer_sim_information_fbe0cdc4.py",
+          "url": "https://raw.githubusercontent.com/RunRiotComeOn/ConsumerSim-Consumer-Confidence-Forecast/fbe0cdc4916d72a359f14fd48ab178139c23337d/consumer_pipeline/information.py",
+          "sha256": "59ffc4174cc26b48b220840b266d450dddc52d31b346a8185247645086c8cf63",
+          "bytes": 3758,
+          "status": "downloaded",
+          "source_commit": "fbe0cdc4916d72a359f14fd48ab178139c23337d",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_sim_information_fbe0cdc4.py"
+        },
+        {
+          "filename": "consumer_sim_debias_fbe0cdc4.py",
+          "url": "https://raw.githubusercontent.com/RunRiotComeOn/ConsumerSim-Consumer-Confidence-Forecast/fbe0cdc4916d72a359f14fd48ab178139c23337d/consumer_pipeline/debias.py",
+          "sha256": "946c5d1635cef78889b4253029cbafc26b07b96f5271dac699334e7deb44b769",
+          "bytes": 2500,
+          "status": "downloaded",
+          "source_commit": "fbe0cdc4916d72a359f14fd48ab178139c23337d",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_sim_debias_fbe0cdc4.py"
+        }
+      ]
+    }
+  ]
+}

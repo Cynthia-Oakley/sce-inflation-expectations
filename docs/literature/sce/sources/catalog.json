@@ -1,0 +1,1409 @@
+{
+  "checked_on": "2026-10-05",
+  "scope": "First targeted review; not exhaustive systematic review. All reading levels and draft versions retained.",
+  "source_count": 28,
+  "theme_counts": {
+    "agent_simulation": 7,
+    "expectation_formation": 7,
+    "household_price_experience": 9,
+    "socioverse_cases": 5
+  },
+  "sources": [
+    {
+      "id": "argyle2023_out_of_one_many",
+      "title": "Out of One, Many: Using Language Models to Simulate Human Samples",
+      "authors": [
+        "Lisa P. Argyle",
+        "Ethan C. Busby",
+        "Nancy Fulda",
+        "Joshua Gubler",
+        "Christopher Rytting",
+        "David Wingate"
+      ],
+      "year": 2023,
+      "source_url": "https://doi.org/10.1017/pan.2023.2",
+      "open_access_url": "https://arxiv.org/pdf/2209.06899",
+      "source_type": "peer_reviewed_journal_article",
+      "access_level": "full_text",
+      "reading_status": "core_full_text_read",
+      "evidence_locations": [
+        "journal article §§3–7",
+        "arXiv PDF pp. 4–15; especially algorithmic fidelity and silicon sampling"
+      ],
+      "findings": [
+        "The paper defines algorithmic fidelity as reproducing target group response distributions and relations, and demonstrates that suitable conditioning can produce different political and public-opinion response patterns.",
+        "The authors explicitly distinguish population-level sample simulation from faithfully simulating a particular individual; conditioning on persona attributes does not guarantee individual coherence or fidelity in a new domain."
+      ],
+      "limitations": [
+        "The empirical setting is U.S. political attitudes and public opinion, not household inflation expectations or SCE Q8/Q9.",
+        "The work does not establish that demographic labels alone recover economically meaningful heterogeneity or within-person probability densities."
+      ],
+      "project_use": "Use algorithmic fidelity as a validation target: compare weighted response distributions and cross-question relationships, not only the national mean or persona plausibility. Treat the paper as a design precedent, not evidence that the current demographic-only SCE agents are faithful.",
+      "version_note": "Political Analysis 31(3), 2023, pp. 337–351; article DOI and author-posted arXiv full text were checked.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/argyle2023_out_of_one_many.pdf",
+        "pdf_url": "https://arxiv.org/pdf/2209.06899",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "agent_simulation",
+          "source_id": "argyle2023_out_of_one_many",
+          "url": "https://arxiv.org/pdf/2209.06899",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/argyle2023_out_of_one_many.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://arxiv.org/pdf/2209.06899",
+          "status": "downloaded",
+          "bytes": 3204201,
+          "sha256": "391f94c0c8bd2f9bed2aa77420e203f863e527296a9ad4412318b1b33d55aeef",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ],
+      "theme": "agent_simulation",
+      "theme_source_file": "docs/literature/sce/sources/agent_simulation.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "bisbee2024_synthetic_replacements",
+      "title": "Synthetic Replacements for Human Survey Data? The Perils of Large Language Models",
+      "authors": [
+        "James Bisbee",
+        "Joshua D. Clinton",
+        "Cassy Dorff",
+        "Brenton Kenkel",
+        "Jennifer M. Larson"
+      ],
+      "year": 2024,
+      "source_url": "https://www.cambridge.org/core/journals/political-analysis/article/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models/B92267DC26195C7F36E63EA04A47D2FE",
+      "open_access_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B92267DC26195C7F36E63EA04A47D2FE/S1047198724000056a.pdf/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models.pdf",
+      "source_type": "peer_reviewed_journal_article",
+      "access_level": "full_text",
+      "reading_status": "core_full_text_read",
+      "evidence_locations": [
+        "Political Analysis 32(4), pp. 401–416",
+        "article §§2–4; methods, main comparisons, prompt and time sensitivity"
+      ],
+      "findings": [
+        "Personas based on real ANES respondents produced some group means close to the survey, while simulated response variance was too low and many regression relationships differed from the human data.",
+        "Small prompt wording changes and model updates over a three-month interval materially changed results, so increasing the number of generated records can narrow Monte Carlo error without fixing bias or distribution mismatch."
+      ],
+      "limitations": [
+        "The questions concern political attitudes and feeling thermometers, and the models and access methods are from an earlier generation; effect sizes do not transfer directly to SCE.",
+        "It diagnoses synthetic survey replacement more broadly and does not identify the cause of this project's narrow Q9 distribution."
+      ],
+      "project_use": "This is the closest empirical warning for the current mean-versus-dispersion gap. Use it to motivate preregistered distributional and prompt/version sensitivity checks; do not treat its measured variance gap as an expected SCE effect size.",
+      "version_note": "Political Analysis 32(4), 2024, pp. 401–416; Cambridge article page and open-access PDF checked.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/bisbee2024_synthetic_replacements.pdf",
+        "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B92267DC26195C7F36E63EA04A47D2FE/S1047198724000056a.pdf/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models.pdf",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "agent_simulation",
+          "source_id": "bisbee2024_synthetic_replacements",
+          "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B92267DC26195C7F36E63EA04A47D2FE/S1047198724000056a.pdf/div-class-title-synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models-div.pdf",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/bisbee2024_synthetic_replacements.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B92267DC26195C7F36E63EA04A47D2FE/S1047198724000056a.pdf/div-class-title-synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models-div.pdf",
+          "status": "downloaded",
+          "bytes": 988155,
+          "sha256": "ece42ff1351144b6d08bc060d6449007bcbba41708e6fb226e2cf2043c0bec2f",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ],
+      "theme": "agent_simulation",
+      "theme_source_file": "docs/literature/sce/sources/agent_simulation.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "horton2023_homo_silicus",
+      "title": "Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?",
+      "authors": [
+        "John J. Horton",
+        "Apostolos Filippas",
+        "Benjamin S. Manning"
+      ],
+      "year": 2023,
+      "source_url": "https://www.nber.org/papers/w31122",
+      "open_access_url": "https://www.benjaminmanning.com/files/homo_silicus.pdf",
+      "source_type": "working_paper",
+      "access_level": "full_text",
+      "reading_status": "targeted_full_text_sections_read",
+      "evidence_locations": [
+        "author-hosted PDF §2.2.1, pp. 12–14: mixture calibration and held-out two-stage game",
+        "author-hosted PDF pp. 31–32: ground-truth and PPI discussion"
+      ],
+      "findings": [
+        "The paper illustrates fitting interpretable mixtures of economic-agent types to behavior in known games, then testing the fitted model in a distinct two-stage game.",
+        "The calibration-versus-extrapolation separation is useful methodologically: matching behavior in a calibration setting does not itself establish performance in a new setting."
+      ],
+      "limitations": [
+        "The paper is an economic-agent framework and game application, not a household inflation-expectation survey or validation of SCE probabilities.",
+        "Version dates differ across records: the NBER series lists a February 2026 revision, while the author-hosted PDF inspected here carries a December 7, 2025 cover date. The specific February 2026 version was not verified as the PDF read."
+      ],
+      "project_use": "Borrow the separation of calibration and genuinely held-out tasks. Any learned mixture or prompt choice must be fit only on development months; evaluate against a later sealed SCE month and transparent baselines.",
+      "version_note": "NBER Working Paper 31122, first issued 2023; NBER metadata reports a February 2026 revision. The opened author-hosted full text is dated 2025-12-07, so this record does not claim to have read the February 2026 revision.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/horton2023_homo_silicus_author_version.pdf",
+        "pdf_url": "https://www.benjaminmanning.com/files/homo_silicus.pdf",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "agent_simulation",
+          "source_id": "horton2023_homo_silicus",
+          "url": "https://www.benjaminmanning.com/files/homo_silicus.pdf",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/homo_silicus_author_2025.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.benjaminmanning.com/files/homo_silicus.pdf",
+          "status": "downloaded",
+          "bytes": 1435579,
+          "sha256": "3bdf0a8376800c5de9f966384ddbf5692a4f8b7d2e143b8486f3f95b05251e84",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central_metadata_check.json"
+        }
+      ],
+      "theme": "agent_simulation",
+      "theme_source_file": "docs/literature/sce/sources/agent_simulation.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "aher2023_turing_experiment",
+      "title": "Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies",
+      "authors": [
+        "Gati Aher",
+        "Rosa I. Arriaga",
+        "Adam Tauman Kalai"
+      ],
+      "year": 2023,
+      "source_url": "https://proceedings.mlr.press/v202/aher23a.html",
+      "open_access_url": "https://proceedings.mlr.press/v202/aher23a/aher23a.pdf",
+      "source_type": "peer_reviewed_conference_proceedings",
+      "access_level": "full_text",
+      "reading_status": "targeted_full_text_read",
+      "evidence_locations": [
+        "PMLR 202, pp. 337–371",
+        "PDF §§3–5, pp. 1–2: Turing Experiment setup, replication results, Wisdom of Crowds distortion"
+      ],
+      "findings": [
+        "Across four established human-subject studies, the authors report that simulated participants replicated the main finding in three studies, while one Wisdom of Crowds task showed an over-accuracy distortion.",
+        "Replication can reveal task-specific distortions even where a headline aggregate finding appears to match."
+      ],
+      "limitations": [
+        "The tested laboratory studies and response formats are not SCE inflation-expectation questions, and the results do not establish fidelity for arbitrary populations or tasks.",
+        "The paper does not supply a validated method for mapping generated answer distributions into SCE survey-weighted Q8/Q9 estimands."
+      ],
+      "project_use": "Use task-specific, predeclared checks for plausible distortions and replicate relationships, not a single realism score. The over-accuracy example motivates checking whether generated Q8/Q9 responses are systematically too moderate, too uniform, or too informed.",
+      "version_note": "Proceedings of Machine Learning Research 202, ICML 2023, pp. 337–371; official PMLR page and PDF checked.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/aher2023_multiple_humans.pdf",
+        "pdf_url": "https://proceedings.mlr.press/v202/aher23a/aher23a.pdf",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "agent_simulation",
+          "source_id": "aher2023_turing_experiment",
+          "url": "https://proceedings.mlr.press/v202/aher23a/aher23a.pdf",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/aher2023_icml.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://proceedings.mlr.press/v202/aher23a/aher23a.pdf",
+          "status": "downloaded",
+          "bytes": 3860576,
+          "sha256": "34ac40e9e779cb564038ab5e8e8393c975a2f942cc94b901d25f261739499a7e",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central_metadata_check.json"
+        }
+      ],
+      "theme": "agent_simulation",
+      "theme_source_file": "docs/literature/sce/sources/agent_simulation.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "park2024_2026_self_reports",
+      "title": "LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals",
+      "authors": [
+        "Joon Sung Park",
+        "Carolyn Q. Zou",
+        "Jonne Kamphorst",
+        "Niles Egan",
+        "Aaron Shaw",
+        "Benjamin Mako Hill",
+        "Carrie Cai",
+        "Meredith Ringel Morris",
+        "Percy Liang",
+        "Robb Willer",
+        "Michael S. Bernstein"
+      ],
+      "year": 2024,
+      "source_url": "https://arxiv.org/abs/2411.10109",
+      "open_access_url": "https://arxiv.org/pdf/2411.10109",
+      "source_type": "preprint",
+      "access_level": "full_text",
+      "reading_status": "core_current_version_full_text_read",
+      "evidence_locations": [
+        "current arXiv v3 PDF, pp. 1–3: study and sample",
+        "PDF pp. 9–10: held-out evaluation and limitations"
+      ],
+      "findings": [
+        "The study recruited 1,052 U.S. participants for approximately two-hour interviews averaging about 6,491 words, alongside structured surveys; this is much richer input than demographic labels alone.",
+        "On held-out GSS items, agents grounded in participants' self-reports reached 82–86% of participants' own two-week test-retest consistency, compared with 74% for demographic-only agents.",
+        "The reported individual-level accuracy does not by itself establish that simulated respondents reproduce population-level cross-question correlations or a survey's joint distribution."
+      ],
+      "limitations": [
+        "The paper uses extensive person-specific interview data; its main result must not be attributed to 1,000 agents receiving only demographic labels.",
+        "The sample is English-speaking and U.S.-based, evaluation uses one model family and specific held-out questions, and the economic-game results do not clearly establish a benefit from self-reports.",
+        "It is a preprint with a substantial version/title change: v1 (2024-11) was titled 'Generative Agent Simulations of 1,000 People'; the current v3 was posted 2026-06-28."
+      ],
+      "project_use": "Treat verified, sourced household experience as a candidate input to test against demographic-only profiles. Do not import the individual-level performance claim to this project, whose profiles do not contain comparable interviews, and evaluate population joint structure separately.",
+      "version_note": "Current version inspected: arXiv v3, posted 2026-06-28, titled 'LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals'. The initial v1 title and framing differed; citations to 2024 refer to the first posting year, not the current version date.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/park2024_v3_self_reports.pdf",
+        "pdf_url": "https://arxiv.org/pdf/2411.10109",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "id": "park2024_2026_self_reports",
+          "url": "https://arxiv.org/pdf/2411.10109v3",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/park2024_2026_self_reports.pdf",
+          "bytes": 3563209,
+          "sha256": "1ee1f32c2ba92eae7a91f28d204b9041a0f1cfb9ffc7201b3c52ac464f4e1fe2",
+          "status": "downloaded",
+          "checked_on": "2026-10-05",
+          "attempt_manifest": "data/raw/literature/sce/20261005/agent_simulation/download_manifest.json",
+          "theme": "agent_simulation"
+        }
+      ],
+      "theme": "agent_simulation",
+      "theme_source_file": "docs/literature/sce/sources/agent_simulation.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "gu2025_probability_sampling",
+      "title": "Do LLMs Play Dice? Exploring Probability Distribution Sampling in Large Language Models for Behavioral Simulation",
+      "authors": [
+        "Jia Gu",
+        "Liang Pang",
+        "Huawei Shen",
+        "Xueqi Cheng"
+      ],
+      "year": 2025,
+      "source_url": "https://aclanthology.org/2025.coling-main.360/",
+      "open_access_url": "https://aclanthology.org/2025.coling-main.360.pdf",
+      "source_type": "peer_reviewed_conference_proceedings",
+      "access_level": "full_text",
+      "reading_status": "targeted_full_text_read",
+      "evidence_locations": [
+        "current arXiv v3 PDF §§3–5, pp. 3–8: explicit distributions, implicit behavioral distributions, programmatic sampling"
+      ],
+      "findings": [
+        "The experiments find that models can often identify a requested probability distribution but do not reliably generate samples in accordance with it.",
+        "Using Python for explicit distribution sampling improves that task, while complex implicit behavioral distributions remain difficult.",
+        "The paper sets temperature to 0.9 to increase sequence diversity; increased text diversity does not establish that samples match a target human distribution."
+      ],
+      "limitations": [
+        "The benchmark concerns distribution-sampling tasks and behavioral sequences, not SCE-specific Q9 elicitation or survey weighting.",
+        "Tool-based random sampling can implement a declared probability vector but cannot supply evidence that the vector itself is a real respondent's belief."
+      ],
+      "project_use": "Keep the API temperature fixed in economic-input contrasts. If stochastic API variation needs estimation, repeat identical P/E/prompt calls as a separate technical-noise analysis; do not present temperature as a model of household expectation formation.",
+      "version_note": "Published in Proceedings of the 31st International Conference on Computational Linguistics (COLING 2025), pp. 5375–5390. The arXiv preprint was first posted 2024-04-13 and v3 posted 2024-12-18; the targeted full-text read was the arXiv v3 PDF, while the official ACL Anthology publication page and PDF URL were checked.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/gu2025_do_llms_play_dice.pdf",
+        "pdf_url": "https://aclanthology.org/2025.coling-main.360.pdf",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "agent_simulation",
+          "source_id": "gu2025_probability_sampling",
+          "url": "https://arxiv.org/pdf/2404.09043v3",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/gu_dice_arxiv_v3.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://arxiv.org/pdf/2404.09043v3",
+          "status": "downloaded",
+          "bytes": 777396,
+          "sha256": "dacb9393bb331f79f3deb9faec3b1efdcf1daad0ba2e5c7d78f8daf00e1c43e0",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central_metadata_check.json"
+        }
+      ],
+      "theme": "agent_simulation",
+      "theme_source_file": "docs/literature/sce/sources/agent_simulation.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "huang2025_uncertainty_quantification",
+      "title": "How Many Human Survey Respondents is a Large Language Model Worth? An Uncertainty Quantification Perspective",
+      "authors": [
+        "Chengpiao Huang",
+        "Yuhang Wu",
+        "Kaizheng Wang"
+      ],
+      "year": 2025,
+      "source_url": "https://arxiv.org/abs/2502.17773",
+      "open_access_url": "https://arxiv.org/pdf/2502.17773",
+      "source_type": "preprint",
+      "access_level": "full_text",
+      "reading_status": "targeted_full_text_read",
+      "evidence_locations": [
+        "current author PDF §2.2, pp. 4–7: uncertainty set and calibration",
+        "PDF examples: binary survey tasks and empirical coverage"
+      ],
+      "findings": [
+        "The proposed approach calibrates the effective synthetic sample size using a bank of related questions with human labels and uncertainty coverage checks.",
+        "Treating many synthetic responses as independent human observations can create intervals that are too narrow around a biased synthetic mean; too little synthetic weight can leave estimates noisy."
+      ],
+      "limitations": [
+        "The method relies on related human-labeled calibration questions and assumptions about transferability/exchangeability and sample independence.",
+        "The current examples center on student samples and binary items; this does not directly establish calibration for SCE survey weights, Q8/Q9 paired outcomes, or respondent-level ten-bin probability vectors.",
+        "This is a preprint; the current inspected author PDF is dated 2026-06-17, later than the initial 2025 posting."
+      ],
+      "project_use": "Use as a warning that synthetic row count is not effective human sample size. Any interval calibration should be learned from separate labeled tasks or periods and assessed on a sealed target month; 600 calls alone do not identify the effective sample size.",
+      "version_note": "arXiv:2502.17773; initial post in 2025. The current arXiv v6 was posted 2026-06-15; no journal publication claim is made.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/huang2025_llm_survey_respondents_uncertainty.pdf",
+        "pdf_url": "https://arxiv.org/pdf/2502.17773",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "theme": "agent_simulation",
+      "theme_source_file": "docs/literature/sce/sources/agent_simulation.json",
+      "archive_status": "not_locally_archived_in_this_batch"
+    },
+    {
+      "id": "mn_learning_inflation_experiences_2016",
+      "title": "Learning from Inflation Experiences",
+      "authors": [
+        "Ulrike Malmendier",
+        "Stefan Nagel"
+      ],
+      "year": 2016,
+      "source_url": "https://academic.oup.com/qje/article-abstract/131/1/53/2461168",
+      "open_access_url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+      "source_type": "期刊论文；作者公开稿",
+      "access_level": "全文已读：Berkeley 作者稿（首页 March 2011）；另核对 QJE 元数据/摘要。不是2016年最终排版全文。",
+      "evidence_locations": [
+        {
+          "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+          "page_or_section": "pp. 1–4",
+          "claim": "经验学习的识别思路：用出生队列经历差异与共同时间环境区分；不属于随机处理。"
+        },
+        {
+          "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+          "page_or_section": "pp. 13–20，尤其表 1",
+          "claim": "美国消费者通胀预期微观调查与 1953–2009 CPI 历史相联；估计长期通胀经历与预期差异的关系，并讨论近期经历对较年轻队列的影响。"
+        }
+      ],
+      "findings": [
+        "长期个人通胀经历与消费者预期的队列差异相关，经历影响可以持续；不同队列对近期经验的权重不同。",
+        "经验解释的是持久的信念状态及其异质性，不是上月问卷答案的逐字记忆。"
+      ],
+      "limitations": [
+        "队列经历未随机分配；结果依赖经验度量和学习模型设定，不能据此断言因果系数适用于本项目模型。",
+        "消费者预期调查与本项目合成 Agent 不同；作者稿是期刊发表前版本。"
+      ],
+      "project_use": [
+        "支持把有来源的终身通胀经历作为候选信念状态，检验年龄/队列差异。",
+        "不支持默认把上一月个人 SCE 回答写入 E。"
+      ],
+      "checked_on": "2026-10-05",
+      "version_note": "下载的 InflExp_4.pdf 首页标注 March 2011；初稿笔记误标2013，已按原文更正。期刊发表于2016年。",
+      "local_archives": [
+        {
+          "theme": "expectation_formation",
+          "source_id": "mn_learning_inflation_experiences_2016",
+          "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+          "local_path": "data/raw/literature/sce/20261005/expectation_formation/malmendier_nagel_author_2011.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+          "status": "downloaded",
+          "bytes": 378713,
+          "sha256": "e5ed3f496b327b8f068d2c9745eced0caae79f4c671d266262fb7d5a5278b0cd",
+          "read_version": "March 2011 author draft; QJE publication 2016",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ],
+      "theme": "expectation_formation",
+      "theme_source_file": "docs/literature/sce/sources/expectation_formation.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "carroll_epidemiology_expectations_2003",
+      "title": "Macroeconomic Expectations of Households and Professional Forecasters",
+      "authors": [
+        "Christopher D. Carroll"
+      ],
+      "year": 2003,
+      "source_url": "https://academic.oup.com/qje/article-abstract/118/1/269/1917034",
+      "open_access_url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+      "source_type": "期刊论文；作者公开稿",
+      "access_level": "全文已读：作者公开稿；另核对 QJE 官方页面。",
+      "evidence_locations": [
+        {
+          "url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+          "page_or_section": "pp. 1–2",
+          "claim": "提出家庭通过新闻逐步吸收专业预测的“流行病式”传播机制。"
+        },
+        {
+          "url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+          "page_or_section": "pp. 8–14",
+          "claim": "以密歇根家庭调查和 Survey of Professional Forecasters 汇总序列估计传播，并讨论报纸新闻量；模型隐含每季度约四分之一家庭接收新信息。"
+        },
+        {
+          "url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+          "page_or_section": "pp. 18–19",
+          "claim": "结论指出需要微观家庭层面的检验和更好的信息吸收率模型。"
+        }
+      ],
+      "findings": [
+        "家庭总体预期可比专业预测更新慢，新闻传播提供一种汇总层面的解释。",
+        "信息传播速度是可变机制，不意味着所有家庭直接读取或理解专业预测。"
+      ],
+      "limitations": [
+        "对汇总时间序列的结构模型拟合，不是随机新闻曝光，也不能识别单个家庭如何形成预期。",
+        "数据主要覆盖 1981Q3–2000Q2，新闻环境、题目和当前 SCE/LLM 场景不同。"
+      ],
+      "project_use": [
+        "把共享信息如何传达、是否被吸收作为可检验因素。",
+        "不能把估计的信息扩散率直接用作 Agent 更新概率。"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "expectation_formation",
+          "source_id": "carroll_epidemiology_expectations_2003",
+          "url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+          "local_path": "data/raw/literature/sce/20261005/expectation_formation/carroll_epidemiology.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+          "status": "downloaded",
+          "bytes": 329653,
+          "sha256": "41945e578755c5cf4d6ba9a3a63908f6485c6217c650eb0baa90e08b01bce6de",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central_metadata_check.json"
+        }
+      ],
+      "theme": "expectation_formation",
+      "theme_source_file": "docs/literature/sce/sources/expectation_formation.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "coibion_gorodnichenko_information_rigidity_2015",
+      "title": "Information Rigidity and the Expectations Formation Process: A Simple Framework and New Facts",
+      "authors": [
+        "Olivier Coibion",
+        "Yuriy Gorodnichenko"
+      ],
+      "year": 2015,
+      "source_url": "https://www.aeaweb.org/articles?id=10.1257/aer.20110306",
+      "open_access_url": "https://www.nber.org/papers/w16537",
+      "source_type": "期刊论文；NBER 工作论文",
+      "access_level": "仅读官方期刊与 NBER 摘要；NBER PDF 全文访问被拒，未据摘要外内容报告样本或系数。",
+      "evidence_locations": [
+        {
+          "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20110306",
+          "page_or_section": "AEA 官方摘要",
+          "claim": "作者提出用预测误差/修订事实检验信息刚性，并在美国及国际、多类预测者数据中报告广泛且随状态变化的信息刚性。"
+        },
+        {
+          "url": "https://www.nber.org/papers/w16537",
+          "page_or_section": "NBER 工作论文摘要",
+          "claim": "官方摘要对框架及证据的概述；未将全文表格或详细识别纳入本笔记。"
+        }
+      ],
+      "findings": [
+        "官方摘要支持信息吸收不完全且随状态变化这一一般框架。"
+      ],
+      "limitations": [
+        "没有读取全文，故不报告具体样本构成、参数、表格或稳健性结果。",
+        "宏观预测者信息刚性不直接证明本项目 LLM 的水平偏低或分布过窄；滞后方向取决于旧信念与新信息的相对位置。"
+      ],
+      "project_use": [
+        "可据此提出“是否更新、更新多少”的可证伪对照，不应将理论参数直接赋给 Agent。"
+      ],
+      "checked_on": "2026-10-05",
+      "theme": "expectation_formation",
+      "theme_source_file": "docs/literature/sce/sources/expectation_formation.json",
+      "archive_status": "not_locally_archived_in_this_batch"
+    },
+    {
+      "id": "cavallo_cruces_perez_truglia_supermarket_prices_2017",
+      "title": "Inflation Expectations, Learning, and Supermarket Prices: Evidence from Survey Experiments",
+      "authors": [
+        "Alberto Cavallo",
+        "Guillermo Cruces",
+        "Ricardo Perez-Truglia"
+      ],
+      "year": 2017,
+      "source_url": "https://www.aeaweb.org/articles?id=10.1257/mac.20150147",
+      "open_access_url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+      "source_type": "期刊论文；哈佛商学院机构库全文",
+      "access_level": "全文已读：机构库收录的期刊全文；另核对 AEA 官方摘要/元数据。",
+      "evidence_locations": [
+        {
+          "url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+          "page_or_section": "期刊页码 pp. 4–8",
+          "claim": "在线随机信息实验的设计：分别提供 CPI 或超市商品价格信息，比较之后的总体通胀判断；包含对虚假/假设信号的检验。"
+        },
+        {
+          "url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+          "page_or_section": "期刊页码 pp. 14–17",
+          "claim": "美国在线实验样本为 3,945 人；随机统计与商品价格信息影响总体预期，实验回答分布向信息信号收敛。"
+        },
+        {
+          "url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+          "page_or_section": "期刊页码 pp. 20–32",
+          "claim": "后续实验比较实际商品价格与受访者记忆/显著性，显示可回忆的价格信号能明显影响总体判断。"
+        }
+      ],
+      "findings": [
+        "随机给定的 CPI 与具体商品价格信息会改变受访者报告的总体通胀判断；在部分处理比较中答案分布变窄。",
+        "家庭可能以熟悉、易记的价格作总体通胀推断；作者将其与有限统计推理、可得性等解释联系起来。"
+      ],
+      "limitations": [
+        "在线实验和调查提示不同于自然购物或 SCE 全国样本；美国实验时期为低通胀时期，阿根廷高通胀样本不可简单外推。",
+        "跨国信息权重差异不是随机化通胀环境；具体产品价格与每个美国家庭的实际篮子并不等价。"
+      ],
+      "project_use": [
+        "支持把生活价格经历作为有来源、可操纵的候选信息，并与共同宏观简报分开测试。",
+        "生活价格/记忆不是上次问卷答案；文献不提供本项目应使用的群体平移幅度。"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "expectation_formation",
+          "source_id": "cavallo_cruces_perez_truglia_supermarket_prices_2017",
+          "url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+          "local_path": "data/raw/literature/sce/20261005/expectation_formation/cavallo_etal_published_2017.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+          "status": "downloaded",
+          "bytes": 913716,
+          "sha256": "14715bce203c4f47395796e754c2c891a3770386ce804375541536cb6890309c",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ],
+      "theme": "expectation_formation",
+      "theme_source_file": "docs/literature/sce/sources/expectation_formation.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "armantier_et_al_price_information_experiment_2016",
+      "title": "The Price Is Right: Updating of Inflation Expectations in a Randomized Price Information Experiment",
+      "authors": [
+        "Olivier Armantier",
+        "Scott Nelson",
+        "Giorgio Topa",
+        "Wilbert van der Klaauw",
+        "Basit Zafar"
+      ],
+      "year": 2016,
+      "source_url": "https://doi.org/10.1162/REST_a_00499",
+      "open_access_url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+      "source_type": "纽约联储 Staff Report 543；后发表于 Review of Economics and Statistics",
+      "access_level": "全文已读：纽约联储 Staff Report 543（2012/2013 工作版本）；另核对期刊 DOI/纽约联储官方页面。非期刊最终排版版。",
+      "evidence_locations": [
+        {
+          "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+          "page_or_section": "Staff Report pp. 2–4",
+          "claim": "2011 年 RAND American Life Panel 在线样本：771 人受邀、735 人参与、667 人可分析；随机分信息组与控制组，告知食品价格历史或专业预测。"
+        },
+        {
+          "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+          "page_or_section": "Staff Report pp. 8–13",
+          "claim": "测量点预测及概率密度；报告信息后更新方向、不同初始不确定性下的响应与“总体通胀/你所支付价格”的措辞差异。"
+        },
+        {
+          "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+          "page_or_section": "Staff Report pp. 31–35",
+          "claim": "讨论异质响应和实验限制，包括未观察个人消费篮子、长期后续信念/反应路径无法充分检验。"
+        }
+      ],
+      "findings": [
+        "随机信息使受访者通常朝信号方向修订预期；先验概率密度较不精确/较不确定者反应更大。",
+        "提供信号后群体回答趋向中心；问个人支付价格与问总体通胀会产生不同报告。"
+      ],
+      "limitations": [
+        "2011 年、选择性 RAND/Michigan 调查参与者及短期线上实验；人工提供信息的吸收未必等于自然信息获取。",
+        "缺少个人消费篮子与长期跟踪，不能判定每个更新是否更准确或持久；密度收敛不证明项目中的窄分布正确。"
+      ],
+      "project_use": [
+        "适合设计同一人信息前后、先验不确定性分组及问题措辞检查。",
+        "应分别报告点预期与个人密度，避免混淆个人不确定性和人群异质性。"
+      ],
+      "checked_on": "2026-10-05",
+      "version_note": "本地 Staff Report 543 首页：January 2012，Revised January 2013。作者名单按该稿首页；2016年期刊版本另列在 source_url。",
+      "local_archives": [
+        {
+          "theme": "expectation_formation",
+          "source_id": "armantier_et_al_price_information_experiment_2016",
+          "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+          "local_path": "data/raw/literature/sce/20261005/expectation_formation/armantier_nyfed_sr543.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+          "status": "downloaded",
+          "bytes": 272942,
+          "sha256": "799283eeef2ed8c5e4616cf8c8ea1f571db632341059505f741665c8051d3d96",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ],
+      "theme": "expectation_formation",
+      "theme_source_file": "docs/literature/sce/sources/expectation_formation.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "coibion_gorodnichenko_weber_fed_communications_2022",
+      "title": "Monetary Policy Communications and Their Effects on Household Inflation Expectations",
+      "authors": [
+        "Olivier Coibion",
+        "Yuriy Gorodnichenko",
+        "Michael Weber"
+      ],
+      "year": 2022,
+      "source_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/718982",
+      "open_access_url": "https://www.nber.org/papers/w25482",
+      "source_type": "期刊论文；NBER 工作论文",
+      "access_level": "已读 JPE 官方摘要、NBER 工作论文摘要及作者总结；未能读取全文 PDF，不报告摘要之外的详细表格。",
+      "evidence_locations": [
+        {
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/718982",
+          "page_or_section": "JPE 官方摘要",
+          "claim": "期刊摘要报告约 20,000 名美国参与者、8 种随机沟通处理，比较联储声明、目标信息及新闻式表述对预期的影响。"
+        },
+        {
+          "url": "https://www.nber.org/papers/w25482",
+          "page_or_section": "NBER 工作论文摘要",
+          "claim": "作者工作论文页概述实验与对家庭支出的相关分析。"
+        },
+        {
+          "url": "https://cepr.org/voxeu/columns/monetary-policy-communications-and-their-effects-household-inflation-expectations",
+          "page_or_section": "作者撰写的 VoxEU 总结",
+          "claim": "作者总结称 FOMC 新闻式文章的平均作用约为目标/完整声明的一半；这是作者摘要性说明，未替代全文检查。"
+        }
+      ],
+      "findings": [
+        "随机沟通内容能够因果改变家庭平均通胀预期；JPE 摘要称完整 FOMC 声明与单独提供联储 2% 目标的平均效应大致相当，新闻式 FOMC 信息影响较小。",
+        "说明官方措辞和传播方式值得分开检验，而不是证明本项目共同 Fed 输入造成低值。"
+      ],
+      "limitations": [
+        "全文未读，具体样本招募、处理细节、异质性和持久性不在本记录可支持范围内。",
+        "随机沟通识别的是给定信息的短期实验效果，不能直接外推到本项目 LLM 或 SCE 实际受访者；在线参与者与 Nielsen 支出样本也存在选择性。"
+      ],
+      "project_use": [
+        "固定事实内容后，对来源标签、央行原文与中性摘要进行随机呈现对照。",
+        "不根据其结果预设新闻摘要会削弱或增强模型回答，先检验当前模型是否响应。"
+      ],
+      "checked_on": "2026-10-05",
+      "theme": "expectation_formation",
+      "theme_source_file": "docs/literature/sce/sources/expectation_formation.json",
+      "archive_status": "not_locally_archived_in_this_batch"
+    },
+    {
+      "id": "weber_et_al_learning_inflation_settings_2025",
+      "title": "Tell Me Something I Don’t Already Know: Learning in Low- and High-Inflation Settings",
+      "authors": [
+        "Michael Weber",
+        "Bernardo Candia",
+        "Hassan Afrouzi",
+        "Tiziano Ropele",
+        "Rodrigo Lluberas",
+        "Serafin Frache",
+        "Brent Meyer",
+        "Saten Kumar",
+        "Yuriy Gorodnichenko",
+        "Dimitris Georgarakos",
+        "Olivier Coibion",
+        "Geoff Kenny",
+        "Jorge Ponce"
+      ],
+      "year": 2025,
+      "source_url": "https://onlinelibrary.wiley.com/doi/full/10.3982/ECTA22764",
+      "open_access_url": "https://www.econometricsociety.org/publications/econometrica/2025/01/01/Tell-Me-Something-I-Dont-Already-Know-Learning-in-Low-and-High-Inflation-Settings/file/ecta200738.pdf",
+      "source_type": "期刊论文；Econometrica 开放全文",
+      "access_level": "全文已读：Wiley/Econometric Society 官方期刊版本 HTML 与 PDF。",
+      "evidence_locations": [
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.3982/ECTA22764",
+          "page_or_section": "§§ 2–4；数据与实验样本说明",
+          "claim": "汇总不同国家/时期的随机信息试验；美国 Nielsen Homescan 家庭面板在 2018、2019 与 2021–2023 多轮调查，作者报告为数万家庭量级。"
+        },
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.3982/ECTA22764",
+          "page_or_section": "结果部分及跨时期讨论",
+          "claim": "家庭/企业对给定信息的响应会随较高通胀环境下降；作者讨论公众注意和媒体关注作为候选解释。"
+        },
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.3982/ECTA22764",
+          "page_or_section": "局限讨论与相关脚注",
+          "claim": "注意变化与信息供给难以完全分离；通胀水平、波动和新闻环境随时期同时变化。"
+        }
+      ],
+      "findings": [
+        "随机信息试验支持给定时期的信息可以改变预期；跨时期的平均响应强弱不同。",
+        "作者将公众注意/媒体信息供给列作通胀环境变化下学习差异的解释线索，但没有把其作为完全分离识别的唯一机制。"
+      ],
+      "limitations": [
+        "跨时期比较不是随机分配通胀环境；通胀水平与波动、信息供给及其他宏观变化并行。",
+        "Nielsen Homescan 样本为有线上购物/扫码记录特征的家庭面板，不代表所有家庭；各国题目、时期和信息处理也不同。",
+        "该文不能提供固定的个体更新系数，也不证明低注意导致更低或更窄的模拟回答。"
+      ],
+      "project_use": [
+        "注意可随宏观显著性变化，模拟中不应先验固定成普遍且不变的属性。",
+        "为固定 P/E 的信息更新对照提供较新实验依据；将随机处理效果和跨时期机制解释分开。"
+      ],
+      "checked_on": "2026-10-05",
+      "theme": "expectation_formation",
+      "theme_source_file": "docs/literature/sce/sources/expectation_formation.json",
+      "archive_status": "not_locally_archived_in_this_batch"
+    },
+    {
+      "id": "price-experience-dmow-2021",
+      "title": "Exposure to Grocery Prices and Inflation Expectations",
+      "authors": [
+        "Francesco D'Acunto",
+        "Ulrike Malmendier",
+        "Juan Ospina",
+        "Michael Weber"
+      ],
+      "year": 2021,
+      "source_url": "https://doi.org/10.1086/713192",
+      "open_access_url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+      "source_type": "journal_article_author_version",
+      "access_level": "全文（作者稿；在线附录）",
+      "evidence_locations": [
+        "作者稿 pp. 1-2：摘要、主要结果及购买频率与消费权重比较",
+        "作者稿 pp. 3-5：解释力、问卷噪声/圆整/堆积的讨论与分组敏感性",
+        "作者稿 pp. 6-9：样本、Nielsen 扫描数据、家庭 CPI 与频率 CPI 及主结果",
+        "作者稿 pp. 14-15：对残差噪声与圆整解释的限定、分组聚合",
+        "在线附录 A.1/A.7（作者稿 pp. 26-33）：噪声和圆整模拟"
+      ],
+      "findings": [
+        "2015/2016 调查与 Nielsen 家庭扫描数据匹配；约 92,511 条调查观测中，约 59,126 人有完整分析样本。匹配样本较美国总体更年长、富裕、受教育且业主比例较高。",
+        "观察关联和两波个体内证据显示，家庭购买频率指标对预期的关联通常强于单用支出份额构造的家庭 CPI；论文报告频率指标关联高约 20-40%，高低频组预期差示例约 0.7pp 对 0.5pp。",
+        "购买的商品涨价比同幅降价更能解释预期；价格变化只出现在未购买品类时，作用较弱。",
+        "作者提醒自报预期有随机测量误差、整数/5 圆整和 heaping；模拟显示这些过程会压低微观拟合度，但不能据此说残差全是调查噪声。"
+      ],
+      "limitations": [
+        "不是随机价格暴露实验；购物篮、购买频率、关注度与预期会共同变化。固定个体效应不能排除时变新闻注意、生活方式或购物行为。",
+        "横截面解释力低于10%；样本来自有许可限制的 Nielsen 面板，不能用 BLS CE 当作逐 UPC/实际成交价的等价复制。",
+        "点预测圆整结论不能直接移植到 SCE 的概率密度回答，也不能说明本项目约7pp的回答离散完全由价格体验产生。"
+      ],
+      "project_use": [
+        "将购买/消费篮子作为 P 到体验 E_i 的候选中介；若用公开 CE，只称为合成篮子价格暴露，不称个人实际价格或个人真实体验。",
+        "若主购物者、车辆使用或通勤未直接测量，不从性别、就业、地区推断角色；频率权重须与支出份额规格分开。",
+        "零 API 核验 Q8 整数/5/10 堆积，Q9 每份密度非零档数与质量集中，再区分实际人群分歧、个体不确定性和回答形式；Binder (2017) 仅作为待独立复现的测量方法，不在本主题精选研究内。"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "household_price_experience",
+          "source_id": "price-experience-dmow-2021",
+          "url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+          "local_path": "data/raw/literature/sce/20261005/household_price_experience/dmow_author_2020.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+          "status": "downloaded",
+          "bytes": 566568,
+          "sha256": "fb93ff9688f25e5923521e755f61a5fb7c097211717e235e5f7a93969300b24a",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ],
+      "theme": "household_price_experience",
+      "theme_source_file": "docs/literature/sce/sources/household_price_experience.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "price-experience-gender-roles-2021",
+      "title": "Gender Roles Produce Divergent Economic Expectations",
+      "authors": [
+        "Francesco D'Acunto",
+        "Ulrike Malmendier",
+        "Michael Weber"
+      ],
+      "year": 2021,
+      "source_url": "https://doi.org/10.1073/pnas.2008534118",
+      "open_access_url": "https://eml.berkeley.edu/~ulrike/Papers/pnas202008534_Published_Paper.pdf",
+      "source_type": "journal_article_author_version",
+      "access_level": "全文（作者稿）",
+      "evidence_locations": [
+        "作者稿 pp. 1-3，尤其 Table 1：匹配样本、主要购物者占比、组间与家庭内回归",
+        "作者稿 pp. 6-8：家庭购物信息来源、SCE 延伸、代理检验和局限"
+      ],
+      "findings": [
+        "研究 2015/2016 年 Nielsen/Kilts 调查中同时有男女户主回答的家庭，约 7,846 户、20,866 条个人-波次记录；约65%女性户主、12%男性户主自报主要购物者。",
+        "主要购物者分工与通胀预期性别差距相关：不购物男性的原始差距约0.64pp；存在男性购物参与的家庭差距较小且不显著。",
+        "家庭固定效应和人口控制削弱稳定家庭差异解释，但购物角色非随机。论文报告女性更常以食品杂货、男性更常以汽油为日常信息来源，并提示通勤等共同变化因素。",
+        "用于 SCE 的外部检验缺少个体购物分工，只能用州级男性购物比例等代理。"
+      ],
+      "limitations": [
+        "观察到的购物角色没有随机指派，不能把角色-预期关联解释为角色改变的因果效应。",
+        "样本着重双户主家庭并依赖自报和 Nielsen 面板；与 DMOW 共用数据，不是独立样本重复。",
+        "性别、就业、地区或家庭身份都不能确定谁实际买菜、做饭、开车或支付账单。"
+      ],
+      "project_use": [
+        "只有项目画像直接包含经验证的购物/驾驶角色时，才将其作为 P 的个体标签；否则留空或作为明确敏感性假设。",
+        "将食品与汽油保留为共享 E 的不同类别；有实测角色后才检验其和分类暴露的交互，不用性别定高低预期。",
+        "以可观测角色的留出样本交互检验个体效应；SCE 无个体购物标签时，不把州级代理解释成受访者级角色。"
+      ],
+      "checked_on": "2026-10-05",
+      "theme": "household_price_experience",
+      "theme_source_file": "docs/literature/sce/sources/household_price_experience.json",
+      "archive_status": "not_locally_archived_in_this_batch"
+    },
+    {
+      "id": "price-experience-johannsen-2014",
+      "title": "Inflation Experience and Inflation Expectations: Dispersion and Disagreement Within Demographic Groups",
+      "authors": [
+        "Benjamin K. Johannsen"
+      ],
+      "year": 2014,
+      "source_url": "https://doi.org/10.17016/FEDS.2014.089",
+      "open_access_url": "https://www.federalreserve.gov/econresdata/feds/2014/files/201489pap.pdf",
+      "source_type": "central_bank_working_paper",
+      "access_level": "全文（Federal Reserve FEDS 工作论文）",
+      "evidence_locations": [
+        "pp. 1-2：研究问题、摘要与组层关联",
+        "pp. 4-8：CEX Interview 支出份额、CPI 分类变化及家庭暴露构造",
+        "pp. 9-13：教育/收入/年龄组暴露差异、SCE/MSC 预期分歧比较及局限"
+      ],
+      "findings": [
+        "§2.2 以固定篮子类别价格指数的成本比率构造家庭价格指数；家庭面对共同类别价格变化的假设意味着结果不是实际购买价。",
+        "CEX 暴露与 Michigan Survey of Consumers 预期在组别层面比较，并非同一受访者跨调查匹配。低教育/收入组的篮子暴露和预期离散通常较高；年龄组没有稳定排序。",
+        "易变食品与能源类别的组内权重差异是低收入/教育组经验离散的可能来源；住房以业主等值租金作代理。"
+      ],
+      "limitations": [
+        "观察性且以人口组汇总，不能识别同一人从真实价格体验到个人回答的微观中介效应。",
+        "全国分类指数不能匹配具体地区、商店、折扣、商品质量和个人购买日期；每月样本约400户并需至少9个月记录。",
+        "2014 年 Federal Reserve 工作论文，不视作已发表的因果识别结论。"
+      ],
+      "project_use": [
+        "作为公开 CE 家庭篮子暴露方法的参照，不要把项目的加权对数变化近似说成精确复现其固定篮子成本比率；须把合成暴露与实际个人价格、主观体验和预期答案区分。",
+        "按租金与 OER 选择一个清晰住房口径；不把按揭本金、租金支出和业主等值租金混为同一实际体验。",
+        "先重现组层方向并做分类映射/年份敏感性；再独立比较合成篮子离散与 SCE 跨人预期分布，不跨调查做个体匹配。"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "household_price_experience",
+          "source_id": "price-experience-johannsen-2014",
+          "url": "https://www.federalreserve.gov/econresdata/feds/2014/files/201489pap.pdf",
+          "local_path": "data/raw/literature/sce/20261005/household_price_experience/johannsen_feds201489.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.federalreserve.gov/econresdata/feds/2014/files/201489pap.pdf",
+          "status": "downloaded",
+          "bytes": 437135,
+          "sha256": "dedd12749c24302d4e2c9afae8fb5cc930a394c9234b1b59bfa0596bdc70a846",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ],
+      "theme": "household_price_experience",
+      "theme_source_file": "docs/literature/sce/sources/household_price_experience.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "price-experience-financial-literacy-2010",
+      "title": "Expectations of Inflation: The Role of Demographic Variables, Expectation Formation, and Financial Literacy",
+      "authors": [
+        "Wändi Bruine de Bruin",
+        "Wilbert van der Klaauw",
+        "Julie S. Downs",
+        "Baruch Fischhoff",
+        "Giorgio Topa",
+        "Olivier Armantier"
+      ],
+      "year": 2010,
+      "source_url": "https://doi.org/10.1111/j.1745-6606.2010.01174.x",
+      "open_access_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/j.1745-6606.2010.01174.x",
+      "source_type": "journal_article",
+      "access_level": "全文（期刊在线页面）",
+      "evidence_locations": [
+        "样本与方法段：RAND American Life Panel 2007-2008 年调查、抽样模块和代表性限制",
+        "Table 5：人口变量、日常价格注意、计划/支出和金融素养的回归比较"
+      ],
+      "findings": [
+        "740 名受邀者中，299 人进入并完成预期、理由、金融素养问题模块；样本量和在线面板构成限制外推。",
+        "横截面模型中仅人口变量的 R2 约 .05；加价格/支出注意变量约 .10；再加金融素养约 .15。更关注支出/已付价格和较低金融素养与较高点预期相关。",
+        "加入价格注意与素养后部分人口变量系数衰减；性别在此样本不显著，年龄方向也不稳定。"
+      ],
+      "limitations": [
+        "随机分配的是问卷模块，不是受访者的金融素养、信息或消费体验；系数为观察相关。",
+        "样本只有299人，2007-2008 时期且预期右偏；无法证明现代 SCE 人群关系或金融教育的因果效应。",
+        "该文金融素养量表不等同于 SCE 的数理能力测试。"
+      ],
+      "project_use": [
+        "SCE 直接数理能力测量可作为信息理解/不确定性分层候选；不以教育、年龄或性别代填金融素养。",
+        "保留价格暴露与解释能力两个通道；不要把素养加为任意噪声或消费权重。",
+        "以固定 E 的留出回答比较组间校准和个体分布宽度，若缺可比测量则不启用该画像维度。"
+      ],
+      "checked_on": "2026-10-05",
+      "theme": "household_price_experience",
+      "theme_source_file": "docs/literature/sce/sources/household_price_experience.json",
+      "archive_status": "not_locally_archived_in_this_batch"
+    },
+    {
+      "id": "price-experience-gas-experiment-2024",
+      "title": "Gasoline Price Changes and Consumer Inflation Expectations: Experimental Evidence",
+      "authors": [
+        "Felix Aidala",
+        "Olivier Armantier",
+        "Gizem Koşar",
+        "Jason Somerville",
+        "Giorgio Topa",
+        "Wilbert van der Klaauw"
+      ],
+      "year": 2024,
+      "source_url": "https://doi.org/10.1016/j.jebo.2024.01.027",
+      "open_access_url": null,
+      "source_type": "journal_article",
+      "access_level": "摘要與頁面節選（全文 PDF 受限）",
+      "evidence_locations": [
+        "期刊摘要與導論：SCE 2022 年 5-6 月實驗的目標、相對商品結果",
+        "Section 2-3 頁面節選：SCE 樣本及同一受訪者的假設情景設計",
+        "Section 4-6 頁面節選與 Table 2：汽油正負衝擊和食物/耐用品反應"
+      ],
+      "findings": [
+        "SCE 中同一受訪者接受食品/汽油與耐用品/汽油兩組假設價格衝擊，屬於受控假設情景的個體處理效應，不是個人實際價格或購買觀察。",
+        "汽油正向年度價格通脹衝擊 1pp 對一年/三年预期的平均影响约 0.075/0.051pp；负向效应接近零。",
+        "食品正向 1pp 冲击平均效应约 0.234/0.203pp，耐用品约 0.180/0.149pp；汽油作用随预测期减弱，且涨跌不对称。"
+      ],
+      "limitations": [
+        "出版社 PDF 不能在当前访问中下载，数值依据可检索到的期刊摘要、实验说明及表格节选；未独立核实样本量或全文附录。",
+        "假设情景识别被询问后的回答变化，不识别现实中的地区汽油价对某个家庭的个人体验。",
+        "实验期处于 2022 高通胀阶段，不将处理系数固定移植至历史月份。"
+      ],
+      "project_use": [
+        "将汽油、食品和耐用品分列为共享 E 的分类信息；地方汽油均值只能是地区价格环境，不能冒充个体消费。",
+        "开展同幅正负、同一文本条件下的离线响应测试，核验方向和相对类别反应；不用同一留出真值估计系数。",
+        "欲构造 E_i 汽油项，需要直接车辆/购买暴露字段或明确列作合成敏感性假设。"
+      ],
+      "checked_on": "2026-10-05",
+      "theme": "household_price_experience",
+      "theme_source_file": "docs/literature/sce/sources/household_price_experience.json",
+      "archive_status": "not_locally_archived_in_this_batch"
+    },
+    {
+      "id": "price-experience-homeownership-2025-2026",
+      "title": "Homeownership and Attention to Inflation: Evidence from Information Treatments",
+      "authors": [
+        "Jessica Piccolo",
+        "Yuriy Gorodnichenko"
+      ],
+      "year": 2025,
+      "source_url": "https://www.nber.org/papers/w33595",
+      "open_access_url": "https://eml.berkeley.edu/~ygorodni/epi_housing_status.pdf",
+      "source_type": "working_paper_revised_2026",
+      "access_level": "全文（作者稿；NBER WP 33595，2026-07 修订）",
+      "evidence_locations": [
+        "作者稿 pp. 1-2：摘要、2021-2023 年美国家庭随机信息处理",
+        "作者稿 pp. 17-19：随机处理、住房身份分组的更新与消费估计",
+        "作者稿 pp. 21-22：流动性、耐用品/非耐用品机制与结论",
+        "NBER 工作论文页：编号、2025 年 3 月首发、2026 年 7 月修订日期"
+      ],
+      "findings": [
+        "约 26,000 个美国家庭的随机信息实验显示，同类信息在租户与业主中带来不同的预期更新和支出反应。",
+        "租户对新信息的预期更新较强，但不显著调整耐用品；业主更新较弱，但在更新时增加耐用品支出。租户更可能受流动性限制，短期通过非耐用品调整。",
+        "论文将信息处理效应的异质性与住房身份联系，但住房身份本身并未随机化。"
+      ],
+      "limitations": [
+        "工作论文且为 2026 年修订版，研究环境为 2021-2023；不是已发表的永久结构参数。",
+        "租户/业主差异同时与收入、财富、债务和年龄关联，不能说住房身份本身造成全部行为差异。",
+        "注意、预期更新、实际租金/房贷支出与消费调整是不同变量。"
+      ],
+      "project_use": [
+        "住房 tenure 是可实测的 P 候选；用同一 E 信息比较按 tenure 分层的更新敏感性，并将租金支出权重独立计算。",
+        "不要把业主等值租金、租户实际租金、按揭本金和个人租金涨幅混为一项。",
+        "控制可观察年龄/收入等条件后，用未参与设计的月份检验信息更新与消费反应，分别报告点预测/分布宽度。"
+      ],
+      "checked_on": "2026-10-05",
+      "theme": "household_price_experience",
+      "theme_source_file": "docs/literature/sce/sources/household_price_experience.json",
+      "archive_status": "not_locally_archived_in_this_batch"
+    },
+    {
+      "id": "price-experience-supermarket-right-tail-2024",
+      "title": "The Influence of Supermarket Prices on Consumer Inflation Expectations",
+      "authors": [
+        "Chew Lian Chua",
+        "Sarantis Tsiaplias"
+      ],
+      "year": 2024,
+      "source_url": "https://doi.org/10.1016/j.jebo.2024.01.022",
+      "open_access_url": "https://www.sciencedirect.com/science/article/pii/S0167268124000283",
+      "source_type": "journal_article_open_access_claimed",
+      "access_level": "摘要与元数据（期刊标为开放获取，全文网页检索返回403，未阅读全文）",
+      "evidence_locations": [
+        "ScienceDirect 期刊摘要：澳大利亚消费者预期样本、超市价格右尾结果及数据可得性说明",
+        "作者研究页：期刊论文与合作者信息"
+      ],
+      "findings": [
+        "摘要称以约 85,000 名澳大利亚消费者预期数据和超市价格变化数据估计，价格变化分布右尾与较高通胀预期相关，低收入家庭的关联更明显。",
+        "论文将超市价格分布的特定部分视为消费者信息，不局限于家庭可观测支出份额；其机制可与实际个人篮子暴露并列。",
+        "数据可按申请取得。"
+      ],
+      "limitations": [
+        "仅核读摘要和作者出版记录；全文访问失败，未核实样本时期、精确识别、微观配对结构或稳健性。",
+        "澳大利亚超市数据不可直接代表美国 CPI 或项目人群；摘要关联不能当作随机因果效应。",
+        "开放获取标记不等于本地全文已经核验或可下载。"
+      ],
+      "project_use": [
+        "视为共享食品 E 的分布敏感性候选，与个人篮子加权指数分开。",
+        "不移植其估计系数；只有目标市场有可核验的公开价格分布时才设计留出测试。",
+        "若找不到美国同频率、同分类的价格分布，不启用该变量。"
+      ],
+      "checked_on": "2026-10-05",
+      "theme": "household_price_experience",
+      "theme_source_file": "docs/literature/sce/sources/household_price_experience.json",
+      "archive_status": "not_locally_archived_in_this_batch"
+    },
+    {
+      "id": "dataset-bls-ce-pumd-2026",
+      "title": "Consumer Expenditure Survey Public Use Microdata: Files, Documentation and Tables",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2026,
+      "source_url": "https://www.bls.gov/cex/pumd.htm",
+      "open_access_url": "https://www.bls.gov/cex/pumd_data.htm",
+      "source_type": "official_dataset_documentation",
+      "access_level": "官方数据文档与免费下载页面（核查日期2026-10-05）",
+      "evidence_locations": [
+        "PUMD 首页：微观文件内容、隐私调整及 SAS/Stata/CSV 格式",
+        "PUMD 数据文件页：2024 为当前列出的最新年度；文件年份覆盖、Interview/Diary 分开下载及 1982/1983 缺年",
+        "Getting Started Guide §2：CU/NEWID、字典字段和变量可用期间；§3 Interview、§4 Diary、§6 年度估计",
+        "Tables 页面：组均值/方差/份额、两人口维度交叉表和历史覆盖"
+      ],
+      "findings": [
+        "CE 收集支出、收入和人口资料；PUMD 以消费单元为基本消费者记录并做隐私保护处理。当前可下载年度文件为 1980-2024，1982/1983 不可用，若干旧字段/Diary 资料较少。",
+        "Interview 询问 CU 过去三个月支出并轮换最多四个季度；Diary 对 CU 的常见小额购买记录两周。NEWID 可连接同一调查的文件，不可把 Diary 和 Interview 不同样本按 CU 联结。",
+        "发布表是加权组/人口均值、份额和部分方差；部分跨表按两人口特征列值。它们不是逐户联合记录。PUMD 可计算同一 CU 记录中的联合变量与类别支出权重。",
+        "年份记录不等于历史调查月时点已发布版本；PUMD 年度更新可能重处理重叠季度，需要另存发布日/版本。"
+      ],
+      "limitations": [
+        "不能识别某次购买对应的个人家庭成员或 SCE 受访者，也没有证据把记录视作个人交易单价、购物者或通勤日志。",
+        "Diary 两周不是年度购买频率；Interview/Diary 同户联合篮子无法从公共数据直接还原。",
+        "组均值若赋予每人会丢失组内差异；多维联合分布只能用 PUMD 微观数据并显式考虑样本权重、隐私调整、缺失、顶码和抽样误差。购物/驾驶等未观测角色只能由其他可信联合微观证据支持条件概率合成，不能从 CEX 或性别直接赋值。"
+      ],
+      "project_use": [
+        "可用 PUMD 联合 CU 支出份额与目标月份已公开的 BLS 分类 CPI 变化，生成明确命名的合成篮子暴露；这只是共同价格与估计权重的计算。",
+        "对 A 线可把后来发布的调查作为回顾性人口约束并清楚标注；B 线或严格点时 A 线只用目标时点前已发布的 P vintage。与 SCE 人口按共同字段做统计分配，记录匹配假设、权重、随机种子和版本；不声称同一受访者匹配。",
+        "用 BLS 发布表做总体/人口组均值 sanity check；不用组均值给 Agent 定性别购物角色、汽油消费量或个人预期。"
+      ],
+      "checked_on": "2026-10-05",
+      "theme": "household_price_experience",
+      "theme_source_file": "docs/literature/sce/sources/household_price_experience.json",
+      "archive_status": "not_locally_archived_in_this_batch"
+    },
+    {
+      "id": "dataset-nyfed-sce-2026",
+      "title": "Survey of Consumer Expectations: Public Microdata and Frequently Asked Questions",
+      "authors": [
+        "Federal Reserve Bank of New York, Center for Microeconomic Data"
+      ],
+      "year": 2026,
+      "source_url": "https://www.newyorkfed.org/microeconomics/sce",
+      "open_access_url": "https://www.newyorkfed.org/microeconomics/sce/sce-faq",
+      "source_type": "official_dataset_documentation",
+      "access_level": "官方问卷、公开微观数据页面与 FAQ（核查日期2026-10-05）",
+      "evidence_locations": [
+        "SCE 页面：每月轮换面板、人口字段、个体预测不确定性和公开微观数据下载入口",
+        "SCE FAQ §Core：启动时间、样本/轮换、密度均值与点预测的定义、问 inflation 而非个人 prices 的原因",
+        "SCE FAQ §Microdata release：核心数据9个月滞后，Housing/Household Spending等专门模块18个月滞后",
+        "SCE FAQ §Housing：每年2月租户与业主专门问题；住房微观数据滞后18个月"
+      ],
+      "findings": [
+        "SCE 2013年6月启动，月度全国互联网轮换面板约1,200-1,300名家庭户主，个人最长参与12个月；公开核心微观数据包括年龄、收入、教育、住房所有权、就业经历、地区和数理能力。",
+        "发布的个人密度均值是 respondent-level density 派生值；个体预测不确定性在个人分布内，人群分歧则是不同个体派生均值之间的跨人离散。点预测与密度均值也不是同一变量。",
+        "核心微观约滞后9个月；Housing、Household Spending、Public Policy 和 Labor Market 特别模块约滞后18个月。住房调查自2014年每年2月对租户和业主 field。",
+        "问卷直接问未来总体通胀，避免把总体 inflation 与受访者自己所付 specific prices 混为一谈。"
+      ],
+      "limitations": [
+        "公共 SCE 微观资料没有逐笔家庭消费、购买者或与 CE CU 的交叉身份链接。",
+        "当前下载的同期密度均值/权重是评价结果，不可作为同一模拟月份的 P 或 E。",
+        "住房和支出特殊模块更低频且延迟发布；不能假设其信息在访谈当时已知。"
+      ],
+      "project_use": [
+        "将人口画像白名单限于问卷/公开变量；住房 tenure 可实测，但不能据此推个人租金价格或购买习惯。",
+        "在后验验证中并列 Q9 的个人密度均值分布、个人密度宽度和跨人加权分散，避免用个体宽分布代替群体分歧。",
+        "将真实同期答案、密度均值派生结果和权重放在评价层；按模块发布滞后保存 `published_at` 与 vintage。"
+      ],
+      "checked_on": "2026-10-05",
+      "theme": "household_price_experience",
+      "theme_source_file": "docs/literature/sce/sources/household_price_experience.json",
+      "archive_status": "not_locally_archived_in_this_batch"
+    },
+    {
+      "id": "cs_huang_2026",
+      "title": "Uncovering Salience-Driven Dynamics in Consumer Confidence with Generative Social Simulation",
+      "authors": [
+        "Yixu Huang",
+        "Yunlu Yin",
+        "Jiayu Lin",
+        "Xinnong Zhang",
+        "Jia Wang",
+        "Siyuan Wang",
+        "Xuanjing Huang",
+        "Liyin Jin",
+        "Zhongyu Wei"
+      ],
+      "year": 2026,
+      "source_url": "https://arxiv.org/html/2606.30395v1",
+      "open_access_url": "https://arxiv.org/html/2606.30395v1",
+      "source_type": "preprint",
+      "access_level": "full_text",
+      "evidence_locations": [
+        "§4.2–4.6",
+        "Appendix F",
+        "§3.5"
+      ],
+      "findings": [
+        "微观人口、个体信息解释、统计扩展与惯性校准分开",
+        "Q9语义不同于该文三分类调查分布"
+      ],
+      "limitations": [
+        "回顾性拟合包含校准，不能等同纯模型回答效果",
+        "本轮未复现作者完整实验"
+      ],
+      "project_use": [
+        "分别评价原始Core、扩展与校准",
+        "校准量与独立评价量分开"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "filename": "consumer_sim_v1.pdf",
+          "url": "https://arxiv.org/pdf/2606.30395v1",
+          "sha256": "5b7bf75fb3ff46206649fa85810a608e64be2c1323688370e140e9cb69513dee",
+          "bytes": 6244963,
+          "status": "downloaded",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_sim_v1.pdf"
+        }
+      ],
+      "theme": "socioverse_cases",
+      "theme_source_file": "docs/literature/sce/sources/socioverse_cases.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "sv2_zhang_2026",
+      "title": "SocioVerse2: A Longitudinal Dynamic Social Simulation Framework under a Human-AI Co-evolutionary Paradigm",
+      "authors": [
+        "Xinnong Zhang",
+        "Jiayu Lin",
+        "Jia Wang",
+        "et al."
+      ],
+      "year": 2026,
+      "source_url": "https://arxiv.org/html/2609.24911v1",
+      "open_access_url": "https://arxiv.org/html/2609.24911v1",
+      "source_type": "preprint",
+      "access_level": "full_text",
+      "evidence_locations": [
+        "§5.4.2 and Appendix A.7",
+        "§5.4.3 and Appendix A.8",
+        "§5.2.1"
+      ],
+      "findings": [
+        "PMI将主体经营状态更新与问卷作答分开",
+        "汽车份额结果包含事后校准，标为重建",
+        "机制替换可用规则决策作对照"
+      ],
+      "limitations": [
+        "模型截止日期是作者报告，不能自动验证本项目模型",
+        "未独立运行参考案例"
+      ],
+      "project_use": [
+        "价格体验中间状态",
+        "规则基线和独立留出",
+        "重建与预测标签分别声明"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "filename": "socioverse2_v1.pdf",
+          "url": "https://arxiv.org/pdf/2609.24911v1",
+          "sha256": "3131dd982402edfc7b03d1de4103d720af9352484aee460833495ea36434faf9",
+          "bytes": 2674134,
+          "status": "downloaded",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/socioverse2_v1.pdf"
+        }
+      ],
+      "theme": "socioverse_cases",
+      "theme_source_file": "docs/literature/sce/sources/socioverse_cases.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "sv_docs_consumer_2026",
+      "title": "消费者信心——当纵向轴是信息而不是时间",
+      "authors": [
+        "SocioVerse2 team"
+      ],
+      "year": 2026,
+      "source_url": "https://socioverse.fudan-disc.com/docs/zh/examples/consumer-confidence/",
+      "open_access_url": "https://socioverse.fudan-disc.com/docs/zh/examples/consumer-confidence/",
+      "source_type": "official_documentation",
+      "access_level": "full_text",
+      "evidence_locations": [
+        "P/E/B",
+        "Results caveats",
+        "Grounding"
+      ],
+      "findings": [
+        "同一目标月的多信息截止点展示信息敏感性",
+        "演示披露指标过滤与未校准水平"
+      ],
+      "limitations": [
+        "小型工程演示不等于全国准确性验证"
+      ],
+      "project_use": [
+        "固定P、固定目标的E对照",
+        "来源与假设分开记录"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "filename": "consumer_confidence.html",
+          "url": "https://socioverse.fudan-disc.com/docs/zh/examples/consumer-confidence/",
+          "sha256": "2733798595515d1e24fa4deda236270add8b9f82cba89beb8f58ba2d54f63a4f",
+          "bytes": 55615,
+          "status": "downloaded",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_confidence.html"
+        }
+      ],
+      "theme": "socioverse_cases",
+      "theme_source_file": "docs/literature/sce/sources/socioverse_cases.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "sv_docs_hisim_2026",
+      "title": "混合舆论动态——同一内核上的LLM与ABM混合人群",
+      "authors": [
+        "SocioVerse2 team"
+      ],
+      "year": 2026,
+      "source_url": "https://socioverse.fudan-disc.com/docs/zh/examples/hisim-roe/",
+      "open_access_url": "https://socioverse.fudan-disc.com/docs/zh/examples/hisim-roe/",
+      "source_type": "official_documentation",
+      "access_level": "full_text",
+      "evidence_locations": [
+        "Two behavior paths",
+        "Results",
+        "v0.2.0 artifact note"
+      ],
+      "findings": [
+        "核心与普通人群更新机制不同",
+        "规则侧可以收缩总体分布"
+      ],
+      "limitations": [
+        "网络舆论机制不能视为家庭调查的既有行为事实"
+      ],
+      "project_use": [
+        "分别看Core和Normal分布",
+        "不将统计填补冒称互动仿真"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "filename": "hisim_roe.html",
+          "url": "https://socioverse.fudan-disc.com/docs/zh/examples/hisim-roe/",
+          "sha256": "12e36df528deef114876cb7925834584c1a3d9c0e1efb7f37e72a5c615b6c2ad",
+          "bytes": 57227,
+          "status": "downloaded",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/hisim_roe.html"
+        }
+      ],
+      "theme": "socioverse_cases",
+      "theme_source_file": "docs/literature/sce/sources/socioverse_cases.json",
+      "archive_status": "downloaded"
+    },
+    {
+      "id": "cs_rewrite_fbe0cdc4",
+      "title": "ConsumerSim core pipeline clean rewrite",
+      "authors": [
+        "RunRiotComeOn / Fudan DISC Lab"
+      ],
+      "year": 2026,
+      "source_url": "https://github.com/RunRiotComeOn/ConsumerSim-Consumer-Confidence-Forecast/tree/fbe0cdc4916d72a359f14fd48ab178139c23337d",
+      "open_access_url": "https://github.com/RunRiotComeOn/ConsumerSim-Consumer-Confidence-Forecast/tree/fbe0cdc4916d72a359f14fd48ab178139c23337d",
+      "source_type": "source_code",
+      "access_level": "source_code",
+      "evidence_locations": [
+        "README core scope",
+        "consumer_pipeline/information.py",
+        "consumer_pipeline/debias.py"
+      ],
+      "findings": [
+        "公开核心源码已可阅读",
+        "残差校准不同于论文惯性混合",
+        "指标过滤字段为observed_at"
+      ],
+      "limitations": [
+        "README排除了论文验证任务",
+        "observed_at与当时公开版本不能自动等同",
+        "默认local为规则演示"
+      ],
+      "project_use": [
+        "参考模块契约但不替换当前实现",
+        "另验发布日期/vintage",
+        "更新旧资源可得性认识"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "filename": "consumer_sim_readme_fbe0cdc4.md",
+          "url": "https://raw.githubusercontent.com/RunRiotComeOn/ConsumerSim-Consumer-Confidence-Forecast/fbe0cdc4916d72a359f14fd48ab178139c23337d/README.md",
+          "sha256": "52ef656fe51a0b80d810f36cad7b3fbeaca5730da87ebc1735e509f572762726",
+          "bytes": 11636,
+          "status": "downloaded",
+          "source_commit": "fbe0cdc4916d72a359f14fd48ab178139c23337d",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_sim_readme_fbe0cdc4.md"
+        },
+        {
+          "filename": "consumer_sim_information_fbe0cdc4.py",
+          "url": "https://raw.githubusercontent.com/RunRiotComeOn/ConsumerSim-Consumer-Confidence-Forecast/fbe0cdc4916d72a359f14fd48ab178139c23337d/consumer_pipeline/information.py",
+          "sha256": "59ffc4174cc26b48b220840b266d450dddc52d31b346a8185247645086c8cf63",
+          "bytes": 3758,
+          "status": "downloaded",
+          "source_commit": "fbe0cdc4916d72a359f14fd48ab178139c23337d",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_sim_information_fbe0cdc4.py"
+        },
+        {
+          "filename": "consumer_sim_debias_fbe0cdc4.py",
+          "url": "https://raw.githubusercontent.com/RunRiotComeOn/ConsumerSim-Consumer-Confidence-Forecast/fbe0cdc4916d72a359f14fd48ab178139c23337d/consumer_pipeline/debias.py",
+          "sha256": "946c5d1635cef78889b4253029cbafc26b07b96f5271dac699334e7deb44b769",
+          "bytes": 2500,
+          "status": "downloaded",
+          "source_commit": "fbe0cdc4916d72a359f14fd48ab178139c23337d",
+          "attempt_manifest": "data/raw/literature/sce/20261005/socioverse_cases/download_manifest.json",
+          "theme": "socioverse_cases",
+          "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_sim_debias_fbe0cdc4.py"
+        }
+      ],
+      "theme": "socioverse_cases",
+      "theme_source_file": "docs/literature/sce/sources/socioverse_cases.json",
+      "archive_status": "downloaded"
+    }
+  ],
+  "archive_state_note": "local_archives/archive_status record current successful archives; any retained pdf_archive sandbox failure describes only the earlier attempt. All actual hashes are checked in archive_manifest.json."
+}

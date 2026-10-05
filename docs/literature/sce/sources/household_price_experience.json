@@ -1,0 +1,354 @@
+{
+  "checked_on": "2026-10-05",
+  "topic": "household_price_experience",
+  "records": [
+    {
+      "id": "price-experience-dmow-2021",
+      "title": "Exposure to Grocery Prices and Inflation Expectations",
+      "authors": [
+        "Francesco D'Acunto",
+        "Ulrike Malmendier",
+        "Juan Ospina",
+        "Michael Weber"
+      ],
+      "year": 2021,
+      "source_url": "https://doi.org/10.1086/713192",
+      "open_access_url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+      "source_type": "journal_article_author_version",
+      "access_level": "全文（作者稿；在线附录）",
+      "evidence_locations": [
+        "作者稿 pp. 1-2：摘要、主要结果及购买频率与消费权重比较",
+        "作者稿 pp. 3-5：解释力、问卷噪声/圆整/堆积的讨论与分组敏感性",
+        "作者稿 pp. 6-9：样本、Nielsen 扫描数据、家庭 CPI 与频率 CPI 及主结果",
+        "作者稿 pp. 14-15：对残差噪声与圆整解释的限定、分组聚合",
+        "在线附录 A.1/A.7（作者稿 pp. 26-33）：噪声和圆整模拟"
+      ],
+      "findings": [
+        "2015/2016 调查与 Nielsen 家庭扫描数据匹配；约 92,511 条调查观测中，约 59,126 人有完整分析样本。匹配样本较美国总体更年长、富裕、受教育且业主比例较高。",
+        "观察关联和两波个体内证据显示，家庭购买频率指标对预期的关联通常强于单用支出份额构造的家庭 CPI；论文报告频率指标关联高约 20-40%，高低频组预期差示例约 0.7pp 对 0.5pp。",
+        "购买的商品涨价比同幅降价更能解释预期；价格变化只出现在未购买品类时，作用较弱。",
+        "作者提醒自报预期有随机测量误差、整数/5 圆整和 heaping；模拟显示这些过程会压低微观拟合度，但不能据此说残差全是调查噪声。"
+      ],
+      "limitations": [
+        "不是随机价格暴露实验；购物篮、购买频率、关注度与预期会共同变化。固定个体效应不能排除时变新闻注意、生活方式或购物行为。",
+        "横截面解释力低于10%；样本来自有许可限制的 Nielsen 面板，不能用 BLS CE 当作逐 UPC/实际成交价的等价复制。",
+        "点预测圆整结论不能直接移植到 SCE 的概率密度回答，也不能说明本项目约7pp的回答离散完全由价格体验产生。"
+      ],
+      "project_use": [
+        "将购买/消费篮子作为 P 到体验 E_i 的候选中介；若用公开 CE，只称为合成篮子价格暴露，不称个人实际价格或个人真实体验。",
+        "若主购物者、车辆使用或通勤未直接测量，不从性别、就业、地区推断角色；频率权重须与支出份额规格分开。",
+        "零 API 核验 Q8 整数/5/10 堆积，Q9 每份密度非零档数与质量集中，再区分实际人群分歧、个体不确定性和回答形式；Binder (2017) 仅作为待独立复现的测量方法，不在本主题精选研究内。"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "household_price_experience",
+          "source_id": "price-experience-dmow-2021",
+          "url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+          "local_path": "data/raw/literature/sce/20261005/household_price_experience/dmow_author_2020.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+          "status": "downloaded",
+          "bytes": 566568,
+          "sha256": "fb93ff9688f25e5923521e755f61a5fb7c097211717e235e5f7a93969300b24a",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ]
+    },
+    {
+      "id": "price-experience-gender-roles-2021",
+      "title": "Gender Roles Produce Divergent Economic Expectations",
+      "authors": [
+        "Francesco D'Acunto",
+        "Ulrike Malmendier",
+        "Michael Weber"
+      ],
+      "year": 2021,
+      "source_url": "https://doi.org/10.1073/pnas.2008534118",
+      "open_access_url": "https://eml.berkeley.edu/~ulrike/Papers/pnas202008534_Published_Paper.pdf",
+      "source_type": "journal_article_author_version",
+      "access_level": "全文（作者稿）",
+      "evidence_locations": [
+        "作者稿 pp. 1-3，尤其 Table 1：匹配样本、主要购物者占比、组间与家庭内回归",
+        "作者稿 pp. 6-8：家庭购物信息来源、SCE 延伸、代理检验和局限"
+      ],
+      "findings": [
+        "研究 2015/2016 年 Nielsen/Kilts 调查中同时有男女户主回答的家庭，约 7,846 户、20,866 条个人-波次记录；约65%女性户主、12%男性户主自报主要购物者。",
+        "主要购物者分工与通胀预期性别差距相关：不购物男性的原始差距约0.64pp；存在男性购物参与的家庭差距较小且不显著。",
+        "家庭固定效应和人口控制削弱稳定家庭差异解释，但购物角色非随机。论文报告女性更常以食品杂货、男性更常以汽油为日常信息来源，并提示通勤等共同变化因素。",
+        "用于 SCE 的外部检验缺少个体购物分工，只能用州级男性购物比例等代理。"
+      ],
+      "limitations": [
+        "观察到的购物角色没有随机指派，不能把角色-预期关联解释为角色改变的因果效应。",
+        "样本着重双户主家庭并依赖自报和 Nielsen 面板；与 DMOW 共用数据，不是独立样本重复。",
+        "性别、就业、地区或家庭身份都不能确定谁实际买菜、做饭、开车或支付账单。"
+      ],
+      "project_use": [
+        "只有项目画像直接包含经验证的购物/驾驶角色时，才将其作为 P 的个体标签；否则留空或作为明确敏感性假设。",
+        "将食品与汽油保留为共享 E 的不同类别；有实测角色后才检验其和分类暴露的交互，不用性别定高低预期。",
+        "以可观测角色的留出样本交互检验个体效应；SCE 无个体购物标签时，不把州级代理解释成受访者级角色。"
+      ],
+      "checked_on": "2026-10-05"
+    },
+    {
+      "id": "price-experience-johannsen-2014",
+      "title": "Inflation Experience and Inflation Expectations: Dispersion and Disagreement Within Demographic Groups",
+      "authors": [
+        "Benjamin K. Johannsen"
+      ],
+      "year": 2014,
+      "source_url": "https://doi.org/10.17016/FEDS.2014.089",
+      "open_access_url": "https://www.federalreserve.gov/econresdata/feds/2014/files/201489pap.pdf",
+      "source_type": "central_bank_working_paper",
+      "access_level": "全文（Federal Reserve FEDS 工作论文）",
+      "evidence_locations": [
+        "pp. 1-2：研究问题、摘要与组层关联",
+        "pp. 4-8：CEX Interview 支出份额、CPI 分类变化及家庭暴露构造",
+        "pp. 9-13：教育/收入/年龄组暴露差异、SCE/MSC 预期分歧比较及局限"
+      ],
+      "findings": [
+        "§2.2 以固定篮子类别价格指数的成本比率构造家庭价格指数；家庭面对共同类别价格变化的假设意味着结果不是实际购买价。",
+        "CEX 暴露与 Michigan Survey of Consumers 预期在组别层面比较，并非同一受访者跨调查匹配。低教育/收入组的篮子暴露和预期离散通常较高；年龄组没有稳定排序。",
+        "易变食品与能源类别的组内权重差异是低收入/教育组经验离散的可能来源；住房以业主等值租金作代理。"
+      ],
+      "limitations": [
+        "观察性且以人口组汇总，不能识别同一人从真实价格体验到个人回答的微观中介效应。",
+        "全国分类指数不能匹配具体地区、商店、折扣、商品质量和个人购买日期；每月样本约400户并需至少9个月记录。",
+        "2014 年 Federal Reserve 工作论文，不视作已发表的因果识别结论。"
+      ],
+      "project_use": [
+        "作为公开 CE 家庭篮子暴露方法的参照，不要把项目的加权对数变化近似说成精确复现其固定篮子成本比率；须把合成暴露与实际个人价格、主观体验和预期答案区分。",
+        "按租金与 OER 选择一个清晰住房口径；不把按揭本金、租金支出和业主等值租金混为同一实际体验。",
+        "先重现组层方向并做分类映射/年份敏感性；再独立比较合成篮子离散与 SCE 跨人预期分布，不跨调查做个体匹配。"
+      ],
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "household_price_experience",
+          "source_id": "price-experience-johannsen-2014",
+          "url": "https://www.federalreserve.gov/econresdata/feds/2014/files/201489pap.pdf",
+          "local_path": "data/raw/literature/sce/20261005/household_price_experience/johannsen_feds201489.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.federalreserve.gov/econresdata/feds/2014/files/201489pap.pdf",
+          "status": "downloaded",
+          "bytes": 437135,
+          "sha256": "dedd12749c24302d4e2c9afae8fb5cc930a394c9234b1b59bfa0596bdc70a846",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ]
+    },
+    {
+      "id": "price-experience-financial-literacy-2010",
+      "title": "Expectations of Inflation: The Role of Demographic Variables, Expectation Formation, and Financial Literacy",
+      "authors": [
+        "Wändi Bruine de Bruin",
+        "Wilbert van der Klaauw",
+        "Julie S. Downs",
+        "Baruch Fischhoff",
+        "Giorgio Topa",
+        "Olivier Armantier"
+      ],
+      "year": 2010,
+      "source_url": "https://doi.org/10.1111/j.1745-6606.2010.01174.x",
+      "open_access_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/j.1745-6606.2010.01174.x",
+      "source_type": "journal_article",
+      "access_level": "全文（期刊在线页面）",
+      "evidence_locations": [
+        "样本与方法段：RAND American Life Panel 2007-2008 年调查、抽样模块和代表性限制",
+        "Table 5：人口变量、日常价格注意、计划/支出和金融素养的回归比较"
+      ],
+      "findings": [
+        "740 名受邀者中，299 人进入并完成预期、理由、金融素养问题模块；样本量和在线面板构成限制外推。",
+        "横截面模型中仅人口变量的 R2 约 .05；加价格/支出注意变量约 .10；再加金融素养约 .15。更关注支出/已付价格和较低金融素养与较高点预期相关。",
+        "加入价格注意与素养后部分人口变量系数衰减；性别在此样本不显著，年龄方向也不稳定。"
+      ],
+      "limitations": [
+        "随机分配的是问卷模块，不是受访者的金融素养、信息或消费体验；系数为观察相关。",
+        "样本只有299人，2007-2008 时期且预期右偏；无法证明现代 SCE 人群关系或金融教育的因果效应。",
+        "该文金融素养量表不等同于 SCE 的数理能力测试。"
+      ],
+      "project_use": [
+        "SCE 直接数理能力测量可作为信息理解/不确定性分层候选；不以教育、年龄或性别代填金融素养。",
+        "保留价格暴露与解释能力两个通道；不要把素养加为任意噪声或消费权重。",
+        "以固定 E 的留出回答比较组间校准和个体分布宽度，若缺可比测量则不启用该画像维度。"
+      ],
+      "checked_on": "2026-10-05"
+    },
+    {
+      "id": "price-experience-gas-experiment-2024",
+      "title": "Gasoline Price Changes and Consumer Inflation Expectations: Experimental Evidence",
+      "authors": [
+        "Felix Aidala",
+        "Olivier Armantier",
+        "Gizem Koşar",
+        "Jason Somerville",
+        "Giorgio Topa",
+        "Wilbert van der Klaauw"
+      ],
+      "year": 2024,
+      "source_url": "https://doi.org/10.1016/j.jebo.2024.01.027",
+      "open_access_url": null,
+      "source_type": "journal_article",
+      "access_level": "摘要與頁面節選（全文 PDF 受限）",
+      "evidence_locations": [
+        "期刊摘要與導論：SCE 2022 年 5-6 月實驗的目標、相對商品結果",
+        "Section 2-3 頁面節選：SCE 樣本及同一受訪者的假設情景設計",
+        "Section 4-6 頁面節選與 Table 2：汽油正負衝擊和食物/耐用品反應"
+      ],
+      "findings": [
+        "SCE 中同一受訪者接受食品/汽油與耐用品/汽油兩組假設價格衝擊，屬於受控假設情景的個體處理效應，不是個人實際價格或購買觀察。",
+        "汽油正向年度價格通脹衝擊 1pp 對一年/三年预期的平均影响约 0.075/0.051pp；负向效应接近零。",
+        "食品正向 1pp 冲击平均效应约 0.234/0.203pp，耐用品约 0.180/0.149pp；汽油作用随预测期减弱，且涨跌不对称。"
+      ],
+      "limitations": [
+        "出版社 PDF 不能在当前访问中下载，数值依据可检索到的期刊摘要、实验说明及表格节选；未独立核实样本量或全文附录。",
+        "假设情景识别被询问后的回答变化，不识别现实中的地区汽油价对某个家庭的个人体验。",
+        "实验期处于 2022 高通胀阶段，不将处理系数固定移植至历史月份。"
+      ],
+      "project_use": [
+        "将汽油、食品和耐用品分列为共享 E 的分类信息；地方汽油均值只能是地区价格环境，不能冒充个体消费。",
+        "开展同幅正负、同一文本条件下的离线响应测试，核验方向和相对类别反应；不用同一留出真值估计系数。",
+        "欲构造 E_i 汽油项，需要直接车辆/购买暴露字段或明确列作合成敏感性假设。"
+      ],
+      "checked_on": "2026-10-05"
+    },
+    {
+      "id": "price-experience-homeownership-2025-2026",
+      "title": "Homeownership and Attention to Inflation: Evidence from Information Treatments",
+      "authors": [
+        "Jessica Piccolo",
+        "Yuriy Gorodnichenko"
+      ],
+      "year": 2025,
+      "source_url": "https://www.nber.org/papers/w33595",
+      "open_access_url": "https://eml.berkeley.edu/~ygorodni/epi_housing_status.pdf",
+      "source_type": "working_paper_revised_2026",
+      "access_level": "全文（作者稿；NBER WP 33595，2026-07 修订）",
+      "evidence_locations": [
+        "作者稿 pp. 1-2：摘要、2021-2023 年美国家庭随机信息处理",
+        "作者稿 pp. 17-19：随机处理、住房身份分组的更新与消费估计",
+        "作者稿 pp. 21-22：流动性、耐用品/非耐用品机制与结论",
+        "NBER 工作论文页：编号、2025 年 3 月首发、2026 年 7 月修订日期"
+      ],
+      "findings": [
+        "约 26,000 个美国家庭的随机信息实验显示，同类信息在租户与业主中带来不同的预期更新和支出反应。",
+        "租户对新信息的预期更新较强，但不显著调整耐用品；业主更新较弱，但在更新时增加耐用品支出。租户更可能受流动性限制，短期通过非耐用品调整。",
+        "论文将信息处理效应的异质性与住房身份联系，但住房身份本身并未随机化。"
+      ],
+      "limitations": [
+        "工作论文且为 2026 年修订版，研究环境为 2021-2023；不是已发表的永久结构参数。",
+        "租户/业主差异同时与收入、财富、债务和年龄关联，不能说住房身份本身造成全部行为差异。",
+        "注意、预期更新、实际租金/房贷支出与消费调整是不同变量。"
+      ],
+      "project_use": [
+        "住房 tenure 是可实测的 P 候选；用同一 E 信息比较按 tenure 分层的更新敏感性，并将租金支出权重独立计算。",
+        "不要把业主等值租金、租户实际租金、按揭本金和个人租金涨幅混为一项。",
+        "控制可观察年龄/收入等条件后，用未参与设计的月份检验信息更新与消费反应，分别报告点预测/分布宽度。"
+      ],
+      "checked_on": "2026-10-05"
+    },
+    {
+      "id": "price-experience-supermarket-right-tail-2024",
+      "title": "The Influence of Supermarket Prices on Consumer Inflation Expectations",
+      "authors": [
+        "Chew Lian Chua",
+        "Sarantis Tsiaplias"
+      ],
+      "year": 2024,
+      "source_url": "https://doi.org/10.1016/j.jebo.2024.01.022",
+      "open_access_url": "https://www.sciencedirect.com/science/article/pii/S0167268124000283",
+      "source_type": "journal_article_open_access_claimed",
+      "access_level": "摘要与元数据（期刊标为开放获取，全文网页检索返回403，未阅读全文）",
+      "evidence_locations": [
+        "ScienceDirect 期刊摘要：澳大利亚消费者预期样本、超市价格右尾结果及数据可得性说明",
+        "作者研究页：期刊论文与合作者信息"
+      ],
+      "findings": [
+        "摘要称以约 85,000 名澳大利亚消费者预期数据和超市价格变化数据估计，价格变化分布右尾与较高通胀预期相关，低收入家庭的关联更明显。",
+        "论文将超市价格分布的特定部分视为消费者信息，不局限于家庭可观测支出份额；其机制可与实际个人篮子暴露并列。",
+        "数据可按申请取得。"
+      ],
+      "limitations": [
+        "仅核读摘要和作者出版记录；全文访问失败，未核实样本时期、精确识别、微观配对结构或稳健性。",
+        "澳大利亚超市数据不可直接代表美国 CPI 或项目人群；摘要关联不能当作随机因果效应。",
+        "开放获取标记不等于本地全文已经核验或可下载。"
+      ],
+      "project_use": [
+        "视为共享食品 E 的分布敏感性候选，与个人篮子加权指数分开。",
+        "不移植其估计系数；只有目标市场有可核验的公开价格分布时才设计留出测试。",
+        "若找不到美国同频率、同分类的价格分布，不启用该变量。"
+      ],
+      "checked_on": "2026-10-05"
+    },
+    {
+      "id": "dataset-bls-ce-pumd-2026",
+      "title": "Consumer Expenditure Survey Public Use Microdata: Files, Documentation and Tables",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2026,
+      "source_url": "https://www.bls.gov/cex/pumd.htm",
+      "open_access_url": "https://www.bls.gov/cex/pumd_data.htm",
+      "source_type": "official_dataset_documentation",
+      "access_level": "官方数据文档与免费下载页面（核查日期2026-10-05）",
+      "evidence_locations": [
+        "PUMD 首页：微观文件内容、隐私调整及 SAS/Stata/CSV 格式",
+        "PUMD 数据文件页：2024 为当前列出的最新年度；文件年份覆盖、Interview/Diary 分开下载及 1982/1983 缺年",
+        "Getting Started Guide §2：CU/NEWID、字典字段和变量可用期间；§3 Interview、§4 Diary、§6 年度估计",
+        "Tables 页面：组均值/方差/份额、两人口维度交叉表和历史覆盖"
+      ],
+      "findings": [
+        "CE 收集支出、收入和人口资料；PUMD 以消费单元为基本消费者记录并做隐私保护处理。当前可下载年度文件为 1980-2024，1982/1983 不可用，若干旧字段/Diary 资料较少。",
+        "Interview 询问 CU 过去三个月支出并轮换最多四个季度；Diary 对 CU 的常见小额购买记录两周。NEWID 可连接同一调查的文件，不可把 Diary 和 Interview 不同样本按 CU 联结。",
+        "发布表是加权组/人口均值、份额和部分方差；部分跨表按两人口特征列值。它们不是逐户联合记录。PUMD 可计算同一 CU 记录中的联合变量与类别支出权重。",
+        "年份记录不等于历史调查月时点已发布版本；PUMD 年度更新可能重处理重叠季度，需要另存发布日/版本。"
+      ],
+      "limitations": [
+        "不能识别某次购买对应的个人家庭成员或 SCE 受访者，也没有证据把记录视作个人交易单价、购物者或通勤日志。",
+        "Diary 两周不是年度购买频率；Interview/Diary 同户联合篮子无法从公共数据直接还原。",
+        "组均值若赋予每人会丢失组内差异；多维联合分布只能用 PUMD 微观数据并显式考虑样本权重、隐私调整、缺失、顶码和抽样误差。购物/驾驶等未观测角色只能由其他可信联合微观证据支持条件概率合成，不能从 CEX 或性别直接赋值。"
+      ],
+      "project_use": [
+        "可用 PUMD 联合 CU 支出份额与目标月份已公开的 BLS 分类 CPI 变化，生成明确命名的合成篮子暴露；这只是共同价格与估计权重的计算。",
+        "对 A 线可把后来发布的调查作为回顾性人口约束并清楚标注；B 线或严格点时 A 线只用目标时点前已发布的 P vintage。与 SCE 人口按共同字段做统计分配，记录匹配假设、权重、随机种子和版本；不声称同一受访者匹配。",
+        "用 BLS 发布表做总体/人口组均值 sanity check；不用组均值给 Agent 定性别购物角色、汽油消费量或个人预期。"
+      ],
+      "checked_on": "2026-10-05"
+    },
+    {
+      "id": "dataset-nyfed-sce-2026",
+      "title": "Survey of Consumer Expectations: Public Microdata and Frequently Asked Questions",
+      "authors": [
+        "Federal Reserve Bank of New York, Center for Microeconomic Data"
+      ],
+      "year": 2026,
+      "source_url": "https://www.newyorkfed.org/microeconomics/sce",
+      "open_access_url": "https://www.newyorkfed.org/microeconomics/sce/sce-faq",
+      "source_type": "official_dataset_documentation",
+      "access_level": "官方问卷、公开微观数据页面与 FAQ（核查日期2026-10-05）",
+      "evidence_locations": [
+        "SCE 页面：每月轮换面板、人口字段、个体预测不确定性和公开微观数据下载入口",
+        "SCE FAQ §Core：启动时间、样本/轮换、密度均值与点预测的定义、问 inflation 而非个人 prices 的原因",
+        "SCE FAQ §Microdata release：核心数据9个月滞后，Housing/Household Spending等专门模块18个月滞后",
+        "SCE FAQ §Housing：每年2月租户与业主专门问题；住房微观数据滞后18个月"
+      ],
+      "findings": [
+        "SCE 2013年6月启动，月度全国互联网轮换面板约1,200-1,300名家庭户主，个人最长参与12个月；公开核心微观数据包括年龄、收入、教育、住房所有权、就业经历、地区和数理能力。",
+        "发布的个人密度均值是 respondent-level density 派生值；个体预测不确定性在个人分布内，人群分歧则是不同个体派生均值之间的跨人离散。点预测与密度均值也不是同一变量。",
+        "核心微观约滞后9个月；Housing、Household Spending、Public Policy 和 Labor Market 特别模块约滞后18个月。住房调查自2014年每年2月对租户和业主 field。",
+        "问卷直接问未来总体通胀，避免把总体 inflation 与受访者自己所付 specific prices 混为一谈。"
+      ],
+      "limitations": [
+        "公共 SCE 微观资料没有逐笔家庭消费、购买者或与 CE CU 的交叉身份链接。",
+        "当前下载的同期密度均值/权重是评价结果，不可作为同一模拟月份的 P 或 E。",
+        "住房和支出特殊模块更低频且延迟发布；不能假设其信息在访谈当时已知。"
+      ],
+      "project_use": [
+        "将人口画像白名单限于问卷/公开变量；住房 tenure 可实测，但不能据此推个人租金价格或购买习惯。",
+        "在后验验证中并列 Q9 的个人密度均值分布、个人密度宽度和跨人加权分散，避免用个体宽分布代替群体分歧。",
+        "将真实同期答案、密度均值派生结果和权重放在评价层；按模块发布滞后保存 `published_at` 与 vintage。"
+      ],
+      "checked_on": "2026-10-05"
+    }
+  ]
+}

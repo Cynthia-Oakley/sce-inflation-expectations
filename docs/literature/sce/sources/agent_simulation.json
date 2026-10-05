@@ -1,0 +1,365 @@
+{
+  "theme": "LLM agent simulation, survey response fidelity, distributional validation, calibration and extrapolation",
+  "checked_on": "2026-10-05",
+  "selection_note": "Seven sources were selected: three core full-text reads (Argyle, Bisbee, Park) and four targeted reads on economic-agent calibration, experimental replication, probability sampling, and uncertainty calibration. Pages and author or institutional sources were opened. Shell PDF retrieval was blocked by sandbox DNS; no local PDF or SHA-256 is claimed. The parent task will centralize retrieval and hashing.",
+  "sources": [
+    {
+      "id": "argyle2023_out_of_one_many",
+      "title": "Out of One, Many: Using Language Models to Simulate Human Samples",
+      "authors": [
+        "Lisa P. Argyle",
+        "Ethan C. Busby",
+        "Nancy Fulda",
+        "Joshua Gubler",
+        "Christopher Rytting",
+        "David Wingate"
+      ],
+      "year": 2023,
+      "source_url": "https://doi.org/10.1017/pan.2023.2",
+      "open_access_url": "https://arxiv.org/pdf/2209.06899",
+      "source_type": "peer_reviewed_journal_article",
+      "access_level": "full_text",
+      "reading_status": "core_full_text_read",
+      "evidence_locations": [
+        "journal article §§3–7",
+        "arXiv PDF pp. 4–15; especially algorithmic fidelity and silicon sampling"
+      ],
+      "findings": [
+        "The paper defines algorithmic fidelity as reproducing target group response distributions and relations, and demonstrates that suitable conditioning can produce different political and public-opinion response patterns.",
+        "The authors explicitly distinguish population-level sample simulation from faithfully simulating a particular individual; conditioning on persona attributes does not guarantee individual coherence or fidelity in a new domain."
+      ],
+      "limitations": [
+        "The empirical setting is U.S. political attitudes and public opinion, not household inflation expectations or SCE Q8/Q9.",
+        "The work does not establish that demographic labels alone recover economically meaningful heterogeneity or within-person probability densities."
+      ],
+      "project_use": "Use algorithmic fidelity as a validation target: compare weighted response distributions and cross-question relationships, not only the national mean or persona plausibility. Treat the paper as a design precedent, not evidence that the current demographic-only SCE agents are faithful.",
+      "version_note": "Political Analysis 31(3), 2023, pp. 337–351; article DOI and author-posted arXiv full text were checked.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/argyle2023_out_of_one_many.pdf",
+        "pdf_url": "https://arxiv.org/pdf/2209.06899",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "agent_simulation",
+          "source_id": "argyle2023_out_of_one_many",
+          "url": "https://arxiv.org/pdf/2209.06899",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/argyle2023_out_of_one_many.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://arxiv.org/pdf/2209.06899",
+          "status": "downloaded",
+          "bytes": 3204201,
+          "sha256": "391f94c0c8bd2f9bed2aa77420e203f863e527296a9ad4412318b1b33d55aeef",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ]
+    },
+    {
+      "id": "bisbee2024_synthetic_replacements",
+      "title": "Synthetic Replacements for Human Survey Data? The Perils of Large Language Models",
+      "authors": [
+        "James Bisbee",
+        "Joshua D. Clinton",
+        "Cassy Dorff",
+        "Brenton Kenkel",
+        "Jennifer M. Larson"
+      ],
+      "year": 2024,
+      "source_url": "https://www.cambridge.org/core/journals/political-analysis/article/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models/B92267DC26195C7F36E63EA04A47D2FE",
+      "open_access_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B92267DC26195C7F36E63EA04A47D2FE/S1047198724000056a.pdf/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models.pdf",
+      "source_type": "peer_reviewed_journal_article",
+      "access_level": "full_text",
+      "reading_status": "core_full_text_read",
+      "evidence_locations": [
+        "Political Analysis 32(4), pp. 401–416",
+        "article §§2–4; methods, main comparisons, prompt and time sensitivity"
+      ],
+      "findings": [
+        "Personas based on real ANES respondents produced some group means close to the survey, while simulated response variance was too low and many regression relationships differed from the human data.",
+        "Small prompt wording changes and model updates over a three-month interval materially changed results, so increasing the number of generated records can narrow Monte Carlo error without fixing bias or distribution mismatch."
+      ],
+      "limitations": [
+        "The questions concern political attitudes and feeling thermometers, and the models and access methods are from an earlier generation; effect sizes do not transfer directly to SCE.",
+        "It diagnoses synthetic survey replacement more broadly and does not identify the cause of this project's narrow Q9 distribution."
+      ],
+      "project_use": "This is the closest empirical warning for the current mean-versus-dispersion gap. Use it to motivate preregistered distributional and prompt/version sensitivity checks; do not treat its measured variance gap as an expected SCE effect size.",
+      "version_note": "Political Analysis 32(4), 2024, pp. 401–416; Cambridge article page and open-access PDF checked.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/bisbee2024_synthetic_replacements.pdf",
+        "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B92267DC26195C7F36E63EA04A47D2FE/S1047198724000056a.pdf/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models.pdf",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "agent_simulation",
+          "source_id": "bisbee2024_synthetic_replacements",
+          "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B92267DC26195C7F36E63EA04A47D2FE/S1047198724000056a.pdf/div-class-title-synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models-div.pdf",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/bisbee2024_synthetic_replacements.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B92267DC26195C7F36E63EA04A47D2FE/S1047198724000056a.pdf/div-class-title-synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models-div.pdf",
+          "status": "downloaded",
+          "bytes": 988155,
+          "sha256": "ece42ff1351144b6d08bc060d6449007bcbba41708e6fb226e2cf2043c0bec2f",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central.json"
+        }
+      ]
+    },
+    {
+      "id": "horton2023_homo_silicus",
+      "title": "Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?",
+      "authors": [
+        "John J. Horton",
+        "Apostolos Filippas",
+        "Benjamin S. Manning"
+      ],
+      "year": 2023,
+      "source_url": "https://www.nber.org/papers/w31122",
+      "open_access_url": "https://www.benjaminmanning.com/files/homo_silicus.pdf",
+      "source_type": "working_paper",
+      "access_level": "full_text",
+      "reading_status": "targeted_full_text_sections_read",
+      "evidence_locations": [
+        "author-hosted PDF §2.2.1, pp. 12–14: mixture calibration and held-out two-stage game",
+        "author-hosted PDF pp. 31–32: ground-truth and PPI discussion"
+      ],
+      "findings": [
+        "The paper illustrates fitting interpretable mixtures of economic-agent types to behavior in known games, then testing the fitted model in a distinct two-stage game.",
+        "The calibration-versus-extrapolation separation is useful methodologically: matching behavior in a calibration setting does not itself establish performance in a new setting."
+      ],
+      "limitations": [
+        "The paper is an economic-agent framework and game application, not a household inflation-expectation survey or validation of SCE probabilities.",
+        "Version dates differ across records: the NBER series lists a February 2026 revision, while the author-hosted PDF inspected here carries a December 7, 2025 cover date. The specific February 2026 version was not verified as the PDF read."
+      ],
+      "project_use": "Borrow the separation of calibration and genuinely held-out tasks. Any learned mixture or prompt choice must be fit only on development months; evaluate against a later sealed SCE month and transparent baselines.",
+      "version_note": "NBER Working Paper 31122, first issued 2023; NBER metadata reports a February 2026 revision. The opened author-hosted full text is dated 2025-12-07, so this record does not claim to have read the February 2026 revision.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/horton2023_homo_silicus_author_version.pdf",
+        "pdf_url": "https://www.benjaminmanning.com/files/homo_silicus.pdf",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "agent_simulation",
+          "source_id": "horton2023_homo_silicus",
+          "url": "https://www.benjaminmanning.com/files/homo_silicus.pdf",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/homo_silicus_author_2025.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://www.benjaminmanning.com/files/homo_silicus.pdf",
+          "status": "downloaded",
+          "bytes": 1435579,
+          "sha256": "3bdf0a8376800c5de9f966384ddbf5692a4f8b7d2e143b8486f3f95b05251e84",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central_metadata_check.json"
+        }
+      ]
+    },
+    {
+      "id": "aher2023_turing_experiment",
+      "title": "Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies",
+      "authors": [
+        "Gati Aher",
+        "Rosa I. Arriaga",
+        "Adam Tauman Kalai"
+      ],
+      "year": 2023,
+      "source_url": "https://proceedings.mlr.press/v202/aher23a.html",
+      "open_access_url": "https://proceedings.mlr.press/v202/aher23a/aher23a.pdf",
+      "source_type": "peer_reviewed_conference_proceedings",
+      "access_level": "full_text",
+      "reading_status": "targeted_full_text_read",
+      "evidence_locations": [
+        "PMLR 202, pp. 337–371",
+        "PDF §§3–5, pp. 1–2: Turing Experiment setup, replication results, Wisdom of Crowds distortion"
+      ],
+      "findings": [
+        "Across four established human-subject studies, the authors report that simulated participants replicated the main finding in three studies, while one Wisdom of Crowds task showed an over-accuracy distortion.",
+        "Replication can reveal task-specific distortions even where a headline aggregate finding appears to match."
+      ],
+      "limitations": [
+        "The tested laboratory studies and response formats are not SCE inflation-expectation questions, and the results do not establish fidelity for arbitrary populations or tasks.",
+        "The paper does not supply a validated method for mapping generated answer distributions into SCE survey-weighted Q8/Q9 estimands."
+      ],
+      "project_use": "Use task-specific, predeclared checks for plausible distortions and replicate relationships, not a single realism score. The over-accuracy example motivates checking whether generated Q8/Q9 responses are systematically too moderate, too uniform, or too informed.",
+      "version_note": "Proceedings of Machine Learning Research 202, ICML 2023, pp. 337–371; official PMLR page and PDF checked.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/aher2023_multiple_humans.pdf",
+        "pdf_url": "https://proceedings.mlr.press/v202/aher23a/aher23a.pdf",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "agent_simulation",
+          "source_id": "aher2023_turing_experiment",
+          "url": "https://proceedings.mlr.press/v202/aher23a/aher23a.pdf",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/aher2023_icml.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://proceedings.mlr.press/v202/aher23a/aher23a.pdf",
+          "status": "downloaded",
+          "bytes": 3860576,
+          "sha256": "34ac40e9e779cb564038ab5e8e8393c975a2f942cc94b901d25f261739499a7e",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central_metadata_check.json"
+        }
+      ]
+    },
+    {
+      "id": "park2024_2026_self_reports",
+      "title": "LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals",
+      "authors": [
+        "Joon Sung Park",
+        "Carolyn Q. Zou",
+        "Jonne Kamphorst",
+        "Niles Egan",
+        "Aaron Shaw",
+        "Benjamin Mako Hill",
+        "Carrie Cai",
+        "Meredith Ringel Morris",
+        "Percy Liang",
+        "Robb Willer",
+        "Michael S. Bernstein"
+      ],
+      "year": 2024,
+      "source_url": "https://arxiv.org/abs/2411.10109",
+      "open_access_url": "https://arxiv.org/pdf/2411.10109",
+      "source_type": "preprint",
+      "access_level": "full_text",
+      "reading_status": "core_current_version_full_text_read",
+      "evidence_locations": [
+        "current arXiv v3 PDF, pp. 1–3: study and sample",
+        "PDF pp. 9–10: held-out evaluation and limitations"
+      ],
+      "findings": [
+        "The study recruited 1,052 U.S. participants for approximately two-hour interviews averaging about 6,491 words, alongside structured surveys; this is much richer input than demographic labels alone.",
+        "On held-out GSS items, agents grounded in participants' self-reports reached 82–86% of participants' own two-week test-retest consistency, compared with 74% for demographic-only agents.",
+        "The reported individual-level accuracy does not by itself establish that simulated respondents reproduce population-level cross-question correlations or a survey's joint distribution."
+      ],
+      "limitations": [
+        "The paper uses extensive person-specific interview data; its main result must not be attributed to 1,000 agents receiving only demographic labels.",
+        "The sample is English-speaking and U.S.-based, evaluation uses one model family and specific held-out questions, and the economic-game results do not clearly establish a benefit from self-reports.",
+        "It is a preprint with a substantial version/title change: v1 (2024-11) was titled 'Generative Agent Simulations of 1,000 People'; the current v3 was posted 2026-06-28."
+      ],
+      "project_use": "Treat verified, sourced household experience as a candidate input to test against demographic-only profiles. Do not import the individual-level performance claim to this project, whose profiles do not contain comparable interviews, and evaluate population joint structure separately.",
+      "version_note": "Current version inspected: arXiv v3, posted 2026-06-28, titled 'LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals'. The initial v1 title and framing differed; citations to 2024 refer to the first posting year, not the current version date.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/park2024_v3_self_reports.pdf",
+        "pdf_url": "https://arxiv.org/pdf/2411.10109",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "id": "park2024_2026_self_reports",
+          "url": "https://arxiv.org/pdf/2411.10109v3",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/park2024_2026_self_reports.pdf",
+          "bytes": 3563209,
+          "sha256": "1ee1f32c2ba92eae7a91f28d204b9041a0f1cfb9ffc7201b3c52ac464f4e1fe2",
+          "status": "downloaded",
+          "checked_on": "2026-10-05",
+          "attempt_manifest": "data/raw/literature/sce/20261005/agent_simulation/download_manifest.json",
+          "theme": "agent_simulation"
+        }
+      ]
+    },
+    {
+      "id": "gu2025_probability_sampling",
+      "title": "Do LLMs Play Dice? Exploring Probability Distribution Sampling in Large Language Models for Behavioral Simulation",
+      "authors": [
+        "Jia Gu",
+        "Liang Pang",
+        "Huawei Shen",
+        "Xueqi Cheng"
+      ],
+      "year": 2025,
+      "source_url": "https://aclanthology.org/2025.coling-main.360/",
+      "open_access_url": "https://aclanthology.org/2025.coling-main.360.pdf",
+      "source_type": "peer_reviewed_conference_proceedings",
+      "access_level": "full_text",
+      "reading_status": "targeted_full_text_read",
+      "evidence_locations": [
+        "current arXiv v3 PDF §§3–5, pp. 3–8: explicit distributions, implicit behavioral distributions, programmatic sampling"
+      ],
+      "findings": [
+        "The experiments find that models can often identify a requested probability distribution but do not reliably generate samples in accordance with it.",
+        "Using Python for explicit distribution sampling improves that task, while complex implicit behavioral distributions remain difficult.",
+        "The paper sets temperature to 0.9 to increase sequence diversity; increased text diversity does not establish that samples match a target human distribution."
+      ],
+      "limitations": [
+        "The benchmark concerns distribution-sampling tasks and behavioral sequences, not SCE-specific Q9 elicitation or survey weighting.",
+        "Tool-based random sampling can implement a declared probability vector but cannot supply evidence that the vector itself is a real respondent's belief."
+      ],
+      "project_use": "Keep the API temperature fixed in economic-input contrasts. If stochastic API variation needs estimation, repeat identical P/E/prompt calls as a separate technical-noise analysis; do not present temperature as a model of household expectation formation.",
+      "version_note": "Published in Proceedings of the 31st International Conference on Computational Linguistics (COLING 2025), pp. 5375–5390. The arXiv preprint was first posted 2024-04-13 and v3 posted 2024-12-18; the targeted full-text read was the arXiv v3 PDF, while the official ACL Anthology publication page and PDF URL were checked.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/gu2025_do_llms_play_dice.pdf",
+        "pdf_url": "https://aclanthology.org/2025.coling-main.360.pdf",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05",
+      "local_archives": [
+        {
+          "theme": "agent_simulation",
+          "source_id": "gu2025_probability_sampling",
+          "url": "https://arxiv.org/pdf/2404.09043v3",
+          "local_path": "data/raw/literature/sce/20261005/agent_simulation/gu_dice_arxiv_v3.pdf",
+          "checked_on": "2026-10-05",
+          "resolved_url": "https://arxiv.org/pdf/2404.09043v3",
+          "status": "downloaded",
+          "bytes": 777396,
+          "sha256": "dacb9393bb331f79f3deb9faec3b1efdcf1daad0ba2e5c7d78f8daf00e1c43e0",
+          "attempt_manifest": "data/raw/literature/sce/20261005/download_manifest_central_metadata_check.json"
+        }
+      ]
+    },
+    {
+      "id": "huang2025_uncertainty_quantification",
+      "title": "How Many Human Survey Respondents is a Large Language Model Worth? An Uncertainty Quantification Perspective",
+      "authors": [
+        "Chengpiao Huang",
+        "Yuhang Wu",
+        "Kaizheng Wang"
+      ],
+      "year": 2025,
+      "source_url": "https://arxiv.org/abs/2502.17773",
+      "open_access_url": "https://arxiv.org/pdf/2502.17773",
+      "source_type": "preprint",
+      "access_level": "full_text",
+      "reading_status": "targeted_full_text_read",
+      "evidence_locations": [
+        "current author PDF §2.2, pp. 4–7: uncertainty set and calibration",
+        "PDF examples: binary survey tasks and empirical coverage"
+      ],
+      "findings": [
+        "The proposed approach calibrates the effective synthetic sample size using a bank of related questions with human labels and uncertainty coverage checks.",
+        "Treating many synthetic responses as independent human observations can create intervals that are too narrow around a biased synthetic mean; too little synthetic weight can leave estimates noisy."
+      ],
+      "limitations": [
+        "The method relies on related human-labeled calibration questions and assumptions about transferability/exchangeability and sample independence.",
+        "The current examples center on student samples and binary items; this does not directly establish calibration for SCE survey weights, Q8/Q9 paired outcomes, or respondent-level ten-bin probability vectors.",
+        "This is a preprint; the current inspected author PDF is dated 2026-06-17, later than the initial 2025 posting."
+      ],
+      "project_use": "Use as a warning that synthetic row count is not effective human sample size. Any interval calibration should be learned from separate labeled tasks or periods and assessed on a sealed target month; 600 calls alone do not identify the effective sample size.",
+      "version_note": "arXiv:2502.17773; initial post in 2025. The current arXiv v6 was posted 2026-06-15; no journal publication claim is made.",
+      "pdf_archive": {
+        "local_path": "data/raw/literature/sce/20261005/agent_simulation/huang2025_llm_survey_respondents_uncertainty.pdf",
+        "pdf_url": "https://arxiv.org/pdf/2502.17773",
+        "status": "sandbox_dns_blocked",
+        "sha256": null
+      },
+      "checked_on": "2026-10-05"
+    }
+  ],
+  "gaps": [
+    "No selected paper directly validates survey-weighted SCE Q8/Q9 joint distributions or ten-bin within-person subjective densities.",
+    "The literature does not identify whether this project's narrow dispersion comes from shared economic information E, demographic-only profiles P, model priors, prompt form, or API sampling noise.",
+    "Current model training cutoffs are unknown, so retrospective replay of already public SCE periods cannot be labeled uncontaminated ex-ante prediction.",
+    "No local PDF or SHA-256 is present because shell DNS access was blocked by the sandbox; exact source URLs are recorded for parent-task retrieval."
+  ]
+}
