@@ -22,4 +22,6 @@
 - [机制诊断与 CPI 对照](../docs/INFLATION_MECHANISM_DIAGNOSTIC_20261005.md)：确认事实、候选解释、经济学参考与诊断边界。
 - [当前任务板](../docs/NEXT_ACTIONS.md)：下一步推进，以最新条目为准。
 
-生成 PDF 使用既有 pandoc/xelatex 与 Songti SC；命令与输出哈希记录于本地 `outputs/core_normal_llm_review_20261005T094100Z/proposal_editorial_provenance_20261005.json`。
+2026-10-05 按用户排版要求更新：A4 两页，中文楷体（Kaiti SC）、英文与数字 Times New Roman、正文 10pt、首行缩进两汉字、1.25 倍行距；P/E/B 表格使用完整横竖边框，并按内容调整三列宽度。验证方案从第二页开始，避免列表跨页。报告正文未改。
+
+可复现排版入口：在仓库根目录运行 `python3 proposal/render_proposal.py`，需要本机 pandoc、xelatex、fc-match 与上述字体。源码仍为 Markdown，LaTeX 编译中间文件与 PDF 写入被忽略的 `proposal/build/`。既往正文修订的来源与哈希保留在 `outputs/core_normal_llm_review_20261005T094100Z/proposal_editorial_provenance_20261005.json`；该记录中的 PDF 哈希属于排版调整前的版本。
