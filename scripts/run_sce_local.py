@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
 import sys
 import time
@@ -57,6 +58,34 @@ def _sha256(path: Path) -> str:
     return h.hexdigest()
 
 
+def _artifact_location(path: Path, runtime_dir: Path) -> str:
+    """Label actual inputs, including independently generated monthly packages."""
+    path = path.resolve()
+    try:
+        return str(path.relative_to(runtime_dir.resolve()))
+    except ValueError:
+        return str(path)
+
+
+def _save_source_snapshot(runtime_dir: Path, audit_dir: Path) -> dict[str, str]:
+    """Preserve the exact executed study code, including uncommitted dependencies."""
+    snapshot = audit_dir / "source_snapshot"
+    snapshot.mkdir(exist_ok=False)
+    hashes = {}
+    files = [p for p in runtime_dir.rglob("*.py") if "__pycache__" not in p.parts]
+    for src in files:
+        rel = src.relative_to(runtime_dir)
+        dest = snapshot / "study" / rel
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dest)
+        hashes[str(dest.relative_to(audit_dir))] = _sha256(dest)
+    for src, name in ((Path(__file__), "run_sce_local.py"), (runtime_dir / "study.yaml", "study.yaml")):
+        dest = snapshot / name
+        shutil.copy2(src, dest)
+        hashes[str(dest.relative_to(audit_dir))] = _sha256(dest)
+    return hashes
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -78,15 +107,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--price-out", type=float, default=None, help="USD per 1M output tokens")
     ap.add_argument("--cost-cap-usd", type=float, default=None)
     ap.add_argument("--population", default=None,
-                    help="population artifact to run on, relative to the exported study dir "
+                    help="population artifact to run on, absolute path or relative to the exported study dir "
                          "(default: population/population.json, the 20-person pilot). "
                          "e.g. population/population_real100.json")
     ap.add_argument("--environment", default=None,
-                    help="environment artifact, relative to the exported study dir "
+                    help="environment artifact, absolute path or relative to the exported study dir "
                          "(default: environment/environment.json, the 2-month dev window). "
                          "e.g. environment/environment_main2021.json")
     ap.add_argument("--simulation", default=None,
-                    help="simulation config, relative to the exported study dir "
+                    help="simulation config, absolute path or relative to the exported study dir "
                          "(default: simulation/simulation.json). "
                          "e.g. simulation/simulation_main2021.json")
     ap.add_argument("--confirm-spend", action="store_true",
@@ -166,6 +195,14 @@ def main(argv: list[str] | None = None) -> int:
             "cost_cap_usd": args.cost_cap_usd,
         })
     sim_c.decision_args = decision_args
+    # Save the EFFECTIVE bundles, including the P -> E binding and CLI overrides.
+    # The framework materializes personas from PopulationBundle; the unrelated
+    # historical roster.jsonl in the exported copy is not a run input.
+    for name, bundle in (("environment_effective.json", env_b),
+                         ("population_effective.json", pop_b),
+                         ("simulation_effective.json", sim_c)):
+        write_artifact(audit_dir / name, bundle)
+    source_snapshot_hashes = _save_source_snapshot(runtime_dir, audit_dir)
     # The effective config is recorded in run_manifest.json, NOT written back into the
     # runtime copy: the copy must stay byte-identical to the export so the one-way
     # export guard (P1) never trips on run records.
@@ -193,9 +230,11 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"Running {STUDY_ID} locally: {len(pop_b.personas)} agents, {sim_c.n_steps} steps, "
           f"llm_kind={args.llm}, run_id={run_id}")
+    started_at = datetime.now(timezone.utc).isoformat()
     t0 = time.perf_counter()
     hist = sim.run()
     elapsed = time.perf_counter() - t0
+    finished_at = datetime.now(timezone.utc).isoformat()
     write_artifact(audit_dir / "metrics_history.json", hist)
 
     from studies.sce_inflation_expectations.model import self_reported_code_sha256
@@ -204,6 +243,8 @@ def main(argv: list[str] | None = None) -> int:
         "run_id": run_id,
         "study_id": STUDY_ID,
         "created_utc": datetime.now(timezone.utc).isoformat(),
+        "started_at_utc": started_at,
+        "finished_at_utc": finished_at,
         "llm_kind": args.llm,
         "decision_args": {k: v for k, v in decision_args.items()},
         "n_agents": len(pop_b.personas),
@@ -217,12 +258,15 @@ def main(argv: list[str] | None = None) -> int:
             "study.yaml": _sha256(p["study"]),
             "environment": _sha256(env_path),
             "population": _sha256(pop_path),
-            "roster.jsonl": _sha256(p["roster"]),
             "simulation": _sha256(sim_path),
         },
-        "population_artifact": str(pop_path.relative_to(runtime_dir)),
-        "environment_artifact": str(env_path.relative_to(runtime_dir)),
-        "simulation_artifact": str(sim_path.relative_to(runtime_dir)),
+        "effective_artifact_sha256": {name: _sha256(audit_dir / name) for name in
+                                      ("population_effective.json", "environment_effective.json", "simulation_effective.json")},
+        "source_snapshot_sha256": source_snapshot_hashes,
+        "roster_source": "PopulationBundle.personas and their init_state; no roster file read",
+        "population_artifact": _artifact_location(pop_path, runtime_dir),
+        "environment_artifact": _artifact_location(env_path, runtime_dir),
+        "simulation_artifact": _artifact_location(sim_path, runtime_dir),
         "git": {"research_repo": _git_state(REPO_ROOT), "official_clone": _git_state(OFFICIAL_ROOT)},
         "store_path": str(store_path),
         "cost": sim.decision.cost_summary() if hasattr(sim.decision, "cost_summary") else None,

@@ -31,6 +31,7 @@ import json
 import os
 import time
 from datetime import datetime, timezone
+from math import isfinite
 from pathlib import Path
 from statistics import median
 from typing import Any
@@ -655,6 +656,11 @@ class SCEDecision(DecisionModel):
                 raise ValueError("llm_kind=openai requires decision_args.model to pin the model.")
             if self.max_calls < 1:
                 raise ValueError("llm_kind=openai requires an explicit max_calls >= 1 budget.")
+            if self.cost_cap_usd is not None:
+                rates = (self.price_input_per_mtok, self.price_output_per_mtok)
+                if (not isfinite(float(self.cost_cap_usd)) or float(self.cost_cap_usd) < 0
+                        or any(r is None or not isfinite(float(r)) or float(r) < 0 for r in rates)):
+                    raise ValueError("cost cap requires finite nonnegative cap and both token prices")
             self.llm = SCEOpenAILLM(
                 model=self.model, temperature=self.temperature, max_tokens=self.max_tokens,
                 extra_body=self.extra_body, response_format=self.response_format,
@@ -680,17 +686,29 @@ class SCEDecision(DecisionModel):
                                    else round(self.estimated_cost_usd(), 6)),
             "price_input_per_mtok": self.price_input_per_mtok,
             "price_output_per_mtok": self.price_output_per_mtok,
+            "request_reserve_rule": "prompt UTF-8 bytes + 256 input tokens, plus max_tokens output",
             "note": "Self-kept ledger from API usage fields; conservative reserve added for "
                     "calls that errored without usage. Not a vendor bill.",
         }
 
-    def _reserve_failed_call(self, prompt_chars: int) -> None:
+    def _request_cost_bound(self, prompt_text: str) -> float | None:
+        """Planning bound for our plain text requests, at supplied token prices.
+
+        UTF-8 byte count avoids the earlier characters/4 underestimate. The 256
+        token allowance covers role framing. It is a local conservative budget
+        guard, not a provider quote or guarantee about changed billing rules.
+        """
+        if self.price_input_per_mtok is None or self.price_output_per_mtok is None:
+            return None
+        input_bound = len(prompt_text.encode("utf-8")) + 256
+        return (input_bound * float(self.price_input_per_mtok)
+                + self.max_tokens * float(self.price_output_per_mtok)) / 1_000_000.0
+
+    def _reserve_failed_call(self, prompt_text: str) -> None:
         """Conservative cost reservation for a call that errored without usage data."""
         if self.price_input_per_mtok is None or self.price_output_per_mtok is None:
             return
-        est_in = max(1, prompt_chars // 4)
-        self.reserved_cost_usd += (est_in * float(self.price_input_per_mtok)
-                                   + self.max_tokens * float(self.price_output_per_mtok)) / 1_000_000.0
+        self.reserved_cost_usd += self._request_cost_bound(prompt_text) or 0.0
 
     def _audit_llm_call(self, row: dict[str, Any]) -> None:
         if not self.audit_dir or not self.run_id:
@@ -794,10 +812,10 @@ class SCEDecision(DecisionModel):
                 self.total_prompt_tokens += int(usage.prompt_tokens or 0)
                 self.total_completion_tokens += int(usage.completion_tokens or 0)
             else:
-                self._reserve_failed_call(len(prompt_text))
+                self._reserve_failed_call(prompt_text)
         except Exception as exc:  # noqa: BLE001 - every failure is evidence, not a crash
             row["error"] = f"{type(exc).__name__}: {exc}"
-            self._reserve_failed_call(len(prompt_text))
+            self._reserve_failed_call(prompt_text)
         self._audit_llm_call(row)
         return row
 
@@ -845,7 +863,8 @@ class SCEDecision(DecisionModel):
                 break
             cap = self.cost_cap_usd
             est = self.estimated_cost_usd()
-            if cap is not None and est is not None and est >= float(cap):
+            next_cost = self._request_cost_bound(json.dumps(messages, ensure_ascii=False))
+            if cap is not None and est is not None and (est >= float(cap) or est + (next_cost or 0) > float(cap)):
                 last_error = "cost_cap_exceeded"
                 break
             self.call_count += 1
