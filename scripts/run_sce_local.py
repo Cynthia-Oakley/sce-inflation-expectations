@@ -66,8 +66,8 @@ def main(argv: list[str] | None = None) -> int:
                     help="pass --force to export_study_runtime.py (discards derived content)")
     ap.add_argument("--model", default=None, help="requested LLM model (openai mode)")
     ap.add_argument("--prompt-version", choices=LLM_PROMPT_VERSIONS,
-                    default="sce-q8-q9-llm-en-v1",
-                    help="LLM prompt renderer; defaults to the existing v1 behavior")
+                    default="sce-q8-q9-v2-abstract",
+                    help="LLM prompt renderer; defaults to v2 with news titles and abstracts")
     ap.add_argument("--max-calls", type=int, default=100, help="hard LLM call budget")
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--max-tokens", type=int, default=1024)
