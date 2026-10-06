@@ -44,6 +44,7 @@ from .household_state_mechanism import (
     PROMPT_VERSION as HOUSEHOLD_PROMPT_VERSION, build_state,
     build_household_state_messages,
 )
+from .information_exposure import PROMPT_VERSION as EXPOSURE_PROMPT_VERSION, build_exposure_view, build_exposure_messages
 
 from socioverse.abc import DecisionModel, EnvironmentProvider, MetricCollector, PopulationProvider
 from socioverse.engine import register
@@ -200,6 +201,9 @@ class SCEEnvironmentProvider(EnvironmentProvider):
             self.mechanism = validate_config(self.mechanism)
         self.experience_by_id = bundle.provider_args.get("experience_by_id", {})
         self.household_state_by_id = bundle.provider_args.get("household_state_by_id", {})
+        self.information_exposure = bundle.provider_args.get("information_exposure")
+        if self.information_exposure and (self.household_state_by_id or self.mechanism is not None):
+            raise ValueError("exposure trial must isolate E/P routing")
         if self.household_state_by_id and self.mechanism is not None:
             raise ValueError("Q1-only trial cannot combine price-experience treatment")
         self.targets: list[dict[str, str]] = list(
@@ -266,6 +270,10 @@ class SCEEnvironmentProvider(EnvironmentProvider):
             profile = dict(self.persona_by_id.get(aid, {}))
             prior = dict(self.answers.get(aid, {}))
             personal_info, local_info = info, {}
+            if self.information_exposure:
+                personal_info, state = build_exposure_view(profile, info, self.information_exposure, aid)
+                local_info = {"information_exposure": state}
+                prior = {}
             if self.household_state_by_id:
                 row = self.household_state_by_id[aid]
                 if row["agent_id"] != aid:
@@ -851,11 +859,15 @@ class SCEDecision(DecisionModel):
 
     def _decide_openai_one(self, ob: Observation) -> Action:
         target = _target_from_observation(ob)
+        if bool(ob.local_information.get("information_exposure")) != (self.prompt_version == EXPOSURE_PROMPT_VERSION):
+            raise ValueError("exposure prompt and explicit exposure observation must be selected together")
         if ob.local_information.get("price_experience") and self.prompt_version != EXPERIENCE_PROMPT_VERSION:
             raise ValueError("mechanism observation requires the experience prompt; refuse partial/unused treatment")
         if ob.local_information.get("household_state") and self.prompt_version != HOUSEHOLD_PROMPT_VERSION:
             raise ValueError("Q1 observation requires the Q1-only prompt")
-        if self.prompt_version == HOUSEHOLD_PROMPT_VERSION:
+        if self.prompt_version == EXPOSURE_PROMPT_VERSION:
+            messages = build_exposure_messages(ob, build_sce_messages_v2(ob))
+        elif self.prompt_version == HOUSEHOLD_PROMPT_VERSION:
             messages = build_household_state_messages(ob, build_sce_messages_v2(ob, include_event_abstracts=True))
         elif self.prompt_version == EXPERIENCE_PROMPT_VERSION:
             messages = build_mechanism_messages(ob, build_sce_messages_v2(ob, include_event_abstracts=True))
@@ -881,6 +893,10 @@ class SCEDecision(DecisionModel):
             state = ob.local_information["price_experience"]
             base_payload.update(mechanism_arm=state["arm"], mechanism_sha256=state["mechanism_sha256"],
                                 public_fact_ledger_sha256=state["public_fact_ledger_sha256"])
+        if self.prompt_version == EXPOSURE_PROMPT_VERSION:
+            state = ob.local_information["information_exposure"]
+            base_payload.update(exposure_arm=state["arm"], exposure_bundle_sha256=state["bundle_sha256"],
+                                source_ledger_sha256=state["source_ledger_sha256"])
         if self.prompt_version == HOUSEHOLD_PROMPT_VERSION:
             state = ob.local_information["household_state"]
             base_payload.update(household_state_sha256=state["state_sha256"],
