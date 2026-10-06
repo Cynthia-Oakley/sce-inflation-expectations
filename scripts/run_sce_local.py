@@ -38,6 +38,7 @@ LLM_PROMPT_VERSIONS = (
     "sce-q8-q9-llm-en-v1",
     "sce-q8-q9-v2",
     "sce-q8-q9-v2-abstract",
+    "sce-q8-q9-experience-v1",
 )
 
 
@@ -118,12 +119,20 @@ def main(argv: list[str] | None = None) -> int:
                     help="simulation config, absolute path or relative to the exported study dir "
                          "(default: simulation/simulation.json). "
                          "e.g. simulation/simulation_main2021.json")
+    ap.add_argument("--mechanism", default=None, help="explicit price-experience arm JSON (repository or absolute path)")
+    ap.add_argument("--experience", default=None, help="materialized CE basket JSON; required by basket/focus arms")
     ap.add_argument("--confirm-spend", action="store_true",
                     help="required with --llm openai: confirms paid API calls are authorized")
     args = ap.parse_args(argv)
 
     if args.llm == "openai" and not args.confirm_spend:
         sys.exit("--llm openai spends real API budget; re-run with --confirm-spend after user approval.")
+    if args.experience and not args.mechanism:
+        sys.exit("--experience requires --mechanism")
+    if args.llm == "openai" and bool(args.mechanism) != (args.prompt_version == "sce-q8-q9-experience-v1"):
+        sys.exit("--mechanism and experience prompt must be selected together; refuse silent unused mechanism")
+    if args.mechanism and args.llm == "scripted":
+        print("ENGINEERING CHECK ONLY: scripted answers ignore the price-experience mechanism; no behaviour comparison.")
 
     # 1. one-way export of the maintained source into the official clone
     export_cmd = [sys.executable, str(REPO_ROOT / "scripts" / "export_study_runtime.py")]
@@ -174,6 +183,48 @@ def main(argv: list[str] | None = None) -> int:
                       "weight": int(pp.weight) if float(pp.weight).is_integer() else pp.weight}
         for pp in pop_b.personas
     }
+
+    mechanism_inputs = {}
+    if args.mechanism:
+        from studies.sce_inflation_expectations.experience_mechanism import validate_config, needs_basket
+        from studies.sce_inflation_expectations.price_experience import profile_hash
+        mechanism_path = (REPO_ROOT / args.mechanism).resolve()
+        config = validate_config(json.loads(mechanism_path.read_text()))
+        env_b.provider_args["price_experience_mechanism"] = config
+        mechanism_inputs["config"] = {"path": str(mechanism_path), "sha256": _sha256(mechanism_path)}
+        if needs_basket(config) and not args.experience:
+            sys.exit("selected mechanism arm requires --experience; no synthetic fallback")
+        if args.experience:
+            experience_path = (REPO_ROOT / args.experience).resolve()
+            experience = json.loads(experience_path.read_text())
+            if experience.get("schema_version") != "sce-experience-bundle-v1":
+                sys.exit("invalid experience bundle schema")
+            if experience.get("research_line") != "A_historical_reconstruction":
+                sys.exit("this experience bundle must be explicitly labelled A historical reconstruction")
+            if len(targets) != 1 or experience.get("target_month") != targets[0]["target_month"]:
+                sys.exit("experience v1 is a single-month bundle; use the matching environment")
+            baskets = experience["experience_by_id"]
+            if set(baskets) != {p.agent_id for p in pop_b.personas}:
+                sys.exit("experience IDs must exactly match the run population")
+            for persona in pop_b.personas:
+                if baskets[persona.agent_id].get("profile_sha256") != profile_hash(persona.attributes):
+                    sys.exit("experience profile hash mismatch")
+            env_b.provider_args["experience_by_id"] = baskets
+            mechanism_inputs["experience"] = {"path": str(experience_path), "sha256": _sha256(experience_path)}
+        # Fail before any real calls if an observation cannot construct its state.
+        from studies.sce_inflation_expectations.model import SCEEnvironmentProvider, build_sce_messages_v2
+        from studies.sce_inflation_expectations.experience_mechanism import build_mechanism_messages
+        check_env = SCEEnvironmentProvider(env_b.model_copy(deep=True))
+        check_env.audit_dir = None
+        check_env.reset(sim_c.seed)
+        for step in range(1, sim_c.n_steps + 1):
+            check_env.advance_to(step)
+            check_observations = check_env.observe_batch([p.agent_id for p in pop_b.personas], step)
+            if args.llm == "openai":
+                for observation in check_observations:
+                    messages = build_mechanism_messages(observation, build_sce_messages_v2(observation, include_event_abstracts=True))
+                    if len(json.dumps(messages, ensure_ascii=False)) > int(sim_c.decision_args.get("max_prompt_chars", 16000)):
+                        sys.exit("mechanism prompt exceeds configured size gate; no calls started")
 
     decision_args = {**sim_c.decision_args, "llm_kind": args.llm,
                      "run_id": run_id, "audit_dir": str(audit_dir)}
@@ -267,6 +318,9 @@ def main(argv: list[str] | None = None) -> int:
         "population_artifact": _artifact_location(pop_path, runtime_dir),
         "environment_artifact": _artifact_location(env_path, runtime_dir),
         "simulation_artifact": _artifact_location(sim_path, runtime_dir),
+        "mechanism_inputs": mechanism_inputs,
+        "mechanism_behaviour_test": bool(args.mechanism and args.llm == "openai"),
+        "execution_purpose": ("mechanism_behaviour_trial" if args.llm == "openai" else "mechanism_plumbing_only_scripted_answers_ignore_treatment") if args.mechanism else "baseline_execution",
         "git": {"research_repo": _git_state(REPO_ROOT), "official_clone": _git_state(OFFICIAL_ROOT)},
         "store_path": str(store_path),
         "cost": sim.decision.cost_summary() if hasattr(sim.decision, "cost_summary") else None,

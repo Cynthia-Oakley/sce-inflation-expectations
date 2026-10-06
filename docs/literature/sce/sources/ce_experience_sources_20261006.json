@@ -1,0 +1,307 @@
+{
+  "checked_on": "2026-10-06",
+  "topic": "sce_ce_experience_data_feasibility",
+  "records": [
+    {
+      "id": "bls_ce_2020_interview_pumd",
+      "title": "Consumer Expenditure Surveys Public Use Microdata: 2020 Interview Survey",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2020,
+      "source_url": "https://www.bls.gov/cex/pumd_data.htm",
+      "open_access_url": "https://www.bls.gov/cex/pumd/data/comma/intrvw20.zip",
+      "source_type": "official_microdata_archive",
+      "access_level": "全文微观数据；官方 ZIP 于 2026-10-06 经 BLS 普通浏览器下载链接取得",
+      "evidence_locations": [
+        "BLS PUMD 数据页 CSV 区 2020 Interview 行；页面当前显示 52.6 MB。",
+        "本地 intrvw20/fmli204.csv：5,205 行、5,205 个唯一 NEWID；QINTRVYR 均为 2020，QINTRVMO 为 10、11、12。",
+        "FMLI204 实际列头核验：AGE_REF、EDUC_REF、CUTENURE、REGION、STATE、FINLWT21、FINCBTXM、FINCBTAX、TOTEXPCQ/PQ、FOODCQ/PQ、RENDWECQ/PQ、SHELTCQ/PQ、HOUSCQ/PQ、GASMOCQ/PQ、SEX_REF 均存在；未见 QNUM、MO_SCOPE 或可与 SCE Q10 对应的 EMPSTAT。"
+      ],
+      "findings": [
+        "同一家庭/CU FMLI 记录联合观察人口特征和家庭支出，适合作为带权家庭篮子 donor；当前 2020 包含 Interview Q2、Q3、Q4 及 2021Q1。",
+        "当前样本可观察住房 tenure；码值 1/2/4/5/6 均出现，3 本次未见。教育码 00/10/11/12/13/14/15/16 均出现。",
+        "FMLI204 中 REGION 缺失 152/5,205，STATE 缺失 487/5,205；精细地理匹配须先处理缺失与支持度。"
+      ],
+      "limitations": [
+        "这是 household consumer unit 支出，不是 SCE 受访者的个人购买记录；没有购买人、购物频率、商品数量、品牌、商店、支付单价或谁开车/做饭的直接变量。",
+        "CE Diary 与 Interview 使用独立样本，BLS 文档明确 NEWID 不能跨两类调查联结；无法将 Diary 购买频率记录拼到此 FMLI 家庭。",
+        "当前 BLS 2019/2020 PUMD 经 2022-03-10 errata 修订；2026 下载副本不是 2021 年首发 vintage。"
+      ],
+      "project_use": [
+        "仅用作赛道 A 的回顾性合成 household-basket donor；每次 SCE-to-CE donor assignment 标 synthetic，并以多次加权抽样/条件分配记录分配不确定性。",
+        "同一 donor 行的食物、汽油和住房支出应一起保留，不能按人口组均值复制给个人，也不按性别、就业或地区判定购物/驾驶责任。",
+        "当前 v1 使用 TOTEXP 归一化的支出显著性 proxy，不是个人 CPI；未来如制作 CPI exposure 应先限定 CPI 可比类别集合，不沿用 TOTEXP 作为默认分母。"
+      ],
+      "checked_on": "2026-10-06",
+      "local_archives": [
+        {
+          "local_path": "data/raw/ce_experience/20261006/intrvw20.zip",
+          "url": "https://www.bls.gov/cex/pumd/data/comma/intrvw20.zip",
+          "status": "downloaded_from_official_site",
+          "retrieved_on": "2026-10-06",
+          "bytes": 53895332,
+          "sha256": "de226eaf9b18eb4721e8aca385c94101b8061a74decc5b9f52667c29cf01ba8a"
+        }
+      ]
+    },
+    {
+      "id": "bls_ce_pumd_dictionary",
+      "title": "Dictionary for Interview and Diary Surveys: Consumer Expenditure Surveys PUMD",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": null,
+      "source_url": "https://www.bls.gov/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx",
+      "open_access_url": "https://www.bls.gov/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx",
+      "source_type": "official_current_data_dictionary",
+      "access_level": "官方当前版完整 Variables/Codes 工作簿已通过同源浏览器下载并本地读取；作者镜像作码值交叉核对",
+      "evidence_locations": [
+        "官方 Variables 工作表：FMLI `AGE_REF`=Age of reference person；`EDUC_REF`=Education of reference person；`CUTENURE`=Housing tenure；`REGION`=Region；`FINCBTXM`=family before-tax income, imputed or collected；`FINCBTAX`=family before-tax income collected data。",
+        "Codes 工作表：EDUC_REF 自 2013Q2 起为 00/10/11/12/13/14/15/16；CUTENURE 自 1996Q1 起为 1–6；REGION 为 1 Northeast、2 Midwest、3 South、4 West。",
+        "Variables 工作表：FOODCQ=FDHOMECQ+FDAWAYCQ；GASMOCQ 为 UCC 470111、470112、470113、470211、470212 合计；RENDWECQ=RNTXRPCQ+RNTAPYCQ；TOTEXPCQ/PQ 的公式包含 CASHCO 与 RETPEN。"
+      ],
+      "findings": [
+        "2020 年教育码 17 不适用；当前有效分类到 16。CUTENURE 可将 1–3 视为不同 owner 类型、4 renter、5 无现金租金、6 学生住房；如为了匹配 SCE 合并类别须保留原码和合并规则。",
+        "FINCBTXM 是插补或收集的税前 family income；FINCBTAX 是收集到的税前 family income。完整收入口径还涉及 rent/meals-as-pay；字典将 JMLPAYQV 与 JRTPAYQV 放在其他 Interview 文件，而非 FMLI204 行。",
+        "SCE `_EDU_CAT` 三档与 CE 八类教育不是天然一一对应，年龄/教育均需明确的合并规则。"
+      ],
+      "limitations": [
+        "本地官方与镜像工作簿均是当前版本，不是 2020 或 2021 年历史码本快照；作者镜像与官方文件字节哈希不同。",
+        "官方当前字典记录为 2026-10-06 获取，需按本地 SHA 固定版本；不能据此重建历史码本 vintage。"
+      ],
+      "project_use": [
+        "码值与描述用于审计 2020 FMLI204 中确实存在的变量；主映射只用本数据与当前 SCE persona 共有且语义可对齐的变量。",
+        "把 education/income/tenure 档位合并当作预注册的统计映射，并报告边界敏感性；不能把数据码值本身当作机制效应。"
+      ],
+      "checked_on": "2026-10-06",
+      "local_archives": [
+        {
+          "local_path": "data/raw/ce_experience/20261006/ce_pumd_dictionary_official.xlsx",
+          "url": "https://www.bls.gov/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx",
+          "status": "downloaded_from_official_site_same_origin_browser_fetch",
+          "retrieved_on": "2026-10-06",
+          "bytes": 1355152,
+          "sha256": "613810d32de105bcd32fa9030d378472afb4dab23d1922be7b71b0c522d0334c"
+        },
+        {
+          "local_path": "data/raw/ce_experience/20261006/ce_pumd_dictionary_author_mirror.xlsx",
+          "url": "https://raw.githubusercontent.com/johanneswieland/MPC2001/main/external_data/output/ce-pumd-interview-diary-dictionary.xlsx",
+          "status": "downloaded_current_author_mirror",
+          "retrieved_on": "2026-10-06",
+          "bytes": 1334843,
+          "sha256": "eef0024c6cc0bbf05919c51c93149fdd84f484f1ed742869b9ee85ee3f891736"
+        }
+      ]
+    },
+    {
+      "id": "bls_ce_pumd_getting_started_guide",
+      "title": "Consumer Expenditure Surveys Public Use Microdata Getting Started Guide",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": null,
+      "source_url": "https://www.bls.gov/cex/pumd-getting-started-guide.htm",
+      "open_access_url": "https://www.bls.gov/cex/pumd-getting-started-guide.htm",
+      "source_type": "official_microdata_methodology_guide",
+      "access_level": "官方方法/变量口径全文",
+      "evidence_locations": [
+        "§2.2：NEWID 链接同一个 CU 跨访谈记录；Interview 与 Diary 独立抽样，不能跨调查联结。",
+        "§3.1–3.2：Interview 每季度轮换、同一住宅最多连续四季度；访谈按日历季度归档并询问此前支出；CQ/PQ 区分支出发生季度。",
+        "§6.3：FINLWT21、NEWID、QNUM、MO_SCOPE 的总体/年度权重方法；年度 Interview 权重使用 FINLWT21/QNUM × MO_SCOPE/3。"
+      ],
+      "findings": [
+        "一个 Interview 行不是一个 calendar-year household record；年度支出估计要组合跨季度数据，并按官方 MO_SCOPE/QNUM 校正。",
+        "Diary 支出是周额，需按官方方法缩放；由于 Diary 样本独立，该数据不能补齐同户 Interview basket 的高频购买记录。"
+      ],
+      "limitations": [
+        "指南公式用于总体年估计；对一个 Q4 donor 行构造参考期篮子份额，不应误用全年权重归一化代替行内金额。",
+        "调查记录会有非抽样误差、缺答、报告与处理误差；小样本交叉分组估计可靠性较低。"
+      ],
+      "project_use": [
+        "若只是带权抽取 Q4 household donor，可按同一记录 FINLWT21 调整 donor 频率；若报告年总体统计，必须按官方 sample code 从 2020Q1–Q4 构造。",
+        "保存访谈季度、月份、NEWID、donor 权重、篮子 period 定义及任何缺失/回退日志。"
+      ],
+      "checked_on": "2026-10-06"
+    },
+    {
+      "id": "bls_ce_2020_midyear_release",
+      "title": "Consumer Expenditure Surveys Midyear Update News Release",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2021,
+      "source_url": "https://www.bls.gov/news.release/archives/cesmy_04292021.htm",
+      "open_access_url": "https://www.bls.gov/news.release/archives/cesmy_04292021.htm",
+      "source_type": "official_data_release_and_availability_notice",
+      "access_level": "官方发布稿全文",
+      "evidence_locations": [
+        "Data Products 节：当时 Interview PUMD 覆盖 2020Q2/Q3，Diary 覆盖 2020Q1/Q2。",
+        "Data Products 节：2020 年年度 news release、data tables、LABSTAT 与 PUMD 计划于 2021 年 9 月发布。"
+      ],
+      "findings": [
+        "2020Q4 Interview household baskets 在 2021-04-29 的公开中期包中还不存在。"
+      ],
+      "limitations": [
+        "Midyear release 提供的是中期样本/表，不代表完整 2020 年 PUMD 已发布。"
+      ],
+      "project_use": [
+        "给 2021-05/06 SCE 目标月的严格时点分析建立数据可得性边界；Q4 只作后见 A 重建。"
+      ],
+      "checked_on": "2026-10-06"
+    },
+    {
+      "id": "bls_ce_2020_annual_release",
+      "title": "Consumer Expenditures - 2020",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2021,
+      "source_url": "https://www.bls.gov/news.release/archives/cesan_09092021.pdf",
+      "open_access_url": "https://www.bls.gov/news.release/archives/cesan_09092021.pdf",
+      "source_type": "official_annual_release_and_microdata_availability_notice",
+      "access_level": "官方年度发布 PDF 全文",
+      "evidence_locations": [
+        "PDF p.1：For release 10:00 a.m. ET, Thursday, September 9, 2021。",
+        "PDF p.8：明确称 1980–2020 annual CE PUMD（Interview、Diary 与 paradata）可在 BLS PUMD 页面获取。"
+      ],
+      "findings": [
+        "直接证明完整 2020 年年度 CE PUMD 最迟在 2021-09-09 的官方年度发布时已公开；这包括用作回顾性 donor 的 2020Q4 Interview 文件。"
+      ],
+      "limitations": [
+        "该发布稿确定数据在发布日期可获取，不证明今天下载文件与 2021-09-09 首发二进制完全相同；官方后来发布了 2019/2020 errata。"
+      ],
+      "project_use": [
+        "A 线可以把完整 2020Q4 作为后验约束，并记录发布晚于 2021-05/06；B 线或 PIT 版本不能将其声称为当时已发布。"
+      ],
+      "checked_on": "2026-10-06"
+    },
+    {
+      "id": "bls_ce_pumd_2019_2020_errata",
+      "title": "Consumer Expenditure Surveys Public Use Microdata ERRATA - 2019 and 2020 Interview and Diary",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2022,
+      "source_url": "https://www.bls.gov/cex/pumd_errata_2019_2020.htm",
+      "open_access_url": "https://www.bls.gov/cex/pumd_errata_2019_2020.htm",
+      "source_type": "official_microdata_revision_notice",
+      "access_level": "官方修订说明全文",
+      "evidence_locations": [
+        "页面日期 2022-03-10；说明 2019/2020 多项记录及相关 summary variables 修订，现有下载文件已替换旧版本。",
+        "2020Q4 Interview 一条 NEWID 的水上运动设备支出从 EAPB 移除；2020 文件其他类别映射也有修订。"
+      ],
+      "findings": [
+        "通过当前 BLS 数据页获取的 2020 文件是 errata 后的当前副本；不能据此复现 2021 年首发的精确值。"
+      ],
+      "limitations": [
+        "errata 是修改说明，不含整个原始首次发布文件的哈希或完整历史存档。"
+      ],
+      "project_use": [
+        "数据 manifest 标为当前修订 vintage，并用文件 SHA 固定研究副本；除非另获首发归档，不把它叫 first-release values。"
+      ],
+      "checked_on": "2026-10-06"
+    },
+    {
+      "id": "parker_schild_erhard_johnson_ce_eip_2021",
+      "title": "Household Spending Responses to the Economic Impact Payments of 2020: Evidence from the Consumer Expenditure Survey",
+      "authors": [
+        "Jonathan A. Parker",
+        "Jake Schild",
+        "Laura Erhard",
+        "David S. Johnson"
+      ],
+      "year": 2021,
+      "source_url": "https://www.bls.gov/osmr/research-papers/2021/pdf/ec210100.pdf",
+      "open_access_url": "https://www.bls.gov/osmr/research-papers/2021/pdf/ec210100.pdf",
+      "source_type": "bls_research_paper_public_microdata_application",
+      "access_level": "全文已读：BLS 研究论文 PDF",
+      "evidence_locations": [
+        "PDF pp.1–2：主要样本和消费异质性结果；研究使用 2019Q3–2020Q4 CE 数据。",
+        "Appendix A.2，PDF p.38：列出 FMLI 的 QINTRVMO、FINLWT21、AGE_REF、AGE2、FAM_SIZE、PERSLT18、SEX_REF、MARITAL1、CUTENURE、FINCBTXM 以及类别支出 CQ/PQ 字段；说明 CU reference-period amount = XXXXXX CQ + XXXXXX PQ。",
+        "正文/附录对样本、疫情期间支出限制和小样本标准误作讨论。"
+      ],
+      "findings": [
+        "该文给出 2020 FMLI 实际字段和 CQ+PQ 参考期金额的可复核用例；观察到疫情期间支出反应在流动资产等家庭维度上有异质性。"
+      ],
+      "limitations": [
+        "论文研究 EIP 支出反应，不是个人通胀体验或 SCE 预期因果识别。",
+        "作者在文中处理家庭面板与疫情样本选择；其结果不证明基于 CE 匹配的合成个人暴露会改变 SCE 回答。"
+      ],
+      "project_use": [
+        "字段/参考期口径作为 FMLI 计算核验；把家庭金额仅作为合成输入特征，机制影响仍需固定信息的独立对照。"
+      ],
+      "checked_on": "2026-10-06"
+    },
+    {
+      "id": "bls_ce_faq_income_and_expenditure_definitions",
+      "title": "Consumer Expenditure Surveys Questions and Answers",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": null,
+      "source_url": "https://www.bls.gov/cex/csxfaqs.htm",
+      "open_access_url": "https://www.bls.gov/cex/csxfaqs.htm",
+      "source_type": "official_variable_definition_faq",
+      "access_level": "官方 FAQ 全文",
+      "evidence_locations": [
+        "Q12：FINCBTAX / FINATXEM 不含 rent-as-pay 和 meals-as-pay，复制总收入时须加 JMLPAYQV、JRTPAYQV。",
+        "Q13：expenditures 包含 gifts、cash contributions、personal insurance、social security、retirement/pension payments 等；mortgage principal 排除于 expenditures。",
+        "Q34–35：FINCBTXM 不含 rent/meals as pay；其 12 个月 income 若用于年度均值需注意时间口径。"
+      ],
+      "findings": [
+        "TOTEXP 是会计/调查口径总支出，不等于只含 CPI 可比日常商品服务的支出篮子；FINCBTXM 也不是包含全部实物支付的最终收入定义。"
+      ],
+      "limitations": [
+        "FAQ 给出变量定义和复制发表总量的原则，不替代对具体 2020 FMLI 列、flag、缺失值和数据字典的检查。"
+      ],
+      "project_use": [
+        "说明当前 v1 的 TOTEXP 归一化只能称 spending-salience proxy，不能称 CPI 权重；后续若另建 CPI exposure，需先指定 CPI 可比类别 K 后再计算分母。"
+      ],
+      "checked_on": "2026-10-06"
+    },
+    {
+      "id": "sce_current_2020_2024_microdata_and_profile_whitelist",
+      "title": "SCE 2020–2024 Current Public Microdata Snapshot and Project Persona Whitelist",
+      "authors": [
+        "Federal Reserve Bank of New York",
+        "SCE project local implementation"
+      ],
+      "year": 2024,
+      "source_url": "https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-20-24.xlsx",
+      "open_access_url": "https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-20-24.xlsx",
+      "source_type": "public_survey_data_and_project_field_audit",
+      "access_level": "当前公开工作簿已本地读取；persona 字段为项目代码白名单，不代表原问卷全部字段",
+      "evidence_locations": [
+        "`studies/sce_inflation_expectations/monthly_population.py` PROFILE_COLUMNS、CATEGORY_MAPS、EMPLOYMENT 与 Q43 housing handling。",
+        "`studies/sce_inflation_expectations/reports/POPULATION_SAMPLING_REPORT.md` 中 2021-05/06 实测 SCE 分类和住房答案覆盖说明。",
+        "`docs/sce_source_manifest.json`：当前 2020–2024 工作簿下载日期 2026-09-28、SHA-256；`docs/peb_source_manifest.json` 未确认历史首次发布时间。"
+      ],
+      "findings": [
+        "当前 persona 字段含年龄、教育、收入档、region、state、numeracy、Q10 派生就业、Q43 housing tenure；不存在家庭食品、汽油、租金或购物频率字段。",
+        "本项目 `price_experience.py` 当前用家庭支出份额作 spending-salience proxy；代码将其标为 estimated proxy / conditional weighted synthetic donor，不含 CPI 乘积或行为响应系数。",
+        "Q43 的 housing status 只在可用回答且未观察到后续搬迁时保留；其余人群状态可能未知。",
+        "SCE 个人 respondent 字段与 CE family/reference-person 字段只有部分可映射，且现有 SCE persona 白名单没有 sex。"
+      ],
+      "limitations": [
+        "工作簿是 2026 年下载的当前 snapshot，首次发布时间/当时字段版本未知；不能证明它是 2021-05/06 可获取的 P。",
+        "SCE 和 CE 之间没有可用的个人/家庭匹配 ID；字段对齐仅支持统计条件匹配，不支持逐户联结。"
+      ],
+      "project_use": [
+        "在 P/E/B 实现中仅将共享且经核验的分类字段用于 donor 条件概率；把缺失和 SCE–CE reference-person 语义差异留在日志。",
+        "对 A 线明确标记回顾性 profile 版本；在 B/PIT 主张前补历史首次发布时间和 vintage。"
+      ],
+      "checked_on": "2026-10-06",
+      "local_archives": [
+        {
+          "local_path": "data/raw/sce_audit_20260928/micro_2020_2024.xlsx",
+          "url": "https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-20-24.xlsx",
+          "status": "current_snapshot_in_project_manifest",
+          "retrieved_on": "2026-09-28",
+          "bytes": 75333602,
+          "sha256": "1b57ffb75c2170d767f46a001002db8c40c228fe5691f6dd19e39777ffe469c"
+        }
+      ]
+    }
+  ]
+}

@@ -36,6 +36,11 @@ from pathlib import Path
 from statistics import median
 from typing import Any
 
+from .experience_mechanism import (
+    PROMPT_VERSION as EXPERIENCE_PROMPT_VERSION, build_experience_view,
+    build_mechanism_messages, validate_config,
+)
+
 from socioverse.abc import DecisionModel, EnvironmentProvider, MetricCollector, PopulationProvider
 from socioverse.engine import register
 from socioverse.schemas import (
@@ -186,6 +191,10 @@ class SCEEnvironmentProvider(EnvironmentProvider):
         self.signals_by_step = bundle.provider_args.get("signals_by_step", {})
         self.events_by_step = bundle.provider_args.get("events_by_step", {})
         self.persona_by_id = bundle.provider_args.get("persona_by_id", {})
+        self.mechanism = bundle.provider_args.get("price_experience_mechanism")
+        if self.mechanism is not None:
+            self.mechanism = validate_config(self.mechanism)
+        self.experience_by_id = bundle.provider_args.get("experience_by_id", {})
         self.targets: list[dict[str, str]] = list(
             bundle.provider_args.get("targets") or DEFAULT_TARGETS)
         self.answers: dict[str, dict[str, Any]] = {}
@@ -249,13 +258,21 @@ class SCEEnvironmentProvider(EnvironmentProvider):
         for aid in agent_ids:
             profile = dict(self.persona_by_id.get(aid, {}))
             prior = dict(self.answers.get(aid, {}))
+            personal_info, local_info = info, {}
+            if self.mechanism is not None:
+                basket = self.experience_by_id.get(aid)
+                if basket is not None and basket.get("agent_id") != aid:
+                    raise ValueError("experience agent ID mismatch")
+                personal_info, state = build_experience_view(profile, info, self.mechanism, basket)
+                local_info = {"price_experience": state}
+                prior = {}  # This mechanism never injects prior questionnaire answers.
             out.append(Observation(
                 agent_id=aid,
                 step=t,
                 macro_physical={"target_month": target["target_month"], "as_of": target["as_of"]},
                 local_physical={"profile": profile, "prior_answer": prior},
-                macro_information=info,
-                local_information={},
+                macro_information=personal_info,
+                local_information=local_info,
             ))
         self._audit_observations(out)
         return out
@@ -821,7 +838,11 @@ class SCEDecision(DecisionModel):
 
     def _decide_openai_one(self, ob: Observation) -> Action:
         target = _target_from_observation(ob)
-        if self.prompt_version.startswith("sce-q8-q9-v2"):
+        if ob.local_information.get("price_experience") and self.prompt_version != EXPERIENCE_PROMPT_VERSION:
+            raise ValueError("mechanism observation requires the experience prompt; refuse partial/unused treatment")
+        if self.prompt_version == EXPERIENCE_PROMPT_VERSION:
+            messages = build_mechanism_messages(ob, build_sce_messages_v2(ob, include_event_abstracts=True))
+        elif self.prompt_version.startswith("sce-q8-q9-v2"):
             messages = build_sce_messages_v2(
                 ob,
                 include_event_abstracts=self.prompt_version.startswith(
@@ -839,6 +860,10 @@ class SCEDecision(DecisionModel):
             "model_version": self.model,
             "seed": self.seed,
         }
+        if self.prompt_version == EXPERIENCE_PROMPT_VERSION:
+            state = ob.local_information["price_experience"]
+            base_payload.update(mechanism_arm=state["arm"], mechanism_sha256=state["mechanism_sha256"],
+                                public_fact_ledger_sha256=state["public_fact_ledger_sha256"])
         prompt_text = json.dumps(messages, ensure_ascii=False)
         if len(prompt_text) > self.max_prompt_chars:
             payload = {**base_payload, "direction": "", "magnitude_pct": 0.0, "point_pct": 0.0,

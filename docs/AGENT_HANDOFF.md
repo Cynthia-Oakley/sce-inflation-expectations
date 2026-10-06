@@ -1,5 +1,7 @@
 # SCE 项目交接入口
 
+> **2026-10-06 价格体验机制 v1 已落地**：先读 [使用入口](PRICE_EXPERIENCE_MECHANISM.md)、[工程验收](PRICE_EXPERIENCE_ACCEPTANCE_20261006.md)、[待授权真实对照卡](PRICE_EXPERIENCE_RUN_CARD_20261006.md)。官方 CE 2020Q4 联合 donor 为两月各 300 人建立消费侧车；四臂公共事实/问卷一致，2,400 条实际提示预览、600 条框架观察和规则式记录通过核验，48 项相关测试通过。`scripted` 只验接线，不使用消费背景回答；真实机制 LLM 仍未运行。现成 20 人小试包和 300 人侧车在 `outputs/price_experience_20261006_v1/`。当前仅 A 后验代理，TOTEXP 不是 CPI 篮子，排序不是实测注意力。先核对新实验模型/价目与数据发送范围并获新预算授权，再做同人五组对照；下方“下一步准备机制材料”为旧阶段记录。计分器、开题与 Kimi 待审批次未改，提交仍必须 scoped add。
+
 > **2026-10-05 文献首轮已整合**：先读 [文献入口](literature/sce/README.md)、[综述](literature/sce/literature_review.md) 与 [改进方案](literature/sce/research_design.md)。三名 Luna Max 子 Agent 与主 Agent 完成四主题研究，23 项论文/报告及 5 项案例/代码/数据入口、14 份本地公开 PDF。下一步是无 API 的回答诊断、SCE–CE 字段核查、同信息表达样例与对照运行卡；不得将文献建议视为已冻结参数或已验证机制。A 后验重建与 B 事前预测的边界继续分别声明。未改开题、运行配置及 Kimi 待审批次。
 
 > **2026-10-05 开题候选已按原稿重修**：[两页开题候选稿](../proposal/proposal_submission_candidate_20261005.md) 与 [机制诊断/CPI 核对](INFLATION_MECHANISM_DIAGNOSTIC_20261005.md)。保留原提案标题、六节与 P/E/B 表格，面向评委阐述框架、经济学逻辑和验证，不写运行参数/人数/内部日程。基础流程通过，行为有效性仍待检验。原提案与 Kimi 待审批次未覆盖，平台未提交，正式参数未冻结。

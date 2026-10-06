@@ -1,0 +1,44 @@
+{
+  "scope": "CE FMLI 2014 onward; current 2020Q4 application",
+  "dictionary_url": "https://www.bls.gov/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx",
+  "dictionary_mirror_url": "https://raw.githubusercontent.com/johanneswieland/MPC2001/main/external_data/output/ce-pumd-interview-diary-dictionary.xlsx",
+  "education_codes_since_2013Q2": {
+    "0": "high_school",
+    "10": "high_school",
+    "11": "high_school",
+    "12": "high_school",
+    "13": "some_college",
+    "14": "some_college",
+    "15": "college",
+    "16": "college"
+  },
+  "tenure_codes_since_1996Q1": {
+    "1": "owner",
+    "2": "owner",
+    "3": "owner",
+    "4": "renter",
+    "5": "other",
+    "6": "other"
+  },
+  "region_codes": {
+    "1": "Northeast",
+    "2": "Midwest",
+    "3": "South",
+    "4": "West"
+  },
+  "amounts": {
+    "food": "FOODPQ+FOODCQ",
+    "gasoline": "GASMOPQ+GASMOCQ",
+    "shelter": "SHELTPQ+SHELTCQ",
+    "total": "TOTEXPPQ+TOTEXPCQ"
+  },
+  "income": "FINCBTXM (reported/imputed 12-month before-tax income)",
+  "weight": "FINLWT21",
+  "limitations": [
+    "Never attended / elementary / high school without diploma are collapsed with high_school, as in the broad SCE education group",
+    "EDUC_REF code 17 ceased in 2013Q1; do not map it for 2020",
+    "Total expenditure includes contributions and pensions, so the shares are spending allocation proxies, not CPI basket weights",
+    "Joint donor assignment does not identify a person's real spending, attention or purchase frequency"
+  ],
+  "dictionary_current_download_sha256": "613810d32de105bcd32fa9030d378472afb4dab23d1922be7b71b0c522d0334c"
+}
