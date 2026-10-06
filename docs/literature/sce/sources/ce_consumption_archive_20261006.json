@@ -1,0 +1,52 @@
+{
+  "retrieved_date": "2026-10-06",
+  "created_at_utc": "2026-10-06T06:56:04.340188+00:00",
+  "research_use": "A_retrospective_proxy_only",
+  "status": "downloaded_and_hashed",
+  "files": [
+    {
+      "relative_path": "data/raw/ce_experience/20261006/intrvw20.zip",
+      "source_url": "https://www.bls.gov/cex/pumd/data/comma/intrvw20.zip",
+      "coverage": "2020 Interview annual archive; FMLI204 used",
+      "bytes": 53895332,
+      "sha256": "de226eaf9b18eb4721e8aca385c94101b8061a74decc5b9f52667c29cf01ba8a",
+      "version_note": "Current corrected download; A retrospective proxy only",
+      "historical_first_release_version_verified": false
+    },
+    {
+      "relative_path": "data/raw/ce_experience/20261006/ce_pumd_dictionary_official.xlsx",
+      "source_url": "https://www.bls.gov/cex/pumd/ce-pumd-interview-diary-dictionary.xlsx",
+      "coverage": "Current dictionary, selecting 2020-effective fields",
+      "bytes": 1355152,
+      "sha256": "613810d32de105bcd32fa9030d378472afb4dab23d1922be7b71b0c522d0334c",
+      "version_note": "Not a 2020 archived dictionary vintage",
+      "historical_first_release_version_verified": false
+    },
+    {
+      "relative_path": "data/raw/ce_experience/20261006/diary/diary20.zip",
+      "source_url": "https://www.bls.gov/cex/pumd/data/comma/diary20.zip",
+      "coverage": "2020 Diary annual archive; Q4 preparation",
+      "bytes": 7160347,
+      "sha256": "4862a21ef2b9de25c88a4efbdd4f3905aeaf68d942abc9acc31b33644f84db1a",
+      "version_note": "Current corrected download; first-release package availability not certified",
+      "historical_first_release_version_verified": false
+    },
+    {
+      "relative_path": "data/raw/ce_experience/20261006/benchmarks/cu-income-before-taxes-2020.xlsx",
+      "source_url": "https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/cu-income-before-taxes-2020.xlsx",
+      "coverage": "2020 annual integrated CE income-group table",
+      "bytes": 37800,
+      "sha256": "c35f3bf588670af91f5fc0f58f2739efae927eb62e4a5027174165174cefe828",
+      "version_note": "Descriptive benchmark; differs from single-quarter Interview estimation",
+      "historical_first_release_version_verified": false
+    }
+  ],
+  "original_registry_preserved": "archive_registry_20261006.json",
+  "availability_evidence": {
+    "known_available_by": "2021-09-09",
+    "source_url": "https://www.bls.gov/news.release/archives/cesan_09092021.htm",
+    "location": "Additional Information > Data Products",
+    "earliest_first_release_date": null,
+    "current_archive_historical_vintage_verified": false
+  }
+}

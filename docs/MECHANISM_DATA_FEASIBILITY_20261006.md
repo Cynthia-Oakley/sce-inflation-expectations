@@ -42,3 +42,20 @@
 - [BLS 2021 CE 使用论文](https://www.bls.gov/osmr/research-papers/2021/pdf/ec210100.pdf)附录 A.2（PDF p.38）列出 2020 `FMLI` 人口、收入、权重和支出字段，并明示参考期 `CQ+PQ`。 [CE Getting Started Guide](https://www.bls.gov/cex/pumd-getting-started-guide.htm)§3.2 与 §6.3 说明问卷回忆期、CQ/PQ、`NEWID`、`FINLWT21` 和全年权重计算；[CE FAQ](https://www.bls.gov/cex/csxfaqs.htm)说明完整收入与总支出口径。
 - [BLS 2019/2020 PUMD Errata](https://www.bls.gov/cex/pumd_errata_2019_2020.htm)说明 2019/2020 文件与关联 summary variables 在 2022-03-10 修订，已替换网站旧版；本地文件因此登记为 2026 下载的当前修订副本。
 - SCE 当前公开源由 `docs/sce_source_manifest.json` 记录：NY Fed 2020–24 microdata 工作簿，2026-09-28 下载；该 manifest 未记录历史首次发布时间。本文确认的是现有代码白名单及本地画像快照，而非证明这些 P 字段在 2021-05/06 已首次公开。
+
+## 候选来源与获取方式补充（2026-10-06）
+
+本节原为获取前的候选比较。随后用户同意落地：Diary ZIP、收入分组年表已本地归档，完整人口篮子已生成，准确路径与当前验收见 [消费数据入口](CE_CONSUMPTION_DATA_INDEX.md)。下文“本次未下载”等表述保留为当时状态，不再代表最新进度；购买频率合成仍未接入模拟。
+
+Diary 是 CE 的日记调查部分，与 Interview 访谈调查共同构成 CE，不是另一个独立供应商。
+
+- **主篮子建议采用 Interview 微观记录。** FMLI 为家庭汇总支出及人口背景；需要拆分更多类别时，可在同一调查内连接 MTBI/月度分类支出或详细问卷分项。带权抽取整户记录，保留组内差异与类别组合；当前已接入的是一个 FMLI 波次，不等于所有详细文件均已处理。
+- **购买频率作为后续 Diary 分支。** 两周日常消费记录可研究有购买记录的天数等短窗口代理；不能把明细行数直接当购物次数，也不能把两周记录视为全年稳定频率。Interview 与 Diary 是不同样本，无法用 NEWID 跨调查联结；联合合成需另有匹配假设与敏感性检验。本次没有宣称已完成 Diary 数据获取或频率构建。
+- **CE 已发布分组表作独立合理性检查及组均值对照。** [官方表格](https://www.bls.gov/cex/tables.htm)提供 Excel/HTML 等格式；组均值本身不足以恢复个体方差、联合分布。
+- **NielsenIQ Consumer Panel 为可选增强来源。** [Kilts 官方说明](https://www.chicagobooth.edu/research/kilts/research-data/nielseniq)介绍家庭购买面板及部分配套预期调查；[获取流程](https://www.chicagobooth.edu/research/kilts/research-data/nielseniq/processes)要求机构订阅及研究者审批，通过 Globus 获取压缩数据。它可更直接研究商品购买/价格接触，但不是无条件开放数据，也不能完整替代住房等全口径支出。学校授权与复旦当前可得性尚未核实。
+
+**文件与 token：** [PUMD 官方下载页](https://www.bls.gov/cex/pumd_data.htm)同时提供 Interview/Diary 的 CSV、Stata、SAS 压缩包；[文档页](https://www.bls.gov/cex/pumd_doc.htm)提供 XLSX 字典。家庭原始记录采用批量下载，不从 [BLS Public Data API](https://www.bls.gov/bls/api_features.htm)逐户检索；该 API 面向已发布历史时间序列，可用于相应宏观指标。主要处理对象是结构化数据，无需把大规模数据或扫描件交给 LLM。问卷/方法 PDF 用于理解规则，只提取必要章节；模型仅接收每人的简短合成消费背景。下载、CSV 清洗及抽样程序本身不调用 LLM。
+
+Luna 子 Agent 另核查了 [BLS 2019 Diary 表格 PDF](https://www.bls.gov/cex/ced/2019/ced-diary-form.pdf)，该文件有可提取文字，无需 OCR；不据此断言所有历史 PDF 均为文字型。官方指南的 Diary 时间字段可用于研究调查周内有记录的不同天数，但隐私处理后不能恢复精确购买日历日期。详细文件和历年字段需在实际获取时再次核对；本次未下载 Diary ZIP。
+
+建议采用 **Interview 主篮子 + CE 分组表核查 + Diary 后续频率对照**；NielsenIQ 不设为项目完成前提。具体年份、类别映射及预测线 vintage 合同仍需分别登记，本节不修改运行配置或冻结参数。
