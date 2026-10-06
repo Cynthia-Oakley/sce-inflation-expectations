@@ -2,6 +2,8 @@
 
 研究主题：美国居民一年期通胀预期的 Agent 调查重建与预测。任务启动日：2026-10-05。
 
+**2026-10-06 心理与家庭状态专题：** [新专题入口](psychological_attributes/README.md)、[整合综述](psychological_attributes/literature_review.md)、[实施建议](psychological_attributes/implementation_proposal.md)。理论、数据、合成方法由三名 Luna Max 并行调查；主 Agent 整合。与下方首轮来源目录分开，避免重复计数。价格体验小试已运行但尚无稳定改善；本专题优先家庭状态和信息处理，幸福/满意联合 donor 作为探索。未新增模拟调用；新心理机制尚未实现。
+
 **2026-10-06 落地更新：** [价格体验机制入口](../../PRICE_EXPERIENCE_MECHANISM.md)、[工程验收](../../PRICE_EXPERIENCE_ACCEPTANCE_20261006.md)、[输出诊断](../../MECHANISM_OUTPUT_DIAGNOSTIC_20261006.md)、[CE 可行性](../../MECHANISM_DATA_FEASIBILITY_20261006.md)。补充数据来源单独索引于 [sources/ce_experience_sources_20261006.json](sources/ce_experience_sources_20261006.json)，不混入首轮 28 条文献计数。第一版已离线接入，真实机制效果未验证；下方“未改运行源码/下一步准备”为 10-05 首轮状态。
 
 **第一轮已完成。** 三个 GPT-6 Luna Max 子 Agent 并行研究预期形成、价格体验和 Agent 方法；主 Agent 核对官方案例、交叉检查并整合。共登记 23 项论文/研究报告与 5 项案例、代码或数据资源，14 份公开 PDF 原文已在本地归档。摘要、页面预览与全文分别标明，不称为穷尽式系统综述。

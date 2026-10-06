@@ -1,5 +1,9 @@
 # SCE 项目交接入口
 
+> **2026-10-06 最新：心理属性专题研究已整合**
+
+先读 [专题入口](literature/sce/psychological_attributes/README.md)、[中文综述](literature/sce/psychological_attributes/literature_review.md) 与 [实施草案](literature/sce/psychological_attributes/implementation_proposal.md)。三名 Luna Max 分工，主 Agent 复核整合。建议先审已有 Q1/NUM，再查 GSS HAPPY＋SATFIN 联合 donor 的条件支持；这是状态/合成代理，不是人格事实。当前只交研究，未建心理侧车/适配器、未改运行配置/计分/开题，零新增模拟调用。下一步按草案做离线数据审计，保留 A/B 边界、Core/Normal 同规则及外部消费—心理联合关系未识别的限制。新模型调用和预算另行确认；Kimi 待审批次未动，提交仍 scoped add。
+
 > **2026-10-06 最新：价格体验真实小试完成**
 
 先读 [实验记录与准确路径](PRICE_EXPERIENCE_PILOT_RECEIPT_20261006.md)。20人×两月×五组=200回答全部合法、无重试，估价$0.185111。实际提示/冻结输入/模型标记核验通过；消费篮子与信息排序未稳定解决集中及低估，不能扩大后直接宣称有效。当前无Normal扩展，无B预测结论；优先较早模型固定条件小试和离线机制诊断，见 [模型对照草案](EARLY_MODEL_COMPARISON_PLAN_20261006.md)，新增调用尚未授权。Kimi待审批次保留，下文待授权/未运行均为历史状态。

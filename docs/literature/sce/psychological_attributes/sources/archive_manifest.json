@@ -1,0 +1,100 @@
+{
+  "checked_on": "2026-10-06",
+  "note": "Six new public PDF archives plus three verified reused PDFs. Download and reading status are separate. Historical input eligibility is not inferred from current downloads. Failed DNS first attempts are retained in ignored integration/download_manifest.json. Data-line archives, if present, are indexed separately by data_sources.json.",
+  "files": [
+    {
+      "filename": "eurostat_matching_2017.pdf",
+      "url": "https://ec.europa.eu/eurostat/documents/3888793/7882299/KS-TC-16-026-EN-N.pdf",
+      "fetched_at_utc": "2026-10-06T08:58:38.573347+00:00",
+      "resolved_url": "https://ec.europa.eu/eurostat/documents/3888793/7882299/KS-TC-16-026-EN-N.pdf",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 2621868,
+      "sha256": "3c7c7643600dd1fdf06b197aea1019ec909a69cace54043db4d924cbbe87cb06",
+      "local_path": "data/raw/literature/sce/20261006_psychological/integration/network_retry/eurostat_matching_2017.pdf"
+    },
+    {
+      "filename": "ecb_trust_wp2375_2020.pdf",
+      "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2375~2bac6e6836.en.pdf",
+      "fetched_at_utc": "2026-10-06T08:58:38.573865+00:00",
+      "resolved_url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2375~2bac6e6836.en.pdf",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 664434,
+      "sha256": "d76b39b03461faa0c730bad6370468b339028ec65488d615412bea6238013b48",
+      "local_path": "data/raw/literature/sce/20261006_psychological/integration/network_retry/ecb_trust_wp2375_2020.pdf"
+    },
+    {
+      "filename": "dacunto_weber_w35511_2026.pdf",
+      "url": "https://www.nber.org/system/files/working_papers/w35511/w35511.pdf",
+      "fetched_at_utc": "2026-10-06T08:58:38.573994+00:00",
+      "status": "failed_not_saved",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "filename": "taubinsky_w32664_current.pdf",
+      "url": "https://www.nber.org/system/files/working_papers/w32664/w32664.pdf",
+      "fetched_at_utc": "2026-10-06T08:58:40.811481+00:00",
+      "resolved_url": "https://www.nber.org/system/files/working_papers/w32664/w32664.pdf",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 5210313,
+      "sha256": "ee54de7b8dac35610eb1509085dfab6e33d267d86f666f766f2ddffdc780f165",
+      "local_path": "data/raw/literature/sce/20261006_psychological/integration/network_retry/taubinsky_w32664_current.pdf"
+    },
+    {
+      "filename": "binder_w33684_current.pdf",
+      "url": "https://www.nber.org/system/files/working_papers/w33684/w33684.pdf",
+      "fetched_at_utc": "2026-10-06T08:58:42.521505+00:00",
+      "resolved_url": "https://www.nber.org/system/files/working_papers/w33684/w33684.pdf",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 708399,
+      "sha256": "97a3700352237ac62dd120bdca5c3a1caa94915b492d4c9e8e4cc953624588a7",
+      "local_path": "data/raw/literature/sce/20261006_psychological/integration/network_retry/binder_w33684_current.pdf"
+    },
+    {
+      "filename": "gao_human_surrogates_author_v3.pdf",
+      "url": "https://arxiv.org/pdf/2410.19599v3",
+      "fetched_at_utc": "2026-10-06T08:58:46.123407+00:00",
+      "resolved_url": "https://arxiv.org/pdf/2410.19599v3",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 1175308,
+      "sha256": "9f61094ab521b2fe7729502543f80bd312ce836da92aaa44196bddc0500f370b",
+      "local_path": "data/raw/literature/sce/20261006_psychological/integration/network_retry/gao_human_surrogates_author_v3.pdf"
+    },
+    {
+      "filename": "raghunathan_mi_2001.pdf",
+      "url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2001001/article/5857-eng.pdf",
+      "fetched_at_utc": "2026-10-06T08:58:46.323620+00:00",
+      "resolved_url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2001001/article/5857-eng.pdf",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 391974,
+      "sha256": "06246d5099fa69281a61bf96db81eb2559e9a968162e072a0cde979c249650b5",
+      "local_path": "data/raw/literature/sce/20261006_psychological/integration/network_retry/raghunathan_mi_2001.pdf"
+    },
+    {
+      "source_id": "consumer_sim_2026_v1",
+      "source_url": "https://arxiv.org/html/2606.30395v1",
+      "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_sim_v1.pdf",
+      "sha256": "5b7bf75fb3ff46206649fa85810a608e64be2c1323688370e140e9cb69513dee",
+      "archive_status": "existing_public_original_reused"
+    },
+    {
+      "source_id": "aher_2023",
+      "source_url": "https://proceedings.mlr.press/v202/aher23a/aher23a.pdf",
+      "local_path": "data/raw/literature/sce/20261005/agent_simulation/aher2023_icml.pdf",
+      "sha256": "34ac40e9e779cb564038ab5e8e8393c975a2f942cc94b901d25f261739499a7e",
+      "archive_status": "existing_public_original_reused"
+    },
+    {
+      "source_id": "bisbee_2024",
+      "source_url": "https://doi.org/10.1017/pan.2024.5",
+      "local_path": "data/raw/literature/sce/20261005/agent_simulation/bisbee2024_synthetic_replacements.pdf",
+      "sha256": "ece42ff1351144b6d08bc060d6449007bcbba41708e6fb226e2cf2043c0bec2f",
+      "archive_status": "existing_public_original_reused"
+    }
+  ]
+}

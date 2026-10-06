@@ -1,0 +1,199 @@
+{
+  "checked_on": "2026-10-06",
+  "count_note": "Counts are registry records, not unique independent papers. ConsumerSim appears in both theory and agent registries; data records can cover multiple waves of one survey. Primary archive index is separate.",
+  "groups": [
+    {
+      "theme": "经济学理论",
+      "registry": "theory_sources.json",
+      "record_count": 11,
+      "records": [
+        {
+          "source_id": "gss_2024_codebook_wellbeing_finance_items",
+          "title": "General Social Survey 2024 Codebook",
+          "url": "https://gss.norc.org/get-documentation.html",
+          "reading_status": "Official codebook entries for HAPPY, SATFIN and GOODLIFE reviewed; not a microdata analysis."
+        },
+        {
+          "source_id": "consumersim_gss_persona_ablation_2026",
+          "title": "Uncovering Salience-Driven Dynamics in Consumer Confidence with Generative Social Simulation",
+          "url": "https://arxiv.org/abs/2606.30395",
+          "reading_status": "Full HTML read for §§2.5, 4.2.1–4.2.2 and relevant implementation text."
+        },
+        {
+          "source_id": "bruin_de_bruin_expectation_formation_fin_literacy_2010",
+          "title": "Expectations of Inflation: The Role of Demographic Variables, Expectation Formation, and Financial Literacy",
+          "url": "https://doi.org/10.1111/j.1745-6606.2010.01174.x",
+          "reading_status": "Full article HTML read; sample, measures, tables and discussion checked."
+        },
+        {
+          "source_id": "armantier_et_al_inflation_expectations_behavior_2011",
+          "title": "Inflation Expectations and Behavior: Do Survey Respondents Act on Their Beliefs?",
+          "url": "https://www.newyorkfed.org/research/staff_reports/sr509.html",
+          "reading_status": "Abstract, introduction, sample, measures and results in §§1–2 read in the 51-page PDF; not every section reread."
+        },
+        {
+          "source_id": "christelis_et_al_trust_central_bank_inflation_expectations_2020",
+          "title": "Trust in the Central Bank and Inflation Expectation",
+          "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2375~2bac6e6836.en.pdf",
+          "reading_status": "Full 47-page PDF read; survey design, regressions, IV discussion and appendix checked."
+        },
+        {
+          "source_id": "hoffmann_et_al_average_inflation_targeting_trust_2022",
+          "title": "Would Households Understand Average Inflation Targeting?",
+          "url": "https://doi.org/10.1016/j.jmoneco.2022.02.006",
+          "reading_status": "Full 50-page Bundesbank PDF read; design, abstract, main results and appendix checked."
+        },
+        {
+          "source_id": "binder_couture_smit_partisan_trust_fed_2025",
+          "title": "Partisan Trust in the Federal Reserve",
+          "url": "https://www.nber.org/papers/w33684",
+          "reading_status": "NBER abstract and summary plus the paper's opening sections reviewed; not a complete full-text read."
+        },
+        {
+          "source_id": "d_acunto_weber_information_expectations_global_2026",
+          "title": "Information and Macroeconomic Expectations: Global Evidence",
+          "url": "https://www.nber.org/papers/w35511",
+          "reading_status": "NBER working-paper abstract and metadata read; full paper not read in this pass."
+        },
+        {
+          "source_id": "taubinsky_et_al_affect_cued_recall_inflation_2026",
+          "title": "Beliefs About the Economy Are Excessively Sensitive to Household-Level Shocks: Evidence from Linked Survey and Administrative Data",
+          "url": "https://doi.org/10.1093/qje/qjag032",
+          "reading_status": "Full article HTML read in selected sections: abstract, introduction, data/sample, main results and supporting survey evidence; not every appendix table reviewed."
+        },
+        {
+          "source_id": "cupak_siranova_inflation_experience_wellbeing_2023",
+          "title": "Fear of the Dark: Inflation Experiences and Subjective Well-being",
+          "url": "https://doi.org/10.1016/j.econlet.2023.111434",
+          "reading_status": "Publisher abstract and introduction/data snippets read; full article not read."
+        },
+        {
+          "source_id": "andre_et_al_subjective_models_households_experts_2022",
+          "title": "Subjective Models of the Macroeconomy: Evidence From Experts and Representative Samples",
+          "url": "https://doi.org/10.1093/restud/rdac008",
+          "reading_status": "Publisher abstract and detailed result sections reviewed; full methods and all appendices not read in this pass."
+        }
+      ]
+    },
+    {
+      "theme": "数据来源与字段",
+      "registry": "data_sources.json",
+      "record_count": 5,
+      "records": [
+        {
+          "source_id": "sce_core",
+          "title": "New York Fed Survey of Consumer Expectations (SCE) core microdata",
+          "url": "https://www.newyorkfed.org/microeconomics/sce",
+          "reading_status": "Official SCE overview and FAQ reviewed; public questionnaire PDF inspected for Q1/Q2, Q45b, QRA1/QRA2 and new-respondent QNUM wording; actual two month slices from the pre-existing current XLSX read. No target association or Q8/Q9 analysis performed."
+        },
+        {
+          "source_id": "gss_2018",
+          "title": "NORC General Social Survey (GSS), 2018 cross-section candidate",
+          "url": "https://gss.norc.org/get-the-data.html",
+          "reading_status": "Official data/documentation pages, 2018 release announcement, 2018 questionnaire index and codebook listing reviewed. The large 1972-2018 cumulative codebook is distributed as an official ZIP; it was not extracted/read. No 2018 microdata were downloaded."
+        },
+        {
+          "source_id": "gss_2021",
+          "title": "NORC GSS 2021 cross-section, comparator only",
+          "url": "https://gss.norc.org/content/dam/gss/get-documentation/pdf/codebook/GSS%202021%20Codebook.pdf",
+          "reading_status": "Official 740-page codebook opened online; targeted fields, questionnaire text, valid counts and release/mode sections reviewed. File not downloaded; no respondent-level calculations."
+        },
+        {
+          "source_id": "shed",
+          "title": "Federal Reserve Board Survey of Household Economics and Decisionmaking (SHED)",
+          "url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+          "reading_status": "2024 official codebook opened and targeted B2/INF4/I21/demographic/weight sections read; official data and FAQ pages reviewed. 2019/2020 microdata and historical snapshots not downloaded."
+        },
+        {
+          "source_id": "hrs_midus_uas_screen",
+          "title": "Special-panel candidates: HRS, MIDUS, and UAS (screened as one alternative-access family; not bulk downloaded)",
+          "url": "https://hrs.isr.umich.edu/news/data-announcements/hrs-2018-core-early-version-10",
+          "reading_status": "Official project data/access pages and one HRS 2018 release/codebook were screened. No full data/codebook batches or individual files downloaded."
+        }
+      ]
+    },
+    {
+      "theme": "统计合成方法",
+      "registry": "method_sources.json",
+      "record_count": 6,
+      "records": [
+        {
+          "source_id": "eurostat_2017_statistical_matching_eusilc_hbs",
+          "title": "Statistical matching of European Union statistics on income and living conditions (EU-SILC) and the Household Budget Survey",
+          "url": "https://ec.europa.eu/eurostat/web/products-statistical-working-papers/-/ks-tc-16-026",
+          "reading_status": "full_text_targeted_sections_read"
+        },
+        {
+          "source_id": "rassler_2002_statistical_matching",
+          "title": "Statistical Matching: A Frequentist Theory, Practical Applications, and Alternative Bayesian Approaches",
+          "url": "https://doi.org/10.1007/978-1-4613-0053-3",
+          "reading_status": "abstract_and_metadata_read"
+        },
+        {
+          "source_id": "andridge_little_2010_hot_deck_review",
+          "title": "A Review of Hot Deck Imputation for Survey Non-response",
+          "url": "https://doi.org/10.1111/j.1751-5823.2010.00103.x",
+          "reading_status": "targeted_sections_reviewed; no local copy"
+        },
+        {
+          "source_id": "statistics_canada_2009_imputation_guidelines",
+          "title": "Imputation",
+          "url": "https://www150.statcan.gc.ca/n1/pub/12-539-x/2009001/imputation-eng.htm",
+          "reading_status": "full_text_read"
+        },
+        {
+          "source_id": "raghunathan_etal_2001_sequential_regression_mi",
+          "title": "A Multivariate Technique for Multiply Imputing Missing Values Using a Sequence of Regression Models",
+          "url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2001001/article/5857-eng.pdf",
+          "reading_status": "abstract_and_method_sections_read"
+        },
+        {
+          "source_id": "yang_reiter_2025_hotdeck_mice_auxiliary_margins",
+          "title": "Imputation of Nonignorable Missing Data in Surveys Using Auxiliary Margins via Hot Deck and Sequential Imputation",
+          "url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2025001/article/00004-eng.htm",
+          "reading_status": "abstract_and_targeted_method_description_read"
+        }
+      ]
+    },
+    {
+      "theme": "Agent忠实性",
+      "registry": "agent_sources.json",
+      "record_count": 4,
+      "records": [
+        {
+          "source_id": "consumer_sim_2026_v1",
+          "title": "Uncovering Salience-Driven Dynamics in Consumer Confidence with Generative Social Simulation",
+          "url": "https://arxiv.org/html/2606.30395v1",
+          "reading_status": "HTML §4.2.1, §4.4, §2.5/Table4 read; existing PDF reused"
+        },
+        {
+          "source_id": "aher_2023",
+          "title": "Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies",
+          "url": "https://proceedings.mlr.press/v202/aher23a/aher23a.pdf",
+          "reading_status": "Official PDF relevant main-text sections; not all appendices"
+        },
+        {
+          "source_id": "bisbee_2024",
+          "title": "Synthetic Replacements for Human Survey Data? The Perils of Large Language Models",
+          "url": "https://doi.org/10.1017/pan.2024.5",
+          "reading_status": "Official abstract checked; reuse prior reviewed main-text notes"
+        },
+        {
+          "source_id": "gao_2025_author_v3",
+          "title": "Take Caution in Using LLMs as Human Surrogates: Scylla Ex Machina",
+          "url": "https://arxiv.org/html/2410.19599v3",
+          "reading_status": "Author HTML Results / demographic personas / few-shot sections; not journal final text"
+        }
+      ]
+    }
+  ],
+  "cross_references": [
+    {
+      "same_work": [
+        "consumersim_gss_persona_ablation_2026",
+        "consumer_sim_2026_v1"
+      ],
+      "note": "Same ConsumerSim v1; different checked sections, count once if reporting unique works."
+    }
+  ]
+}

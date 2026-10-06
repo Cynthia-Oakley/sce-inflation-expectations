@@ -1,0 +1,383 @@
+{
+  "checked_on": "2026-10-06",
+  "topic": "psychological attributes and household inflation expectations",
+  "selection_note": "Ten substantive sources prioritize direct household inflation-expectation measures, experiments, panel or administrative linkage, and explicit contrary evidence; an official GSS codebook record documents item measurement. No public full texts were downloaded locally. Reading status states whether full text, selected sections, or abstract only was reviewed.",
+  "sources": [
+    {
+      "id": "gss_2024_codebook_wellbeing_finance_items",
+      "title": "General Social Survey 2024 Codebook",
+      "authors": [
+        "NORC at the University of Chicago"
+      ],
+      "year": 2025,
+      "source_url": "https://gss.norc.org/get-documentation.html",
+      "open_access_url": "https://gss.norc.org/content/dam/gss/get-documentation/pdf/codebook/GSS%202024%20Codebook%20R2.pdf",
+      "source_type": "Official survey codebook / measurement documentation",
+      "access_level": "Official codebook entries for HAPPY, SATFIN and GOODLIFE reviewed; not a microdata analysis.",
+      "evidence_locations": [
+        {
+          "url": "https://gss.norc.org/content/dam/gss/get-documentation/pdf/codebook/GSS%202024%20Codebook.pdf",
+          "section": "HAPPY, p. 91",
+          "claim": "General happiness asks whether the respondent is very happy, pretty happy, or not too happy; the response scale is ordinal."
+        },
+        {
+          "url": "https://gss.norc.org/content/dam/gss/get-documentation/pdf/codebook/GSS%202024%20Codebook%20R2.pdf",
+          "section": "SATFIN, p. 110",
+          "claim": "Financial satisfaction asks whether the respondent is pretty well satisfied, more or less satisfied, or not satisfied at all; the response scale is ordinal."
+        },
+        {
+          "url": "https://sda.berkeley.edu/sdaweb/docs/gss24rel3/DOC/GSS2024CodebookR3.pdf",
+          "section": "GOODLIFE",
+          "claim": "GOODLIFE is an ordered agreement item about whether the respondent and family have a good chance of improving their standard of living. It is not an inflation forecast."
+        }
+      ],
+      "findings": [
+        "The named GSS measures are ordered answer categories, not continuous, precisely measured psychological scores.",
+        "GOODLIFE is one possible economic-prospect measure, but the codebook alone does not establish that ConsumerSim used this item for its 'future optimism' attribute."
+      ],
+      "limitations": [
+        "The 2024 codebook documents item wording and response categories; it does not establish availability in every GSS year or the exact source version, coding and conditional cells used by ConsumerSim.",
+        "Item documentation is not evidence that happiness or satisfaction causes inflation expectations."
+      ],
+      "project_use": "Preserve ordinal categories and item wording if these constructs are later examined. Do not infer a paper's specific variable mapping from similar construct names."
+    },
+    {
+      "id": "consumersim_gss_persona_ablation_2026",
+      "title": "Uncovering Salience-Driven Dynamics in Consumer Confidence with Generative Social Simulation",
+      "authors": [
+        "Yixu Huang",
+        "Yunlu Yin",
+        "Jiayu Lin",
+        "Xinnong Zhang",
+        "Jia Wang",
+        "Siyuan Wang",
+        "Xuanjing Huang",
+        "Liyin Jin",
+        "Zhongyu Wei"
+      ],
+      "year": 2026,
+      "source_url": "https://arxiv.org/abs/2606.30395",
+      "open_access_url": "https://arxiv.org/html/2606.30395v1",
+      "source_type": "arXiv preprint",
+      "access_level": "Full HTML read for §§2.5, 4.2.1–4.2.2 and relevant implementation text.",
+      "evidence_locations": [
+        {
+          "url": "https://arxiv.org/html/2606.30395v1",
+          "section": "§4.2.1",
+          "claim": "Lists happiness, financial satisfaction, job satisfaction, future optimism, social trust and perceived mobility as attributes statistically imputed from conditional GSS distributions; says they are not direct measures of particular SIPP individuals."
+        },
+        {
+          "url": "https://arxiv.org/html/2606.30395v1",
+          "section": "§2.5 and Table 4",
+          "claim": "The persona ablation removes the entire Hierarchical Persona Substrate, not one psychological attribute at a time."
+        }
+      ],
+      "findings": [
+        "The paper names the behavioral attributes and their GSS-based conditional-imputation approach.",
+        "The reported ablation shows a contribution from the overall persona substrate, including demographics and household circumstances, but does not identify the incremental value of any one psychological attribute."
+      ],
+      "limitations": [
+        "The paper does not provide in §4.2 item names, conditioning cells, pooled-year details, or uncertainty for each imputed psychological attribute.",
+        "The target is consumer confidence, not SCE one-year inflation expectations or Q9 subjective densities."
+      ],
+      "project_use": "Use only as a framework precedent. Do not cite it as evidence that happiness or optimism individually improves SCE expectation simulation."
+    },
+    {
+      "id": "bruin_de_bruin_expectation_formation_fin_literacy_2010",
+      "title": "Expectations of Inflation: The Role of Demographic Variables, Expectation Formation, and Financial Literacy",
+      "authors": [
+        "Wändi Bruine de Bruin",
+        "Wilbert van der Klaauw",
+        "Julie S. Downs",
+        "Baruch Fischhoff",
+        "Giorgio Topa",
+        "Olivier Armantier"
+      ],
+      "year": 2010,
+      "source_url": "https://doi.org/10.1111/j.1745-6606.2010.01174.x",
+      "open_access_url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1745-6606.2010.01174.x",
+      "source_type": "Journal of Consumer Affairs article",
+      "access_level": "Full article HTML read; sample, measures, tables and discussion checked.",
+      "evidence_locations": [
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1745-6606.2010.01174.x",
+          "section": "Sample; n=299; Table 5",
+          "claim": "RAND American Life Panel module; lower objective financial literacy and greater attention to paying future expenses / prices paid are associated with higher one-year inflation expectations."
+        },
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1745-6606.2010.01174.x",
+          "section": "Results, pp. 271–284 (HTML lines around Tables 3–5)",
+          "claim": "Self-reported focus on the U.S. inflation rate and subjective financial confidence are not significantly related to reported expectations; lower financial literacy groups show greater expectation disagreement."
+        }
+      ],
+      "findings": [
+        "This is direct household inflation-expectation evidence linking financial attention and objective financial literacy to forecast levels.",
+        "It distinguishes actual knowledge from confidence in one's knowledge; the latter was not a significant predictor in the reported models."
+      ],
+      "limitations": [
+        "Observational correlations in a module of 299 panel members, not a randomized numeracy treatment.",
+        "The sample was recruited through Michigan survey respondents, skewed toward higher education and income, and the survey dates to 2007–2008.",
+        "The study measures point expectations and does not establish how these attributes affect SCE Q9 probability densities."
+      ],
+      "project_use": "Prioritize verified numeracy/financial-understanding measures over a generic confidence or satisfaction score; test response format and subgroup fit separately."
+    },
+    {
+      "id": "armantier_et_al_inflation_expectations_behavior_2011",
+      "title": "Inflation Expectations and Behavior: Do Survey Respondents Act on Their Beliefs?",
+      "authors": [
+        "Olivier Armantier",
+        "Wändi Bruine de Bruin",
+        "Giorgio Topa",
+        "Wilbert van der Klaauw",
+        "Basit Zafar"
+      ],
+      "year": 2011,
+      "source_url": "https://www.newyorkfed.org/research/staff_reports/sr509.html",
+      "open_access_url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr509.pdf",
+      "source_type": "Federal Reserve Bank of New York Staff Report 509",
+      "access_level": "Abstract, introduction, sample, measures and results in §§1–2 read in the 51-page PDF; not every section reread.",
+      "evidence_locations": [
+        {
+          "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr509.pdf",
+          "pages": "pp. 1, 5–8",
+          "claim": "Survey inflation beliefs are compared with choices in a financially incentivized investment experiment; respondents whose choices are difficult to rationalize score lower on numeracy and financial literacy and take longer to complete the survey."
+        }
+      ],
+      "findings": [
+        "Survey inflation beliefs correlate with decisions whose payoffs depend on future inflation, supporting a degree of construct validity.",
+        "Numeracy and financial literacy may affect how respondents convert beliefs into probability and financial choices."
+      ],
+      "limitations": [
+        "The experiment validates a narrow financial choice, not every real-world action or the accuracy of an inflation forecast.",
+        "The 2010–2011 U.S. American Life Panel sample was recruited from Michigan survey participants and is not the current SCE panel."
+      ],
+      "project_use": "Use as evidence about probability comprehension and response behavior, not as proof that higher numerical ability makes expectations more accurate."
+    },
+    {
+      "id": "christelis_et_al_trust_central_bank_inflation_expectations_2020",
+      "title": "Trust in the Central Bank and Inflation Expectation",
+      "authors": [
+        "Dimitris Christelis",
+        "Dimitris Georgarakos",
+        "Tullio Jappelli",
+        "Maarten van Rooij"
+      ],
+      "year": 2020,
+      "source_url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2375~2bac6e6836.en.pdf",
+      "open_access_url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2375~2bac6e6836.en.pdf",
+      "source_type": "European Central Bank Working Paper 2375",
+      "access_level": "Full 47-page PDF read; survey design, regressions, IV discussion and appendix checked.",
+      "evidence_locations": [
+        {
+          "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2375~2bac6e6836.en.pdf",
+          "pages": "pp. 1, 3–6, 14–16, 30–31",
+          "claim": "2015 Dutch CentERpanel survey, 3,117 observations; higher ECB trust is associated with lower average one-year expectation and individual uncertainty, with a stronger anchoring pattern in the upper forecast quantiles."
+        },
+        {
+          "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2375~2bac6e6836.en.pdf",
+          "pages": "pp. 5–6, 15–16",
+          "claim": "The paper controls for ECB knowledge, financial literacy and optimism; IV uses repair-person cheating exposure and interpersonal trust under explicit exclusion assumptions."
+        }
+      ],
+      "findings": [
+        "Trust can relate to both the level and the respondent's own uncertainty; the level association is not uniform across the distribution.",
+        "Trust and expected GDP growth move positively together in this setting, underscoring that expected output and expected inflation are separate outcomes."
+      ],
+      "limitations": [
+        "The design is an observational panel survey with IV assumptions, not randomized assignment of trust.",
+        "The result concerns Dutch-speaking households, ECB credibility and a 2015 low-inflation setting, not U.S. SCE 2021 one-year Q9."
+      ],
+      "project_use": "Treat trust as a possible anchor and moderator, not a fixed coefficient that uniformly lowers every simulated household's forecast. Keep within-person uncertainty distinct from between-person disagreement."
+    },
+    {
+      "id": "hoffmann_et_al_average_inflation_targeting_trust_2022",
+      "title": "Would Households Understand Average Inflation Targeting?",
+      "authors": [
+        "Mathias Hoffmann",
+        "Lora Pavlova",
+        "Emanuel Moench",
+        "Guido Schultefrankenfeld"
+      ],
+      "year": 2022,
+      "source_url": "https://doi.org/10.1016/j.jmoneco.2022.02.006",
+      "open_access_url": "https://www.bundesbank.de/resource/blob/891576/38266128945d9d0061ad364f52d99ea2/mL/2022-05-30-dkp-17-data.pdf",
+      "source_type": "Journal of Monetary Economics article; Bundesbank Discussion Paper 17/2022 author version",
+      "access_level": "Full 50-page Bundesbank PDF read; design, abstract, main results and appendix checked.",
+      "evidence_locations": [
+        {
+          "url": "https://www.bundesbank.de/resource/blob/891576/38266128945d9d0061ad364f52d99ea2/mL/2022-05-30-dkp-17-data.pdf",
+          "pages": "pp. 2–6 and main results section",
+          "claim": "About 9,000 Bundesbank Online Panel Households respondents took part in randomized information treatments about a hypothetical average-inflation-targeting regime; high trust strengthened policy-consistent updates, while the lowest-trust group could revise in the opposite direction."
+        }
+      ],
+      "findings": [
+        "Trust changes how a household responds to a specific policy-information treatment; it does not imply a universal sign for expected inflation.",
+        "The experiments elicit probabilistic medium- and longer-term expectations, so they distinguish information response from stable optimism."
+      ],
+      "limitations": [
+        "The policy regime was hypothetical and the setting was Germany/ECB; the horizon is two to three or five to ten years, not SCE's one year.",
+        "Trust itself was measured rather than randomized, although the information treatment was randomized."
+      ],
+      "project_use": "A strong design precedent for testing trust × message interactions; do not translate its treatment effect directly into SCE Q9 coefficients."
+    },
+    {
+      "id": "binder_couture_smit_partisan_trust_fed_2025",
+      "title": "Partisan Trust in the Federal Reserve",
+      "authors": [
+        "Carola Binder",
+        "Cody Couture",
+        "Abhiprerna Smit"
+      ],
+      "year": 2025,
+      "source_url": "https://www.nber.org/papers/w33684",
+      "open_access_url": "https://www.nber.org/system/files/working_papers/w33684/w33684.pdf",
+      "source_type": "NBER Working Paper 33684",
+      "access_level": "NBER abstract and summary plus the paper's opening sections reviewed; not a complete full-text read.",
+      "evidence_locations": [
+        {
+          "url": "https://www.nber.org/papers/w33684",
+          "section": "Abstract and 2025 survey summary",
+          "claim": "Michigan and Gallup data from 2001–2023 show partisan gaps in Fed trust; those gaps do not explain the large partisan gap in inflation expectations. A 2025 survey found Republicans' trust remained lower while their inflation expectations were also lower."
+        },
+        {
+          "url": "https://www.nber.org/system/files/working_papers/w33684/w33684.pdf",
+          "section": "Introduction",
+          "claim": "The authors examine same-survey measures of party, Fed trust and inflation expectations and report only a small explanatory role for trust in partisan expectation differences."
+        }
+      ],
+      "findings": [
+        "Direct counterevidence to a one-direction rule that low institutional trust necessarily means higher inflation expectations.",
+        "Open-ended answers point to salient political and tariff information as alternative context for expectation formation."
+      ],
+      "limitations": [
+        "The 2025 setting is unusually politicized and the NBER paper is a working paper.",
+        "Partisan trust gaps do not identify the effect of general trust on a randomly assigned household."
+      ],
+      "project_use": "Keep trust, partisan information and source use separate; do not code a deterministic trust-to-inflation sign."
+    },
+    {
+      "id": "d_acunto_weber_information_expectations_global_2026",
+      "title": "Information and Macroeconomic Expectations: Global Evidence",
+      "authors": [
+        "Francesco D’Acunto",
+        "Michael Weber"
+      ],
+      "year": 2026,
+      "source_url": "https://www.nber.org/papers/w35511",
+      "open_access_url": "https://www.nber.org/papers/w35511",
+      "source_type": "NBER Working Paper 35511",
+      "access_level": "NBER working-paper abstract and metadata read; full paper not read in this pass.",
+      "evidence_locations": [
+        {
+          "url": "https://www.nber.org/papers/w35511",
+          "section": "Abstract",
+          "claim": "A harmonized survey of about 47,000 consumers in 47 countries finds local information sources common and associated with biased macroeconomic expectations; distrust in governments and central banks is associated with local-source reliance and less learning from aggregate outcomes."
+        }
+      ],
+      "findings": [
+        "Information-source selection and institutional trust are relevant to inflation-expectation errors across many countries.",
+        "Demographic differences in biases appear largely related to sorting into information sources, rather than different processing of the same information."
+      ],
+      "limitations": [
+        "The source-choice and trust relationships are observational; they do not identify the causal effect of assigning a source or changing trust.",
+        "The paper's full methods and subgroup definitions were not examined in this pass; the 2023 global sample is not the U.S. SCE."
+      ],
+      "project_use": "Motivates recording information source and source credibility as separate candidate mechanisms; do not infer a respondent's source use from demographics alone."
+    },
+    {
+      "id": "taubinsky_et_al_affect_cued_recall_inflation_2026",
+      "title": "Beliefs About the Economy Are Excessively Sensitive to Household-Level Shocks: Evidence from Linked Survey and Administrative Data",
+      "authors": [
+        "Dmitry Taubinsky",
+        "Luigi Butera",
+        "Matteo Saccarola",
+        "Chen Lian"
+      ],
+      "year": 2026,
+      "source_url": "https://doi.org/10.1093/qje/qjag032",
+      "open_access_url": "https://academic.oup.com/qje/advance-article/doi/10.1093/qje/qjag032/8711394",
+      "source_type": "Quarterly Journal of Economics article",
+      "access_level": "Full article HTML read in selected sections: abstract, introduction, data/sample, main results and supporting survey evidence; not every appendix table reviewed.",
+      "evidence_locations": [
+        {
+          "url": "https://academic.oup.com/qje/advance-article/doi/10.1093/qje/qjag032/8711394",
+          "section": "Abstract; §§I, II.C, IV–VI",
+          "claim": "Danish Consumer Expectations Survey linked to registry data; 35,050 usable responses from 2012–2019 after sample restrictions. Household income changes and expected future household finances covary with inflation forecasts far more than with realized inflation."
+        },
+        {
+          "url": "https://academic.oup.com/qje/advance-article/doi/10.1093/qje/qjag032/8711394",
+          "section": "§V and §VI.C",
+          "claim": "Backcasts, adverse health events and supplementary randomized survey prompts support affect-cued recall: negative/positive household events can cue corresponding memories, affecting inflation perceptions and forecasts."
+        }
+      ],
+      "findings": [
+        "The strongest direct psychological evidence here concerns affect attached to recent or anticipated household events and which inflation memories they cue, rather than a stable optimism trait.",
+        "The authors formally test implications of rational expectations and find the observed household-event associations too large to satisfy the benchmark under stated assumptions."
+      ],
+      "limitations": [
+        "Administrative income changes are observed, not randomly assigned; the mechanism is described as at least partly affect-cued recall.",
+        "The supporting cue experiment does not establish a stable-happiness treatment effect on SCE Q9; Danish survey and register access differ from U.S. public data."
+      ],
+      "project_use": "Prioritize recent/expected household-finance state and salient events as testable candidates; avoid equating them with a general happiness or pessimism score."
+    },
+    {
+      "id": "cupak_siranova_inflation_experience_wellbeing_2023",
+      "title": "Fear of the Dark: Inflation Experiences and Subjective Well-being",
+      "authors": [
+        "Andrej Cupák",
+        "Mária Širaňová"
+      ],
+      "year": 2023,
+      "source_url": "https://doi.org/10.1016/j.econlet.2023.111434",
+      "open_access_url": "https://www.sciencedirect.com/science/article/abs/pii/S0165176523004603",
+      "source_type": "Economics Letters article",
+      "access_level": "Publisher abstract and introduction/data snippets read; full article not read.",
+      "evidence_locations": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0165176523004603",
+          "section": "Abstract; data description",
+          "claim": "HFCS microdata from 22 countries around 2017 linked to lifetime experienced inflation; higher experience is associated with lower current life-satisfaction scores, with a non-linear pattern in older EU member states."
+        }
+      ],
+      "findings": [
+        "The direct relationship studied runs from inflation experience to well-being, not from happiness to inflation expectations."
+      ],
+      "limitations": [
+        "The result is observational, European and concerns life satisfaction as an outcome; it cannot establish that satisfaction predicts an American household's inflation belief."
+      ],
+      "project_use": "Use as a direction-of-causality caution. Do not cite general inflation-versus-well-being findings as evidence for a happiness persona variable."
+    },
+    {
+      "id": "andre_et_al_subjective_models_households_experts_2022",
+      "title": "Subjective Models of the Macroeconomy: Evidence From Experts and Representative Samples",
+      "authors": [
+        "Peter Andre",
+        "Carlo Pizzinelli",
+        "Christopher Roth",
+        "Johannes Wohlfart"
+      ],
+      "year": 2022,
+      "source_url": "https://doi.org/10.1093/restud/rdac008",
+      "open_access_url": "https://academic.oup.com/restud/article/89/6/2958/6531988",
+      "source_type": "Review of Economic Studies article",
+      "access_level": "Publisher abstract and detailed result sections reviewed; full methods and all appendices not read in this pass.",
+      "evidence_locations": [
+        {
+          "url": "https://academic.oup.com/restud/article/89/6/2958/6531988",
+          "section": "Abstract; §§4.3–4.5 and conclusion",
+          "claim": "About 6,500 U.S. households and 1,500 experts forecast inflation and unemployment under common shock vignettes; both groups show within-group disagreement, while households and experts retrieve different demand/supply channels."
+        }
+      ],
+      "findings": [
+        "Experts' reasoning is more concentrated in textbook channels; household beliefs are dispersed and context-sensitive even under similar stated information.",
+        "Context cues can change which causal channel comes to mind and shift forecasts."
+      ],
+      "limitations": [
+        "The hypothetical shock vignettes are not ordinary SCE one-year questions or Q9 probability densities.",
+        "It does not show that happiness or optimism explains the household–expert gap, nor diagnose this project's model."
+      ],
+      "project_use": "Treat analyst-like reasoning as a testable response-framing hypothesis; compare resident and analyst framing with identical P/E before adding new psychological attributes."
+    }
+  ],
+  "central_archive_note": "Theme-agent download claims describe that agent only; six PDFs separately downloaded by integrator and three existing PDFs verified. See archive_manifest.json; download does not change reading status."
+}

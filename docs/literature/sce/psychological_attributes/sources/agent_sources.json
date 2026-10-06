@@ -1,0 +1,49 @@
+{
+  "checked_on": "2026-10-06",
+  "sources": [
+    {
+      "source_id": "consumer_sim_2026_v1",
+      "title": "Uncovering Salience-Driven Dynamics in Consumer Confidence with Generative Social Simulation",
+      "source_url": "https://arxiv.org/html/2606.30395v1",
+      "checked_on": "2026-10-06",
+      "reading_status": "HTML §4.2.1, §4.4, §2.5/Table4 read; existing PDF reused",
+      "supports": "Simulation fidelity and module attribution limits; not psychological effect sizes for SCE",
+      "local_path": "data/raw/literature/sce/20261005/socioverse_cases/consumer_sim_v1.pdf",
+      "sha256": "5b7bf75fb3ff46206649fa85810a608e64be2c1323688370e140e9cb69513dee",
+      "archive_status": "existing_public_original_reused"
+    },
+    {
+      "source_id": "aher_2023",
+      "title": "Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies",
+      "source_url": "https://proceedings.mlr.press/v202/aher23a/aher23a.pdf",
+      "checked_on": "2026-10-06",
+      "reading_status": "Official PDF relevant main-text sections; not all appendices",
+      "supports": "Simulation fidelity and module attribution limits; not psychological effect sizes for SCE",
+      "local_path": "data/raw/literature/sce/20261005/agent_simulation/aher2023_icml.pdf",
+      "sha256": "34ac40e9e779cb564038ab5e8e8393c975a2f942cc94b901d25f261739499a7e",
+      "archive_status": "existing_public_original_reused"
+    },
+    {
+      "source_id": "bisbee_2024",
+      "title": "Synthetic Replacements for Human Survey Data? The Perils of Large Language Models",
+      "source_url": "https://doi.org/10.1017/pan.2024.5",
+      "checked_on": "2026-10-06",
+      "reading_status": "Official abstract checked; reuse prior reviewed main-text notes",
+      "supports": "Simulation fidelity and module attribution limits; not psychological effect sizes for SCE",
+      "local_path": "data/raw/literature/sce/20261005/agent_simulation/bisbee2024_synthetic_replacements.pdf",
+      "sha256": "ece42ff1351144b6d08bc060d6449007bcbba41708e6fb226e2cf2043c0bec2f",
+      "archive_status": "existing_public_original_reused"
+    },
+    {
+      "source_id": "gao_2025_author_v3",
+      "title": "Take Caution in Using LLMs as Human Surrogates: Scylla Ex Machina",
+      "source_url": "https://arxiv.org/html/2410.19599v3",
+      "checked_on": "2026-10-06",
+      "reading_status": "Author HTML Results / demographic personas / few-shot sections; not journal final text",
+      "supports": "Simulation fidelity and module attribution limits; not psychological effect sizes for SCE",
+      "local_path": "data/raw/literature/sce/20261006_psychological/integration/network_retry/gao_human_surrogates_author_v3.pdf",
+      "sha256": "9f61094ab521b2fe7729502543f80bd312ce836da92aaa44196bddc0500f370b",
+      "archive_status": "new_public_original_downloaded_by_integrator"
+    }
+  ]
+}

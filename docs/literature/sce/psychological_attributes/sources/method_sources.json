@@ -1,0 +1,204 @@
+{
+  "theme": "SCE psychological attribute synthesis, statistical matching, donor imputation, and uncertainty",
+  "checked_on": "2026-10-06",
+  "selection_note": "Six authoritative method sources were selected: Eurostat and Statistics Canada methodology publications plus original methods research. Only official institutional pages/PDFs and primary method papers are used. No source document was downloaded to the project this round; no local source hash is claimed.",
+  "sources": [
+    {
+      "id": "eurostat_2017_statistical_matching_eusilc_hbs",
+      "title": "Statistical matching of European Union statistics on income and living conditions (EU-SILC) and the Household Budget Survey",
+      "authors": [
+        "Paula Serafino",
+        "Rob Tonkin"
+      ],
+      "year": 2017,
+      "source_url": "https://ec.europa.eu/eurostat/web/products-statistical-working-papers/-/ks-tc-16-026",
+      "open_access_url": "https://ec.europa.eu/eurostat/documents/3888793/7882299/KS-TC-16-026-EN-N.pdf",
+      "source_type": "official_statistical_matching_working_paper",
+      "access_level": "official publication page and full PDF opened",
+      "reading_status": "full_text_targeted_sections_read",
+      "evidence_locations": [
+        "PDF pp. 9–15: population, reference person, survey reconciliation, common variables and matching methods",
+        "PDF pp. 16–21: comparison of parametric, nonparametric and mixed matching, including masked-value checks and variables omitted from matching",
+        "PDF p. 22, §4: conditional independence assumption and non-testability"
+      ],
+      "findings": [
+        "The study statistically matches Household Budget Survey expenditure to EU-SILC income/material deprivation for six countries because no one source measures all domains.",
+        "It evaluates the synthetic values against observed donor-file margins and variables omitted from matching; no method is uniformly best across all countries and distribution regions.",
+        "All methods described assume conditional independence of variables not jointly observed given matching X. The paper calls the assumption strong, says it cannot be tested from the matched datasets, and notes incorrect inference can follow when it fails."
+      ],
+      "limitations": [
+        "The example concerns European household surveys and expenditure/deprivation, not U.S. SCE or psychological variables.",
+        "Matching quality for observed margins and omitted covariates does not validate an unobserved cross-source joint relation."
+      ],
+      "project_use": [
+        "Ground the warning that separately matching CE and GSS/SHED conditional on X imposes a conditional-independence assumption and cannot recover or self-test the missing consumption–psychology association.",
+        "Use masked donor holdout and checks on variables not used for matching as diagnostics, while stating their limits."
+      ],
+      "checked_on": "2026-10-06",
+      "local_archives": []
+    },
+    {
+      "id": "rassler_2002_statistical_matching",
+      "title": "Statistical Matching: A Frequentist Theory, Practical Applications, and Alternative Bayesian Approaches",
+      "authors": [
+        "Susanne Rässler"
+      ],
+      "year": 2002,
+      "source_url": "https://doi.org/10.1007/978-1-4613-0053-3",
+      "open_access_url": "https://link.springer.com/book/10.1007/978-1-4613-0053-3",
+      "source_type": "original_method_monograph",
+      "access_level": "publisher bibliographic page and abstract; full book access requires subscription",
+      "reading_status": "abstract_and_metadata_read",
+      "evidence_locations": [
+        "Publisher description: data fusion/statistical file matching and use of informative-prior multiple imputation to address conditional-independence assumptions",
+        "Publisher chapter list: frequentist theory, practical applications, alternative approaches, and empirical evaluation"
+      ],
+      "findings": [
+        "Statistical matching constructs an artificial complete file from different survey samples using common variables.",
+        "Multiple-imputation specifications can make uncertainty about associations of variables never jointly observed visible; informative assumptions can be used as sensitivity parameters."
+      ],
+      "limitations": [
+        "Only the publisher page and abstract were accessed, not the book chapters.",
+        "It provides general statistical-matching theory, not a validated SCE psychological profile model."
+      ],
+      "project_use": [
+        "Treat uncertainty over the unobserved joint association as a sensitivity dimension; do not describe a single CIA-based synthetic pairing as identified by the data."
+      ],
+      "checked_on": "2026-10-06",
+      "local_archives": []
+    },
+    {
+      "id": "andridge_little_2010_hot_deck_review",
+      "title": "A Review of Hot Deck Imputation for Survey Non-response",
+      "authors": [
+        "Rebecca R. Andridge",
+        "Roderick J. A. Little"
+      ],
+      "year": 2010,
+      "source_url": "https://doi.org/10.1111/j.1751-5823.2010.00103.x",
+      "open_access_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3130338/",
+      "source_type": "peer_reviewed_method_review",
+      "access_level": "publisher abstract and indexed open full-text sections",
+      "reading_status": "targeted_sections_reviewed; no local copy",
+      "evidence_locations": [
+        "Abstract: definition, practical prevalence, and limits of hot-deck theory",
+        "Article sections on adjustment cells/donor pools, distance and predictive-mean neighborhoods, survey weights, multivariate values, and variance estimation"
+      ],
+      "findings": [
+        "Hot deck replaces missing values with observed values from similar respondents; donor classes are formed from auxiliary variables observed for recipients and donors.",
+        "Methods include random within-cell, nearest-neighbor, weighted/sequential and predictive-mean approaches; more covariates can make exact cells sparse.",
+        "The review describes multiple imputation as one route to carry imputation uncertainty into inferences, and notes that good matches and appropriate variance treatment are necessary."
+      ],
+      "limitations": [
+        "The review focuses on survey item nonresponse, not specifically data fusion across unrelated survey samples.",
+        "It reports no universal best hot-deck procedure and highlights remaining theory and multivariate-missingness gaps."
+      ],
+      "project_use": [
+        "Support a simple conditional weighted donor as a transparent starting point, whole-row draws for within-source variable combinations, explicit support/weight diagnostics, and multiple assignment draws.",
+        "Do not import a minimum donor pool number from CE into GSS/SHED without field-specific validation."
+      ],
+      "checked_on": "2026-10-06",
+      "local_archives": []
+    },
+    {
+      "id": "statistics_canada_2009_imputation_guidelines",
+      "title": "Imputation",
+      "authors": [
+        "Statistics Canada"
+      ],
+      "year": 2009,
+      "source_url": "https://www150.statcan.gc.ca/n1/pub/12-539-x/2009001/imputation-eng.htm",
+      "open_access_url": "https://www150.statcan.gc.ca/n1/pub/12-539-x/2009001/imputation-eng.htm",
+      "source_type": "official_statistical_agency_quality_guidance",
+      "access_level": "official methodology page full text",
+      "reading_status": "full_text_read",
+      "evidence_locations": [
+        "Methods §§ on stochastic imputation, hierarchical method fallback and donor imputation",
+        "Impact sections on retaining imputation flags/donor identity, preserving relationships and checking domain effects",
+        "Variance estimation guidance on sampling and added imputation variance"
+      ],
+      "findings": [
+        "The agency distinguishes donor-transfer methods from explicit parametric models and lists random hot deck and nearest-neighbor stochastic imputation.",
+        "It recommends choosing auxiliary variables and an imputation model carefully, limiting hierarchy complexity, limiting donor reuse where appropriate, retaining flags/method/donor information, and evaluating effects on distributions and variance.",
+        "Imputation can change relationships between variables and domains even where aggregate totals appear stable."
+      ],
+      "limitations": [
+        "This is general agency guidance, not a prescription for the project’s psychological constructs or minimum cell sizes.",
+        "Operational advice about donor reuse must be balanced against preserving the source-weighted target distribution."
+      ],
+      "project_use": [
+        "Keep fallback tiers, unsupported states, donor-use diagnostics and provenance in the proposed schema; test every fallback instead of silently relaxing matches."
+      ],
+      "checked_on": "2026-10-06",
+      "local_archives": []
+    },
+    {
+      "id": "raghunathan_etal_2001_sequential_regression_mi",
+      "title": "A Multivariate Technique for Multiply Imputing Missing Values Using a Sequence of Regression Models",
+      "authors": [
+        "Trivellore E. Raghunathan",
+        "James M. Lepkowski",
+        "John Van Hoewyk",
+        "Peter W. Solenberger"
+      ],
+      "year": 2001,
+      "source_url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2001001/article/5857-eng.pdf",
+      "open_access_url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2001001/article/5857-eng.pdf",
+      "source_type": "original_multiple_imputation_method_paper",
+      "access_level": "Statistics Canada journal PDF",
+      "reading_status": "abstract_and_method_sections_read",
+      "evidence_locations": [
+        "Survey Methodology 27(1), pp. 85–95",
+        "Abstract/method: sequential regression models draw from predictive distributions; linear, logistic, Poisson, generalized-logit or mixed models are selected by variable type",
+        "Method discussion: relevant-subpopulation restrictions, logical bounds and multiple-imputation combining"
+      ],
+      "findings": [
+        "Sequential regression multiple imputation offers a practical multivariate fallback for mixed variable types and constrained domains, with stochastic draws from fitted predictive distributions.",
+        "Inference is computed for each completed dataset and then combined to reflect between-imputation variation."
+      ],
+      "limitations": [
+        "The paper studies missing-data imputation under its modeling assumptions; chained equations do not identify associations between constructs that were never jointly observed across GSS, SHED or CE.",
+        "Model fit and support still require empirical checks; a flexible model does not remove transportability or positivity problems."
+      ],
+      "project_use": [
+        "Use a within-source multivariate model only as a sensitivity/fallback when donor cells are sparse and masked-donor validation supports it.",
+        "Keep independently sampled source domains separate unless a joint source or external constraint identifies their relationship."
+      ],
+      "checked_on": "2026-10-06",
+      "local_archives": []
+    },
+    {
+      "id": "yang_reiter_2025_hotdeck_mice_auxiliary_margins",
+      "title": "Imputation of Nonignorable Missing Data in Surveys Using Auxiliary Margins via Hot Deck and Sequential Imputation",
+      "authors": [
+        "Yanjiao Yang",
+        "Jerome P. Reiter"
+      ],
+      "year": 2025,
+      "source_url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2025001/article/00004-eng.htm",
+      "open_access_url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2025001/article/00004-eng.pdf",
+      "source_type": "peer_reviewed_survey_methodology_article",
+      "access_level": "official Statistics Canada publication page, abstract and targeted method description",
+      "reading_status": "abstract_and_targeted_method_description_read",
+      "evidence_locations": [
+        "Abstract and §3 description of random hot deck and MICE hybrid",
+        "Publication metadata: Survey Methodology 51(1), pp. 251–274"
+      ],
+      "findings": [
+        "The paper combines survey-weighted auxiliary population margins with random hot deck for unit nonresponse and chained-equation multiple imputation for item nonresponse.",
+        "Its motivation includes the practical difficulty of specifying a high-dimensional joint model with mixed variable types; simulation results show gains in its specific nonignorable-missingness setting."
+      ],
+      "limitations": [
+        "The method concerns nonresponse and known auxiliary margins, not matching separate CE and psychological donors.",
+        "Its simulation/application results do not imply that marginal controls can recover an unobserved cross-domain association."
+      ],
+      "project_use": [
+        "If A-line external margins are used to constrain a synthesis, declare them as build constraints and do not use the same margins as independent validation.",
+        "Keep the advanced joint-model approach as optional later work; it is unnecessary for the first transparent donor-based prototype."
+      ],
+      "checked_on": "2026-10-06",
+      "local_archives": []
+    }
+  ],
+  "central_archive_note": "Theme-agent download claims describe that agent only; six PDFs separately downloaded by integrator and three existing PDFs verified. See archive_manifest.json; download does not change reading status."
+}
