@@ -40,6 +40,10 @@ from .experience_mechanism import (
     PROMPT_VERSION as EXPERIENCE_PROMPT_VERSION, build_experience_view,
     build_mechanism_messages, validate_config,
 )
+from .household_state_mechanism import (
+    PROMPT_VERSION as HOUSEHOLD_PROMPT_VERSION, build_state,
+    build_household_state_messages,
+)
 
 from socioverse.abc import DecisionModel, EnvironmentProvider, MetricCollector, PopulationProvider
 from socioverse.engine import register
@@ -195,6 +199,9 @@ class SCEEnvironmentProvider(EnvironmentProvider):
         if self.mechanism is not None:
             self.mechanism = validate_config(self.mechanism)
         self.experience_by_id = bundle.provider_args.get("experience_by_id", {})
+        self.household_state_by_id = bundle.provider_args.get("household_state_by_id", {})
+        if self.household_state_by_id and self.mechanism is not None:
+            raise ValueError("Q1-only trial cannot combine price-experience treatment")
         self.targets: list[dict[str, str]] = list(
             bundle.provider_args.get("targets") or DEFAULT_TARGETS)
         self.answers: dict[str, dict[str, Any]] = {}
@@ -259,6 +266,12 @@ class SCEEnvironmentProvider(EnvironmentProvider):
             profile = dict(self.persona_by_id.get(aid, {}))
             prior = dict(self.answers.get(aid, {}))
             personal_info, local_info = info, {}
+            if self.household_state_by_id:
+                row = self.household_state_by_id[aid]
+                if row["agent_id"] != aid:
+                    raise ValueError("Q1 agent ID mismatch")
+                local_info = {"household_state": build_state(row, profile, target["target_month"])}
+                prior = {}
             if self.mechanism is not None:
                 basket = self.experience_by_id.get(aid)
                 if basket is not None and basket.get("agent_id") != aid:
@@ -840,7 +853,11 @@ class SCEDecision(DecisionModel):
         target = _target_from_observation(ob)
         if ob.local_information.get("price_experience") and self.prompt_version != EXPERIENCE_PROMPT_VERSION:
             raise ValueError("mechanism observation requires the experience prompt; refuse partial/unused treatment")
-        if self.prompt_version == EXPERIENCE_PROMPT_VERSION:
+        if ob.local_information.get("household_state") and self.prompt_version != HOUSEHOLD_PROMPT_VERSION:
+            raise ValueError("Q1 observation requires the Q1-only prompt")
+        if self.prompt_version == HOUSEHOLD_PROMPT_VERSION:
+            messages = build_household_state_messages(ob, build_sce_messages_v2(ob, include_event_abstracts=True))
+        elif self.prompt_version == EXPERIENCE_PROMPT_VERSION:
             messages = build_mechanism_messages(ob, build_sce_messages_v2(ob, include_event_abstracts=True))
         elif self.prompt_version.startswith("sce-q8-q9-v2"):
             messages = build_sce_messages_v2(
@@ -864,6 +881,11 @@ class SCEDecision(DecisionModel):
             state = ob.local_information["price_experience"]
             base_payload.update(mechanism_arm=state["arm"], mechanism_sha256=state["mechanism_sha256"],
                                 public_fact_ledger_sha256=state["public_fact_ledger_sha256"])
+        if self.prompt_version == HOUSEHOLD_PROMPT_VERSION:
+            state = ob.local_information["household_state"]
+            base_payload.update(household_state_sha256=state["state_sha256"],
+                                household_state_source=state["source"],
+                                research_line=state["research_line"])
         prompt_text = json.dumps(messages, ensure_ascii=False)
         if len(prompt_text) > self.max_prompt_chars:
             payload = {**base_payload, "direction": "", "magnitude_pct": 0.0, "point_pct": 0.0,

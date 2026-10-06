@@ -39,6 +39,7 @@ LLM_PROMPT_VERSIONS = (
     "sce-q8-q9-v2",
     "sce-q8-q9-v2-abstract",
     "sce-q8-q9-experience-v1",
+    "sce-q8-q9-household-state-v1",
 )
 
 
@@ -121,6 +122,7 @@ def main(argv: list[str] | None = None) -> int:
                          "e.g. simulation/simulation_main2021.json")
     ap.add_argument("--mechanism", default=None, help="explicit price-experience arm JSON (repository or absolute path)")
     ap.add_argument("--experience", default=None, help="materialized CE basket JSON; required by basket/focus arms")
+    ap.add_argument("--household-state", default=None, help="explicit Q1-only A reconstruction bundle")
     ap.add_argument("--confirm-spend", action="store_true",
                     help="required with --llm openai: confirms paid API calls are authorized")
     args = ap.parse_args(argv)
@@ -133,6 +135,10 @@ def main(argv: list[str] | None = None) -> int:
         sys.exit("--mechanism and experience prompt must be selected together; refuse silent unused mechanism")
     if args.mechanism and args.llm == "scripted":
         print("ENGINEERING CHECK ONLY: scripted answers ignore the price-experience mechanism; no behaviour comparison.")
+    if args.household_state and (args.mechanism or args.experience):
+        sys.exit("Q1-only trial cannot combine price-experience treatments")
+    if args.llm == "openai" and bool(args.household_state) != (args.prompt_version == "sce-q8-q9-household-state-v1"):
+        sys.exit("--household-state and Q1-only prompt must be selected together")
 
     # 1. one-way export of the maintained source into the official clone
     export_cmd = [sys.executable, str(REPO_ROOT / "scripts" / "export_study_runtime.py")]
@@ -185,6 +191,29 @@ def main(argv: list[str] | None = None) -> int:
     }
 
     mechanism_inputs = {}
+    household_state_inputs = {}
+    if args.household_state:
+        from studies.sce_inflation_expectations.household_state_mechanism import validate_bundle, build_household_state_messages
+        from studies.sce_inflation_expectations.model import SCEEnvironmentProvider, build_sce_messages_v2
+        if len(targets) != 1:
+            sys.exit("Q1-only v1 requires a single-month environment")
+        state_path = (REPO_ROOT / args.household_state).resolve()
+        bundle = validate_bundle(json.loads(state_path.read_text()), pop_b.personas, targets[0]["target_month"])
+        if any(k in env_b.provider_args for k in ("price_experience_mechanism", "experience_by_id", "household_state_by_id")):
+            sys.exit("Q1 inputs require a clean explicit baseline environment")
+        env_b.provider_args["household_state_by_id"] = bundle["state_by_id"]
+        household_state_inputs = {"path": str(state_path), "sha256": _sha256(state_path),
+                                  "research_line": bundle["research_line"]}
+        check_env = SCEEnvironmentProvider(env_b.model_copy(deep=True))
+        check_env.audit_dir = None
+        check_env.reset(sim_c.seed)
+        check_env.advance_to(1)
+        for observation in check_env.observe_batch([p.agent_id for p in pop_b.personas], 1):
+            messages = build_household_state_messages(observation, build_sce_messages_v2(observation, include_event_abstracts=True))
+            if len(json.dumps(messages, ensure_ascii=False)) > int(sim_c.decision_args.get("max_prompt_chars", 16000)):
+                sys.exit("Q1 prompt exceeds size gate; no calls started")
+        if args.llm == "scripted":
+            print("ENGINEERING CHECK ONLY: scripted answers ignore Q1; no behavioural inference.")
     if args.mechanism:
         from studies.sce_inflation_expectations.experience_mechanism import validate_config, needs_basket
         from studies.sce_inflation_expectations.price_experience import profile_hash
@@ -319,8 +348,10 @@ def main(argv: list[str] | None = None) -> int:
         "environment_artifact": _artifact_location(env_path, runtime_dir),
         "simulation_artifact": _artifact_location(sim_path, runtime_dir),
         "mechanism_inputs": mechanism_inputs,
+        "household_state_inputs": household_state_inputs,
+        "household_state_behaviour_test": bool(args.household_state and args.llm == "openai"),
         "mechanism_behaviour_test": bool(args.mechanism and args.llm == "openai"),
-        "execution_purpose": ("mechanism_behaviour_trial" if args.llm == "openai" else "mechanism_plumbing_only_scripted_answers_ignore_treatment") if args.mechanism else "baseline_execution",
+        "execution_purpose": ("household_state_behaviour_trial" if args.llm == "openai" else "household_state_plumbing_only_scripted_answers_ignore_treatment") if args.household_state else (("mechanism_behaviour_trial" if args.llm == "openai" else "mechanism_plumbing_only_scripted_answers_ignore_treatment") if args.mechanism else "baseline_execution"),
         "git": {"research_repo": _git_state(REPO_ROOT), "official_clone": _git_state(OFFICIAL_ROOT)},
         "store_path": str(store_path),
         "cost": sim.decision.cost_summary() if hasattr(sim.decision, "cost_summary") else None,
