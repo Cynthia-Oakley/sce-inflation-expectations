@@ -21,7 +21,8 @@ def sha(path):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--trial", type=Path, required=True)
-    ap.add_argument("--truth", type=Path, default=ROOT / "data/evaluation/sce_truth_main2021.json")
+    ap.add_argument("--truth", type=Path, default=ROOT / "data/evaluation/dev_full_20261005T045330Z_947a818f/truth.json",
+                    help="evaluation-only full-month extract; the old 73-person panel cannot cover this trial")
     a = ap.parse_args()
     plan_path = a.trial.resolve() / "trial_manifest.json"
     plan = json.loads(plan_path.read_text())
