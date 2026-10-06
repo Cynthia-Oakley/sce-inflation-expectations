@@ -1,5 +1,7 @@
 # 当前任务板
 
+**2026-10-06 额度接力记录：** [下一次执行顺序、预期效果与依据](literature/sce/psychological_attributes/NEXT_SESSION.md)。先做已有SCE Q1/数理字段离线诊断，再做GSS2018联合样本支持；通过后才构建侧车、申请新对照实验。本条保存工作状态，不代表启动模拟或冻结配置。
+
 ## 2026-10-06 最新：心理与家庭状态专题调研
 
 三名 Luna Max 并行研究理论、数据和合成方法，主 Agent 交叉复核；成果见 [唯一入口](literature/sce/psychological_attributes/README.md)、[整合综述](literature/sce/psychological_attributes/literature_review.md)、[实施草案](literature/sce/psychological_attributes/implementation_proposal.md)。优先检查已有 SCE 财务经历 Q1 和 numeracy；GSS 幸福/财务满意联合 donor 暂作探索，不视作稳定人格或已验证机制。下一项是零 API 的字段覆盖/关系诊断与 donor 共同支持审计，再生成多套合成侧车；通过后才拟新实验卡。心理合成器、Normal 心理扩展尚未实现，未新增模拟 LLM/付费 MCP。较早模型对照仍是单独候选，不与心理新增一起改。2021-05/06 已是开发数据，不作独立测试；A 重建与 B 事前可得性分别声明。Kimi 未审批次继续保护，以下较早条目保留追溯。

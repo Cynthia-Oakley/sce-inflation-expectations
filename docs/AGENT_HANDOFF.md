@@ -1,5 +1,7 @@
 # SCE 项目交接入口
 
+> **额度接力入口（2026-10-06）：** 读 [NEXT_SESSION](literature/sce/psychological_attributes/NEXT_SESSION.md)，包含具体执行顺序、完成标准、预期效果和原始支持依据。下一项先做离线工作包1；研究已整合，不重开选题，不把计划当已实现。
+
 > **2026-10-06 最新：心理属性专题研究已整合**
 
 先读 [专题入口](literature/sce/psychological_attributes/README.md)、[中文综述](literature/sce/psychological_attributes/literature_review.md) 与 [实施草案](literature/sce/psychological_attributes/implementation_proposal.md)。三名 Luna Max 分工，主 Agent 复核整合。建议先审已有 Q1/NUM，再查 GSS HAPPY＋SATFIN 联合 donor 的条件支持；这是状态/合成代理，不是人格事实。当前只交研究，未建心理侧车/适配器、未改运行配置/计分/开题，零新增模拟调用。下一步按草案做离线数据审计，保留 A/B 边界、Core/Normal 同规则及外部消费—心理联合关系未识别的限制。新模型调用和预算另行确认；Kimi 待审批次未动，提交仍 scoped add。
