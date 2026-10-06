@@ -29,16 +29,76 @@
       "population_and_unit": "Monthly rotating internet panel of roughly 1,200-1,300 U.S. household heads; one row per respondent-month, with a stable panel user ID and month.",
       "weights": "Monthly SCE weight column `weight`; the required month-specific historical public vintage and publication date must be established before any B use.",
       "fields_verified": [
-        {"field": "Q1", "meaning": "Respondent/family current financial position versus 12 months earlier; ordinal 1 much worse through 5 much better.", "role": "retrospective self-reported state/experience; not happiness or objective financial stress", "2021_05": "1234/1234 valid", "2021_06": "1297/1297 valid"},
-        {"field": "Q2", "meaning": "Expected respondent/family financial position 12 months ahead versus now; ordinal 1 much worse through 5 much better.", "role": "near-target future household-finance proxy; contemporaneous B input prohibited; a lagged value also needs publication-date evidence", "2021_05": "1233/1234 valid", "2021_06": "1296/1297 valid"},
-        {"field": "Q43", "meaning": "Primary-residence housing tenure/ownership-status field; observed public categories 1-3, full label mapping not verified this turn.", "role": "housing X; only new-entry-sized coverage", "2021_05": "153 valid", "2021_06": "162 valid"},
-        {"field": "Q45b", "meaning": "Self-rated health: 1 excellent, 2 very good, 3 good, 4 fair, 5 poor.", "role": "state proxy; only new respondents", "2021_05": "153 valid", "2021_06": "163 valid"},
-        {"field": "QRA1", "meaning": "Willingness to take financial risks; scale 1-7, endpoints not willing at all / very willing.", "role": "risk-tolerance proxy, not a general validated personality scale; only new respondents", "2021_05": "153 valid; actual codes 1-7", "2021_06": "163 valid; actual codes 1-7"},
-        {"field": "QRA2", "meaning": "General willingness to take risks in daily activities; scale 1-7.", "role": "risk-tolerance proxy; only new respondents", "2021_05": "153 valid; actual codes 1-7", "2021_06": "163 valid; actual codes 1-7"},
-        {"field": "QNUM1, QNUM2, QNUM3, QNUM5, QNUM6, QNUM8, QNUM9", "meaning": "Raw numeric responses to numeracy questions; codebook questionnaire says these questions are asked only of new respondents.", "role": "numeracy test items, not raw continuous latent score", "2021_05": "153 valid each", "2021_06": "162-163 valid per item"},
-        {"field": "_NUM_CAT", "meaning": "Observed public High/Low numeracy category.", "role": "derived all-row covariate; thresholds and across-wave derivation/update logic not verified", "2021_05": "1234/1234 present", "2021_06": "1297/1297 present"},
-        {"field": "_AGE_CAT, _EDU_CAT, _HH_INC_CAT, _REGION_CAT, _STATE, _COMMUTING_ZONE", "meaning": "Demographic categories and geographies.", "role": "same respondent-month rows; candidate X", "2021_05": "all present (CZ 1234/1234)", "2021_06": "all present (CZ 1297/1297)"},
-        {"field": "Q10_1-Q10_10", "meaning": "Ten-column public representation of Q10 employment situation; all columns exist and are nonmissing in the checked rows.", "role": "employment X; full value/label crosswalk not verified", "2021_05": "all 1234/1234 present", "2021_06": "all 1297/1297 present"}
+        {
+          "field": "Q1",
+          "meaning": "Respondent/family current financial position versus 12 months earlier; ordinal 1 much worse through 5 much better.",
+          "role": "retrospective self-reported state/experience; not happiness or objective financial stress",
+          "2021_05": "1234/1234 valid",
+          "2021_06": "1297/1297 valid"
+        },
+        {
+          "field": "Q2",
+          "meaning": "Expected respondent/family financial position 12 months ahead versus now; ordinal 1 much worse through 5 much better.",
+          "role": "near-target future household-finance proxy; contemporaneous B input prohibited; a lagged value also needs publication-date evidence",
+          "2021_05": "1233/1234 valid",
+          "2021_06": "1296/1297 valid"
+        },
+        {
+          "field": "Q43",
+          "meaning": "Primary-residence housing tenure/ownership-status field; observed public categories 1-3, full label mapping not verified this turn.",
+          "role": "housing X; only new-entry-sized coverage",
+          "2021_05": "153 valid",
+          "2021_06": "162 valid"
+        },
+        {
+          "field": "Q45b",
+          "meaning": "Self-rated health: 1 excellent, 2 very good, 3 good, 4 fair, 5 poor.",
+          "role": "state proxy; only new respondents",
+          "2021_05": "153 valid",
+          "2021_06": "163 valid"
+        },
+        {
+          "field": "QRA1",
+          "meaning": "Willingness to take financial risks; scale 1-7, endpoints not willing at all / very willing.",
+          "role": "risk-tolerance proxy, not a general validated personality scale; only new respondents",
+          "2021_05": "153 valid; actual codes 1-7",
+          "2021_06": "163 valid; actual codes 1-7"
+        },
+        {
+          "field": "QRA2",
+          "meaning": "General willingness to take risks in daily activities; scale 1-7.",
+          "role": "risk-tolerance proxy; only new respondents",
+          "2021_05": "153 valid; actual codes 1-7",
+          "2021_06": "163 valid; actual codes 1-7"
+        },
+        {
+          "field": "QNUM1, QNUM2, QNUM3, QNUM5, QNUM6, QNUM8, QNUM9",
+          "meaning": "Raw numeric responses to numeracy questions; codebook questionnaire says these questions are asked only of new respondents.",
+          "role": "numeracy test items, not raw continuous latent score",
+          "2021_05": "153 valid each",
+          "2021_06": "162-163 valid per item"
+        },
+        {
+          "field": "_NUM_CAT",
+          "meaning": "Observed public High/Low numeracy category.",
+          "role": "derived all-row covariate; thresholds and across-wave derivation/update logic not verified",
+          "2021_05": "1234/1234 present",
+          "2021_06": "1297/1297 present"
+        },
+        {
+          "field": "_AGE_CAT, _EDU_CAT, _HH_INC_CAT, _REGION_CAT, _STATE, _COMMUTING_ZONE",
+          "meaning": "Demographic categories and geographies.",
+          "role": "same respondent-month rows; candidate X",
+          "2021_05": "all present (CZ 1234/1234)",
+          "2021_06": "all present (CZ 1297/1297)"
+        },
+        {
+          "field": "Q10_1-Q10_10",
+          "meaning": "Ten-column public representation of Q10 employment situation; all columns exist and are nonmissing in the checked rows.",
+          "role": "employment X; full value/label crosswalk not verified",
+          "2021_05": "all 1234/1234 present",
+          "2021_06": "all 1297/1297 present"
+        }
       ],
       "joint_records": "Same respondent-month row supports joining Q1/Q2, observed demographics, employment and new-entry questions when answered. Q1-Q2 complete rows are 1233 in 2021-05 and 1296 in 2021-06. New-entry fields are only about 12% of monthly rows; exact multi-field complete-case intersections were not computed.",
       "release_and_access": "Free official public data. NY Fed FAQ says SCE core and Credit Access microdata are released with a nine-month lag. This current downloaded file does not establish when each historical month first became public.",
@@ -63,14 +123,45 @@
       ],
       "population_and_unit": "National U.S. adult individual cross-section; unit is a respondent, not necessarily the SCE household head.",
       "candidate_fields": [
-        {"field": "HAPPY", "meaning": "Current overall happiness, three ordered response categories (very, pretty, not too happy).", "status": "candidate for 2018; 2018 row distribution and ballot-specific missingness not computed"},
-        {"field": "SATFIN", "meaning": "Satisfaction with current respondent/family financial situation, three ordered response categories.", "status": "candidate for 2018; exact 2018 joint support with HAPPY/TRUST/X not computed"},
-        {"field": "TRUST", "meaning": "Interpersonal trust, most people can be trusted versus cannot be too careful.", "status": "candidate for 2018; 2021 codebook explicitly says TRUST absent in 2021"},
-        {"field": "GOODLIFE", "meaning": "Single agreement item on whether respondent/family have a chance to improve their standard of living.", "status": "found in 2021 codebook; 2018 availability not verified. Single item, not a validated trait-optimism scale."},
-        {"field": "FINALTER", "meaning": "Whether financial situation has been getting better/worse/same over the last few years.", "status": "retrospective in 2021 codebook; never label as future optimism"},
-        {"field": "FINRELA", "meaning": "Current family income relative to U.S. families generally.", "status": "relative current status, not a future forecast"}
+        {
+          "field": "HAPPY",
+          "meaning": "Current overall happiness, three ordered response categories (very, pretty, not too happy).",
+          "status": "candidate for 2018; 2018 row distribution and ballot-specific missingness not computed"
+        },
+        {
+          "field": "SATFIN",
+          "meaning": "Satisfaction with current respondent/family financial situation, three ordered response categories.",
+          "status": "candidate for 2018; exact 2018 joint support with HAPPY/TRUST/X not computed"
+        },
+        {
+          "field": "TRUST",
+          "meaning": "Interpersonal trust, most people can be trusted versus cannot be too careful.",
+          "status": "candidate for 2018; 2021 codebook explicitly says TRUST absent in 2021"
+        },
+        {
+          "field": "GOODLIFE",
+          "meaning": "Single agreement item on whether respondent/family have a chance to improve their standard of living.",
+          "status": "found in 2021 codebook; 2018 availability not verified. Single item, not a validated trait-optimism scale."
+        },
+        {
+          "field": "FINALTER",
+          "meaning": "Whether financial situation has been getting better/worse/same over the last few years.",
+          "status": "retrospective in 2021 codebook; never label as future optimism"
+        },
+        {
+          "field": "FINRELA",
+          "meaning": "Current family income relative to U.S. families generally.",
+          "status": "relative current status, not a future forecast"
+        }
       ],
-      "common_x_candidates": ["AGE", "EDUC", "family income (check REALINC/original income field and harmonize to SCE household income bands)", "REGION", "WRKSTAT", "homeownership/tenure item"],
+      "common_x_candidates": [
+        "AGE",
+        "EDUC",
+        "family income (check REALINC/original income field and harmonize to SCE household income bands)",
+        "REGION",
+        "WRKSTAT",
+        "homeownership/tenure item"
+      ],
       "x_gaps": "No public state/CZ equivalence confirmed; household-head versus adult-person unit differs; income definition and education/employment/tenure category mappings need recoding and overlap validation.",
       "weights": "Current GSS FAQ recommends WTSSPS generally and WTSSNRPS for 2004-2024 nonresponse adjustment. These later post-stratification weights were created/released after 2018; strict B must use and archive the weight variable in the contemporaneous 2018 public release, not retroactively claim later weights were known.",
       "historical_release": "NORC official announcement dated 2019-03-19 verifies 2018 GSS results were publicly available before the 2021-05 cutoff. It does not verify that today's cumulative download is byte-identical to that 2019 release.",
@@ -112,12 +203,30 @@
       "population_and_unit": "Annual U.S. adult respondent survey using address-based recruitment/probability-based online panel; respondent-level, not necessarily household head; excludes institutionalized adults and some adults without a physical address.",
       "2024_codebook_version": "12,295 respondents; codebook last updated 2025-05-28; 2024 data last updated 2026-02-09. These current revisions are not available to 2021 B.",
       "verified_fields": [
-        {"field": "B2", "meaning": "Current self-rated financial management: 1 difficult to get by, 2 just getting by, 3 doing okay, 4 living comfortably.", "validity": "0 missing of 12,295"},
-        {"field": "INF4", "meaning": "Effect of prices paid versus last year on household financial situation: 1 much worse, 2 somewhat worse, 3 little/no effect, 4 somewhat better, 5 much better.", "validity": "0 missing of 12,295"},
-        {"field": "I21_a / I21_b", "meaning": "Household monthly income / spending compared with a year earlier: decreased, about same, increased.", "validity": "0 missing each of 12,295"}
+        {
+          "field": "B2",
+          "meaning": "Current self-rated financial management: 1 difficult to get by, 2 just getting by, 3 doing okay, 4 living comfortably.",
+          "validity": "0 missing of 12,295"
+        },
+        {
+          "field": "INF4",
+          "meaning": "Effect of prices paid versus last year on household financial situation: 1 much worse, 2 somewhat worse, 3 little/no effect, 4 somewhat better, 5 much better.",
+          "validity": "0 missing of 12,295"
+        },
+        {
+          "field": "I21_a / I21_b",
+          "meaning": "Household monthly income / spending compared with a year earlier: decreased, about same, increased.",
+          "validity": "0 missing each of 12,295"
+        }
       ],
       "psychometric_gaps": "Inspected codebook keyword searches found no `happy` or `optimistic` measure; no general interpersonal-trust scale was verified. B2/INF4 are financial state/experience, not happiness or dispositional optimism.",
-      "common_x": ["ppage (age)", "ED0 (education)", "ppinc7 (household income band)", "ppreg4 (four Census regions)", "pprent (housing tenure)"],
+      "common_x": [
+        "ppage (age)",
+        "ED0 (education)",
+        "ppinc7 (household income band)",
+        "ppreg4 (four Census regions)",
+        "pprent (housing tenure)"
+      ],
       "common_x_gaps": "Employment status field mapping not verified; respondent person unit differs from SCE household head. Geography beyond public-use coarse categories is limited.",
       "weights": "Annual cross-section `weight` and population-total `weight_pop`; 2023-2024 panel sample uses `panel_weight` and `panel_weight_pop`.",
       "historical_release": "Official data page records 2019 public-use data/state field update dated 2021-05-07. 2020 SHED report was published 2021-05-17, but report date does not prove 2020 PUF release date; initial public-use release remains unverified. For a 2021-05-12 cutoff, only an archived 2019 file with its update record is currently a plausible SHED candidate.",
@@ -140,5 +249,6 @@
     }
   ],
   "local_archives_created_this_turn": [],
-  "integrity_note": "No new raw or public source files were written. The existing SCE file SHA is transcribed from docs/sce_source_manifest.json. Official web documentation was inspected online and is not claimed as a local archive."
+  "integrity_note": "No new raw or public source files were written. The existing SCE file SHA is transcribed from docs/sce_source_manifest.json. Official web documentation was inspected online and is not claimed as a local archive.",
+  "subsequent_audit": "See docs/PSYCHOLOGICAL_PROFILES_ACCEPTANCE_20261006.md: GSS2018 now downloaded and joint support checked; SCE nonblank profile counts do not prove valid categories. Clean missing EDU/INC: May9/14, June6/13. Original research status retained below."
 }

@@ -1,0 +1,49 @@
+{
+  "checked_on": "2026-10-06",
+  "current_download_only": true,
+  "historical_2021_vintage_proven": false,
+  "files": [
+    {
+      "url": "https://gss.norc.org/get-the-data/stata.html",
+      "resolved_url": "https://gss.norc.org/get-the-data/stata.html",
+      "downloaded_at_utc": "2026-10-06T13:16:58.670960+00:00",
+      "bytes": 77358,
+      "sha256": "1cadf0e268f8932954f86fe5a19f8388cf94136ca4423c212ae661b5dcc83ffb",
+      "path": "data/raw/psychological/gss/2018/20261006T131656Z/official_stata_index.html",
+      "historical_version_proven": false
+    },
+    {
+      "url": "https://gss.norc.org/content/dam/gss/get-the-data/documents/stata/2018_stata.zip",
+      "resolved_url": "https://gss.norc.org/content/dam/gss/get-the-data/documents/stata/2018_stata.zip",
+      "downloaded_at_utc": "2026-10-06T13:17:01.006147+00:00",
+      "bytes": 1094533,
+      "sha256": "541199514cafbcedb9a4bab3e84fc81e61ebc48e6fac31274f653c893eaa9ad8",
+      "path": "data/raw/psychological/gss/2018/20261006T131656Z/gss2018_stata.zip",
+      "historical_version_proven": false
+    },
+    {
+      "archive": "gss2018_stata.zip",
+      "member": "GSS2018.dta",
+      "path": "data/raw/psychological/gss/2018/20261006T131656Z/GSS2018.dta",
+      "bytes": 4487482,
+      "sha256": "5816dc11c00b6f19a210d3d8f83fc2bab1a738352636295342dec3ebf71a15f4",
+      "historical_version_proven": false
+    },
+    {
+      "url": "https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/glossary/frbny-sce-chartglossary.pdf",
+      "resolved_url": "https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/glossary/frbny-sce-chartglossary.pdf",
+      "downloaded_at_utc": "2026-10-06T13:17:04.584618+00:00",
+      "bytes": 248640,
+      "sha256": "ee5c88618dae047948eaf528999b22d02ba38a80502b4eb5c8346983cbfb2881",
+      "path": "data/raw/psychological/gss/2018/20261006T131656Z/sce_chart_guide.pdf",
+      "historical_version_proven": false
+    },
+    {
+      "path": "data/raw/psychological/gss/2018/20261006T131656Z/embedded_variable_dictionary.json",
+      "sha256": "42225fd657c3614f60c697bef1a6414fc42f7bd1caeac9da1758e2a3e48e046a",
+      "source": "Official DTA embedded field labels, no individual values"
+    }
+  ],
+  "weight_primary": "WTSSPS, per current NORC FAQ; A exploration only",
+  "weight_source": "https://gss.norc.org/faq.html"
+}
