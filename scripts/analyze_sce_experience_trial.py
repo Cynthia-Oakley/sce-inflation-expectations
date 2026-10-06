@@ -255,7 +255,7 @@ def _find_answer_source(
 
 
 def _load_run_answers(
-    record: dict[str, Any], manifest_path: Path, project_root: Path,
+    record: dict[str, Any], manifest_path: Path, project_root: Path, expected_n: int,
 ) -> tuple[dict[int, dict[str, Any]], dict[str, Any], dict[str, Any]]:
     run_id = str(record["run_id"])
     month = _month_key(record["month"])
@@ -272,6 +272,17 @@ def _load_run_answers(
             f"trial run_id {run_id!r} does not match {run_manifest_path} run_id "
             f"{run_manifest.get('run_id')!r}"
         )
+    try:
+        declared_n = int(run_manifest.get("n_agents"))
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"run manifest has no valid n_agents: {run_manifest_path}") from exc
+    if declared_n != expected_n:
+        raise ValueError(
+            f"{month}/{arm} run declares n_agents={declared_n}; expected {expected_n}"
+        )
+    llm_kind = str(run_manifest.get("llm_kind", "")).lower()
+    if llm_kind != "openai":
+        raise ValueError(f"{month}/{arm} run llm_kind={llm_kind!r}; expected a real openai run")
     answer_path, answer_kind = _find_answer_source(output_dir, run_manifest, project_root)
     answer_rows = _jsonl(answer_path) if answer_kind == "jsonl" else _duckdb_rows(answer_path)
     answers = _records_from_rows(answer_rows, month)
@@ -285,6 +296,8 @@ def _load_run_answers(
         "run_manifest_declared_run_id": run_manifest.get("run_id"),
         "llm_kind": run_manifest.get("llm_kind"),
         "n_agents_declared": run_manifest.get("n_agents"),
+        "trial_record_status": record.get("status"),
+        "trial_record_cost": record.get("cost"),
         "n_answer_rows_extracted": len(answers),
         "answer_source": {
             "path": str(answer_path),
@@ -691,6 +704,10 @@ def analyze_trial(
     trial_manifest_path = trial_manifest_path.resolve()
     truth_path = truth_path.resolve()
     trial_payload = json.loads(trial_manifest_path.read_text(encoding="utf-8"))
+    if str(trial_payload.get("status", "")).lower() != "completed":
+        raise ValueError(
+            f"trial status is {trial_payload.get('status')!r}; analysis requires completed"
+        )
     records = trial_payload.get("records")
     if not isinstance(records, list):
         raise ValueError("trial manifest must contain a records list")
@@ -705,12 +722,19 @@ def analyze_trial(
         for field in ("month", "arm", "run_id", "output_dir"):
             if field not in record:
                 raise ValueError(f"trial record missing required field {field!r}: {record}")
+        if str(record.get("status", "")).lower() != "completed":
+            raise ValueError(
+                f"trial record {record.get('run_id')!r} status is {record.get('status')!r}; "
+                "analysis requires completed records"
+            )
         month, arm = _month_key(record["month"]), _canonical_arm(record["arm"])
         cell = (month, arm)
         if cell in seen_cells:
             raise ValueError(f"duplicate trial cell: {month}/{arm}")
         seen_cells.add(cell)
-        answers, metadata, _ = _load_run_answers(record, trial_manifest_path, project_root)
+        answers, metadata, _ = _load_run_answers(
+            record, trial_manifest_path, project_root, expected_n,
+        )
         run_payloads[cell] = answers
         run_meta[cell] = metadata
         if len(answers) != expected_n:
@@ -774,6 +798,11 @@ def analyze_trial(
             "expected_n_per_month_arm": expected_n,
             "months": list(sorted(required_months)),
             "arms": list(ARMS),
+            "analysis_weighting": "equal_person_unweighted",
+            "quantile_method": "numpy.quantile(method='linear')",
+            "standard_deviation_method": "sample standard deviation (ddof=1); 0 when n=1",
+            "trial_status": trial_payload.get("status"),
+            "trial_id": trial_payload.get("trial_id"),
             "run_sources": [run_meta[(month, arm)] for month in sorted(required_months) for arm in ARMS],
             "scorer": _scorer_sources(),
         },
@@ -781,6 +810,7 @@ def analyze_trial(
             "Every arm is compared on the IDs present in its same-month sibling runs; IDs are never selected from truth.",
             "Q9 simulated and real answers are both scored with the same live frozen project scorer recorded above.",
             "The 20-person cells have limited power; estimates are descriptive and should not be treated as confirmatory.",
+            "People are equally weighted within this selected Core panel; these results are not survey-weighted national estimates.",
             "Higher simulated variance alone is not a success criterion.",
             "This pilot does not select a winning arm or provide independent validation; a separate held-out period is required.",
             "Q8 and Q9 availability masks are reported independently; invalid/error placeholders are excluded from that question's estimates.",
@@ -806,15 +836,20 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.expected_n < 1:
         parser.error("--expected-n must be positive")
+    out = args.out.expanduser().resolve()
+    if out.exists():
+        parser.exit(2, f"output already exists; refusing to overwrite: {out}\n")
     try:
         months = tuple(_month_key(part) for part in args.months.split(",") if part.strip())
         result = analyze_trial(
             args.trial_manifest, args.truth, project_root=args.project_root.resolve(),
             expected_n=args.expected_n, required_months=months,
         )
-        out = args.out.expanduser().resolve()
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+        with out.open("x", encoding="utf-8") as stream:
+            stream.write(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
+    except FileExistsError:
+        parser.exit(2, f"output appeared during analysis; refusing to overwrite: {out}\n")
     except (OSError, ValueError, KeyError, RuntimeError, json.JSONDecodeError) as exc:
         parser.exit(2, f"analysis failed: {exc}\n")
     print(f"Analyzed {len(result['manifest']['months'])} months × {len(ARMS)} arms × "
