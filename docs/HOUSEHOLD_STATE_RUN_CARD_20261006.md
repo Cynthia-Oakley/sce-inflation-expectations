@@ -10,12 +10,12 @@
 
 ## 配置与规模
 
-- 月份：2021-05、2021-06，已用开发月，不能称独立测试。
+- 月份：2021-05、2021-06，沿用既有开发窗口、已审计的P/E/真值，便于先比较机制；成本不是仅选这两月的首要理由。不能称独立测试；后续有信号再扩至更多月份及未调参的独立测试窗口。
 - 每月50人，从现有完整月人口按Q1五类各取10人，以种子42的固定哈希排序抽取。没有读取真实Q8/Q9或权重来挑人。两个月各自抽样，不强行保持同一面板。
 - 两组：现有v2标题＋摘要基线；同一提示＋一段Q1经历。每月两组使用完全相同的50人。5月先基线，6月先Q1，避免总是基线先运行。
 - 公共指标、新闻及摘要、人口其他字段、问卷、模型和计分一致。CE消费篮子、幸福度、财务满意度、Normal答案扩展均不启用。既有300人Core/Normal配置不修改；这个单独诊断样本不改变正式分层。
 - 模型请求名`deepseek-flash`，官方API `https://api.deepseek.com`。记录每次returned_model/fingerprint，身份变化则停。官方当前说明该别名对应V4.1-Flash，不能简单称早期V4，也不能认为模型训练截止已知。[价目/模型说明](https://api-docs.deepseek.com/quick_start/pricing/)。
-- 请求temperature=0、thinking disabled、max_tokens=1024；这是请求参数，不保证供应商一定实施所有解码参数。新基线与Q1组同期重跑，不复用旧基线。
+- 请求temperature=0.5（沿用既有300人主实验）、thinking disabled、max_tokens=1024；这是请求参数，不保证供应商一定实施所有解码参数。新基线与Q1组同期重跑，不复用旧基线。
 - 共200回答、最多200次调用；本轮自动重试=0。每个50人作业完成后，若发现无效回答/身份变化则停止后续作业；进程出错则立即停止，不追加补跑或规则兜底。
 
 这是有意增加少数财务状态的机制诊断样本，各类等额，因此**不是全国代表人口，不报告全国headline或重新加权全国结论**。每组每月只有10人，也不保证统计功效；先判断工程与效应方向，值得继续再扩样/独立月份验证。
@@ -37,16 +37,16 @@
 
 当前200份实际提示的保守预算（输入按UTF-8字节数＋256、输出按1024上限）合计约$0.848；单月单组均低于$0.25。**总上限$1，单作业$0.25，无自动重试**。自记token估价不是供应商账单。
 
-新增发送字段是去标识的Q1财务变化类别，其余为去标识人口粗画像与公开新闻/宏观资料。API消息不包含userid/agent_id、真实通胀答案、调查权重、donor ID、密钥或其他心理合成值。外层ID仅用于本地路由、轨迹和评价。
+Q1是SCE已有问题“与12个月前相比，你的家庭财务状况如何？”，五档为明显变差、略变差、大致相同、略变好、明显变好。“新增”指现在把这个已有字段纳入模拟输入，并非新下载数据或新调查。新增发送字段是去标识的Q1财务变化类别，其余为去标识人口粗画像与公开新闻/宏观资料。API消息不包含userid/agent_id、真实通胀答案、调查权重、donor ID、密钥或其他心理合成值。外层ID仅用于本地路由、轨迹和评价。
 
 ## 准确路径与接力
 
-准备包：[trial_manifest.json](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_q1_trial_20261006T140227Z_dd85a63f/trial_manifest.json)。其中包含原始输入/代码哈希与4条待执行命令；`initial_plan.json`是未运行初始版本。
+准备包：[trial_manifest.json](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_q1_trial_20261006T142504Z_a6740800/trial_manifest.json)。其中包含原始输入/代码哈希与4条待执行命令；`initial_plan.json`是未运行初始版本。
 
 每个月子目录包含：`population.json`、`environment.json`、`simulation.json`、`household_state.json`、`prompt_preview_baseline.json`、`prompt_preview_q1_state.json`。源码快照在同包`source_snapshot/`；所有个人数据与自动结果保留本地，不上传Git。
 
-- [5月实际Q1提示预览](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_q1_trial_20261006T140227Z_dd85a63f/202105/prompt_preview_q1_state.json)
-- [6月实际Q1提示预览](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_q1_trial_20261006T140227Z_dd85a63f/202106/prompt_preview_q1_state.json)
+- [5月实际Q1提示预览](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_q1_trial_20261006T142504Z_a6740800/202105/prompt_preview_q1_state.json)
+- [6月实际Q1提示预览](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_q1_trial_20261006T142504Z_a6740800/202106/prompt_preview_q1_state.json)
 - 唯一实现：[household_state_mechanism.py](../studies/sce_inflation_expectations/household_state_mechanism.py)
 - 准备/执行入口：[run_sce_household_state_trial.py](../scripts/run_sce_household_state_trial.py)，默认只离线prepare。不得从看到命令中的confirm-spend推定用户已授权。
 

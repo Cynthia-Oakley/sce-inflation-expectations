@@ -20,14 +20,14 @@
 
 ## 准确路径
 
-唯一当前候选包：[trial_manifest.json](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_q1_trial_20261006T140227Z_dd85a63f/trial_manifest.json)。早期135718、135810准备尝试保留但被新准备包取代；135718之前还有一次预算边界失败的部分目录，不作为有效运行输入。
+唯一当前候选包：[trial_manifest.json](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_q1_trial_20261006T142504Z_a6740800/trial_manifest.json)。早期135718、135810、140227准备尝试保留但被新准备包取代；135718之前还有一次预算边界失败的部分目录，不作为有效运行输入。
 
 规则式记录：
 
 - [5月run_manifest.json](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/local_runs/sce-q1-offline-20261006-202105-v1/run_manifest.json)
 - [6月run_manifest.json](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/local_runs/sce-q1-offline-20261006-202106-v1/run_manifest.json)
 
-规则式运行使用135810准备批次；最新140227批次的P/E/Q1/模拟/提示内容与其一致，新增代码快照包含最终评价实现和请求核对。不要把这两次规则式运行当作最新真实实验四个作业中的任何一个。
+规则式运行使用135810准备批次；最新142504批次的P/E/Q1/模拟/提示内容与其一致，最新代码快照与真实运行命令将请求温度恢复为主实验0.5；此前140227候选的0不再使用。不要把这两次规则式运行当作最新真实实验四个作业中的任何一个。
 
 实现与入口：
 
@@ -43,12 +43,12 @@ python -m unittest tests.test_sce_household_state_mechanism tests.test_sce_house
 python scripts/run_sce_household_state_trial.py  # 新建唯一run_id，只prepare，不付费
 ```
 
-真实运行必须先得到本次新授权，才使用`--prepared outputs/sce_q1_trial_20261006T140227Z_dd85a63f --execute --approval-note '实际用户授权原文'`。不得伪造授权原文或重复未完的真实运行。批准前脚本prepare仅使用白名单P和公开E，从不读取评价真值。
+真实运行必须先得到本次新授权，才使用`--prepared outputs/sce_q1_trial_20261006T142504Z_a6740800 --execute --approval-note '实际用户授权原文'`。不得伪造授权原文或重复未完的真实运行。批准前脚本prepare仅使用白名单P和公开E，从不读取评价真值。
 
 完成后执行：
 
 ```bash
-python scripts/analyze_sce_household_state_trial.py --trial outputs/sce_q1_trial_20261006T140227Z_dd85a63f
+python scripts/analyze_sce_household_state_trial.py --trial outputs/sce_q1_trial_20261006T142504Z_a6740800
 ```
 
 评价输出另建`outputs/sce_q1_analysis_<time>_<suffix>/`，汇总与逐人结果物理分开保留。分析入口拒绝未完成/规则式试验。两个月主误差及核心组间差距都改善才建议扩样；一好一坏报不稳定；失败结果保留。下轮心理模块另做对照，不提前并入主配置。
@@ -58,3 +58,7 @@ python scripts/analyze_sce_household_state_trial.py --trial outputs/sce_q1_trial
 同期Q1可能反映共同情绪/方法效应；改进不识别因果。两月已用于诊断、每组每月10人且等额过采样，不是全国代表、独立测试或功效保证。模型知识边界仍未知。更早模型、Normal新条件扩展、心理迁移效度是后续独立任务。
 
 Kimi刻意未提交文件未还原、stash或纳入本轮提交；计分器也未修改。旧提案/运行配置未改。只保存本轮明确源码、测试与文档，原始数据/个人记录/自动产物/密钥继续忽略。未向其他线程或第三方发送项目消息。
+
+## 温度与开发窗口更正
+
+用户指出既有主实验请求temperature=0.5，核实CORE_NORMAL_LLM_RECEIPT一致。20人消费机制小试曾设0，本轮起初沿用小试以减少生成噪声，但不宜未说明就改变主实验条件。真实运行候选已恢复0.5，两组相同；旧候选未执行真实调用，按新run_id重新准备。生成随机性另在后续重复实验评估；模型是否实施该参数仍需供应商/回包证据。5/6月用于已有开发窗口的机制比较，不是以费用限定最终回测范围。Q1是既有SCE财务变化题，现在拟新增为A画像状态输入，不是新增采集数据、真实通胀回答或幸福度。

@@ -29,6 +29,7 @@ from studies.sce_inflation_expectations.price_experience import profile_hash
 MONTHS = ("202105", "202106")
 ARMS = ("baseline", "q1_state")
 MODEL = "deepseek-flash"
+TEMPERATURE = .5  # Preserve the main 300-Core experiment's requested setting.
 PRICE_IN, PRICE_OUT = .30, 1.20
 PER_JOB_CAP, TOTAL_CAP = .25, 1.0
 
@@ -82,7 +83,8 @@ def prepare(profiles_path, role_root, environment_root, output):
     plan = {"trial_id": output.name, "created_at_utc": datetime.now(timezone.utc).isoformat(),
             "status": "prepared_not_run", "research_line": "A_historical_reconstruction",
             "model": MODEL, "n_per_month": 50, "target_answers": 200, "max_attempts": 200,
-            "seed": 42, "normal_expansion": False, "psychological_module": False,
+            "seed": 42, "temperature_requested": TEMPERATURE,
+            "normal_expansion": False, "psychological_module": False,
             "sampling": "10 per Q1 category, hash-ranked from full monthly population; not nationally representative",
             "primary_contrast": "q1_state minus contemporaneously rerun baseline, same selected IDs",
             "evaluation": "same frozen project Q9 scorer for simulated and real raw bins; paired MAE and Q1 group-level fit; spread alone is not success",
@@ -159,7 +161,7 @@ def prepare(profiles_path, role_root, environment_root, output):
                    "--model", MODEL, "--population", str((month_dir / "population.json").resolve()),
                    "--environment", str((month_dir / "environment.json").resolve()),
                    "--simulation", str((month_dir / "simulation.json").resolve()),
-                   "--run-id", f"{output.name}-{month}-{arm}", "--temperature", "0", "--max-tokens", "1024",
+                   "--run-id", f"{output.name}-{month}-{arm}", "--temperature", str(TEMPERATURE), "--max-tokens", "1024",
                    "--retry-max", "0", "--max-calls", "50", "--extra-body", '{"thinking":{"type":"disabled"}}',
                    "--price-in", str(PRICE_IN), "--price-out", str(PRICE_OUT), "--cost-cap-usd", str(PER_JOB_CAP),
                    "--confirm-spend", "--prompt-version", PROMPT_VERSION if arm == "q1_state" else "sce-q8-q9-v2-abstract"]
