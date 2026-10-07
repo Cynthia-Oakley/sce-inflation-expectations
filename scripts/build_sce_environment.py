@@ -396,7 +396,7 @@ def transcribe_empsit(text: str, ref: str) -> dict:
         unemp_quote = _quote(c, unemp_m)
     else:
         unemp_m = re.search(
-            r"unemploymentrate(?:wasunchanged|changedlittle|waslittlechanged)"
+            r"unemploymentrate(?:wasunchanged|changedlittle|waslittlechanged|remained|remainedunchanged)"
             r"(?:at|from)([\d.]+)percent", c)
         if not unemp_m:
             raise ValueError(f"unemployment rate sentence not found for {ref}")

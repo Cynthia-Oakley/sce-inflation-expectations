@@ -208,7 +208,7 @@ def _unemployment_rate_only(text: str, ref: str) -> dict:
         rf"([\d.]+)percent", c)
     if not unemp_m:
         unemp_m = re.search(
-            r"unemploymentrate(?:wasunchanged|changedlittle|waslittlechanged)"
+            r"unemploymentrate(?:wasunchanged|changedlittle|waslittlechanged|remained|remainedunchanged)"
             r"(?:at|from)([\d.]+)percent", c)
     if not unemp_m:
         raise ValueError(f"unemployment rate sentence not found for {ref}")

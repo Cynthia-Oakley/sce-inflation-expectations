@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-07",
+  "accepted_output_relative_path": "outputs/sce_e_extension_20261007T081207Z",
+  "targets": [
+    "2022-01",
+    "2022-02",
+    "2022-03",
+    "2022-04",
+    "2022-05",
+    "2022-06",
+    "2022-07",
+    "2022-08",
+    "2022-09",
+    "2022-10",
+    "2022-11",
+    "2022-12"
+  ],
+  "new_bls_pdf_count": 24,
+  "new_nyt_archive_months": 12,
+  "verified_bls_pdf_count": 46,
+  "component_html_agreement_count": 115,
+  "component_unchecked_count": 0,
+  "legacy_2021_environment_energy_months_agree": 23,
+  "signal_count": 924,
+  "selected_step_news_count": 360,
+  "schema_valid": true,
+  "strict_pit_certified": false,
+  "real_llm_calls": 0,
+  "paid_mcp_calls": 0,
+  "hashes": {
+    "environment_candidate.json": "8c86f790fbeb164064ce9a9890904755edf6a833ee3bc331ef196a15836e82f9",
+    "components_cpi.jsonl": "35a467b2f82c5d875a803c0aa2dcf34de1515c8e3d9b39149ff931d026cea721",
+    "component_html_checks.json": "7424a9e0f938a8a2618316cb7ab31bafd234a6be99336bf66a0a4795cc747f2a",
+    "summary.json": "9bc779466ad5efae39e01b476b0d5be85d96b514b936fed97bed2370e0649607",
+    "acceptance.json": "f698563cf31a53cd612844fc2122470850693248139f013141a9b2f64ebfc1f8",
+    "legacy_energy_final_check.json": "17439df25ed015e619ae110d955bb17945263da0489a5ecbb3547e44af8bb588"
+  }
+}
