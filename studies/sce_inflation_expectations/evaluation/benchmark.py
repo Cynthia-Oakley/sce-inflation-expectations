@@ -44,6 +44,9 @@ def available_rows(rows, cutoff):
 
 
 def macro_feature(target, policy, inputs):
+    if policy == 'current_month_cpi_release_day_end' and not any(
+            r['target_month'] == target for r in inputs['cpi_calendar']):
+        return None  # No actual CPI-release-day forecast origin for this month.
     cutoff = cutoff_for(target, policy, inputs['cpi_calendar'])
     y = available_rows(inputs['headline_releases'], cutoff)
     cpi = available_rows(inputs['cpi_first_releases'], cutoff)
@@ -59,6 +62,14 @@ def forecast_benchmarks(inputs, protocol):
     for policy in protocol['forecast_cutoffs']:
         for target in targets:
             month = target['reference_period']
+            if policy == 'current_month_cpi_release_day_end' and not any(
+                    r['target_month'] == month for r in inputs['cpi_calendar']):
+                if protocol.get('missing_current_cpi_cutoff_rule') != 'exclude_and_report':
+                    raise ValueError(f'No audited CPI-release-day origin: {month}')
+                for method in protocol['headline_baselines'] + protocol['macro_extensions']:
+                    skipped.append(dict(policy=policy, target_month=month, method=method,
+                                        reason='no_actual_current_month_cpi_release_day'))
+                continue
             cutoff = cutoff_for(month, policy, inputs['cpi_calendar'])
             history = available_rows(releases, cutoff)
             if not history or any(r['reference_period'] >= month for r in history):
@@ -144,7 +155,7 @@ def reconstruction_benchmarks(micro, protocol):
     frames = {f'{int(m) // 100}-{int(m) % 100:02d}': frame for m, frame in micro.groupby('date')}
     rows, diagnostics = [], []
     for month in sorted(frames):
-        if not protocol['evaluation_start'] <= month <= protocol['evaluation_end']:
+        if not protocol['evaluation_start'] <= month <= protocol.get('reconstruction_evaluation_end', protocol['evaluation_end']):
             continue
         prior = frames[shift_month(month, -1)]
         current = frames[month]

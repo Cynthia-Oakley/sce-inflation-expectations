@@ -153,3 +153,22 @@ def test_future_target_and_macro_values_cannot_change_current_forecasts():
     changed['cpi_first_releases'][-1]['value']=100
     mutated,_=forecast_benchmarks(changed,protocol)
     assert [(r['method'],r['prediction_pp']) for r in original]==[(r['method'],r['prediction_pp']) for r in mutated]
+
+
+def test_missing_cpi_release_day_is_reported_and_never_invented():
+    from evaluation.benchmark import forecast_benchmarks, macro_feature
+    inputs = {'headline_releases': [{'reference_period': '2025-11', 'published_date': '2025-12-08',
+                'value_pp': 3.2, 'chart_snapshot_value_pp': 3.2}],
+              'cpi_calendar': [], 'cpi_first_releases': []}
+    protocol = {'evaluation_start': '2025-11', 'evaluation_end': '2025-11',
+                'forecast_cutoffs': ['current_month_cpi_release_day_end'],
+                'missing_current_cpi_cutoff_rule': 'exclude_and_report',
+                'headline_baselines': ['persistence'], 'macro_extensions': ['arx_sce_cpi']}
+    rows, skipped = forecast_benchmarks(inputs, protocol)
+    assert not rows
+    assert len(skipped) == 2
+    assert {r['reason'] for r in skipped} == {'no_actual_current_month_cpi_release_day'}
+    assert macro_feature('2025-11', 'current_month_cpi_release_day_end', inputs) is None
+    protocol.pop('missing_current_cpi_cutoff_rule')
+    with pytest.raises(ValueError):
+        forecast_benchmarks(inputs, protocol)

@@ -36,6 +36,9 @@ def main():
     parser.add_argument('--output-dir', type=Path)
     parser.add_argument('--headlines-only', action='store_true')
     args = parser.parse_args()
+    for name in ('inputs', 'protocol', 'aggregate_file', 'output_dir'):
+        if getattr(args, name) is not None:
+            setattr(args, name, getattr(args, name).resolve())
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     dest = args.output_dir or ROOT / 'outputs' / f'sce_baselines_{stamp}_{uuid.uuid4().hex[:8]}'
     dest.mkdir(parents=True, exist_ok=False)
@@ -47,6 +50,7 @@ def main():
     source_paths = [Path(__file__), args.protocol,
         ROOT / 'scripts/build_sce_baseline_inputs.py', ROOT / 'scripts/prepare_sce_baseline_sources.py',
         ROOT / 'scripts/evaluate_sce_outputs.py',
+        *(ROOT / 'scripts').glob('extend_sce_baseline_inputs.py'),
         *(ROOT / 'studies/sce_inflation_expectations/evaluation').glob('*.py')]
     code_hashes = {str(p.relative_to(ROOT)): sha(p) for p in source_paths}
     manifest = dict(run_id=dest.name, started_at=datetime.now(timezone.utc).isoformat(),
@@ -84,7 +88,7 @@ def main():
         manifest['micro_source_hashes'] = metadata['sources']
     summary = dict(protocol_id=protocol['protocol_id'], evaluation_window=[protocol['evaluation_start'], protocol['evaluation_end']],
                    forecasts=forecasts, reconstruction=reconstruction, excluded_macro_forecasts=len(skipped),
-                   interpretation='baseline characterization across 60 months; not blind validation of an Agent mechanism',
+                   interpretation='retrospective baseline characterization over declared coverage; not blind validation of an Agent mechanism',
                    forecast_signal_note='Public past SCE headlines are allowed to baselines; current LLM E omitted them, so comparisons do not isolate method alone',
                    reconstruction_note='A-line latest micro snapshots; official derived means, not an exact Q9 fitting replication')
     write_json(dest / 'summary.json', summary)

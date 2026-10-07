@@ -72,6 +72,8 @@ def main():
         'sticky_agent_0.1':'规则Agent：10%更新','sticky_agent_0.25':'规则Agent：25%更新',
         'sticky_agent_0.5':'规则Agent：50%更新','agent_core_normal':'300 Core＋Normal 主实验'}
     summary=json.loads((a.baseline_run/'summary.json').read_text())
+    start,end=summary['evaluation_window']
+    total_months=month_index(end)-month_index(start)+1
     payload=dict(labels=labels, forecasts=summary['forecasts'], comparison=comparison,
         series=[dict(policy=pol,method=met,records=rs) for (pol,met),rs in grouped.items()],rolling=rolling)
     template='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -108,6 +110,9 @@ document.getElementById('comparison').innerHTML=table(['方法','5月预测（%�
 document.getElementById('policy').onchange=render;document.getElementById('view').onchange=render;render();
 </script></html>'''
     a.html.parent.mkdir(parents=True,exist_ok=True)
+    template=template.replace('五年基线','长期基线').replace('2020年1月—2024年12月，共60个月',f'{start}—{end}，范围共{total_months}个月；具体方法的有效月数另列')
+    template=template.replace('不能直接与60月均值排名','不能直接与全期均值排名').replace('60月是本次选择的完整年度窗口，不是官方数据上限','原60月是首次完整年度窗口；本页已扩展到最新全国指标，微观分布仍以已核验月份为上限')
+    template=template.replace('SCE_BASELINE_RESULTS_20261007.md', 'SCE_BASELINE_METHODS_AND_LATEST_20261007.md' if end>'2024-12' else 'SCE_BASELINE_RESULTS_20261007.md')
     a.html.write_text(template.replace('PAYLOAD',json.dumps(payload,ensure_ascii=False).replace('</','<\\/')))
     print(json.dumps(comparison,ensure_ascii=False,indent=2))
     print(a.html)
