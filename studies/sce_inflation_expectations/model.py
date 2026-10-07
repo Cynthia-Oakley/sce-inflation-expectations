@@ -871,6 +871,9 @@ class SCEDecision(DecisionModel):
             messages = build_household_state_messages(ob, build_sce_messages_v2(ob, include_event_abstracts=True))
         elif self.prompt_version == EXPERIENCE_PROMPT_VERSION:
             messages = build_mechanism_messages(ob, build_sce_messages_v2(ob, include_event_abstracts=True))
+        elif self.prompt_version == "sce-q8-q9-v3-dated-abstract-v1":
+            from .dated_prompt import build_dated_messages
+            messages = build_dated_messages(ob, build_sce_messages_v2)
         elif self.prompt_version.startswith("sce-q8-q9-v2"):
             messages = build_sce_messages_v2(
                 ob,

@@ -1,0 +1,276 @@
+{
+  "audit_date": "2026-10-07",
+  "population_summary": {
+    "first_month": 201701,
+    "last_month": 202510,
+    "months": 106,
+    "profile_rows": 130216,
+    "unique_people": 17141,
+    "created_utc": "2026-10-07T14:13:07.301790+00:00",
+    "source_code_sha256": {
+      "scripts/analyze_sce_forecast_population.py": "c8116d99fd12ecc32d775c090e522603fdde2c237d6dab4f85abd13186387b20",
+      "studies/sce_inflation_expectations/population_forecast.py": "5843fd19c1b1dc5f93979d0fb1613496265c048bad818d20b283c3c80f52345d",
+      "studies/sce_inflation_expectations/monthly_population.py": "fbc24d2b9fb943c4e0cf9eca3db3c15483a080ce4ed034cbb772edb52a434878",
+      "studies/sce_inflation_expectations/core_normal.py": "f55274b960fdf52601d378e4e8fe5ba66de5fa93b787c7914a67d4e50ffa6e31"
+    },
+    "wave_size_min": 976,
+    "wave_size_median": 1260.0,
+    "wave_size_max": 1377,
+    "weighted_ess_median": 737.9910136218825,
+    "new_to_previous_median": 0.16752005429857503,
+    "return_after_gap_median": 0.04720162922394172,
+    "drift_summary": {
+      "age_group": {
+        "lag_1": {
+          "mean_tvd": 0.0006240917453531105,
+          "p90_tvd": 0.0017026803921823782
+        },
+        "lag_10": {
+          "mean_tvd": 0.0029329414723084962,
+          "p90_tvd": 0.008111880654197295
+        },
+        "lag_12": {
+          "mean_tvd": 0.003446804101534711,
+          "p90_tvd": 0.008113626516131466
+        },
+        "donor_window_1": {
+          "mean_tvd": 0.0020341506513698337,
+          "p90_tvd": 0.00783996463892017
+        },
+        "donor_window_12": {
+          "mean_tvd": 0.002851269137102227,
+          "p90_tvd": 0.009145675537548772
+        }
+      },
+      "education_group": {
+        "lag_1": {
+          "mean_tvd": 0.00408639721814514,
+          "p90_tvd": 0.010171533818782948
+        },
+        "lag_10": {
+          "mean_tvd": 0.01721264777679338,
+          "p90_tvd": 0.04134986736755559
+        },
+        "lag_12": {
+          "mean_tvd": 0.019586613418032195,
+          "p90_tvd": 0.047861674478317504
+        },
+        "donor_window_1": {
+          "mean_tvd": 0.02133939957319477,
+          "p90_tvd": 0.04857499000196237
+        },
+        "donor_window_12": {
+          "mean_tvd": 0.026125702849666733,
+          "p90_tvd": 0.049615638460525906
+        }
+      },
+      "household_income_band": {
+        "lag_1": {
+          "mean_tvd": 0.008224874737635649,
+          "p90_tvd": 0.01664228123816239
+        },
+        "lag_10": {
+          "mean_tvd": 0.029495742536749636,
+          "p90_tvd": 0.07851644123463113
+        },
+        "lag_12": {
+          "mean_tvd": 0.0312512804450029,
+          "p90_tvd": 0.08064679723693001
+        },
+        "donor_window_1": {
+          "mean_tvd": 0.03509274749783348,
+          "p90_tvd": 0.08182544662149699
+        },
+        "donor_window_12": {
+          "mean_tvd": 0.03536398367773369,
+          "p90_tvd": 0.0772742970184563
+        }
+      },
+      "region": {
+        "lag_1": {
+          "mean_tvd": 0.0018814481574348921,
+          "p90_tvd": 0.005659451772698402
+        },
+        "lag_10": {
+          "mean_tvd": 0.0036115078979143803,
+          "p90_tvd": 0.00795519586195774
+        },
+        "lag_12": {
+          "mean_tvd": 0.0035656142386312007,
+          "p90_tvd": 0.007839558396419954
+        },
+        "donor_window_1": {
+          "mean_tvd": 0.002822566177560196,
+          "p90_tvd": 0.0077821990691595
+        },
+        "donor_window_12": {
+          "mean_tvd": 0.00256195822365603,
+          "p90_tvd": 0.00562134621163457
+        }
+      },
+      "numeracy": {
+        "lag_1": {
+          "mean_tvd": 0.009207836515801251,
+          "p90_tvd": 0.018437972585295778
+        },
+        "lag_10": {
+          "mean_tvd": 0.023655000549175437,
+          "p90_tvd": 0.04195627379137179
+        },
+        "lag_12": {
+          "mean_tvd": 0.023826600499361417,
+          "p90_tvd": 0.044929289127555457
+        },
+        "donor_window_1": {
+          "mean_tvd": 0.026216641581243816,
+          "p90_tvd": 0.04217866183087149
+        },
+        "donor_window_12": {
+          "mean_tvd": 0.020637946180982955,
+          "p90_tvd": 0.04306225612652433
+        }
+      },
+      "employment_status": {
+        "lag_1": {
+          "mean_tvd": 0.021167252373553443,
+          "p90_tvd": 0.028987519042578784
+        },
+        "lag_10": {
+          "mean_tvd": 0.03587793452985743,
+          "p90_tvd": 0.055113590630594615
+        },
+        "lag_12": {
+          "mean_tvd": 0.03712804481074425,
+          "p90_tvd": 0.061835432699349394
+        },
+        "donor_window_1": {
+          "mean_tvd": 0.036894332684865284,
+          "p90_tvd": 0.0677469401196079
+        },
+        "donor_window_12": {
+          "mean_tvd": 0.03345750879243124,
+          "p90_tvd": 0.04785080951549845
+        }
+      },
+      "housing_tenure": {
+        "lag_1": {
+          "mean_tvd": 0.018317640535955238,
+          "p90_tvd": 0.04096816727805244
+        },
+        "lag_10": {
+          "mean_tvd": 0.06989710095113279,
+          "p90_tvd": 0.09784517774729867
+        },
+        "lag_12": {
+          "mean_tvd": 0.07327257828797532,
+          "p90_tvd": 0.10702954487002199
+        },
+        "donor_window_1": {
+          "mean_tvd": 0.030405490086552123,
+          "p90_tvd": 0.05876825926596238
+        },
+        "donor_window_12": {
+          "mean_tvd": 0.028249807095972135,
+          "p90_tvd": 0.05373635673534331
+        }
+      },
+      "age_education_income_region_joint": {
+        "lag_1": {
+          "mean_tvd": 0.07811222865975795,
+          "p90_tvd": 0.09197740389326119
+        },
+        "lag_10": {
+          "mean_tvd": 0.18078200965960256,
+          "p90_tvd": 0.21018724094973268
+        },
+        "lag_12": {
+          "mean_tvd": 0.19464323019199406,
+          "p90_tvd": 0.22558705039303423
+        },
+        "donor_window_1": {
+          "mean_tvd": 0.18823471754414206,
+          "p90_tvd": 0.2141927904522073
+        },
+        "donor_window_12": {
+          "mean_tvd": 0.1784507791088539,
+          "p90_tvd": 0.20334529361229287
+        }
+      }
+    },
+    "forecast_population_validation": "description only; no Q8/Q9 outcomes; assumed posting lag for historical validation",
+    "prospective_candidate": "2026-10 from snapshot observed 2026-09-28; historical 2025-10 profiles reused as synthetic types",
+    "missing_weight_rows": 42,
+    "real_llm_calls": 0,
+    "source_configs_modified": false
+  },
+  "source_files": [
+    {
+      "source_file": "data/raw/sce_p_sources/micro_2017_2019.xlsx",
+      "source_sha256": "a88e5a225c9a566dd8cdfdd77abef9ac456eb52d1a120c5ec208184a88c745c9",
+      "snapshot_observed_at": "2026-09-29T09:50:18.898162+00:00",
+      "source_url": "https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-complete-17-19.xlsx",
+      "historical_first_published_at": null,
+      "cache_file": "data/cache/monthly_profiles_f143f8eb1593f6a34d4f.parquet",
+      "cache_sha256": "b42c21883a87132d2e523e3d61155abddb3d38704f5f753dc4407a251dd4d388"
+    },
+    {
+      "source_file": "data/raw/sce_audit_20260928/micro_2020_2024.xlsx",
+      "source_sha256": "1b57ffb75c2170d767f46a001002db8c40c228fe5691f6dd19e39777ffe469c6",
+      "snapshot_observed_at": "2026-09-28T02:16:33.994958+00:00",
+      "source_url": "https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-20-24.xlsx",
+      "historical_first_published_at": null,
+      "cache_file": "data/cache/monthly_profiles_7f0ed622ae0915902741.parquet",
+      "cache_sha256": "ed8af50003e508ab6da66dd5f3afa34413fe88a5efb7454d8a4432477278f2b6"
+    },
+    {
+      "source_file": "data/raw/sce_audit_20260928/micro_latest.xlsx",
+      "source_sha256": "7da4bbcd3f23a4434ab5a94c4c93a255c46df7a57c38eef807b39466bf158f48",
+      "snapshot_observed_at": "2026-09-28T02:16:39.467970+00:00",
+      "source_url": "https://www.newyorkfed.org/medialibrary/Interactives/sce/sce/downloads/data/frbny-sce-public-microdata-latest",
+      "historical_first_published_at": null,
+      "cache_file": "data/cache/monthly_profiles_0681593a0fc5369b4274.parquet",
+      "cache_sha256": "37f9ae2449bfafb1b6a69b41d3c7429a65b4e1cf4babce47cd57f12712d431f7"
+    }
+  ],
+  "primary_method_urls": [
+    "https://www.newyorkfed.org/microeconomics/sce/sce-faq",
+    "https://www.newyorkfed.org/research/epr/medialibrary/6501bd82d3bc482891b59df93e24011d.ashx",
+    "https://www.bls.gov/cpi/questions-and-answers.htm",
+    "https://www.bls.gov/cpi/seasonal-adjustment/using-seasonally-adjusted-data.htm",
+    "https://www.bls.gov/web/empsit/cesnaicsrev.htm",
+    "https://www.bls.gov/cps/seasonal-adjustment-methodology.htm"
+  ],
+  "artifact_hashes": {
+    "outputs/sce_b_readiness_population_v5_20261007/summary.json": "6d39f076fdff85cebcb37882911741ce4b594e9fcefee04670c0d4eb745bfc14",
+    "outputs/sce_b_readiness_population_v5_20261007/source_manifest.json": "949771a234fa084020ded7c29e402a4e82e0cc650830a09cb2d911a57c3ce807",
+    "outputs/sce_b_readiness_population_v5_20261007/monthly_profile_stats.json": "1e5481ace32518f0d4f686c505bdd5f1574091810c2f761f788995fe6861c62d",
+    "outputs/sce_b_readiness_population_v5_20261007/forecast_distribution_validation.json": "ab1528921738d3ad3a6e8fb8ad000878711b8dbe496bc1a05fc0a87ab2d34e65",
+    "outputs/sce_vintage_examples_v2_20261007/summary.json": "74b4508b09465b4d8be8afb38d5625a2a094aa8cd94e11b4e1017e6370d3c517",
+    "outputs/sce_vintage_examples_v2_20261007/source_versions.jsonl": "12fd4210bc3448d29918b124e23d101d42b53f2bf2b1ef906eac29940ac4ec53",
+    "outputs/sce_dated_preview_bls_20261007/summary.json": "697a53247134c34b48973635e696e3ef1a5ccb771ce0634042cda99709c34feb",
+    "outputs/sce_dated_preview_full_v2_20261007/summary.json": "5e9e7dfebdc4eb63783bbbe9dea1163cbfb02e86c327aa9ddba4878c56aece42",
+    "outputs/sce_b_readiness_population_v5_20261007/population_B_2026_10_window_1/population_candidate.json": "b7dec742b5e8d73e93683e6b515cfcba1cffcb392bf0265eef5fa3bd1d8cd75a",
+    "outputs/sce_b_readiness_population_v5_20261007/population_B_2026_10_window_1/sampling_meta.json": "53fde4e86d233f964a64c557a6733b2a80e34b6b299b5e794d4c7c3f7a6617c4",
+    "outputs/sce_b_readiness_population_v5_20261007/population_B_2026_10_window_1/sampling_distribution_diagnostics.json": "6719f520222aa6098fc26ef3edaf8bdce0d1c6bfdee90b71aaa464a29ea784d5",
+    "outputs/sce_b_readiness_population_v5_20261007/population_B_2026_10_window_1/core_normal_support_diagnostic.json": "66655a7600d1c78e5babeaf7a47cf25bde21d8506fa1d3579f26f5e638e8ea31",
+    "outputs/sce_b_readiness_population_v5_20261007/population_B_2026_10_window_12/population_candidate.json": "5accde686e972a2b1b837d0734fc0295885b60897a6293cdcb14602462c0999f",
+    "outputs/sce_b_readiness_population_v5_20261007/population_B_2026_10_window_12/sampling_meta.json": "650b2e23321f02939992ac13a32d5df8d2f2b5bf6b3d94291a355d0d9c104516",
+    "outputs/sce_b_readiness_population_v5_20261007/population_B_2026_10_window_12/sampling_distribution_diagnostics.json": "db2fc001c509e90daad5d0a8931de71d2d44963fd6244a5b0bee4e980587f7d7",
+    "outputs/sce_b_readiness_population_v5_20261007/population_B_2026_10_window_12/core_normal_support_diagnostic.json": "b908b06a5e6b043156a713ef220ac6b6f94f81d7a864bd9e7ab3abbabbd7b471"
+  },
+  "validation": {
+    "unittest_count": 65,
+    "passed": true,
+    "real_llm_calls": 0,
+    "paid_mcp_calls": 0,
+    "official_simulation_config_modified": false
+  },
+  "limitations": [
+    "current E remains initial-release variant; only bounded CES revision example added",
+    "historical P posting times not independently reconstructed; t-minus-10 distribution checks use availability assumption",
+    "2026-10 candidate P snapshot observed before cutoff; not true current population",
+    "26 prompt previews use actual E provider, no historical P joined; full gas/news input vintages unverified",
+    "Core/Normal support checks assume all selected Core answers would be valid; no LLM answers generated",
+    "no new budget or test window frozen"
+  ]
+}
