@@ -6,6 +6,8 @@
 
 本次保留原六节结构，在局部更新后依用户意见进一步理顺十一处段落：说明消费篮子的匹配方法、支撑假设、使用方式与验证路径，把当前效果问题与下一步机制对照连接起来；明确开发月份中模拟 SCE 与真实 SCE 的趋势方向一致，但水平偏低、人群分歧不足。未改模型或研究配置，未覆盖 Kimi 待审的 `proposal.md`；旧候选和旧 PDF 原样保留。审定与平台提交由用户办理，尚未取得提交回执。
 
+新增数据来源说明：第四节逐项列明 SCE、CE Interview/Diary、BLS CPI/就业首发稿、EIA 汽油周价与纽约时报新闻档案的用途，区分已使用和拟研究资料，明确评价答案与预测版本边界。最新 PDF 仍为两页、约 0.25 MB。
+
 官方要求已于 2026-10-07 复核：1–2 页 PDF，须包含问题、赛道、人群/环境/行为设定草案与数据来源，截止 **10-12 23:59（北京时间）**；通过平台「研究目录」页参赛入口提交。来源为[赛事官网](https://socioverse.fudan-disc.com/challenge/)及其当前公开 `challenge.js?v=20261005a`。结构检查和修改依据见 [提交前检查](submission_review_20261007.md)。
 
 重建命令：`python3 proposal/render_proposal.py --stem proposal_submission_ready_20261007`。来源、PDF 哈希、页数与核验记录在 `build/submission_review_20261007.json`。
