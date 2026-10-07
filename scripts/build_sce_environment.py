@@ -333,7 +333,7 @@ def transcribe_cpi(text: str, ref: str) -> dict:
             mom_m = re.search(
                 r"consumerpriceindexforallurbanconsumerscpi-u"
                 r"(increased|rose|advanced|declined|decreased|fell)([\d.]+)percent"
-                r"onaseasonallyadjustedbasis", c)
+                r"onaseasonallyadjustedbasis(?!overthe(?:2|two)months)", c)
         if mom_m:
             verb, num = mom_m.group(1), float(mom_m.group(2))
             mom = -num if verb in ("declined", "decreased", "fell") else num
@@ -417,6 +417,9 @@ def transcribe_empsit(text: str, ref: str) -> dict:
         if not unemp_m:
             unemp_m = re.search(
                 rf"unemploymentrate,?at([\d.]+)percent,?(?:also)?changedlittlein{month}", c)
+        if not unemp_m:
+            unemp_m = re.search(
+                rf"in{month},?theunemploymentrate,?at([\d.]+)percent,?waslittlechangedfrom[a-z]+", c)
         if not unemp_m:
             raise ValueError(f"unemployment rate sentence not found for {ref}")
         unemp = float(unemp_m.group(1))

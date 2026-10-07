@@ -22,6 +22,7 @@ import build_sce_environment_v2 as ev
 import build_nyt_events as nyt
 import extract_cpi_components as components
 from sce_cpi_layout import extract_annual_component
+from sce_release_available import cpi_available
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -305,10 +306,12 @@ def check_cpi_headlines(records: list) -> list:
     for record in records:
         if record["kind"] != "cpi":
             continue
-        values = bls.transcribe_cpi(bls._first_pages_text(ROOT / record["file"]),
+        values = cpi_available(bls._first_pages_text(ROOT / record["file"]),
                                     record["reference_period"])
         for signal, key in (("cpi_all_items_yoy", "cpi_yoy_nsa_pct"),
                             ("cpi_all_items_mom", "cpi_mom_sa_pct")):
+            if values[key] is None:
+                continue  # official structural absence, not zero or two-month change
             rows.append({"signal_id": signal, "reference_period": record["reference_period"],
                          "published_at": record["published_at"][:10],
                          "value": values[key]["value"]})

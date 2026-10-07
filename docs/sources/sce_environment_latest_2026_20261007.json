@@ -1,0 +1,99 @@
+{
+  "target_start": "2025-10",
+  "target_end": "2026-10",
+  "target_months": 13,
+  "latest_verified_sce": "2026-08",
+  "verified_bls_pdfs": 182,
+  "independent_value_agreements": 636,
+  "schema_valid": true,
+  "status": "B_input_draft_not_run_configuration",
+  "information_cutoff": "previous month end America/New_York; per-series available first-release selection",
+  "full_package_strict_pit_certified": false,
+  "bls_only_package": "excludes current gas snapshot and current news text; source timing audited, not model-training-leakage certified",
+  "unobserved_target_months": [
+    "2026-09",
+    "2026-10"
+  ],
+  "source_config_modified": false,
+  "real_llm_calls": 0,
+  "paid_mcp_calls": 0,
+  "source_scope_note": "canonical report headline observations; October 2025 payroll later printed in November report not yet independently added",
+  "checked_on": "2026-10-07",
+  "components_independently_agree": 455,
+  "cpi_headlines_independently_agree": 181,
+  "nyt_cache_end": "2026-09",
+  "micro_snapshot_end": "2025-10",
+  "micro_updated": false,
+  "tests_passed": 57,
+  "official_latest_evidence": {
+    "checked_at_utc": "2026-10-07T13:16:57.806962+00:00",
+    "latest_verified_sce_month": "2026-08",
+    "micro_snapshot_not_updated": "2025-10",
+    "files": [
+      {
+        "file": "chart.xlsx",
+        "source_url": "https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-data.xlsx",
+        "sha256": "936aeaa8b83a04f6210dcc74bd9b3b0a8c5e6c8df38e57cf69048c37b5db75ac"
+      },
+      {
+        "file": "gasregw_response.csv",
+        "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GASREGW&cosd=2025-01-01&coed=2026-09-30",
+        "sha256": "b5d4e49025436cafee80fb92cf8e3c1908fe847aa242b79879888b04ed314d20",
+        "overlap_observations_agree": 91,
+        "vintage": "current_snapshot_unverified"
+      }
+    ],
+    "source_page": "https://www.newyorkfed.org/microeconomics/sce",
+    "source_release": "https://www.newyorkfed.org/newsevents/news/research/2026/20260908"
+  },
+  "artifacts": [
+    {
+      "path": "data/raw/sce_environment_latest_20261007/manifest.json",
+      "sha256": "06b0c336e61c5a991fed64c659dcae666149046dab2cc18190737243126cb163"
+    },
+    {
+      "path": "outputs/sce_e_B_through_2026_10_draft_v2_20261007/summary.json",
+      "sha256": "3fc20c0ec88b7f987120a4fde9adc85ae5047c2664805b82264bee4f18185995"
+    },
+    {
+      "path": "outputs/sce_e_B_through_2026_10_draft_v2_20261007/environment_B_full_draft.json",
+      "sha256": "8b6b29b8842b9c5271c8c839ad70cd77c9448331ded2e488883009f7c0bca75e"
+    },
+    {
+      "path": "outputs/sce_e_B_through_2026_10_draft_v2_20261007/environment_B_bls_only_draft.json",
+      "sha256": "df6a2f46989bd9d444fdd1dc342caac771b15219428d5359ff49f7e310829081"
+    },
+    {
+      "path": "outputs/sce_e_B_through_2026_10_draft_v2_20261007/availability_audit.json",
+      "sha256": "f47612c230ceb25f2d02d904ae0baa718f7737cbe0355970e1eede001b5bd35e"
+    },
+    {
+      "path": "outputs/sce_e_B_through_2026_10_draft_v2_20261007/independent_value_checks.json",
+      "sha256": "26d0afd51417e04719ef71afb5198d27d06699fa84d4996f2a0687cee38c219a"
+    },
+    {
+      "path": "outputs/sce_e_B_through_2026_10_draft_v2_20261007/structural_missing.json",
+      "sha256": "e66d2a4ba2510292fdf2319ec05fc9c68cbd2a108a977dc62b88ee6796c07799"
+    },
+    {
+      "path": "outputs/sce_e_B_through_2026_10_draft_v2_20261007/manifest.sha256",
+      "sha256": "41038b9b924af38837db33e23eb08739ab60ad918f72b9c207b73bfd065180d9"
+    },
+    {
+      "path": "outputs/sce_shared_e_B_bls_through_2026_10_v2_20261007/manifest.json",
+      "sha256": "2b3dea91c8aa60ca8a1f5333a488d54acf38156a3ac22feb1d33b6ab75df3c96"
+    },
+    {
+      "path": "outputs/sce_shared_e_B_bls_through_2026_10_v2_20261007/shared_environment.jsonl",
+      "sha256": "880f1384730a7aad91effe2685c13a67603110422dd0806bfd55173902e42f77"
+    },
+    {
+      "path": "outputs/sce_shared_e_B_full_through_2026_10_v2_20261007/manifest.json",
+      "sha256": "475fedf6d0892a79f8dc32b261074cbb926984576397f959ac34cc6982c8e362"
+    },
+    {
+      "path": "outputs/sce_shared_e_B_full_through_2026_10_v2_20261007/shared_environment.jsonl",
+      "sha256": "2ba6f2b2d87f38b17a4bcf40d348a5e28f8302d799bf93157715f9692a4eb4e3"
+    }
+  ]
+}
