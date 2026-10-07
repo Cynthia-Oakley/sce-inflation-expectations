@@ -6,6 +6,7 @@ The Markdown text is unchanged; LaTeX intermediates stay under ignored build/.
 """
 
 from pathlib import Path
+import argparse
 import re
 import subprocess
 
@@ -52,7 +53,9 @@ def grid_table(match: re.Match) -> str:
     return head + r"\endlastfoot" + body
 
 
-def main() -> None:
+def main(stem: str = STEM) -> None:
+    if not re.fullmatch(r"[a-zA-Z0-9_-]+", stem) or not (ROOT / f"{stem}.md").is_file():
+        raise ValueError("stem must name an existing proposal Markdown file")
     build = ROOT / "build"
     build.mkdir(exist_ok=True)
     header = build / "proposal_typography.tex"
@@ -67,7 +70,7 @@ def main() -> None:
         raise RuntimeError("Kaiti SC font collection is not available")
     result = subprocess.run(
         [
-            "pandoc", str(ROOT / f"{STEM}.md"), "--standalone", "--to=latex",
+            "pandoc", str(ROOT / f"{stem}.md"), "--standalone", "--to=latex",
             "-V", "mainfont=Times New Roman", "-V", "CJKmainfont=Kaiti.ttc",
             "-V", f"CJKoptions=Path={{{Path(kaiti).parent}/}},FontIndex=0,BoldFont=Kaiti.ttc,BoldFeatures={{FontIndex=3}}",
             "-V", "fontsize=10pt", "-V", "papersize=a4", "-V", "indent=true",
@@ -87,7 +90,7 @@ def main() -> None:
     latex = latex.replace(r"\textbf{SocioVerse Challenge", r"\noindent\textbf{SocioVerse Challenge", 1)
     # Start validation on page two so its list does not straddle the page break.
     latex = latex.replace(r"\subsection{三、验证方案}", "\\newpage\n" + r"\subsection{三、验证方案}", 1)
-    tex = build / f"{STEM}.tex"
+    tex = build / f"{stem}.tex"
     tex.write_text(latex, encoding="utf-8")
     for _ in range(2):
         subprocess.run(
@@ -95,8 +98,10 @@ def main() -> None:
              f"-output-directory={build}", str(tex)],
             cwd=ROOT, capture_output=True, text=True, check=True,
         )
-    print(build / f"{STEM}.pdf")
+    print(build / f"{stem}.pdf")
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--stem", default=STEM, help="proposal Markdown basename without extension")
+    main(parser.parse_args().stem)

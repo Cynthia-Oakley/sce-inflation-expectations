@@ -1,6 +1,16 @@
 # 开题提案
 
-## 当前提交候选（2026-10-05）
+## 当前可提交版（2026-10-07）
+
+**提交文件：[proposal_submission_ready_20261007.pdf](build/proposal_submission_ready_20261007.pdf)**。可编辑源稿：[proposal_submission_ready_20261007.md](proposal_submission_ready_20261007.md)。共 **2 页 A4**，逐页视觉核验通过，沿用楷体、Times New Roman、首行两字缩进、1.25 倍行距及表格边框。
+
+本次保留原六节结构，仅做八处局部调整：纳入最新小试发现，明确消费篮子的合成性质、历史重建/未来预测边界与结果封存，强化群体分布评价及独立验证。未改模型或研究配置，未覆盖 Kimi 待审的 `proposal.md`；旧候选和旧 PDF 原样保留。审定与平台提交由用户办理，尚未取得提交回执。
+
+官方要求已于 2026-10-07 复核：1–2 页 PDF，须包含问题、赛道、人群/环境/行为设定草案与数据来源，截止 **10-12 23:59（北京时间）**；通过平台「研究目录」页参赛入口提交。来源为[赛事官网](https://socioverse.fudan-disc.com/challenge/)及其当前公开 `challenge.js?v=20261005a`。结构检查和修改依据见 [提交前检查](submission_review_20261007.md)。
+
+重建命令：`python3 proposal/render_proposal.py --stem proposal_submission_ready_20261007`。来源、PDF 哈希、页数与核验记录在 `build/submission_review_20261007.json`。
+
+## 前一提交候选（2026-10-05）
 
 可编辑稿：[proposal_submission_candidate_20261005.md](proposal_submission_candidate_20261005.md)。PDF：`build/proposal_submission_candidate_20261005.pdf`，已导出并视觉核验，共 **2 页**。PDF 为本地产物，不自动推送；审定、平台提交及回执由用户办理，目前未提交。
 
