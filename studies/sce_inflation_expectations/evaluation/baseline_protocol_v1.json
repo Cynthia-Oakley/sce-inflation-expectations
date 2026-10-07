@@ -1,0 +1,162 @@
+{
+  "protocol_id": "sce-evaluation-v1-20261007",
+  "status": "offline_benchmark_protocol",
+  "target": "one_year_sce_expectations_next_survey_not_realized_cpi",
+  "evaluation_start": "2020-01",
+  "evaluation_end": "2024-12",
+  "data_role": "retrospective_baseline_reference_not_blind_agent_test",
+  "forecast_cutoffs": [
+    "previous_month_end",
+    "current_month_cpi_release_day_end"
+  ],
+  "timezone": "America/New_York",
+  "release_date_rule": "date_only_is_available_at_end_of_publication_day",
+  "headline_primary_truth": "official_press_release_one_decimal_first_release",
+  "headline_secondary_truth": "archived_official_chart_high_precision_snapshot",
+  "reconstruction_micro_truth": "official_provided_Q9_mean_and_Q9_iqr_latest_micro_snapshot",
+  "training": "expanding_available_releases_only",
+  "minimum_training_observations": 12,
+  "rolling_mean_months": 12,
+  "simple_agent_n": 1300,
+  "sticky_agent_update_probabilities": [
+    0.1,
+    0.25,
+    0.5
+  ],
+  "sticky_agent_signal": "last_published_sce_headline_not_professional_forecast",
+  "sticky_agent_initial_state": "first_available_headline_for_all_archetypes",
+  "seed": 42,
+  "reconstruction_conditional_fields": [
+    "_AGE_CAT",
+    "_EDU_CAT"
+  ],
+  "reconstruction_minimum_donor_count": 20,
+  "reconstruction_history_months": 1,
+  "reconstruction_known_constraint": "optional_current_micro_weighted_median",
+  "quantile_method": "left_inverse_weighted_empirical_cdf",
+  "headline_metrics": [
+    "mae_pp",
+    "rmse_pp",
+    "bias_pp",
+    "monthly_errors"
+  ],
+  "distribution_metrics": [
+    "w1_pp",
+    "centered_w1_pp",
+    "median_error_pp",
+    "iqr_error_pp",
+    "group_median_error_pp",
+    "uncertainty_median_error_pp"
+  ],
+  "between_month_weighting": "equal_months",
+  "bootstrap": {
+    "unit": "paired_month_errors",
+    "circular_block_length": 6,
+    "draws": 2000
+  },
+  "model_selection": "no_selection_using_evaluation_performance",
+  "llm_calls": 0,
+  "curated_first_release_headlines": {
+    "2018-12": 3.0,
+    "2019": [
+      3.0,
+      2.8,
+      2.8,
+      2.6,
+      2.5,
+      2.7,
+      2.6,
+      2.4,
+      2.5,
+      2.3,
+      2.4,
+      2.5
+    ],
+    "2020": [
+      2.5,
+      2.5,
+      2.5,
+      2.6,
+      3.0,
+      2.7,
+      2.9,
+      3.0,
+      3.0,
+      2.8,
+      3.0,
+      3.0
+    ],
+    "2021": [
+      3.0,
+      3.1,
+      3.2,
+      3.4,
+      4.0,
+      4.8,
+      4.8,
+      5.2,
+      5.3,
+      5.7,
+      6.0,
+      6.0
+    ],
+    "2022": [
+      5.8,
+      6.0,
+      6.6,
+      6.3,
+      6.6,
+      6.8,
+      6.2,
+      5.7,
+      5.4,
+      5.9,
+      5.2,
+      5.0
+    ],
+    "2023": [
+      5.0,
+      4.2,
+      4.7,
+      4.4,
+      4.1,
+      3.8,
+      3.5,
+      3.6,
+      3.7,
+      3.6,
+      3.4,
+      3.0
+    ],
+    "2024": [
+      3.0,
+      3.0,
+      3.0,
+      3.3,
+      3.2,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      2.9,
+      3.0,
+      3.0
+    ]
+  },
+  "curation_evidence": "Headline values read from archived FRBNY core-release inflation passages; preparation verifies numeric presence, dates, source hashes and compares chart rounding; ambiguous horizons require reviewer inspection.",
+  "attribution": "Source: Survey of Consumer Expectations, Federal Reserve Bank of New York. FRBNY disclaims responsibility for this analysis and interpretation. https://www.newyorkfed.org/microeconomics/sce",
+  "headline_baselines": [
+    "persistence",
+    "mean12",
+    "ar1_expanding",
+    "sticky_agent_0.1",
+    "sticky_agent_0.25",
+    "sticky_agent_0.5"
+  ],
+  "macro_extensions": [
+    "cpi_as_expectation",
+    "arx_sce_cpi"
+  ],
+  "arx_training": "direct cutoff-specific features with released training targets; minimum12 pairs; matched-window comparison",
+  "agent_model_note": "Carroll-inspired update structure only; public SCE signal replaces professional forecasts; update probabilities are reference assumptions, not estimated household frequencies"
+}
