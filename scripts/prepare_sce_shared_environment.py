@@ -20,9 +20,12 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--environment", type=Path, required=True)
     ap.add_argument("--output-dir", type=Path)
+    ap.add_argument("--allow-unverified-vintage", action="store_true",
+                    help="A retrospective shared export may retain explicitly flagged GASREGW snapshots")
     args = ap.parse_args()
     source = args.environment.resolve()
-    rows = extract_shared_rows(json.loads(source.read_text()))
+    rows = extract_shared_rows(json.loads(source.read_text()),
+                               allow_unverified_vintage=args.allow_unverified_vintage)
     out = args.output_dir or ROOT / "outputs" / ("sce_shared_environment_" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "_" + uuid.uuid4().hex[:8])
     out.mkdir(parents=True, exist_ok=False)
     target = out / "shared_environment.jsonl"
@@ -36,6 +39,7 @@ def main():
                           "evidence_uncertainties": r["evidence_uncertainties"]} for r in rows],
               "code_sha256": {str(p.relative_to(ROOT)): sha(p) for p in [Path(__file__), ROOT / "studies/sce_inflation_expectations/evaluation/shared_environment.py"]},
               "status": "shared_input_export_only_not_trained_baseline", "research_line": "A_retrospective_current_CPI_release_day",
+              "allow_unverified_gasoline_vintage": args.allow_unverified_vintage,
               "limitations": ["Metadata timestamp checks do not independently verify gasoline vintage or inferred release day",
                               "No historical SCE, population features or target outcomes have been added",
                               "News vocabulary, scaling, imputation and hyperparameters must be fitted only on admissible training periods"]}

@@ -127,6 +127,14 @@ class TestClassifyDoc(unittest.TestCase):
 
 
 class TestSelectEvents(unittest.TestCase):
+    def test_2025_article_capitalization_is_accepted_without_selecting_interactives(self):
+        article = doc(document_type="Article", headline={"main": "Inflation rises"})
+        interactive = doc(document_type="Interactive", headline={"main": "Inflation map"},
+                          web_url="https://x/interactive")
+        out = bne.select_events([article, interactive], "2021-06", "sha", max_per_month=30)
+        self.assertEqual(len(out), 1)
+        self.assertEqual(out[0]["headline"], "Inflation rises")
+
     def test_dedupe_sort_cap(self):
         fp = doc(print_section="A", print_page="1", pub_date="2021-06-05T00:00:00+0000",
                  headline={"main": "Front page story"},

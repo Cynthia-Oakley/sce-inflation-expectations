@@ -42,5 +42,24 @@ class SharedEnvironmentTest(unittest.TestCase):
         self.assertEqual(len(row["evidence_uncertainties"]), 1)
         self.assertEqual(len(row["signals"]), 1)
 
+    def test_flagged_gas_requires_opt_in_and_remains_flagged(self):
+        data = fixture()
+        record = data["provider_args"]["signals_by_step"]["0"][0]
+        record.update(signal_id="eia_gasoline_retail_regular_mean_2021_04",
+                      source_version="FRED GASREGW (EIA weekly retail, Monday obs)",
+                      eligibility="vintage_unverified")
+        with self.assertRaises(ValueError):
+            extract_shared_rows(data)
+        row = extract_shared_rows(data, allow_unverified_vintage=True)[0]
+        self.assertEqual(row["signals"][0]["eligibility"], "vintage_unverified")
+        self.assertEqual(len(row["evidence_uncertainties"]), 1)
+
+    def test_opt_in_does_not_admit_unknown_or_non_gas_evidence(self):
+        for status in ("vintage_unverified", "unknown_as_of"):
+            data = fixture()
+            data["provider_args"]["signals_by_step"]["0"][0]["eligibility"] = status
+            with self.assertRaises(ValueError):
+                extract_shared_rows(data, allow_unverified_vintage=True)
+
 
 if __name__ == "__main__": unittest.main()

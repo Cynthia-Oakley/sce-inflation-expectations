@@ -210,7 +210,7 @@ def select_events(docs: list[dict], month: str, archive_sha: str,
                   max_per_month: int) -> list[dict]:
     events, seen = [], set()
     for doc in docs:
-        if doc.get("document_type") != "article":
+        if str(doc.get("document_type") or "").casefold() != "article":
             continue
         tier, matched = classify_doc(doc)
         if tier is None:

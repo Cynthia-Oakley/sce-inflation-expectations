@@ -30,7 +30,7 @@ def available_time(stamp, cutoff):
     return when
 
 
-def extract_shared_rows(bundle):
+def extract_shared_rows(bundle, *, allow_unverified_vintage=False):
     args = bundle["provider_args"]
     targets = args["targets"]
     if not targets or len({t["target_month"] for t in targets}) != len(targets):
@@ -45,7 +45,11 @@ def extract_shared_rows(bundle):
         features, uncertainties = {}, []
         signal_ids = set()
         for record in signals:
-            if record.get("eligibility") != "eligible":
+            uncertain_gas = (record.get("eligibility") == "vintage_unverified"
+                             and record.get("signal_id", "").startswith("eia_gasoline_retail_")
+                             and "GASREGW" in record.get("source_version", ""))
+            if record.get("eligibility") != "eligible" and not (
+                    allow_unverified_vintage and uncertain_gas):
                 raise ValueError("unapproved signal in shared input")
             if not record.get("source_url") or not record.get("source_version"):
                 raise ValueError("signal source evidence missing")
@@ -60,7 +64,7 @@ def extract_shared_rows(bundle):
             signal_ids.add(record["signal_id"])
             features[key] = value
             note = record.get("note", "")
-            if "conservative" in note.lower() or "last weekly obs" in note.lower():
+            if uncertain_gas or "conservative" in note.lower() or "last weekly obs" in note.lower():
                 uncertainties.append({"signal_id": record["signal_id"], "issue": "inferred_release_date_or_unverified_vintage", "note": note})
         news_ids = set()
         for event in news:

@@ -327,13 +327,29 @@ def transcribe_cpi(text: str, ref: str) -> dict:
         mom = -num if verb in ("declined", "decreased", "fell") else num
         mom_quote = _quote(c, mom_m)
     else:
+        # June 2024 omits the month inside the opening SA sentence. Require
+        # the matching report heading and the all-urban-consumers subject.
+        if f"consumerpriceindex{month}{y}" in c:
+            mom_m = re.search(
+                r"consumerpriceindexforallurbanconsumerscpi-u"
+                r"(increased|rose|advanced|declined|decreased|fell)([\d.]+)percent"
+                r"onaseasonallyadjustedbasis", c)
+        if mom_m:
+            verb, num = mom_m.group(1), float(mom_m.group(2))
+            mom = -num if verb in ("declined", "decreased", "fell") else num
+            mom_quote = _quote(c, mom_m)
+        else:
+            mom, mom_quote = None, None
         for ordering in orderings:
+            if mom is not None:
+                break
             mom_m = re.search(rf"unchanged{ordering}", c)
             if mom_m:
                 break
         if not mom_m:
             raise ValueError(f"CPI m/m SA sentence not found for {ref}")
-        mom, mom_quote = 0.0, _quote(c, mom_m)
+        if mom is None:
+            mom, mom_quote = 0.0, _quote(c, mom_m)
 
     # y/y NSA, all items only. Candidate shapes:
     #   "...the all items index increased 1.2 percent before seasonal adjustment"
@@ -399,6 +415,9 @@ def transcribe_empsit(text: str, ref: str) -> dict:
             r"unemploymentrate(?:wasunchanged|changedlittle|waslittlechanged|remained|remainedunchanged)"
             r"(?:at|from)([\d.]+)percent", c)
         if not unemp_m:
+            unemp_m = re.search(
+                rf"unemploymentrate,?at([\d.]+)percent,?(?:also)?changedlittlein{month}", c)
+        if not unemp_m:
             raise ValueError(f"unemployment rate sentence not found for {ref}")
         unemp = float(unemp_m.group(1))
         unemp_quote = _quote(c, unemp_m)
@@ -406,6 +425,17 @@ def transcribe_empsit(text: str, ref: str) -> dict:
     # Nonfarm payrolls: "Total nonfarm payroll employment rose by 916,000 in
     # march"; pandemic-era variants include "nonfarm payroll employment changed
     # little (+49,000)".
+    million_m = re.search(
+        rf"totalnonfarmpayrollemployment(rose|increased|grew|fell|declined|decreased)"
+        rf"by([\d.]+)millionin{month}", c)
+    if million_m:
+        nfr = float(million_m.group(2)) * 1000.0
+        if million_m.group(1) in ("fell", "declined", "decreased"):
+            nfr = -nfr
+        return {"unemployment_rate_pct": {"value": unemp, "quote": unemp_quote},
+                "nonfarm_payroll_change_k": {"value": nfr, "quote": _quote(c, million_m)},
+                "usdl": re.search(r"usdl-(\d{2}-\d{4})", c).group(1)}
+
     nf_m = re.search(
         rf"totalnonfarmpayrollemployment(rose|increased|grew|fell|declined|"
         rf"decreased|edgedup|edgeddown)by([\d,]+)in{month}", c)
@@ -418,16 +448,16 @@ def transcribe_empsit(text: str, ref: str) -> dict:
     else:
         nf_m = re.search(
             r"nonfarmpayrollemploymentchangedlittle\(?(\+?-?[\d,]+)\)?", c)
+        if not nf_m:
+            nf_m = re.search(
+                rf"totalnonfarmpayrollemployment(?:changedlittle|waslittlechanged|"
+                rf"wasessentiallyunchanged|edgedup|edgeddown)"
+                rf"in{month}([+-]?[\d,]+)", c)
         if nf_m:
             nfr = round(int(nf_m.group(1).replace(",", "")) / 1000.0)
             nf_quote = _quote(c, nf_m)
         else:
-            nf_m = re.search(
-                rf"totalnonfarmpayrollemployment(?:changedlittle|waslittlechanged)"
-                rf"in{month}", c)
-            if not nf_m:
-                raise ValueError(f"nonfarm payroll sentence not found for {ref}")
-            nfr, nf_quote = 0.0, _quote(c, nf_m)
+            raise ValueError(f"nonfarm payroll numeric change not found for {ref}")
     nfr = round(nfr)
 
     usdl = re.search(r"usdl-(\d{2}-\d{4})", c).group(1)

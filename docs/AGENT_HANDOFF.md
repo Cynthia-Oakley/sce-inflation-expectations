@@ -1,5 +1,7 @@
 # SCE 项目交接入口
 
+**2026-10-07 额度恢复后，69个月E资料已验收。** 读[成果与复算入口](SCE_ENVIRONMENT_EXTENSION_20261007.md)。最新包 `outputs/sce_e_extension_2020_2025_verified_20261007/`：2020-01..2025-09，160份BLS PDF、400分项及160总体CPI值独立HTML对账一致；69×77数值、2090新闻，官方schema通过。共享输入 `outputs/sce_shared_e_2020_2025_20261007/` 已导出，未训练新基线、未跑长期LLM。87 tests＋9 subtests。2025-10原始来源齐，但9月就业在11-20才发布，旧模板阻断；下一步按各指标最新可见值构建，A回顾/B预测信息范围分别明确。汽油vintage、新闻文本版本仍未补证，不能称严格PIT。旧2021数值/截止全部一致，2/3/12月新闻仍体现旧排序流程；5/6月新闻不变，旧实验保留，长期运行使用新包。正式配置及Kimi待审文件未动，DECISIONS仍受保护，scoped add。下文2022-only及历史支持待补是旧状态。
+
 **2026-10-07 最新用户优先级：先补E，暂缓高阶新闻基线。** 读[扩展成果与接力入口](SCE_ENVIRONMENT_EXTENSION_20261007.md)。Luna核查ConsumerSim：FAAR语义压成紧凑特征＋AR；另一新闻Ridge仅披露新闻派生特征，编码/聚合/降维细节不足以完整复刻。新资料入口`extend_sce_environment_sources.py`已补2022全年，验收包`outputs/sce_e_extension_20261007T081207Z/`：新增24份BLS、12个NYT月；46份BLS核验，115分项独立网页逐条一致；12步×77信号/30新闻，官方EnvironmentBundle通过。发现并隔离旧能源模式误读核心通胀的8项2022错值，在新入口修复；就业解析补remained句式。61 tests＋9 subtests。候选不替换旧study，无新增真实LLM/付费MCP；汽油vintage/推定日期、新闻文本vintage仍未解决。下一项补历史支持及后续年份，再建立A/B不同截止包和长窗口运行卡。下文句向量优先级为历史候选，不继续下载模型。Kimi待审批次与DECISIONS保持原样，scoped add。
 
 **2026-10-07 用户决定新闻基线暂不用TF-IDF，直接句向量。** 读[句向量部署与训练/评价说明](SCE_NEWS_EMBEDDING_AND_SPLITS_20261007.md)。候选本地固定 `all-mpnet-base-v2`，每篇标题摘要→月汇总→训练内PCA→回归；OpenRouter有专门embedding接口，可替代但未调用。初始训练/验证/后续滚动评价必须分开，2017–19/2020/2021起只是待数据齐备后确认的例子，未改冻结窗口。已有AR/ARX滚动训练不是用当期答案拟合；新强基线尚未训练。ConsumerSim新闻FAAR与宏观市场新闻Ridge可借鉴，正文未明确到可完全复刻编码器/每月训练清单。零新API、未下载模型、未修改配置/计分或待审文件。

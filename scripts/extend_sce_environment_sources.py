@@ -21,6 +21,7 @@ import build_sce_environment as bls
 import build_sce_environment_v2 as ev
 import build_nyt_events as nyt
 import extract_cpi_components as components
+from sce_cpi_layout import extract_annual_component
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -40,7 +41,7 @@ def calendar_entries(text: str, source: str) -> dict:
     month_numbers = {calendar.month_name[k]: k for k in range(1, 13)}
     pattern = re.compile(
         r"(?:Monday|Tuesday|Wednesday|Thursday|Friday),\s+"
-        r"([A-Z][a-z]+)\s+(\d{1,2}),\s+(\d{4})\s+08:30 AM\s+"
+        r"([A-Z][a-z]+)\s+(\d{1,2}),\s+(\d{4})\s+(?:\|\s*)?08:30 AM\s+(?:\|\s*)?"
         r"(Consumer Price Index|Employment Situation) for ([A-Z][a-z]+) (\d{4})")
     result = {}
     for match in pattern.finditer(text):
@@ -58,7 +59,8 @@ def calendar_entries(text: str, source: str) -> dict:
 def read_calendars() -> dict:
     result = {}
     for folder in (ROOT / "data/raw/sce_baselines_20261007",
-                   ROOT / "data/raw/sce_baselines_latest_20261007"):
+                   ROOT / "data/raw/sce_baselines_latest_20261007",
+                   ROOT / "data/raw/sce_environment_extension_calendars"):
         for path in sorted(folder.glob("bls_schedule_*.web.txt")):
             result.update(calendar_entries(path.read_text(), str(path.relative_to(ROOT))))
     return result
@@ -189,6 +191,9 @@ def extract_components(records: list) -> tuple[list, list]:
                 hit = (components._extract_from_text(pages, signal, record["reference_period"])
                        or components._extract_from_table_a(pages, signal)
                        or component_wording_fallback(pages, signal))
+            if not hit:
+                hit = extract_annual_component(ROOT / record["file"], signal,
+                                               record["reference_period"])
             lo, hi = components.SANITY[signal]
             if not hit or not lo <= hit["value"] <= hi:
                 failures.append({**base, "reason": "no valid deterministic extraction"})
@@ -242,9 +247,11 @@ def check_component_html(rows: list) -> list:
     """
     labels = {"cpi_food_yoy": "Food", "cpi_food_at_home_yoy": "Food at home",
               "cpi_energy_yoy": "Energy", "cpi_shelter_yoy": "Shelter",
-              "cpi_gasoline_yoy": "Gasoline (all types)"}
+              "cpi_gasoline_yoy": "Gasoline (all types)",
+              "cpi_all_items_yoy": "All items", "cpi_all_items_mom": "All items"}
     result = []
     for row in rows:
+        column = -2 if row["signal_id"] == "cpi_all_items_mom" else -1
         stamp = row["published_at"].replace("-", "")
         source = next((p for folder in ("sce_environment_extension_html",
                                        "sce_baselines_20261007", "sce_baselines_latest_20261007")
@@ -265,7 +272,7 @@ def check_component_html(rows: list) -> list:
             if match:
                 cells = [v.strip() for v in match.group(1).split("|")]
                 try:
-                    html_value = float(cells[-1])
+                    html_value = float(cells[column])
                 except ValueError:
                     pass
                 else:
@@ -283,7 +290,7 @@ def check_component_html(rows: list) -> list:
                 if match:
                     numbers = re.findall(r"[-+]?(?:\d+\.\d+|\.\d+)", match.group(1))
                     if len(numbers) == 8:
-                        html_value = float(numbers[-1])
+                        html_value = float(numbers[column])
                         check.update(html_value=html_value,
                                      source_file=str(source.relative_to(ROOT)),
                                      source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
@@ -293,12 +300,29 @@ def check_component_html(rows: list) -> list:
     return result
 
 
+def check_cpi_headlines(records: list) -> list:
+    rows = []
+    for record in records:
+        if record["kind"] != "cpi":
+            continue
+        values = bls.transcribe_cpi(bls._first_pages_text(ROOT / record["file"]),
+                                    record["reference_period"])
+        for signal, key in (("cpi_all_items_yoy", "cpi_yoy_nsa_pct"),
+                            ("cpi_all_items_mom", "cpi_mom_sa_pct")):
+            rows.append({"signal_id": signal, "reference_period": record["reference_period"],
+                         "published_at": record["published_at"][:10],
+                         "value": values[key]["value"]})
+    return check_component_html(rows)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--targets", required=True)
     ap.add_argument("--fetch", action="store_true")
     ap.add_argument("--fetch-nyt", action="store_true")
     ap.add_argument("--build-candidate", action="store_true")
+    ap.add_argument("--gas-weekly-csv", type=Path,
+                    help="optional separately archived gasoline history, never overwrites original CSV")
     ap.add_argument("--proxy", default=bls.DEFAULT_PROXY)
     ap.add_argument("--out", type=Path)
     args = ap.parse_args()
@@ -334,6 +358,10 @@ def main() -> int:
     write_json(out / "component_html_checks.json", html_checks)
     issues.extend({"source": "component_html_comparison", **r}
                   for r in html_checks if r["status"] == "disagree")
+    headline_checks = check_cpi_headlines(records)
+    write_json(out / "headline_html_checks.json", headline_checks)
+    issues.extend({"source": "headline_html_comparison", **r}
+                  for r in headline_checks if r["status"] == "disagree")
     key = nyt.load_api_key(ROOT / ".env") if args.fetch_nyt and plan["missing_nyt"] else None
     last_request = None
     for month in needs["nyt_months"]:
@@ -346,7 +374,10 @@ def main() -> int:
         try:
             data = prepare_news(month, args.fetch_nyt, args.proxy, key)
             digest = hashlib.sha256(path.read_bytes()).hexdigest()
-            events.extend(nyt.select_events(data["response"]["docs"], month, digest, 30))
+            selected = nyt.select_events(data["response"]["docs"], month, digest, 30)
+            if not selected:
+                raise ValueError(f"no selected news: inspect source schema/date coverage for {month}")
+            events.extend(selected)
             print(f"NYT {month}: cached", flush=True)
         except Exception as exc:
             issues.append({"source": "nyt", "month": month, "reason": str(exc)})
@@ -357,21 +388,35 @@ def main() -> int:
     write_jsonl(out / "events_ledger.jsonl", events)
     candidate_written = False
     if args.build_candidate and not issues and not handoff:
-        old = ev.COMPONENTS_JSONL, ev.NYT_LEDGER
+        old = ev.COMPONENTS_JSONL, ev.NYT_LEDGER, ev.GAS_WEEKLY_CSV
         try:
             ev.COMPONENTS_JSONL, ev.NYT_LEDGER = out / "components_cpi.jsonl", out / "events_ledger.jsonl"
+            if args.gas_weekly_csv:
+                ev.GAS_WEEKLY_CSV = args.gas_weekly_csv.resolve()
             candidate = ev.build_window_v2(needs["targets"], bls.DEFAULT_RAW_ROOT, False, args.proxy)
+            source_paths = {
+                "bls_macro_release_signals": out / "external_events_candidate.json",
+                "bls_release_information": out / "external_events_candidate.json",
+                "bls_cpi_component_signals": ev.COMPONENTS_JSONL,
+                "eia_gasoline_retail_price": ev.GAS_WEEKLY_CSV,
+            }
+            for layer in candidate["bundle"]["layers"]:
+                if layer["name"] in source_paths:
+                    path = source_paths[layer["name"]].resolve()
+                    layer["source"] = str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
             write_json(out / "environment_candidate.json", candidate["bundle"])
             write_json(out / "external_events_candidate.json", candidate["external_events"])
             candidate_written = True
         except Exception as exc:
             issues.append({"source": "candidate_build", "reason": str(exc)})
         finally:
-            ev.COMPONENTS_JSONL, ev.NYT_LEDGER = old
+            ev.COMPONENTS_JSONL, ev.NYT_LEDGER, ev.GAS_WEEKLY_CSV = old
     summary = {"targets": needs["targets"], "verified_bls_pdfs": len(records),
                "components_extracted": len(extracted), "component_handoff_count": len(handoff),
                "component_html_agreement_count": sum(r["status"] == "agree" for r in html_checks),
                "component_html_unchecked_count": sum(r["status"].startswith("unchecked") for r in html_checks),
+               "headline_html_agreement_count": sum(r["status"] == "agree" for r in headline_checks),
+               "headline_html_unchecked_count": sum(r["status"].startswith("unchecked") for r in headline_checks),
                "selected_completed_month_news": len(events), "issues": issues,
                "candidate_written": candidate_written, "real_llm_calls": 0,
                "paid_mcp_calls": 0, "nyt_text_vintage": "unverified_archive_snapshot",

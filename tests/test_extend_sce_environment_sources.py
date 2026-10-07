@@ -6,6 +6,8 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import extend_sce_environment_sources as extension
+from archive_sce_gasoline_support import parse_snapshot
+from audit_sce_environment_candidate import audit
 
 
 def test_history_and_news_requirements_include_previous_year():
@@ -15,6 +17,25 @@ def test_history_and_news_requirements_include_previous_year():
     assert req["nyt_months"] == ["2021-12", "2022-01", "2022-02"]
     with pytest.raises(ValueError):
         extension.requirements(["2022-13"])
+
+
+def test_gasoline_support_preserves_observation_range_and_missing_values():
+    payload = (b"observation_date,GASREGW\n2018-12-03,2.451\n"
+               b"2018-12-10,.\n2018-12-17,2.339\n")
+    assert parse_snapshot(payload, "2018-12-01", "2018-12-31") == {
+        "2018-12-03": 2.451, "2018-12-17": 2.339}
+    with pytest.raises(ValueError, match="out-of-request"):
+        parse_snapshot(payload, "2018-12-10", "2018-12-31")
+    with pytest.raises(ValueError, match="duplicate"):
+        parse_snapshot(payload + b"2018-12-03,2.451\n", "2018-12-01", "2018-12-31")
+
+
+def test_candidate_acceptance_blocks_unchecked_independent_values(tmp_path):
+    extension.write_json(tmp_path / "summary.json", {
+        "candidate_written": True, "issues": [], "component_handoff_count": 0,
+        "component_html_unchecked_count": 1})
+    with pytest.raises(AssertionError):
+        audit(tmp_path)
 
 
 def test_calendar_uses_explicit_reference_not_release_month():
@@ -148,3 +169,56 @@ def test_employment_remained_wording_for_2022_first_release():
     assert got["nonfarm_payroll_change_k"]["value"] == 390
     assert "remainedat3.6percent" in got["unemployment_rate_pct"]["quote"]
     assert extension.ev._unemployment_rate_only(text, "2022-05")["value"] == 3.6
+
+
+def test_pandemic_payroll_millions_are_converted_to_thousands():
+    text = ("USDL-20-0815 Total nonfarm payroll employment fell by 20.5 million in April, "
+            "and the unemployment rate rose to 14.7 percent.")
+    got = extension.bls.transcribe_empsit(text, "2020-04")
+    assert got["nonfarm_payroll_change_k"]["value"] == -20500
+    assert got["unemployment_rate_pct"]["value"] == 14.7
+    assert "20.5millioninapril" in got["nonfarm_payroll_change_k"]["quote"]
+
+
+def test_old_calendar_pipe_layout_uses_actual_release_date():
+    rows = extension.calendar_entries(
+        "L209: Wednesday, February 13, 2019  | 08:30 AM  | Consumer Price Index for January 2019", "2019-calendar")
+    assert rows["cpi", "2019-01"]["release_date"] == "2019-02-13"
+
+
+def test_2025_unemployment_value_before_changed_little_wording():
+    text = ("USDL-25-1433 Total nonfarm payroll employment changed little in August (+22,000). "
+            "The unemployment rate, at 4.3 percent, also changed little in August.")
+    got = extension.bls.transcribe_empsit(text, "2025-08")
+    assert got["unemployment_rate_pct"]["value"] == 4.3
+    assert got["nonfarm_payroll_change_k"]["value"] == 22
+    assert extension.ev._unemployment_rate_only(text, "2025-08")["value"] == 4.3
+    with pytest.raises(ValueError):
+        extension.ev._unemployment_rate_only(text, "2025-07")
+
+
+@pytest.mark.parametrize("wording,ref,value", [
+    ("edged up in May (+75,000)", "2019-05", 75),
+    ("was essentially unchanged in October (+12,000)", "2024-10", 12),
+    ("changed little in February (20,000)", "2019-02", 20),
+])
+def test_small_payroll_change_uses_explicit_number_not_zero(wording, ref, value):
+    text = f"USDL-25-1234 Total nonfarm payroll employment {wording}, and the unemployment rate remained at 4.1 percent."
+    assert extension.bls.transcribe_empsit(text, ref)["nonfarm_payroll_change_k"]["value"] == value
+
+
+def test_cpi_monthless_sa_sentence_requires_matching_report_heading():
+    text = ("USDL-24-1335 CONSUMER PRICE INDEX — JUNE 2024 "
+            "The Consumer Price Index for All Urban Consumers (CPI-U) declined 0.1 percent "
+            "on a seasonally adjusted basis, after being unchanged in May. "
+            "Over the last 12 months, the all items index increased 3.0 percent before seasonal adjustment.")
+    assert extension.bls.transcribe_cpi(text, "2024-06")["cpi_mom_sa_pct"]["value"] == -0.1
+    with pytest.raises(ValueError):
+        extension.bls.transcribe_cpi(text, "2024-05")
+
+
+def test_changed_little_without_numeric_change_is_not_guessed_as_zero():
+    text = ("USDL-25-1234 Total nonfarm payroll employment changed little in May. "
+            "The unemployment rate remained at 4.1 percent.")
+    with pytest.raises(ValueError, match="numeric change"):
+        extension.bls.transcribe_empsit(text, "2024-05")

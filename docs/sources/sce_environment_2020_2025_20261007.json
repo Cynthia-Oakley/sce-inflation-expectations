@@ -1,0 +1,96 @@
+{
+  "checked_on": "2026-10-07",
+  "scope": "source_preparation_and_shared_input_export_only",
+  "target_range": [
+    "2020-01",
+    "2025-09"
+  ],
+  "target_months": 69,
+  "verified_bls_pdfs": 160,
+  "independent_component_agreements": 400,
+  "independent_cpi_headline_agreements": 160,
+  "signals": 5313,
+  "runtime_news": 2090,
+  "official_environment_schema_valid": true,
+  "strict_pit_certified": false,
+  "as_of_policy": "existing E v2 current-month CPI release-day EOD; not B previous-month-end",
+  "news_policy": "existing D050 prefilter before ranking; top A1 strong uncapped",
+  "legacy_2021_numeric_and_cutoffs_equal": true,
+  "legacy_changed_news_months": [
+    "2021-02",
+    "2021-03",
+    "2021-12"
+  ],
+  "development_may_june_news_unchanged": true,
+  "october_2025": "sources complete; old same-reference-month employment assumption blocked by November 20 release; not included in accepted candidate",
+  "remaining_boundaries": [
+    "gasoline current snapshot and inferred publication date unverified",
+    "NYT current archive text vintage unverified",
+    "A/B information-policy materialization and population/run preparation remain"
+  ],
+  "tests": {
+    "passed": 87,
+    "subtests": 9
+  },
+  "real_llm_calls": 0,
+  "paid_mcp_calls": 0,
+  "source_config_modified": false,
+  "artifacts": [
+    {
+      "path": "outputs/sce_e_extension_2020_2025_verified_20261007/summary.json",
+      "sha256": "5f3212f5674bf8b2655bb2e5aaf941fc0da0e161c0e00e695dc5738bbbc971d8"
+    },
+    {
+      "path": "outputs/sce_e_extension_2020_2025_verified_20261007/acceptance.json",
+      "sha256": "78ab4348fe162ff84d15ce99a2af506891b50c35ef4e2dbf6bceaee86c41ae80"
+    },
+    {
+      "path": "outputs/sce_e_extension_2020_2025_verified_20261007/environment_candidate.json",
+      "sha256": "4f2bcf50a515216a1530ebc4d349b342672fe73edd6cca8d2aba21996a3c35ec"
+    },
+    {
+      "path": "outputs/sce_e_extension_2020_2025_verified_20261007/external_events_candidate.json",
+      "sha256": "314809a48468edba30082c39ff9e6be9275ffff6eb78f40e416ac66b46877b29"
+    },
+    {
+      "path": "outputs/sce_e_extension_2020_2025_verified_20261007/components_cpi.jsonl",
+      "sha256": "7989fd4537bb0c2dcf40793aeba342fa12055344eb2c8d06632671aefaf846a4"
+    },
+    {
+      "path": "outputs/sce_e_extension_2020_2025_verified_20261007/component_html_checks.json",
+      "sha256": "478aa4211392623708d7d74a6c7f196338d363cbeef4b0756458a6b23a9a5647"
+    },
+    {
+      "path": "outputs/sce_e_extension_2020_2025_verified_20261007/headline_html_checks.json",
+      "sha256": "68805c65fbe42f4a90ff7636cb8271c14628c8b7aec2138fcd04323a81b919ca"
+    },
+    {
+      "path": "outputs/sce_e_extension_2020_2025_verified_20261007/manifest.sha256",
+      "sha256": "0e6ed09e20b648dc0e22c69e68f207db0c18d9a3af91d6cfe0034b11a95ab2fa"
+    },
+    {
+      "path": "outputs/sce_e_extension_2020_2025_verified_20261007/legacy_2021_comparison.json",
+      "sha256": "aad0fc0aaedf9a748d0b9f9a5718717803fa0fe44fb1bb458f7087389e4d6b80"
+    },
+    {
+      "path": "outputs/sce_e_extension_2020_2025_verified_20261007/headline_parser_probe.json",
+      "sha256": "afe50242d35483f7a4a593acf99f3b17e84de1350dc6eb0e4b4c7f2be0ecee4a"
+    },
+    {
+      "path": "outputs/sce_shared_e_2020_2025_20261007/shared_environment.jsonl",
+      "sha256": "77293bc52ade10e5dd5b7dcd0595ddc1e131e2bb24c0b92f289eac643598b547"
+    },
+    {
+      "path": "outputs/sce_shared_e_2020_2025_20261007/manifest.json",
+      "sha256": "a6ca2163d6f735bb86c27c749344d8e97f611f492ca5c80bda5aefc40a3cd9c9"
+    },
+    {
+      "path": "outputs/sce_e_extension_2025_10_release_gate_20261007/summary.json",
+      "sha256": "34e8635452f0dff3b41b183a3bb199ac0ae3e20db2742a7e7ce4fc3e3caa6e87"
+    },
+    {
+      "path": "data/raw/eia_gasoline_support/20261007T085903Z/manifest.json",
+      "sha256": "5f00c4cdd44dc745b247d57f932f25760b097d3e7e498a6129fc78f0f83d695b"
+    }
+  ]
+}
