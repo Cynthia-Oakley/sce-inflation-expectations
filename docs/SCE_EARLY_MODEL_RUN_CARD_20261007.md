@@ -1,0 +1,49 @@
+# 较早模型匹配对照运行卡（待确认）
+
+核查日：2026-10-07。**输入已准备；未运行，新增 API 预算/数据发送未确认。** 本卡取代旧 10-06 草案的首次执行建议；旧五组实验及 temperature=0 的历史记录不改。此次选取 10-05 完整 300 Core/月的实验作参考，它使用 temperature=0.5。
+
+## 问题与规模
+
+判断换模型是否减轻回答偏低、过于接近的问题。每月固定 20 人，2021-05/06 两个月；Qwen 与 LLaMA 各 40 份新回答，参考相同 40 人次的已完成 DeepSeek 回答。属于路线 A 开发诊断，不是全国代表性样本、B 预测或正式测试。
+
+固定抽样种子：每月 SeedSequence([42, YYYYMM, 20261007])；不根据回答效果选人。月份、P/E、每份消息已准备，实际环境生成的 40 份消息与参考日志完全一致。禁止同时切日期提示词 v3、人口更新、消费篮子、新闻筛选或回忆机制。
+
+## 固定输入与配置
+
+- 提示词：`sce-q8-q9-v2-abstract`（标题+摘要）。
+- temperature：0.5；max_tokens：1024；JSON object 响应与现有问卷校验。
+- 无新增工具、网页访问或聊天历史；不传 DeepSeek 私有 thinking 参数。
+- API 目的地：OpenRouter `https://openrouter.ai/api/v1`；下游固定 DeepInfra 路由。
+- 发送内容：去标识年龄档、收入档、就业、住房、教育、地区、数理能力等白名单画像，以及公开历史宏观数据/新闻。真实 Q8/Q9 答案、原始调查者 ID 和 DeepSeek 参考回答不进 API payload。
+- 本地原始 ID 只用于匹配与核验；传输消息中没有 ID。评价依旧使用现有计分器；不在模型对照中修改拟合算法。
+
+## 候选服务与顺序
+
+1. **先 Qwen**：`qwen/qwen-2.5-72b-instruct`，路由 `deepinfra/fp8`，fp8；本日目录上下文 32,768，支持 JSON、temperature、max_tokens。输入 $0.36 / 百万 token，输出 $0.40 / 百万 token。
+2. **后 LLaMA**：`meta-llama/llama-3.1-70b-instruct`，路由 `deepinfra/turbo`，fp8；目录上下文 131,072，支持同样参数。输入/输出均 $0.40 / 百万 token。但本日目录快照 status=-5、短时可用率波动，状态含义未据官方定义证明，须重新核查并作小样试跑；不能承诺立即可用。
+
+[Qwen 路由元数据](https://openrouter.ai/api/v1/models/qwen/qwen-2.5-72b-instruct/endpoints)、[LLaMA 路由元数据](https://openrouter.ai/api/v1/models/meta-llama/llama-3.1-70b-instruct/endpoints)。执行前重查，保存快照/时间。provider.order 锁精确标签，allow_fallbacks=false，require_parameters=true。若所选路由不可用或参数不支持，停止对应模型；更换路由另留新卡，不静默 fallback。目录状态不等于端到端验收。
+
+两者都比当前 DeepSeek 服务早，但 2021 年仍在可能的训练范围内。Meta 官方卡列预训练知识截止 2023-12；Qwen 官方卡未披露明确训练截止。都不能把“较早模型”解释为“没有前视记忆”。同一型号的实际服务权重构建不可得时记为未知。
+
+## 预算草案与停止规则
+
+参考 40 份原输入的最大实测输入 token 为 2,480；跨 tokenizer 留 1.5 倍余量，按 3,720 输入 token/请求估算，最大输出 1,024。完整提示词不截断，此余量不是已核实的新模型 token 数。
+
+每模型 40 份回答、每份最多 1 次额外重试，即最多 80 请求：Qwen 按 token 价估 $0.139904；LLaMA $0.151808；合计 $0.291712。建议 **Qwen 上限 $0.25，两模型累计上限 $0.50**，与旧 DeepSeek 预算分开。目录价、token 余量均不构成服务商保证报价，结算以真实记录为准。
+
+批准后先发送 2 份冻结输入作参数/JSON 小样；这 2 份计入该模型的 40 份，不另加。每次调用前以已有累计成本加保守请求预留检查上限，日志持久化后再继续；若 token/单价高于估算、路由身份不符、回答不合规或账务信息不足，暂停核查，不无限重试。故障重试也记原始回答、费用和原因。
+
+## 评价与判据
+
+先检验 40/40 结构有效、输入一致、模型/路由信息和用量可审计。然后对相同案例比较每月 Q8 中位数、Q9 密度均值的中位数、月内四分位距、平均偏差、与真人分布的距离。逐个真实答案只进评价层；20 人不代表全国总体，不因这个小样“更准”就宣布最终模型胜出。
+
+重点看换模型是否同时改善总体水平与回答分散度，并按画像组检查。没有改善也有价值：说明 P/E/行为设定仍需继续改进。单次生成仍有随机性和不同服务提供商的影响，若出现明显且一致的改善，再登记独立月份/重复生成的确认实验。不能在这 40 案例上反复挑模型参数。
+
+## 开发者接力
+
+准备包：`outputs/sce_model_counterfactual_20261007/`。`requests_prepared.jsonl` 含 80 个候选请求（模型各 40）；**只有 payload 可以发 API**。外层费用/案例字段和 `deepseek_reference_private.jsonl` 只保留本地。其余每月 P/E 仅是已验收输入副本；正式运行配置未替换。
+
+准备脚本为 `scripts/prepare_sce_model_counterfactual.py`，已调用实际 environment provider 并做消息一致性验收。真实请求回放/日志接线尚未实现；批准后在独立入口接 OpenAI 兼容客户端，并将 provider 放入 extra_body。不得将只准备文件称为已运行模型。
+
+新增运行应保存 run_id、输入哈希、请求和返回模型、provider/精确路由、generation/request ID、时间、usage、实际/估计费用、失败/重试、计分器哈希、Git commit 和 dirty 差异哈希。旧 run 只读。

@@ -1,3 +1,5 @@
+**2026-10-07 新增：宏观就业更新 P 的离线回测与模型对照准备。** 先读[结果/方法/准确路径](SCE_MACRO_POPULATION_AND_MODEL_STATUS_20261007.md)、[模型对照运行卡](SCE_EARLY_MODEL_RUN_CARD_20261007.md)。37 月（2022-10..2025-10）相同评价：就业占比 MAE 旧画像 1.466pp、12 月平均 1.532pp、无宏观历史更新 1.397pp、失业率回归 1.323pp；失业标签占比未改善。历史 P 可得日为 t−10 假设，宏观为首发方案，不称严格 PIT/盲测；收入与 P 重加权未接入。最终包 `outputs/sce_macro_population_v3_20261007/`。Qwen/LLaMA **尚无真实回答**，40 个固定参考案例及 80 个请求已准备，实际 v2-abstract 消息与旧 DeepSeek 逐字节一致，温度 0.5；`outputs/sce_model_counterfactual_20261007/`。下一项：新预算/数据发送确认后先 Qwen，再核查 LLaMA 路由；P 的就业人口比/收入资料与权重更新可独立推进。零新 LLM/付费 MCP，正式配置未改，DECISIONS 与 Kimi 待审批次保留。
+
 **2026-10-07 修订与B人口离线准备已完成。** 先读[指标版本、106月人口实测和准确路径](SCE_B_READINESS_AND_VINTAGES_20261007.md)、[长跨度运行卡草案](SCE_LONG_RUN_CARD_DRAFT_20261007.md)。版本原则：B用cutoff前最新公布版本；现有E仍首发方案，年度修订库未补齐。新选择器/2021 CES真实修订示例通过；130,216画像只读人口字段，实测加权与原始比例显著不同、联合结构不完全稳定。2026-10两套联合donor人口候选已物化并schema验收，1,044人/300 Core只是工程示例；历史P可得日仍有假设。人口最终包 `outputs/sce_b_readiness_population_v5_20261007/`，其他早期版本不是最终。新增日期提示v3仅可选，26份实际E预览通过，旧v2/正式配置不切换。65 tests，零新LLM/付费MCP。**下一优先**：补使用序列的实际年度修订→按月B独立打包/Normal接线→同信息基线和窗口登记→确认运行卡再真实调用。A/B仍分开，Kimi待审批次与DECISIONS未改，scoped add。
 
 # 当前任务板

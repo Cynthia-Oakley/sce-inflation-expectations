@@ -1,0 +1,174 @@
+{
+  "date": "2026-10-07",
+  "status": "offline exploratory analysis and input preparation only",
+  "real_llm_calls": 0,
+  "macro_population": {
+    "feature_months": 70,
+    "evaluated_months": 37,
+    "evaluation_start": 202210,
+    "evaluation_end": 202510,
+    "metrics": {
+      "latest_public_wave": {
+        "employed_mae_pp": 1.4657807929680344,
+        "sce_unemployed_label_mae_pp": 0.7856469114624762,
+        "distribution_mean_tvd": 0.017076679662355022,
+        "employed_bias_pp": 0.8534464803994871,
+        "employed_rmse_pp": 1.742071712005993
+      },
+      "past_12_public_waves": {
+        "employed_mae_pp": 1.5319938212601762,
+        "sce_unemployed_label_mae_pp": 0.870246849247853,
+        "distribution_mean_tvd": 0.017731434432093424,
+        "employed_bias_pp": 1.2392105353205398,
+        "employed_rmse_pp": 1.921020640484117
+      },
+      "historical_drift": {
+        "employed_mae_pp": 1.3970448847193162,
+        "sce_unemployed_label_mae_pp": 0.8529570640154404,
+        "distribution_mean_tvd": 0.017117869938472544,
+        "employed_bias_pp": 0.14849704574427802,
+        "employed_rmse_pp": 1.6310708981079969
+      },
+      "unrate_ols": {
+        "employed_mae_pp": 1.3231592266328351,
+        "sce_unemployed_label_mae_pp": 0.8163622697174863,
+        "distribution_mean_tvd": 0.016436338644110815,
+        "employed_bias_pp": 0.12661649546184528,
+        "employed_rmse_pp": 1.532761146289023
+      },
+      "macro_ridge": {
+        "employed_mae_pp": 1.3279414655735418,
+        "sce_unemployed_label_mae_pp": 0.8169054005241969,
+        "distribution_mean_tvd": 0.016497207953971547,
+        "employed_bias_pp": 0.12485787041737734,
+        "employed_rmse_pp": 1.5357659610912513
+      }
+    },
+    "descriptive_employment_change_correlations": {
+      "unrate_gap_pp": -0.6718779171061084,
+      "three_month_payroll_sum_gap_millions": 0.4532124698931338,
+      "unrate_three_month_change_pp": -0.39489315982173034
+    },
+    "features": [
+      "unrate_gap_since_donor_month",
+      "three_month_payroll_sum_gap_millions",
+      "unrate_three_month_change"
+    ],
+    "min_train_labels": 24,
+    "source_hashes": {
+      "outputs/sce_b_readiness_population_v5_20261007/monthly_profile_stats.json": "1e5481ace32518f0d4f686c505bdd5f1574091810c2f761f788995fe6861c62d",
+      "outputs/sce_e_B_through_2026_10_draft_v2_20261007/source_observations.jsonl": "d89a1275069e01358a72b958a95bceaa2a9ca40d152d5d90e9a31649771c28c0"
+    },
+    "created_at_utc": "2026-10-07T15:26:42.189298+00:00",
+    "code_hashes": {
+      "scripts/check_sce_macro_population.py": "d1b42eb85b40b6414ec50c8f8db753406742e53281dfcdebc04593dc2191850e",
+      "studies/sce_inflation_expectations/macro_population.py": "960561912ea039be0bdad7306418d109fd87fe8096a14bb50403f75ba0a68b66"
+    },
+    "status": "exploratory aggregate distribution backtest; not blind evaluation or validated B simulation",
+    "limitations": [
+      "historical SCE posting dates assumed via t-minus-10; current micro snapshots",
+      "macro first-release variant; later annual revisions not used",
+      "no CPI/SCE answers or LLM predictions involved",
+      "COVID months enter descriptive relations/training, but not forecast evaluation due insufficient available earlier labels",
+      "income model and population reweighting not implemented"
+    ],
+    "real_llm_calls": 0
+  },
+  "matched_model_preparation": {
+    "status": "prepared only; no model endpoint calls; provider health and budget not authorized",
+    "reference_cases": 40,
+    "new_target_answers": 80,
+    "per_model": {
+      "qwen/qwen-2.5-72b-instruct": {
+        "target_answers": 40,
+        "max_attempts_with_one_retry": 80,
+        "input_token_budget_per_attempt": 3720,
+        "estimated_upper_token_cost_usd": 0.139904,
+        "route_candidate": "deepinfra/fp8"
+      },
+      "meta-llama/llama-3.1-70b-instruct": {
+        "target_answers": 40,
+        "max_attempts_with_one_retry": 80,
+        "input_token_budget_per_attempt": 3720,
+        "estimated_upper_token_cost_usd": 0.151808,
+        "route_candidate": "deepinfra/turbo"
+      }
+    },
+    "reference_prompt_tokens_max": 2480,
+    "temperature": 0.5,
+    "prompt_version": "sce-q8-q9-v2-abstract",
+    "actual_provider_messages_matched_reference": true,
+    "no_true_sce_answers_in_requests": true,
+    "real_llm_calls": 0,
+    "priority": "Qwen first; Llama route requires fresh health/parameter verification; no silent provider fallback",
+    "limitations": [
+      "small A-line model sensitivity check; not national or B prediction validation",
+      "earlier models may still contain 2021 knowledge",
+      "only one generation per model/person; random and provider effects remain"
+    ]
+  },
+  "artifact_hashes": {
+    "outputs/sce_macro_population_v3_20261007/summary.json": "21c075275cfdcf83dea8845710909bca8b993e9e2f75bcfb79d52cc02adc847b",
+    "outputs/sce_model_counterfactual_20261007/summary.json": "e86048dc9b2466933668d0bb4084f67797bc328d867ac8419e707986799959b7",
+    "outputs/sce_model_counterfactual_20261007/requests_prepared.jsonl": "a86cc97053b817e2b2e39218c67c89d75aeabd721b59345c3f109d3e6481efc6",
+    "scripts/prepare_sce_model_counterfactual.py": "54dcacab1b8c9b1051b4deef70be7ab1d8ed7bdde180718bc2cb63f379e3526a"
+  },
+  "sources": [
+    {
+      "url": "https://www.bls.gov/cps/definitions.htm",
+      "use": "CPS population and labour-force denominators differ from SCE profile shares"
+    },
+    {
+      "url": "https://www.bea.gov/resources/learning-center/what-to-know-income-saving",
+      "use": "monthly personal income components; disposable income is after-tax"
+    },
+    {
+      "url": "https://euromod-web.jrc.ec.europa.eu/overview/extended-functionalities",
+      "use": "Labour Market Adjustment for nowcasting with lagged microdata; methodological direction, not SCE validation"
+    },
+    {
+      "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md",
+      "use": "Meta official model card; December 2023 pretraining knowledge cutoff, not immutable endpoint weight proof"
+    }
+  ],
+  "questionnaire": {
+    "path": "data/raw/sce_audit_20260928/questionnaire.pdf",
+    "sha256": "e30e2ef1f925cb90aef1d5d6c9b13c6307b1f311e40c5b894ad27ddf69066e93",
+    "pages": [
+      35,
+      40
+    ],
+    "income_scope": "all household members, pre-tax, past 12 months"
+  },
+  "endpoint_directory_snapshots": [
+    {
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen-2.5-72b-instruct/endpoints",
+      "tag": "deepinfra/fp8",
+      "quantization": "fp8",
+      "status": 0,
+      "prompt_usd_per_million": 0.36,
+      "completion_usd_per_million": 0.4,
+      "context_length": 32768,
+      "response_format_supported": true
+    },
+    {
+      "url": "https://openrouter.ai/api/v1/models/meta-llama/llama-3.1-70b-instruct/endpoints",
+      "tag": "deepinfra/turbo",
+      "quantization": "fp8",
+      "status": -5,
+      "prompt_usd_per_million": 0.4,
+      "completion_usd_per_million": 0.4,
+      "context_length": 131072,
+      "response_format_supported": true
+    }
+  ],
+  "endpoint_status_note": "Read public web-tool cached directory metadata on 2026-10-07; no authenticated connectivity test or live availability guarantee; undocumented negative status needs fresh verification",
+  "authorization": "New OpenRouter data sending and $0.50 cap not yet confirmed; AGENTS.md rule 11",
+  "validation": {
+    "command": "python -m unittest tests.test_sce_macro_population tests.test_sce_b_readiness",
+    "passed": 16,
+    "protected_files_unchanged": 15,
+    "prepared_request_payload_checks_passed": true,
+    "api_execution": false
+  }
+}
