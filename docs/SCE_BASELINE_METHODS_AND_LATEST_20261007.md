@@ -80,6 +80,8 @@ python scripts/run_sce_baselines.py --headlines-only \
   --aggregate-file docs/sources/sce_baseline_aggregate_sources_latest_20261007.json
 ```
 
+全国部分还在干净本地clone（commit `426e1bb`）复算通过：未使用原始网页、微观缓存、密钥或Kimi待审改动，16组全国方法/时点摘要及覆盖排除与正式run完全一致。回执 `outputs/sce_baseline_diagnostics_latest_20261007_v1/clean_reproduction_receipt.json`。
+
 A微观复算另需已归档官方微观工作簿/缓存；不声称仅靠公共聚合台账就能复算个人分布。原始网页是回顾下载的官方归档，不是当年实时保存的网页快照。
 
 Source: Survey of Consumer Expectations, Federal Reserve Bank of New York. FRBNY disclaims responsibility for this analysis and interpretation. CPI source: U.S. Bureau of Labor Statistics.
