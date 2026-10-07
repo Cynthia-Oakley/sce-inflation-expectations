@@ -54,9 +54,9 @@ SCE、CE、BLS、EIA 的官方入口已在线复核；NYT 当前使用方式从�
 
 ## 成品核验
 
-`proposal/build/proposal_submission_ready_20261007.pdf`：两页 A4；第一页为研究问题与模拟设计，第二页为验证、基础、计划和贡献。PDF 成功编译；日志未发现字符缺失或内容溢出；两页 PNG 均已人工视觉检查，表格无截断、无孤立标题、无内容溢出。楷体/Times New Roman 及嵌入字体、正文10pt、1.25倍行距、首行缩进与横竖表格线沿用已确认设置。
+`proposal/build/socioverse_challenge_proposal_20261007.pdf`：两页 A4；第一页为研究问题与模拟设计，第二页为验证、基础、计划和贡献。PDF 成功编译；日志未发现字符缺失或内容溢出；两页 PNG 均已人工视觉检查，表格无截断、无孤立标题、无内容溢出。楷体/Times New Roman 及嵌入字体、正文10pt、1.25倍行距、首行缩进与横竖表格线沿用已确认设置。
 
-可复现命令：`python3 proposal/render_proposal.py --stem proposal_submission_ready_20261007`。保留 10-05 源稿与 PDF，Kimi 待审 `proposal.md` 未动。
+可复现命令：`python3 proposal/render_proposal.py --stem socioverse_challenge_proposal_20261007`。保留 10-05 源稿与 PDF，Kimi 待审 `proposal.md` 未动。
 
 ## 提交状态
 
