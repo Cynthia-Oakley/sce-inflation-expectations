@@ -86,6 +86,8 @@ Source: Survey of Consumer Expectations, Federal Reserve Bank of New York. FRBNY
 
 评价计算、发布时间拒绝、未来标签/价格扰动、文本人口分类、宏观约束标注、计分版本与缺月拒绝等**15项测试通过**。首轮人口缓存曾错误数值化文本标签；已纠正并补独立集成测试，旧目录保留纠错记录，不使用其条件/群体结果。正确重建另存新run，原全国数值未受影响。
 
+**干净仓库复算通过**：在不包含本机原始数据、微观缓存、密钥与待审改动的临时本地clone中，使用commit `8acbd2b1610aa1da4781ee9ff9dc139bcf3226bf` 的公共聚合台账运行headline-only；16组方法/时点的全国摘要及覆盖排除与正式run完全一致。无网络、无LLM。回执 `outputs/sce_baseline_figures_20261007_v1/clean_reproduction_receipt.json`。这一验收只覆盖全国部分；A微观分布复算仍需另行取得官方微观数据，不能声称无数据也能复算。
+
 公共聚合来源随版本保存：[来源台账](sources/sce_baseline_aggregate_sources_20261007.json)。规范与命令：[统一契约](SCE_EVALUATION_CONTRACT_V1.md)、[评价入口](../studies/sce_inflation_expectations/evaluation/README.md)。个体原档与大型自动产物只在本地，本报告和公共聚合台账可版本备份。
 
 图表可直接查看：[60月全国曲线](../outputs/sce_baseline_figures_20261007_v1/national_baselines.png)。它是运行结束后的可视化，不冒充原run输出；复画入口 `scripts/plot_sce_baselines.py`，需要Matplotlib。
