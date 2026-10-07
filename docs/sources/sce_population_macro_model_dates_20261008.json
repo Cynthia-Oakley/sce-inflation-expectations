@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-08",
+  "status": "specification and guarded runner ready; automatic approval rejected first real command",
+  "real_model_requests_executed": 0,
+  "new_cost_usd": 0,
+  "trial_output_directory_exists": false,
+  "offline_tests_passed": 31,
+  "protected_files_unchanged": 15,
+  "trial_authorization": "pending explicit data destination and $0.50 budget confirmation requested asynchronously",
+  "new_sources_and_purpose": [
+    {
+      "url": "https://www.bls.gov/news.release/empsit.t01.htm",
+      "purpose": "monthly employment/population ratio and participation rates; current page is definition/source locator, not historical vintage input"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/empsit.t19.htm",
+      "purpose": "monthly private nonfarm average hourly/weekly earnings; source locator only"
+    },
+    {
+      "url": "https://www.bea.gov/resources/learning-center/what-to-know-income-saving",
+      "purpose": "monthly personal-income components and after-tax disposable-income distinction"
+    },
+    {
+      "url": "https://qwenlm.github.io/blog/qwen2.5/",
+      "purpose": "official launch 2024-09-19"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct",
+      "purpose": "official model card; precise data cutoff not found"
+    },
+    {
+      "url": "https://arxiv.org/html/2412.15115v2",
+      "purpose": "official technical report checked; no exact pretraining cutoff found"
+    },
+    {
+      "url": "https://openrouter.ai/qwen/qwen-2.5-72b-instruct",
+      "purpose": "directory June 2024 knowledge-cutoff claim, not official training-boundary evidence"
+    },
+    {
+      "url": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md",
+      "purpose": "official release 2024-07-23, pretraining cutoff December 2023"
+    }
+  ]
+}

@@ -56,6 +56,8 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--dotenv', type=Path, default=ROOT.parent / 'socioverse2_repo/.env')
     ap.add_argument('--confirm-spend', action='store_true')
+    ap.add_argument('--authorization-note', default=None,
+                    help='record the human confirmation of data destination and the $0.50 cap')
     args = ap.parse_args()
     summary = json.loads((args.inputs / 'summary.json').read_text())
     rows = [json.loads(s) for s in (args.inputs / 'requests_prepared.jsonl').read_text().splitlines()]
@@ -74,6 +76,8 @@ def main():
     if not args.confirm_spend:
         print('OFFLINE: 80 request contracts and source hashes valid; no credential/network access.')
         return
+    if not args.authorization_note:
+        raise ValueError('explicit_data_destination_and_budget_authorization_record_required')
 
     key = credential(args.dotenv)
     args.out.mkdir(parents=True, exist_ok=False)
@@ -83,7 +87,7 @@ def main():
              'input_sha256': sha(args.inputs / 'requests_prepared.jsonl'),
              'prompt_version': summary['prompt_version'], 'temperature': .5, 'max_tokens': 1024,
              'mode': 'exact-message model probe; not a new full SocioVerse engine trajectory',
-             'authorization': '2026-10-07 user approved a small trial after $0.50 run card was presented',
+             'authorization': args.authorization_note,
              'git_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
              'git_dirty_diff_sha256': hashlib.sha256(subprocess.check_output(['git', 'diff', 'HEAD'], cwd=ROOT)).hexdigest(),
              'code_sha256': {str(p.relative_to(ROOT)): sha(p) for p in [Path(__file__).resolve(), ROOT / 'studies/sce_inflation_expectations/model_counterfactual.py']}}
