@@ -1,0 +1,1587 @@
+{
+  "date": "2026-10-08",
+  "run_dir": "outputs/sce_earlier_model_trial_20261008",
+  "analysis_dir": "outputs/sce_earlier_model_analysis_20261008_v3",
+  "run_summary": {
+    "status": "partial_or_blocked",
+    "run_id": "sce_earlier_model_trial_20261008",
+    "started_at_utc": "2026-10-08T00:44:38.146595+00:00",
+    "total_cap_usd": 0.5,
+    "model_cap_usd": 0.25,
+    "total_charged_or_reserved_usd": 0.041436799999999996,
+    "paid_attempts": 41,
+    "valid_answers": 40,
+    "models": {
+      "qwen/qwen-2.5-72b-instruct": {
+        "status": "preflight_blocked",
+        "valid_answers": 0,
+        "attempts": 0,
+        "charged_or_reserved_usd": 0.0,
+        "reason": "locked_route_status_not_zero"
+      },
+      "meta-llama/llama-3.1-70b-instruct": {
+        "status": "complete",
+        "valid_answers": 40,
+        "attempts": 41,
+        "charged_or_reserved_usd": 0.041436799999999996,
+        "endpoint": {
+          "tag": "deepinfra/turbo",
+          "status": 0,
+          "pricing": {
+            "prompt": "0.0000004",
+            "completion": "0.0000004",
+            "discount": 0
+          },
+          "quantization": "fp8"
+        }
+      }
+    },
+    "input_sha256": "a86cc97053b817e2b2e39218c67c89d75aeabd721b59345c3f109d3e6481efc6",
+    "prompt_version": "sce-q8-q9-v2-abstract",
+    "temperature": 0.5,
+    "max_tokens": 1024,
+    "mode": "exact-message model probe; not a new full SocioVerse engine trajectory",
+    "authorization": "2026-10-08 human reply: 好的，我觉得可以开始，同意。 Confirmation follows explicit scope: deidentified demographic profiles and public historical P/E to OpenRouter and fixed DeepInfra, no true answers or personal IDs; Qwen and Llama 40 answers each, total cap USD 0.50.",
+    "git_commit": "5bc48cb125f10a30636f6ffc712ce26acbf19e46",
+    "git_dirty_diff_sha256": "281ba8405daac778de7348f02bd0b2e966f8dd60f2f22e031492f8dc271e8660",
+    "code_sha256": {
+      "scripts/run_sce_model_counterfactual.py": "95210cb67c225e69e63eed4c08e381153c9a718ec0e51a75de60d797dac802ba",
+      "studies/sce_inflation_expectations/model_counterfactual.py": "9097e1b25ac513b9d4790cef652b2201fb85d1d18af5d72145fb0a1584d53551"
+    },
+    "finished_at_utc": "2026-10-08T00:47:35.118628+00:00"
+  },
+  "analysis_summary": {
+    "run_ids": [
+      "sce_earlier_model_trial_20261008"
+    ],
+    "completed_models": [
+      "meta-llama/llama-3.1-70b-instruct"
+    ],
+    "months": {
+      "2021-05": {
+        "Q9": {
+          "n_selected": 20,
+          "n_common": 18,
+          "n_excluded": 2,
+          "arms": {
+            "deepseek_reference": {
+              "distribution": {
+                "n": 18,
+                "median": 2.3735694365071476,
+                "mean": 2.509363401415185,
+                "iqr": 0.6046422047837461
+              },
+              "individual_mae_pp": 2.9113045567293057,
+              "individual_rmse_pp": 4.194175936277135,
+              "mean_bias_pp": -1.447958203651524,
+              "sample_median_absolute_error_pp": 0.9983145607405137,
+              "sample_iqr_absolute_gap_pp": 1.7999918536517536,
+              "wasserstein_1_pp": 2.1783914427461366
+            },
+            "llama": {
+              "distribution": {
+                "n": 18,
+                "median": 2.9968081042824997,
+                "mean": 3.0204020014145367,
+                "iqr": 0.03552587346525993
+              },
+              "individual_mae_pp": 2.42082972849386,
+              "individual_rmse_pp": 3.81879371081497,
+              "mean_bias_pp": -0.9369196036521719,
+              "sample_median_absolute_error_pp": 0.37507589296516164,
+              "sample_iqr_absolute_gap_pp": 2.36910818497024,
+              "wasserstein_1_pp": 2.2787175200190317
+            }
+          },
+          "matched_real": {
+            "n": 18,
+            "median": 3.3718839972476613,
+            "mean": 3.957321605066708,
+            "iqr": 2.4046340584354997
+          },
+          "paired_mae_changes_vs_deepseek_pp": {
+            "llama": -0.4904748282354454
+          }
+        },
+        "Q8_secondary": {
+          "n_selected": 20,
+          "n_common": 19,
+          "n_excluded": 1,
+          "arms": {
+            "deepseek_reference": {
+              "distribution": {
+                "n": 19,
+                "median": 3.5,
+                "mean": 3.5526315789473686,
+                "iqr": 0.5
+              },
+              "individual_mae_pp": 5.026315789473684,
+              "individual_rmse_pp": 7.569850168857199,
+              "mean_bias_pp": -0.39473684210526316,
+              "sample_median_absolute_error_pp": 0.5,
+              "sample_iqr_absolute_gap_pp": 5.25,
+              "wasserstein_1_pp": 4.815789473684211
+            },
+            "llama": {
+              "distribution": {
+                "n": 19,
+                "median": 4.0,
+                "mean": 4.157894736842105,
+                "iqr": 1.25
+              },
+              "individual_mae_pp": 5.0,
+              "individual_rmse_pp": 7.60193881086993,
+              "mean_bias_pp": 0.21052631578947367,
+              "sample_median_absolute_error_pp": 0.0,
+              "sample_iqr_absolute_gap_pp": 4.5,
+              "wasserstein_1_pp": 4.526315789473685
+            }
+          },
+          "matched_real": {
+            "n": 19,
+            "median": 4.0,
+            "mean": 3.9473684210526314,
+            "iqr": 5.75
+          },
+          "paired_mae_changes_vs_deepseek_pp": {
+            "llama": -0.02631578947368421
+          }
+        },
+        "fitting_status_counts": {
+          "real:ok": 18,
+          "deepseek_reference:ok": 20,
+          "llama:ok": 20,
+          "real:invalid_bins": 2
+        },
+        "individual_uncertainty_iqr": {
+          "real": {
+            "n": 18,
+            "median": 3.237907649003358,
+            "mean": 3.3973616435035865,
+            "iqr": 3.0132012265622525
+          },
+          "deepseek_reference": {
+            "n": 18,
+            "median": 3.7087511637297146,
+            "mean": 3.8352204115342183,
+            "iqr": 0.43361628758424997
+          },
+          "llama": {
+            "n": 18,
+            "median": 1.6255786498171991,
+            "mean": 1.9276719524291448,
+            "iqr": 0.02363999830243646
+          }
+        },
+        "profile_group_diagnostics": {
+          "age_group": {
+            "40 to 60": {
+              "n_selected": 9,
+              "n_common": 8,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 9,
+                "n_common": 8,
+                "n_excluded": 1,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 8,
+                      "median": 2.5114809154146274,
+                      "mean": 2.3276412410691245,
+                      "iqr": 1.1776523101634266
+                    },
+                    "individual_mae_pp": 2.5647832935922565,
+                    "individual_rmse_pp": 3.8096397249868725,
+                    "mean_bias_pp": -1.686675109607301,
+                    "sample_median_absolute_error_pp": 0.8887760191883936,
+                    "sample_iqr_absolute_gap_pp": 0.11747977009573951,
+                    "wasserstein_1_pp": 1.98290152048995
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 8,
+                      "median": 2.979236540820984,
+                      "mean": 2.895211107768476,
+                      "iqr": 0.11940777656443213
+                    },
+                    "individual_mae_pp": 2.0135115914518615,
+                    "individual_rmse_pp": 3.157447628432224,
+                    "mean_bias_pp": -1.1191052429079495,
+                    "sample_median_absolute_error_pp": 0.4210203937820367,
+                    "sample_iqr_absolute_gap_pp": 1.175724303694734,
+                    "wasserstein_1_pp": 1.9295340017171319
+                  }
+                },
+                "matched_real": {
+                  "n": 8,
+                  "median": 3.400256934603021,
+                  "mean": 4.014316350676426,
+                  "iqr": 1.2951320802591662
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.5512717021403949
+                }
+              }
+            },
+            "Over 60": {
+              "n_selected": 5,
+              "n_common": 5,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 5,
+                "n_common": 5,
+                "n_excluded": 0,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 5,
+                      "median": 2.4518024552325723,
+                      "mean": 2.5521477631984295,
+                      "iqr": 0.5993576954764919
+                    },
+                    "individual_mae_pp": 2.9156265193685185,
+                    "individual_rmse_pp": 4.901023000642409,
+                    "mean_bias_pp": -2.65508892383801,
+                    "sample_median_absolute_error_pp": 0.5273775005330048,
+                    "sample_iqr_absolute_gap_pp": 0.7003009792801893,
+                    "wasserstein_1_pp": 2.6550889238380098
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 5,
+                      "median": 2.9968081042824997,
+                      "mean": 3.3255087069151728,
+                      "iqr": 0.0
+                    },
+                    "individual_mae_pp": 2.224072158120169,
+                    "individual_rmse_pp": 4.597096777658773,
+                    "mean_bias_pp": -1.881727980121267,
+                    "sample_median_absolute_error_pp": 0.017628148516922515,
+                    "sample_iqr_absolute_gap_pp": 1.2996586747566812,
+                    "wasserstein_1_pp": 2.023304359025368
+                  }
+                },
+                "matched_real": {
+                  "n": 5,
+                  "median": 2.979179955765577,
+                  "mean": 5.20723668703644,
+                  "iqr": 1.2996586747566812
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.6915543612483497
+                }
+              }
+            },
+            "Under 40": {
+              "n_selected": 6,
+              "n_common": 5,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 6,
+                "n_common": 5,
+                "n_excluded": 1,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 5,
+                      "median": 2.362590271840517,
+                      "mean": 2.7573344961856376,
+                      "iqr": 0.04867349128821097
+                    },
+                    "individual_mae_pp": 3.4614166151093704,
+                    "individual_rmse_pp": 4.010811418711114,
+                    "mean_bias_pp": 0.1411195660642063,
+                    "sample_median_absolute_error_pp": 0.4789066353037086,
+                    "sample_iqr_absolute_gap_pp": 3.392529197330897,
+                    "wasserstein_1_pp": 2.59701495931294
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 5,
+                      "median": 2.9968081042824997,
+                      "mean": 2.9156007257475984,
+                      "iqr": 0.03552587346525993
+                    },
+                    "individual_mae_pp": 3.269296318134748,
+                    "individual_rmse_pp": 3.9261950837302475,
+                    "mean_bias_pp": 0.29938579562616746,
+                    "sample_median_absolute_error_pp": 1.113124467745691,
+                    "sample_iqr_absolute_gap_pp": 3.405676815153848,
+                    "wasserstein_1_pp": 3.12109191045105
+                  }
+                },
+                "matched_real": {
+                  "n": 5,
+                  "median": 1.8836836365368086,
+                  "mean": 2.616214930121431,
+                  "iqr": 3.441202688619108
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.19212029697462238
+                }
+              }
+            }
+          },
+          "education_group": {
+            "college": {
+              "n_selected": 13,
+              "n_common": 11,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 13,
+                "n_common": 11,
+                "n_excluded": 2,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 11,
+                      "median": 2.335875109885567,
+                      "mean": 2.3752748283407943,
+                      "iqr": 0.902980217427543
+                    },
+                    "individual_mae_pp": 2.815787516820848,
+                    "individual_rmse_pp": 4.01152238870602,
+                    "mean_bias_pp": -1.384287506728728,
+                    "sample_median_absolute_error_pp": 1.0477938856149125,
+                    "sample_iqr_absolute_gap_pp": 1.1476715772417694,
+                    "wasserstein_1_pp": 2.2928505126837697
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 11,
+                      "median": 2.9968081042824997,
+                      "mean": 2.889201764476712,
+                      "iqr": 0.20301844633725263
+                    },
+                    "individual_mae_pp": 2.468064800485544,
+                    "individual_rmse_pp": 3.6473985986331274,
+                    "mean_bias_pp": -0.8703605705928098,
+                    "sample_median_absolute_error_pp": 0.38686089121797984,
+                    "sample_iqr_absolute_gap_pp": 1.8476333483320597,
+                    "wasserstein_1_pp": 2.3332348904725997
+                  }
+                },
+                "matched_real": {
+                  "n": 11,
+                  "median": 3.3836689955004795,
+                  "mean": 3.759562335069522,
+                  "iqr": 2.0506517946693124
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.34772271633530455
+                }
+              }
+            },
+            "high_school": {
+              "n_selected": 1,
+              "n_common": 1,
+              "sparse_below_five": true
+            },
+            "some_college": {
+              "n_selected": 6,
+              "n_common": 6,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 6,
+                "n_common": 6,
+                "n_excluded": 0,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 2.418175528203175,
+                      "mean": 2.4194872837321664,
+                      "iqr": 0.2961005985296006
+                    },
+                    "individual_mae_pp": 3.009289073868285,
+                    "individual_rmse_pp": 4.623132643378424,
+                    "mean_bias_pp": -2.368361664099979,
+                    "sample_median_absolute_error_pp": 1.1761361329993045,
+                    "sample_iqr_absolute_gap_pp": 1.2721608905735118,
+                    "wasserstein_1_pp": 2.637985130459957
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 2.9968081042824997,
+                      "mean": 3.2648680853225556,
+                      "iqr": 0.026357345192272952
+                    },
+                    "individual_mae_pp": 2.4298206202848562,
+                    "individual_rmse_pp": 4.33486146122371,
+                    "mean_bias_pp": -1.5229808625095902,
+                    "sample_median_absolute_error_pp": 0.59750355691998,
+                    "sample_iqr_absolute_gap_pp": 1.5419041439108394,
+                    "wasserstein_1_pp": 2.262514121039189
+                  }
+                },
+                "matched_real": {
+                  "n": 6,
+                  "median": 3.5943116612024797,
+                  "mean": 4.787848947832146,
+                  "iqr": 1.5682614891031124
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.5794684535834292
+                }
+              }
+            }
+          },
+          "household_income_band": {
+            "50k_to_100k": {
+              "n_selected": 11,
+              "n_common": 10,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 11,
+                "n_common": 10,
+                "n_excluded": 1,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 10,
+                      "median": 2.3735694365071476,
+                      "mean": 2.3747631259366218,
+                      "iqr": 0.36422014100539
+                    },
+                    "individual_mae_pp": 2.8829447682298137,
+                    "individual_rmse_pp": 4.2333504938735125,
+                    "mean_bias_pp": -2.407950027699078,
+                    "sample_median_absolute_error_pp": 1.2752151403592062,
+                    "sample_iqr_absolute_gap_pp": 1.0296582553804159,
+                    "wasserstein_1_pp": 2.5628917504159943
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 10,
+                      "median": 2.9614736040883543,
+                      "mean": 2.908479579043499,
+                      "iqr": 0.03552587346525993
+                    },
+                    "individual_mae_pp": 2.519648111075754,
+                    "individual_rmse_pp": 3.9077991018771727,
+                    "mean_bias_pp": -1.874233574592201,
+                    "sample_median_absolute_error_pp": 0.6873109727779996,
+                    "sample_iqr_absolute_gap_pp": 1.358352522920546,
+                    "wasserstein_1_pp": 2.385469010139173
+                  }
+                },
+                "matched_real": {
+                  "n": 10,
+                  "median": 3.648784576866354,
+                  "mean": 4.7827131536357,
+                  "iqr": 1.393878396385806
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.3632966571540594
+                }
+              }
+            },
+            "over_100k": {
+              "n_selected": 6,
+              "n_common": 6,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 6,
+                "n_common": 6,
+                "n_excluded": 0,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 2.8746008931670746,
+                      "mean": 2.936630765184718,
+                      "iqr": 0.7942334581695634
+                    },
+                    "individual_mae_pp": 2.850874474758666,
+                    "individual_rmse_pp": 4.260938396781835,
+                    "mean_bias_pp": -0.979181345308791,
+                    "sample_median_absolute_error_pp": 0.029014493047432754,
+                    "sample_iqr_absolute_gap_pp": 1.5314433603462625,
+                    "wasserstein_1_pp": 1.5497812465956708
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 2.9968081042824997,
+                      "mean": 3.2148040044102792,
+                      "iqr": 0.0
+                    },
+                    "individual_mae_pp": 2.04910374757494,
+                    "individual_rmse_pp": 3.5075898321464987,
+                    "mean_bias_pp": -0.70100810608323,
+                    "sample_median_absolute_error_pp": 0.15122170416285785,
+                    "sample_iqr_absolute_gap_pp": 2.325676818515826,
+                    "wasserstein_1_pp": 1.8936392061510257
+                  }
+                },
+                "matched_real": {
+                  "n": 6,
+                  "median": 2.845586400119642,
+                  "mean": 3.915812110493509,
+                  "iqr": 2.325676818515826
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.8017707271837268
+                }
+              }
+            },
+            "under_50k": {
+              "n_selected": 2,
+              "n_common": 2,
+              "sparse_below_five": true
+            },
+            "unknown": {
+              "n_selected": 1,
+              "n_common": 0,
+              "sparse_below_five": true
+            }
+          },
+          "numeracy": {
+            "high": {
+              "n_selected": 15,
+              "n_common": 14,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 15,
+                "n_common": 14,
+                "n_excluded": 1,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 14,
+                      "median": 2.362590271840517,
+                      "mean": 2.361635297576104,
+                      "iqr": 0.45713520960533405
+                    },
+                    "individual_mae_pp": 3.2179589993927147,
+                    "individual_rmse_pp": 4.58627429093929,
+                    "mean_bias_pp": -1.818525815848203,
+                    "sample_median_absolute_error_pp": 0.8354221428950526,
+                    "sample_iqr_absolute_gap_pp": 1.9474988488301657,
+                    "wasserstein_1_pp": 2.6951699826321946
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 14,
+                      "median": 2.9968081042824997,
+                      "mean": 3.029680677271209,
+                      "iqr": 0.03552587346525993
+                    },
+                    "individual_mae_pp": 2.7944650844010743,
+                    "individual_rmse_pp": 4.271701271181913,
+                    "mean_bias_pp": -1.150480436153098,
+                    "sample_median_absolute_error_pp": 0.20120431045307008,
+                    "sample_iqr_absolute_gap_pp": 2.36910818497024,
+                    "wasserstein_1_pp": 2.6168245125713323
+                  }
+                },
+                "matched_real": {
+                  "n": 14,
+                  "median": 3.1980124147355697,
+                  "mean": 4.180161113424306,
+                  "iqr": 2.4046340584354997
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.4234939149916404
+                }
+              }
+            },
+            "low": {
+              "n_selected": 5,
+              "n_common": 4,
+              "sparse_below_five": true
+            }
+          },
+          "employment_status": {
+            "disabled": {
+              "n_selected": 1,
+              "n_common": 1,
+              "sparse_below_five": true
+            },
+            "employed": {
+              "n_selected": 14,
+              "n_common": 13,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 14,
+                "n_common": 13,
+                "n_excluded": 1,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 13,
+                      "median": 2.362590271840517,
+                      "mean": 2.4577354377296117,
+                      "iqr": 0.5549090318303218
+                    },
+                    "individual_mae_pp": 2.9137001618112484,
+                    "individual_rmse_pp": 3.888861317684694,
+                    "mean_bias_pp": -0.9877350558306695,
+                    "sample_median_absolute_error_pp": 0.9975087271543259,
+                    "sample_iqr_absolute_gap_pp": 2.8381998628496894,
+                    "wasserstein_1_pp": 2.1017083751924615
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 13,
+                      "median": 2.9968081042824997,
+                      "mean": 2.9057860280270047,
+                      "iqr": 0.03552587346525993
+                    },
+                    "individual_mae_pp": 2.465370438932486,
+                    "individual_rmse_pp": 3.4713413895951897,
+                    "mean_bias_pp": -0.5396844655332766,
+                    "sample_median_absolute_error_pp": 0.36329089471234344,
+                    "sample_iqr_absolute_gap_pp": 3.3575830212147513,
+                    "wasserstein_1_pp": 2.351283591998456
+                  }
+                },
+                "matched_real": {
+                  "n": 13,
+                  "median": 3.360098998994843,
+                  "mean": 3.4454704935602813,
+                  "iqr": 3.393108894680011
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.4483297228787627
+                }
+              }
+            },
+            "retired": {
+              "n_selected": 3,
+              "n_common": 3,
+              "sparse_below_five": true
+            },
+            "unemployed": {
+              "n_selected": 1,
+              "n_common": 1,
+              "sparse_below_five": true
+            },
+            "unknown": {
+              "n_selected": 1,
+              "n_common": 0,
+              "sparse_below_five": true
+            }
+          }
+        }
+      },
+      "2021-06": {
+        "Q9": {
+          "n_selected": 20,
+          "n_common": 19,
+          "n_excluded": 1,
+          "arms": {
+            "deepseek_reference": {
+              "distribution": {
+                "n": 19,
+                "median": 4.133280433715967,
+                "mean": 3.8981173325666956,
+                "iqr": 1.106012650190089
+              },
+              "individual_mae_pp": 2.964886549635795,
+              "individual_rmse_pp": 3.9579934777424493,
+              "mean_bias_pp": -1.6232414789100194,
+              "sample_median_absolute_error_pp": 1.401103555799006,
+              "sample_iqr_absolute_gap_pp": 2.563796867661533,
+              "wasserstein_1_pp": 2.405250262903134
+            },
+            "llama": {
+              "distribution": {
+                "n": 19,
+                "median": 2.9968081042824997,
+                "mean": 3.1849755495263237,
+                "iqr": 0.03552587346525993
+              },
+              "individual_mae_pp": 3.083575001936641,
+              "individual_rmse_pp": 4.126565459090863,
+              "mean_bias_pp": -2.3363832619503913,
+              "sample_median_absolute_error_pp": 2.5375758852324735,
+              "sample_iqr_absolute_gap_pp": 3.634283644386362,
+              "wasserstein_1_pp": 2.926860091512884
+            }
+          },
+          "matched_real": {
+            "n": 19,
+            "median": 5.534383989514973,
+            "mean": 5.5213588114767145,
+            "iqr": 3.669809517851622
+          },
+          "paired_mae_changes_vs_deepseek_pp": {
+            "llama": 0.1186884523008459
+          }
+        },
+        "Q8_secondary": {
+          "n_selected": 20,
+          "n_common": 20,
+          "n_excluded": 0,
+          "arms": {
+            "deepseek_reference": {
+              "distribution": {
+                "n": 20,
+                "median": 4.5,
+                "mean": 4.3549999999999995,
+                "iqr": 0.07500000000000018
+              },
+              "individual_mae_pp": 5.015,
+              "individual_rmse_pp": 6.933145029494191,
+              "mean_bias_pp": -3.3950000000000005,
+              "sample_median_absolute_error_pp": 3.0,
+              "sample_iqr_absolute_gap_pp": 5.425,
+              "wasserstein_1_pp": 4.855
+            },
+            "llama": {
+              "distribution": {
+                "n": 20,
+                "median": 4.0,
+                "mean": 4.4,
+                "iqr": 1.0
+              },
+              "individual_mae_pp": 5.0,
+              "individual_rmse_pp": 6.897463301823359,
+              "mean_bias_pp": -3.35,
+              "sample_median_absolute_error_pp": 3.5,
+              "sample_iqr_absolute_gap_pp": 4.5,
+              "wasserstein_1_pp": 4.6000000000000005
+            }
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 7.5,
+            "mean": 7.75,
+            "iqr": 5.5
+          },
+          "paired_mae_changes_vs_deepseek_pp": {
+            "llama": -0.01499999999999999
+          }
+        },
+        "fitting_status_counts": {
+          "real:ok": 19,
+          "deepseek_reference:ok": 20,
+          "llama:ok": 20,
+          "real:invalid_bins": 1
+        },
+        "individual_uncertainty_iqr": {
+          "real": {
+            "n": 19,
+            "median": 2.6279148509717096,
+            "mean": 4.463690121399642,
+            "iqr": 3.021300656270359
+          },
+          "deepseek_reference": {
+            "n": 19,
+            "median": 4.622722532383496,
+            "mean": 4.727970734294014,
+            "iqr": 0.7368566469470919
+          },
+          "llama": {
+            "n": 19,
+            "median": 1.6255786498171991,
+            "mean": 2.10174959041285,
+            "iqr": 0.02363999830243646
+          }
+        },
+        "profile_group_diagnostics": {
+          "age_group": {
+            "40 to 60": {
+              "n_selected": 5,
+              "n_common": 5,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 5,
+                "n_common": 5,
+                "n_excluded": 0,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 5,
+                      "median": 3.175321154432817,
+                      "mean": 3.580520541081545,
+                      "iqr": 1.0976472423784687
+                    },
+                    "individual_mae_pp": 2.471357732852261,
+                    "individual_rmse_pp": 2.5500280865160208,
+                    "mean_bias_pp": -1.0707996847552388,
+                    "sample_median_absolute_error_pp": 2.824678845567183,
+                    "sample_iqr_absolute_gap_pp": 2.824160856887704,
+                    "wasserstein_1_pp": 2.0322988359008733
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 5,
+                      "median": 2.9612822308172397,
+                      "mean": 2.841390028575209,
+                      "iqr": 0.37051101920924534
+                    },
+                    "individual_mae_pp": 2.726158929377106,
+                    "individual_rmse_pp": 3.05481047854528,
+                    "mean_bias_pp": -1.809930197261575,
+                    "sample_median_absolute_error_pp": 3.0387177691827603,
+                    "sample_iqr_absolute_gap_pp": 3.5512970800569272,
+                    "wasserstein_1_pp": 2.4437434767347326
+                  }
+                },
+                "matched_real": {
+                  "n": 5,
+                  "median": 6.0,
+                  "mean": 4.651320225836784,
+                  "iqr": 3.9218080992661726
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": 0.25480119652484523
+                }
+              }
+            },
+            "Over 60": {
+              "n_selected": 8,
+              "n_common": 8,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 8,
+                "n_common": 8,
+                "n_excluded": 0,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 8,
+                      "median": 4.143254439637963,
+                      "mean": 4.0904524612325766,
+                      "iqr": 0.5363820129008254
+                    },
+                    "individual_mae_pp": 4.228713799288526,
+                    "individual_rmse_pp": 5.5054275935380605,
+                    "mean_bias_pp": -3.1621289065240044,
+                    "sample_median_absolute_error_pp": 2.4283981737826386,
+                    "sample_iqr_absolute_gap_pp": 7.4944347352645355,
+                    "wasserstein_1_pp": 4.043424467000129
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 8,
+                      "median": 2.9968081042824997,
+                      "mean": 3.3398449415913753,
+                      "iqr": 0.0027164761646485402
+                    },
+                    "individual_mae_pp": 4.446427975733723,
+                    "individual_rmse_pp": 5.656846982696415,
+                    "mean_bias_pp": -3.9127364261652047,
+                    "sample_median_absolute_error_pp": 3.574844509138102,
+                    "sample_iqr_absolute_gap_pp": 8.028100272000712,
+                    "wasserstein_1_pp": 4.434830031202759
+                  }
+                },
+                "matched_real": {
+                  "n": 8,
+                  "median": 6.571652613420602,
+                  "mean": 7.252581367756581,
+                  "iqr": 8.03081674816536
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": 0.2177141764451973
+                }
+              }
+            },
+            "Under 40": {
+              "n_selected": 7,
+              "n_common": 6,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 7,
+                "n_common": 6,
+                "n_excluded": 1,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 4.169531211320249,
+                      "mean": 3.9063344872498136,
+                      "iqr": 0.8451768674561926
+                    },
+                    "individual_mae_pp": 1.691057564085099,
+                    "individual_rmse_pp": 1.9432556409094617,
+                    "mean_bias_pp": -0.031759737220355445,
+                    "sample_median_absolute_error_pp": 0.28230359238481295,
+                    "sample_iqr_absolute_gap_pp": 0.8720335225795148,
+                    "wasserstein_1_pp": 0.8935425700544629
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 2.9968081042824997,
+                      "mean": 3.2648042942321838,
+                      "iqr": 0.026644405098944723
+                    },
+                    "individual_mae_pp": 1.5642844306734769,
+                    "individual_rmse_pp": 1.865637946779934,
+                    "mean_bias_pp": -0.6732899302379861,
+                    "sample_median_absolute_error_pp": 0.8904195146529368,
+                    "sample_iqr_absolute_gap_pp": 1.6905659849367627,
+                    "wasserstein_1_pp": 1.3270506738437327
+                  }
+                },
+                "matched_real": {
+                  "n": 6,
+                  "median": 3.8872276189354364,
+                  "mean": 3.9380942244701695,
+                  "iqr": 1.7172103900357074
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.12677313341162208
+                }
+              }
+            }
+          },
+          "education_group": {
+            "college": {
+              "n_selected": 10,
+              "n_common": 10,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 10,
+                "n_common": 10,
+                "n_excluded": 0,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 10,
+                      "median": 3.673516579116548,
+                      "mean": 3.691807077376777,
+                      "iqr": 0.9942100568874324
+                    },
+                    "individual_mae_pp": 2.7867829742307166,
+                    "individual_rmse_pp": 3.714249589686045,
+                    "mean_bias_pp": -1.5493569652547814,
+                    "sample_median_absolute_error_pp": 1.093506212584515,
+                    "sample_iqr_absolute_gap_pp": 2.312888359476686,
+                    "wasserstein_1_pp": 2.1333097272328034
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 10,
+                      "median": 2.9968081042824997,
+                      "mean": 3.366070602751203,
+                      "iqr": 0.026644405098944723
+                    },
+                    "individual_mae_pp": 2.5389218372390174,
+                    "individual_rmse_pp": 3.411984240493176,
+                    "mean_bias_pp": -1.8750934398803558,
+                    "sample_median_absolute_error_pp": 1.7702146874185631,
+                    "sample_iqr_absolute_gap_pp": 3.2804540112651734,
+                    "wasserstein_1_pp": 2.2553738568199844
+                  }
+                },
+                "matched_real": {
+                  "n": 10,
+                  "median": 4.767022791701063,
+                  "mean": 5.241164042631559,
+                  "iqr": 3.307098416364118
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.24786113699169893
+                }
+              }
+            },
+            "high_school": {
+              "n_selected": 4,
+              "n_common": 3,
+              "sparse_below_five": true
+            },
+            "some_college": {
+              "n_selected": 6,
+              "n_common": 6,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 6,
+                "n_common": 6,
+                "n_excluded": 0,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 4.234203373137984,
+                      "mean": 4.137055730367679,
+                      "iqr": 0.3950966211809597
+                    },
+                    "individual_mae_pp": 2.7329206015301306,
+                    "individual_rmse_pp": 3.3418733132844873,
+                    "mean_bias_pp": -0.6503473820295379,
+                    "sample_median_absolute_error_pp": 0.6531934488538766,
+                    "sample_iqr_absolute_gap_pp": 3.7503774687064073,
+                    "wasserstein_1_pp": 2.427984635743127
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 2.973612215220572,
+                      "mean": 2.9772341834401037,
+                      "iqr": 0.03280939730061139
+                    },
+                    "individual_mae_pp": 3.069895443315801,
+                    "individual_rmse_pp": 3.793510222784276,
+                    "mean_bias_pp": -1.8101689289571137,
+                    "sample_median_absolute_error_pp": 1.913784606771288,
+                    "sample_iqr_absolute_gap_pp": 4.112664692586756,
+                    "wasserstein_1_pp": 3.0462115276722947
+                  }
+                },
+                "matched_real": {
+                  "n": 6,
+                  "median": 4.88739682199186,
+                  "mean": 4.787403112397218,
+                  "iqr": 4.145474089887367
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": 0.3369748417856709
+                }
+              }
+            }
+          },
+          "household_income_band": {
+            "50k_to_100k": {
+              "n_selected": 7,
+              "n_common": 6,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 7,
+                "n_common": 6,
+                "n_excluded": 1,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 4.169531211320249,
+                      "mean": 4.01990314441399,
+                      "iqr": 0.027188083203212088
+                    },
+                    "individual_mae_pp": 2.9957265994932825,
+                    "individual_rmse_pp": 4.2522419299577505,
+                    "mean_bias_pp": -1.0516508226087897,
+                    "sample_median_absolute_error_pp": 0.5098373546590862,
+                    "sample_iqr_absolute_gap_pp": 2.8029844059183024,
+                    "wasserstein_1_pp": 2.6767156419904508
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 2.9968081042824997,
+                      "mean": 3.729918706997994,
+                      "iqr": 1.2859160700704129
+                    },
+                    "individual_mae_pp": 2.402029890958699,
+                    "individual_rmse_pp": 3.5582679946397757,
+                    "mean_bias_pp": -1.3416352600247858,
+                    "sample_median_absolute_error_pp": 0.6628857523786635,
+                    "sample_iqr_absolute_gap_pp": 1.5442564190511017,
+                    "wasserstein_1_pp": 2.1647961341289546
+                  }
+                },
+                "matched_real": {
+                  "n": 6,
+                  "median": 3.659693856661163,
+                  "mean": 5.07155396702278,
+                  "iqr": 2.8301724891215145
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.5936967085345833
+                }
+              }
+            },
+            "over_100k": {
+              "n_selected": 6,
+              "n_common": 6,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 6,
+                "n_common": 6,
+                "n_excluded": 0,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 3.105477172885158,
+                      "mean": 3.5651203289571534,
+                      "iqr": 1.1502481482086617
+                    },
+                    "individual_mae_pp": 2.3360162483307225,
+                    "individual_rmse_pp": 2.472872855976365,
+                    "mean_bias_pp": -1.4536624916029528,
+                    "sample_median_absolute_error_pp": 2.6617148218723288,
+                    "sample_iqr_absolute_gap_pp": 0.9162280753659138,
+                    "wasserstein_1_pp": 2.055764041017539
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 6,
+                      "median": 2.9790451675498697,
+                      "mean": 2.8672930411930904,
+                      "iqr": 0.286764732773249
+                    },
+                    "individual_mae_pp": 2.7456135922982035,
+                    "individual_rmse_pp": 2.9861390862310198,
+                    "mean_bias_pp": -2.1514897793670156,
+                    "sample_median_absolute_error_pp": 2.788146827207617,
+                    "sample_iqr_absolute_gap_pp": 1.7797114908013265,
+                    "wasserstein_1_pp": 2.621929097010887
+                  }
+                },
+                "matched_real": {
+                  "n": 6,
+                  "median": 5.767191994757487,
+                  "mean": 5.018782820560106,
+                  "iqr": 2.0664762235745755
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": 0.4095973439674805
+                }
+              }
+            },
+            "under_50k": {
+              "n_selected": 7,
+              "n_common": 7,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 7,
+                "n_common": 7,
+                "n_excluded": 0,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 7,
+                      "median": 4.116977667955677,
+                      "mean": 4.079155496934336,
+                      "iqr": 0.6333895500108122
+                    },
+                    "individual_mae_pp": 3.477483908019438,
+                    "individual_rmse_pp": 4.667035851447753,
+                    "mean_bias_pp": -2.258529744859986,
+                    "sample_median_absolute_error_pp": 1.8830223320443231,
+                    "sample_iqr_absolute_gap_pp": 5.1451945929325165,
+                    "wasserstein_1_pp": 3.2657246711184142
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 7,
+                      "median": 2.9968081042824997,
+                      "mean": 2.9901807074076636,
+                      "iqr": 0.005432952329297525
+                    },
+                    "individual_mae_pp": 3.9574377338935376,
+                    "individual_rmse_pp": 5.26541981355859,
+                    "mean_bias_pp": -3.3475045343866596,
+                    "sample_median_absolute_error_pp": 3.0031918957175003,
+                    "sample_iqr_absolute_gap_pp": 5.773151190614032,
+                    "wasserstein_1_pp": 3.9441829401438646
+                  }
+                },
+                "matched_real": {
+                  "n": 7,
+                  "median": 6.0,
+                  "mean": 6.337685241794324,
+                  "iqr": 5.778584142943329
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": 0.47995382587409846
+                }
+              }
+            }
+          },
+          "numeracy": {
+            "high": {
+              "n_selected": 11,
+              "n_common": 11,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 11,
+                "n_common": 11,
+                "n_excluded": 0,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 11,
+                      "median": 3.7732537640876815,
+                      "mean": 3.668655153792457,
+                      "iqr": 1.0377772667528053
+                    },
+                    "individual_mae_pp": 3.105531432609965,
+                    "individual_rmse_pp": 4.0176319755784515,
+                    "mean_bias_pp": -1.9629852997696988,
+                    "sample_median_absolute_error_pp": 1.7611302254272916,
+                    "sample_iqr_absolute_gap_pp": 2.330219608457149,
+                    "wasserstein_1_pp": 2.661519452420836
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 11,
+                      "median": 2.9968081042824997,
+                      "mean": 3.081044329455121,
+                      "iqr": 0.005432952329297525
+                    },
+                    "individual_mae_pp": 3.3606606586706778,
+                    "individual_rmse_pp": 4.476557099469993,
+                    "mean_bias_pp": -2.550596124107035,
+                    "sample_median_absolute_error_pp": 2.5375758852324735,
+                    "sample_iqr_absolute_gap_pp": 3.362563922880657,
+                    "wasserstein_1_pp": 3.1028897673806473
+                  }
+                },
+                "matched_real": {
+                  "n": 11,
+                  "median": 5.534383989514973,
+                  "mean": 5.631640453562157,
+                  "iqr": 3.3679968752099545
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": 0.2551292260607132
+                }
+              }
+            },
+            "low": {
+              "n_selected": 9,
+              "n_common": 8,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 9,
+                "n_common": 8,
+                "n_excluded": 1,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 8,
+                      "median": 4.234203373137984,
+                      "mean": 4.213627828381274,
+                      "iqr": 0.3817471310983942
+                    },
+                    "individual_mae_pp": 2.7714998355463116,
+                    "individual_rmse_pp": 3.874491925144656,
+                    "mean_bias_pp": -1.156093725227959,
+                    "sample_median_absolute_error_pp": 0.6531934488538766,
+                    "sample_iqr_absolute_gap_pp": 3.164393072799131,
+                    "wasserstein_1_pp": 2.5559362470472022
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 8,
+                      "median": 2.9790451675498697,
+                      "mean": 3.3278809771242273,
+                      "iqr": 0.03552587346525993
+                    },
+                    "individual_mae_pp": 2.70258222392734,
+                    "individual_rmse_pp": 3.5900402010650727,
+                    "mean_bias_pp": -2.0418405764850056,
+                    "sample_median_absolute_error_pp": 1.9083516544419905,
+                    "sample_iqr_absolute_gap_pp": 3.5106143304322655,
+                    "wasserstein_1_pp": 2.68481928719471
+                  }
+                },
+                "matched_real": {
+                  "n": 8,
+                  "median": 4.88739682199186,
+                  "mean": 5.369721553609233,
+                  "iqr": 3.5461402038975254
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": -0.06891761161897159
+                }
+              }
+            }
+          },
+          "employment_status": {
+            "employed": {
+              "n_selected": 10,
+              "n_common": 9,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 10,
+                "n_common": 9,
+                "n_excluded": 1,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 9,
+                      "median": 4.116977667955677,
+                      "mean": 3.7390849450984525,
+                      "iqr": 0.9942100568874324
+                    },
+                    "individual_mae_pp": 2.8471642648509428,
+                    "individual_rmse_pp": 3.236088274772129,
+                    "mean_bias_pp": -1.739959322902409,
+                    "sample_median_absolute_error_pp": 1.8830223320443231,
+                    "sample_iqr_absolute_gap_pp": 1.381018287813561,
+                    "wasserstein_1_pp": 2.3184688041797923
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 9,
+                      "median": 2.9859421996239046,
+                      "mean": 3.091868852056757,
+                      "iqr": 0.03552587346525993
+                    },
+                    "individual_mae_pp": 3.094105169900047,
+                    "individual_rmse_pp": 3.706613553433372,
+                    "mean_bias_pp": -2.3871754159441045,
+                    "sample_median_absolute_error_pp": 3.0140578003760954,
+                    "sample_iqr_absolute_gap_pp": 2.3397024712357335,
+                    "wasserstein_1_pp": 2.7869464968711783
+                  }
+                },
+                "matched_real": {
+                  "n": 9,
+                  "median": 6.0,
+                  "mean": 5.4790442680008615,
+                  "iqr": 2.3752283447009934
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": 0.2469409050491037
+                }
+              }
+            },
+            "homemaker": {
+              "n_selected": 2,
+              "n_common": 2,
+              "sparse_below_five": true
+            },
+            "on_leave": {
+              "n_selected": 1,
+              "n_common": 1,
+              "sparse_below_five": true
+            },
+            "retired": {
+              "n_selected": 7,
+              "n_common": 7,
+              "sparse_below_five": false,
+              "Q9": {
+                "n_selected": 7,
+                "n_common": 7,
+                "n_excluded": 0,
+                "arms": {
+                  "deepseek_reference": {
+                    "distribution": {
+                      "n": 7,
+                      "median": 4.169531211320249,
+                      "mean": 4.086663145986419,
+                      "iqr": 0.6333895500108122
+                    },
+                    "individual_mae_pp": 3.88735709962189,
+                    "individual_rmse_pp": 5.327518198296101,
+                    "mean_bias_pp": -2.6684029364624378,
+                    "sample_median_absolute_error_pp": 1.8304687886797506,
+                    "sample_iqr_absolute_gap_pp": 6.359589307948803,
+                    "wasserstein_1_pp": 3.675597862720865
+                  },
+                  "llama": {
+                    "distribution": {
+                      "n": 7,
+                      "median": 2.9968081042824997,
+                      "mean": 3.3904024761581573,
+                      "iqr": 0.0
+                    },
+                    "individual_mae_pp": 3.974596805797577,
+                    "individual_rmse_pp": 5.290807744906267,
+                    "mean_bias_pp": -3.364663606290699,
+                    "sample_median_absolute_error_pp": 3.0031918957175003,
+                    "sample_iqr_absolute_gap_pp": 6.992978857959615,
+                    "wasserstein_1_pp": 3.9644465562360742
+                  }
+                },
+                "matched_real": {
+                  "n": 7,
+                  "median": 6.0,
+                  "mean": 6.755066082448856,
+                  "iqr": 6.992978857959615
+                },
+                "paired_mae_changes_vs_deepseek_pp": {
+                  "llama": 0.08723970617568659
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "costs": {
+      "sce_earlier_model_trial_20261008": 0.041436799999999996
+    },
+    "scorer": {
+      "scorer": "sce_q9_frozen",
+      "variant": "relaxed_tail_skip_zero",
+      "tail_start": 20.0,
+      "holdout_run_id": "20261003T023026Z_77ebb305",
+      "pinned_sha256": {
+        "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+        "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+      },
+      "live_sha256": {
+        "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+        "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+      },
+      "live_matches_pinned": true,
+      "kernel_migration": {
+        "migrated_at": "2026-10-03",
+        "old_source": "scripts/diagnose_sce_beta.py",
+        "old_source_sha256": "b45a29345f432288fe3b0b18e8c39066998bf19a803a0e7c661dc2a193987e57",
+        "new_source": "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+        "algorithm_unchanged": true,
+        "equivalence_check": "3,741 sealed holdout rows recomputed; zero per-field difference"
+      },
+      "approximation_notice": "Research approximation of the Armantier et al. (2017) Appendix C generalized-beta fit, selected on a preregistered holdout; not the official FRBNY implementation. The same algorithm scores real and simulated questionnaires; differences from official headline values are reported separately."
+    },
+    "estimand": "equal-weight exact matched 20-case development sample per month; not national headline",
+    "prompt_version": "sce-q8-q9-v2-abstract",
+    "temperature": 0.5,
+    "new_calls_in_analysis": 0,
+    "limitations": [
+      "A development months only, not blind B prediction",
+      "2021 is potentially in every model training window",
+      "one generation per model/case; model, provider, quantization and random variation not separately identified",
+      "same approximate Q9 scorer applied to real and model bins; no official headline reconstruction",
+      "Qwen absent if its locked route failed preflight; no provider substitution"
+    ],
+    "source_hashes": {
+      "outputs/sce_model_counterfactual_20261007/summary.json": "e86048dc9b2466933668d0bb4084f67797bc328d867ac8419e707986799959b7",
+      "outputs/sce_model_counterfactual_20261007/requests_prepared.jsonl": "a86cc97053b817e2b2e39218c67c89d75aeabd721b59345c3f109d3e6481efc6",
+      "outputs/sce_model_counterfactual_20261007/deepseek_reference_private.jsonl": "d02abdcf2989bae3edd0a7fa8eeb4fc168c49f8ef7183de1a7f85a1308e404e9",
+      "/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/data/evaluation/dev_full_20261005T045330Z_947a818f/truth.json": "59cc51b4f7f0cbf91dfd3b3845a75222ac178513f96726927ed4bfa7c6cf2a55",
+      "outputs/sce_earlier_model_trial_20261008/run_summary.json": "11eb3019c132628c17213d88a1958f3079670b14156c9a1385d26b186223565e",
+      "outputs/sce_earlier_model_trial_20261008/llm_calls.jsonl": "7e02d3a6aae1b69f39ff1d6d8e6cd457dedbac6f797d6ab698d371a907611a5f",
+      "/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/scripts/analyze_sce_model_counterfactual.py": "6b39628bfa9c742a4078805299d71438d019d538a62691905c41969e0a1b7e86",
+      "/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/studies/sce_inflation_expectations/model_comparison_analysis.py": "5aa4e0ba4fb91322c182e79127f2b86001ea93c9f96a52d5c760f2d28603baa2",
+      "/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/studies/sce_inflation_expectations/household_state_analysis.py": "3752e2c4e684c9384f12de7b570e7bc474f16b01ae327aab9709b3514cf1ee42",
+      "/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/studies/sce_inflation_expectations/scoring/sce_q9_frozen.py": "5d7f616f56a820ad29be871b4892e5b3f67f528792e1eb8b90862b8c794ba7e3"
+    }
+  },
+  "endpoint_recheck": {
+    "retrieved_at_utc": "2026-10-08T00:49:49.415980+00:00",
+    "data": {
+      "id": "qwen/qwen-2.5-72b-instruct",
+      "name": "Qwen2.5 72B Instruct",
+      "created": 1726704000,
+      "description": "Qwen2.5 72B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
+      "architecture": {
+        "tokenizer": "Qwen",
+        "instruct_type": "chatml",
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "endpoints": [
+        {
+          "name": "DeepInfra | qwen/qwen-2.5-72b-instruct",
+          "model_id": "qwen/qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "context_length": 32768,
+          "pricing": {
+            "prompt": "0.00000036",
+            "completion": "0.0000004",
+            "discount": 0
+          },
+          "provider_name": "DeepInfra",
+          "tag": "deepinfra/fp8",
+          "quantization": "fp8",
+          "max_completion_tokens": 16384,
+          "max_prompt_tokens": null,
+          "supported_parameters": [
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "top_k",
+            "seed",
+            "min_p",
+            "tools",
+            "tool_choice",
+            "logit_bias",
+            "structured_outputs",
+            "response_format"
+          ],
+          "supports_tool_choice": {
+            "none": true,
+            "auto": true,
+            "required": false,
+            "function": false
+          },
+          "status": -2,
+          "uptime_last_30m": 92.23716381418093,
+          "uptime_last_5m": 93.51351351351352,
+          "uptime_last_1d": 97.62295158766597,
+          "supports_implicit_caching": false,
+          "native_tools": {},
+          "supports_voice_cloning": false,
+          "supports_multiple_audio_references": false,
+          "supports_image_reference": false,
+          "latency_last_30m": null,
+          "throughput_last_30m": null
+        },
+        {
+          "name": "Novita | qwen/qwen-2.5-72b-instruct",
+          "model_id": "qwen/qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "context_length": 32000,
+          "pricing": {
+            "prompt": "0.00000038",
+            "completion": "0.0000004",
+            "discount": 0
+          },
+          "provider_name": "Novita",
+          "tag": "novita/bf16",
+          "quantization": "bf16",
+          "max_completion_tokens": 8192,
+          "max_prompt_tokens": null,
+          "supported_parameters": [
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "seed",
+            "top_k",
+            "repetition_penalty",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_tool_choice": {
+            "none": true,
+            "auto": true,
+            "required": true,
+            "function": true
+          },
+          "status": -2,
+          "uptime_last_30m": 89.45487042001787,
+          "uptime_last_5m": 81.48148148148148,
+          "uptime_last_1d": 94.76276501465676,
+          "supports_implicit_caching": false,
+          "native_tools": {},
+          "supports_voice_cloning": false,
+          "supports_multiple_audio_references": false,
+          "supports_image_reference": false,
+          "latency_last_30m": null,
+          "throughput_last_30m": null
+        }
+      ]
+    }
+  },
+  "validation": {
+    "targeted_tests": 7,
+    "paid_attempts": 41,
+    "valid_cases": 40,
+    "format_retry_count": 1,
+    "prompt_tokens": 98947,
+    "completion_tokens": 4645,
+    "all_costs_api_reported": true,
+    "protected_files_unchanged": 15
+  },
+  "artifact_sha256": {
+    "outputs/sce_earlier_model_trial_20261008/run_summary.json": "11eb3019c132628c17213d88a1958f3079670b14156c9a1385d26b186223565e",
+    "outputs/sce_earlier_model_trial_20261008/llm_calls.jsonl": "7e02d3a6aae1b69f39ff1d6d8e6cd457dedbac6f797d6ab698d371a907611a5f",
+    "outputs/sce_earlier_model_trial_20261008/requests_prepared.jsonl": "a86cc97053b817e2b2e39218c67c89d75aeabd721b59345c3f109d3e6481efc6",
+    "outputs/sce_earlier_model_analysis_20261008_v3/summary.json": "85e5e10df7c692a42e8d32dd43c71242631af32370657df353e9099fb0b6ab78"
+  }
+}
