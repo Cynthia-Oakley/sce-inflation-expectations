@@ -5,6 +5,7 @@ import collections
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -58,11 +59,13 @@ def audit_run(run_id):
                         (folder / 'observations.jsonl').read_text().splitlines()]
         result['signal_counts'] = sorted({len(o['observation']['macro_information']['signals'])
                                           for o in observations})
-        # State can contain prior responses while actual API prompts omit them.
+        # Check the actual rendered sentence; generic prior/previous keywords
+        # missed "Last month" in the original 2026-10-08 audit.
         result['observations_with_prior_answer'] = sum(bool(
             o['observation']['local_physical'].get('prior_answer')) for o in observations)
         result['prompts_with_prior_language'] = sum(
-            any(word in r['prompt_text'].lower() for word in ['previous', 'prior']) for r in rows)
+            bool(re.search(r'Last month you gave a point estimate of', r['prompt_text'], re.I)) for r in rows)
+        result['prior_language_detection'] = 'actual Last month questionnaire-memory sentence'
         result['as_of_by_month'] = {month: sorted({
             o['observation']['macro_information']['as_of'] for o in observations
             if o['observation']['macro_information']['target_month'] == month})

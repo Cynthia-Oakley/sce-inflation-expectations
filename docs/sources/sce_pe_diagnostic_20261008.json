@@ -1,0 +1,3508 @@
+{
+  "audit_date": "2026-10-08",
+  "scope": "Offline actual-input audit, reused simulations and economic mechanism hypotheses; no new run configurations.",
+  "aggregate_results": {
+    "audit_id": "sce_pe_diagnostic_20261008_v3",
+    "new_llm_calls": 0,
+    "new_mcp_calls": 0,
+    "changed_runtime_inputs": false,
+    "memory_correction": {
+      "old_requests": 876,
+      "old_actual_notes": 803,
+      "all_old_notes_match_actual_prior_deepseek": true,
+      "qwen_actual_deepseek_history_notes": 220,
+      "qwen_notes_different_from_own_previous_answer": 161,
+      "interpretation": "Exact-input conditional model comparison, not independent Qwen autoregressive history",
+      "cause_of_old_audit_error": "Checked previous/prior only; missed Last month"
+    },
+    "units": {
+      "old_payroll_thousands_omitted_requests": 876,
+      "new_payroll_number_rendering_verified_requests": 600,
+      "old_percent_labels_and_source_values_checked": true,
+      "cpi_first_release_yoy_matches": true
+    },
+    "population_marginals": {
+      "old73": {
+        "n": 73,
+        "marginal_counts": {
+          "age_group": {
+            "40 to 60": 25,
+            "Over 60": 30,
+            "Under 40": 18
+          },
+          "education_group": {
+            "college": 41,
+            "some_college": 25,
+            "high_school": 7
+          },
+          "household_income_band": {
+            "50k_to_100k": 31,
+            "over_100k": 25,
+            "under_50k": 17
+          },
+          "region": {
+            "Northeast": 17,
+            "Midwest": 17,
+            "South": 24,
+            "West": 15
+          },
+          "numeracy": {
+            "low": 15,
+            "high": 58
+          },
+          "employment_status": {
+            "employed": 38,
+            "disabled": 3,
+            "retired": 23,
+            "homemaker": 2,
+            "unemployed": 4,
+            "student": 3
+          },
+          "housing_tenure": {
+            "renter": 14,
+            "owner": 59
+          }
+        }
+      },
+      "selected20": {
+        "n": 20,
+        "marginal_counts": {
+          "age_group": {
+            "40 to 60": 7,
+            "Under 40": 7,
+            "Over 60": 6
+          },
+          "education_group": {
+            "college": 13,
+            "some_college": 6,
+            "high_school": 1
+          },
+          "household_income_band": {
+            "50k_to_100k": 8,
+            "over_100k": 7,
+            "under_50k": 5
+          },
+          "region": {
+            "South": 6,
+            "Northeast": 5,
+            "West": 3,
+            "Midwest": 6
+          },
+          "numeracy": {
+            "high": 17,
+            "low": 3
+          },
+          "employment_status": {
+            "employed": 11,
+            "retired": 4,
+            "unemployed": 3,
+            "homemaker": 2
+          },
+          "housing_tenure": {
+            "renter": 6,
+            "owner": 14
+          }
+        }
+      },
+      "full202101_weighted_reference": {
+        "n": 1259,
+        "shares": {
+          "college": 0.3571307255128506,
+          "high_numeracy": 0.6319653638039284,
+          "over100k": 0.31783768723225597,
+          "over60": 0.36040463256367955
+        }
+      }
+    },
+    "old_month_inputs": {
+      "202101": {
+        "target_month": "2021-01",
+        "as_of": "2020-12-31T23:59:59-05:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2020-12-10T08:30:00-05:00",
+            "reference_period": "2020-11",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_11_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+            "source_version": "USDL-20-2218",
+            "unit": "percent",
+            "value": 1.2
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2020-12-10T08:30:00-05:00",
+            "reference_period": "2020-11",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2020_11_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_12102020.pdf",
+            "source_version": "USDL-20-2218",
+            "unit": "percent",
+            "value": 0.2
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2020-12-04T08:30:00-05:00",
+            "reference_period": "2020-11",
+            "signal_id": "bls_unemployment_rate_sa_2020_11_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_12042020.pdf",
+            "source_version": "USDL-20-2184",
+            "unit": "percent",
+            "value": 6.7
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2020-12-04T08:30:00-05:00",
+            "reference_period": "2020-11",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2020_11_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_12042020.pdf",
+            "source_version": "USDL-20-2184",
+            "unit": "thousands",
+            "value": 245
+          }
+        ],
+        "reference_period": "2020-11",
+        "latest_known_cpi_yoy_pct": 1.2,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 1.4,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-01. You only know information that was publicly available by 2020-12-31T23:59:59-05:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2020-11: 1.2% (initial release published 2020-12-10, source USDL-20-2218)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2020-11: 0.2% (initial release published 2020-12-10, source USDL-20-2218)\n- Civilian unemployment rate, seasonally adjusted for 2020-11: 6.7% (initial release published 2020-12-04, source USDL-20-2184)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2020-11: 245 (initial release published 2020-12-04, source USDL-20-2184)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 2.0,
+          "bins": [
+            1.0,
+            2.0,
+            5.0,
+            12.0,
+            38.0,
+            28.0,
+            8.0,
+            4.0,
+            1.0,
+            1.0
+          ],
+          "reason": "With recent CPI inflation around 1.2% and a weak pandemic economy, I expect modest inflation near 2%, with most probability around 0-2% and some chance of mild deflation."
+        },
+        "example_density_mean_pp": 0.3379754647610369,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 42.0,
+          "positive_bin_count": 10,
+          "inflation_above4_mass_pct": 8.0,
+          "midpoint_mean_tail16_pp": 0.38,
+          "symmetric_tail12_20_mean_range_pp": [
+            0.38,
+            0.38
+          ]
+        }
+      },
+      "202102": {
+        "target_month": "2021-02",
+        "as_of": "2021-01-31T23:59:59-05:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-01-13T08:30:00-05:00",
+            "reference_period": "2020-12",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2020_12_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+            "source_version": "USDL-21-0024",
+            "unit": "percent",
+            "value": 1.4
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-01-13T08:30:00-05:00",
+            "reference_period": "2020-12",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2020_12_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_01132021.pdf",
+            "source_version": "USDL-21-0024",
+            "unit": "percent",
+            "value": 0.4
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-01-08T08:30:00-05:00",
+            "reference_period": "2020-12",
+            "signal_id": "bls_unemployment_rate_sa_2020_12_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_01082021.pdf",
+            "source_version": "USDL-21-0002",
+            "unit": "percent",
+            "value": 6.7
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-01-08T08:30:00-05:00",
+            "reference_period": "2020-12",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2020_12_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_01082021.pdf",
+            "source_version": "USDL-21-0002",
+            "unit": "thousands",
+            "value": -140
+          }
+        ],
+        "reference_period": "2020-12",
+        "latest_known_cpi_yoy_pct": 1.4,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 1.7,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-02. You only know information that was publicly available by 2021-01-31T23:59:59-05:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2020-12: 1.4% (initial release published 2021-01-13, source USDL-21-0024)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2020-12: 0.4% (initial release published 2021-01-13, source USDL-21-0024)\n- Civilian unemployment rate, seasonally adjusted for 2020-12: 6.7% (initial release published 2021-01-08, source USDL-21-0002)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2020-12: -140 (initial release published 2021-01-08, source USDL-21-0002)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nLast month you gave a point estimate of 2.0% for the then-current 12-month-ahead period. You may revise it freely.\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 2.0,
+          "bins": [
+            1.0,
+            2.0,
+            7.0,
+            15.0,
+            35.0,
+            25.0,
+            8.0,
+            5.0,
+            1.0,
+            1.0
+          ],
+          "reason": "With CPI inflation running near 1.4% and the economy still weak from the pandemic, I expect moderate inflation around 2% over the next year, with most risk tilted toward the 0-2% range."
+        },
+        "example_density_mean_pp": 0.4903045366110561,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 40.0,
+          "positive_bin_count": 10,
+          "inflation_above4_mass_pct": 10.0,
+          "midpoint_mean_tail16_pp": 0.53,
+          "symmetric_tail12_20_mean_range_pp": [
+            0.53,
+            0.53
+          ]
+        }
+      },
+      "202103": {
+        "target_month": "2021-03",
+        "as_of": "2021-02-28T23:59:59-05:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-02-10T08:30:00-05:00",
+            "reference_period": "2021-01",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_01_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+            "source_version": "USDL-21-0226",
+            "unit": "percent",
+            "value": 1.4
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-02-10T08:30:00-05:00",
+            "reference_period": "2021-01",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_01_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_02102021.pdf",
+            "source_version": "USDL-21-0226",
+            "unit": "percent",
+            "value": 0.3
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-02-05T08:30:00-05:00",
+            "reference_period": "2021-01",
+            "signal_id": "bls_unemployment_rate_sa_2021_01_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_02052021.pdf",
+            "source_version": "USDL-21-0158",
+            "unit": "percent",
+            "value": 6.3
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-02-05T08:30:00-05:00",
+            "reference_period": "2021-01",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_01_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_02052021.pdf",
+            "source_version": "USDL-21-0158",
+            "unit": "thousands",
+            "value": 49
+          }
+        ],
+        "reference_period": "2021-01",
+        "latest_known_cpi_yoy_pct": 1.4,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 2.6,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-03. You only know information that was publicly available by 2021-02-28T23:59:59-05:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2021-01: 1.4% (initial release published 2021-02-10, source USDL-21-0226)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2021-01: 0.3% (initial release published 2021-02-10, source USDL-21-0226)\n- Civilian unemployment rate, seasonally adjusted for 2021-01: 6.3% (initial release published 2021-02-05, source USDL-21-0158)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2021-01: 49 (initial release published 2021-02-05, source USDL-21-0158)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nLast month you gave a point estimate of 2.0% for the then-current 12-month-ahead period. You may revise it freely.\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 2.5,
+          "bins": [
+            1.0,
+            3.0,
+            8.0,
+            17.0,
+            38.0,
+            20.0,
+            7.0,
+            4.0,
+            1.0,
+            1.0
+          ],
+          "reason": "With inflation running near 1.4% and the economy still weak, I expect a modest rise toward 2.5% as growth resumes, with most probability mass around 0-4%."
+        },
+        "example_density_mean_pp": 0.8363877846176351,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 33.0,
+          "positive_bin_count": 10,
+          "inflation_above4_mass_pct": 12.0,
+          "midpoint_mean_tail16_pp": 0.92,
+          "symmetric_tail12_20_mean_range_pp": [
+            0.92,
+            0.92
+          ]
+        }
+      },
+      "202104": {
+        "target_month": "2021-04",
+        "as_of": "2021-03-31T23:59:59-04:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-03-10T08:30:00-05:00",
+            "reference_period": "2021-02",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_02_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+            "source_version": "USDL-21-0390",
+            "unit": "percent",
+            "value": 1.7
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-03-10T08:30:00-05:00",
+            "reference_period": "2021-02",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_02_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.pdf",
+            "source_version": "USDL-21-0390",
+            "unit": "percent",
+            "value": 0.4
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-03-05T08:30:00-05:00",
+            "reference_period": "2021-02",
+            "signal_id": "bls_unemployment_rate_sa_2021_02_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_03052021.pdf",
+            "source_version": "USDL-21-0365",
+            "unit": "percent",
+            "value": 6.2
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-03-05T08:30:00-05:00",
+            "reference_period": "2021-02",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_02_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_03052021.pdf",
+            "source_version": "USDL-21-0365",
+            "unit": "thousands",
+            "value": 379
+          }
+        ],
+        "reference_period": "2021-02",
+        "latest_known_cpi_yoy_pct": 1.7,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 4.2,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-04. You only know information that was publicly available by 2021-03-31T23:59:59-04:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2021-02: 1.7% (initial release published 2021-03-10, source USDL-21-0390)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2021-02: 0.4% (initial release published 2021-03-10, source USDL-21-0390)\n- Civilian unemployment rate, seasonally adjusted for 2021-02: 6.2% (initial release published 2021-03-05, source USDL-21-0365)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2021-02: 379 (initial release published 2021-03-05, source USDL-21-0365)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nLast month you gave a point estimate of 2.5% for the then-current 12-month-ahead period. You may revise it freely.\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 2.5,
+          "bins": [
+            1.0,
+            3.0,
+            10.0,
+            25.0,
+            35.0,
+            18.0,
+            5.0,
+            2.0,
+            0.0,
+            1.0
+          ],
+          "reason": "Recent CPI inflation is moderate at 1.7%, and I expect it to stay near the low 2% range over the next year. I see most of the chance around 0% to 4%, with small tails for higher or negative inflation."
+        },
+        "example_density_mean_pp": 1.4109218191759325,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 26.0,
+          "positive_bin_count": 9,
+          "inflation_above4_mass_pct": 14.0,
+          "midpoint_mean_tail16_pp": 1.55,
+          "symmetric_tail12_20_mean_range_pp": [
+            1.55,
+            1.55
+          ]
+        }
+      },
+      "202105": {
+        "target_month": "2021-05",
+        "as_of": "2021-04-30T23:59:59-04:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-04-13T08:30:00-04:00",
+            "reference_period": "2021-03",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_03_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+            "source_version": "USDL-21-0651",
+            "unit": "percent",
+            "value": 2.6
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-04-13T08:30:00-04:00",
+            "reference_period": "2021-03",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_03_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_04132021.pdf",
+            "source_version": "USDL-21-0651",
+            "unit": "percent",
+            "value": 0.6
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-04-02T08:30:00-04:00",
+            "reference_period": "2021-03",
+            "signal_id": "bls_unemployment_rate_sa_2021_03_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_04022021.pdf",
+            "source_version": "USDL-21-0582",
+            "unit": "percent",
+            "value": 6
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-04-02T08:30:00-04:00",
+            "reference_period": "2021-03",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_03_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_04022021.pdf",
+            "source_version": "USDL-21-0582",
+            "unit": "thousands",
+            "value": 916
+          }
+        ],
+        "reference_period": "2021-03",
+        "latest_known_cpi_yoy_pct": 2.6,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 5,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-05. You only know information that was publicly available by 2021-04-30T23:59:59-04:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2021-03: 2.6% (initial release published 2021-04-13, source USDL-21-0651)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2021-03: 0.6% (initial release published 2021-04-13, source USDL-21-0651)\n- Civilian unemployment rate, seasonally adjusted for 2021-03: 6% (initial release published 2021-04-02, source USDL-21-0582)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2021-03: 916 (initial release published 2021-04-02, source USDL-21-0582)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nLast month you gave a point estimate of 2.5% for the then-current 12-month-ahead period. You may revise it freely.\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 3.0,
+          "bins": [
+            2.0,
+            6.0,
+            14.0,
+            28.0,
+            30.0,
+            12.0,
+            4.0,
+            3.0,
+            1.0,
+            0.0
+          ],
+          "reason": "With inflation running at 2.6% and recent monthly increases, I expect somewhat higher inflation ahead, centered near 3%."
+        },
+        "example_density_mean_pp": 2.127216373467009,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 20.0,
+          "positive_bin_count": 9,
+          "inflation_above4_mass_pct": 22.0,
+          "midpoint_mean_tail16_pp": 2.38,
+          "symmetric_tail12_20_mean_range_pp": [
+            2.3,
+            2.46
+          ]
+        }
+      },
+      "202106": {
+        "target_month": "2021-06",
+        "as_of": "2021-05-31T23:59:59-04:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-05-12T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+            "source_version": "USDL-21-0857",
+            "unit": "percent",
+            "value": 4.2
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-05-12T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+            "source_version": "USDL-21-0857",
+            "unit": "percent",
+            "value": 0.8
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-05-07T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "signal_id": "bls_unemployment_rate_sa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+            "source_version": "USDL-21-0816",
+            "unit": "percent",
+            "value": 6.1
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-05-07T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+            "source_version": "USDL-21-0816",
+            "unit": "thousands",
+            "value": 266
+          }
+        ],
+        "reference_period": "2021-04",
+        "latest_known_cpi_yoy_pct": 4.2,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 5.4,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-06. You only know information that was publicly available by 2021-05-31T23:59:59-04:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2021-04: 4.2% (initial release published 2021-05-12, source USDL-21-0857)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2021-04: 0.8% (initial release published 2021-05-12, source USDL-21-0857)\n- Civilian unemployment rate, seasonally adjusted for 2021-04: 6.1% (initial release published 2021-05-07, source USDL-21-0816)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2021-04: 266 (initial release published 2021-05-07, source USDL-21-0816)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nLast month you gave a point estimate of 3.0% for the then-current 12-month-ahead period. You may revise it freely.\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 4.0,
+          "bins": [
+            1.0,
+            4.0,
+            15.0,
+            25.0,
+            25.0,
+            18.0,
+            7.0,
+            3.0,
+            1.0,
+            1.0
+          ],
+          "reason": "Recent CPI reports show inflation running around 4%, and I expect it to stay elevated near that level over the next year."
+        },
+        "example_density_mean_pp": 1.5690222011198713,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 30.0,
+          "positive_bin_count": 10,
+          "inflation_above4_mass_pct": 20.0,
+          "midpoint_mean_tail16_pp": 1.63,
+          "symmetric_tail12_20_mean_range_pp": [
+            1.63,
+            1.63
+          ]
+        }
+      },
+      "202107": {
+        "target_month": "2021-07",
+        "as_of": "2021-06-30T23:59:59-04:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-06-10T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+            "source_version": "USDL-21-1018",
+            "unit": "percent",
+            "value": 5
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-06-10T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+            "source_version": "USDL-21-1018",
+            "unit": "percent",
+            "value": 0.6
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-06-04T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "signal_id": "bls_unemployment_rate_sa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_06042021.pdf",
+            "source_version": "USDL-21-0980",
+            "unit": "percent",
+            "value": 5.8
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-06-04T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_06042021.pdf",
+            "source_version": "USDL-21-0980",
+            "unit": "thousands",
+            "value": 559
+          }
+        ],
+        "reference_period": "2021-05",
+        "latest_known_cpi_yoy_pct": 5,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 5.4,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-07. You only know information that was publicly available by 2021-06-30T23:59:59-04:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2021-05: 5% (initial release published 2021-06-10, source USDL-21-1018)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2021-05: 0.6% (initial release published 2021-06-10, source USDL-21-1018)\n- Civilian unemployment rate, seasonally adjusted for 2021-05: 5.8% (initial release published 2021-06-04, source USDL-21-0980)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2021-05: 559 (initial release published 2021-06-04, source USDL-21-0980)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nLast month you gave a point estimate of 4.0% for the then-current 12-month-ahead period. You may revise it freely.\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 4.5,
+          "bins": [
+            3.0,
+            10.0,
+            22.0,
+            28.0,
+            20.0,
+            9.0,
+            4.0,
+            2.0,
+            1.0,
+            1.0
+          ],
+          "reason": "Recent CPI reports show inflation running around 5%, so I expect somewhat elevated inflation over the next year but likely moderating from the current spike. I am not very numerate, so my uncertainty is fairly wide."
+        },
+        "example_density_mean_pp": 3.232189840690191,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 17.0,
+          "positive_bin_count": 10,
+          "inflation_above4_mass_pct": 35.0,
+          "midpoint_mean_tail16_pp": 3.25,
+          "symmetric_tail12_20_mean_range_pp": [
+            3.17,
+            3.33
+          ]
+        }
+      },
+      "202108": {
+        "target_month": "2021-08",
+        "as_of": "2021-07-31T23:59:59-04:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-07-13T08:30:00-04:00",
+            "reference_period": "2021-06",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_06_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_07132021.pdf",
+            "source_version": "USDL-21-1313",
+            "unit": "percent",
+            "value": 5.4
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-07-13T08:30:00-04:00",
+            "reference_period": "2021-06",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_06_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_07132021.pdf",
+            "source_version": "USDL-21-1313",
+            "unit": "percent",
+            "value": 0.9
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-07-02T08:30:00-04:00",
+            "reference_period": "2021-06",
+            "signal_id": "bls_unemployment_rate_sa_2021_06_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_07022021.pdf",
+            "source_version": "USDL-21-1224",
+            "unit": "percent",
+            "value": 5.9
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-07-02T08:30:00-04:00",
+            "reference_period": "2021-06",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_06_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_07022021.pdf",
+            "source_version": "USDL-21-1224",
+            "unit": "thousands",
+            "value": 850
+          }
+        ],
+        "reference_period": "2021-06",
+        "latest_known_cpi_yoy_pct": 5.4,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 5.3,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-08. You only know information that was publicly available by 2021-07-31T23:59:59-04:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2021-06: 5.4% (initial release published 2021-07-13, source USDL-21-1313)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2021-06: 0.9% (initial release published 2021-07-13, source USDL-21-1313)\n- Civilian unemployment rate, seasonally adjusted for 2021-06: 5.9% (initial release published 2021-07-02, source USDL-21-1224)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2021-06: 850 (initial release published 2021-07-02, source USDL-21-1224)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nLast month you gave a point estimate of 4.5% for the then-current 12-month-ahead period. You may revise it freely.\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 5.0,
+          "bins": [
+            2.0,
+            8.0,
+            20.0,
+            25.0,
+            25.0,
+            12.0,
+            5.0,
+            2.0,
+            1.0,
+            0.0
+          ],
+          "reason": "Recent CPI reports show inflation running around 5%, so I expect it to stay elevated near that level over the next year, with most likelihood in the 2-8% range."
+        },
+        "example_density_mean_pp": 2.6099876895605973,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 20.0,
+          "positive_bin_count": 9,
+          "inflation_above4_mass_pct": 30.0,
+          "midpoint_mean_tail16_pp": 2.83,
+          "symmetric_tail12_20_mean_range_pp": [
+            2.75,
+            2.91
+          ]
+        }
+      },
+      "202109": {
+        "target_month": "2021-09",
+        "as_of": "2021-08-31T23:59:59-04:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-08-11T08:30:00-04:00",
+            "reference_period": "2021-07",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_07_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_08112021.pdf",
+            "source_version": "USDL-21-1467",
+            "unit": "percent",
+            "value": 5.4
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-08-11T08:30:00-04:00",
+            "reference_period": "2021-07",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_07_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_08112021.pdf",
+            "source_version": "USDL-21-1467",
+            "unit": "percent",
+            "value": 0.5
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-08-06T08:30:00-04:00",
+            "reference_period": "2021-07",
+            "signal_id": "bls_unemployment_rate_sa_2021_07_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_08062021.pdf",
+            "source_version": "USDL-21-1434",
+            "unit": "percent",
+            "value": 5.4
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-08-06T08:30:00-04:00",
+            "reference_period": "2021-07",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_07_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_08062021.pdf",
+            "source_version": "USDL-21-1434",
+            "unit": "thousands",
+            "value": 943
+          }
+        ],
+        "reference_period": "2021-07",
+        "latest_known_cpi_yoy_pct": 5.4,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 5.4,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-09. You only know information that was publicly available by 2021-08-31T23:59:59-04:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2021-07: 5.4% (initial release published 2021-08-11, source USDL-21-1467)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2021-07: 0.5% (initial release published 2021-08-11, source USDL-21-1467)\n- Civilian unemployment rate, seasonally adjusted for 2021-07: 5.4% (initial release published 2021-08-06, source USDL-21-1434)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2021-07: 943 (initial release published 2021-08-06, source USDL-21-1434)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nLast month you gave a point estimate of 5.0% for the then-current 12-month-ahead period. You may revise it freely.\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 5.0,
+          "bins": [
+            2.0,
+            8.0,
+            20.0,
+            25.0,
+            20.0,
+            10.0,
+            6.0,
+            5.0,
+            2.0,
+            2.0
+          ],
+          "reason": "With inflation running around 5.4% and the economy still reopening, I expect prices to keep rising at a similar pace over the next year, though there is a lot of uncertainty."
+        },
+        "example_density_mean_pp": 2.2895703494168416,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 25.0,
+          "positive_bin_count": 10,
+          "inflation_above4_mass_pct": 30.0,
+          "midpoint_mean_tail16_pp": 2.17,
+          "symmetric_tail12_20_mean_range_pp": [
+            2.17,
+            2.17
+          ]
+        }
+      },
+      "202110": {
+        "target_month": "2021-10",
+        "as_of": "2021-09-30T23:59:59-04:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-09-14T08:30:00-04:00",
+            "reference_period": "2021-08",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_08_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_09142021.pdf",
+            "source_version": "USDL-21-1644",
+            "unit": "percent",
+            "value": 5.3
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-09-14T08:30:00-04:00",
+            "reference_period": "2021-08",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_08_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_09142021.pdf",
+            "source_version": "USDL-21-1644",
+            "unit": "percent",
+            "value": 0.3
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-09-03T08:30:00-04:00",
+            "reference_period": "2021-08",
+            "signal_id": "bls_unemployment_rate_sa_2021_08_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_09032021.pdf",
+            "source_version": "USDL-21-1571",
+            "unit": "percent",
+            "value": 5.2
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-09-03T08:30:00-04:00",
+            "reference_period": "2021-08",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_08_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_09032021.pdf",
+            "source_version": "USDL-21-1571",
+            "unit": "thousands",
+            "value": 235
+          }
+        ],
+        "reference_period": "2021-08",
+        "latest_known_cpi_yoy_pct": 5.3,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 6.2,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-10. You only know information that was publicly available by 2021-09-30T23:59:59-04:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2021-08: 5.3% (initial release published 2021-09-14, source USDL-21-1644)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2021-08: 0.3% (initial release published 2021-09-14, source USDL-21-1644)\n- Civilian unemployment rate, seasonally adjusted for 2021-08: 5.2% (initial release published 2021-09-03, source USDL-21-1571)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2021-08: 235 (initial release published 2021-09-03, source USDL-21-1571)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nLast month you gave a point estimate of 5.0% for the then-current 12-month-ahead period. You may revise it freely.\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 5.5,
+          "bins": [
+            3.0,
+            12.0,
+            25.0,
+            30.0,
+            18.0,
+            7.0,
+            3.0,
+            1.0,
+            0.5,
+            0.5
+          ],
+          "reason": "With recent CPI inflation running above 5% and broad price pressures continuing, I expect somewhat elevated inflation near 5.5% over the next year, with most probability in the 2% to 8% range."
+        },
+        "example_density_mean_pp": 3.8578164152986236,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 12.0,
+          "positive_bin_count": 10,
+          "inflation_above4_mass_pct": 40.0,
+          "midpoint_mean_tail16_pp": 3.91,
+          "symmetric_tail12_20_mean_range_pp": [
+            3.81,
+            4.01
+          ]
+        }
+      },
+      "202111": {
+        "target_month": "2021-11",
+        "as_of": "2021-10-31T23:59:59-04:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-10-13T08:30:00-04:00",
+            "reference_period": "2021-09",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_09_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_10132021.pdf",
+            "source_version": "USDL-21-1831",
+            "unit": "percent",
+            "value": 5.4
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-10-13T08:30:00-04:00",
+            "reference_period": "2021-09",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_09_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_10132021.pdf",
+            "source_version": "USDL-21-1831",
+            "unit": "percent",
+            "value": 0.4
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-10-08T08:30:00-04:00",
+            "reference_period": "2021-09",
+            "signal_id": "bls_unemployment_rate_sa_2021_09_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_10082021.pdf",
+            "source_version": "USDL-21-1799",
+            "unit": "percent",
+            "value": 4.8
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-10-08T08:30:00-04:00",
+            "reference_period": "2021-09",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_09_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_10082021.pdf",
+            "source_version": "USDL-21-1799",
+            "unit": "thousands",
+            "value": 194
+          }
+        ],
+        "reference_period": "2021-09",
+        "latest_known_cpi_yoy_pct": 5.4,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 6.8,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-11. You only know information that was publicly available by 2021-10-31T23:59:59-04:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2021-09: 5.4% (initial release published 2021-10-13, source USDL-21-1831)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2021-09: 0.4% (initial release published 2021-10-13, source USDL-21-1831)\n- Civilian unemployment rate, seasonally adjusted for 2021-09: 4.8% (initial release published 2021-10-08, source USDL-21-1799)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2021-09: 194 (initial release published 2021-10-08, source USDL-21-1799)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nLast month you gave a point estimate of 5.5% for the then-current 12-month-ahead period. You may revise it freely.\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 5.0,
+          "bins": [
+            2.0,
+            8.0,
+            25.0,
+            30.0,
+            20.0,
+            8.0,
+            4.0,
+            2.0,
+            1.0,
+            0.0
+          ],
+          "reason": "Inflation has been running around 5.4% and I expect it to stay elevated but ease somewhat over the next year as supply issues improve. I am not very numerate, so my estimates are rough and centered near recent experience."
+        },
+        "example_density_mean_pp": 3.175321154432817,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 15.0,
+          "positive_bin_count": 9,
+          "inflation_above4_mass_pct": 35.0,
+          "midpoint_mean_tail16_pp": 3.3,
+          "symmetric_tail12_20_mean_range_pp": [
+            3.22,
+            3.38
+          ]
+        }
+      },
+      "202112": {
+        "target_month": "2021-12",
+        "as_of": "2021-11-30T23:59:59-05:00",
+        "signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-11-10T08:30:00-05:00",
+            "reference_period": "2021-10",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_10_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_11102021.pdf",
+            "source_version": "USDL-21-1973",
+            "unit": "percent",
+            "value": 6.2
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-11-10T08:30:00-05:00",
+            "reference_period": "2021-10",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_10_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_11102021.pdf",
+            "source_version": "USDL-21-1973",
+            "unit": "percent",
+            "value": 0.9
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-11-05T08:30:00-04:00",
+            "reference_period": "2021-10",
+            "signal_id": "bls_unemployment_rate_sa_2021_10_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_11052021.pdf",
+            "source_version": "USDL-21-1930",
+            "unit": "percent",
+            "value": 4.6
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-11-05T08:30:00-04:00",
+            "reference_period": "2021-10",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_10_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_11052021.pdf",
+            "source_version": "USDL-21-1930",
+            "unit": "thousands",
+            "value": 531
+          }
+        ],
+        "reference_period": "2021-10",
+        "latest_known_cpi_yoy_pct": 6.2,
+        "contemporaneous_cpi_yoy_evaluation_only_pct": 7,
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nIt is 2021-12. You only know information that was publicly available by 2021-11-30T23:59:59-05:00.\nThe most recent official U.S. Bureau of Labor Statistics releases available to you:\n- CPI-U all items 12-month percent change, not seasonally adjusted for 2021-10: 6.2% (initial release published 2021-11-10, source USDL-21-1973)\n- CPI-U all items 1-month percent change, seasonally adjusted for 2021-10: 0.9% (initial release published 2021-11-10, source USDL-21-1973)\n- Civilian unemployment rate, seasonally adjusted for 2021-10: 4.6% (initial release published 2021-11-05, source USDL-21-1930)\n- Total nonfarm payroll employment 1-month change, seasonally adjusted for 2021-10: 531 (initial release published 2021-11-05, source USDL-21-1930)\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nLast month you gave a point estimate of 5.0% for the then-current 12-month-ahead period. You may revise it freely.\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "reply_example": {
+          "point_pct": 5.5,
+          "bins": [
+            3.0,
+            10.0,
+            27.0,
+            30.0,
+            18.0,
+            7.0,
+            3.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          "reason": "With recent CPI inflation running at 6.2% and strong demand, I expect somewhat elevated inflation over the next year, though it may ease from current levels."
+        },
+        "example_density_mean_pp": 3.7431911842284604,
+        "example_probability_diagnostic": {
+          "deflation_mass_pct": 12.0,
+          "positive_bin_count": 9,
+          "inflation_above4_mass_pct": 40.0,
+          "midpoint_mean_tail16_pp": 3.8,
+          "symmetric_tail12_20_mean_range_pp": [
+            3.72,
+            3.88
+          ]
+        }
+      }
+    },
+    "old_reason_mentions": {
+      "202101": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 62,
+        "pandemic_reason_mentions": 60,
+        "pandemic_mentioned_not_in_input": 60,
+        "fed_reason_mentions": 3,
+        "fed_mentioned_not_in_input": 3
+      },
+      "202102": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 39,
+        "pandemic_reason_mentions": 24,
+        "pandemic_mentioned_not_in_input": 24,
+        "fed_reason_mentions": 4,
+        "fed_mentioned_not_in_input": 4
+      },
+      "202103": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 55,
+        "pandemic_reason_mentions": 17,
+        "pandemic_mentioned_not_in_input": 17,
+        "fed_reason_mentions": 4,
+        "fed_mentioned_not_in_input": 4
+      },
+      "202104": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 60,
+        "pandemic_reason_mentions": 5,
+        "pandemic_mentioned_not_in_input": 5,
+        "fed_reason_mentions": 4,
+        "fed_mentioned_not_in_input": 4,
+        "temporary_reason_mentions": 1,
+        "temporary_mentioned_not_in_input": 1
+      },
+      "202105": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 67,
+        "pandemic_reason_mentions": 2,
+        "pandemic_mentioned_not_in_input": 2,
+        "temporary_reason_mentions": 3,
+        "temporary_mentioned_not_in_input": 3,
+        "fed_reason_mentions": 7,
+        "fed_mentioned_not_in_input": 7
+      },
+      "202106": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 64,
+        "fed_reason_mentions": 2,
+        "fed_mentioned_not_in_input": 2
+      },
+      "202107": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 66,
+        "temporary_reason_mentions": 3,
+        "temporary_mentioned_not_in_input": 3,
+        "fed_reason_mentions": 8,
+        "fed_mentioned_not_in_input": 8,
+        "pandemic_reason_mentions": 3,
+        "pandemic_mentioned_not_in_input": 3
+      },
+      "202108": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 65,
+        "fed_reason_mentions": 3,
+        "fed_mentioned_not_in_input": 3,
+        "temporary_reason_mentions": 5,
+        "temporary_mentioned_not_in_input": 5
+      },
+      "202109": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 62,
+        "fed_reason_mentions": 3,
+        "fed_mentioned_not_in_input": 3,
+        "pandemic_reason_mentions": 5,
+        "pandemic_mentioned_not_in_input": 5,
+        "temporary_reason_mentions": 3,
+        "temporary_mentioned_not_in_input": 3
+      },
+      "202110": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 62,
+        "pandemic_reason_mentions": 4,
+        "pandemic_mentioned_not_in_input": 4,
+        "temporary_reason_mentions": 2,
+        "temporary_mentioned_not_in_input": 2,
+        "fed_reason_mentions": 5,
+        "fed_mentioned_not_in_input": 5
+      },
+      "202111": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 60,
+        "fed_reason_mentions": 1,
+        "fed_mentioned_not_in_input": 1
+      },
+      "202112": {
+        "n_calls": 73,
+        "cpi_reason_mentions": 63,
+        "fed_reason_mentions": 8,
+        "fed_mentioned_not_in_input": 8
+      }
+    },
+    "old73_monthly": {
+      "202101": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 73,
+            "median": 2.0,
+            "iqr": 0.19999999999999996
+          },
+          "matched_real": {
+            "n": 73,
+            "median": 3.5,
+            "iqr": 13.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 71,
+            "median": 0.7795634992921183,
+            "iqr": 0.6065961294261903
+          },
+          "matched_real": {
+            "n": 71,
+            "median": 3.14556831735129,
+            "iqr": 8.271393391255181
+          }
+        },
+        "raw_deflation_mass_median_pct": 35.0,
+        "raw_real_deflation_mass_median_pct": 5.0,
+        "raw_positive_bin_count_median": 10.0,
+        "real_positive_bin_count_median": 5.0,
+        "midpoint_mean_median_pp": 0.82,
+        "individual_point_minus_density_median_pp": 1.1972228649549976,
+        "real_individual_point_minus_density_median_pp": 0.4961825410886007
+      },
+      "202102": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 73,
+            "median": 2.2,
+            "iqr": 0.2999999999999998
+          },
+          "matched_real": {
+            "n": 73,
+            "median": 5.0,
+            "iqr": 8.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 73,
+            "median": 0.9874613774832692,
+            "iqr": 0.456790000718188
+          },
+          "matched_real": {
+            "n": 73,
+            "median": 3.090884534886859,
+            "iqr": 6.2688927452270935
+          }
+        },
+        "raw_deflation_mass_median_pct": 32.0,
+        "raw_real_deflation_mass_median_pct": 5.0,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 4.0,
+        "midpoint_mean_median_pp": 1.16,
+        "individual_point_minus_density_median_pp": 1.286225637737342,
+        "real_individual_point_minus_density_median_pp": 0.8375089704732757
+      },
+      "202103": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 73,
+            "median": 2.5,
+            "iqr": 0.2999999999999998
+          },
+          "matched_real": {
+            "n": 73,
+            "median": 3.0,
+            "iqr": 8.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 70,
+            "median": 1.1022641658515635,
+            "iqr": 0.3302068714537083
+          },
+          "matched_real": {
+            "n": 70,
+            "median": 2.956469513524625,
+            "iqr": 3.484035246441444
+          }
+        },
+        "raw_deflation_mass_median_pct": 30.0,
+        "raw_real_deflation_mass_median_pct": 5.0,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 4.0,
+        "midpoint_mean_median_pp": 1.26,
+        "individual_point_minus_density_median_pp": 1.4667050664948675,
+        "real_individual_point_minus_density_median_pp": 0.549386554763811
+      },
+      "202104": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 73,
+            "median": 2.8,
+            "iqr": 0.2999999999999998
+          },
+          "matched_real": {
+            "n": 73,
+            "median": 4.0,
+            "iqr": 7.5
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 73,
+            "median": 1.2447364415760624,
+            "iqr": 0.34840892500296405
+          },
+          "matched_real": {
+            "n": 73,
+            "median": 3.0154592182328086,
+            "iqr": 3.867189769524582
+          }
+        },
+        "raw_deflation_mass_median_pct": 28.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 4.0,
+        "midpoint_mean_median_pp": 1.4,
+        "individual_point_minus_density_median_pp": 1.5135730811533525,
+        "real_individual_point_minus_density_median_pp": 0.4624752955742646
+      },
+      "202105": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 72,
+            "median": 3.2,
+            "iqr": 0.3999999999999999
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 5.0,
+            "iqr": 6.375
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 72,
+            "median": 1.7973406722387644,
+            "iqr": 0.3436272998500356
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 3.5693338596267283,
+            "iqr": 3.8355483529022987
+          }
+        },
+        "raw_deflation_mass_median_pct": 21.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 10.0,
+        "real_positive_bin_count_median": 4.0,
+        "midpoint_mean_median_pp": 2.07,
+        "individual_point_minus_density_median_pp": 1.4352181010189389,
+        "real_individual_point_minus_density_median_pp": 0.14400357776314676
+      },
+      "202106": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 72,
+            "median": 4.15,
+            "iqr": 0.5
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 5.0,
+            "iqr": 7.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 72,
+            "median": 3.175321154432817,
+            "iqr": 0.3613764811180684
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 3.822807373668476,
+            "iqr": 3.757078027538968
+          }
+        },
+        "raw_deflation_mass_median_pct": 15.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.27,
+        "individual_point_minus_density_median_pp": 1.31859972741589,
+        "real_individual_point_minus_density_median_pp": 0.5595983917745286
+      },
+      "202107": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 72,
+            "median": 4.5,
+            "iqr": 0.375
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 5.0,
+            "iqr": 6.25
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 72,
+            "median": 3.175321154432817,
+            "iqr": 0.8065550165421982
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 4.477956147767353,
+            "iqr": 4.165285213553782
+          }
+        },
+        "raw_deflation_mass_median_pct": 16.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.26,
+        "individual_point_minus_density_median_pp": 1.4053081764143265,
+        "real_individual_point_minus_density_median_pp": 0.5968056990962407
+      },
+      "202108": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 72,
+            "median": 4.8,
+            "iqr": 0.7999999999999998
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 5.5,
+            "iqr": 6.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 72,
+            "median": 3.0639781155005306,
+            "iqr": 0.7846518761837156
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 5.218884006650612,
+            "iqr": 4.6024138911638595
+          }
+        },
+        "raw_deflation_mass_median_pct": 17.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 3.5,
+        "midpoint_mean_median_pp": 3.22,
+        "individual_point_minus_density_median_pp": 1.4455366053839818,
+        "real_individual_point_minus_density_median_pp": 0.2577035985148033
+      },
+      "202109": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 72,
+            "median": 4.5,
+            "iqr": 0.5
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 6.0,
+            "iqr": 7.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 71,
+            "median": 2.9440446650474286,
+            "iqr": 0.47117101251995797
+          },
+          "matched_real": {
+            "n": 71,
+            "median": 5.066441150807035,
+            "iqr": 5.941120747108842
+          }
+        },
+        "raw_deflation_mass_median_pct": 18.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 10.0,
+        "real_positive_bin_count_median": 4.0,
+        "midpoint_mean_median_pp": 3.04,
+        "individual_point_minus_density_median_pp": 1.708383622465739,
+        "real_individual_point_minus_density_median_pp": 0.6168401311779417
+      },
+      "202110": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 72,
+            "median": 4.5,
+            "iqr": 0.7999999999999998
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 6.0,
+            "iqr": 6.5
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 72,
+            "median": 3.0756209822229694,
+            "iqr": 0.7215322763345089
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 5.647176904137575,
+            "iqr": 4.742422132152236
+          }
+        },
+        "raw_deflation_mass_median_pct": 15.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 10.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.25,
+        "individual_point_minus_density_median_pp": 1.4092208742825036,
+        "real_individual_point_minus_density_median_pp": 0.34991026535960135
+      },
+      "202111": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 72,
+            "median": 4.8,
+            "iqr": 0.5
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 6.0,
+            "iqr": 6.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 71,
+            "median": 3.175321154432817,
+            "iqr": 0.9544230903805166
+          },
+          "matched_real": {
+            "n": 71,
+            "median": 5.722536740072787,
+            "iqr": 6.351406981623189
+          }
+        },
+        "raw_deflation_mass_median_pct": 15.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.3,
+        "individual_point_minus_density_median_pp": 1.3993415127628896,
+        "real_individual_point_minus_density_median_pp": 0.31250819565399723
+      },
+      "202112": {
+        "n_selected": 73,
+        "point": {
+          "simulated": {
+            "n": 72,
+            "median": 5.25,
+            "iqr": 0.5
+          },
+          "matched_real": {
+            "n": 72,
+            "median": 7.0,
+            "iqr": 5.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 71,
+            "median": 4.0601549532728605,
+            "iqr": 0.8625843976637482
+          },
+          "matched_real": {
+            "n": 71,
+            "median": 5.760429666459391,
+            "iqr": 6.186815748533348
+          }
+        },
+        "raw_deflation_mass_median_pct": 12.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 10.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 4.13,
+        "individual_point_minus_density_median_pp": 1.004233487874239,
+        "real_individual_point_minus_density_median_pp": 0.23957033354060897
+      }
+    },
+    "selected20_deepseek": {
+      "202101": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 2.0,
+            "iqr": 0.19999999999999996
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.0,
+            "iqr": 6.5
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 18,
+            "median": 0.5245333937119723,
+            "iqr": 0.7356524978613397
+          },
+          "matched_real": {
+            "n": 18,
+            "median": 2.951100996332056,
+            "iqr": 5.083382669699096
+          }
+        },
+        "raw_deflation_mass_median_pct": 37.5,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 10.0,
+        "real_positive_bin_count_median": 5.0,
+        "midpoint_mean_median_pp": 0.647,
+        "individual_point_minus_density_median_pp": 1.3194736961962605,
+        "real_individual_point_minus_density_median_pp": -0.023504427123022698
+      },
+      "202102": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 2.2,
+            "iqr": 0.32499999999999973
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.0,
+            "iqr": 3.5
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 0.9896597789956125,
+            "iqr": 0.2756790112788914
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 2.494458460501971,
+            "iqr": 1.8024478634990737
+          }
+        },
+        "raw_deflation_mass_median_pct": 32.0,
+        "raw_real_deflation_mass_median_pct": 5.5,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 4.5,
+        "midpoint_mean_median_pp": 1.1749999999999998,
+        "individual_point_minus_density_median_pp": 1.2412452687532607,
+        "real_individual_point_minus_density_median_pp": 0.8764309268242954
+      },
+      "202103": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 2.5,
+            "iqr": 0.2999999999999998
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.0,
+            "iqr": 2.775000035762787
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 19,
+            "median": 1.1022641658515635,
+            "iqr": 0.26163840455479903
+          },
+          "matched_real": {
+            "n": 19,
+            "median": 2.873735033963568,
+            "iqr": 1.4896023488328933
+          }
+        },
+        "raw_deflation_mass_median_pct": 30.0,
+        "raw_real_deflation_mass_median_pct": 2.5,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 3.5,
+        "midpoint_mean_median_pp": 1.26,
+        "individual_point_minus_density_median_pp": 1.478224776541833,
+        "real_individual_point_minus_density_median_pp": 0.7117260197063469
+      },
+      "202104": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 2.8,
+            "iqr": 0.07500000000000018
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.0,
+            "iqr": 2.625
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 1.1579754388981929,
+            "iqr": 0.2814536645801038
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.0277376093481116,
+            "iqr": 1.6510337285846757
+          }
+        },
+        "raw_deflation_mass_median_pct": 28.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 4.0,
+        "midpoint_mean_median_pp": 1.34,
+        "individual_point_minus_density_median_pp": 1.569202268615911,
+        "real_individual_point_minus_density_median_pp": 0.5013543445099948
+      },
+      "202105": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 3.2,
+            "iqr": 0.20000000000000018
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.0,
+            "iqr": 5.875
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 1.8065478260426637,
+            "iqr": 0.4535081657274529
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.242301879913803,
+            "iqr": 1.7610872266489865
+          }
+        },
+        "raw_deflation_mass_median_pct": 20.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 10.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 2.081,
+        "individual_point_minus_density_median_pp": 1.3424527653853575,
+        "real_individual_point_minus_density_median_pp": 0.2660750209834082
+      },
+      "202106": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 4.25,
+            "iqr": 0.5
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.0,
+            "iqr": 2.25
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 2.97136756492623,
+            "iqr": 0.49359521241329674
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.195920426216781,
+            "iqr": 1.3893760364800425
+          }
+        },
+        "raw_deflation_mass_median_pct": 16.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.1,
+        "individual_point_minus_density_median_pp": 1.328261736202628,
+        "real_individual_point_minus_density_median_pp": -0.007729609116404301
+      },
+      "202107": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 0.5999999999999996
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.0,
+            "iqr": 2.375
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 3.2186269273818757,
+            "iqr": 0.9137300194761391
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.1179833763475715,
+            "iqr": 1.922345121908136
+          }
+        },
+        "raw_deflation_mass_median_pct": 15.5,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 10.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.38,
+        "individual_point_minus_density_median_pp": 1.261613650124911,
+        "real_individual_point_minus_density_median_pp": 0.4893224503071607
+      },
+      "202108": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 4.8,
+            "iqr": 0.27500000000000036
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.25,
+            "iqr": 4.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 3.090559115947467,
+            "iqr": 1.0208661826814027
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.572868980412097,
+            "iqr": 3.0646545105271352
+          }
+        },
+        "raw_deflation_mass_median_pct": 16.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 10.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.242,
+        "individual_point_minus_density_median_pp": 1.3985057297349575,
+        "real_individual_point_minus_density_median_pp": 0.007297029234912378
+      },
+      "202109": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 0.34999999999999964
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 3.5
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 19,
+            "median": 3.012444072603655,
+            "iqr": 0.24847152262511019
+          },
+          "matched_real": {
+            "n": 19,
+            "median": 3.4678499580331836,
+            "iqr": 2.876292096432832
+          }
+        },
+        "raw_deflation_mass_median_pct": 16.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 10.0,
+        "real_positive_bin_count_median": 4.0,
+        "midpoint_mean_median_pp": 3.162,
+        "individual_point_minus_density_median_pp": 1.507648484815066,
+        "real_individual_point_minus_density_median_pp": 0.07236212687097421
+      },
+      "202110": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 0.2999999999999998
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 2.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 2.9947599682192116,
+            "iqr": 0.286010466821359
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.100527158262582,
+            "iqr": 2.810564869768307
+          }
+        },
+        "raw_deflation_mass_median_pct": 16.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.192,
+        "individual_point_minus_density_median_pp": 1.5052400317807884,
+        "real_individual_point_minus_density_median_pp": -0.21044192663385552
+      },
+      "202111": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 0.7999999999999998
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.0,
+            "iqr": 2.800000011920929
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 3.175321154432817,
+            "iqr": 0.6743130262234214
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.196760922060437,
+            "iqr": 3.193059527858482
+          }
+        },
+        "raw_deflation_mass_median_pct": 15.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 9.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.28,
+        "individual_point_minus_density_median_pp": 1.2718480271872048,
+        "real_individual_point_minus_density_median_pp": -0.10132246821857804
+      },
+      "202112": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 5.5,
+            "iqr": 1.0
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 5.0,
+            "iqr": 5.025000035762787
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 4.19980510456123,
+            "iqr": 1.0527375445847102
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.223518499758959,
+            "iqr": 3.07390798589659
+          }
+        },
+        "raw_deflation_mass_median_pct": 11.5,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 10.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 4.26,
+        "individual_point_minus_density_median_pp": 1.1405914691892436,
+        "real_individual_point_minus_density_median_pp": -0.006716117644446129
+      }
+    },
+    "selected20_qwen": {
+      "202101": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 1.5,
+            "iqr": 0.0
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.0,
+            "iqr": 6.5
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 18,
+            "median": 0.955043991926221,
+            "iqr": 0.0
+          },
+          "matched_real": {
+            "n": 18,
+            "median": 2.951100996332056,
+            "iqr": 5.083382669699096
+          }
+        },
+        "raw_deflation_mass_median_pct": 25.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 7.0,
+        "real_positive_bin_count_median": 5.0,
+        "midpoint_mean_median_pp": 0.89,
+        "individual_point_minus_density_median_pp": 0.544956008073779,
+        "real_individual_point_minus_density_median_pp": -0.023504427123022698
+      },
+      "202102": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 2.2,
+            "iqr": 0.20000000000000018
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.0,
+            "iqr": 3.5
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 1.2958403109532868,
+            "iqr": 0.5133172342920242
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 2.494458460501971,
+            "iqr": 1.8024478634990737
+          }
+        },
+        "raw_deflation_mass_median_pct": 25.0,
+        "raw_real_deflation_mass_median_pct": 5.5,
+        "raw_positive_bin_count_median": 7.0,
+        "real_positive_bin_count_median": 4.5,
+        "midpoint_mean_median_pp": 1.245,
+        "individual_point_minus_density_median_pp": 0.70621623060054,
+        "real_individual_point_minus_density_median_pp": 0.8764309268242954
+      },
+      "202103": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 2.5,
+            "iqr": 0.0
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.0,
+            "iqr": 2.775000035762787
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 19,
+            "median": 1.0762911096240853,
+            "iqr": 0.13864299616143683
+          },
+          "matched_real": {
+            "n": 19,
+            "median": 2.873735033963568,
+            "iqr": 1.4896023488328933
+          }
+        },
+        "raw_deflation_mass_median_pct": 25.0,
+        "raw_real_deflation_mass_median_pct": 2.5,
+        "raw_positive_bin_count_median": 7.0,
+        "real_positive_bin_count_median": 3.5,
+        "midpoint_mean_median_pp": 0.99,
+        "individual_point_minus_density_median_pp": 1.4206822430289323,
+        "real_individual_point_minus_density_median_pp": 0.7117260197063469
+      },
+      "202104": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 2.5,
+            "iqr": 0.04999999999999982
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.0,
+            "iqr": 2.625
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 1.4937837693994602,
+            "iqr": 0.48185884489981134
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.0277376093481116,
+            "iqr": 1.6510337285846757
+          }
+        },
+        "raw_deflation_mass_median_pct": 20.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 7.0,
+        "real_positive_bin_count_median": 4.0,
+        "midpoint_mean_median_pp": 1.44,
+        "individual_point_minus_density_median_pp": 1.1269243103054105,
+        "real_individual_point_minus_density_median_pp": 0.5013543445099948
+      },
+      "202105": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 2.9,
+            "iqr": 0.20000000000000018
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.0,
+            "iqr": 5.875
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 1.4937837693994602,
+            "iqr": 0.0843176864842512
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.242301879913803,
+            "iqr": 1.7610872266489865
+          }
+        },
+        "raw_deflation_mass_median_pct": 20.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 7.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 1.455,
+        "individual_point_minus_density_median_pp": 1.363936140757951,
+        "real_individual_point_minus_density_median_pp": 0.2660750209834082
+      },
+      "202106": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 3.5,
+            "iqr": 0.0
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.0,
+            "iqr": 2.25
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 2.556468091033695,
+            "iqr": 0.6074585856074153
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.195920426216781,
+            "iqr": 1.3893760364800425
+          }
+        },
+        "raw_deflation_mass_median_pct": 10.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 6.5,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 2.665,
+        "individual_point_minus_density_median_pp": 1.1429452124635429,
+        "real_individual_point_minus_density_median_pp": -0.007729609116404301
+      },
+      "202107": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 4.0,
+            "iqr": 0.5
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.0,
+            "iqr": 2.375
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 3.270416113178798,
+            "iqr": 0.8953301041385084
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.1179833763475715,
+            "iqr": 1.922345121908136
+          }
+        },
+        "raw_deflation_mass_median_pct": 10.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 5.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.585,
+        "individual_point_minus_density_median_pp": 1.1398202893207214,
+        "real_individual_point_minus_density_median_pp": 0.4893224503071607
+      },
+      "202108": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 0.5
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.25,
+            "iqr": 4.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 3.3601797106792786,
+            "iqr": 0.4399652230250597
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.572868980412097,
+            "iqr": 3.0646545105271352
+          }
+        },
+        "raw_deflation_mass_median_pct": 7.5,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 5.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.65,
+        "individual_point_minus_density_median_pp": 1.1398202893207214,
+        "real_individual_point_minus_density_median_pp": 0.007297029234912378
+      },
+      "202109": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 0.5
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 3.5
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 19,
+            "median": 3.3601797106792786,
+            "iqr": 0.2958705319493262
+          },
+          "matched_real": {
+            "n": 19,
+            "median": 3.4678499580331836,
+            "iqr": 2.876292096432832
+          }
+        },
+        "raw_deflation_mass_median_pct": 5.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 5.0,
+        "real_positive_bin_count_median": 4.0,
+        "midpoint_mean_median_pp": 3.65,
+        "individual_point_minus_density_median_pp": 1.2315613532193739,
+        "real_individual_point_minus_density_median_pp": 0.07236212687097421
+      },
+      "202110": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 0.5
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 2.0
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 3.177950058605444,
+            "iqr": 0.6469767142858656
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.100527158262582,
+            "iqr": 2.810564869768307
+          }
+        },
+        "raw_deflation_mass_median_pct": 5.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 5.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.425,
+        "individual_point_minus_density_median_pp": 1.1856908212700477,
+        "real_individual_point_minus_density_median_pp": -0.21044192663385552
+      },
+      "202111": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 4.5,
+            "iqr": 0.5
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.0,
+            "iqr": 2.800000011920929
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 3.3601797106792786,
+            "iqr": 0.0
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 3.196760922060437,
+            "iqr": 3.193059527858482
+          }
+        },
+        "raw_deflation_mass_median_pct": 5.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 5.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 3.65,
+        "individual_point_minus_density_median_pp": 1.2130268773694133,
+        "real_individual_point_minus_density_median_pp": -0.10132246821857804
+      },
+      "202112": {
+        "n_selected": 20,
+        "point": {
+          "simulated": {
+            "n": 20,
+            "median": 5.0,
+            "iqr": 0.5
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 5.0,
+            "iqr": 5.025000035762787
+          }
+        },
+        "density": {
+          "simulated": {
+            "n": 20,
+            "median": 4.352758909352083,
+            "iqr": 0.4194322916536146
+          },
+          "matched_real": {
+            "n": 20,
+            "median": 4.223518499758959,
+            "iqr": 3.07390798589659
+          }
+        },
+        "raw_deflation_mass_median_pct": 5.0,
+        "raw_real_deflation_mass_median_pct": 0.0,
+        "raw_positive_bin_count_median": 6.0,
+        "real_positive_bin_count_median": 3.0,
+        "midpoint_mean_median_pp": 4.7,
+        "individual_point_minus_density_median_pp": 1.0321178861836895,
+        "real_individual_point_minus_density_median_pp": -0.006716117644446129
+      }
+    },
+    "full_real_official_monthly": {
+      "202101": {
+        "n_respondents": 1259,
+        "q8point_interp_median": 4.5480240532620515,
+        "q9_mean_weighted_median": 3.0466694831848145,
+        "n_with_weight_q8": 1251,
+        "n_with_weight_q9_mean": 1237,
+        "official_point_median": 4.54802417755127,
+        "official_density_median": 3.046669483184814
+      },
+      "202102": {
+        "n_respondents": 1243,
+        "q8point_interp_median": 4.578317318116222,
+        "q9_mean_weighted_median": 3.0908844470977783,
+        "n_with_weight_q8": 1239,
+        "n_with_weight_q9_mean": 1226,
+        "official_point_median": 4.578317165374756,
+        "official_density_median": 3.090884447097778
+      },
+      "202103": {
+        "n_respondents": 1221,
+        "q8point_interp_median": 4.920811701490738,
+        "q9_mean_weighted_median": 3.244255781173706,
+        "n_with_weight_q8": 1215,
+        "n_with_weight_q9_mean": 1163,
+        "official_point_median": 4.920811653137207,
+        "official_density_median": 3.244255781173706
+      },
+      "202104": {
+        "n_respondents": 1243,
+        "q8point_interp_median": 4.620440990054071,
+        "q9_mean_weighted_median": 3.3601796627044678,
+        "n_with_weight_q8": 1240,
+        "n_with_weight_q9_mean": 1228,
+        "official_point_median": 4.62044095993042,
+        "official_density_median": 3.360179662704468
+      },
+      "202105": {
+        "n_respondents": 1234,
+        "q8point_interp_median": 5.261723083146164,
+        "q9_mean_weighted_median": 4.0,
+        "n_with_weight_q8": 1228,
+        "n_with_weight_q9_mean": 1216,
+        "official_point_median": 5.261723041534424,
+        "official_density_median": 4
+      },
+      "202106": {
+        "n_respondents": 1297,
+        "q8point_interp_median": 5.481581789765941,
+        "q9_mean_weighted_median": 4.801745414733887,
+        "n_with_weight_q8": 1293,
+        "n_with_weight_q9_mean": 1273,
+        "official_point_median": 5.481581687927246,
+        "official_density_median": 4.801745414733887
+      },
+      "202107": {
+        "n_respondents": 1239,
+        "q8point_interp_median": 5.410089898614995,
+        "q9_mean_weighted_median": 4.8424506187438965,
+        "n_with_weight_q8": 1235,
+        "n_with_weight_q9_mean": 1224,
+        "official_point_median": 5.41008996963501,
+        "official_density_median": 4.842450618743896
+      },
+      "202108": {
+        "n_respondents": 1265,
+        "q8point_interp_median": 5.816178695044224,
+        "q9_mean_weighted_median": 5.1798272132873535,
+        "n_with_weight_q8": 1263,
+        "n_with_weight_q9_mean": 1248,
+        "official_point_median": 5.816178321838379,
+        "official_density_median": 5.179827213287354
+      },
+      "202109": {
+        "n_respondents": 1261,
+        "q8point_interp_median": 5.522045542158612,
+        "q9_mean_weighted_median": 5.310168743133545,
+        "n_with_weight_q8": 1254,
+        "n_with_weight_q9_mean": 1243,
+        "official_point_median": 5.522045612335205,
+        "official_density_median": 5.310168743133545
+      },
+      "202110": {
+        "n_respondents": 1283,
+        "q8point_interp_median": 6.816116852479353,
+        "q9_mean_weighted_median": 5.653466701507568,
+        "n_with_weight_q8": 1279,
+        "n_with_weight_q9_mean": 1266,
+        "official_point_median": 6.816116809844971,
+        "official_density_median": 5.653466701507568
+      },
+      "202111": {
+        "n_respondents": 1281,
+        "q8point_interp_median": 7.233366087222235,
+        "q9_mean_weighted_median": 6.0,
+        "n_with_weight_q8": 1277,
+        "n_with_weight_q9_mean": 1259,
+        "official_point_median": 7.233366012573242,
+        "official_density_median": 6
+      },
+      "202112": {
+        "n_respondents": 1283,
+        "q8point_interp_median": 7.025210892805949,
+        "q9_mean_weighted_median": 5.990273952484131,
+        "n_with_weight_q8": 1279,
+        "n_with_weight_q9_mean": 1261,
+        "official_point_median": 7.025210380554199,
+        "official_density_median": 5.990273952484131
+      }
+    },
+    "new_v2_months": {
+      "202105": {
+        "source_run": "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c",
+        "as_of": "2021-05-12T23:59:59-04:00",
+        "n_calls": 300,
+        "memory_notes": 0,
+        "signal_count": 77,
+        "news_count": 30,
+        "latest_signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-05-12T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+            "source_version": "USDL-21-0857",
+            "unit": "percent",
+            "value": 4.2
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-05-12T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+            "source_version": "USDL-21-0857",
+            "unit": "percent",
+            "value": 0.8
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-05-07T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "role": "latest_release",
+            "signal_id": "bls_unemployment_rate_sa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+            "source_version": "USDL-21-0816",
+            "unit": "percent",
+            "value": 6.1
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-05-07T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "role": "latest_release",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_05072021.pdf",
+            "source_version": "USDL-21-0816",
+            "unit": "thousands",
+            "value": 266
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-05-12T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_food_yoy_nsa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+            "source_version": "USDL-21-0857",
+            "unit": "percent",
+            "value": 2.4
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U food at home 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-05-12T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_food_at_home_yoy_nsa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+            "source_version": "USDL-21-0857",
+            "unit": "percent",
+            "value": 1.2
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-05-12T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_energy_yoy_nsa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+            "source_version": "USDL-21-0857",
+            "unit": "percent",
+            "value": 25.1
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-05-12T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_shelter_yoy_nsa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+            "source_version": "USDL-21-0857",
+            "unit": "percent",
+            "value": 2.1
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U gasoline (all types) 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-05-12T08:30:00-04:00",
+            "reference_period": "2021-04",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_gasoline_yoy_nsa_2021_04_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_05122021.pdf",
+            "source_version": "USDL-21-0857",
+            "unit": "percent",
+            "value": 49.6
+          },
+          {
+            "eligibility": "vintage_unverified",
+            "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+            "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)",
+            "published_at": "2021-04-29T17:00:00-04:00",
+            "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+            "reference_period": "2021-04",
+            "role": "latest_release",
+            "signal_id": "eia_gasoline_retail_regular_mean_2021_04",
+            "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+            "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+            "unit": "dollars_per_gallon",
+            "value": 2.858
+          },
+          {
+            "eligibility": "vintage_unverified",
+            "measure": "Retail gasoline price 12-month percent change (monthly means)",
+            "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)",
+            "published_at": "2021-04-29T17:00:00-04:00",
+            "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+            "reference_period": "2021-04",
+            "role": "latest_release",
+            "signal_id": "eia_gasoline_retail_regular_yoy_2021_04",
+            "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+            "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+            "unit": "percent",
+            "value": 55.3
+          }
+        ],
+        "monthly": {
+          "n_selected": 300,
+          "point": {
+            "simulated": {
+              "n": 297,
+              "median": 3.5,
+              "iqr": 0.5
+            },
+            "matched_real": {
+              "n": 297,
+              "median": 5.0,
+              "iqr": 7.0
+            }
+          },
+          "density": {
+            "simulated": {
+              "n": 292,
+              "median": 2.8363174064534604,
+              "iqr": 0.7974721383078673
+            },
+            "matched_real": {
+              "n": 292,
+              "median": 3.8017936354310864,
+              "iqr": 4.717630178183583
+            }
+          },
+          "raw_deflation_mass_median_pct": 15.0,
+          "raw_real_deflation_mass_median_pct": null,
+          "raw_positive_bin_count_median": 10.0,
+          "real_positive_bin_count_median": null,
+          "midpoint_mean_median_pp": 3.0549999999999997,
+          "individual_point_minus_density_median_pp": 0.831984580502847,
+          "real_individual_point_minus_density_median_pp": 0.38888888888888884
+        },
+        "interview_timing_full_real_frame": {
+          "n": 1234,
+          "known_date_n": 1234,
+          "strictly_before_cutoff_date_n": 342,
+          "same_date_n": 14,
+          "unknown_date_n": 0,
+          "before_share_known": 0.2771474878444084
+        },
+        "news_review_flagged_titles": [
+          "Sexual Assault Allegations Against Biographer Halt Shipping of His Roth Book"
+        ],
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nYou are answering a monthly survey in May 2021. You only know information that was publicly available by May 12, 2021.\n\nRecent official statistics:\n- Consumer Price Index (April 2021): +4.2% compared with a year earlier; +0.8% in April alone\n- Unemployment rate (April 2021): 6.1%; U.S. employers added 266,000 jobs\n- Prices you may notice compared with a year ago: gasoline +49.6%, energy +25.1%, food +2.4%, groceries (food at home) +1.2%, rent and shelter +2.1%. A gallon of regular gasoline costs about $2.86.\n\nRecent trends (each lists the past 12 monthly releases, oldest to newest):\n- CPI inflation (12-month %): 0.1, 0.6, 1.0, 1.3, 1.4, 1.2, 1.2, 1.4, 1.4, 1.7, 2.6, 4.2\n- Unemployment rate (%): 13.3, 11.1, 10.2, 8.4, 7.9, 6.9, 6.7, 6.7, 6.3, 6.2, 6.0, 6.1\n- Regular gasoline price ($/gallon): 1.87, 2.08, 2.18, 2.18, 2.18, 2.16, 2.11, 2.19, 2.33, 2.50, 2.81, 2.86\n- Food prices (12-month %): 4.0, 4.5, 4.1, 4.1, 3.9, 3.9, 3.7, 3.9, 3.8, 3.6, 3.5, 2.4\n- Energy prices (12-month %): -18.9, -12.6, -11.2, -9.0, -7.7, -9.2, -9.4, -7.0, -3.6, 2.4, 13.2, 25.1\n- Rent/shelter prices (12-month %): 2.5, 2.4, 2.3, 2.3, 2.0, 2.0, 1.9, 1.8, 1.6, 1.5, 1.7, 2.1\n\nRecent news headlines (with brief summaries):\n- Apr 2: \"Strong U.S. Job Growth in March Fuels Optimism on Recovery\" — The gain of 916,000 was the biggest since August, and unemployment fell to 6 percent. Barring a setback in fighting the virus, the outlook is bullish.\n- Apr 12: \"Amid a chip shortage, the White House gathers business leaders to discuss supplies.\" — The global semiconductor shortage has disrupted auto production in the United States and elsewhere.\n- Apr 15: \"Signs of Economic Hope Are Growing, Some With Superlatives\" — Soaring retail sales and a sharp drop in jobless claims are the latest reflection of a quickening recovery and suggest a year of remarkable growth.\n- Apr 15: \"‘It’s a Roller-Coaster Ride’: Global Chip Shortage Is Making Industries Sweat\" — The internet-connected world is completely dependent on the production of semiconductors. That’s become a problem now that supplies are running short.\n- Apr 16: \"The Fed’s newest governor sees America’s inflation pop as temporary.\" — Christopher Waller said he expected inflation to ease once stimulus checks have been spent and supply chain problems are addressed.\n- Apr 22: \"Sexual Assault Allegations Against Biographer Halt Shipping of His Roth Book\" — W.W. Norton, citing the accusations that the author, Blake Bailey, faces, said it would stop shipping and promoting his new best-selling book.\n- Apr 23: \"A Tiny Part’s Big Ripple: Global Chip Shortage Hobbles the Auto Industry\" — Almost every carmaker has had to curtail production, hampering the economic recovery.\n- Apr 25: \"Federal Aid to Renters Moves Slowly, Leaving Many at Risk\" — Congress allocated $25 billion in December and another $21 billion in March to help people who fell behind on rent during the pandemic. Little has reached landlords or tenants.\n- Apr 26: \"5 Takeaways From the New Food Allergy Law\" — Sesame becomes a “major allergen,” joining milk, eggs, fish, shellfish, tree nuts, peanuts, wheat and soybeans.\n- Apr 27: \"Biden Orders $15 Minimum Wage for Federal Contractors\" — The current minimum, $10.95, has prevailed since an executive order in 2014, including adjustments in the interim for inflation.\n- Apr 28: \"Fed Leaves Interest Rates Unchanged as Economy Begins to Heal\" — The Federal Reserve said the economy had “strengthened” but opted to continue providing support while playing down a rise in inflation.\n- Apr 28: \"The Fed’s patient approach could be tested soon.\" — As unemployment drops and inflation picks up, the Fed could face growing calls to dial back its economic support.\n- Apr 28: \"A key question: How much inflation is too much?\" — The Fed thinks price increases will be temporary. Some economists are worried they won’t be.\n- Apr 28: \"Global chip shortage will slash Ford’s production by about half in the second quarter.\" — Ford expects the shortage to lower its operating profit this year by $2.5 billion, to between $5.5 billion to $6.5 billion.\n- Apr 29: \"Auto sales helped get the American economy off to a good start in 2021.\" — Stimulus payments, pent-up demand and low interest rates lifted sales and prices.\n- Apr 30: \"Renovating Your Kitchen This Summer? Proceed With Caution.\" — Supply chain problems and labor shortages have made home improvement projects even more complicated.\n- May 2: \"‘We’re Suffering’: How Remote Work Is Killing Manhattan’s Storefronts\" — Landlords cut small retailers a break on rent during the pandemic, but stores are still struggling because too few office workers and tourists have returned.\n- May 3: \"Widespread Commodity Shortages Raise Inflation Fears\" — For products as diverse as lumber and microchips, price increases are filtering through the economy.\n- May 6: \"Who’s Afraid of the Big Bad Boom?\" — Rising prices here and there aren’t a sign of runaway inflation.\n- May 7: \"Biden and Republicans Spar Over Unemployment as Job Gains Disappoint\" — The president said he saw no measurable evidence that a $300 federal boost in unemployment benefits was hurting the labor market, amid criticism from conservatives and business groups.\n- May 7: \"Despite Chip Shortage, Chip Innovation Is Booming\" — While a variety of industries struggle with supplies, semiconductor experts say there are plenty of new ideas and, most surprising, start-ups.\n- May 7: \"New ideas are flooding into the semiconductor industry even as chip shortages remain.\" — Even as a chip shortage is causing trouble for all sorts of industries, the semiconductor field is entering a surprising new era of creativity, from industry giants to innovative start-ups seeing a spike in funding from venture capitalists that traditionally avoided chip makers, Don Clark reports for The New York Times.\n- May 7: \"The weak jobs report could help the Fed justify its patient approach to its policies.\" — Officials have said that they want to see real, not just forecast, progress toward full employment and stable inflation.\n- May 7: \"Biden and Republicans spar over unemployment as the jobs report disappoints.\" — Biden administration officials say there is no evidence that hiring has been slowed by the additional $300 per week that unemployed Americans are currently eligible to receive.\n- May 10: \"Biden Defends Unemployment Benefits, Provided Workers Accept Job Offers\" — The president’s comments and a raft of policy announcements were a pushback to Republican criticism of his economic plan after a disappointing jobs report on Friday.\n- May 11: \"Semiconductor makers and users form a group to push for chip funding.\" — The new coalition comes amid a global semiconductor shortage that has caused disruptions throughout the economy.\n- May 12: \"Jump in Consumer Prices Raises Stakes in Inflation Debate\" — The increase in the Labor Department’s Consumer Price Index was well above forecasts. A top Fed official acknowledged the surprise but said, “This is one data point.”\n- May 12: \"Gasoline Buying Fever Rages as Pipeline Company Begins Restart\" — While drivers scrambled for fuel, Colonial Pipeline said supplies would resume flowing from Texas to the East Coast in the coming days.\n- May 12: \"Panicking About That Jobs Report? Breathe. Look at the Data.\" — Federal unemployment benefits are an unlikely reason for the underwhelming April jobs numbers.\n- May 12: \"Panic buying worsens gas shortages throughout the Southeast as officials ask for calm.\" — Several thousand gas stations across the nation have run out of fuel, and hundreds of others are limiting sales. “The oil and gasoline is there,” one energy expert said.\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "population_marginal_counts": {
+          "age_group": {
+            "40 to 60": 100,
+            "Over 60": 99,
+            "Under 40": 101
+          },
+          "education_group": {
+            "college": 177,
+            "some_college": 94,
+            "high_school": 28,
+            "unknown": 1
+          },
+          "household_income_band": {
+            "over_100k": 90,
+            "50k_to_100k": 112,
+            "under_50k": 95,
+            "unknown": 3
+          },
+          "region": {
+            "Northeast": 59,
+            "West": 63,
+            "South": 102,
+            "Midwest": 76
+          },
+          "numeracy": {
+            "low": 87,
+            "high": 213
+          },
+          "employment_status": {
+            "retired": 71,
+            "employed": 194,
+            "homemaker": 11,
+            "disabled": 9,
+            "unemployed": 9,
+            "student": 3,
+            "on_leave": 2,
+            "unknown": 1
+          },
+          "housing_tenure": {
+            "owner": 199,
+            "renter": 69,
+            "unknown": 25,
+            "other": 7
+          }
+        }
+      },
+      "202106": {
+        "source_run": "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76",
+        "as_of": "2021-06-10T23:59:59-04:00",
+        "n_calls": 300,
+        "memory_notes": 0,
+        "signal_count": 77,
+        "news_count": 30,
+        "latest_signals": [
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-06-10T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_u_all_items_yoy_nsa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+            "source_version": "USDL-21-1018",
+            "unit": "percent",
+            "value": 5
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U all items 1-month percent change, seasonally adjusted",
+            "published_at": "2021-06-10T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_u_all_items_mom_sa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+            "source_version": "USDL-21-1018",
+            "unit": "percent",
+            "value": 0.6
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Civilian unemployment rate, seasonally adjusted",
+            "published_at": "2021-06-04T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "role": "latest_release",
+            "signal_id": "bls_unemployment_rate_sa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_06042021.pdf",
+            "source_version": "USDL-21-0980",
+            "unit": "percent",
+            "value": 5.8
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "Total nonfarm payroll employment 1-month change, seasonally adjusted",
+            "published_at": "2021-06-04T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "role": "latest_release",
+            "signal_id": "bls_nonfarm_payroll_change_sa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/empsit_06042021.pdf",
+            "source_version": "USDL-21-0980",
+            "unit": "thousands",
+            "value": 559
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U food 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-06-10T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_food_yoy_nsa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+            "source_version": "USDL-21-1018",
+            "unit": "percent",
+            "value": 2.2
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U food at home 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-06-10T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_food_at_home_yoy_nsa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+            "source_version": "USDL-21-1018",
+            "unit": "percent",
+            "value": 0.7
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U energy 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-06-10T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_energy_yoy_nsa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+            "source_version": "USDL-21-1018",
+            "unit": "percent",
+            "value": 28.5
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U shelter 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-06-10T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_shelter_yoy_nsa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+            "source_version": "USDL-21-1018",
+            "unit": "percent",
+            "value": 2.2
+          },
+          {
+            "eligibility": "eligible",
+            "measure": "CPI-U gasoline (all types) 12-month percent change, not seasonally adjusted",
+            "published_at": "2021-06-10T08:30:00-04:00",
+            "reference_period": "2021-05",
+            "role": "latest_release",
+            "signal_id": "bls_cpi_gasoline_yoy_nsa_2021_05_initial",
+            "source_url": "https://www.bls.gov/news.release/archives/cpi_06102021.pdf",
+            "source_version": "USDL-21-1018",
+            "unit": "percent",
+            "value": 56.2
+          },
+          {
+            "eligibility": "vintage_unverified",
+            "measure": "U.S. regular all formulations retail gasoline price, monthly mean of weekly observations",
+            "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)",
+            "published_at": "2021-06-03T17:00:00-04:00",
+            "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+            "reference_period": "2021-05",
+            "role": "latest_release",
+            "signal_id": "eia_gasoline_retail_regular_mean_2021_05",
+            "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+            "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+            "unit": "dollars_per_gallon",
+            "value": 2.985
+          },
+          {
+            "eligibility": "vintage_unverified",
+            "measure": "Retail gasoline price 12-month percent change (monthly means)",
+            "note": "monthly mean of weekly Monday observations; published_at = last weekly obs + 3 days (conservative)",
+            "published_at": "2021-06-03T17:00:00-04:00",
+            "published_at_basis": "last_weekly_observation_plus_3_days_assumption",
+            "reference_period": "2021-05",
+            "role": "latest_release",
+            "signal_id": "eia_gasoline_retail_regular_yoy_2021_05",
+            "source_url": "https://fred.stlouisfed.org/series/GASREGW",
+            "source_version": "FRED GASREGW (EIA weekly retail, Monday obs)",
+            "unit": "percent",
+            "value": 59.7
+          }
+        ],
+        "monthly": {
+          "n_selected": 300,
+          "point": {
+            "simulated": {
+              "n": 300,
+              "median": 4.5,
+              "iqr": 0.5499999999999998
+            },
+            "matched_real": {
+              "n": 300,
+              "median": 5.0,
+              "iqr": 7.0
+            }
+          },
+          "density": {
+            "simulated": {
+              "n": 293,
+              "median": 3.7431910104316293,
+              "iqr": 1.0747442177812268
+            },
+            "matched_real": {
+              "n": 293,
+              "median": 4.381966011250105,
+              "iqr": 4.783470910055457
+            }
+          },
+          "raw_deflation_mass_median_pct": 12.0,
+          "raw_real_deflation_mass_median_pct": null,
+          "raw_positive_bin_count_median": 10.0,
+          "real_positive_bin_count_median": null,
+          "midpoint_mean_median_pp": 3.83,
+          "individual_point_minus_density_median_pp": 0.48715499715336863,
+          "real_individual_point_minus_density_median_pp": 0.4383757897382736
+        },
+        "interview_timing_full_real_frame": {
+          "n": 1297,
+          "known_date_n": 1297,
+          "strictly_before_cutoff_date_n": 339,
+          "same_date_n": 8,
+          "unknown_date_n": 0,
+          "before_share_known": 0.26137239784117194
+        },
+        "news_review_flagged_titles": [],
+        "actual_input_excerpt_without_persona": "[人口画像段另见汇总，不展示个体组合]\n\nYou are answering a monthly survey in June 2021. You only know information that was publicly available by June 10, 2021.\n\nRecent official statistics:\n- Consumer Price Index (May 2021): +5.0% compared with a year earlier; +0.6% in May alone\n- Unemployment rate (May 2021): 5.8%; U.S. employers added 559,000 jobs\n- Prices you may notice compared with a year ago: gasoline +56.2%, energy +28.5%, food +2.2%, groceries (food at home) +0.7%, rent and shelter +2.2%. A gallon of regular gasoline costs about $2.98.\n\nRecent trends (each lists the past 12 monthly releases, oldest to newest):\n- CPI inflation (12-month %): 0.6, 1.0, 1.3, 1.4, 1.2, 1.2, 1.4, 1.4, 1.7, 2.6, 4.2, 5.0\n- Unemployment rate (%): 11.1, 10.2, 8.4, 7.9, 6.9, 6.7, 6.7, 6.3, 6.2, 6.0, 6.1, 5.8\n- Regular gasoline price ($/gallon): 2.08, 2.18, 2.18, 2.18, 2.16, 2.11, 2.19, 2.33, 2.50, 2.81, 2.86, 2.98\n- Food prices (12-month %): 4.5, 4.1, 4.1, 3.9, 3.9, 3.7, 3.9, 3.8, 3.6, 3.5, 2.4, 2.2\n- Energy prices (12-month %): -12.6, -11.2, -9.0, -7.7, -9.2, -9.4, -7.0, -3.6, 2.4, 13.2, 25.1, 28.5\n- Rent/shelter prices (12-month %): 2.4, 2.3, 2.3, 2.0, 2.0, 1.9, 1.8, 1.6, 1.5, 1.7, 2.1, 2.2\n\nRecent news headlines (with brief summaries):\n- May 2: \"‘We’re Suffering’: How Remote Work Is Killing Manhattan’s Storefronts\" — Landlords cut small retailers a break on rent during the pandemic, but stores are still struggling because too few office workers and tourists have returned.\n- May 3: \"Widespread Commodity Shortages Raise Inflation Fears\" — For products as diverse as lumber and microchips, price increases are filtering through the economy.\n- May 7: \"Biden and Republicans Spar Over Unemployment as Job Gains Disappoint\" — The president said he saw no measurable evidence that a $300 federal boost in unemployment benefits was hurting the labor market, amid criticism from conservatives and business groups.\n- May 7: \"Despite Chip Shortage, Chip Innovation Is Booming\" — While a variety of industries struggle with supplies, semiconductor experts say there are plenty of new ideas and, most surprising, start-ups.\n- May 7: \"New ideas are flooding into the semiconductor industry even as chip shortages remain.\" — Even as a chip shortage is causing trouble for all sorts of industries, the semiconductor field is entering a surprising new era of creativity, from industry giants to innovative start-ups seeing a spike in funding from venture capitalists that traditionally avoided chip makers, Don Clark reports for The New York Times.\n- May 10: \"Biden Defends Unemployment Benefits, Provided Workers Accept Job Offers\" — The president’s comments and a raft of policy announcements were a pushback to Republican criticism of his economic plan after a disappointing jobs report on Friday.\n- May 12: \"Jump in Consumer Prices Raises Stakes in Inflation Debate\" — The increase in the Labor Department’s Consumer Price Index was well above forecasts. A top Fed official acknowledged the surprise but said, “This is one data point.”\n- May 12: \"Gasoline Buying Fever Rages as Pipeline Company Begins Restart\" — While drivers scrambled for fuel, Colonial Pipeline said supplies would resume flowing from Texas to the East Coast in the coming days.\n- May 12: \"Panicking About That Jobs Report? Breathe. Look at the Data.\" — Federal unemployment benefits are an unlikely reason for the underwhelming April jobs numbers.\n- May 17: \"Inflation Fears Abound as Gas and Lumber Shortages Bite. Should the Fed Worry?\" — Federal Reserve officials believe low and stable price expectations give them room to heal the job market. But what if outlooks change?\n- May 18: \"Texas, Indiana and Oklahoma join states cutting off pandemic unemployment benefits.\" — The Republican-run states are joining a movement based on the contention that jobless pay is deterring people from seeking work.\n- May 21: \"Soaring Prices Herald Boom Time for Steel Makers\" — A rebounding economy and Trump-era tariffs have helped drive the price of domestic steel to record highs.\n- May 22: \"Defying Critics, Biden and the Fed Insist the Economic Recovery Is on Track\" — Confidence from the White House runs counter to warnings from Republicans, some investors and even a few liberal economists.\n- May 24: \"The pandemic has taken a devastating toll on undocumented women in New York.\" — The nearly half a million undocumented immigrants who live in New York City were devastated by the pandemic, stricken by the virus and the economic fallout it caused and ineligible for stimulus checks and the unemployment benefits that kept many New Yorkers afloat.\n- May 30: \"The Luckiest Workers in America? Teenagers.\" — Teens are picking up jobs — and higher wages — as companies scramble to hire. But that trend could have a downside.\n- Jun 1: \"How the World Ran Out of Everything\" — Global shortages of many goods reflect the disruption of the pandemic combined with decades of companies limiting their inventories.\n- Jun 1: \"N.Y.C. Mayor’s Race Tightens Ahead of Crucial In-Person Debate\" — Democratic hopefuls sharpened attack lines as they tried to draw contrasts on critical issues like policing and the city’s economic recovery.\n- Jun 1: \"OPEC Plus agrees to add production as oil prices climb.\" — The member states of the Organization of the Petroleum Exporting Countries and allied producers like Russia confirmed a plan to increase output in June and July, reflecting growing demand for petroleum.\n- Jun 2: \"Stimulus Checks Substantially Reduced Hardship, Study Shows\" — Researchers found that sharp declines in food shortages, financial instability and anxiety coincided with the two most recent rounds of payments.\n- Jun 3: \"The U.S. Economy Is Sending Confusing Signals. What’s Going On?\" — The ebbing of the pandemic has brought price increases, supply bottlenecks and labor shortages. Key indicators will show whether it’s just a stage.\n- Jun 3: \"Wage Growth Is Holding Up in Aftermath of the Economic Crash\" — The pay increases are giving Democrats a bragging point. But it comes with risks: Gains could fade, or spark quicker price inflation.\n- Jun 3: \"G.M. will increase production of cars and trucks as the chip shortage eases.\" — The automaker said its financial results in the first half of the year would be “significantly better” than it had previously forecast.\n- Jun 4: \"To Keep Their Son Alive, They Sleep in Shifts. And Hope a Nurse Shows Up.\" — A nursing shortage — driven by the pandemic — has made life miserable for parents with profoundly disabled children. “What if I’m so exhausted that I make a mistake?”\n- Jun 4: \"Was the Jobs Report Good? It’s in the Eye of the Beholder.\" — With Americans divided over who bears credit for the economic recovery, we spoke with our reporter Ben Casselman about the latest job numbers.\n- Jun 5: \"U.S. Waged Secret Legal Battle to Obtain Emails of 4 Times Reporters\" — The push began in the Trump administration and continued under President Biden, and the Justice Department obtained a gag order to keep it from public view.\n- Jun 5: \"Federal Unemployment Aid Is Now a Political Lightning Rod\" — Republican-led states are cutting off relief months ahead of schedule, citing openings aplenty. Some jobless workers face hardships and tough choices.\n- Jun 6: \"Republicans, Don’t Ignore the Evidence on ‘Labor Shortages’\" — The latest jobs report shows just how misguided their plans to cut unemployment benefits are.\n- Jun 7: \"Offshore Wind Farms Show What Biden’s Climate Plan Is Up Against\" — The U.S. has fallen way behind Europe partly because of an old shipping law and opposition from homeowners and fishing groups.\n- Jun 10: \"Prices Jumped 5% in May From Year Earlier, Stoking Debate in Washington\" — The Consumer Price Index showed the strongest year-over-year reading since 2008, and a core index popped the most since 1992.\n- Jun 10: \"Despite economic recovery, the European Central Bank keeps its policies steady.\" — The bank said it would hold interest rates at record low levels while continuing to buy bonds in its pandemic response program.\n\nQuestion 1 (point estimate): Over the next 12 months, what do you expect the rate of inflation to be,\nin percent? Give a single signed number (negative means deflation).\n\nQuestion 2 (density): What is the percent chance that the 12-month-ahead inflation rate will fall in\neach of the following ten ranges? Give each a probability from 0 to 100; the ten probabilities must\nsum to exactly 100.\n  \"bin1\": probability that inflation will be 12% or more\n  \"bin2\": probability that inflation will be between 8% and 12%\n  \"bin3\": probability that inflation will be between 4% and 8%\n  \"bin4\": probability that inflation will be between 2% and 4%\n  \"bin5\": probability that inflation will be between 0% and 2%\n  \"bin6\": probability that inflation will be between -2% and 0%\n  \"bin7\": probability that inflation will be between -4% and -2%\n  \"bin8\": probability that inflation will be between -8% and -4%\n  \"bin9\": probability that inflation will be between -12% and -8%\n  \"bin10\": probability that inflation will be -12% or less (deflation of 12% or more)\n\nReply with ONLY a JSON object of the form:\n{\"point_pct\": <number>, \"q9\": {\"bin1\": <0-100>, \"bin2\": <0-100>, ..., \"bin10\": <0-100>},\n \"reason\": \"<one or two short sentences>\"}",
+        "population_marginal_counts": {
+          "age_group": {
+            "40 to 60": 98,
+            "Under 40": 109,
+            "Over 60": 93
+          },
+          "education_group": {
+            "college": 172,
+            "some_college": 86,
+            "high_school": 41,
+            "unknown": 1
+          },
+          "household_income_band": {
+            "over_100k": 87,
+            "50k_to_100k": 112,
+            "under_50k": 98,
+            "unknown": 3
+          },
+          "region": {
+            "Northeast": 60,
+            "South": 104,
+            "West": 58,
+            "Midwest": 78
+          },
+          "numeracy": {
+            "low": 89,
+            "high": 211
+          },
+          "employment_status": {
+            "retired": 58,
+            "employed": 195,
+            "homemaker": 11,
+            "disabled": 14,
+            "on_leave": 3,
+            "unemployed": 15,
+            "student": 4
+          },
+          "housing_tenure": {
+            "owner": 196,
+            "unknown": 33,
+            "renter": 63,
+            "other": 8
+          }
+        }
+      }
+    },
+    "sources_sha256": {
+      "outputs/local_runs/sce-local-openai-20261003T055121Z-1dc7cd15/llm_calls.jsonl": "716e4cb40684a699193eb01b6d24d68a1c4c085776361f2c5dc35b40e027d4df",
+      "outputs/local_runs/sce-local-openai-20261003T055121Z-1dc7cd15/observations.jsonl": "07e7789b6067ce2e37d5cdb2addf106f8f06bda16b53684a65f8f691fbb6f29e",
+      "data/evaluation/sce_truth_main2021.json": "379287faaaa13a180c64d4e21ffd4730edf67c49e15d38bb153f4c421b38dfb6",
+      "data/evaluation/sce_baselines_latest_20261007/aggregate_inputs.json": "a1a275df4fb77e3567a8984293460f9bf671a6eea141319f13d6ed42df609f43",
+      "outputs/sce_qwen_reuse_prepared_20261008_v1/deepseek_reference_private.jsonl": "de63106c77366dbcae91be19a46862b73617c88853f2f596deadfd7c0c966bdf",
+      "outputs/sce_qwen_reuse_run_20261008_v1/requests_prepared.jsonl": "e6a624ca14529424b75758f49712b2041d537ad179c9e7e76e90395ddfc774a3",
+      "outputs/sce_qwen_reuse_run_20261008_v1/llm_calls.jsonl": "b7cfa7cc770247949504d1c1fd50fb1e42731c75f2e56d59dc77339ac93e2868",
+      "outputs/sce_qwen_reuse_comparison_20261008_v1/summary.json": "eb2e6398b867fe7013dc21b52261c07f29a5e2b37978ff168b18102ec05e7dcf",
+      "data/cache/monthly_profiles_7f0ed622ae0915902741.parquet": "ed8af50003e508ab6da66dd5f3afa34413fe88a5efb7454d8a4432477278f2b6",
+      "data/evaluation/dev_full_20261005T045330Z_947a818f/truth.json": "59cc51b4f7f0cbf91dfd3b3845a75222ac178513f96726927ed4bfa7c6cf2a55",
+      "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/llm_calls.jsonl": "038ac18e759b1fe294e510de56d12f9cacbf668da82ec51cd5d5988f642d3ef2",
+      "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/observations.jsonl": "ef6750cba78cfa1e58b595dec8377c10704e927f08597ece33e9b1bf3a9290e3",
+      "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/population_effective.json": "aa8e132d351061d8d9a3c28f81cb9dbb0df1c5d1b964b8da72a4760b7692e676",
+      "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/llm_calls.jsonl": "fda70ea69b4fb33a4f8d3626dfbae03543696a4cabd03c199f73b120709eb8d8",
+      "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/observations.jsonl": "cd0e1604a17f6c8d4a56f467c54358c91ed769f77286534abfe15499b2016765",
+      "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/population_effective.json": "764987249c9099bcb8d7489f11ce739e99e25b643c363d739d3e3e0e391417e4",
+      "studies/sce_inflation_expectations/pe_diagnostic.py": "3e442aca1908f671bea7a7390d9cc6879da90b89586e815f4989e1d9cc710fd3",
+      "scripts/audit_sce_pe_diagnostic.py": "d5df987e8f74a51991c7860178cb3c5f4e8ab7c7ae6f09d0c266fb0469ec0c3a"
+    },
+    "scorer": {
+      "scorer": "sce_q9_frozen",
+      "variant": "relaxed_tail_skip_zero",
+      "tail_start": 20.0,
+      "holdout_run_id": "20261003T023026Z_77ebb305",
+      "pinned_sha256": {
+        "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+        "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+      },
+      "live_sha256": {
+        "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+        "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+      },
+      "live_matches_pinned": true,
+      "kernel_migration": {
+        "migrated_at": "2026-10-03",
+        "old_source": "scripts/diagnose_sce_beta.py",
+        "old_source_sha256": "b45a29345f432288fe3b0b18e8c39066998bf19a803a0e7c661dc2a193987e57",
+        "new_source": "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+        "algorithm_unchanged": true,
+        "equivalence_check": "3,741 sealed holdout rows recomputed; zero per-field difference"
+      },
+      "approximation_notice": "Research approximation of the Armantier et al. (2017) Appendix C generalized-beta fit, selected on a preregistered holdout; not the official FRBNY implementation. The same algorithm scores real and simulated questionnaires; differences from official headline values are reported separately."
+    },
+    "limits": [
+      "No intervention identifies individual causes.",
+      "Reason text is reported explanation, not access to model attention.",
+      "Q8 need not equal Q9 mean.",
+      "Midpoint tails 12/16/20 are diagnostics, not official scoring.",
+      "Old and new P/E versions, populations and dates differ.",
+      "Exact E document arithmetic is distinct from household knowledge."
+    ]
+  },
+  "existing_experiment_registry": {
+    "rows": [
+      {
+        "family": "篮子/排序",
+        "arm": "原基线",
+        "month": "202105",
+        "n_common": 20,
+        "temperature": 0,
+        "simulated_median_pp": 2.982528739824261,
+        "real_median_pp": 3.7506984065770594,
+        "median_bias_pp": -0.7681696667527986,
+        "simulated_iqr_pp": 0.8513163553720435,
+        "real_iqr_pp": 5.203870865345584,
+        "iqr_fraction_of_real": 0.1635929056274744
+      },
+      {
+        "family": "篮子/排序",
+        "arm": "答题视角",
+        "month": "202105",
+        "n_common": 20,
+        "temperature": 0,
+        "simulated_median_pp": 3.024038355713279,
+        "real_median_pp": 3.7506984065770594,
+        "median_bias_pp": -0.7266600508637806,
+        "simulated_iqr_pp": 0.2234968729073774,
+        "real_iqr_pp": 5.203870865345584,
+        "iqr_fraction_of_real": 0.04294819734973097
+      },
+      {
+        "family": "篮子/排序",
+        "arm": "篮子+视角",
+        "month": "202105",
+        "n_common": 20,
+        "temperature": 0,
+        "simulated_median_pp": 2.994671163723002,
+        "real_median_pp": 3.7506984065770594,
+        "median_bias_pp": -0.7560272428540573,
+        "simulated_iqr_pp": 0.8097672132530662,
+        "real_iqr_pp": 5.203870865345584,
+        "iqr_fraction_of_real": 0.15560862946188622
+      },
+      {
+        "family": "篮子/排序",
+        "arm": "排序+视角",
+        "month": "202105",
+        "n_common": 20,
+        "temperature": 0,
+        "simulated_median_pp": 2.9830768806133783,
+        "real_median_pp": 3.7506984065770594,
+        "median_bias_pp": -0.7676215259636812,
+        "simulated_iqr_pp": 0.1180865400418254,
+        "real_iqr_pp": 5.203870865345584,
+        "iqr_fraction_of_real": 0.02269205810394055
+      },
+      {
+        "family": "篮子/排序",
+        "arm": "篮子+排序+视角",
+        "month": "202105",
+        "n_common": 20,
+        "temperature": 0,
+        "simulated_median_pp": 3.028076179655467,
+        "real_median_pp": 3.7506984065770594,
+        "median_bias_pp": -0.7226222269215925,
+        "simulated_iqr_pp": 0.7633262247386519,
+        "real_iqr_pp": 5.203870865345584,
+        "iqr_fraction_of_real": 0.14668431336794138
+      },
+      {
+        "family": "篮子/排序",
+        "arm": "原基线",
+        "month": "202106",
+        "n_common": 19,
+        "temperature": 0,
+        "simulated_median_pp": 4.158085057293773,
+        "real_median_pp": 6.0926609172190975,
+        "median_bias_pp": -1.9345758599253244,
+        "simulated_iqr_pp": 0.9942100568874324,
+        "real_iqr_pp": 5.417014492088722,
+        "iqr_fraction_of_real": 0.18353468655832955
+      },
+      {
+        "family": "篮子/排序",
+        "arm": "答题视角",
+        "month": "202106",
+        "n_common": 19,
+        "temperature": 0,
+        "simulated_median_pp": 4.158085057293773,
+        "real_median_pp": 6.0926609172190975,
+        "median_bias_pp": -1.9345758599253244,
+        "simulated_iqr_pp": 0.11839167483926172,
+        "real_iqr_pp": 5.417014492088722,
+        "iqr_fraction_of_real": 0.021855521156933736
+      },
+      {
+        "family": "篮子/排序",
+        "arm": "篮子+视角",
+        "month": "202106",
+        "n_common": 19,
+        "temperature": 0,
+        "simulated_median_pp": 4.158085057293773,
+        "real_median_pp": 6.0926609172190975,
+        "median_bias_pp": -1.9345758599253244,
+        "simulated_iqr_pp": 0.5278604870276222,
+        "real_iqr_pp": 5.417014492088722,
+        "iqr_fraction_of_real": 0.09744490951584789
+      },
+      {
+        "family": "篮子/排序",
+        "arm": "排序+视角",
+        "month": "202106",
+        "n_common": 19,
+        "temperature": 0,
+        "simulated_median_pp": 4.051139536542758,
+        "real_median_pp": 6.0926609172190975,
+        "median_bias_pp": -2.0415213806763397,
+        "simulated_iqr_pp": 0.5668326205492225,
+        "real_iqr_pp": 5.417014492088722,
+        "iqr_fraction_of_real": 0.1046393029549862
+      },
+      {
+        "family": "篮子/排序",
+        "arm": "篮子+排序+视角",
+        "month": "202106",
+        "n_common": 19,
+        "temperature": 0,
+        "simulated_median_pp": 4.051139536542758,
+        "real_median_pp": 6.0926609172190975,
+        "median_bias_pp": -2.0415213806763397,
+        "simulated_iqr_pp": 0.4837815494462401,
+        "real_iqr_pp": 5.417014492088722,
+        "iqr_fraction_of_real": 0.08930778201771082
+      },
+      {
+        "family": "财务经历Q1",
+        "arm": "原基线",
+        "month": "202105",
+        "n_common": 50,
+        "temperature": 0.5,
+        "simulated_median_pp": 2.972238353570635,
+        "real_median_pp": 2.9665367276459405,
+        "median_bias_pp": 0.005701625924694476,
+        "simulated_iqr_pp": 0.7808908159980117,
+        "real_iqr_pp": 3.9015300636368413,
+        "iqr_fraction_of_real": 0.2001498907508349
+      },
+      {
+        "family": "财务经历Q1",
+        "arm": "加入Q1",
+        "month": "202105",
+        "n_common": 50,
+        "temperature": 0.5,
+        "simulated_median_pp": 3.1273848669719593,
+        "real_median_pp": 2.9665367276459405,
+        "median_bias_pp": 0.16084813932601882,
+        "simulated_iqr_pp": 0.8858511040712775,
+        "real_iqr_pp": 3.9015300636368413,
+        "iqr_fraction_of_real": 0.22705223069472508
+      },
+      {
+        "family": "财务经历Q1",
+        "arm": "原基线",
+        "month": "202106",
+        "n_common": 49,
+        "temperature": 0.5,
+        "simulated_median_pp": 3.9052569808208837,
+        "real_median_pp": 4.1891218892022035,
+        "median_bias_pp": -0.28386490838131984,
+        "simulated_iqr_pp": 1.1330046016433375,
+        "real_iqr_pp": 4.555881034647718,
+        "iqr_fraction_of_real": 0.24869055908764456
+      },
+      {
+        "family": "财务经历Q1",
+        "arm": "加入Q1",
+        "month": "202106",
+        "n_common": 49,
+        "temperature": 0.5,
+        "simulated_median_pp": 4.169531211320249,
+        "real_median_pp": 4.1891218892022035,
+        "median_bias_pp": -0.01959067788195412,
+        "simulated_iqr_pp": 0.5928578398417645,
+        "real_iqr_pp": 4.555881034647718,
+        "iqr_fraction_of_real": 0.13013022845264158
+      },
+      {
+        "family": "信息接触",
+        "arm": "共享信息",
+        "month": "202105",
+        "n_common": 47,
+        "temperature": 0.5,
+        "simulated_median_pp": 3.012444072603655,
+        "real_median_pp": 4.4402571263229795,
+        "median_bias_pp": -1.4278130537193245,
+        "simulated_iqr_pp": 0.6595342391066943,
+        "real_iqr_pp": 5.981126860168171,
+        "iqr_fraction_of_real": 0.1102692276097535
+      },
+      {
+        "family": "信息接触",
+        "arm": "随机视图",
+        "month": "202105",
+        "n_common": 47,
+        "temperature": 0.5,
+        "simulated_median_pp": 1.8369496713325493,
+        "real_median_pp": 4.4402571263229795,
+        "median_bias_pp": -2.6033074549904303,
+        "simulated_iqr_pp": 1.537453441111123,
+        "real_iqr_pp": 5.981126860168171,
+        "iqr_fraction_of_real": 0.2570507994655533
+      },
+      {
+        "family": "信息接触",
+        "arm": "匹配视图",
+        "month": "202105",
+        "n_common": 47,
+        "temperature": 0.5,
+        "simulated_median_pp": 1.7773412352441724,
+        "real_median_pp": 4.4402571263229795,
+        "median_bias_pp": -2.662915891078807,
+        "simulated_iqr_pp": 1.7622202160369609,
+        "real_iqr_pp": 5.981126860168171,
+        "iqr_fraction_of_real": 0.2946301352965138
+      },
+      {
+        "family": "信息接触",
+        "arm": "共享信息",
+        "month": "202106",
+        "n_common": 48,
+        "temperature": 0.5,
+        "simulated_median_pp": 3.806937481866822,
+        "real_median_pp": 4.380545431023577,
+        "median_bias_pp": -0.5736079491567554,
+        "simulated_iqr_pp": 1.2976234897125618,
+        "real_iqr_pp": 5.806621804316463,
+        "iqr_fraction_of_real": 0.22347305084480423
+      },
+      {
+        "family": "信息接触",
+        "arm": "随机视图",
+        "month": "202106",
+        "n_common": 48,
+        "temperature": 0.5,
+        "simulated_median_pp": 2.221085425614058,
+        "real_median_pp": 4.380545431023577,
+        "median_bias_pp": -2.159460005409519,
+        "simulated_iqr_pp": 2.218552250512405,
+        "real_iqr_pp": 5.806621804316463,
+        "iqr_fraction_of_real": 0.3820727998615653
+      },
+      {
+        "family": "信息接触",
+        "arm": "匹配视图",
+        "month": "202106",
+        "n_common": 48,
+        "temperature": 0.5,
+        "simulated_median_pp": 1.9481654352333573,
+        "real_median_pp": 4.380545431023577,
+        "median_bias_pp": -2.43237999579022,
+        "simulated_iqr_pp": 2.880960754917403,
+        "real_iqr_pp": 5.806621804316463,
+        "iqr_fraction_of_real": 0.4961509207945636
+      },
+      {
+        "family": "新版E模型小试",
+        "arm": "DeepSeek",
+        "month": "202105",
+        "n_common": 18,
+        "temperature": 0.5,
+        "simulated_median_pp": 2.3735694365071476,
+        "real_median_pp": 3.3718839972476613,
+        "median_bias_pp": -0.9983145607405137,
+        "simulated_iqr_pp": 0.6046422047837461,
+        "real_iqr_pp": 2.4046340584354997,
+        "iqr_fraction_of_real": 0.2514487402616004
+      },
+      {
+        "family": "新版E模型小试",
+        "arm": "Llama3.1",
+        "month": "202105",
+        "n_common": 18,
+        "temperature": 0.5,
+        "simulated_median_pp": 2.9968081042824997,
+        "real_median_pp": 3.3718839972476613,
+        "median_bias_pp": -0.37507589296516164,
+        "simulated_iqr_pp": 0.03552587346525993,
+        "real_iqr_pp": 2.4046340584354997,
+        "iqr_fraction_of_real": 0.01477392093846235
+      },
+      {
+        "family": "新版E模型小试",
+        "arm": "Qwen2.5",
+        "month": "202105",
+        "n_common": 18,
+        "temperature": 0.5,
+        "simulated_median_pp": 2.7035457710254494,
+        "real_median_pp": 3.3718839972476613,
+        "median_bias_pp": -0.668338226222212,
+        "simulated_iqr_pp": 0.8925955502331364,
+        "real_iqr_pp": 2.4046340584354997,
+        "iqr_fraction_of_real": 0.3711980819293044
+      },
+      {
+        "family": "新版E模型小试",
+        "arm": "DeepSeek",
+        "month": "202106",
+        "n_common": 19,
+        "temperature": 0.5,
+        "simulated_median_pp": 4.133280433715967,
+        "real_median_pp": 5.534383989514973,
+        "median_bias_pp": -1.401103555799006,
+        "simulated_iqr_pp": 1.106012650190089,
+        "real_iqr_pp": 3.669809517851622,
+        "iqr_fraction_of_real": 0.3013814871888965
+      },
+      {
+        "family": "新版E模型小试",
+        "arm": "Llama3.1",
+        "month": "202106",
+        "n_common": 19,
+        "temperature": 0.5,
+        "simulated_median_pp": 2.9968081042824997,
+        "real_median_pp": 5.534383989514973,
+        "median_bias_pp": -2.5375758852324735,
+        "simulated_iqr_pp": 0.03552587346525993,
+        "real_iqr_pp": 3.669809517851622,
+        "iqr_fraction_of_real": 0.009680576959770235
+      },
+      {
+        "family": "新版E模型小试",
+        "arm": "Qwen2.5",
+        "month": "202106",
+        "n_common": 19,
+        "temperature": 0.5,
+        "simulated_median_pp": 2.2165860462666664,
+        "real_median_pp": 5.534383989514973,
+        "median_bias_pp": -3.3177979432483067,
+        "simulated_iqr_pp": 1.9971323272078316,
+        "real_iqr_pp": 3.669809517851622,
+        "iqr_fraction_of_real": 0.5442059914807218
+      },
+      {
+        "family": "新版共享E300人",
+        "arm": "基础模拟",
+        "month": "202105",
+        "n_common": 292,
+        "temperature": 0.5,
+        "simulated_median_pp": 2.8363174064534604,
+        "real_median_pp": 3.8017936354310864,
+        "median_bias_pp": -0.965476228977626,
+        "simulated_iqr_pp": 0.7974721383078673,
+        "real_iqr_pp": 4.717630178183583,
+        "iqr_fraction_of_real": 0.16904083367868314
+      },
+      {
+        "family": "新版共享E300人",
+        "arm": "基础模拟",
+        "month": "202106",
+        "n_common": 293,
+        "temperature": 0.5,
+        "simulated_median_pp": 3.7431910104316293,
+        "real_median_pp": 4.381966011250105,
+        "median_bias_pp": -0.6387750008184758,
+        "simulated_iqr_pp": 1.0747442177812268,
+        "real_iqr_pp": 4.783470910055457,
+        "iqr_fraction_of_real": 0.2246787401846595
+      }
+    ],
+    "source_sha256": {
+      "outputs/sce-experience-trial-20261006T080038Z-594845/analysis/summary.json": "ace0c272b654d2a9229d6f4a4b44c7082d8cdce743a169712c512979b136c553",
+      "outputs/sce_q1_analysis_20261006T143540Z_33c159ad/summary.json": "4fc8e53c8e54b2bbc253002fe6ea2ce716b3af551e2bbf71663311959c8fb835",
+      "outputs/sce_exposure_analysis_20261006T151924Z_47735326/summary.json": "a5357060eab15c490d4b3e31eec90e4a34dcbeb1562ee4221ea92cd9b843b3e9",
+      "outputs/sce_model_followup_analysis_20261008_v3/summary.json": "6af3a6dd0da137143efa7234ea3144034df9f4bf7a23f1ba6089fc019984955f"
+    },
+    "limits": "Each comparison uses its own matched real sample. Not a cross-trial causal ranking."
+  },
+  "artifacts_sha256": {
+    "studies/sce_inflation_expectations/pe_diagnostic.py": "3e442aca1908f671bea7a7390d9cc6879da90b89586e815f4989e1d9cc710fd3",
+    "studies/sce_inflation_expectations/pe_diagnostic_view.py": "a9c9f196b5b1e15d8b54c459b9a8bbf9f68736336eb7fe4ac5f67ecb8e566149",
+    "scripts/audit_sce_pe_diagnostic.py": "d5df987e8f74a51991c7860178cb3c5f4e8ab7c7ae6f09d0c266fb0469ec0c3a",
+    "scripts/render_sce_pe_diagnostic.py": "5ff7a80047609fe5fa5bc773f5f8370a7e3d88b1ba8b6855b033ca157d461255",
+    "scripts/audit_sce_deepseek_reuse.py": "af896e099a1d90b7bd25337480e5778503f1597c1fc901879b2850980ae6e598",
+    "tests/test_pe_diagnostic.py": "2955ae3f22dbf1cdb35303b8e98ac414490529f6761fba2782872502ccc2908c",
+    "docs/SCE_PE_DIAGNOSTIC_PLAN_20261008.md": "d593184c3d945d4a3476cacab0fe656b11254f23d6b3c512c0f756264c4c9c79",
+    "docs/SCE_PE_DIAGNOSTIC_20261008.md": "612e2b7ae05852074c821ee777b186a6655880ab633dc3b7af4e4b336bb9c9fa",
+    "docs/SCE_PE_DIAGNOSTIC_20261008.html": "843045d49fa108d524318abfaf3548ac925bb57064859cabd95ca57166578f0d",
+    "data/raw/sce_audit_20260928/questionnaire.pdf": "e30e2ef1f925cb90aef1d5d6c9b13c6307b1f311e40c5b894ad27ddf69066e93",
+    "data/raw/sce_audit_20260928/chart.xlsx": "936aeaa8b83a04f6210dcc74bd9b3b0a8c5e6c8df38e57cf69048c37b5db75ac",
+    "outputs/sce_pe_diagnostic_20261008_v3/mechanism_trials.png": "2d0537503119c0af0ac832686b242dc855de1ef2cafead585f074a398a42826e",
+    "outputs/sce_pe_diagnostic_20261008_v3/population_composition.png": "6b92aeff6aa176a13a2e48f13c129175013ae169d1425560e990ae235135b909",
+    "outputs/sce_pe_diagnostic_20261008_v3/raw_probability_diagnostics.png": "2ee1b360501bb040e23d178ba018d69b069bc17a2256035834e045d7478953a7",
+    "outputs/sce_pe_diagnostic_20261008_v3/information_time.png": "a7999ec9cc3b237143453548deee577f1887ca01d9e94b3af855ed598d7af2ee",
+    "outputs/sce_pe_diagnostic_20261008_v3/year_q8_q9.png": "2d98ebe5727e3e3e48af23af77c3965b2a078171c0abf0d27f0fd6544a792e95",
+    "outputs/sce_pe_diagnostic_20261008_v3/summary.json": "5b245e569d9c88066e96d5135d2866c48afe89c2d437156910e47d2d973e580f",
+    "outputs/sce_pe_diagnostic_20261008_v3/experiment_registry.json": "9030efcd42ba50c2c713e9b96172adc5d80137c978d0749123adf457ba95ebd6"
+  },
+  "web_sources": [
+    {
+      "url": "https://www.newyorkfed.org/research/staff_reports/sr443.html",
+      "support": "Randomized survey wording affects expectation levels and dispersion; preserve official questionnaire semantics.",
+      "access": "Official research abstract"
+    },
+    {
+      "url": "https://www.newyorkfed.org/research/staff_reports/sr489.html",
+      "support": "Salient specific price recall can influence expectations and disagreement.",
+      "access": "Official research abstract"
+    },
+    {
+      "url": "https://www.nber.org/papers/w26237",
+      "support": "Shopping price frequency and magnitude inform inflation expectations; expenditure shares alone are insufficient.",
+      "access": "Primary research abstract"
+    },
+    {
+      "url": "https://www.nber.org/papers/w25482",
+      "support": "Randomized household information treatments change inflation expectations.",
+      "access": "Primary abstract indexed; direct page access restricted in this check"
+    },
+    {
+      "url": "https://cepr.org/voxeu/columns/monetary-policy-communications-and-their-effects-household-inflation-expectations",
+      "support": "Authors describe randomized information experiment; no treatment coefficient assumed for this project.",
+      "access": "Authors research explanation"
+    },
+    {
+      "url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+      "support": "Information diffusion and gradual household updating; not evidence for exact recall of last survey answer.",
+      "access": "Author manuscript"
+    },
+    {
+      "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+      "support": "Lifetime inflation experience and expectation heterogeneity.",
+      "access": "2011 author manuscript; journal publication 2016"
+    },
+    {
+      "url": "https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-survey-core-module-public-questionnaire.pdf",
+      "support": "Q8 direction and magnitude; Q9 next 12 months ten probability bins.",
+      "access": "Local official PDF text checked at Q8/Q9; no new PDF download"
+    }
+  ],
+  "validation": {
+    "tests": "7 passed: tests/test_pe_diagnostic.py + tests/test_numeracy_audit.py",
+    "input_source_hashes": "All summary source hashes match",
+    "protected_files": "15 unchanged SHA256 checks",
+    "figures": "All five PNGs visually checked; PNG bytes embedded in HTML verified",
+    "html": "14 data views parsed; JavaScript update logic checked via Node VM DOM mock; no browser screenshot claimed",
+    "official_chart": "202101 Q8/Q9 column headings and numbers independently checked in chart.xlsx"
+  },
+  "new_llm_calls": 0,
+  "new_paid_mcp_calls": 0,
+  "fee_this_audit_usd": 0,
+  "supersedes": "Old reuse memory detection was incorrect; original output archives retained, public docs carry visible correction."
+}
