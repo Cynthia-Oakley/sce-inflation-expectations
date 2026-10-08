@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-08",
+  "status": "prepared; user authorized small replay; not run yet",
+  "model": "qwen/qwen-2.5-72b-instruct",
+  "provider": "DeepInfra / deepinfra/fp8",
+  "target_answers": 240,
+  "budget_cap_usd": 0.5,
+  "summary_sha256": "1e850421599df16ba96010781badf4fa0a3f16b79b1ff46f017456dbc982c1a0",
+  "requests_sha256": "e6a624ca14529424b75758f49712b2041d537ad179c9e7e76e90395ddfc774a3",
+  "reference_sha256": "de63106c77366dbcae91be19a46862b73617c88853f2f596deadfd7c0c966bdf",
+  "preparation": {
+    "status": "offline prepared",
+    "source_run_id": "sce-local-openai-20261003T055121Z-1dc7cd15",
+    "model": "qwen/qwen-2.5-72b-instruct",
+    "persons": 20,
+    "months": [
+      202101,
+      202102,
+      202103,
+      202104,
+      202105,
+      202106,
+      202107,
+      202108,
+      202109,
+      202110,
+      202111,
+      202112
+    ],
+    "target_answers": 240,
+    "budget_cap_usd": 0.5,
+    "temperature": 0.5,
+    "prompt_version": "sce-q8-q9-llm-en-v1",
+    "max_attempts_per_case": 2,
+    "retry_protocol": "identical original messages; no feedback",
+    "source_sha256": {
+      "outputs/local_runs/sce-local-openai-20261003T055121Z-1dc7cd15/llm_calls.jsonl": "716e4cb40684a699193eb01b6d24d68a1c4c085776361f2c5dc35b40e027d4df"
+    },
+    "execution_code_sha256": {
+      "scripts/prepare_sce_reuse_probe.py": "954d09dce2d16c362a200c5fbd6a8ec0455e46c81879e8504ed9fb117c71614a",
+      "scripts/run_sce_reuse_probe.py": "e0b661b969a18e3de88608a558c4672bced809b26b584ee8a498a940e3c1021d",
+      "studies/sce_inflation_expectations/model_counterfactual.py": "0a64c281bb2e6b15bb55ab1a304a57738432af5a67333ab6e48b78e0ad003f9a",
+      "studies/sce_inflation_expectations/annual_model_comparison.py": "b8ff136c03f0fb95d9bbe7e3523204868a95bd7948f406c5032e00ff435f678d",
+      "studies/sce_inflation_expectations/model.py": "acc8721688083fa0078f93b9a89473a96027cc0213ff798b45651b6ce60d5c2f"
+    },
+    "requests_sha256": "e6a624ca14529424b75758f49712b2041d537ad179c9e7e76e90395ddfc774a3",
+    "reference_sha256": "de63106c77366dbcae91be19a46862b73617c88853f2f596deadfd7c0c966bdf",
+    "scope": "old P/E model sensitivity, not latest P/E or nationally representative simulation",
+    "real_llm_calls": 0
+  },
+  "authorization": "User accepted reuse DeepSeek plus only Qwen 20 persons x12 months, proposed $0.50, and asked to inspect effects before reprioritizing. Same OpenRouter/DeepInfra recipient previously authorized.",
+  "evaluation_truth_sha256": "379287faaaa13a180c64d4e21ffd4730edf67c49e15d38bb153f4c421b38dfb6"
+}
