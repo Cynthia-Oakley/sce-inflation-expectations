@@ -1,0 +1,1889 @@
+{
+  "audit_id": "sce_numeracy_audit_20261008_v4",
+  "sources_sha256": {
+    "data/raw/sce_audit_20260928/micro_2020_2024.xlsx": "1b57ffb75c2170d767f46a001002db8c40c228fe5691f6dd19e39777ffe469c6",
+    "data/evaluation/sce_baselines_latest_20261007/aggregate_inputs.json": "a1a275df4fb77e3567a8984293460f9bf671a6eea141319f13d6ed42df609f43",
+    "data/evaluation/dev_full_20261005T045330Z_947a818f/truth.json": "59cc51b4f7f0cbf91dfd3b3845a75222ac178513f96726927ed4bfa7c6cf2a55",
+    "outputs/sce_numeracy_audit_20261008_v2/micro_evaluation_private.parquet": "f2c901c1a0b94424949adfd44b95f9ac5f1ec2e90f898d8717c78ee239ff531d",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/population_effective.json": "aa8e132d351061d8d9a3c28f81cb9dbb0df1c5d1b964b8da72a4760b7692e676",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/llm_calls.jsonl": "038ac18e759b1fe294e510de56d12f9cacbf668da82ec51cd5d5988f642d3ef2",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/simulation_effective.json": "714bc95d6045c9042ebb2fb227544c998b590b35bbf80868ccacce279f788610",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/population_effective.json": "764987249c9099bcb8d7489f11ce739e99e25b643c363d739d3e3e0e391417e4",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/llm_calls.jsonl": "fda70ea69b4fb33a4f8d3626dfbae03543696a4cabd03c199f73b120709eb8d8",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/simulation_effective.json": "fad6c3aff3d23f1f5e18feca1979cdd4ab56ded2668479fde7d69e982ff8dfc4",
+    "studies/sce_inflation_expectations/numeracy_audit.py": "f4a53576bbf8cd001e630c76700d975c52d91e7b57938f7d58f3f9d37b4100ce",
+    "scripts/audit_sce_numeracy.py": "881e665569fa86e27a6a24bbc8658b228f9b264a6283b44911173696abc5b55d",
+    "studies/sce_inflation_expectations/household_state_audit.py": "8fea53f67c5e0c40a2b7c2fd532816dc8b025d9ff59318cdca2cd25c567b256b",
+    "studies/sce_inflation_expectations/household_state_analysis.py": "3752e2c4e684c9384f12de7b570e7bc474f16b01ae327aab9709b3514cf1ee42"
+  },
+  "new_api_calls": 0,
+  "changed_runtime_inputs": false,
+  "scorer_provenance": {
+    "scorer": "sce_q9_frozen",
+    "variant": "relaxed_tail_skip_zero",
+    "tail_start": 20.0,
+    "holdout_run_id": "20261003T023026Z_77ebb305",
+    "pinned_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_matches_pinned": true,
+    "kernel_migration": {
+      "migrated_at": "2026-10-03",
+      "old_source": "scripts/diagnose_sce_beta.py",
+      "old_source_sha256": "b45a29345f432288fe3b0b18e8c39066998bf19a803a0e7c661dc2a193987e57",
+      "new_source": "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+      "algorithm_unchanged": true,
+      "equivalence_check": "3,741 sealed holdout rows recomputed; zero per-field difference"
+    },
+    "approximation_notice": "Research approximation of the Armantier et al. (2017) Appendix C generalized-beta fit, selected on a preregistered holdout; not the official FRBNY implementation. The same algorithm scores real and simulated questionnaires; differences from official headline values are reported separately."
+  },
+  "definition": "Official High = at least four correct of five numeracy/financial literacy questions; category includes carried entry assessments",
+  "scope": "Retrospective descriptive evaluation; 2021-05/06 already development data; 60-month review exploratory, no independent test claim",
+  "benchmarks": {
+    "current": "CPI-U all-items NSA y/y in survey calendar month; retrospective distance, not error or necessarily available during interview",
+    "future": "CPI-U all-items NSA y/y in month t+12, from initial BLS release; month-level approximation to next-12-month expectation; evaluation only"
+  },
+  "numeracy_classification": {
+    "source_rows": 71976,
+    "excluded_missing_nonpositive_weight_rows": 16,
+    "n_rows": 71960,
+    "unique_people": 9747,
+    "months": 60,
+    "category_counts": {
+      "High": 50185,
+      "Low": 21769,
+      "Missing": 6
+    },
+    "complete_five_question_n": 8494,
+    "comparable_n": 8494,
+    "agreement_n": 8494,
+    "disagreement_n": 0
+  },
+  "missing_benchmarks": {
+    "current_months": [],
+    "future_months": [
+      202410
+    ]
+  },
+  "real_equal_month_contrasts": {
+    "point": {
+      "months": 60,
+      "mean_monthly_median_gap_low_minus_high_pp": 2.9950000007947284,
+      "months_low_greater": 60,
+      "months_high_greater": 0,
+      "months_tied": 0
+    },
+    "density_mean": {
+      "months": 60,
+      "mean_monthly_median_gap_low_minus_high_pp": 0.0012936194737752278,
+      "months_low_greater": 32,
+      "months_high_greater": 27,
+      "months_tied": 1
+    },
+    "uncertainty": {
+      "months": 60,
+      "mean_monthly_median_gap_low_minus_high_pp": 3.3497614800930022,
+      "months_low_greater": 60,
+      "months_high_greater": 0,
+      "months_tied": 0
+    },
+    "point_future_error": {
+      "months": 59,
+      "mean_monthly_median_gap_low_minus_high_pp": 3.467288135269941,
+      "months_low_greater": 59,
+      "months_high_greater": 0,
+      "months_tied": 0
+    },
+    "density_future_error": {
+      "months": 59,
+      "mean_monthly_median_gap_low_minus_high_pp": 0.8823400686059963,
+      "months_low_greater": 59,
+      "months_high_greater": 0,
+      "months_tied": 0
+    },
+    "point_current_distance": {
+      "months": 60,
+      "mean_monthly_median_gap_low_minus_high_pp": 4.414166665077209,
+      "months_low_greater": 60,
+      "months_high_greater": 0,
+      "months_tied": 0
+    },
+    "density_current_distance": {
+      "months": 60,
+      "mean_monthly_median_gap_low_minus_high_pp": 1.2909207040148323,
+      "months_low_greater": 60,
+      "months_high_greater": 0,
+      "months_tied": 0
+    }
+  },
+  "real_controlled_associations": {
+    "controls": [
+      "date",
+      "_AGE_CAT",
+      "_EDU_CAT",
+      "_HH_INC_CAT",
+      "_REGION_CAT"
+    ],
+    "weighting": "Equal month mass; within-month survey weights",
+    "interpretation": "Descriptive conditional mean associations; panel dependence not tested; no p-values or causal claims",
+    "outcomes": {
+      "point": {
+        "n": 70723,
+        "low_minus_high_coefficient_pp": 1.6314074076593634,
+        "rank": 70,
+        "parameters": 70
+      },
+      "density_mean": {
+        "n": 69790,
+        "low_minus_high_coefficient_pp": 0.13092027367339254,
+        "rank": 70,
+        "parameters": 70
+      },
+      "uncertainty": {
+        "n": 69790,
+        "low_minus_high_coefficient_pp": 2.4246776716709513,
+        "rank": 70,
+        "parameters": 70
+      },
+      "point_future_error": {
+        "n": 69665,
+        "low_minus_high_coefficient_pp": 3.896838975033867,
+        "rank": 69,
+        "parameters": 69
+      },
+      "density_future_error": {
+        "n": 68748,
+        "low_minus_high_coefficient_pp": 1.011417054754558,
+        "rank": 69,
+        "parameters": 69
+      }
+    }
+  },
+  "simulations": {
+    "202105": {
+      "source_run": "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c",
+      "n_population": 300,
+      "n_valid_responses": 300,
+      "prompt_and_response_hashes_checked": 300,
+      "actual_numeracy_sentence_checked": 300,
+      "common_mask_exclusions": {
+        "point": 3,
+        "density_mean": 8,
+        "uncertainty": 8
+      },
+      "matched_real_same_frozen_scoring": {
+        "High": {
+          "n_rows": 213,
+          "unique_people": 213,
+          "point": {
+            "valid_n": 210,
+            "weighted_mean_pp": 6.5647619048754375,
+            "weighted_p25_pp": 3.0,
+            "weighted_median_pp": 4.0,
+            "weighted_p75_pp": 8.0,
+            "between_person_iqr_pp": 5.0,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "density_mean": {
+            "valid_n": 209,
+            "weighted_mean_pp": 5.1351994628333655,
+            "weighted_p25_pp": 2.4750550623515624,
+            "weighted_median_pp": 3.5065520314643486,
+            "weighted_p75_pp": 6.333683177684301,
+            "between_person_iqr_pp": 3.8586281153327384,
+            "weight_sum": 209.0,
+            "effective_n": 209.0
+          },
+          "uncertainty": {
+            "valid_n": 209,
+            "weighted_mean_pp": 4.004888461639608,
+            "weighted_p25_pp": 1.5950892031433064,
+            "weighted_median_pp": 2.8770826318799583,
+            "weighted_p75_pp": 5.061984209881404,
+            "between_person_iqr_pp": 3.4668950067380973,
+            "weight_sum": 209.0,
+            "effective_n": 209.0
+          },
+          "point_future_error": {
+            "valid_n": 210,
+            "weighted_mean_pp": 6.0333333332198,
+            "weighted_p25_pp": 3.5999999999999996,
+            "weighted_median_pp": 4.6,
+            "weighted_p75_pp": 6.6,
+            "between_person_iqr_pp": 3.0,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "density_future_error": {
+            "valid_n": 209,
+            "weighted_mean_pp": 5.198388545801435,
+            "weighted_p25_pp": 2.8922204284212416,
+            "weighted_median_pp": 5.403403395698687,
+            "weighted_p75_pp": 6.255631084967318,
+            "between_person_iqr_pp": 3.363410656546076,
+            "weight_sum": 209.0,
+            "effective_n": 209.0
+          },
+          "point_current_distance": {
+            "valid_n": 210,
+            "weighted_mean_pp": 4.701904761791229,
+            "weighted_p25_pp": 1.0,
+            "weighted_median_pp": 3.0,
+            "weighted_p75_pp": 5.0,
+            "between_person_iqr_pp": 4.0,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "density_current_distance": {
+            "valid_n": 209,
+            "weighted_mean_pp": 3.3601835071952384,
+            "weighted_p25_pp": 1.4716882260552469,
+            "weighted_median_pp": 2.258932612991968,
+            "weighted_p75_pp": 3.802396687617762,
+            "between_person_iqr_pp": 2.3307084615625153,
+            "weight_sum": 209.0,
+            "effective_n": 209.0
+          }
+        },
+        "Low": {
+          "n_rows": 87,
+          "unique_people": 87,
+          "point": {
+            "valid_n": 87,
+            "weighted_mean_pp": 9.701149425287356,
+            "weighted_p25_pp": 3.0,
+            "weighted_median_pp": 7.0,
+            "weighted_p75_pp": 15.0,
+            "between_person_iqr_pp": 12.0,
+            "weight_sum": 87.0,
+            "effective_n": 87.0
+          },
+          "density_mean": {
+            "valid_n": 83,
+            "weighted_mean_pp": 6.529677968962731,
+            "weighted_p25_pp": 1.936073192297998,
+            "weighted_median_pp": 4.39403005255617,
+            "weighted_p75_pp": 8.998668141841042,
+            "between_person_iqr_pp": 7.062594949543044,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "uncertainty": {
+            "valid_n": 83,
+            "weighted_mean_pp": 6.788316214219556,
+            "weighted_p25_pp": 2.5261545839323514,
+            "weighted_median_pp": 4.648093209764597,
+            "weighted_p75_pp": 11.129903841292464,
+            "between_person_iqr_pp": 8.603749257360112,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "point_future_error": {
+            "valid_n": 87,
+            "weighted_mean_pp": 11.4,
+            "weighted_p25_pp": 3.5999999999999996,
+            "weighted_median_pp": 6.4,
+            "weighted_p75_pp": 11.6,
+            "between_person_iqr_pp": 8.0,
+            "weight_sum": 87.0,
+            "effective_n": 87.0
+          },
+          "density_future_error": {
+            "valid_n": 83,
+            "weighted_mean_pp": 6.417057713276816,
+            "weighted_p25_pp": 3.0556772926403193,
+            "weighted_median_pp": 5.357537564912219,
+            "weighted_p75_pp": 8.600000000043172,
+            "between_person_iqr_pp": 5.544322707402853,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "point_current_distance": {
+            "valid_n": 87,
+            "weighted_mean_pp": 11.551724137931034,
+            "weighted_p25_pp": 2.0,
+            "weighted_median_pp": 7.0,
+            "weighted_p75_pp": 15.0,
+            "between_person_iqr_pp": 13.0,
+            "weight_sum": 87.0,
+            "effective_n": 87.0
+          },
+          "density_current_distance": {
+            "valid_n": 83,
+            "weighted_mean_pp": 5.33184891866255,
+            "weighted_p25_pp": 1.5782007019743012,
+            "weighted_median_pp": 3.6973706455251225,
+            "weighted_p75_pp": 6.351237823167272,
+            "between_person_iqr_pp": 4.773037121192971,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          }
+        }
+      },
+      "simulated_same_frozen_scoring": {
+        "High": {
+          "n_rows": 213,
+          "unique_people": 213,
+          "point": {
+            "valid_n": 210,
+            "weighted_mean_pp": 3.2785714285714285,
+            "weighted_p25_pp": 3.0,
+            "weighted_median_pp": 3.5,
+            "weighted_p75_pp": 3.5,
+            "between_person_iqr_pp": 0.5,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "density_mean": {
+            "valid_n": 209,
+            "weighted_mean_pp": 2.5421883883953953,
+            "weighted_p25_pp": 2.1661533785101312,
+            "weighted_median_pp": 2.4518024552325723,
+            "weighted_p75_pp": 2.982528739824261,
+            "between_person_iqr_pp": 0.8163753613141296,
+            "weight_sum": 209.0,
+            "effective_n": 209.0
+          },
+          "uncertainty": {
+            "valid_n": 209,
+            "weighted_mean_pp": 3.644064547298716,
+            "weighted_p25_pp": 3.214499999500699,
+            "weighted_median_pp": 3.6458043751168976,
+            "weighted_p75_pp": 4.086365893925471,
+            "between_person_iqr_pp": 0.8718658944247721,
+            "weight_sum": 209.0,
+            "effective_n": 209.0
+          },
+          "point_future_error": {
+            "valid_n": 210,
+            "weighted_mean_pp": 5.321428571428571,
+            "weighted_p25_pp": 5.1,
+            "weighted_median_pp": 5.1,
+            "weighted_p75_pp": 5.6,
+            "between_person_iqr_pp": 0.5,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "density_future_error": {
+            "valid_n": 209,
+            "weighted_mean_pp": 6.057811611604604,
+            "weighted_p25_pp": 5.617471260175739,
+            "weighted_median_pp": 6.148197544767427,
+            "weighted_p75_pp": 6.433846621489868,
+            "between_person_iqr_pp": 0.8163753613141296,
+            "weight_sum": 209.0,
+            "effective_n": 209.0
+          },
+          "point_current_distance": {
+            "valid_n": 210,
+            "weighted_mean_pp": 1.7214285714285715,
+            "weighted_p25_pp": 1.5,
+            "weighted_median_pp": 1.5,
+            "weighted_p75_pp": 2.0,
+            "between_person_iqr_pp": 0.5,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "density_current_distance": {
+            "valid_n": 209,
+            "weighted_mean_pp": 2.4578116116046047,
+            "weighted_p25_pp": 2.017471260175739,
+            "weighted_median_pp": 2.5481975447674277,
+            "weighted_p75_pp": 2.8338466214898688,
+            "between_person_iqr_pp": 0.8163753613141296,
+            "weight_sum": 209.0,
+            "effective_n": 209.0
+          }
+        },
+        "Low": {
+          "n_rows": 87,
+          "unique_people": 87,
+          "point": {
+            "valid_n": 87,
+            "weighted_mean_pp": 4.396551724137931,
+            "weighted_p25_pp": 4.0,
+            "weighted_median_pp": 4.5,
+            "weighted_p75_pp": 5.0,
+            "between_person_iqr_pp": 1.0,
+            "weight_sum": 87.0,
+            "effective_n": 87.0
+          },
+          "density_mean": {
+            "valid_n": 83,
+            "weighted_mean_pp": 3.199758530146475,
+            "weighted_p25_pp": 2.982528739824261,
+            "weighted_median_pp": 3.175321154432817,
+            "weighted_p75_pp": 3.468667288292019,
+            "between_person_iqr_pp": 0.4861385484677583,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "uncertainty": {
+            "valid_n": 83,
+            "weighted_mean_pp": 4.381091326412922,
+            "weighted_p25_pp": 4.119866778831957,
+            "weighted_median_pp": 4.408940397755799,
+            "weighted_p75_pp": 4.574209704441453,
+            "between_person_iqr_pp": 0.4543429256094962,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "point_future_error": {
+            "valid_n": 87,
+            "weighted_mean_pp": 4.203448275862072,
+            "weighted_p25_pp": 3.5999999999999996,
+            "weighted_median_pp": 4.1,
+            "weighted_p75_pp": 4.6,
+            "between_person_iqr_pp": 1.0,
+            "weight_sum": 87.0,
+            "effective_n": 87.0
+          },
+          "density_future_error": {
+            "valid_n": 83,
+            "weighted_mean_pp": 5.400241469853524,
+            "weighted_p25_pp": 5.13133271170798,
+            "weighted_median_pp": 5.424678845567183,
+            "weighted_p75_pp": 5.617471260175739,
+            "between_person_iqr_pp": 0.4861385484677587,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "point_current_distance": {
+            "valid_n": 87,
+            "weighted_mean_pp": 0.6724137931034483,
+            "weighted_p25_pp": 0.5,
+            "weighted_median_pp": 0.5,
+            "weighted_p75_pp": 1.0,
+            "between_person_iqr_pp": 0.5,
+            "weight_sum": 87.0,
+            "effective_n": 87.0
+          },
+          "density_current_distance": {
+            "valid_n": 83,
+            "weighted_mean_pp": 1.8002414698535252,
+            "weighted_p25_pp": 1.531332711707981,
+            "weighted_median_pp": 1.824678845567183,
+            "weighted_p75_pp": 2.017471260175739,
+            "between_person_iqr_pp": 0.4861385484677583,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          }
+        }
+      },
+      "controlled_real": {
+        "controls": [
+          "date",
+          "_AGE_CAT",
+          "_EDU_CAT",
+          "_HH_INC_CAT",
+          "_REGION_CAT"
+        ],
+        "weighting": "Equal month mass; within-month survey weights",
+        "interpretation": "Descriptive conditional mean associations; panel dependence not tested; no p-values or causal claims",
+        "outcomes": {
+          "point": {
+            "n": 294,
+            "low_minus_high_coefficient_pp": 2.3244176023470033,
+            "rank": 11,
+            "parameters": 11
+          },
+          "density_mean": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": 0.6363386995358632,
+            "rank": 11,
+            "parameters": 11
+          },
+          "uncertainty": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": 2.027190689139712,
+            "rank": 11,
+            "parameters": 11
+          },
+          "point_future_error": {
+            "n": 294,
+            "low_minus_high_coefficient_pp": 3.8023737814839795,
+            "rank": 11,
+            "parameters": 11
+          },
+          "density_future_error": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": 0.9127415186138735,
+            "rank": 11,
+            "parameters": 11
+          }
+        }
+      },
+      "controlled_simulated": {
+        "controls": [
+          "date",
+          "_AGE_CAT",
+          "_EDU_CAT",
+          "_HH_INC_CAT",
+          "_REGION_CAT"
+        ],
+        "weighting": "Equal month mass; within-month survey weights",
+        "interpretation": "Descriptive conditional mean associations; panel dependence not tested; no p-values or causal claims",
+        "outcomes": {
+          "point": {
+            "n": 294,
+            "low_minus_high_coefficient_pp": 1.035720884003747,
+            "rank": 11,
+            "parameters": 11
+          },
+          "density_mean": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": 0.613640804122293,
+            "rank": 11,
+            "parameters": 11
+          },
+          "uncertainty": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": 0.6586698627914406,
+            "rank": 11,
+            "parameters": 11
+          },
+          "point_future_error": {
+            "n": 294,
+            "low_minus_high_coefficient_pp": -1.0357208840037475,
+            "rank": 11,
+            "parameters": 11
+          },
+          "density_future_error": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": -0.6136408041222927,
+            "rank": 11,
+            "parameters": 11
+          }
+        }
+      },
+      "scope": "Equal-weight exact selected respondents; independent group comparisons, no prompt-only ablation or national claim",
+      "survey_weight_sensitivity": {
+        "real": {
+          "High": {
+            "n_rows": 213,
+            "unique_people": 213,
+            "point": {
+              "valid_n": 210,
+              "weighted_mean_pp": 7.767682029415314,
+              "weighted_p25_pp": 3.0,
+              "weighted_median_pp": 5.0,
+              "weighted_p75_pp": 10.0,
+              "between_person_iqr_pp": 7.0,
+              "weight_sum": 185.3796018064022,
+              "effective_n": 138.23240187123506
+            },
+            "density_mean": {
+              "valid_n": 209,
+              "weighted_mean_pp": 5.449350939929046,
+              "weighted_p25_pp": 2.4750550623515624,
+              "weighted_median_pp": 3.7280620535125237,
+              "weighted_p75_pp": 7.192735385414911,
+              "between_person_iqr_pp": 4.717680323063349,
+              "weight_sum": 185.28393310308456,
+              "effective_n": 137.97584690370465
+            },
+            "uncertainty": {
+              "valid_n": 209,
+              "weighted_mean_pp": 4.688229236640163,
+              "weighted_p25_pp": 1.7620061155882736,
+              "weighted_median_pp": 3.246055641069619,
+              "weighted_p75_pp": 6.1906992024731196,
+              "between_person_iqr_pp": 4.428693086884846,
+              "weight_sum": 185.28393310308456,
+              "effective_n": 137.97584690370465
+            },
+            "point_future_error": {
+              "valid_n": 210,
+              "weighted_mean_pp": 6.39951465222294,
+              "weighted_p25_pp": 3.4000000000000004,
+              "weighted_median_pp": 4.6,
+              "weighted_p75_pp": 6.6,
+              "between_person_iqr_pp": 3.1999999999999993,
+              "weight_sum": 185.3796018064022,
+              "effective_n": 138.23240187123506
+            },
+            "density_future_error": {
+              "valid_n": 209,
+              "weighted_mean_pp": 5.252631956572428,
+              "weighted_p25_pp": 3.136696426498842,
+              "weighted_median_pp": 5.403403395698687,
+              "weighted_p75_pp": 6.437069214725848,
+              "between_person_iqr_pp": 3.3003727882270057,
+              "weight_sum": 185.28393310308456,
+              "effective_n": 137.97584690370465
+            },
+            "point_current_distance": {
+              "valid_n": 210,
+              "weighted_mean_pp": 5.419295664863186,
+              "weighted_p25_pp": 1.0,
+              "weighted_median_pp": 3.0,
+              "weighted_p75_pp": 5.0,
+              "between_person_iqr_pp": 4.0,
+              "weight_sum": 185.3796018064022,
+              "effective_n": 138.23240187123506
+            },
+            "density_current_distance": {
+              "valid_n": 209,
+              "weighted_mean_pp": 3.6818481990917453,
+              "weighted_p25_pp": 1.5929073919900691,
+              "weighted_median_pp": 2.3585868576651805,
+              "weighted_p75_pp": 4.355277162483606,
+              "between_person_iqr_pp": 2.762369770493537,
+              "weight_sum": 185.28393310308456,
+              "effective_n": 137.97584690370465
+            }
+          },
+          "Low": {
+            "n_rows": 87,
+            "unique_people": 87,
+            "point": {
+              "valid_n": 87,
+              "weighted_mean_pp": 12.572388069716018,
+              "weighted_p25_pp": 4.0,
+              "weighted_median_pp": 10.0,
+              "weighted_p75_pp": 20.0,
+              "between_person_iqr_pp": 16.0,
+              "weight_sum": 97.43661397695541,
+              "effective_n": 54.94448104753896
+            },
+            "density_mean": {
+              "valid_n": 83,
+              "weighted_mean_pp": 6.882610678800522,
+              "weighted_p25_pp": 1.5544060528973986,
+              "weighted_median_pp": 5.384727429978436,
+              "weighted_p75_pp": 9.364143229894388,
+              "between_person_iqr_pp": 7.80973717699699,
+              "weight_sum": 94.16272696852684,
+              "effective_n": 52.3312165415919
+            },
+            "uncertainty": {
+              "valid_n": 83,
+              "weighted_mean_pp": 6.7141139364282285,
+              "weighted_p25_pp": 2.5261545839323514,
+              "weighted_median_pp": 4.486818876017825,
+              "weighted_p75_pp": 10.261996390702599,
+              "between_person_iqr_pp": 7.735841806770248,
+              "weight_sum": 94.16272696852684,
+              "effective_n": 52.3312165415919
+            },
+            "point_future_error": {
+              "valid_n": 87,
+              "weighted_mean_pp": 11.582005348358194,
+              "weighted_p25_pp": 3.5999999999999996,
+              "weighted_median_pp": 6.6,
+              "weighted_p75_pp": 16.4,
+              "between_person_iqr_pp": 12.799999999999999,
+              "weight_sum": 97.43661397695541,
+              "effective_n": 54.94448104753896
+            },
+            "density_future_error": {
+              "valid_n": 83,
+              "weighted_mean_pp": 6.170998165355281,
+              "weighted_p25_pp": 2.5999999999999996,
+              "weighted_median_pp": 5.488888888888889,
+              "weighted_p75_pp": 8.600000000043172,
+              "between_person_iqr_pp": 6.000000000043173,
+              "weight_sum": 94.16272696852684,
+              "effective_n": 52.3312165415919
+            },
+            "point_current_distance": {
+              "valid_n": 87,
+              "weighted_mean_pp": 12.41671441254958,
+              "weighted_p25_pp": 3.0,
+              "weighted_median_pp": 10.0,
+              "weighted_p75_pp": 15.0,
+              "between_person_iqr_pp": 12.0,
+              "weight_sum": 97.43661397695541,
+              "effective_n": 54.94448104753896
+            },
+            "density_current_distance": {
+              "valid_n": 83,
+              "weighted_mean_pp": 5.559435520892939,
+              "weighted_p25_pp": 2.0,
+              "weighted_median_pp": 3.850490481556859,
+              "weighted_p75_pp": 6.351237823167272,
+              "between_person_iqr_pp": 4.351237823167272,
+              "weight_sum": 94.16272696852684,
+              "effective_n": 52.3312165415919
+            }
+          }
+        },
+        "simulated": {
+          "High": {
+            "n_rows": 213,
+            "unique_people": 213,
+            "point": {
+              "valid_n": 210,
+              "weighted_mean_pp": 3.29206074010965,
+              "weighted_p25_pp": 3.0,
+              "weighted_median_pp": 3.5,
+              "weighted_p75_pp": 3.5,
+              "between_person_iqr_pp": 0.5,
+              "weight_sum": 185.3796018064022,
+              "effective_n": 138.23240187123506
+            },
+            "density_mean": {
+              "valid_n": 209,
+              "weighted_mean_pp": 2.575018573215791,
+              "weighted_p25_pp": 2.205426887854429,
+              "weighted_median_pp": 2.538836259099188,
+              "weighted_p75_pp": 2.982528739824261,
+              "between_person_iqr_pp": 0.7771018519698316,
+              "weight_sum": 185.28393310308456,
+              "effective_n": 137.97584690370465
+            },
+            "uncertainty": {
+              "valid_n": 209,
+              "weighted_mean_pp": 3.701208949667845,
+              "weighted_p25_pp": 3.2394646553370734,
+              "weighted_median_pp": 3.7529408070320045,
+              "weighted_p75_pp": 4.119866778831957,
+              "between_person_iqr_pp": 0.8804021234948838,
+              "weight_sum": 185.28393310308456,
+              "effective_n": 137.97584690370465
+            },
+            "point_future_error": {
+              "valid_n": 210,
+              "weighted_mean_pp": 5.3079392598903485,
+              "weighted_p25_pp": 5.1,
+              "weighted_median_pp": 5.1,
+              "weighted_p75_pp": 5.6,
+              "between_person_iqr_pp": 0.5,
+              "weight_sum": 185.3796018064022,
+              "effective_n": 138.23240187123506
+            },
+            "density_future_error": {
+              "valid_n": 209,
+              "weighted_mean_pp": 6.02498142678421,
+              "weighted_p25_pp": 5.617471260175739,
+              "weighted_median_pp": 6.0611637409008114,
+              "weighted_p75_pp": 6.3945731121455704,
+              "between_person_iqr_pp": 0.7771018519698316,
+              "weight_sum": 185.28393310308456,
+              "effective_n": 137.97584690370465
+            },
+            "point_current_distance": {
+              "valid_n": 210,
+              "weighted_mean_pp": 1.7079392598903498,
+              "weighted_p25_pp": 1.5,
+              "weighted_median_pp": 1.5,
+              "weighted_p75_pp": 2.0,
+              "between_person_iqr_pp": 0.5,
+              "weight_sum": 185.3796018064022,
+              "effective_n": 138.23240187123506
+            },
+            "density_current_distance": {
+              "valid_n": 209,
+              "weighted_mean_pp": 2.424981426784209,
+              "weighted_p25_pp": 2.017471260175739,
+              "weighted_median_pp": 2.461163740900812,
+              "weighted_p75_pp": 2.794573112145571,
+              "between_person_iqr_pp": 0.7771018519698316,
+              "weight_sum": 185.28393310308456,
+              "effective_n": 137.97584690370465
+            }
+          },
+          "Low": {
+            "n_rows": 87,
+            "unique_people": 87,
+            "point": {
+              "valid_n": 87,
+              "weighted_mean_pp": 4.548955698500516,
+              "weighted_p25_pp": 4.5,
+              "weighted_median_pp": 4.5,
+              "weighted_p75_pp": 5.0,
+              "between_person_iqr_pp": 0.5,
+              "weight_sum": 97.43661397695541,
+              "effective_n": 54.94448104753896
+            },
+            "density_mean": {
+              "valid_n": 83,
+              "weighted_mean_pp": 3.2948263118411387,
+              "weighted_p25_pp": 2.982528739824261,
+              "weighted_median_pp": 3.175321154432817,
+              "weighted_p75_pp": 3.488275741515663,
+              "between_person_iqr_pp": 0.5057470016914021,
+              "weight_sum": 94.16272696852684,
+              "effective_n": 52.3312165415919
+            },
+            "uncertainty": {
+              "valid_n": 83,
+              "weighted_mean_pp": 4.492507406534466,
+              "weighted_p25_pp": 4.143038508653774,
+              "weighted_median_pp": 4.408940397755799,
+              "weighted_p75_pp": 4.682447239848575,
+              "between_person_iqr_pp": 0.5394087311948006,
+              "weight_sum": 94.16272696852684,
+              "effective_n": 52.3312165415919
+            },
+            "point_future_error": {
+              "valid_n": 87,
+              "weighted_mean_pp": 4.051044301499484,
+              "weighted_p25_pp": 3.5999999999999996,
+              "weighted_median_pp": 4.1,
+              "weighted_p75_pp": 4.1,
+              "between_person_iqr_pp": 0.5,
+              "weight_sum": 97.43661397695541,
+              "effective_n": 54.94448104753896
+            },
+            "density_future_error": {
+              "valid_n": 83,
+              "weighted_mean_pp": 5.305173688158862,
+              "weighted_p25_pp": 5.111724258484337,
+              "weighted_median_pp": 5.424678845567183,
+              "weighted_p75_pp": 5.617471260175739,
+              "between_person_iqr_pp": 0.5057470016914021,
+              "weight_sum": 94.16272696852684,
+              "effective_n": 52.3312165415919
+            },
+            "point_current_distance": {
+              "valid_n": 87,
+              "weighted_mean_pp": 0.55619204559397,
+              "weighted_p25_pp": 0.0,
+              "weighted_median_pp": 0.5,
+              "weighted_p75_pp": 0.5,
+              "between_person_iqr_pp": 0.5,
+              "weight_sum": 97.43661397695541,
+              "effective_n": 54.94448104753896
+            },
+            "density_current_distance": {
+              "valid_n": 83,
+              "weighted_mean_pp": 1.7051736881588617,
+              "weighted_p25_pp": 1.5117242584843371,
+              "weighted_median_pp": 1.824678845567183,
+              "weighted_p75_pp": 2.017471260175739,
+              "between_person_iqr_pp": 0.5057470016914021,
+              "weight_sum": 94.16272696852684,
+              "effective_n": 52.3312165415919
+            }
+          }
+        }
+      }
+    },
+    "202106": {
+      "source_run": "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76",
+      "n_population": 300,
+      "n_valid_responses": 300,
+      "prompt_and_response_hashes_checked": 300,
+      "actual_numeracy_sentence_checked": 300,
+      "common_mask_exclusions": {
+        "point": 0,
+        "density_mean": 7,
+        "uncertainty": 7
+      },
+      "matched_real_same_frozen_scoring": {
+        "High": {
+          "n_rows": 211,
+          "unique_people": 211,
+          "point": {
+            "valid_n": 211,
+            "weighted_mean_pp": 7.3163507109004735,
+            "weighted_p25_pp": 3.0,
+            "weighted_median_pp": 5.0,
+            "weighted_p75_pp": 10.0,
+            "between_person_iqr_pp": 7.0,
+            "weight_sum": 211.0,
+            "effective_n": 211.0
+          },
+          "density_mean": {
+            "valid_n": 210,
+            "weighted_mean_pp": 5.62397081111779,
+            "weighted_p25_pp": 2.6973197351096947,
+            "weighted_median_pp": 4.381966011250105,
+            "weighted_p75_pp": 6.893491920562007,
+            "between_person_iqr_pp": 4.196172185452312,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "uncertainty": {
+            "valid_n": 210,
+            "weighted_mean_pp": 4.464247932868795,
+            "weighted_p25_pp": 1.7133963870236055,
+            "weighted_median_pp": 2.9486453013176153,
+            "weighted_p75_pp": 5.881489495202571,
+            "between_person_iqr_pp": 4.168093108178965,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "point_future_error": {
+            "valid_n": 211,
+            "weighted_mean_pp": 6.462322274881516,
+            "weighted_p25_pp": 4.1,
+            "weighted_median_pp": 5.1,
+            "weighted_p75_pp": 7.1,
+            "between_person_iqr_pp": 3.0,
+            "weight_sum": 211.0,
+            "effective_n": 211.0
+          },
+          "density_future_error": {
+            "valid_n": 210,
+            "weighted_mean_pp": 5.490148322404024,
+            "weighted_p25_pp": 3.0999999999999996,
+            "weighted_median_pp": 5.1,
+            "weighted_p75_pp": 6.909016994374947,
+            "between_person_iqr_pp": 3.8090169943749475,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "point_current_distance": {
+            "valid_n": 211,
+            "weighted_mean_pp": 5.0286729857819905,
+            "weighted_p25_pp": 0.5999999999999996,
+            "weighted_median_pp": 2.4000000000000004,
+            "weighted_p75_pp": 4.6,
+            "between_person_iqr_pp": 4.0,
+            "weight_sum": 211.0,
+            "effective_n": 211.0
+          },
+          "density_current_distance": {
+            "valid_n": 210,
+            "weighted_mean_pp": 3.7480254073835972,
+            "weighted_p25_pp": 1.1182094760251475,
+            "weighted_median_pp": 2.4271377110163677,
+            "weighted_p75_pp": 4.274002636935501,
+            "between_person_iqr_pp": 3.1557931609103536,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          }
+        },
+        "Low": {
+          "n_rows": 89,
+          "unique_people": 89,
+          "point": {
+            "valid_n": 89,
+            "weighted_mean_pp": 9.53370786516854,
+            "weighted_p25_pp": 3.5,
+            "weighted_median_pp": 7.0,
+            "weighted_p75_pp": 15.0,
+            "between_person_iqr_pp": 11.5,
+            "weight_sum": 89.0,
+            "effective_n": 89.0
+          },
+          "density_mean": {
+            "valid_n": 83,
+            "weighted_mean_pp": 6.121711253073777,
+            "weighted_p25_pp": 1.531332786173417,
+            "weighted_median_pp": 4.381966011250105,
+            "weighted_p75_pp": 10.0,
+            "between_person_iqr_pp": 8.468667213826583,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "uncertainty": {
+            "valid_n": 83,
+            "weighted_mean_pp": 6.834710529158045,
+            "weighted_p25_pp": 2.119395241482862,
+            "weighted_median_pp": 4.142135623730951,
+            "weighted_p75_pp": 12.005678337956788,
+            "between_person_iqr_pp": 9.886283096473925,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "point_future_error": {
+            "valid_n": 89,
+            "weighted_mean_pp": 11.388764044943821,
+            "weighted_p25_pp": 3.0999999999999996,
+            "weighted_median_pp": 5.9,
+            "weighted_p75_pp": 13.9,
+            "between_person_iqr_pp": 10.8,
+            "weight_sum": 89.0,
+            "effective_n": 89.0
+          },
+          "density_future_error": {
+            "valid_n": 83,
+            "weighted_mean_pp": 6.7329800762457985,
+            "weighted_p25_pp": 3.0786114980872883,
+            "weighted_median_pp": 6.1,
+            "weighted_p75_pp": 9.1,
+            "between_person_iqr_pp": 6.021388501912711,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "point_current_distance": {
+            "valid_n": 89,
+            "weighted_mean_pp": 11.362921348314607,
+            "weighted_p25_pp": 1.5999999999999996,
+            "weighted_median_pp": 4.6,
+            "weighted_p75_pp": 14.6,
+            "between_person_iqr_pp": 13.0,
+            "weight_sum": 89.0,
+            "effective_n": 89.0
+          },
+          "density_current_distance": {
+            "valid_n": 83,
+            "weighted_mean_pp": 5.473037053901744,
+            "weighted_p25_pp": 1.6136514135369575,
+            "weighted_median_pp": 3.8686672138265834,
+            "weighted_p75_pp": 6.754919505754236,
+            "between_person_iqr_pp": 5.141268092217278,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          }
+        }
+      },
+      "simulated_same_frozen_scoring": {
+        "High": {
+          "n_rows": 211,
+          "unique_people": 211,
+          "point": {
+            "valid_n": 211,
+            "weighted_mean_pp": 4.04739336492891,
+            "weighted_p25_pp": 3.5,
+            "weighted_median_pp": 4.2,
+            "weighted_p75_pp": 4.5,
+            "between_person_iqr_pp": 1.0,
+            "weight_sum": 211.0,
+            "effective_n": 211.0
+          },
+          "density_mean": {
+            "valid_n": 210,
+            "weighted_mean_pp": 3.525198464672403,
+            "weighted_p25_pp": 2.989805986908957,
+            "weighted_median_pp": 3.468667288292019,
+            "weighted_p75_pp": 4.158085057293773,
+            "between_person_iqr_pp": 1.1682790703848163,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "uncertainty": {
+            "valid_n": 210,
+            "weighted_mean_pp": 4.3359182625356265,
+            "weighted_p25_pp": 4.119866778831957,
+            "weighted_median_pp": 4.371933626060747,
+            "weighted_p75_pp": 4.622722532383496,
+            "between_person_iqr_pp": 0.5028557535515388,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "point_future_error": {
+            "valid_n": 211,
+            "weighted_mean_pp": 5.052606635071092,
+            "weighted_p25_pp": 4.6,
+            "weighted_median_pp": 4.8999999999999995,
+            "weighted_p75_pp": 5.6,
+            "between_person_iqr_pp": 1.0,
+            "weight_sum": 211.0,
+            "effective_n": 211.0
+          },
+          "density_future_error": {
+            "valid_n": 210,
+            "weighted_mean_pp": 5.574801535327597,
+            "weighted_p25_pp": 4.9419149427062266,
+            "weighted_median_pp": 5.63133271170798,
+            "weighted_p75_pp": 6.110194013091043,
+            "between_person_iqr_pp": 1.1682790703848163,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          },
+          "point_current_distance": {
+            "valid_n": 211,
+            "weighted_mean_pp": 1.3526066350710906,
+            "weighted_p25_pp": 0.9000000000000004,
+            "weighted_median_pp": 1.2000000000000002,
+            "weighted_p75_pp": 1.9000000000000004,
+            "between_person_iqr_pp": 1.0,
+            "weight_sum": 211.0,
+            "effective_n": 211.0
+          },
+          "density_current_distance": {
+            "valid_n": 210,
+            "weighted_mean_pp": 1.8748015353275977,
+            "weighted_p25_pp": 1.2419149427062273,
+            "weighted_median_pp": 1.9313327117079813,
+            "weighted_p75_pp": 2.4101940130910435,
+            "between_person_iqr_pp": 1.1682790703848163,
+            "weight_sum": 210.0,
+            "effective_n": 210.0
+          }
+        },
+        "Low": {
+          "n_rows": 89,
+          "unique_people": 89,
+          "point": {
+            "valid_n": 89,
+            "weighted_mean_pp": 4.651685393258427,
+            "weighted_p25_pp": 4.5,
+            "weighted_median_pp": 4.5,
+            "weighted_p75_pp": 4.5,
+            "between_person_iqr_pp": 0.0,
+            "weight_sum": 89.0,
+            "effective_n": 89.0
+          },
+          "density_mean": {
+            "valid_n": 83,
+            "weighted_mean_pp": 4.081305107294276,
+            "weighted_p25_pp": 3.7431910104316293,
+            "weighted_median_pp": 4.13674926420706,
+            "weighted_p75_pp": 4.522734734583942,
+            "between_person_iqr_pp": 0.7795437241523127,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "uncertainty": {
+            "valid_n": 83,
+            "weighted_mean_pp": 4.9010189391802585,
+            "weighted_p25_pp": 4.622722532383496,
+            "weighted_median_pp": 4.773536821777085,
+            "weighted_p75_pp": 5.3292116949432256,
+            "between_person_iqr_pp": 0.7064891625597296,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "point_future_error": {
+            "valid_n": 89,
+            "weighted_mean_pp": 4.448314606741574,
+            "weighted_p25_pp": 4.6,
+            "weighted_median_pp": 4.6,
+            "weighted_p75_pp": 4.6,
+            "between_person_iqr_pp": 0.0,
+            "weight_sum": 89.0,
+            "effective_n": 89.0
+          },
+          "density_future_error": {
+            "valid_n": 83,
+            "weighted_mean_pp": 5.018694892705722,
+            "weighted_p25_pp": 4.577265265416058,
+            "weighted_median_pp": 4.96325073579294,
+            "weighted_p75_pp": 5.35680898956837,
+            "between_person_iqr_pp": 0.7795437241523127,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          },
+          "point_current_distance": {
+            "valid_n": 89,
+            "weighted_mean_pp": 0.8314606741573037,
+            "weighted_p25_pp": 0.9000000000000004,
+            "weighted_median_pp": 0.9000000000000004,
+            "weighted_p75_pp": 0.9000000000000004,
+            "between_person_iqr_pp": 0.0,
+            "weight_sum": 89.0,
+            "effective_n": 89.0
+          },
+          "density_current_distance": {
+            "valid_n": 83,
+            "weighted_mean_pp": 1.32285446448867,
+            "weighted_p25_pp": 0.8772652654160584,
+            "weighted_median_pp": 1.2632507357929406,
+            "weighted_p75_pp": 1.656808989568371,
+            "between_person_iqr_pp": 0.7795437241523127,
+            "weight_sum": 83.0,
+            "effective_n": 83.0
+          }
+        }
+      },
+      "controlled_real": {
+        "controls": [
+          "date",
+          "_AGE_CAT",
+          "_EDU_CAT",
+          "_HH_INC_CAT",
+          "_REGION_CAT"
+        ],
+        "weighting": "Equal month mass; within-month survey weights",
+        "interpretation": "Descriptive conditional mean associations; panel dependence not tested; no p-values or causal claims",
+        "outcomes": {
+          "point": {
+            "n": 296,
+            "low_minus_high_coefficient_pp": 0.7819789011530281,
+            "rank": 11,
+            "parameters": 11
+          },
+          "density_mean": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": -0.1725693858181969,
+            "rank": 11,
+            "parameters": 11
+          },
+          "uncertainty": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": 1.588811136200199,
+            "rank": 11,
+            "parameters": 11
+          },
+          "point_future_error": {
+            "n": 296,
+            "low_minus_high_coefficient_pp": 3.7093293015824047,
+            "rank": 11,
+            "parameters": 11
+          },
+          "density_future_error": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": 0.7561835582051452,
+            "rank": 11,
+            "parameters": 11
+          }
+        }
+      },
+      "controlled_simulated": {
+        "controls": [
+          "date",
+          "_AGE_CAT",
+          "_EDU_CAT",
+          "_HH_INC_CAT",
+          "_REGION_CAT"
+        ],
+        "weighting": "Equal month mass; within-month survey weights",
+        "interpretation": "Descriptive conditional mean associations; panel dependence not tested; no p-values or causal claims",
+        "outcomes": {
+          "point": {
+            "n": 296,
+            "low_minus_high_coefficient_pp": 0.5200023634501684,
+            "rank": 11,
+            "parameters": 11
+          },
+          "density_mean": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": 0.4677802482846958,
+            "rank": 11,
+            "parameters": 11
+          },
+          "uncertainty": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": 0.5174856282547544,
+            "rank": 11,
+            "parameters": 11
+          },
+          "point_future_error": {
+            "n": 296,
+            "low_minus_high_coefficient_pp": -0.5200023634501719,
+            "rank": 11,
+            "parameters": 11
+          },
+          "density_future_error": {
+            "n": 289,
+            "low_minus_high_coefficient_pp": -0.46778024828469217,
+            "rank": 11,
+            "parameters": 11
+          }
+        }
+      },
+      "scope": "Equal-weight exact selected respondents; independent group comparisons, no prompt-only ablation or national claim",
+      "survey_weight_sensitivity": {
+        "real": {
+          "High": {
+            "n_rows": 211,
+            "unique_people": 211,
+            "point": {
+              "valid_n": 211,
+              "weighted_mean_pp": 9.41112097015631,
+              "weighted_p25_pp": 3.0,
+              "weighted_median_pp": 5.0,
+              "weighted_p75_pp": 12.0,
+              "between_person_iqr_pp": 9.0,
+              "weight_sum": 203.1677185446024,
+              "effective_n": 131.03878155834346
+            },
+            "density_mean": {
+              "valid_n": 210,
+              "weighted_mean_pp": 6.749301546041402,
+              "weighted_p25_pp": 2.9699467232973666,
+              "weighted_median_pp": 5.5592692369388885,
+              "weighted_p75_pp": 9.265794993041439,
+              "between_person_iqr_pp": 6.295848269744072,
+              "weight_sum": 202.59901739656925,
+              "effective_n": 130.44013596833437
+            },
+            "uncertainty": {
+              "valid_n": 210,
+              "weighted_mean_pp": 5.474021557152704,
+              "weighted_p25_pp": 1.9678663933718834,
+              "weighted_median_pp": 3.6551305063962527,
+              "weighted_p75_pp": 8.45075371947493,
+              "between_person_iqr_pp": 6.482887326103047,
+              "weight_sum": 202.59901739656925,
+              "effective_n": 130.44013596833437
+            },
+            "point_future_error": {
+              "valid_n": 211,
+              "weighted_mean_pp": 7.320920347722868,
+              "weighted_p25_pp": 4.1,
+              "weighted_median_pp": 5.1,
+              "weighted_p75_pp": 7.1,
+              "between_person_iqr_pp": 3.0,
+              "weight_sum": 203.1677185446024,
+              "effective_n": 131.03878155834346
+            },
+            "density_future_error": {
+              "valid_n": 210,
+              "weighted_mean_pp": 5.732938890536045,
+              "weighted_p25_pp": 2.9955292458979716,
+              "weighted_median_pp": 4.736016358247658,
+              "weighted_p75_pp": 7.1,
+              "between_person_iqr_pp": 4.104470754102028,
+              "weight_sum": 202.59901739656925,
+              "effective_n": 130.44013596833437
+            },
+            "point_current_distance": {
+              "valid_n": 211,
+              "weighted_mean_pp": 6.530199527986315,
+              "weighted_p25_pp": 1.4000000000000004,
+              "weighted_median_pp": 2.5999999999999996,
+              "weighted_p75_pp": 6.6,
+              "between_person_iqr_pp": 5.199999999999999,
+              "weight_sum": 203.1677185446024,
+              "effective_n": 131.03878155834346
+            },
+            "density_current_distance": {
+              "valid_n": 210,
+              "weighted_mean_pp": 4.562215249701693,
+              "weighted_p25_pp": 1.1580604364549227,
+              "weighted_median_pp": 2.9838865298597597,
+              "weighted_p75_pp": 5.400000000043173,
+              "between_person_iqr_pp": 4.24193956358825,
+              "weight_sum": 202.59901739656925,
+              "effective_n": 130.44013596833437
+            }
+          },
+          "Low": {
+            "n_rows": 89,
+            "unique_people": 89,
+            "point": {
+              "valid_n": 89,
+              "weighted_mean_pp": 13.074383574903294,
+              "weighted_p25_pp": 3.0,
+              "weighted_median_pp": 10.0,
+              "weighted_p75_pp": 20.0,
+              "between_person_iqr_pp": 17.0,
+              "weight_sum": 104.38104832172394,
+              "effective_n": 56.5946183313364
+            },
+            "density_mean": {
+              "valid_n": 83,
+              "weighted_mean_pp": 6.813070980112255,
+              "weighted_p25_pp": 1.531332786173417,
+              "weighted_median_pp": 4.636709113678142,
+              "weighted_p75_pp": 10.740534339915836,
+              "between_person_iqr_pp": 9.20920155374242,
+              "weight_sum": 96.07793718576431,
+              "effective_n": 52.5070736122756
+            },
+            "uncertainty": {
+              "valid_n": 83,
+              "weighted_mean_pp": 7.07689049178853,
+              "weighted_p25_pp": 2.119395241482862,
+              "weighted_median_pp": 4.212521162375327,
+              "weighted_p75_pp": 12.488183891428827,
+              "between_person_iqr_pp": 10.368788649945966,
+              "weight_sum": 96.07793718576431,
+              "effective_n": 52.5070736122756
+            },
+            "point_future_error": {
+              "valid_n": 89,
+              "weighted_mean_pp": 12.756873911141916,
+              "weighted_p25_pp": 3.9000000000000004,
+              "weighted_median_pp": 6.1,
+              "weighted_p75_pp": 15.9,
+              "between_person_iqr_pp": 12.0,
+              "weight_sum": 104.38104832172394,
+              "effective_n": 56.5946183313364
+            },
+            "density_future_error": {
+              "valid_n": 83,
+              "weighted_mean_pp": 6.470668420892185,
+              "weighted_p25_pp": 2.965817787554549,
+              "weighted_median_pp": 6.1,
+              "weighted_p75_pp": 8.966579028316357,
+              "between_person_iqr_pp": 6.000761240761808,
+              "weight_sum": 96.07793718576431,
+              "effective_n": 52.5070736122756
+            },
+            "point_current_distance": {
+              "valid_n": 89,
+              "weighted_mean_pp": 13.180705853167696,
+              "weighted_p25_pp": 2.4000000000000004,
+              "weighted_median_pp": 4.6,
+              "weighted_p75_pp": 15.4,
+              "between_person_iqr_pp": 13.0,
+              "weight_sum": 104.38104832172394,
+              "effective_n": 56.5946183313364
+            },
+            "density_current_distance": {
+              "valid_n": 83,
+              "weighted_mean_pp": 5.6906584941723555,
+              "weighted_p25_pp": 2.4000000000000004,
+              "weighted_median_pp": 4.4,
+              "weighted_p75_pp": 6.848223927453228,
+              "between_person_iqr_pp": 4.448223927453228,
+              "weight_sum": 96.07793718576431,
+              "effective_n": 52.5070736122756
+            }
+          }
+        },
+        "simulated": {
+          "High": {
+            "n_rows": 211,
+            "unique_people": 211,
+            "point": {
+              "valid_n": 211,
+              "weighted_mean_pp": 4.120849480787015,
+              "weighted_p25_pp": 3.5,
+              "weighted_median_pp": 4.2,
+              "weighted_p75_pp": 4.5,
+              "between_person_iqr_pp": 1.0,
+              "weight_sum": 203.1677185446024,
+              "effective_n": 131.03878155834346
+            },
+            "density_mean": {
+              "valid_n": 210,
+              "weighted_mean_pp": 3.612026909171059,
+              "weighted_p25_pp": 3.0356326388229027,
+              "weighted_median_pp": 3.7431910104316293,
+              "weighted_p75_pp": 4.158085057293773,
+              "between_person_iqr_pp": 1.1224524184708704,
+              "weight_sum": 202.59901739656925,
+              "effective_n": 130.44013596833437
+            },
+            "uncertainty": {
+              "valid_n": 210,
+              "weighted_mean_pp": 4.377616355908781,
+              "weighted_p25_pp": 4.297245835275028,
+              "weighted_median_pp": 4.393478952772011,
+              "weighted_p75_pp": 4.622722532383496,
+              "between_person_iqr_pp": 0.32547669710846794,
+              "weight_sum": 202.59901739656925,
+              "effective_n": 130.44013596833437
+            },
+            "point_future_error": {
+              "valid_n": 211,
+              "weighted_mean_pp": 4.979150519212984,
+              "weighted_p25_pp": 4.6,
+              "weighted_median_pp": 4.8999999999999995,
+              "weighted_p75_pp": 5.6,
+              "between_person_iqr_pp": 1.0,
+              "weight_sum": 203.1677185446024,
+              "effective_n": 131.03878155834346
+            },
+            "density_future_error": {
+              "valid_n": 210,
+              "weighted_mean_pp": 5.487973090828941,
+              "weighted_p25_pp": 4.9419149427062266,
+              "weighted_median_pp": 5.35680898956837,
+              "weighted_p75_pp": 6.064367361177097,
+              "between_person_iqr_pp": 1.1224524184708704,
+              "weight_sum": 202.59901739656925,
+              "effective_n": 130.44013596833437
+            },
+            "point_current_distance": {
+              "valid_n": 211,
+              "weighted_mean_pp": 1.2791505192129855,
+              "weighted_p25_pp": 0.9000000000000004,
+              "weighted_median_pp": 1.2000000000000002,
+              "weighted_p75_pp": 1.9000000000000004,
+              "between_person_iqr_pp": 1.0,
+              "weight_sum": 203.1677185446024,
+              "effective_n": 131.03878155834346
+            },
+            "density_current_distance": {
+              "valid_n": 210,
+              "weighted_mean_pp": 1.7879730908289408,
+              "weighted_p25_pp": 1.2419149427062273,
+              "weighted_median_pp": 1.656808989568371,
+              "weighted_p75_pp": 2.3643673611770977,
+              "between_person_iqr_pp": 1.1224524184708704,
+              "weight_sum": 202.59901739656925,
+              "effective_n": 130.44013596833437
+            }
+          },
+          "Low": {
+            "n_rows": 89,
+            "unique_people": 89,
+            "point": {
+              "valid_n": 89,
+              "weighted_mean_pp": 4.770931263467349,
+              "weighted_p25_pp": 4.5,
+              "weighted_median_pp": 4.5,
+              "weighted_p75_pp": 5.0,
+              "between_person_iqr_pp": 0.5,
+              "weight_sum": 104.38104832172394,
+              "effective_n": 56.5946183313364
+            },
+            "density_mean": {
+              "valid_n": 83,
+              "weighted_mean_pp": 4.140364680053989,
+              "weighted_p25_pp": 3.7431911842284604,
+              "weighted_median_pp": 4.169531211320249,
+              "weighted_p75_pp": 4.522734734583942,
+              "between_person_iqr_pp": 0.7795435503554815,
+              "weight_sum": 96.07793718576431,
+              "effective_n": 52.5070736122756
+            },
+            "uncertainty": {
+              "valid_n": 83,
+              "weighted_mean_pp": 4.957807137048668,
+              "weighted_p25_pp": 4.574209704441453,
+              "weighted_median_pp": 4.852312947292745,
+              "weighted_p75_pp": 5.3292116949432256,
+              "between_person_iqr_pp": 0.7550019905017722,
+              "weight_sum": 96.07793718576431,
+              "effective_n": 52.5070736122756
+            },
+            "point_future_error": {
+              "valid_n": 89,
+              "weighted_mean_pp": 4.32906873653265,
+              "weighted_p25_pp": 4.1,
+              "weighted_median_pp": 4.6,
+              "weighted_p75_pp": 4.6,
+              "between_person_iqr_pp": 0.5,
+              "weight_sum": 104.38104832172394,
+              "effective_n": 56.5946183313364
+            },
+            "density_future_error": {
+              "valid_n": 83,
+              "weighted_mean_pp": 4.959635319946011,
+              "weighted_p25_pp": 4.577265265416058,
+              "weighted_median_pp": 4.93046878867975,
+              "weighted_p75_pp": 5.356808815771539,
+              "between_person_iqr_pp": 0.7795435503554815,
+              "weight_sum": 96.07793718576431,
+              "effective_n": 52.5070736122756
+            },
+            "point_current_distance": {
+              "valid_n": 89,
+              "weighted_mean_pp": 0.7965611984338308,
+              "weighted_p25_pp": 0.5999999999999996,
+              "weighted_median_pp": 0.9000000000000004,
+              "weighted_p75_pp": 0.9000000000000004,
+              "between_person_iqr_pp": 0.3000000000000007,
+              "weight_sum": 104.38104832172394,
+              "effective_n": 56.5946183313364
+            },
+            "density_current_distance": {
+              "valid_n": 83,
+              "weighted_mean_pp": 1.2662475275464133,
+              "weighted_p25_pp": 0.8772652654160584,
+              "weighted_median_pp": 1.230468788679751,
+              "weighted_p75_pp": 1.65680881577154,
+              "between_person_iqr_pp": 0.7795435503554815,
+              "weight_sum": 96.07793718576431,
+              "effective_n": 52.5070736122756
+            }
+          }
+        }
+      }
+    }
+  },
+  "limits": [
+    "Association is not label causality.",
+    "Official Q9 derived values for full real data; identical frozen approximate fits for selected real versus simulated data.",
+    "Numeracy high/low does not manipulate the underlying LLM computation capability.",
+    "No correction for panel/survey design dependence; no significance claims.",
+    "Calendar-month CPI is not household-specific experienced inflation."
+  ],
+  "real_development_months": {
+    "202105": {
+      "High": {
+        "n_rows": 887,
+        "unique_people": 887,
+        "point": {
+          "valid_n": 882,
+          "weighted_mean_pp": 7.600275942153846,
+          "weighted_p25_pp": 3.0,
+          "weighted_median_pp": 5.0,
+          "weighted_p75_pp": 10.0,
+          "between_person_iqr_pp": 7.0,
+          "weight_sum": 806.1639385521412,
+          "effective_n": 526.1195971091715
+        },
+        "density_mean": {
+          "valid_n": 879,
+          "weighted_mean_pp": 5.629673864032644,
+          "weighted_p25_pp": 2.620957374572754,
+          "weighted_median_pp": 4.0,
+          "weighted_p75_pp": 7.093835830688477,
+          "between_person_iqr_pp": 4.472878456115723,
+          "weight_sum": 803.475410670042,
+          "effective_n": 523.99590613308
+        },
+        "uncertainty": {
+          "valid_n": 879,
+          "weighted_mean_pp": 4.533119620765803,
+          "weighted_p25_pp": 1.6755847930908203,
+          "weighted_median_pp": 2.996034860610962,
+          "weighted_p75_pp": 5.416683197021484,
+          "between_person_iqr_pp": 3.741098403930664,
+          "weight_sum": 803.475410670042,
+          "effective_n": 523.99590613308
+        },
+        "point_future_error": {
+          "valid_n": 882,
+          "weighted_mean_pp": 6.852908341448027,
+          "weighted_p25_pp": 3.5999999999999996,
+          "weighted_median_pp": 4.6,
+          "weighted_p75_pp": 6.6,
+          "between_person_iqr_pp": 3.0,
+          "weight_sum": 806.1639385521412,
+          "effective_n": 526.1195971091715
+        },
+        "density_future_error": {
+          "valid_n": 879,
+          "weighted_mean_pp": 5.379734413876839,
+          "weighted_p25_pp": 3.000393486022949,
+          "weighted_median_pp": 5.2002347946167,
+          "weighted_p75_pp": 6.437070226669311,
+          "between_person_iqr_pp": 3.4366767406463623,
+          "weight_sum": 803.475410670042,
+          "effective_n": 523.99590613308
+        },
+        "point_current_distance": {
+          "valid_n": 882,
+          "weighted_mean_pp": 5.6424764409005475,
+          "weighted_p25_pp": 1.0,
+          "weighted_median_pp": 2.5,
+          "weighted_p75_pp": 5.0,
+          "between_person_iqr_pp": 4.0,
+          "weight_sum": 806.1639385521412,
+          "effective_n": 526.1195971091715
+        },
+        "density_current_distance": {
+          "valid_n": 879,
+          "weighted_mean_pp": 3.79529451511728,
+          "weighted_p25_pp": 1.223625659942627,
+          "weighted_median_pp": 2.299100399017334,
+          "weighted_p75_pp": 4.283829689025879,
+          "between_person_iqr_pp": 3.060204029083252,
+          "weight_sum": 803.475410670042,
+          "effective_n": 523.99590613308
+        }
+      },
+      "Low": {
+        "n_rows": 347,
+        "unique_people": 347,
+        "point": {
+          "valid_n": 346,
+          "weighted_mean_pp": 12.879559769841899,
+          "weighted_p25_pp": 3.0,
+          "weighted_median_pp": 10.0,
+          "weighted_p75_pp": 20.0,
+          "between_person_iqr_pp": 17.0,
+          "weight_sum": 417.83484226465225,
+          "effective_n": 217.56430088723863
+        },
+        "density_mean": {
+          "valid_n": 337,
+          "weighted_mean_pp": 6.480348698948695,
+          "weighted_p25_pp": 1.0,
+          "weighted_median_pp": 4.0362653732299805,
+          "weighted_p75_pp": 10.0,
+          "between_person_iqr_pp": 9.0,
+          "weight_sum": 409.788098603487,
+          "effective_n": 211.37081189612965
+        },
+        "uncertainty": {
+          "valid_n": 337,
+          "weighted_mean_pp": 8.194169944317684,
+          "weighted_p25_pp": 2.243398666381836,
+          "weighted_median_pp": 6.905461311340332,
+          "weighted_p75_pp": 13.0,
+          "between_person_iqr_pp": 10.756601333618164,
+          "weight_sum": 409.788098603487,
+          "effective_n": 211.37081189612965
+        },
+        "point_future_error": {
+          "valid_n": 346,
+          "weighted_mean_pp": 13.335636984287476,
+          "weighted_p25_pp": 3.5999999999999996,
+          "weighted_median_pp": 6.6,
+          "weighted_p75_pp": 16.4,
+          "between_person_iqr_pp": 12.799999999999999,
+          "weight_sum": 417.83484226465225,
+          "effective_n": 217.56430088723863
+        },
+        "density_future_error": {
+          "valid_n": 337,
+          "weighted_mean_pp": 7.0555861059130365,
+          "weighted_p25_pp": 3.125457382202148,
+          "weighted_median_pp": 6.009936714172364,
+          "weighted_p75_pp": 8.708599469065666,
+          "between_person_iqr_pp": 5.583142086863518,
+          "weight_sum": 409.788098603487,
+          "effective_n": 211.37081189612965
+        },
+        "point_current_distance": {
+          "valid_n": 346,
+          "weighted_mean_pp": 13.725081269349232,
+          "weighted_p25_pp": 2.0,
+          "weighted_median_pp": 10.0,
+          "weighted_p75_pp": 20.0,
+          "between_person_iqr_pp": 18.0,
+          "weight_sum": 417.83484226465225,
+          "effective_n": 217.56430088723863
+        },
+        "density_current_distance": {
+          "valid_n": 337,
+          "weighted_mean_pp": 6.245971922204364,
+          "weighted_p25_pp": 2.0703697204589844,
+          "weighted_median_pp": 4.364137649536133,
+          "weighted_p75_pp": 7.305150985717773,
+          "between_person_iqr_pp": 5.234781265258789,
+          "weight_sum": 409.788098603487,
+          "effective_n": 211.37081189612965
+        }
+      }
+    },
+    "202106": {
+      "High": {
+        "n_rows": 932,
+        "unique_people": 932,
+        "point": {
+          "valid_n": 930,
+          "weighted_mean_pp": 8.158859467608664,
+          "weighted_p25_pp": 3.0,
+          "weighted_median_pp": 5.0,
+          "weighted_p75_pp": 10.0,
+          "between_person_iqr_pp": 7.0,
+          "weight_sum": 858.095243319869,
+          "effective_n": 544.0664372089003
+        },
+        "density_mean": {
+          "valid_n": 922,
+          "weighted_mean_pp": 6.228967375509592,
+          "weighted_p25_pp": 2.895548105239868,
+          "weighted_median_pp": 4.937746524810791,
+          "weighted_p75_pp": 7.840320110321045,
+          "between_person_iqr_pp": 4.944772005081177,
+          "weight_sum": 849.8130584210157,
+          "effective_n": 537.4749773888458
+        },
+        "uncertainty": {
+          "valid_n": 922,
+          "weighted_mean_pp": 4.865384172887661,
+          "weighted_p25_pp": 1.9073395729064941,
+          "weighted_median_pp": 3.2746434211730957,
+          "weighted_p75_pp": 6.089157581329346,
+          "between_person_iqr_pp": 4.181818008422852,
+          "weight_sum": 849.8130584210157,
+          "effective_n": 537.4749773888458
+        },
+        "point_future_error": {
+          "valid_n": 930,
+          "weighted_mean_pp": 6.705163569502178,
+          "weighted_p25_pp": 3.0999999999999996,
+          "weighted_median_pp": 5.1,
+          "weighted_p75_pp": 6.6,
+          "between_person_iqr_pp": 3.5,
+          "weight_sum": 858.095243319869,
+          "effective_n": 544.0664372089003
+        },
+        "density_future_error": {
+          "valid_n": 922,
+          "weighted_mean_pp": 5.521843315827466,
+          "weighted_p25_pp": 3.0562559127807614,
+          "weighted_median_pp": 5.081331634521485,
+          "weighted_p75_pp": 6.909016942977905,
+          "between_person_iqr_pp": 3.8527610301971436,
+          "weight_sum": 849.8130584210157,
+          "effective_n": 537.4749773888458
+        },
+        "point_current_distance": {
+          "valid_n": 930,
+          "weighted_mean_pp": 5.692313718700295,
+          "weighted_p25_pp": 1.4000000000000004,
+          "weighted_median_pp": 2.5999999999999996,
+          "weighted_p75_pp": 4.6,
+          "between_person_iqr_pp": 3.1999999999999993,
+          "weight_sum": 858.095243319869,
+          "effective_n": 544.0664372089003
+        },
+        "density_current_distance": {
+          "valid_n": 922,
+          "weighted_mean_pp": 3.9852712308233955,
+          "weighted_p25_pp": 1.0860806465148922,
+          "weighted_median_pp": 2.504451894760132,
+          "weighted_p75_pp": 4.4,
+          "between_person_iqr_pp": 3.313919353485108,
+          "weight_sum": 849.8130584210157,
+          "effective_n": 537.4749773888458
+        }
+      },
+      "Low": {
+        "n_rows": 365,
+        "unique_people": 365,
+        "point": {
+          "valid_n": 363,
+          "weighted_mean_pp": 13.01576999117706,
+          "weighted_p25_pp": 3.0,
+          "weighted_median_pp": 10.0,
+          "weighted_p75_pp": 20.0,
+          "between_person_iqr_pp": 17.0,
+          "weight_sum": 433.00078751146793,
+          "effective_n": 226.99855123349982
+        },
+        "density_mean": {
+          "valid_n": 351,
+          "weighted_mean_pp": 6.4418794501478995,
+          "weighted_p25_pp": 1.1779612302780151,
+          "weighted_median_pp": 4.012370586395264,
+          "weighted_p75_pp": 10.576009750366211,
+          "between_person_iqr_pp": 9.398048520088196,
+          "weight_sum": 417.4296468645334,
+          "effective_n": 219.65287857187607
+        },
+        "uncertainty": {
+          "valid_n": 351,
+          "weighted_mean_pp": 8.426325644010596,
+          "weighted_p25_pp": 2.3938722610473633,
+          "weighted_median_pp": 7.856517791748047,
+          "weighted_p75_pp": 13.0,
+          "between_person_iqr_pp": 10.606127738952637,
+          "weight_sum": 417.4296468645334,
+          "effective_n": 219.65287857187607
+        },
+        "point_future_error": {
+          "valid_n": 363,
+          "weighted_mean_pp": 14.795255784678362,
+          "weighted_p25_pp": 4.1,
+          "weighted_median_pp": 7.1,
+          "weighted_p75_pp": 16.9,
+          "between_person_iqr_pp": 12.799999999999999,
+          "weight_sum": 433.00078751146793,
+          "effective_n": 226.99855123349982
+        },
+        "density_future_error": {
+          "valid_n": 351,
+          "weighted_mean_pp": 7.467673748446889,
+          "weighted_p25_pp": 3.396967029571533,
+          "weighted_median_pp": 6.399100399017334,
+          "weighted_p75_pp": 9.099999979186398,
+          "between_person_iqr_pp": 5.703032949614865,
+          "weight_sum": 417.4296468645334,
+          "effective_n": 219.65287857187607
+        },
+        "point_current_distance": {
+          "valid_n": 363,
+          "weighted_mean_pp": 15.353083146422554,
+          "weighted_p25_pp": 2.9000000000000004,
+          "weighted_median_pp": 6.6,
+          "weighted_p75_pp": 19.6,
+          "between_person_iqr_pp": 16.700000000000003,
+          "weight_sum": 433.00078751146793,
+          "effective_n": 226.99855123349982
+        },
+        "density_current_distance": {
+          "valid_n": 351,
+          "weighted_mean_pp": 6.3312256613033675,
+          "weighted_p25_pp": 2.4000000000000004,
+          "weighted_median_pp": 4.4,
+          "weighted_p75_pp": 7.835859918594361,
+          "between_person_iqr_pp": 5.43585991859436,
+          "weight_sum": 417.4296468645334,
+          "effective_n": 219.65287857187607
+        }
+      }
+    }
+  },
+  "analysis_dir": "outputs/sce_numeracy_audit_20261008_v4",
+  "validation": {
+    "targeted_numeric_tests": 4,
+    "actual_prompts_and_response_hashes": 600,
+    "official_category_reconstruction_agreements": 8494,
+    "new_api_calls": 0
+  },
+  "plot_sha256": "35975e50ee1949b3620b0b228add56594a425b9de2686912dd2188f3f92fb118",
+  "plot_source_sha256": "ee3dda15f58ed8943ad05b642c4ef13c3a6ab71149609d6b16e23d9546654580"
+}
