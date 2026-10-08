@@ -1,0 +1,349 @@
+{
+  "date": "2026-10-08",
+  "scope": "public metadata research only; zero model calls; no API credential read",
+  "raw_snapshot_dir": "outputs/sce_openrouter_status_research_20261008",
+  "endpoint_status_evidence": {
+    "url": "https://openrouter.ai/_next/static/immutable/chunks/3dd_vwnwpy31s.js",
+    "sha256": "f4ca7169e8b442e2cf4660b8faf99362dcc04afbba4ad0c19fc94b1653c1f60a",
+    "excerpt": "ar t,i=((t={})[t.Default=0]=\"Default\",t[t.Deprioritized=-1]=\"Deprioritized\",t[t.DegradedPerformance=-2]=\"DegradedPerformance\",t[t.Deranked=-3]=\"Deranked\",t[t.Down=-5]=\"Down\",t[t.Disabled=-10]=\"Disabled\",t);e.s([\"EndpointStatus\",()=>i])},723157,e=",
+    "mapping": {
+      "0": "Default",
+      "-1": "Deprioritized",
+      "-2": "DegradedPerformance",
+      "-3": "Deranked",
+      "-5": "Down",
+      "-10": "Disabled"
+    },
+    "caveat": "Current frontend enum, not a stable API contract or exact cause log. OpenAPI and generated SDK list numeric values only."
+  },
+  "official_routing_doc": "https://openrouter.ai/docs/guides/community/for-providers#10-uptime-monitoring-and-traffic-routing",
+  "candidates": [
+    {
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "retrieved_at_utc": "2026-10-08T01:51:06.953479+00:00",
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen-2.5-72b-instruct/endpoints",
+      "endpoints": [
+        {
+          "tag": "deepinfra/fp8",
+          "status": -2,
+          "uptime_last_30m": 92.85714285714286,
+          "input_usd_per_million": 0.36,
+          "output_usd_per_million": 0.39999999999999997,
+          "context_length": 32768,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "novita/bf16",
+          "status": -2,
+          "uptime_last_30m": 85.53082191780823,
+          "input_usd_per_million": 0.38,
+          "output_usd_per_million": 0.39999999999999997,
+          "context_length": 32000,
+          "response_format_supported": false,
+          "quantization": "bf16"
+        }
+      ]
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "retrieved_at_utc": "2026-10-08T01:51:15.597107+00:00",
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen3-32b/endpoints",
+      "endpoints": [
+        {
+          "tag": "deepinfra/fp8",
+          "status": 0,
+          "uptime_last_30m": 100,
+          "input_usd_per_million": 0.08,
+          "output_usd_per_million": 0.28,
+          "context_length": 40960,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "tenstorrent/fp8",
+          "status": 0,
+          "uptime_last_30m": 100,
+          "input_usd_per_million": 0.14,
+          "output_usd_per_million": 0.39999999999999997,
+          "context_length": 41000,
+          "response_format_supported": false,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "siliconflow/fp8",
+          "status": 0,
+          "uptime_last_30m": 99.72826086956522,
+          "input_usd_per_million": 0.14,
+          "output_usd_per_million": 0.5700000000000001,
+          "context_length": 131072,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        }
+      ]
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "retrieved_at_utc": "2026-10-08T01:51:12.394024+00:00",
+      "url": "https://openrouter.ai/api/v1/models/meta-llama/llama-3.1-8b-instruct/endpoints",
+      "endpoints": [
+        {
+          "tag": "deepinfra/fp8",
+          "status": 0,
+          "uptime_last_30m": 100,
+          "input_usd_per_million": 0.02,
+          "output_usd_per_million": 0.04,
+          "context_length": 131072,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "novita/fp8",
+          "status": 0,
+          "uptime_last_30m": 99.48709253528888,
+          "input_usd_per_million": 0.02,
+          "output_usd_per_million": 0.049999999999999996,
+          "context_length": 16384,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "groq",
+          "status": 0,
+          "uptime_last_30m": 99.95764394440768,
+          "input_usd_per_million": 0.049999999999999996,
+          "output_usd_per_million": 0.08,
+          "context_length": 131072,
+          "response_format_supported": true,
+          "quantization": "unknown"
+        },
+        {
+          "tag": "cloudflare/fp8",
+          "status": 0,
+          "uptime_last_30m": 100,
+          "input_usd_per_million": 0.15200000000000002,
+          "output_usd_per_million": 0.28700000000000003,
+          "context_length": 32000,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "coreweave/bf16",
+          "status": 0,
+          "uptime_last_30m": 100,
+          "input_usd_per_million": 0.22,
+          "output_usd_per_million": 0.22,
+          "context_length": 131072,
+          "response_format_supported": true,
+          "quantization": "bf16"
+        }
+      ]
+    },
+    {
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "retrieved_at_utc": "2026-10-08T01:51:17.887236+00:00",
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen3-30b-a3b-instruct-2507/endpoints",
+      "endpoints": [
+        {
+          "tag": "streamlake",
+          "status": 0,
+          "uptime_last_30m": 99.8036930249678,
+          "input_usd_per_million": 0.04815,
+          "output_usd_per_million": 0.19305,
+          "context_length": 128000,
+          "response_format_supported": true,
+          "quantization": "unknown"
+        },
+        {
+          "tag": "dekallm",
+          "status": 0,
+          "uptime_last_30m": 97.90518191841234,
+          "input_usd_per_million": 0.09,
+          "output_usd_per_million": 0.3,
+          "context_length": 262144,
+          "response_format_supported": true,
+          "quantization": "unknown"
+        },
+        {
+          "tag": "siliconflow/fp8",
+          "status": 0,
+          "uptime_last_30m": 99.89127808649431,
+          "input_usd_per_million": 0.09,
+          "output_usd_per_million": 0.3,
+          "context_length": 262144,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "nebius/fp8",
+          "status": 0,
+          "uptime_last_30m": 99.80539699014011,
+          "input_usd_per_million": 0.09999999999999999,
+          "output_usd_per_million": 0.3,
+          "context_length": 262144,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "alibaba",
+          "status": 0,
+          "uptime_last_30m": 100,
+          "input_usd_per_million": 0.13,
+          "output_usd_per_million": 0.52,
+          "context_length": 131072,
+          "response_format_supported": true,
+          "quantization": "unknown"
+        }
+      ]
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "retrieved_at_utc": "2026-10-08T01:51:14.015030+00:00",
+      "url": "https://openrouter.ai/api/v1/models/meta-llama/llama-3.3-70b-instruct/endpoints",
+      "endpoints": [
+        {
+          "tag": "deepinfra/turbo",
+          "status": 0,
+          "uptime_last_30m": 99.60080824010646,
+          "input_usd_per_million": 0.09999999999999999,
+          "output_usd_per_million": 0.32,
+          "context_length": 131072,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "novita/bf16",
+          "status": 0,
+          "uptime_last_30m": 99.74656810982049,
+          "input_usd_per_million": 0.135,
+          "output_usd_per_million": 0.39999999999999997,
+          "context_length": 12288,
+          "response_format_supported": false,
+          "quantization": "bf16"
+        },
+        {
+          "tag": "akashml/fp8",
+          "status": 0,
+          "uptime_last_30m": 99.05468025949953,
+          "input_usd_per_million": 0.19999999999999998,
+          "output_usd_per_million": 0.52,
+          "context_length": 131072,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "parasail/fp8",
+          "status": 0,
+          "uptime_last_30m": 99.69869046239425,
+          "input_usd_per_million": 0.22,
+          "output_usd_per_million": 0.5,
+          "context_length": 131072,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "cloudflare/fp8",
+          "status": 0,
+          "uptime_last_30m": 99.66666666666667,
+          "input_usd_per_million": 0.293,
+          "output_usd_per_million": 2.2529999999999997,
+          "context_length": 24000,
+          "response_format_supported": true,
+          "quantization": "fp8"
+        },
+        {
+          "tag": "sambanova-turbo",
+          "status": 0,
+          "uptime_last_30m": 99.28338762214983,
+          "input_usd_per_million": 0.44999999999999996,
+          "output_usd_per_million": 0.8999999999999999,
+          "context_length": 131072,
+          "response_format_supported": true,
+          "quantization": "unknown"
+        },
+        {
+          "tag": "groq",
+          "status": 0,
+          "uptime_last_30m": 99.92172977203796,
+          "input_usd_per_million": 0.59,
+          "output_usd_per_million": 0.7899999999999999,
+          "context_length": 131072,
+          "response_format_supported": true,
+          "quantization": "unknown"
+        },
+        {
+          "tag": "coreweave/fp16",
+          "status": 0,
+          "uptime_last_30m": 99.94722955145119,
+          "input_usd_per_million": 0.71,
+          "output_usd_per_million": 0.71,
+          "context_length": 128000,
+          "response_format_supported": true,
+          "quantization": "fp16"
+        },
+        {
+          "tag": "google-vertex/us-central1",
+          "status": 0,
+          "uptime_last_30m": null,
+          "input_usd_per_million": 0.72,
+          "output_usd_per_million": 0.72,
+          "context_length": 128000,
+          "response_format_supported": true,
+          "quantization": "unknown"
+        },
+        {
+          "tag": "google-vertex",
+          "status": 0,
+          "uptime_last_30m": null,
+          "input_usd_per_million": 0.72,
+          "output_usd_per_million": 0.72,
+          "context_length": 128000,
+          "response_format_supported": true,
+          "quantization": "unknown"
+        },
+        {
+          "tag": "together",
+          "status": 0,
+          "uptime_last_30m": 99.99506221607743,
+          "input_usd_per_million": 1.04,
+          "output_usd_per_million": 1.04,
+          "context_length": 131072,
+          "response_format_supported": true,
+          "quantization": "unknown"
+        }
+      ]
+    },
+    {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "retrieved_at_utc": "2026-10-08T01:51:11.084801+00:00",
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen-2.5-7b-instruct/endpoints",
+      "endpoints": [
+        {
+          "tag": "phala",
+          "status": 0,
+          "uptime_last_30m": 100,
+          "input_usd_per_million": 0.09999999999999999,
+          "output_usd_per_million": 0.19999999999999998,
+          "context_length": 32768,
+          "response_format_supported": true,
+          "quantization": "unknown"
+        }
+      ]
+    }
+  ],
+  "raw_sha256": {
+    "sdk_tree.json": "5badd9400ea4f82e01178dc97ec1740645b81e469856fe6006f213ddb4743b4b",
+    "qwen__qwen-2.5-72b-instruct.json": "8b28aa52526f1bb7a9681c14fd65258e675bb60a8b44a3ee66c82c86a71ebac0",
+    "qwen__qwen3-32b.json": "71cdccedc31d169ea8b31afd7cd2cd56645c76b341dc18dcf6760e144027b525",
+    "models.json": "accb677dbac61812d16fb169f3c1039c1f076593239b4bdbc5fa765df024fef3",
+    "meta-llama__llama-3.1-8b-instruct.json": "8096e6b8b8121aa5dad98431a9fc1ff65d7453176d747f9599b6ddc8b99677cf",
+    "qwen__qwen3-30b-a3b-instruct-2507.json": "19a3f9dcbdfc771c64f61c3f31451b52a5f095e6cea187ad84337d1d7012e48b",
+    "meta-llama__llama-3.3-70b-instruct.json": "9b5060a1241fea4fd410309e3600fd9c7d7d373c1c00d36adbe5a4dc7e089796",
+    "frontend_status_matches.json": "b0e8d93d5f6ad84e98c4301a98ed596934e3c69af4395247d3e3a08392446920",
+    "qwen__qwen-2.5-7b-instruct.json": "9b8236ec907494360e989c726b9ada22658d0cca7f529d67a2614394db5c96c7",
+    "openapi.json": "efebdc01f22d9e0090b17e562a8c5bab3d6e98b12a213660da74b68616853ba9"
+  },
+  "catalog_absent": [
+    "qwen/qwen-2.5-32b-instruct: endpoint HTTP404 and not in retrieved public model catalog; not the separate Coder model"
+  ]
+}
