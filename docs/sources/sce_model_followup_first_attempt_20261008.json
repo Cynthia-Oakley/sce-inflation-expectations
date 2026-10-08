@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-08",
+  "run_summary": {
+    "status": "partial_or_blocked",
+    "run_id": "sce_model_followup_20261008",
+    "started_at_utc": "2026-10-08T02:14:58.346614+00:00",
+    "total_cap_usd": 0.5,
+    "model_cap_usd": 0.25,
+    "total_charged_or_reserved_usd": 0.08239254,
+    "prior_cost_usd": 0.041436799999999996,
+    "new_charged_or_reserved_usd": 0.04095574,
+    "prior_run_id": "sce_earlier_model_trial_20261008",
+    "prior_run_hashes": {
+      "outputs/sce_earlier_model_trial_20261008/run_summary.json": "11eb3019c132628c17213d88a1958f3079670b14156c9a1385d26b186223565e",
+      "outputs/sce_earlier_model_trial_20261008/llm_calls.jsonl": "7e02d3a6aae1b69f39ff1d6d8e6cd457dedbac6f797d6ab698d371a907611a5f"
+    },
+    "preflight_version": "endpoint-status-v2-degraded-probe",
+    "paid_attempts": 48,
+    "valid_answers": 44,
+    "models": {
+      "qwen/qwen-2.5-72b-instruct": {
+        "status": "complete",
+        "valid_answers": 40,
+        "attempts": 40,
+        "charged_or_reserved_usd": 0.03831376,
+        "endpoint": {
+          "tag": "deepinfra/fp8",
+          "status": -2,
+          "pricing": {
+            "prompt": "0.00000036",
+            "completion": "0.0000004",
+            "discount": 0
+          },
+          "quantization": "fp8",
+          "uptime_last_30m": 94.55464799688838,
+          "degraded_probe": true
+        }
+      },
+      "meta-llama/llama-3.3-70b-instruct": {
+        "status": "audit_stopped",
+        "valid_answers": 3,
+        "attempts": 5,
+        "charged_or_reserved_usd": 0.0024817800000000003,
+        "endpoint": {
+          "tag": "deepinfra/turbo",
+          "status": 0,
+          "pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.00000032",
+            "discount": 0
+          },
+          "quantization": "fp8",
+          "uptime_last_30m": 99.6071861821963,
+          "degraded_probe": false
+        },
+        "reason": "completion_http_429"
+      },
+      "meta-llama/llama-3.1-8b-instruct": {
+        "status": "probe_stopped",
+        "valid_answers": 1,
+        "attempts": 3,
+        "charged_or_reserved_usd": 0.00016020000000000002,
+        "endpoint": {
+          "tag": "deepinfra/fp8",
+          "status": 0,
+          "pricing": {
+            "prompt": "0.00000002",
+            "completion": "0.00000004",
+            "discount": 0
+          },
+          "quantization": "fp8",
+          "uptime_last_30m": 99.99190512810134,
+          "degraded_probe": false
+        },
+        "reason": "first_two_frozen_cases_did_not_validate"
+      }
+    },
+    "input_sha256": "d4f00e3f54e88146c182f3e37a934fa9718e5a174d35361353948d9191ccd2d6",
+    "original_input_sha256": "a86cc97053b817e2b2e39218c67c89d75aeabd721b59345c3f109d3e6481efc6",
+    "prompt_version": "sce-q8-q9-v2-abstract",
+    "temperature": 0.5,
+    "max_tokens": 1024,
+    "mode": "exact-message model probe; not a new full SocioVerse engine trajectory",
+    "authorization": "2026-10-08 human authorized continuing Qwen and the proposed similar models: 我觉得确实可以继续往下试一下，包括你提出的其他几个相对类似的模型。 Run Qwen2.5-72B, Llama3.3-70B, Llama3.1-8B on fixed DeepInfra through OpenRouter with identical deidentified demographic/public-history inputs, no actual answers or original IDs. Keep prior authorized cumulative USD0.50 cap including earlier USD0.0414368; each model USD0.25; no fallback. Phala is excluded pending explicit destination approval.",
+    "git_commit": "9431350e066ee368fc6b4a4d1fd3b994c6e0958a",
+    "git_dirty_diff_sha256": "7aaf51ce2ff5124bc9b9ae09c1d3aab7e9856b1b4eef3b80b47a183cc304fd31",
+    "code_sha256": {
+      "scripts/run_sce_model_followup.py": "cc3ad0c6a8d17e07ada5e8a3f22a0f7dc152c5e63b828d13128a9b7cb0f7ec1e",
+      "studies/sce_inflation_expectations/model_counterfactual.py": "0a64c281bb2e6b15bb55ab1a304a57738432af5a67333ab6e48b78e0ad003f9a",
+      "studies/sce_inflation_expectations/model_followup.py": "f9fcbed40197a9d58250d85d766d9391615d84b85a89a0536fe723be028dde04"
+    },
+    "finished_at_utc": "2026-10-08T02:23:38.424952+00:00"
+  },
+  "artifact_sha256": {
+    "outputs/sce_model_followup_20261008/run_summary.json": "1f561ecdca30992f71283fe8e627c74212cfc257fafab53353c09db1916069c6",
+    "outputs/sce_model_followup_20261008/llm_calls.jsonl": "cedc34c180d803620ddd69e1ea756a29207949d70856241ed7da6e8d603cd7f1",
+    "outputs/sce_model_followup_20261008/requests_prepared.jsonl": "d4f00e3f54e88146c182f3e37a934fa9718e5a174d35361353948d9191ccd2d6"
+  }
+}

@@ -11,6 +11,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from studies.sce_inflation_expectations.model import parse_sce_response
 from studies.sce_inflation_expectations.household_state_analysis import density,distribution
 from studies.sce_inflation_expectations.model_comparison_analysis import comparison_metrics
+from studies.sce_inflation_expectations.model_followup import MODEL_LABELS
 from studies.sce_inflation_expectations.scoring.sce_q9_frozen import provenance
 
 
@@ -28,16 +29,30 @@ def main():
     sources=[args.inputs/'summary.json',args.inputs/'requests_prepared.jsonl',args.inputs/'deepseek_reference_private.jsonl',args.truth]
     prep=json.loads((args.inputs/'summary.json').read_text());refs=read_lines(args.inputs/'deepseek_reference_private.jsonl')
     requests={ (r['case_id'],r['payload']['model']):r for r in read_lines(args.inputs/'requests_prepared.jsonl') }
-    calls={};runs=[]
+    calls={};runs=[];audit_counts={}
     for folder in args.run:
         run=json.loads((folder/'run_summary.json').read_text())
         if run['status']=='running':raise ValueError('run not finalized')
-        if run['input_sha256']!=sha(args.inputs/'requests_prepared.jsonl'):raise ValueError('run inputs differ')
+        executed_requests=folder/'requests_prepared.jsonl'
+        if run['input_sha256']!=sha(executed_requests):raise ValueError('run snapshot inputs differ')
+        sources.append(executed_requests)
+        for request in read_lines(executed_requests):
+            key=(request['case_id'],request['payload']['model'])
+            if key[1] not in MODEL_LABELS:raise ValueError('unregistered model identity')
+            messages=request['payload']['messages']
+            if hashlib.sha256(json.dumps(messages,ensure_ascii=False).encode()).hexdigest()!=prep['case_prompt_hashes'][key[0]]:
+                raise ValueError('run messages differ from original frozen reference')
+            if key in requests and request!=requests[key]:raise ValueError('conflicting model/case input')
+            requests[key]=request
         runs.append(run);sources.append(folder/'run_summary.json')
         path=folder/'llm_calls.jsonl'
         if path.exists():
             sources.append(path)
             for call in read_lines(path):
+                counts=audit_counts.setdefault(call['requested_model'],Counter())
+                counts['attempts']+=1
+                counts['http_200']+=call.get('http_status')==200
+                if call.get('error'):counts[call['error']]+=1
                 if call.get('error') or 'answer' not in call:continue
                 key=(call['case_id'],call['requested_model'])
                 if key in calls:raise ValueError('duplicate successful model/case')
@@ -55,12 +70,14 @@ def main():
         text=str(value)
         return f'{text[:4]}-{text[4:]}' if len(text)==6 and text.isdigit() else text
     truth={(month_key(r['date']),f"sce_u{int(r['userid'])}"):r for r in json.loads(args.truth.read_text())['per_person']}
-    labels={model:('llama' if model.startswith('meta-llama/') else 'qwen') for model in completed}
+    labels={model:MODEL_LABELS[model] for model in completed}
     arms=['deepseek_reference',*[labels[m] for m in completed]]
     scorer=provenance()
     if not scorer['live_matches_pinned']:raise ValueError('frozen scorer sources changed')
     result={'run_ids':[r['run_id'] for r in runs],'completed_models':completed,'months':{},
-            'costs':{r['run_id']:r['total_charged_or_reserved_usd'] for r in runs},'scorer':scorer,
+            'model_completion':{model:{'target_cases':40,'valid_unique_cases':sum(m==model for _,m in calls),
+                'complete_for_effect_comparison':model in completed,'attempt_audit':dict(counts)} for model,counts in audit_counts.items()},
+            'costs':{r['run_id']:r.get('new_charged_or_reserved_usd',r['total_charged_or_reserved_usd']) for r in runs},'scorer':scorer,
             'estimand':'equal-weight exact matched 20-case development sample per month; not national headline',
             'prompt_version':prep['prompt_version'],'temperature':.5,'new_calls_in_analysis':0,
             'limitations':['A development months only, not blind B prediction','2021 is potentially in every model training window',
@@ -72,11 +89,13 @@ def main():
         selected=[r for r in refs if r['case_id'].startswith(month)]
         people={r['agent_id']:r for r in json.loads((args.inputs/month/'population.json').read_text())['personas']}
         q9rows=[];q8rows=[];statuses=Counter();uncertainty={arm:[] for arm in ['real',*arms]};profiles={}
+        raw_patterns={arm:Counter() for arm in arms}
         for ref in selected:
             case=ref['case_id'];person=truth[(month,ref['source_agent_id'])]
             baseline,error=parse_sce_response(ref['reference_response'])
             if error:raise ValueError('invalid recorded baseline')
             answers={'deepseek_reference':baseline,**{labels[m]:calls[(case,m)]['answer'] for m in completed}}
+            for arm,answer in answers.items():raw_patterns[arm].update([tuple(answer['bins'])])
             fits={'real':density([person.get(f'Q9_bin{i}') for i in range(1,11)]),
                   **{arm:density(a['bins']) for arm,a in answers.items()}}
             statuses.update(f'{arm}:{f["status"]}' for arm,f in fits.items())
@@ -103,8 +122,12 @@ def main():
         result['months'][month]={'Q9':comparison_metrics(q9rows,arms),'Q8_secondary':comparison_metrics(q8rows,arms),
                                  'fitting_status_counts':dict(statuses),
                                  'individual_uncertainty_iqr':{arm:distribution(vals) for arm,vals in uncertainty.items()},
+                                 'raw_probability_patterns':{arm:{'n':sum(counts.values()),'unique_vectors':len(counts),
+                                     'most_frequent_vector':list(counts.most_common(1)[0][0]),
+                                     'most_frequent_count':counts.most_common(1)[0][1]} for arm,counts in raw_patterns.items()},
                                  'profile_group_diagnostics':groups}
     sources += [Path(__file__).resolve(),ROOT/'studies/sce_inflation_expectations/model_comparison_analysis.py',
+                ROOT/'studies/sce_inflation_expectations/model_followup.py',
                 ROOT/'studies/sce_inflation_expectations/household_state_analysis.py',
                 ROOT/'studies/sce_inflation_expectations/scoring/sce_q9_frozen.py']
     result['source_hashes']={str(p):sha(p) for p in sources}

@@ -29,13 +29,17 @@ def guarded_payload(row):
     return payload
 
 
-def preflight(row, directory):
+def preflight(row, directory, *, allow_degraded=False):
     endpoint = next((e for e in directory['data']['endpoints']
                      if e['tag'] == row['route_candidate']), None)
     if not endpoint:
         raise ValueError('locked_route_not_listed')
-    if endpoint.get('status', -1) != 0:
-        raise ValueError('locked_route_status_not_zero')
+    status = endpoint.get('status', -1)
+    if status != 0:
+        uptime = endpoint.get('uptime_last_30m')
+        if not (allow_degraded and status == -2 and type(uptime) in (int, float)
+                and math.isfinite(uptime) and 80 <= uptime <= 100):
+            raise ValueError('locked_route_status_not_accepted')
     required = {'response_format', 'temperature', 'max_tokens'}
     if not required.issubset(endpoint.get('supported_parameters', [])):
         raise ValueError('locked_route_missing_parameters')
