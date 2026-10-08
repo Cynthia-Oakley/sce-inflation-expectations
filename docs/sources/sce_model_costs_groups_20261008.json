@@ -1,0 +1,626 @@
+{
+  "date": "2026-10-08",
+  "new_llm_calls": 0,
+  "costs": {
+    "meta-llama/llama-3.1-70b-instruct": {
+      "input_usd_per_million": 0.39999999999999997,
+      "output_usd_per_million": 0.39999999999999997,
+      "api_reported_usd": 0.041436799999999996,
+      "unknown_reserved_usd": 0.0,
+      "attempts": 41,
+      "valid_cases": 40,
+      "normalized_one_call_usd": 0.0010599999999999997,
+      "normalized_1000_calls_usd": 1.0599999999999998,
+      "observed_cost_per_valid_answer_usd": 0.0010359199999999999
+    },
+    "qwen/qwen-2.5-72b-instruct": {
+      "input_usd_per_million": 0.36,
+      "output_usd_per_million": 0.39999999999999997,
+      "api_reported_usd": 0.03831376,
+      "unknown_reserved_usd": 0.0,
+      "attempts": 40,
+      "valid_cases": 40,
+      "normalized_one_call_usd": 0.00096,
+      "normalized_1000_calls_usd": 0.9600000000000001,
+      "observed_cost_per_valid_answer_usd": 0.000957844
+    },
+    "meta-llama/llama-3.3-70b-instruct": {
+      "input_usd_per_million": 0.09999999999999999,
+      "output_usd_per_million": 0.32,
+      "api_reported_usd": 0.0019471,
+      "unknown_reserved_usd": 0.0013739800000000001,
+      "attempts": 8,
+      "valid_cases": 4,
+      "normalized_one_call_usd": 0.000298,
+      "normalized_1000_calls_usd": 0.298,
+      "observed_cost_per_valid_answer_usd": 0.000486775
+    },
+    "meta-llama/llama-3.1-8b-instruct": {
+      "input_usd_per_million": 0.02,
+      "output_usd_per_million": 0.04,
+      "api_reported_usd": 0.00016020000000000002,
+      "unknown_reserved_usd": 0.0,
+      "attempts": 3,
+      "valid_cases": 1,
+      "normalized_one_call_usd": 5.6e-05,
+      "normalized_1000_calls_usd": 0.056,
+      "observed_cost_per_valid_answer_usd": 0.00016020000000000002
+    },
+    "deepseek_reference": {
+      "input_usd_per_million": 0.3,
+      "output_usd_per_million": 1.2,
+      "normalized_1000_calls_usd": 0.93,
+      "price_basis": "October 5 configured ledger estimate; not verified current tariff or billed cost"
+    }
+  },
+  "normalized_workload": {
+    "input_tokens_per_call": 2500,
+    "output_tokens_per_call": 150,
+    "excludes": [
+      "format retries",
+      "HTTP errors",
+      "caching",
+      "account purchase fees",
+      "taxes"
+    ]
+  },
+  "months": {
+    "2021-05": {
+      "common_n": 18,
+      "real_sample_median": 3.3718839972476613,
+      "metrics": {
+        "deepseek_reference": {
+          "sample_median_absolute_error_pp": 0.9983145607405137,
+          "sample_median": 2.3735694365071476,
+          "individual_mae_pp": 2.9113045567293057,
+          "wasserstein_1_pp": 2.1783914427461366,
+          "bootstrap_median_error_percentile_95_pp": [
+            0.08219910528815078,
+            2.015529185677037
+          ]
+        },
+        "llama": {
+          "sample_median_absolute_error_pp": 0.37507589296516164,
+          "sample_median": 2.9968081042824997,
+          "individual_mae_pp": 2.42082972849386,
+          "wasserstein_1_pp": 2.2787175200190313,
+          "bootstrap_median_error_percentile_95_pp": [
+            0.017628148516922515,
+            1.4032696825683155
+          ]
+        },
+        "qwen": {
+          "sample_median_absolute_error_pp": 0.668338226222212,
+          "sample_median": 2.7035457710254494,
+          "individual_mae_pp": 2.4788929903567585,
+          "wasserstein_1_pp": 2.0361181825519816,
+          "bootstrap_median_error_percentile_95_pp": [
+            0.02877170994874234,
+            1.526222232114418
+          ]
+        }
+      },
+      "group_diagnostics": {
+        "age_group": {
+          "groups": {
+            "40 to 60": {
+              "n": 8,
+              "real_median": 3.400256934603021,
+              "model_medians": {
+                "deepseek_reference": 2.5114809154146274,
+                "llama": 2.979236540820984,
+                "qwen": 2.884262510224562
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 0.8887760191883936,
+                "llama": 0.4210203937820367,
+                "qwen": 0.5159944243784591
+              }
+            },
+            "Over 60": {
+              "n": 5,
+              "real_median": 2.979179955765577,
+              "model_medians": {
+                "deepseek_reference": 2.4518024552325723,
+                "llama": 2.9968081042824997,
+                "qwen": 3.0853038859241595
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 0.5273775005330048,
+                "llama": 0.017628148516922515,
+                "qwen": 0.10612393015858235
+              }
+            },
+            "Under 40": {
+              "n": 5,
+              "real_median": 1.8836836365368086,
+              "model_medians": {
+                "deepseek_reference": 2.362590271840517,
+                "llama": 2.9968081042824997,
+                "qwen": 2.683221134524964
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 0.4789066353037086,
+                "llama": 1.113124467745691,
+                "qwen": 0.7995374979881555
+              }
+            }
+          },
+          "covered_cases": 18,
+          "total_common_cases": 18,
+          "sample_size_weighted_group_median_error_pp": {
+            "deepseek_reference": 0.6745349351494841,
+            "llama": 0.5012181239760757,
+            "qwen": 0.48090347420896457
+          }
+        },
+        "education_group": {
+          "groups": {
+            "college": {
+              "n": 11,
+              "real_median": 3.3836689955004795,
+              "model_medians": {
+                "deepseek_reference": 2.335875109885567,
+                "llama": 2.9968081042824997,
+                "qwen": 2.683221134524964
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 1.0477938856149125,
+                "llama": 0.38686089121797984,
+                "qwen": 0.7004478609755154
+              }
+            },
+            "high_school": {
+              "n": 1,
+              "sparse": true
+            },
+            "some_college": {
+              "n": 6,
+              "real_median": 3.5943116612024797,
+              "model_medians": {
+                "deepseek_reference": 2.418175528203175,
+                "llama": 2.9968081042824997,
+                "qwen": 3.0853038859241595
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 1.1761361329993045,
+                "llama": 0.59750355691998,
+                "qwen": 0.5090077752783202
+              }
+            }
+          },
+          "covered_cases": 17,
+          "total_common_cases": 18,
+          "sample_size_weighted_group_median_error_pp": {
+            "deepseek_reference": 1.0930911493976392,
+            "llama": 0.4612053614657446,
+            "qwen": 0.6328807719059171
+          }
+        },
+        "household_income_band": {
+          "groups": {
+            "50k_to_100k": {
+              "n": 10,
+              "real_median": 3.648784576866354,
+              "model_medians": {
+                "deepseek_reference": 2.3735694365071476,
+                "llama": 2.9614736040883543,
+                "qwen": 2.884262510224562
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 1.2752151403592062,
+                "llama": 0.6873109727779996,
+                "qwen": 0.764522066641792
+              }
+            },
+            "over_100k": {
+              "n": 6,
+              "real_median": 2.845586400119642,
+              "model_medians": {
+                "deepseek_reference": 2.8746008931670746,
+                "llama": 2.9968081042824997,
+                "qwen": 2.4983377529676187
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 0.029014493047432754,
+                "llama": 0.15122170416285785,
+                "qwen": 0.3472486471520231
+              }
+            },
+            "under_50k": {
+              "n": 2,
+              "sparse": true
+            }
+          },
+          "covered_cases": 16,
+          "total_common_cases": 18,
+          "sample_size_weighted_group_median_error_pp": {
+            "deepseek_reference": 0.8078898976172912,
+            "llama": 0.4862774970473214,
+            "qwen": 0.6080445343331287
+          }
+        },
+        "numeracy": {
+          "groups": {
+            "high": {
+              "n": 14,
+              "real_median": 3.1980124147355697,
+              "model_medians": {
+                "deepseek_reference": 2.362590271840517,
+                "llama": 2.9968081042824997,
+                "qwen": 2.7035457710254494
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 0.8354221428950526,
+                "llama": 0.20120431045307008,
+                "qwen": 0.4944666437101204
+              }
+            },
+            "low": {
+              "n": 4,
+              "sparse": true
+            }
+          },
+          "covered_cases": 14,
+          "total_common_cases": 18,
+          "sample_size_weighted_group_median_error_pp": {
+            "deepseek_reference": 0.8354221428950526,
+            "llama": 0.20120431045307008,
+            "qwen": 0.4944666437101204
+          }
+        },
+        "employment_status": {
+          "groups": {
+            "disabled": {
+              "n": 1,
+              "sparse": true
+            },
+            "employed": {
+              "n": 13,
+              "real_median": 3.360098998994843,
+              "model_medians": {
+                "deepseek_reference": 2.362590271840517,
+                "llama": 2.9968081042824997,
+                "qwen": 2.7238704075259346
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 0.9975087271543259,
+                "llama": 0.36329089471234344,
+                "qwen": 0.6362285914689085
+              }
+            },
+            "retired": {
+              "n": 3,
+              "sparse": true
+            },
+            "unemployed": {
+              "n": 1,
+              "sparse": true
+            }
+          },
+          "covered_cases": 13,
+          "total_common_cases": 18,
+          "sample_size_weighted_group_median_error_pp": {
+            "deepseek_reference": 0.9975087271543259,
+            "llama": 0.36329089471234344,
+            "qwen": 0.6362285914689085
+          }
+        }
+      },
+      "qwen_minus_deepseek_median_error_bootstrap_95_pp": [
+        -0.9008029805543811,
+        0.19182804218152727
+      ]
+    },
+    "2021-06": {
+      "common_n": 19,
+      "real_sample_median": 5.534383989514973,
+      "metrics": {
+        "deepseek_reference": {
+          "sample_median_absolute_error_pp": 1.401103555799006,
+          "sample_median": 4.133280433715967,
+          "individual_mae_pp": 2.964886549635795,
+          "wasserstein_1_pp": 2.405250262903134,
+          "bootstrap_median_error_percentile_95_pp": [
+            0.11731607406852484,
+            2.7862472754828715
+          ]
+        },
+        "llama": {
+          "sample_median_absolute_error_pp": 2.5375758852324735,
+          "sample_median": 2.9968081042824997,
+          "individual_mae_pp": 3.083575001936641,
+          "wasserstein_1_pp": 2.9268600915128844,
+          "bootstrap_median_error_percentile_95_pp": [
+            0.32291801515267426,
+            3.378081834305646
+          ]
+        },
+        "qwen": {
+          "sample_median_absolute_error_pp": 3.3177979432483067,
+          "sample_median": 2.2165860462666664,
+          "individual_mae_pp": 3.5444637790630455,
+          "wasserstein_1_pp": 3.0930961882884764,
+          "bootstrap_median_error_percentile_95_pp": [
+            0.3403486005530345,
+            4.242368280766341
+          ]
+        }
+      },
+      "group_diagnostics": {
+        "age_group": {
+          "groups": {
+            "40 to 60": {
+              "n": 5,
+              "real_median": 6.0,
+              "model_medians": {
+                "deepseek_reference": 3.175321154432817,
+                "llama": 2.9612822308172397,
+                "qwen": 3.739320951036081
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 2.824678845567183,
+                "llama": 3.0387177691827603,
+                "qwen": 2.260679048963919
+              }
+            },
+            "Over 60": {
+              "n": 8,
+              "real_median": 6.571652613420602,
+              "model_medians": {
+                "deepseek_reference": 4.143254439637963,
+                "llama": 2.9968081042824997,
+                "qwen": 2.3643188972474793
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 2.4283981737826386,
+                "llama": 3.574844509138102,
+                "qwen": 4.207333716173123
+              }
+            },
+            "Under 40": {
+              "n": 6,
+              "real_median": 3.8872276189354364,
+              "model_medians": {
+                "deepseek_reference": 4.169531211320249,
+                "llama": 2.9968081042824997,
+                "qwen": 1.9296975895689896
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 0.28230359238481295,
+                "llama": 0.8904195146529368,
+                "qwen": 1.9575300293664468
+              }
+            }
+          },
+          "covered_cases": 19,
+          "total_common_cases": 19,
+          "sample_size_weighted_group_median_error_pp": {
+            "deepseek_reference": 1.8549684827582054,
+            "llama": 2.586045368786118,
+            "qwen": 2.984591850021224
+          }
+        },
+        "education_group": {
+          "groups": {
+            "college": {
+              "n": 10,
+              "real_median": 4.767022791701063,
+              "model_medians": {
+                "deepseek_reference": 3.673516579116548,
+                "llama": 2.9968081042824997,
+                "qwen": 2.213361215511865
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 1.093506212584515,
+                "llama": 1.7702146874185631,
+                "qwen": 2.5536615761891976
+              }
+            },
+            "high_school": {
+              "n": 3,
+              "sparse": true
+            },
+            "some_college": {
+              "n": 6,
+              "real_median": 4.88739682199186,
+              "model_medians": {
+                "deepseek_reference": 4.234203373137984,
+                "llama": 2.973612215220572,
+                "qwen": 2.7330332397294606
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 0.6531934488538766,
+                "llama": 1.913784606771288,
+                "qwen": 2.1543635822623997
+              }
+            }
+          },
+          "covered_cases": 16,
+          "total_common_cases": 19,
+          "sample_size_weighted_group_median_error_pp": {
+            "deepseek_reference": 0.9283889261855256,
+            "llama": 1.824053407175835,
+            "qwen": 2.403924828466648
+          }
+        },
+        "household_income_band": {
+          "groups": {
+            "50k_to_100k": {
+              "n": 6,
+              "real_median": 3.659693856661163,
+              "model_medians": {
+                "deepseek_reference": 4.169531211320249,
+                "llama": 2.9968081042824997,
+                "qwen": 2.210136384757064
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 0.5098373546590862,
+                "llama": 0.6628857523786635,
+                "qwen": 1.4495574719040993
+              }
+            },
+            "over_100k": {
+              "n": 6,
+              "real_median": 5.767191994757487,
+              "model_medians": {
+                "deepseek_reference": 3.105477172885158,
+                "llama": 2.9790451675498697,
+                "qwen": 3.2619640219815045
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 2.6617148218723288,
+                "llama": 2.788146827207617,
+                "qwen": 2.505227972775982
+              }
+            },
+            "under_50k": {
+              "n": 7,
+              "real_median": 6.0,
+              "model_medians": {
+                "deepseek_reference": 4.116977667955677,
+                "llama": 2.9968081042824997,
+                "qwen": 2.518501409737895
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 1.8830223320443231,
+                "llama": 3.0031918957175003,
+                "qwen": 3.481498590262105
+              }
+            }
+          },
+          "covered_cases": 19,
+          "total_common_cases": 19,
+          "sample_size_weighted_group_median_error_pp": {
+            "deepseek_reference": 1.6952878622894076,
+            "llama": 2.1962388814494833,
+            "qwen": 2.5315369894692226
+          }
+        },
+        "numeracy": {
+          "groups": {
+            "high": {
+              "n": 11,
+              "real_median": 5.534383989514973,
+              "model_medians": {
+                "deepseek_reference": 3.7732537640876815,
+                "llama": 2.9968081042824997,
+                "qwen": 2.2165860462666664
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 1.7611302254272916,
+                "llama": 2.5375758852324735,
+                "qwen": 3.3177979432483067
+              }
+            },
+            "low": {
+              "n": 8,
+              "real_median": 4.88739682199186,
+              "model_medians": {
+                "deepseek_reference": 4.234203373137984,
+                "llama": 2.9790451675498697,
+                "qwen": 2.489287515768845
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 0.6531934488538766,
+                "llama": 1.9083516544419905,
+                "qwen": 2.398109306223015
+              }
+            }
+          },
+          "covered_cases": 19,
+          "total_common_cases": 19,
+          "sample_size_weighted_group_median_error_pp": {
+            "deepseek_reference": 1.294630530027959,
+            "llama": 2.2726393670049014,
+            "qwen": 2.9305606223955523
+          }
+        },
+        "employment_status": {
+          "groups": {
+            "employed": {
+              "n": 9,
+              "real_median": 6.0,
+              "model_medians": {
+                "deepseek_reference": 4.116977667955677,
+                "llama": 2.9859421996239046,
+                "qwen": 2.210136384757064
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 1.8830223320443231,
+                "llama": 3.0140578003760954,
+                "qwen": 3.789863615242936
+              }
+            },
+            "homemaker": {
+              "n": 2,
+              "sparse": true
+            },
+            "on_leave": {
+              "n": 1,
+              "sparse": true
+            },
+            "retired": {
+              "n": 7,
+              "real_median": 6.0,
+              "model_medians": {
+                "deepseek_reference": 4.169531211320249,
+                "llama": 2.9968081042824997,
+                "qwen": 2.210136384757064
+              },
+              "median_absolute_error_pp": {
+                "deepseek_reference": 1.8304687886797506,
+                "llama": 3.0031918957175003,
+                "qwen": 3.789863615242936
+              }
+            }
+          },
+          "covered_cases": 16,
+          "total_common_cases": 19,
+          "sample_size_weighted_group_median_error_pp": {
+            "deepseek_reference": 1.8600301568223228,
+            "llama": 3.00930396708796,
+            "qwen": 3.789863615242936
+          }
+        }
+      },
+      "qwen_minus_deepseek_median_error_bootstrap_95_pp": [
+        -0.30671133102431725,
+        2.41189949208659
+      ]
+    }
+  },
+  "bootstrap": {
+    "repetitions": 10000,
+    "seed": 20261008,
+    "scope": "paired case resampling within month; conditional on the single recorded model generation",
+    "does_not_measure": [
+      "LLM regeneration variance",
+      "month-to-month uncertainty",
+      "national survey design uncertainty"
+    ]
+  },
+  "equal_month_average_median_absolute_error_pp": {
+    "deepseek_reference": 1.1997090582697598,
+    "llama": 1.4563258890988175,
+    "qwen": 1.9930680847352593
+  },
+  "source_sha256": {
+    "outputs/sce_earlier_model_trial_20261008/run_summary.json": "11eb3019c132628c17213d88a1958f3079670b14156c9a1385d26b186223565e",
+    "outputs/sce_earlier_model_trial_20261008/llm_calls.jsonl": "7e02d3a6aae1b69f39ff1d6d8e6cd457dedbac6f797d6ab698d371a907611a5f",
+    "outputs/sce_earlier_model_trial_20261008/requests_prepared.jsonl": "a86cc97053b817e2b2e39218c67c89d75aeabd721b59345c3f109d3e6481efc6",
+    "outputs/sce_model_followup_20261008/run_summary.json": "1f561ecdca30992f71283fe8e627c74212cfc257fafab53353c09db1916069c6",
+    "outputs/sce_model_followup_20261008/llm_calls.jsonl": "cedc34c180d803620ddd69e1ea756a29207949d70856241ed7da6e8d603cd7f1",
+    "outputs/sce_model_followup_20261008/requests_prepared.jsonl": "d4f00e3f54e88146c182f3e37a934fa9718e5a174d35361353948d9191ccd2d6",
+    "outputs/sce_llama33_resume_20261008/run_summary.json": "1974ec0a6ae437d8667988c1018b4d821eaf542ed53bde9d7d28c90ef245a3da",
+    "outputs/sce_llama33_resume_20261008/requests_prepared.jsonl": "99f6e5b4edf11f273df424d499304c96153ca75bc3cbd81f51948eaf328d0048",
+    "outputs/sce_llama33_resume2_20261008/run_summary.json": "187c8b140a81eb090a9926c334fef743e718a39f8d049901e1040e9b34884fcc",
+    "outputs/sce_llama33_resume2_20261008/llm_calls.jsonl": "108c7121d126a5377caddd29305e829a6908f2ea8c5b2a16bfbedebfec8d33e8",
+    "outputs/sce_llama33_resume2_20261008/requests_prepared.jsonl": "99f6e5b4edf11f273df424d499304c96153ca75bc3cbd81f51948eaf328d0048",
+    "outputs/sce_model_followup_analysis_20261008_v3/summary.json": "6af3a6dd0da137143efa7234ea3144034df9f4bf7a23f1ba6089fc019984955f",
+    "docs/sources/sce_model_followup_final_20261008.json": "3380218beee604de178bdb57044631508a3be8fed0ed98a367971ef56cccba5c",
+    "outputs/sce_model_followup_analysis_20261008_v3/paired_evaluation_private.jsonl": "1886bc88eac16251f53d439d7c9909f819a4aeef3be0309550d0c1e0dc2396cd",
+    "scripts/analyze_sce_model_costs_groups.py": "d4edc31f851ccc3374dfe3a895a7d074786cde3d7d14bff0a5a82992b9edee1d",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/cost_ledger.json": "6d363800160460745e4dc877a26fe4ca57a5f6bb8fdd170f84e643db8e5f36e4"
+  }
+}
