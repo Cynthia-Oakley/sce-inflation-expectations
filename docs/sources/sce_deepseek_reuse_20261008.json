@@ -1,0 +1,185 @@
+{
+  "audit_date": "2026-10-08",
+  "real_llm_calls_this_audit": 0,
+  "runs": [
+    {
+      "run_id": "sce-local-openai-20261003T055121Z-1dc7cd15",
+      "response_rows": 876,
+      "months": {
+        "2021-01": 73,
+        "2021-02": 73,
+        "2021-03": 73,
+        "2021-04": 73,
+        "2021-05": 73,
+        "2021-06": 73,
+        "2021-07": 73,
+        "2021-08": 73,
+        "2021-09": 73,
+        "2021-10": 73,
+        "2021-11": 73,
+        "2021-12": 73
+      },
+      "unique_persons": 73,
+      "requested_models": [
+        "deepseek-flash"
+      ],
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "temperatures": [
+        0.5
+      ],
+      "prompt_versions": [
+        "sce-q8-q9-llm-en-v1"
+      ],
+      "all_prompt_response_hashes_verified": true,
+      "all_raw_q9_probabilities_valid": true,
+      "source_hashes": {
+        "outputs/local_runs/sce-local-openai-20261003T055121Z-1dc7cd15/llm_calls.jsonl": "716e4cb40684a699193eb01b6d24d68a1c4c085776361f2c5dc35b40e027d4df",
+        "outputs/local_runs/sce-local-openai-20261003T055121Z-1dc7cd15/run_manifest.json": "753c8b85cbfce9cc5e24e94340bfdb23a2ed02db3d343519fd1929a93b118f73"
+      },
+      "archived_cost": {
+        "call_count": 876,
+        "total_prompt_tokens": 598130,
+        "total_completion_tokens": 119530,
+        "reserved_cost_usd": 0.0,
+        "estimated_cost_usd": 0.322875,
+        "price_input_per_mtok": 0.3,
+        "price_output_per_mtok": 1.2,
+        "note": "Self-kept ledger from API usage fields; conservative reserve added for calls that errored without usage. Not a vendor bill."
+      },
+      "signal_counts": [
+        4
+      ],
+      "observations_with_prior_answer": 803,
+      "prompts_with_prior_language": 0,
+      "as_of_by_month": {
+        "2021-01": [
+          "2020-12-31T23:59:59-05:00"
+        ],
+        "2021-02": [
+          "2021-01-31T23:59:59-05:00"
+        ],
+        "2021-03": [
+          "2021-02-28T23:59:59-05:00"
+        ],
+        "2021-04": [
+          "2021-03-31T23:59:59-04:00"
+        ],
+        "2021-05": [
+          "2021-04-30T23:59:59-04:00"
+        ],
+        "2021-06": [
+          "2021-05-31T23:59:59-04:00"
+        ],
+        "2021-07": [
+          "2021-06-30T23:59:59-04:00"
+        ],
+        "2021-08": [
+          "2021-07-31T23:59:59-04:00"
+        ],
+        "2021-09": [
+          "2021-08-31T23:59:59-04:00"
+        ],
+        "2021-10": [
+          "2021-09-30T23:59:59-04:00"
+        ],
+        "2021-11": [
+          "2021-10-31T23:59:59-04:00"
+        ],
+        "2021-12": [
+          "2021-11-30T23:59:59-05:00"
+        ]
+      },
+      "illustrative_qwen_only_replay": {
+        "persons": 20,
+        "months": 12,
+        "new_calls": 240,
+        "new_deepseek_calls": 0,
+        "sample_selection": "stable SHA256 priority, seed label 42",
+        "reference_input_tokens": 163828,
+        "reference_output_tokens": 32833,
+        "price_basis": "Previously verified DeepInfra Qwen72 input .36/output .40 per million",
+        "cost_using_deepseek_usage_usd": 0.07211128,
+        "cost_if_input_tokens_1_5x_and_every_output_1024_usd": 0.18677111999999998,
+        "warning": "Model tokenizers/output lengths differ; neither number is a bill or guarantee",
+        "authorization": "proposal only; no new budget or API execution authorized"
+      }
+    },
+    {
+      "run_id": "sce-local-openai-20261005T092656Z-202105-8d2e3b2c",
+      "response_rows": 300,
+      "months": {
+        "2021-05": 300
+      },
+      "unique_persons": 300,
+      "requested_models": [
+        "deepseek-flash"
+      ],
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "temperatures": [
+        0.5
+      ],
+      "prompt_versions": [
+        "sce-q8-q9-v2-abstract"
+      ],
+      "all_prompt_response_hashes_verified": true,
+      "all_raw_q9_probabilities_valid": true,
+      "source_hashes": {
+        "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/llm_calls.jsonl": "038ac18e759b1fe294e510de56d12f9cacbf668da82ec51cd5d5988f642d3ef2",
+        "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/run_manifest.json": "82c2d7b97cd970beff11093a6e6a55f625c6f22a5c226ae289de5a17d9b4ea0b"
+      },
+      "archived_cost": {
+        "call_count": 300,
+        "total_prompt_tokens": 725234,
+        "total_completion_tokens": 40696,
+        "reserved_cost_usd": 0.0,
+        "estimated_cost_usd": 0.266405,
+        "price_input_per_mtok": 0.3,
+        "price_output_per_mtok": 1.2,
+        "request_reserve_rule": "prompt UTF-8 bytes + 256 input tokens, plus max_tokens output",
+        "note": "Self-kept ledger from API usage fields; conservative reserve added for calls that errored without usage. Not a vendor bill."
+      }
+    },
+    {
+      "run_id": "sce-local-openai-20261005T092656Z-202106-e4f49f76",
+      "response_rows": 300,
+      "months": {
+        "2021-06": 300
+      },
+      "unique_persons": 300,
+      "requested_models": [
+        "deepseek-flash"
+      ],
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "temperatures": [
+        0.5
+      ],
+      "prompt_versions": [
+        "sce-q8-q9-v2-abstract"
+      ],
+      "all_prompt_response_hashes_verified": true,
+      "all_raw_q9_probabilities_valid": true,
+      "source_hashes": {
+        "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/llm_calls.jsonl": "fda70ea69b4fb33a4f8d3626dfbae03543696a4cabd03c199f73b120709eb8d8",
+        "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/run_manifest.json": "951837436907a7e7e6bab9ed4ca946b9cd3055c635f3e0edb9618c94afb2267f"
+      },
+      "archived_cost": {
+        "call_count": 300,
+        "total_prompt_tokens": 742115,
+        "total_completion_tokens": 39488,
+        "reserved_cost_usd": 0.0,
+        "estimated_cost_usd": 0.27002,
+        "price_input_per_mtok": 0.3,
+        "price_output_per_mtok": 1.2,
+        "request_reserve_rule": "prompt UTF-8 bytes + 256 input tokens, plus max_tokens output",
+        "note": "Self-kept ledger from API usage fields; conservative reserve added for calls that errored without usage. Not a vendor bill."
+      }
+    }
+  ],
+  "annual_four_model_plan": "suspended by user; $20 not authorized"
+}
