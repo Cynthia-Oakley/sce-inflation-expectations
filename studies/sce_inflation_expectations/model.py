@@ -857,8 +857,8 @@ class SCEDecision(DecisionModel):
         self._audit_llm_call(row)
         return row
 
-    def _decide_openai_one(self, ob: Observation) -> Action:
-        target = _target_from_observation(ob)
+    def build_llm_messages(self, ob: Observation) -> list[dict[str, str]]:
+        """Render the audited input; subclasses may add isolated study treatments."""
         if bool(ob.local_information.get("information_exposure")) != (self.prompt_version == EXPOSURE_PROMPT_VERSION):
             raise ValueError("exposure prompt and explicit exposure observation must be selected together")
         if ob.local_information.get("price_experience") and self.prompt_version != EXPERIENCE_PROMPT_VERSION:
@@ -882,6 +882,11 @@ class SCEDecision(DecisionModel):
             )
         else:
             messages = build_sce_messages(ob)
+        return messages
+
+    def _decide_openai_one(self, ob: Observation) -> Action:
+        target = _target_from_observation(ob)
+        messages = self.build_llm_messages(ob)
         base_payload: dict[str, Any] = {
             "agent_id": ob.agent_id,
             "target_month": target["target_month"],

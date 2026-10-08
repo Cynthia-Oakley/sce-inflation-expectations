@@ -41,6 +41,7 @@ LLM_PROMPT_VERSIONS = (
     "sce-q8-q9-experience-v1",
     "sce-q8-q9-household-state-v1",
     "sce-q8-q9-information-exposure-v1",
+    "sce-q8-q9-native-spending-v1",
 )
 
 
@@ -129,6 +130,12 @@ def main(argv: list[str] | None = None) -> int:
                     help="required with --llm openai: confirms paid API calls are authorized")
     args = ap.parse_args(argv)
 
+    # The native spending provider is explicitly selected in an isolated
+    # simulation artifact; it uses the same audited calls and local engine.
+    if args.prompt_version == "sce-q8-q9-native-spending-v1":
+        if not args.simulation or args.mechanism or args.experience or args.household_state or args.information_exposure:
+            sys.exit("native spending requires an explicit isolated simulation config")
+
     if args.llm == "openai" and not args.confirm_spend:
         sys.exit("--llm openai spends real API budget; re-run with --confirm-spend after user approval.")
     if args.experience and not args.mechanism:
@@ -199,6 +206,21 @@ def main(argv: list[str] | None = None) -> int:
     mechanism_inputs = {}
     household_state_inputs = {}
     exposure_inputs = {}
+    native_inputs = {}
+    native_ref = "sce_inflation_expectations.native_spending_decision"
+    if args.llm == "openai" and ((sim_c.decision_ref == native_ref) != (args.prompt_version == "sce-q8-q9-native-spending-v1")):
+        sys.exit("native provider and native prompt must be selected together")
+    if sim_c.decision_ref == native_ref:
+        from studies.sce_inflation_expectations.native_spending import validate_bundle
+        if len(targets) != 1 or args.mechanism or args.experience or args.household_state or args.information_exposure:
+            sys.exit("native spending requires an isolated one-month environment")
+        if any(k in env_b.provider_args for k in ("information_exposure", "household_state_by_id", "price_experience_mechanism", "experience_by_id")):
+            sys.exit("native spending requires a clean baseline environment")
+        native = validate_bundle(sim_c.decision_args["native_spending_bundle"], pop_b.personas, targets[0]["target_month"])
+        sim_c.decision_args["native_spending_bundle"] = native
+        native_inputs = {"arm": native["arm"], "research_line": native["research_line"], "source_sha256": native["source_sha256"]}
+        if args.llm == "scripted":
+            print("ENGINEERING CHECK ONLY: scripted answers ignore native spending; no behavioural inference.")
     if args.information_exposure:
         from studies.sce_inflation_expectations.information_exposure import validate_bundle, build_exposure_messages
         from studies.sce_inflation_expectations.model import SCEEnvironmentProvider, build_sce_messages_v2
@@ -378,6 +400,8 @@ def main(argv: list[str] | None = None) -> int:
         "mechanism_inputs": mechanism_inputs,
         "household_state_inputs": household_state_inputs,
         "information_exposure_inputs": exposure_inputs,
+        "native_spending_inputs": native_inputs,
+        "native_spending_behaviour_test": bool(native_inputs and args.llm == "openai"),
         "information_exposure_behaviour_test": bool(args.information_exposure and args.llm == "openai"),
         "household_state_behaviour_test": bool(args.household_state and args.llm == "openai"),
         "mechanism_behaviour_test": bool(args.mechanism and args.llm == "openai"),
@@ -386,6 +410,8 @@ def main(argv: list[str] | None = None) -> int:
         "store_path": str(store_path),
         "cost": sim.decision.cost_summary() if hasattr(sim.decision, "cost_summary") else None,
     }
+    if native_inputs:
+        manifest["execution_purpose"] = "native_spending_behaviour_trial" if args.llm == "openai" else "native_spending_plumbing_only"
     (audit_dir / "run_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if hasattr(sim.decision, "cost_summary"):

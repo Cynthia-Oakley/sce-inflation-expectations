@@ -8,5 +8,6 @@ socioverse2_repo/studies/ is a one-way runtime export (scripts/export_study_runt
 from __future__ import annotations
 
 from . import model  # noqa: F401  (side effect: @register decorators run)
+from . import native_spending  # noqa: F401
 
 __all__ = ["model"]
