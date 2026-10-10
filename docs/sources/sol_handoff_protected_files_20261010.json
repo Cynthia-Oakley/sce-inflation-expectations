@@ -1,0 +1,22 @@
+{
+  "recorded_on": "2026-10-10",
+  "purpose": "接力时保护用户与Kimi尚未审定的15份改动；不是可提交文件清单。",
+  "instruction": "不得改写、提交或还原；如哈希已变，先辨认新的修改，不按本清单回滚。",
+  "files_sha256": {
+    "docs/DECISIONS.md": "be033cf93fd4d8107867204afd934b6762532dec2c112a193fc26fb663568b6a",
+    "proposal/proposal.md": "aad43b49b3fbf0c136bec0650af9e1b1fd73358cc94efd344975f9a06a671609",
+    "scripts/analyze_sce_wave_stats.py": "ba912de19cb06be98c6894756c4514263635b4c69e275767a2dcff9a5af0ae57",
+    "scripts/build_sce_evaluation_truth.py": "ff352f6db794547558aae8c0eb8037c40bd3d8822aab08a31083e4f4786c6640",
+    "scripts/build_sce_population.py": "aafa00801e55b4a3ea49d498ae61c38f82f218bdbcd5f3c5425d7dbda4ecd80a",
+    "studies/sce_inflation_expectations/population/population_main2021_a73.sampling_meta.json": "97d2a000906d88b01149a987fc4e8339f76fa16bddd9b90c6f1f0c1434d381db",
+    "studies/sce_inflation_expectations/population/population_real100.json": "55b81aec6415f410f169821d4a4933cd0147ee5ef370ca234f864091cc22c170",
+    "studies/sce_inflation_expectations/population/population_real100.sampling_meta.json": "876d66d9b50d5da14a8189d88bb6b955e7fcb04b2f9ce1d6fa88a37aff02961b",
+    "studies/sce_inflation_expectations/reports/POPULATION_WAVE_STATS.json": "27371ed5a996cb401e12aecea54fe9810e31e57c318b8dbccc6a32ae25db3408",
+    "studies/sce_inflation_expectations/reports/POPULATION_WAVE_STATS.md": "c5a2e1b4f596fa0eb9b7220e34c8da191a2e2e76d7c7e55bf7373b4a6cae7063",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py": "5d7f616f56a820ad29be871b4892e5b3f67f528792e1eb8b90862b8c794ba7e3",
+    "tests/test_build_sce_population.py": "e593e3fb4ae1e7e84630d82247b8587951558460d46a824bae0c88f40b4d0124",
+    "docs/A_B_LINE_CONTRACTS.md": "6c298dc8520aee0a870a30ebbc4074947eb9436496908ba4b0a7d91c87d841de",
+    "studies/sce_inflation_expectations/reports/PROMPT_IO_REVIEW_20261003.md": "6072df260c4a6ed8adf048f1738e7a925e07b94ae0b35928152d5440a370cf41",
+    "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+  }
+}
