@@ -118,7 +118,15 @@
           "5": "    West Coast (PADD 5) ............. 3.150 3.276 3.344 3.432 3.468 3.473 3.487 3.507 3.527 3.552 3.598 3.647"
         },
         "publication_evidence": "Dated official EIA weekly archive URL; publication clock not independently recovered",
-        "vintage_status": "dated_archived_report_downloaded_20261010; original bytes immutability not established"
+        "vintage_status": "dated_archived_report_downloaded_20261010; original bytes immutability not established",
+        "descriptive_window_growth_pct": {
+          "national": 12.457273072540831,
+          "1": 9.946236559139777,
+          "2": 11.826697892271687,
+          "3": 13.925672789406217,
+          "4": 25.54325543255431,
+          "5": 15.777777777777779
+        }
       },
       "dairy": {
         "items": [
@@ -288,7 +296,15 @@
           "5": "    West Coast (PADD 5) ............. 3.468 3.473 3.487 3.507 3.527 3.552 3.598 3.647 3.675 3.698 3.724 3.747"
         },
         "publication_evidence": "Dated official EIA weekly archive URL; publication clock not independently recovered",
-        "vintage_status": "dated_archived_report_downloaded_20261010; original bytes immutability not established"
+        "vintage_status": "dated_archived_report_downloaded_20261010; original bytes immutability not established",
+        "descriptive_window_growth_pct": {
+          "national": 5.933682373472937,
+          "1": 4.417527609547567,
+          "2": 7.582938388625604,
+          "3": 3.1261913839115474,
+          "4": 8.67937372362151,
+          "5": 8.044982698961945
+        }
       },
       "dairy": {
         "items": [
@@ -343,5 +359,28 @@
         "vintage_status": "dated_archived_report_downloaded; original bytes immutability not established"
       }
     }
+  },
+  "spending_followup": {
+    "checked_at": "2026-10-10",
+    "source_url": "https://www.bls.gov/cex/tables/calendar-year/mean/ce-all-multi-year-2021-2022.pdf",
+    "table_vintage": "September 2023 table, 2021 expenditure year; retrospective descriptive reference only",
+    "annual_total_usd": 66928,
+    "expenditures_usd": {
+      "electricity": 1551,
+      "natural_gas": 447,
+      "water_and_other_public_services": 695,
+      "utilities_fuels_public_services_including_telephone": 4223,
+      "gasoline_other_fuels_motor_oil": 2148
+    },
+    "shares_of_total_pct": {
+      "electricity_natural_gas_water_other_public_services": 4.023726990198422,
+      "utilities_broad": 6.309765718383935,
+      "gasoline_broad": 3.2094190772173086
+    },
+    "limits": [
+      "Ratio of national aggregate mean expenditures, not an average of household shares or CPI weight.",
+      "Water category also includes other public services; broad utility category includes telephone.",
+      "Expenditure share is not perceptual attention or forecast elasticity; no unique geographically sensitive share."
+    ]
   }
 }
