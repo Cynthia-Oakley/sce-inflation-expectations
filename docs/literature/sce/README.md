@@ -2,6 +2,8 @@
 
 研究主题：美国居民一年期通胀预期的 Agent 调查重建与预测。任务启动日：2026-10-05。
 
+**2026-10-10 持续性、政策与信任专题初核：**[研究笔记](themes/persistence_policy_trust_20261010.md)／[浏览器版](themes/persistence_policy_trust_20261010.html)。补充“价格变化会持续多久”的连接，区分政策理解、央行/政府信任、政治认同与一般乐观；Pew受众构成不直接证明经济报道偏差。当前输入已含Fed暂时性与供应链叙述，先核查解释与曝光，再选机制；未启动新模拟或取得外部微观数据。
+
 **2026-10-06 心理与家庭状态专题：** [新专题入口](psychological_attributes/README.md)、[整合综述](psychological_attributes/literature_review.md)、[实施建议](psychological_attributes/implementation_proposal.md)。理论、数据、合成方法由三名 Luna Max 并行调查；主 Agent 整合。与下方首轮来源目录分开，避免重复计数。价格体验小试已运行但尚无稳定改善；本专题优先家庭状态和信息处理，幸福/满意联合 donor 作为探索。未新增模拟调用；新心理机制尚未实现。
 
 **2026-10-06 落地更新：** [价格体验机制入口](../../PRICE_EXPERIENCE_MECHANISM.md)、[工程验收](../../PRICE_EXPERIENCE_ACCEPTANCE_20261006.md)、[输出诊断](../../MECHANISM_OUTPUT_DIAGNOSTIC_20261006.md)、[CE 可行性](../../MECHANISM_DATA_FEASIBILITY_20261006.md)。补充数据来源单独索引于 [sources/ce_experience_sources_20261006.json](sources/ce_experience_sources_20261006.json)，不混入首轮 28 条文献计数。第一版已离线接入，真实机制效果未验证；下方“未改运行源码/下一步准备”为 10-05 首轮状态。

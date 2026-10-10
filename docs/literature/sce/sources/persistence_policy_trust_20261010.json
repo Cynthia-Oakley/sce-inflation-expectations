@@ -1,0 +1,62 @@
+{
+  "checked_on": "2026-10-10",
+  "type": "literature_brainstorm_and_single_prompt_check_not_experiment",
+  "sources": [
+    {
+      "id": "nyfed_2023_drivers",
+      "url": "https://libertystreeteconomics.newyorkfed.org/2023/08/consumers-perspectives-on-the-recent-movements-in-inflation-expectations/",
+      "title": "Consumers’ Perspectives on the Recent Movements in Inflation",
+      "read_scope": "Original research article relevant sections; SCE aggregate reason ratings, not matched 2021 beliefs",
+      "use": "Policy and supply-chain explanations; do not infer random causal effects"
+    },
+    {
+      "id": "monetary_households_2026",
+      "url": "https://www.nber.org/papers/w35127",
+      "title": "Monetary Policy According to Households: Perceptions, Reactions and Channels",
+      "read_scope": "Official abstract via indexed search; direct page returned403; full paper not audited",
+      "use": "Household understanding of policy transmission can differ from standard theory"
+    },
+    {
+      "id": "partisanship_covid",
+      "url": "https://www.nber.org/papers/w32650",
+      "title": "Partisan Expectations and COVID-Era Inflation",
+      "read_scope": "Official abstract and publication record; direct page403; no full-method review",
+      "use": "Time-dependent partisan heterogeneity; not a fixed party coefficient"
+    },
+    {
+      "id": "fed_trust_partisan",
+      "url": "https://www.nber.org/papers/w33684",
+      "title": "Partisan Trust in the Federal Reserve",
+      "read_scope": "Official abstract via search; direct page403; full paper not audited",
+      "use": "Fed trust does not fully explain partisan inflation expectations"
+    },
+    {
+      "id": "pew_media_2019",
+      "url": "https://www.pewresearch.org/short-reads/2020/04/01/americans-main-sources-for-political-news-vary-by-party-and-age/",
+      "title": "Americans’ main sources for political news vary by party and age",
+      "read_scope": "Primary survey article, late2019 survey published2020",
+      "use": "Historical audience/source reference; not individual SCE matching or inflation-news exposure"
+    },
+    {
+      "id": "pew_media_2025",
+      "url": "https://www.pewresearch.org/journalism/2025/06/10/the-political-gap-in-americans-news-sources/",
+      "title": "The Political Gap in Americans’ News Sources",
+      "read_scope": "Primary survey article including explicit audience vs content distinction",
+      "use": "Use/trust and audience composition; not content bias classification or 2021 B input"
+    }
+  ],
+  "local_source_sha256": {
+    "data/raw/sce_audit_20260928/questionnaire.pdf": "e30e2ef1f925cb90aef1d5d6c9b13c6307b1f311e40c5b894ad27ddf69066e93",
+    "docs/literature/sce/themes/expectation_formation.md": "ccab70b9880117eb3f9da405863534c0e9f8042a9b26006747c6b87826a88db7",
+    "docs/literature/sce/psychological_attributes/theory_review.md": "d36d29ceaa2b547a452628056038e0740e4a4f5a59c38dce2b8791af0a131774",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/llm_calls.jsonl": "038ac18e759b1fe294e510de56d12f9cacbf668da82ec51cd5d5988f642d3ef2"
+  },
+  "local_check_scope": {
+    "questionnaire": "Keyword search only, not exhaustive schema or supplemental module audit",
+    "prompt": "First persisted May2021 300Core call; read only public-news subset, not whole-sample narrative frequency"
+  },
+  "new_llm_calls": 0,
+  "new_paid_mcp_calls": 0,
+  "external_microdata_downloaded": false,
+  "protected_files_hashes_unchanged": true
+}
