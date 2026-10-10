@@ -1,0 +1,347 @@
+{
+  "checked_at": "2026-10-10",
+  "usage": "retrospective_A_price_contact_trial",
+  "state_padd_source": "https://www.eia.gov/tools/glossary/index.php?id=P",
+  "months": {
+    "202105": {
+      "gasoline": {
+        "dates": [
+          "2021-02-22",
+          "2021-03-01",
+          "2021-03-08",
+          "2021-03-15",
+          "2021-03-22",
+          "2021-03-29",
+          "2021-04-05",
+          "2021-04-12",
+          "2021-04-19",
+          "2021-04-26",
+          "2021-05-03",
+          "2021-05-10"
+        ],
+        "series": {
+          "national": [
+            2.633,
+            2.711,
+            2.771,
+            2.853,
+            2.865,
+            2.852,
+            2.857,
+            2.849,
+            2.855,
+            2.872,
+            2.89,
+            2.961
+          ],
+          "1": [
+            2.604,
+            2.652,
+            2.704,
+            2.787,
+            2.807,
+            2.778,
+            2.765,
+            2.754,
+            2.75,
+            2.758,
+            2.777,
+            2.863
+          ],
+          "2": [
+            2.562,
+            2.662,
+            2.706,
+            2.764,
+            2.743,
+            2.747,
+            2.782,
+            2.754,
+            2.772,
+            2.795,
+            2.806,
+            2.865
+          ],
+          "3": [
+            2.341,
+            2.411,
+            2.495,
+            2.605,
+            2.623,
+            2.602,
+            2.587,
+            2.577,
+            2.565,
+            2.586,
+            2.583,
+            2.667
+          ],
+          "4": [
+            2.439,
+            2.566,
+            2.708,
+            2.839,
+            2.938,
+            2.95,
+            2.95,
+            2.952,
+            2.973,
+            2.993,
+            3.018,
+            3.062
+          ],
+          "5": [
+            3.15,
+            3.276,
+            3.344,
+            3.432,
+            3.468,
+            3.473,
+            3.487,
+            3.507,
+            3.527,
+            3.552,
+            3.598,
+            3.647
+          ]
+        },
+        "available_by": "2021-05-12T23:59:59-04:00",
+        "source_url": "https://www.eia.gov/petroleum/supply/weekly/archive/2021/2021_05_12/pdf/wpsrall.pdf",
+        "sha256": "7b031b7c8f5e3f4ffd0fb165b9da8477f36883b312c66ce739e9a8127dab27f3",
+        "pdf_page": 32,
+        "source_rows": {
+          "national": "  Regular ..................................... 2.633 2.711 2.771 2.853 2.865 2.852 2.857 2.849 2.855 2.872 2.890 2.961",
+          "1": "    East Coast (PADD 1) .............. 2.604 2.652 2.704 2.787 2.807 2.778 2.765 2.754 2.750 2.758 2.777 2.863",
+          "2": "    Midwest (PADD 2) .................. 2.562 2.662 2.706 2.764 2.743 2.747 2.782 2.754 2.772 2.795 2.806 2.865",
+          "3": "    Gulf Coast (PADD 3) .............. 2.341 2.411 2.495 2.605 2.623 2.602 2.587 2.577 2.565 2.586 2.583 2.667",
+          "4": "    Rocky Mountain (PADD 4) ..... 2.439 2.566 2.708 2.839 2.938 2.950 2.950 2.952 2.973 2.993 3.018 3.062",
+          "5": "    West Coast (PADD 5) ............. 3.150 3.276 3.344 3.432 3.468 3.473 3.487 3.507 3.527 3.552 3.598 3.647"
+        },
+        "publication_evidence": "Dated official EIA weekly archive URL; publication clock not independently recovered",
+        "vintage_status": "dated_archived_report_downloaded_20261010; original bytes immutability not established"
+      },
+      "dairy": {
+        "items": [
+          {
+            "label": "Milk half gallon",
+            "stores": [
+              545,
+              659,
+              1164
+            ],
+            "prices": [
+              2.73,
+              2.19,
+              1.4
+            ],
+            "source_row": "Milk All fat tests half gallon 545    2.73 659    2.19 1164    1.40"
+          },
+          {
+            "label": "Natural cheese 8 oz shred",
+            "stores": [
+              8903,
+              11056,
+              7373
+            ],
+            "prices": [
+              2.47,
+              2.54,
+              2.86
+            ],
+            "source_row": "Cheese Natural Varieties 8 oz shred 8903    2.47 11056    2.54 7373    2.86"
+          },
+          {
+            "label": "Greek yogurt 4–6 oz",
+            "stores": [
+              6099,
+              6965,
+              5388
+            ],
+            "prices": [
+              0.96,
+              0.97,
+              0.96
+            ],
+            "source_row": "Yogurt Greek 4-6 oz 6099     .96 6965     .97 5388     .96"
+          }
+        ],
+        "available_by": "2021-05-07T23:59:59-04:00",
+        "source_url": "https://esmis.nal.usda.gov/sites/default/release-files/z603qx43s/d217rj427/v979vz50r/DYWWEEKLYREPORT.PDF",
+        "sha256": "20f1dee5a796a2df049e6c24d8c8e4676efa85b72517cc6e5f345797ec0e3d2d",
+        "pdf_page": 27,
+        "publication_evidence": "Friday issued date printed in retail report",
+        "vintage_status": "dated_archived_report_downloaded; original bytes immutability not established"
+      }
+    },
+    "202106": {
+      "gasoline": {
+        "dates": [
+          "2021-03-22",
+          "2021-03-29",
+          "2021-04-05",
+          "2021-04-12",
+          "2021-04-19",
+          "2021-04-26",
+          "2021-05-03",
+          "2021-05-10",
+          "2021-05-17",
+          "2021-05-24",
+          "2021-05-31",
+          "2021-06-07"
+        ],
+        "series": {
+          "national": [
+            2.865,
+            2.852,
+            2.857,
+            2.849,
+            2.855,
+            2.872,
+            2.89,
+            2.961,
+            3.028,
+            3.02,
+            3.027,
+            3.035
+          ],
+          "1": [
+            2.807,
+            2.778,
+            2.765,
+            2.754,
+            2.75,
+            2.758,
+            2.777,
+            2.863,
+            2.939,
+            2.934,
+            2.928,
+            2.931
+          ],
+          "2": [
+            2.743,
+            2.747,
+            2.782,
+            2.754,
+            2.772,
+            2.795,
+            2.806,
+            2.865,
+            2.914,
+            2.896,
+            2.931,
+            2.951
+          ],
+          "3": [
+            2.623,
+            2.602,
+            2.587,
+            2.577,
+            2.565,
+            2.586,
+            2.583,
+            2.667,
+            2.778,
+            2.75,
+            2.717,
+            2.705
+          ],
+          "4": [
+            2.938,
+            2.95,
+            2.95,
+            2.952,
+            2.973,
+            2.993,
+            3.018,
+            3.062,
+            3.129,
+            3.145,
+            3.157,
+            3.193
+          ],
+          "5": [
+            3.468,
+            3.473,
+            3.487,
+            3.507,
+            3.527,
+            3.552,
+            3.598,
+            3.647,
+            3.675,
+            3.698,
+            3.724,
+            3.747
+          ]
+        },
+        "available_by": "2021-06-09T23:59:59-04:00",
+        "source_url": "https://www.eia.gov/petroleum/supply/weekly/archive/2021/2021_06_09/pdf/wpsrall.pdf",
+        "sha256": "ceaa1727c0ce9f3b8b802affad2f0751232126ecb352d8bd03ca300f08078e16",
+        "pdf_page": 32,
+        "source_rows": {
+          "national": "  Regular ..................................... 2.865 2.852 2.857 2.849 2.855 2.872 2.890 2.961 3.028 3.020 3.027 3.035",
+          "1": "    East Coast (PADD 1) .............. 2.807 2.778 2.765 2.754 2.750 2.758 2.777 2.863 2.939 2.934 2.928 2.931",
+          "2": "    Midwest (PADD 2) .................. 2.743 2.747 2.782 2.754 2.772 2.795 2.806 2.865 2.914 2.896 2.931 2.951",
+          "3": "    Gulf Coast (PADD 3) .............. 2.623 2.602 2.587 2.577 2.565 2.586 2.583 2.667 2.778 2.750 2.717 2.705",
+          "4": "    Rocky Mountain (PADD 4) ..... 2.938 2.950 2.950 2.952 2.973 2.993 3.018 3.062 3.129 3.145 3.157 3.193",
+          "5": "    West Coast (PADD 5) ............. 3.468 3.473 3.487 3.507 3.527 3.552 3.598 3.647 3.675 3.698 3.724 3.747"
+        },
+        "publication_evidence": "Dated official EIA weekly archive URL; publication clock not independently recovered",
+        "vintage_status": "dated_archived_report_downloaded_20261010; original bytes immutability not established"
+      },
+      "dairy": {
+        "items": [
+          {
+            "label": "Milk half gallon",
+            "stores": [
+              1194,
+              454,
+              493
+            ],
+            "prices": [
+              1.38,
+              2.05,
+              2.29
+            ],
+            "source_row": "Milk All fat tests half gallon 1194    1.38 454    2.05 493    2.29"
+          },
+          {
+            "label": "Natural cheese 8 oz shred",
+            "stores": [
+              10253,
+              11189,
+              6518
+            ],
+            "prices": [
+              2.32,
+              2.4,
+              2.42
+            ],
+            "source_row": "Cheese Natural Varieties 8 oz shred 10253    2.32 11189    2.40 6518    2.42"
+          },
+          {
+            "label": "Greek yogurt 4–6 oz",
+            "stores": [
+              10039,
+              6273,
+              5408
+            ],
+            "prices": [
+              0.97,
+              0.98,
+              0.94
+            ],
+            "source_row": "Yogurt Greek 4-6 oz 10039     .97 6273     .98 5408     .94"
+          }
+        ],
+        "available_by": "2021-06-04T23:59:59-04:00",
+        "source_url": "https://esmis.nal.usda.gov/sites/default/release-files/z603qx43s/gm80js03w/dv140p857/DYWWEEKLYREPORT.PDF",
+        "sha256": "b060bcf6852b0e576da59b9774735c7aac51b1e887ace3d6595ae73dd90b44fe",
+        "pdf_page": 21,
+        "publication_evidence": "Friday issued date printed in retail report",
+        "vintage_status": "dated_archived_report_downloaded; original bytes immutability not established"
+      }
+    }
+  }
+}

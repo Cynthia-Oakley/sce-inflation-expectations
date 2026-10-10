@@ -1,0 +1,172 @@
+{
+  "checked_at": "2026-10-09",
+  "purpose": "Availability probe for current-month household price exposure; not yet integrated into E or run",
+  "samples": [
+    {
+      "file": "usda_dairy_week_20210503_20210507.pdf",
+      "source_url": "https://esmis.nal.usda.gov/sites/default/release-files/z603qx43s/d217rj427/v979vz50r/DYWWEEKLYREPORT.PDF",
+      "sha256": "20f1dee5a796a2df049e6c24d8c8e4676efa85b72517cc6e5f345797ec0e3d2d",
+      "bytes": 1734215,
+      "pages": 31,
+      "text_chars": 98071,
+      "checked_at": "2026-10-09",
+      "status": "sample archive retrieved; report-date text available; full publication timestamp/revision validation pending"
+    },
+    {
+      "file": "usda_virginia_grain_20210507.pdf",
+      "source_url": "https://esmis.nal.usda.gov/sites/default/release-files/c821gj78w/vm40zn02t/s7527679p/AMS_3167.PDF",
+      "sha256": "32eb53b8db60d93e314d04fa13ef2529b7a6a3fe93a31af443168c500e14ddf5",
+      "bytes": 266536,
+      "pages": 5,
+      "text_chars": 7977,
+      "checked_at": "2026-10-09",
+      "status": "sample archive retrieved; report-date text available; full publication timestamp/revision validation pending"
+    }
+  ],
+  "candidate_sources": [
+    {
+      "name": "EIA weekly retail gasoline",
+      "url": "https://www.eia.gov/petroleum/gasdiesel/",
+      "frequency": "weekly",
+      "status": "official release-method documented; historical-series fetch timed out in web tool; no gasoline sample values asserted"
+    },
+    {
+      "name": "USDA grocery feature reports",
+      "url": "https://www.ams.usda.gov/market-news",
+      "frequency": "weekly",
+      "meaning": "advertised retail prices, not transaction prices or representative CPI",
+      "status": "2021-05 dairy sample retrieved; other commodities and longitudinal coverage pending"
+    },
+    {
+      "name": "USDA MPR DataMart",
+      "url": "https://mpr.datamart.ams.usda.gov/",
+      "meaning": "selected mandatory wholesale livestock/dairy reports since April 2001; each report coverage requires audit"
+    },
+    {
+      "name": "USDA MMN API",
+      "url": "https://mymarketnews.ams.usda.gov/mymarketnews-api",
+      "status": "official API documented; access/version/full historical coverage not locally validated"
+    },
+    {
+      "name": "USDA API correction resources",
+      "url": "https://mymarketnews.ams.usda.gov/general-resources",
+      "meaning": "corrected reports and datasets require version checks"
+    },
+    {
+      "name": "Exposure to Daily Price Changes and Inflation Expectations",
+      "url": "https://www.nber.org/papers/w26237",
+      "meaning": "experience-based price-change evidence; does not establish time lag as project error cause"
+    }
+  ],
+  "time_rule": "Keep report/reference date, published timestamp and any correction version separate. Do not use full-month aggregates before month ends. Route B forecast origin remains fixed: observations released after it are ineligible.",
+  "additional_spending_sources": [
+    {
+      "category": "Rent",
+      "source": "Zillow ZORI",
+      "url": "https://www.zillow.com/research/methodology-zori-repeat-rent/",
+      "frequency": "monthly, three-month smoothing",
+      "meaning": "asking rents for listed rental units; not all incumbent tenant payments",
+      "audit_status": "methodology checked; actual historical releases/vintages not retrieved"
+    },
+    {
+      "category": "Electricity",
+      "source": "EIA Electric Power Monthly",
+      "url": "https://www.eia.gov/electricity/monthly/",
+      "frequency": "monthly; checked current issue July data released September",
+      "meaning": "residential revenue/sales average, not a personal tariff or bill",
+      "audit_status": "methodology/release lag checked; no individual tariff reconstruction"
+    },
+    {
+      "category": "Heating oil and propane",
+      "source": "EIA winter-fuel price surveys",
+      "url": "https://www.eia.gov/petroleum/heatingoilpropane/pdf/methodology.pdf",
+      "frequency": "weekly October–March; documented off-season monthly collection April–September",
+      "meaning": "residential quotes excluding taxes and certain discounts; not pipeline natural gas",
+      "audit_status": "method documented; period-specific coverage/revisions still need audit"
+    },
+    {
+      "category": "Used vehicles",
+      "source": "Manheim MUVVI",
+      "url": "https://press.manheim.com/industry-resources",
+      "frequency": "monthly with mid-month update",
+      "meaning": "wholesale vehicle price index, not consumer retail price; mid-month checkpoint not identical to final index",
+      "audit_status": "publisher schedule checked; 2021 mid-month archive not retrieved"
+    },
+    {
+      "category": "Online consumer goods",
+      "source": "Adobe DPI",
+      "url": "https://blog.adobe.com/en/publish/2022/03/10/adobe-launches-web-portal-for-online-inflation-data",
+      "frequency": "monthly publication, not daily access to underlying item prices",
+      "meaning": "online goods including apparel, appliances and personal care; not comprehensive brick-and-mortar prices",
+      "audit_status": "categories/publishing description checked; portal launched 2022, 2021 release availability must independently verify"
+    },
+    {
+      "category": "Airline fares",
+      "source": "BLS CPI",
+      "url": "https://www.bls.gov/cpi/factsheets/airline-fares.htm",
+      "frequency": "monthly",
+      "meaning": "fixed itinerary, booking lead time and weekday specs; current ticket quote is not a historical quote",
+      "audit_status": "official monthly series identified; no free continuous daily quote archive confirmed"
+    },
+    {
+      "category": "Insurance / medical care / tuition",
+      "source": "BLS CPI fact sheets",
+      "urls": [
+        "https://www.bls.gov/cpi/factsheets/motor-vehicle-insurance.htm",
+        "https://www.bls.gov/cpi/factsheets/medical-care.htm",
+        "https://www.bls.gov/cpi/factsheets/college-tuition.htm"
+      ],
+      "frequency": "monthly published indices; individual price changes often tied to contracts or academic terms; not all medical/drug prices uniform",
+      "audit_status": "sources checked; no comprehensive historical high-frequency retail indicators confirmed"
+    }
+  ],
+  "implementation_recommendation": "Classify price-change, household-contact and publication frequencies separately. Prioritize rent and utilities for coverage; distinguish contract renewal/bill changes from current market quotes. Do not invent uniform numeric repricing frequencies.",
+  "utility_event_sources": [
+    {
+      "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-rates/rate-change-advisories/rate-change-alerts---previous-years",
+      "coverage": "official 2020–2023 archived rate alerts, including 2021",
+      "status": "index verified; individual dated PDFs and publication timestamps not yet transcribed"
+    },
+    {
+      "url": "https://dps.ny.gov/national-grid-electric-rate-case-summary",
+      "coverage": "New York utility case summary",
+      "status": "official event source identified; not a nationwide real-time series"
+    },
+    {
+      "url": "https://www.nyc.gov/site/nycwaterboard/meetings/public-notices.page",
+      "coverage": "NYC Water Board notices",
+      "status": "municipal water event source identified"
+    }
+  ],
+  "utility_event_contract": {
+    "required_fields": [
+      "published_at",
+      "decision_status",
+      "effective_at",
+      "provider",
+      "service_area",
+      "customer_class",
+      "price_component",
+      "typical_bill_usage_assumptions",
+      "source_url",
+      "source_version"
+    ],
+    "rules": [
+      "Application, approval and effective rates remain separate event statuses.",
+      "Apply household bill effect only where actual service territory and tariff are known; state alone is insufficient.",
+      "A percentage revenue increase is not automatically the percentage household bill or unit-price increase.",
+      "Announcement can be known before effective date; do not label it as already paid.",
+      "Unknown local supplier stays missing; broad news exposure may be modeled explicitly, not assumed universal."
+    ]
+  },
+  "user_scope_20261009": {
+    "priority": "household consumables, apparel and online-goods sources; retain distinction between purchasing and price exposure, especially low-frequency appliances",
+    "excluded_for_now": [
+      "airline fares",
+      "hotels"
+    ],
+    "lower_priority": "vehicle purchases",
+    "utility_plan": "price-change announcements as local E events; slow monthly statistics stay background",
+    "prompt_plan": "Provide sourced/synthetic-labeled household shopping facts first; explicit frequency-attention instruction is an optional separate hypothesis/treatment, not adopted as a factual trait or default behavior."
+  }
+}

@@ -42,6 +42,7 @@ LLM_PROMPT_VERSIONS = (
     "sce-q8-q9-household-state-v1",
     "sce-q8-q9-information-exposure-v1",
     "sce-q8-q9-native-spending-v1",
+    "sce-q8-q9-price-contact-v1",
 )
 
 
@@ -207,6 +208,23 @@ def main(argv: list[str] | None = None) -> int:
     household_state_inputs = {}
     exposure_inputs = {}
     native_inputs = {}
+    contact_inputs = {}
+    contact_ref = "sce_inflation_expectations.price_contact_decision"
+    if args.llm == "openai" and ((sim_c.decision_ref == contact_ref) != (args.prompt_version == "sce-q8-q9-price-contact-v1")):
+        sys.exit("price contact provider and prompt must be selected together")
+    if sim_c.decision_ref == contact_ref:
+        from studies.sce_inflation_expectations.price_contact import validate_bundle
+        if len(targets) != 1 or args.mechanism or args.experience or args.household_state or args.information_exposure:
+            sys.exit("price contact requires an isolated one-month environment")
+        if any(k in env_b.provider_args for k in ("information_exposure", "household_state_by_id", "price_experience_mechanism", "experience_by_id")):
+            sys.exit("price contact requires a clean common environment")
+        contact = validate_bundle(sim_c.decision_args["price_contact_bundle"], pop_b.personas, targets[0]["target_month"])
+        if contact["as_of"] != targets[0]["as_of"]:
+            sys.exit("price contact cutoff mismatch")
+        sim_c.decision_args["price_contact_bundle"] = contact
+        contact_inputs = {"arm": contact["arm"], "research_line": contact["research_line"]}
+        if args.llm == "scripted":
+            print("ENGINEERING CHECK ONLY: scripted answers ignore price-contact treatment.")
     native_ref = "sce_inflation_expectations.native_spending_decision"
     if args.llm == "openai" and ((sim_c.decision_ref == native_ref) != (args.prompt_version == "sce-q8-q9-native-spending-v1")):
         sys.exit("native provider and native prompt must be selected together")
@@ -401,6 +419,7 @@ def main(argv: list[str] | None = None) -> int:
         "household_state_inputs": household_state_inputs,
         "information_exposure_inputs": exposure_inputs,
         "native_spending_inputs": native_inputs,
+        "price_contact_inputs": contact_inputs,
         "native_spending_behaviour_test": bool(native_inputs and args.llm == "openai"),
         "information_exposure_behaviour_test": bool(args.information_exposure and args.llm == "openai"),
         "household_state_behaviour_test": bool(args.household_state and args.llm == "openai"),
@@ -412,6 +431,8 @@ def main(argv: list[str] | None = None) -> int:
     }
     if native_inputs:
         manifest["execution_purpose"] = "native_spending_behaviour_trial" if args.llm == "openai" else "native_spending_plumbing_only"
+    if contact_inputs:
+        manifest["execution_purpose"] = "price_contact_behaviour_trial" if args.llm == "openai" else "price_contact_plumbing_only"
     (audit_dir / "run_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if hasattr(sim.decision, "cost_summary"):
