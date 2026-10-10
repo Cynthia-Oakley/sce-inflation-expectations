@@ -1,0 +1,64 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>水上挽月 · 下一阶段方案</title><style>
+:root{color-scheme:light;--bg:#faf9f5;--ink:#182c38;--muted:#52616a;--line:#d4d9db;--accent:#965222}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:auto;padding:38px 28px 70px}h1{font-size:28px;line-height:1.4;margin:16px 0}h2{font-size:22px;line-height:1.5;margin:38px 0 14px}h3{font-size:18px;margin:24px 0 12px}p{margin:14px 0}a{color:#305d77;text-underline-offset:3px}.muted,small{color:var(--muted)}.lead{font-size:19px;max-width:820px}.top{border-bottom:1px solid var(--line);padding-bottom:24px}.flow{display:grid;grid-template-columns:repeat(5,1fr);margin:24px 0;border:1px solid var(--line)}.step{padding:16px;border-right:1px solid var(--line)}.step:last-child{border:0}.step small,.step b,.step span,.step em{display:block}.step b{font-size:18px}.step span{font-size:14px}.step em{font-size:13px;font-style:normal;color:var(--muted);margin-top:12px}.step:nth-child(2),.step:nth-child(3){background:#eee8de}.note{border-left:3px solid var(--accent);padding:4px 18px;margin:24px 0}.columns{display:grid;grid-template-columns:1fr 1fr;gap:32px}table{border-collapse:collapse;width:100%;font-size:15px;margin:20px 0}td,th{border-bottom:1px solid var(--line);text-align:left;vertical-align:top;padding:16px 12px}th{font-size:14px;color:var(--muted)}td:first-child{width:26%}.tablewrap{overflow-x:auto}details{border-top:1px solid var(--line);margin-top:32px;padding-top:16px}summary{font-size:20px;cursor:pointer;font-weight:600}article{max-width:850px;margin:24px auto}article h1{font-size:24px}article li{margin-bottom:8px}article code{font-size:14px;overflow-wrap:anywhere}article a{overflow-wrap:anywhere}nav{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px}footer{border-top:1px solid var(--line);margin-top:35px;padding-top:14px;font-size:13px}.control{font:inherit;padding:7px 16px;border:1px solid var(--line);background:white;cursor:pointer;color:var(--ink)}@media(max-width:750px){main{padding:22px 18px}.flow{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.columns{grid-template-columns:1fr}h1{font-size:24px}td{min-width:170px}}@media print{details article{display:block}summary,button{display:none}main{max-width:none;padding:0}.flow{break-inside:avoid}h2,h3{break-after:avoid}a{color:inherit}body{background:white}}
+</style><main><nav><a href="project_design_review_20261010.html">返回设计复核</a><a href="next_stage_plan_20261010.md">Markdown原文</a></nav><article><h1>接下来做什么，做到什么程度再扩大</h1>
+<p>2026-10-10。针对用户四个问题的具体推进建议。这里的人数与门槛是候选安排，不是已经运行或已经证明有足够精度的配置。当前状态见<a href="project_status.md">项目总览</a>，设计依据见<a href="project_design_review_20261010.md">深入复核</a>。</p>
+<h2>我们现在在哪里</h2>
+<p>真实模拟、保存回答与统一评价已经跑通。主实验做过2021年5、6月每月300名Core；最近20—50人的实验用于检查具体机制。旧输入另有12个月结果，但不能替代当前机制的长期验证。当前主线仍是路线A的历史调查重建，路线B的数据准备继续保留。</p>
+<p>目前最明显的问题是总体偏低、不同人的回答过于接近。我们要模拟的是居民怎样回答未来一年通胀问题；拟合实际CPI不是本项目的最终目标。</p>
+<h2>对P、E、B的理解</h2>
+<ul>
+<li>P：这个家庭有什么生活条件、经历和原有看法。</li>
+<li>E：在该时间点，他可能看到、听到或亲自遇到什么。</li>
+<li>B：他怎样理解这些信息、改变看法，再填写问卷。</li>
+</ul>
+<p>P与E的对应关系确实是当前重点，但不能假定对应做好以后，B就自然像真人。信息接触与回答方式需要并行检查；情绪属性的大规模补充可以后置。</p>
+<p>不要求知道每个居民全部心理活动。先寻找几项可以观测、可以检验的重要联系：消费类别与价格接触、数理能力与概率表达、已有看法与更新幅度。观察不到的部分说明假设，并检查换一种合理假设会不会改变结论。</p>
+<h2>第一阶段：先把现有差距解释清楚</h2>
+<p>主要复用现有数据，不新增模拟调用。</p>
+<ol>
+<li>对照真人和Agent的点预测、十档原始概率、通缩概率及回答分散程度，检查偏差在哪一步出现。</li>
+<li>检查同类人口内部的差异是否丢失，并将跨人差异、个人主观不确定性、重复调用波动分开。</li>
+<li>列出当前实际发给Agent的完整信息，检查单位、时点、重复内容和研究说明是否混入居民视角。</li>
+<li>整理哪些月份已参与调参或被查看；复用并扩展已有真人抽样检查，帮助决定后续人数。</li>
+</ol>
+<p><strong>阶段完成的标志：</strong>可以清楚列出两三个待检验解释，每个解释都有现有证据、尚缺证据以及对应对照；不再笼统地把误差都归为P/E不够丰富。同步清理交付入口和依赖缺口，待审文件仍按原约定处理。</p>
+<h2>第二阶段：小范围比较，找到值得推广的改动</h2>
+<p>建议先在已有两个开发月，每月50—100人，比较三种输入：原版；同样事实用更自然的家庭信息记录表达；保持原版信息但更忠实地还原问卷表达。后二者分别与原版比较，暂不同时修改。实际人数根据第一阶段抽样结果与分组覆盖决定。</p>
+<p>固定同一批人、价格事实、模型和温度0.5。每组做2—3次独立生成，观察结果是否依赖某一次回答；这仍是初步重复检查，不代表已经有充分统计把握。三组、两月、上述候选人数对应600—1800份回答，具体请求数和预算在运行卡中确定。</p>
+<p><strong>阶段完成的标志：</strong>至少一个改动在重复运行中有方向较一致的帮助，主要指标的改善没有伴随明显的分布或Q8恶化。若效果小且波动大，不宣称有效；若两个改动都无帮助，回到解释层，不自动扩大。</p>
+<p>之后再单独研究“不同家庭接触不同信息”和“保留原有看法再更新”。本人篮子、合成篮子、随机错配的意义分别说明；不能把更换表达与更换信息内容混作同一个原因。</p>
+<h2>第三阶段：先扩大时期，检查机制能否迁移</h2>
+<p>保留原版与最有希望的一版，模型先不换。拟选4—6个不用于该版调参的月份，覆盖通胀较低、上升较快、较高以及回落的环境；月份按经济情景和数据完整性确定，不按拟合好坏挑选。已有描述统计用过的时期如实标注，不称全项目从未看过。</p>
+<p>每月100—200人可以作为迁移检查的候选起点，但若抽样检查显示结果太不稳定，须增加人数或改进抽样；这一阶段不负责宣布全国预测已达标。初步扩大时间，不必等到两个开发月被拟合得很好，否则会持续适应这两个月。</p>
+<p><strong>阶段完成的标志：</strong>帮助不仅出现在2021年5、6月，且能说明在哪些时期或人群有效、在哪些情况下失效。观察到失败也要完整保留。重复生成和共同样本评价继续执行。</p>
+<h2>第四阶段：形成能够写入正式报告的验证</h2>
+<p>冻结方案后，争取连续12—24个月；每月300—500名Core是候选规模，最终由抽样精度与分组覆盖决定，必要时进一步增加。Normal只作统计扩展，不计为新的独立证据。换更多模型不是本阶段前置条件。</p>
+<p>分别保留：Core原始结果、Normal扩展结果、若采用的历史信息校准结果。比较持续性、简单更新/人口分布方法、接受同样信息的直接LLM和多Agent方案；历史SCE信息的使用也应登记。</p>
+<p><strong>阶段完成的标志：</strong>总体误差、居民分布和预设人群关系在独立时期经得起比较；主要图表能从研究包重算。A路线若使用当期全国指标作为约束，应验证未用于约束的微观结构；B路线只用预测时点可得资料，单独滚动评价下一期调查。</p>
+<p>12个月是检验季节与一年变化的起点；24个月也不保证覆盖所有经济状态。月份数与人口数解决不同问题：更多月份检验能否跨时期成立，更多人改善当月分布与人群估计。</p>
+<h2>为什么现在不能直接宣称小样有代表性</h2>
+<p>已有检查从5、6月完整SCE调查中重复抽样200次，直接用真人官方派生Q9值汇总。简单随机抽样的“月度加权中位数绝对误差的200次平均”如下：</p>
+<ul>
+<li>每月100人：5月0.560、6月0.559个百分点。</li>
+<li>每月300人：5月0.275、6月0.356个百分点。</li>
+<li>每月500人：5月0.155、6月0.227个百分点。</li>
+</ul>
+<p>这只反映给定调查框内的抽样误差，不包括LLM错误，也不是全国调查自身的抽样不确定性。300/500的误差仍有较大尾部，因此不能宣布这些人数天然足够。它们也不是模拟成绩必须达到的理论下限：额外历史信息或建模可以改变估计，但必须独立验证。</p>
+<p>原结果：<code>outputs/population_precision_20261005T042754Z_64e2388c/summary.json</code>。没有在本轮重复计算全部抽样，只读取封存汇总。</p>
+<h2>是否需要加入行为经济学机制</h2>
+<p>需要检验，不能先假定模型已经具备，也不能先假定所有真人都以同一种方式偏离理性。相同信息下，真人可能因为原有看法、信任和理解不同而产生不同更新。纽约联储实验发现，更新也可能与贝叶斯学习相容，因此“不完全理性”不等于随意扭曲概率。<a href="https://www.newyorkfed.org/research/staff_reports/sr543.html">SR543</a></p>
+<p>建议顺序是：先明确真人中已观测到的规律，再测试当前模型能否呈现；若不能，才比较提示词表达与简单显式规则。参数只用开发资料确定，在其他月份核验。随机加情绪或人为扩大方差不构成机制证据。</p>
+<p>另一个重要区别：前景理论中的概率决策权重描述如何评价有风险的选择，不等于调查者报告的主观概率，不能直接将该权重公式套到Q9十档上。<a href="https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Behavioral_Decision_Theory/Kahneman_Tversky_1979_Prospect_theory.pdf">Kahneman–Tversky原文</a></p>
+<h2>怎样算取得成功</h2>
+<p>ConsumerSim论文v1报告了75个月、三个地区的指数重建，使用MAE、RMSE及相关性；美国代表性MAE为3.45个CCI指数点。该结果包含人口扩展及与上一期真实指标混合的惯性校准。CCI指数点不能换算成SCE的通胀百分点，也不能将其最终效果当作原始LLM的准确率。<a href="https://arxiv.org/html/2606.30395v1">论文表1及§4.6</a></p>
+<p>本项目的期望目标分开设定：</p>
+<ol>
+<li><strong>总体有用：</strong>在相同时间窗口和可比信息下，误差稳定低于有竞争力的简单方法。可把相对MAE下降约10%设为内部投入目标，但它不是学界或赛事及格线；改善是否可靠、机制是否有解释力也同样重要。</li>
+<li><strong>居民结构有用：</strong>整体分布更接近真人，至少几项事先选定的人群关系能在独立时期出现，例如数理能力与个人不确定性、食品支出与预期中心。不能只抬高全国中位数，或为了变分散而随意加噪声。</li>
+<li><strong>机制有证据：</strong>加入某项机制的帮助在重复生成及不同月份仍可见；删掉它或错配信息后的表现与事前假说一致。模拟中的差异不直接证明现实因果。</li>
+<li><strong>结果可复核：</strong>报告中的指标能够从保存回答、固定计分和明确权重重算，费用、模型与数据用途可查。</li>
+</ol>
+<p>已有全国持续性参照在2020-01—2026-08、上月末口径的80月MAE约0.304个百分点。若未来完全可比的窗口仍是0.30，下降10%大约意味着0.27；这只是算例，不是给新窗口预设0.27的合格线，也不能与当前20人的同样本误差直接比较。<a href="SCE_BASELINE_METHODS_AND_LATEST_20261007.md">基线记录</a></p>
+<p>无当期SCE约束的A重建仍需检验总体拟合；有宏观约束的A重建用未参与约束的微观量评价。B以跨月全国指标MAE为主，辅以RMSE、偏高/偏低、分布及分组；相关性只能说明同向变化，不能替代误差。若没有胜过基线，应如实报告局限，不能把工程完成写成经验有效性成功。</p>
+<h2>接下来最先交付什么</h2>
+<p>第一项是现有回答的差距分解，第二项是三组对照的具体输入样例和运行卡。届时给出人数、请求量、费用及验收规则，再进入真实调用。本方案不修改现有运行配置，不启动付费实验；日历安排仍以 <code>ROADMAP.md</code> 为唯一来源。</p></article></main></html>
