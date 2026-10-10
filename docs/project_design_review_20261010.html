@@ -1,0 +1,98 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>水上挽月 · 项目设计复核</title><style>
+:root{color-scheme:light;--bg:#faf9f5;--ink:#182c38;--muted:#52616a;--line:#d4d9db;--accent:#965222}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:auto;padding:38px 28px 70px}h1{font-size:28px;line-height:1.4;margin:16px 0}h2{font-size:22px;line-height:1.5;margin:38px 0 14px}h3{font-size:18px;margin:24px 0 12px}p{margin:14px 0}a{color:#305d77;text-underline-offset:3px}.muted,small{color:var(--muted)}.lead{font-size:19px;max-width:820px}.top{border-bottom:1px solid var(--line);padding-bottom:24px}.flow{display:grid;grid-template-columns:repeat(5,1fr);margin:24px 0;border:1px solid var(--line)}.step{padding:16px;border-right:1px solid var(--line)}.step:last-child{border:0}.step small,.step b,.step span,.step em{display:block}.step b{font-size:18px}.step span{font-size:14px}.step em{font-size:13px;font-style:normal;color:var(--muted);margin-top:12px}.step:nth-child(2),.step:nth-child(3){background:#eee8de}.note{border-left:3px solid var(--accent);padding:4px 18px;margin:24px 0}.columns{display:grid;grid-template-columns:1fr 1fr;gap:32px}table{border-collapse:collapse;width:100%;font-size:15px;margin:20px 0}td,th{border-bottom:1px solid var(--line);text-align:left;vertical-align:top;padding:16px 12px}th{font-size:14px;color:var(--muted)}td:first-child{width:26%}.tablewrap{overflow-x:auto}details{border-top:1px solid var(--line);margin-top:32px;padding-top:16px}summary{font-size:20px;cursor:pointer;font-weight:600}article{max-width:850px;margin:24px auto}article h1{font-size:24px}article li{margin-bottom:8px}article code{font-size:14px;overflow-wrap:anywhere}article a{overflow-wrap:anywhere}nav{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px}footer{border-top:1px solid var(--line);margin-top:35px;padding-top:14px;font-size:13px}.control{font:inherit;padding:7px 16px;border:1px solid var(--line);background:white;cursor:pointer;color:var(--ink)}@media(max-width:750px){main{padding:22px 18px}.flow{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.columns{grid-template-columns:1fr}h1{font-size:24px}td{min-width:170px}}@media print{details article{display:block}summary,button{display:none}main{max-width:none;padding:0}.flow{break-inside:avoid}h2,h3{break-after:avoid}a{color:inherit}body{background:white}}
+</style><main><header class="top"><small>水上挽月 · SocioVerse Challenge 2026 · 2026-10-10设计复核</small><h1>流程已经跑通，居民形成预期的过程还需要被建模和验证</h1><p class="lead">下一阶段的主问题：家庭的价格接触与信念更新，能否解释通胀预期的水平和分歧？LLM 在其中提供了多少额外价值？</p><nav><a href="#mechanism">设计链条</a><a href="#rubric">赛事对照</a><a href="#next">推进顺序</a><a href="project_design_review_20261010.md">完整Markdown</a><button class="control" onclick="document.getElementById('full').open=true;document.getElementById('full').scrollIntoView({behavior:'smooth'})">展开深入分析</button></nav></header>
+<section id="mechanism"><h2>我们最缺的是中间的行为过程</h2><div class="flow"><div class="step"><small>1</small><b>社会环境</b><span>价格、政策、新闻</span><em>已有较多可核查资料</em></div><div class="step"><small>2</small><b>家庭接触</b><span>购物、地区、信息渠道</span><em>主要缺口：谁实际看到什么</em></div><div class="step"><small>3</small><b>信念状态</b><span>旧看法、确信、记忆</span><em>主要缺口：怎样更新</em></div><div class="step"><small>4</small><b>问卷回答</b><span>点预测与十档概率</span><em>需独立检验表达过程</em></div><div class="step"><small>5</small><b>群体结果</b><span>中心、分歧、人群差异</span><em>已有评价，仍缺独立验证</em></div></div><div class="columns"><div><h3>已经有证据</h3><p>同一批真人与Agent比较，回答仍偏低、过度集中；部分差距在原始十档概率中就存在。Normal目前重用Core回答，不能产生缺失的预期类型。</p></div><div><h3>尚待识别原因</h3><p>完整宏观信息是否把居民变成“经过信息干预的人群”？人口标签是否只生成典型答案？研究说明是否削弱体验信息？这些有依据，但还不是已验证的解释。</p></div></div><div class="note"><strong>新发现：</strong>当前居民提示包含“合成篮子不是你的实测购买”等研究说明。需要把来源审计与居民观察分层，并单独检验表达效果；不能将合成经历冒称真实观测。</div></section>
+<section id="rubric"><h2>对照官网：五项权重，不是我们获得的分数</h2><p>官网重视理论、真实数据、独立验证与群体差异；复现工程还有硬门槛。以下是项目缺口与建议。</p><div class="tablewrap"><table><thead><tr><th>官方维度</th><th>当前缺口</th><th>对应交付</th></tr></thead><tbody><tr><td><strong>社会科学价值与问题创新</strong><br><span class="muted">官方权重 25%</span></td><td>研究问题仍偏“复现指数”；需要解释居民为什么分歧。</td><td>固定信息接触与信念更新假说，给出可否定的预期。</td></tr><tr><td><strong>方法与实验设计严谨性</strong><br><span class="muted">官方权重 25%</span></td><td>主要机制缺独立月份、生成波动和信息公平检验。</td><td>同事实表达对照、问卷对照、状态模型与规则基线。</td></tr><tr><td><strong>结果与理论贡献</strong><br><span class="muted">官方权重 20%</span></td><td>已发现偏差，尚未验证稳定有效的改进。</td><td>用独立数据检验中心、分布和预设组间关系。</td></tr><tr><td><strong>可复现性与工程质量</strong><br><span class="muted">官方权重 20%</span></td><td>运行日志完整，但干净提交包验收尚缺。</td><td>审阅待提交依赖，完成自足入口与封存回答复算。</td></tr><tr><td><strong>呈现与拓展潜力</strong><br><span class="muted">官方权重 10%</span></td><td>试验记录多，核心研究故事尚未收束。</td><td>主图围绕问题、机制、对照、适用边界组织。</td></tr></tbody></table></div><p class="muted">来源：<a href="https://socioverse.fudan-disc.com/challenge/">赛事官网</a>，2026-10-10核查。PMI案例启发是“先更新主体状态，再回答问卷”，不是照搬企业数量或经营变量。</p></section>
+<section id="next"><h2>接下来按依赖推进</h2><ol><li><strong>诊断与交付：</strong>复算原始概率、组内分歧和拟合误差；审查未提交运行依赖，准备能独立复算的研究包。</li><li><strong>机制对照：</strong>先固定事实检验表达与问卷，再加入接触分配、信念状态；每次明确只检验哪一个问题。</li><li><strong>独立验证：</strong>记录哪些月份已被用过，冻结后做跨时期验证和同信息基线；再推进路线B。</li></ol><p>保留无当期SCE约束的模拟，同时另设明确宏观约束的A路线重建，用未参与约束的微观结构验证。暂缓继续扩大模型列表和人口规模。</p></section>
+<details id="full"><summary>完整设计分析：证据、理论、修改点与验收</summary><article><h1 id="_1">水上挽月：项目设计复核与下一阶段主线</h1>
+<p>2026-10-10。依据已归档实验、实际提示构造代码、评价协议及当日赛事官网复核。本文是设计审查与建议，不是新实验结果，也不改动既有运行配置。浏览器阅读版：<a href="project_design_review_20261010.html">project_design_review_20261010.html</a>。</p>
+<h2 id="1">1. 最重要的判断</h2>
+<p><strong>工程已经能执行一场模拟调查；但居民形成预期的过程，仍大部分交给同一个 LLM 自行补全。</strong>我们拥有人口标签和经济资料，却还没有充分规定并验证：这个家庭实际接触什么、原来相信什么、怎样更新看法、怎样把看法填写成概率。</p>
+<p>因此，下一阶段应把主问题收敛为：<strong>家庭的价格接触与信念更新，能否解释通胀预期的总体水平和居民分歧？LLM 在其中提供了多少额外价值？</strong>这保留原来的 SCE 方向，也让每个新增模块有可以检验的作用。</p>
+<p>这是一项结构性诊断。我们已经确认若干设计缺口，但尚未识别各缺口造成了多少误差。不能把“模型像专家”“宏观信息太多”或“缺少篮子”直接写成已证实的原因。</p>
+<h2 id="2">2. 哪些事实已经能排除过于简单的解释</h2>
+<ul>
+<li><strong>不全是人口抽样问题。</strong>新版300人两月实验中，对同一批真人与 Agent 做同口径比较，Q9中心仍偏低；5月真人/模拟跨人IQR约4.72/0.80个百分点，6月约4.78/1.08。即使暂不讨论全国代表性，分歧也明显不足。<a href="SCE_PE_DIAGNOSTIC_20261008.md">输入与结果诊断</a></li>
+<li><strong>不全是计分器问题。</strong>旧2021年1月小样的真人通缩总概率中位数为0%，DeepSeek为37.5%、Qwen为25%。差别已经出现在十档原始概率中。<a href="SCE_PE_DIAGNOSTIC_20261008.md">同上，第1节</a></li>
+<li><strong>增加人数不能自动产生缺失的行为。</strong>Normal 目前重用 Core 的完整回答，只改变这些回答的分配权重，不能创造 Core 中不存在的预期类型。<a href="CORE_NORMAL_LLM_RECEIPT_20261005.md">主实验</a></li>
+<li><strong>篮子确有信息，但解释力有限。</strong>SCE本人支出加入固定统计模型后，2022—2024的Q9个人误差改善约0.039—0.063个百分点；Q8没有改善。这支持继续研究，不支持把篮子视为充分解法。<a href="SCE_NATIVE_SPENDING_20261009.md">原生支出研究</a></li>
+<li><strong>近期价格有迹象，证据还弱。</strong>最新20人两月实验中，补全国汽油和乳制品报价使Q9中心误差略降，但重采样区间跨0，Q8未同步改善，地区匹配也未稳定胜过随机分配。<a href="PRICE_CONTACT_EXPERIMENT_RECEIPT_20261010.md">实验记录</a></li>
+<li><strong>模型替换尚未解决问题。</strong>旧输入下Qwen全年小样的中心误差略低，但分布和方向没有同步改善；且其部分提示继承了DeepSeek上期回答，不能当作两套独立动态轨迹。<a href="SCE_QWEN_REUSE_RESULT_20261008.md">模型比较</a>、<a href="SCE_PE_DIAGNOSTIC_20261008.md">记忆更正</a></li>
+</ul>
+<p>不同试验的人口、信息和部分参数不同，以上是各自内部结论，不能横向按误差排成机制排行榜。</p>
+<h2 id="3">3. 设计链条中，究竟缺在哪里</h2>
+<p>建议把 P/E/B 展开为：</p>
+<p><strong>社会中发生的价格与新闻 → 家庭实际接触 → 个人理解与已有看法 → 信念更新 → Q8/Q9作答 → 加权汇总。</strong></p>
+<p>这六步中，现有系统对资料收集、问卷格式和汇总的控制较强，对中间三步的控制与验证较弱。</p>
+<h3 id="31-population">3.1 Population：标签齐全，不等于生成了居民分布</h3>
+<p>同年龄、同收入、同学历的两个人，也可能有不同经历、信任程度和原有预期。目前一句人口描述通常对应一次 LLM 回答；这没有保证我们在模拟“这一类家庭可能出现的各种回答”。</p>
+<p>从统计上说，如果模型趋向给出某类人的典型答案，就容易保留组间差别、丢掉组内差别。总分歧包含这两部分；增加更多相似画像，不能补回缺失的组内变化。现有低分歧与这一解释相容，但尚未证明 LLM 确实在输出条件均值。</p>
+<p><strong>需要修改：</strong>把可观测人口属性与未观测的信念、接触、理解差异分开。先用历史真人数据测量组内分散、同人跨月持续性和问卷圆整模式，再决定哪些差异需要作为状态或条件分布来模拟。数据不足时，给出多组有依据的假设，不把人为加噪声造成的变宽当作成功。</p>
+<p>Numeracy 不应仅被理解为让模型“算错一点”。它可能关联概率表达、理解、信心和信息获取；这些作用需要分别验证。心理属性也不宜按独立边际随意拼接，否则可能生成现实中很少见的组合。</p>
+<h3 id="32-environment">3.2 Environment：公开资料被当成了每个人都知道的资料</h3>
+<p>主提示给每个人完整官方统计、滚动趋势和新闻。最新价格试验仍保留这份宏观背景，只在问卷前追加篮子与零售价格。它检验了“追加信息”，尚未检验更接近居民日常生活的信息形成过程。</p>
+<p>纽约联储随机信息实验发现，提供客观信息会使预期分布向中心收敛；更新幅度也与原先看法及其精确程度有关。因此，给所有人同一份完整统计资料，可能相当于给所有人做了一次统一信息干预。<strong>这是有文献依据的项目假设，尚未确认是本项目同质化的原因。</strong><a href="https://www.newyorkfed.org/research/staff_reports/sr543.html">Armantier等，SR543</a></p>
+<p><strong>需要修改：</strong>保留完整 E 作为社会背景库，再单独定义每个家庭实际接触的内容。地区、购物角色、消费类别和历史接触可用于构造这个视图；同时保留一定公共信息，不再使用“一个人只看一个商品”的过强遮罩。</p>
+<p>第一项对照应先保持事实和信息量接近，只改变统计简报与生活记录的呈现；随后再检验选择性接触。否则同时删宏观表、加篮子、改新闻，无法判断是哪一步起作用。</p>
+<h3 id="33">3.3 消费篮子到价格体验之间，仍有测量空白</h3>
+<p>支出份额回答“钱花在哪里”；购买频率回答“多久接触一次”；注意力回答“哪些变化被记住”。三者没有固定的一一对应关系。房租占比高但合同更新慢，日用品常买但未必记住单价，汽油地区均价也不代表每个人都会加油。</p>
+<p>购物微观研究支持接触价格变化的频率与幅度具有解释作用，但没有给出可以直接移植到本项目的通用注意力系数。<a href="https://www.nber.org/papers/w26237">D’Acunto等</a></p>
+<p>当前CE篮子是条件匹配代理；SCE本人篮子更接近受访者，但仍没有每次交易与注意力。USDA三项乳制品广告价存在促销和门店构成变化，不能代表完整食品生活成本。地区匹配目前只改变汽油，不涉及水电燃气。</p>
+<p><strong>需要填补：</strong>用CE Diary估计类别购买发生率或频率的条件分布，明确短日记窗口、家庭记录与个人注意力之间的差距；用本人SCE篮子检验关联。没有直接测量的接触情景标为合成，并检查结论对不同合理分配方式是否稳健。不能因为期望提高预期，就只选涨价商品。</p>
+<h3 id="34-behavior">3.4 Behavior：缺少可检验的信念起点与更新过程</h3>
+<p>最新实验每月冷启动，隔离了上期回答，但同时没有明确保留家庭此前的看法。旧版则直接把上期点预测放进提示。前者适合横截面诊断，后者只是精确答案记忆；两者都不足以证明形成了合理的信念动态。</p>
+<p>经验学习与新闻传播研究支持既有经历和渐进更新，但不要求居民准确记得上月填写的数字。<a href="https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf">Malmendier–Nagel</a>、<a href="https://www.econ2.jhu.edu/RePEc/papers/wp477_org.pdf">Carroll</a></p>
+<p><strong>建议候选：</strong>给家庭维护“此前的大致看法、确信程度、已接触信息及时间”等状态。先做一个简单、可估计的更新规则作为基线，再检验LLM是否能改善对新闻的理解或非线性反应。初始化与更新参数只用声明的训练资料；B线只能用预测时点已可得的历史数据。当前真人答案若作为初始化，必须另列为条件重建，不能再当独立预测成绩。</p>
+<p>这里最有价值的输出是“什么信息令哪些家庭更新多少、这种差异能否在其他时期成立”。不要求每一步都让LLM自由发挥，也不预设混合模型一定优于纯LLM。</p>
+<h3 id="35">3.5 问卷作答也是一个行为过程</h3>
+<p>Q8点预测、个人Q9密度宽度、不同人的Q9中心分歧、同一提示重复生成的波动，是四种不同对象。温度0.5带来的输出变化不能直接当作居民不确定性；概率曲线更宽也不能解决所有居民中心相同的问题。</p>
+<p>现有提示把官方方向与幅度问法压缩为带符号数字，并要求一次输出完整JSON。数值含义可对应，但作答过程不完全相同。问卷措辞的随机实验说明，表达方式本身可能改变预期水平和分歧。<a href="https://www.newyorkfed.org/research/staff_reports/sr443.html">纽约联储SR443</a></p>
+<p><strong>需要先做的低成本检查：</strong>利用现有原始回答比较通缩总概率、零概率档数、整数圆整、尾部质量、Q8与Q9中心差距；按拟合分支检查计分误差。真实与模拟使用同一个近似计分器，有助于公平，但若两者落入不同拟合形态，误差不会自动抵消。</p>
+<p>随后在固定信息和人口下，比较忠实问卷表达与现有压缩表达；不强迫Q8等于Q9均值，也不通过事后挪动概率把结果调到真人附近。</p>
+<h3 id="36">3.6 一项新发现：研究说明进入了居民的观察文本</h3>
+<p>当前价格提示直接告诉模型：消费份额是合成分配、不是你的实测购买；价格只是体验代理；不规定注意力系数。它们是诚实的方法说明，但会使扮演居民的模型同时承担研究者的判断任务。模型可能因此降低这些信息的可信度，而完整官方统计显得更权威；这一影响尚未检验。</p>
+<p><strong>建议修改信息分层：</strong>来源、合成方法和局限完整保留在研究台账；居民视图用一致的场景语义表达他可以观察到什么、哪些只是市场均价、哪些尚不确定。不能把合成交易伪装成真实调查记录，也不能仅删除不利提示来追求更好结果。应将这种表达变更作为单独对照。</p>
+<h2 id="4">4. 研究设计上更大的空白</h2>
+<h3 id="a">A路线的潜力还没有充分使用</h3>
+<p>目前多数A实验虽然允许回顾资料，实际目标仍接近“不给当期SCE结果，尽量直接猜准调查”。我们还没有充分开展“已知宏观约束时，能否重建未给出的微观结构”。</p>
+<p>建议保留两个明确任务：无当期SCE约束的模拟，检验总体与分布；另做声明全国中位数约束的重建，检验没有用于约束的组间差异、尾部、个人不确定性及跨期联系。后者同样需要有效的统计重建基线。约束满足不是独立成功证据，宏观拟合也不能唯一识别真实心理机制。<a href="A_B_RESEARCH_DESIGN.md">已有两线定义</a>、<a href="SCE_EVALUATION_CONTRACT_V1.md">评价契约</a></p>
+<h3 id="agent">对照要回答“多Agent究竟增加了什么”</h3>
+<p>建议最低保留四类：最后已公布SCE值的持续性参照；历史人口条件分布/简单信念更新；接受同批信息的直接LLM预测或分布生成；有个人状态的多Agent模拟。复杂回归模型不是当前前置条件。</p>
+<p>资料应明确分为公开结构化信息、新闻、历史SCE标签，列出每种方法实际用到哪一层。持续性可以是低信息参照，但不能单凭超过它就声称Agent机制更好。尤其要检查：基线用了历史SCE，Agent是否也获得同等可用历史信息；公平比较不能只检查CPI和新闻。</p>
+<h3 id="_2">反复观察两个开发月，会积累选择偏差</h3>
+<p>继续在5、6月挑机制和解释，会逐渐适应该阶段。最新机制没有全年验证；旧全年不能替代。已用于计分审计、人口统计或篮子研究的月份，也不能笼统称从未看过。</p>
+<p>建议建立数据使用台账，区分“看过标签”“用于方法选择”“仅核验格式”。冻结机制后选跨经济状态的月份复查，再做连续窗口测试；具体月份在台账审查后确定。误差要报告按月结果，不能只报有利平均值。</p>
+<p>小样试验至少区分人口抽样、合成画像分配与LLM重复生成三种波动。单次回答后的受访者bootstrap只覆盖其中一部分。Normal复制不能增加独立样本量；同家庭跨月与同月共同冲击也需要考虑。</p>
+<h2 id="5">5. 工程审查：运行可靠与交付可复现之间还有距离</h2>
+<p>已有优点是实际提示留存、输入白名单、来源日期、原始回答、调用费用和运行快照。它们让本次能够追查记忆、单位和口径问题。</p>
+<p>以下缺口有文件与代码证据：</p>
+<ol>
+<li><strong>入口文档过时。</strong>根README仍写尚无真实模拟，并保留旧提案日期；研究协议正文还有计分未验收等旧状态。顶部更正并未完全消除正文冲突。</li>
+<li><strong>运行依赖尚未全部进入可发布版本。</strong>工作区计分器导入的 <code>beta_fit_kernel.py</code> 仍属于用户待审的未跟踪批次，实际运行也包含未提交代码快照。不能因此断言旧Git版本必然无法导入，但当前运行版本无法仅靠该提交完整恢复。</li>
+<li><strong>本机与相邻目录依赖仍在。</strong>study README使用本机Conda绝对路径，主入口默认依赖相邻 <code>socioverse2_repo</code>；study内尚无 <code>run.py</code>，最终ZIP干净解压验收也未完成。根脚本可运行不等于最终包已具备自足入口。</li>
+<li><strong>研究说明与最终证据仍分散。</strong>大量任务板历史、ignored输出与单独记录需要收束为“配置→输入→回答→图表”的提交清单。只推代码不能备份全部轨迹。</li>
+</ol>
+<p>应先审阅受保护批次，再完成明确依赖版本的研究包，用没有现有输出缓存的环境检查。分别验证规则干跑、保存回答的统计重算和真实LLM重跑；前两项成功不能冒充第三项。此次只标记缺口，不改动15份待审文件。</p>
+<h2 id="6-socioverse">6. 对照SocioVerse评价标准</h2>
+<p>2026-10-10已核查<a href="https://socioverse.fudan-disc.com/challenge/">赛事官网</a>及其动态内容。官方权重为社会科学价值25%、方法严谨性25%、结果贡献20%、复现工程20%、呈现拓展10%；复现不合格是硬门槛。以下是本项目判断，不是评委给出的分数。</p>
+<p><strong>社会科学价值与问题创新，25%。</strong>现实问题明确，但“用Agent复现一个指数”尚不足以形成清晰贡献。建议围绕信息接触、信念更新及居民分歧提出可被否定的研究问题，解释为什么同样宏观环境会产生不同预期。</p>
+<p><strong>方法与实验设计严谨性，25%。</strong>已有白名单和配对消融；主要空白是行为中间过程、独立评价、生成不确定性与信息公平。交付物应是一组少量但能区分竞争解释的实验，而不是更多不可比较的提示词版本。</p>
+<p><strong>结果与理论贡献，20%。</strong>目前确认了低分歧与整体偏差，尚无稳定有效的改进。需要将“何时有效、对谁有效、为什么可能有效”落实到未参与调参的观测。严谨的失败边界可以有价值，但现有小样阴性结果还不能直接当成理论贡献。</p>
+<p><strong>可复现性与工程质量，20%。</strong>日志基础较好，完整交付验收尚缺。优先完成研究包、依赖、资料获取/分享边界、一键入口和成本说明，验收从提交包重算主要图表。</p>
+<p><strong>呈现与拓展潜力，10%。</strong>已有图解和提案，但研究故事被试验版本淹没。最终报告应串起问题、理论、P/E/B、关键对照、主要结果和边界，并配实际运行演示。不要把工程日志直接当论文。</p>
+<p>官网案例的可借鉴点也更具体：PMI案例先更新企业经营状态再生成问卷，提示我们建立家庭信念状态；消费者信心案例强调差异化反应；经典ABM案例在相同观察与动作空间替换行为机制，支持我们公平比较规则与LLM；居住隔离案例用外部格局验证微观选择。案例介绍不等于这些机制已在SCE上有效，也不应照搬其中人数。</p>
+<p>赛事重视个体行为如何形成群体结果。我们可以先做经验可靠的家庭调查模拟，不必为迎合“社会互动”强行增加聊天网络；若将来研究信息扩散，需有传播假设和额外验证。目前不应宣称内生形成CPI、消费均衡或政策因果效应。</p>
+<h2 id="7">7. 我建议的推进顺序与验收结果</h2>
+<h3 id="_3">第一优先：把问题分解清楚，同时处理交付门槛</h3>
+<p>复用现有回答做问卷/概率诊断；整理输入、生成、计分与加权各层误差。同步审查未提交依赖与过时入口，准备最小自足研究包。</p>
+<p><strong>产出：</strong>一份误差分解结果和一份可复现缺口清单。应能回答“主要偏差在原始回答还是拟合后”“组内差异缺多少”“哪些主图能由提交包重算”。这一步以本地复算为主。</p>
+<h3 id="_4">第二优先：一组能区分解释的机制对照</h3>
+<p>先固定P、价格事实、模型与题目，单独比较信息呈现；再单独比较忠实问卷表达。随后才引入有依据的接触分配与信念状态，给出匹配/置换和规则/LLM对照。不要把全部改变塞入一个新版本。</p>
+<p><strong>产出：</strong>能够判断改善来自信息内容、表达、状态更新还是概率回答方式的证据。评价同时要求中心、分布和预设组间关系；仅把回答变宽或统一抬高不算通过。小样先检验方向与可行性，正式效应需重复生成及更广时期复查。</p>
+<h3 id="b">第三优先：用独立数据证明有用，再扩展路线B</h3>
+<p>完成数据使用台账后冻结机制与对照，选择独立时期，报告跨月MAE/RMSE、分布误差、组间关系和不确定性。同步开展明确宏观约束的A重建参照；B的输入和训练标签另外按时点验收。</p>
+<p><strong>产出：</strong>一项经独立验证的贡献，或明确的失效边界。若个人状态方法仍不能稳定优于统计基线，应调整论文主张为对LLM家庭调查模拟局限的经验研究，不能继续仅靠加变量追齐曲线。</p>
+<p>暂缓大规模扩Core/Normal、更多模型搜索、无依据的心理属性堆叠、复杂社会网络与企业价格反馈。这些仍可后续研究，当前无法替代行为机制与独立验证。</p>
+<h2 id="8">8. 证据范围与记录</h2>
+<p>本次阅读当前源码与封存统计，核对官网及经济学原始研究页面；没有重新跑全部历史测试、没有新付费模拟，也没有宣称完成干净环境复现。已确认事实、理论动机和候选修改分别表达。</p>
+<p>来源及文件哈希：<a href="sources/project_design_review_20261010.json">复核台账</a>。原官网网页及脚本保存在本地 <code>data/raw/project_review/20261010/</code>，未提交完整网页。现状入口：<a href="project_status.md">project_status.md</a>。日程仍统一由 <a href="ROADMAP.md">ROADMAP.md</a>管理，本报告不给旧日程追加新的完成日期。</p></article></details><footer>本轮为文档、源码与封存结果审查，没有新增付费模拟。未完成干净环境复现；理论支持不等于已识别现实因果。<a href="sources/project_design_review_20261010.json">来源与文件哈希</a> · <a href="project_status.md">项目现状总览</a></footer></main></html>

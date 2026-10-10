@@ -1,0 +1,157 @@
+{
+  "as_of": "2026-10-10",
+  "kind": "design_review_not_new_experiment",
+  "commit_before_review": "b1b15be8c8a6df6e83dd08273e7ad4ab1d40cf59",
+  "official": {
+    "page_url": "https://socioverse.fudan-disc.com/challenge/",
+    "dynamic_url": "https://socioverse.fudan-disc.com/challenge/challenge.js?v=20261005a",
+    "retrieved_at_utc": "2026-10-10T10:11:03.735792+00:00",
+    "local_snapshot_hashes": {
+      "html": "7d4281341a9a9f50fe8e1fb9465d9e120d828f642e0cab6184886cf7c9be1091",
+      "js": "32803744f718354547b2b24cac3bf887a4453473efe96f69ab37436abd7691c9"
+    },
+    "weights": [
+      {
+        "name": "社会科学价值与问题创新",
+        "weight": 25
+      },
+      {
+        "name": "方法与实验设计严谨性",
+        "weight": 25
+      },
+      {
+        "name": "结果与理论贡献",
+        "weight": 20
+      },
+      {
+        "name": "可复现性与工程质量",
+        "weight": 20
+      },
+      {
+        "name": "呈现与拓展潜力",
+        "weight": 10
+      }
+    ],
+    "track": "A historical reconstruction and forecasting",
+    "reproducibility_gate": true,
+    "requirements_paraphrased": {
+      "study_layout": true,
+      "report_pages": "4–8 including figures",
+      "video_minutes_max": 5,
+      "cost_model_seed_declaration": true,
+      "dry_run_vs_real_llm_distinction": true
+    }
+  },
+  "literature": [
+    {
+      "url": "https://www.newyorkfed.org/research/staff_reports/sr543.html",
+      "basis": "Official research abstract: information intervention and heterogeneous updating."
+    },
+    {
+      "url": "https://www.nber.org/papers/w26237",
+      "basis": "Primary research abstract retrieved via search; direct page blocked 403; existing project literature also reviewed."
+    },
+    {
+      "url": "https://www.newyorkfed.org/research/staff_reports/sr443.html",
+      "basis": "Official research abstract: questionnaire wording."
+    },
+    {
+      "url": "https://www.econ2.jhu.edu/RePEc/papers/wp477_org.pdf",
+      "basis": "Author paper search extract and archived project synthesis: news and gradual updating."
+    },
+    {
+      "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_4.pdf",
+      "basis": "Author paper search extract and archived project synthesis: experience learning."
+    }
+  ],
+  "source_files_sha256": {
+    "docs/SCE_PE_DIAGNOSTIC_20261008.md": "612e2b7ae05852074c821ee777b186a6655880ab633dc3b7af4e4b336bb9c9fa",
+    "docs/CORE_NORMAL_LLM_RECEIPT_20261005.md": "b8bab87a538cc6157b424b591d4e19e6a88ee5d7a0342822c156e0e550d16cda",
+    "docs/PRICE_CONTACT_EXPERIMENT_RECEIPT_20261010.md": "a154308bb4af68070703a254e2a681937deddbf2283a551acd97bb0186507dde",
+    "docs/SCE_NATIVE_SPENDING_20261009.md": "199fcde78e0cf39a5151af6c15103673616a9742c3f6177a3866d539e84d944c",
+    "docs/SCE_EVALUATION_CONTRACT_V1.md": "ed2c902cf8718b28284d263575d71f9c4f4d9924997bf103f963b04da8aee445",
+    "docs/A_B_RESEARCH_DESIGN.md": "a27df6c232b7d0bc16ad26ec8d135dfc8d94abfa4d16ace064c9f97ebe78f4dc",
+    "docs/INFORMATION_EXPOSURE_RECEIPT_20261006.md": "74cef7a437b291ef35e89690695b86b5d5ca3166bfd5d7b4709cc843ea2cc6f2",
+    "docs/SCE_QWEN_REUSE_RESULT_20261008.md": "e1e0f0f60f19e5ce7e996d77de2383136389eb323af0d699ab5875e66a59b22a",
+    "studies/sce_inflation_expectations/model.py": "29cddd98394b0d56ea1f857e8f3849652a739bd9315947995210db743792650a",
+    "studies/sce_inflation_expectations/price_contact.py": "39ce15891f3f06dc1b9e889161d2be397504e5a517d42909640471016eaf4319",
+    "studies/sce_inflation_expectations/core_normal.py": "f55274b960fdf52601d378e4e8fe5ba66de5fa93b787c7914a67d4e50ffa6e31",
+    "scripts/run_sce_local.py": "15d302dc4e4f612c5bbaa05fd64f21c7a9f799c57184b8edbaf0c718216f071f",
+    "README.md": "3709baa4bc063ee8fa54bcc115d36aeba1e58e98e42273b12432787f33a1e664",
+    "studies/sce_inflation_expectations/README.md": "0cf55265e12ee7ed0139b32176f43886a9e5a9a3d9141b65a70e12f7c8ed5fa0",
+    "docs/RESEARCH_PROTOCOL.md": "23f58d3d2e15de8adc372f5d2059e6259891fd8c9f02ae29914ea5cd928cbf9a",
+    "submission/README.md": "e12def77a4be0bf63777ebfe34a9b7303b422ccff1e6242d0d1f07b80014d73e",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py": "5d7f616f56a820ad29be871b4892e5b3f67f528792e1eb8b90862b8c794ba7e3",
+    "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+  },
+  "latest_trial_summary_sha256": "1623b7c327d13f864ad30ead4266bf176b95b39cd36e9517fb3f0938cd01f53d",
+  "latest_trial_subset": {
+    "202105": {
+      "selected_n": 20,
+      "common_valid_n": 20,
+      "arms": {
+        "baseline": {
+          "median_absolute_error_pp": 0.7925928157528088,
+          "distribution_W1_pp": 4.03577549732429
+        },
+        "national": {
+          "median_absolute_error_pp": 0.753818187218569,
+          "distribution_W1_pp": 3.845229884669371
+        },
+        "matched": {
+          "median_absolute_error_pp": 0.6880002625419466,
+          "distribution_W1_pp": 3.8808026533612208
+        },
+        "shuffled": {
+          "median_absolute_error_pp": 0.822455899721295,
+          "distribution_W1_pp": 3.9742568721119556
+        }
+      }
+    },
+    "202106": {
+      "selected_n": 20,
+      "common_valid_n": 19,
+      "arms": {
+        "baseline": {
+          "median_absolute_error_pp": 2.800624882655134,
+          "distribution_W1_pp": 3.6218605047266594
+        },
+        "national": {
+          "median_absolute_error_pp": 2.3494699067874683,
+          "distribution_W1_pp": 3.3032014325708126
+        },
+        "matched": {
+          "median_absolute_error_pp": 2.0415213806763397,
+          "distribution_W1_pp": 3.4227022391118087
+        },
+        "shuffled": {
+          "median_absolute_error_pp": 2.0591978392027936,
+          "distribution_W1_pp": 3.3677258090118882
+        }
+      }
+    }
+  },
+  "engineering_checks": {
+    "study_run_py_exists": false,
+    "current_beta_kernel_tracked": false,
+    "clean_checkout_executed_this_review": false
+  },
+  "claims": {
+    "confirmed": [
+      "Same-sample low dispersion",
+      "Large raw deflation probability in archived early-2021 runs",
+      "Normal resamples existing Core responses",
+      "Current price prompt contains research caveats",
+      "Current latest mechanism trials cold-start",
+      "Uncommitted runtime dependencies and outdated entry docs"
+    ],
+    "hypotheses_not_identified": [
+      "Shared full information acts like an information treatment",
+      "LLM answers cluster around a typical conditional response",
+      "Research caveats discount experience evidence",
+      "Explicit belief state may improve fit"
+    ]
+  },
+  "new_paid_calls": 0,
+  "runtime_config_changes": false
+}
