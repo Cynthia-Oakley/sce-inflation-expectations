@@ -1,0 +1,157 @@
+{
+  "reviewed_on": "2026-10-11",
+  "stage": "offline_prepared_not_run",
+  "current_output": "outputs/sce_belief_preparation_20261011_v3",
+  "source_hashes": {
+    "docs/literature/sce/belief_proxies/fed_confidence_candidate_2021.json": "ce4964ee3bdbbc69d37b6723ce0dadd51c2cd0a3d19cfc78d119467f6b9d19b0",
+    "data/raw/belief_proxies/20261010/gallup_fed_confidence_20210426.pdf": "a1d12f54a22ea66d0886a9da302942dda2610c7ebeb9a82fbbdbcbc1f63032ef",
+    "studies/sce_inflation_expectations/belief_trial_preparation.py": "51d83a5cce7061aaa2fee9499271e26b78f88ef784cfc91174379a69c5b884a6",
+    "scripts/prepare_sce_belief_trial.py": "3bc66b554c87e370ea840aef024a2e370e0d7136811f5fbb87343a86083a791d",
+    "scripts/build_nyt_events.py": "4f56b4dfe7524d51894129b2cf22da1bfb800afec5e243709238599248cba55b",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/population_effective.json": "aa8e132d351061d8d9a3c28f81cb9dbb0df1c5d1b964b8da72a4760b7692e676",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/environment_effective.json": "ae4449f336e661e6698dd1a8e626ab6a124e2ed421cc0423fb853c3eb5114710",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/llm_calls.jsonl": "038ac18e759b1fe294e510de56d12f9cacbf668da82ec51cd5d5988f642d3ef2",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/population_effective.json": "764987249c9099bcb8d7489f11ce739e99e25b643c363d739d3e3e0e391417e4",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/environment_effective.json": "0dc7f1307328c9cf7c4ead0d359bdcdd7ee0425178c5740c7864b1460f19c2e2",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/llm_calls.jsonl": "fda70ea69b4fb33a4f8d3626dfbae03543696a4cabd03c199f73b120709eb8d8"
+  },
+  "months": {
+    "202105": {
+      "target": {
+        "target_month": "2021-05",
+        "as_of": "2021-05-12T23:59:59-04:00"
+      },
+      "source_n": 300,
+      "education": {
+        "college": {
+          "source_n": 177,
+          "selected_n": 20
+        },
+        "some_college": {
+          "source_n": 94,
+          "selected_n": 20
+        },
+        "high_school": {
+          "source_n": 28,
+          "selected_n": 20
+        }
+      },
+      "unmapped_education_n": 1,
+      "selected_n": 60,
+      "conditioned_category_counts": {
+        "fair_amount": 33,
+        "great_deal": 5,
+        "only_a_little": 8,
+        "dont_know_or_refused": 6,
+        "almost_none": 8
+      },
+      "shuffle_same_category_n": 18,
+      "full_source_category_counts": {
+        "only_a_little": 42,
+        "dont_know_or_refused": 26,
+        "fair_amount": 152,
+        "almost_none": 42,
+        "great_deal": 37,
+        "null": 1
+      },
+      "news_screen": {
+        "event_count": 30,
+        "lexical_counts": {
+          "Fed_or_monetary_policy_mention": 7,
+          "possible_temporary_or_easing_language": 6,
+          "possible_price_or_supply_pressure_language": 19
+        },
+        "flagged_events": 2,
+        "candidate_duplicate_pairs": [
+          {
+            "left": "932ac48feac3fd64",
+            "right": "ae2d148ad2582c6b",
+            "title_token_jaccard": 0.75,
+            "status": "candidate_duplicate_not_deduplicated"
+          }
+        ]
+      }
+    },
+    "202106": {
+      "target": {
+        "target_month": "2021-06",
+        "as_of": "2021-06-10T23:59:59-04:00"
+      },
+      "source_n": 300,
+      "education": {
+        "college": {
+          "source_n": 172,
+          "selected_n": 20
+        },
+        "some_college": {
+          "source_n": 86,
+          "selected_n": 20
+        },
+        "high_school": {
+          "source_n": 41,
+          "selected_n": 20
+        }
+      },
+      "unmapped_education_n": 1,
+      "selected_n": 60,
+      "conditioned_category_counts": {
+        "fair_amount": 30,
+        "only_a_little": 6,
+        "almost_none": 11,
+        "great_deal": 7,
+        "dont_know_or_refused": 6
+      },
+      "shuffle_same_category_n": 26,
+      "full_source_category_counts": {
+        "only_a_little": 46,
+        "fair_amount": 149,
+        "great_deal": 38,
+        "almost_none": 38,
+        "dont_know_or_refused": 28,
+        "null": 1
+      },
+      "news_screen": {
+        "event_count": 30,
+        "lexical_counts": {
+          "Fed_or_monetary_policy_mention": 4,
+          "possible_temporary_or_easing_language": 2,
+          "possible_price_or_supply_pressure_language": 14
+        },
+        "flagged_events": 3,
+        "candidate_duplicate_pairs": []
+      }
+    }
+  },
+  "cross_month_assignment_check": {
+    "same_source_household": 243,
+    "changed_education": 0,
+    "same_education_changed_label": 0
+  },
+  "acceptance": {
+    "rows": 360,
+    "cases": 120,
+    "all_three_arms": true,
+    "questionnaire_identical": true,
+    "no_source_ids": true,
+    "source_hashes_valid": true,
+    "candidate_counts": {
+      "202105": {
+        "original": 30,
+        "candidate": 29
+      },
+      "202106": {
+        "original": 30,
+        "candidate": 29
+      }
+    },
+    "protected_files_unchanged": true
+  },
+  "new_llm_calls": 0,
+  "new_mcp_calls": 0,
+  "new_api_cost_usd": 0,
+  "B_eligible": false,
+  "runtime_provider_registered": false,
+  "protected_files_unchanged": true,
+  "unit_tests_passed": 6,
+  "scope": "One synthetic Fed-chair economic-confidence label; no government-confidence, TIPS or population persistence allocation; old P/E/questions/config unchanged."
+}
