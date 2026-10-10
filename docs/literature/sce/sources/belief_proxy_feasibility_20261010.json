@@ -1,0 +1,211 @@
+{
+  "checked_at": "2026-10-10",
+  "work": "belief proxy feasibility research and offline descriptive audit",
+  "real_llm_calls": 0,
+  "mcp_calls": 0,
+  "source_notes": [
+    {
+      "id": "sce_sr1037",
+      "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr1037.pdf",
+      "verified_scope": "2023-11 revision; exact questions Appendix B/C, aggregate results; no public individual special-survey file located"
+    },
+    {
+      "id": "sce_special2023",
+      "url": "https://libertystreeteconomics.newyorkfed.org/2023/08/consumers-perspectives-on-the-recent-movements-in-inflation-expectations/",
+      "verified_scope": "2023-08-17 article; June 7-20 special survey, 2155 former panelists; chart workbook aggregate only"
+    },
+    {
+      "id": "sce_faq",
+      "url": "https://www.newyorkfed.org/microeconomics/sce/sce-faq",
+      "verified_scope": "core 9-month lag; public policy 18-month lag; horizon wording"
+    },
+    {
+      "id": "sce_policy",
+      "url": "https://www.newyorkfed.org/microeconomics/sce/public-policy",
+      "verified_scope": "every four months; questionnaire policy probabilities and household impacts, not Fed efficacy scale"
+    },
+    {
+      "id": "gallup2021",
+      "url": "https://news.gallup.com/poll/348959/economic-confidence-positive-first-time-pandemic.aspx",
+      "verified_scope": "2021-04-26; exact construct, dated national distribution and linked PDF cross-tabs"
+    },
+    {
+      "id": "gallup2024",
+      "url": "https://news.gallup.com/file/poll/644756/2024_05_06%20Economic%20Leaders.pdf",
+      "verified_scope": "dated 2024 public questionnaire and separate demographic cross-tabs, not individual joint data"
+    },
+    {
+      "id": "anes2020",
+      "url": "https://electionstudies.org/data-center/2020-time-series-study/",
+      "verified_scope": "public data formats, sample universe and current 2022-02-10 data version; raw download not obtained"
+    },
+    {
+      "id": "anes2020_codebook",
+      "url": "https://electionstudies.org/anes_timeseries_2020_userguidecodebook_accessible_html/",
+      "verified_scope": "web-read V201233 government trust, V201231x party, V201507x age, V201511x education, V201617x family income, V203003 region; final weights replace preliminary weights"
+    },
+    {
+      "id": "anes_releases",
+      "url": "https://electionstudies.org/updates-announcements/",
+      "verified_scope": "preliminary pre-election 2021-02-11; preliminary combined 2021-03-24; full 2021-07-19"
+    },
+    {
+      "id": "pew2021",
+      "url": "https://www.pewresearch.org/politics/2021/05/17/americans-see-broad-responsibilities-for-government-little-change-since-2019/",
+      "verified_scope": "released 2021-05-17; report and topline April 5-11 interviews; partisan government trust changes, not Fed trust"
+    },
+    {
+      "id": "pew_wave87",
+      "url": "https://www.pewresearch.org/dataset/american-trends-panel-wave-87/",
+      "verified_scope": "requires account for dataset; page March 15-28 dates conflict with linked report and topline, must verify codebook before merge"
+    },
+    {
+      "id": "gss",
+      "url": "https://gss.norc.org/get-the-data/stata.html",
+      "verified_scope": "existing locally archived GSS2018, current revised file; direct person-level joint checks only for generic executive confidence"
+    },
+    {
+      "id": "michigan",
+      "url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=63705",
+      "verified_scope": "historical official Table34, monthly GOVT combines inflation and unemployment policy evaluation; current continuity and micro access not verified"
+    }
+  ],
+  "downloads": [
+    {
+      "file": "gallup_fed_confidence_20210426.pdf",
+      "url": "https://news.gallup.com/file/poll/348980/210426Economy.pdf",
+      "resolved_url": "https://news.gallup.com/file/poll/348980/210426Economy.pdf",
+      "sha256": "a1d12f54a22ea66d0886a9da302942dda2610c7ebeb9a82fbbdbcbc1f63032ef",
+      "bytes": 742071,
+      "retrieved_at": "2026-10-10T14:52:44.585293+00:00"
+    },
+    {
+      "file": "gallup_fed2021_page.html",
+      "url": "https://news.gallup.com/poll/348959/economic-confidence-positive-first-time-pandemic.aspx",
+      "resolved_url": "https://news.gallup.com/poll/348959/economic-confidence-positive-first-time-pandemic.aspx",
+      "sha256": "f741a2792157d21ec9f6de80a591e19415535e2d531ca70565284d9bc72a4251",
+      "bytes": 94186,
+      "retrieved_at": "2026-10-10T14:52:46.748313+00:00"
+    },
+    {
+      "file": "anes2020_page.html",
+      "url": "https://electionstudies.org/data-center/2020-time-series-study/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "sce_policy_page.html",
+      "url": "https://www.newyorkfed.org/microeconomics/sce/public-policy",
+      "resolved_url": "https://www.newyorkfed.org/microeconomics/sce/public-policy",
+      "bytes": 109056,
+      "sha256": "85fecc9189f61d5c5d036225e950b0894fd1a68e6396e8ff71a08adb32eeb871",
+      "retrieved_at": "2026-10-10T14:49:53.900209+00:00"
+    },
+    {
+      "file": "sce_special2023_page.html",
+      "url": "https://libertystreeteconomics.newyorkfed.org/2023/08/consumers-perspectives-on-the-recent-movements-in-inflation-expectations/",
+      "resolved_url": "https://libertystreeteconomics.newyorkfed.org/2023/08/consumers-perspectives-on-the-recent-movements-in-inflation-expectations/",
+      "bytes": 188697,
+      "sha256": "8db6d8233a32b5223b6f942cd2f914f9639f9d19d0b9c7fc5069d90cb972da63",
+      "retrieved_at": "2026-10-10T14:49:55.865867+00:00"
+    },
+    {
+      "file": "sr1037_revised_202311.pdf",
+      "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr1037.pdf",
+      "resolved_url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr1037.pdf",
+      "bytes": 4096892,
+      "sha256": "cb09fb00d70345fdce0bb9edb1321c3a551abea12025a118ac6e52ca53153161",
+      "retrieved_at": "2026-10-10T14:49:59.125485+00:00"
+    },
+    {
+      "file": "anes2020_codebook.html",
+      "url": "https://electionstudies.org/wp-content/uploads/2026/04/anes_timeseries_2020_userguidecodebook_accessible_html.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "anes_announcements.html",
+      "url": "https://electionstudies.org/updates-announcements/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "pew_gov_trust2021_page.html",
+      "url": "https://www.pewresearch.org/politics/2021/05/17/americans-see-broad-responsibilities-for-government-little-change-since-2019/",
+      "resolved_url": "https://www.pewresearch.org/politics/2021/05/17/americans-see-broad-responsibilities-for-government-little-change-since-2019/",
+      "sha256": "0a56ed93df44a2ec27c460d63f076a2e7abd6b19d511d0799023ac33649d9af1",
+      "bytes": 435391,
+      "retrieved_at": "2026-10-10T14:56:53.150943+00:00"
+    },
+    {
+      "file": "pew_gov_trust2021_topline.pdf",
+      "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2021/05/PP_2021.05.17_scope-of-government_TOPLINE.pdf",
+      "resolved_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2021/05/PP_2021.05.17_scope-of-government_TOPLINE.pdf",
+      "sha256": "99dbbfd45531081b1dc07f28a71b6c75e372a6c2f5838a9953028979b45f30c1",
+      "bytes": 125807,
+      "retrieved_at": "2026-10-10T14:56:54.409212+00:00"
+    },
+    {
+      "file": "pew_wave87_page.html",
+      "url": "https://www.pewresearch.org/dataset/american-trends-panel-wave-87/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "sce_special2023_chart_data.xlsx",
+      "url": "https://newyorkfed.org/medialibrary/media/research/blog/2023/2023_LSE-Kosar-Inflation-factors",
+      "resolved_url": "https://www.newyorkfed.org/medialibrary/media/research/blog/2023/2023_LSE-Kosar-Inflation-factors",
+      "bytes": 60591,
+      "sha256": "3dce31134d083ea6bcfd3d396e5b71fda726599c3e77d68a7bd5fe0eb16d0c5f",
+      "retrieved_at": "2026-10-10T14:51:21.870901+00:00"
+    },
+    {
+      "file": "sce_policy_questionnaire.pdf",
+      "url": "https://www.newyorkfed.org/medialibrary/media/research/microeconomics/interactive/downloads/sce-policy-public-questionnaire.pdf",
+      "resolved_url": "https://www.newyorkfed.org/medialibrary/media/research/microeconomics/interactive/downloads/sce-policy-public-questionnaire.pdf",
+      "bytes": 69044,
+      "sha256": "9362fba365b9a9db30379482d5e1d03f6373642ad6db34c8f44ea99479c81d21",
+      "retrieved_at": "2026-10-10T14:51:23.878432+00:00"
+    },
+    {
+      "file": "gallup_fed_confidence_20240506.pdf",
+      "url": "https://news.gallup.com/file/poll/644756/2024_05_06%20Economic%20Leaders.pdf",
+      "resolved_url": "https://news.gallup.com/file/poll/644756/2024_05_06%20Economic%20Leaders.pdf",
+      "bytes": 417592,
+      "sha256": "63492e4bb2070752b32109f39ead01efafffd49412a51ab2f6a264fcab2c94dd",
+      "retrieved_at": "2026-10-10T14:51:26.041579+00:00"
+    },
+    {
+      "file": "gallup_fed2025_page.html",
+      "url": "https://news.gallup.com/poll/659534/trump-first-quarter-approval-rating-below-average.aspx",
+      "resolved_url": "https://news.gallup.com/poll/659534/trump-first-quarter-approval-rating-below-average.aspx",
+      "bytes": 167374,
+      "sha256": "7edcc2d3bcd00fe752fbec6d642a084d32387244bd4899eade0de0a4a182cbda",
+      "retrieved_at": "2026-10-10T14:51:28.421203+00:00"
+    },
+    {
+      "file": "pew_gov_trust2025_page.html",
+      "url": "https://www.pewresearch.org/politics/2025/12/04/public-trust-in-government-1958-2025/",
+      "resolved_url": "https://www.pewresearch.org/politics/2025/12/04/public-trust-in-government-1958-2025/",
+      "bytes": 805059,
+      "sha256": "a77d8ff24028e008692ffa4cb7f54eee32275dea8b1b6e63b5edff289699aed3",
+      "retrieved_at": "2026-10-10T14:51:30.204286+00:00"
+    }
+  ],
+  "existing_inputs": [
+    {
+      "path": "/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/data/raw/sce_audit_20260928/micro_2020_2024.xlsx",
+      "sha256": "1b57ffb75c2170d767f46a001002db8c40c228fe5691f6dd19e39777ffe469c6"
+    },
+    {
+      "path": "/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/data/raw/psychological/gss/2018/20261006T131656Z/GSS2018.dta",
+      "sha256": "5816dc11c00b6f19a210d3d8f83fc2bab1a738352636295342dec3ebf71a15f4"
+    }
+  ],
+  "audit_output": "outputs/belief_proxy_audit_20261010T145508Z_0fdd3198",
+  "candidate_distribution": "docs/literature/sce/belief_proxies/fed_confidence_candidate_2021.json",
+  "unresolved": [
+    "SCE 2022/2023 special survey microdata not located",
+    "ANES data not downloaded",
+    "Pew account and field-date conflict",
+    "Fed leader confidence is an imperfect policy efficacy proxy",
+    "Original demographic cross-tab vintage for B2021 not independently recovered",
+    "2026 same-question micro/cross-tabs not certified"
+  ]
+}

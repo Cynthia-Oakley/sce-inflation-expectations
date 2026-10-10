@@ -1,0 +1,90 @@
+{
+  "status": "candidate_distribution_only_not_connected_to_population_or_prompts",
+  "construct": "confidence_in_Fed_chair_to_do_or_recommend_right_thing_for_economy",
+  "not_equivalent_to": [
+    "trust_in_government",
+    "belief_in_Fed_inflation_control",
+    "inflation_persistence"
+  ],
+  "source_url": "https://news.gallup.com/file/poll/348980/210426Economy.pdf",
+  "source_pdf_page": 14,
+  "source_sha256": "a1d12f54a22ea66d0886a9da302942dda2610c7ebeb9a82fbbdbcbc1f63032ef",
+  "field_dates": [
+    "2021-04-01",
+    "2021-04-21"
+  ],
+  "published_date_evidence": "2021-04-26 article links this report; original 2021 byte version of demographic cross-tabs not independently recovered",
+  "article_url": "https://news.gallup.com/poll/348959/economic-confidence-positive-first-time-pandemic.aspx",
+  "source_population": "US adults; not specifically SCE household heads",
+  "categories": [
+    "great_deal",
+    "fair_amount",
+    "only_a_little",
+    "almost_none",
+    "dont_know_or_refused"
+  ],
+  "education_tables": {
+    "college_graduate": {
+      "source_percent": [
+        18,
+        46,
+        13,
+        12,
+        10
+      ],
+      "source_sum": 99,
+      "candidate_probabilities": [
+        0.18181818181818182,
+        0.46464646464646464,
+        0.13131313131313133,
+        0.12121212121212122,
+        0.10101010101010101
+      ]
+    },
+    "some_college": {
+      "source_percent": [
+        6,
+        43,
+        18,
+        19,
+        14
+      ],
+      "source_sum": 100,
+      "candidate_probabilities": [
+        0.06,
+        0.43,
+        0.18,
+        0.19,
+        0.14
+      ]
+    },
+    "high_school_or_less": {
+      "source_percent": [
+        11,
+        40,
+        19,
+        20,
+        10
+      ],
+      "source_sum": 100,
+      "candidate_probabilities": [
+        0.11,
+        0.4,
+        0.19,
+        0.2,
+        0.1
+      ]
+    }
+  },
+  "national_source_percent": [
+    12,
+    43,
+    17,
+    17,
+    11
+  ],
+  "proposed_matching": "Education only; unknown education stays unknown. Do not multiply independent age, education and party cross-tabs. No donor or actual persona assignment created.",
+  "B_status": "candidate_only_pending_historical_cross_tab_version_evidence",
+  "other_attributes": "not inferred from this field",
+  "unknown_category_rule": "retain pooled DK/refusal; do not infer ignorance or negative trust"
+}
