@@ -4,13 +4,14 @@
 
 ## 本轮成果（2026-10-11）
 
+- [关键词机制v1.2](keyword_recall_v1_2.md)／[打标提示词v1.2](llm_label_prompt_v1_2.md)：按用户要求明确候选入口、四类处理、六类主题与实际输入输出格式。可供下一次试标，尚未接入API或修改正式E。
 - [原始库存与未入选检查](inventory_audit_20261011.md)：82个月、34万条元数据；两开发月120篇未入选抽查，已证明存在有价值的漏选候选。
 - [更宽松的候选标准v1.2](classification_standard_v1_2.md)：按用户最新偏好保留经济背景，先处理明显误入与主题拥挤；尚未改生产规则。
 - [库存数据与哈希](inventory_summary_20261011.json)／[未入选抽查汇总](unselected_sample_summary_20261011.json)／[未入选候选标签](unselected_sample_labels_20261011.json)：便于离线核查与后续接力。
 - [审核说明](review_receipt_20261011.md)：现有60条新闻输入的结果、争议和下一步。
 - [可筛选阅读页](news_review_20261011.html)：按月份、决定、主题筛选，逐篇展开原摘要和审核理由；在浏览器打开。
-- [最终候选标准](classification_standard_v1_1.md)：区分价格消息、经济背景、待核正文和排除项。
-- [未来LLM分类提示词](llm_label_prompt_v1_1.md)：可作为DeepSeek等模型的小样本比较起点，尚未接入API或生产流程。
+- [历史候选标准v1.1](classification_standard_v1_1.md)：保留此前价格消息、经济背景、待核正文和排除项的审核口径。
+- [历史LLM提示词v1.1](llm_label_prompt_v1_1.md)：保留旧草案，下一次试标使用上面的v1.2；两版均未接入API或生产流程。
 - [标签JSON](review_labels_20261011.json)／[标签CSV](review_labels_20261011.csv)：60行有理由、有来源的审核结果；未附完整原摘要。
 - [原始审核标准](rubric_v1.md)／[来源与哈希](review_manifest_20261011.json)：保留如何审、依据什么输入、之后澄清了哪些边界。
 
