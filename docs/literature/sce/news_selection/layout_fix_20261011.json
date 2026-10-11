@@ -1,0 +1,15 @@
+{
+  "status": "layout_fixed_static_checks_passed",
+  "checked_at_utc": "2026-10-11T08:12:57.749440+00:00",
+  "cause": "global three-column summary layout incorrectly applied to plain-text news titles",
+  "page": "docs/literature/sce/news_selection/news_review_20261011.html",
+  "stylesheet": "docs/literature/sce/news_selection/news_review_layout.css",
+  "stylesheet_sha256": "955c26ef27222ef9f94d20245a2f428bfc866a452244166bf3972c78e1aaf522",
+  "existing_html_before_sha256": "9d19c3ca6140e6e7aad8ac632ce7776a3f8cc6d9e495523b8a6001df1ad4eba3",
+  "existing_html_after_sha256": "7050806b9a542857bf34402de29e60af3283c49863f6d1ebd1bf3500e2e58b1d",
+  "page_content_unchanged_outside_added_styles": true,
+  "browser_visual_verification": false,
+  "browser_verification_limit": "CUA policy disallows file: URLs; no alternate browser workaround used",
+  "new_api_calls": 0,
+  "next_demo_prior_directory": "outputs/sce_news_review_layout_20261011_v1"
+}
