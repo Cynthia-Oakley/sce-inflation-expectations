@@ -1,0 +1,129 @@
+{
+  "research_line": "A_historical_reconstruction",
+  "months": [
+    "202203",
+    "202209",
+    "202303",
+    "202403"
+  ],
+  "n_per_month": 48,
+  "arms": [
+    "no_added_confidence",
+    "national_confidence"
+  ],
+  "repeats": [
+    1,
+    2
+  ],
+  "planned_answers": 768,
+  "model": "deepseek-flash",
+  "temperature": 0.5,
+  "retry_max": 0,
+  "news_seed": 104729,
+  "confidence_seed": 42,
+  "metadata": {
+    "202203": {
+      "as_of": "2022-03-10T23:59:59-05:00",
+      "frame_n": 1273,
+      "confidence_counts": {
+        "fair_amount": 18,
+        "dont_know_or_refused": 5,
+        "only_a_little": 4,
+        "almost_none": 13,
+        "great_deal": 8
+      },
+      "identical_prompt_DK_count": 5,
+      "wave_id": "gallup_2021_april",
+      "policy_published_at": "2022-01-26T14:00:00-05:00",
+      "natural_news_fed_mentions_n": 14,
+      "controlled_policy_brief_n": 48,
+      "numerical_signals": 77
+    },
+    "202209": {
+      "as_of": "2022-09-13T23:59:59-04:00",
+      "frame_n": 1271,
+      "confidence_counts": {
+        "fair_amount": 17,
+        "only_a_little": 17,
+        "dont_know_or_refused": 2,
+        "great_deal": 3,
+        "almost_none": 9
+      },
+      "identical_prompt_DK_count": 2,
+      "wave_id": "gallup_2022_april",
+      "policy_published_at": "2022-07-27T14:00:00-04:00",
+      "natural_news_fed_mentions_n": 48,
+      "controlled_policy_brief_n": 48,
+      "numerical_signals": 77
+    },
+    "202303": {
+      "as_of": "2023-03-14T23:59:59-04:00",
+      "frame_n": 1254,
+      "confidence_counts": {
+        "only_a_little": 15,
+        "almost_none": 7,
+        "fair_amount": 18,
+        "great_deal": 4,
+        "dont_know_or_refused": 4
+      },
+      "identical_prompt_DK_count": 4,
+      "wave_id": "gallup_2022_april",
+      "policy_published_at": "2023-02-01T14:00:00-05:00",
+      "natural_news_fed_mentions_n": 30,
+      "controlled_policy_brief_n": 48,
+      "numerical_signals": 77
+    },
+    "202403": {
+      "as_of": "2024-03-12T23:59:59-04:00",
+      "frame_n": 1120,
+      "confidence_counts": {
+        "only_a_little": 12,
+        "almost_none": 16,
+        "fair_amount": 17,
+        "dont_know_or_refused": 3
+      },
+      "identical_prompt_DK_count": 3,
+      "wave_id": "gallup_2023_april",
+      "policy_published_at": "2024-01-31T14:00:00-05:00",
+      "natural_news_fed_mentions_n": 17,
+      "controlled_policy_brief_n": 48,
+      "numerical_signals": 77
+    }
+  },
+  "preregistered_evaluation": {
+    "primary": [
+      "Q9 sample median absolute error",
+      "Q9 W1 distribution distance",
+      "Q9 cross-person IQR gap"
+    ],
+    "secondary": [
+      "Q8 median error",
+      "individual uncertainty",
+      "raw deflation probability",
+      "housing/age/numeracy groups"
+    ],
+    "comparisons": "same valid people, weights and inputs; report both generations separately, then equal-weight monthly averages",
+    "repetition_rule": "independent model generations with identical messages; repeat index is not a provider random seed",
+    "upgrade_rule": "candidate only if both median error and distribution distance improve in both repetitions, in at least three of four months each; no automatic production change",
+    "intervals": "paired person bootstrap conditional on fixed news/confidence assignment; not population or period generalization",
+    "truth_isolation": "raw answers and survey weights read only by separate offline analysis",
+    "no_target_tuning": true
+  },
+  "conservative_simulation_cost_bound_usd": 2.2804139999999995,
+  "proposed_simulation_cap_usd": 2.5,
+  "limitations": [
+    "48-person samples and four previously examined periods are mechanism diagnostics, not nationwide or blind prediction.",
+    "Annual Gallup adult confidence is a synthetic proxy, not SCE household-head attitudes or measured trust in inflation control.",
+    "Gallup waves are about 5–11 months old; no political traits or government/Fed joint distribution inferred.",
+    "CE2020Q4 synthetic baskets are held fixed; cross-year spending stability unverified.",
+    "Gasoline vintage and NYT historical text/paper dates remain incompletely verified; not strict forecast B.",
+    "Common policy brief assumes controlled awareness; comparison with old runs cannot isolate this information change.",
+    "No own prior answer, panel memory, core/normal projection or interpersonal interaction."
+  ],
+  "status": "offline_prepared_awaiting_explicit_budget_reply",
+  "target": "SCE one-year Q8/Q9",
+  "engineering_cells_passed": 8,
+  "focused_checks_passed": 19,
+  "real_simulation_calls": 0,
+  "truth_reference_rows": 4918
+}
