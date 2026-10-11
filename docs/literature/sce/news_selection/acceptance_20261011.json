@@ -1,0 +1,44 @@
+{
+  "checked_on": "2026-10-11",
+  "status": "passed_offline_content_checks",
+  "article_month_rows": 60,
+  "unique_articles": 51,
+  "final_counts": {
+    "context_only": 26,
+    "include": 26,
+    "exclude": 5,
+    "needs_fulltext": 3
+  },
+  "all_600_saved_prompts_contain_their_30_source_news": true,
+  "source_and_prompt_hashes_verified": true,
+  "JSON_CSV_HTML_match": true,
+  "evidence_snippets_exact_and_max12_words": true,
+  "protected_files_unchanged": 15,
+  "HTML_filter_checks": {
+    "status": "passed",
+    "checks": [
+      "60 default rows",
+      "30 May rows",
+      "15 May core rows",
+      "11 June core rows",
+      "3 June exclusion rows",
+      "reset restores60",
+      "waged search returns1",
+      "category filter"
+    ],
+    "environment": "node vm with generated HTML record attributes; not a browser screenshot",
+    "new_external_api_calls": 0
+  },
+  "canvas_authoring_check": {
+    "imports_only_cursor_canvas": true,
+    "data_inline": true,
+    "host_theme_colors": true,
+    "empty_filtered_table_omitted": true,
+    "managed_file": "/Users/wushuyue/.cursor/projects/Users-wushuyue-Documents/canvases/sce-news-review-20261011.canvas.tsx",
+    "host_compiler_diagnostics": "not_available_in_this_tool_environment"
+  },
+  "browser_open_status": "queued_by_open_in_codex; not a screenshot or browser QA claim",
+  "new_simulation_or_external_paid_API_calls": 0,
+  "raw_news_text_in_git": false,
+  "runtime_inputs_changed": false
+}

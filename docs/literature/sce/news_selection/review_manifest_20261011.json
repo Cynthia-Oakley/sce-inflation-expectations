@@ -1,0 +1,66 @@
+{
+  "created_on": "2026-10-11",
+  "purpose": "offline semantic review of existing saved news; no simulation answers supplied",
+  "source_files": [
+    {
+      "target_month": "202105",
+      "path": "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/environment_effective.json",
+      "sha256": "ae4449f336e661e6698dd1a8e626ab6a124e2ed421cc0423fb853c3eb5114710",
+      "n_events": 30
+    },
+    {
+      "target_month": "202106",
+      "path": "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/environment_effective.json",
+      "sha256": "0dc7f1307328c9cf7c4ead0d359bdcdd7ee0425178c5740c7864b1460f19c2e2",
+      "n_events": 30
+    }
+  ],
+  "overlap": "10 uniformly sampled articles per month, seed 42; no truth or first-review labels supplied",
+  "new_external_api_calls": 0,
+  "review_bundle": "outputs/sce_news_review_20261011_v1/",
+  "annotation_protocol": "rubric_v1.md; clarifications in classification_standard_v1_1.md",
+  "reviewer_outputs": [
+    {
+      "file": "outputs/sce_news_review_20261011_v1/reviewer_may.json",
+      "sha256": "fa8cd2a2e7861dbf00c6e174edbb703782aa46f16e007afe1d9a10b455b21cc1"
+    },
+    {
+      "file": "outputs/sce_news_review_20261011_v1/reviewer_june.json",
+      "sha256": "2c1a47f437b6211768e97846500abdfa700be310c9675e8d6fda9ab2c52b2ad3"
+    },
+    {
+      "file": "outputs/sce_news_review_20261011_v1/reviewer_blind20.json",
+      "sha256": "81f07713ccfa2174ac10b8bf358c3856f8de49f33c244291df9ff177d3ecc486"
+    },
+    {
+      "file": "outputs/sce_news_review_20261011_v1/parent_initial.json",
+      "sha256": "9787d7b5a6667964893d33339bfc7c0767f0172473e2dd2c6ef272fe5e83c154"
+    }
+  ],
+  "source_events_file": {
+    "file": "outputs/sce_news_review_20261011_v1/source_events_private.json",
+    "sha256": "1864844b4763fdae860c42d5dfc72a930cf6d82b05dd036de2176b909ca7b047"
+  },
+  "curated_labels_sha256": "598ee27fd777b5889eefe42ecba449e04a2b677b5ddb2434fe12a86fdf32fa69",
+  "source_text_committed": false,
+  "raw_reviewer_files_committed": false,
+  "private_population_or_true_survey_answers_sent_to_reviewers": false,
+  "actual_input_checks": [
+    {
+      "target_month": "202105",
+      "successful_prompts_checked": 300,
+      "all_30_headline_abstract_pairs_present": true,
+      "saved_prompt_hashes_valid": true,
+      "calls_file": "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/llm_calls.jsonl",
+      "calls_sha256": "038ac18e759b1fe294e510de56d12f9cacbf668da82ec51cd5d5988f642d3ef2"
+    },
+    {
+      "target_month": "202106",
+      "successful_prompts_checked": 300,
+      "all_30_headline_abstract_pairs_present": true,
+      "saved_prompt_hashes_valid": true,
+      "calls_file": "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/llm_calls.jsonl",
+      "calls_sha256": "fda70ea69b4fb33a4f8d3626dfbae03543696a4cabd03c199f73b120709eb8d8"
+    }
+  ]
+}
