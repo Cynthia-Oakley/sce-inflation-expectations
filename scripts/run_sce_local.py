@@ -43,6 +43,7 @@ LLM_PROMPT_VERSIONS = (
     "sce-q8-q9-information-exposure-v1",
     "sce-q8-q9-native-spending-v1",
     "sce-q8-q9-price-contact-v1",
+    "sce-q8-q9-news-exposure-v1",
 )
 
 
@@ -209,6 +210,33 @@ def main(argv: list[str] | None = None) -> int:
     exposure_inputs = {}
     native_inputs = {}
     contact_inputs = {}
+    news_inputs = {}
+    news_ref = "sce_inflation_expectations.news_exposure_decision"
+    if args.llm == "openai" and ((sim_c.decision_ref == news_ref) != (args.prompt_version == "sce-q8-q9-news-exposure-v1")):
+        sys.exit("news provider and prompt must be selected together")
+    if sim_c.decision_ref == news_ref:
+        from studies.sce_inflation_expectations.news_exposure import validate_bundle, build_messages
+        from studies.sce_inflation_expectations.model import SCEEnvironmentProvider
+        if len(targets) != 1 or args.mechanism or args.experience or args.household_state or args.information_exposure:
+            sys.exit("news exposure requires isolated one-month inputs")
+        if any(k in env_b.provider_args for k in ("information_exposure", "household_state_by_id", "price_experience_mechanism", "experience_by_id")):
+            sys.exit("news exposure requires a clean common environment")
+        news = validate_bundle(sim_c.decision_args["news_exposure_bundle"], pop_b.personas,
+                               targets[0]["target_month"], targets[0]["as_of"])
+        if args.llm == "openai" and news["pool_status"] != "complete_coarse_candidate_labels":
+            sys.exit("news labels incomplete; no real calls started")
+        sim_c.decision_args["news_exposure_bundle"] = news
+        news_inputs = {"arm": news["arm"], "mixing_weight": news["mixing_weight"],
+                       "pool_status": news["pool_status"], "source_sha256": news["source_sha256"]}
+        check_env = SCEEnvironmentProvider(env_b.model_copy(deep=True))
+        check_env.audit_dir = None
+        check_env.reset(sim_c.seed)
+        check_env.advance_to(1)
+        for observation in check_env.observe_batch([p.agent_id for p in pop_b.personas], 1):
+            if len(json.dumps(build_messages(observation, news), ensure_ascii=False)) > 18000:
+                sys.exit("news prompt exceeds size gate; no calls started")
+        if args.llm == "scripted":
+            print("ENGINEERING CHECK ONLY: scripted answers ignore news-exposure treatment.")
     contact_ref = "sce_inflation_expectations.price_contact_decision"
     if args.llm == "openai" and ((sim_c.decision_ref == contact_ref) != (args.prompt_version == "sce-q8-q9-price-contact-v1")):
         sys.exit("price contact provider and prompt must be selected together")
@@ -420,6 +448,7 @@ def main(argv: list[str] | None = None) -> int:
         "information_exposure_inputs": exposure_inputs,
         "native_spending_inputs": native_inputs,
         "price_contact_inputs": contact_inputs,
+        "news_exposure_inputs": news_inputs,
         "native_spending_behaviour_test": bool(native_inputs and args.llm == "openai"),
         "information_exposure_behaviour_test": bool(args.information_exposure and args.llm == "openai"),
         "household_state_behaviour_test": bool(args.household_state and args.llm == "openai"),
@@ -433,6 +462,8 @@ def main(argv: list[str] | None = None) -> int:
         manifest["execution_purpose"] = "native_spending_behaviour_trial" if args.llm == "openai" else "native_spending_plumbing_only"
     if contact_inputs:
         manifest["execution_purpose"] = "price_contact_behaviour_trial" if args.llm == "openai" else "price_contact_plumbing_only"
+    if news_inputs:
+        manifest["execution_purpose"] = "news_exposure_behaviour_trial" if args.llm == "openai" else "news_exposure_plumbing_only"
     (audit_dir / "run_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if hasattr(sim.decision, "cost_summary"):

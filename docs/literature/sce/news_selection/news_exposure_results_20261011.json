@@ -1,0 +1,1246 @@
+{
+  "status": "completed_offline_analysis",
+  "created_at_utc": "2026-10-11T09:28:58.318601+00:00",
+  "trial_directory": "outputs/sce_news_exposure_trial_20261011_v3",
+  "actual_simulation_calls": 288,
+  "estimated_simulation_cost_usd": 0.17638,
+  "not_vendor_invoice": true,
+  "new_analysis_api_calls": 0,
+  "run_audit": [
+    {
+      "month": "202105",
+      "arm": "shared",
+      "run_id": "sce_news_exposure_trial_20261011_v3-202105-shared",
+      "calls": 48,
+      "request_errors": 0,
+      "returned_models": {
+        "deepseek-flash": 48
+      },
+      "validation_statuses": {
+        "valid": 48
+      },
+      "estimated_cost_usd": 0.028838,
+      "input_tokens": 70824,
+      "output_tokens": 6326
+    },
+    {
+      "month": "202105",
+      "arm": "random",
+      "run_id": "sce_news_exposure_trial_20261011_v3-202105-random",
+      "calls": 48,
+      "request_errors": 0,
+      "returned_models": {
+        "deepseek-flash": 48
+      },
+      "validation_statuses": {
+        "valid": 48
+      },
+      "estimated_cost_usd": 0.029228,
+      "input_tokens": 72222,
+      "output_tokens": 6301
+    },
+    {
+      "month": "202105",
+      "arm": "matched",
+      "run_id": "sce_news_exposure_trial_20261011_v3-202105-matched",
+      "calls": 48,
+      "request_errors": 0,
+      "returned_models": {
+        "deepseek-flash": 48
+      },
+      "validation_statuses": {
+        "valid": 48
+      },
+      "estimated_cost_usd": 0.029349,
+      "input_tokens": 72347,
+      "output_tokens": 6371
+    },
+    {
+      "month": "202106",
+      "arm": "shared",
+      "run_id": "sce_news_exposure_trial_20261011_v3-202106-shared",
+      "calls": 48,
+      "request_errors": 0,
+      "returned_models": {
+        "deepseek-flash": 48
+      },
+      "validation_statuses": {
+        "valid": 48
+      },
+      "estimated_cost_usd": 0.029906,
+      "input_tokens": 74504,
+      "output_tokens": 6296
+    },
+    {
+      "month": "202106",
+      "arm": "random",
+      "run_id": "sce_news_exposure_trial_20261011_v3-202106-random",
+      "calls": 48,
+      "request_errors": 0,
+      "returned_models": {
+        "deepseek-flash": 48
+      },
+      "validation_statuses": {
+        "valid": 48
+      },
+      "estimated_cost_usd": 0.029493,
+      "input_tokens": 73367,
+      "output_tokens": 6236
+    },
+    {
+      "month": "202106",
+      "arm": "matched",
+      "run_id": "sce_news_exposure_trial_20261011_v3-202106-matched",
+      "calls": 48,
+      "request_errors": 0,
+      "returned_models": {
+        "deepseek-flash": 48
+      },
+      "validation_statuses": {
+        "valid": 48
+      },
+      "estimated_cost_usd": 0.029566,
+      "input_tokens": 73557,
+      "output_tokens": 6249
+    }
+  ],
+  "scorer": {
+    "scorer": "sce_q9_frozen",
+    "variant": "relaxed_tail_skip_zero",
+    "tail_start": 20.0,
+    "holdout_run_id": "20261003T023026Z_77ebb305",
+    "pinned_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_matches_pinned": true,
+    "kernel_migration": {
+      "migrated_at": "2026-10-03",
+      "old_source": "scripts/diagnose_sce_beta.py",
+      "old_source_sha256": "b45a29345f432288fe3b0b18e8c39066998bf19a803a0e7c661dc2a193987e57",
+      "new_source": "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+      "algorithm_unchanged": true,
+      "equivalence_check": "3,741 sealed holdout rows recomputed; zero per-field difference"
+    },
+    "approximation_notice": "Research approximation of the Armantier et al. (2017) Appendix C generalized-beta fit, selected on a preregistered holdout; not the official FRBNY implementation. The same algorithm scores real and simulated questionnaires; differences from official headline values are reported separately."
+  },
+  "limits": [
+    "NYT/A1 are exposure proxies; paper date and text vintage unverified.",
+    "50/50 and thresholds are design assumptions; unestimated household preferences.",
+    "Four CE categories do not identify utility spending; no synthetic utility share invented.",
+    "Each month cold-start; no own prior answer or longitudinal claim.",
+    "One news seed/one generation is preliminary; independent month and seeds needed.",
+    "Same frozen approximate density scorer on both real and simulated bins.",
+    "Shared-arm news are one random set; comparison also depends on its content.",
+    "Six sequential jobs, one news seed and one LLM draw per person; no causal or national claim."
+  ],
+  "classification": {
+    "new_articles": 977,
+    "paid_requests": 123,
+    "same_article_resends": 0,
+    "labels": {
+      "keep": 287,
+      "exclude": 307,
+      "background": 373,
+      "uncertain": 10
+    },
+    "peak_uncached_token_cost_estimate_usd": 0.160221,
+    "input_tokens": 207858,
+    "output_tokens": 81553,
+    "offline_repairs": {
+      "offline_extract_verified_continuous_quote": 2,
+      "offline_verbatim_quote_shortening": 51,
+      "offline_clip_minor_quote_difference_to_literal_fragment": 4,
+      "offline_identity_recovery_by_unique_literal_quote": 1
+    },
+    "classification_decisions_unchanged": true,
+    "complete_coarse_candidate_labels": true,
+    "personal_keep_pool_by_month": {
+      "202105": 200,
+      "202106": 201
+    }
+  },
+  "total_new_classification_and_simulation_estimate_usd": 0.336601,
+  "analysis_directory": "outputs/sce_news_exposure_analysis_20261011_v2",
+  "analysis_summary_sha256": "c5b3d393970406a2e57f337fa3597a181744bbbfe5eba2611255f727b4b52190",
+  "evaluation_plan": "docs/literature/sce/news_selection/news_exposure_evaluation_plan_20261011.md",
+  "page_prior_directory_for_next_update": "outputs/sce_news_exposure_reading_copyedit_20261011_v1",
+  "primary_result": "No stable distribution improvement; June median error slightly improves versus random, May unchanged; cross-person spread remains too narrow.",
+  "months": {
+    "202105": {
+      "fit_status_counts": {
+        "real:ok": 46,
+        "shared:ok": 48,
+        "random:ok": 48,
+        "matched:ok": 48,
+        "real:invalid_bins": 2
+      },
+      "news_delivery": {
+        "shared": {
+          "unique_personal_sets": 1,
+          "related_news_total": 30
+        },
+        "random": {
+          "unique_personal_sets": 48,
+          "related_news_total": 33
+        },
+        "matched": {
+          "unique_personal_sets": 48,
+          "related_news_total": 45
+        }
+      },
+      "full_month_official_derived_reference": {
+        "n_respondents": 1234,
+        "q8point_interp_median": 5.261723083146164,
+        "q9_mean_weighted_median": 4.0,
+        "n_with_weight_q8": 1228,
+        "n_with_weight_q9_mean": 1216,
+        "official_point_median": 5.261723041534424,
+        "official_density_median": 4
+      },
+      "Q9": {
+        "n_selected": 48,
+        "n_common": 46,
+        "n_excluded": 2,
+        "estimand": "equal-weight common diagnostic sample; not a nationwide headline",
+        "real": {
+          "n": 46,
+          "median_pp": 3.1878091107778657,
+          "mean_pp": 5.423103045829635,
+          "cross_person_iqr_pp": 4.9260924581603165
+        },
+        "matched_minus_random": {
+          "median_absolute_error_pp": {
+            "change_pp": 0.0,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.21081132278135684,
+              0.22239201148931365
+            ]
+          },
+          "distribution_W1_pp": {
+            "change_pp": -0.007847057829818649,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.13375455263488154,
+              0.12672292215219064
+            ]
+          },
+          "individual_MAE_auxiliary_pp": {
+            "change_pp": 0.00045354659649321505,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.20536674228594304,
+              0.20512509376427765
+            ]
+          }
+        },
+        "bootstrap_scope": "conditional selected-person uncertainty only; excludes new news draws and repeated LLM generations",
+        "arms": {
+          "shared": {
+            "distribution": {
+              "n": 46,
+              "median_pp": 3.0250804556504356,
+              "mean_pp": 3.0942495576408913,
+              "cross_person_iqr_pp": 0.3739122896452134
+            },
+            "median_absolute_error_pp": 0.16272865512743007,
+            "distribution_W1_pp": 3.2479085826962204,
+            "IQR_absolute_gap_pp": 4.552180168515103,
+            "individual_MAE_auxiliary_pp": 3.511550729058645,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 46,
+                "weighted_median_pp": 3.1727437122565654,
+                "weighted_mean_pp": 3.0989947933859745,
+                "weighted_std_pp": 0.5077316037432242,
+                "effective_sample_size": 28.893531681064555
+              },
+              "real": {
+                "n_valid": 46,
+                "weighted_median_pp": 3.4168448737055623,
+                "weighted_mean_pp": 6.002254207113066,
+                "weighted_std_pp": 5.605561145342017,
+                "effective_sample_size": 28.893531681064562
+              },
+              "median_absolute_error_pp": 0.24410116144899696
+            }
+          },
+          "random": {
+            "distribution": {
+              "n": 46,
+              "median_pp": 2.982528739824261,
+              "mean_pp": 3.0831504514654964,
+              "cross_person_iqr_pp": 0.737070024376425
+            },
+            "median_absolute_error_pp": 0.20528037095360485,
+            "distribution_W1_pp": 3.127532260902994,
+            "IQR_absolute_gap_pp": 4.189022433783892,
+            "individual_MAE_auxiliary_pp": 3.5773817024056966,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 46,
+                "weighted_median_pp": 2.982528739824261,
+                "weighted_mean_pp": 3.1457494616939323,
+                "weighted_std_pp": 0.6519595354985358,
+                "effective_sample_size": 28.893531681064562
+              },
+              "real": {
+                "n_valid": 46,
+                "weighted_median_pp": 3.4168448737055623,
+                "weighted_mean_pp": 6.002254207113066,
+                "weighted_std_pp": 5.605561145342017,
+                "effective_sample_size": 28.893531681064562
+              },
+              "median_absolute_error_pp": 0.4343161338813015
+            }
+          },
+          "matched": {
+            "distribution": {
+              "n": 46,
+              "median_pp": 2.982528739824261,
+              "mean_pp": 3.0902058048851386,
+              "cross_person_iqr_pp": 0.5709662499886079
+            },
+            "median_absolute_error_pp": 0.20528037095360485,
+            "distribution_W1_pp": 3.119685203073175,
+            "IQR_absolute_gap_pp": 4.355126208171709,
+            "individual_MAE_auxiliary_pp": 3.57783524900219,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 46,
+                "weighted_median_pp": 3.2204774131733234,
+                "weighted_mean_pp": 3.262568924437841,
+                "weighted_std_pp": 0.6140736335161647,
+                "effective_sample_size": 28.893531681064555
+              },
+              "real": {
+                "n_valid": 46,
+                "weighted_median_pp": 3.4168448737055623,
+                "weighted_mean_pp": 6.002254207113066,
+                "weighted_std_pp": 5.605561145342017,
+                "effective_sample_size": 28.893531681064562
+              },
+              "median_absolute_error_pp": 0.19636746053223897
+            }
+          }
+        }
+      },
+      "Q8_secondary": {
+        "n_selected": 48,
+        "n_common": 47,
+        "n_excluded": 1,
+        "estimand": "equal-weight common diagnostic sample; not a nationwide headline",
+        "real": {
+          "n": 47,
+          "median_pp": 3.916666666666667,
+          "mean_pp": 7.23404255319149,
+          "cross_person_iqr_pp": 8.0
+        },
+        "matched_minus_random": {
+          "median_absolute_error_pp": {
+            "change_pp": -0.02677419354838717,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.11899371273010116,
+              0.11411738351254476
+            ]
+          },
+          "distribution_W1_pp": {
+            "change_pp": 0.010638297872340274,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.13191489361702224,
+              0.14255319148936163
+            ]
+          },
+          "individual_MAE_auxiliary_pp": {
+            "change_pp": 0.10851063829787133,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.010638297872339386,
+              0.2404255319148936
+            ]
+          }
+        },
+        "bootstrap_scope": "conditional selected-person uncertainty only; excludes new news draws and repeated LLM generations",
+        "arms": {
+          "shared": {
+            "distribution": {
+              "n": 47,
+              "median_pp": 3.6058823529411765,
+              "mean_pp": 3.75531914893617,
+              "cross_person_iqr_pp": 0.3999999999999999
+            },
+            "median_absolute_error_pp": 0.3107843137254904,
+            "distribution_W1_pp": 7.699999999999999,
+            "IQR_absolute_gap_pp": 7.6,
+            "individual_MAE_auxiliary_pp": 7.882978723404255,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 47,
+                "weighted_median_pp": 3.6648058406950645,
+                "weighted_mean_pp": 3.8347441506696103,
+                "weighted_std_pp": 0.5285754373495496,
+                "effective_sample_size": 29.54776049868265
+              },
+              "real": {
+                "n_valid": 47,
+                "weighted_median_pp": 4.330417318954312,
+                "weighted_mean_pp": 8.020957905569867,
+                "weighted_std_pp": 16.54540308356244,
+                "effective_sample_size": 29.54776049868265
+              },
+              "median_absolute_error_pp": 0.665611478259247
+            }
+          },
+          "random": {
+            "distribution": {
+              "n": 47,
+              "median_pp": 3.57,
+              "mean_pp": 3.738297872340426,
+              "cross_person_iqr_pp": 0.2999999999999998
+            },
+            "median_absolute_error_pp": 0.3466666666666671,
+            "distribution_W1_pp": 7.627659574468085,
+            "IQR_absolute_gap_pp": 7.7,
+            "individual_MAE_auxiliary_pp": 7.823404255319149,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 47,
+                "weighted_median_pp": 3.5736659023803092,
+                "weighted_mean_pp": 3.7665876475922246,
+                "weighted_std_pp": 0.5991353820435715,
+                "effective_sample_size": 29.54776049868265
+              },
+              "real": {
+                "n_valid": 47,
+                "weighted_median_pp": 4.330417318954312,
+                "weighted_mean_pp": 8.020957905569867,
+                "weighted_std_pp": 16.54540308356244,
+                "effective_sample_size": 29.54776049868265
+              },
+              "median_absolute_error_pp": 0.7567514165740024
+            }
+          },
+          "matched": {
+            "distribution": {
+              "n": 47,
+              "median_pp": 3.596774193548387,
+              "mean_pp": 3.7702127659574467,
+              "cross_person_iqr_pp": 0.3999999999999999
+            },
+            "median_absolute_error_pp": 0.31989247311827995,
+            "distribution_W1_pp": 7.638297872340425,
+            "IQR_absolute_gap_pp": 7.6,
+            "individual_MAE_auxiliary_pp": 7.93191489361702,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 47,
+                "weighted_median_pp": 3.664978604898758,
+                "weighted_mean_pp": 3.8864863767210602,
+                "weighted_std_pp": 0.5918090048333704,
+                "effective_sample_size": 29.54776049868265
+              },
+              "real": {
+                "n_valid": 47,
+                "weighted_median_pp": 4.330417318954312,
+                "weighted_mean_pp": 8.020957905569867,
+                "weighted_std_pp": 16.54540308356244,
+                "effective_sample_size": 29.54776049868265
+              },
+              "median_absolute_error_pp": 0.6654387140555538
+            }
+          }
+        }
+      },
+      "personal_uncertainty": {
+        "n_selected": 48,
+        "n_common": 46,
+        "n_excluded": 2,
+        "estimand": "equal-weight common diagnostic sample; not a nationwide headline",
+        "real": {
+          "n": 46,
+          "median_pp": 3.0885078907949177,
+          "mean_pp": 4.2971178453827825,
+          "cross_person_iqr_pp": 3.975268375449441
+        },
+        "matched_minus_random": {
+          "median_absolute_error_pp": {
+            "change_pp": -0.15112485401149733,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.3029631170076011,
+              0.21672537044081075
+            ]
+          },
+          "distribution_W1_pp": {
+            "change_pp": -0.04614894911016609,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.23157010518084364,
+              0.15908146391669706
+            ]
+          },
+          "individual_MAE_auxiliary_pp": {
+            "change_pp": 0.0032416703434261507,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.18618381085929334,
+              0.20109649347301164
+            ]
+          }
+        },
+        "bootstrap_scope": "conditional selected-person uncertainty only; excludes new news draws and repeated LLM generations",
+        "arms": {
+          "shared": {
+            "distribution": {
+              "n": 46,
+              "median_pp": 4.119866778831957,
+              "mean_pp": 4.168450595875771,
+              "cross_person_iqr_pp": 0.5740456955019329
+            },
+            "median_absolute_error_pp": 1.0313588880370395,
+            "distribution_W1_pp": 2.6435448920192077,
+            "IQR_absolute_gap_pp": 3.4012226799475083,
+            "individual_MAE_auxiliary_pp": 2.806207525486514,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 46,
+                "weighted_median_pp": 4.327662870311251,
+                "weighted_mean_pp": 4.2475971394308365,
+                "weighted_std_pp": 0.6485428593417752,
+                "effective_sample_size": 28.893531681064562
+              },
+              "real": {
+                "n_valid": 46,
+                "weighted_median_pp": 3.465681246605571,
+                "weighted_mean_pp": 5.269034535438718,
+                "weighted_std_pp": 4.639944020087071,
+                "effective_sample_size": 28.893531681064555
+              },
+              "median_absolute_error_pp": 0.8619816237056797
+            }
+          },
+          "random": {
+            "distribution": {
+              "n": 46,
+              "median_pp": 4.2709916328434545,
+              "mean_pp": 4.094711994660072,
+              "cross_person_iqr_pp": 0.5918176841693623
+            },
+            "median_absolute_error_pp": 1.1824837420485368,
+            "distribution_W1_pp": 2.6397522524864603,
+            "IQR_absolute_gap_pp": 3.383450691280079,
+            "individual_MAE_auxiliary_pp": 2.889601206179039,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 46,
+                "weighted_median_pp": 4.2709916328434545,
+                "weighted_mean_pp": 4.1463520454583636,
+                "weighted_std_pp": 0.6296513893944553,
+                "effective_sample_size": 28.893531681064562
+              },
+              "real": {
+                "n_valid": 46,
+                "weighted_median_pp": 3.465681246605571,
+                "weighted_mean_pp": 5.269034535438718,
+                "weighted_std_pp": 4.639944020087071,
+                "effective_sample_size": 28.893531681064555
+              },
+              "median_absolute_error_pp": 0.8053103862378834
+            }
+          },
+          "matched": {
+            "distribution": {
+              "n": 46,
+              "median_pp": 4.119866778831957,
+              "mean_pp": 4.142706446011113,
+              "cross_person_iqr_pp": 0.8159206883692889
+            },
+            "median_absolute_error_pp": 1.0313588880370395,
+            "distribution_W1_pp": 2.593603303376294,
+            "IQR_absolute_gap_pp": 3.1593476870801522,
+            "individual_MAE_auxiliary_pp": 2.892842876522465,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 46,
+                "weighted_median_pp": 4.327662870311251,
+                "weighted_mean_pp": 4.245139192685538,
+                "weighted_std_pp": 0.6092183675226689,
+                "effective_sample_size": 28.893531681064555
+              },
+              "real": {
+                "n_valid": 46,
+                "weighted_median_pp": 3.465681246605571,
+                "weighted_mean_pp": 5.269034535438718,
+                "weighted_std_pp": 4.639944020087071,
+                "effective_sample_size": 28.893531681064555
+              },
+              "median_absolute_error_pp": 0.8619816237056797
+            }
+          }
+        }
+      },
+      "raw_deflation_probability": {
+        "n_selected": 48,
+        "n_common": 46,
+        "n_excluded": 2,
+        "estimand": "equal-weight common diagnostic sample; not a nationwide headline",
+        "real": {
+          "n": 46,
+          "median_pp": 0.0,
+          "mean_pp": 7.695652173913044,
+          "cross_person_iqr_pp": 5.0
+        },
+        "matched_minus_random": {
+          "median_absolute_error_pp": {
+            "change_pp": 0.0,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -1.0,
+              2.0
+            ]
+          },
+          "distribution_W1_pp": {
+            "change_pp": 0.19565217391304301,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.9347826086956523,
+              1.2173913043478244
+            ]
+          },
+          "individual_MAE_auxiliary_pp": {
+            "change_pp": 0.19565217391304301,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -1.0875000000000021,
+              1.4570652173913021
+            ]
+          }
+        },
+        "bootstrap_scope": "conditional selected-person uncertainty only; excludes new news draws and repeated LLM generations",
+        "arms": {
+          "shared": {
+            "distribution": {
+              "n": 46,
+              "median_pp": 15.0,
+              "mean_pp": 14.347826086956522,
+              "cross_person_iqr_pp": 3.0
+            },
+            "median_absolute_error_pp": 15.0,
+            "distribution_W1_pp": 14.869565217391305,
+            "IQR_absolute_gap_pp": 2.0,
+            "individual_MAE_auxiliary_pp": 15.91304347826087,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 46,
+                "weighted_median_pp": 15.0,
+                "weighted_mean_pp": 14.617001204203435,
+                "weighted_std_pp": 2.6251041988858894,
+                "effective_sample_size": 28.893531681064555
+              },
+              "real": {
+                "n_valid": 46,
+                "weighted_median_pp": 0.0,
+                "weighted_mean_pp": 8.240399591573839,
+                "weighted_std_pp": 17.676018493076388,
+                "effective_sample_size": 28.893531681064555
+              },
+              "median_absolute_error_pp": 15.0
+            }
+          },
+          "random": {
+            "distribution": {
+              "n": 46,
+              "median_pp": 15.0,
+              "mean_pp": 14.391304347826088,
+              "cross_person_iqr_pp": 4.0
+            },
+            "median_absolute_error_pp": 15.0,
+            "distribution_W1_pp": 14.391304347826088,
+            "IQR_absolute_gap_pp": 1.0,
+            "individual_MAE_auxiliary_pp": 16.565217391304348,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 46,
+                "weighted_median_pp": 15.0,
+                "weighted_mean_pp": 14.144047980823801,
+                "weighted_std_pp": 3.522749043183598,
+                "effective_sample_size": 28.893531681064562
+              },
+              "real": {
+                "n_valid": 46,
+                "weighted_median_pp": 0.0,
+                "weighted_mean_pp": 8.240399591573839,
+                "weighted_std_pp": 17.676018493076388,
+                "effective_sample_size": 28.893531681064555
+              },
+              "median_absolute_error_pp": 15.0
+            }
+          },
+          "matched": {
+            "distribution": {
+              "n": 46,
+              "median_pp": 15.0,
+              "mean_pp": 14.369565217391305,
+              "cross_person_iqr_pp": 4.0
+            },
+            "median_absolute_error_pp": 15.0,
+            "distribution_W1_pp": 14.58695652173913,
+            "IQR_absolute_gap_pp": 1.0,
+            "individual_MAE_auxiliary_pp": 16.76086956521739,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 46,
+                "weighted_median_pp": 14.0,
+                "weighted_mean_pp": 13.537591353471614,
+                "weighted_std_pp": 3.176894030390117,
+                "effective_sample_size": 28.893531681064555
+              },
+              "real": {
+                "n_valid": 46,
+                "weighted_median_pp": 0.0,
+                "weighted_mean_pp": 8.240399591573839,
+                "weighted_std_pp": 17.676018493076388,
+                "effective_sample_size": 28.893531681064555
+              },
+              "median_absolute_error_pp": 14.0
+            }
+          }
+        }
+      }
+    },
+    "202106": {
+      "fit_status_counts": {
+        "real:ok": 48,
+        "shared:ok": 48,
+        "random:ok": 48,
+        "matched:ok": 48
+      },
+      "news_delivery": {
+        "shared": {
+          "unique_personal_sets": 1,
+          "related_news_total": 8
+        },
+        "random": {
+          "unique_personal_sets": 48,
+          "related_news_total": 57
+        },
+        "matched": {
+          "unique_personal_sets": 48,
+          "related_news_total": 79
+        }
+      },
+      "full_month_official_derived_reference": {
+        "n_respondents": 1297,
+        "q8point_interp_median": 5.481581789765941,
+        "q9_mean_weighted_median": 4.801745414733887,
+        "n_with_weight_q8": 1293,
+        "n_with_weight_q9_mean": 1273,
+        "official_point_median": 5.481581687927246,
+        "official_density_median": 4.801745414733887
+      },
+      "Q9": {
+        "n_selected": 48,
+        "n_common": 48,
+        "n_excluded": 0,
+        "estimand": "equal-weight common diagnostic sample; not a nationwide headline",
+        "real": {
+          "n": 48,
+          "median_pp": 4.812058373462069,
+          "mean_pp": 6.207769994049773,
+          "cross_person_iqr_pp": 4.631546670325552
+        },
+        "matched_minus_random": {
+          "median_absolute_error_pp": {
+            "change_pp": -0.1682078999823151,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.6738900994890735,
+              0.30794852611112855
+            ]
+          },
+          "distribution_W1_pp": {
+            "change_pp": -0.0023819604051289467,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.20524483745494204,
+              0.1983863528380327
+            ]
+          },
+          "individual_MAE_auxiliary_pp": {
+            "change_pp": -0.22081628798949637,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.4705256519845642,
+              0.03279538962434415
+            ]
+          }
+        },
+        "bootstrap_scope": "conditional selected-person uncertainty only; excludes new news draws and repeated LLM generations",
+        "arms": {
+          "shared": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 3.8578164152986236,
+              "mean_pp": 3.8295378944162963,
+              "cross_person_iqr_pp": 1.1595494993802884
+            },
+            "median_absolute_error_pp": 0.9542419581634451,
+            "distribution_W1_pp": 3.9299974861827103,
+            "IQR_absolute_gap_pp": 3.4719971709452633,
+            "individual_MAE_auxiliary_pp": 4.524148589078369,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 3.8578164152986236,
+                "weighted_mean_pp": 3.879442854369517,
+                "weighted_std_pp": 0.6253512614103495,
+                "effective_sample_size": 33.864650936729674
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 5.967901858578387,
+                "weighted_mean_pp": 7.318782023496534,
+                "weighted_std_pp": 7.997786948997488,
+                "effective_sample_size": 33.864650936729674
+              },
+              "median_absolute_error_pp": 2.1100854432797638
+            }
+          },
+          "random": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 3.712840342897014,
+              "mean_pp": 3.7542584299636084,
+              "cross_person_iqr_pp": 1.0273851428375549
+            },
+            "median_absolute_error_pp": 1.099218030565055,
+            "distribution_W1_pp": 3.958742152068826,
+            "IQR_absolute_gap_pp": 3.604161527487997,
+            "individual_MAE_auxiliary_pp": 4.58674681069155,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 3.468667288292019,
+                "weighted_mean_pp": 3.6662189960946483,
+                "weighted_std_pp": 0.6949078554722867,
+                "effective_sample_size": 33.86465093672967
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 5.967901858578387,
+                "weighted_mean_pp": 7.318782023496534,
+                "weighted_std_pp": 7.997786948997488,
+                "effective_sample_size": 33.864650936729674
+              },
+              "median_absolute_error_pp": 2.4992345702863683
+            }
+          },
+          "matched": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 3.881048242879329,
+              "mean_pp": 3.8335532346613763,
+              "cross_person_iqr_pp": 0.9356776897964498
+            },
+            "median_absolute_error_pp": 0.9310101305827398,
+            "distribution_W1_pp": 3.956360191663697,
+            "IQR_absolute_gap_pp": 3.695868980529102,
+            "individual_MAE_auxiliary_pp": 4.365930522702054,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 4.133280433715967,
+                "weighted_mean_pp": 3.9058004411990828,
+                "weighted_std_pp": 0.6112348971635365,
+                "effective_sample_size": 33.864650936729674
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 5.967901858578387,
+                "weighted_mean_pp": 7.318782023496534,
+                "weighted_std_pp": 7.997786948997488,
+                "effective_sample_size": 33.864650936729674
+              },
+              "median_absolute_error_pp": 1.8346214248624202
+            }
+          }
+        }
+      },
+      "Q8_secondary": {
+        "n_selected": 48,
+        "n_common": 48,
+        "n_excluded": 0,
+        "estimand": "equal-weight common diagnostic sample; not a nationwide headline",
+        "real": {
+          "n": 48,
+          "median_pp": 5.583333333333333,
+          "mean_pp": 8.041666666666666,
+          "cross_person_iqr_pp": 7.0
+        },
+        "matched_minus_random": {
+          "median_absolute_error_pp": {
+            "change_pp": -0.042567567567568076,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.13549616443745105,
+              0.03804565390749546
+            ]
+          },
+          "distribution_W1_pp": {
+            "change_pp": 0.033333333333333215,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.10833333333333342,
+              0.17505208333333286
+            ]
+          },
+          "individual_MAE_auxiliary_pp": {
+            "change_pp": -0.04166666666666696,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.19999999999999976,
+              0.11874999999999947
+            ]
+          }
+        },
+        "bootstrap_scope": "conditional selected-person uncertainty only; excludes new news draws and repeated LLM generations",
+        "arms": {
+          "shared": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 4.427027027027027,
+              "mean_pp": 4.391666666666667,
+              "cross_person_iqr_pp": 0.07500000000000018
+            },
+            "median_absolute_error_pp": 1.1563063063063064,
+            "distribution_W1_pp": 5.058333333333334,
+            "IQR_absolute_gap_pp": 6.925,
+            "individual_MAE_auxiliary_pp": 5.3125,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 4.474736714736031,
+                "weighted_mean_pp": 4.47599407034548,
+                "weighted_std_pp": 0.3314961172080602,
+                "effective_sample_size": 33.86465093672967
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 6.63287429544801,
+                "weighted_mean_pp": 9.381406953776928,
+                "weighted_std_pp": 8.176849094627732,
+                "effective_sample_size": 33.86465093672967
+              },
+              "median_absolute_error_pp": 2.158137580711979
+            }
+          },
+          "random": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 4.425,
+              "mean_pp": 4.391666666666667,
+              "cross_person_iqr_pp": 0.2999999999999998
+            },
+            "median_absolute_error_pp": 1.1583333333333332,
+            "distribution_W1_pp": 5.016666666666667,
+            "IQR_absolute_gap_pp": 6.7,
+            "individual_MAE_auxiliary_pp": 5.291666666666667,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 4.400928436207502,
+                "weighted_mean_pp": 4.3349196357859325,
+                "weighted_std_pp": 0.5158751408350674,
+                "effective_sample_size": 33.864650936729674
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 6.63287429544801,
+                "weighted_mean_pp": 9.381406953776928,
+                "weighted_std_pp": 8.176849094627732,
+                "effective_sample_size": 33.86465093672967
+              },
+              "median_absolute_error_pp": 2.2319458592405086
+            }
+          },
+          "matched": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 4.467567567567568,
+              "mean_pp": 4.425,
+              "cross_person_iqr_pp": 0.0
+            },
+            "median_absolute_error_pp": 1.1157657657657651,
+            "distribution_W1_pp": 5.05,
+            "IQR_absolute_gap_pp": 7.0,
+            "individual_MAE_auxiliary_pp": 5.25,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 4.521135342833163,
+                "weighted_mean_pp": 4.503343462861949,
+                "weighted_std_pp": 0.364344487580579,
+                "effective_sample_size": 33.864650936729674
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 6.63287429544801,
+                "weighted_mean_pp": 9.381406953776928,
+                "weighted_std_pp": 8.176849094627732,
+                "effective_sample_size": 33.86465093672967
+              },
+              "median_absolute_error_pp": 2.1117389526148473
+            }
+          }
+        }
+      },
+      "personal_uncertainty": {
+        "n_selected": 48,
+        "n_common": 48,
+        "n_excluded": 0,
+        "estimand": "equal-weight common diagnostic sample; not a nationwide headline",
+        "real": {
+          "n": 48,
+          "median_pp": 2.9742967738815387,
+          "mean_pp": 5.311208404066977,
+          "cross_person_iqr_pp": 6.12209806065157
+        },
+        "matched_minus_random": {
+          "median_absolute_error_pp": {
+            "change_pp": 0.0,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.2110503129248178,
+              0.1963944975017169
+            ]
+          },
+          "distribution_W1_pp": {
+            "change_pp": 0.007131783859175123,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.1398894147513285,
+              0.15353238643347503
+            ]
+          },
+          "individual_MAE_auxiliary_pp": {
+            "change_pp": -0.16320934755146688,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.35412055608893617,
+              0.04024153301244947
+            ]
+          }
+        },
+        "bootstrap_scope": "conditional selected-person uncertainty only; excludes new news draws and repeated LLM generations",
+        "arms": {
+          "shared": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 4.542276818685469,
+              "mean_pp": 4.5599636898728315,
+              "cross_person_iqr_pp": 0.3420275902432204
+            },
+            "median_absolute_error_pp": 1.5679800448039303,
+            "distribution_W1_pp": 3.2770514559642714,
+            "IQR_absolute_gap_pp": 5.78007047040835,
+            "individual_MAE_auxiliary_pp": 3.643765059111672,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 4.574209704441453,
+                "weighted_mean_pp": 4.555422493977713,
+                "weighted_std_pp": 0.5067949121941134,
+                "effective_sample_size": 33.86465093672967
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 5.418081071583377,
+                "weighted_mean_pp": 6.454617999675805,
+                "weighted_std_pp": 4.756532416012888,
+                "effective_sample_size": 33.864650936729674
+              },
+              "median_absolute_error_pp": 0.843871367141924
+            }
+          },
+          "random": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 4.574209704441453,
+              "mean_pp": 4.5769780498609025,
+              "cross_person_iqr_pp": 0.5244177531063166
+            },
+            "median_absolute_error_pp": 1.5999129305599147,
+            "distribution_W1_pp": 3.267290188446085,
+            "IQR_absolute_gap_pp": 5.597680307545254,
+            "individual_MAE_auxiliary_pp": 3.7047419558711785,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 4.574209680813172,
+                "weighted_mean_pp": 4.583825257139465,
+                "weighted_std_pp": 0.5482834601437626,
+                "effective_sample_size": 33.864650936729674
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 5.418081071583377,
+                "weighted_mean_pp": 6.454617999675805,
+                "weighted_std_pp": 4.756532416012888,
+                "effective_sample_size": 33.864650936729674
+              },
+              "median_absolute_error_pp": 0.8438713907702056
+            }
+          },
+          "matched": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 4.574209704441453,
+              "mean_pp": 4.5870649418614855,
+              "cross_person_iqr_pp": 0.35442889941714384
+            },
+            "median_absolute_error_pp": 1.5999129305599147,
+            "distribution_W1_pp": 3.27442197230526,
+            "IQR_absolute_gap_pp": 5.767669161234426,
+            "individual_MAE_auxiliary_pp": 3.5415326083197116,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 4.622722532383496,
+                "weighted_mean_pp": 4.6638375702707515,
+                "weighted_std_pp": 0.5584439508639675,
+                "effective_sample_size": 33.86465093672967
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 5.418081071583377,
+                "weighted_mean_pp": 6.454617999675805,
+                "weighted_std_pp": 4.756532416012888,
+                "effective_sample_size": 33.864650936729674
+              },
+              "median_absolute_error_pp": 0.7953585391998814
+            }
+          }
+        }
+      },
+      "raw_deflation_probability": {
+        "n_selected": 48,
+        "n_common": 48,
+        "n_excluded": 0,
+        "estimand": "equal-weight common diagnostic sample; not a nationwide headline",
+        "real": {
+          "n": 48,
+          "median_pp": 0.0,
+          "mean_pp": 11.333333333333334,
+          "cross_person_iqr_pp": 11.25
+        },
+        "matched_minus_random": {
+          "median_absolute_error_pp": {
+            "change_pp": -2.0,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -2.0,
+              2.0
+            ]
+          },
+          "distribution_W1_pp": {
+            "change_pp": 0.3125,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -0.5625,
+              1.208333333333334
+            ]
+          },
+          "individual_MAE_auxiliary_pp": {
+            "change_pp": -0.3958333333333339,
+            "paired_sample_bootstrap_95_interval_pp": [
+              -1.625,
+              0.8958333333333357
+            ]
+          }
+        },
+        "bootstrap_scope": "conditional selected-person uncertainty only; excludes new news draws and repeated LLM generations",
+        "arms": {
+          "shared": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 10.0,
+              "mean_pp": 11.604166666666666,
+              "cross_person_iqr_pp": 5.0
+            },
+            "median_absolute_error_pp": 10.0,
+            "distribution_W1_pp": 14.395833333333334,
+            "IQR_absolute_gap_pp": 6.25,
+            "individual_MAE_auxiliary_pp": 16.3125,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 10.0,
+                "weighted_mean_pp": 11.223742923911797,
+                "weighted_std_pp": 2.5757123484002187,
+                "effective_sample_size": 33.864650936729674
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 0.0,
+                "weighted_mean_pp": 13.94339401796037,
+                "weighted_std_pp": 21.309769112582785,
+                "effective_sample_size": 33.864650936729674
+              },
+              "median_absolute_error_pp": 10.0
+            }
+          },
+          "random": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 12.0,
+              "mean_pp": 12.229166666666666,
+              "cross_person_iqr_pp": 5.0
+            },
+            "median_absolute_error_pp": 12.0,
+            "distribution_W1_pp": 13.9375,
+            "IQR_absolute_gap_pp": 6.25,
+            "individual_MAE_auxiliary_pp": 16.3125,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 12.0,
+                "weighted_mean_pp": 12.801107789146496,
+                "weighted_std_pp": 3.797355626606085,
+                "effective_sample_size": 33.86465093672967
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 0.0,
+                "weighted_mean_pp": 13.94339401796037,
+                "weighted_std_pp": 21.309769112582785,
+                "effective_sample_size": 33.864650936729674
+              },
+              "median_absolute_error_pp": 12.0
+            }
+          },
+          "matched": {
+            "distribution": {
+              "n": 48,
+              "median_pp": 10.0,
+              "mean_pp": 11.75,
+              "cross_person_iqr_pp": 5.0
+            },
+            "median_absolute_error_pp": 10.0,
+            "distribution_W1_pp": 14.25,
+            "IQR_absolute_gap_pp": 6.25,
+            "individual_MAE_auxiliary_pp": 15.916666666666666,
+            "survey_weighted_auxiliary": {
+              "simulated": {
+                "n_valid": 48,
+                "weighted_median_pp": 10.0,
+                "weighted_mean_pp": 11.626640731918542,
+                "weighted_std_pp": 2.8376636646128706,
+                "effective_sample_size": 33.864650936729674
+              },
+              "real": {
+                "n_valid": 48,
+                "weighted_median_pp": 0.0,
+                "weighted_mean_pp": 13.94339401796037,
+                "weighted_std_pp": 21.309769112582785,
+                "effective_sample_size": 33.864650936729674
+              },
+              "median_absolute_error_pp": 10.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "validation": {
+    "targeted_tests_passed": 34,
+    "protected_files_unchanged": 15,
+    "actual_prompt_hashes_match": 288,
+    "raw_response_hashes_match": 288,
+    "rules_engine_jobs_passed": 6,
+    "browser_visual_verification": false
+  }
+}

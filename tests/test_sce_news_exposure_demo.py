@@ -109,6 +109,12 @@ class ExposureTests(unittest.TestCase):
         b['abstract'] = 'A different development.'
         self.assertEqual(len(module.exact_deduplicate([a, b])), 2)
 
+    def test_identical_text_at_different_times_remains(self):
+        a, b = self.row('a'), self.row('b')
+        b['headline'] = a['headline']
+        b['pub_date'] = '2021-04-02T12:00:00Z'
+        self.assertEqual(len(module.exact_deduplicate([a, b])), 2)
+
 
 if __name__ == '__main__':
     unittest.main()

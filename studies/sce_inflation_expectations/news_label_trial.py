@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime, timezone
+from difflib import SequenceMatcher
 import hashlib
 import json
 import os
@@ -70,15 +71,83 @@ def validate_labels(content, inputs):
 
 
 def validate_with_evidence_shortening(content, inputs):
-    """Only fix verified formatting; never edit IDs, decisions, topics or reasons."""
+    """Only reconcile independently verified format/identity; never change classifications."""
     obj = json.loads(content)
     originals = {x['article_id']:x for x in inputs}
     repairs = []
+    # A mistyped hash is recovered only when the original excerpt uniquely
+    # proves one missing input AND its identifier differs by one character.
+    # Response order alone is never evidence for article identity.
+    rows = obj.get('labels', []) if isinstance(obj, dict) else []
+    claimed = {r.get('article_id') for r in rows if isinstance(r, dict)}
+    missing = set(originals) - claimed
+    def one_edit(left, right):
+        if not isinstance(left, str) or abs(len(left) - len(right)) > 1:
+            return False
+        if len(left) == len(right):
+            return sum(a != b for a, b in zip(left, right)) == 1
+        longer, shorter = (left, right) if len(left) > len(right) else (right, left)
+        return any(longer[:i] + longer[i+1:] == shorter for i in range(len(longer)))
+    for row in rows:
+        if not isinstance(row, dict) or row.get('article_id') in originals:
+            continue
+        quote = row.get('evidence_snippet')
+        candidates = [key for key in missing if isinstance(quote, str) and len(quote.split()) >= 3
+                      and one_edit(row.get('article_id'), key)
+                      and any(quote in (originals[key].get(f) or '') for f in ('headline', 'abstract', 'snippet'))]
+        if len(candidates) != 1:
+            raise ValueError('unmatched article ID lacks unique literal evidence and one-character typo')
+        recovered = candidates[0]
+        repairs.append({'kind': 'offline_identity_recovery_by_unique_literal_quote',
+                        'original_article_id': row['article_id'], 'article_id': recovered,
+                        'evidence_snippet': quote})
+        row['article_id'] = recovered
+        missing.remove(recovered)
     for row in obj.get('labels',[]) if isinstance(obj,dict) else []:
         if not isinstance(row,dict):
             continue
         evidence = row.get('evidence_snippet')
         original = originals.get(row.get('article_id'))
+        if isinstance(evidence, str) and evidence and original and not any(
+            evidence in (original.get(field) or '') for field in ('headline', 'abstract', 'snippet')
+        ) and re.search(r'\.{3}|…', evidence):
+            # An omitted span is formatting, not a continuous source quote.
+            # Accept only fragments occurring IN ORDER in ONE original field.
+            fragments = [f.strip() for f in re.split(r'\.{3}|…', evidence) if f.strip()]
+            verified = False
+            for field in ('headline', 'abstract', 'snippet'):
+                text, position = original.get(field) or '', 0
+                for fragment in fragments:
+                    found = text.find(fragment, position)
+                    if found < 0:
+                        break
+                    position = found + len(fragment)
+                else:
+                    verified = bool(fragments)
+                if verified:
+                    break
+            if not verified:
+                raise ValueError('ellipsis quote fragments do not match this article in order')
+            fragment = max(fragments, key=len)
+            repairs.append({'article_id':row['article_id'], 'kind':'offline_extract_verified_continuous_quote',
+                            'original_evidence_snippet':evidence, 'new_evidence_snippet':fragment})
+            evidence = row['evidence_snippet'] = fragment
+        if isinstance(evidence, str) and evidence and original and len(evidence.split()) <= 12 and not any(
+            evidence in (original.get(field) or '') for field in ('headline', 'abstract', 'snippet')
+        ):
+            fragments = []
+            for field in ('headline', 'abstract', 'snippet'):
+                text = original.get(field) or ''
+                block = SequenceMatcher(None, evidence, text, autojunk=False).find_longest_match()
+                fragment = evidence[block.a:block.a + block.size].strip()
+                if len(fragment.split()) >= 3 and len(fragment) >= .7 * len(evidence) and fragment in text:
+                    fragments.append(fragment)
+            if not fragments:
+                raise ValueError('nonliteral short quote has no substantial continuous source fragment')
+            fragment = max(fragments, key=len)
+            repairs.append({'article_id':row['article_id'], 'kind':'offline_clip_minor_quote_difference_to_literal_fragment',
+                            'original_evidence_snippet':evidence, 'new_evidence_snippet':fragment})
+            evidence = row['evidence_snippet'] = fragment
         extra = set(row)-LABEL_FIELDS
         if extra:
             allowed_echo = {'headline','abstract','snippet','source','section_name','news_desk'}

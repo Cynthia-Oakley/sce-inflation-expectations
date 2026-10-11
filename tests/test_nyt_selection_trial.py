@@ -81,6 +81,41 @@ class NewsTrialTests(unittest.TestCase):
         row['headline']='invented'
         with self.assertRaises(ValueError):labeler.validate_with_evidence_shortening(json.dumps({'labels':[row]}),[source])
 
+    def test_ellipsis_recovery_requires_ordered_fragments_in_one_article(self):
+        source={'article_id':'a','headline':'','abstract':'Beef plants, after repairs, were coming back online.','snippet':''}
+        row={'article_id':'a','decision':'keep','topics':['supply_costs'],'scope':'us_unspecified',
+             'claim_type':'fact','reason_zh':'供给','evidence_snippet':'Beef plants ... were coming back online'}
+        labels,repairs=labeler.validate_with_evidence_shortening(json.dumps({'labels':[row]}),[source])
+        self.assertEqual(labels[0]['decision'],'keep')
+        self.assertEqual(labels[0]['evidence_snippet'],'were coming back online')
+        self.assertEqual(repairs[0]['kind'],'offline_extract_verified_continuous_quote')
+        row['evidence_snippet']='were coming back online ... Beef plants'
+        with self.assertRaises(ValueError):labeler.validate_with_evidence_shortening(json.dumps({'labels':[row]}),[source])
+
+    def test_minor_quote_difference_only_clips_literal_source_fragment(self):
+        source={'article_id':'a','headline':'','abstract':'Its vaccine generated revenue in the first quarter.','snippet':''}
+        row={'article_id':'a','decision':'keep','topics':['other_economic'],'scope':'us_national',
+             'claim_type':'fact','reason_zh':'原分类不变','evidence_snippet':'The vaccine generated revenue in the first quarter'}
+        labels,repairs=labeler.validate_with_evidence_shortening(json.dumps({'labels':[row]}),[source])
+        self.assertIn(labels[0]['evidence_snippet'],source['abstract'])
+        self.assertEqual(labels[0]['decision'],row['decision'])
+        self.assertEqual(labels[0]['reason_zh'],row['reason_zh'])
+        row['evidence_snippet']='Invented unrelated price increase'
+        with self.assertRaises(ValueError):labeler.validate_with_evidence_shortening(json.dumps({'labels':[row]}),[source])
+
+    def test_identity_recovery_requires_one_character_and_unique_article_quote(self):
+        source={'article_id':'abcde','headline':'A unique source title','abstract':'','snippet':''}
+        row={'article_id':'abccde','decision':'background','topics':['other_economic'],'scope':'unspecified',
+             'claim_type':'unclear','reason_zh':'原分类','evidence_snippet':source['headline']}
+        labels,repairs=labeler.validate_with_evidence_shortening(json.dumps({'labels':[row]}),[source])
+        self.assertEqual(labels[0]['article_id'],'abcde')
+        self.assertEqual(labels[0]['decision'],'background')
+        self.assertEqual(repairs[0]['kind'],'offline_identity_recovery_by_unique_literal_quote')
+        row['article_id']='unrelated-id'
+        with self.assertRaises(ValueError):labeler.validate_with_evidence_shortening(json.dumps({'labels':[row]}),[source])
+        row['article_id']='abccde';row['evidence_snippet']='No matching source quote'
+        with self.assertRaises(ValueError):labeler.validate_with_evidence_shortening(json.dumps({'labels':[row]}),[source])
+
 
 if __name__=='__main__':
     unittest.main()

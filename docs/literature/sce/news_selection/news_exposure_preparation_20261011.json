@@ -1,0 +1,62 @@
+{
+  "status": "completed_and_audited_no_real_simulation",
+  "new_articles": 977,
+  "paid_requests": 123,
+  "same_article_resends": 0,
+  "labels": {
+    "keep": 287,
+    "exclude": 307,
+    "background": 373,
+    "uncertain": 10
+  },
+  "peak_uncached_token_cost_estimate_usd": 0.160221,
+  "not_vendor_invoice": true,
+  "input_tokens": 207858,
+  "output_tokens": 81553,
+  "offline_repairs": {
+    "offline_extract_verified_continuous_quote": 2,
+    "offline_verbatim_quote_shortening": 51,
+    "offline_clip_minor_quote_difference_to_literal_fragment": 4,
+    "offline_identity_recovery_by_unique_literal_quote": 1
+  },
+  "classification_decisions_unchanged": true,
+  "complete_coarse_candidate_labels": true,
+  "personal_keep_pool_by_month": {
+    "202105": 200,
+    "202106": 201
+  },
+  "trial": {
+    "n_per_month": 48,
+    "months": [
+      "202105",
+      "202106"
+    ],
+    "arms": [
+      "shared",
+      "random",
+      "matched"
+    ],
+    "prepared_prompts": 288,
+    "rules_engine_jobs_passed": 6,
+    "mixing_weight": 0.5,
+    "related_weight": 2,
+    "common_count": 3,
+    "personal_count": 5,
+    "temperature": 0.5,
+    "estimated_full_output_reservation_usd": 0.8143088999999999,
+    "proposed_cap_usd": 1.0,
+    "real_simulation_calls": 0
+  },
+  "temporal_repetition_policy": "retain articles at different publication times",
+  "protected_files_unchanged": 15,
+  "output_directories": {
+    "classification_preparation": "outputs/sce_news_pool_completion_20261011_v1",
+    "classification_runs": [
+      "outputs/sce_news_pool_labels_20261011_part01_v3",
+      "outputs/sce_news_pool_labels_20261011_part02_v2",
+      "outputs/sce_news_pool_labels_20261011_part03_v2"
+    ],
+    "simulation_preparation": "outputs/sce_news_exposure_trial_20261011_v3"
+  },
+  "page_prior_directory_for_next_update": "outputs/sce_news_exposure_trial_20261011_v3"
+}

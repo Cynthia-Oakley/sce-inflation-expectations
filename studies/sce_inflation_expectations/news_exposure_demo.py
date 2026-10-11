@@ -11,7 +11,7 @@ import random
 import re
 
 ROOT = Path(__file__).resolve().parents[2]
-CONFIG = Path(__file__).with_name('news_exposure_demo_config_v1.json')
+CONFIG = Path(__file__).with_name('news_exposure_demo_config_v2.json')
 # Descriptive routing tags AFTER existing semantic classification, not new recall rules.
 TERMS = {
     'rental_housing': ('rent', 'rents', 'renting', 'rental', 'tenant', 'tenants', 'landlord', 'landlords', 'eviction'),
@@ -102,10 +102,10 @@ def draw_news(rows, count, seed_key, interests=frozenset(), mixing_weight=0., bo
 
 
 def exact_deduplicate(rows):
-    """Only remove identical source text; different updates remain, not invented event clusters."""
+    """Remove identical text at the SAME timestamp; retain later repeated coverage."""
     result, seen = [], set()
     for row in sorted(rows, key=lambda r: r['article_id']):
-        key = tuple(' '.join((row.get(k) or '').split()).casefold() for k in ('headline', 'abstract', 'snippet'))
+        key = (row.get('pub_date'),) + tuple(' '.join((row.get(k) or '').split()).casefold() for k in ('headline', 'abstract', 'snippet'))
         if key not in seen:
             result.append(row)
             seen.add(key)
@@ -176,6 +176,8 @@ def render_news_input(common, personal):
 
 def preview_section(bundle, config):
     esc = html.escape
+    related_pct = round(config['default_mixing_weight'] * 100)
+    uniform_pct = 100 - related_pct
     rows = []
     for stats in bundle['windows']:
         rows.append('<li>' + esc(stats['target']) + '：A1候选 ' + str(stats['common_a1_candidates']) +
@@ -199,7 +201,7 @@ def preview_section(bundle, config):
         cards.append('<article class="exposure-card" data-month="' + esc(view['target']) + '" data-household="' +
                      esc(view['profile']['demo_id']) + '" data-mix="' + str(view['mixing_weight']) + '"><h3>' +
                      esc(heading) + '</h3><p>本次实际抽到 ' + str(view['related_selected']) + ' 条规则相关消息 / ' +
-                     str(len(view['personal_news'])) + ' 条个人消息；单次抽样无需恰好等于30%。</p>' + ''.join(lists) +
+                     str(len(view['personal_news'])) + ' 条个人消息；相关性权重是抽样概率的混合比例，不是相关新闻的固定条数。</p>' + ''.join(lists) +
                      '<details><summary>查看实际可送给模拟模型的新闻原文（只有新闻，不是完整P/E/B提示）</summary><pre style="white-space:pre-wrap">' +
                      esc(view['news_input_text']) + '</pre></details></article>')
     selects = []
@@ -211,9 +213,11 @@ def preview_section(bundle, config):
         selects.append('<label>' + label + ' <select id="exposure-' + field + '">' + opts + '</select></label>')
     return ('<section id="news-exposure-demo"><h2>从公共新闻库到每个家庭看到的消息</h2>'
             '<p class="important">离线实现，真实模型调用0次。共同背景只依据总头版A1，不按通胀相关性再筛；B1不是A1。个人消息取已有精筛主要候选，结合家庭相关性与随机性抽取。</p>'
-            '<p>三种家庭完全合成，不来自真实SCE受访者；支出份额只作演示。默认相关性权重0.3：每次选择概率由70%均匀分布＋30%家庭相关加权分布组成，相关项加权2倍。不是固定30%消息必须相关，更不是估计到的真实阅读比例。</p>'
-            '<ul>' + ''.join(rows) + '</ul><p>每个窗口共同3条＋个人5条仅为输入演示，不是最终每月新闻量。共同消息按固定种子随机抽自全主题A1候选；每个家庭共用同一组。比例0为纯随机，0.6仅作敏感性示例。</p>'
-            '<p class="meta">沿用旧5/6月UTC日期级窗口，仅A路线回顾性机制样例；版面实际刊载日与历史文字版本未独立核验，不能当严格B预测输入。这里只去除原文完全相同的记录，尚未完成按事件整理。未证明模拟误差改善。</p>'
+            '<p>三种家庭完全合成，不来自真实SCE受访者；支出份额只作演示。默认相关性权重' + str(config['default_mixing_weight']) +
+            '：每次选择概率由' + str(uniform_pct) + '%均匀分布＋' + str(related_pct) + '%家庭相关加权分布组成，相关项加权' +
+            str(config['affinity_boost']) + '倍。不是固定相应比例的消息必须相关，更不是估计到的真实阅读比例。</p>'
+            '<ul>' + ''.join(rows) + '</ul><p>每个窗口共同3条＋个人5条仅为输入演示，不是最终每月新闻量。共同消息按固定种子随机抽自全主题A1候选；每个家庭共用同一组。比例0为纯随机，其余设置用于比较相关性权重的影响。</p>'
+            '<p class="meta">沿用旧5/6月UTC日期级窗口，仅A路线回顾性机制样例；版面实际刊载日与历史文字版本未独立核验，不能当严格B预测输入。同一事件在不同时间的报道保留；只删除同发布时间且原文相同的重复记录。未证明模拟误差改善。</p>'
             '<div class="filters">' + ''.join(selects) + '</div><p id="exposure-count" class="meta"></p>' + ''.join(cards) + '</section>')
 
 
