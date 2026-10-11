@@ -1,3 +1,7 @@
+# 2026-10-12 生活经历、人格与概率作答文献核查完成
+
+见[literature/sce/heterogeneity_and_probability/README.md](literature/sce/heterogeneity_and_probability/README.md)及其综述/讨论方案。核查10篇原始论文与UAS官方目录，六份公开PDF已本地归档（作者草稿/发表日期分开，出处与哈希留存）；重点是长期通胀经历、概率报告取整，以及奥地利人格—通胀新证据。UAS1有性格/数理/人口部分，尚未登录取得联合微观样本，不称数据就绪。RFT与单纯提示变化分开；不按真实SCE筛选模型输出，不把风险决策权重直接变形Q9。建议下一步零API分析历史开发样本的报告精度/跨月稳定性，并审计年龄与长历史价格可得性，选一个机制后再准备配对输入/留出时期/种子与预算。方案是草案，未接入引擎；原温度0.5、新闻50/50、信心候选及全部旧结果保留。原阅读页新增`#heterogeneity-probability-literature`并备份；无浏览器视觉验收。无新LLM/付费MCP，正式P/E/B/计分器及15份待审文件不动；DECISIONS受保护，讨论内容单独留档。
+
 # 2026-10-12 央行信心保留与回答形状复查完成
 
 用户要求保留央行信心机制；保留为后续可选候选模块，不改正式P/原配置。见[literature/sce/belief_proxies/confidence_response_diagnostic_20261012.md](literature/sce/belief_proxies/confidence_response_diagnostic_20261012.md)：零API原回答核查，模型非零档通常8—10对真人4；约59%真人零通缩而模型无人为零，但真人平均通缩概率更高，不能笼统高估或删尾；模型个人不确定程度在人群间IQR0.40对真人4.25pp，个人宽度2024-03已近真人，持续同质化是主要瓶颈。已修正原阅读页“Q8普遍更近”的过宽表述，只在2024-03成立；原统计未改。新产物`outputs/sce_confidence_response_diagnostic_20261012_v2/`，三图视觉核验通过，保留原HTML备份；原16运行、评分/配置及15份待审哈希保持。下一项先审定同事实概率语义澄清/有限家庭价格感知两个独立离线对照，登记未用于调整的时期/额外种子及门槛；无新预算不调用API。不把理由关键词当因果、不強制对齐Q8/Q9、不人为加噪制造异质性。DECISIONS受保护，用户选择记录在独立诊断。

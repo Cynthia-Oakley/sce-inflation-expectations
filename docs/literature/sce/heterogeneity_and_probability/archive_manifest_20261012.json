@@ -1,0 +1,78 @@
+{
+  "checked_on": "2026-10-12",
+  "note": "Public sources only; sandbox DNS failure retained separately. Download is not a full-text review.",
+  "files": [
+    {
+      "source_url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_44.pdf",
+      "retrieved_at_utc": "2026-10-11T17:08:06.013782+00:00",
+      "resolved_url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_44.pdf",
+      "content_type": "application/pdf",
+      "status": "downloaded",
+      "path": "data/raw/literature/sce/20261012_heterogeneity_probability/learning_inflation_author_2013.pdf",
+      "bytes": 609873,
+      "sha256": "875e632cb637d93720c155cc89b917f0aaec8422a4899bae3b3604f524f4c2dd",
+      "pdf_pages": 54,
+      "text_extract_path": "outputs/sce_heterogeneity_literature_20261012_v1/learning_inflation_author_2013.txt"
+    },
+    {
+      "source_url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+      "retrieved_at_utc": "2026-10-11T17:08:09.070311+00:00",
+      "resolved_url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+      "content_type": "application/pdf",
+      "status": "downloaded",
+      "path": "data/raw/literature/sce/20261012_heterogeneity_probability/grocery_prices_author.pdf",
+      "bytes": 566568,
+      "sha256": "fb93ff9688f25e5923521e755f61a5fb7c097211717e235e5f7a93969300b24a",
+      "pdf_pages": 34,
+      "text_extract_path": "outputs/sce_heterogeneity_literature_20261012_v1/grocery_prices_author.txt"
+    },
+    {
+      "source_url": "https://www.oenb.at/dam/jcr:5d1a8cce-c813-40e2-8a6a-b62535ea3321/wp-272.pdf",
+      "retrieved_at_utc": "2026-10-11T17:08:11.517547+00:00",
+      "resolved_url": "https://www.oenb.at/dam/jcr:5d1a8cce-c813-40e2-8a6a-b62535ea3321/wp-272.pdf",
+      "content_type": "application/pdf;charset=UTF-8",
+      "status": "downloaded",
+      "path": "data/raw/literature/sce/20261012_heterogeneity_probability/personality_inflation_oenb_wp272_2026.pdf",
+      "bytes": 1261958,
+      "sha256": "b320692511a79a81d7dbe648209b0220d1fb0b350b35ec8fd6321a2dd0299757",
+      "pdf_pages": 65,
+      "text_extract_path": "outputs/sce_heterogeneity_literature_20261012_v1/personality_inflation_oenb_wp272_2026.txt"
+    },
+    {
+      "source_url": "https://molinari.economics.cornell.edu/docs/GMM_Rounding_Paper_Final.pdf",
+      "retrieved_at_utc": "2026-10-11T17:08:14.219337+00:00",
+      "resolved_url": "https://molinari.economics.cornell.edu/docs/GMM_Rounding_Paper_Final.pdf",
+      "content_type": "application/pdf",
+      "status": "downloaded",
+      "path": "data/raw/literature/sce/20261012_heterogeneity_probability/tail_center_rounding_author_final.pdf",
+      "bytes": 1039381,
+      "sha256": "5dd1028bab0755548df99477ce0b0e4ac8b02176cd78cc6c565f33d8cf7308e6",
+      "pdf_pages": 40,
+      "text_extract_path": "outputs/sce_heterogeneity_literature_20261012_v1/tail_center_rounding_author_final.txt"
+    },
+    {
+      "source_url": "https://aclanthology.org/2024.acl-long.554.pdf",
+      "retrieved_at_utc": "2026-10-11T17:08:17.236373+00:00",
+      "resolved_url": "https://aclanthology.org/2024.acl-long.554.pdf",
+      "content_type": "application/pdf",
+      "status": "downloaded",
+      "path": "data/raw/literature/sce/20261012_heterogeneity_probability/persona_effect_acl2024.pdf",
+      "bytes": 872864,
+      "sha256": "e8d04961d53b62060195e47b34809162296f901ee8fcda785606d724d41c8c90",
+      "pdf_pages": 19,
+      "text_extract_path": "outputs/sce_heterogeneity_literature_20261012_v1/persona_effect_acl2024.txt"
+    },
+    {
+      "source_url": "https://arxiv.org/pdf/2307.09288",
+      "retrieved_at_utc": "2026-10-11T17:08:19.212323+00:00",
+      "resolved_url": "https://arxiv.org/pdf/2307.09288",
+      "content_type": "application/pdf",
+      "status": "downloaded",
+      "path": "data/raw/literature/sce/20261012_heterogeneity_probability/llama2_2023.pdf",
+      "bytes": 13661300,
+      "sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91",
+      "pdf_pages": 77,
+      "text_extract_path": "outputs/sce_heterogeneity_literature_20261012_v1/llama2_2023.txt"
+    }
+  ]
+}

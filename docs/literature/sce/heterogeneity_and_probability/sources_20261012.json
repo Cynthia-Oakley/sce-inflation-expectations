@@ -1,0 +1,135 @@
+{
+  "checked_on": "2026-10-12",
+  "status": "research_only_no_new_API_simulation",
+  "note": "Primary sources; read scopes distinguish manuscript sections, abstracts and catalogs. Project proposals are inferences.",
+  "sources": [
+    {
+      "id": "L01",
+      "title": "Learning from Inflation Experiences",
+      "authors": "Ulrike Malmendier; Stefan Nagel",
+      "publication": "Quarterly Journal of Economics 131(1):53–87 (2016)",
+      "doi": "10.1093/qje/qjv037",
+      "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_44.pdf",
+      "version": "Author draft dated 2013-04-04; journal publication independently checked on author bibliography",
+      "archive_file": "learning_inflation_author_2013.pdf",
+      "read_scope": "Abstract, introduction and age-dependent learning framework in author draft, including equations (1)–(5); not full replication",
+      "project_limit": "National age-cohort history is a proxy, not verified personal biography or a universal age ranking."
+    },
+    {
+      "id": "L02",
+      "title": "Exposure to Grocery Prices and Inflation Expectations",
+      "authors": "Francesco D’Acunto; Ulrike Malmendier; Juan Ospina; Michael Weber",
+      "publication": "Journal of Political Economy 129(5):1615–1639 (2021)",
+      "doi": "10.1086/713192",
+      "url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+      "version": "Author draft dated 2020-08-03, not journal typeset final",
+      "archive_file": "grocery_prices_author.pdf",
+      "read_scope": "Abstract, introduction and sections on purchase frequency, sign of changes and robustness in author draft",
+      "project_limit": "Expenditure shares are not purchase frequencies; underlying linked scanner data are not available in this project."
+    },
+    {
+      "id": "L03",
+      "title": "From traits to rates: How personality shapes inflation expectations",
+      "authors": "Philipp Roderweis; Alexander Toplitsch",
+      "publication": "OeNB Working Paper 272, 2026-01-20",
+      "url": "https://www.oenb.at/dam/jcr:5d1a8cce-c813-40e2-8a6a-b62535ea3321/wp-272.pdf",
+      "version": "Dated 2026-01-20 working paper, Austrian HFCS 2023 wave",
+      "archive_file": "personality_inflation_oenb_wp272_2026.pdf",
+      "read_scope": "Abstract/nontechnical summary, data and fieldwork description, key reported associations; not full econometric replication",
+      "project_limit": "Observational Austrian working paper. Added explained variance is relative to demographics, not 70% of all variance; coefficients not transferable to US personas."
+    },
+    {
+      "id": "L04",
+      "title": "Rounding Probabilistic Expectations in Surveys",
+      "authors": "Charles F. Manski; Francesca Molinari",
+      "publication": "Journal of Business & Economic Statistics 28(2):219–231 (2010)",
+      "doi": "10.1198/jbes.2009.08098",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20368764/",
+      "version": "Published abstract and author bibliography checked; PMC full-text direct access showed verification page",
+      "archive_file": null,
+      "read_scope": "Primary abstract and bibliographic metadata, not complete full-text review",
+      "project_limit": "HRS findings do not identify SCE rounding type proportions or justify universal thresholds."
+    },
+    {
+      "id": "L05",
+      "title": "Tail and Center Rounding of Probabilistic Expectations in the Health and Retirement Study",
+      "authors": "Pamela Giustinelli; Charles F. Manski; Francesca Molinari",
+      "publication": "Journal of Econometrics 231(1):265–281 (2022 issue; online 2020)",
+      "doi": "10.1016/j.jeconom.2020.03.020",
+      "url": "https://molinari.economics.cornell.edu/docs/GMM_Rounding_Paper_Final.pdf",
+      "version": "Author final manuscript; issue date confirmed by author bibliography. Not equating 2018 working paper with 2022 issue.",
+      "archive_file": "tail_center_rounding_author_final.pdf",
+      "read_scope": "Abstract/introduction and section 2 inference framework, especially stability and rounding bounds; not full replication",
+      "project_limit": "Separate scalar probability questions are not SCE ten-bin distributions. Observed multiples give constraints, not uniquely identified rounding rules."
+    },
+    {
+      "id": "L06",
+      "title": "Assessing small non-zero perceptions of chance: The case of H1N1 (swine) flu risks",
+      "authors": "Wändi Bruine de Bruin; Andrew M. Parker; Jürgen Maurer",
+      "publication": "Journal of Risk and Uncertainty 42(2):145–159 (2011)",
+      "doi": "10.1007/s11166-011-9113-5",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4267538/",
+      "version": "Primary manuscript indexed abstract checked; direct page access blocked by verification",
+      "archive_file": null,
+      "read_scope": "Publicly indexed primary abstract, not archived full text",
+      "project_limit": "Health-risk evidence about small probabilities, not a causal explanation of SCE deflation zeros or a zero-probability target."
+    },
+    {
+      "id": "L07",
+      "title": "Advances in Prospect Theory: Cumulative Representation of Uncertainty",
+      "authors": "Amos Tversky; Daniel Kahneman",
+      "publication": "Journal of Risk and Uncertainty 5:297–323 (1992)",
+      "url": "https://psych.fullerton.edu/mbirnbaum/teaching/psych466/articles/Tversky_Kahneman_JRU_92.pdf",
+      "version": "University-hosted original article",
+      "archive_file": null,
+      "read_scope": "Abstract/introduction and section 1.1 distinction between decision weights and probabilities",
+      "project_limit": "Decision weighting for choices is not a justified transformation of elicited Q9 belief probabilities."
+    },
+    {
+      "id": "L08",
+      "title": "Quantifying the Persona Effect in LLM Simulations",
+      "authors": "Tiancheng Hu; Nigel Collier",
+      "publication": "ACL 2024, pages 10289–10307",
+      "doi": "10.18653/v1/2024.acl-long.554",
+      "url": "https://aclanthology.org/2024.acl-long.554/",
+      "version": "Published ACL paper",
+      "archive_file": "persona_effect_acl2024.pdf",
+      "read_scope": "Abstract, motivation and reported overall conclusions; not re-running their evaluated NLP tasks",
+      "project_limit": "Subjective NLP tasks are not SCE; prompt responsiveness must be measured locally."
+    },
+    {
+      "id": "L09",
+      "title": "Questioning the Survey Responses of Large Language Models",
+      "authors": "Ricardo Dominguez-Olmedo; Moritz Hardt; Celestine Mendler-Dünner",
+      "publication": "NeurIPS 2024",
+      "url": "https://proceedings.nips.cc/paper_files/paper/2024/hash/515c62809e0a29729d7eec26e2916fc0-Abstract-Conference.html",
+      "version": "Published conference paper",
+      "archive_file": null,
+      "read_scope": "Official conference abstract and reported formatting/order effects; not full replication",
+      "project_limit": "ACS-style categorical survey tasks differ from open Q9 probabilities; equivalent wording is a control, not persona evidence."
+    },
+    {
+      "id": "L10",
+      "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+      "authors": "Hugo Touvron et al.",
+      "publication": "arXiv:2307.09288 (2023)",
+      "url": "https://arxiv.org/abs/2307.09288",
+      "version": "Current author preprint fetched 2026-10-12; hash retained, PDF version not inferred from unversioned download URL",
+      "archive_file": "llama2_2023.pdf",
+      "read_scope": "Section 3.2.3 on rejection sampling fine-tuning, PDF pages 13–14; not complete 77-page review",
+      "project_limit": "Fine-tuning involves ranking candidate outputs and updating weights. Prompt variations alone are not fine-tuning."
+    },
+    {
+      "id": "D01",
+      "title": "Understanding America Study — UAS 1 and Comprehensive File",
+      "authors": "USC Center for Economic and Social Research",
+      "publication": "Official survey catalog, accessed 2026-10-12",
+      "url": "https://uasdata.usc.edu/index.php?ssid=UAS+1&type=4",
+      "additional_url": "https://uasdata.usc.edu/index.php?pid=Comprehensive+File&type=3",
+      "version": "Current catalog, not a historical microdata vintage",
+      "archive_file": null,
+      "read_scope": "Official indexed UAS1 catalog and comprehensive-file public description; direct UAS1 fetch error retained as limitation",
+      "project_limit": "Login/registration/data-use agreement needed; no joint sample count, inflation linkage or historical data availability has been audited."
+    }
+  ]
+}
