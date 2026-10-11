@@ -1,0 +1,32 @@
+{
+  "status": "offline_demonstration_not_frozen_simulation",
+  "seed": 42,
+  "common_count": 3,
+  "personal_count": 5,
+  "affinity_boost": 2.0,
+  "mixing_weights": [0.0, 0.3, 0.6],
+  "default_mixing_weight": 0.3,
+  "households": [
+    {
+      "demo_id": "renter_food",
+      "label_zh": "租房、食品支出较多的家庭",
+      "housing_tenure": "rent",
+      "employed": true,
+      "synthetic_spending_shares": {"food": 0.32, "gasoline": 0.02, "utilities": 0.05}
+    },
+    {
+      "demo_id": "owner_driver",
+      "label_zh": "自有住房、驾车支出较多的家庭",
+      "housing_tenure": "own",
+      "employed": true,
+      "synthetic_spending_shares": {"food": 0.14, "gasoline": 0.10, "utilities": 0.05}
+    },
+    {
+      "demo_id": "retired_owner",
+      "label_zh": "自有住房、很少驾车的退休家庭",
+      "housing_tenure": "own",
+      "employed": false,
+      "synthetic_spending_shares": {"food": 0.18, "gasoline": 0.01, "utilities": 0.10}
+    }
+  ]
+}

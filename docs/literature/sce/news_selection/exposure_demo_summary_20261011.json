@@ -1,0 +1,262 @@
+{
+  "status": "offline_demo_complete_no_simulation",
+  "output_dir": "outputs/sce_news_exposure_demo_20261011_v2",
+  "windows": [
+    {
+      "target": "202105",
+      "cutoff_date": "2021-05-12",
+      "date_rule": "legacy UTC pub_date first10 <= cutoff date; not precise New York timestamp PIT",
+      "source_articles": 5616,
+      "placement_counts": {
+        "unknown": 2290,
+        "other_recorded_page": 3082,
+        "a1": 244
+      },
+      "common_a1_candidates": 244,
+      "personal_keep_candidates": 49,
+      "personal_unknown_placement": 25,
+      "sample_status": "personal library is limited to existing 347-article labeling trial; not full-month final selection",
+      "paper_issue_date_status": "not_independently_verified; online pub_date is not paper publication date",
+      "common_selected_ids": [
+        "6d811ef444cc1be08d9d9e75",
+        "9da17f656660f98ec527a473",
+        "736c5dc8b6013a08dddd02a5"
+      ],
+      "common_draw_audit": [
+        {
+          "article_id": "6d811ef444cc1be08d9d9e75",
+          "probability_given_remaining_pool": 0.004098360655737705,
+          "related_tags": [],
+          "uniform_draw": 0.4666041197896281
+        },
+        {
+          "article_id": "9da17f656660f98ec527a473",
+          "probability_given_remaining_pool": 0.00411522633744856,
+          "related_tags": [],
+          "uniform_draw": 0.6467090891562971
+        },
+        {
+          "article_id": "736c5dc8b6013a08dddd02a5",
+          "probability_given_remaining_pool": 0.004132231404958678,
+          "related_tags": [],
+          "uniform_draw": 0.4975804211403403
+        }
+      ]
+    },
+    {
+      "target": "202106",
+      "cutoff_date": "2021-06-10",
+      "date_rule": "legacy UTC pub_date first10 <= cutoff date; not precise New York timestamp PIT",
+      "source_articles": 5311,
+      "placement_counts": {
+        "unknown": 2137,
+        "a1": 235,
+        "other_recorded_page": 2939
+      },
+      "common_a1_candidates": 235,
+      "personal_keep_candidates": 49,
+      "personal_unknown_placement": 23,
+      "sample_status": "personal library is limited to existing 347-article labeling trial; not full-month final selection",
+      "paper_issue_date_status": "not_independently_verified; online pub_date is not paper publication date",
+      "common_selected_ids": [
+        "60bfc504bfaeef735786f64c",
+        "5911c780bd4ed4b8fcceb7c8",
+        "632593f45782366657111f63"
+      ],
+      "common_draw_audit": [
+        {
+          "article_id": "60bfc504bfaeef735786f64c",
+          "probability_given_remaining_pool": 0.00425531914893617,
+          "related_tags": [],
+          "uniform_draw": 0.3977226226367192
+        },
+        {
+          "article_id": "5911c780bd4ed4b8fcceb7c8",
+          "probability_given_remaining_pool": 0.004273504273504274,
+          "related_tags": [],
+          "uniform_draw": 0.3700138335011117
+        },
+        {
+          "article_id": "632593f45782366657111f63",
+          "probability_given_remaining_pool": 0.004291845493562232,
+          "related_tags": [],
+          "uniform_draw": 0.41703319791984195
+        }
+      ]
+    }
+  ],
+  "views_generated": 18,
+  "common_count": 3,
+  "personal_count": 5,
+  "seed": 42,
+  "affinity_boost": 2.0,
+  "mixing_weights": [
+    0.0,
+    0.3,
+    0.6
+  ],
+  "default_mixing_weight": 0.3,
+  "source_plan_sha256": "28dad1be74d3ae53d445302c604d685ec0f25d443110c9ae06643617a05b4d83",
+  "source_labels_sha256": "ef6198aa0f6f69af5e936cd78955c9c2ea031307058c63ae3ca0bcef3b6a3e0f",
+  "module_sha256": "b64bccf26626687c74638766ff4ef0979e06a2623e4f6a64e781c79e6b82c521",
+  "config_sha256": "3ecc0bc78c6ecea4ec78fca9a317558cd61c4fde821516c84a4d1416ce16e972",
+  "protected_files_unchanged": 15,
+  "new_api_calls": 0,
+  "new_simulation_calls": 0,
+  "real_personal_data_used": false,
+  "sampling_results": [
+    {
+      "target": "202105",
+      "mixing_weight": 0.0,
+      "related_candidates": 12,
+      "related_selected": 0,
+      "first_draw_related_probability": 0.24489795918367344,
+      "demo_id": "renter_food"
+    },
+    {
+      "target": "202105",
+      "mixing_weight": 0.3,
+      "related_candidates": 12,
+      "related_selected": 1,
+      "first_draw_related_probability": 0.2894613583138173,
+      "demo_id": "renter_food"
+    },
+    {
+      "target": "202105",
+      "mixing_weight": 0.6,
+      "related_candidates": 12,
+      "related_selected": 2,
+      "first_draw_related_probability": 0.3340247574439612,
+      "demo_id": "renter_food"
+    },
+    {
+      "target": "202105",
+      "mixing_weight": 0.0,
+      "related_candidates": 16,
+      "related_selected": 2,
+      "first_draw_related_probability": 0.326530612244898,
+      "demo_id": "owner_driver"
+    },
+    {
+      "target": "202105",
+      "mixing_weight": 0.3,
+      "related_candidates": 16,
+      "related_selected": 2,
+      "first_draw_related_probability": 0.3762637362637361,
+      "demo_id": "owner_driver"
+    },
+    {
+      "target": "202105",
+      "mixing_weight": 0.6,
+      "related_candidates": 16,
+      "related_selected": 2,
+      "first_draw_related_probability": 0.42599686028257455,
+      "demo_id": "owner_driver"
+    },
+    {
+      "target": "202105",
+      "mixing_weight": 0.0,
+      "related_candidates": 1,
+      "related_selected": 0,
+      "first_draw_related_probability": 0.02040816326530612,
+      "demo_id": "retired_owner"
+    },
+    {
+      "target": "202105",
+      "mixing_weight": 0.3,
+      "related_candidates": 1,
+      "related_selected": 0,
+      "first_draw_related_probability": 0.026285714285714287,
+      "demo_id": "retired_owner"
+    },
+    {
+      "target": "202105",
+      "mixing_weight": 0.6,
+      "related_candidates": 1,
+      "related_selected": 0,
+      "first_draw_related_probability": 0.03216326530612245,
+      "demo_id": "retired_owner"
+    },
+    {
+      "target": "202106",
+      "mixing_weight": 0.0,
+      "related_candidates": 20,
+      "related_selected": 2,
+      "first_draw_related_probability": 0.40816326530612257,
+      "demo_id": "renter_food"
+    },
+    {
+      "target": "202106",
+      "mixing_weight": 0.3,
+      "related_candidates": 20,
+      "related_selected": 4,
+      "first_draw_related_probability": 0.45962732919254673,
+      "demo_id": "renter_food"
+    },
+    {
+      "target": "202106",
+      "mixing_weight": 0.6,
+      "related_candidates": 20,
+      "related_selected": 4,
+      "first_draw_related_probability": 0.5110913930789708,
+      "demo_id": "renter_food"
+    },
+    {
+      "target": "202106",
+      "mixing_weight": 0.0,
+      "related_candidates": 21,
+      "related_selected": 3,
+      "first_draw_related_probability": 0.4285714285714287,
+      "demo_id": "owner_driver"
+    },
+    {
+      "target": "202106",
+      "mixing_weight": 0.3,
+      "related_candidates": 21,
+      "related_selected": 3,
+      "first_draw_related_probability": 0.48,
+      "demo_id": "owner_driver"
+    },
+    {
+      "target": "202106",
+      "mixing_weight": 0.6,
+      "related_candidates": 21,
+      "related_selected": 3,
+      "first_draw_related_probability": 0.5314285714285717,
+      "demo_id": "owner_driver"
+    },
+    {
+      "target": "202106",
+      "mixing_weight": 0.0,
+      "related_candidates": 1,
+      "related_selected": 0,
+      "first_draw_related_probability": 0.02040816326530612,
+      "demo_id": "retired_owner"
+    },
+    {
+      "target": "202106",
+      "mixing_weight": 0.3,
+      "related_candidates": 1,
+      "related_selected": 1,
+      "first_draw_related_probability": 0.026285714285714287,
+      "demo_id": "retired_owner"
+    },
+    {
+      "target": "202106",
+      "mixing_weight": 0.6,
+      "related_candidates": 1,
+      "related_selected": 1,
+      "first_draw_related_probability": 0.03216326530612245,
+      "demo_id": "retired_owner"
+    }
+  ],
+  "existing_html_before_sha256": "23a13776533fab94980167dadeeb6f53fa34a58c910f79af957fff1638439536",
+  "previous_demo": "outputs/sce_news_exposure_demo_20261011_v1",
+  "existing_html_after_sha256": "9d19c3ca6140e6e7aad8ac632ce7776a3f8cc6d9e495523b8a6001df1ad4eba3",
+  "output_sha256": {
+    "config_snapshot.json": "3ecc0bc78c6ecea4ec78fca9a317558cd61c4fde821516c84a4d1416ce16e972",
+    "household_views.json": "8bbff364a926dc39acdbd2f27313ab57bf08393d1110136d83000d2bc9a3b8bb",
+    "library_202105.json": "619aa5ca3ec2e340fe543d45236360e7be99767b4befb2539095baedac9e8fe8",
+    "library_202106.json": "ae4a3662c69d77e90cc220e77beff66ef5b79bff1b3c68cb48ace8af4ba0c928"
+  }
+}

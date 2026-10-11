@@ -1,0 +1,36 @@
+{
+  "checked_at_utc": "2026-10-11T07:34:07.715576+00:00",
+  "status": "passed",
+  "module_sha256": "b64bccf26626687c74638766ff4ef0979e06a2623e4f6a64e781c79e6b82c521",
+  "unit_test_file_sha256": "f3e3d266731b29d1662587b76face985cd638e0bce02aa6ca288f5dc38d7c929",
+  "unit_test_count_passed": 9,
+  "unit_test_command": "python3 -m unittest discover -s tests -p 'test_sce_news_exposure_demo.py' -v",
+  "generated_views_checked": 18,
+  "common_count_per_view": 3,
+  "personal_count_per_view": 5,
+  "checks": [
+    "original source hashes and text unchanged",
+    "common A1 metadata in all views",
+    "no future rows relative to legacy UTC date cutoff",
+    "same common articles across households and mixing weights",
+    "no duplicate IDs per view",
+    "keep-only personal candidates",
+    "positive sampling probabilities",
+    "source labels and private scoring fields excluded from rendered news",
+    "unique DOM IDs and old 60/120/360 rows unchanged",
+    "exact legacy HTML preserved outside new section and script",
+    "local README links resolve"
+  ],
+  "html_filters": {
+    "status": "passed",
+    "combinations_checked": 18,
+    "browser_render_inspected": false
+  },
+  "protected_files_unchanged": 15,
+  "new_api_calls": 0,
+  "new_simulation_calls": 0,
+  "complete_month_semantic_library": false,
+  "strict_b_pit_verified": false,
+  "real_household_exposure_observed": false,
+  "forecast_accuracy_measured": false
+}
