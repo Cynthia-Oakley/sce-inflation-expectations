@@ -110,6 +110,23 @@ def validate_with_evidence_shortening(content, inputs):
         original = originals.get(row.get('article_id'))
         if isinstance(evidence, str) and evidence and original and not any(
             evidence in (original.get(field) or '') for field in ('headline', 'abstract', 'snippet')
+        ):
+            # Title case and non-breaking spaces can be normalized by the
+            # model. Restore only an unambiguous span with the same words; never
+            # treat paraphrases or a different article as source evidence.
+            pattern = r'\s+'.join(re.escape(word) for word in evidence.split())
+            spans = {match.group() for field in ('headline', 'abstract', 'snippet')
+                     for match in re.finditer(pattern, original.get(field) or '', re.IGNORECASE)
+                     if ' '.join(match.group().split()).casefold() == ' '.join(evidence.split()).casefold()}
+            if len(spans) == 1:
+                literal = spans.pop()
+                kind = ('offline_restore_source_quote_case' if literal.casefold() == evidence.casefold()
+                        else 'offline_restore_source_quote_whitespace')
+                repairs.append({'article_id': row['article_id'], 'kind': kind,
+                                'original_evidence_snippet': evidence, 'new_evidence_snippet': literal})
+                evidence = row['evidence_snippet'] = literal
+        if isinstance(evidence, str) and evidence and original and not any(
+            evidence in (original.get(field) or '') for field in ('headline', 'abstract', 'snippet')
         ) and re.search(r'\.{3}|…', evidence):
             # An omitted span is formatting, not a continuous source quote.
             # Accept only fragments occurring IN ORDER in ONE original field.

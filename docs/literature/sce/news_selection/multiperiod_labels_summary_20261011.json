@@ -1,58 +1,190 @@
 {
-  "status": "prepared_not_authorized_not_run",
-  "created_at_utc": "2026-10-11T14:49:23.519224+00:00",
-  "target_months": [
-    "2022-03",
-    "2022-09",
-    "2023-03",
-    "2024-03"
-  ],
-  "window_candidates": [
+  "status": "all_classification_completed_raw_revalidated_libraries_ready",
+  "checked_on": "2026-10-11",
+  "unique_articles": 2278,
+  "decision_counts": {
+    "keep": 881,
+    "exclude": 663,
+    "background": 729,
+    "uncertain": 5
+  },
+  "paid_requests": 286,
+  "same_prompt_retries": 1,
+  "automatic_retries": 0,
+  "explicit_user_approved_response_less_retries": 1,
+  "windows": [
     {
       "target_month": "2022-03",
       "as_of": "2022-03-10T23:59:59-05:00",
-      "new_labels_needed": 653
+      "new_labels_needed": 653,
+      "source_articles": 5224,
+      "labelled_candidates": 653,
+      "decision_counts": {
+        "keep": 287,
+        "background": 195,
+        "exclude": 169,
+        "uncertain": 2
+      },
+      "keep_topic_memberships": {
+        "employment_income_consumption": 61,
+        "policy": 147,
+        "living_prices": 79,
+        "economic_outlook": 131,
+        "supply_costs": 120,
+        "other_economic": 7
+      },
+      "common_a1_candidates": 214,
+      "personal_keep_candidates": 269,
+      "personal_unknown_placement": 98,
+      "pool_status": "complete_coarse_candidate_labels",
+      "exact_same_time_text_duplicates_removed": 0,
+      "paper_issue_date_status": "unverified; online publication time is not paper date",
+      "historical_text_vintage": "unverified_archive_snapshot",
+      "fed_mention_literal_counts": {
+        "common_pool": 0,
+        "personal_pool": 16
+      },
+      "fed_mention_measure_note": "Literal phrase audit only; not semantic policy exposure or proof a household saw an action."
     },
     {
       "target_month": "2022-09",
       "as_of": "2022-09-13T23:59:59-04:00",
-      "new_labels_needed": 611
+      "new_labels_needed": 611,
+      "source_articles": 5087,
+      "labelled_candidates": 611,
+      "decision_counts": {
+        "keep": 257,
+        "exclude": 181,
+        "background": 172,
+        "uncertain": 1
+      },
+      "keep_topic_memberships": {
+        "supply_costs": 82,
+        "living_prices": 78,
+        "economic_outlook": 121,
+        "employment_income_consumption": 69,
+        "policy": 155,
+        "other_economic": 5
+      },
+      "common_a1_candidates": 246,
+      "personal_keep_candidates": 232,
+      "personal_unknown_placement": 72,
+      "pool_status": "complete_coarse_candidate_labels",
+      "exact_same_time_text_duplicates_removed": 0,
+      "paper_issue_date_status": "unverified; online publication time is not paper date",
+      "historical_text_vintage": "unverified_archive_snapshot",
+      "fed_mention_literal_counts": {
+        "common_pool": 6,
+        "personal_pool": 25
+      },
+      "fed_mention_measure_note": "Literal phrase audit only; not semantic policy exposure or proof a household saw an action."
     },
     {
       "target_month": "2023-03",
       "as_of": "2023-03-14T23:59:59-04:00",
-      "new_labels_needed": 524
+      "new_labels_needed": 524,
+      "source_articles": 4718,
+      "labelled_candidates": 524,
+      "decision_counts": {
+        "exclude": 160,
+        "uncertain": 1,
+        "background": 185,
+        "keep": 178
+      },
+      "keep_topic_memberships": {
+        "supply_costs": 48,
+        "economic_outlook": 90,
+        "policy": 101,
+        "living_prices": 44,
+        "employment_income_consumption": 56,
+        "other_economic": 7
+      },
+      "common_a1_candidates": 239,
+      "personal_keep_candidates": 157,
+      "personal_unknown_placement": 35,
+      "pool_status": "complete_coarse_candidate_labels",
+      "exact_same_time_text_duplicates_removed": 0,
+      "paper_issue_date_status": "unverified; online publication time is not paper date",
+      "historical_text_vintage": "unverified_archive_snapshot",
+      "fed_mention_literal_counts": {
+        "common_pool": 7,
+        "personal_pool": 21
+      },
+      "fed_mention_measure_note": "Literal phrase audit only; not semantic policy exposure or proof a household saw an action."
     },
     {
       "target_month": "2024-03",
       "as_of": "2024-03-12T23:59:59-04:00",
-      "new_labels_needed": 490
+      "new_labels_needed": 490,
+      "source_articles": 5085,
+      "labelled_candidates": 490,
+      "decision_counts": {
+        "background": 177,
+        "exclude": 153,
+        "keep": 159,
+        "uncertain": 1
+      },
+      "keep_topic_memberships": {
+        "policy": 89,
+        "economic_outlook": 73,
+        "supply_costs": 26,
+        "living_prices": 61,
+        "employment_income_consumption": 46,
+        "other_economic": 3
+      },
+      "common_a1_candidates": 235,
+      "personal_keep_candidates": 155,
+      "personal_unknown_placement": 42,
+      "pool_status": "complete_coarse_candidate_labels",
+      "exact_same_time_text_duplicates_removed": 0,
+      "paper_issue_date_status": "unverified; online publication time is not paper date",
+      "historical_text_vintage": "unverified_archive_snapshot",
+      "fed_mention_literal_counts": {
+        "common_pool": 1,
+        "personal_pool": 15
+      },
+      "fed_mention_measure_note": "Literal phrase audit only; not semantic policy exposure or proof a household saw an action."
     }
   ],
-  "unique_new_articles": 2278,
-  "new_batches": 285,
-  "total_reservation_usd": 1.5106676999999995,
-  "proposed_total_cap_usd": 1.75,
-  "pricing_basis": {
-    "input_usd_per_million": 0.3,
-    "output_usd_per_million": 1.2,
-    "basis": "peak uncached rates; actual weekend prices may be lower",
-    "verified_on": "2026-10-11",
-    "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+  "returned_models": {
+    "deepseek-flash": 285
   },
-  "destination": "https://api.deepseek.com/v1/chat/completions",
-  "data_scope": "public NYT metadata only; no population or SCE answers",
-  "batch_size_max": 8,
-  "temperature": 0,
-  "requested_model": "deepseek-flash",
-  "execution_policy": "one run chain per part; resume only unattempted batches; stop all parts on failure",
-  "classification_contract": "unchanged v1.2; different-time event repetition retained",
-  "simulation_status": "not_configured_not_authorized_not_run",
-  "prepared_package": "outputs/sce_multiperiod_news_labels_prepared_20261011_v1",
-  "prepared_summary_sha256": "e101a2c81d49eb21385bb2022819cf3ceee55eb41868ad21522bfe1db1f06c0b",
-  "offline_validation": "all_seven_packages_validated_offline",
-  "protected_files_checked": 15,
-  "new_api_calls": 0,
+  "system_fingerprints": {
+    "aeb56401ca74e127821c4f9126dcb669": 285
+  },
+  "prompt_tokens": 487749,
+  "completion_tokens": 193602,
+  "peak_uncached_cost_upper_usd": 0.3837969,
+  "published_weekend_cache_aware_cost_estimate_usd": 0.1677415980000001,
+  "unknown_charge_reservation_usd": 0.0051497999999999995,
+  "budget_cap_usd": 1.75,
+  "billing_note": "Peak upper includes response-less fee reservation; weekend estimate is known replies only. Token/rate estimates, not an account invoice.",
+  "offline_repair_counts": {
+    "offline_verbatim_quote_shortening": 112,
+    "offline_restore_source_quote_case": 6,
+    "offline_clip_minor_quote_difference_to_literal_fragment": 6,
+    "offline_restore_source_quote_whitespace": 4,
+    "offline_extract_verified_continuous_quote": 2,
+    "offline_remove_verbatim_input_echo": 8,
+    "offline_restore_source_inline_double_quotes": 1
+  },
   "new_simulation_calls": 0,
-  "authorization": "new_$1.75_scope_requested_in_chat; awaiting_reply"
+  "interpretation": "Observed classification funnel; model decisions are suggestions, not human accuracy or full recall. A1 is an editorial proxy, not measured exposure.",
+  "semantic_review": {
+    "status": "targeted_semantic_review_completed_no_label_changes",
+    "reviewed_rows": 41,
+    "sampling": "up to 3 per decision per window, fixed source-ID hash; includes all five uncertain articles",
+    "source_sample_sha256": "19e0c06a70798f577d28e91362bd32d35ccea06cd679e491a6335041c703eff0",
+    "observations": [
+      "Selected examples broadly follow the intended economic-versus-corporate/background boundary.",
+      "Some keep labels are indirect local costs or industry policy, not direct inflation news; this is permitted by the broad standard.",
+      "Five uncertain labels lack substantive abstracts; personal keep libraries omit them.",
+      "This small model-assisted check is not a human accuracy estimate or evidence of full recall."
+    ],
+    "labels_changed": 0,
+    "new_api_calls": 0
+  },
+  "final_analysis_package": "outputs/sce_multiperiod_news_label_analysis_20261011_v1",
+  "summary_sha256": "57ca767009414fcae0b82ac665257abed1089a93d7fd2fdd6dd70b74c54ba709",
+  "available_raw_replies_revalidated": 285
 }
