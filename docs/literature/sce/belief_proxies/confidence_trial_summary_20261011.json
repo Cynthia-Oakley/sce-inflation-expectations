@@ -120,10 +120,14 @@
     "Common policy brief assumes controlled awareness; comparison with old runs cannot isolate this information change.",
     "No own prior answer, panel memory, core/normal projection or interpersonal interaction."
   ],
-  "status": "offline_prepared_awaiting_explicit_budget_reply",
+  "status": "simulation_and_offline_analysis_completed",
   "target": "SCE one-year Q8/Q9",
   "engineering_cells_passed": 8,
   "focused_checks_passed": 19,
-  "real_simulation_calls": 0,
-  "truth_reference_rows": 4918
+  "real_simulation_calls": 768,
+  "truth_reference_rows": 4918,
+  "authorized_cap_usd": 2.5,
+  "valid_answers": 767,
+  "invalid_answers": 1,
+  "result_summary": "docs/literature/sce/belief_proxies/confidence_result_20261012.json"
 }

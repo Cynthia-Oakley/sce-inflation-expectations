@@ -1,0 +1,60 @@
+{
+  "status": "simulation_and_offline_analysis_completed",
+  "completed_on_local_date": "2026-10-12",
+  "analysis_directory": "outputs/sce_confidence_analysis_20261011_v2",
+  "analysis_summary_sha256": "d0155ed3a394c8bef9ec724e8fb06ba2ba120b54746f7ce7162c00117ff9dc01",
+  "actual_calls": 768,
+  "valid_answers": 767,
+  "invalid_answers": 1,
+  "transport_errors": 0,
+  "automatic_retries": 0,
+  "conservative_cost_usd": 0.495106,
+  "budget_cap_usd": 2.5,
+  "Q9_four_month_two_repeat_equal_cell_average": {
+    "no_added_confidence": {
+      "median_absolute_error_pp": 0.7360094392436488,
+      "distribution_W1_pp": 3.7460691786203775,
+      "IQR_absolute_gap_pp": 5.145337623744377
+    },
+    "national_confidence": {
+      "median_absolute_error_pp": 0.5645723150524508,
+      "distribution_W1_pp": 3.658668149007974,
+      "IQR_absolute_gap_pp": 5.0629706337169935
+    }
+  },
+  "real_Q9_cross_person_IQR_pp": 5.782082293350616,
+  "simulated_Q9_cross_person_IQR_pp": {
+    "no_added_confidence": 0.6367446696062387,
+    "national_confidence": 0.7191116596336217
+  },
+  "median_error_improvement_percent": 23.292788794580314,
+  "median_error_intervals_containing_zero": 7,
+  "median_error_comparisons": 8,
+  "candidate_upgrade_gate_passed": true,
+  "production_P_changed": false,
+  "sources": {
+    "scorer": "sce_q9_frozen",
+    "variant": "relaxed_tail_skip_zero",
+    "tail_start": 20.0,
+    "holdout_run_id": "20261003T023026Z_77ebb305",
+    "pinned_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_matches_pinned": true,
+    "kernel_migration": {
+      "migrated_at": "2026-10-03",
+      "old_source": "scripts/diagnose_sce_beta.py",
+      "old_source_sha256": "b45a29345f432288fe3b0b18e8c39066998bf19a803a0e7c661dc2a193987e57",
+      "new_source": "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+      "algorithm_unchanged": true,
+      "equivalence_check": "3,741 sealed holdout rows recomputed; zero per-field difference"
+    },
+    "approximation_notice": "Research approximation of the Armantier et al. (2017) Appendix C generalized-beta fit, selected on a preregistered holdout; not the official FRBNY implementation. The same algorithm scores real and simulated questionnaires; differences from official headline values are reported separately."
+  },
+  "interpretation": "candidate positive mechanism signal; limited precision; substantial distribution gap remains"
+}
