@@ -1,0 +1,58 @@
+{
+  "status": "prepared_not_authorized_not_run",
+  "created_at_utc": "2026-10-11T14:49:23.519224+00:00",
+  "target_months": [
+    "2022-03",
+    "2022-09",
+    "2023-03",
+    "2024-03"
+  ],
+  "window_candidates": [
+    {
+      "target_month": "2022-03",
+      "as_of": "2022-03-10T23:59:59-05:00",
+      "new_labels_needed": 653
+    },
+    {
+      "target_month": "2022-09",
+      "as_of": "2022-09-13T23:59:59-04:00",
+      "new_labels_needed": 611
+    },
+    {
+      "target_month": "2023-03",
+      "as_of": "2023-03-14T23:59:59-04:00",
+      "new_labels_needed": 524
+    },
+    {
+      "target_month": "2024-03",
+      "as_of": "2024-03-12T23:59:59-04:00",
+      "new_labels_needed": 490
+    }
+  ],
+  "unique_new_articles": 2278,
+  "new_batches": 285,
+  "total_reservation_usd": 1.5106676999999995,
+  "proposed_total_cap_usd": 1.75,
+  "pricing_basis": {
+    "input_usd_per_million": 0.3,
+    "output_usd_per_million": 1.2,
+    "basis": "peak uncached rates; actual weekend prices may be lower",
+    "verified_on": "2026-10-11",
+    "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+  },
+  "destination": "https://api.deepseek.com/v1/chat/completions",
+  "data_scope": "public NYT metadata only; no population or SCE answers",
+  "batch_size_max": 8,
+  "temperature": 0,
+  "requested_model": "deepseek-flash",
+  "execution_policy": "one run chain per part; resume only unattempted batches; stop all parts on failure",
+  "classification_contract": "unchanged v1.2; different-time event repetition retained",
+  "simulation_status": "not_configured_not_authorized_not_run",
+  "prepared_package": "outputs/sce_multiperiod_news_labels_prepared_20261011_v1",
+  "prepared_summary_sha256": "e101a2c81d49eb21385bb2022819cf3ceee55eb41868ad21522bfe1db1f06c0b",
+  "offline_validation": "all_seven_packages_validated_offline",
+  "protected_files_checked": 15,
+  "new_api_calls": 0,
+  "new_simulation_calls": 0,
+  "authorization": "new_$1.75_scope_requested_in_chat; awaiting_reply"
+}
