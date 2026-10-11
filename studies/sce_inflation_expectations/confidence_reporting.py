@@ -81,7 +81,7 @@ def report(root, analysis_dir):
         '<p>两次生成分别达到预先登记的继续研究门槛，但8个中心误差改善区间中7个仍包含零。合成信心改变了本模型的回答，真人政策信心的机制与匹配仍需独立验证。</p>'
         '<table class="table"><thead><tr><th>调查月</th><th>不加信心误差</th><th>加入信心误差</th><th>变化</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table>'
         '<p class="meta">单位：个百分点；两次生成平均，误差相对同月同一批共同有效真人样本。不是未来实际CPI预测误差。</p>'+images+
-        '<p>2024-03模拟通缩概率中位数仍约15%，真人约3%；Q8点回答比Q9概率回答更接近真人。下一步先免费拆解概率回答偏差和人群差异来源，不继续调新闻比例或新增付费调用。</p></section>')
+        '<p>2024-03模拟通缩概率中位数仍约15%，真人约3%；该月Q8点回答的中心更接近真人，但这个比较并不适用于所有月份。下一步先免费拆解概率回答偏差和人群差异来源，不继续调新闻比例或新增付费调用。</p></section>')
     dump(analysis_dir / 'reading_receipt.json', {'page': str(page.relative_to(root)), 'before_sha256': sha(page),
         'section_added': 'confidence-four-period-results', 'visual_browser_check': False})
     (analysis_dir / 'news_review_before_results.html').write_text(before)

@@ -1,0 +1,47 @@
+{
+  "status": "offline_frozen_response_description",
+  "new_API_calls": 0,
+  "new_API_cost_usd": 0,
+  "equal_cell_average": {
+    "real": {
+      "nonzero_bins_median": 4.0,
+      "zero_deflation_share_pct": 59.280806737588655,
+      "raw_deflation_median_pct": 0.8125,
+      "raw_deflation_mean_pct": 14.823914007092199,
+      "cross_person_center_IQR_pp": 5.782082293350616,
+      "typical_person_density_IQR_pp": 3.5924165858751955,
+      "cross_person_uncertainty_IQR_pp": 4.252406585988332,
+      "point_minus_Q9_center_median_pp": -0.07978359505554342
+    },
+    "no_added_confidence": {
+      "nonzero_bins_median": 9.1875,
+      "zero_deflation_share_pct": 0.0,
+      "raw_deflation_median_pct": 10.25,
+      "raw_deflation_mean_pct": 10.33056294326241,
+      "cross_person_center_IQR_pp": 0.6367446696062387,
+      "typical_person_density_IQR_pp": 4.392053057911899,
+      "cross_person_uncertainty_IQR_pp": 0.4722881407402888,
+      "point_minus_Q9_center_median_pp": 0.49080995476500133
+    },
+    "national_confidence": {
+      "nonzero_bins_median": 8.75,
+      "zero_deflation_share_pct": 0.0,
+      "raw_deflation_median_pct": 8.625,
+      "raw_deflation_mean_pct": 9.04435394503546,
+      "cross_person_center_IQR_pp": 0.7191116596336217,
+      "typical_person_density_IQR_pp": 4.301308988570161,
+      "cross_person_uncertainty_IQR_pp": 0.4039767291675975,
+      "point_minus_Q9_center_median_pp": 0.4312852545407198
+    }
+  },
+  "limits": [
+    "Unweighted selected common samples; averages across eight cells, not nationally representative.",
+    "Two generations of the same people are not twice as many respondents.",
+    "Reason strings and synthetic-label associations are clues, not causal explanations.",
+    "Q9 continuous mean/IQR use the frozen approximate scorer; raw bins have no fitting dependency.",
+    "Averaged individual probability vectors are not the distribution of personal expectation centers."
+  ],
+  "protected_files_unchanged": 15,
+  "diagnostic_summary_sha256": "f86c6e141a3245c28f76566a0c8c261f102886662f1c188887f8396bef65a73b",
+  "source_directory": "outputs/sce_confidence_response_diagnostic_20261012_v2"
+}
