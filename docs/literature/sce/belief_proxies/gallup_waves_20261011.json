@@ -1,0 +1,165 @@
+{
+  "status": "candidate_only_offline_no_simulation",
+  "construct": "confidence_in_Fed_chair_to_do_or_recommend_right_thing_for_economy",
+  "categories": [
+    "great_deal",
+    "fair_amount",
+    "only_a_little",
+    "almost_none",
+    "dont_know_or_refused"
+  ],
+  "waves": [
+    {
+      "wave_id": "gallup_2021_april",
+      "field_dates": [
+        "2021-04-01",
+        "2021-04-21"
+      ],
+      "published_date": "2021-04-26",
+      "national_source_percent": [
+        12,
+        43,
+        17,
+        17,
+        11
+      ],
+      "source_url": "https://news.gallup.com/file/poll/348980/210426Economy.pdf",
+      "article_url": "https://news.gallup.com/poll/348959/economic-confidence-positive-first-time-pandemic.aspx",
+      "local_file": "data/raw/belief_proxies/20261010/gallup_fed_confidence_20210426.pdf",
+      "sha256": "a1d12f54a22ea66d0886a9da302942dda2610c7ebeb9a82fbbdbcbc1f63032ef",
+      "source_location": "Fed chair topline; existing education cross-tabs on PDF page 14",
+      "education_source": {
+        "college_graduate": {
+          "source_percent": [
+            18,
+            46,
+            13,
+            12,
+            10
+          ],
+          "source_sum": 99,
+          "candidate_probabilities": [
+            0.18181818181818182,
+            0.46464646464646464,
+            0.13131313131313133,
+            0.12121212121212122,
+            0.10101010101010101
+          ]
+        },
+        "some_college": {
+          "source_percent": [
+            6,
+            43,
+            18,
+            19,
+            14
+          ],
+          "source_sum": 100,
+          "candidate_probabilities": [
+            0.06,
+            0.43,
+            0.18,
+            0.19,
+            0.14
+          ]
+        },
+        "high_school_or_less": {
+          "source_percent": [
+            11,
+            40,
+            19,
+            20,
+            10
+          ],
+          "source_sum": 100,
+          "candidate_probabilities": [
+            0.11,
+            0.4,
+            0.19,
+            0.2,
+            0.1
+          ]
+        }
+      },
+      "national_sum": 100,
+      "candidate_probabilities": [
+        0.12,
+        0.43,
+        0.17,
+        0.17,
+        0.11
+      ],
+      "original_historical_bytes": "not_independently_recovered"
+    },
+    {
+      "wave_id": "gallup_2022_april",
+      "field_dates": [
+        "2022-04-01",
+        "2022-04-19"
+      ],
+      "published_date": "2022-05-02",
+      "national_source_percent": [
+        8,
+        35,
+        26,
+        22,
+        10
+      ],
+      "source_url": "https://news.gallup.com/poll/392306/confidence-economic-leaders-flagging.aspx",
+      "article_url": "https://news.gallup.com/poll/392306/confidence-economic-leaders-flagging.aspx",
+      "local_file": "data/raw/belief_proxies/20261011/gallup_economic_leaders_2022_page.html",
+      "sha256": "f0d0b08bd29533240ab65ffd22c90bb71a2f76c0fbd66198b4fd4771774d327b",
+      "source_location": "HTML table Confidence in Leaders on Economy, 2022; Federal Reserve Chairman Jerome Powell row",
+      "education_source": null,
+      "national_sum": 101,
+      "candidate_probabilities": [
+        0.07920792079207921,
+        0.3465346534653465,
+        0.25742574257425743,
+        0.21782178217821782,
+        0.09900990099009901
+      ],
+      "original_historical_bytes": "not_independently_recovered"
+    },
+    {
+      "wave_id": "gallup_2023_april",
+      "field_dates": [
+        "2023-04-03",
+        "2023-04-25"
+      ],
+      "published_date": "2023-05-09",
+      "national_source_percent": [
+        4,
+        32,
+        26,
+        28,
+        9
+      ],
+      "source_url": "https://news.gallup.com/file/poll/505484/230510ConfidenceLeaders.pdf",
+      "article_url": "https://news.gallup.com/poll/505478/americans-lack-confidence-major-economic-leaders.aspx",
+      "local_file": "data/raw/belief_proxies/20261011/gallup_economic_leaders_2023.pdf",
+      "sha256": "9b42e3bb729bd3a4eee1e97278d398588bb35bc5b4d80ff32dfb6a51f7829eae",
+      "source_location": "PDF page 4 Q11B; education cross-tabs page 7, not yet transcribed in this preparation",
+      "education_source": null,
+      "national_sum": 99,
+      "candidate_probabilities": [
+        0.04040404040404041,
+        0.32323232323232326,
+        0.26262626262626265,
+        0.2828282828282828,
+        0.09090909090909091
+      ],
+      "original_historical_bytes": "not_independently_recovered"
+    }
+  ],
+  "primary_assignment_candidate": "latest_published_national_distribution; no education or party relationship assumed",
+  "normalization": "rounded national percentages normalized by their own sum; 2022 sum 101 and 2023 sum 99",
+  "source_population": "US adults; transport to SCE household heads is a hypothesis",
+  "limitations": [
+    "annual snapshots do not observe monthly confidence changes",
+    "not directly confidence in inflation control",
+    "not actual individual confidence; no causal interpretation of fit gains",
+    "government and Fed confidence not jointly assigned from separate marginal tables"
+  ],
+  "new_paid_calls": 0
+}

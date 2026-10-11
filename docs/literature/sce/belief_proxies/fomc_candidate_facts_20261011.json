@@ -1,0 +1,76 @@
+{
+  "status": "archived_and_paraphrased_candidate_not_injected",
+  "files": [
+    {
+      "file": "data/raw/policy_statements/20261011/fomc_20220126.html",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20220126a.htm",
+      "release_date": "2022-01-26",
+      "published_at": "2022-01-26T14:00:00-05:00",
+      "publication_evidence": "Official dated FOMC statement: For release at 2:00 p.m. EST/EDT",
+      "sha256": "cc52bb4c7e66d03b97492d92a315b73fff9cc7ece2d338d938ffa0e005266ee4",
+      "downloaded_at": "2026-10-11T12:49:19.973656+00:00",
+      "historical_bytes": "original publication bytes not independently recovered",
+      "candidate_plain_language_facts": [
+        "The Fed kept its policy rate range at 0 to 0.25 percent and signaled that an increase would likely be appropriate soon.",
+        "Its statement attributed elevated inflation to pandemic-related supply and demand imbalances.",
+        "It expected easing supply constraints to help reduce inflation; this was a policy assessment, not an observed future result."
+      ],
+      "role": "public_policy_event_in_E; not confidence_in_P; optional candidate only",
+      "exposure_warning": "Availability does not establish household awareness. Do not automatically give all households the whole FOMC statement."
+    },
+    {
+      "file": "data/raw/policy_statements/20261011/fomc_20220727.html",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20220727a.htm",
+      "release_date": "2022-07-27",
+      "published_at": "2022-07-27T14:00:00-04:00",
+      "publication_evidence": "Official dated FOMC statement: For release at 2:00 p.m. EST/EDT",
+      "sha256": "19b7885761911e7ef7b09fe00e7e8b0c12c9491f7c6c040c8106eb597552157e",
+      "downloaded_at": "2026-10-11T12:49:21.039960+00:00",
+      "historical_bytes": "original publication bytes not independently recovered",
+      "candidate_plain_language_facts": [
+        "The Fed raised its policy rate range to 2.25 to 2.50 percent and anticipated further increases.",
+        "It cited pandemic supply and demand imbalances, higher food and energy prices, and the war in Ukraine as inflation pressures.",
+        "It reaffirmed its longer-run 2 percent inflation objective; this was a goal, not a promise of next-year inflation."
+      ],
+      "role": "public_policy_event_in_E; not confidence_in_P; optional candidate only",
+      "exposure_warning": "Availability does not establish household awareness. Do not automatically give all households the whole FOMC statement."
+    },
+    {
+      "file": "data/raw/policy_statements/20261011/fomc_20230201.html",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20230201a.htm",
+      "release_date": "2023-02-01",
+      "published_at": "2023-02-01T14:00:00-05:00",
+      "publication_evidence": "Official dated FOMC statement: For release at 2:00 p.m. EST/EDT",
+      "sha256": "862eac97cb01c7747462e7cdd44a0f7e0da3c5c58c1f284ead7352c68af8f55b",
+      "downloaded_at": "2026-10-11T12:49:22.886420+00:00",
+      "historical_bytes": "original publication bytes not independently recovered",
+      "candidate_plain_language_facts": [
+        "The Fed raised its policy rate range to 4.50 to 4.75 percent and anticipated further increases.",
+        "It said inflation had eased but remained elevated.",
+        "It noted that policy affects inflation with a lag and reaffirmed its longer-run 2 percent objective."
+      ],
+      "role": "public_policy_event_in_E; not confidence_in_P; optional candidate only",
+      "exposure_warning": "Availability does not establish household awareness. Do not automatically give all households the whole FOMC statement."
+    },
+    {
+      "file": "data/raw/policy_statements/20261011/fomc_20240131.html",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20240131a.htm",
+      "release_date": "2024-01-31",
+      "published_at": "2024-01-31T14:00:00-05:00",
+      "publication_evidence": "Official dated FOMC statement: For release at 2:00 p.m. EST/EDT",
+      "sha256": "efbffa6d6bf3d88f35bf7f88bd2937595678b3a11c83e98e25254dba74a95159",
+      "downloaded_at": "2026-10-11T12:49:24.029227+00:00",
+      "historical_bytes": "original publication bytes not independently recovered",
+      "candidate_plain_language_facts": [
+        "The Fed kept its policy rate range at 5.25 to 5.50 percent.",
+        "It said inflation had eased over the previous year but remained elevated.",
+        "It did not expect a rate cut to be appropriate until it had greater confidence that inflation was moving sustainably toward 2 percent."
+      ],
+      "role": "public_policy_event_in_E; not confidence_in_P; optional candidate only",
+      "exposure_warning": "Availability does not establish household awareness. Do not automatically give all households the whole FOMC statement."
+    }
+  ],
+  "new_paid_api_calls": 0,
+  "comparison_rule": "To isolate confidence, identical public policy facts/exposure must be used across confidence arms. Adding facts alone is a different treatment.",
+  "source_manifest_sha256": "4a7764c8487efe5081eefdfca88da0a686cdd919b990a12864ee5ba214ac7c10"
+}
