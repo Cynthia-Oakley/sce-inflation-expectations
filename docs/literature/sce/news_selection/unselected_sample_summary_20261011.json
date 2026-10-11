@@ -1,0 +1,54 @@
+{
+  "sample_rows": 120,
+  "unique_articles": 120,
+  "decision_counts": {
+    "reasonable_keep": 37,
+    "irrelevant": 81,
+    "uncertain": 2
+  },
+  "by_month": {
+    "202105": {
+      "reasonable_keep": 19,
+      "irrelevant": 40,
+      "uncertain": 1
+    },
+    "202106": {
+      "irrelevant": 41,
+      "reasonable_keep": 18,
+      "uncertain": 1
+    }
+  },
+  "by_stratum": {
+    "budget_removed": {
+      "reasonable_keep": 17,
+      "irrelevant": 22,
+      "uncertain": 1
+    },
+    "rule_blocked_enriched": {
+      "irrelevant": 22,
+      "reasonable_keep": 17,
+      "uncertain": 1
+    },
+    "rule_blocked_other": {
+      "irrelevant": 37,
+      "reasonable_keep": 3
+    }
+  },
+  "reasonable_keep_by_removed_at": {
+    "monthly_budget": 17,
+    "no_keyword_or_frontpage": 20
+  },
+  "reviewer_files": [
+    {
+      "path": "outputs/sce_nyt_inventory_20261011_v2/reviewer_may.json",
+      "sha256": "ad0bfef5b15b943d11b074996b7dc79351f3b53bbe0138d41697a05fe27de950"
+    },
+    {
+      "path": "outputs/sce_nyt_inventory_20261011_v2/reviewer_june.json",
+      "sha256": "893e4d0da1ac3895fc4e72faca3c957233c42288b89dfe35196114e25f6a0919"
+    }
+  ],
+  "sample_design": "Two windows; 20 random cases in each of three strata per window. Strata intentionally unequal relative to population; descriptive sample counts, not overall recall.",
+  "parent_checks": "Checked IDs, evidence excerpts, stages and saved-input replay. Read selected reasonable_keep cases and seven targeted source examples. Did not independently relabel all120.",
+  "new_NYT_API_or_paid_project_LLM_calls": 0
+}

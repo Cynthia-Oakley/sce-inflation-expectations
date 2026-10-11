@@ -1,0 +1,60 @@
+{
+  "checked_on": "2026-10-11",
+  "all82_hashes_counts_hits_match": true,
+  "15_monthly_ledgers_replayed_exactly": true,
+  "two_saved_inputs_replayed_exactly": true,
+  "stage_count_conservation": true,
+  "120_unique_samples_and_original_evidence_verified": true,
+  "no_env_no_network_guard_replay_passed": true,
+  "protected_files_unchanged": 15,
+  "local_markdown_links_exist": true,
+  "HTML_original60_new120_match": true,
+  "new_NYT_API_paid_project_LLM_or_simulation_calls": 0,
+  "production_files_changed": false,
+  "canvas_host_compiler_diagnostics": "unavailable; not claimed",
+  "audit_entry_sha256": "d3c85adf69485299aa4a017405bfdfbb0783be0f8568c7c42e77bf8b8056a483",
+  "audit_module_sha256": "1efdbf778ceca58b4deaad680458cc61903f0c1ae79ab13c8d1e37a9da502aaa",
+  "HTML_filter_checks": {
+    "status": "passed",
+    "checks": [
+      "old60 unchanged",
+      "new default37",
+      "May19 candidate",
+      "June18 candidate",
+      "June41 irrelevant",
+      "two uncertain",
+      "reset120",
+      "meat supply example1",
+      "other stratum40",
+      "original May30 filter remains"
+    ],
+    "environment": "Node vm with generated page data attributes; not a rendered browser screenshot"
+  },
+  "raw_news_text_committed": false,
+  "manifest": [
+    {
+      "path": "outputs/sce_nyt_inventory_20261011_v2/inventory_summary.json",
+      "sha256": "4bdf20d4729e32063b43a8496d53e1b6baa3b634964595cd76ddfbd711340b62"
+    },
+    {
+      "path": "outputs/sce_nyt_inventory_20261011_v2/sample_202105.json",
+      "sha256": "52a5679e28d8475b429a7d899180ab8c940fad4d23022b8842c65842a99f0447"
+    },
+    {
+      "path": "outputs/sce_nyt_inventory_20261011_v2/sample_202106.json",
+      "sha256": "330f7885212f41643de2b964130debd4cf0d8d4d9f43868292e5c462033fbc74"
+    },
+    {
+      "path": "outputs/sce_nyt_inventory_20261011_v2/reviewer_may.json",
+      "sha256": "ad0bfef5b15b943d11b074996b7dc79351f3b53bbe0138d41697a05fe27de950"
+    },
+    {
+      "path": "outputs/sce_nyt_inventory_20261011_v2/reviewer_june.json",
+      "sha256": "893e4d0da1ac3895fc4e72faca3c957233c42288b89dfe35196114e25f6a0919"
+    },
+    {
+      "path": "outputs/sce_nyt_inventory_20261011_v2/parent_targeted_examples.json",
+      "sha256": "f334b21e1a118f1af79859fd6b254625d9bb7106fb067306c6b1fd6307e3a684"
+    }
+  ]
+}
