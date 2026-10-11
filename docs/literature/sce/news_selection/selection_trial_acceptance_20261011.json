@@ -1,0 +1,80 @@
+{
+  "all_requests_revalidated": true,
+  "sources_unchanged": true,
+  "protected_unchanged": 15,
+  "no_retries": true,
+  "within_cap": true,
+  "source_sha256": {
+    "studies/sce_inflation_expectations/news_keyword_rules_v1_2.json": "c837da27db730f163339c4cad765b4e83b7a1027f31b521e068749a25d153c79",
+    "docs/literature/sce/news_selection/llm_label_prompt_v1_2.md": "c0cc799e8d6b0e28985426f666541811d5757573e826da862649ed88dbd796ae",
+    "scripts/build_nyt_events.py": "4f56b4dfe7524d51894129b2cf22da1bfb800afec5e243709238599248cba55b",
+    "data/raw/nyt_archive/2021-04.json": "e5fa779979841b6821901027dd95ec68923c02ada0b52422e4c64bc3f7fb9d2d",
+    "data/raw/nyt_archive/2021-05.json": "2f8a63d9bc93a1bb40e2c54628f5cebc8427544ebf81fb987c21db3be7542e01",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/environment_effective.json": "ae4449f336e661e6698dd1a8e626ab6a124e2ed421cc0423fb853c3eb5114710",
+    "data/raw/nyt_archive/2021-06.json": "a00a7cad130f2ad41ee963b6bd2b470239c98ecea9faeaf50030326634222b71",
+    "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/environment_effective.json": "0dc7f1307328c9cf7c4ead0d359bdcdd7ee0425178c5740c7864b1460f19c2e2",
+    "data/raw/nyt_archive/2021-09.json": "bed90991e3fcddf3156d526995c37ad07f8939b817dfb3d1baaeab5c27441fa5"
+  },
+  "requests_sha256": "bd136c58eb794941d3b5cc1fd24f627a98e15b04e40a82a7aca2a6869cb24092",
+  "state_sha256": "e07ee5b9d6ee1d9a4e70e2067f0b7b65939c5238cfa866ac66fd443f8363672c",
+  "summary_sha256": "daf382a7f1396d5f7a606ac93b6979f82976d05b093bb60f96ac4e79529e93bc",
+  "analysis_module_sha256": "7fc3e4f2c504de402abf63b7c1cc7d31ecd9d486b2df190bdbe69b82195d5265",
+  "final_checks": {
+    "protected_files_unchanged": 15,
+    "legacy_html_records_unchanged": {
+      "old": 60,
+      "inventory": 120
+    },
+    "new_html_records": 360,
+    "unique_articles": 347,
+    "document_links": "pass",
+    "public_no_abstract_snippet_raw_id": true,
+    "validated_response_count": 44,
+    "same_prompt_retries": 0,
+    "recorded_format_stops": 2,
+    "canvas_file_hash_matches": true,
+    "canvas_host_typescript_diagnostics": "not_available; not claimed",
+    "new_simulation_calls": 0
+  },
+  "html_filter_checks": {
+    "status": "pass",
+    "tests": [
+      {
+        "name": "all window rows",
+        "count": 360
+      },
+      {
+        "name": "May",
+        "count": 120
+      },
+      {
+        "name": "May main",
+        "count": 60
+      },
+      {
+        "name": "June main",
+        "count": 54
+      },
+      {
+        "name": "September main",
+        "count": 56
+      },
+      {
+        "name": "uncertain",
+        "count": 1
+      },
+      {
+        "name": "new-only stratum",
+        "count": 90
+      },
+      {
+        "name": "food supply search",
+        "count": 1
+      },
+      {
+        "name": "reset",
+        "count": 360
+      }
+    ]
+  }
+}

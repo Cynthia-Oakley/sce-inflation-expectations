@@ -1,0 +1,1141 @@
+{
+  "checked_on": "2026-10-11",
+  "preparation_run_id": "sce_nyt_selection_trial_20261011_v1",
+  "classification_run_id": "sce_nyt_label_trial_20261011_v3",
+  "windows": [
+    {
+      "target": "202105",
+      "role": "development_window",
+      "months": [
+        "2021-04",
+        "2021-05"
+      ],
+      "cutoff_date": "2021-05-12",
+      "date_rule": "legacy UTC pub_date first10 <= cutoff date; not precise New York timestamp PIT",
+      "counts": {
+        "raw_in_date_window": 6186,
+        "excluded_after_date_cutoff": 2671,
+        "unique_articles_with_text": 5616,
+        "old_rule_candidates": 385,
+        "new_rule_candidates": 679,
+        "old_final": 30,
+        "non_article": 570
+      },
+      "strata": {
+        "old_final": {
+          "population": 30,
+          "sample": 30,
+          "sampling": "census"
+        },
+        "new_only": {
+          "population": 534,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement"
+        },
+        "both_rules_not_final": {
+          "population": 117,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement"
+        },
+        "old_rule_only": {
+          "population": 238,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement"
+        },
+        "neither_rule": {
+          "population": 4697,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement"
+        }
+      },
+      "rule_hits_article_counts_overlap": {
+        "economic_section": 606,
+        "general_economic_context": 48,
+        "direct_economic_terms": 108,
+        "price_and_change": 8,
+        "object_and_change": 13
+      },
+      "new_candidate_fraction_of_unique_articles": 0.12090455840455841,
+      "old_candidate_fraction_of_unique_articles": 0.06855413105413105,
+      "stratified_model_labels": {
+        "old_final": {
+          "population": 30,
+          "sample": 30,
+          "sampling": "census",
+          "decision_counts": {
+            "keep": 28,
+            "exclude": 2
+          }
+        },
+        "new_only": {
+          "population": 534,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "background": 14,
+            "keep": 8,
+            "exclude": 8
+          }
+        },
+        "both_rules_not_final": {
+          "population": 117,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "keep": 20,
+            "background": 6,
+            "exclude": 4
+          }
+        },
+        "old_rule_only": {
+          "population": 238,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "exclude": 10,
+            "keep": 3,
+            "background": 2
+          }
+        },
+        "neither_rule": {
+          "population": 4697,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "exclude": 14,
+            "keep": 1
+          }
+        }
+      },
+      "old_final_exact_model_labels": {
+        "keep": 28,
+        "exclude": 2
+      },
+      "old_final_keep_topics": {
+        "supply_costs": 11,
+        "economic_outlook": 19,
+        "policy": 12,
+        "employment_income_consumption": 11,
+        "living_prices": 10
+      },
+      "new_candidate_sample_model_labels": {
+        "keep": 56,
+        "background": 20,
+        "exclude": 12
+      },
+      "candidate_model_estimates": {
+        "new_rule": {
+          "candidate_population": 679,
+          "estimated_label_counts": {
+            "keep": 248.40000000000012,
+            "background": 272.59999999999997,
+            "exclude": 158.00000000000003
+          },
+          "estimated_keep_fraction": 0.3658321060382918,
+          "estimated_keep_or_background_fraction": 0.7673048600883654
+        },
+        "old_rule": {
+          "candidate_population": 385,
+          "estimated_label_counts": {
+            "keep": 153.60000000000005,
+            "exclude": 176.2666666666667,
+            "background": 55.13333333333333
+          },
+          "estimated_keep_fraction": 0.39896103896103907,
+          "estimated_keep_or_background_fraction": 0.5421645021645023
+        }
+      },
+      "new_only_keep_examples": [
+        {
+          "article_id": "89e87f258d0eee3b355a0f18",
+          "event_id": "b6b53e2de27110cb",
+          "headline": "Canadian Company Defies Michigan Order to Shut Down Oil Pipeline",
+          "web_url": "https://www.nytimes.com/2021/05/12/world/canada/canada-pipeline-michigan.html",
+          "pub_date": "2021-05-12T21:40:12+0000",
+          "stratum": "new_only",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "supply_costs",
+            "policy"
+          ],
+          "scope": "us_and_global",
+          "claim_type": "fact",
+          "reason_zh": "文章涉及美加石油管道争议，属国际能源与供应链相关消息。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "0be52f84bcee11b86ac73585",
+          "event_id": "76e0c9d4dbd7f027",
+          "headline": "Companies Can’t Stop Overworking",
+          "web_url": "https://www.nytimes.com/2021/04/10/business/dealbook/overwork-health.html",
+          "pub_date": "2021-04-10T12:00:04+0000",
+          "stratum": "new_only",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "employment_income_consumption"
+          ],
+          "scope": "us_unspecified",
+          "claim_type": "unclear",
+          "reason_zh": "讨论过度工作对雇主与员工的影响，涉及就业与工作条件。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "0d05f7dc67cf5a0591d9eced",
+          "event_id": "f06d0211d977cc3f",
+          "headline": "Biden’s $2.3 trillion plan spurs a fight over what ‘infrastructure’ really means.",
+          "web_url": "https://www.nytimes.com/2021/04/06/us/politics/bidens-2-3-trillion-plan-spurs-a-fight-over-what-infrastructure-really-means.html",
+          "pub_date": "2021-04-06T14:37:04+0000",
+          "stratum": "new_only",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "policy",
+            "economic_outlook"
+          ],
+          "scope": "us_national",
+          "claim_type": "mixed",
+          "reason_zh": "围绕拜登基建计划的政治经济辩论，涉及财政政策与经济前景。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "122c064125f4d01e3b596c5b",
+          "event_id": "268be5894fba4ba8",
+          "headline": "That Popular S.U.V. Is Going to Cost You",
+          "web_url": "https://www.nytimes.com/2021/04/16/your-money/cars-sale-price-trade-in.html",
+          "pub_date": "2021-04-16T13:00:08+0000",
+          "stratum": "new_only",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "living_prices",
+            "supply_costs"
+          ],
+          "scope": "us_unspecified",
+          "claim_type": "fact",
+          "reason_zh": "文章讨论新车供给紧张导致优惠减少，涉及居民购车支出与供给成本。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "4afb3265a06fa96eb6764eed",
+          "event_id": "b40877c1331427ff",
+          "headline": "Americans have saved a lot of cash, and they are ready to spend it.",
+          "web_url": "https://www.nytimes.com/2021/04/02/business/postpandemic-spending.html",
+          "pub_date": "2021-04-02T12:46:03+0000",
+          "stratum": "new_only",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "employment_income_consumption",
+            "economic_outlook"
+          ],
+          "scope": "us_national",
+          "claim_type": "mixed",
+          "reason_zh": "讨论美国居民储蓄与消费意愿，涉及家庭消费和经济前景。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "dd0d79f3965f07f7318b827e",
+          "event_id": "033ec9ff61a22e21",
+          "headline": "New proposal would ban most foreclosures until 2022.",
+          "web_url": "https://www.nytimes.com/2021/04/05/business/foreclosure-ban-proposal.html",
+          "pub_date": "2021-04-05T19:18:31+0000",
+          "stratum": "new_only",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "policy",
+            "living_prices"
+          ],
+          "scope": "us_national",
+          "claim_type": "fact",
+          "reason_zh": "消费者金融保护局拟议规则限制止赎并便利贷款修改，涉及家庭住房支出与相关政策。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "23de4a51aee09da840d84a30",
+          "event_id": "9fa9b090d17b022c",
+          "headline": "Biden Leans Into Plans to Tax the Rich",
+          "web_url": "https://www.nytimes.com/2021/05/05/business/biden-tax-increases-wealthy.html",
+          "pub_date": "2021-05-05T22:57:36+0000",
+          "stratum": "new_only",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "policy",
+            "economic_outlook"
+          ],
+          "scope": "us_national",
+          "claim_type": "attributed_claim",
+          "reason_zh": "报道拜登政府推动对富人增税的政策计划。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "d328928bcba5127f72b9c214",
+          "event_id": "025bd0b7b401716b",
+          "headline": "How the Colonial Pipeline Became a Vital Artery for Fuel",
+          "web_url": "https://www.nytimes.com/2021/05/10/business/colonial-pipeline-ransomware.html",
+          "pub_date": "2021-05-10T21:11:38+0000",
+          "stratum": "new_only",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "supply_costs"
+          ],
+          "scope": "us_national",
+          "claim_type": "fact",
+          "reason_zh": "解释Colonial Pipeline成为关键燃料动脉，涉及国内油气生产与炼油能力变化。",
+          "new_recalled": true,
+          "old_final": false
+        }
+      ],
+      "still_not_recalled_keep_examples": [
+        {
+          "article_id": "20092c0f45112a776718dc66",
+          "event_id": "da98224309814596",
+          "headline": "Biden Seeks Shift in How the Nation Serves Its People",
+          "web_url": "https://www.nytimes.com/2021/04/28/us/politics/joe-biden-government-plans.html",
+          "pub_date": "2021-04-29T00:01:40+0000",
+          "stratum": "old_rule_only",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "policy",
+            "economic_outlook"
+          ],
+          "scope": "us_national",
+          "claim_type": "attributed_claim",
+          "reason_zh": "讨论拜登政府大规模支出提案及政府角色，属相关财政政策与经济前景。",
+          "new_recalled": false,
+          "old_final": false
+        },
+        {
+          "article_id": "7420c235d7413e7041743c61",
+          "event_id": "3d597327ed12732a",
+          "headline": "New York Region to Accelerate Reopening, Raising Hopes and Anxiety",
+          "web_url": "https://www.nytimes.com/2021/05/03/nyregion/nyc-reopening.html",
+          "pub_date": "2021-05-03T23:26:02+0000",
+          "stratum": "old_rule_only",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "economic_outlook",
+            "policy"
+          ],
+          "scope": "us_local",
+          "claim_type": "fact",
+          "reason_zh": "纽约地区加速重启并恢复地铁24小时运营，涉及区域经济活动和政策安排。",
+          "new_recalled": false,
+          "old_final": false
+        },
+        {
+          "article_id": "fb58f866723807124dba2dea",
+          "event_id": "836c7b9d7fc9dbd5",
+          "headline": "U.S. Imposes Stiff Sanctions on Russia, Blaming It for Major Hacking Operation",
+          "web_url": "https://www.nytimes.com/2021/04/15/world/europe/us-russia-sanctions.html",
+          "pub_date": "2021-04-15T12:37:08+0000",
+          "stratum": "old_rule_only",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "policy"
+          ],
+          "scope": "us_and_global",
+          "claim_type": "fact",
+          "reason_zh": "美国对俄实施制裁并意图影响俄经济，属相关国际政策消息。",
+          "new_recalled": false,
+          "old_final": false
+        },
+        {
+          "article_id": "db597d19a7f93d34943d6b93",
+          "event_id": "c3cb765f3217598b",
+          "headline": "Coronavirus Briefing: What Happened Today",
+          "web_url": "https://www.nytimes.com/2021/04/02/us/coronavirus-today-vaccines.html",
+          "pub_date": "2021-04-02T20:46:07+0000",
+          "stratum": "neither_rule",
+          "target": "202105",
+          "decision": "keep",
+          "topics": [
+            "economic_outlook"
+          ],
+          "scope": "us_national",
+          "claim_type": "attributed_claim",
+          "reason_zh": "经济学家称最新经济数据是美国复苏转折点。",
+          "new_recalled": false,
+          "old_final": false
+        }
+      ],
+      "old_final_exclude_or_uncertain_examples": [
+        {
+          "article_id": "617f987a3f980bc3aeda5af2",
+          "event_id": "c7c1e7e2a2b597aa",
+          "headline": "Sexual Assault Allegations Against Biographer Halt Shipping of His Roth Book",
+          "web_url": "https://www.nytimes.com/2021/04/21/books/philip-roth-blake-bailey.html",
+          "pub_date": "2021-04-22T01:01:34+0000",
+          "stratum": "old_final",
+          "target": "202105",
+          "decision": "exclude",
+          "topics": [],
+          "scope": "us_unspecified",
+          "claim_type": "fact",
+          "reason_zh": "涉及出版与性侵指控，无实质经济内容。",
+          "new_recalled": false,
+          "old_final": true
+        },
+        {
+          "article_id": "e335c82ce4eaf4e756237b4b",
+          "event_id": "cba9d7ef14dc4668",
+          "headline": "5 Takeaways From the New Food Allergy Law",
+          "web_url": "https://www.nytimes.com/2021/04/26/well/eat/food-allergy-law-sesame.html",
+          "pub_date": "2021-04-26T09:00:09+0000",
+          "stratum": "old_final",
+          "target": "202105",
+          "decision": "exclude",
+          "topics": [],
+          "scope": "us_national",
+          "claim_type": "fact",
+          "reason_zh": "食品过敏原法规属健康监管，无实质经济内容。",
+          "new_recalled": false,
+          "old_final": true
+        }
+      ]
+    },
+    {
+      "target": "202106",
+      "role": "development_window",
+      "months": [
+        "2021-05",
+        "2021-06"
+      ],
+      "cutoff_date": "2021-06-10",
+      "date_rule": "legacy UTC pub_date first10 <= cutoff date; not precise New York timestamp PIT",
+      "counts": {
+        "raw_in_date_window": 5735,
+        "excluded_after_date_cutoff": 2790,
+        "unique_articles_with_text": 5311,
+        "old_rule_candidates": 394,
+        "new_rule_candidates": 644,
+        "old_final": 30,
+        "non_article": 424
+      },
+      "strata": {
+        "old_final": {
+          "population": 30,
+          "sample": 30,
+          "sampling": "census"
+        },
+        "new_only": {
+          "population": 480,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement"
+        },
+        "both_rules_not_final": {
+          "population": 136,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement"
+        },
+        "old_rule_only": {
+          "population": 228,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement"
+        },
+        "neither_rule": {
+          "population": 4437,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement"
+        }
+      },
+      "rule_hits_article_counts_overlap": {
+        "economic_section": 561,
+        "direct_economic_terms": 130,
+        "general_economic_context": 29,
+        "object_and_change": 17,
+        "price_and_change": 17
+      },
+      "new_candidate_fraction_of_unique_articles": 0.1212577668988891,
+      "old_candidate_fraction_of_unique_articles": 0.07418565241950668,
+      "stratified_model_labels": {
+        "old_final": {
+          "population": 30,
+          "sample": 30,
+          "sampling": "census",
+          "decision_counts": {
+            "background": 2,
+            "keep": 26,
+            "exclude": 2
+          }
+        },
+        "new_only": {
+          "population": 480,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "background": 18,
+            "exclude": 6,
+            "keep": 6
+          }
+        },
+        "both_rules_not_final": {
+          "population": 136,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "keep": 22,
+            "background": 4,
+            "exclude": 4
+          }
+        },
+        "old_rule_only": {
+          "population": 228,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "exclude": 14,
+            "background": 1
+          }
+        },
+        "neither_rule": {
+          "population": 4437,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "exclude": 15
+          }
+        }
+      },
+      "old_final_exact_model_labels": {
+        "background": 2,
+        "keep": 26,
+        "exclude": 2
+      },
+      "old_final_keep_topics": {
+        "supply_costs": 10,
+        "policy": 13,
+        "economic_outlook": 18,
+        "employment_income_consumption": 13,
+        "living_prices": 8
+      },
+      "new_candidate_sample_model_labels": {
+        "background": 24,
+        "keep": 54,
+        "exclude": 10
+      },
+      "candidate_model_estimates": {
+        "new_rule": {
+          "candidate_population": 644,
+          "estimated_label_counts": {
+            "background": 308.13333333333344,
+            "keep": 221.7333333333333,
+            "exclude": 114.13333333333333
+          },
+          "estimated_keep_fraction": 0.3443064182194616,
+          "estimated_keep_or_background_fraction": 0.8227743271221534
+        },
+        "old_rule": {
+          "candidate_population": 394,
+          "estimated_label_counts": {
+            "background": 35.33333333333333,
+            "keep": 125.73333333333329,
+            "exclude": 232.93333333333328
+          },
+          "estimated_keep_fraction": 0.3191201353637901,
+          "estimated_keep_or_background_fraction": 0.408798646362098
+        }
+      },
+      "new_only_keep_examples": [
+        {
+          "article_id": "701eb6ffa0a0419d4a4b3401",
+          "event_id": "3d6dae09d73a0cf4",
+          "headline": "Bank of England predicts a faster recovery and slows down its bond-buying program.",
+          "web_url": "https://www.nytimes.com/2021/05/06/business/bank-of-england-predicts-a-faster-recovery-and-slows-down-its-bond-buying-program.html",
+          "pub_date": "2021-05-06T12:15:37+0000",
+          "stratum": "new_only",
+          "target": "202106",
+          "decision": "keep",
+          "topics": [
+            "economic_outlook",
+            "policy",
+            "employment_income_consumption"
+          ],
+          "scope": "non_us",
+          "claim_type": "attributed_claim",
+          "reason_zh": "英国央行预测经济更快复苏并放缓购债，属外国货币政策与经济前景，非美国居民处境。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "7b92b8e2073aea01fecd3c8b",
+          "event_id": "485e472c483fb6ec",
+          "headline": "A Look at What’s Inside Biden’s $6 Trillion Budget Request",
+          "web_url": "https://www.nytimes.com/2021/05/28/us/politics/trillion-budget-plan-joe-biden.html",
+          "pub_date": "2021-05-28T17:40:16+0000",
+          "stratum": "new_only",
+          "target": "202106",
+          "decision": "keep",
+          "topics": [
+            "policy",
+            "economic_outlook"
+          ],
+          "scope": "us_national",
+          "claim_type": "fact",
+          "reason_zh": "拜登6万亿美元预算请求包含基建、教育等支出，涉及财政政策。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "c92f26d273e5e33f6b201ae3",
+          "event_id": "29847a2f60a4d929",
+          "headline": "Meat processor JBS paid $11 million in ransom to hackers.",
+          "web_url": "https://www.nytimes.com/2021/06/09/business/jbs-cyberattack-ransom.html",
+          "pub_date": "2021-06-10T00:34:19+0000",
+          "stratum": "new_only",
+          "target": "202106",
+          "decision": "keep",
+          "topics": [
+            "supply_costs",
+            "other_economic"
+          ],
+          "scope": "us_national",
+          "claim_type": "fact",
+          "reason_zh": "肉类加工商遭黑客攻击并支付赎金，涉及美国关键食品供应链。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "3147ee1ce142ea21e8fcf16b",
+          "event_id": "0463d49e160b72a2",
+          "headline": "U.S. Asks Mexico to Investigate Labor Issues at G.M. Facility",
+          "web_url": "https://www.nytimes.com/2021/05/12/business/economy/mexico-investigate-trade-gm.html",
+          "pub_date": "2021-05-12T09:00:22+0000",
+          "stratum": "new_only",
+          "target": "202106",
+          "decision": "keep",
+          "topics": [
+            "employment_income_consumption",
+            "policy"
+          ],
+          "scope": "us_and_global",
+          "claim_type": "attributed_claim",
+          "reason_zh": "美国要求墨西哥调查通用汽车工厂劳工权利问题，涉及就业与贸易政策。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "def5b69f5e72fbddc0d04be8",
+          "event_id": "4aa1c880739de900",
+          "headline": "The Fed announces plans to sell off its corporate bond holdings.",
+          "web_url": "https://www.nytimes.com/2021/06/02/business/fed-sells-corporate-bond-holdings.html",
+          "pub_date": "2021-06-02T20:35:03+0000",
+          "stratum": "new_only",
+          "target": "202106",
+          "decision": "keep",
+          "topics": [
+            "policy",
+            "economic_outlook"
+          ],
+          "scope": "us_national",
+          "claim_type": "fact",
+          "reason_zh": "美联储宣布出售公司债持仓，属货币政策操作与经济前景背景。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "79124ca63064fc5fc49b44f1",
+          "event_id": "878bcdb3991eee11",
+          "headline": "The Week in Business: Biden’s Big Budget",
+          "web_url": "https://www.nytimes.com/2021/05/30/business/the-week-in-business-biden-budget.html",
+          "pub_date": "2021-05-30T11:00:05+0000",
+          "stratum": "new_only",
+          "target": "202106",
+          "decision": "keep",
+          "topics": [
+            "policy",
+            "economic_outlook"
+          ],
+          "scope": "us_national",
+          "claim_type": "attributed_claim",
+          "reason_zh": "拜登预算计划旨在提振经济，涉及财政政策与经济前景。",
+          "new_recalled": true,
+          "old_final": false
+        }
+      ],
+      "still_not_recalled_keep_examples": [],
+      "old_final_exclude_or_uncertain_examples": [
+        {
+          "article_id": "0fceafc518ae7747691d6c7e",
+          "event_id": "5849bdb9e20b1f0d",
+          "headline": "U.S. Waged Secret Legal Battle to Obtain Emails of 4 Times Reporters",
+          "web_url": "https://www.nytimes.com/2021/06/04/us/politics/times-reporter-emails-gag-order-trump-google.html",
+          "pub_date": "2021-06-05T02:53:35+0000",
+          "stratum": "old_final",
+          "target": "202106",
+          "decision": "exclude",
+          "topics": [],
+          "scope": "us_national",
+          "claim_type": "fact",
+          "reason_zh": "报道司法部秘密获取记者邮件，属法律与新闻自由议题，无实质经济内容。",
+          "new_recalled": false,
+          "old_final": true
+        },
+        {
+          "article_id": "6c69196c1d8b2e01f31ca477",
+          "event_id": "6b66cefcb796e98c",
+          "headline": "To Keep Their Son Alive, They Sleep in Shifts. And Hope a Nurse Shows Up.",
+          "web_url": "https://www.nytimes.com/2021/06/04/health/nursing-shortage-disabled-children.html",
+          "pub_date": "2021-06-04T21:19:47+0000",
+          "stratum": "old_final",
+          "target": "202106",
+          "decision": "exclude",
+          "topics": [],
+          "scope": "us_unspecified",
+          "claim_type": "unclear",
+          "reason_zh": "护理短缺对残疾儿童家庭的影响属健康与社会照护议题，非居民经济处境核心。",
+          "new_recalled": false,
+          "old_final": true
+        }
+      ]
+    },
+    {
+      "target": "202109",
+      "role": "independent_news_check",
+      "months": [
+        "2021-09"
+      ],
+      "cutoff_date": "2021-09-30",
+      "date_rule": "legacy UTC pub_date first10 <= cutoff date; not precise New York timestamp PIT",
+      "counts": {
+        "raw_in_date_window": 4482,
+        "excluded_after_date_cutoff": 0,
+        "unique_articles_with_text": 3927,
+        "old_rule_candidates": 277,
+        "new_rule_candidates": 422,
+        "old_final": 30,
+        "non_article": 555
+      },
+      "strata": {
+        "old_final": {
+          "population": 30,
+          "sample": 30,
+          "sampling": "census"
+        },
+        "new_only": {
+          "population": 310,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement"
+        },
+        "both_rules_not_final": {
+          "population": 84,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement"
+        },
+        "old_rule_only": {
+          "population": 163,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement"
+        },
+        "neither_rule": {
+          "population": 3340,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement"
+        }
+      },
+      "rule_hits_article_counts_overlap": {
+        "economic_section": 370,
+        "direct_economic_terms": 90,
+        "price_and_change": 12,
+        "object_and_change": 12,
+        "general_economic_context": 20
+      },
+      "new_candidate_fraction_of_unique_articles": 0.1074611662846957,
+      "old_candidate_fraction_of_unique_articles": 0.07053730583142348,
+      "stratified_model_labels": {
+        "old_final": {
+          "population": 30,
+          "sample": 30,
+          "sampling": "census",
+          "decision_counts": {
+            "exclude": 4,
+            "keep": 26
+          }
+        },
+        "new_only": {
+          "population": 310,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "background": 12,
+            "keep": 6,
+            "exclude": 12
+          }
+        },
+        "both_rules_not_final": {
+          "population": 84,
+          "sample": 30,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "exclude": 3,
+            "keep": 21,
+            "background": 6
+          }
+        },
+        "old_rule_only": {
+          "population": 163,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "exclude": 11,
+            "keep": 3,
+            "background": 1
+          }
+        },
+        "neither_rule": {
+          "population": 3340,
+          "sample": 15,
+          "sampling": "simple_random_without_replacement",
+          "decision_counts": {
+            "exclude": 13,
+            "uncertain": 1,
+            "background": 1
+          }
+        }
+      },
+      "old_final_exact_model_labels": {
+        "exclude": 4,
+        "keep": 26
+      },
+      "old_final_keep_topics": {
+        "supply_costs": 10,
+        "employment_income_consumption": 5,
+        "living_prices": 6,
+        "economic_outlook": 11,
+        "policy": 14
+      },
+      "new_candidate_sample_model_labels": {
+        "keep": 52,
+        "exclude": 18,
+        "background": 18
+      },
+      "candidate_model_estimates": {
+        "new_rule": {
+          "candidate_population": 422,
+          "estimated_label_counts": {
+            "keep": 145.80000000000004,
+            "exclude": 135.4,
+            "background": 140.80000000000004
+          },
+          "estimated_keep_fraction": 0.3454976303317536,
+          "estimated_keep_or_background_fraction": 0.6791469194312798
+        },
+        "old_rule": {
+          "candidate_population": 277,
+          "estimated_label_counts": {
+            "exclude": 131.93333333333337,
+            "keep": 117.39999999999998,
+            "background": 27.666666666666668
+          },
+          "estimated_keep_fraction": 0.42382671480144396,
+          "estimated_keep_or_background_fraction": 0.5237063778580023
+        }
+      },
+      "new_only_keep_examples": [
+        {
+          "article_id": "57633a583d4f284235edc9b0",
+          "event_id": "5a507ac4ed6f8aea",
+          "headline": "With Extreme Weather, Home Insurance Will Cost More. If You Can Get It.",
+          "web_url": "https://www.nytimes.com/2021/09/10/your-money/extreme-weather-homeowner-insurance.html",
+          "pub_date": "2021-09-10T13:00:08+0000",
+          "stratum": "new_only",
+          "target": "202109",
+          "decision": "keep",
+          "topics": [
+            "living_prices",
+            "supply_costs"
+          ],
+          "scope": "us_unspecified",
+          "claim_type": "fact",
+          "reason_zh": "极端天气推高房屋保险费，涉及家庭生活成本。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "c20d6b9f58f0f506eb646151",
+          "event_id": "8df1206c35ef8856",
+          "headline": "The U.S. could run out of cash to pay its bills as early as Oct. 15, analysts say.",
+          "web_url": "https://www.nytimes.com/2021/09/24/business/us-debt-limit-timeline.html",
+          "pub_date": "2021-09-24T11:00:57+0000",
+          "stratum": "new_only",
+          "target": "202109",
+          "decision": "keep",
+          "topics": [
+            "policy",
+            "economic_outlook"
+          ],
+          "scope": "us_national",
+          "claim_type": "attributed_claim",
+          "reason_zh": "讨论美国债务上限与违约风险，涉及财政政策与经济前景。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "2d93554e925dab696e813260",
+          "event_id": "0ded677433cabdfb",
+          "headline": "Small businesses can get $2 million disaster loans, with more time to pay them back.",
+          "web_url": "https://www.nytimes.com/2021/09/09/business/sba-disaster-loans-limit-pandemic.html",
+          "pub_date": "2021-09-09T21:07:52+0000",
+          "stratum": "new_only",
+          "target": "202109",
+          "decision": "keep",
+          "topics": [
+            "policy",
+            "supply_costs"
+          ],
+          "scope": "us_national",
+          "claim_type": "fact",
+          "reason_zh": "小企业可获最高200万美元灾难贷款并延长还款期，涉及企业融资政策。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "46a26f1d0e3afa679d7971a9",
+          "event_id": "7c0aff896a5b5e2f",
+          "headline": "President Biden has erased billions in student debt, but progressives want more.",
+          "web_url": "https://www.nytimes.com/2021/09/13/business/president-biden-has-erased-billions-in-student-debt-but-progressives-want-more.html",
+          "pub_date": "2021-09-13T11:09:12+0000",
+          "stratum": "new_only",
+          "target": "202109",
+          "decision": "keep",
+          "topics": [
+            "policy",
+            "employment_income_consumption"
+          ],
+          "scope": "us_national",
+          "claim_type": "fact",
+          "reason_zh": "报道拜登政府免除学生贷款债务，涉及家庭财务与相关政策。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "625a8b64c914d6464592d5a5",
+          "event_id": "a2f9f2eaa945fc2f",
+          "headline": "Consumers and Companies Are Buying In on Paying Later",
+          "web_url": "https://www.nytimes.com/2021/09/03/your-money/buy-now-pay-later-afterpay-affirm-amazon-square.html",
+          "pub_date": "2021-09-03T15:20:53+0000",
+          "stratum": "new_only",
+          "target": "202109",
+          "decision": "keep",
+          "topics": [
+            "employment_income_consumption",
+            "other_economic"
+          ],
+          "scope": "us_unspecified",
+          "claim_type": "fact",
+          "reason_zh": "讨论消费者分期付款服务及其对家庭支出的影响。",
+          "new_recalled": true,
+          "old_final": false
+        },
+        {
+          "article_id": "65fe860195adb59b0fbe91a8",
+          "event_id": "d201b5dedda18515",
+          "headline": "Proposed Tax Changes Focus on the Wealthy",
+          "web_url": "https://www.nytimes.com/2021/09/17/your-money/tax-changes-wealthy.html",
+          "pub_date": "2021-09-17T13:00:08+0000",
+          "stratum": "new_only",
+          "target": "202109",
+          "decision": "keep",
+          "topics": [
+            "policy",
+            "economic_outlook"
+          ],
+          "scope": "us_national",
+          "claim_type": "mixed",
+          "reason_zh": "讨论国会税改方案对富人收入门槛的定义，涉及税收政策与经济分配。",
+          "new_recalled": true,
+          "old_final": false
+        }
+      ],
+      "still_not_recalled_keep_examples": [
+        {
+          "article_id": "1a83e089737a55f8d1f8bbd6",
+          "event_id": "40eaceb4bb9766ba",
+          "headline": "Newsom Beat the Recall, Now Comes the Hard Part: Governing California",
+          "web_url": "https://www.nytimes.com/2021/09/15/us/gavin-newsom-governor-california.html",
+          "pub_date": "2021-09-15T22:21:16+0000",
+          "stratum": "old_final",
+          "target": "202109",
+          "decision": "keep",
+          "topics": [
+            "living_prices",
+            "economic_outlook"
+          ],
+          "scope": "us_local",
+          "claim_type": "fact",
+          "reason_zh": "加州面临房价高企和无家可归危机，涉及居民生活成本与地方经济。",
+          "new_recalled": false,
+          "old_final": true
+        },
+        {
+          "article_id": "c5b6cb6868fad9c4c5b1a4f1",
+          "event_id": "4dd7db2b12079da0",
+          "headline": "No Veggies, No Buns, Few Forks: Schools Scramble to Feed Students Amid Shortages",
+          "web_url": "https://www.nytimes.com/2021/09/27/us/politics/schools-labor-supply-shortages.html",
+          "pub_date": "2021-09-27T15:10:59+0000",
+          "stratum": "old_rule_only",
+          "target": "202109",
+          "decision": "keep",
+          "topics": [
+            "supply_costs",
+            "living_prices"
+          ],
+          "scope": "us_national",
+          "claim_type": "fact",
+          "reason_zh": "学校因供应短缺、延迟发货和人员不足而减少午餐选项，涉及供给与生活成本。",
+          "new_recalled": false,
+          "old_final": false
+        },
+        {
+          "article_id": "a76a2a9e19820893d02d72db",
+          "event_id": "a56d1c5557a362e3",
+          "headline": "Will the Bus Driver Ever Come? Or the Substitute Teacher or Cafeteria Worker?",
+          "web_url": "https://www.nytimes.com/2021/09/16/us/school-shortages-bus-drivers-workers.html",
+          "pub_date": "2021-09-16T09:00:23+0000",
+          "stratum": "old_rule_only",
+          "target": "202109",
+          "decision": "keep",
+          "topics": [
+            "employment_income_consumption"
+          ],
+          "scope": "us_unspecified",
+          "claim_type": "fact",
+          "reason_zh": "学校低薪、福利少和排班不稳导致岗位空缺，涉及就业与工资。",
+          "new_recalled": false,
+          "old_final": false
+        },
+        {
+          "article_id": "39001fc7295c94bc5e0ddc69",
+          "event_id": "ce701bda02525a71",
+          "headline": "Britain’s Gas Crisis, Explained",
+          "web_url": "https://www.nytimes.com/2021/09/28/world/europe/why-uk-fuel-shortage.html",
+          "pub_date": "2021-09-28T14:03:26+0000",
+          "stratum": "old_rule_only",
+          "target": "202109",
+          "decision": "keep",
+          "topics": [
+            "supply_costs",
+            "living_prices"
+          ],
+          "scope": "non_us",
+          "claim_type": "fact",
+          "reason_zh": "英国卡车司机短缺导致燃油供应紧张，属国际能源供应背景消息。",
+          "new_recalled": false,
+          "old_final": false
+        }
+      ],
+      "old_final_exclude_or_uncertain_examples": [
+        {
+          "article_id": "0cf081b6ca03a78ca8d3a32a",
+          "event_id": "d30451bf1f31adea",
+          "headline": "Thousands of N.Y. Health Care Workers Get Vaccinated Ahead of Deadline",
+          "web_url": "https://www.nytimes.com/2021/09/28/nyregion/vaccine-health-care-workers-mandate.html",
+          "pub_date": "2021-09-28T09:00:16+0000",
+          "stratum": "old_final",
+          "target": "202109",
+          "decision": "exclude",
+          "topics": [],
+          "scope": "us_local",
+          "claim_type": "fact",
+          "reason_zh": "报道纽约医护人员疫苗接种与人手短缺，属公共卫生与人事，无实质经济内容。",
+          "new_recalled": false,
+          "old_final": true
+        },
+        {
+          "article_id": "588e75129f73b1fe6faceda2",
+          "event_id": "55cda56abb21d027",
+          "headline": "In Britain, Rising Prices and Shortages Evoke 1970s-Style Jitters",
+          "web_url": "https://www.nytimes.com/2021/09/24/world/europe/britain-shortages-economy-1970s.html",
+          "pub_date": "2021-09-24T20:07:42+0000",
+          "stratum": "old_final",
+          "target": "202109",
+          "decision": "exclude",
+          "topics": [],
+          "scope": "non_us",
+          "claim_type": "unclear",
+          "reason_zh": "讲英国物价与短缺，属外国地方议题，无美国或国际供应链背景。",
+          "new_recalled": true,
+          "old_final": true
+        },
+        {
+          "article_id": "b1c13195b6eff6793201900b",
+          "event_id": "585077c367d43d81",
+          "headline": "As Russians Vote, Resignation, Anger and Fear of a Post-Putin Unknown",
+          "web_url": "https://www.nytimes.com/2021/09/16/world/europe/russia-election-vote-putin.html",
+          "pub_date": "2021-09-16T19:19:22+0000",
+          "stratum": "old_final",
+          "target": "202109",
+          "decision": "exclude",
+          "topics": [
+            "living_prices",
+            "employment_income_consumption"
+          ],
+          "scope": "non_us",
+          "claim_type": "attributed_claim",
+          "reason_zh": "俄罗斯地方选举与民怨，属外国地方议题且无相关国际能源贸易背景。",
+          "new_recalled": true,
+          "old_final": true
+        },
+        {
+          "article_id": "f007091c4fae8518ffd77f5e",
+          "event_id": "ed827c93b7a0a855",
+          "headline": "Turkey’s currency hits a new low after a surprise interest rate cut.",
+          "web_url": "https://www.nytimes.com/2021/09/23/business/turkish-lira-today.html",
+          "pub_date": "2021-09-23T16:30:46+0000",
+          "stratum": "old_final",
+          "target": "202109",
+          "decision": "exclude",
+          "topics": [
+            "policy"
+          ],
+          "scope": "non_us",
+          "claim_type": "fact",
+          "reason_zh": "土耳其央行降息与里拉汇率属外国地方议题，无相关国际能源贸易背景。",
+          "new_recalled": true,
+          "old_final": true
+        }
+      ]
+    }
+  ],
+  "unique_articles_labeled": 347,
+  "unique_label_counts": {
+    "keep": 159,
+    "exclude": 122,
+    "background": 65,
+    "uncertain": 1
+  },
+  "total_paid_requests": 44,
+  "same_prompt_retries": 0,
+  "quote_shortening_count": 22,
+  "verbatim_echo_removal_count": 2,
+  "returned_models": {
+    "deepseek-flash": 44
+  },
+  "prompt_tokens": 74258,
+  "completion_tokens": 28878,
+  "peak_uncached_cost_upper_usd": 0.056930999999999995,
+  "published_offpeak_cache_aware_cost_estimate_usd": 0.025229148000000003,
+  "budget_cap_usd": 0.25,
+  "billing_note": "Token/rate estimate, not an account bill; Sunday off-peak prices verified from official docs on 2026-10-11.",
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "raw_json_schema_and_verbatim_evidence": "pass after recorded quote shortening",
+  "all_requests_revalidated_from_raw_response": true,
+  "protected_files_unchanged": 15,
+  "new_simulation_calls": 0,
+  "historical_text_vintage": "unverified_archive_snapshot",
+  "interpretation": "Funnel is observed counts. Semantic labels and weighted rates are model suggestions, not human accuracy or true recall. Rare missed topics sampled at n15 have high uncertainty. Independent September shares standards but a different window length, so raw counts are not directly comparable."
+}

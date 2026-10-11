@@ -1,0 +1,140 @@
+[
+  {
+    "article_id": "0128668e28d040d85638278f",
+    "event_id": "3c6eef63b0ba2529",
+    "headline": "G.M. will increase production of cars and trucks as the chip shortage eases.",
+    "web_url": "https://www.nytimes.com/2021/06/03/business/general-motors-chip-shortage.html",
+    "pub_date": "2021-06-03T16:27:05+0000",
+    "stratum": "old_final",
+    "target": "202106",
+    "decision": "background",
+    "topics": [
+      "supply_costs",
+      "economic_outlook"
+    ],
+    "scope": "us_unspecified",
+    "claim_type": "attributed_claim",
+    "reason_zh": "通用汽车因芯片短缺缓解而增产并上调财务预期，属公司经营与供应链背景。",
+    "new_recalled": true,
+    "old_final": true,
+    "review_kind": "classification_boundary",
+    "review_note": "汽车明确增产的信息应按供给内容审查；摘要提及盈利不应自动压过标题中的实际产量变化。",
+    "reviewer": "primary Codex agent; targeted model-assisted review, not human gold",
+    "original_label_unchanged": true
+  },
+  {
+    "article_id": "701eb6ffa0a0419d4a4b3401",
+    "event_id": "3d6dae09d73a0cf4",
+    "headline": "Bank of England predicts a faster recovery and slows down its bond-buying program.",
+    "web_url": "https://www.nytimes.com/2021/05/06/business/bank-of-england-predicts-a-faster-recovery-and-slows-down-its-bond-buying-program.html",
+    "pub_date": "2021-05-06T12:15:37+0000",
+    "stratum": "new_only",
+    "target": "202106",
+    "decision": "keep",
+    "topics": [
+      "economic_outlook",
+      "policy",
+      "employment_income_consumption"
+    ],
+    "scope": "non_us",
+    "claim_type": "attributed_claim",
+    "reason_zh": "英国央行预测经济更快复苏并放缓购债，属外国货币政策与经济前景，非美国居民处境。",
+    "new_recalled": true,
+    "old_final": false,
+    "review_kind": "decision_reason_conflict",
+    "review_note": "标签为keep，理由却说非美国居民处境；英国本国复苏/购债不自动成为美国主要信息，需统一国外政策处理。",
+    "reviewer": "primary Codex agent; targeted model-assisted review, not human gold",
+    "original_label_unchanged": true
+  },
+  {
+    "article_id": "1a83e089737a55f8d1f8bbd6",
+    "event_id": "40eaceb4bb9766ba",
+    "headline": "Newsom Beat the Recall, Now Comes the Hard Part: Governing California",
+    "web_url": "https://www.nytimes.com/2021/09/15/us/gavin-newsom-governor-california.html",
+    "pub_date": "2021-09-15T22:21:16+0000",
+    "stratum": "old_final",
+    "target": "202109",
+    "decision": "keep",
+    "topics": [
+      "living_prices",
+      "economic_outlook"
+    ],
+    "scope": "us_local",
+    "claim_type": "fact",
+    "reason_zh": "加州面临房价高企和无家可归危机，涉及居民生活成本与地方经济。",
+    "new_recalled": false,
+    "old_final": true,
+    "review_kind": "keyword_miss",
+    "review_note": "原文home price是单数，新词典仅有home prices；需补形式，不能为消除词面误中同时丢掉实质房价信息。",
+    "reviewer": "primary Codex agent; targeted model-assisted review, not human gold",
+    "original_label_unchanged": true
+  },
+  {
+    "article_id": "c5b6cb6868fad9c4c5b1a4f1",
+    "event_id": "4dd7db2b12079da0",
+    "headline": "No Veggies, No Buns, Few Forks: Schools Scramble to Feed Students Amid Shortages",
+    "web_url": "https://www.nytimes.com/2021/09/27/us/politics/schools-labor-supply-shortages.html",
+    "pub_date": "2021-09-27T15:10:59+0000",
+    "stratum": "old_rule_only",
+    "target": "202109",
+    "decision": "keep",
+    "topics": [
+      "supply_costs",
+      "living_prices"
+    ],
+    "scope": "us_national",
+    "claim_type": "fact",
+    "reason_zh": "学校因供应短缺、延迟发货和人员不足而减少午餐选项，涉及供给与生活成本。",
+    "new_recalled": false,
+    "old_final": false,
+    "review_kind": "keyword_miss",
+    "review_note": "学校餐食与食堂人员短缺没有命中当前商品对象列表，食品供给对象仍有遗漏。",
+    "reviewer": "primary Codex agent; targeted model-assisted review, not human gold",
+    "original_label_unchanged": true
+  },
+  {
+    "article_id": "39001fc7295c94bc5e0ddc69",
+    "event_id": "ce701bda02525a71",
+    "headline": "Britain’s Gas Crisis, Explained",
+    "web_url": "https://www.nytimes.com/2021/09/28/world/europe/why-uk-fuel-shortage.html",
+    "pub_date": "2021-09-28T14:03:26+0000",
+    "stratum": "old_rule_only",
+    "target": "202109",
+    "decision": "keep",
+    "topics": [
+      "supply_costs",
+      "living_prices"
+    ],
+    "scope": "non_us",
+    "claim_type": "fact",
+    "reason_zh": "英国卡车司机短缺导致燃油供应紧张，属国际能源供应背景消息。",
+    "new_recalled": false,
+    "old_final": false,
+    "review_kind": "scope_boundary",
+    "review_note": "英国国内卡车司机造成加油站短缺，不等同全球石油供给变化；keep与其他英国地方价格新闻的排除界限需复查。",
+    "reviewer": "primary Codex agent; targeted model-assisted review, not human gold",
+    "original_label_unchanged": true
+  },
+  {
+    "article_id": "75893fe26068589860bd0a09",
+    "event_id": "c79ec125468b5d6b",
+    "headline": "Prices for new iPhones, iPads and Apple Watches are mostly unchanged.",
+    "web_url": "https://www.nytimes.com/2021/09/14/technology/apple-iphone-ipad-prices.html",
+    "pub_date": "2021-09-14T18:26:17+0000",
+    "stratum": "new_only",
+    "target": "202109",
+    "decision": "background",
+    "topics": [
+      "living_prices"
+    ],
+    "scope": "us_national",
+    "claim_type": "fact",
+    "reason_zh": "报道苹果新品定价大多不变，属公司产品定价背景，与居民整体生活价格关系有限。",
+    "new_recalled": true,
+    "old_final": false,
+    "review_kind": "classification_boundary",
+    "review_note": "真实消费电子零售价与公司融资不同；应区分直接价格信息和产品宣传，不以公司名称把它们统一归为次要背景。",
+    "reviewer": "primary Codex agent; targeted model-assisted review, not human gold",
+    "original_label_unchanged": true
+  }
+]
