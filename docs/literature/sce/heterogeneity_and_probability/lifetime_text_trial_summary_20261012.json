@@ -1,0 +1,78 @@
+{
+  "experiment_name": "Lifetime Inflation Experience: numeric versus qualitative",
+  "research_line": "A_historical_reconstruction",
+  "months": [
+    "202203",
+    "202209",
+    "202303",
+    "202403"
+  ],
+  "arms": [
+    "original",
+    "numeric_history",
+    "text_history"
+  ],
+  "n_per_month": 12,
+  "repeats": [
+    1,
+    2
+  ],
+  "planned_answers": 288,
+  "start_age": 6,
+  "model": "deepseek-flash",
+  "documented_model_version": "DeepSeek-V4.1-Flash",
+  "temperature": 0.5,
+  "max_tokens": 1024,
+  "retry_max": 0,
+  "conservative_simulation_cost_bound_usd": 1.026642,
+  "proposed_simulation_cap_usd": 1.5,
+  "preregistered_evaluation": {
+    "primary": [
+      "Q9 sample median absolute error",
+      "Q9 W1 distribution distance",
+      "Q9 cross-person IQR gap"
+    ],
+    "secondary": [
+      "Q8",
+      "personal uncertainty",
+      "raw deflation probability",
+      "age groups"
+    ],
+    "contrasts": [
+      "text_history minus numeric_history",
+      "text_history minus original",
+      "numeric_history minus original"
+    ],
+    "common_valid": "same valid people across all three arms; report rates independently",
+    "aggregation": "each repeat separately, equal-weight averages over four periods; survey weights auxiliary",
+    "age_groups": "four selected per age group; descriptive only, no significance claim",
+    "bootstrap": "paired people conditional on fixed P/E/history; 1000 draws, seed 42; not population or period generalization",
+    "repetition_rule": "independent generations; repeat index is not a provider random seed",
+    "candidate_gate": "same criterion versus original as well; no automatic production upgrade",
+    "truth_isolation": "analysis only; official answers/weights not read during preparation or execution",
+    "no_target_tuning": true,
+    "primary_contrast": "text_history minus numeric_history",
+    "representation_gate": "both repeats: lower mean Q9 median error and W1 than numeric, both improve in >=3/4 periods"
+  },
+  "qualitative_duration_rule": "observed complete spell >=12 months: extended; <=6: short-lived; middle: a while; left/right censoring explicitly retained",
+  "limitations": [
+    "National history is a background proxy, not observed personal recall or residence history.",
+    "Era compression and retained information differ between common and matched arms; not a pure matching effect.",
+    "Start ages and 5% duration threshold are research conventions, not estimated universal thresholds.",
+    "Four previously studied periods remain development diagnostics; independent holdout not registered.",
+    "Current-byte history essays and previous news/gasoline limitations remain; not strict forecast B.",
+    "12-person age-balanced samples, four previously examined periods, no independent holdout.",
+    "All existing confidence/CE/news assumptions retained; no new shopping weights or probability reporting instructions.",
+    "No own prior answers, panel memory, core/normal expansion or social interaction.",
+    "Equal count in three age groups is not a nationally representative age distribution.",
+    "Historical context and compression differ between common and age-matched arms; not a pure matching causal effect.",
+    "Qualitative history also shortens context and removes exact age/month/rate details; not pure isolation of CPI digits."
+  ],
+  "status": "prepared_and_authorized_by_user_same_scope_budget",
+  "preparation_path": "outputs/sce_lifetime_text_trial_20261012_v1",
+  "targeted_tests": 27,
+  "engineering_cells": 12,
+  "authorization_quote": "重新再试一次，可以按照原有的模拟预算",
+  "cap_usd": 1.5,
+  "new_model_calls": 0
+}

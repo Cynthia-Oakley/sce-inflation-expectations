@@ -47,6 +47,7 @@ LLM_PROMPT_VERSIONS = (
     "sce-q8-q9-news-exposure-v1",
     "sce-q8-q9-confidence-v1",
     "sce-q8-q9-lifetime-inflation-v1",
+    "sce-q8-q9-lifetime-text-v1",
 )
 
 
@@ -216,11 +217,15 @@ def main(argv: list[str] | None = None) -> int:
     news_inputs = {}
     confidence_inputs = {}
     lifetime_inputs = {}
-    lifetime_ref = "sce_inflation_expectations.lifetime_decision"
-    if ((sim_c.decision_ref == lifetime_ref) != (args.prompt_version == "sce-q8-q9-lifetime-inflation-v1")):
-        sys.exit("lifetime provider and prompt must be selected together")
-    if sim_c.decision_ref == lifetime_ref:
-        from studies.sce_inflation_expectations.lifetime_experiment import validate_bundle, build_messages
+    lifetime_refs = {"sce_inflation_expectations.lifetime_decision": "sce-q8-q9-lifetime-inflation-v1",
+                     "sce_inflation_expectations.lifetime_text_decision": "sce-q8-q9-lifetime-text-v1"}
+    if sim_c.decision_ref in lifetime_refs or args.prompt_version in lifetime_refs.values():
+        if lifetime_refs.get(sim_c.decision_ref) != args.prompt_version:
+            sys.exit("lifetime provider and prompt must be selected together")
+        if args.prompt_version == "sce-q8-q9-lifetime-text-v1":
+            from studies.sce_inflation_expectations.lifetime_text_experiment import validate_bundle, build_messages
+        else:
+            from studies.sce_inflation_expectations.lifetime_experiment import validate_bundle, build_messages
         from studies.sce_inflation_expectations.model import SCEEnvironmentProvider
         if len(targets) != 1 or args.mechanism or args.experience or args.household_state or args.information_exposure:
             sys.exit("lifetime experiment requires isolated one-month inputs")

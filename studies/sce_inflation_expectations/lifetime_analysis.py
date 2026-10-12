@@ -18,14 +18,18 @@ CONTRASTS = ((ARMS[2], ARMS[0]), (ARMS[1], ARMS[0]), (ARMS[2], ARMS[1]))
 SCORE_KEYS = ('median_absolute_error_pp', 'distribution_W1_pp', 'IQR_absolute_gap_pp')
 
 
-def metrics(rows, point=False, bootstrap=1000):
-    common = [r for r in rows if all(finite(r.get(k)) for k in ('real',)+ARMS)]
+def metrics(rows, point=False, bootstrap=1000, arms=ARMS):
+    arms = tuple(arms)
+    if len(arms) != 3 or len(set(arms)) != 3:
+        raise ValueError('three distinct registered arms required')
+    contrasts = ((arms[2], arms[0]), (arms[1], arms[0]), (arms[2], arms[1]))
+    common = [r for r in rows if all(finite(r.get(k)) for k in ('real',)+arms)]
     real = np.asarray([r['real'] for r in common])
-    preds = {a: np.asarray([r[a] for r in common]) for a in ARMS}
+    preds = {a: np.asarray([r[a] for r in common]) for a in arms}
     result = {'n_selected': len(rows), 'n_common': len(common), 'n_excluded': len(rows)-len(common),
               'estimand': 'equal-weight common age-balanced diagnostic sample, not national headline',
               'real': describe(real, point), 'arms': {}, 'contrasts': {}}
-    for arm in ARMS:
+    for arm in arms:
         result['arms'][arm] = statistics(preds[arm], real, point)
         ages = sorted({r['profile']['age_group'] for r in common})
         result['arms'][arm]['age_groups_descriptive'] = {g: statistics(
@@ -40,13 +44,13 @@ def metrics(rows, point=False, bootstrap=1000):
                 'median_absolute_error_pp': abs(sw['weighted_median_pp']-rw['weighted_median_pp'])}
     if not common:
         return result
-    intervals = {(a,b,k): [] for a,b in CONTRASTS for k in SCORE_KEYS}
+    intervals = {(a,b,k): [] for a,b in contrasts for k in SCORE_KEYS}
     rng = np.random.default_rng(42)
     for indices in rng.integers(0, len(common), size=(bootstrap,len(common))):
-        s = {a: statistics(preds[a][indices], real[indices], point) for a in ARMS}
+        s = {a: statistics(preds[a][indices], real[indices], point) for a in arms}
         for a,b,k in intervals:
             intervals[a,b,k].append(s[a][k]-s[b][k])
-    for a,b in CONTRASTS:
+    for a,b in contrasts:
         result['contrasts'][f'{a}_minus_{b}'] = {
             k: {'change_pp': result['arms'][a][k]-result['arms'][b][k],
                 'paired_person_bootstrap_95_interval_pp': np.quantile(intervals[a,b,k],[.025,.975]).tolist() if bootstrap else None}
@@ -69,6 +73,9 @@ def analyze(root, trial, truth_dir, out):
     if out.exists() or not out.is_relative_to(root/'outputs'):
         raise ValueError('fresh ignored analysis directory required')
     plan = json.loads((trial/'trial_manifest.json').read_text())
+    arms = tuple(plan['arms'])
+    if len(arms) != 3 or len(set(arms)) != 3 or len(plan['repeats']) != 2:
+        raise ValueError('registered three-arm two-generation design required')
     if plan['status'] != 'completed_pending_analysis' or len(plan['jobs']) != 24 or any(j.get('exit_code') != 0 for j in plan['jobs']):
         raise ValueError('all 24 completed real cells required')
     check_frozen(root, trial, plan)
@@ -100,7 +107,7 @@ def analyze(root, trial, truth_dir, out):
             'note':'published derived micro values; auxiliary, not primary balanced-sample truth or rerun score'}
         for repeat in (1,2):
             answers = {}
-            for arm in ARMS:
+            for arm in arms:
                 job = next(j for j in plan['jobs'] if (j['month'],j['arm'],j['repeat']) == (month,arm,repeat))
                 run = root/'outputs/local_runs'/job['run_id']
                 manifest = json.loads((run/'run_manifest.json').read_text())
@@ -143,15 +150,15 @@ def analyze(root, trial, truth_dir, out):
                 aid = link['agent_id']
                 actual = truth[month,link['source_agent_id']]
                 bins = {'real':[actual[f'Q9_bin{i}'] for i in range(1,11)]}
-                bins.update({a:[answers[a][aid][f'q9_bin{i}'] for i in range(1,11)] if answers[a][aid]['validation_status']=='valid' else [None]*10 for a in ARMS})
+                bins.update({a:[answers[a][aid][f'q9_bin{i}'] for i in range(1,11)] if answers[a][aid]['validation_status']=='valid' else [None]*10 for a in arms})
                 fits = {a:density(v) for a,v in bins.items()}
                 fits_count.update(f'{a}:{v["status"]}' for a,v in fits.items())
                 base = {'agent_id':aid,'profile':profiles[aid],'weight':actual['weight']}
                 for q,f in (('Q9','mean'),('personal_uncertainty','iqr')):
                     rows[q].append({**base,**{a:v[f] for a,v in fits.items()}})
-                rows['Q8'].append({**base,'real':actual['Q8v2part2'],**{a:point_value(answers[a][aid]) for a in ARMS}})
+                rows['Q8'].append({**base,'real':actual['Q8v2part2'],**{a:point_value(answers[a][aid]) for a in arms}})
                 rows['raw_deflation_probability'].append({**base,**{a:sum(v[5:]) if all(finite(x) for x in v) and abs(sum(v)-100)<=.5 else None for a,v in bins.items()}})
-            cell = {q:metrics(rr,point=q=='Q8') for q,rr in rows.items()}
+            cell = {q:metrics(rr,point=q=='Q8',arms=arms) for q,rr in rows.items()}
             cell['fit_status_counts'] = dict(fits_count)
             result['months'][month]['repeats'][str(repeat)] = cell
             private.extend({'month':month,'repeat':repeat,'measure':q,**r} for q,rr in rows.items() for r in rr)
@@ -161,17 +168,17 @@ def analyze(root, trial, truth_dir, out):
         for q in ('Q9','Q8'):
             cells = [result['months'][m]['repeats'][str(repeat)][q] for m in MONTHS]
             entry[q] = {}
-            for arm in ARMS:
+            for arm in arms:
                 entry[q][arm] = {}
                 for key in SCORE_KEYS:
                     values = [c['arms'][arm][key] for c in cells]
                     entry[q][arm][key] = float(np.mean(values)) if all(finite(x) for x in values) else None
-            entry[q]['matched_months_both_improve'] = sum(all(finite(c['arms'][a][k]) for a in (ARMS[0],ARMS[2]) for k in SCORE_KEYS[:2]) and all(c['arms'][ARMS[2]][k]<c['arms'][ARMS[0]][k] for k in SCORE_KEYS[:2]) for c in cells)
+            entry[q]['matched_months_both_improve'] = sum(all(finite(c['arms'][a][k]) for a in (arms[0],arms[2]) for k in SCORE_KEYS[:2]) and all(c['arms'][arms[2]][k]<c['arms'][arms[0]][k] for k in SCORE_KEYS[:2]) for c in cells)
         result['across_months_by_repeat'][str(repeat)] = entry
     result['candidate_continue_gate_passed'] = all(
         result['across_months_by_repeat'][str(r)]['Q9']['matched_months_both_improve']>=3 and
-        all(finite(result['across_months_by_repeat'][str(r)]['Q9'][a][k]) for a in (ARMS[0],ARMS[2]) for k in SCORE_KEYS[:2]) and
-        all(result['across_months_by_repeat'][str(r)]['Q9'][ARMS[2]][k]<result['across_months_by_repeat'][str(r)]['Q9'][ARMS[0]][k] for k in SCORE_KEYS[:2]) for r in (1,2))
+        all(finite(result['across_months_by_repeat'][str(r)]['Q9'][a][k]) for a in (arms[0],arms[2]) for k in SCORE_KEYS[:2]) and
+        all(result['across_months_by_repeat'][str(r)]['Q9'][arms[2]][k]<result['across_months_by_repeat'][str(r)]['Q9'][arms[0]][k] for k in SCORE_KEYS[:2]) for r in (1,2))
     if result['actual_calls'] != 288 or result['conservative_cost_usd']>plan['proposed_simulation_cap_usd']:
         raise ValueError('overall call or cost limit')
     out.mkdir()

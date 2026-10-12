@@ -200,7 +200,7 @@ def execute(root, folder, approval_note):
         raise ValueError('fresh explicit scope/budget confirmation required')
     check_frozen(root, folder, plan)
     checks = json.loads((folder/'engineering_check.json').read_text())
-    if len(checks) != 12 or {(r['month'],r['arm']) for r in checks} != {(m,a) for m in MONTHS for a in ARMS} or any(r['exit_code'] for r in checks):
+    if len(checks) != 12 or {(r['month'],r['arm']) for r in checks} != {(m,a) for m in MONTHS for a in plan['arms']} or any(r['exit_code'] for r in checks):
         raise ValueError('twelve successful engineering cells required')
     if sum(j['job_cap_usd'] for j in plan['jobs']) > plan['proposed_simulation_cap_usd']:
         raise ValueError('aggregate cost protection')
