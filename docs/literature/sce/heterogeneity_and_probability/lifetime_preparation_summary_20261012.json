@@ -1,0 +1,161 @@
+{
+  "status": "offline_draft_not_runtime_configuration",
+  "research_line": "A_historical_reconstruction",
+  "months": [
+    "202203",
+    "202209",
+    "202303",
+    "202403"
+  ],
+  "arms": [
+    "original",
+    "age_only",
+    "common_history",
+    "age_matched_history"
+  ],
+  "respondent_month_rows": 192,
+  "prompt_counts": {
+    "original": 192,
+    "age_only": 192,
+    "common_history": 192,
+    "age_matched_history": 192
+  },
+  "per_month": {
+    "202203": {
+      "n": 48,
+      "first_pilot_eligible": 48,
+      "last_completed_year": 2021,
+      "max_prompt_chars": 7353
+    },
+    "202209": {
+      "n": 48,
+      "first_pilot_eligible": 43,
+      "last_completed_year": 2021,
+      "max_prompt_chars": 7323
+    },
+    "202303": {
+      "n": 48,
+      "first_pilot_eligible": 48,
+      "last_completed_year": 2022,
+      "max_prompt_chars": 7215
+    },
+    "202403": {
+      "n": 48,
+      "first_pilot_eligible": 48,
+      "last_completed_year": 2023,
+      "max_prompt_chars": 7306
+    }
+  },
+  "source_checks": {
+    "202203": {
+      "vintage_date": "2022-03-10",
+      "as_of": "2022-03-10T23:59:59-05:00",
+      "latest_reference_month": "2022-02",
+      "latest_nsa_index": 283.716,
+      "bls_release_pdf": "data/raw/bls_initial_releases/2022-02/cpi_2022_02_released_2022_03_10.pdf",
+      "bls_sha256": "fda7128b5b41de01031337aead07249b886247fc350ad7d34b41b81e57cd34c9",
+      "release_date_and_latest_value_cross_checked": true,
+      "all_historical_rows_independently_cross_checked": false,
+      "completed_annual_yoy_first_year": 1914,
+      "completed_annual_yoy_last_year": 2021
+    },
+    "202209": {
+      "vintage_date": "2022-09-13",
+      "as_of": "2022-09-13T23:59:59-04:00",
+      "latest_reference_month": "2022-08",
+      "latest_nsa_index": 296.171,
+      "bls_release_pdf": "data/raw/bls_initial_releases/2022-08/cpi_2022_08_released_2022_09_13.pdf",
+      "bls_sha256": "2d4216c35a19addc4c648f25ad335e75a8d3e0a78fb77e0e122d01e2b3bc11b1",
+      "release_date_and_latest_value_cross_checked": true,
+      "all_historical_rows_independently_cross_checked": false,
+      "completed_annual_yoy_first_year": 1914,
+      "completed_annual_yoy_last_year": 2021
+    },
+    "202303": {
+      "vintage_date": "2023-03-14",
+      "as_of": "2023-03-14T23:59:59-04:00",
+      "latest_reference_month": "2023-02",
+      "latest_nsa_index": 300.84,
+      "bls_release_pdf": "data/raw/bls_initial_releases/2023-02/cpi_2023_02_released_2023_03_14.pdf",
+      "bls_sha256": "6310668fe62d6f8dd51f06d37346835683095265584af59b622a4a0f8be35edb",
+      "release_date_and_latest_value_cross_checked": true,
+      "all_historical_rows_independently_cross_checked": false,
+      "completed_annual_yoy_first_year": 1914,
+      "completed_annual_yoy_last_year": 2022
+    },
+    "202403": {
+      "vintage_date": "2024-03-12",
+      "as_of": "2024-03-12T23:59:59-04:00",
+      "latest_reference_month": "2024-02",
+      "latest_nsa_index": 310.326,
+      "bls_release_pdf": "data/raw/bls_initial_releases/2024-02/cpi_2024_02_released_2024_03_12.pdf",
+      "bls_sha256": "50f01126c5705f1f9c87af83883313497f0b002dc2a9470c9e17a7d74ce093fe",
+      "release_date_and_latest_value_cross_checked": true,
+      "all_historical_rows_independently_cross_checked": false,
+      "completed_annual_yoy_first_year": 1914,
+      "completed_annual_yoy_last_year": 2023
+    }
+  },
+  "birth_year_interval_mean_rate_sensitivity_pp": {
+    "median": 0.03303588440774674,
+    "max": 0.25211879553131356,
+    "definition": "Difference between mean annual CPI changes over complete years from age 6, for the two possible birth years; not SCE prediction uncertainty."
+  },
+  "acceptance": {
+    "questionnaire_and_output_unchanged": true,
+    "old_PE_policy_confidence_and_news_unchanged": true,
+    "no_current_partial_years": true,
+    "four_latest_nsa_values_match_independent_BLS_releases": true,
+    "strict_B_inputs_accepted": false,
+    "old_15_pending_files_unchanged": true,
+    "real_LLM_effect_tested": false,
+    "runtime_provider_connected": false
+  },
+  "limits": [
+    "Older 13-month age sources remain flagged; pilot selection can omit them without deleting records.",
+    "Age and residence/recall are not jointly observed; national history is a proxy.",
+    "Common versus matched changes historical compression and retained information; not a pure matching-effect estimate.",
+    "History essays are current downloaded bytes with a 2013 written-as-of date; not certified past byte versions.",
+    "Existing NYT/gasoline version limitations remain; not strict route-B prediction.",
+    "These four periods have been examined before; not an independent holdout.",
+    "Inherited Q8/Q9 wording is preserved exactly; it is an existing project rendering, not verbatim official questionnaire."
+  ],
+  "code_sha256": "74fa8b37867891c6934c612666fe7b8238ad38111fd5e587668d978393a1ed9e",
+  "trial": {
+    "n_per_month": 12,
+    "n_respondent_months": 48,
+    "main_candidate_calls": 384,
+    "template_candidate_calls": 36,
+    "sample_seed": 20261012,
+    "historical_rate_reserve_only": {
+      "input_per_million_usd": 0.3,
+      "output_per_million_usd": 1.2,
+      "main_reserve_usd": 1.2348059999999994,
+      "template_reserve_usd": 0.12432059999999999,
+      "is_current_price_quote": false,
+      "not_actual_tokens_or_invoice": true
+    },
+    "pre_run_gates": [
+      "review complete prompts and the age-6 convention",
+      "implement isolated runner and pass deterministic dry runs",
+      "verify current model/price and register concrete expenditure cap",
+      "confirm new age-detail sending scope and new-call budget",
+      "register a separate mechanism holdout before any follow-up tuning"
+    ]
+  },
+  "reading_page": {
+    "page": "docs/literature/sce/news_selection/news_review_20261011.html",
+    "before_sha256": "3b2ce952e2a4f1c8327ee50871a6543f68e6ca0553fe2a83e454c8cbe077a361",
+    "after_sha256": "0498bd4c0168f413f91dbffd710c6b8e22e8b59e682f408f1ad2d5b72abcbcc1",
+    "anchor": "lifetime-background-preparation",
+    "existing_content_preserved": true,
+    "examples_are_synthetic": true,
+    "browser_visual_verification": false
+  },
+  "new_llm_calls": 0,
+  "new_paid_mcp_calls": 0,
+  "tests": {
+    "command": "python -m unittest tests.test_sce_lifetime_experience",
+    "passed": 9
+  }
+}

@@ -1,3 +1,7 @@
+# 2026-10-12 年龄经历数据与四组提示草案完成
+
+见[literature/sce/heterogeneity_and_probability/lifetime_preparation_20261012.md](literature/sce/heterogeneity_and_probability/lifetime_preparation_20261012.md)。BLS历史表本机下载403，转用ALFRED指定版本CPIAUCNS：四个已有截止日的回包列名/观测截止及最新值与BLS首发PDF核对；3月9日边界版本只到1月。原始资料data/raw/lifetime_experience/20261012_v1/，另归档3篇2013署时、当前字节的美联储历史文章，后者非认证旧版本。完整年均指数同比，未完成年度不补；6岁阶段摘要为候选，18岁另存，真实居住/记忆未知。最终经历包outputs/sce_lifetime_preparation_20261012_v3/：192人月×原输入/年龄细节/共同历史/年龄对应历史=768提示草案，旧P/E、信心、新闻、问卷与输出逐字保留。小试消息outputs/sce_lifetime_trial_draft_20261012_v3/：原四时期各12人、每年龄组4人、四组两次=384候选；6人三种引导语两次=36候选。5条13月旧年龄暂不入首次抽样，原记录保留；Over60数据包含60岁，边界另说明。旧费率保守预留合计约$1.36，非现价/账单；不是可执行Simulation配置。9项边界/数值检查通过，原阅读页新增#lifetime-background-preparation并留备份；无浏览器视觉验收。下一项完整提示人工复核→独立运行入口/确定性干跑→当前模型/价格/具体预算与新年龄细节发送确认→真实小试；四时期是开发诊断，独立机制留出未登记。15待审哈希/正式计分与配置保持，无新LLM或付费MCP，DECISIONS不改。完整年度层的来源范围1914至2021/22/23，不称逐行全量独立对账或严格B。
+
 # 2026-10-12 年龄经历表示与等价模板进一步方案完成
 
 用户确认暂不新增概率表达/取整行为提示，保留原生Q9与已做敏感性说明；既有央行信心/numeracy/旧配置保留。独立记录[literature/sce/heterogeneity_and_probability/user_choices_20261012.md](literature/sce/heterogeneity_and_probability/user_choices_20261012.md)，DECISIONS待审不改。[年龄经历设计](literature/sce/heterogeneity_and_probability/age_experience_design_20261012.md)区分数据/事件/组合与P/E分工，6岁或18岁均未冻结；当前192条四时期记录Q32来源为同月19＋前1—11月168＋旧13月5，生日/真实记忆不可恢复。逐人来源只存outputs/sce_age_source_followup_20261012_v1/，未进P。组合仅推荐，不称已实现或PIT通过。已核T0/P3、FormatSpread、Llama2及Park2026修订稿，来源目录与三种英文中性模板存研究目录；占位块结构核验通过，不是语义/实际提示验收，也未接入引擎。下一步年龄来源核查→长期价格/中性事件归档→对应经历摘要→同事实小样模板检查；新真实调用另登记预算，当前新增LLM/MCP费用0，15待审及正式计分/运行保持。
