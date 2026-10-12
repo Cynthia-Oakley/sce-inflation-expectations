@@ -1,0 +1,952 @@
+{
+  "new_api_calls": 0,
+  "months": {
+    "202203": {
+      "repeats": {
+        "1": {
+          "Q9": {
+            "n": 12,
+            "centers_percent": {
+              "real": 5.769130683713755,
+              "original": 5.8594511146520745,
+              "numeric_history": 5.162692375611277,
+              "text_history": 5.44421204538075
+            },
+            "iqr_pp": {
+              "real": 5.334681771323409,
+              "original": 1.0279522534391212,
+              "numeric_history": 1.0535212658078876,
+              "text_history": 0.32170331416239506
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 0.7691306837137546,
+              "original": 0.8594511146520745,
+              "numeric_history": 0.16269237561127703,
+              "text_history": 0.4442120453807501
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.09032043093831987,
+              "numeric_history": 0.6064383081024776,
+              "text_history": 0.3249186383330045
+            },
+            "numeric_history_shift": {
+              "mean_pp": -1.0217680367307789,
+              "negative": 10,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.7447912314842201,
+              "negative": 10,
+              "n": 12
+            }
+          },
+          "Q8": {
+            "n": 12,
+            "centers_percent": {
+              "real": 7.000000000000001,
+              "original": 6.125,
+              "numeric_history": 6.1,
+              "text_history": 5.8125
+            },
+            "iqr_pp": {
+              "real": 5.875,
+              "original": 1.375,
+              "numeric_history": 1.0,
+              "text_history": 1.0
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 2.000000000000001,
+              "original": 1.125,
+              "numeric_history": 1.0999999999999996,
+              "text_history": 0.8125
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.8750000000000009,
+              "numeric_history": 0.9000000000000012,
+              "text_history": 1.1875000000000009
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.2916666666666667,
+              "negative": 3,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.4583333333333333,
+              "negative": 4,
+              "n": 12
+            }
+          }
+        },
+        "2": {
+          "Q9": {
+            "n": 12,
+            "centers_percent": {
+              "real": 5.769130683713755,
+              "original": 5.8594511146520745,
+              "numeric_history": 5.40366780396661,
+              "text_history": 5.103678317255819
+            },
+            "iqr_pp": {
+              "real": 5.334681771323409,
+              "original": 1.4071302737080202,
+              "numeric_history": 0.7302804383749795,
+              "text_history": 1.05505735781015
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 0.7691306837137546,
+              "original": 0.8594511146520745,
+              "numeric_history": 0.4036678039666102,
+              "text_history": 0.10367831725581933
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.09032043093831987,
+              "numeric_history": 0.3654628797471444,
+              "text_history": 0.6654523664579353
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.3913462835979286,
+              "negative": 8,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.3687580506812453,
+              "negative": 7,
+              "n": 12
+            }
+          },
+          "Q8": {
+            "n": 12,
+            "centers_percent": {
+              "real": 7.000000000000001,
+              "original": 5.928571428571429,
+              "numeric_history": 6.125,
+              "text_history": 6.1875
+            },
+            "iqr_pp": {
+              "real": 5.875,
+              "original": 1.125,
+              "numeric_history": 1.125,
+              "text_history": 0.625
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 2.000000000000001,
+              "original": 0.9285714285714288,
+              "numeric_history": 1.125,
+              "text_history": 1.1875
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 1.071428571428572,
+              "numeric_history": 0.8750000000000009,
+              "text_history": 0.8125000000000009
+            },
+            "numeric_history_shift": {
+              "mean_pp": 0.041666666666666664,
+              "negative": 3,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.125,
+              "negative": 3,
+              "n": 12
+            }
+          }
+        }
+      },
+      "across_two_generations": {
+        "Q8": {
+          "real": 7.000000000000001,
+          "original": 6.026785714285714,
+          "numeric_history": 6.1125,
+          "text_history": 6.0
+        },
+        "Q9": {
+          "real": 5.769130683713755,
+          "original": 5.8594511146520745,
+          "numeric_history": 5.283180089788944,
+          "text_history": 5.273945181318284
+        }
+      }
+    },
+    "202209": {
+      "repeats": {
+        "1": {
+          "Q9": {
+            "n": 12,
+            "centers_percent": {
+              "real": 6.114862625549749,
+              "original": 6.398094330383812,
+              "numeric_history": 5.527758329917381,
+              "text_history": 5.7858098671153275
+            },
+            "iqr_pp": {
+              "real": 1.6773401780686603,
+              "original": 0.9765370783025427,
+              "numeric_history": 0.6302593322436589,
+              "text_history": 0.5924822673016941
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 2.414862625549749,
+              "original": 2.698094330383812,
+              "numeric_history": 1.8277583299173807,
+              "text_history": 2.0858098671153273
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.2832317048340629,
+              "numeric_history": 0.5871042956323684,
+              "text_history": 0.32905275843442183
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.813322744788866,
+              "negative": 11,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.45431061328287886,
+              "negative": 9,
+              "n": 12
+            }
+          },
+          "Q8": {
+            "n": 12,
+            "centers_percent": {
+              "real": 5.428571428571429,
+              "original": 5.8,
+              "numeric_history": 5.9375,
+              "text_history": 5.7727272727272725
+            },
+            "iqr_pp": {
+              "real": 1.5,
+              "original": 1.125,
+              "numeric_history": 0.625,
+              "text_history": 0.5
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 1.7285714285714286,
+              "original": 2.0999999999999996,
+              "numeric_history": 2.2375,
+              "text_history": 2.0727272727272723
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.371428571428571,
+              "numeric_history": 0.5089285714285712,
+              "text_history": 0.34415584415584366
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.041666666666666664,
+              "negative": 4,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.08333333333333333,
+              "negative": 5,
+              "n": 12
+            }
+          }
+        },
+        "2": {
+          "Q9": {
+            "n": 12,
+            "centers_percent": {
+              "real": 6.114862625549749,
+              "original": 5.904298263031588,
+              "numeric_history": 5.212904729153532,
+              "text_history": 5.77681226122489
+            },
+            "iqr_pp": {
+              "real": 1.6773401780686603,
+              "original": 0.9723892996369434,
+              "numeric_history": 0.3783445241673986,
+              "text_history": 0.8476875633461498
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 2.414862625549749,
+              "original": 2.204298263031588,
+              "numeric_history": 1.512904729153532,
+              "text_history": 2.07681226122489
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.21056436251816102,
+              "numeric_history": 0.9019578963962172,
+              "text_history": 0.33805036432485913
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.8089886542502779,
+              "negative": 9,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.1545675682596818,
+              "negative": 7,
+              "n": 12
+            }
+          },
+          "Q8": {
+            "n": 12,
+            "centers_percent": {
+              "real": 5.428571428571429,
+              "original": 5.7,
+              "numeric_history": 5.611111111111111,
+              "text_history": 5.75
+            },
+            "iqr_pp": {
+              "real": 1.5,
+              "original": 0.5,
+              "numeric_history": 0.125,
+              "text_history": 0.5
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 1.7285714285714286,
+              "original": 2.0,
+              "numeric_history": 1.9111111111111105,
+              "text_history": 2.05
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.27142857142857135,
+              "numeric_history": 0.1825396825396819,
+              "text_history": 0.3214285714285712
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.20833333333333334,
+              "negative": 4,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.041666666666666664,
+              "negative": 3,
+              "n": 12
+            }
+          }
+        }
+      },
+      "across_two_generations": {
+        "Q8": {
+          "real": 5.428571428571429,
+          "original": 5.75,
+          "numeric_history": 5.774305555555555,
+          "text_history": 5.761363636363637
+        },
+        "Q9": {
+          "real": 6.114862625549749,
+          "original": 6.151196296707701,
+          "numeric_history": 5.370331529535457,
+          "text_history": 5.781311064170109
+        }
+      }
+    },
+    "202303": {
+      "repeats": {
+        "1": {
+          "Q9": {
+            "n": 11,
+            "centers_percent": {
+              "real": 6.026755594670004,
+              "original": 4.349776324939533,
+              "numeric_history": 3.743382156048355,
+              "text_history": 3.9042086285391697
+            },
+            "iqr_pp": {
+              "real": 6.546407868466115,
+              "original": 0.7465146077153495,
+              "numeric_history": 0.4213036094750451,
+              "text_history": 0.409694940385922
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 2.5267555946700044,
+              "original": 0.8497763249395334,
+              "numeric_history": 0.2433821560483551,
+              "text_history": 0.4042086285391697
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 1.676979269730471,
+              "numeric_history": 2.2833734386216493,
+              "text_history": 2.1225469661308347
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.3603640086850572,
+              "negative": 7,
+              "n": 11
+            },
+            "text_history_shift": {
+              "mean_pp": -0.4078196496557993,
+              "negative": 7,
+              "n": 11
+            }
+          },
+          "Q8": {
+            "n": 12,
+            "centers_percent": {
+              "real": 5.75,
+              "original": 4.833333333333333,
+              "numeric_history": 4.6875,
+              "text_history": 4.833333333333333
+            },
+            "iqr_pp": {
+              "real": 5.5,
+              "original": 1.0,
+              "numeric_history": 0.625,
+              "text_history": 1.0
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 2.25,
+              "original": 1.333333333333333,
+              "numeric_history": 1.1875,
+              "text_history": 1.333333333333333
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.916666666666667,
+              "numeric_history": 1.0625,
+              "text_history": 0.916666666666667
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.125,
+              "negative": 3,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.05833333333333335,
+              "negative": 1,
+              "n": 12
+            }
+          }
+        },
+        "2": {
+          "Q9": {
+            "n": 11,
+            "centers_percent": {
+              "real": 6.026755594670004,
+              "original": 4.306780230696502,
+              "numeric_history": 3.8404200421390327,
+              "text_history": 4.136185420249424
+            },
+            "iqr_pp": {
+              "real": 6.546407868466115,
+              "original": 0.6217073262205108,
+              "numeric_history": 0.2835447998823728,
+              "text_history": 0.713469557225392
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 2.5267555946700044,
+              "original": 0.8067802306965017,
+              "numeric_history": 0.34042004213903265,
+              "text_history": 0.6361854202494239
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 1.7199753639735027,
+              "numeric_history": 2.186335552530972,
+              "text_history": 1.8905701744205805
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.46980510314726553,
+              "negative": 8,
+              "n": 11
+            },
+            "text_history_shift": {
+              "mean_pp": -0.04768175625430599,
+              "negative": 4,
+              "n": 11
+            }
+          },
+          "Q8": {
+            "n": 12,
+            "centers_percent": {
+              "real": 5.75,
+              "original": 4.6875,
+              "numeric_history": 4.4,
+              "text_history": 4.611111111111111
+            },
+            "iqr_pp": {
+              "real": 5.5,
+              "original": 0.5,
+              "numeric_history": 0.2999999999999998,
+              "text_history": 0.125
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 2.25,
+              "original": 1.1875,
+              "numeric_history": 0.9000000000000004,
+              "text_history": 1.1111111111111107
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 1.0625,
+              "numeric_history": 1.3499999999999996,
+              "text_history": 1.1388888888888893
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.2916666666666667,
+              "negative": 6,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": 0.0,
+              "negative": 4,
+              "n": 12
+            }
+          }
+        }
+      },
+      "across_two_generations": {
+        "Q8": {
+          "real": 5.75,
+          "original": 4.760416666666666,
+          "numeric_history": 4.54375,
+          "text_history": 4.722222222222221
+        },
+        "Q9": {
+          "real": 6.026755594670004,
+          "original": 4.3282782778180175,
+          "numeric_history": 3.791901099093694,
+          "text_history": 4.020197024394297
+        }
+      }
+    },
+    "202403": {
+      "repeats": {
+        "1": {
+          "Q9": {
+            "n": 12,
+            "centers_percent": {
+              "real": 2.0,
+              "original": 2.121271869523376,
+              "numeric_history": 1.9356055144014057,
+              "text_history": 1.8361697694421508
+            },
+            "iqr_pp": {
+              "real": 2.6225776015376536,
+              "original": 0.3076143378466183,
+              "numeric_history": 0.19347686568916034,
+              "text_history": 0.23275420784629652
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 0.3999999999999999,
+              "original": 0.2787281304766238,
+              "numeric_history": 0.4643944855985942,
+              "text_history": 0.5638302305578491
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.1212718695233761,
+              "numeric_history": 0.06439448559859429,
+              "text_history": 0.16383023055784918
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.17900229794966585,
+              "negative": 9,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.3680358843120597,
+              "negative": 10,
+              "n": 12
+            }
+          },
+          "Q8": {
+            "n": 12,
+            "centers_percent": {
+              "real": 3.285714285714286,
+              "original": 3.0,
+              "numeric_history": 3.05,
+              "text_history": 2.933333333333333
+            },
+            "iqr_pp": {
+              "real": 3.0,
+              "original": 0.07499999999999973,
+              "numeric_history": 0.3250000000000002,
+              "text_history": 0.25
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 0.8857142857142861,
+              "original": 0.6000000000000001,
+              "numeric_history": 0.6499999999999999,
+              "text_history": 0.5333333333333332
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.28571428571428603,
+              "numeric_history": 0.2357142857142862,
+              "text_history": 0.3523809523809529
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.008333333333333304,
+              "negative": 4,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.15000000000000002,
+              "negative": 5,
+              "n": 12
+            }
+          }
+        },
+        "2": {
+          "Q9": {
+            "n": 11,
+            "centers_percent": {
+              "real": 2.0,
+              "original": 2.0806103200142996,
+              "numeric_history": 2.0407471373007766,
+              "text_history": 1.8955594337859978
+            },
+            "iqr_pp": {
+              "real": 3.06154773622249,
+              "original": 0.23141351933210874,
+              "numeric_history": 0.15970440882802706,
+              "text_history": 0.33503380804129623
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 0.3999999999999999,
+              "original": 0.31938967998570034,
+              "numeric_history": 0.3592528626992233,
+              "text_history": 0.5044405662140021
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.08061032001429957,
+              "numeric_history": 0.040747137300776615,
+              "text_history": 0.10444056621400222
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.15395140157467102,
+              "negative": 6,
+              "n": 11
+            },
+            "text_history_shift": {
+              "mean_pp": -0.35192119296991,
+              "negative": 9,
+              "n": 11
+            }
+          },
+          "Q8": {
+            "n": 12,
+            "centers_percent": {
+              "real": 3.285714285714286,
+              "original": 3.0,
+              "numeric_history": 2.9833333333333334,
+              "text_history": 2.9499999999999997
+            },
+            "iqr_pp": {
+              "real": 3.0,
+              "original": 0.1499999999999999,
+              "numeric_history": 0.17499999999999982,
+              "text_history": 0.40000000000000036
+            },
+            "distance_to_future_cpi_pp": {
+              "real": 0.8857142857142861,
+              "original": 0.6000000000000001,
+              "numeric_history": 0.5833333333333335,
+              "text_history": 0.5499999999999998
+            },
+            "distance_to_real_sample_center_pp": {
+              "original": 0.28571428571428603,
+              "numeric_history": 0.30238095238095264,
+              "text_history": 0.3357142857142863
+            },
+            "numeric_history_shift": {
+              "mean_pp": -0.024999999999999984,
+              "negative": 4,
+              "n": 12
+            },
+            "text_history_shift": {
+              "mean_pp": -0.050000000000000044,
+              "negative": 6,
+              "n": 12
+            }
+          }
+        }
+      },
+      "across_two_generations": {
+        "Q8": {
+          "real": 3.285714285714286,
+          "original": 3.0,
+          "numeric_history": 3.0166666666666666,
+          "text_history": 2.9416666666666664
+        },
+        "Q9": {
+          "real": 2.0,
+          "original": 2.100941094768838,
+          "numeric_history": 1.9881763258510912,
+          "text_history": 1.8658646016140743
+        }
+      }
+    }
+  },
+  "prompt_audit": {
+    "202203": {
+      "person_months": 12,
+      "distinct_national_statistics_blocks": 1,
+      "unknown_housing_count": 3,
+      "other_spending_share_percent_min_max": [
+        38.2,
+        80.2
+      ],
+      "confidence_statements": {
+        "You have a fair amount of confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 5,
+        "not supplied": 2,
+        "You have only a little confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 2,
+        "You have almost no confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 2,
+        "You have a great deal of confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 1
+      },
+      "history_immediately_precedes_questionnaire": true
+    },
+    "202209": {
+      "person_months": 12,
+      "distinct_national_statistics_blocks": 1,
+      "unknown_housing_count": 3,
+      "other_spending_share_percent_min_max": [
+        45.1,
+        88.8
+      ],
+      "confidence_statements": {
+        "You have a fair amount of confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 5,
+        "You have almost no confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 3,
+        "You have a great deal of confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 1,
+        "You have only a little confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 3
+      },
+      "history_immediately_precedes_questionnaire": true
+    },
+    "202303": {
+      "person_months": 12,
+      "distinct_national_statistics_blocks": 1,
+      "unknown_housing_count": 2,
+      "other_spending_share_percent_min_max": [
+        31.9,
+        69.4
+      ],
+      "confidence_statements": {
+        "You have a fair amount of confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 3,
+        "You have almost no confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 4,
+        "You have only a little confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 3,
+        "not supplied": 2
+      },
+      "history_immediately_precedes_questionnaire": true
+    },
+    "202403": {
+      "person_months": 12,
+      "distinct_national_statistics_blocks": 1,
+      "unknown_housing_count": 0,
+      "other_spending_share_percent_min_max": [
+        31.1,
+        79.3
+      ],
+      "confidence_statements": {
+        "You have only a little confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 3,
+        "You have almost no confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 5,
+        "You have a fair amount of confidence in the Federal Reserve chair to do or recommend the right thing for the economy.": 3,
+        "not supplied": 1
+      },
+      "history_immediately_precedes_questionnaire": true
+    }
+  },
+  "reason_word_counts": {
+    "original": {
+      "n": 96,
+      "easing_or_moderation_words": 84,
+      "fed_or_rate_policy_words": 55,
+      "history_words": 0
+    },
+    "numeric_history": {
+      "n": 96,
+      "easing_or_moderation_words": 85,
+      "fed_or_rate_policy_words": 57,
+      "history_words": 2
+    },
+    "text_history": {
+      "n": 96,
+      "easing_or_moderation_words": 88,
+      "fed_or_rate_policy_words": 51,
+      "history_words": 1
+    }
+  },
+  "limits": [
+    "Four previously used development months; 12 selected people per month.",
+    "Two generations are paired observations, not independent extra people.",
+    "Future CPI is an ex-post comparator, never a new simulation input.",
+    "Closer numerical agreement cannot identify training-data memorization.",
+    "Reason word matches are descriptive, not causal evidence."
+  ],
+  "future_cpi_sources": {
+    "202203": {
+      "reference_period": "202303",
+      "yoy_nsa_percent": 5.0,
+      "published_date": "2023-04-12",
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_04122023.htm",
+      "checked_on": "2026-10-12",
+      "status": "web-verified first-release value; evaluation only"
+    },
+    "202209": {
+      "reference_period": "202309",
+      "yoy_nsa_percent": 3.7,
+      "published_date": "2023-10-12",
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_10122023.htm",
+      "checked_on": "2026-10-12",
+      "status": "web-verified first-release value; evaluation only"
+    },
+    "202303": {
+      "reference_period": "202403",
+      "yoy_nsa_percent": 3.5,
+      "published_date": "2024-04-10",
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_04102024.htm",
+      "checked_on": "2026-10-12",
+      "status": "web-verified first-release value; evaluation only"
+    },
+    "202403": {
+      "reference_period": "202503",
+      "yoy_nsa_percent": 2.4,
+      "published_date": "2025-04-10",
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_04102025.htm",
+      "checked_on": "2026-10-12",
+      "status": "web-verified first-release value; evaluation only"
+    }
+  },
+  "response_shifts": {
+    "Q9": {
+      "numeric_history": {
+        "mean_pp": -0.5311662565084638,
+        "median_pp": -0.5049430888118849,
+        "negative": 68,
+        "n": 93
+      },
+      "text_history": {
+        "mean_pp": -0.36523880391313124,
+        "median_pp": -0.30906432332234957,
+        "negative": 63,
+        "n": 93
+      }
+    },
+    "Q8": {
+      "numeric_history": {
+        "mean_pp": -0.11875000000000001,
+        "median_pp": 0.0,
+        "negative": 31,
+        "n": 96
+      },
+      "text_history": {
+        "mean_pp": -0.12083333333333335,
+        "median_pp": 0.0,
+        "negative": 31,
+        "n": 96
+      }
+    }
+  },
+  "raw_q9_bin_probability_means": {
+    "original": {
+      "n": 93,
+      "bin1_to_bin10_percent": [
+        4.306451612903226,
+        16.43548387096774,
+        31.72043010752688,
+        25.50537634408602,
+        13.43010752688172,
+        5.193548387096774,
+        1.924731182795699,
+        0.9956989247311827,
+        0.2903225806451613,
+        0.19784946236559142
+      ]
+    },
+    "numeric_history": {
+      "n": 93,
+      "bin1_to_bin10_percent": [
+        2.913978494623656,
+        12.827956989247312,
+        30.50537634408602,
+        28.376344086021504,
+        16.096774193548388,
+        5.666666666666667,
+        2.075268817204301,
+        0.9741935483870967,
+        0.2655913978494624,
+        0.2978494623655914
+      ]
+    },
+    "text_history": {
+      "n": 93,
+      "bin1_to_bin10_percent": [
+        3.806451612903226,
+        14.763440860215054,
+        29.440860215053764,
+        26.161290322580644,
+        15.580645161290322,
+        6.096774193548387,
+        2.360215053763441,
+        1.1806451612903226,
+        0.33440860215053764,
+        0.2752688172043011
+      ]
+    }
+  },
+  "auxiliary_shape": {
+    "personal_uncertainty": {
+      "n": 93,
+      "pooled_response_means": {
+        "real": 4.996858117334616,
+        "original": 4.447342057124252,
+        "numeric_history": 4.206867365491192,
+        "text_history": 4.524307156312176
+      },
+      "paired_changes_from_original": {
+        "numeric_history": -0.24047469163305918,
+        "text_history": 0.07696509918792489
+      },
+      "unit": "percentage points of inflation"
+    },
+    "raw_deflation_probability": {
+      "n": 93,
+      "pooled_response_means": {
+        "real": 13.258064516129032,
+        "original": 8.602150537634408,
+        "numeric_history": 9.279569892473118,
+        "text_history": 10.24731182795699
+      },
+      "paired_changes_from_original": {
+        "numeric_history": 0.6774193548387096,
+        "text_history": 1.6451612903225807
+      },
+      "unit": "percentage points of probability"
+    }
+  },
+  "source_sha256": {
+    "outputs/sce_lifetime_text_trial_20261012_v1/trial_manifest.json": "63d0435ef9c3b8a54f5685e939200961aaddb315716a4618316693a0ffc0f32a",
+    "outputs/sce_lifetime_text_analysis_20261012_v1/paired_evaluation_private.json": "c19a062a65150153521fbdcc67a0223699a5c265a076cd8e357dc0d2cf3b6c69",
+    "outputs/sce_lifetime_text_analysis_20261012_v1/summary.json": "8606f2c08f4f72615c8f4bb2f8c169a251557f8b67ea501a99057754d8a6748e",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202203/preview_original.json": "913fa5720c8596b93a5b969f4736901c180aa7fad0dae615ea983e5ceaf75ee3",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202203/preview_numeric_history.json": "88c7294f3cfc6b4a4bec483610e3264bceb3cbe4756f569b84cfc5353a642f8a",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202203/preview_text_history.json": "8ffb29ceadce642b35157b95e7f3c9c92544674b1415161da73497b378738fbe",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202209/preview_original.json": "37db0e583a12c4e7d8e641c987c2485d3f87ff67b76c10b01440a78688ab178f",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202209/preview_numeric_history.json": "2a104ef3d4eafaf90d06936d193fc2a54c24b1fe6ee849832e5d205b7aacc949",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202209/preview_text_history.json": "91a44a07eb0a19f1629483774813b3b7873c3d2520019967709b11510cfdb479",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202303/preview_original.json": "878fb3d0dc19786406739bd6c67a64ac1ca2abcad27f56773b0f8a76e56cde26",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202303/preview_numeric_history.json": "cd139948ce9f132b3134677921ecb3e01c2380394b52956e37a997763f28c91a",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202303/preview_text_history.json": "697565980c9fcf998eed1f8da65cb376ce8281c4e3bc3c5ab287f3c408d25bd3",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202403/preview_original.json": "ade9ae2c1f30a01b91f2816fd3aa10326ec47b9e7af2da555979558fb4d13f4c",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202403/preview_numeric_history.json": "031bbe0d803ccd326c40ad967ef847ae2ff185cce30d359c0eb0cb805f2d349a",
+    "outputs/sce_lifetime_text_trial_20261012_v1/202403/preview_text_history.json": "0bb9156a3ab01b90ed94a83ef1a95ce8092b381a202a8c7cd07570bf2743d24e",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202203-original-r1/llm_calls.jsonl": "eedd4ca9102fabe7a7683a06ace0ef22c5bb12ce321f0cad2e39790a2e585935",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202203-numeric_history-r1/llm_calls.jsonl": "7041337a2cea5c62cef0460ad1dff4921acc86aaf5895be2faf8f3248ab9f71b",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202203-text_history-r1/llm_calls.jsonl": "59fe9dad326f263812c7a16e7c4dc7987aebff0fee50963f3249cd064cab5bf5",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202203-numeric_history-r2/llm_calls.jsonl": "f9062cd025236ddce1c9600726cbb764b8002dcb5a69c7238c240eb4ba9fd135",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202203-text_history-r2/llm_calls.jsonl": "21347d25ec0736e694e7f040ca4c719d6fa46e83bae6e7916f8b71d692f97575",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202203-original-r2/llm_calls.jsonl": "3c434e9fd35b791e75619c37c9aad5447388e029e8b533a3920e40fedc706d10",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202209-numeric_history-r1/llm_calls.jsonl": "dbdc1c74ad363c9eabb98fa660e3d566456404d08bbfdd209488b40d40d011b8",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202209-text_history-r1/llm_calls.jsonl": "5feaa243bf448a8a9755c69ad5488f3961847c7e4cabf75a618e4c7ac375ca5d",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202209-original-r1/llm_calls.jsonl": "4244f416ef65c35d94dc05990c482221779566f30c7d0da28229e70955358a9a",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202209-text_history-r2/llm_calls.jsonl": "794e6235cd54288711a740410b34d38161a6d7febe16745d9febc584178b355b",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202209-original-r2/llm_calls.jsonl": "327f7e5b979cbd04f30a5e20625ce0a01787cc9c9880a9645496557d9810c6ad",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202209-numeric_history-r2/llm_calls.jsonl": "78e983a5ccb75b96fb7e30762b1eff24475c0b8b377ebfe779212faf6ee37f85",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202303-text_history-r1/llm_calls.jsonl": "dec6e71cf5b4499c122acdfa4a3060cbfc007e918db5fe2012d89236db7024c1",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202303-original-r1/llm_calls.jsonl": "5e551d261002b60924095236876d642561e5e5a484e7037d10ef9ec5b15d48ba",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202303-numeric_history-r1/llm_calls.jsonl": "15a17990cb6700bf62b0931c7aacba1f8b8dc2b0877b7a167318ad7067d09145",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202303-original-r2/llm_calls.jsonl": "1d92aae772bd9b4a650ebcc5f363a4aa986a1711b21af12b0c53e769b44b837b",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202303-numeric_history-r2/llm_calls.jsonl": "e3cfa23127f67e470b03e344e848cb6cb4613768d9adebe0646e4405a1489d23",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202303-text_history-r2/llm_calls.jsonl": "7f31ef968f7d8e7e6949c8cd01340ef310d752538c61ffa0bb153d26a193e9f9",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202403-original-r1/llm_calls.jsonl": "5c2e25a6d14064c19d116064b7310b206d9af7064a44ff515dc21aafea4841ee",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202403-numeric_history-r1/llm_calls.jsonl": "aa5fc57c5ed7d939b8f713961d4608b22ececaa3727af2de6513664b53d48128",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202403-text_history-r1/llm_calls.jsonl": "07f2b1d4caa518a7f4355538071ba281c28a1fc463591907ff43da91e2fa16f2",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202403-numeric_history-r2/llm_calls.jsonl": "6d24822ba51a5a747d66c1f76505494494731adf6683f1265bdd258b6b4aad57",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202403-text_history-r2/llm_calls.jsonl": "a151cc2d783c7e11e20709e368d01e83411dba1beb2c796f0f723712cda0dfc9",
+    "outputs/local_runs/sce_lifetime_text_trial_20261012_v1-202403-original-r2/llm_calls.jsonl": "d6edccde3763afa08f0041a5a20c2dcd6756ced6d2f9be8f49dc627c1483212c"
+  },
+  "diagnostic_code_sha256": "cd813d52b020bb84bf15dcc5922273fecd439f704eda8500df6243126c7d74b7",
+  "word_patterns": {
+    "easing_or_moderation_words": "\\b(?:eas\\w*|cool\\w*|moderat\\w*|disinflation|fall\\w*|declin\\w*)\\b",
+    "fed_or_rate_policy_words": "\\b(?:fed|federal reserve|tighten\\w*|interest rate\\w*)\\b",
+    "history_words": "\\b(?:histor\\w*|past|crisis|recession|1970s|1980s|experienced)\\b"
+  },
+  "diagnostic_output": "outputs/sce_lifetime_mechanism_diagnostic_20261012_v4/summary.json"
+}
