@@ -66,15 +66,217 @@
     "Equal count in three age groups is not a nationally representative age distribution.",
     "Historical context and compression differ between common and age-matched arms; not a pure matching causal effect."
   ],
-  "status": "engineering_passed_awaiting_specific_scope_budget",
+  "status": "completed_with_negative_development_result",
   "preparation_path": "outputs/sce_lifetime_trial_20261012_v2",
   "engineering_checks_passed": 12,
   "targeted_tests_passed": 21,
-  "new_real_api_calls": 0,
+  "new_real_api_calls": 288,
   "protected_pending_files_unchanged": 15,
   "formal_configs_and_scorer_unchanged": true,
   "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing",
   "pricing_retrieved_at": "2026-10-12T08:36:32.023625+00:00",
   "pricing_sha256": "210f102275ccf1a6542f08a3bc9e4b4c7c83278cb74b35217bffa112df6363b2",
-  "earlier_v1": "pre-run draft retained; syntax repair in analysis module; no model calls"
+  "earlier_v1": "pre-run draft retained; syntax repair in analysis module; no model calls",
+  "authorization": {
+    "quote": "同意上述发送范围和$1.50上限，开始模拟",
+    "cap_usd": 1.5,
+    "automatic_retries": 0
+  },
+  "results": {
+    "status": "completed_development_diagnostic",
+    "module_name": "Lifetime Inflation Experience",
+    "periods": [
+      {
+        "month": "202203",
+        "common_n": [
+          12,
+          12
+        ],
+        "real_median_pp": 5.769130683713755,
+        "real_iqr_pp": 5.334681771323409,
+        "arms": {
+          "original": {
+            "median_pp": 5.791119201089534,
+            "iqr_pp": 1.2275917555567073,
+            "median_MAE_pp": 0.10967924753074687,
+            "W1_pp": 3.300645167032405
+          },
+          "common_episodes": {
+            "median_pp": 5.741961004727693,
+            "iqr_pp": 0.5671066296995098,
+            "median_MAE_pp": 0.1566871059268644,
+            "W1_pp": 3.50632209174039
+          },
+          "age_matched_episodes": {
+            "median_pp": 5.086164592434758,
+            "iqr_pp": 0.5564239936129232,
+            "median_MAE_pp": 0.6829660912789963,
+            "W1_pp": 3.6543645868661856
+          }
+        }
+      },
+      {
+        "month": "202209",
+        "common_n": [
+          12,
+          12
+        ],
+        "real_median_pp": 6.114862625549749,
+        "real_iqr_pp": 1.6773401780686603,
+        "arms": {
+          "original": {
+            "median_pp": 5.844447046798932,
+            "iqr_pp": 0.8166435478867036,
+            "median_MAE_pp": 0.2704155787508178,
+            "W1_pp": 2.3694632851532376
+          },
+          "common_episodes": {
+            "median_pp": 5.490080558589478,
+            "iqr_pp": 0.5862331068872204,
+            "median_MAE_pp": 0.6247820669602717,
+            "W1_pp": 2.7037849722038327
+          },
+          "age_matched_episodes": {
+            "median_pp": 5.270738390934627,
+            "iqr_pp": 0.7406413924930395,
+            "median_MAE_pp": 0.8441242346151228,
+            "W1_pp": 2.771797208380732
+          }
+        }
+      },
+      {
+        "month": "202303",
+        "common_n": [
+          10,
+          11
+        ],
+        "real_median_pp": 6.026755594670004,
+        "real_iqr_pp": 6.694105197953776,
+        "arms": {
+          "original": {
+            "median_pp": 3.9836031016163096,
+            "iqr_pp": 0.8548354291340723,
+            "median_MAE_pp": 2.043152493053695,
+            "W1_pp": 4.6542404441094645
+          },
+          "common_episodes": {
+            "median_pp": 3.8842494969355865,
+            "iqr_pp": 0.4510220823683382,
+            "median_MAE_pp": 2.142506097734418,
+            "W1_pp": 4.8196579907920505
+          },
+          "age_matched_episodes": {
+            "median_pp": 3.7385528162966954,
+            "iqr_pp": 0.45664415684125337,
+            "median_MAE_pp": 2.288202778373309,
+            "W1_pp": 4.788667332389959
+          }
+        }
+      },
+      {
+        "month": "202403",
+        "common_n": [
+          12,
+          12
+        ],
+        "real_median_pp": 2.0,
+        "real_iqr_pp": 2.6225776015376536,
+        "arms": {
+          "original": {
+            "median_pp": 2.0351782433494776,
+            "iqr_pp": 0.35299419025091505,
+            "median_MAE_pp": 0.0726253478422123,
+            "W1_pp": 1.580974711786817
+          },
+          "common_episodes": {
+            "median_pp": 1.9925993119762468,
+            "iqr_pp": 0.18205887973048873,
+            "median_MAE_pp": 0.007400688023753155,
+            "W1_pp": 1.7352401742948236
+          },
+          "age_matched_episodes": {
+            "median_pp": 1.9385973458489518,
+            "iqr_pp": 0.2423947785298206,
+            "median_MAE_pp": 0.061402654151048175,
+            "W1_pp": 1.7472677334098967
+          }
+        }
+      }
+    ],
+    "averages": {
+      "Q9": {
+        "original": {
+          "median_absolute_error_pp": 0.623968166794368,
+          "distribution_W1_pp": 2.9763309020204805,
+          "IQR_absolute_gap_pp": 3.2691599565137754
+        },
+        "common_episodes": {
+          "median_absolute_error_pp": 0.7328439896613268,
+          "distribution_W1_pp": 3.191251307257774,
+          "IQR_absolute_gap_pp": 3.6355710125494856
+        },
+        "age_matched_episodes": {
+          "median_absolute_error_pp": 0.9691739396046191,
+          "distribution_W1_pp": 3.2405242152616935,
+          "IQR_absolute_gap_pp": 3.5831501068516154
+        }
+      },
+      "Q8": {
+        "original": {
+          "median_absolute_error_pp": 0.5754464285714287,
+          "distribution_W1_pp": 4.4625,
+          "IQR_absolute_gap_pp": 3.328125
+        },
+        "common_episodes": {
+          "median_absolute_error_pp": 0.7913690476190478,
+          "distribution_W1_pp": 4.626041666666667,
+          "IQR_absolute_gap_pp": 3.56875
+        },
+        "age_matched_episodes": {
+          "median_absolute_error_pp": 0.6897195165945169,
+          "distribution_W1_pp": 4.606249999999999,
+          "IQR_absolute_gap_pp": 3.4750000000000005
+        }
+      }
+    },
+    "mean_cross_person_iqr_pp": {
+      "original": 0.8130162307070996,
+      "common_episodes": 0.44660517467138927,
+      "age_matched_episodes": 0.49902608036925916,
+      "real": 4.082176187220875
+    },
+    "calls": 288,
+    "valid_answers": 287,
+    "invalid_answers": [
+      {
+        "month": "202303",
+        "arm": "common_episodes",
+        "repeat": 1,
+        "status": "invalid",
+        "error": "q9_sum_99.0"
+      }
+    ],
+    "retries": 0,
+    "request_errors": 0,
+    "estimated_cost_usd": 0.261325,
+    "not_vendor_invoice": true,
+    "candidate_gate_passed": false,
+    "bootstrap_intervals_cover_zero": 8,
+    "analysis_summary_sha256": "6d9814fd209c875aa55066947c6b49788b1a64eb0e795d3b7002626029c3ab75",
+    "source": "outputs/sce_lifetime_analysis_20261012_v1",
+    "limitations": [
+      "National history is a background proxy, not observed personal recall or residence history.",
+      "Era compression and retained information differ between common and matched arms; not a pure matching effect.",
+      "Start ages and 5% duration threshold are research conventions, not estimated universal thresholds.",
+      "Four previously studied periods remain development diagnostics; independent holdout not registered.",
+      "Current-byte history essays and previous news/gasoline limitations remain; not strict forecast B.",
+      "12-person age-balanced samples, four previously examined periods, no independent holdout.",
+      "All existing confidence/CE/news assumptions retained; no new shopping weights or probability reporting instructions.",
+      "No own prior answers, panel memory, core/normal expansion or social interaction.",
+      "Equal count in three age groups is not a nationally representative age distribution.",
+      "Historical context and compression differ between common and age-matched arms; not a pure matching causal effect."
+    ]
+  },
+  "analysis_path": "outputs/sce_lifetime_analysis_20261012_v1",
+  "formal_module_upgrade": false
 }
