@@ -1,0 +1,80 @@
+{
+  "module_name": "Lifetime Inflation Experience",
+  "research_line": "A_historical_reconstruction",
+  "months": [
+    "202203",
+    "202209",
+    "202303",
+    "202403"
+  ],
+  "arms": [
+    "original",
+    "common_episodes",
+    "age_matched_episodes"
+  ],
+  "n_per_month": 12,
+  "repeats": [
+    1,
+    2
+  ],
+  "planned_answers": 288,
+  "start_age": 6,
+  "model": "deepseek-flash",
+  "documented_model_version": "DeepSeek-V4.1-Flash",
+  "temperature": 0.5,
+  "max_tokens": 1024,
+  "retry_max": 0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "conservative_simulation_cost_bound_usd": 1.0948344,
+  "proposed_simulation_cap_usd": 1.5,
+  "preregistered_evaluation": {
+    "primary": [
+      "Q9 sample median absolute error",
+      "Q9 W1 distribution distance",
+      "Q9 cross-person IQR gap"
+    ],
+    "secondary": [
+      "Q8",
+      "personal uncertainty",
+      "raw deflation probability",
+      "age groups"
+    ],
+    "contrasts": [
+      "age_matched_episodes minus original",
+      "common_episodes minus original",
+      "age_matched_episodes minus common_episodes"
+    ],
+    "common_valid": "same valid people across all three arms; report rates independently",
+    "aggregation": "each repeat separately, equal-weight averages over four periods; survey weights auxiliary",
+    "age_groups": "four selected per age group; descriptive only, no significance claim",
+    "bootstrap": "paired people conditional on fixed P/E/history; 1000 draws, seed 42; not population or period generalization",
+    "repetition_rule": "independent generations; repeat index is not a provider random seed",
+    "candidate_gate": "both repeats: matched has lower average Q9 median error and W1 than original, both improve in >=3/4 periods; no automatic production upgrade",
+    "truth_isolation": "analysis only; official answers/weights not read during preparation or execution",
+    "no_target_tuning": true
+  },
+  "limitations": [
+    "National history is a background proxy, not observed personal recall or residence history.",
+    "Era compression and retained information differ between common and matched arms; not a pure matching effect.",
+    "Start ages and 5% duration threshold are research conventions, not estimated universal thresholds.",
+    "Four previously studied periods remain development diagnostics; independent holdout not registered.",
+    "Current-byte history essays and previous news/gasoline limitations remain; not strict forecast B.",
+    "12-person age-balanced samples, four previously examined periods, no independent holdout.",
+    "All existing confidence/CE/news assumptions retained; no new shopping weights or probability reporting instructions.",
+    "No own prior answers, panel memory, core/normal expansion or social interaction.",
+    "Equal count in three age groups is not a nationally representative age distribution.",
+    "Historical context and compression differ between common and age-matched arms; not a pure matching causal effect."
+  ],
+  "status": "engineering_passed_awaiting_specific_scope_budget",
+  "preparation_path": "outputs/sce_lifetime_trial_20261012_v2",
+  "engineering_checks_passed": 12,
+  "targeted_tests_passed": 21,
+  "new_real_api_calls": 0,
+  "protected_pending_files_unchanged": 15,
+  "formal_configs_and_scorer_unchanged": true,
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing",
+  "pricing_retrieved_at": "2026-10-12T08:36:32.023625+00:00",
+  "pricing_sha256": "210f102275ccf1a6542f08a3bc9e4b4c7c83278cb74b35217bffa112df6363b2",
+  "earlier_v1": "pre-run draft retained; syntax repair in analysis module; no model calls"
+}

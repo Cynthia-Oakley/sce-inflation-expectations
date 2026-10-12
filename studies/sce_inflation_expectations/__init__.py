@@ -12,5 +12,6 @@ from . import native_spending  # noqa: F401
 from . import price_contact  # noqa: F401
 from . import news_exposure  # noqa: F401
 from . import confidence_experiment  # noqa: F401
+from . import lifetime_experiment  # noqa: F401
 
 __all__ = ["model"]
