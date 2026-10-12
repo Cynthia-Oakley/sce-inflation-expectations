@@ -1,3 +1,7 @@
+# 2026-10-12 年龄经历表示与等价模板进一步方案完成
+
+用户确认暂不新增概率表达/取整行为提示，保留原生Q9与已做敏感性说明；既有央行信心/numeracy/旧配置保留。独立记录[literature/sce/heterogeneity_and_probability/user_choices_20261012.md](literature/sce/heterogeneity_and_probability/user_choices_20261012.md)，DECISIONS待审不改。[年龄经历设计](literature/sce/heterogeneity_and_probability/age_experience_design_20261012.md)区分数据/事件/组合与P/E分工，6岁或18岁均未冻结；当前192条四时期记录Q32来源为同月19＋前1—11月168＋旧13月5，生日/真实记忆不可恢复。逐人来源只存outputs/sce_age_source_followup_20261012_v1/，未进P。组合仅推荐，不称已实现或PIT通过。已核T0/P3、FormatSpread、Llama2及Park2026修订稿，来源目录与三种英文中性模板存研究目录；占位块结构核验通过，不是语义/实际提示验收，也未接入引擎。下一步年龄来源核查→长期价格/中性事件归档→对应经历摘要→同事实小样模板检查；新真实调用另登记预算，当前新增LLM/MCP费用0，15待审及正式计分/运行保持。
+
 # 2026-10-12 年龄与概率表达零API实测完成
 
 见[literature/sce/heterogeneity_and_probability/age_reporting_followup_20261012.md](literature/sce/heterogeneity_and_probability/age_reporting_followup_20261012.md)与[prompt方案](literature/sce/heterogeneity_and_probability/prompt_variant_plan_20261012.md)。106月/130,216人月，年龄差距随时期变化：2021老组高约1.31pp，2024趋近、2025前十月方向略反；不能按年龄固定加减数值。同组内IQR约4.7—5.0pp，年龄不能包办同质化。Q32当行12.2%，同人过去12个月来源覆盖94.7%，只核可得性未接入P。真人网格形状有跨月持续性，但年龄/教育/收入/numeracy在月内解释约0.76%；不把低numeracy硬映射为粗报。767份旧模型Q9机械5%取整后16单元群体中位数绝对移动均值0.182pp/最大0.374，影响不能默认抵消；建议暂缓注入，原生概率仍作主结果，并披露敏感性。最终outputs/sce_age_reporting_audit_20261012_v3/；v1只读数组错误、v2空类别回归保留，v3正确排除，年龄主结果/取整量不变。四项数学检查、来源哈希/原计分复算、三图查看通过；原阅读页新增#age-reporting-followup。下一步先核年龄来源与长期价格摘要，区分所有人相同历史信息/年龄匹配经历，再另做等价措辞对照，登记机制留出/种子和新预算后才调用。现有正式P/E/B、50/50、计分器和15待审保持；无新增LLM/MCP费用，DECISIONS不动。

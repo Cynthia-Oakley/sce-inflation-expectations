@@ -1,0 +1,79 @@
+{
+  "checked_on": "2026-10-12",
+  "status": "source_verification_and_design_only",
+  "new_publications_downloaded": 0,
+  "sources": [
+    {
+      "id": "PRACTICE_01",
+      "title": "Quantifying Language Models’ Sensitivity to Spurious Features in Prompt Design",
+      "authors": "Melanie Sclar; Yejin Choi; Yulia Tsvetkov; Alane Suhr",
+      "publication": "ICLR 2024; arXiv v2 revised 2024-07-01",
+      "url": "https://arxiv.org/html/2310.11324v2",
+      "read_scope": "Abstract and prompt grammar/semantic-equivalence sections; not full algorithm replication",
+      "use": "Format sensitivity control, not persona synthesis or SCE performance guarantee"
+    },
+    {
+      "id": "PRACTICE_02",
+      "title": "Multitask Prompted Training Enables Zero-Shot Task Generalization",
+      "authors": "Victor Sanh et al.",
+      "publication": "ICLR 2022; HTML of arXiv v3",
+      "url": "https://arxiv.org/html/2110.08207v3",
+      "read_scope": "Prompt collection/training design and prompt-count ablation; not training replication",
+      "use": "Multiple templates per data instance; T0 actually trains weights, current project does not"
+    },
+    {
+      "id": "PRACTICE_03",
+      "title": "PromptSource / P3",
+      "authors": "BigScience workshop authors",
+      "publication": "Official repository README accessed 2026-10-12",
+      "url": "https://github.com/bigscience-workshop/promptsource",
+      "read_scope": "README explanation and Jinja structured prompt examples; no installation",
+      "use": "Separate canonical data and rendering templates"
+    },
+    {
+      "id": "PRACTICE_04",
+      "title": "LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals",
+      "authors": "Joon Sung Park et al.",
+      "publication": "arXiv:2411.10109v3, revised 2026-06-28; title differs from 2024 v1",
+      "url": "https://arxiv.org/abs/2411.10109v3",
+      "read_scope": "Primary abstract; 2024 v1 and current v3 titles checked, not full-text review",
+      "use": "Grounding agents in observed interviews/surveys; not justification for invented biographies"
+    },
+    {
+      "id": "PRACTICE_05",
+      "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+      "authors": "Hugo Touvron et al.",
+      "publication": "2023",
+      "url": "https://arxiv.org/abs/2307.09288",
+      "read_scope": "Reuse archived and previously read section 3.2.3",
+      "use": "Rejection sampling fine-tuning definition; adapted template quality control is not actual RFT"
+    },
+    {
+      "id": "AGE_HISTORY_01",
+      "title": "Learning from Inflation Experiences",
+      "authors": "Ulrike Malmendier; Stefan Nagel",
+      "publication": "QJE 2016; reused 2013-04-04 author draft",
+      "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_44.pdf",
+      "read_scope": "Rechecked lifetime-before-birth boundary in previously archived text",
+      "use": "Lifetime experience proxy; no validated universal age-six memory threshold"
+    },
+    {
+      "id": "AGE_HISTORY_02",
+      "title": "The Great Inflation",
+      "authors": "Michael Bryan / Federal Reserve History",
+      "publication": "Written as of 2013-11-22, current page accessed 2026-10-12",
+      "url": "https://www.federalreservehistory.org/essays/great-inflation",
+      "read_scope": "Period, policy/event narrative and written-as-of statement; not archived historical byte vintage",
+      "use": "Candidate neutral event facts; original evaluations not automatically household memories"
+    },
+    {
+      "id": "AGE_HISTORY_03",
+      "title": "Archived Consumer Price Index Supplemental Files",
+      "authors": "U.S. Bureau of Labor Statistics",
+      "publication": "Current archive directory accessed 2026-10-12",
+      "url": "https://www.bls.gov/cpi/tables/supplemental-files/home.htm",
+      "read_scope": "Historical CPI-U table catalog verified; no new workbook downloaded or PIT acceptance",
+      "use": "Candidate long-run source; annual definitions, missing years and historical versions need audit"
+    }
+  ]
+}

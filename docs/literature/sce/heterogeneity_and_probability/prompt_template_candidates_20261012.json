@@ -1,0 +1,56 @@
+{
+  "checked_on": "2026-10-12",
+  "status": "draft_documentation_only_not_simulation_config",
+  "fixed_block_order": [
+    "role_block",
+    "persona_block",
+    "experience_block",
+    "environment_block",
+    "questionnaire_block",
+    "output_schema_block"
+  ],
+  "immutable_blocks": [
+    "role_block",
+    "persona_block",
+    "experience_block",
+    "environment_block",
+    "questionnaire_block",
+    "output_schema_block"
+  ],
+  "wording_variants": [
+    {
+      "id": "neutral_prose",
+      "label": "中性书面",
+      "style_is_not_personality": true,
+      "template": "{role_block}\n\nYour household profile and available information are given below.\n\nHousehold profile:\n{persona_block}\n\nLong-term background:\n{experience_block}\n\nAvailable information:\n{environment_block}\n\n{questionnaire_block}\n\n{output_schema_block}"
+    },
+    {
+      "id": "plain_prose",
+      "label": "简洁说明",
+      "style_is_not_personality": true,
+      "template": "{role_block}\n\nBelow are your household details and the information available to you.\n\nHousehold profile:\n{persona_block}\n\nLong-term background:\n{experience_block}\n\nAvailable information:\n{environment_block}\n\n{questionnaire_block}\n\n{output_schema_block}"
+    },
+    {
+      "id": "everyday_prose",
+      "label": "日常措辞",
+      "style_is_not_personality": true,
+      "template": "{role_block}\n\nHere's your household profile and the information you have for this survey.\n\nHousehold profile:\n{persona_block}\n\nLong-term background:\n{experience_block}\n\nAvailable information:\n{environment_block}\n\n{questionnaire_block}\n\n{output_schema_block}"
+    }
+  ],
+  "structure_candidates": [
+    "same block order, paragraph headings",
+    "same block order, Markdown headings",
+    "same block order, clearly separated list of blocks"
+  ],
+  "forbidden_changes": [
+    "question wording or bin order",
+    "probability-reporting instructions",
+    "numerical values, precision, units or dates",
+    "news titles/abstracts",
+    "confidence strength or institution",
+    "unmeasured emotion, numeracy or expertise"
+  ],
+  "assignment": "No current assignment; test same person under all templates first. Later persistent template IDs require a recorded seed and are experimental conventions.",
+  "new_api_calls": 0,
+  "integration_status": "not_connected_to_current_provider"
+}
