@@ -1,3 +1,7 @@
+# 2026-10-12 年龄与概率表达零API实测完成
+
+见[literature/sce/heterogeneity_and_probability/age_reporting_followup_20261012.md](literature/sce/heterogeneity_and_probability/age_reporting_followup_20261012.md)与[prompt方案](literature/sce/heterogeneity_and_probability/prompt_variant_plan_20261012.md)。106月/130,216人月，年龄差距随时期变化：2021老组高约1.31pp，2024趋近、2025前十月方向略反；不能按年龄固定加减数值。同组内IQR约4.7—5.0pp，年龄不能包办同质化。Q32当行12.2%，同人过去12个月来源覆盖94.7%，只核可得性未接入P。真人网格形状有跨月持续性，但年龄/教育/收入/numeracy在月内解释约0.76%；不把低numeracy硬映射为粗报。767份旧模型Q9机械5%取整后16单元群体中位数绝对移动均值0.182pp/最大0.374，影响不能默认抵消；建议暂缓注入，原生概率仍作主结果，并披露敏感性。最终outputs/sce_age_reporting_audit_20261012_v3/；v1只读数组错误、v2空类别回归保留，v3正确排除，年龄主结果/取整量不变。四项数学检查、来源哈希/原计分复算、三图查看通过；原阅读页新增#age-reporting-followup。下一步先核年龄来源与长期价格摘要，区分所有人相同历史信息/年龄匹配经历，再另做等价措辞对照，登记机制留出/种子和新预算后才调用。现有正式P/E/B、50/50、计分器和15待审保持；无新增LLM/MCP费用，DECISIONS不动。
+
 # 2026-10-12 生活经历、人格与概率作答文献核查完成
 
 见[literature/sce/heterogeneity_and_probability/README.md](literature/sce/heterogeneity_and_probability/README.md)及其综述/讨论方案。核查10篇原始论文与UAS官方目录，六份公开PDF已本地归档（作者草稿/发表日期分开，出处与哈希留存）；重点是长期通胀经历、概率报告取整，以及奥地利人格—通胀新证据。UAS1有性格/数理/人口部分，尚未登录取得联合微观样本，不称数据就绪。RFT与单纯提示变化分开；不按真实SCE筛选模型输出，不把风险决策权重直接变形Q9。建议下一步零API分析历史开发样本的报告精度/跨月稳定性，并审计年龄与长历史价格可得性，选一个机制后再准备配对输入/留出时期/种子与预算。方案是草案，未接入引擎；原温度0.5、新闻50/50、信心候选及全部旧结果保留。原阅读页新增`#heterogeneity-probability-literature`并备份；无浏览器视觉验收。无新LLM/付费MCP，正式P/E/B/计分器及15份待审文件不动；DECISIONS受保护，讨论内容单独留档。
