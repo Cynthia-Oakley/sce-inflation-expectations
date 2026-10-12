@@ -1,3 +1,7 @@
+# 2026-10-12 阅读入口补充PDF
+
+用户反馈原HTML阅读页打不开。文件存在、约1MB、HTML结束标签及章节定位正常；自动浏览器读取file协议被安全策略拒绝，未绕过、未启本地HTTP服务，不能据此断言用户浏览器的具体故障。已另生成并逐页查看3页PDF：outputs/sce_lifetime_reading_pdf_20261012_v1/sce_lifetime_reading_20261012.pdf，中文总览与两位合成示意居民的英文背景；原网页和实验输入不改。原始/最终哈希与PDF来源清单在同目录receipt.json。使用PDF原生文件入口，新增LLM/付费MCP0；后续链接优先用无片段的PDF路径，HTML精确定位只作为补充。
+
 # 2026-10-12 年龄经历数据与四组提示草案完成
 
 见[literature/sce/heterogeneity_and_probability/lifetime_preparation_20261012.md](literature/sce/heterogeneity_and_probability/lifetime_preparation_20261012.md)。BLS历史表本机下载403，转用ALFRED指定版本CPIAUCNS：四个已有截止日的回包列名/观测截止及最新值与BLS首发PDF核对；3月9日边界版本只到1月。原始资料data/raw/lifetime_experience/20261012_v1/，另归档3篇2013署时、当前字节的美联储历史文章，后者非认证旧版本。完整年均指数同比，未完成年度不补；6岁阶段摘要为候选，18岁另存，真实居住/记忆未知。最终经历包outputs/sce_lifetime_preparation_20261012_v3/：192人月×原输入/年龄细节/共同历史/年龄对应历史=768提示草案，旧P/E、信心、新闻、问卷与输出逐字保留。小试消息outputs/sce_lifetime_trial_draft_20261012_v3/：原四时期各12人、每年龄组4人、四组两次=384候选；6人三种引导语两次=36候选。5条13月旧年龄暂不入首次抽样，原记录保留；Over60数据包含60岁，边界另说明。旧费率保守预留合计约$1.36，非现价/账单；不是可执行Simulation配置。9项边界/数值检查通过，原阅读页新增#lifetime-background-preparation并留备份；无浏览器视觉验收。下一项完整提示人工复核→独立运行入口/确定性干跑→当前模型/价格/具体预算与新年龄细节发送确认→真实小试；四时期是开发诊断，独立机制留出未登记。15待审哈希/正式计分与配置保持，无新LLM或付费MCP，DECISIONS不改。完整年度层的来源范围1914至2021/22/23，不称逐行全量独立对账或严格B。
