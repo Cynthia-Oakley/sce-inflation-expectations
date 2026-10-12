@@ -1,0 +1,26 @@
+{
+  "finalized_on": "2026-10-13",
+  "evidence_cutoff": "2026-10-12",
+  "pdf": "outputs/sce_mechanism_retro_20261013_v1/sce_mechanism_review_20261013.pdf",
+  "pdf_sha256": "4e84f62519fda591dd8b7ce4151231e0d4ea4fd6d9be8b9e7cc4b790e52a2151",
+  "source_sha256": {
+    "docs/reviews/20261012_mechanism_retro/review.md": "eb22a7f9cbb9e57ea8577def9d40316a5111889fc39bb9fa2ac10eae3b171f65",
+    "docs/reviews/20261012_mechanism_retro/prompt_frequency_audit.md": "fe7314850be9553ed9fc84577b6f532f62c0a91897f789285d0f031dd1f2457d",
+    "docs/reviews/20261012_mechanism_retro/missing_factors_evidence.md": "d1fce268df1853795e7b688faa18c5bc12e1bffe55ff3450ec08e17c2454a9ea",
+    "docs/reviews/20261012_mechanism_retro/experiment_inventory.md": "09e2ffc86f185dcf71f0a3d35669bda4002e833a9828c4799ca54bf2a234b4dd",
+    "docs/literature/sce/belief_proxies/confidence_result_20261012.json": "0b3f3e61ea6c5ac7e8748427c7f39a62f4603f37c19d1e740bc77a1b4f434545",
+    "docs/literature/sce/heterogeneity_and_probability/lifetime_text_trial_summary_20261012.json": "9ccc34e42a6ed93be85fd2807e04db8cffa7fda552c950375fc264fe1cc76ee9",
+    "docs/reviews/20261012_mechanism_retro/build_reading_pdf.py": "771030bc2697a5657c2c335789a6e36a6f3948832327a0191a131eb61904c3a3"
+  },
+  "new_simulation_calls": 0,
+  "new_project_paid_api_calls": 0,
+  "counts_and_metrics": "Existing public aggregate receipts only; no participant-level rows in PDF.",
+  "visual_qa": "All 8 pages rendered and inspected; changed chart page 7 re-rendered and inspected after binding charts to saved JSON metrics.",
+  "pdf_pages": 8,
+  "checked_on": "2026-10-13",
+  "protected_files_unchanged": 15,
+  "scope": "Audit/research/documentation only; no execution configuration or scoring changes.",
+  "sources_reading_scope": "See source-specific reading scopes; existing research notes versus full-text reads are distinguished.",
+  "inventory_corrections": "Latest 80/70-month baseline; four-period news included in actual confidence/history runs; 18 offline equivalent-template previews; text history paused.",
+  "claim_limit": "No new behavioral mechanism deployed or predictive improvement claimed."
+}

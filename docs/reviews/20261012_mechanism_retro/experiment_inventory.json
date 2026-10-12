@@ -1,0 +1,502 @@
+{
+  "schema_version": "1.0",
+  "audit_date": "2026-10-12",
+  "period_covered": {
+    "start": "2026-09-29",
+    "end": "2026-10-12"
+  },
+  "scope": "Read-only synthesis of SCE implementation, run receipts, aggregate result files, and preparation manifests. No personal records copied; no protected files, public configs, or run inputs edited.",
+  "status_definitions": {
+    "adopted_infrastructure": "Operational code or evaluation machinery is in use; this status does not claim research efficacy.",
+    "retained_candidate": "A mechanism has evidence or a registered reason to keep studying, but is not part of a frozen production configuration.",
+    "no_stable_improvement_deferred": "A completed comparison did not meet its registered or practical improvement bar; retained as evidence and paused for now.",
+    "preparation_only_not_run": "Data, code, prompts, or manifests are prepared, but the corresponding simulation/API call did not occur.",
+    "diagnostic_only": "Offline description or sensitivity analysis of existing observations; no new behavior was simulated."
+  },
+  "pipeline": [
+    {
+      "stage": "literature",
+      "status": "implemented_research_support",
+      "implemented": "Topic reviews and source archives cover inflation expectations, price experience, CE/SCE spending, news exposure, confidence, numeracy, age experience, and response reporting.",
+      "remaining": "Literature motivates hypotheses; it does not directly identify portable agent parameters or establish this project's causal mechanisms.",
+      "evidence": [
+        "docs/literature/sce/README.md",
+        "docs/literature/sce/native_spending/DATA_AND_METHOD_20261009.md",
+        "docs/literature/sce/news_selection/README.md",
+        "docs/literature/sce/heterogeneity_and_probability/README.md"
+      ]
+    },
+    {
+      "stage": "study",
+      "status": "implemented_local_study_and_export",
+      "implemented": "SCE StudySpec, scripted/LLM behavior, local run entry, and one-way runtime export exist.",
+      "remaining": "A self-contained locked research environment and a complete prospective B-line evaluation have not been delivered.",
+      "evidence": [
+        "studies/sce_inflation_expectations/study.yaml",
+        "studies/sce_inflation_expectations/model.py",
+        "scripts/run_sce_local.py",
+        "scripts/export_study_runtime.py",
+        "docs/LOCAL_RUNTIME_ACCEPTANCE.md"
+      ]
+    },
+    {
+      "stage": "population",
+      "status": "implemented_A_population_and_core_normal; B_update_not_adopted",
+      "implemented": "SCE whitelist portraits, Core/Normal extension, CE synthetic spending sidecars, and macro population-update backtests exist.",
+      "remaining": "A-line contemporaneous portraits are retrospective; QSP5 external use is unapproved; employment/income macro changes were not wired into formal P.",
+      "evidence": [
+        "studies/sce_inflation_expectations/monthly_population.py",
+        "studies/sce_inflation_expectations/core_normal.py",
+        "studies/sce_inflation_expectations/price_experience.py",
+        "studies/sce_inflation_expectations/population_forecast.py",
+        "docs/SCE_MACRO_PROFILE_EXTENSION_RECEIPT_20261008.md"
+      ]
+    },
+    {
+      "stage": "environment",
+      "status": "implemented_with_vintage_gaps",
+      "implemented": "Historical macro/news environments, release-date checks, 77-signal packages, news allocation, and recent EIA/USDA price inputs have code and run manifests.",
+      "remaining": "Some gasoline/news vintage and NYT print-publication boundaries remain unverified; model training knowledge is unknown.",
+      "evidence": [
+        "studies/sce_inflation_expectations/environment_authoring/",
+        "studies/sce_inflation_expectations/environment/",
+        "studies/sce_inflation_expectations/news_exposure.py",
+        "studies/sce_inflation_expectations/price_contact.py",
+        "docs/SCE_ENVIRONMENT_EXTENSION_20261007.md"
+      ]
+    },
+    {
+      "stage": "dataset",
+      "status": "audited_but_not_full_PIT",
+      "implemented": "Core SCE coverage is audited for 106 months and about 130,216 respondent-month records; related CE/SCE spending and macro sources are archived at multiple levels.",
+      "remaining": "Microdata first-release dates and complete vintage coverage are incomplete; local coverage is not a claim about today's live release frontier.",
+      "evidence": [
+        "docs/project_status.md",
+        "docs/SCE_DATA_AUDIT.md",
+        "docs/CE_CONSUMPTION_DATA_INDEX.md",
+        "docs/SCE_NATIVE_SPENDING_20261009.md"
+      ]
+    },
+    {
+      "stage": "simulation",
+      "status": "local_scripted_and_real_LLM_paths_operational",
+      "implemented": "Local SocioVerse2 execution supports deterministic scripted and real OpenAI-compatible calls; actual DeepSeek SCE runs completed.",
+      "remaining": "Experiments are mostly small retrospective development runs. Provider aliases do not prove immutable model weights or training cutoff; cloud v4 was not run.",
+      "evidence": [
+        "studies/sce_inflation_expectations/model.py",
+        "scripts/run_sce_local.py",
+        "docs/CORE_NORMAL_LLM_RECEIPT_20261005.md",
+        "docs/CLOUD_V4_PREP_RECEIPT.md"
+      ]
+    },
+    {
+      "stage": "trajectory",
+      "status": "local_run_level_audit_operational",
+      "implemented": "Local run directories preserve messages, observations, DuckDB, effective configs, source snapshots, hashes, and conservative cost ledgers.",
+      "remaining": "Most detailed artifacts are ignored/local-only. Cloud v2 lacks historical observations, distinct run ID, and cost ledger; cloud v3 has an unexplained newline conversion boundary.",
+      "evidence": [
+        "studies/sce_inflation_expectations/trajectory/README.md",
+        "studies/sce_inflation_expectations/README.md",
+        "docs/CLOUD_V2_PILOT_RECEIPT.md",
+        "docs/CLOUD_V3_AUDIT_RECEIPT.md"
+      ]
+    },
+    {
+      "stage": "analysis",
+      "status": "frozen_approximate_scoring_and_unified_metrics_operational",
+      "implemented": "Common Q9 approximate scorer, Q8/Q9 separation, group/distribution metrics, source checks, and long-window offline baselines exist.",
+      "remaining": "Open-tail and gapped-bin Beta scoring differences remain; national official values, project re-scoring, and selected-sample metrics are not interchangeable.",
+      "evidence": [
+        "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py",
+        "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+        "studies/sce_inflation_expectations/evaluation/",
+        "docs/SCE_Q9_SCORING_REPLICATION.md",
+        "docs/SCE_EVALUATION_CONTRACT_V1.md"
+      ]
+    },
+    {
+      "stage": "reports",
+      "status": "experiment_receipts_exist_final_research_report_not_done",
+      "implemented": "Experiment receipts, aggregate summaries, plots, and local HTML reviews exist.",
+      "remaining": "No final research paper/report is complete; several directory READMEs retain stale pending/no-results text.",
+      "evidence": [
+        "docs/project_status.md",
+        "studies/sce_inflation_expectations/reports/README.md",
+        "docs/reviews/20261012_mechanism_retro/experiment_inventory.md"
+      ]
+    }
+  ],
+  "experiment_families": [
+    {
+      "id": "q9_scorer_freeze",
+      "dates": "2026-10-01 onward; execution kernel pinned 2026-10-03",
+      "p_change": "none",
+      "e_change": "none",
+      "b_change": "none; scoring/evaluation only",
+      "scale": "Public microdata comparison for 2020-01 and 2022-06; 3,741 sealed holdout rows checked for kernel migration; no LLM calls.",
+      "result": "Uniform and adjacent-bin triangular branches closely match official individual derived values; open-tail/gapped generalized-Beta cases retain error. Official-derived headline aggregation matches, while project fitted headline differs by about 0.007-0.011pp in the two cited months.",
+      "status": "adopted_infrastructure",
+      "qualification": "Frozen common project approximation, not the exact FRBNY implementation.",
+      "evidence": [
+        "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py",
+        "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+        "docs/SCE_Q9_SCORING_REPLICATION.md",
+        "outputs/sce_confidence_analysis_20261011_v2/summary.json"
+      ]
+    },
+    {
+      "id": "cloud_scripted_and_local_runtime",
+      "dates": "2026-09-30 to 2026-10-05",
+      "p_change": "Cloud v2/v3: 20 synthetic portraits per target month; later local runs use audited SCE portrait whitelist.",
+      "e_change": "Cloud: six BLS first-release signals for 2021-05/06; local main run: 77 macro signals plus 30 news items per month.",
+      "b_change": "Cloud v2/v3 deterministic scripted; cloud v4 configured real LLM but not executed; local harness later made real LLM calls.",
+      "scale": "Cloud v2 and v3 each produced 40 scripted answers (20 x 2 months), simulation LLM calls 0. Cloud v3 observation content was corroborated 40/40; sidecar newline conversion remains unexplained. Cloud v4 quote was unavailable and it was not run.",
+      "result": "Cloud runs establish partial workflow/provenance evidence, not behavior efficacy. Local real-call evidence is covered by the 300-Core family.",
+      "status": "adopted_infrastructure",
+      "evidence": [
+        "docs/CLOUD_V2_PILOT_RECEIPT.md",
+        "docs/CLOUD_V3_AUDIT_RECEIPT.md",
+        "docs/CLOUD_V4_PREP_RECEIPT.md",
+        "docs/LOCAL_RUNTIME_ACCEPTANCE.md",
+        "studies/sce_inflation_expectations/model.py"
+      ]
+    },
+    {
+      "id": "core300_normal",
+      "dates": "2026-10-05",
+      "p_change": "Monthly SCE frame: 1,234 in 2021-05 and 1,297 in 2021-06; 300 Core sampled per month, remainder Normal.",
+      "e_change": "77 macro signals plus 30 title/abstract news items; monthly cutoff at CPI release date.",
+      "b_change": "DeepSeek official alias deepseek-flash; sce-q8-q9-v2-abstract; temperature 0.5; monthly cold starts.",
+      "scale": "600 real API calls, 600 valid answers, zero retries; conservative estimated cost USD 0.536425 (not vendor invoice).",
+      "result": "Q9 median 2.952% versus 4.000% in May and 3.860% versus 4.802% in June. Normal expansion did not reliably improve Core direct weighting. Simulated cross-person Q9 spread was far below the full-month SCE spread.",
+      "status": "adopted_infrastructure",
+      "qualification": "End-to-end development run, not prospective validation or a successful SCE reconstruction.",
+      "evidence": [
+        "docs/CORE_NORMAL_LLM_RECEIPT_20261005.md",
+        "docs/CORE_NORMAL_ACCEPTANCE_20261005.md",
+        "outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/",
+        "outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/",
+        "outputs/core_normal_expansion_20261005T093623Z_65145ce1/",
+        "outputs/core_normal_expansion_20261005T094550Z_b1b09dd8/"
+      ]
+    },
+    {
+      "id": "long_window_baselines_and_core_size",
+      "dates": "2026-10-07: early 60-month run; subsequently extended to latest verified coverage",
+      "p_change": "Statistical population-distribution reconstruction; no simulated individual P changes.",
+      "e_change": "Historical national SCE/CPI first-release data for rolling baselines; no Agent E package.",
+      "b_change": "Persistence, AR(1), ARX, 12-month mean, rule update, and population-conditional statistical reconstruction; no LLM.",
+      "scale": "Early national run: 60 months (2020-01 through 2024-12), zero LLM calls. Latest national headline: 80 months (2020-01 through 2026-08); microdata: 70 months (2020-01 through 2025-10). Separate Core-size resampling uses prior answers/observed responses, not new generation.",
+      "result": "Early 60-month metrics remain a historical run record. Latest month-end national headline MAE: persistence 0.303750pp, AR(1) 0.346464, fixed 25% rule-update Agent 0.438750 across 80 months. Mid-month metrics cover 79 months: 0.231646, 0.256516, 0.356962pp respectively. ARX covers 66/67 months and must be compared on common months. Latest microdata W1: historical distribution 0.501307 versus population-conditioned 0.500891; age-education group median error 0.579344 to 0.482376 across 70 months. Different windows/targets are not ranked together.",
+      "status": "adopted_infrastructure",
+      "qualification": "The latest 80-month national and 70-month microdata offline baselines are the current comparison reference; the older 60-month results remain an archived early-window run. None is a long-run LLM validation. Compare each metric only with matching months, data target, population and scoring contract.",
+      "evidence": [
+        "docs/SCE_BASELINE_RESULTS_20261007.md",
+        "docs/SCE_BASELINE_METHODS_AND_LATEST_20261007.md",
+        "docs/SCE_EVALUATION_CONTRACT_V1.md",
+        "studies/sce_inflation_expectations/evaluation/baselines.py",
+        "outputs/sce_baselines_20261007T041750Z_5973bbf9/",
+        "outputs/sce_baselines_20261007T055057Z_f99c2f6b/",
+        "outputs/sce_core_size_20261007T061115Z_ec4e8ba9/",
+        "outputs/sce_core_size_replay_20261007T061426Z_74fe5ffd/",
+        "outputs/sce_core_size_replay_20261007T061510Z_93b5b374/"
+      ]
+    },
+    {
+      "id": "deepseek_qwen_llama_models",
+      "dates": "2026-10-08",
+      "p_change": "Short comparison: 20 existing Core cases per month, 2021-05/06. Annual reuse: same legacy 20-person panel in 2021-01..12.",
+      "e_change": "Short comparison uses old matched P/E and messages. Annual reuse uses only four BLS signals; 220/240 Qwen messages include prior DeepSeek point forecasts.",
+      "b_change": "DeepSeek reference; Llama 3.1-70B and Qwen2.5-72B completed short cases; Llama 3.3-70B and 3.1-8B failed format gate with too few valid cases. Qwen annual reuse generated 240 answers.",
+      "scale": "Short: Llama 41 requests/40 valid; Qwen 40 valid after a blocked first route; follow-up Qwen 40 valid, Llama3.3 4 valid, Llama3.1-8B 1 valid. Annual: Qwen 246 requests/240 valid; new DeepSeek calls 0. Separate 4-model x 300 x 12 preparation: 14,400 candidate requests, calls 0.",
+      "result": "Qwen had a small annual level MAE decrease (0.952 to 0.884pp) but improved only 6/12 months, trend direction fell 5/11 to 3/11, and W1 worsened 2.546 to 2.642pp. No model met adoption criteria; incomplete Llama samples are not ranked.",
+      "status": "no_stable_improvement_deferred",
+      "qualification": "Provider aliases do not establish weight snapshots or training cutoffs; annual legacy reuse is not the current rich E nor an independent Qwen trajectory.",
+      "evidence": [
+        "docs/SCE_EARLIER_MODEL_TRIAL_RECEIPT_20261008.md",
+        "docs/SCE_MODEL_FOLLOWUP_20261008.md",
+        "docs/SCE_QWEN_REUSE_RESULT_20261008.md",
+        "docs/SCE_ANNUAL_MODEL_COMPARISON_20261008.md",
+        "outputs/sce_model_followup_analysis_20261008_v3/summary.json",
+        "outputs/sce_qwen_reuse_comparison_20261008_v1/summary.json",
+        "outputs/sce_annual_models_prepared_20261008_v1/summary.json"
+      ]
+    },
+    {
+      "id": "ce_synthetic_basket_and_ordering",
+      "dates": "2026-10-06",
+      "p_change": "Synthetic CE donor shares for food, gasoline, shelter, and other; no real SCE household receipt or purchase-frequency record.",
+      "e_change": "Compared common facts with basket display and/or information ordering; Q8/Q9 survey unchanged.",
+      "b_change": "Same DeepSeek model and base questionnaire; tested answer-view prompt changes.",
+      "scale": "2021-05/06, 20 people per month, five arms, 200 real answers; temperature 0.",
+      "result": "Full mechanism lowered Q9 individual MAE by about 0.289pp in May but only 0.002pp in June. Model cross-person IQR stayed below 1pp versus about 5.2/5.4pp in the selected SCE samples.",
+      "status": "no_stable_improvement_deferred",
+      "evidence": [
+        "docs/PRICE_EXPERIENCE_PILOT_RECEIPT_20261006.md",
+        "docs/PRICE_EXPERIENCE_MECHANISM.md",
+        "studies/sce_inflation_expectations/mechanism/",
+        "outputs/sce-experience-trial-20261006T080038Z-594845/trial_manifest.json",
+        "outputs/sce-experience-trial-20261006T080038Z-594845/analysis/summary.json"
+      ]
+    },
+    {
+      "id": "sce_native_qsp5_basket",
+      "dates": "2026-10-09 data audit and preparation",
+      "p_change": "Local QSP5/SCE respondent-month linkage is analyzed; proposed LLM treatment would send genuine nine-category shares.",
+      "e_change": "Proposed trial holds existing 77 signals/news fixed.",
+      "b_change": "Proposed no-basket, own-basket, and shuffled-basket groups; no actual model call.",
+      "scale": "15,931 overlapping respondent-months linked; 11,327 complete weighted baskets in local analysis. Proposed 32 people x 2 months x 3 conditions = 192 prompts; rule dry-runs only, zero LLM calls.",
+      "result": "Own-basket statistical model improves Q9 individual MAE only 0.039-0.063pp in 2022-24 chronological checks; Q8 not improved. Specific external-send approval was blocked because prior consent covered synthetic CE baskets, not real QSP5 shares.",
+      "status": "preparation_only_not_run",
+      "qualification": "Local association analysis is complete; external LLM experiment remains awaiting explicit authorization.",
+      "evidence": [
+        "docs/SCE_NATIVE_SPENDING_20261009.md",
+        "docs/literature/sce/native_spending/DATA_AND_METHOD_20261009.md",
+        "studies/sce_inflation_expectations/native_spending.py",
+        "studies/sce_inflation_expectations/native_spending_trial.py",
+        "outputs/sce_native_spending_trial_20261009_v4/trial_manifest.json",
+        "outputs/sce_spending_audit_20261009_v2/summary.json"
+      ]
+    },
+    {
+      "id": "q1_household_financial_state",
+      "dates": "2026-10-06",
+      "p_change": "Add current SCE Q1 self-reported household financial change to prompt; five categories, ten selected cases per month.",
+      "e_change": "unchanged",
+      "b_change": "Same baseline prompt/model/question; one added Q1 sentence.",
+      "scale": "2021-05/06, 50 people per month, baseline and Q1 arms, 200 real answers; one invalid human Q9 in June.",
+      "result": "Some group-gap differences moved closer to the selected human sample, but Q9 individual MAE worsened slightly both months and spread did not improve consistently.",
+      "status": "no_stable_improvement_deferred",
+      "evidence": [
+        "docs/HOUSEHOLD_STATE_PILOT_RECEIPT_20261006.md",
+        "docs/HOUSEHOLD_STATE_ACCEPTANCE_20261006.md",
+        "outputs/sce_q1_trial_20261006T142504Z_a6740800/trial_manifest.json",
+        "outputs/sce_q1_analysis_20261006T143540Z_33c159ad/summary.json"
+      ]
+    },
+    {
+      "id": "personal_information_exposure_channels",
+      "dates": "2026-10-06",
+      "p_change": "Same 48-person selected sample and synthetic CE basket per month.",
+      "e_change": "Shared, shuffled, or matched single-channel food/gasoline/housing views; news disabled.",
+      "b_change": "Otherwise same Q8/Q9 simulation.",
+      "scale": "2021-05/06, 48 people per month, three arms, 288 real calls.",
+      "result": "Matched channel increased cross-person spread, but had higher Q9 individual MAE than shared and no stable advantage over shuffled; distribution distance worsened. Remained much more concentrated than the selected human samples.",
+      "status": "no_stable_improvement_deferred",
+      "evidence": [
+        "docs/INFORMATION_EXPOSURE_RECEIPT_20261006.md",
+        "docs/literature/sce/information_exposure/README.md",
+        "outputs/sce_exposure_analysis_20261006T151924Z_47735326/summary.json",
+        "outputs/sce_exposure_trial_20261006T150949Z_533cc2be/trial_manifest.json"
+      ]
+    },
+    {
+      "id": "recent_prices_and_regional_gasoline",
+      "dates": "2026-10-10",
+      "p_change": "20 selected SCE portraits per month with the existing synthetic CE basket.",
+      "e_change": "Compared existing info, recent national dairy-advertisement/gasoline prices, state-to-PADD gasoline, and permuted regional gasoline; food remained national.",
+      "b_change": "Same Q8/Q9 and model.",
+      "scale": "2021-05/06, four arms, 160 real calls.",
+      "result": "National recent price lowered selected-sample Q9 median error slightly in both months, but paired intervals included zero and Q8 did not show the same pattern. Regional gasoline did not consistently beat shuffled-region assignment on W1; cross-person spread remained very low.",
+      "status": "retained_candidate",
+      "qualification": "Keep national recent-price signal as a weak candidate; defer regional matching. This only tests gasoline geography in these two development months.",
+      "evidence": [
+        "docs/PRICE_CONTACT_EXPERIMENT_PLAN_20261010.md",
+        "docs/PRICE_CONTACT_EXPERIMENT_RECEIPT_20261010.md",
+        "docs/sources/sce_price_contact_20261010.json",
+        "outputs/sce_price_contact_trial_20261010_v1/trial_manifest.json",
+        "outputs/sce_price_contact_trial_20261010_v1/analysis/summary.json"
+      ]
+    },
+    {
+      "id": "news_labeling_and_50_50_exposure",
+      "dates": "2026-10-11",
+      "p_change": "48 selected prior Core portraits per month; same people and synthetic basket across exposure arms.",
+      "e_change": "Three shared A1 stories plus five personal items; random versus related-weighted draw. Related draw mixes 50% uniform sampling probability and 50% relevance-weighted probability (weight 2 versus 1), not a 50% relevant-story quota.",
+      "b_change": "Same DeepSeek model and questionnaire; only news assignment differed.",
+      "scale": "2021-05/06 exposure ablation: 48 people x 3 arms x 2 months = 288 calls. Labels: 977 new labels in those windows; another 2,278 candidates labeled for four later periods (286 attempts, 285 valid responses plus one separately authorized recovery). Four-period resident simulations did occur in separate trials: 768 confidence calls and two history-representation trials of 288 calls each, all inheriting news inputs; these are not a four-period shared/random/matched news ablation.",
+      "result": "Related weighting did not improve May median error over random; June error was lower by 0.168pp, but paired intervals included zero. Distribution distances changed little and inter-person spread remained much narrower than selected humans.",
+      "status": "retained_candidate",
+      "qualification": "News labeling/allocation infrastructure works; the direct shared/random/related-weighted efficacy test covers only selected 2021 development samples. Later four-period simulations included news while testing confidence or history changes, but no standalone shared/random/matched news ablation was repeated across those periods.",
+      "evidence": [
+        "docs/literature/sce/news_selection/news_exposure_results_20261011.md",
+        "docs/literature/sce/news_selection/selection_trial_20261011.md",
+        "docs/literature/sce/news_selection/multiperiod_labels_20261011.md",
+        "docs/literature/sce/news_selection/news_exposure_results_20261011.json",
+        "docs/literature/sce/news_selection/multiperiod_labels_summary_20261011.json",
+        "outputs/sce_news_exposure_analysis_20261011_v2/summary.json",
+        "outputs/sce_multiperiod_news_label_analysis_20261011_v1/summary.json",
+        "outputs/sce_confidence_trial_20261011_v1/trial_manifest.json",
+        "outputs/sce_lifetime_trial_20261012_v2/trial_manifest.json",
+        "outputs/sce_lifetime_text_trial_20261012_v1/trial_manifest.json"
+      ]
+    },
+    {
+      "id": "fed_confidence_text",
+      "dates": "2026-10-11 preparation; 2026-10-12 run and diagnosis",
+      "p_change": "Four periods (2022-03, 2022-09, 2023-03, 2024-03), 48 selected people per period; treatment adds an aggregate Gallup-derived confidence sentence, not measured respondent confidence.",
+      "e_change": "Both arms receive the same three-sentence historical Fed policy brief, same news allocation, prices, and synthetic CE basket.",
+      "b_change": "Only treatment arm adds the confidence sentence before the same survey questions; two generations per prompt.",
+      "scale": "768 API calls, 767 valid answers, one 99% Q9 retained without retry; selected four-period sample only.",
+      "result": "Equal-cell Q9 center MAE was 0.736 to 0.565pp (about 23.3% lower); distribution W1 improved about 2.3%, while simulated inter-person IQR remained about 0.72pp versus about 5.78pp in selected humans. Seven of eight center-error intervals included zero.",
+      "status": "retained_candidate",
+      "qualification": "The treatment contrast is the added confidence wording conditional on a common policy brief. The 0.736-to-0.565 change is not attributed to the shared policy brief or whole policy package; P is not upgraded.",
+      "evidence": [
+        "docs/literature/sce/belief_proxies/confidence_trial_20261011.md",
+        "docs/literature/sce/belief_proxies/confidence_response_diagnostic_20261012.md",
+        "docs/literature/sce/belief_proxies/confidence_result_20261012.json",
+        "outputs/sce_confidence_analysis_20261011_v2/summary.json",
+        "outputs/sce_confidence_response_diagnostic_20261012_v2/summary.json"
+      ]
+    },
+    {
+      "id": "age_experience_numeric",
+      "dates": "2026-10-12",
+      "p_change": "Age-matched detailed historical inflation background added; same four-period selected sample, 12 per period.",
+      "e_change": "Existing prices/news and other inputs kept; historical context added before the same questionnaire.",
+      "b_change": "Compare original input, common history, and age-matched numeric history; two generations.",
+      "scale": "Four periods x 12 people x 3 arms x 2 generations = 288 calls; 287 valid simulated Q9 responses.",
+      "result": "Q9 center error: original 0.624pp, common history 0.733, age-matched numeric history 0.969. Age-history W1 3.241 versus original 2.976; simulated inter-person IQR stayed far below selected humans. Registered continue threshold failed.",
+      "status": "no_stable_improvement_deferred",
+      "qualification": "Four 12-person development periods are not national samples or an independent holdout.",
+      "evidence": [
+        "docs/literature/sce/heterogeneity_and_probability/lifetime_trial_20261012.md",
+        "docs/literature/sce/heterogeneity_and_probability/lifetime_trial_summary_20261012.json",
+        "studies/sce_inflation_expectations/lifetime_trial.py",
+        "outputs/sce_lifetime_trial_20261012_v2/trial_manifest.json",
+        "outputs/sce_lifetime_analysis_20261012_v1/public_summary.json"
+      ]
+    },
+    {
+      "id": "age_experience_text_vs_numeric",
+      "dates": "2026-10-12",
+      "p_change": "Same selected samples and existing P; only historical-experience representation is replaced by brief text in one arm.",
+      "e_change": "Same inherited news, price, confidence, basket, and questionnaire inputs.",
+      "b_change": "同期三组 original/numeric-history/brief-text-history; two generations.",
+      "scale": "Four periods x 12 people x 3 arms x 2 generations = 288 calls; 287 valid simulated Q9 responses.",
+      "result": "Text center error 0.742pp versus detailed numeric 0.879pp (15.6% lower), but original input was 0.534pp. W1 was not consistently better; inter-person spread remained far below selected humans. All eight text-vs-numeric center intervals included zero.",
+      "status": "no_stable_improvement_deferred",
+      "qualification": "The brief-text arm is paused and not adopted; its outputs are retained for audit only. Its relative improvement over the worse numeric-history arm is not evidence of improvement over the original input. Four 12-person development periods are not national samples or an independent holdout.",
+      "evidence": [
+        "docs/literature/sce/heterogeneity_and_probability/lifetime_text_trial_20261012.md",
+        "docs/literature/sce/heterogeneity_and_probability/lifetime_text_trial_summary_20261012.json",
+        "studies/sce_inflation_expectations/lifetime_text_trial.py",
+        "outputs/sce_lifetime_text_trial_20261012_v1/trial_manifest.json",
+        "outputs/sce_lifetime_text_analysis_20261012_v1/public_summary.json"
+      ]
+    },
+    {
+      "id": "equivalent_wording_and_probability_reporting",
+      "dates": "2026-10-12 offline diagnosis and draft design",
+      "p_change": "No new P attribute; equivalent wording templates are only candidates.",
+      "e_change": "No new environment or information change.",
+      "b_change": "A/B/C are not frozen or approved. Eighteen complete offline message previews and 36 candidate assignments exist, with zero API calls; the variants are not connected to the runner and no equivalent-wording cross-run occurred. The old CE experience-trial expression_shared arm had 40 real answers (20 per month) but changed the answer framing and is not equivalent-wording evidence. Separate offline sensitivity audit re-scored existing outputs only.",
+      "scale": "No new API. Offline wording preparation: six selected cases x three templates = 18 message previews and 36 candidate assignments; no runner integration or real calls. Probability-shape audit covers 106 survey months and 767 valid existing model answers; 5% deterministic rounding moved selected-sample median by mean absolute 0.182pp, 10% by 0.493pp.",
+      "result": "Real Q9 nonzero-bin median 4 versus about 8-10 for model answers; around 59% of human answers assigned zero deflation probability, none in this model sample. Data show reporting shape can matter but do not identify a correct injected style.",
+      "status": "diagnostic_only",
+      "qualification": "User chose not to add rounding/zero-bin behavior to prompts. Equivalent-wording work is offline preparation, not an executed experiment or SFT/RFT. Keep the legacy expression_shared responses separate from the unrun same-facts variants.",
+      "evidence": [
+        "docs/literature/sce/heterogeneity_and_probability/prompt_variant_plan_20261012.md",
+        "docs/literature/sce/heterogeneity_and_probability/prompt_variation_practice_20261012.md",
+        "docs/literature/sce/heterogeneity_and_probability/user_choices_20261012.md",
+        "docs/literature/sce/heterogeneity_and_probability/age_reporting_followup_20261012.md",
+        "docs/literature/sce/heterogeneity_and_probability/age_reporting_summary_20261012.json",
+        "studies/sce_inflation_expectations/age_reporting_audit.py",
+        "outputs/sce_age_reporting_audit_20261012_v3/summary.json",
+        "docs/reviews/20261012_mechanism_retro/prompt_frequency_audit.md",
+        "outputs/sce_lifetime_trial_draft_20261012_v3/trial_manifest.json",
+        "outputs/sce-experience-trial-20261006T080038Z-594845/trial_manifest.json"
+      ]
+    },
+    {
+      "id": "macro_population_employment_income",
+      "dates": "2026-10-08",
+      "p_change": "Backtested candidate updates to employment and income category proportions using BLS/BEA release-time observations; formal P unchanged.",
+      "e_change": "91 BLS and 92 BEA release files; 2,473 dated observations; no simulation E change.",
+      "b_change": "No Agent call; offline population proportion prediction only.",
+      "scale": "37 evaluation months, zero LLM calls; 2,473 dated macro observations with 1,472 BEA cells verified against official workbook.",
+      "result": "New employment-population ratio MAE 1.349pp and plus participation 1.359 versus unemployment-rate update 1.323 and old portrait 1.466. Income distribution candidates did not beat old portraits overall.",
+      "status": "no_stable_improvement_deferred",
+      "qualification": "No fixed P/E behavioral transmission test; t-10 portrait availability assumption and incomplete revision history limit PIT claims.",
+      "evidence": [
+        "docs/SCE_MACRO_PROFILE_EXTENSION_RECEIPT_20261008.md",
+        "docs/SCE_POPULATION_MACRO_UPDATE_SPEC_20261008.md",
+        "studies/sce_inflation_expectations/macro_profile_sources.py",
+        "studies/sce_inflation_expectations/macro_profile_extension.py",
+        "outputs/sce_macro_profile_sources_20261008_v7/summary.json",
+        "outputs/sce_macro_profile_backtest_20261008_v1/summary.json"
+      ]
+    }
+  ],
+  "state_conflicts_and_limits": [
+    {
+      "issue": "Some component READMEs are stale",
+      "details": "population/README.md, environment/README.md, simulation/README.md, trajectory/README.md, reports/README.md, and the top-level study README contain template-era pending/no-results text despite current code and later run receipts.",
+      "evidence": [
+        "studies/sce_inflation_expectations/population/README.md",
+        "studies/sce_inflation_expectations/environment/README.md",
+        "studies/sce_inflation_expectations/simulation/README.md",
+        "studies/sce_inflation_expectations/trajectory/README.md",
+        "studies/sce_inflation_expectations/reports/README.md",
+        "studies/sce_inflation_expectations/README.md",
+        "docs/CORE_NORMAL_LLM_RECEIPT_20261005.md"
+      ]
+    },
+    {
+      "issue": "Selected-sample, national, and small-period outputs differ",
+      "details": "The early 60-month aggregate baseline has since been extended: latest national headline covers 80 months (through 2026-08), and latest microdata distribution covers 70 months (through 2025-10). 300-Core monthly runs, 20/48-person mechanism arms, and four-period 12/48-person studies still use different populations, questions, weights, and scoring contracts; numerical metrics are not directly ranked across these designs.",
+      "evidence": [
+        "docs/CORE_NORMAL_LLM_RECEIPT_20261005.md",
+        "docs/SCE_BASELINE_RESULTS_20261007.md",
+        "docs/literature/sce/belief_proxies/confidence_trial_20261011.md",
+        "docs/literature/sce/heterogeneity_and_probability/lifetime_trial_20261012.md"
+      ]
+    },
+    {
+      "issue": "Real SCE spending basket approval",
+      "details": "The QSP5 v4 manifest is a prepared trial; external API run was blocked because earlier consent covered synthetic CE basket shares, not real QSP5 shares. The current inventory treats it as not run.",
+      "evidence": [
+        "docs/SCE_NATIVE_SPENDING_20261009.md",
+        "outputs/sce_native_spending_trial_20261009_v4/trial_manifest.json"
+      ]
+    },
+    {
+      "issue": "Scoring freeze does not mean exact official implementation",
+      "details": "The same pinned approximate scorer is applied to human and model answers; Beta fit residual differences remain, especially in open tails and gapped bins.",
+      "evidence": [
+        "docs/SCE_Q9_SCORING_REPLICATION.md",
+        "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py",
+        "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py"
+      ]
+    },
+    {
+      "issue": "Candidate improvements are not production adoption",
+      "details": "Confidence passed a registered continue-study threshold but is not in formal P. Text history improved against numeric history while remaining worse than its同期 original-input control. News, recent-price, and confidence outcomes remain selected-sample development evidence.",
+      "evidence": [
+        "docs/literature/sce/belief_proxies/confidence_trial_20261011.md",
+        "docs/literature/sce/heterogeneity_and_probability/lifetime_text_trial_20261012.md",
+        "docs/literature/sce/news_selection/news_exposure_results_20261011.md",
+        "docs/PRICE_CONTACT_EXPERIMENT_RECEIPT_20261010.md"
+      ]
+    },
+    {
+      "issue": "Prepared does not mean executed",
+      "details": "The 14,400-request annual four-model batch, standalone four-period shared/random/matched news ablation, QSP5 LLM trial, and equivalent-wording experiment have no completed calls. Four-period confidence and two history-representation simulations did run and included news inputs; they do not substitute for a news-allocation ablation.",
+      "evidence": [
+        "docs/SCE_ANNUAL_MODEL_COMPARISON_20261008.md",
+        "docs/literature/sce/news_selection/multiperiod_labels_20261011.md",
+        "docs/SCE_NATIVE_SPENDING_20261009.md",
+        "docs/literature/sce/heterogeneity_and_probability/prompt_variant_plan_20261012.md"
+      ]
+    }
+  ],
+  "protected_files": {
+    "manifest": "docs/sources/sol_handoff_protected_files_20261010.json",
+    "listed_count": 15,
+    "handling": "Read-only; not edited, restored, committed, or used as an input to new model calls."
+  },
+  "only_written_outputs": [
+    "docs/reviews/20261012_mechanism_retro/experiment_inventory.md",
+    "docs/reviews/20261012_mechanism_retro/experiment_inventory.json"
+  ]
+}

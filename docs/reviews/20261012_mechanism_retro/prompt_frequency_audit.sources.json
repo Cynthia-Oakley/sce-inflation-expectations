@@ -1,0 +1,150 @@
+{
+  "checked_on": "2026-10-12",
+  "status": "read_only_audit_and_proposed_design_not_new_experiment",
+  "new_llm_calls": 0,
+  "new_paid_api_cost_usd": 0,
+  "local_evidence_sha256": {
+    "docs/literature/sce/heterogeneity_and_probability/prompt_variant_plan_20261012.md": "a9f6377812f53ed459f96d078609110ba1e52d8e0ce6c07e75db75eb4e33c53d",
+    "docs/literature/sce/heterogeneity_and_probability/prompt_variation_practice_20261012.md": "a26e09d0937137a852424ef2e561399ebd19c37c9ad741d115feb78c71f54d75",
+    "docs/literature/sce/heterogeneity_and_probability/prompt_template_candidates_20261012.json": "6bd5af2ce430546315519f89cca38936ed5004fa47c311eb630611f6098d791e",
+    "studies/sce_inflation_expectations/lifetime_trial_preparation.py": "4069c90f7681b5a6ab6560325760c523630337799989b7d31cf792051db02cf7",
+    "studies/sce_inflation_expectations/lifetime_trial.py": "a6ea63a4fd75031c30d3926ad0a2fe58b03c0506429d1a1ee425ff6ea617eccb",
+    "studies/sce_inflation_expectations/lifetime_text_trial.py": "d2da2250be9dc0364f76882f7f9a096fe4763825db493e73fc9b2cd47c8740a0",
+    "studies/sce_inflation_expectations/experience_mechanism.py": "8ccd2fe96d12ea9d4ecb50c83cf30f26b67e5ec78f40864416869ab6c65e977d",
+    "studies/sce_inflation_expectations/diary_experience.py": "7da6194df98add1fe2ab9b26f651f77a531b8af3bd917d527ae719106e86fbdc",
+    "studies/sce_inflation_expectations/information_exposure.py": "ec40d018428ed240645331d0bc0ff4c583e726f1a268f5e55ce097b636e5eb3b",
+    "studies/sce_inflation_expectations/native_spending.py": "baa4061b7c38a5965cb0044613ef859164a2a09b0307b22ae77a23b1b7751455",
+    "studies/sce_inflation_expectations/price_contact.py": "39ce15891f3f06dc1b9e889161d2be397504e5a517d42909640471016eaf4319",
+    "outputs/sce_age_source_followup_20261012_v1/template_validation.json": "87ee4281ea942a5960d2e486cc67cf3d2af21823d7acbe1a16c1dd852f4adba6",
+    "outputs/sce_lifetime_trial_draft_20261012_v3/trial_manifest.json": "5f96a81e08c79f8257f59ca4ec787b29e99ad6fef51f724692a40c9c2e225b0a",
+    "outputs/sce_lifetime_trial_draft_20261012_v3/template_probes_private.json": "1b524e02ec51362c67e0bb5ea826cd04b8fe5c3b570560d592ae08424f5957b5",
+    "outputs/sce_lifetime_trial_20261012_v2/trial_manifest.json": "20c8b49ce4d2e1f853bfdc98aaa1de0916128520315cab0168896123c5eb0315",
+    "outputs/sce_lifetime_text_trial_20261012_v1/trial_manifest.json": "63d0435ef9c3b8a54f5685e939200961aaddb315716a4618316693a0ffc0f32a",
+    "outputs/sce-experience-trial-20261006T080038Z-594845/trial_manifest.json": "76ca66e5fe3d2a35e9102254edac4cbf92ba29e7a11351249429fc3ff84a43f6",
+    "outputs/sce_exposure_trial_20261006T150949Z_533cc2be/trial_manifest.json": "73e8082899636bb2c9627e78c2bb517fcbbaa8815b7dc68305e4cf1dd2df7b23",
+    "outputs/sce_price_contact_trial_20261010_v1/trial_manifest.json": "94dc4bc7dbd823c7b6caf167a252d1dbe45550e169f6303e05266c38ee3f9261",
+    "outputs/sce_native_spending_trial_20261009_v4/trial_manifest.json": "b5cbf8dad84b9980516e1d9be7a9e46467c0907eb84eb8e0fc98f2d0f6ec8d9e",
+    "data/interim/ce_experience/20261006T071002778274Z_ce_diary2020q4_4862a21e/manifest.json": "09a28d3ecb1b2442539071c766caafca3ece05c56b0c3a4da68a126334a7ca51",
+    "data/interim/ce_experience/20261006T071002778274Z_ce_diary2020q4_4862a21e/diary_weekly.jsonl": "5340b3434d2b802046e2622f7cd7fc24cc0eebc8b8bb653f066c570ea4af905e",
+    "docs/CE_DIARY_FIELD_REVIEW_20261006.md": "46b1640903d4e940a79d53059d7418eea205dedd8e977e7d95400f1c996b04bf",
+    "docs/PRICE_EXPERIENCE_PILOT_RECEIPT_20261006.md": "b17440784a0b1445426f447ce253638d55b7e8cd8c4c4172c070f83385df43cf",
+    "docs/INFORMATION_EXPOSURE_RECEIPT_20261006.md": "74cef7a437b291ef35e89690695b86b5d5ca3166bfd5d7b4709cc843ea2cc6f2",
+    "docs/PRICE_CONTACT_EXPERIMENT_RECEIPT_20261010.md": "a154308bb4af68070703a254e2a681937deddbf2283a551acd97bb0186507dde",
+    "docs/SCE_NATIVE_SPENDING_20261009.md": "199fcde78e0cf39a5151af6c15103673616a9742c3f6177a3866d539e84d944c"
+  },
+  "audit_checks": {
+    "template_actual_previews": 18,
+    "template_people": 6,
+    "template_variants": 3,
+    "body_after_removing_intro_equal_within_person": true,
+    "frozen_fact_hash_equal_within_person": true,
+    "frozen_questionnaire_suffix_hash_equal_within_person": true,
+    "semantic_equivalence_certified": false,
+    "diary_rows": 2835,
+    "diary_status_counts": {
+      "available": 2455,
+      "partial_day_support": 136,
+      "zero_positive_pub_flag_2_cost_records": 121,
+      "zero_expd_rows": 123
+    },
+    "day_count_unweighted_complete_support": {
+      "1": 424,
+      "2": 380,
+      "3": 399,
+      "4": 399,
+      "5": 347,
+      "6": 293,
+      "7": 213
+    },
+    "diary_decision_consumers_found": 0,
+    "native_qsp5_real_jobs_completed": 0,
+    "protected_files_original_hash_matches": 15
+  },
+  "real_run_file_counts": {
+    "sce_exposure_trial_20261006T150949Z_533cc2be": {
+      "call_files": 6,
+      "rows": 288,
+      "note": "Actual audit rows, not offline run dirs; no fresh API call"
+    },
+    "sce_price_contact_trial_20261010_v1": {
+      "call_files": 8,
+      "rows": 160,
+      "note": "Actual audit rows, not offline run dirs; no fresh API call"
+    },
+    "sce_lifetime_trial_20261012_v2": {
+      "call_files": 24,
+      "rows": 288,
+      "note": "Actual audit rows, not offline run dirs; no fresh API call"
+    },
+    "sce_lifetime_text_trial_20261012_v1": {
+      "call_files": 24,
+      "rows": 288,
+      "note": "Actual audit rows, not offline run dirs; no fresh API call"
+    },
+    "sce-experience-trial-20261006T080038Z-594845": {
+      "call_files": 10,
+      "rows": 200,
+      "note": "Actual audit rows, not offline run dirs; no fresh API call"
+    }
+  },
+  "primary_sources": [
+    {
+      "id": "formatspread",
+      "url": "https://arxiv.org/html/2310.11324v2",
+      "version": "arXiv v2 2024-07-01",
+      "read_scope": "Abstract, introduction, grammar definition, distinction from prompt optimization",
+      "use": "Format sensitivity as robustness control; not SCE validity guarantee",
+      "access": "web text verified"
+    },
+    {
+      "id": "rejection_fine_tuning",
+      "url": "https://arxiv.org/html/2307.09288v2",
+      "version": "Llama 2 arXiv v2",
+      "read_scope": "Section 3.2.3 iterative fine-tuning/rejection sampling",
+      "use": "Candidate selection followed by gradient update differs from prompt paraphrase",
+      "access": "web text verified"
+    },
+    {
+      "id": "frequency_price_exposure",
+      "url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+      "version": "Author-hosted 34-page draft, exact local/online publication vintage not re-certified",
+      "read_scope": "Section III.C-D and conclusion; frequency definition and alternative shopping-trip weight",
+      "use": "Item quantity-weighted historical price changes are not CE recorded-day counts",
+      "access": "web PDF text verified; NBER landing https://www.nber.org/papers/w26237 returned403"
+    },
+    {
+      "id": "qsp5",
+      "url": "https://www.newyorkfed.org/medialibrary/media/research/microeconomics/interactive/downloads/sce_household-spending-questionnaire.pdf",
+      "version": "Current official 6-page questionnaire",
+      "read_scope": "QSP3 and QSP5, PDF pages1-2",
+      "use": "QSP5 expenditure shares, QSP3 purchase incidence; neither daily shopping counts",
+      "access": "web PDF text verified"
+    },
+    {
+      "id": "ce_guide",
+      "url": "https://www.bls.gov/cex/pumd-getting-started-guide.htm",
+      "version": "Current official guide",
+      "read_scope": "Sections2,4,6; separate samples, identifiers, valid flags, week weights",
+      "use": "CU-week units and survey non-linkability",
+      "access": "web text verified"
+    },
+    {
+      "id": "ce_release_2020",
+      "url": "https://www.bls.gov/news.release/archives/cesan_09092021.htm",
+      "version": "Release 2021-09-09 10:00ET",
+      "read_scope": "Additional Information/Data Products",
+      "use": "Annual1980-2020PUMD available by release date; not first release date proof",
+      "access": "web text verified"
+    },
+    {
+      "id": "ce_errata",
+      "url": "https://www.bls.gov/cex/pumd_errata_2019_2020.htm",
+      "version": "Errata 2022-03-10",
+      "read_scope": "2020Q4Diary cost corrections and category remapping",
+      "use": "Current corrected2020file not certified2021byte vintage",
+      "access": "web text verified"
+    }
+  ],
+  "proposal_thresholds_status": "Project engineering choices, not literature-estimated parameters or approved freeze",
+  "report_sha256": "fe7314850be9553ed9fc84577b6f532f62c0a91897f789285d0f031dd1f2457d"
+}

@@ -1,0 +1,448 @@
+{
+  "checked_on": "2026-10-12",
+  "status": "review_and_design_candidates_only",
+  "sources": [
+    {
+      "id": "cavallo_2017",
+      "title": "Inflation Expectations, Learning, and Supermarket Prices: Evidence from Survey Experiments",
+      "url": "https://www.hbs.edu/ris/Publication%20Files/Cavallo_Alberto_J5_Inflation%20Expectations%20Learning%20and%20Supermarket%20Prices_ac98a304-ebe4-426c-93c7-ba7d6f92aae1.pdf",
+      "version_or_publication": "AEJ Macroeconomics 9(3), 2017",
+      "population_and_period": "US/Argentina; 2012–13 experiments",
+      "reading_scope": "PDF introduction and design pp1–8 read this pass",
+      "evidence_class": "direct_inflation; randomized_information_and_recall_cues",
+      "limits_and_project_use": "Randomized messages identify message effects, not permanent attention; some responses are numeric anchoring. No direct SCE Q9 validation.",
+      "mechanism_families": [
+        1,
+        5
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "grocery_2021",
+      "title": "Exposure to Grocery Prices and Inflation Expectations",
+      "url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+      "version_or_publication": "JPE 129(5), 2021; author draft 2020-08-03",
+      "population_and_period": "US Nielsen matched shopping/expectation panel",
+      "reading_scope": "Existing repository full reading summary reviewed; NBER original draft indexed results checked",
+      "evidence_class": "direct_inflation; observational_matched_microdata",
+      "limits_and_project_use": "Purchase frequency is not expenditure share. Proprietary fine purchases not acquired.",
+      "mechanism_families": [
+        1
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "gasoline_2024",
+      "title": "Gasoline price changes and consumer inflation expectations: Experimental evidence",
+      "url": "https://doi.org/10.1016/j.jebo.2024.01.027",
+      "version_or_publication": "JEBO 220, 66–80, April 2024",
+      "population_and_period": "US SCE experimental module",
+      "reading_scope": "Publisher indexed abstract and metadata; direct page returned empty/error; no full method audit",
+      "evidence_class": "direct_inflation; experimental",
+      "limits_and_project_use": "Positive/negative asymmetry; effect smaller than food/durables, cannot treat gasoline as universally dominant.",
+      "mechanism_families": [
+        1
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "ce_diary",
+      "title": "Consumer Expenditure Surveys Public Use Microdata Getting Started Guide",
+      "url": "https://www.bls.gov/cex/pumd-getting-started-guide.htm",
+      "version_or_publication": "Official current methodology; checked 2026-10-12",
+      "population_and_period": "US CE consumer units; two-week diaries",
+      "reading_scope": "Official indexed detailed data fields/methods read",
+      "evidence_class": "data_documentation",
+      "limits_and_project_use": "EXPNWDY/EXPNSQDY are purchase-day proxies; purchasers/consumers not identifiable; Diary and Interview separate samples. Historical file dates not audited.",
+      "mechanism_families": [
+        1
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "ce_methods",
+      "title": "Collections & Data Sources",
+      "url": "https://www.bls.gov/opub/hom/cex/data.htm",
+      "version_or_publication": "Official current handbook",
+      "population_and_period": "US CE Diary",
+      "reading_scope": "Official indexed methodology read",
+      "evidence_class": "data_documentation",
+      "limits_and_project_use": "Diary covers household purchases over two separate weeks. Not individual attention or matched SCE shopping records.",
+      "mechanism_families": [
+        1
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "sce_perceptions_2023",
+      "title": "Consumers’ Perspectives on the Recent Movements in Inflation",
+      "url": "https://libertystreeteconomics.newyorkfed.org/2023/08/consumers-perspectives-on-the-recent-movements-in-inflation-expectations/",
+      "version_or_publication": "NY Fed, August 2023",
+      "population_and_period": "US June2023 special survey backcasts for 2019/2021–22/2022–23",
+      "reading_scope": "Original institution indexed survey wording; existing repository notes reviewed",
+      "evidence_class": "direct_inflation; descriptive_special_survey",
+      "limits_and_project_use": "Public aggregate and questions do not establish public joint special-module microdata; cannot use 2023 response for 2021 forecast.",
+      "mechanism_families": [
+        1,
+        2
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "andre_2022",
+      "title": "Subjective Models of the Macroeconomy: Evidence From Experts and Representative Samples",
+      "url": "https://doi.org/10.1093/restud/rdac008",
+      "version_or_publication": "REStud 89(6), 2958–2991, 2022",
+      "population_and_period": "About6500 US households and1500 experts, vignette study",
+      "reading_scope": "Publisher detailed shock results read; inherited repository mechanism-prompt result",
+      "evidence_class": "direct_inflation; common_information_vignettes_and_randomized_cues",
+      "limits_and_project_use": "Scenario forecasts differ from SCE Q9. Heterogeneous measured models are not randomized personalities.",
+      "mechanism_families": [
+        2
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "andre_replication",
+      "title": "Replication package for Subjective Models of the Macroeconomy",
+      "url": "https://zenodo.org/records/5744017",
+      "version_or_publication": "v1 published2021-11-30; modified2022-01-31",
+      "population_and_period": "Open author research data/code",
+      "reading_scope": "Repository metadata read; no download or row-level audit",
+      "evidence_class": "data_availability",
+      "limits_and_project_use": "v1 publication after May/June2021. Cannot claim B-ready historical donor; joint X support untested.",
+      "mechanism_families": [
+        2
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "sce_deflation_2023",
+      "title": "The Curious Case of the Rise in Deflation Expectations",
+      "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr1037.pdf",
+      "version_or_publication": "SR1037 October2022; revisedNovember2023",
+      "population_and_period": "US SCE2019–2023 plus May2022/June2023 special surveys",
+      "reading_scope": "PDF abstract, special-survey data dates, §5 and appendix references read",
+      "evidence_class": "direct_inflation; observational",
+      "limits_and_project_use": "Price mean reversion mainly medium/long horizons; not identified one-year effect. Special public microdata not acquired.",
+      "mechanism_families": [
+        2,
+        7
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "taubinsky_2026",
+      "title": "Beliefs About the Economy Are Excessively Sensitive to Household-Level Shocks",
+      "url": "https://doi.org/10.1093/qje/qjag032",
+      "version_or_publication": "QJE2026; NBER32664 early version",
+      "population_and_period": "Denmark2012–2019 linked administrative/survey data; supplemental Denmark/US surveys",
+      "reading_scope": "Inherited local selected-full-text reading; official indexed PDF appendix checked; direct publisher/NBER returned500/403 this pass",
+      "evidence_class": "direct_inflation; observational_admin_linkage_and_supporting_randomized_cues",
+      "limits_and_project_use": "Income/health events not all randomized; mechanism only partly affect-cued recall. Country/period/horizon transfer uncertain.",
+      "mechanism_families": [
+        3,
+        7
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "taubinsky_author_pdf",
+      "title": "Beliefs About the Economy ... author working paper",
+      "url": "https://www.nber.org/system/files/working_papers/w32664/revisions/w32664.rev1.pdf",
+      "version_or_publication": "NBER32664 rev1; exact revision date not verified",
+      "population_and_period": "Early version of preceding paper",
+      "reading_scope": "Official indexed appendix questions only; direct403",
+      "evidence_class": "direct_inflation_source_variant",
+      "limits_and_project_use": "Do not conflate revision date, QJE date and hypothetical B availability. Not downloaded.",
+      "mechanism_families": [
+        3
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "sce_faq",
+      "title": "Survey of Consumer Expectations Frequently Asked Questions",
+      "url": "https://www.newyorkfed.org/microeconomics/sce/sce-faq",
+      "version_or_publication": "Official current FAQ checked2026-10-12",
+      "population_and_period": "US SCE household heads",
+      "reading_scope": "Original webpage methodology and release-lag sections read",
+      "evidence_class": "data_documentation",
+      "limits_and_project_use": "Core/credit nine-month lag; spending/housing/labor/public policy eighteen-month lag. State/CZ access does not establish county mapping.",
+      "mechanism_families": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "sce_stress_2026",
+      "title": "Food Insecurity and Consumer Pessimism",
+      "url": "https://libertystreeteconomics.newyorkfed.org/2026/05/food-insecurity-and-consumer-pessimism/",
+      "version_or_publication": "NY Fed May2026",
+      "population_and_period": "US SCE targeted2020-05/06,2025-10,2026-02 modules",
+      "reading_scope": "Official original page overview checked; detailed models not reviewed",
+      "evidence_class": "finance_state_and_general_pessimism; data_candidate",
+      "limits_and_project_use": "Existence of old2020 module does not prove public joint microdata or historical publication. No direct inflation causality claimed.",
+      "mechanism_families": [
+        3
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "network_2023",
+      "title": "The Expectations of Others",
+      "url": "https://www.clevelandfed.org/-/media/project/clevelandfedtenant/clevelandfedsite/publications/working-papers/2023/wp2322.pdf",
+      "version_or_publication": "WP23-22, September20,2023",
+      "population_and_period": "US ICIE2021-02–2023-07;2016 county SCI",
+      "reading_scope": "PDF abstract/intro, §3 data, §4 identification discussion, §5 shift-share IV checked",
+      "evidence_class": "direct_inflation; observational_and_instrumental_variable",
+      "limits_and_project_use": "IV uses national gas price×driving commute shares under identification assumptions. No observed individual friendship graph/messages; ICIE microdata not acquired.",
+      "mechanism_families": [
+        4
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "meta_sci",
+      "title": "Social Connectedness Index",
+      "url": "https://ai.meta.com/ai-for-good/datasets/social-connectedness-index/",
+      "version_or_publication": "Official current dataset description",
+      "population_and_period": "Geographic aggregate Facebook friendship connections",
+      "reading_scope": "Official indexed definition/download route checked",
+      "evidence_class": "data_documentation",
+      "limits_and_project_use": "Current public download not historical byte vintage; location average not personal graph. No downloaded SCI.",
+      "mechanism_families": [
+        4
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "burke_manz_2011",
+      "title": "Economic Literacy and Inflation Expectations: Evidence from a Laboratory Experiment",
+      "url": "https://www.bostonfed.org/-/media/Documents/Workingpapers/PDF/ppdp1108.pdf",
+      "version_or_publication": "Boston Fed11-8; publishedJMCB2014 DOI10.1111/jmcb.12144",
+      "population_and_period": "US lab sample, mean age29; simulated forecast tasks",
+      "reading_scope": "PDF abstract, sample and information-choice/use sections checked",
+      "evidence_class": "direct_inflation_task; measured_literacy_in_experimental_environment",
+      "limits_and_project_use": "Literacy not randomized training; lab selection and simulated tasks limit SCE generalization.",
+      "mechanism_families": [
+        5
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "nfcs_data",
+      "title": "NFCS Data and Downloads",
+      "url": "https://finrafoundation.org/knowledge-we-gain-share/nfcs/data-and-downloads",
+      "version_or_publication": "Official current entry for2018/2021/2024",
+      "population_and_period": "US adults, nonprobability online quota sample",
+      "reading_scope": "Original entry checked2018 questionnaire/dataset links; no download/joint audit",
+      "evidence_class": "data_candidate",
+      "limits_and_project_use": "Financial knowledge/state+X possible same donor; no verified same-person SCE inflation. Archived microdata release/vintage required.",
+      "mechanism_families": [
+        3,
+        5
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "nfcs2018_report",
+      "title": "The State of U.S. Financial Capability: The2018 NFCS",
+      "url": "https://finrafoundation.org/sites/finrafoundation/files/NFCS-2018-Report-Natl-Findings.pdf",
+      "version_or_publication": "June2019 report",
+      "population_and_period": "US2018",
+      "reading_scope": "Official indexed cover/date and financial-state summary checked",
+      "evidence_class": "data_release_context",
+      "limits_and_project_use": "Report release verifies report only; not exact historical microdata bytes or same-person inflation questionnaire.",
+      "mechanism_families": [
+        3,
+        5
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "partisan_covid_2024",
+      "title": "Partisan Expectations and COVID-Era Inflation",
+      "url": "https://www.nber.org/papers/w32650",
+      "version_or_publication": "NBER32650,2024; JME148(S),2024",
+      "population_and_period": "US COVID-era",
+      "reading_scope": "Inherited repository abstract; direct403; author research entry checked",
+      "evidence_class": "direct_inflation; observational",
+      "limits_and_project_use": "Political affiliation and source choice not randomized. No fixed party inflation coefficient.",
+      "mechanism_families": [
+        6
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "partisan_comment_2024",
+      "title": "Partisan expectations and COVID era inflation: A comment",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0304393224001120",
+      "version_or_publication": "JME148,2024; NY Fed authors verified from official Topa CV",
+      "population_and_period": "US SCE supplementary evidence",
+      "reading_scope": "Publisher indexed abstract; full methods not audited",
+      "evidence_class": "direct_inflation; evidence_on_strategic_reporting",
+      "limits_and_project_use": "Some party gap may be strategic answering; do not infer all gap is sincere belief or all is expressive.",
+      "mechanism_families": [
+        6
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "fed_trust_2025",
+      "title": "Partisan Trust in the Federal Reserve",
+      "url": "https://www.nber.org/papers/w33684",
+      "version_or_publication": "NBER33684,2025",
+      "population_and_period": "US Michigan/Gallup2001–2023 and2025 survey",
+      "reading_scope": "Existing repository selected opening sections/abstract; no fresh full-text review",
+      "evidence_class": "direct_inflation; observational_counterexample",
+      "limits_and_project_use": "Trust-party relationship does not explain all forecast gap;2025 direction not2021 constant.",
+      "mechanism_families": [
+        6
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "anes_history",
+      "title": "Updates & Announcements",
+      "url": "https://electionstudies.org/updates-announcements/",
+      "version_or_publication": "Official archive:2021-02-11,03-24,07-19 releases",
+      "population_and_period": "ANES2020 preliminary/full releases",
+      "reading_scope": "Original indexed release chronology and page read",
+      "evidence_class": "historical_release_evidence",
+      "limits_and_project_use": "2021-03-24pre/post preliminary potentially eligible forMay2021 only if exact archived version and fields acquired.",
+      "mechanism_families": [
+        4,
+        6
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "anes2020",
+      "title": "2020 Time Series Study",
+      "url": "https://electionstudies.org/data-center/2020-time-series-study/",
+      "version_or_publication": "Current2022-02-10 version; July2021 auxiliary files",
+      "population_and_period": "US eligible voters, pre/post2020, panel and fresh sample",
+      "reading_scope": "Original documentation summary read; no download/field support audit",
+      "evidence_class": "data_candidate",
+      "limits_and_project_use": "Eligible-voter universe differs from SCE household heads; current full release cannot replace preliminary historical file.",
+      "mechanism_families": [
+        4,
+        6
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "personality_2026",
+      "title": "From traits to rates: How personality shapes inflation expectations",
+      "url": "https://www.oenb.at/dam/jcr:5d1a8cce-c813-40e2-8a6a-b62535ea3321/wp-272.pdf",
+      "version_or_publication": "OeNB WP272,2026-01-20",
+      "population_and_period": "Austria2023 HFCS fielded2023–24",
+      "reading_scope": "PDF abstract, measures/reliability and variance wording checked; prior repository sample detail",
+      "evidence_class": "direct_inflation; observational",
+      "limits_and_project_use": "70% relative gain in explained variance, not70% total explanation. Austrian cross-section not US causal coefficients.",
+      "mechanism_families": [
+        7
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "religion_general",
+      "title": "People’s Opium? Religion and Economic Attitudes",
+      "url": "https://cepr.org/publications/dp3588",
+      "version_or_publication": "CEPR DP3588,2002-10-20; webpage revised2019-05-08",
+      "population_and_period": "World Values Surveys cross-country",
+      "reading_scope": "Original research abstract read",
+      "evidence_class": "general_economic_attitudes_only; observational",
+      "limits_and_project_use": "No direct inflation forecast result established. Religion denomination cannot be hard-mapped to inflation bias.",
+      "mechanism_families": [
+        8
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "gss_data",
+      "title": "Get the Data",
+      "url": "https://gss.norc.org/get-the-data.html",
+      "version_or_publication": "Current official data entry;2018joint happiness donor audited previously in repository",
+      "population_and_period": "US adult individual samples",
+      "reading_scope": "Original entry read; inherited joint audit not rerun",
+      "evidence_class": "data_candidate",
+      "limits_and_project_use": "HAPPY/SATFIN are states not BigFive; new religion/ballot joint intersections untested; public donor not person-level SCE link.",
+      "mechanism_families": [
+        7,
+        8
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    },
+    {
+      "id": "shed_history",
+      "title": "SHED Data",
+      "url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+      "version_or_publication": "Current page update2026-09-04;2013–2019files updated2026-06-22",
+      "population_and_period": "US SHED yearly adult surveys",
+      "reading_scope": "Original2018/2019 release notes read",
+      "evidence_class": "historical_release_correction",
+      "limits_and_project_use": "2021-05-07state ID note belongs2018, not2019.2020-12cross-yearID note exists2019. Exact2019historical file still required.",
+      "mechanism_families": [
+        3
+      ],
+      "checked_on": "2026-10-12",
+      "new_microdata_downloaded": false
+    }
+  ],
+  "top_three_mechanisms": [
+    "perceived_inflation_price_contact_attention",
+    "subjective_causal_model_and_persistence",
+    "recent_household_finance_shocks_affect_cued_recall"
+  ],
+  "historical_corrections": [
+    {
+      "source_id": "shed_history",
+      "finding": "2021-05-07 state-ID update is under2018 survey documentation, not2019; old2019eligibility citation insufficient",
+      "changed_old_docs": false
+    },
+    {
+      "source_id": "anes_history",
+      "finding": "2021-03-24combinedpre/post preliminary predatesMay2021; fullJuly2021release does not establish blanket unavailability; archive initialversion needed",
+      "changed_old_docs": false
+    }
+  ],
+  "no_direct_supported_religion_sign": true,
+  "new_llm_calls": 0,
+  "new_paid_api_calls": 0,
+  "modified_scope": [
+    "docs/reviews/20261012_mechanism_retro/missing_factors_evidence.md",
+    "docs/reviews/20261012_mechanism_retro/sources_missing_factors.json"
+  ],
+  "sources_403_or_partial_explicitly_marked": true
+}
