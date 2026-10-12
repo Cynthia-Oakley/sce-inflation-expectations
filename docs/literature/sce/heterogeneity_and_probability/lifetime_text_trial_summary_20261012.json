@@ -68,11 +68,249 @@
     "Historical context and compression differ between common and age-matched arms; not a pure matching causal effect.",
     "Qualitative history also shortens context and removes exact age/month/rate details; not pure isolation of CPI digits."
   ],
-  "status": "prepared_and_authorized_by_user_same_scope_budget",
+  "status": "completed_partial_center_improvement_no_upgrade",
   "preparation_path": "outputs/sce_lifetime_text_trial_20261012_v1",
   "targeted_tests": 27,
   "engineering_cells": 12,
   "authorization_quote": "重新再试一次，可以按照原有的模拟预算",
   "cap_usd": 1.5,
-  "new_model_calls": 0
+  "api_calls_during_preparation": 0,
+  "results": {
+    "status": "completed_development_diagnostic",
+    "module_name": "Lifetime Inflation Experience: numeric versus qualitative",
+    "periods": [
+      {
+        "month": "202203",
+        "common_n": [
+          12,
+          12
+        ],
+        "real_median_pp": 5.769130683713755,
+        "real_iqr_pp": 5.334681771323409,
+        "arms": {
+          "original": {
+            "median_pp": 5.8594511146520745,
+            "iqr_pp": 1.2175412635735707,
+            "median_absolute_error_pp": 0.09032043093831987,
+            "distribution_W1_pp": 3.2696871777953174,
+            "IQR_absolute_gap_pp": 4.117140507749839
+          },
+          "numeric_history": {
+            "median_pp": 5.283180089788944,
+            "iqr_pp": 0.8919008520914335,
+            "median_absolute_error_pp": 0.485950593924811,
+            "distribution_W1_pp": 3.5307491407764457,
+            "IQR_absolute_gap_pp": 4.442780919231976
+          },
+          "text_history": {
+            "median_pp": 5.273945181318284,
+            "iqr_pp": 0.6883803359862726,
+            "median_absolute_error_pp": 0.4951855023954699,
+            "distribution_W1_pp": 3.480977427812025,
+            "IQR_absolute_gap_pp": 4.646301435337136
+          }
+        }
+      },
+      {
+        "month": "202209",
+        "common_n": [
+          12,
+          12
+        ],
+        "real_median_pp": 6.114862625549749,
+        "real_iqr_pp": 1.6773401780686603,
+        "arms": {
+          "original": {
+            "median_pp": 6.151196296707701,
+            "iqr_pp": 0.974463188969743,
+            "median_absolute_error_pp": 0.24689803367611196,
+            "distribution_W1_pp": 2.3067772593659543,
+            "IQR_absolute_gap_pp": 0.7028769890989173
+          },
+          "numeric_history": {
+            "median_pp": 5.370331529535457,
+            "iqr_pp": 0.5043019282055288,
+            "median_absolute_error_pp": 0.7445310960142928,
+            "distribution_W1_pp": 2.861379494567804,
+            "IQR_absolute_gap_pp": 1.1730382498631315
+          },
+          "text_history": {
+            "median_pp": 5.781311064170109,
+            "iqr_pp": 0.7200849153239219,
+            "median_absolute_error_pp": 0.3335515613796405,
+            "distribution_W1_pp": 2.548504760932774,
+            "IQR_absolute_gap_pp": 0.9572552627447384
+          }
+        }
+      },
+      {
+        "month": "202303",
+        "common_n": [
+          11,
+          11
+        ],
+        "real_median_pp": 6.026755594670004,
+        "real_iqr_pp": 6.546407868466115,
+        "arms": {
+          "original": {
+            "median_pp": 4.3282782778180175,
+            "iqr_pp": 0.6841109669679302,
+            "median_absolute_error_pp": 1.6984773168519869,
+            "distribution_W1_pp": 4.352587587746512,
+            "IQR_absolute_gap_pp": 5.862296901498185
+          },
+          "numeric_history": {
+            "median_pp": 3.791901099093694,
+            "iqr_pp": 0.35242420467870894,
+            "median_absolute_error_pp": 2.2348544955763106,
+            "distribution_W1_pp": 4.640340588193002,
+            "IQR_absolute_gap_pp": 6.193983663787407
+          },
+          "text_history": {
+            "median_pp": 4.020197024394297,
+            "iqr_pp": 0.561582248805657,
+            "median_absolute_error_pp": 2.0065585702757076,
+            "distribution_W1_pp": 4.560433772329562,
+            "IQR_absolute_gap_pp": 5.984825619660459
+          }
+        }
+      },
+      {
+        "month": "202403",
+        "common_n": [
+          12,
+          11
+        ],
+        "real_median_pp": 2.0,
+        "real_iqr_pp": 2.8420626688800716,
+        "arms": {
+          "original": {
+            "median_pp": 2.100941094768838,
+            "iqr_pp": 0.2695139285893635,
+            "median_absolute_error_pp": 0.10094109476883784,
+            "distribution_W1_pp": 1.5955432899800628,
+            "IQR_absolute_gap_pp": 2.572548740290708
+          },
+          "numeric_history": {
+            "median_pp": 1.9881763258510912,
+            "iqr_pp": 0.1765906372585937,
+            "median_absolute_error_pp": 0.05257081144968545,
+            "distribution_W1_pp": 1.733291113558728,
+            "IQR_absolute_gap_pp": 2.665472031621478
+          },
+          "text_history": {
+            "median_pp": 1.8658646016140743,
+            "iqr_pp": 0.2838940079437964,
+            "median_absolute_error_pp": 0.1341353983859257,
+            "distribution_W1_pp": 1.7651247149353355,
+            "IQR_absolute_gap_pp": 2.5581686609362757
+          }
+        }
+      }
+    ],
+    "averages": {
+      "Q9": {
+        "original": {
+          "median_absolute_error_pp": 0.5341592190588141,
+          "distribution_W1_pp": 2.8811488287219618,
+          "IQR_absolute_gap_pp": 3.3137157846594123
+        },
+        "numeric_history": {
+          "median_absolute_error_pp": 0.879476749241275,
+          "distribution_W1_pp": 3.191440084273995,
+          "IQR_absolute_gap_pp": 3.6188187161259977
+        },
+        "text_history": {
+          "median_absolute_error_pp": 0.7423577581091859,
+          "distribution_W1_pp": 3.0887601690024242,
+          "IQR_absolute_gap_pp": 3.5366377446696524
+        }
+      },
+      "Q8": {
+        "original": {
+          "median_absolute_error_pp": 0.6424851190476193,
+          "distribution_W1_pp": 4.439583333333333,
+          "IQR_absolute_gap_pp": 3.2375
+        },
+        "numeric_history": {
+          "median_absolute_error_pp": 0.6771329365079367,
+          "distribution_W1_pp": 4.55,
+          "IQR_absolute_gap_pp": 3.43125
+        },
+        "text_history": {
+          "median_absolute_error_pp": 0.6761544011544015,
+          "distribution_W1_pp": 4.6312500000000005,
+          "IQR_absolute_gap_pp": 3.41875
+        }
+      }
+    },
+    "comparisons": {
+      "text_history_minus_numeric_history": {
+        "1": {
+          "months_both_improve": 1,
+          "mean_median_error_change_pp": -0.15024048362474485,
+          "mean_W1_change_pp": 0.026516778547327036,
+          "gate": false
+        },
+        "2": {
+          "months_both_improve": 2,
+          "mean_median_error_change_pp": -0.12399749863943321,
+          "mean_W1_change_pp": -0.23187660909046892,
+          "gate": false
+        },
+        "both_repeats_gate": false
+      },
+      "text_history_minus_original": {
+        "1": {
+          "months_both_improve": 0,
+          "mean_median_error_change_pp": 0.19213632960747007,
+          "mean_W1_change_pp": 0.30429789378365824,
+          "gate": false
+        },
+        "2": {
+          "months_both_improve": 0,
+          "mean_median_error_change_pp": 0.2242607484932735,
+          "mean_W1_change_pp": 0.11092478677726714,
+          "gate": false
+        },
+        "both_repeats_gate": false
+      }
+    },
+    "estimated_cost_usd": 0.231522,
+    "not_vendor_invoice": true,
+    "calls": 288,
+    "validation_counts": {
+      "valid": 287,
+      "invalid": 1
+    },
+    "automatic_retries": 0,
+    "request_errors": 0,
+    "text_vs_numeric_median_error_reduction_pct": 15.590973979742117,
+    "mean_cross_person_iqr_pp": {
+      "original": 0.7864073370251519,
+      "numeric_history": 0.48130440555856624,
+      "text_history": 0.563485377014912,
+      "real": 4.100123121684565
+    },
+    "center_difference_intervals_include_zero": 8,
+    "candidate_gate": false,
+    "source": "outputs/sce_lifetime_text_analysis_20261012_v1",
+    "analysis_sha256": "8606f2c08f4f72615c8f4bb2f8c169a251557f8b67ea501a99057754d8a6748e",
+    "limitations": [
+      "National history is a background proxy, not observed personal recall or residence history.",
+      "Era compression and retained information differ between common and matched arms; not a pure matching effect.",
+      "Start ages and 5% duration threshold are research conventions, not estimated universal thresholds.",
+      "Four previously studied periods remain development diagnostics; independent holdout not registered.",
+      "Current-byte history essays and previous news/gasoline limitations remain; not strict forecast B.",
+      "12-person age-balanced samples, four previously examined periods, no independent holdout.",
+      "All existing confidence/CE/news assumptions retained; no new shopping weights or probability reporting instructions.",
+      "No own prior answers, panel memory, core/normal expansion or social interaction.",
+      "Equal count in three age groups is not a nationally representative age distribution.",
+      "Historical context and compression differ between common and age-matched arms; not a pure matching causal effect.",
+      "Qualitative history also shortens context and removes exact age/month/rate details; not pure isolation of CPI digits."
+    ]
+  },
+  "analysis_path": "outputs/sce_lifetime_text_analysis_20261012_v1",
+  "actual_model_calls": 288,
+  "formal_module_upgrade": false
 }
