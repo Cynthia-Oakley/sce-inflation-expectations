@@ -1,0 +1,54 @@
+{
+  "schema_version": "sce-lifetime-episode-catalogue-v1",
+  "status": "research_draft_not_frozen",
+  "meaning": "National historical context, not observed personal memory. Era boundaries are a project partition, not causal identification.",
+  "prompt_intro": "Past U.S. price history: figures show CPI changes over the preceding 12 months. Slower inflation means prices rose more slowly.",
+  "history_through": "last complete calendar year before the existing cutoff; current conditions remain in the original E",
+  "landmark_cap_per_era": 8,
+  "duration_threshold_pct": 5.0,
+  "sources": {
+    "great_inflation": {"file": "data/raw/lifetime_experience/20261012_v1/great_inflation.html", "url": "https://www.federalreservehistory.org/essays/great-inflation", "evidence_class": "retrospective_official_history_current_bytes", "review_date": "2013-11-22"},
+    "recession_1981_82": {"file": "data/raw/lifetime_experience/20261012_v1/recession_1981_82.html", "url": "https://www.federalreservehistory.org/essays/recession-of-1981-82", "evidence_class": "retrospective_official_history_current_bytes", "review_date": "2013-11-22"},
+    "great_recession": {"file": "data/raw/lifetime_experience/20261012_v1/great_recession.html", "url": "https://www.federalreservehistory.org/essays/great-recession-of-200709", "evidence_class": "retrospective_official_history_current_bytes", "review_date": "2013-11-22"},
+    "great_moderation": {"file": "data/raw/lifetime_episodes/20261012_v1/great_moderation.html", "url": "https://www.federalreservehistory.org/essays/great-moderation", "evidence_class": "retrospective_official_history_current_bytes", "review_date": "2013-11-22"},
+    "accord": {"file": "data/raw/lifetime_episodes/20261012_v1/treasury_fed_accord.html", "url": "https://www.federalreservehistory.org/essays/treasury-fed-accord", "evidence_class": "retrospective_official_history_current_bytes", "review_date": "2013-11-22"},
+    "goal_2012": {"file": "data/raw/lifetime_episodes/20261012_v1/fomc_goal_20120125.html", "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20120125c.htm", "evidence_class": "dated_official_statement_current_download", "review_date": "2012-01-25"},
+    "pandemic_2021": {"file": "data/raw/lifetime_episodes/20261012_v1/fomc_pandemic_20211215.html", "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20211215a.htm", "evidence_class": "dated_official_statement_current_download", "review_date": "2021-12-15"},
+    "tightening_2022": {"file": "data/raw/policy_statements/20261011/fomc_20220727.html", "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20220727a.htm", "evidence_class": "dated_official_statement_current_download", "review_date": "2022-07-27"}
+  },
+  "eras": [
+    {"id": "postwar", "start_year": 1945, "end_year": 1964, "label": "Post-war price changes", "facts": [
+      {"id": "accord_1951", "event_start": "1951-03", "event_end": "1951-03", "source_id": "accord", "text": "In 1951 the Treasury and Federal Reserve separated government debt management from monetary policy."}
+    ]},
+    {"id": "stagflation", "start_year": 1965, "end_year": 1980, "label": "Great Inflation and 1970s stagflation", "facts": [
+      {"id": "oil_1973", "event_start": "1973-10", "event_end": "1974-03", "source_id": "great_inflation", "text": "The 1973-1974 oil embargo sharply raised oil costs; inflation and unemployment both increased during the 1970s."},
+      {"id": "oil_1979", "event_start": "1979-01", "event_end": "1979-12", "source_id": "great_inflation", "text": "A second oil disruption occurred in 1979, and the Federal Reserve changed its operating approach that October."}
+    ]},
+    {"id": "disinflation_1980s", "start_year": 1981, "end_year": 1989, "label": "1980s disinflation and recovery", "facts": [
+      {"id": "tight_policy_recession", "event_start": "1981-07", "event_end": "1982-11", "source_id": "recession_1981_82", "text": "Tight monetary policy accompanied the 1981-1982 recession, followed by recovery and lower inflation."}
+    ]},
+    {"id": "moderation_1990s", "start_year": 1990, "end_year": 2006, "label": "1990s and early 2000s: Great Moderation", "facts": [
+      {"id": "moderation", "event_start": "1984-01", "event_end": "2006-12", "source_id": "great_moderation", "text": "The Great Moderation was a period of relatively stable inflation, interrupted by financial shocks."},
+      {"id": "dotcom", "event_start": "2000-01", "event_end": "2000-12", "source_id": "great_moderation", "text": "The dot-com crash interrupted the economic calm in 2000."},
+      {"id": "housing_peak", "event_start": "2006-06", "event_end": "2006-06", "source_id": "great_recession", "text": "U.S. house prices reached a peak around the middle of 2006, before the subsequent financial crisis."}
+    ]},
+    {"id": "financial_crisis", "start_year": 2007, "end_year": 2009, "label": "Financial crisis and Great Recession", "facts": [
+      {"id": "recession_2007_09", "event_start": "2007-12", "event_end": "2009-06", "source_id": "great_recession", "text": "The housing and financial crisis was followed by a deep recession. The Federal Reserve cut its policy rate to 0-0.25% in December 2008."}
+    ]},
+    {"id": "postcrisis", "start_year": 2010, "end_year": 2019, "label": "Post-crisis recovery and low-inflation years", "facts": [
+      {"id": "forward_guidance", "event_start": "2011-08", "event_end": "2011-08", "source_id": "great_recession", "text": "In 2011 the Federal Reserve communicated plans to keep policy rates exceptionally low while the recovery remained weak."},
+      {"id": "pce_goal_2012", "event_start": "2012-01", "event_end": "2012-01", "source_id": "goal_2012", "text": "In 2012 the Federal Reserve announced a longer-run 2% inflation goal measured by PCE, rather than CPI."}
+    ]},
+    {"id": "pandemic", "start_year": 2020, "end_year": 2021, "label": "Pandemic and reopening", "facts": [
+      {"id": "bottlenecks_2021", "event_start": "2021-01", "event_end": "2021-12", "source_id": "pandemic_2021", "text": "By late 2021, the Federal Reserve reported pandemic and reopening-related supply-demand imbalances contributing to inflation."}
+    ]},
+    {"id": "recent_tightening", "start_year": 2022, "end_year": 2099, "label": "Recent high inflation and monetary tightening", "facts": [
+      {"id": "war_and_tightening", "event_start": "2022-02", "event_end": "2022-12", "source_id": "tightening_2022", "text": "In July 2022 the Federal Reserve cited Russia's war against Ukraine as adding inflation pressure and raised its policy-rate target."}
+    ]}
+  ],
+  "policy_notes": [
+    "Never infer a respondent's political affiliation or faith in a named government from the era label.",
+    "Context availability and overlap must be checked separately; unfinished era endpoints are clipped in displayed text.",
+    "Involvement and memory weights are hypotheses; numerical weights are not estimated or injected."
+  ]
+}

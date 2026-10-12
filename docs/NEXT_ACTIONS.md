@@ -1,3 +1,7 @@
+# 2026-10-12 用户七点修订：时代与轨迹生成器完成离线准备
+
+见[literature/sce/heterogeneity_and_probability/episode_generation_20261012.md](literature/sce/heterogeneity_and_probability/episode_generation_20261012.md)。新查Gennaioli等2024-06-24作者稿（SCE/密歇根、选择性记忆；实证16岁起点）和John1999（8-9岁已有价格知识但注意有限），不把战争/油价类比、起点或生活阶段权重称已验证。BLS目录重试SSL、XLSX/PDF403，VPN/证书未改；Harvard/SFU新论文下载也失败，网页阅读已核，4份新Fed网页成功。原ALFRED4版本继续使用。时代库episode_catalogue_20261012.json与生成器lifetime_episodes.py：国别背景＋月度CPI同比起终点/峰谷/转折＋跨章节持续段与回落，假设/出处留侧车，短指标说明进入模型；不称个人真实记忆。6/10/12/16均物化，默认6未冻结，可显式--main-start-age；人生阶段只标示、家庭购物短句关闭、数值权重/概率行为不注入。最终outputs/sce_lifetime_episodes_20261012_v7/：192人月四套背景，原四时期同12人三组144消息，两次候选288；移出年龄细化主组、措辞附加暂缓（均新增0调用）。窗口末端最高值不称已见顶，同一持续段不重复计数；5%是描述阈值，回落未知不补未来。9定向检查、48配对组问卷一致、15待审哈希保持。新4页PDFoutputs/sce_lifetime_episode_reading_pdf_20261012_v1/sce_lifetime_episodes_20261012.pdf：两条实际月度轨迹＋合成示意人物，逐页视觉验收；原HTML/旧PDF/旧结果不覆盖。主试只是消息草案，独立入口/干跑/当前价格、具体新预算和年龄背景发送确认尚待；四时期为开发诊断、独立留出未登记，不自动开API。正式配置/计分/DECISIONS保持，无新LLM/付费MCP；默认288是调用数减少25%，非费用下降25%。
+
 # 2026-10-12 阅读入口补充PDF
 
 用户反馈原HTML阅读页打不开。文件存在、约1MB、HTML结束标签及章节定位正常；自动浏览器读取file协议被安全策略拒绝，未绕过、未启本地HTTP服务，不能据此断言用户浏览器的具体故障。已另生成并逐页查看3页PDF：outputs/sce_lifetime_reading_pdf_20261012_v1/sce_lifetime_reading_20261012.pdf，中文总览与两位合成示意居民的英文背景；原网页和实验输入不改。原始/最终哈希与PDF来源清单在同目录receipt.json。使用PDF原生文件入口，新增LLM/付费MCP0；后续链接优先用无片段的PDF路径，HTML精确定位只作为补充。

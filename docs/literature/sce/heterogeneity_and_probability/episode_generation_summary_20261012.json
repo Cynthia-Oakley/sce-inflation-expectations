@@ -1,0 +1,192 @@
+{
+  "status": "offline_episode_draft_no_model_run",
+  "research_line": "A_historical_reconstruction",
+  "start_age_candidates": [
+    6,
+    10,
+    12,
+    16
+  ],
+  "main_start_age_not_frozen": true,
+  "main_start_age_candidate": 6,
+  "main_arms": [
+    "original",
+    "common_episodes",
+    "age_matched_episodes"
+  ],
+  "age_precision_arm_removed_from_main": true,
+  "optional_age_precision_probe_calls": 0,
+  "template_probe_calls": 0,
+  "new_llm_calls": 0,
+  "n_respondent_months": 192,
+  "source_checks": {
+    "202203": {
+      "vintage_date": "2022-03-10",
+      "as_of": "2022-03-10T23:59:59-05:00",
+      "latest_reference_month": "2022-02",
+      "latest_nsa_index": 283.716,
+      "bls_release_pdf": "data/raw/bls_initial_releases/2022-02/cpi_2022_02_released_2022_03_10.pdf",
+      "bls_sha256": "fda7128b5b41de01031337aead07249b886247fc350ad7d34b41b81e57cd34c9",
+      "release_date_and_latest_value_cross_checked": true,
+      "all_historical_rows_independently_cross_checked": false,
+      "completed_annual_yoy_first_year": 1914,
+      "completed_annual_yoy_last_year": 2021
+    },
+    "202209": {
+      "vintage_date": "2022-09-13",
+      "as_of": "2022-09-13T23:59:59-04:00",
+      "latest_reference_month": "2022-08",
+      "latest_nsa_index": 296.171,
+      "bls_release_pdf": "data/raw/bls_initial_releases/2022-08/cpi_2022_08_released_2022_09_13.pdf",
+      "bls_sha256": "2d4216c35a19addc4c648f25ad335e75a8d3e0a78fb77e0e122d01e2b3bc11b1",
+      "release_date_and_latest_value_cross_checked": true,
+      "all_historical_rows_independently_cross_checked": false,
+      "completed_annual_yoy_first_year": 1914,
+      "completed_annual_yoy_last_year": 2021
+    },
+    "202303": {
+      "vintage_date": "2023-03-14",
+      "as_of": "2023-03-14T23:59:59-04:00",
+      "latest_reference_month": "2023-02",
+      "latest_nsa_index": 300.84,
+      "bls_release_pdf": "data/raw/bls_initial_releases/2023-02/cpi_2023_02_released_2023_03_14.pdf",
+      "bls_sha256": "6310668fe62d6f8dd51f06d37346835683095265584af59b622a4a0f8be35edb",
+      "release_date_and_latest_value_cross_checked": true,
+      "all_historical_rows_independently_cross_checked": false,
+      "completed_annual_yoy_first_year": 1914,
+      "completed_annual_yoy_last_year": 2022
+    },
+    "202403": {
+      "vintage_date": "2024-03-12",
+      "as_of": "2024-03-12T23:59:59-04:00",
+      "latest_reference_month": "2024-02",
+      "latest_nsa_index": 310.326,
+      "bls_release_pdf": "data/raw/bls_initial_releases/2024-02/cpi_2024_02_released_2024_03_12.pdf",
+      "bls_sha256": "50f01126c5705f1f9c87af83883313497f0b002dc2a9470c9e17a7d74ce093fe",
+      "release_date_and_latest_value_cross_checked": true,
+      "all_historical_rows_independently_cross_checked": false,
+      "completed_annual_yoy_first_year": 1914,
+      "completed_annual_yoy_last_year": 2023
+    }
+  },
+  "per_month": {
+    "202203": {
+      "n_person_months": 48,
+      "sample_n": 12,
+      "history_end": "2021-12",
+      "max_prompt_chars": 10155,
+      "common_card_n": 7
+    },
+    "202209": {
+      "n_person_months": 48,
+      "sample_n": 12,
+      "history_end": "2021-12",
+      "max_prompt_chars": 9943,
+      "common_card_n": 7
+    },
+    "202303": {
+      "n_person_months": 48,
+      "sample_n": 12,
+      "history_end": "2022-12",
+      "max_prompt_chars": 10383,
+      "common_card_n": 8
+    },
+    "202403": {
+      "n_person_months": 48,
+      "sample_n": 12,
+      "history_end": "2023-12",
+      "max_prompt_chars": 10335,
+      "common_card_n": 8
+    }
+  },
+  "involvement_weighting": "life-stage labels only; shopping-involvement text disabled, no numerical weights",
+  "limits": [
+    "National history is a background proxy, not observed personal recall or residence history.",
+    "Era compression and retained information differ between common and matched arms; not a pure matching effect.",
+    "Start ages and 5% duration threshold are research conventions, not estimated universal thresholds.",
+    "Four previously studied periods remain development diagnostics; independent holdout not registered.",
+    "Current-byte history essays and previous news/gasoline limitations remain; not strict forecast B."
+  ],
+  "runtime_provider_connected": false,
+  "main_unique_prompts": 144,
+  "candidate_repeats": 2,
+  "main_candidate_calls": 288,
+  "unchanged_old_questionnaire_and_PE": true,
+  "old_15_pending_files_unchanged": true,
+  "old_plan_candidate_calls": 384,
+  "main_call_count_reduction_fraction": 0.25,
+  "code_sha256": "31643a56daea46612528ed477ff13b7306cdefa2a59bec5b387449a44e118f22",
+  "catalogue_sha256": "2d643c91f9620f0330147dea0201dda743c1d97b1fd0bc7756be40843b3346c6",
+  "download_results": [
+    {
+      "url": "https://www.bls.gov/cpi/tables/supplemental-files/home.htm",
+      "filename": "bls_catalogue.html",
+      "accepted_file": false,
+      "error_type": "SSLError"
+    },
+    {
+      "url": "https://www.bls.gov/cpi/tables/supplemental-files/historical-cpi-u-202202.xlsx",
+      "filename": "historical_cpi_u_202202.xlsx",
+      "http_status": 403,
+      "accepted_file": false
+    },
+    {
+      "url": "https://www.bls.gov/cpi/tables/supplemental-files/historical-cpi-u-202202.pdf",
+      "filename": "historical_cpi_u_202202.pdf",
+      "http_status": 403,
+      "accepted_file": false
+    },
+    {
+      "url": "https://shleifer.scholars.harvard.edu/sites/g/files/omnuum10626/files/shleifer/files/inflation_june24-1.pdf",
+      "filename": "selective_memory_20240624.pdf",
+      "http_status": 403,
+      "accepted_file": false
+    },
+    {
+      "url": "https://www.sfu.ca/media-lab/cmns320_06/readings/roedder_john_consumer_socialization.pdf",
+      "filename": "consumer_socialization_1999.pdf",
+      "accepted_file": false,
+      "error_type": "SSLError"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25529327/",
+      "filename": "public_event_memory_2016.html",
+      "http_status": 203,
+      "accepted_file": false
+    },
+    {
+      "url": "https://www.federalreservehistory.org/essays/great-moderation",
+      "filename": "great_moderation.html",
+      "http_status": 200,
+      "accepted_file": true,
+      "sha256": "ad46580a47b9d757444210dc58109b9d9298c58937aad03901d0a92b8f87252e"
+    },
+    {
+      "url": "https://www.federalreservehistory.org/essays/treasury-fed-accord",
+      "filename": "treasury_fed_accord.html",
+      "http_status": 200,
+      "accepted_file": true,
+      "sha256": "4a52d6b83a9046b50f878b871570fe3e801b3480366e82c24cf62a269d1cdaa6"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20120125c.htm",
+      "filename": "fomc_goal_20120125.html",
+      "http_status": 200,
+      "accepted_file": true,
+      "sha256": "16af1d9b8e7ca0fead42b02f0f647ee5e38767ca8ac075b21f974577f436ffbb"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20211215a.htm",
+      "filename": "fomc_pandemic_20211215.html",
+      "http_status": 200,
+      "accepted_file": true,
+      "sha256": "8887b53c9bb5f0fbe260ad13b259b59f6e5bf7b7412c87261ba542697935ea3d"
+    }
+  ],
+  "validation": {
+    "targeted_tests_passed": 9,
+    "main_message_pairs": 48,
+    "questionnaire_same_across_arms": true,
+    "default_examples_identical_v6_v7": true
+  }
+}
