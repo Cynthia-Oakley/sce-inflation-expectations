@@ -1,0 +1,137 @@
+{
+  "status": "offline_prior_transfer_diagnostic",
+  "person_months": 47,
+  "two_generations_averaged_not_counted_as_new_people": true,
+  "new_api_calls": 0,
+  "within_period_descriptive": {
+    "real": {
+      "ols_slope": 0.4947075164905606,
+      "pearson": 0.48858692785058505,
+      "spearman": 0.6599017067983705
+    },
+    "own_previous": {
+      "ols_slope": 0.1344151277163973,
+      "pearson": 0.6705284345799342,
+      "spearman": 0.7117252543940795
+    }
+  },
+  "paired_prior_assignment_response": {
+    "slope_through_origin": 0.08146449449826257,
+    "spearman": 0.628700277520814,
+    "mean_absolute_prior_difference_pp": 4.900383171646815,
+    "mean_absolute_model_response_difference_pp": 0.7739667958155289,
+    "limitation": "Joint Q8/Q9 prior assignment changes; not a pure Q9 causal coefficient or an optimal update weight."
+  },
+  "limitations": [
+    "Four examined small development periods; not nationwide or holdout.",
+    "Real association is descriptive, confounded by P and common trends; not a learning coefficient.",
+    "Simulator association uses generation-averaged outputs; cannot directly call it a causal shrinkage weight."
+  ],
+  "evaluation_source": "outputs/sce_prior_analysis_20261013_v1/paired_evaluation_private.json",
+  "evaluation_source_sha256": "3076b2c668699d258dc154a4a195c9a756cc90c2586efd0c8429ba722563e6a8",
+  "raw_Q8_averaged_cross_person_IQR": {
+    "real": 5.75,
+    "own_prior": 6.15625,
+    "no_prior": 0.55,
+    "own_previous": 0.659375,
+    "permuted_previous": 0.434375
+  },
+  "raw_Q8_cells": [
+    {
+      "month": "202203",
+      "repeat": 1,
+      "n": 12,
+      "raw_Q8_cross_person_IQR": {
+        "real": 6.25,
+        "own_prior": 3.375,
+        "no_prior": 1.125,
+        "own_previous": 1.5,
+        "permuted_previous": 1.125
+      }
+    },
+    {
+      "month": "202203",
+      "repeat": 2,
+      "n": 12,
+      "raw_Q8_cross_person_IQR": {
+        "real": 6.25,
+        "own_prior": 3.375,
+        "no_prior": 1.0,
+        "own_previous": 0.75,
+        "permuted_previous": 0.0
+      }
+    },
+    {
+      "month": "202209",
+      "repeat": 1,
+      "n": 12,
+      "raw_Q8_cross_person_IQR": {
+        "real": 9.0,
+        "own_prior": 14.5,
+        "no_prior": 0.5,
+        "own_previous": 0.125,
+        "permuted_previous": 0.125
+      }
+    },
+    {
+      "month": "202209",
+      "repeat": 2,
+      "n": 12,
+      "raw_Q8_cross_person_IQR": {
+        "real": 9.0,
+        "own_prior": 14.5,
+        "no_prior": 0.5,
+        "own_previous": 1.125,
+        "permuted_previous": 0.625
+      }
+    },
+    {
+      "month": "202303",
+      "repeat": 1,
+      "n": 12,
+      "raw_Q8_cross_person_IQR": {
+        "real": 4.25,
+        "own_prior": 4.25,
+        "no_prior": 0.75,
+        "own_previous": 0.625,
+        "permuted_previous": 0.5
+      }
+    },
+    {
+      "month": "202303",
+      "repeat": 2,
+      "n": 12,
+      "raw_Q8_cross_person_IQR": {
+        "real": 4.25,
+        "own_prior": 4.25,
+        "no_prior": 0.125,
+        "own_previous": 1.0,
+        "permuted_previous": 1.0
+      }
+    },
+    {
+      "month": "202403",
+      "repeat": 1,
+      "n": 12,
+      "raw_Q8_cross_person_IQR": {
+        "real": 3.5,
+        "own_prior": 2.5,
+        "no_prior": 0.20000000000000018,
+        "own_previous": 0.02499999999999991,
+        "permuted_previous": 0.10000000000000009
+      }
+    },
+    {
+      "month": "202403",
+      "repeat": 2,
+      "n": 12,
+      "raw_Q8_cross_person_IQR": {
+        "real": 3.5,
+        "own_prior": 2.5,
+        "no_prior": 0.20000000000000018,
+        "own_previous": 0.125,
+        "permuted_previous": 0.0
+      }
+    }
+  ]
+}
