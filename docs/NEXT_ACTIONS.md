@@ -1,5 +1,7 @@
 # 2026-10-13 先验库存与三组对照输入完成（最新）
 
+**提示阅读补充：** [完整三组提示入口](literature/sce/factual_mechanisms_20261013/prior_prompt_preview.md)。已按v4排序首例导出三份完整英文TXT及中文说明到`outputs/sce_prior_prompt_preview_20261013_v1/`；每组一条user消息，5459/5947/5954字符，源哈希与消息哈希核验通过。新调用0、配置不变；本人先验是A线真实t-1，未冒称B自己的模拟状态。个人例子只留本地输出，下一项独立运行入口仍待。
+
 读[先验准备结果与下一步](literature/sce/factual_mechanisms_20261013/prior_preparation_receipt.md)、[无个人汇总](literature/sce/factual_mechanisms_20261013/prior_preparation_summary.json)。补130216条tenure/调查日期/Q8与旧Q9缓存键对账：112182有效tenure相邻观测全部随作答加一，含6668日历漏访；tenure不是日历月，旧过严规则已修正。893条13—16作答次数另列，2022-09有73条，首轮不强行改写。四个既有开发期原48人中40/37/42/40有可用本人t-1；每期按年龄4×3选12，三组两遍288候选，当前P/E/问卷保持。19名新人全部支持历史联合Q8/Q9候选，未接运行。最终outputs/sce_prior_preparation_20261013_v4/，核验outputs/sce_prior_validation_20261013_v2/；十项测试、288完整复建及192绑定/本期答案权重扰动检查通过。复用96旧无先验答案，94可比；人际IQR真人5.50/上期延续4.39/旧LLM0.59pp，但延续中心误差并非每期较好，只支持继续检验更新。历史B旧版本未认证；未来B可封存当前可得资料。**本轮新API0，新增机制效果未测，未建真实执行入口/改配置，MIDUS原始数据未处理。** 下一项独立runner与确定性轨迹→当前模型价格和包含真实t-1问卷的明确范围预算卡→小试→登记独立时期→自身状态连续模拟。旧15待审哈希不变，DECISIONS不动；提交scoped add。
 
 # 2026-10-13 MIDUS下载与连续信念研究准备完成
