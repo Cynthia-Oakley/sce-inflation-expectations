@@ -1,3 +1,7 @@
+# 2026-10-13 MIDUS下载与连续信念研究准备完成
+
+入口：[MIDUS文件、码本字段与本地统计操作](literature/sce/factual_mechanisms_20261013/midus_preparation.md)、[诺奖及信念更新研究](literature/sce/factual_mechanisms_20261013/nobel_belief_dynamics.md)、[连续滚动协议草案](literature/sce/factual_mechanisms_20261013/continuous_belief_protocol.md)。用户已注册，使用Chrome登录定位并下载M2/MR1两份SAV到Downloads/sce_midus_private_20261013；10份公开PDF含量表、码本、问卷/权重说明和作者论文归档，独立年龄PDF链接404保留记录。**未读个体、未发API、未在真数据执行统计**。公开码本驱动的用户本地统计入口summarize_midus_local.py完成，四项人工数据测试通过；pyreadstat1.3.6安装到既有环境。首版只出有支持的年龄/教育分组联合摘要，不输出个体；现实数据输出仍由用户审阅协议。MR1原始2016发布、现2025新增SAQ权重，不能自动用在2021年B。用户接受B自己信念滚动和经验初始信念：以后按1/3/6/12日历月看总体误差累积，真人最多11次相邻更新；目前仅草案未接运行。诺奖KVA公告核实Hall/Woodford，有限记忆/非理性预期作为机制启发，不搬理论参数或注入概率习惯。下一步用户在普通终端处理隔离数据；Agent先验tenure/PIT与状态来源准备，取得允许的汇总后再审心理分布。新付费调用0、旧P/E/B/计分配置与15待审保留，DECISIONS未改。
+
 # 2026-10-13 先验来源/新入组/注册及AI访问条款补核
 
 见[操作说明](literature/sce/factual_mechanisms_20261013/registration_and_initialization.md)。先验先做A线真实t-1条件诊断，正式连续模拟用自己生成的上期状态；B不能逐月读真实t-1微观。新入组先验按历史真入组、共同P下的经验分布初始化；缺就业/收入前态的Diff为unknown，Q1仍可描述过去12月。UAS注册与MIDUS/NACDA公开数据免费，由用户本人用学校邮箱注册/接受协议。**本轮发现UAS与MIDUS现行AI限制，修正此前仅考虑账号的方案：不让Agent接触这两项微观，不放AI索引工作区；用户隔离用普通统计程序处理，依据允许汇总考虑合成人格，具体输出仍须协议确认。**UAS规则更新2026-09-19，MIDUS注册页亦有禁止公共/不保密外部AI上传条款。两个项目微观均未取得/上传。未注册、签署、发邮件或新增API；既有15待审保留。
