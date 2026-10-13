@@ -1,4 +1,6 @@
-**2026-10-13 协作最新：**见[水平分工](workstreams/20261013_behavior/coordination.md)。Codex概率报告线首轮已完成：[结果与统计解释](workstreams/20261013_behavior/codex_results.md)、[聚合汇总](workstreams/20261013_behavior/codex_summary.json)。46月本人历史预测填法有增量，不能认定心理风格；机械取整仍未恢复人际差异。主预登记和事后登记探索性控制分开，新增API0/旧配置不改。下一项与Kimi更新结果汇合，执行进度以其文件为准；公共文件Codex整合，15待审保护。
+**2026-10-13 概率填法后续最新：**[离线映射结果](workstreams/20261013_behavior/codex_mapping_results.md)、[聚合汇总](workstreams/20261013_behavior/codex_mapping_summary.json)、[先登记协议](workstreams/20261013_behavior/codex_mapping_protocol.json)。四期各12人两遍，94有效Q9配对/47人月，三臂共282问卷；本人/同月打乱/原回答，五种子全部保存。主种子本人中心MAE1.318→1.222pp/W1 3.102→3.027pp/IQR1.060→1.081pp，对真人经验IQR6.249pp；打乱中心1.227pp，主要区间跨0，无清晰身份增量。表达形式更像但未恢复信念差异，不升级主机制、不自动开新API。12定向测试、48真实答案扰动/47旧历史预测对账及独立Scipy评分通过；15待审/P/E/计分/原回答/Q8/Kimi文件保持，API0/$0。结果sce_reporting_mapping_20261013_v1、阅读sce_reporting_mapping_reading_20261013_v2（v1排版稿保留），个人行仅outputs。下一重点建议Kimi个人信念保留/更新，再汇合定真实配置和预算。下段为首轮记录。
+
+**2026-10-13 协作首轮：**见[水平分工](workstreams/20261013_behavior/coordination.md)。Codex概率报告线首轮已完成：[结果与统计解释](workstreams/20261013_behavior/codex_results.md)、[聚合汇总](workstreams/20261013_behavior/codex_summary.json)。46月本人历史预测填法有增量，不能认定心理风格；机械取整仍未恢复人际差异。主预登记和事后登记探索性控制分开，新增API0/旧配置不改。两条线交叉复核与后续分工见最新清单；公共文件Codex整合，15待审保护。
 
 **2026-10-13 最新方向讨论：**先读[行为机制与微观评价复盘](reviews/20261012_mechanism_retro/behavior_reorientation_20261013.md)及NEXT_ACTIONS顶部。用户主张把f作为主线；先研究个人信念保留/更新，概率表达另对照，不能用增加方差代替有效重建。W1/更新分布/排序与宏观误差共同报告；个人长期偏移不等于惯性，方差分解需处理短轮换面板及协方差。仅方向记录，未改运行/主指标/预算，15待审保护。
 

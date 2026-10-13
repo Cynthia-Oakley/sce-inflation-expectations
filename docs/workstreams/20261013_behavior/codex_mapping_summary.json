@@ -1,0 +1,497 @@
+{
+  "status": "completed_offline",
+  "source": "outputs/sce_reporting_mapping_20261013_v1",
+  "source_summary_sha256": "db6d5d4cd481b1df8ccbe3b4972c3511759ddb3bc00b908555f88921f00f13de",
+  "coverage": {
+    "roster_person_months": 48,
+    "input_q9_rows": 96,
+    "valid_q9_rows": 94,
+    "valid_person_months": 47,
+    "persons": 47,
+    "excluded_rows": 2,
+    "mapping_only_failures": 0
+  },
+  "history": {
+    "past_n_min": 1,
+    "past_n_max": 11,
+    "no_history_person_months": 0
+  },
+  "primary_style_seed": 42,
+  "primary_model_arm": "own_previous",
+  "primary_results": {
+    "native": {
+      "sample_center_mae_pp": 1.3176417423740423,
+      "cross_section_w1_pp": 3.1023133931510607,
+      "cross_person_iqr_gap_pp": 5.189313840721141,
+      "delta_w1_pp": 1.786234020490486,
+      "cross_person_iqr_pp": 1.059802383800474,
+      "real_cross_person_iqr_pp": 6.2491162245216145,
+      "center_bias_pp": 0.39125394731126273,
+      "individual_mae_pp": 3.430160623586011,
+      "zero_deflation_fraction": 0.0946969696969697,
+      "mean_nonzero_bins": 8.254734848484848,
+      "personal_density_iqr_mean_pp": 4.2048234241344495,
+      "family_change_fraction": 0.0,
+      "centered_w1_pp": 2.9618008431906064,
+      "spearman": 0.3444945432470831,
+      "observed_grid_proportions": [
+        0.9356060606060606,
+        0.06439393939393939,
+        0.0
+      ]
+    },
+    "personal_history_mapping": {
+      "sample_center_mae_pp": 1.2223679385574235,
+      "cross_section_w1_pp": 3.026872187503893,
+      "cross_person_iqr_gap_pp": 5.167888232973979,
+      "delta_w1_pp": 1.7793710409599932,
+      "cross_person_iqr_pp": 1.0812279915476357,
+      "real_cross_person_iqr_pp": 6.2491162245216145,
+      "center_bias_pp": 0.651012866453452,
+      "individual_mae_pp": 3.409526127868462,
+      "zero_deflation_fraction": 0.5113636363636364,
+      "mean_nonzero_bins": 5.300189393939394,
+      "personal_density_iqr_mean_pp": 4.2532869283084285,
+      "family_change_fraction": 0.0,
+      "centered_w1_pp": 2.917382087781711,
+      "spearman": 0.2964751881633504,
+      "observed_grid_proportions": [
+        0.14583333333333331,
+        0.3939393939393939,
+        0.4602272727272727
+      ]
+    },
+    "uniform_grid_5": {
+      "sample_center_mae_pp": 1.2212043959453345,
+      "cross_section_w1_pp": 3.0766395987745656,
+      "cross_person_iqr_gap_pp": 5.092271385420493,
+      "delta_w1_pp": 1.819523538784006,
+      "cross_person_iqr_pp": 1.156844839101122,
+      "real_cross_person_iqr_pp": 6.2491162245216145,
+      "center_bias_pp": 0.596574533519941,
+      "individual_mae_pp": 3.4024723375162518,
+      "zero_deflation_fraction": 0.3797348484848485,
+      "mean_nonzero_bins": 5.267045454545455,
+      "personal_density_iqr_mean_pp": 4.289390706878109,
+      "family_change_fraction": 0.0,
+      "centered_w1_pp": 2.9660569521132754,
+      "spearman": 0.3488134890333234,
+      "observed_grid_proportions": [
+        0.0,
+        0.9886363636363636,
+        0.011363636363636364
+      ]
+    },
+    "uniform_grid_10": {
+      "sample_center_mae_pp": 1.1938137664787192,
+      "cross_section_w1_pp": 2.966779607058652,
+      "cross_person_iqr_gap_pp": 4.904745255678932,
+      "delta_w1_pp": 1.83792811849426,
+      "cross_person_iqr_pp": 1.3443709688426821,
+      "real_cross_person_iqr_pp": 6.2491162245216145,
+      "center_bias_pp": 0.608427303274611,
+      "individual_mae_pp": 3.467289790702875,
+      "zero_deflation_fraction": 0.6922348484848485,
+      "mean_nonzero_bins": 4.321969696969697,
+      "personal_density_iqr_mean_pp": 4.212111983389089,
+      "family_change_fraction": 0.0,
+      "centered_w1_pp": 2.853468950710013,
+      "spearman": 0.23190323404788254,
+      "observed_grid_proportions": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "permuted_history_mapping": {
+      "sample_center_mae_pp": 1.2274376172908894,
+      "cross_section_w1_pp": 3.0394702904688295,
+      "cross_person_iqr_gap_pp": 5.040292496823429,
+      "delta_w1_pp": 1.8285834886372518,
+      "cross_person_iqr_pp": 1.208823727698187,
+      "real_cross_person_iqr_pp": 6.249116224521615,
+      "center_bias_pp": 0.5834411408737883,
+      "individual_mae_pp": 3.4548887225160794,
+      "zero_deflation_fraction": 0.4783712121212121,
+      "mean_nonzero_bins": 5.2696022727272736,
+      "family_change_fraction": 0.0,
+      "observed_grid_proportions": [
+        0.13562500000000002,
+        0.4014204545454544,
+        0.4629545454545457
+      ]
+    }
+  },
+  "primary_bootstrap": {
+    "persons": 47,
+    "draws_requested": 1000,
+    "draws_used": 1000,
+    "discarded_empty_month_draws": 0,
+    "contrasts": {
+      "personal_minus_native": {
+        "sample_center_mae_pp": {
+          "interval_95": [
+            -0.30019245998813604,
+            0.21007309084387218
+          ],
+          "difference": -0.09527380381661876
+        },
+        "cross_section_w1_pp": {
+          "interval_95": [
+            -0.15155813834538714,
+            0.057233613633623955
+          ],
+          "difference": -0.07544120564716783
+        },
+        "cross_person_iqr_gap_pp": {
+          "interval_95": [
+            -0.30930303553094923,
+            0.2383984771205064
+          ],
+          "difference": -0.021425607747161735
+        },
+        "delta_w1_pp": {
+          "interval_95": [
+            -0.12435882965359837,
+            0.13696045989064942
+          ],
+          "difference": -0.006862979530492863
+        },
+        "cross_person_iqr_pp": {
+          "interval_95": [
+            -0.2135615772530312,
+            0.3421994380001687
+          ],
+          "difference": 0.021425607747161735
+        },
+        "real_cross_person_iqr_pp": {
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "difference": 0.0
+        },
+        "center_bias_pp": {
+          "interval_95": [
+            0.09516219198073768,
+            0.4621218830270227
+          ],
+          "difference": 0.2597589191421893
+        },
+        "individual_mae_pp": {
+          "interval_95": [
+            -0.10998130672546406,
+            0.07388365691317005
+          ],
+          "difference": -0.02063449571754905
+        }
+      },
+      "personal_minus_permutation_mean": {
+        "sample_center_mae_pp": {
+          "interval_95": [
+            -0.11509439795346503,
+            0.10826150092392446
+          ],
+          "difference": -0.0050696787334658655
+        },
+        "cross_section_w1_pp": {
+          "interval_95": [
+            -0.09079922754660333,
+            0.043268225328301164
+          ],
+          "difference": -0.012598102964936686
+        },
+        "cross_person_iqr_gap_pp": {
+          "interval_95": [
+            -0.19656014022634832,
+            0.26415738869077743
+          ],
+          "difference": 0.12759573615055064
+        },
+        "delta_w1_pp": {
+          "interval_95": [
+            -0.10870988111174502,
+            0.035052075858268784
+          ],
+          "difference": -0.04921244767725863
+        },
+        "cross_person_iqr_pp": {
+          "interval_95": [
+            -0.267173383506083,
+            0.20629563559147085
+          ],
+          "difference": -0.1275957361505513
+        },
+        "real_cross_person_iqr_pp": {
+          "interval_95": [
+            -6.483702463810914e-14,
+            4.796163466380676e-14
+          ],
+          "difference": -8.881784197001252e-16
+        },
+        "center_bias_pp": {
+          "interval_95": [
+            -0.07720364423870583,
+            0.1541287559813745
+          ],
+          "difference": 0.06757172557966373
+        },
+        "individual_mae_pp": {
+          "interval_95": [
+            -0.1190475600990333,
+            0.022453828521066362
+          ],
+          "difference": -0.04536259464761727
+        }
+      }
+    },
+    "scope": "whole observed respondent across all target months and both generation repeats; renormalize each month; comparisons personal vs native and personal vs mean of 50 permutation metric results; primary style seed only, conditional on fixed assignments, histories and mapping; not a permutation p-value or nationwide interval"
+  },
+  "seed_sensitivity": [
+    {
+      "seed": 42,
+      "personal": {
+        "sample_center_mae_pp": 1.2223679385574235,
+        "cross_section_w1_pp": 3.026872187503893,
+        "cross_person_iqr_gap_pp": 5.167888232973979,
+        "delta_w1_pp": 1.7793710409599932,
+        "cross_person_iqr_pp": 1.0812279915476357,
+        "real_cross_person_iqr_pp": 6.2491162245216145,
+        "center_bias_pp": 0.651012866453452,
+        "individual_mae_pp": 3.409526127868462,
+        "zero_deflation_fraction": 0.5113636363636364,
+        "mean_nonzero_bins": 5.300189393939394,
+        "personal_density_iqr_mean_pp": 4.2532869283084285,
+        "family_change_fraction": 0.0,
+        "centered_w1_pp": 2.917382087781711,
+        "spearman": 0.2964751881633504,
+        "observed_grid_proportions": [
+          0.14583333333333331,
+          0.3939393939393939,
+          0.4602272727272727
+        ]
+      },
+      "permutation": {
+        "sample_center_mae_pp": 1.2274376172908894,
+        "cross_section_w1_pp": 3.0394702904688295,
+        "cross_person_iqr_gap_pp": 5.040292496823429,
+        "delta_w1_pp": 1.8285834886372518,
+        "cross_person_iqr_pp": 1.208823727698187,
+        "real_cross_person_iqr_pp": 6.249116224521615,
+        "center_bias_pp": 0.5834411408737883,
+        "individual_mae_pp": 3.4548887225160794,
+        "zero_deflation_fraction": 0.4783712121212121,
+        "mean_nonzero_bins": 5.2696022727272736,
+        "family_change_fraction": 0.0,
+        "observed_grid_proportions": [
+          0.13562500000000002,
+          0.4014204545454544,
+          0.4629545454545457
+        ]
+      }
+    },
+    {
+      "seed": 104729,
+      "personal": {
+        "sample_center_mae_pp": 1.24497359929895,
+        "cross_section_w1_pp": 3.0415280220735674,
+        "cross_person_iqr_gap_pp": 5.035080052317911,
+        "delta_w1_pp": 1.8183900870065937,
+        "cross_person_iqr_pp": 1.2140361722037047,
+        "real_cross_person_iqr_pp": 6.2491162245216145,
+        "center_bias_pp": 0.6166426451123074,
+        "individual_mae_pp": 3.4113497472980363,
+        "zero_deflation_fraction": 0.4706439393939394,
+        "mean_nonzero_bins": 5.446022727272727,
+        "personal_density_iqr_mean_pp": 4.269611783312139,
+        "family_change_fraction": 0.0,
+        "centered_w1_pp": 2.9248441310350586,
+        "spearman": 0.3255435278911069,
+        "observed_grid_proportions": [
+          0.1893939393939394,
+          0.3693181818181818,
+          0.44128787878787873
+        ]
+      },
+      "permutation": {
+        "sample_center_mae_pp": 1.2369574821648002,
+        "cross_section_w1_pp": 3.0367651046490223,
+        "cross_person_iqr_gap_pp": 5.027828449258258,
+        "delta_w1_pp": 1.8307013879181977,
+        "cross_person_iqr_pp": 1.2212877752633575,
+        "real_cross_person_iqr_pp": 6.249116224521615,
+        "center_bias_pp": 0.5796196310436006,
+        "individual_mae_pp": 3.4594130108799606,
+        "zero_deflation_fraction": 0.46276515151515146,
+        "mean_nonzero_bins": 5.4300378787878785,
+        "family_change_fraction": 0.0,
+        "observed_grid_proportions": [
+          0.1748863636363636,
+          0.3838257575757575,
+          0.44128787878787884
+        ]
+      }
+    },
+    {
+      "seed": 130363,
+      "personal": {
+        "sample_center_mae_pp": 1.2087169029105864,
+        "cross_section_w1_pp": 3.0036726475419875,
+        "cross_person_iqr_gap_pp": 5.093861838248608,
+        "delta_w1_pp": 1.781535917347931,
+        "cross_person_iqr_pp": 1.1552543862730076,
+        "real_cross_person_iqr_pp": 6.2491162245216145,
+        "center_bias_pp": 0.5596403050573195,
+        "individual_mae_pp": 3.428033564395089,
+        "zero_deflation_fraction": 0.46875,
+        "mean_nonzero_bins": 5.672348484848484,
+        "personal_density_iqr_mean_pp": 4.218325189125005,
+        "family_change_fraction": 0.0,
+        "centered_w1_pp": 2.8981477733095224,
+        "spearman": 0.2691420919838844,
+        "observed_grid_proportions": [
+          0.22916666666666666,
+          0.38257575757575757,
+          0.38825757575757575
+        ]
+      },
+      "permutation": {
+        "sample_center_mae_pp": 1.243068296432586,
+        "cross_section_w1_pp": 3.0297780614169523,
+        "cross_person_iqr_gap_pp": 5.009826997237821,
+        "delta_w1_pp": 1.8257048246298,
+        "cross_person_iqr_pp": 1.239289227283795,
+        "real_cross_person_iqr_pp": 6.249116224521615,
+        "center_bias_pp": 0.5550938485679807,
+        "individual_mae_pp": 3.4581788971241965,
+        "zero_deflation_fraction": 0.44804924242424243,
+        "mean_nonzero_bins": 5.596704545454545,
+        "family_change_fraction": 0.0,
+        "observed_grid_proportions": [
+          0.2210416666666667,
+          0.3818371212121213,
+          0.397121212121212
+        ]
+      }
+    },
+    {
+      "seed": 99991,
+      "personal": {
+        "sample_center_mae_pp": 1.2425871965311361,
+        "cross_section_w1_pp": 3.0281144525016215,
+        "cross_person_iqr_gap_pp": 5.15367914891597,
+        "delta_w1_pp": 1.8105125490884544,
+        "cross_person_iqr_pp": 1.0954370756056457,
+        "real_cross_person_iqr_pp": 6.2491162245216145,
+        "center_bias_pp": 0.5075213307400493,
+        "individual_mae_pp": 3.4514446092487416,
+        "zero_deflation_fraction": 0.4261363636363636,
+        "mean_nonzero_bins": 5.680871212121212,
+        "personal_density_iqr_mean_pp": 4.2668287277943335,
+        "family_change_fraction": 0.0,
+        "centered_w1_pp": 2.899060266329589,
+        "spearman": 0.2610369403299113,
+        "observed_grid_proportions": [
+          0.2556818181818182,
+          0.3181818181818182,
+          0.42613636363636365
+        ]
+      },
+      "permutation": {
+        "sample_center_mae_pp": 1.2573984442551747,
+        "cross_section_w1_pp": 3.0427889672500346,
+        "cross_person_iqr_gap_pp": 5.048547711990255,
+        "delta_w1_pp": 1.8182667592240986,
+        "cross_person_iqr_pp": 1.2005685125313603,
+        "real_cross_person_iqr_pp": 6.249116224521615,
+        "center_bias_pp": 0.548206830390573,
+        "individual_mae_pp": 3.446629261935282,
+        "zero_deflation_fraction": 0.4523106060606061,
+        "mean_nonzero_bins": 5.610757575757574,
+        "family_change_fraction": 0.0,
+        "observed_grid_proportions": [
+          0.23401515151515156,
+          0.32780303030303026,
+          0.43818181818181823
+        ]
+      }
+    },
+    {
+      "seed": 271828,
+      "personal": {
+        "sample_center_mae_pp": 1.1904524325130659,
+        "cross_section_w1_pp": 3.0197508161202586,
+        "cross_person_iqr_gap_pp": 5.084021547228459,
+        "delta_w1_pp": 1.7848815405322136,
+        "cross_person_iqr_pp": 1.165094677293156,
+        "real_cross_person_iqr_pp": 6.2491162245216145,
+        "center_bias_pp": 0.5679513222942828,
+        "individual_mae_pp": 3.4699502269233244,
+        "zero_deflation_fraction": 0.4375,
+        "mean_nonzero_bins": 5.886363636363637,
+        "personal_density_iqr_mean_pp": 4.224178541294206,
+        "family_change_fraction": 0.0,
+        "centered_w1_pp": 2.900277149912383,
+        "spearman": 0.2507748887925152,
+        "observed_grid_proportions": [
+          0.32954545454545453,
+          0.24431818181818182,
+          0.42613636363636365
+        ]
+      },
+      "permutation": {
+        "sample_center_mae_pp": 1.2540100159278342,
+        "cross_section_w1_pp": 3.043403644631972,
+        "cross_person_iqr_gap_pp": 5.05620754908965,
+        "delta_w1_pp": 1.8042595309959757,
+        "cross_person_iqr_pp": 1.1929086754319653,
+        "real_cross_person_iqr_pp": 6.249116224521615,
+        "center_bias_pp": 0.5279627065740253,
+        "individual_mae_pp": 3.4483972427292326,
+        "zero_deflation_fraction": 0.4190909090909091,
+        "mean_nonzero_bins": 5.877443181818182,
+        "family_change_fraction": 0.0,
+        "observed_grid_proportions": [
+          0.31971590909090913,
+          0.24187499999999995,
+          0.43840909090909086
+        ]
+      }
+    }
+  ],
+  "real_current_shape": {
+    "observed_grid_proportions": [
+      0.1268939393939394,
+      0.3200757575757575,
+      0.553030303030303
+    ],
+    "zero_deflation_fraction": 0.6590909090909091,
+    "mean_nonzero_bins": 4.583333333333333
+  },
+  "independent_audit": {
+    "independent_metric_max_abs_difference": 4.440892098500626e-16,
+    "independent_mapping_max_abs_difference": 0.0,
+    "history_profiles_compared_with_prior_run": 47,
+    "prior_run_class_probability_max_abs_difference": 0.0,
+    "actual_target_future_mutations_checked": 48,
+    "target_future_mutation_max_abs_difference": 0.0,
+    "roster_tie_break_boundary_fraction_among_grid_variants": 0.3871527777777778,
+    "common_valid_rows": 94,
+    "new_api_calls": 0
+  },
+  "new_api_calls": 0,
+  "api_cost_usd": 0,
+  "interpretation": "Limited measurement-format improvement; no clear identity-specific advantage or recovery of cross-person heterogeneity; no automatic new simulation.",
+  "source_hashes": {
+    "outputs/sce_age_reporting_audit_20261012_v1/reference_private.parquet": "86414d573d053b72ef20906dcc448ee9476f1679f86833144babd17bd433dc1b",
+    "outputs/sce_prior_analysis_20261013_v1/paired_evaluation_private.json": "3076b2c668699d258dc154a4a195c9a756cc90c2586efd0c8429ba722563e6a8",
+    "outputs/sce_prior_trial_20261013_v2/evaluation_links_private.json": "a4ea8cff1bd78048af0cbc939bdc6c0f8c194f63b90dba7396232429b47164de",
+    "outputs/sce_reporting_behavior_20261013_v1/fitted_tables.json": "6704c900deb103a85058cc074f42d2a76608a5c1fa533ffbce71474612436163",
+    "docs/workstreams/20261013_behavior/codex_protocol.json": "fc1a0fe06c9a7a18b61fc268e614ffcc4bdb220c01296ce13b16a431edb6b519",
+    "docs/workstreams/20261013_behavior/codex_mapping_protocol.json": "6925efc18b1114dea711efbc102a6cd8ad09f6d35a6952d34a05327ff1678db0"
+  },
+  "analysis_code_hashes": {
+    "studies/sce_inflation_expectations/reporting_behavior/mapping.py": "515f43898cd992bdb08ccb72c4ede64d93c8ae23242bf9cc96d8637e931dfb47"
+  },
+  "report_code_sha256": "2dc7f7d2c51bbc08d57dc202da3acef4bb42fc4e43172603d110355605f7f478"
+}

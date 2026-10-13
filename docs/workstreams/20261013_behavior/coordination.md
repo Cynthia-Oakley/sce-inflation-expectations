@@ -1,6 +1,6 @@
 # Codex与Kimi的水平分工
 
-2026-10-13。最新状态：Kimi已经启动，具体进度以Kimi记录为准；Codex首轮概率报告分析已交付[codex_results.md](codex_results.md)及聚合汇总。两条线仍无新增真实模拟调用；下一项汇合结果后登记对照。下文保留最初分工约定。
+2026-10-13。最新状态：两条线首轮分析与交叉复核已完成；Codex个人填法映射的零API验证已交付[codex_mapping_results.md](codex_mapping_results.md)。格式更像、总体误差小幅变化，但没有恢复人际差异或确认身份增量。目录已见Kimi新增个人基准/状态交付，尚未审阅，下一项汇合复核；分工见[joint_next_steps.md](joint_next_steps.md)。具体新Simulation配置与预算未冻结。下文保留最初分工约定。
 
 ## 为什么这样分
 
