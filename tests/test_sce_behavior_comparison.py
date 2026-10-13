@@ -8,7 +8,7 @@ from scipy.stats import wasserstein_distance
 
 from studies.sce_inflation_expectations.evaluation.behavior_comparison import (
     BIN_FIELDS, MAIN, history_baselines, import_extra, paired_intervals,
-    score, screen_candidate, summarize,
+    planned_comparisons, guidance_membership, score, screen_candidate, summarize,
 )
 
 
@@ -149,3 +149,28 @@ def test_invalid_probabilities_never_become_good_forecasts():
     assert score(None)["mean"] is None
     assert score([np.nan]*10)["mean"] is None
     assert score(bins(4))["mean"] == 1
+
+
+def test_guidance_is_compared_directly_and_original_protocol_stays_compatible():
+    protocol = {"llm_arms": ["no_prior", "own_previous", "permuted_previous"],
+                "extra_contrasts": [["own_state_guided", "own_state"]]}
+    pairs = planned_comparisons(protocol, ["own_state", "own_state_guided"], ["copy_previous"])
+    assert ("own_state_guided", "own_state") in pairs
+    assert ("own_state_guided", "own_previous") in pairs
+    assert len(pairs) == len(set(pairs))
+    assert ("own_state_guided", "own_state") not in planned_comparisons(protocol, [], ["copy_previous"])
+
+
+def test_guidance_membership_is_frozen_before_current_outcomes(tmp_path):
+    records = [{"month": 202203, "agent_id": "a", "userid": 1, "guidance_active": True},
+               {"month": 202203, "agent_id": "b", "userid": 2, "guidance_active": False}]
+    path = tmp_path/"membership.json"
+    path.write_text(json.dumps(records))
+    protocol = {"guidance_membership": path.name,
+                "guidance_membership_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+    subjects = [{"month":r["month"], "agent_id":r["agent_id"], "userid":r["userid"]} for r in records]
+    assert guidance_membership(tmp_path, protocol, subjects) == {(202203, "a")}
+    records[1]["guidance_active"] = True
+    path.write_text(json.dumps(records))
+    with pytest.raises(ValueError, match="eligibility changed"):
+        guidance_membership(tmp_path, protocol, subjects)

@@ -1,0 +1,116 @@
+{
+  "version": "sce-u1-state-guidance-comparison-v2",
+  "registered_on": "2026-10-14",
+  "status": "registered before new U1 outcomes; four months already examined",
+  "research_line": "A_conditional_history_diagnostic",
+  "source_cache": "outputs/sce_age_reporting_audit_20261012_v1/reference_private.parquet",
+  "source_cache_sha256": "86414d573d053b72ef20906dcc448ee9476f1679f86833144babd17bd433dc1b",
+  "answers": "outputs/sce_prior_analysis_20261013_v1/paired_evaluation_private.json",
+  "answers_sha256": "3076b2c668699d258dc154a4a195c9a756cc90c2586efd0c8429ba722563e6a8",
+  "links": "outputs/sce_prior_trial_20261013_v2/evaluation_links_private.json",
+  "links_sha256": "a4ea8cff1bd78048af0cbc939bdc6c0f8c194f63b90dba7396232429b47164de",
+  "months": [
+    202203,
+    202209,
+    202303,
+    202403
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "expected_person_months": 48,
+  "llm_arms": [
+    "no_prior",
+    "own_previous",
+    "permuted_previous"
+  ],
+  "frozen_llm": {
+    "model_requested": "deepseek-flash",
+    "temperature": 0.5,
+    "note": "requested alias/temperature equality alone cannot rule out backend-version drift"
+  },
+  "baseline_arms": [
+    "copy_previous",
+    "history_anchor_half"
+  ],
+  "baseline_rule": "copy_previous uses own exact calendar t-1 frozen Q9 mean; history_anchor_half = previous + 0.50*(mean of strictly earlier valid frozen Q9 means - previous); fewer than two histories falls back to copy_previous. No current nationwide level or current answer enters either prediction.",
+  "anchor_coefficient": 0.5,
+  "coefficient_origin": "fixed candidate borrowed from Kimi C1 training result; Kimi trained on official means with a current-truth common shift. This past-only, frozen-score variant is not the identical C1 estimator and is not fitted on this cohort.",
+  "history_policy": "all strictly earlier legal, scorable raw Q9 questionnaires of the same respondent, unweighted; never current/future answers or weights",
+  "q8_policy": "Q8 direct signed points evaluated separately; copy_previous available; no automatic transfer of the Q9 historical-anchor coefficient to Q8",
+  "quantiles": "left-inverse empirical CDF for Q9 and Q8; interpolated IQR auxiliary only; old published Q8 interpolation remains historical, not overwritten",
+  "weighting": "unweighted selected cohorts, month x repeat cells equally weighted; not a nationally representative headline",
+  "common_sample": "within each measure, real and exact previous values and ALL registered conditions must be valid; report full-roster failures separately; Q8 and Q9 samples need not match; new conditions may shrink common sample and this is explicitly reported",
+  "main_metrics": [
+    "sample_center_mae_pp",
+    "cross_section_w1_pp",
+    "delta_w1_pp"
+  ],
+  "auxiliary_metrics": [
+    "center_bias_pp",
+    "cross_person_iqr_gap_pp",
+    "cross_person_iqr_pp",
+    "real_cross_person_iqr_pp",
+    "centered_w1_pp",
+    "spearman",
+    "individual_mae_pp",
+    "personal_density_iqr_mean_pp",
+    "zero_deflation_fraction"
+  ],
+  "bootstrap": {
+    "draws": 1000,
+    "seed": 161803,
+    "unit": "whole respondent across fixed months and both repeats; paired across all conditions; repeats are not independent people; discard and count draws empty in any cell",
+    "scope": "conditional on these four selected months, fixed histories and saved responses; not a national or future-month confidence interval"
+  },
+  "contrasts": "each LLM condition vs copy_previous and history_anchor_half, plus own_previous vs no_prior and permuted_previous; future condition vs own_previous and both past-only baselines",
+  "decision_rules": {
+    "execution": "registered inputs, complete expected roster, current/future isolation, scorer hashes and separate failure counts required; no new API initiated by evaluation",
+    "pilot_signal": "candidate vs frozen U0 own_previous: center MAE and cross-section W1 lower, delta W1 no higher, in EACH of two repeats; candidate Q9 scoring coverage no lower. This is a project screening convention, not proof or an academic standard.",
+    "baseline_increment": "report all three metric differences against BOTH past-only baselines; no selecting an easier baseline after results. Improvement over U0 alone is not improvement over simple methods.",
+    "conditional_support": "paired whole-person intervals for the three main differences vs U0 and baselines; intervals containing zero mean direction not resolved in this conditional sample, not a zero effect",
+    "formal_adoption": "none from this reused four-month cohort; independent months and larger representative cohorts, including Route B availability and recursive state, still required",
+    "failure": "no effect, center-only improvement, or distribution/updates worsening all retained as distinct outcomes; no variance inflation or headline blending counted as raw simulation success",
+    "guidance_increment": "Evaluate guided-minus-state explicitly for each main metric and repeat, jointly with guided-minus-U0; do not infer guidance value from guided-vs-U0 alone. Active-history subset secondary, no switching to it because full-roster outcomes are unfavorable.",
+    "runtime_gate": "Prepared-input audit is not engine acceptance. Require engine-received prompt hashes, frozen config, correct aliases, deterministic zero-API dry-run and real-call authorization alignment."
+  },
+  "unavailable_comparisons": "Kimi oracle-common-shift C1 and long-span nationwide baselines remain separate conditional/reference studies; no direct ranking against this 12-person cohort",
+  "future_import": "new JSONL keyed by registered month/agent_id/repeat/arm; q8_point_pct and q9_probabilities, plus hashed manifest with months/repeats/arms/model/temperature/run_ids; same registered roster, no guessing cross-run person IDs",
+  "new_api_calls": 0,
+  "expected_extra_arms": [
+    "own_state",
+    "own_state_guided"
+  ],
+  "extra_contrasts": [
+    [
+      "own_state_guided",
+      "own_state"
+    ]
+  ],
+  "guidance_membership": "outputs/sce_u1_preparation_audit_20261014_v1/guidance_membership_private.json",
+  "guidance_membership_sha256": "9a498ee2202864b65512016df07e4d97aef80411b5694d8b717daf46865bcc04",
+  "guidance_subset": "Secondary predefined history>=2 subgroup; full roster remains primary. Never select on current answers, output improvement, or new response validity.",
+  "contrast_interpretations": {
+    "own_state_minus_own_previous": "Effect of added state-information package, including additional own history. Not pure summarization/cognition. Historical U0/backend drift remains a limitation.",
+    "own_state_guided_minus_own_state": "Increment from hypothesis sentence under contemporaneous paired model/config/E. Six unanchored cases have identical prompts; their response differences reflect generation variability."
+  },
+  "prepared_bundle": "outputs/sce_u1_state_preparation_20261013_v2",
+  "prepared_snapshot_sha256": {
+    "outputs/sce_u1_state_preparation_20261013_v2/202203/preview_own_state.json": "a6529b0b903f8f73a167e4f973abdfab035de8e46e2cec84e923006602068905",
+    "outputs/sce_u1_state_preparation_20261013_v2/202203/preview_own_state_guided.json": "66fb39e6b373e589a0ba7276e672dab1afe72984ed7f18f61e3ebc0b433f7311",
+    "outputs/sce_u1_state_preparation_20261013_v2/202209/preview_own_state.json": "117693332ef6f51ddc7a8c3d2c0418f539bd8f39fda4a050b5333d026d16f746",
+    "outputs/sce_u1_state_preparation_20261013_v2/202209/preview_own_state_guided.json": "c6de1894c3bd4d1f32f824e8907cd41974fedcca4894541941e365dc9b070d78",
+    "outputs/sce_u1_state_preparation_20261013_v2/202303/preview_own_state.json": "4b16a8b9010ae2b5b095af8e071503c825f3ae2c17fee14f02abdf4d37a5023b",
+    "outputs/sce_u1_state_preparation_20261013_v2/202303/preview_own_state_guided.json": "24725006e9a707d19a23d4494dcfa6bd1d2a9a6f9bcb2cd7638296d6fe187f53",
+    "outputs/sce_u1_state_preparation_20261013_v2/202403/preview_own_state.json": "d7e8e6dfbf93e4795666d7b0c51cc89014064483160b9353805de7f82bd6c3ed",
+    "outputs/sce_u1_state_preparation_20261013_v2/202403/preview_own_state_guided.json": "389cad72fbe552c3f20a17ced8219c39a945712ebf423fd411752c9ce4dda92f",
+    "outputs/sce_u1_state_preparation_20261013_v2/preview_sample_guided.txt": "174bcc38d8c24c3bbe1889c1bcb8e4e19d6bff924eb94b7aa71e418fc6a4f233",
+    "outputs/sce_u1_state_preparation_20261013_v2/preview_sample_state.txt": "529ca4e0a962d1e43fb72ca6644b1c38a0df1e0702234b45115dbba55ea98ae5",
+    "outputs/sce_u1_state_preparation_20261013_v2/state_values_private.json": "9d9d7e38c3008c3230b4fa28496019ec71f6e8bffaf9a1663232f22c30efe0fe",
+    "outputs/sce_u1_state_preparation_20261013_v2/summary.json": "40cf150e05cdfbc71cc0d81d05fc5c666266efa99b7ca95b8148cbf0110e4cee",
+    "outputs/sce_u1_state_preparation_20261013_v2/manifest.json": "74fdd293aca0001aab8d7538446f1086bdfd2a9c061ad09967f36a92e98c52ff",
+    "docs/workstreams/20261013_behavior/kimi_u1_input_spec.md": "abe7e73b557fdea92c9fe7dd108abfe37c7b5562db3373cb5944444f5ebbb309"
+  },
+  "information_equivalence_note": "Historical anchor baseline uses multiple earlier answers but no public E; old U0 receives only t-1 answers and public E, so their information sets are not nested. U1s adds historical summary, improving comparability on the history dimension without isolating all method effects."
+}

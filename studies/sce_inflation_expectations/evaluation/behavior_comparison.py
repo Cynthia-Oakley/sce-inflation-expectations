@@ -108,6 +108,8 @@ def import_extra(answer_path, manifest_path, subjects, protocol):
     if (not arms or len(set(arms)) != len(arms) or reserved.intersection(arms)
             or any(not isinstance(a, str) or not a for a in arms)):
         raise ValueError("New arm names duplicate/reserve existing conditions")
+    if protocol.get("expected_extra_arms") and set(arms) != set(protocol["expected_extra_arms"]):
+        raise ValueError("New results omit/change registered state/guidance conditions")
     if not manifest["run_ids"] or not manifest["model_requested"]:
         raise ValueError("Run/model provenance required")
     design = protocol.get("frozen_llm")
@@ -299,12 +301,39 @@ def screen_candidate(summary, candidate, baseline="own_previous"):
             "reason": "Development screening only; independent months/scale/Route B still required"}
 
 
+def planned_comparisons(protocol, extras, baselines):
+    """Register the direct guided/state contrast, rather than infer it from U0."""
+    pairs = [(arm, b) for arm in protocol["llm_arms"] + extras for b in baselines]
+    pairs += [("own_previous", "no_prior"), ("own_previous", "permuted_previous")]
+    pairs += [(arm, "own_previous") for arm in extras]
+    available = set(protocol["llm_arms"] + extras + baselines)
+    pairs += [tuple(pair) for pair in protocol.get("extra_contrasts", [])
+              if set(pair) <= available]
+    return list(dict.fromkeys(pairs))
+
+
+def guidance_membership(root, protocol, subjects):
+    """Subgroup fixed from earlier histories, never new/current outcomes."""
+    if not protocol.get("guidance_membership"):
+        return None
+    path = root / protocol["guidance_membership"]
+    if sha(path) != protocol["guidance_membership_sha256"]:
+        raise ValueError("Frozen guidance eligibility changed")
+    expected = {(int(s["month"]), s["agent_id"]): int(s["userid"]) for s in subjects}
+    records = json.loads(path.read_text())
+    actual = {(int(r["month"]), r["agent_id"]): int(r["userid"]) for r in records}
+    if len(actual) != len(records) or actual != expected:
+        raise ValueError("Guidance eligibility roster differs")
+    return {(int(r["month"]), r["agent_id"]) for r in records if r["guidance_active"]}
+
+
 def run(root, out, protocol_path, extra_answers=None, extra_manifest=None):
     root, out, protocol_path = map(lambda p: Path(p).resolve(), (root, out, protocol_path))
     if out.exists() or not out.is_relative_to(root / "outputs"):
         raise ValueError("Require a fresh ignored outputs directory")
     protocol = json.loads(protocol_path.read_text())
     rows, states, extras, meta = prepare(root, protocol, extra_answers, extra_manifest)
+    active = guidance_membership(root, protocol, states)
     code_paths = ["studies/sce_inflation_expectations/evaluation/behavior_comparison.py",
                   "studies/sce_inflation_expectations/evaluation/metrics.py",
                   "studies/sce_inflation_expectations/reporting_behavior/mapping.py",
@@ -322,13 +351,19 @@ def run(root, out, protocol_path, extra_answers=None, extra_manifest=None):
         baselines = protocol["baseline_arms"] if measure == "Q9" else ["copy_previous"]
         conditions = protocol["llm_arms"] + baselines + extras
         result, common = summarize(rows, conditions, measure)
-        comparisons = [(arm, b) for arm in protocol["llm_arms"]+extras for b in baselines]
-        comparisons += [("own_previous", "no_prior"), ("own_previous", "permuted_previous")]
-        comparisons += [(arm, "own_previous") for arm in extras]
+        comparisons = planned_comparisons(protocol, extras, baselines)
         if result["status"] == "evaluated":
             result["paired_intervals"] = paired_intervals(common, comparisons, measure, protocol["bootstrap"])
             if measure == "Q9":
                 result["candidate_screening"] = {a: screen_candidate(result, a) for a in extras}
+        if active is not None and extras:
+            subset_rows = [r for r in rows if (r["month"], r["agent_id"]) in active]
+            sub, sub_common = summarize(subset_rows, conditions, measure)
+            sub["scope"] = protocol["guidance_subset"]
+            if sub["status"] == "evaluated":
+                sub["paired_intervals"] = paired_intervals(sub_common, comparisons, measure, protocol["bootstrap"])
+            # Primary screening continues to use all registered cases.
+            result["guidance_active_secondary"] = sub
         summary["measures"][measure] = result
     summary["limitations"] = ["Four disconnected months, small selected cohorts and repeat generations do not identify national performance or a continuous trajectory.",
                               "Q9 headline-style sample center is median of individual approximate density MEANS, not median of Q8 or individual density medians.",

@@ -13,8 +13,9 @@ if __name__ == "__main__":
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--extra-answers", type=Path)
     parser.add_argument("--extra-manifest", type=Path)
+    parser.add_argument("--protocol", type=Path,
+                        default=ROOT / "docs/workstreams/20261013_behavior/codex_comparison_protocol.json")
     args = parser.parse_args()
-    result = run(ROOT, args.out,
-                 ROOT / "docs/workstreams/20261013_behavior/codex_comparison_protocol.json",
+    result = run(ROOT, args.out, args.protocol,
                  args.extra_answers, args.extra_manifest)
     print(f"Offline evaluation saved to {args.out}; new API calls: {result['new_api_calls']}")

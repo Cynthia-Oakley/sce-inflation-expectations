@@ -1,0 +1,111 @@
+{
+  "prepared_input_audit": {
+    "status": "prepared_inputs_passed_not_runtime_acceptance",
+    "completed_at": "2026-10-13T16:46:23.060355+00:00",
+    "bundle": "outputs/sce_u1_state_preparation_20261013_v2",
+    "counts": {
+      "checked_cases": 48,
+      "active": 42,
+      "inactive": 6
+    },
+    "prepared_prompts": 96,
+    "planned_requests": 192,
+    "state_numeric_max_difference": 0.0,
+    "base_preservation_checks": 96,
+    "current_future_derived_perturbation_checks": 48,
+    "output_hashes_checked": 12,
+    "input_hashes_checked": 10,
+    "prepared_snapshot_sha256": {
+      "outputs/sce_u1_state_preparation_20261013_v2/202203/preview_own_state.json": "a6529b0b903f8f73a167e4f973abdfab035de8e46e2cec84e923006602068905",
+      "outputs/sce_u1_state_preparation_20261013_v2/202203/preview_own_state_guided.json": "66fb39e6b373e589a0ba7276e672dab1afe72984ed7f18f61e3ebc0b433f7311",
+      "outputs/sce_u1_state_preparation_20261013_v2/202209/preview_own_state.json": "117693332ef6f51ddc7a8c3d2c0418f539bd8f39fda4a050b5333d026d16f746",
+      "outputs/sce_u1_state_preparation_20261013_v2/202209/preview_own_state_guided.json": "c6de1894c3bd4d1f32f824e8907cd41974fedcca4894541941e365dc9b070d78",
+      "outputs/sce_u1_state_preparation_20261013_v2/202303/preview_own_state.json": "4b16a8b9010ae2b5b095af8e071503c825f3ae2c17fee14f02abdf4d37a5023b",
+      "outputs/sce_u1_state_preparation_20261013_v2/202303/preview_own_state_guided.json": "24725006e9a707d19a23d4494dcfa6bd1d2a9a6f9bcb2cd7638296d6fe187f53",
+      "outputs/sce_u1_state_preparation_20261013_v2/202403/preview_own_state.json": "d7e8e6dfbf93e4795666d7b0c51cc89014064483160b9353805de7f82bd6c3ed",
+      "outputs/sce_u1_state_preparation_20261013_v2/202403/preview_own_state_guided.json": "389cad72fbe552c3f20a17ced8219c39a945712ebf423fd411752c9ce4dda92f",
+      "outputs/sce_u1_state_preparation_20261013_v2/preview_sample_guided.txt": "174bcc38d8c24c3bbe1889c1bcb8e4e19d6bff924eb94b7aa71e418fc6a4f233",
+      "outputs/sce_u1_state_preparation_20261013_v2/preview_sample_state.txt": "529ca4e0a962d1e43fb72ca6644b1c38a0df1e0702234b45115dbba55ea98ae5",
+      "outputs/sce_u1_state_preparation_20261013_v2/state_values_private.json": "9d9d7e38c3008c3230b4fa28496019ec71f6e8bffaf9a1663232f22c30efe0fe",
+      "outputs/sce_u1_state_preparation_20261013_v2/summary.json": "40cf150e05cdfbc71cc0d81d05fc5c666266efa99b7ca95b8148cbf0110e4cee",
+      "outputs/sce_u1_state_preparation_20261013_v2/manifest.json": "74fdd293aca0001aab8d7538446f1086bdfd2a9c061ad09967f36a92e98c52ff",
+      "docs/workstreams/20261013_behavior/kimi_u1_input_spec.md": "abe7e73b557fdea92c9fe7dd108abfe37c7b5562db3373cb5944444f5ebbb309"
+    },
+    "source_sha256": {
+      "outputs/sce_prior_preparation_20261013_v4/summary.json": "94403cd7a5e1e839c6a99cb670d9c9b6ced6850357f7c4f6d7a8bf81098260e0",
+      "outputs/sce_prior_preparation_20261013_v4/labeled_reference_private.parquet": "03809a5c8ac8c391da7b09e0962043c5fd559bac8b92f7ed9c3fd645770af0e5",
+      "outputs/sce_prior_preparation_20261013_v4/selection_links_private.json": "471ce244bc82a790343952fdf332443532aa6ffa07da7ddc40275299beff9770",
+      "outputs/sce_prior_preparation_20261013_v4/candidate_cases_private.jsonl": "5e605ead91435d926882f14bb0008b265025179adb30790a2a66d50974c5c845",
+      "outputs/sce_prior_trial_20261013_v2/trial_manifest.json": "0d92021f4a2a52f7b751cc25691f2c50f29e0174356d0388a75de42686cad40a",
+      "outputs/sce_prior_trial_20261013_v2/evaluation_links_private.json": "a4ea8cff1bd78048af0cbc939bdc6c0f8c194f63b90dba7396232429b47164de",
+      "outputs/sce_prior_trial_20261013_v2/202203/preview_own_previous.json": "35956fc1439ddef6541fafdb65f096d62a67319679b1082955da5ec1ef55fc2c",
+      "outputs/sce_prior_trial_20261013_v2/202209/preview_own_previous.json": "2af62bd8c2d2927c77c5e9018e7cac62e71c75cf23f1aae5f1d5c1049a0834a6",
+      "outputs/sce_prior_trial_20261013_v2/202303/preview_own_previous.json": "f0f8c947daa38d3044ea5a99bf17676744143d9b72dfe1d19ee11e17ad4295a7",
+      "outputs/sce_prior_trial_20261013_v2/202403/preview_own_previous.json": "d31fa357901fdcdbc409384db26b8762a211f6b9c8b6ea214c18477eb10c0dfc"
+    },
+    "preparation_code_sha256": {
+      "studies/sce_inflation_expectations/belief_state_preparation.py": "b1723ff74efc93ed4d2d762b2194853fa7b6fa7e612bf2253c492d75c5aed102",
+      "scripts/prepare_sce_u1a_state.py": "eb408ab1009a55c0a749169c81e645ebb310962b2c9db1112ac5ace9574dfaa6"
+    },
+    "audit_code_sha256": {
+      "studies/sce_inflation_expectations/evaluation/u1_preparation_audit.py": "f47027f2aa6a7ee2ef5379654643cdf895c3e7e48a80423c786b5e55d8a8291e",
+      "studies/sce_inflation_expectations/evaluation/behavior_comparison.py": "a0b5773eca4abfa764d4bde7f2e00e364e0f200eed6442a8819039403ef7c520",
+      "scripts/audit_sce_u1_preparation.py": "cae1ca73c3b0670aea7b2cde24f19f4616ee586d27fe5b3a3671e7f66be72682"
+    },
+    "scorer": {
+      "scorer": "sce_q9_frozen",
+      "variant": "relaxed_tail_skip_zero",
+      "tail_start": 20.0,
+      "holdout_run_id": "20261003T023026Z_77ebb305",
+      "pinned_sha256": {
+        "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+        "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+      },
+      "live_sha256": {
+        "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+        "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+      },
+      "live_matches_pinned": true,
+      "kernel_migration": {
+        "migrated_at": "2026-10-03",
+        "old_source": "scripts/diagnose_sce_beta.py",
+        "old_source_sha256": "b45a29345f432288fe3b0b18e8c39066998bf19a803a0e7c661dc2a193987e57",
+        "new_source": "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+        "algorithm_unchanged": true,
+        "equivalence_check": "3,741 sealed holdout rows recomputed; zero per-field difference"
+      },
+      "approximation_notice": "Research approximation of the Armantier et al. (2017) Appendix C generalized-beta fit, selected on a preregistered holdout; not the official FRBNY implementation. The same algorithm scores real and simulated questionnaires; differences from official headline values are reported separately."
+    },
+    "interpretation": [
+      "U1s versus old U0 measures a state-information package, including additional multi-survey history, not pure wording or isolated cognition.",
+      "U1g versus U1s isolates the added hypothesis sentence conditional on matched runtime/model/information; all 48 person-months primary, 42 guidance-active secondary.",
+      "Six unanchored cases receive identical prompts; generation differences there are not an effect of guidance.",
+      "Matching output schemas permit common report processing; they do not imply statistically additive/orthogonal effects."
+    ],
+    "remaining": [
+      "Independent actual engine dry-run receipt/prompt hashes/config/call count",
+      "Formal experiment/authorization alignment",
+      "Old joint draft synchronized or retired"
+    ],
+    "new_api_calls": 0,
+    "kimi_files_modified": false
+  },
+  "tests_passed": 35,
+  "offline_replay": {
+    "rows": 192,
+    "source": "outputs/sce_u1_comparison_replay_20261014_v1",
+    "not_real_simulation": true,
+    "old_results_max_difference": 0,
+    "direct_contrast_and_interval_max_difference": 0,
+    "main_q9_rows": 94,
+    "active_q9_rows": 84,
+    "main_q8_rows": 96,
+    "active_q8_rows": 84,
+    "latest_analysis": "outputs/sce_u1_comparison_replay_20261014_v1/evaluated_v2",
+    "original_paired_intervals_max_difference": 0
+  },
+  "new_api_calls": 0,
+  "new_cost_usd": 0,
+  "kimi_files_modified": false,
+  "comparison_protocol_sha256": "41b21a7792d989e822238fd8d233e0e4b675dd8d07371b8f191360b13b4d60b7"
+}
