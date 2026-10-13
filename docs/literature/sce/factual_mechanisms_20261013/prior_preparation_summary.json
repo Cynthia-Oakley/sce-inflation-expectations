@@ -1,0 +1,627 @@
+{
+  "status": "offline_inputs_and_inventory_completed_no_simulation",
+  "new_api_calls": 0,
+  "prepared_at_utc": "2026-10-13T03:44:50.908749+00:00",
+  "research_line": "A_observed_prior_conditional_update",
+  "months": {
+    "202203": {
+      "as_of": "2022-03-10T23:59:59-05:00",
+      "original_sample_n": 48,
+      "original_sample_status_counts": {
+        "adjacent_returner": 40,
+        "returner_after_gap": 5,
+        "entry_tenure_1": 3
+      },
+      "valid_adjacent_prior_n": 40,
+      "eligible_by_age": {
+        "Under 40": 16,
+        "40 to 60": 14,
+        "Over 60": 10
+      },
+      "selected_n": 12,
+      "selected_age_counts": {
+        "Over 60": 4,
+        "Under 40": 4,
+        "40 to 60": 4
+      },
+      "selected_status_counts": {
+        "adjacent_returner": 12
+      },
+      "selected_current_surveys_before_E_cutoff_n": 4,
+      "selected_current_date_unknown_n": 0,
+      "target_new_entrant_n": 153,
+      "historical_entrant_12m_bank_n": 1739,
+      "original_48_new_entrant_n": 3,
+      "initialization_match_level_counts": {
+        "_AGE_CAT+_EDU_CAT+_NUM_CAT": 47,
+        "_AGE_CAT": 1
+      },
+      "b_lag_screen_candidate_bank_n": 1824,
+      "b_historical_version_certified": false
+    },
+    "202209": {
+      "as_of": "2022-09-13T23:59:59-04:00",
+      "original_sample_n": 48,
+      "original_sample_status_counts": {
+        "invalid_or_extended_tenure": 5,
+        "adjacent_returner": 37,
+        "returner_after_gap": 1,
+        "entry_tenure_1": 5
+      },
+      "valid_adjacent_prior_n": 37,
+      "eligible_by_age": {
+        "Under 40": 16,
+        "Over 60": 9,
+        "40 to 60": 12
+      },
+      "selected_n": 12,
+      "selected_age_counts": {
+        "Over 60": 4,
+        "Under 40": 4,
+        "40 to 60": 4
+      },
+      "selected_status_counts": {
+        "adjacent_returner": 12
+      },
+      "selected_current_surveys_before_E_cutoff_n": 8,
+      "selected_current_date_unknown_n": 0,
+      "target_new_entrant_n": 134,
+      "historical_entrant_12m_bank_n": 1692,
+      "original_48_new_entrant_n": 5,
+      "initialization_match_level_counts": {
+        "_AGE_CAT+_EDU_CAT+_NUM_CAT": 43,
+        "_AGE_CAT": 2,
+        "_AGE_CAT+_EDU_CAT": 3
+      },
+      "b_lag_screen_candidate_bank_n": 1792,
+      "b_historical_version_certified": false
+    },
+    "202303": {
+      "as_of": "2023-03-14T23:59:59-04:00",
+      "original_sample_n": 48,
+      "original_sample_status_counts": {
+        "adjacent_returner": 42,
+        "returner_after_gap": 1,
+        "entry_tenure_1": 5
+      },
+      "valid_adjacent_prior_n": 42,
+      "eligible_by_age": {
+        "Under 40": 14,
+        "40 to 60": 15,
+        "Over 60": 13
+      },
+      "selected_n": 12,
+      "selected_age_counts": {
+        "Over 60": 4,
+        "Under 40": 4,
+        "40 to 60": 4
+      },
+      "selected_status_counts": {
+        "adjacent_returner": 12
+      },
+      "selected_current_surveys_before_E_cutoff_n": 9,
+      "selected_current_date_unknown_n": 0,
+      "target_new_entrant_n": 172,
+      "historical_entrant_12m_bank_n": 1631,
+      "original_48_new_entrant_n": 5,
+      "initialization_match_level_counts": {
+        "_AGE_CAT+_EDU_CAT+_NUM_CAT": 48
+      },
+      "b_lag_screen_candidate_bank_n": 1713,
+      "b_historical_version_certified": false
+    },
+    "202403": {
+      "as_of": "2024-03-12T23:59:59-04:00",
+      "original_sample_n": 48,
+      "original_sample_status_counts": {
+        "adjacent_returner": 41,
+        "returner_after_gap": 1,
+        "entry_tenure_1": 6
+      },
+      "valid_adjacent_prior_n": 40,
+      "eligible_by_age": {
+        "40 to 60": 21,
+        "Over 60": 7,
+        "Under 40": 12
+      },
+      "selected_n": 12,
+      "selected_age_counts": {
+        "Under 40": 4,
+        "40 to 60": 4,
+        "Over 60": 4
+      },
+      "selected_status_counts": {
+        "adjacent_returner": 12
+      },
+      "selected_current_surveys_before_E_cutoff_n": 4,
+      "selected_current_date_unknown_n": 0,
+      "target_new_entrant_n": 130,
+      "historical_entrant_12m_bank_n": 1591,
+      "original_48_new_entrant_n": 6,
+      "initialization_match_level_counts": {
+        "_AGE_CAT+_EDU_CAT+_NUM_CAT": 44,
+        "_AGE_CAT": 1,
+        "_AGE_CAT+_EDU_CAT": 3
+      },
+      "b_lag_screen_candidate_bank_n": 1631,
+      "b_historical_version_certified": false
+    }
+  },
+  "panel": {
+    "rows": 130216,
+    "months": 106,
+    "unique_ids": 17141,
+    "tenure_counts": {
+      "1": 15857,
+      "2": 13466,
+      "3": 12457,
+      "4": 11724,
+      "5": 11173,
+      "6": 10723,
+      "7": 10413,
+      "8": 10047,
+      "9": 9663,
+      "10": 9089,
+      "11": 8148,
+      "12": 6563,
+      "13": 774,
+      "14": 95,
+      "15": 20,
+      "16": 4
+    },
+    "panel_status_counts": {
+      "unobserved_previous_or_left_boundary": 1284,
+      "adjacent_returner": 105514,
+      "returner_after_gap": 6668,
+      "entry_tenure_1": 15857,
+      "invalid_or_extended_tenure": 893
+    },
+    "transition_pairs": 112182,
+    "tenure_increment_equals_calendar_gap": 105514,
+    "tenure_increment_equals_one_response": 112182,
+    "calendar_gap_transition_counts": [
+      {
+        "calendar_gap": 1,
+        "tenure_increment": 1,
+        "pairs": 105514
+      },
+      {
+        "calendar_gap": 2,
+        "tenure_increment": 1,
+        "pairs": 5315
+      },
+      {
+        "calendar_gap": 3,
+        "tenure_increment": 1,
+        "pairs": 1339
+      },
+      {
+        "calendar_gap": 4,
+        "tenure_increment": 1,
+        "pairs": 14
+      }
+    ],
+    "inconsistent_ids": 0,
+    "missing_survey_date_rows": 0,
+    "calendar_coding_statement": "Observed tenure increments once per completed response, even after calendar gaps. Calendar adjacency is checked separately. This is a data audit, not a recovered enrollment contract.",
+    "monthly_targets": {
+      "202203": {
+        "wave_n": 1273,
+        "status_counts": {
+          "adjacent_returner": 1070,
+          "returner_after_gap": 50,
+          "entry_tenure_1": 153
+        },
+        "adjacent_returners_n": 1070,
+        "tenure_1_entries_n": 153
+      },
+      "202209": {
+        "wave_n": 1271,
+        "status_counts": {
+          "invalid_or_extended_tenure": 73,
+          "adjacent_returner": 1023,
+          "returner_after_gap": 41,
+          "entry_tenure_1": 134
+        },
+        "adjacent_returners_n": 1023,
+        "tenure_1_entries_n": 134
+      },
+      "202303": {
+        "wave_n": 1254,
+        "status_counts": {
+          "adjacent_returner": 1044,
+          "returner_after_gap": 38,
+          "entry_tenure_1": 172
+        },
+        "adjacent_returners_n": 1044,
+        "tenure_1_entries_n": 172
+      },
+      "202403": {
+        "wave_n": 1120,
+        "status_counts": {
+          "adjacent_returner": 936,
+          "returner_after_gap": 54,
+          "entry_tenure_1": 130
+        },
+        "adjacent_returners_n": 936,
+        "tenure_1_entries_n": 130
+      }
+    }
+  },
+  "n_respondent_months": 48,
+  "arms": [
+    "no_prior",
+    "own_previous",
+    "permuted_previous"
+  ],
+  "candidate_requests": 288,
+  "repeats": [
+    1,
+    2
+  ],
+  "sampling_seed": 20261013,
+  "prior_representation": "Verbatim t-1 Q8 signed point (optional) and raw ten-bin probabilities; controlled reminder",
+  "no_target_answer_based_sampling": true,
+  "B_availability": {
+    "status": "historical_B_not_certified",
+    "micro_release_rule": "Official core microdata lag is nine months",
+    "official_rule_url": "https://www.newyorkfed.org/microeconomics/sce/sce-faq",
+    "rule_is_not_a_first_release_timestamp": true,
+    "lag_screen": "target minus 10 observation months, conservative candidate inventory only",
+    "original_workbook_version": "Current downloaded bytes, not demonstrated historical vintages",
+    "eligible_historical_B_input_files": [],
+    "same_person_t_minus_1_is_unavailable_in_historical_B": true,
+    "prospective_use": "Current files can be snapshotted for a future forecast after documented current availability; this does not certify past cutoffs",
+    "per_month": {
+      "202203": {
+        "as_of": "2022-03-10T23:59:59-05:00",
+        "candidate_latest_observation": 202105,
+        "candidate_bank_n": 1824,
+        "published_at": null,
+        "vintage_certified": false,
+        "gate": "unknown_historical_version"
+      },
+      "202209": {
+        "as_of": "2022-09-13T23:59:59-04:00",
+        "candidate_latest_observation": 202111,
+        "candidate_bank_n": 1792,
+        "published_at": null,
+        "vintage_certified": false,
+        "gate": "unknown_historical_version"
+      },
+      "202303": {
+        "as_of": "2023-03-14T23:59:59-04:00",
+        "candidate_latest_observation": 202205,
+        "candidate_bank_n": 1713,
+        "published_at": null,
+        "vintage_certified": false,
+        "gate": "unknown_historical_version"
+      },
+      "202403": {
+        "as_of": "2024-03-12T23:59:59-04:00",
+        "candidate_latest_observation": 202305,
+        "candidate_bank_n": 1631,
+        "published_at": null,
+        "vintage_certified": false,
+        "gate": "unknown_historical_version"
+      }
+    }
+  },
+  "initialization_candidates": {
+    "n": 19,
+    "supported_n": 19,
+    "joint_empirical_donor_used": true,
+    "current_target_answer_used": false,
+    "runtime_connected": false
+  },
+  "limitations": [
+    "Previously examined development periods; no blind holdout registered.",
+    "Four per age group are a mechanism probe, not a nationally representative sample.",
+    "Current E is a fixed information treatment; some actual respondents answered before its cutoff.",
+    "Exact prior reminder is an information intervention, not proof of natural memory.",
+    "Equal-weight permutation preserves the stock of priors, not a survey-weighted stock.",
+    "Initialization is a historical conditional donor candidate; no regime shift correction, no certified historical B vintage.",
+    "Own prior persistence can improve levels without reproducing learning or rational updates.",
+    "Two repeats are candidate generations, not two new populations or provider-controlled random seeds."
+  ],
+  "source_sha256": {
+    "outputs/sce_confidence_trial_20261011_v1/202203/environment.json": "a6a4cbb43c2579281a47ebb3efd108221e2b0b20d9c67a82a90cc905352621c5",
+    "outputs/sce_confidence_trial_20261011_v1/202203/population.json": "ebc820f5e51bbafdc6daa0dbe6921dec739a872f4719a2233f41218d76b53476",
+    "outputs/sce_confidence_trial_20261011_v1/202203/preview_national_confidence.json": "69df27915764d8c86afc0e68816c17e15960fd965fadd118e78d5832035bf227",
+    "outputs/sce_confidence_trial_20261011_v1/202203/simulation_national_confidence.json": "36ccc1e6a5eaa6f44194af5318547e9ffe879026793a150a7b0678ca186c1d9c",
+    "outputs/sce_confidence_trial_20261011_v1/202209/environment.json": "6f1b43ba92f2c7ee039bdd5bb773fd897cbb7924311bf13060cf135c799031b1",
+    "outputs/sce_confidence_trial_20261011_v1/202209/population.json": "f1a47f55e78e7a73fe1cce81993d6241134d75b40ead38da491bd8ca2ef31ff7",
+    "outputs/sce_confidence_trial_20261011_v1/202209/preview_national_confidence.json": "2894e3196ebb92b453802c79290f4beee393049466227c0ccd7a1649a953987a",
+    "outputs/sce_confidence_trial_20261011_v1/202209/simulation_national_confidence.json": "5499605c37799666e8f9451248c23946287fd22b1817cc08482e9cf1431f98f2",
+    "outputs/sce_confidence_trial_20261011_v1/202303/environment.json": "16b190b19da10529deaca2b3389a6cb2af90d0427e3248cef2b3d616c3b53c2b",
+    "outputs/sce_confidence_trial_20261011_v1/202303/population.json": "5787f83bc6d98bf8a63ba15525f180fa66e09610d1d3ba8c765da255a9ec358c",
+    "outputs/sce_confidence_trial_20261011_v1/202303/preview_national_confidence.json": "f9c6143736674c62e7fa5cdb99c314d02120f3335c37df5b3ab75e05b4f5a0d1",
+    "outputs/sce_confidence_trial_20261011_v1/202303/simulation_national_confidence.json": "a82553d8b8a91714156e4a775d37002c5cccda811b15e69512f93bfb0d568cbc",
+    "outputs/sce_confidence_trial_20261011_v1/202403/environment.json": "21d7b8073cf686d7b6ba63d0944e555d222f42ff9c62de161e3829b76fd86323",
+    "outputs/sce_confidence_trial_20261011_v1/202403/population.json": "f7a88b753adf5eeef8007332c95830d512bf3989c45905cb07c0e4701b07372d",
+    "outputs/sce_confidence_trial_20261011_v1/202403/preview_national_confidence.json": "579ab75c88f11608591ba4924dd6623a8edd89ff5bf7958f9dde107156fb2042",
+    "outputs/sce_confidence_trial_20261011_v1/202403/simulation_national_confidence.json": "9bb4df226ce7e5763130a52feed96b746f301523a013b66cec8da35cb28959cf",
+    "outputs/sce_confidence_trial_20261011_v1/evaluation_links_private.json": "013eb3ebcc18a5aca7009f6a7649a275865b6bf2f83621f71e258f1b31eeed1e",
+    "outputs/sce_confidence_trial_20261011_v1/trial_manifest.json": "5619a24ffab91be0947a0d274801366fc2040cbdc1638674c67ee8882ee89b1e"
+  },
+  "code_sha256": {
+    "studies/sce_inflation_expectations/prior_belief_trial_preparation.py": "7e866936e7e58d736511fb55c79e3a7d97e51b9287bad4ecd44e64cb48ce4c77",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py": "dad877f02ae5148f6ecd12d1726cf9d33a8f2a984e09e012e8a7015df2707ca4",
+    "scripts/prepare_sce_prior_trial.py": "e7e7cd6ad4e98e82fca8e96c944c456db7a2bfa29dd839ab2b2c09d5e7e0dbed"
+  },
+  "final_preparation": "outputs/sce_prior_preparation_20261013_v4",
+  "final_validation": "outputs/sce_prior_validation_20261013_v2",
+  "validation": {
+    "candidate_requests_verified": 288,
+    "cell_count": 24,
+    "checks": {
+      "exact_complete_message_rebuild": 288,
+      "target_answer_and_weight_selector_mutation": 192,
+      "prior_source_calendar_and_person_binding": 192
+    },
+    "protected_files_unchanged": 15,
+    "own_and_permuted_prior_payloads_identical_n": 0
+  },
+  "reused_baseline_comparison": {
+    "202203": [
+      {
+        "repeat": 1,
+        "same_valid_people": 12,
+        "excluded_n": 0,
+        "no_update_personal_prior": {
+          "n": 12,
+          "center_absolute_error_pp": 0.9070227210544299,
+          "individual_MAE_pp": 1.5230560126403307,
+          "W1_pp": 1.5230560126403305,
+          "predicted_cross_person_IQR_pp": 4.751445038786121,
+          "real_cross_person_IQR_pp": 5.0820346030340495
+        },
+        "already_run_no_prior_LLM": {
+          "n": 12,
+          "center_absolute_error_pp": 2.5951622720221703,
+          "individual_MAE_pp": 4.26370044124846,
+          "W1_pp": 3.7220765731866705,
+          "predicted_cross_person_IQR_pp": 0.7125369160149351,
+          "real_cross_person_IQR_pp": 5.0820346030340495
+        },
+        "returned_model_counts": {
+          "deepseek-flash": 12
+        },
+        "comparison_scope": "Historical same-message diagnostic; not a newly contemporaneous randomized model experiment"
+      },
+      {
+        "repeat": 2,
+        "same_valid_people": 12,
+        "excluded_n": 0,
+        "no_update_personal_prior": {
+          "n": 12,
+          "center_absolute_error_pp": 0.9070227210544299,
+          "individual_MAE_pp": 1.5230560126403307,
+          "W1_pp": 1.5230560126403305,
+          "predicted_cross_person_IQR_pp": 4.751445038786121,
+          "real_cross_person_IQR_pp": 5.0820346030340495
+        },
+        "already_run_no_prior_LLM": {
+          "n": 12,
+          "center_absolute_error_pp": 2.5177679088603506,
+          "individual_MAE_pp": 4.344618017462565,
+          "W1_pp": 3.592360716079825,
+          "predicted_cross_person_IQR_pp": 0.8422769721852799,
+          "real_cross_person_IQR_pp": 5.0820346030340495
+        },
+        "returned_model_counts": {
+          "deepseek-flash": 12
+        },
+        "comparison_scope": "Historical same-message diagnostic; not a newly contemporaneous randomized model experiment"
+      }
+    ],
+    "202209": [
+      {
+        "repeat": 1,
+        "same_valid_people": 12,
+        "excluded_n": 0,
+        "no_update_personal_prior": {
+          "n": 12,
+          "center_absolute_error_pp": 1.8716951560598392,
+          "individual_MAE_pp": 4.255198528320714,
+          "W1_pp": 1.8245136594587725,
+          "predicted_cross_person_IQR_pp": 6.279480066866139,
+          "real_cross_person_IQR_pp": 9.72676315367743
+        },
+        "already_run_no_prior_LLM": {
+          "n": 12,
+          "center_absolute_error_pp": 1.4843650725478597,
+          "individual_MAE_pp": 5.352479536432963,
+          "W1_pp": 4.943351231482866,
+          "predicted_cross_person_IQR_pp": 0.9676011330562959,
+          "real_cross_person_IQR_pp": 9.72676315367743
+        },
+        "returned_model_counts": {
+          "deepseek-flash": 12
+        },
+        "comparison_scope": "Historical same-message diagnostic; not a newly contemporaneous randomized model experiment"
+      },
+      {
+        "repeat": 2,
+        "same_valid_people": 12,
+        "excluded_n": 0,
+        "no_update_personal_prior": {
+          "n": 12,
+          "center_absolute_error_pp": 1.8716951560598392,
+          "individual_MAE_pp": 4.255198528320714,
+          "W1_pp": 1.8245136594587725,
+          "predicted_cross_person_IQR_pp": 6.279480066866139,
+          "real_cross_person_IQR_pp": 9.72676315367743
+        },
+        "already_run_no_prior_LLM": {
+          "n": 12,
+          "center_absolute_error_pp": 1.7644989878734538,
+          "individual_MAE_pp": 5.29183598391323,
+          "W1_pp": 5.04150693808621,
+          "predicted_cross_person_IQR_pp": 0.5058702097328069,
+          "real_cross_person_IQR_pp": 9.72676315367743
+        },
+        "returned_model_counts": {
+          "deepseek-flash": 12
+        },
+        "comparison_scope": "Historical same-message diagnostic; not a newly contemporaneous randomized model experiment"
+      }
+    ],
+    "202303": [
+      {
+        "repeat": 1,
+        "same_valid_people": 11,
+        "excluded_n": 1,
+        "no_update_personal_prior": {
+          "n": 11,
+          "center_absolute_error_pp": 2.478644333176331,
+          "individual_MAE_pp": 4.105603546005799,
+          "W1_pp": 2.4197234438720647,
+          "predicted_cross_person_IQR_pp": 4.256977446294503,
+          "real_cross_person_IQR_pp": 3.761309266986345
+        },
+        "already_run_no_prior_LLM": {
+          "n": 11,
+          "center_absolute_error_pp": 0.4739796363667823,
+          "individual_MAE_pp": 2.9516699932913864,
+          "W1_pp": 2.5440593432687395,
+          "predicted_cross_person_IQR_pp": 0.5293021022726547,
+          "real_cross_person_IQR_pp": 3.761309266986345
+        },
+        "returned_model_counts": {
+          "deepseek-flash": 11
+        },
+        "comparison_scope": "Historical same-message diagnostic; not a newly contemporaneous randomized model experiment"
+      },
+      {
+        "repeat": 2,
+        "same_valid_people": 11,
+        "excluded_n": 1,
+        "no_update_personal_prior": {
+          "n": 11,
+          "center_absolute_error_pp": 2.478644333176331,
+          "individual_MAE_pp": 4.105603546005799,
+          "W1_pp": 2.4197234438720647,
+          "predicted_cross_person_IQR_pp": 4.256977446294503,
+          "real_cross_person_IQR_pp": 3.761309266986345
+        },
+        "already_run_no_prior_LLM": {
+          "n": 11,
+          "center_absolute_error_pp": 0.29890341578382174,
+          "individual_MAE_pp": 2.904037827692758,
+          "W1_pp": 2.415005379419987,
+          "predicted_cross_person_IQR_pp": 0.9203382487621967,
+          "real_cross_person_IQR_pp": 3.761309266986345
+        },
+        "returned_model_counts": {
+          "deepseek-flash": 11
+        },
+        "comparison_scope": "Historical same-message diagnostic; not a newly contemporaneous randomized model experiment"
+      }
+    ],
+    "202403": [
+      {
+        "repeat": 1,
+        "same_valid_people": 12,
+        "excluded_n": 0,
+        "no_update_personal_prior": {
+          "n": 12,
+          "center_absolute_error_pp": 0.29664983884618445,
+          "individual_MAE_pp": 1.9364031030667537,
+          "W1_pp": 1.0474244076029726,
+          "predicted_cross_person_IQR_pp": 2.2595727965668733,
+          "real_cross_person_IQR_pp": 3.4388593438712416
+        },
+        "already_run_no_prior_LLM": {
+          "n": 12,
+          "center_absolute_error_pp": 1.481740558464669,
+          "individual_MAE_pp": 3.06434903344425,
+          "W1_pp": 2.7612425564868657,
+          "predicted_cross_person_IQR_pp": 0.10649378424354561,
+          "real_cross_person_IQR_pp": 3.4388593438712416
+        },
+        "returned_model_counts": {
+          "deepseek-flash": 12
+        },
+        "comparison_scope": "Historical same-message diagnostic; not a newly contemporaneous randomized model experiment"
+      },
+      {
+        "repeat": 2,
+        "same_valid_people": 12,
+        "excluded_n": 0,
+        "no_update_personal_prior": {
+          "n": 12,
+          "center_absolute_error_pp": 0.29664983884618445,
+          "individual_MAE_pp": 1.9364031030667537,
+          "W1_pp": 1.0474244076029726,
+          "predicted_cross_person_IQR_pp": 2.2595727965668733,
+          "real_cross_person_IQR_pp": 3.4388593438712416
+        },
+        "already_run_no_prior_LLM": {
+          "n": 12,
+          "center_absolute_error_pp": 1.4058320392302739,
+          "individual_MAE_pp": 3.017138979744434,
+          "W1_pp": 2.7613936466140814,
+          "predicted_cross_person_IQR_pp": 0.15837806434688062,
+          "real_cross_person_IQR_pp": 3.4388593438712416
+        },
+        "returned_model_counts": {
+          "deepseek-flash": 12
+        },
+        "comparison_scope": "Historical same-message diagnostic; not a newly contemporaneous randomized model experiment"
+      }
+    ]
+  },
+  "existing_response_source_hashes": {
+    "outputs/local_runs/sce_confidence_trial_20261011_v1-202203-national_confidence-r1/llm_calls.jsonl": "a51c49c914d04a9b922d000d790f2b2428b74482d7b056f5cee15de3cccbaabe",
+    "outputs/local_runs/sce_confidence_trial_20261011_v1-202203-national_confidence-r2/llm_calls.jsonl": "ed60c434b17e0e38385cbacb7625434d88cf2057cbb0bccefc2283e5bf774ec8",
+    "outputs/local_runs/sce_confidence_trial_20261011_v1-202209-national_confidence-r1/llm_calls.jsonl": "c4d586fa5bb4e332d313c8ae0604086aa97ae888a074ce0e3140f99b7f8f6648",
+    "outputs/local_runs/sce_confidence_trial_20261011_v1-202209-national_confidence-r2/llm_calls.jsonl": "58d1263fe572fbc4a4f38be8c90d15e9053df3d66c1df51235f88a6a68cab83f",
+    "outputs/local_runs/sce_confidence_trial_20261011_v1-202303-national_confidence-r1/llm_calls.jsonl": "87740a554034655d35d10e07ab172c69f0530a791b4faf0184edcabb4dfe34f7",
+    "outputs/local_runs/sce_confidence_trial_20261011_v1-202303-national_confidence-r2/llm_calls.jsonl": "d344b24984e534c2767b6fe13e0c080f6da0a03358ff7f2287746b4ab9998f71",
+    "outputs/local_runs/sce_confidence_trial_20261011_v1-202403-national_confidence-r1/llm_calls.jsonl": "74cbacd2863576bcd51f5de43c09ffa13b60a9288095eff26eecf7c215ac002b",
+    "outputs/local_runs/sce_confidence_trial_20261011_v1-202403-national_confidence-r2/llm_calls.jsonl": "fb648b3b8ac26196407df121b7c8c36040113b39463b3375826a2f77b5ac92db"
+  },
+  "same_sample_eight_cell_averages": {
+    "no_update_personal_prior": {
+      "center_absolute_error_pp": 1.3885030122841961,
+      "individual_MAE_pp": 2.9550652975083995,
+      "W1_pp": 1.703679380893535,
+      "predicted_cross_person_IQR_pp": 4.386868837128409,
+      "real_cross_person_IQR_pp": 5.5022415918922665
+    },
+    "already_run_no_prior_LLM": {
+      "center_absolute_error_pp": 1.5027812363936726,
+      "individual_MAE_pp": 3.898728726653756,
+      "W1_pp": 3.472624548078156,
+      "predicted_cross_person_IQR_pp": 0.5928496788268245,
+      "real_cross_person_IQR_pp": 5.5022415918922665
+    }
+  },
+  "completed_new_LLM_treatment_answers": 0,
+  "frozen_scorer_provenance": {
+    "scorer": "sce_q9_frozen",
+    "variant": "relaxed_tail_skip_zero",
+    "tail_start": 20.0,
+    "holdout_run_id": "20261003T023026Z_77ebb305",
+    "pinned_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_matches_pinned": true,
+    "kernel_migration": {
+      "migrated_at": "2026-10-03",
+      "old_source": "scripts/diagnose_sce_beta.py",
+      "old_source_sha256": "b45a29345f432288fe3b0b18e8c39066998bf19a803a0e7c661dc2a193987e57",
+      "new_source": "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+      "algorithm_unchanged": true,
+      "equivalence_check": "3,741 sealed holdout rows recomputed; zero per-field difference"
+    },
+    "approximation_notice": "Research approximation of the Armantier et al. (2017) Appendix C generalized-beta fit, selected on a preregistered holdout; not the official FRBNY implementation. The same algorithm scores real and simulated questionnaires; differences from official headline values are reported separately."
+  },
+  "reproducibility_scope": "Verified local environment; protected scorer/kernel changes are not committed in this task; clean-clone acceptance not claimed"
+}
