@@ -48,6 +48,7 @@ LLM_PROMPT_VERSIONS = (
     "sce-q8-q9-confidence-v1",
     "sce-q8-q9-lifetime-inflation-v1",
     "sce-q8-q9-lifetime-text-v1",
+    "sce-q8-q9-observed-prior-v1",
 )
 
 
@@ -217,6 +218,30 @@ def main(argv: list[str] | None = None) -> int:
     news_inputs = {}
     confidence_inputs = {}
     lifetime_inputs = {}
+    prior_inputs = {}
+    prior_ref = "sce_inflation_expectations.prior_belief_decision"
+    if sim_c.decision_ref == prior_ref or args.prompt_version == "sce-q8-q9-observed-prior-v1":
+        if sim_c.decision_ref != prior_ref or args.prompt_version != "sce-q8-q9-observed-prior-v1":
+            sys.exit("prior provider and prompt must be selected together")
+        from studies.sce_inflation_expectations.prior_belief_experiment import validate_bundle, build_messages
+        from studies.sce_inflation_expectations.model import SCEEnvironmentProvider
+        if len(targets) != 1 or args.mechanism or args.experience or args.household_state or args.information_exposure:
+            sys.exit("prior diagnostic requires isolated one-month inputs")
+        if any(k in env_b.provider_args for k in ("information_exposure", "household_state_by_id", "price_experience_mechanism", "experience_by_id")):
+            sys.exit("prior diagnostic requires frozen baseline environment")
+        bundle = validate_bundle(sim_c.decision_args["prior_bundle"], pop_b.personas,
+                                 targets[0]["target_month"], targets[0]["as_of"])
+        sim_c.decision_args["prior_bundle"] = bundle
+        prior_inputs = {"arm": bundle["arm"], "research_line": bundle["research_line"],
+                        "prior_source": "observed_t_minus_1_A_diagnostic",
+                        "bundle_sha256": hashlib.sha256(json.dumps(bundle, sort_keys=True).encode()).hexdigest()}
+        check_env = SCEEnvironmentProvider(env_b.model_copy(deep=True))
+        check_env.audit_dir = None
+        check_env.reset(sim_c.seed)
+        check_env.advance_to(1)
+        for observation in check_env.observe_batch([p.agent_id for p in pop_b.personas], 1):
+            if len(json.dumps(build_messages(observation, bundle), ensure_ascii=False)) > 18000:
+                sys.exit("prior prompt exceeds size gate; no calls started")
     lifetime_refs = {"sce_inflation_expectations.lifetime_decision": "sce-q8-q9-lifetime-inflation-v1",
                      "sce_inflation_expectations.lifetime_text_decision": "sce-q8-q9-lifetime-text-v1"}
     if sim_c.decision_ref in lifetime_refs or args.prompt_version in lifetime_refs.values():
@@ -506,6 +531,7 @@ def main(argv: list[str] | None = None) -> int:
         "news_exposure_inputs": news_inputs,
         "confidence_inputs": confidence_inputs,
         "lifetime_inputs": lifetime_inputs,
+        "prior_inputs": prior_inputs,
         "native_spending_behaviour_test": bool(native_inputs and args.llm == "openai"),
         "information_exposure_behaviour_test": bool(args.information_exposure and args.llm == "openai"),
         "household_state_behaviour_test": bool(args.household_state and args.llm == "openai"),
@@ -525,6 +551,8 @@ def main(argv: list[str] | None = None) -> int:
         manifest["execution_purpose"] = "confidence_behaviour_trial" if args.llm == "openai" else "confidence_plumbing_only"
     if lifetime_inputs:
         manifest["execution_purpose"] = "lifetime_behaviour_trial" if args.llm == "openai" else "lifetime_plumbing_only"
+    if prior_inputs:
+        manifest["execution_purpose"] = "observed_prior_behaviour_trial" if args.llm == "openai" else "observed_prior_plumbing_only"
     (audit_dir / "run_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if hasattr(sim.decision, "cost_summary"):
