@@ -1,6 +1,6 @@
 # Codex与Kimi的水平分工
 
-2026-10-13。最新状态：Kimi第二轮已互检，[结论与修订清单](codex_kimi_u1_review_20261013.md)。锚参数/数值一致，保留预登记未通过；U1需区分Q8/Q9、改四分位措辞、对齐半程指导/身份控制、正确96/192请求数并接入运行入口。Kimi仍负责自身版本修订；Codex报告映射只作离线敏感性，不升级正式机制。主复核完成不代表执行前验收通过；新Simulation未启动。下文保留最初分工约定。
+2026-10-13。最新状态：Codex[统一评价/同样本基线](codex_comparison_results.md)、[Kimi接入规范](codex_comparison_input_spec.md)已完成，API0。两种过去信息规则与LLM并列，截面和变化分开检验；报告映射仍为附加敏感性。Kimi继续按[互检清单](codex_kimi_u1_review_20261013.md)修订自己的U1与入口；新输入/真实运行尚未验收，预算/范围待具体对齐。Codex新代码仅evaluation/behavior_comparison和两个独立入口，不改Kimi模块或原配置。下文保留最初分工约定。
 
 ## 为什么这样分
 
