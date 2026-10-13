@@ -1,7 +1,7 @@
 <!-- current-todo:start -->
 # 当前任务清单：居民信念更新与问卷表达
 
-更新：2026-10-13（北京时间）。当前：水平分工任务包已准备；拟由Kimi做信念更新与经验基线，Codex做概率表达诊断。Kimi待用户转发启动，新分析及付费实验尚未开始。
+更新：2026-10-13（北京时间）。当前：用户已向Kimi转发任务；Codex正在准备概率表达分析，已核查旧结果并整理执行清单，新全量分析与付费调用尚未开始。
 
 - [x] 复盘已有功能、实验结果与主要瓶颈。
 - [x] 整理行为机制方向与评价指标草案。
@@ -17,6 +17,8 @@
 <!-- current-todo:end -->
 
 # 2026-10-13 本人先验真实实验与分析完成（最新）
+
+**Codex概率报告线计划已整理：**[子任务进度](workstreams/20261013_behavior/codex_progress.md)。已核查旧106月网格稳定性/人口关联及767份取整敏感性，避免重复；新增重点是过去填法的后续预测、信念集中与报告方式的区分、映射计分影响及最多两种候选。先登记时间划分与对照，全部零API；Kimi任务用户已转发，未替其写执行完成。主清单研究项仍未勾完，15待审与旧配置保持。
 
 **Codex/Kimi水平分工包已准备：**[协作安排](workstreams/20261013_behavior/coordination.md)、[Kimi独立任务](workstreams/20261013_behavior/kimi_belief_dynamics_task.md)、[Codex独立任务](workstreams/20261013_behavior/codex_reporting_task.md)。按研究问题做两条完整线，各自有分析/代码/结果，不互等文献或实现；只在最终实验冻结汇合。新增源码按belief_dynamics/reporting_behavior分区，公共文件Codex整合，提交scoped/串行。任务包不是Kimi已启动证据，本轮没有新分析或调用，保留原配置与15待审。
 
