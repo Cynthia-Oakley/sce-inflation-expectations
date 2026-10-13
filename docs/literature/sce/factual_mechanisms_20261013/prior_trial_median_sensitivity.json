@@ -1,0 +1,101 @@
+{
+  "purpose": "posthoc quantile-definition sensitivity due to even small samples; not replacing frozen primary metrics or tuning",
+  "new_api_calls": 0,
+  "alternative": "numpy midpoint median for all Q9 arms/real/persistence",
+  "averages": {
+    "no_prior": 1.606370065927845,
+    "own_previous": 1.1797966337589232,
+    "permuted_previous": 1.0133566936111662,
+    "own_prior": 1.3885030122841961
+  },
+  "cells": [
+    {
+      "month": "202203",
+      "repeat": 1,
+      "n": 12,
+      "errors": {
+        "no_prior": 2.7447234501926836,
+        "own_previous": 1.1814870609304897,
+        "permuted_previous": 1.6919027999539926,
+        "own_prior": 0.9070227210544299
+      }
+    },
+    {
+      "month": "202203",
+      "repeat": 2,
+      "n": 12,
+      "errors": {
+        "no_prior": 2.5767354327441767,
+        "own_previous": 2.0501086149041,
+        "permuted_previous": 1.8274726843473994,
+        "own_prior": 0.9070227210544299
+      }
+    },
+    {
+      "month": "202209",
+      "repeat": 1,
+      "n": 12,
+      "errors": {
+        "no_prior": 1.8294565766726683,
+        "own_previous": 1.8244457869123307,
+        "permuted_previous": 1.29041180485203,
+        "own_prior": 1.8716951560598392
+      }
+    },
+    {
+      "month": "202209",
+      "repeat": 2,
+      "n": 12,
+      "errors": {
+        "no_prior": 1.5763483390565387,
+        "own_previous": 1.7178971994366954,
+        "permuted_previous": 1.3661416718774895,
+        "own_prior": 1.8716951560598392
+      }
+    },
+    {
+      "month": "202303",
+      "repeat": 1,
+      "n": 11,
+      "errors": {
+        "no_prior": 0.7540395963602302,
+        "own_previous": 0.3361034875202469,
+        "permuted_previous": 0.08201619311079789,
+        "own_prior": 2.478644333176331
+      }
+    },
+    {
+      "month": "202303",
+      "repeat": 2,
+      "n": 11,
+      "errors": {
+        "no_prior": 0.4739796363667823,
+        "own_previous": 0.15259107356314505,
+        "permuted_previous": 0.11128953167707412,
+        "own_prior": 2.478644333176331
+      }
+    },
+    {
+      "month": "202403",
+      "repeat": 1,
+      "n": 12,
+      "errors": {
+        "no_prior": 1.4558611421309346,
+        "own_previous": 1.1453355614394876,
+        "permuted_previous": 0.9725243851208671,
+        "own_prior": 0.29664983884618445
+      }
+    },
+    {
+      "month": "202403",
+      "repeat": 2,
+      "n": 12,
+      "errors": {
+        "no_prior": 1.4398163538987458,
+        "own_previous": 1.0304042853648903,
+        "permuted_previous": 0.765094477949678,
+        "own_prior": 0.29664983884618445
+      }
+    }
+  ]
+}

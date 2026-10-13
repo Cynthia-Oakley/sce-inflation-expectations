@@ -1,0 +1,1816 @@
+{
+  "status": "completed_offline_analysis",
+  "scorer": {
+    "scorer": "sce_q9_frozen",
+    "variant": "relaxed_tail_skip_zero",
+    "tail_start": 20.0,
+    "holdout_run_id": "20261003T023026Z_77ebb305",
+    "pinned_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_matches_pinned": true,
+    "kernel_migration": {
+      "migrated_at": "2026-10-03",
+      "old_source": "scripts/diagnose_sce_beta.py",
+      "old_source_sha256": "b45a29345f432288fe3b0b18e8c39066998bf19a803a0e7c661dc2a193987e57",
+      "new_source": "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+      "algorithm_unchanged": true,
+      "equivalence_check": "3,741 sealed holdout rows recomputed; zero per-field difference"
+    },
+    "approximation_notice": "Research approximation of the Armantier et al. (2017) Appendix C generalized-beta fit, selected on a preregistered holdout; not the official FRBNY implementation. The same algorithm scores real and simulated questionnaires; differences from official headline values are reported separately."
+  },
+  "trial": "outputs/sce_prior_trial_20261013_v2",
+  "trial_manifest_sha256": "0d92021f4a2a52f7b751cc25691f2c50f29e0174356d0388a75de42686cad40a",
+  "actual_calls": 288,
+  "conservative_cost_usd": 0.20124899999999996,
+  "new_analysis_api_calls": 0,
+  "median_convention": "existing project empirical quantile for Q9, interpolation for Q8; same for all arms and persistence; earlier preparation np.median diagnostics may differ for even n",
+  "across_months_by_repeat": {
+    "1": {
+      "no_prior": {
+        "median_absolute_error_pp": 1.8320029615349251,
+        "distribution_W1_pp": 3.499571370758159,
+        "IQR_absolute_gap_pp": 4.818625573262477
+      },
+      "own_previous": {
+        "median_absolute_error_pp": 1.233914296603254,
+        "distribution_W1_pp": 3.1055800966537768,
+        "IQR_absolute_gap_pp": 4.555520851789499
+      },
+      "permuted_previous": {
+        "median_absolute_error_pp": 1.1830298923167244,
+        "distribution_W1_pp": 3.256125170917315,
+        "IQR_absolute_gap_pp": 4.7991215131581475
+      },
+      "own_prior_persistence": {
+        "median_absolute_error_pp": 0.8496830370124867,
+        "distribution_W1_pp": 1.703679380893535,
+        "IQR_absolute_gap_pp": 1.3632068444179364
+      },
+      "own_vs_no_prior_both_improve_months": 4
+    },
+    "2": {
+      "no_prior": {
+        "median_absolute_error_pp": 1.688288088446853,
+        "distribution_W1_pp": 3.4471958630220114,
+        "IQR_absolute_gap_pp": 4.746894895990272
+      },
+      "own_previous": {
+        "median_absolute_error_pp": 1.4013691881448307,
+        "distribution_W1_pp": 3.0990466896483455,
+        "IQR_absolute_gap_pp": 4.500381244568965
+      },
+      "permuted_previous": {
+        "median_absolute_error_pp": 1.1938329553831317,
+        "distribution_W1_pp": 3.1542341455977727,
+        "IQR_absolute_gap_pp": 4.60027071586852
+      },
+      "own_prior_persistence": {
+        "median_absolute_error_pp": 0.8496830370124867,
+        "distribution_W1_pp": 1.703679380893535,
+        "IQR_absolute_gap_pp": 1.3632068444179364
+      },
+      "own_vs_no_prior_both_improve_months": 3
+    }
+  },
+  "candidate_continue_gate_passed": true,
+  "limits": [
+    "Previously examined development periods; no blind holdout registered.",
+    "Four per age group are a mechanism probe, not a nationally representative sample.",
+    "Current E is a fixed information treatment; some actual respondents answered before its cutoff.",
+    "Exact prior reminder is an information intervention, not proof of natural memory.",
+    "Equal-weight permutation preserves the stock of priors, not a survey-weighted stock.",
+    "Initialization is a historical conditional donor candidate; no regime shift correction, no certified historical B vintage.",
+    "Own prior persistence can improve levels without reproducing learning or rational updates.",
+    "Two repeats are candidate generations, not two new populations or provider-controlled random seeds.",
+    "Full prior reminder is a controlled intervention, not a measurement of natural memory.",
+    "Four previously inspected development periods; independent mechanism holdout remains to be registered.",
+    "Fresh contemporaneous no-prior arm avoids relying solely on old alias-version responses."
+  ],
+  "full_aggregate_source": "outputs/sce_prior_analysis_20261013_v1/summary.json",
+  "full_source_sha256": "c96967196f59162c3666cc5ab568d7a3b2a9e31c4d25fb2bfae6f690b2b3d291",
+  "scope": "curated aggregate receipt; full repeated/group diagnostics kept in ignored local outputs",
+  "months": {
+    "202203": {
+      "metadata": {
+        "as_of": "2022-03-10T23:59:59-05:00",
+        "numerical_signals": 77,
+        "age_counts": {
+          "Over 60": 4,
+          "Under 40": 4,
+          "40 to 60": 4
+        }
+      },
+      "repeats": {
+        "1": {
+          "Q9": {
+            "n_selected": 12,
+            "n_common": 12,
+            "n_excluded": 0,
+            "real": {
+              "n": 12,
+              "median_pp": 7.348970640937018,
+              "mean_pp": 7.9605541431638365,
+              "cross_person_iqr_pp": 5.0820346030340495
+            },
+            "contrasts": {
+              "permuted_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.9976671825242001,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.4570805341466855,
+                    1.1952026171242824
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.47948659654445747,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.2933501286688254,
+                    0.2861539490525707
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.046808448142757975,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.797245083228616,
+                    1.0061210614325138
+                  ]
+                },
+                "average_response_shift_pp": 1.0293152594626214
+              },
+              "own_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -1.5559826103754055,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.9557228812663023,
+                    1.1512468440872876
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.6809828148556516,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.6222074402258841,
+                    0.20989958083879193
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.22176116201540985,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -2.090670873464379,
+                    0.932162552830655
+                  ]
+                },
+                "average_response_shift_pp": 1.2140950093018044
+              },
+              "permuted_previous_minus_own_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": 0.5583154278512055,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.7740325468793259,
+                    0.7740325468793259
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": 0.20149621831119413,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.23318673630548437,
+                    0.6766012337534032
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": 0.17495271387265188,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.2060403312362722,
+                    1.4536997090048527
+                  ]
+                },
+                "average_response_shift_pp": -0.184779749839183
+              },
+              "own_previous_minus_permuted_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.5583154278512055,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.7740325468793259,
+                    0.7740325468793259
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.20149621831119413,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.6766012337534032,
+                    0.23318673630548437
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.17495271387265188,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.4536997090048527,
+                    1.2060403312362722
+                  ]
+                },
+                "average_response_shift_pp": 0.184779749839183
+              }
+            },
+            "prior_persistence_common_sample": {
+              "distribution": {
+                "n": 12,
+                "median_pp": 7.348970640937018,
+                "mean_pp": 6.88016320894081,
+                "cross_person_iqr_pp": 4.751445038786121
+              },
+              "median_absolute_error_pp": 0.0,
+              "distribution_W1_pp": 1.5230560126403303,
+              "IQR_absolute_gap_pp": 0.3305895642479282,
+              "individual_MAE_auxiliary_pp": 1.5230560126403307
+            },
+            "updates_and_copying": {
+              "no_prior": {
+                "n": 12,
+                "mean_signed_update_pp": -1.211502001154188,
+                "mean_absolute_update_pp": 3.2710984533050094,
+                "real_mean_signed_update_pp": 1.0803909342230253,
+                "update_MAE_pp": 4.293263522542132,
+                "real_nonzero_update_n": 7,
+                "update_sign_agreement": 0.2857142857142857,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 0,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": null
+                }
+              },
+              "own_previous": {
+                "n": 12,
+                "mean_signed_update_pp": 0.0025930081476165747,
+                "mean_absolute_update_pp": 2.219483311037053,
+                "real_mean_signed_update_pp": 1.0803909342230253,
+                "update_MAE_pp": 3.1698460228705923,
+                "real_nonzero_update_n": 7,
+                "update_sign_agreement": 0.42857142857142855,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 60.333333333333336
+                }
+              },
+              "permuted_previous": {
+                "n": 12,
+                "mean_signed_update_pp": -0.18218674169156657,
+                "mean_absolute_update_pp": 2.777425329724276,
+                "real_mean_signed_update_pp": 1.0803909342230253,
+                "update_MAE_pp": 3.7250868680452327,
+                "real_nonzero_update_n": 7,
+                "update_sign_agreement": 0.42857142857142855,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 68.66666666666667
+                }
+              }
+            },
+            "arms": {
+              "no_prior": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 5.4960626823321626,
+                  "mean_pp": 5.668661207786623,
+                  "cross_person_iqr_pp": 0.7821844448581263
+                },
+                "median_absolute_error_pp": 1.8529079586048551,
+                "distribution_W1_pp": 3.760119924622591,
+                "IQR_absolute_gap_pp": 4.299850158175923,
+                "individual_MAE_auxiliary_pp": 4.293263522542132
+              },
+              "own_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 7.052045292707568,
+                  "mean_pp": 6.882756217088427,
+                  "cross_person_iqr_pp": 1.0039456068735362
+                },
+                "median_absolute_error_pp": 0.2969253482294496,
+                "distribution_W1_pp": 3.0791371097669393,
+                "IQR_absolute_gap_pp": 4.078088996160513,
+                "individual_MAE_auxiliary_pp": 3.1698460228705923
+              },
+              "permuted_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 6.493729864856363,
+                  "mean_pp": 6.697976467249244,
+                  "cross_person_iqr_pp": 0.8289928930008843
+                },
+                "median_absolute_error_pp": 0.8552407760806551,
+                "distribution_W1_pp": 3.2806333280781335,
+                "IQR_absolute_gap_pp": 4.253041710033165,
+                "individual_MAE_auxiliary_pp": 3.7250868680452327
+              }
+            }
+          }
+        },
+        "2": {
+          "Q9": {
+            "n_selected": 12,
+            "n_common": 12,
+            "n_excluded": 0,
+            "real": {
+              "n": 12,
+              "median_pp": 7.348970640937018,
+              "mean_pp": 7.9605541431638365,
+              "cross_person_iqr_pp": 5.0820346030340495
+            },
+            "contrasts": {
+              "permuted_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.7662111177946667,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.2115874434959233,
+                    1.1038620439630389
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.3176968991772462,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.9606684803797704,
+                    0.2875202626857638
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": 0.1153508470080622,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.7131333416889682,
+                    0.7579858059371032
+                  ]
+                },
+                "average_response_shift_pp": 0.609504003406604
+              },
+              "own_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.6054476294022901,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.3618316414045006,
+                    0.6837573807347559
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.40274196711086985,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.1485674610434196,
+                    0.08730754365627719
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.3295796282182284,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.9197244182277022,
+                    0.6855964514459302
+                  ]
+                },
+                "average_response_shift_pp": 0.3785261279257486
+              },
+              "permuted_previous_minus_own_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.16076348839237653,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.8953320534020062,
+                    1.2732287873251842
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": 0.08504506793362365,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.38123307691053354,
+                    0.7945515674135608
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": 0.4449304752262906,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.2515201830758136,
+                    1.5416896399314783
+                  ]
+                },
+                "average_response_shift_pp": 0.2309778754808555
+              },
+              "own_previous_minus_permuted_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": 0.16076348839237653,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.2732287873251842,
+                    0.8953320534020062
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.08504506793362365,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.7945515674135608,
+                    0.38123307691053354
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.4449304752262906,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.5416896399314783,
+                    1.2515201830758136
+                  ]
+                },
+                "average_response_shift_pp": -0.2309778754808555
+              }
+            },
+            "prior_persistence_common_sample": {
+              "distribution": {
+                "n": 12,
+                "median_pp": 7.348970640937018,
+                "mean_pp": 6.88016320894081,
+                "cross_person_iqr_pp": 4.751445038786121
+              },
+              "median_absolute_error_pp": 0.0,
+              "distribution_W1_pp": 1.5230560126403303,
+              "IQR_absolute_gap_pp": 0.3305895642479282,
+              "individual_MAE_auxiliary_pp": 1.5230560126403307
+            },
+            "updates_and_copying": {
+              "no_prior": {
+                "n": 12,
+                "mean_signed_update_pp": -0.8852731584703815,
+                "mean_absolute_update_pp": 3.3158512731324445,
+                "real_mean_signed_update_pp": 1.0803909342230253,
+                "update_MAE_pp": 4.338016342369566,
+                "real_nonzero_update_n": 7,
+                "update_sign_agreement": 0.2857142857142857,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 0,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": null
+                }
+              },
+              "own_previous": {
+                "n": 12,
+                "mean_signed_update_pp": -0.5067470305446328,
+                "mean_absolute_update_pp": 2.385303440642912,
+                "real_mean_signed_update_pp": 1.0803909342230253,
+                "update_MAE_pp": 3.4074685098800344,
+                "real_nonzero_update_n": 7,
+                "update_sign_agreement": 0.2857142857142857,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 60.166666666666664
+                }
+              },
+              "permuted_previous": {
+                "n": 12,
+                "mean_signed_update_pp": -0.2757691550637773,
+                "mean_absolute_update_pp": 2.9720521683136734,
+                "real_mean_signed_update_pp": 1.0803909342230253,
+                "update_MAE_pp": 3.9504730599582523,
+                "real_nonzero_update_n": 7,
+                "update_sign_agreement": 0.42857142857142855,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 72.0
+                }
+              }
+            },
+            "arms": {
+              "no_prior": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 5.552215832519735,
+                  "mean_pp": 5.9948900504704286,
+                  "cross_person_iqr_pp": 1.1415703986175227
+                },
+                "median_absolute_error_pp": 1.7967548084172824,
+                "distribution_W1_pp": 3.6242446231609904,
+                "IQR_absolute_gap_pp": 3.940464204416527,
+                "individual_MAE_auxiliary_pp": 4.338016342369566
+              },
+              "own_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 6.157663461922025,
+                  "mean_pp": 6.373416178396177,
+                  "cross_person_iqr_pp": 1.4711500268357511
+                },
+                "median_absolute_error_pp": 1.1913071790149923,
+                "distribution_W1_pp": 3.2215026560501205,
+                "IQR_absolute_gap_pp": 3.6108845761982984,
+                "individual_MAE_auxiliary_pp": 3.4074685098800344
+              },
+              "permuted_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 6.318426950314402,
+                  "mean_pp": 6.604394053877033,
+                  "cross_person_iqr_pp": 1.0262195516094605
+                },
+                "median_absolute_error_pp": 1.0305436906226157,
+                "distribution_W1_pp": 3.306547723983744,
+                "IQR_absolute_gap_pp": 4.055815051424589,
+                "individual_MAE_auxiliary_pp": 3.9504730599582523
+              }
+            }
+          }
+        }
+      }
+    },
+    "202209": {
+      "metadata": {
+        "as_of": "2022-09-13T23:59:59-04:00",
+        "numerical_signals": 77,
+        "age_counts": {
+          "Over 60": 4,
+          "Under 40": 4,
+          "40 to 60": 4
+        }
+      },
+      "repeats": {
+        "1": {
+          "Q9": {
+            "n_selected": 12,
+            "n_common": 12,
+            "n_excluded": 0,
+            "real": {
+              "n": 12,
+              "median_pp": 2.8319061214089505,
+              "mean_pp": 6.457057087931301,
+              "cross_person_iqr_pp": 9.72676315367743
+            },
+            "contrasts": {
+              "permuted_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.49224409396363455,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.1145911525797665,
+                    1.096028999080426
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": 0.11627261552831047,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.33989921242209037,
+                    0.4781828274364634
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": 0.36350887140136123,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.3233620482445993,
+                    0.8216553453181408
+                  ]
+                },
+                "average_response_shift_pp": -0.5042736123946218
+              },
+              "own_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.11300989003765416,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.8932353801472654,
+                    0.6843954982151931
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.38530160301339755,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.7443228193342343,
+                    0.05166771999524176
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.3325297923921031,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.6729886032718753,
+                    0.4483161314801634
+                  ]
+                },
+                "average_response_shift_pp": 0.18519494272047274
+              },
+              "permuted_previous_minus_own_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.3792342039259804,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.0839853833629505,
+                    1.0844494372004336
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": 0.501574218541708,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.12975661300866054,
+                    0.972861873267689
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": 0.6960386637934644,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.07023048865857062,
+                    1.8963177523805324
+                  ]
+                },
+                "average_response_shift_pp": -0.6894685551150945
+              },
+              "own_previous_minus_permuted_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": 0.3792342039259804,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.0844494372004336,
+                    1.0839853833629505
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.501574218541708,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.972861873267689,
+                    0.12975661300866054
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.6960386637934644,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.8963177523805324,
+                    0.07023048865857062
+                  ]
+                },
+                "average_response_shift_pp": 0.6894685551150945
+              }
+            },
+            "prior_persistence_common_sample": {
+              "distribution": {
+                "n": 12,
+                "median_pp": 2.301918958350911,
+                "mean_pp": 5.357691655026943,
+                "cross_person_iqr_pp": 6.279480066866139
+              },
+              "median_absolute_error_pp": 0.5299871630580393,
+              "distribution_W1_pp": 1.8245136594587723,
+              "IQR_absolute_gap_pp": 3.447283086811291,
+              "individual_MAE_auxiliary_pp": 4.255198528320714
+            },
+            "updates_and_copying": {
+              "no_prior": {
+                "n": 12,
+                "mean_signed_update_pp": 0.9678596127559143,
+                "mean_absolute_update_pp": 5.495645428805896,
+                "real_mean_signed_update_pp": 1.0993654329043585,
+                "update_MAE_pp": 5.320622901469394,
+                "real_nonzero_update_n": 11,
+                "update_sign_agreement": 0.8181818181818182,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 0,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": null
+                }
+              },
+              "own_previous": {
+                "n": 12,
+                "mean_signed_update_pp": 1.1530545554763874,
+                "mean_absolute_update_pp": 5.133789263761436,
+                "real_mean_signed_update_pp": 1.0993654329043585,
+                "update_MAE_pp": 4.99875458059659,
+                "real_nonzero_update_n": 11,
+                "update_sign_agreement": 0.8181818181818182,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 101.5
+                }
+              },
+              "permuted_previous": {
+                "n": 12,
+                "mean_signed_update_pp": 0.46358600036129277,
+                "mean_absolute_update_pp": 5.290735132138735,
+                "real_mean_signed_update_pp": 1.0993654329043585,
+                "update_MAE_pp": 5.338491998122361,
+                "real_nonzero_update_n": 11,
+                "update_sign_agreement": 0.7272727272727273,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 105.83333333333333
+                }
+              }
+            },
+            "arms": {
+              "no_prior": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 6.27067335195968,
+                  "mean_pp": 6.325551267782855,
+                  "cross_person_iqr_pp": 0.8897755384811123
+                },
+                "median_absolute_error_pp": 3.438767230550729,
+                "distribution_W1_pp": 4.982340723938495,
+                "IQR_absolute_gap_pp": 8.836987615196318,
+                "individual_MAE_auxiliary_pp": 5.320622901469394
+              },
+              "own_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 6.157663461922025,
+                  "mean_pp": 6.510746210503329,
+                  "cross_person_iqr_pp": 1.2223053308732155
+                },
+                "median_absolute_error_pp": 3.325757340513075,
+                "distribution_W1_pp": 4.597039120925097,
+                "IQR_absolute_gap_pp": 8.504457822804214,
+                "individual_MAE_auxiliary_pp": 4.99875458059659
+              },
+              "permuted_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 5.778429257996045,
+                  "mean_pp": 5.821277655388234,
+                  "cross_person_iqr_pp": 0.526266667079752
+                },
+                "median_absolute_error_pp": 2.9465231365870945,
+                "distribution_W1_pp": 5.098613339466805,
+                "IQR_absolute_gap_pp": 9.200496486597679,
+                "individual_MAE_auxiliary_pp": 5.338491998122361
+              }
+            }
+          }
+        },
+        "2": {
+          "Q9": {
+            "n_selected": 12,
+            "n_common": 12,
+            "n_excluded": 0,
+            "real": {
+              "n": 12,
+              "median_pp": 2.8319061214089505,
+              "mean_pp": 6.457057087931301,
+              "cross_person_iqr_pp": 9.72676315367743
+            },
+            "contrasts": {
+              "permuted_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.22899637451313204,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.6173976974575605,
+                    0.6327818361115298
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": 0.030122866744243026,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.22327188042841697,
+                    0.2651065024412648
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": 0.26541009649415237,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.4680674270649306,
+                    0.6711412264886728
+                  ]
+                },
+                "average_response_shift_pp": -0.050848506563152096
+              },
+              "own_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": 0.1376029022437084,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.9687487554441339,
+                    1.1108433330919496
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.5864694444850995,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.5419181862916551,
+                    0.07033254303680073
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.34489987718785997,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -2.404752966572351,
+                    0.3738429404329744
+                  ]
+                },
+                "average_response_shift_pp": 0.7098495082737705
+              },
+              "permuted_previous_minus_own_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.36659927675684045,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.9636255858627614,
+                    1.1575368897692755
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": 0.6165923112293425,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.10590881741472236,
+                    1.6902774683374893
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": 0.6103099736820123,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.3807219830641491,
+                    2.597806989867217
+                  ]
+                },
+                "average_response_shift_pp": -0.7606980148369226
+              },
+              "own_previous_minus_permuted_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": 0.36659927675684045,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.1575368897692755,
+                    0.9636255858627614
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.6165923112293425,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.6902774683374893,
+                    0.10590881741472236
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.6103099736820123,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -2.597806989867217,
+                    0.3807219830641491
+                  ]
+                },
+                "average_response_shift_pp": 0.7606980148369226
+              }
+            },
+            "prior_persistence_common_sample": {
+              "distribution": {
+                "n": 12,
+                "median_pp": 2.301918958350911,
+                "mean_pp": 5.357691655026943,
+                "cross_person_iqr_pp": 6.279480066866139
+              },
+              "median_absolute_error_pp": 0.5299871630580393,
+              "distribution_W1_pp": 1.8245136594587723,
+              "IQR_absolute_gap_pp": 3.447283086811291,
+              "individual_MAE_auxiliary_pp": 4.255198528320714
+            },
+            "updates_and_copying": {
+              "no_prior": {
+                "n": 12,
+                "mean_signed_update_pp": 0.7372237345484374,
+                "mean_absolute_update_pp": 5.50707453677538,
+                "real_mean_signed_update_pp": 1.0993654329043585,
+                "update_MAE_pp": 5.264230616622657,
+                "real_nonzero_update_n": 11,
+                "update_sign_agreement": 0.8181818181818182,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 0,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": null
+                }
+              },
+              "own_previous": {
+                "n": 12,
+                "mean_signed_update_pp": 1.4470732428222082,
+                "mean_absolute_update_pp": 5.028209503358134,
+                "real_mean_signed_update_pp": 1.0993654329043585,
+                "update_MAE_pp": 4.659351361745082,
+                "real_nonzero_update_n": 11,
+                "update_sign_agreement": 0.8181818181818182,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 99.66666666666667
+                }
+              },
+              "permuted_previous": {
+                "n": 12,
+                "mean_signed_update_pp": 0.6863752279852853,
+                "mean_absolute_update_pp": 5.489317633697382,
+                "real_mean_signed_update_pp": 1.0993654329043585,
+                "update_MAE_pp": 5.382632515594898,
+                "real_nonzero_update_n": 11,
+                "update_sign_agreement": 0.6363636363636364,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 105.66666666666667
+                }
+              }
+            },
+            "arms": {
+              "no_prior": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 6.051537563830243,
+                  "mean_pp": 6.094915389575378,
+                  "cross_person_iqr_pp": 0.9017875845561871
+                },
+                "median_absolute_error_pp": 3.219631442421292,
+                "distribution_W1_pp": 5.04157377069062,
+                "IQR_absolute_gap_pp": 8.824975569121243,
+                "individual_MAE_auxiliary_pp": 5.264230616622657
+              },
+              "own_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 6.189140466073951,
+                  "mean_pp": 6.804764897849149,
+                  "cross_person_iqr_pp": 1.246687461744047
+                },
+                "median_absolute_error_pp": 3.3572343446650006,
+                "distribution_W1_pp": 4.455104326205521,
+                "IQR_absolute_gap_pp": 8.480075691933383,
+                "individual_MAE_auxiliary_pp": 4.659351361745082
+              },
+              "permuted_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 5.822541189317111,
+                  "mean_pp": 6.044066883012227,
+                  "cross_person_iqr_pp": 0.6363774880620348
+                },
+                "median_absolute_error_pp": 2.99063506790816,
+                "distribution_W1_pp": 5.071696637434863,
+                "IQR_absolute_gap_pp": 9.090385665615395,
+                "individual_MAE_auxiliary_pp": 5.382632515594898
+              }
+            }
+          }
+        }
+      }
+    },
+    "202303": {
+      "metadata": {
+        "as_of": "2023-03-14T23:59:59-04:00",
+        "numerical_signals": 77,
+        "age_counts": {
+          "Over 60": 4,
+          "Under 40": 4,
+          "40 to 60": 4
+        }
+      },
+      "repeats": {
+        "1": {
+          "Q9": {
+            "n_selected": 12,
+            "n_common": 11,
+            "n_excluded": 1,
+            "real": {
+              "n": 11,
+              "median_pp": 4.450937129970344,
+              "mean_pp": 3.851019657768019,
+              "cross_person_iqr_pp": 3.761309266986345
+            },
+            "contrasts": {
+              "permuted_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.6720234032494323,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.3217912134928707,
+                    1.6798936788482912
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.22196981831090934,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.681261391887433,
+                    0.6580757875086912
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.3680731040761698,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.0330477914001217,
+                    0.8112197502589993
+                  ]
+                },
+                "average_response_shift_pp": 0.7620773014870331
+              },
+              "own_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.41793610883998333,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.0079381383303119,
+                    0.49193329539140174
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.26219243855884766,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.6564745086490317,
+                    0.12032459894887279
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.2874563280818956,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.1922654104282762,
+                    0.6547370419541043
+                  ]
+                },
+                "average_response_shift_pp": 0.19369950818831994
+              },
+              "permuted_previous_minus_own_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.254087294409449,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.1417674172586527,
+                    1.3724994041070042
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": 0.04022262024793832,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.31990708707531734,
+                    0.9072225492174062
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.08061677599427419,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.8469369640425716,
+                    1.051270016210725
+                  ]
+                },
+                "average_response_shift_pp": 0.5683777932987133
+              },
+              "own_previous_minus_permuted_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": 0.254087294409449,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.3724994041070042,
+                    1.1417674172586527
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.04022262024793832,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.9072225492174062,
+                    0.31990708707531734
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": 0.08061677599427419,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.051270016210725,
+                    0.8469369640425716
+                  ]
+                },
+                "average_response_shift_pp": -0.5683777932987133
+              }
+            },
+            "prior_persistence_common_sample": {
+              "distribution": {
+                "n": 11,
+                "median_pp": 1.9722927967940134,
+                "mean_pp": 2.560677315721993,
+                "cross_person_iqr_pp": 4.256977446294503
+              },
+              "median_absolute_error_pp": 2.478644333176331,
+              "distribution_W1_pp": 2.4197234438720647,
+              "IQR_absolute_gap_pp": 0.4956681793081579,
+              "individual_MAE_auxiliary_pp": 4.105603546005799
+            },
+            "updates_and_copying": {
+              "no_prior": {
+                "n": 11,
+                "mean_signed_update_pp": 1.382181492715454,
+                "mean_absolute_update_pp": 3.5414948457944533,
+                "real_mean_signed_update_pp": 1.2903423420460256,
+                "update_MAE_pp": 3.2027873399442544,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.8,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 0,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": null
+                }
+              },
+              "own_previous": {
+                "n": 11,
+                "mean_signed_update_pp": 1.5758810009037738,
+                "mean_absolute_update_pp": 3.4925868525172343,
+                "real_mean_signed_update_pp": 1.2903423420460256,
+                "update_MAE_pp": 2.6256122527141006,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.8,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 11,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 112.27272727272727
+                }
+              },
+              "permuted_previous": {
+                "n": 11,
+                "mean_signed_update_pp": 2.144258794202487,
+                "mean_absolute_update_pp": 3.8849838302074122,
+                "real_mean_signed_update_pp": 1.2903423420460256,
+                "update_MAE_pp": 3.1349272755445883,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.8,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 11,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 121.18181818181819
+                }
+              }
+            },
+            "arms": {
+              "no_prior": {
+                "distribution": {
+                  "n": 11,
+                  "median_pp": 3.696897533610114,
+                  "mean_pp": 3.942858808437447,
+                  "cross_person_iqr_pp": 0.7277120433011737
+                },
+                "median_absolute_error_pp": 0.7540395963602302,
+                "distribution_W1_pp": 2.522305109208864,
+                "IQR_absolute_gap_pp": 3.033597223685171,
+                "individual_MAE_auxiliary_pp": 3.2027873399442544
+              },
+              "own_previous": {
+                "distribution": {
+                  "n": 11,
+                  "median_pp": 4.1148336424500975,
+                  "mean_pp": 4.136558316625767,
+                  "cross_person_iqr_pp": 1.0151683713830693
+                },
+                "median_absolute_error_pp": 0.3361034875202469,
+                "distribution_W1_pp": 2.2601126706500163,
+                "IQR_absolute_gap_pp": 2.7461408956032756,
+                "individual_MAE_auxiliary_pp": 2.6256122527141006
+              },
+              "permuted_previous": {
+                "distribution": {
+                  "n": 11,
+                  "median_pp": 4.532953323081142,
+                  "mean_pp": 4.70493610992448,
+                  "cross_person_iqr_pp": 1.0957851473773434
+                },
+                "median_absolute_error_pp": 0.08201619311079789,
+                "distribution_W1_pp": 2.3003352908979546,
+                "IQR_absolute_gap_pp": 2.6655241196090014,
+                "individual_MAE_auxiliary_pp": 3.1349272755445883
+              }
+            }
+          }
+        },
+        "2": {
+          "Q9": {
+            "n_selected": 12,
+            "n_common": 11,
+            "n_excluded": 1,
+            "real": {
+              "n": 11,
+              "median_pp": 4.450937129970344,
+              "mean_pp": 3.851019657768019,
+              "cross_person_iqr_pp": 3.761309266986345
+            },
+            "contrasts": {
+              "permuted_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.3626901046897082,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.0086168620113298,
+                    1.0451861370293827
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.2839800281219671,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.6495395799056265,
+                    0.4152524096384781
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.6614155588068287,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.5194801763757242,
+                    1.055361779767352
+                  ]
+                },
+                "average_response_shift_pp": 0.4253042839499901
+              },
+              "own_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.32138856280363726,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.0830993140420535,
+                    1.1936442180885711
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.1572101984784129,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.6182965743094397,
+                    0.6178202790793098
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.11707327637387,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.964107810389659,
+                    0.9214901975720828
+                  ]
+                },
+                "average_response_shift_pp": 0.7140788515065513
+              },
+              "permuted_previous_minus_own_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.041301541886070936,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.7165087322958297,
+                    1.0893204833428838
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.1267698296435542,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.509298976565394,
+                    0.5433630453588467
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.5443422824329587,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.4328501236802822,
+                    0.9510000524743364
+                  ]
+                },
+                "average_response_shift_pp": -0.28877456755656117
+              },
+              "own_previous_minus_permuted_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": 0.041301541886070936,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.0893204833428838,
+                    0.7165087322958297
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": 0.1267698296435542,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.5433630453588467,
+                    0.509298976565394
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": 0.5443422824329587,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.9510000524743364,
+                    1.4328501236802822
+                  ]
+                },
+                "average_response_shift_pp": 0.28877456755656117
+              }
+            },
+            "prior_persistence_common_sample": {
+              "distribution": {
+                "n": 11,
+                "median_pp": 1.9722927967940134,
+                "mean_pp": 2.560677315721993,
+                "cross_person_iqr_pp": 4.256977446294503
+              },
+              "median_absolute_error_pp": 2.478644333176331,
+              "distribution_W1_pp": 2.4197234438720647,
+              "IQR_absolute_gap_pp": 0.4956681793081579,
+              "individual_MAE_auxiliary_pp": 4.105603546005799
+            },
+            "updates_and_copying": {
+              "no_prior": {
+                "n": 11,
+                "mean_signed_update_pp": 1.3590115057395693,
+                "mean_absolute_update_pp": 3.8411116628238435,
+                "real_mean_signed_update_pp": 1.2903423420460256,
+                "update_MAE_pp": 3.0160676047037516,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.8,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 0,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": null
+                }
+              },
+              "own_previous": {
+                "n": 11,
+                "mean_signed_update_pp": 2.073090357246121,
+                "mean_absolute_update_pp": 3.831215662495805,
+                "real_mean_signed_update_pp": 1.2903423420460256,
+                "update_MAE_pp": 3.2375558233306765,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.8,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 11,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 114.0
+                }
+              },
+              "permuted_previous": {
+                "n": 11,
+                "mean_signed_update_pp": 1.7843157896895592,
+                "mean_absolute_update_pp": 4.015570103039017,
+                "real_mean_signed_update_pp": 1.2903423420460256,
+                "update_MAE_pp": 3.1077901982398064,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.7,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 11,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 111.63636363636364
+                }
+              }
+            },
+            "arms": {
+              "no_prior": {
+                "distribution": {
+                  "n": 11,
+                  "median_pp": 3.976957493603562,
+                  "mean_pp": 3.919688821461563,
+                  "cross_person_iqr_pp": 0.7506718161421153
+                },
+                "median_absolute_error_pp": 0.4739796363667823,
+                "distribution_W1_pp": 2.388371709469209,
+                "IQR_absolute_gap_pp": 3.0106374508442295,
+                "individual_MAE_auxiliary_pp": 3.0160676047037516
+              },
+              "own_previous": {
+                "distribution": {
+                  "n": 11,
+                  "median_pp": 4.6035282035334895,
+                  "mean_pp": 4.633767672968115,
+                  "cross_person_iqr_pp": 0.8677450925159853
+                },
+                "median_absolute_error_pp": 0.15259107356314505,
+                "distribution_W1_pp": 2.231161510990796,
+                "IQR_absolute_gap_pp": 2.8935641744703595,
+                "individual_MAE_auxiliary_pp": 3.2375558233306765
+              },
+              "permuted_previous": {
+                "distribution": {
+                  "n": 11,
+                  "median_pp": 4.5622266616474185,
+                  "mean_pp": 4.344993105411553,
+                  "cross_person_iqr_pp": 1.412087374948944
+                },
+                "median_absolute_error_pp": 0.11128953167707412,
+                "distribution_W1_pp": 2.104391681347242,
+                "IQR_absolute_gap_pp": 2.349221892037401,
+                "individual_MAE_auxiliary_pp": 3.1077901982398064
+              }
+            }
+          }
+        }
+      }
+    },
+    "202403": {
+      "metadata": {
+        "as_of": "2024-03-12T23:59:59-04:00",
+        "numerical_signals": 77,
+        "age_counts": {
+          "Under 40": 4,
+          "40 to 60": 4,
+          "Over 60": 4
+        }
+      },
+      "repeats": {
+        "1": {
+          "Q9": {
+            "n_selected": 12,
+            "n_common": 12,
+            "n_excluded": 0,
+            "real": {
+              "n": 12,
+              "median_pp": 3.3901006518155765,
+              "mean_pp": 3.66943461710272,
+              "cross_person_iqr_pp": 3.4388593438712416
+            },
+            "contrasts": {
+              "permuted_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.43395759713553694,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.7259457509431648,
+                    0.42106922541039005
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.38860100003632025,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.9437489883352115,
+                    0.10787092244584635
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.02664355959975717,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.8239025780308672,
+                    0.42099335334632804
+                  ]
+                },
+                "average_response_shift_pp": 0.6064345099877646
+              },
+              "own_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.3054260504736419,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.7164141201350542,
+                    0.2874674623743552
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.24748823998963276,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.5878216637100091,
+                    0.08270734571547131
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.21067160340250668,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.7386237881455506,
+                    0.2973130348556729
+                  ]
+                },
+                "average_response_shift_pp": 0.43009194295107367
+              },
+              "permuted_previous_minus_own_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.12853154666189504,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.3989869423555028,
+                    0.33039899379674953
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.1411127600466875,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.6430782757674208,
+                    0.2703850156973115
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": 0.1840280438027495,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.8054385167281995,
+                    0.6682313119334845
+                  ]
+                },
+                "average_response_shift_pp": 0.17634256703669093
+              },
+              "own_previous_minus_permuted_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": 0.12853154666189504,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.33039899379674953,
+                    0.3989869423555028
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": 0.1411127600466875,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.2703850156973115,
+                    0.6430782757674208
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.1840280438027495,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.6682313119334845,
+                    0.8054385167281995
+                  ]
+                },
+                "average_response_shift_pp": -0.17634256703669093
+              }
+            },
+            "prior_persistence_common_sample": {
+              "distribution": {
+                "n": 12,
+                "median_pp": 3.0,
+                "mean_pp": 3.591667299667348,
+                "cross_person_iqr_pp": 2.2595727965668733
+              },
+              "median_absolute_error_pp": 0.3901006518155765,
+              "distribution_W1_pp": 1.0474244076029728,
+              "IQR_absolute_gap_pp": 1.1792865473043683,
+              "individual_MAE_auxiliary_pp": 1.9364031030667537
+            },
+            "updates_and_copying": {
+              "no_prior": {
+                "n": 12,
+                "mean_signed_update_pp": -1.4050536648773173,
+                "mean_absolute_update_pp": 2.054007114106059,
+                "real_mean_signed_update_pp": 0.07776731743537113,
+                "update_MAE_pp": 3.0873060664960845,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.5,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 0,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": null
+                }
+              },
+              "own_previous": {
+                "n": 12,
+                "mean_signed_update_pp": -0.9749617219262436,
+                "mean_absolute_update_pp": 1.651190248955125,
+                "real_mean_signed_update_pp": 0.07776731743537113,
+                "update_MAE_pp": 2.6986146565580977,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.4,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 63.666666666666664
+                }
+              },
+              "permuted_previous": {
+                "n": 12,
+                "mean_signed_update_pp": -0.7986191548895526,
+                "mean_absolute_update_pp": 1.9735202955817446,
+                "real_mean_signed_update_pp": 0.07776731743537113,
+                "update_MAE_pp": 2.750719457486199,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.6,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 63.333333333333336
+                }
+              }
+            },
+            "arms": {
+              "no_prior": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 2.10780359119169,
+                  "mean_pp": 2.186613634790031,
+                  "cross_person_iqr_pp": 0.3347920478787434
+                },
+                "median_absolute_error_pp": 1.2822970606238866,
+                "distribution_W1_pp": 2.733519725262687,
+                "IQR_absolute_gap_pp": 3.104067295992498,
+                "individual_MAE_auxiliary_pp": 3.0873060664960845
+              },
+              "own_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 2.413229641665332,
+                  "mean_pp": 2.616705577741105,
+                  "cross_person_iqr_pp": 0.5454636512812501
+                },
+                "median_absolute_error_pp": 0.9768710101502447,
+                "distribution_W1_pp": 2.4860314852730543,
+                "IQR_absolute_gap_pp": 2.8933956925899915,
+                "individual_MAE_auxiliary_pp": 2.6986146565580977
+              },
+              "permuted_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 2.541761188327227,
+                  "mean_pp": 2.7930481447777957,
+                  "cross_person_iqr_pp": 0.36143560747850056
+                },
+                "median_absolute_error_pp": 0.8483394634883497,
+                "distribution_W1_pp": 2.344918725226367,
+                "IQR_absolute_gap_pp": 3.077423736392741,
+                "individual_MAE_auxiliary_pp": 2.750719457486199
+              }
+            }
+          }
+        },
+        "2": {
+          "Q9": {
+            "n_selected": 12,
+            "n_common": 12,
+            "n_excluded": 0,
+            "real": {
+              "n": 12,
+              "median_pp": 3.3901006518155765,
+              "mean_pp": 3.66943461710272,
+              "cross_person_iqr_pp": 3.4388593438712416
+            },
+            "contrasts": {
+              "permuted_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.6199229352573781,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.025544322521478,
+                    0.6732085924454676
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.6002928091419841,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.0904836408030931,
+                    -0.0003668420603706405
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.3058421051823941,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.2268008241887447,
+                    0.29885012291667296
+                  ]
+                },
+                "average_response_shift_pp": 0.7777625696858816
+              },
+              "own_previous_minus_no_prior": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.3584423112458701,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.7704294240364806,
+                    0.3719872166177307
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.24617508342028138,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.7104621952366267,
+                    0.21127840377145168
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.19450182390526916,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.6101566901630283,
+                    0.393350873358385
+                  ]
+                },
+                "average_response_shift_pp": 0.4220531035656712
+              },
+              "permuted_previous_minus_own_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": -0.26148062401150796,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.5924264048821923,
+                    0.30204102840268193
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": -0.35411772572170275,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.7226599058215469,
+                    0.07553307557071334
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": -0.11134028127712492,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -1.1995118157748135,
+                    0.5113785655168444
+                  ]
+                },
+                "average_response_shift_pp": 0.3557094661202103
+              },
+              "own_previous_minus_permuted_previous": {
+                "median_absolute_error_pp": {
+                  "change_pp": 0.26148062401150796,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.30204102840268193,
+                    0.5924264048821923
+                  ]
+                },
+                "distribution_W1_pp": {
+                  "change_pp": 0.35411772572170275,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.07553307557071334,
+                    0.7226599058215469
+                  ]
+                },
+                "IQR_absolute_gap_pp": {
+                  "change_pp": 0.11134028127712492,
+                  "paired_person_bootstrap_95_interval_pp": [
+                    -0.5113785655168444,
+                    1.1995118157748135
+                  ]
+                },
+                "average_response_shift_pp": -0.3557094661202103
+              }
+            },
+            "prior_persistence_common_sample": {
+              "distribution": {
+                "n": 12,
+                "median_pp": 3.0,
+                "mean_pp": 3.591667299667348,
+                "cross_person_iqr_pp": 2.2595727965668733
+              },
+              "median_absolute_error_pp": 0.3901006518155765,
+              "distribution_W1_pp": 1.0474244076029728,
+              "IQR_absolute_gap_pp": 1.1792865473043683,
+              "individual_MAE_auxiliary_pp": 1.9364031030667537
+            },
+            "updates_and_copying": {
+              "no_prior": {
+                "n": 12,
+                "mean_signed_update_pp": -1.3437855851255758,
+                "mean_absolute_update_pp": 1.990219134418638,
+                "real_mean_signed_update_pp": 0.07776731743537113,
+                "update_MAE_pp": 3.030491239794223,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.5,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 0,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": null
+                }
+              },
+              "own_previous": {
+                "n": 12,
+                "mean_signed_update_pp": -0.9217324815599047,
+                "mean_absolute_update_pp": 1.5799256249408897,
+                "real_mean_signed_update_pp": 0.07776731743537113,
+                "update_MAE_pp": 2.6440817809929147,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.6,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 66.66666666666667
+                }
+              },
+              "permuted_previous": {
+                "n": 12,
+                "mean_signed_update_pp": -0.5660230154396945,
+                "mean_absolute_update_pp": 2.0592576672126275,
+                "real_mean_signed_update_pp": 0.07776731743537113,
+                "update_MAE_pp": 2.6433893237289006,
+                "real_nonzero_update_n": 10,
+                "update_sign_agreement": 0.6,
+                "scope": "signed-center changes relative to own observed t-1; overlapping horizons, not evidence of causal learning",
+                "supplied_prior_raw_copying": {
+                  "n": 12,
+                  "exact_copy_n": 0,
+                  "mean_probability_L1_percentage_points": 62.083333333333336
+                }
+              }
+            },
+            "arms": {
+              "no_prior": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 2.127314185233521,
+                  "mean_pp": 2.2478817145417724,
+                  "cross_person_iqr_pp": 0.22735698429215212
+                },
+                "median_absolute_error_pp": 1.2627864665820554,
+                "distribution_W1_pp": 2.7345933487672256,
+                "IQR_absolute_gap_pp": 3.2115023595790895,
+                "individual_MAE_auxiliary_pp": 3.030491239794223
+              },
+              "own_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 2.4857564964793912,
+                  "mean_pp": 2.669934818107444,
+                  "cross_person_iqr_pp": 0.4218588081974213
+                },
+                "median_absolute_error_pp": 0.9043441553361853,
+                "distribution_W1_pp": 2.488418265346944,
+                "IQR_absolute_gap_pp": 3.0170005356738203,
+                "individual_MAE_auxiliary_pp": 2.6440817809929147
+              },
+              "permuted_previous": {
+                "distribution": {
+                  "n": 12,
+                  "median_pp": 2.747237120490899,
+                  "mean_pp": 3.025644284227654,
+                  "cross_person_iqr_pp": 0.5331990894745462
+                },
+                "median_absolute_error_pp": 0.6428635313246773,
+                "distribution_W1_pp": 2.1343005396252415,
+                "IQR_absolute_gap_pp": 2.9056602543966954,
+                "individual_MAE_auxiliary_pp": 2.6433893237289006
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

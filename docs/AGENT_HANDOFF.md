@@ -1,4 +1,4 @@
-**2026-10-13 最新：** 先读NEXT_ACTIONS顶部及[literature/sce/factual_mechanisms_20261013/prior_preparation_receipt.md](literature/sce/factual_mechanisms_20261013/prior_preparation_receipt.md)。先验库存/三组288候选已完成离线准备，tenure按作答次数而非日历月的规则已核实；下一步独立运行入口及具体预算/真实t-1答案外发范围，不把已准备当已调用。MIDUS隔离文件只能由用户本地统计。15待审文件继续保护，scoped add。
+**2026-10-13 最新：** 先读NEXT_ACTIONS顶部及[literature/sce/factual_mechanisms_20261013/prior_trial_execution_20261013.md](literature/sce/factual_mechanisms_20261013/prior_trial_execution_20261013.md)。先验三组288真实回答已授权运行并分析，成本高峰价估算$0.201249/$1；本人中心误差降25.1%但差异仍小、置换中心更近，先验原样延续的分布距离更好，不能宣称学会正确更新。小样中位数定义敏感性单列；不以替换定义挑胜者。现成入口/分析/阅读与聚合封存路径在记录，旧准备状态均历史。下一步零API核查差异压缩与更新机制，独立时期/合成起点/B自身状态另设计；新闻数量暂不改。MIDUS隔离数据仅用户本地统计。15待审保护，scoped add。
 
 **2026-10-10 Sol接力清单已整理（计划，未新增实验）：**[可执行清单与结果备选方案](sol_execution_checklist_20261010.md)／[浏览器版](sol_execution_checklist_20261010.html)／[接力提示](sol_start_here_20261010.txt)。按00—08推进：先保护现场与偏差分解，再评价/抽样/月份登记、同事实表达和问卷对照的离线准备，随后具体运行卡；复现依赖检查同步做。ROADMAP顶部已更新为当前唯一日历，旧日程归档。最多两轮有依据的改进后作收束判断，保留跨时期验证；局部改善、稳定失败或仅校准有效分别写结论，不把负结果自动当成功。首轮Sol从00、01开始并推进02、03和07；15份待审文件按sources/sol_handoff_protected_files_20261010.json保护。本次仅文档及交接，无新API、无正式配置变更。
 

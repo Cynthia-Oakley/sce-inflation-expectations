@@ -1,0 +1,15 @@
+{
+  "status": "raw_responses_equal_duckdb_payloads",
+  "request_count": 288,
+  "returned_models": {
+    "deepseek-flash": 288
+  },
+  "validation_counts": {
+    "valid": 288
+  },
+  "maximum_q9_sum_floating_deviation": 1.4210854715202004e-14,
+  "q9_sum_tolerance": 1e-06,
+  "protected_files_unchanged": 15,
+  "new_audit_api_calls": 0,
+  "first_check_note": "strict binary float sum==100 rejected tiny numerical deviation; tolerance corrected in audit only, no answer modification"
+}
