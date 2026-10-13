@@ -1,0 +1,1260 @@
+{
+  "status": "completed_offline_fixed_weight_diagnostic",
+  "new_api_calls": 0,
+  "cost_usd": 0,
+  "main_history_weight": 0.4,
+  "fixed_sensitivity_weights": [
+    0.0,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "weight_selection_performed": false,
+  "original_trial": "outputs/sce_prior_trial_20261013_v2",
+  "original_analysis": "outputs/sce_prior_analysis_20261013_v1",
+  "n_periods": 4,
+  "repetitions_per_period": 2,
+  "scopes": {
+    "same_sample": {
+      "target_description": "same selected real respondents, same frozen scorer and empirical median",
+      "persistence": {
+        "mae_pp": 0.8496830370124867,
+        "rmse_pp": 1.2822580319440766,
+        "bias_pp": -0.8496830370124867,
+        "error_variance_pp_squared_ddof0": 0.9222243970983336
+      },
+      "weights": {
+        "0.0": {
+          "no_prior": {
+            "mae_pp": 1.760145524990889,
+            "rmse_pp": 2.0274642492534274,
+            "bias_pp": -0.09554585674788385,
+            "error_variance_pp_squared_ddof0": 4.101482271259077
+          },
+          "own_previous": {
+            "mae_pp": 1.3176417423740423,
+            "rmse_pp": 1.7939978644770518,
+            "bias_pp": 0.39125394731126273,
+            "error_variance_pp_squared_ddof0": 3.065348686461578
+          },
+          "permuted_previous": {
+            "mae_pp": 1.188431423849928,
+            "rmse_pp": 1.6035670849784567,
+            "bias_pp": 0.3441845584708536,
+            "error_variance_pp_squared_ddof0": 2.4529643857365286
+          }
+        },
+        "0.2": {
+          "no_prior": {
+            "mae_pp": 1.5250543110894046,
+            "rmse_pp": 1.648293202126587,
+            "bias_pp": -0.24637329280080433,
+            "error_variance_pp_squared_ddof0": 2.6561706807712073
+          },
+          "own_previous": {
+            "mae_pp": 1.1405330702832983,
+            "rmse_pp": 1.4252840352389071,
+            "bias_pp": 0.14306655044651295,
+            "error_variance_pp_squared_ddof0": 2.0109665432502375
+          },
+          "permuted_previous": {
+            "mae_pp": 1.0290218852190611,
+            "rmse_pp": 1.2608408223789183,
+            "bias_pp": 0.10541103937418583,
+            "error_variance_pp_squared_ddof0": 1.5786080921552008
+          }
+        },
+        "0.4": {
+          "no_prior": {
+            "mae_pp": 1.2899630971879201,
+            "rmse_pp": 1.33167470393979,
+            "bias_pp": -0.3972007288537249,
+            "error_variance_pp_squared_ddof0": 1.6155890981111969
+          },
+          "own_previous": {
+            "mae_pp": 1.0015721665833406,
+            "rmse_pp": 1.1315977355314604,
+            "bias_pp": -0.1051208464182371,
+            "error_variance_pp_squared_ddof0": 1.2694630427082423
+          },
+          "permuted_previous": {
+            "mae_pp": 0.9179387777851628,
+            "rmse_pp": 1.003066048422758,
+            "bias_pp": -0.1333624797224825,
+            "error_variance_pp_squared_ddof0": 0.9883559465007175
+          }
+        },
+        "0.6": {
+          "no_prior": {
+            "mae_pp": 1.0548718832864359,
+            "rmse_pp": 1.1314028428504121,
+            "bias_pp": -0.5480281649066456,
+            "error_variance_pp_squared_ddof0": 0.9797375232790491
+          },
+          "own_previous": {
+            "mae_pp": 0.8626112628833827,
+            "rmse_pp": 0.9826825019340192,
+            "bias_pp": -0.35330824328298693,
+            "error_variance_pp_squared_ddof0": 0.8408381848355932
+          },
+          "permuted_previous": {
+            "mae_pp": 0.8068556703512643,
+            "rmse_pp": 0.9059211612442913,
+            "bias_pp": -0.3721359988191506,
+            "error_variance_pp_squared_ddof0": 0.6822079487730786
+          }
+        },
+        "0.8": {
+          "no_prior": {
+            "mae_pp": 0.8197806693849515,
+            "rmse_pp": 1.1122118086350807,
+            "bias_pp": -0.6988556009595662,
+            "error_variance_pp_squared_ddof0": 0.748615956274761
+          },
+          "own_previous": {
+            "mae_pp": 0.7236503591834249,
+            "rmse_pp": 1.0425396753836405,
+            "bias_pp": -0.6014956401477369,
+            "error_variance_pp_squared_ddof0": 0.7250919696322904
+          },
+          "permuted_previous": {
+            "mae_pp": 0.6957725629173658,
+            "rmse_pp": 1.0165503126025892,
+            "bias_pp": -0.6109095179158187,
+            "error_variance_pp_squared_ddof0": 0.6601640989722839
+          }
+        },
+        "1.0": {
+          "no_prior": {
+            "mae_pp": 0.8496830370124867,
+            "rmse_pp": 1.2822580319440766,
+            "bias_pp": -0.8496830370124867,
+            "error_variance_pp_squared_ddof0": 0.9222243970983336
+          },
+          "own_previous": {
+            "mae_pp": 0.8496830370124867,
+            "rmse_pp": 1.2822580319440766,
+            "bias_pp": -0.8496830370124867,
+            "error_variance_pp_squared_ddof0": 0.9222243970983336
+          },
+          "permuted_previous": {
+            "mae_pp": 0.8496830370124867,
+            "rmse_pp": 1.2822580319440766,
+            "bias_pp": -0.8496830370124867,
+            "error_variance_pp_squared_ddof0": 0.9222243970983336
+          }
+        }
+      },
+      "average_two_generations_before_scoring": {
+        "0.0": {
+          "no_prior": {
+            "mae_pp": 1.760145524990889,
+            "rmse_pp": 2.0254597101279526,
+            "bias_pp": -0.09554585674788385,
+            "error_variance_pp_squared_ddof0": 4.093358026609922
+          },
+          "own_previous": {
+            "mae_pp": 1.2794939739832563,
+            "rmse_pp": 1.7757016434398576,
+            "bias_pp": 0.39125394731126273,
+            "error_variance_pp_squared_ddof0": 3.0000366752283663
+          },
+          "permuted_previous": {
+            "mae_pp": 1.188431423849928,
+            "rmse_pp": 1.6020901206517644,
+            "bias_pp": 0.3441845584708535,
+            "error_variance_pp_squared_ddof0": 2.4482297444002086
+          }
+        },
+        "0.4": {
+          "no_prior": {
+            "mae_pp": 1.2899630971879201,
+            "rmse_pp": 1.3305761117047878,
+            "bias_pp": -0.3972007288537248,
+            "error_variance_pp_squared_ddof0": 1.6126643700375014
+          },
+          "own_previous": {
+            "mae_pp": 1.0015721665833404,
+            "rmse_pp": 1.121160608929859,
+            "bias_pp": -0.10512084641823716,
+            "error_variance_pp_squared_ddof0": 1.2459507186642855
+          },
+          "permuted_previous": {
+            "mae_pp": 0.9179387777851628,
+            "rmse_pp": 1.002216057852483,
+            "bias_pp": -0.1333624797224825,
+            "error_variance_pp_squared_ddof0": 0.9866514756196421
+          }
+        }
+      }
+    },
+    "public_anchor_reference": {
+      "target_description": "official national first-release headline; nonrepresentative small-sample reference only",
+      "persistence": {
+        "mae_pp": 0.3999999999999999,
+        "rmse_pp": 0.4949747468305831,
+        "bias_pp": -0.25,
+        "error_variance_pp_squared_ddof0": 0.1824999999999999
+      },
+      "weights": {
+        "0.0": {
+          "no_prior": {
+            "mae_pp": 0.895619949662392,
+            "rmse_pp": 0.90731076079086,
+            "bias_pp": -0.5150672207149116,
+            "error_variance_pp_squared_ddof0": 0.5579185747919058
+          },
+          "own_previous": {
+            "mae_pp": 0.5279797218316511,
+            "rmse_pp": 0.5653843232881506,
+            "bias_pp": -0.028267416655765043,
+            "error_variance_pp_squared_ddof0": 0.31886038617560936
+          },
+          "permuted_previous": {
+            "mae_pp": 0.2755794173244629,
+            "rmse_pp": 0.30271365403651385,
+            "bias_pp": -0.07533680549617416,
+            "error_variance_pp_squared_ddof0": 0.08595992207776983
+          }
+        },
+        "0.2": {
+          "no_prior": {
+            "mae_pp": 0.7964959597299135,
+            "rmse_pp": 0.8113573322673271,
+            "bias_pp": -0.46205377657192903,
+            "error_variance_pp_squared_ddof0": 0.4448070281795716
+          },
+          "own_previous": {
+            "mae_pp": 0.4623837774653207,
+            "rmse_pp": 0.49625171757983144,
+            "bias_pp": -0.0726139333246118,
+            "error_variance_pp_squared_ddof0": 0.24099298388806167
+          },
+          "permuted_previous": {
+            "mae_pp": 0.30046353385957014,
+            "rmse_pp": 0.31075035582507465,
+            "bias_pp": -0.11026944439693909,
+            "error_variance_pp_squared_ddof0": 0.08440643327780088
+          }
+        },
+        "0.4": {
+          "no_prior": {
+            "mae_pp": 0.6973719697974353,
+            "rmse_pp": 0.7197384184186624,
+            "bias_pp": -0.409040332428947,
+            "error_variance_pp_squared_ddof0": 0.3507093973942141
+          },
+          "own_previous": {
+            "mae_pp": 0.4089810391928556,
+            "rmse_pp": 0.4495586624561911,
+            "bias_pp": -0.11696044999345928,
+            "error_variance_pp_squared_ddof0": 0.18842324412672706
+          },
+          "permuted_previous": {
+            "mae_pp": 0.3253476503946776,
+            "rmse_pp": 0.3381824088624849,
+            "bias_pp": -0.14520208329770445,
+            "error_variance_pp_squared_ddof0": 0.09328369667003938
+          }
+        },
+        "0.6": {
+          "no_prior": {
+            "mae_pp": 0.5982479798649569,
+            "rmse_pp": 0.6343349490753442,
+            "bias_pp": -0.3560268882859647,
+            "error_variance_pp_squared_ddof0": 0.2756256824358328
+          },
+          "own_previous": {
+            "mae_pp": 0.40598735946190356,
+            "rmse_pp": 0.4326327592605527,
+            "bias_pp": -0.16130696666230604,
+            "error_variance_pp_squared_ddof0": 0.16115116689160508
+          },
+          "permuted_previous": {
+            "mae_pp": 0.35023176692978486,
+            "rmse_pp": 0.3808414767275291,
+            "bias_pp": -0.1801347221984696,
+            "error_variance_pp_squared_ddof0": 0.11259171225448524
+          }
+        },
+        "0.8": {
+          "no_prior": {
+            "mae_pp": 0.4991239899324783,
+            "rmse_pp": 0.558008091908908,
+            "bias_pp": -0.30301344414298226,
+            "error_variance_pp_squared_ddof0": 0.2195558833044281
+          },
+          "own_previous": {
+            "mae_pp": 0.40299367973095185,
+            "rmse_pp": 0.4488542161870968,
+            "bias_pp": -0.20565348333115313,
+            "error_variance_pp_squared_ddof0": 0.1591767521826962
+          },
+          "permuted_previous": {
+            "mae_pp": 0.37511588346489255,
+            "rmse_pp": 0.43426311130618456,
+            "bias_pp": -0.21506736109923474,
+            "error_variance_pp_squared_ddof0": 0.14233048003113902
+          }
+        },
+        "1.0": {
+          "no_prior": {
+            "mae_pp": 0.3999999999999999,
+            "rmse_pp": 0.4949747468305831,
+            "bias_pp": -0.25,
+            "error_variance_pp_squared_ddof0": 0.1824999999999999
+          },
+          "own_previous": {
+            "mae_pp": 0.3999999999999999,
+            "rmse_pp": 0.4949747468305831,
+            "bias_pp": -0.25,
+            "error_variance_pp_squared_ddof0": 0.1824999999999999
+          },
+          "permuted_previous": {
+            "mae_pp": 0.3999999999999999,
+            "rmse_pp": 0.4949747468305831,
+            "bias_pp": -0.25,
+            "error_variance_pp_squared_ddof0": 0.1824999999999999
+          }
+        }
+      },
+      "average_two_generations_before_scoring": {
+        "0.0": {
+          "no_prior": {
+            "mae_pp": 0.895619949662392,
+            "rmse_pp": 0.9028225584231563,
+            "bias_pp": -0.5150672207149116,
+            "error_variance_pp_squared_ddof0": 0.5497943301427499
+          },
+          "own_previous": {
+            "mae_pp": 0.41739558731215753,
+            "rmse_pp": 0.5043286842791993,
+            "bias_pp": -0.028267416655765043,
+            "error_variance_pp_squared_ddof0": 0.2535483749423976
+          },
+          "permuted_previous": {
+            "mae_pp": 0.275579417324463,
+            "rmse_pp": 0.2947896114245172,
+            "bias_pp": -0.07533680549617428,
+            "error_variance_pp_squared_ddof0": 0.08122528074144945
+          }
+        },
+        "0.4": {
+          "no_prior": {
+            "mae_pp": 0.6973719697974352,
+            "rmse_pp": 0.7177037431099974,
+            "bias_pp": -0.4090403324289471,
+            "error_variance_pp_squared_ddof0": 0.34778466932051766
+          },
+          "own_previous": {
+            "mae_pp": 0.40898103919285567,
+            "rmse_pp": 0.4225998899023087,
+            "bias_pp": -0.11696044999345934,
+            "error_variance_pp_squared_ddof0": 0.1649109200827709
+          },
+          "permuted_previous": {
+            "mae_pp": 0.3253476503946777,
+            "rmse_pp": 0.33565290224122546,
+            "bias_pp": -0.14520208329770434,
+            "error_variance_pp_squared_ddof0": 0.09157922578896417
+          }
+        }
+      }
+    }
+  },
+  "cells": [
+    {
+      "month": "202203",
+      "repeat": 1,
+      "n_common": 12,
+      "as_of": "2022-03-10T23:59:59-05:00",
+      "same_sample_truth_pp": 7.348970640937018,
+      "same_sample_anchor_pp": 7.348970640937018,
+      "public_truth_pp": 6.6,
+      "public_truth_source": "https://www.newyorkfed.org/newsevents/news/research/2022/20220411",
+      "public_anchor": {
+        "reference_period": "2022-01",
+        "value_pp": 5.8,
+        "published_date": "2022-02-14",
+        "source_url": "https://www.newyorkfed.org/newsevents/news/research/2022/20220214"
+      },
+      "variants": {
+        "0.0": {
+          "same_sample": {
+            "no_prior": 5.4960626823321626,
+            "own_previous": 7.052045292707568,
+            "permuted_previous": 6.493729864856363
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.4960626823321626,
+            "own_previous": 7.052045292707568,
+            "permuted_previous": 6.493729864856363
+          }
+        },
+        "0.2": {
+          "same_sample": {
+            "no_prior": 5.866644274053133,
+            "own_previous": 7.111430362353458,
+            "permuted_previous": 6.664778020072495
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.55685014586573,
+            "own_previous": 6.801636234166055,
+            "permuted_previous": 6.354983891885091
+          }
+        },
+        "0.4": {
+          "same_sample": {
+            "no_prior": 6.237225865774105,
+            "own_previous": 7.170815431999348,
+            "permuted_previous": 6.8358261752886245
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.6176376093992975,
+            "own_previous": 6.55122717562454,
+            "permuted_previous": 6.2162379189138175
+          }
+        },
+        "0.6": {
+          "same_sample": {
+            "no_prior": 6.607807457495076,
+            "own_previous": 7.230200501645237,
+            "permuted_previous": 7.006874330504756
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.678425072932865,
+            "own_previous": 6.300818117083027,
+            "permuted_previous": 6.077491945942546
+          }
+        },
+        "0.8": {
+          "same_sample": {
+            "no_prior": 6.978389049216046,
+            "own_previous": 7.289585571291128,
+            "permuted_previous": 7.177922485720886
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.739212536466432,
+            "own_previous": 6.050409058541513,
+            "permuted_previous": 5.938745972971272
+          }
+        },
+        "1.0": {
+          "same_sample": {
+            "no_prior": 7.348970640937018,
+            "own_previous": 7.348970640937018,
+            "permuted_previous": 7.348970640937018
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.8,
+            "own_previous": 5.8,
+            "permuted_previous": 5.8
+          }
+        }
+      },
+      "raw_within_period_variance_pp_squared_ddof0": {
+        "real": 28.731865476732466,
+        "own_prior": 13.152463078994169,
+        "no_prior": 0.533889508431221,
+        "own_previous": 1.4313882647763956,
+        "permuted_previous": 1.134097818545449
+      },
+      "raw_within_period_IQR_pp": {
+        "real": 5.0820346030340495,
+        "own_prior": 4.751445038786121,
+        "no_prior": 0.7821844448581263,
+        "own_previous": 1.0039456068735362,
+        "permuted_previous": 0.8289928930008843
+      }
+    },
+    {
+      "month": "202203",
+      "repeat": 2,
+      "n_common": 12,
+      "as_of": "2022-03-10T23:59:59-05:00",
+      "same_sample_truth_pp": 7.348970640937018,
+      "same_sample_anchor_pp": 7.348970640937018,
+      "public_truth_pp": 6.6,
+      "public_truth_source": "https://www.newyorkfed.org/newsevents/news/research/2022/20220411",
+      "public_anchor": {
+        "reference_period": "2022-01",
+        "value_pp": 5.8,
+        "published_date": "2022-02-14",
+        "source_url": "https://www.newyorkfed.org/newsevents/news/research/2022/20220214"
+      },
+      "variants": {
+        "0.0": {
+          "same_sample": {
+            "no_prior": 5.552215832519735,
+            "own_previous": 6.157663461922025,
+            "permuted_previous": 6.318426950314402
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.552215832519735,
+            "own_previous": 6.157663461922025,
+            "permuted_previous": 6.318426950314402
+          }
+        },
+        "0.2": {
+          "same_sample": {
+            "no_prior": 5.911566794203193,
+            "own_previous": 6.395924897725024,
+            "permuted_previous": 6.524535688438926
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.601772666015789,
+            "own_previous": 6.086130769537621,
+            "permuted_previous": 6.214741560251522
+          }
+        },
+        "0.4": {
+          "same_sample": {
+            "no_prior": 6.270917755886648,
+            "own_previous": 6.634186333528023,
+            "permuted_previous": 6.730644426563448
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.65132949951184,
+            "own_previous": 6.014598077153215,
+            "permuted_previous": 6.1110561701886414
+          }
+        },
+        "0.6": {
+          "same_sample": {
+            "no_prior": 6.630268717570105,
+            "own_previous": 6.872447769331021,
+            "permuted_previous": 6.936753164687971
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.700886333007894,
+            "own_previous": 5.94306538476881,
+            "permuted_previous": 6.007370780125761
+          }
+        },
+        "0.8": {
+          "same_sample": {
+            "no_prior": 6.989619679253561,
+            "own_previous": 7.110709205134019,
+            "permuted_previous": 7.142861902812495
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.750443166503946,
+            "own_previous": 5.871532692384404,
+            "permuted_previous": 5.90368539006288
+          }
+        },
+        "1.0": {
+          "same_sample": {
+            "no_prior": 7.348970640937018,
+            "own_previous": 7.348970640937018,
+            "permuted_previous": 7.348970640937018
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.8,
+            "own_previous": 5.8,
+            "permuted_previous": 5.8
+          }
+        }
+      },
+      "raw_within_period_variance_pp_squared_ddof0": {
+        "real": 28.731865476732466,
+        "own_prior": 13.152463078994169,
+        "no_prior": 0.6728108423834064,
+        "own_previous": 1.2775942190717196,
+        "permuted_previous": 0.9827028808660448
+      },
+      "raw_within_period_IQR_pp": {
+        "real": 5.0820346030340495,
+        "own_prior": 4.751445038786121,
+        "no_prior": 1.1415703986175227,
+        "own_previous": 1.4711500268357511,
+        "permuted_previous": 1.0262195516094605
+      }
+    },
+    {
+      "month": "202209",
+      "repeat": 1,
+      "n_common": 12,
+      "as_of": "2022-09-13T23:59:59-04:00",
+      "same_sample_truth_pp": 2.8319061214089505,
+      "same_sample_anchor_pp": 2.301918958350911,
+      "public_truth_pp": 5.4,
+      "public_truth_source": "https://www.newyorkfed.org/newsevents/news/research/2022/20221011",
+      "public_anchor": {
+        "reference_period": "2022-08",
+        "value_pp": 5.7,
+        "published_date": "2022-09-12",
+        "source_url": "https://www.newyorkfed.org/newsevents/news/research/2022/20220912"
+      },
+      "variants": {
+        "0.0": {
+          "same_sample": {
+            "no_prior": 6.27067335195968,
+            "own_previous": 6.157663461922025,
+            "permuted_previous": 5.778429257996045
+          },
+          "public_anchor_reference": {
+            "no_prior": 6.27067335195968,
+            "own_previous": 6.157663461922025,
+            "permuted_previous": 5.778429257996045
+          }
+        },
+        "0.2": {
+          "same_sample": {
+            "no_prior": 5.476922473237926,
+            "own_previous": 5.386514561207803,
+            "permuted_previous": 5.083127198067018
+          },
+          "public_anchor_reference": {
+            "no_prior": 6.156538681567744,
+            "own_previous": 6.0661307695376205,
+            "permuted_previous": 5.762743406396837
+          }
+        },
+        "0.4": {
+          "same_sample": {
+            "no_prior": 4.683171594516172,
+            "own_previous": 4.6153656604935795,
+            "permuted_previous": 4.387825138137991
+          },
+          "public_anchor_reference": {
+            "no_prior": 6.042404011175808,
+            "own_previous": 5.974598077153216,
+            "permuted_previous": 5.747057554797627
+          }
+        },
+        "0.6": {
+          "same_sample": {
+            "no_prior": 3.8894207157944187,
+            "own_previous": 3.844216759779357,
+            "permuted_previous": 3.6925230782089646
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.9282693407838725,
+            "own_previous": 5.883065384768811,
+            "permuted_previous": 5.731371703198418
+          }
+        },
+        "0.8": {
+          "same_sample": {
+            "no_prior": 3.0956698370726645,
+            "own_previous": 3.0730678590651337,
+            "permuted_previous": 2.997221018279938
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.814134670391936,
+            "own_previous": 5.791532692384405,
+            "permuted_previous": 5.7156858515992095
+          }
+        },
+        "1.0": {
+          "same_sample": {
+            "no_prior": 2.301918958350911,
+            "own_previous": 2.301918958350911,
+            "permuted_previous": 2.301918958350911
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.7,
+            "own_previous": 5.7,
+            "permuted_previous": 5.7
+          }
+        }
+      },
+      "raw_within_period_variance_pp_squared_ddof0": {
+        "real": 42.88160814729077,
+        "own_prior": 53.97959308379291,
+        "no_prior": 0.45171390391604826,
+        "own_previous": 1.4056809554337988,
+        "permuted_previous": 0.2633382369324596
+      },
+      "raw_within_period_IQR_pp": {
+        "real": 9.72676315367743,
+        "own_prior": 6.279480066866139,
+        "no_prior": 0.8897755384811123,
+        "own_previous": 1.2223053308732155,
+        "permuted_previous": 0.526266667079752
+      }
+    },
+    {
+      "month": "202209",
+      "repeat": 2,
+      "n_common": 12,
+      "as_of": "2022-09-13T23:59:59-04:00",
+      "same_sample_truth_pp": 2.8319061214089505,
+      "same_sample_anchor_pp": 2.301918958350911,
+      "public_truth_pp": 5.4,
+      "public_truth_source": "https://www.newyorkfed.org/newsevents/news/research/2022/20221011",
+      "public_anchor": {
+        "reference_period": "2022-08",
+        "value_pp": 5.7,
+        "published_date": "2022-09-12",
+        "source_url": "https://www.newyorkfed.org/newsevents/news/research/2022/20220912"
+      },
+      "variants": {
+        "0.0": {
+          "same_sample": {
+            "no_prior": 6.051537563830243,
+            "own_previous": 6.189140466073951,
+            "permuted_previous": 5.822541189317111
+          },
+          "public_anchor_reference": {
+            "no_prior": 6.051537563830243,
+            "own_previous": 6.189140466073951,
+            "permuted_previous": 5.822541189317111
+          }
+        },
+        "0.2": {
+          "same_sample": {
+            "no_prior": 5.301613842734376,
+            "own_previous": 5.411696164529343,
+            "permuted_previous": 5.118416743123871
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.981230051064195,
+            "own_previous": 6.091312372859161,
+            "permuted_previous": 5.798032951453688
+          }
+        },
+        "0.4": {
+          "same_sample": {
+            "no_prior": 4.55169012163851,
+            "own_previous": 4.634251862984735,
+            "permuted_previous": 4.414292296930631
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.910922538298146,
+            "own_previous": 5.99348427964437,
+            "permuted_previous": 5.773524713590266
+          }
+        },
+        "0.6": {
+          "same_sample": {
+            "no_prior": 3.8017664005426437,
+            "own_previous": 3.856807561440127,
+            "permuted_previous": 3.710167850737391
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.840615025532097,
+            "own_previous": 5.89565618642958,
+            "permuted_previous": 5.749016475726844
+          }
+        },
+        "0.8": {
+          "same_sample": {
+            "no_prior": 3.0518426794467777,
+            "own_previous": 3.079363259895519,
+            "permuted_previous": 3.006043404544151
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.770307512766049,
+            "own_previous": 5.7978280932147905,
+            "permuted_previous": 5.724508237863422
+          }
+        },
+        "1.0": {
+          "same_sample": {
+            "no_prior": 2.301918958350911,
+            "own_previous": 2.301918958350911,
+            "permuted_previous": 2.301918958350911
+          },
+          "public_anchor_reference": {
+            "no_prior": 5.7,
+            "own_previous": 5.7,
+            "permuted_previous": 5.7
+          }
+        }
+      },
+      "raw_within_period_variance_pp_squared_ddof0": {
+        "real": 42.88160814729077,
+        "own_prior": 53.97959308379291,
+        "no_prior": 0.23040543404079097,
+        "own_previous": 2.580210828578988,
+        "permuted_previous": 0.22844670683910429
+      },
+      "raw_within_period_IQR_pp": {
+        "real": 9.72676315367743,
+        "own_prior": 6.279480066866139,
+        "no_prior": 0.9017875845561871,
+        "own_previous": 1.246687461744047,
+        "permuted_previous": 0.6363774880620348
+      }
+    },
+    {
+      "month": "202303",
+      "repeat": 1,
+      "n_common": 11,
+      "as_of": "2023-03-14T23:59:59-04:00",
+      "same_sample_truth_pp": 4.450937129970344,
+      "same_sample_anchor_pp": 1.9722927967940134,
+      "public_truth_pp": 4.7,
+      "public_truth_source": "https://www.newyorkfed.org/newsevents/news/research/2023/20230410",
+      "public_anchor": {
+        "reference_period": "2023-02",
+        "value_pp": 4.2,
+        "published_date": "2023-03-13",
+        "source_url": "https://www.newyorkfed.org/newsevents/news/research/2023/20230313"
+      },
+      "variants": {
+        "0.0": {
+          "same_sample": {
+            "no_prior": 3.696897533610114,
+            "own_previous": 4.1148336424500975,
+            "permuted_previous": 4.532953323081142
+          },
+          "public_anchor_reference": {
+            "no_prior": 3.696897533610114,
+            "own_previous": 4.1148336424500975,
+            "permuted_previous": 4.532953323081142
+          }
+        },
+        "0.2": {
+          "same_sample": {
+            "no_prior": 3.351976586246894,
+            "own_previous": 3.6863254733188806,
+            "permuted_previous": 4.020821217823717
+          },
+          "public_anchor_reference": {
+            "no_prior": 3.797518026888092,
+            "own_previous": 4.131866913960078,
+            "permuted_previous": 4.466362658464914
+          }
+        },
+        "0.4": {
+          "same_sample": {
+            "no_prior": 3.007055638883674,
+            "own_previous": 3.2578173041876637,
+            "permuted_previous": 3.508689112566291
+          },
+          "public_anchor_reference": {
+            "no_prior": 3.8981385201660688,
+            "own_previous": 4.148900185470058,
+            "permuted_previous": 4.3997719938486854
+          }
+        },
+        "0.6": {
+          "same_sample": {
+            "no_prior": 2.662134691520454,
+            "own_previous": 2.829309135056447,
+            "permuted_previous": 2.9965570073088648
+          },
+          "public_anchor_reference": {
+            "no_prior": 3.9987590134440456,
+            "own_previous": 4.165933456980039,
+            "permuted_previous": 4.333181329232457
+          }
+        },
+        "0.8": {
+          "same_sample": {
+            "no_prior": 2.3172137441572334,
+            "own_previous": 2.40080096592523,
+            "permuted_previous": 2.484424902051439
+          },
+          "public_anchor_reference": {
+            "no_prior": 4.099379506722023,
+            "own_previous": 4.18296672849002,
+            "permuted_previous": 4.266590664616229
+          }
+        },
+        "1.0": {
+          "same_sample": {
+            "no_prior": 1.9722927967940134,
+            "own_previous": 1.9722927967940134,
+            "permuted_previous": 1.9722927967940134
+          },
+          "public_anchor_reference": {
+            "no_prior": 4.2,
+            "own_previous": 4.2,
+            "permuted_previous": 4.2
+          }
+        }
+      },
+      "raw_within_period_variance_pp_squared_ddof0": {
+        "real": 14.371890687222871,
+        "own_prior": 21.894810947692548,
+        "no_prior": 0.47637648077979244,
+        "own_previous": 0.8418054629144041,
+        "permuted_previous": 0.40391478271053105
+      },
+      "raw_within_period_IQR_pp": {
+        "real": 3.761309266986345,
+        "own_prior": 4.256977446294503,
+        "no_prior": 0.7277120433011737,
+        "own_previous": 1.0151683713830693,
+        "permuted_previous": 1.0957851473773434
+      }
+    },
+    {
+      "month": "202303",
+      "repeat": 2,
+      "n_common": 11,
+      "as_of": "2023-03-14T23:59:59-04:00",
+      "same_sample_truth_pp": 4.450937129970344,
+      "same_sample_anchor_pp": 1.9722927967940134,
+      "public_truth_pp": 4.7,
+      "public_truth_source": "https://www.newyorkfed.org/newsevents/news/research/2023/20230410",
+      "public_anchor": {
+        "reference_period": "2023-02",
+        "value_pp": 4.2,
+        "published_date": "2023-03-13",
+        "source_url": "https://www.newyorkfed.org/newsevents/news/research/2023/20230313"
+      },
+      "variants": {
+        "0.0": {
+          "same_sample": {
+            "no_prior": 3.976957493603562,
+            "own_previous": 4.6035282035334895,
+            "permuted_previous": 4.5622266616474185
+          },
+          "public_anchor_reference": {
+            "no_prior": 3.976957493603562,
+            "own_previous": 4.6035282035334895,
+            "permuted_previous": 4.5622266616474185
+          }
+        },
+        "0.2": {
+          "same_sample": {
+            "no_prior": 3.5760245542416524,
+            "own_previous": 4.077281122185594,
+            "permuted_previous": 4.044239888676738
+          },
+          "public_anchor_reference": {
+            "no_prior": 4.02156599488285,
+            "own_previous": 4.522822562826792,
+            "permuted_previous": 4.489781329317935
+          }
+        },
+        "0.4": {
+          "same_sample": {
+            "no_prior": 3.175091614879743,
+            "own_previous": 3.551034040837699,
+            "permuted_previous": 3.526253115706057
+          },
+          "public_anchor_reference": {
+            "no_prior": 4.066174496162137,
+            "own_previous": 4.442116922120094,
+            "permuted_previous": 4.417335996988451
+          }
+        },
+        "0.6": {
+          "same_sample": {
+            "no_prior": 2.7741586755178327,
+            "own_previous": 3.024786959489804,
+            "permuted_previous": 3.0082663427353755
+          },
+          "public_anchor_reference": {
+            "no_prior": 4.110782997441425,
+            "own_previous": 4.361411281413396,
+            "permuted_previous": 4.344890664658967
+          }
+        },
+        "0.8": {
+          "same_sample": {
+            "no_prior": 2.373225736155923,
+            "own_previous": 2.4985398781419086,
+            "permuted_previous": 2.4902795697646942
+          },
+          "public_anchor_reference": {
+            "no_prior": 4.155391498720713,
+            "own_previous": 4.280705640706698,
+            "permuted_previous": 4.272445332329484
+          }
+        },
+        "1.0": {
+          "same_sample": {
+            "no_prior": 1.9722927967940134,
+            "own_previous": 1.9722927967940134,
+            "permuted_previous": 1.9722927967940134
+          },
+          "public_anchor_reference": {
+            "no_prior": 4.2,
+            "own_previous": 4.2,
+            "permuted_previous": 4.2
+          }
+        }
+      },
+      "raw_within_period_variance_pp_squared_ddof0": {
+        "real": 14.371890687222871,
+        "own_prior": 21.894810947692548,
+        "no_prior": 0.5372507181539065,
+        "own_previous": 0.6697047645955746,
+        "permuted_previous": 0.8289862024648946
+      },
+      "raw_within_period_IQR_pp": {
+        "real": 3.761309266986345,
+        "own_prior": 4.256977446294503,
+        "no_prior": 0.7506718161421153,
+        "own_previous": 0.8677450925159853,
+        "permuted_previous": 1.412087374948944
+      }
+    },
+    {
+      "month": "202403",
+      "repeat": 1,
+      "n_common": 12,
+      "as_of": "2024-03-12T23:59:59-04:00",
+      "same_sample_truth_pp": 3.3901006518155765,
+      "same_sample_anchor_pp": 3.0,
+      "public_truth_pp": 3.0,
+      "public_truth_source": "https://www.newyorkfed.org/newsevents/news/research/2024/20240408",
+      "public_anchor": {
+        "reference_period": "2024-02",
+        "value_pp": 3.0,
+        "published_date": "2024-03-11",
+        "source_url": "https://www.newyorkfed.org/newsevents/news/research/2024/20240311"
+      },
+      "variants": {
+        "0.0": {
+          "same_sample": {
+            "no_prior": 2.10780359119169,
+            "own_previous": 2.413229641665332,
+            "permuted_previous": 2.541761188327227
+          },
+          "public_anchor_reference": {
+            "no_prior": 2.10780359119169,
+            "own_previous": 2.413229641665332,
+            "permuted_previous": 2.541761188327227
+          }
+        },
+        "0.2": {
+          "same_sample": {
+            "no_prior": 2.286242872953352,
+            "own_previous": 2.5305837133322657,
+            "permuted_previous": 2.6334089506617815
+          },
+          "public_anchor_reference": {
+            "no_prior": 2.286242872953352,
+            "own_previous": 2.5305837133322657,
+            "permuted_previous": 2.6334089506617815
+          }
+        },
+        "0.4": {
+          "same_sample": {
+            "no_prior": 2.464682154715014,
+            "own_previous": 2.647937784999199,
+            "permuted_previous": 2.725056712996336
+          },
+          "public_anchor_reference": {
+            "no_prior": 2.464682154715014,
+            "own_previous": 2.647937784999199,
+            "permuted_previous": 2.725056712996336
+          }
+        },
+        "0.6": {
+          "same_sample": {
+            "no_prior": 2.643121436476676,
+            "own_previous": 2.7652918566661326,
+            "permuted_previous": 2.8167044753308907
+          },
+          "public_anchor_reference": {
+            "no_prior": 2.643121436476676,
+            "own_previous": 2.7652918566661326,
+            "permuted_previous": 2.8167044753308907
+          }
+        },
+        "0.8": {
+          "same_sample": {
+            "no_prior": 2.8215607182383384,
+            "own_previous": 2.8826459283330665,
+            "permuted_previous": 2.9083522376654454
+          },
+          "public_anchor_reference": {
+            "no_prior": 2.8215607182383384,
+            "own_previous": 2.8826459283330665,
+            "permuted_previous": 2.9083522376654454
+          }
+        },
+        "1.0": {
+          "same_sample": {
+            "no_prior": 3.0,
+            "own_previous": 3.0,
+            "permuted_previous": 3.0
+          },
+          "public_anchor_reference": {
+            "no_prior": 3.0,
+            "own_previous": 3.0,
+            "permuted_previous": 3.0
+          }
+        }
+      },
+      "raw_within_period_variance_pp_squared_ddof0": {
+        "real": 10.185687251465373,
+        "own_prior": 5.435584546499829,
+        "no_prior": 0.16160258245706186,
+        "own_previous": 0.1714790576846783,
+        "permuted_previous": 0.5677334956293423
+      },
+      "raw_within_period_IQR_pp": {
+        "real": 3.4388593438712416,
+        "own_prior": 2.2595727965668733,
+        "no_prior": 0.3347920478787434,
+        "own_previous": 0.5454636512812501,
+        "permuted_previous": 0.36143560747850056
+      }
+    },
+    {
+      "month": "202403",
+      "repeat": 2,
+      "n_common": 12,
+      "as_of": "2024-03-12T23:59:59-04:00",
+      "same_sample_truth_pp": 3.3901006518155765,
+      "same_sample_anchor_pp": 3.0,
+      "public_truth_pp": 3.0,
+      "public_truth_source": "https://www.newyorkfed.org/newsevents/news/research/2024/20240408",
+      "public_anchor": {
+        "reference_period": "2024-02",
+        "value_pp": 3.0,
+        "published_date": "2024-03-11",
+        "source_url": "https://www.newyorkfed.org/newsevents/news/research/2024/20240311"
+      },
+      "variants": {
+        "0.0": {
+          "same_sample": {
+            "no_prior": 2.127314185233521,
+            "own_previous": 2.4857564964793912,
+            "permuted_previous": 2.747237120490899
+          },
+          "public_anchor_reference": {
+            "no_prior": 2.127314185233521,
+            "own_previous": 2.4857564964793912,
+            "permuted_previous": 2.747237120490899
+          }
+        },
+        "0.2": {
+          "same_sample": {
+            "no_prior": 2.3018513481868172,
+            "own_previous": 2.5886051971835133,
+            "permuted_previous": 2.7977896963927193
+          },
+          "public_anchor_reference": {
+            "no_prior": 2.3018513481868172,
+            "own_previous": 2.5886051971835133,
+            "permuted_previous": 2.7977896963927193
+          }
+        },
+        "0.4": {
+          "same_sample": {
+            "no_prior": 2.4763885111401125,
+            "own_previous": 2.6914538978876346,
+            "permuted_previous": 2.8483422722945395
+          },
+          "public_anchor_reference": {
+            "no_prior": 2.4763885111401125,
+            "own_previous": 2.6914538978876346,
+            "permuted_previous": 2.8483422722945395
+          }
+        },
+        "0.6": {
+          "same_sample": {
+            "no_prior": 2.650925674093408,
+            "own_previous": 2.7943025985917562,
+            "permuted_previous": 2.8988948481963597
+          },
+          "public_anchor_reference": {
+            "no_prior": 2.650925674093408,
+            "own_previous": 2.7943025985917562,
+            "permuted_previous": 2.8988948481963597
+          }
+        },
+        "0.8": {
+          "same_sample": {
+            "no_prior": 2.8254628370467043,
+            "own_previous": 2.8971512992958783,
+            "permuted_previous": 2.94944742409818
+          },
+          "public_anchor_reference": {
+            "no_prior": 2.8254628370467043,
+            "own_previous": 2.8971512992958783,
+            "permuted_previous": 2.94944742409818
+          }
+        },
+        "1.0": {
+          "same_sample": {
+            "no_prior": 3.0,
+            "own_previous": 3.0,
+            "permuted_previous": 3.0
+          },
+          "public_anchor_reference": {
+            "no_prior": 3.0,
+            "own_previous": 3.0,
+            "permuted_previous": 3.0
+          }
+        }
+      },
+      "raw_within_period_variance_pp_squared_ddof0": {
+        "real": 10.185687251465373,
+        "own_prior": 5.435584546499829,
+        "no_prior": 0.19976892423068923,
+        "own_previous": 0.18889226609513213,
+        "permuted_previous": 0.5395482586310973
+      },
+      "raw_within_period_IQR_pp": {
+        "real": 3.4388593438712416,
+        "own_prior": 2.2595727965668733,
+        "no_prior": 0.22735698429215212,
+        "own_previous": 0.4218588081974213,
+        "permuted_previous": 0.5331990894745462
+      }
+    }
+  ],
+  "aggregation_rule": "equal periods and equal generations; generations are not independent months",
+  "personal_answers_or_simulation_configuration_changed": false,
+  "source_sha256": {
+    "outputs/sce_prior_analysis_20261013_v1/summary.json": "c96967196f59162c3666cc5ab568d7a3b2a9e31c4d25fb2bfae6f690b2b3d291",
+    "outputs/sce_prior_analysis_20261013_v1/paired_evaluation_private.json": "3076b2c668699d258dc154a4a195c9a756cc90c2586efd0c8429ba722563e6a8",
+    "docs/sources/sce_baseline_aggregate_sources_latest_20261007.json": "a1a275df4fb77e3567a8984293460f9bf671a6eea141319f13d6ed42df609f43",
+    "data/raw/sce_baselines_20261007/20220214.html": "a20d4f35eb485c94edf9993eb647bd3acb0830c706b443aabd3c3703771eec8f",
+    "data/raw/sce_baselines_20261007/20220411.html": "7b5ab385ea1992157707dd7c3203341cf719356829422b121f210b966be89224",
+    "data/raw/sce_baselines_20261007/20220912.html": "4a4c6b18cd1c639adc00c88b42bf60d90e833aa7ea72a0679a0867e9d2f72abe",
+    "data/raw/sce_baselines_20261007/20221011.html": "e3f0d396e8bcb262d5f09595585988048e50d92f368c19cacc28f7277ae55766",
+    "data/raw/sce_baselines_20261007/20230313.html": "11d8b8115067b96a32841005b30878d7b11a43609a1a7bf7fc914fe432f26f3e",
+    "data/raw/sce_baselines_20261007/20230410.html": "8ac67fcf1450e9512a41b3e4230867380caee80c6a4727ec8e576aaf726a7ae0",
+    "data/raw/sce_baselines_20261007/20240311.html": "ad2a7974d91f55a3df1bbbe0b33d777259e6403b5aac4b675ef707c6d93e2be2",
+    "data/raw/sce_baselines_20261007/20240408.html": "25624b2c24d7624600e741aaf652f2f43eabaa0db003674db9b0701a80004379"
+  },
+  "limitations": [
+    "Four examined development periods and age-balanced 12-person frames, not representative national estimates or holdout.",
+    "Public-anchor reference compares this small-sample scalar to national truth; its population estimand differs from same-sample metrics.",
+    "The original observed-prior treatment used real t-1 microdata; using PIT public anchors does not turn this run into strict forecast B.",
+    "Only headline predictions are blended, not personal probabilities; the mixture is not the direct median of unchanged simulated Q9 answers.",
+    "Two-generation variance is a rough conditional diagnostic, not a precise estimate of model uncertainty.",
+    "0.4 is a borrowed fixed sensitivity setting, not a trained SCE parameter. No best weight is selected on these observations."
+  ],
+  "heterogeneity": {
+    "method": "average within-period descriptive population variance, ddof=0, percent-point-squared; same unmodified personal Q9 means",
+    "mean_variance_pp_squared": {
+      "real": 24.04276289067787,
+      "own_prior": 23.615612914244863,
+      "no_prior": 0.4079772992991145,
+      "own_previous": 1.0708444773938364,
+      "permuted_previous": 0.6185960478273653
+    },
+    "mean_IQR_pp": {
+      "real": 5.5022415918922665,
+      "own_prior": 4.386868837128409,
+      "no_prior": 0.7194813572658916,
+      "own_previous": 0.9742905437130345,
+      "permuted_previous": 0.8025454773789332
+    },
+    "post_headline_calibration_personal_variance_change": 0.0
+  },
+  "two_generation_variance": {
+    "description": "average across four periods of sample variance over the two scalar generations (ddof=1); fixed historical anchor",
+    "raw_pp_squared": {
+      "no_prior": 0.01624848929831179,
+      "own_previous": 0.13062402246642354,
+      "permuted_previous": 0.009469282672640786
+    },
+    "calibrated_04_multiplier": 0.36,
+    "calibrated_04_pp_squared": {
+      "no_prior": 0.0058494561473922445,
+      "own_previous": 0.04702464808791247,
+      "permuted_previous": 0.003408941762150683
+    }
+  },
+  "code_sha256": {
+    "studies/sce_inflation_expectations/evaluation/inertia_calibration_diagnostic.py": "c218fa8cd7fee628acce62a4664cad21eb5705efb9254961eca39f892d37d9c3",
+    "scripts/analyze_sce_inertia_calibration.py": "aec5ad2644c7c32105f9c021198378b9930d8d85e2bd383c3a017f2f7da8e9e2"
+  }
+}
