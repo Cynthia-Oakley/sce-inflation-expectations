@@ -1,0 +1,95 @@
+{
+  "review_date": "2026-10-13",
+  "status": "review_completed_execution_acceptance_requires_revision",
+  "new_api_calls": 0,
+  "kimi_files_modified": false,
+  "source_sha256": {
+    "docs/workstreams/20261013_behavior/kimi_anchor_prereg.md": "93730713981a92bb0bcd7b2d05ef893f5d51b09193a64e3d5edd906f22cdbeed",
+    "docs/workstreams/20261013_behavior/kimi_anchor_results.md": "f4a1e2079bd8764f63de7bfa4a19c090fe446c036d5e100f6b5dc44aecfeac45",
+    "docs/workstreams/20261013_behavior/kimi_u1_input_spec.md": "352b235a00ba62f6ebe434528b1d5a477f5dbd1354fdc218cbf8db1f15de2bc6",
+    "docs/workstreams/20261013_behavior/kimi_joint_design_draft.md": "b8b657a85d118582ab30e7a557b0dc16218a3f3b75e2ce96b58375aa304f8ee9",
+    "docs/workstreams/20261013_behavior/kimi_results.md": "2a9bf016c00133b631edf9fe2fb36a5c01439fc572713a8d8479890981f1f775",
+    "docs/workstreams/20261013_behavior/kimi_progress.md": "de35d085707045226d05be58cd6a4e521070974467caa21b1aaf6a0e941ff914",
+    "studies/sce_inflation_expectations/belief_dynamics/anchor.py": "ea04165f7a34a8171b2caadff8cf1012ee5bb703c7152df7fe2291ed91ef86c7",
+    "studies/sce_inflation_expectations/belief_dynamics/baselines.py": "2062e06fbbd1600a98cc1d83c43a503bb770693aa30cb4fee125ab43068ec7a5",
+    "studies/sce_inflation_expectations/belief_state_preparation.py": "33cbfbe713cacd8c07345556dcc4bd92657465d782ddb4bf729fb59590f81266",
+    "outputs/sce_anchor_baselines_20261013_v1/anchor_summary.json": "c303b1dfd3cd6cd5dc62aa5ab4f478102091e88f29d25bb46abe5697dd80d6ab",
+    "outputs/sce_u1a_state_preparation_20261013_v1/summary.json": "e0c90c0380b51cef4068ff6a2629901bfb4ab201951df6dd48c92b51ffddbcfa",
+    "outputs/sce_u1a_state_preparation_20261013_v1/preview_sample.txt": "61db1cce5deed2f2310a97494d81f71e6a029f64ce4a5f42821639d3c11b37a0"
+  },
+  "independent_anchor_recalculation": {
+    "valid_pairs": 103630,
+    "train_pairs": 60587,
+    "evaluation_pairs": 43043,
+    "selected_parameters": {
+      "C1": 0.5,
+      "C2": 0.54,
+      "C3": 0.6
+    },
+    "max_abs_metric_difference": 6.661338147750939e-16,
+    "predeclared_verdict": "not_passed; keep original threshold",
+    "C1_val_delta_w1": 1.9496392752732947,
+    "C1_val_cross_section_w1": 0.7310182619981833,
+    "C1_val_center_mae": 0.26766904745604714,
+    "C1_val_individual_mae": 2.903789453807282,
+    "supplementary_C1_weighted_iqr": 5.318093096503523,
+    "supplementary_real_weighted_iqr": 5.591602375649887,
+    "supplement_notice": "Review-time descriptive clarification, not a replacement success criterion."
+  },
+  "test_results": {
+    "anchor": 8,
+    "state_preparation": 7,
+    "original_belief_line": 13,
+    "total_passed": 28
+  },
+  "prepared_inputs": {
+    "cases": 48,
+    "cases_per_month": 12,
+    "anchor_cases": 42,
+    "no_anchor_but_halfway_instruction_cases": 6,
+    "actual_executed_pe_prefix_matches": 48,
+    "actual_executed_questionnaire_tail_matches": 48,
+    "prompt_hash_errors": 0,
+    "source_hash_errors": 0,
+    "code_hash_errors": 0,
+    "output_hash_mismatches": [
+      "summary.json"
+    ],
+    "Q8_prior_point_vs_Q9_density_mean": {
+      "cases_above_0_1pp": 46,
+      "cases_total": 48,
+      "average_abs_difference_pp": 4.827924701549093,
+      "max_abs_difference_pp": 50.00000000004317
+    }
+  },
+  "decisions": {
+    "A_conditional_first": "supported",
+    "report_mapping_owner": "Codex; exploratory offline sensitivity, not adopted main mechanism",
+    "sample": "12 per month x 4 months = 48 person-months",
+    "calls_one_new_arm_two_repeats": 96,
+    "calls_two_new_arms_two_repeats": 192
+  },
+  "requires_revision": [
+    "distinguish Q8 point and Q9 mean; preserve or separately test full prior versus summary",
+    "describe p25/p75 as approximately middle 50% probability, not most likely range",
+    "treat halfway instruction as hypothesis, gate it off without anchor and separate its effect if claiming a specific mechanism",
+    "define same-format identity-response control or remove automatic 0.30 trigger",
+    "correct cohort/row/call counts and remove unrelated 767-answer control",
+    "fix summary self-hash in a new output version",
+    "connect actual runtime, enumerate requests and match approved scope/budget; offline engine acceptance remains",
+    "limit W1/width/remaining-error causal interpretations"
+  ],
+  "kimi_mapping_review_forwarded_by_user": {
+    "registered_hashes_reported_verified": 8,
+    "full_rerun_reported_agree": true,
+    "new_api_calls_reported": 0,
+    "interpretation_adjustments": [
+      "no clear identity benefit, not proof of zero identity effect",
+      "uniform 10 grid also worsens delta W1 compared with native and personal mapping",
+      "use ECDF primary and interpolation sensitivity",
+      "0.260pp is total mapping shift, not isolated tie-break contribution",
+      "mapped bias remains in evaluation if mapped output is used",
+      "U1 prioritized, not uniquely identified root cause"
+    ]
+  }
+}
