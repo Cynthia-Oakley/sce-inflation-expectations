@@ -1,4 +1,4 @@
-**2026-10-13 协作任务已拆分：**见[水平分工](workstreams/20261013_behavior/coordination.md)。Kimi独立做信念更新与经验基线，Codex独立做概率报告/计分影响；各自从证据到代码到结果，不互等。用户已转发Kimi任务，执行进度以其记录为准；Codex已核查旧分析并写[执行计划](workstreams/20261013_behavior/codex_progress.md)，新全量分析未执行。新源码/文档范围在任务包，公共文件由Codex整合，15待审保护。
+**2026-10-13 协作最新：**见[水平分工](workstreams/20261013_behavior/coordination.md)。Codex概率报告线首轮已完成：[结果与统计解释](workstreams/20261013_behavior/codex_results.md)、[聚合汇总](workstreams/20261013_behavior/codex_summary.json)。46月本人历史预测填法有增量，不能认定心理风格；机械取整仍未恢复人际差异。主预登记和事后登记探索性控制分开，新增API0/旧配置不改。下一项与Kimi更新结果汇合，执行进度以其文件为准；公共文件Codex整合，15待审保护。
 
 **2026-10-13 最新方向讨论：**先读[行为机制与微观评价复盘](reviews/20261012_mechanism_retro/behavior_reorientation_20261013.md)及NEXT_ACTIONS顶部。用户主张把f作为主线；先研究个人信念保留/更新，概率表达另对照，不能用增加方差代替有效重建。W1/更新分布/排序与宏观误差共同报告；个人长期偏移不等于惯性，方差分解需处理短轮换面板及协方差。仅方向记录，未改运行/主指标/预算，15待审保护。
 

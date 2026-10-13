@@ -1,0 +1,763 @@
+{
+  "checked_on": "2026-10-13",
+  "coverage": {
+    "source_rows": 130216,
+    "valid_rows": 128244,
+    "excluded_invalid_probability_or_weight": 1972,
+    "persons": 16957,
+    "months": 106
+  },
+  "protocol": {
+    "version": "sce-reporting-pattern-v1",
+    "registered_on": "2026-10-13",
+    "research_line": "A_conditional_reporting_diagnostic",
+    "source_cache": "outputs/sce_age_reporting_audit_20261012_v1/reference_private.parquet",
+    "train": [
+      201701,
+      201912
+    ],
+    "validation": [
+      202001,
+      202112
+    ],
+    "evaluation": [
+      202201,
+      202510
+    ],
+    "class_order": [
+      "finer_than_5",
+      "5_only",
+      "10"
+    ],
+    "valid_probability_sum_tolerance": 1e-06,
+    "grid_tolerance": 1e-08,
+    "demographic_fields": [
+      "_AGE_CAT",
+      "_EDU_CAT",
+      "_NUM_CAT"
+    ],
+    "table_min_rows": 100,
+    "table_min_persons": 20,
+    "table_prior_mass": 20,
+    "personal_prior_mass": 3,
+    "history": "all earlier valid answers of the same observed respondent; strictly before current date",
+    "state_features": "last valid answer nonzero-bin bucket 1/2/3-4/5-10; training quartiles of its official Q9_iqr and max bin probability; missing/first-observed explicit",
+    "models": [
+      "training_population",
+      "demographic",
+      "demographic_personal_history",
+      "previous_belief_shape",
+      "previous_belief_shape_personal_history"
+    ],
+    "primary_loss": "normalized multiclass Brier = 0.5 * sum((p-one_hot)^2); range 0..1",
+    "auxiliary": [
+      "log_loss",
+      "accuracy",
+      "monthly predicted-versus-observed class proportions",
+      "cold/no history versus 1-2 versus 3+ prior observations",
+      "exact-calendar adjacent sensitivity"
+    ],
+    "weighting": "survey weight normalized within month; months equally weighted; training weights rescaled to mean one solely for fixed pseudocount scale",
+    "main_contrasts": [
+      [
+        "demographic_personal_history",
+        "demographic"
+      ],
+      [
+        "previous_belief_shape_personal_history",
+        "previous_belief_shape"
+      ]
+    ],
+    "person_cluster_bootstrap": {
+      "repetitions": 1000,
+      "seed": 104729,
+      "scope": "conditional on fitted training tables and observed evaluation months; renormalize weights within each resampled month"
+    },
+    "month_block_bootstrap": {
+      "repetitions": 1000,
+      "seed": 130363,
+      "block_months": 6,
+      "scope": "separate paired circular-block monthly-loss diagnostic; not a joint two-way or official complex-survey interval"
+    },
+    "sensitivity_reuse": "existing 767 valid confidence-trial model answers and 5/10 rounding outputs; reproduce equal-sample empirical median/IQR/W1/variance before and after; no new fitting choices or simulations",
+    "exposure": "Full-span descriptive grid/age statistics and four development experiments have already been viewed. These are time-separated checks for this fixed method, not a completely unseen project test.",
+    "limits": [
+      "Observed grid is not an identified psychological trait.",
+      "Conditioning on previous belief shape does not establish a causal reporting effect.",
+      "Returning respondents and valid answers are selected; no-history means first observable here, not necessarily first SCE interview.",
+      "Private previous questionnaire data are not PIT B inputs.",
+      "Parameters are fixed before new evaluation and are not selected from this run."
+    ]
+  },
+  "periods": {
+    "validation": {
+      "training_population": {
+        "rows": 29654,
+        "persons": 4925,
+        "months": 24,
+        "brier": 0.31292994508503447,
+        "log_loss": 1.035571449944211,
+        "accuracy": 0.4767854365990714
+      },
+      "demographic": {
+        "rows": 29654,
+        "persons": 4925,
+        "months": 24,
+        "brier": 0.3116216397394802,
+        "log_loss": 1.031315857598461,
+        "accuracy": 0.4767854365990714
+      },
+      "demographic_personal_history": {
+        "rows": 29654,
+        "persons": 4925,
+        "months": 24,
+        "brier": 0.24454992701354736,
+        "log_loss": 0.8272242427804649,
+        "accuracy": 0.6219736880626212
+      },
+      "previous_belief_shape": {
+        "rows": 29654,
+        "persons": 4925,
+        "months": 24,
+        "brier": 0.27637264276034174,
+        "log_loss": 0.916297913771999,
+        "accuracy": 0.5112158678611397
+      },
+      "previous_belief_shape_personal_history": {
+        "rows": 29654,
+        "persons": 4925,
+        "months": 24,
+        "brier": 0.23739773664084848,
+        "log_loss": 0.8008422242051436,
+        "accuracy": 0.6280523704430659
+      }
+    },
+    "evaluation": {
+      "training_population": {
+        "rows": 51796,
+        "persons": 7129,
+        "months": 46,
+        "brier": 0.31316159928104736,
+        "log_loss": 1.0368149672629172,
+        "accuracy": 0.47863105623699775
+      },
+      "demographic": {
+        "rows": 51796,
+        "persons": 7129,
+        "months": 46,
+        "brier": 0.3113814640545959,
+        "log_loss": 1.030554477139001,
+        "accuracy": 0.47863105623699775
+      },
+      "demographic_personal_history": {
+        "rows": 51796,
+        "persons": 7129,
+        "months": 46,
+        "brier": 0.23233273615076874,
+        "log_loss": 0.7911812480310025,
+        "accuracy": 0.649568088360623
+      },
+      "previous_belief_shape": {
+        "rows": 51796,
+        "persons": 7129,
+        "months": 46,
+        "brier": 0.27246889749979497,
+        "log_loss": 0.9050560617426795,
+        "accuracy": 0.5175431670340817
+      },
+      "previous_belief_shape_personal_history": {
+        "rows": 51796,
+        "persons": 7129,
+        "months": 46,
+        "brier": 0.22444592090030063,
+        "log_loss": 0.7619536485284655,
+        "accuracy": 0.6538076964087661
+      }
+    }
+  },
+  "subgroups": {
+    "no_past_observable": {
+      "training_population": {
+        "rows": 5973,
+        "persons": 5973,
+        "months": 46,
+        "brier": 0.347683739173929,
+        "log_loss": 1.144267034748008,
+        "accuracy": 0.347255892047258
+      },
+      "demographic": {
+        "rows": 5973,
+        "persons": 5973,
+        "months": 46,
+        "brier": 0.34401279665290163,
+        "log_loss": 1.1320628699971282,
+        "accuracy": 0.347255892047258
+      },
+      "demographic_personal_history": {
+        "rows": 5973,
+        "persons": 5973,
+        "months": 46,
+        "brier": 0.3440127966529015,
+        "log_loss": 1.1320628699971282,
+        "accuracy": 0.347255892047258
+      },
+      "previous_belief_shape": {
+        "rows": 5973,
+        "persons": 5973,
+        "months": 46,
+        "brier": 0.3338509582807706,
+        "log_loss": 1.100171357380423,
+        "accuracy": 0.347255892047258
+      },
+      "previous_belief_shape_personal_history": {
+        "rows": 5973,
+        "persons": 5973,
+        "months": 46,
+        "brier": 0.3338509582807706,
+        "log_loss": 1.100171357380423,
+        "accuracy": 0.347255892047258
+      }
+    },
+    "one_or_two_past": {
+      "training_population": {
+        "rows": 10119,
+        "persons": 5377,
+        "months": 46,
+        "brier": 0.331089860405538,
+        "log_loss": 1.0905530603352145,
+        "accuracy": 0.39962783323410533
+      },
+      "demographic": {
+        "rows": 10119,
+        "persons": 5377,
+        "months": 46,
+        "brier": 0.32915075933039434,
+        "log_loss": 1.08402586841862,
+        "accuracy": 0.39962783323410533
+      },
+      "demographic_personal_history": {
+        "rows": 10119,
+        "persons": 5377,
+        "months": 46,
+        "brier": 0.27869845149334327,
+        "log_loss": 0.9351216853279227,
+        "accuracy": 0.5898106918442839
+      },
+      "previous_belief_shape": {
+        "rows": 10119,
+        "persons": 5377,
+        "months": 46,
+        "brier": 0.3005058906446617,
+        "log_loss": 0.9980094530406418,
+        "accuracy": 0.47063554928241513
+      },
+      "previous_belief_shape_personal_history": {
+        "rows": 10119,
+        "persons": 5377,
+        "months": 46,
+        "brier": 0.27081107111551733,
+        "log_loss": 0.9145054585972526,
+        "accuracy": 0.593064422744265
+      }
+    },
+    "three_or_more_past": {
+      "training_population": {
+        "rows": 35704,
+        "persons": 5352,
+        "months": 46,
+        "brier": 0.3022196832480991,
+        "log_loss": 1.003292189805508,
+        "accuracy": 0.5230610215604959
+      },
+      "demographic": {
+        "rows": 35704,
+        "persons": 5352,
+        "months": 46,
+        "brier": 0.3008279168609524,
+        "log_loss": 0.9981700154598715,
+        "accuracy": 0.5230610215604959
+      },
+      "demographic_personal_history": {
+        "rows": 35704,
+        "persons": 5352,
+        "months": 46,
+        "brier": 0.19999141118713057,
+        "log_loss": 0.6917408115755874,
+        "accuracy": 0.7185248583404783
+      },
+      "previous_belief_shape": {
+        "rows": 35704,
+        "persons": 5352,
+        "months": 46,
+        "brier": 0.25397681506238234,
+        "log_loss": 0.8452048820795418,
+        "accuracy": 0.560309182928138
+      },
+      "previous_belief_shape_personal_history": {
+        "rows": 35704,
+        "persons": 5352,
+        "months": 46,
+        "brier": 0.1924516082179597,
+        "log_loss": 0.6604730440995523,
+        "accuracy": 0.7236719801758404
+      }
+    },
+    "exact_adjacent_calendar": {
+      "training_population": {
+        "rows": 43266,
+        "persons": 6097,
+        "months": 46,
+        "brier": 0.30851519621388174,
+        "log_loss": 1.0222581567734723,
+        "accuracy": 0.49581919010367625
+      },
+      "demographic": {
+        "rows": 43266,
+        "persons": 6097,
+        "months": 46,
+        "brier": 0.3070818621212015,
+        "log_loss": 1.0170259814540445,
+        "accuracy": 0.49581919010367625
+      },
+      "demographic_personal_history": {
+        "rows": 43266,
+        "persons": 6097,
+        "months": 46,
+        "brier": 0.21626079417830746,
+        "log_loss": 0.7419636045567277,
+        "accuracy": 0.6920778285795816
+      },
+      "previous_belief_shape": {
+        "rows": 43266,
+        "persons": 6097,
+        "months": 46,
+        "brier": 0.2638117254317371,
+        "log_loss": 0.8772097325639707,
+        "accuracy": 0.5394257193009149
+      },
+      "previous_belief_shape_personal_history": {
+        "rows": 43266,
+        "persons": 6097,
+        "months": 46,
+        "brier": 0.20857146193668874,
+        "log_loss": 0.7127480397518337,
+        "accuracy": 0.6969678814830813
+      }
+    },
+    "2022": {
+      "training_population": {
+        "rows": 14679,
+        "persons": 2779,
+        "months": 12,
+        "brier": 0.3120196408236499,
+        "log_loss": 1.0322483870165462,
+        "accuracy": 0.47769359730006394
+      },
+      "demographic": {
+        "rows": 14679,
+        "persons": 2779,
+        "months": 12,
+        "brier": 0.31079185663180936,
+        "log_loss": 1.0275745637367029,
+        "accuracy": 0.47769359730006394
+      },
+      "demographic_personal_history": {
+        "rows": 14679,
+        "persons": 2779,
+        "months": 12,
+        "brier": 0.23260270302497643,
+        "log_loss": 0.7899186092372094,
+        "accuracy": 0.6503846389626532
+      },
+      "previous_belief_shape": {
+        "rows": 14679,
+        "persons": 2779,
+        "months": 12,
+        "brier": 0.27451037839732667,
+        "log_loss": 0.9110048381219439,
+        "accuracy": 0.5175929323571026
+      },
+      "previous_belief_shape_personal_history": {
+        "rows": 14679,
+        "persons": 2779,
+        "months": 12,
+        "brier": 0.22546711970152378,
+        "log_loss": 0.7624592711416601,
+        "accuracy": 0.6553145856870793
+      }
+    },
+    "2023": {
+      "training_population": {
+        "rows": 13839,
+        "persons": 2706,
+        "months": 12,
+        "brier": 0.31482838580203326,
+        "log_loss": 1.0420341932468695,
+        "accuracy": 0.4724512160563436
+      },
+      "demographic": {
+        "rows": 13839,
+        "persons": 2706,
+        "months": 12,
+        "brier": 0.31388581087744255,
+        "log_loss": 1.0388080765127263,
+        "accuracy": 0.4724512160563436
+      },
+      "demographic_personal_history": {
+        "rows": 13839,
+        "persons": 2706,
+        "months": 12,
+        "brier": 0.23069927358634476,
+        "log_loss": 0.7881003636997231,
+        "accuracy": 0.6578939691313841
+      },
+      "previous_belief_shape": {
+        "rows": 13839,
+        "persons": 2706,
+        "months": 12,
+        "brier": 0.2713845691051006,
+        "log_loss": 0.9010220568021219,
+        "accuracy": 0.5282295123721863
+      },
+      "previous_belief_shape_personal_history": {
+        "rows": 13839,
+        "persons": 2706,
+        "months": 12,
+        "brier": 0.22150743141897208,
+        "log_loss": 0.7548171185675433,
+        "accuracy": 0.6643308525380802
+      }
+    },
+    "2024": {
+      "training_population": {
+        "rows": 12856,
+        "persons": 2534,
+        "months": 12,
+        "brier": 0.31442315305801044,
+        "log_loss": 1.0410700251926321,
+        "accuracy": 0.4755443277872749
+      },
+      "demographic": {
+        "rows": 12856,
+        "persons": 2534,
+        "months": 12,
+        "brier": 0.31249902304236754,
+        "log_loss": 1.034532585679368,
+        "accuracy": 0.4755443277872749
+      },
+      "demographic_personal_history": {
+        "rows": 12856,
+        "persons": 2534,
+        "months": 12,
+        "brier": 0.23508119089863708,
+        "log_loss": 0.7998654872081442,
+        "accuracy": 0.6438838301630584
+      },
+      "previous_belief_shape": {
+        "rows": 12856,
+        "persons": 2534,
+        "months": 12,
+        "brier": 0.27521951498577507,
+        "log_loss": 0.9140534223743829,
+        "accuracy": 0.510763218639413
+      },
+      "previous_belief_shape_personal_history": {
+        "rows": 12856,
+        "persons": 2534,
+        "months": 12,
+        "brier": 0.22750415364565113,
+        "log_loss": 0.7728759018788912,
+        "accuracy": 0.6459028888467923
+      }
+    },
+    "2025": {
+      "training_population": {
+        "rows": 10422,
+        "persons": 2147,
+        "months": 10,
+        "brier": 0.3110179410723852,
+        "log_loss": 1.0309257228621616,
+        "accuracy": 0.49087588931777093
+      },
+      "demographic": {
+        "rows": 10422,
+        "persons": 2147,
+        "months": 10,
+        "brier": 0.30774270598919784,
+        "log_loss": 1.0194523237248474,
+        "accuracy": 0.49087588931777093
+      },
+      "demographic_personal_history": {
+        "rows": 10422,
+        "persons": 2147,
+        "months": 10,
+        "brier": 0.23067078528158622,
+        "log_loss": 0.7859723887685197,
+        "accuracy": 0.6454182805503516
+      },
+      "previous_belief_shape": {
+        "rows": 10422,
+        "persons": 2147,
+        "months": 10,
+        "brier": 0.26801957351321437,
+        "log_loss": 0.891961503258187,
+        "accuracy": 0.5127957723143336
+      },
+      "previous_belief_shape_personal_history": {
+        "rows": 10422,
+        "persons": 2147,
+        "months": 10,
+        "brier": 0.2230767904220068,
+        "log_loss": 0.7568040333252264,
+        "accuracy": 0.6488574109939825
+      }
+    }
+  },
+  "contrasts": [
+    {
+      "model": "demographic_personal_history",
+      "baseline": "demographic",
+      "person_cluster": {
+        "difference": -0.0790487279038272,
+        "interval_95": [
+          -0.08260859507885072,
+          -0.07559336312017272
+        ],
+        "persons": 7129,
+        "repetitions": 1000,
+        "seed": 104729
+      },
+      "month_block": {
+        "difference": -0.07904872790382718,
+        "interval_95": [
+          -0.08101692907822831,
+          -0.07709018722811865
+        ],
+        "months": 46,
+        "block_months": 6,
+        "repetitions": 1000,
+        "seed": 130363
+      }
+    },
+    {
+      "model": "previous_belief_shape_personal_history",
+      "baseline": "previous_belief_shape",
+      "person_cluster": {
+        "difference": -0.04802297659949435,
+        "interval_95": [
+          -0.051140945693715696,
+          -0.04477720083339578
+        ],
+        "persons": 7129,
+        "repetitions": 1000,
+        "seed": 104729
+      },
+      "month_block": {
+        "difference": -0.048022976599494366,
+        "interval_95": [
+          -0.049635546575013116,
+          -0.04629269540155084
+        ],
+        "months": 46,
+        "block_months": 6,
+        "repetitions": 1000,
+        "seed": 130363
+      }
+    }
+  ],
+  "observed_shapes": {
+    "finer_than_5": {
+      "rows": 9873,
+      "single_bin_fraction": 0.0,
+      "mean_nonzero_bins": 8.071872819654764,
+      "zero_deflation_fraction": 0.1698382394255034,
+      "official_personal_uncertainty_median_pp": 5.861473083496094
+    },
+    "5_only": {
+      "rows": 17846,
+      "single_bin_fraction": 0.0,
+      "mean_nonzero_bins": 5.391440458095997,
+      "zero_deflation_fraction": 0.4891481317193384,
+      "official_personal_uncertainty_median_pp": 4.093035697937012
+    },
+    "10": {
+      "rows": 24077,
+      "single_bin_fraction": 0.3050113145608527,
+      "mean_nonzero_bins": 3.154597477411004,
+      "zero_deflation_fraction": 0.7150955086749953,
+      "official_personal_uncertainty_median_pp": 2.3431458473205566
+    },
+    "zero_deflation_transition": {
+      "pairs": 43266,
+      "joint_probability_equal_month": [
+        [
+          0.3764565902343942,
+          0.08670763077487041
+        ],
+        [
+          0.07381806921382779,
+          0.46301770977690754
+        ]
+      ],
+      "probability_zero_now_if_zero_before": 0.8624941330240552,
+      "probability_zero_now_if_positive_before": 0.1872071002935609
+    }
+  },
+  "training_support": {
+    "demographic_cells": 18,
+    "state_cells": 32,
+    "rows": 46794,
+    "months": 36,
+    "cuts": {
+      "previous_Q9_iqr": [
+        1.1715720891952515,
+        2.2362494468688965,
+        5.581639766693115
+      ],
+      "previous_max_mass": [
+        40.0,
+        50.0,
+        80.0
+      ]
+    }
+  },
+  "rounding_aggregate": {
+    "deterministic_5": {
+      "original_center_mae_pp": 0.6490290583025797,
+      "mapped_center_mae_pp": 0.49760802033667073,
+      "original_w1_pp": 3.6995561888493143,
+      "mapped_w1_pp": 3.598145741403557,
+      "original_person_iqr_pp": 0.6927349872118003,
+      "mapped_person_iqr_pp": 0.8571807225213222,
+      "real_person_iqr_pp": 6.093915209445863,
+      "original_variance_pp2": 0.30538729558548117,
+      "mapped_variance_pp2": 0.38367356971182603,
+      "signed_center_shift_pp": 0.1808650247638805,
+      "family_changed_fraction": 0.0,
+      "cells": 16
+    },
+    "deterministic_10": {
+      "original_center_mae_pp": 0.6490290583025797,
+      "mapped_center_mae_pp": 0.5456196877512286,
+      "original_w1_pp": 3.6995561888493143,
+      "mapped_w1_pp": 3.6124599038192278,
+      "original_person_iqr_pp": 0.6927349872118003,
+      "mapped_person_iqr_pp": 0.9227258116722004,
+      "real_person_iqr_pp": 6.093915209445863,
+      "original_variance_pp2": 0.30538729558548117,
+      "mapped_variance_pp2": 0.4504697053796647,
+      "signed_center_shift_pp": 0.39586795295254346,
+      "family_changed_fraction": 0.0,
+      "cells": 16
+    },
+    "balanced_random_5": {
+      "original_center_mae_pp": 0.6490290583025797,
+      "mapped_center_mae_pp": 0.5706142460445682,
+      "original_w1_pp": 3.6995561888493143,
+      "mapped_w1_pp": 3.6447862498880594,
+      "original_person_iqr_pp": 0.6927349872118003,
+      "mapped_person_iqr_pp": 0.7714876240294641,
+      "real_person_iqr_pp": 6.093915209445863,
+      "original_variance_pp2": 0.30538729558548117,
+      "mapped_variance_pp2": 0.3360709133972591,
+      "signed_center_shift_pp": 0.07841481225801164,
+      "family_changed_fraction": 0.0,
+      "cells": 16
+    }
+  },
+  "supplement": {
+    "protocol": {
+      "version": "sce-reporting-controls-v1",
+      "registered_on": "2026-10-13",
+      "status": "supplementary exploratory control, registered after primary results",
+      "reason": "Primary results show different class distributions for first-observable and repeat respondents. Check whether personal-history value survives controls for number of past valid observations.",
+      "parent_protocol": "codex_protocol.json",
+      "past_observation_buckets": [
+        "none",
+        "1",
+        "2",
+        "3-5",
+        "6+"
+      ],
+      "model": "previous belief shape plus past-observation bucket conditional table; shrink to parent shape table with original support/pseudocount settings",
+      "personal_history": "same fixed three-pseudocount rule, no parameter search",
+      "permutation": {
+        "repetitions": 5,
+        "seed": 99991,
+        "strata": "current month x previous-belief-shape key x past-observation bucket",
+        "rule": "shuffle past class proportions among eligible returning people; retain receiver observation-count strength; do not use current labels; singleton strata unchanged"
+      },
+      "notice": "Observed answer counts are not exact survey tenure. Controls cannot uniquely separate stable beliefs, questionnaire familiarity and reporting style. This supplement does not replace the five primary methods or select a final persona distribution."
+    },
+    "evaluation": {
+      "shape_and_count": {
+        "rows": 51796,
+        "persons": 7129,
+        "months": 46,
+        "brier": 0.27220973784543523,
+        "log_loss": 0.9027275469576245,
+        "accuracy": 0.5166066462810754
+      },
+      "shape_count_personal_history": {
+        "rows": 51796,
+        "persons": 7129,
+        "months": 46,
+        "brier": 0.22407026402359306,
+        "log_loss": 0.7602171363783713,
+        "accuracy": 0.6539675852816081
+      }
+    },
+    "history_contrast": {
+      "person_cluster": {
+        "difference": -0.04813947382184216,
+        "interval_95": [
+          -0.05123628012052441,
+          -0.04488641937582189
+        ],
+        "persons": 7129,
+        "repetitions": 1000,
+        "seed": 104729
+      },
+      "month_block": {
+        "difference": -0.04813947382184214,
+        "interval_95": [
+          -0.04982012283573349,
+          -0.046380335362029124
+        ],
+        "months": 46,
+        "block_months": 6,
+        "repetitions": 1000,
+        "seed": 130363
+      }
+    },
+    "permutation": {
+      "movable_rows": 44642,
+      "total_rows": 51796,
+      "fraction_movable": 0.861881226349525,
+      "mean_brier": 0.3077546588291725,
+      "brier_per_draw": [
+        0.30615941375149786,
+        0.3091423213253477,
+        0.30721339523087104,
+        0.3093071995359242,
+        0.30695096430222174
+      ],
+      "mean_accuracy": 0.4928765514873679
+    }
+  },
+  "source_hashes": {
+    "outputs/sce_age_reporting_audit_20261012_v1/reference_private.parquet": "86414d573d053b72ef20906dcc448ee9476f1679f86833144babd17bd433dc1b",
+    "docs/workstreams/20261013_behavior/codex_protocol.json": "fc1a0fe06c9a7a18b61fc268e614ffcc4bdb220c01296ce13b16a431edb6b519"
+  },
+  "analysis_code_sha256": {
+    "studies/sce_inflation_expectations/reporting_behavior/analysis.py": "84bd95b1a59abc6720d56d036dc837f859981686c66cf107219695844ba840d9"
+  },
+  "result_files": {
+    "outputs/sce_reporting_behavior_20261013_v1/summary.json": "52e739b6aac6293d6992062c2b6d0622f8c38a1b54b318913dc606b4d11fa734",
+    "outputs/sce_reporting_controls_20261013_v1/summary.json": "eb0a54039f9d9a5f32c43edddef73f91aa4724ebdc422494fbfe60b8f4ea1203",
+    "outputs/sce_reporting_reading_20261013_v1/reading_receipt.json": "1720d2d626d22b43deb12c304a2069b9cbfbe0bc82c27453c59bff72bd3238e2"
+  },
+  "new_api_calls": 0,
+  "simulation_changed": false,
+  "individual_rows_in_document": false
+}

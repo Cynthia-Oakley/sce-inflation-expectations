@@ -1,6 +1,6 @@
 # Codex与Kimi的水平分工
 
-2026-10-13。最新状态：用户已确认任务转发给Kimi，其实际执行进度以Kimi记录为准；Codex已核查旧报告并写出[codex_progress.md](codex_progress.md)，新全量分析及付费实验尚未执行。下文保留最初分工约定。
+2026-10-13。最新状态：Kimi已经启动，具体进度以Kimi记录为准；Codex首轮概率报告分析已交付[codex_results.md](codex_results.md)及聚合汇总。两条线仍无新增真实模拟调用；下一项汇合结果后登记对照。下文保留最初分工约定。
 
 ## 为什么这样分
 

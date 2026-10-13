@@ -1,0 +1,12 @@
+{
+  "version": "sce-reporting-controls-v1",
+  "registered_on": "2026-10-13",
+  "status": "supplementary exploratory control, registered after primary results",
+  "reason": "Primary results show different class distributions for first-observable and repeat respondents. Check whether personal-history value survives controls for number of past valid observations.",
+  "parent_protocol": "codex_protocol.json",
+  "past_observation_buckets": ["none", "1", "2", "3-5", "6+"],
+  "model": "previous belief shape plus past-observation bucket conditional table; shrink to parent shape table with original support/pseudocount settings",
+  "personal_history": "same fixed three-pseudocount rule, no parameter search",
+  "permutation": {"repetitions": 5, "seed": 99991, "strata": "current month x previous-belief-shape key x past-observation bucket", "rule": "shuffle past class proportions among eligible returning people; retain receiver observation-count strength; do not use current labels; singleton strata unchanged"},
+  "notice": "Observed answer counts are not exact survey tenure. Controls cannot uniquely separate stable beliefs, questionnaire familiarity and reporting style. This supplement does not replace the five primary methods or select a final persona distribution."
+}

@@ -15,6 +15,8 @@ def main():
     title = re.search(r'^# (.+)$', section, re.M).group(1)
     note = next(line for line in section.splitlines() if line.startswith('更新：'))
     tasks = re.findall(r'^- \[([ x])\] (.+)$', section, re.M)
+    result_link = re.search(r'^结果阅读：\[([^\]]+)\]\(([^)]+)\)', section, re.M)
+    result_html = '' if result_link is None else f'<p><a href="{escape(result_link.group(2),quote=True)}">{escape(result_link.group(1))}</a></p>'
     if not tasks:
         raise ValueError('Current checklist contains no tasks')
     done = sum(status == 'x' for status, _ in tasks)
@@ -30,7 +32,7 @@ def main():
 </style></head><body><main>
 <h1>{escape(title)}</h1><p>{escape(note)}</p>
 <p>已完成 {done} / {len(tasks)} 项</p><progress value="{done}" max="{len(tasks)}" aria-label="清单完成进度"></progress>
-<ul>{''.join(rows)}</ul>
+<ul>{''.join(rows)}</ul>{result_html}
 <footer>清单由Agent根据实际进展更新，本页每10秒刷新。打钩表示工作已完成，不代表实验假设得到支持。<br>文字来源：NEXT_ACTIONS.md。<a href="reviews/20261012_mechanism_retro/behavior_reorientation_20261013.md">方向方案</a></footer>
 </main></body></html>'''
     output = root / 'docs/current_todo.html'
