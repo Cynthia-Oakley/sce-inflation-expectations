@@ -26,9 +26,14 @@
 - [x] 冻结个人状态与LLM新增信息反应的分工、参数选择和开发/评价分期。
 - [x] 核对八期回访者人口/E覆盖、状态来源与基线，封存提示，16离线单元通过。
 - [x] 在固定规则后的四期复核，记录未过筛选，不将程序组合升级主机制。
+- [x] 核对外部通胀预期观点的一手文献，整理可检验的行为提示与人口匹配边界。
 - [ ] 用八期已有回答拆解个人原有位置、公共月份变化和个人更新的关系。
 - [ ] 按年龄、收入、数理能力等分组，核查差异压缩是否一致，保留小组统计边界。
 - [ ] 先离线比较保留个人位置、单独估计公共更新的候选，再登记新验证期与预算。
+- [ ] 用现有CE Diary补商品类别购买日数及条件供体匹配，核查缺失与历史可得性。
+- [ ] 根据离线诊断选择一个行为机制，准备匹配／置换或同人理解方式对照，再冻结提示与新验证期。
+
+行为方案：[一手文献复核与下一步](literature/sce/heterogeneity_and_probability/behavior_prompt_review_20261014.md)；[阅读页](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#behavior-mechanism-review)。候选提示未接入、未冻结，新增API0。
 
 结果阅读：[八期扩大实验结果与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#expanded-trial-results)
 

@@ -1,0 +1,82 @@
+{
+  "checked_on": "2026-10-14",
+  "type": "primary_literature_index_not_download_manifest",
+  "sources": [
+    {
+      "id": "dmow_grocery",
+      "title": "Exposure to Grocery Prices and Inflation Expectations",
+      "authors": "Francesco D'Acunto, Ulrike Malmendier, Juan Ospina, Michael Weber",
+      "version": "Author manuscript 2020-08-03; journal publication 2021",
+      "url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+      "use": "Purchase-frequency exposure and asymmetric salience of increases versus decreases",
+      "boundary": "US grocery scanner measures are not CE expenditure shares or diary purchase days"
+    },
+    {
+      "id": "huber_perceptions",
+      "title": "The pass-through from inflation perceptions to inflation expectations",
+      "authors": "Stefanie J. Huber, Daria Minina, Tobias Schmidt",
+      "version": "Bundesbank Discussion Paper 17/2023",
+      "url": "https://www.bundesbank.de/resource/blob/902668/365682610f6c37a512c5905f66f8f285/mL/2023-06-30-dkp-17-data.pdf",
+      "use": "Perceptions-expectations linkage and randomized information experiment",
+      "boundary": "German online-population survey; not an identified coefficient for US SCE"
+    },
+    {
+      "id": "boe_food",
+      "title": "Food prices matter most: sensitive household inflation expectations",
+      "authors": "Nikoleta Anesti, Vania Esady, Matthew Naylor",
+      "version": "BoE Staff Working Paper 1125, May 2025, originally published 2025-04-25",
+      "url": "https://www.bankofengland.co.uk/-/media/boe/files/working-paper/2025/food-prices-matter-most-sensitive-household-inflation-expectations.pdf",
+      "use": "Distinguish exposure from sensitivity; food and cross-group responses",
+      "boundary": "UK evidence, heterogeneous associations; not universal low-income response coefficients"
+    },
+    {
+      "id": "malmendier_nagel_experiences",
+      "title": "Learning from Inflation Experiences",
+      "authors": "Ulrike Malmendier, Stefan Nagel",
+      "version": "Author manuscript; QJE publication 2016",
+      "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_44.pdf",
+      "use": "Age-dependent lifetime experience weighting",
+      "boundary": "Does not establish a universal U-shaped age profile or permanently higher expectations of old people"
+    },
+    {
+      "id": "andre_subjective_models",
+      "title": "Subjective Models of the Macroeconomy: Evidence From Experts and Representative Samples",
+      "authors": "Peter Andre, Carlo Pizzinelli, Christopher Roth, Johannes Wohlfart",
+      "version": "Author manuscript dated 2021-10-27; publication 2022",
+      "url": "https://www.econ.ku.dk/cebi/publikationer/journals/SubjModelsRevision.pdf",
+      "use": "Subjective transmission channels and randomized contextual priming",
+      "boundary": "Macroeconomic shock vignettes, not monthly SCE density responses; sample response fractions are not population assignment probabilities"
+    },
+    {
+      "id": "cleveland_indirect",
+      "title": "Indirect Consumer Inflation Expectations",
+      "version": "Cleveland Fed Economic Commentary 2022-03",
+      "url": "https://www.clevelandfed.org/publications/economic-commentary/2022/ec-202203-indirect-consumer-inflation-expectations",
+      "use": "Demographic patterns can vary with measurement wording",
+      "boundary": "Indirect question differs from SCE Q9; no universal demographic offsets"
+    },
+    {
+      "id": "carroll_epidemiology",
+      "title": "The Epidemiology of Macroeconomic Expectations",
+      "authors": "Christopher D. Carroll",
+      "version": "NBER Working Paper 8695, 2001",
+      "url": "https://www.nber.org/papers/w8695",
+      "use": "Gradual propagation of expert/media information into household expectations",
+      "boundary": "Does not identify our respondents' networks or their individual update probability"
+    },
+    {
+      "id": "mankiw_reis_sticky",
+      "title": "Sticky Information Versus Sticky Prices: A Proposal to Replace the New Keynesian Phillips Curve",
+      "authors": "N. Gregory Mankiw, Ricardo Reis",
+      "version": "NBER Working Paper 8290, 2001; QJE publication 2002",
+      "url": "https://www.nber.org/papers/w8290",
+      "use": "Infrequent information updating as a theoretical reference",
+      "boundary": "Price-setting model is not a direct empirical SCE household updating model"
+    }
+  ],
+  "unverified_claims": [
+    "Universal ranking of all drivers by contribution",
+    "Universal U-shaped age relationship and fixed 2pp/3pp demographic offsets",
+    "Unspecified Chinese studies and fixed 2-3-quarter interest-rate response lag"
+  ]
+}

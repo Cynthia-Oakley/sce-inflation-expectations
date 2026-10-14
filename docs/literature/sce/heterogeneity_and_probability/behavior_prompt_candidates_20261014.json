@@ -1,0 +1,46 @@
+{
+  "status": "draft_not_integrated_not_frozen",
+  "prepared_on": "2026-10-14",
+  "new_api_calls": 0,
+  "scope": "Optional mechanism blocks, not full survey prompts or a runnable configuration",
+  "invariants": [
+    "Keep the same P/E facts, prior information, survey wording, horizon, bin order and output constraints in a prompt-only comparison",
+    "Do not include current true Q8/Q9 answers or assign styles based on current prediction errors",
+    "Do not encode a new expected inflation level or a forced direction",
+    "Test one mechanism at a time; these blocks must not be concatenated by default"
+  ],
+  "candidates": [
+    {
+      "id": "price_contact_attention",
+      "text": "Prices you often encounter tend to come to mind first when you think about price changes. Start from the categories in your assigned price-contact profile, then judge which changes may persist over the next 12 months. Other supplied information can still change your judgment.",
+      "source_id": "dmow_grocery",
+      "requires": "Category-level CE Diary contact proxy with matching and missingness audit; currently unavailable in the running provider",
+      "population_assignment": "Conditional joint donor distribution versus the same donor vectors permuted; do not equate contact days with observed attention",
+      "status": "draft_requires_data_preparation"
+    },
+    {
+      "id": "upward_price_salience",
+      "text": "A price increase in an item you regularly buy tends to stay in your memory more than a comparable price decrease. Treat this as an attention tendency, not a requirement to report higher inflation; judge the outlook over the next 12 months.",
+      "source_id": "dmow_grocery",
+      "requires": "Comparable price changes and a separately preregistered salience-only contrast",
+      "population_assignment": "No validated individual distribution or intensity parameter; within-person experimental condition only",
+      "status": "secondary_draft_not_for_default_use"
+    },
+    {
+      "id": "cost_channel_attention",
+      "text": "When considering policy changes or supply disruptions, the production and borrowing costs that businesses face tend to come to mind first. Consider how these costs might affect prices over the next 12 months; other effects may still matter.",
+      "source_id": "andre_subjective_models",
+      "population_assignment": "Within-person randomized crossover; no demographic assignment is validated",
+      "status": "draft_mechanism_probe"
+    },
+    {
+      "id": "demand_channel_attention",
+      "text": "When considering policy changes or supply disruptions, the spending and purchasing decisions of households and businesses tend to come to mind first. Consider how these decisions might affect prices over the next 12 months; other effects may still matter.",
+      "source_id": "andre_subjective_models",
+      "population_assignment": "Within-person randomized crossover; no demographic assignment is validated",
+      "status": "draft_mechanism_probe"
+    }
+  ],
+  "interpretation": "These are hypotheses for a simulator, not observed SCE respondents' psychological traits. Prompt sensitivity and human mechanism validity require separate evidence.",
+  "next_gate": "Complete existing-response diagnostics and contact-proxy data preparation; select one mechanism and freeze a new protocol before requesting paid calls"
+}

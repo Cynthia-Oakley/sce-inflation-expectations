@@ -1,4 +1,26 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE扩大实验前诊断</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><section id="expanded-trial-results" style="border-bottom:1px solid #ddd;padding-bottom:24px;margin-bottom:36px">
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE扩大实验前诊断</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><section id="behavior-mechanism-review" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>外部观点：有价值，怎样落实？</h1>
+<p><strong>提示词可以用来表达居民的思考习惯。下一步重点是让信息经过个人理解，再形成回答；每种习惯的依据、分配方式和实际效果都要检查。</strong></p>
+<p>2026-10-14：本节是文献核对与方案草案，新增API调用0，原实验结果及配置未改。</p>
+<h2>最值得留下的三点</h2>
+<ol><li><strong>价格接触不同。</strong>经常买什么，会影响什么价格最容易被想起来；购买频率与支出占比需要分别处理。</li>
+<li><strong>原有信念不同。</strong>新信息不必把过去判断全部推翻。八期结果仍显示个人差异被压缩，先查压缩发生在哪里。</li>
+<li><strong>理解方式不同。</strong>同样看到加息，有人先想到企业成本，有人先想到需求降温。美国居民调查及随机提示研究支持这个方向。</li></ol>
+<h2>不能直接照搬的结论</h2>
+<p>不能把因素排名、年龄U型、女性固定高2个百分点、低收入固定高3个百分点写成人群规则。年龄关系会随时期变化；食品支出占比高也不等于反应更强。所引英国食品论文为2025年，短期与长期预期也并非互不相干。</p>
+<h2>具体怎么往下做</h2>
+<ol><li><strong>先零API拆解已有回答：</strong>核查个人上期位置、公共月份变化、个人更新；按年龄、收入、数理能力看差异压缩。</li>
+<li><strong>补购买频率代理：</strong>现有CE Diary已经有合计购物日数，下一步补到商品类别，检查共同画像字段能否支持匹配。</li>
+<li><strong>选择一个机制小试：</strong>购买接触比较当前输入／条件匹配／随机置换；政策理解可另做同人的成本／需求提示对照。先不一次加入所有机制。</li></ol>
+<h3>提示可以怎样写？</h3>
+<p style="background:#eef4f0;padding:16px 20px;border-left:4px solid #527761">你通常先通过经常购买的商品形成物价印象，再判断这些变化是否会延续到未来12个月。其他消息仍可能改变你的判断。</p>
+<p>这是待检验的机制提示。购物接触需要数据支持；缺乏人口对应依据的理解风格，先作为随机交叉的实验条件。人口匹配不能仅靠“年龄大，所以更悲观”。</p>
+<h2>怎样算有进展？</h2>
+<p>不仅看回答变得不同，还要看总体中心误差、跨人分布W1、更新分布W1；条件匹配要优于随机置换。已有八期已被查看，只能供进一步开发诊断，改进后另留验证期。新模拟的范围与费用会另登记。</p>
+<p><a href="../../literature/sce/heterogeneity_and_probability/behavior_prompt_review_20261014.md">完整复核与实施顺序</a> · <a href="../../literature/sce/heterogeneity_and_probability/behavior_prompt_candidates_20261014.json">候选提示草案（未接入）</a></p>
+<p>一手依据：<a href="https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf">美国购物频率研究</a> · <a href="https://www.econ.ku.dk/cebi/publikationer/journals/SubjModelsRevision.pdf">主观经济理解与随机提示</a> · <a href="https://www.bankofengland.co.uk/-/media/boe/files/working-paper/2025/food-prices-matter-most-sensitive-household-inflation-expectations.pdf">英国食品研究</a>。完整来源索引见复核文档。</p>
+</section>
+<section id="expanded-trial-results" style="border-bottom:1px solid #ddd;padding-bottom:24px;margin-bottom:36px">
 <h1>八期扩大实验：已完成</h1><p><strong>按预先登记的三项相对误差综合标准，开发期选择的新信息权重为0.00。这次程序方案因此退回上期延续，并没有证明加入LLM新信号更好。它不是说居民从不更新；真人在更新，但本次LLM信号和组合方式没有同时保护好总体中心、人际差异和更新分布。</strong></p>
 <p>八期各96人、两组、各两次，3072真实请求；模拟约$2.14，新闻约$0.58，合计约$2.72（token估算，非账单）。无重试，全部实际提示与预览一致。</p>
 <h2>固定规则后的四期评价</h2><p>2022-06、2023-06、2024-10、2025-09。误差单位均为百分点，越小越好。真人跨人IQR为5.545pp；表中IQR是人际差异，不能与一个人回答内的概率区间宽度混淆。</p>
