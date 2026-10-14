@@ -30,7 +30,9 @@ def scaled_budget(old_trial, planned_calls):
                 pricing_note='Peak cache-miss rates; estimate, not invoice or frozen new-prompt quote.')
 
 
-def run(root: Path,out: Path):
+def run(root: Path,out: Path, candidate_months=TARGETS):
+    if len(candidate_months)!=8 or len(set(candidate_months))!=8:
+        raise ValueError('Eight distinct candidate months required')
     if out.exists(): raise FileExistsError('Use a fresh ignored output directory')
     out.mkdir(parents=True)
     sources={}
@@ -53,7 +55,7 @@ def run(root: Path,out: Path):
         for line in (root/path).read_text().splitlines():known.add(json.loads(line)['label']['article_id'])
     rule_path=str(RULE_FILE.relative_to(root));rules=RecallRules(read(rule_path))
     windows=[];pending={}
-    for target in TARGETS:
+    for target in candidate_months:
         i,t=targets[target];cutoff=datetime.fromisoformat(t['as_of'])
         month=int(target.replace('-',''));prev=int(previous_month(target).replace('-',''))
         current=f[f.date==month]
@@ -105,7 +107,7 @@ def run(root: Path,out: Path):
     (out/'news_label_requests_draft.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in requests))
     old=read('outputs/sce_u1_trial_20261014_v2/trial_manifest.json')
     costs=scaled_budget(old,8*96*2*2)
-    result=dict(status='candidate_inventory_and_budget_not_authorized',candidate_months=list(TARGETS),
+    result=dict(status='candidate_inventory_only_not_execution_package',candidate_months=list(candidate_months),
         n_per_month=96,arms=2,generation_repeats=2,simulation_budget=costs,
         draft_model=dict(endpoint='https://api.deepseek.com',requested_alias='deepseek-flash',
             published_version='DeepSeek-V4.1-Flash',temperature=.5,thinking='disabled',max_tokens=1024,
