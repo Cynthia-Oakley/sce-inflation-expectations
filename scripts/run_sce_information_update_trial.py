@@ -1,0 +1,141 @@
+#!/usr/bin/env python3
+"""Information-time follow-up; reuse old A, run only new B/C; no auto-resume/retry and explicit authorization gate."""
+import argparse
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor,as_completed
+from datetime import datetime,timezone
+import json
+import hashlib
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+
+ROOT=Path(__file__).resolve().parents[1]
+OFFICIAL=ROOT.parent/'socioverse2_repo'
+sys.path.insert(0,str(ROOT))
+
+
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def dump(path,value):
+    Path(path).write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
+
+
+def verify(folder):
+    m=json.loads((folder/'manifest.json').read_text())
+    for name,digest in m['source_sha256'].items():
+        if sha(ROOT/name)!=digest:raise ValueError('source changed: '+name)
+    for name,digest in m['prepared_file_sha256'].items():
+        if sha(folder/name)!=digest:raise ValueError('prepared input changed: '+name)
+    if sum(j['cap_usd'] for j in m['jobs'])>m['proposed_cap_usd']+1e-9:raise ValueError('budget sum')
+    return m
+
+
+def authorization_gate(folder,m):
+    auth=json.loads((folder/'authorization.json').read_text())
+    if auth.get('approved') is not True or auth.get('protocol_sha256')!=m['protocol_sha256'] or auth.get('cap_usd')!=m['proposed_cap_usd'] or auth.get('planned_calls')!=m['planned_calls']:
+        raise ValueError('specific matching scope/budget authorization required')
+    checks=json.loads((folder/'engineering_checks.json').read_text())
+    if len(checks)!=len(m['jobs']) or {r['job_index'] for r in checks}!=set(range(len(m['jobs']))) or any(r['exit_code'] for r in checks):
+        raise ValueError('all offline cells required')
+    from studies.sce_inflation_expectations.news_label_trial import dotenv_values
+    values=dotenv_values(OFFICIAL/'.env')
+    host=(os.environ.get('SV_LLM_BASE_URL') or values.get('SV_LLM_BASE_URL') or '').rstrip('/')
+    if host not in ('https://api.deepseek.com','https://api.deepseek.com/v1') or not (os.environ.get('SV_LLM_API_KEY') or values.get('SV_LLM_API_KEY')):
+        raise ValueError('official DeepSeek endpoint/credential required')
+
+
+def worker(folder,index,scripted):
+    m=verify(folder)
+    sys.path.insert(0,str(OFFICIAL))
+    if not scripted:authorization_gate(folder,m)
+    from socioverse.engine import build_simulator
+    from socioverse.schemas import EnvironmentBundle,PopulationBundle,SimulationConfig
+    from studies.sce_inflation_expectations.information_update_runtime import InformationUpdateDecision
+    from studies.sce_inflation_expectations.model import SCEEnvironmentProvider
+    from studies.sce_inflation_expectations.prior_belief_experiment import message_hash
+    job=m['jobs'][index]
+    run_id=job['run_id']+('-engineering' if scripted else '')
+    audit=ROOT/'outputs/local_runs'/run_id;audit.mkdir(parents=True,exist_ok=False)
+    runtime=OFFICIAL/'studies/sce_inflation_expectations'
+    snapshot=audit/'source_snapshot';snapshot.mkdir();hashes={}
+    for source in runtime.rglob('*.py'):
+        if '__pycache__' in source.parts:continue
+        rel=source.relative_to(runtime);dest=snapshot/rel;dest.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copy2(source,dest);hashes[str(rel)]=sha(source)
+    dest=folder/str(job['month'])
+    env=EnvironmentBundle.model_validate_json((dest/'environment.json').read_text())
+    pop=PopulationBundle.model_validate_json((dest/'population.json').read_text())
+    cfg=SimulationConfig.model_validate_json((dest/f"simulation_{job['arm']}.json").read_text())
+    n=len(pop.personas)
+    env.provider_args.update(audit_dir=str(audit),run_id=run_id,persona_by_id={p.agent_id:p.attributes for p in pop.personas})
+    cfg.seed=41+job['repeat']
+    cfg.decision_args.update(llm_kind='scripted' if scripted else 'openai',seed=cfg.seed,
+        run_id=run_id,audit_dir=str(audit),model='deepseek-flash',temperature=.5,max_tokens=1024,
+        retry_max=0,max_calls=n,extra_body={'thinking':{'type':'disabled'}},
+        price_input_per_mtok=.3,price_output_per_mtok=1.2,cost_cap_usd=job['cap_usd'])
+    check=SCEEnvironmentProvider(env.model_copy(deep=True));check.audit_dir=None;check.reset(cfg.seed);check.advance_to(1)
+    decision=InformationUpdateDecision(**{**cfg.decision_args,'llm_kind':'scripted'})
+    previews={r['agent_id']:r['prompt_sha256'] for r in json.loads((dest/f"preview_{job['arm']}.json").read_text())}
+    for ob in check.observe_batch([p.agent_id for p in pop.personas],1):
+        if message_hash(decision.build_llm_messages(ob))!=previews[ob.agent_id]:raise ValueError('actual message drift')
+    for name,bundle in [('population_effective',pop),('environment_effective',env),('simulation_effective',cfg)]:
+        dump(audit/(name+'.json'),bundle.model_dump(mode='json'))
+    sim=build_simulator(env_bundle=env,pop_bundle=pop,sim_config=cfg,store_path=audit/'study.duckdb')
+    statuses=Counter();base=sim.decision.decide_batch
+    def counted(obs,memories):
+        actions=base(obs,memories);statuses.update(str(a.payload.get('validation_status')) for a in actions);return actions
+    sim.decision.decide_batch=counted
+    started=datetime.now(timezone.utc).isoformat();sim.run();cost=sim.decision.cost_summary()
+    result={'run_id':run_id,'month':job['month'],'arm':job['arm'],'repeat':job['repeat'],
+        'n':n,'llm_kind':'scripted' if scripted else 'openai','started_at_utc':started,
+        'finished_at_utc':datetime.now(timezone.utc).isoformat(),'cost':cost,
+        'decisions_by_validation_status':dict(statuses),'source_snapshot_sha256':hashes,
+        'actual_input_hashes_match':True,'protocol_sha256':m['protocol_sha256']}
+    dump(audit/'run_manifest.json',result);dump(audit/'cost_ledger.json',cost)
+    if not scripted and cost['call_count']!=n:raise RuntimeError('incomplete job; preserve without retry')
+    print(json.dumps({'month':job['month'],'arm':job['arm'],'repeat':job['repeat'],'statuses':dict(statuses),
+                      'cost':cost['estimated_cost_usd']}),flush=True)
+
+
+def dispatch(folder,scripted,workers):
+    m=verify(folder)
+    if not scripted:
+        authorization_gate(folder,m)
+    exported=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/export_study_runtime.py')],cwd=ROOT,capture_output=True,text=True)
+    if exported.returncode:raise RuntimeError(exported.stdout+exported.stderr)
+    for job in m['jobs']:
+        if (ROOT/'outputs/local_runs'/(job['run_id']+('-engineering' if scripted else ''))).exists():
+            raise ValueError('existing job: no automatic rerun/resume')
+    def one(index):
+        job=m['jobs'][index];log=folder/(job['run_id']+('-engineering' if scripted else '')+'.log')
+        cmd=[sys.executable,'-B',str(Path(__file__).resolve()),'worker','--folder',str(folder),'--job-index',str(index)]
+        if scripted:cmd.append('--scripted')
+        childenv=dict(os.environ,OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1')
+        with log.open('x') as handle:rc=subprocess.run(cmd,cwd=ROOT,stdout=handle,stderr=subprocess.STDOUT,env=childenv).returncode
+        print(job['month'],job['arm'],job['repeat'],'completed' if rc==0 else 'stopped',flush=True)
+        return {'job_index':index,'run_id':job['run_id'],'exit_code':rc}
+    results=[]
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures=[pool.submit(one,i) for i in range(len(m['jobs']))]
+        for future in as_completed(futures):
+            results.append(future.result());dump(folder/('engineering_checks.json' if scripted else 'real_dispatch.json'),results)
+    if any(r['exit_code'] for r in results):raise RuntimeError('one or more cells stopped; no automatic retry')
+
+
+def main():
+    p=argparse.ArgumentParser();p.add_argument('action',choices=['prepare','dry-run','run','worker'])
+    p.add_argument('--folder',type=Path,required=True);p.add_argument('--workers',type=int,default=4)
+    p.add_argument('--job-index',type=int);p.add_argument('--scripted',action='store_true');args=p.parse_args()
+    folder=args.folder.resolve()
+    if args.action=='prepare':
+        from studies.sce_inflation_expectations.information_update_preparation import prepare
+        m=prepare(folder);print('prepared',m['planned_calls'],'requests; reserve',round(m['conservative_reservation_usd'],4),'cap',m['proposed_cap_usd']);return
+    if args.action=='worker':return worker(folder,args.job_index,args.scripted)
+    dispatch(folder,args.action=='dry-run',args.workers)
+
+
+if __name__=='__main__':main()

@@ -1,0 +1,67 @@
+{
+  "id": "sce-information-update-reuse-v1",
+  "registered_at_utc": "2026-10-14T12:50:07.923334+00:00",
+  "research_line": "A_conditional_returner_reconstruction",
+  "months": [
+    202004,
+    202105,
+    202111,
+    202203
+  ],
+  "n_per_month": 48,
+  "sampling_seed": 20261015,
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "arms": [
+    "new_wording",
+    "dated_information"
+  ],
+  "model": "deepseek-flash",
+  "official_advertised_version": "DeepSeek-V4.1-Flash",
+  "model_identity_limit": "Mutable alias, not fixed weights or verified training cutoff",
+  "temperature": 0.5,
+  "max_tokens": 1024,
+  "thinking": "disabled",
+  "retry_max": 0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_verified_date": "2026-10-14",
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "budget_cap_usd": 3.0,
+  "comparison": "Only B/C newly generated together; old A reused at user request. C differs from B only by a publication-time index.",
+  "role_block": "Belief update instruction:\nYour previous survey records the belief you formed last month using the information you had at that time. Treat it as the starting point for your current view. The forecast window has now advanced by one month. Consider whether more recent information warrants keeping or revising that view; keeping it is allowed, revising it is allowed, and no fixed amount of adjustment is required.\n\n",
+  "planned_calls": 768,
+  "primary_contrast": "dated_information minus new_wording on cross-section W1",
+  "guardrails": [
+    "center MAE and delta W1 point values must not worsen for an overall candidate",
+    "at least 99% generated questionnaires structurally valid and scorable"
+  ],
+  "candidate_gate": "Primary W1 paired-person upper 95% bound < 0; center MAE and delta W1 points no worse; new scorable fraction >=99%. Not overall project success.",
+  "mechanism_check": "Within-month slope on own prior mean, across-person IQR, rank correlation; do not treat a slope as an identified psychological weight.",
+  "baseline_refs": [
+    "copy_previous",
+    "history_anchor_half"
+  ],
+  "q8": "secondary, separate from Q9",
+  "aggregation": "Each month/repeat separately, equal cell average; Q9 headline-style center is median of individually fitted density means, not a nationwide headline.",
+  "intervals": "2000 paired-person resamples within month, both generations together; 4-month resampling sensitivity; seed 20261015",
+  "truth_isolation": "No new sampling. Read only userid/date/survey_date for past-date lookup; current answers/weights confined to evaluation sidecar.",
+  "limits": [
+    "Four previously inspected development periods; no independent holdout claim.",
+    "Returners with actual private past answers and retrospective synthetic P; not real-time B.",
+    "2020Q4 CE proxy for 2020-04 is retrospective, not a PIT input.",
+    "Engine seeds do not imply a seeded or deterministic API generation.",
+    "Reused A is an earlier batch; apparent wording gain cannot exclude batch drift.",
+    "Publication-time tags do not establish real attention or information acquisition."
+  ],
+  "no_tuning_after_run": true,
+  "wording_block": "Belief update instruction:\nYour previous survey records the belief you formed last month using the information you had at that time. Treat it as the starting point for your current view. The forecast window has now advanced by one month. Consider whether more recent information warrants keeping or revising that view; keeping it is allowed, revising it is allowed, and no fixed amount of adjustment is required.\n\n",
+  "reused_A_calls": 384,
+  "reused_A_folder": "outputs/sce_anchor_role_trial_20261014_v3",
+  "reused_A_arm": "belief_start",
+  "exploratory_contrast": "new_wording minus reused_A; contains batch/time drift and is not a clean contemporaneous wording effect",
+  "date_boundary": "Prior survey calendar day, New York release dates; same-day unknown response time is ambiguous. No actual prior response date sent.",
+  "support": "Same truth-scorable person-generations with all three A/B/C answers, plus explicit failure coverage."
+}
