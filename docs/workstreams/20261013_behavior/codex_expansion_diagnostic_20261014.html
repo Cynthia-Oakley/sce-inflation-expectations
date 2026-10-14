@@ -1,9 +1,35 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><aside id="next-stage-checklist" style="background:#eef4ef;border-left:4px solid #326a56;padding:18px 22px;margin-bottom:30px;line-height:1.7">
-<strong>购买频率：运行准备完成，等待具体外发确认</strong>
-<p>已删除“不要机械地外推”这句。16引擎单元和10项定向检查通过；四个月各48人、两组各两遍，共768请求，估$0.893，保守上限$4。</p>
-<p>自动审批要求明确本批真实上期问卷/画像发送至DeepSeek，拒绝了启动。<strong>进程未启动、费用0</strong>；具体确认问题已发。提示、样本和其他P/E保持封存。</p>
-<p><a href="../20261014_mechanism/purchase_frequency_trial_20261015.md">本轮配置、对照、费用和状态</a> · <a href="../../current_todo.html">当前清单</a> · <a href="../../../outputs/sce_purchase_frequency_preparation_20261015_v1/preview_sample_private.txt">修改后完整输入预览</a></p></aside><section id="purchase-frequency-preparation" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
-<h1>不是零进展：差异恢复了一部分</h1>
+<strong>购买频率对照已完成：这段作用说明暂不采用</strong>
+<p>768次真实请求全部有效，0连接错误、0重试；按记录token及高峰价估$0.875，非账单。明确强调频率后，跨人分布误差增加，回答差异进一步缩小。保留频率材料与旧候选，不把这一结果解释成购买频率理论无效。</p>
+<p><a href="#purchase-frequency-results">看本轮结果</a> · <a href="../../current_todo.html">当前清单（19/24）</a> · <a href="../20261014_mechanism/purchase_frequency_results_20261015.md">完整记录与复算</a></p></aside><section id="purchase-frequency-results" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>频率数据相同，明确作用说明没有更好</h1>
+<p><strong>2026-10-15完成。此次检验的是“这段说明有没有增量”，不是购买频率数据是否有价值。</strong> 两组都拿到相同的四类购买日数和价格，并保留原有信念、时间索引、新闻与政策。只有说明组明确要求高频类别获得更多关注，再判断变化会否持续。你要求删除的“不要机械外推”没有加回。</p>
+<h2>主要结果：中位数、分布、个人更新一起看</h2>
+<div class="table-scroll"><table style="min-width:620px"><thead><tr><th>同样本Q9指标</th><th>频率数据组</th><th>数据＋作用说明组</th><th>怎样理解</th></tr></thead><tbody>
+<tr><td>群体中位数MAE</td><td>0.763</td><td>0.808</td><td>点值略差，统计区间仍含0</td></tr>
+<tr><td>跨人分布W1</td><td>2.232</td><td>2.413</td><td>差值+0.181，区间[+0.046,+0.264]</td></tr>
+<tr><td>个人更新分布W1</td><td>1.629</td><td>1.622</td><td>几乎持平，区间含0</td></tr>
+<tr><td>人际差异宽度IQR</td><td>2.226</td><td>1.961</td><td>真人4.773，说明组进一步收窄</td></tr>
+<tr><td>Q8点预期中位数MAE（另列）</td><td>0.750</td><td>0.800</td><td>与Q9分开，不混算</td></tr>
+</tbody></table></div>
+<p>单位均为百分点。四个已看过的开发月各48人、每组生成两遍；188个不同人月、376条共同有效生成。4个真人Q9不能评分，未另补人。每月每遍先算、再平均；Q9是个人密度均值的跨人中位数，不是全国官方指标。</p>
+<figure><img src="../../../outputs/sce_purchase_frequency_reading_20261015_v1/errors.png" alt="两组频率输入、旧C描述参照及过去信息基线的三种误差"><figcaption>绿色为相同频率/价格数据，橙色再加作用说明。蓝色旧C是早先批次且少了新价格/频率，不能将蓝绿差异解释成纯频率作用。Copy为每人的上期真实Q9均值照抄，Past anchor为过去个人锚。</figcaption></figure>
+<h2>为什么暂不采用这段话？</h2>
+<p>四个月的跨人分布误差都变大。同月按人配对重抽、保留一个人的两次生成后，误差增加的95%区间为[+0.046,+0.264]，在所选月份和生成条件下较稳定。中位数误差变化区间[−0.178,+0.186]、更新误差区间[−0.106,+0.131]，两项没有明确增量。</p>
+<p>按原登记，候选未通过。使用原调查权重作辅助，中心误差有所改善，但分布和更新误差同时变大；不事后换口径挑胜负。区间是这些开发月的样本人不确定性，尚不代表其他时期或未来模型随机性。</p>
+<h2>同质化为什么更严重？现在有什么线索？</h2>
+<p>原有个人位置的描述斜率0.241→0.182，排序相关0.463→0.438。这与模型更看重大家共有的类别价格、较少保留自己的原有高低位置相容，<strong>还不是已证明的心理路径</strong>。解释文字不能当作因果证据。</p>
+<figure><img src="../../../outputs/sce_purchase_frequency_reading_20261015_v1/personal_differences.png" alt="频率两组与真人的人际宽度和原有位置关系"><figcaption>黑色真人，绿色数据组，橙色说明组。左图人际差异，右图当期回答与本人上期位置的关系；斜率不是心理更新权重。四个月不连续，连线不是月度演化轨迹。</figcaption></figure>
+<p>频率来自另一批CE家庭的单周记录；粗画像匹配不保证复原购物角色、长期习惯与原有信念之间的关系。四类只覆盖一部分消费，也可能使共同价格更加突出。这些是下一步可检查的缺口，不是此次已确定的原因。</p>
+<h2>概率回答还是什么状态？</h2>
+<p>通缩五档全填0：数据组12.7%、说明组10.1%，真人66.9%，填法差距仍在。但单个人的密度平均IQR是3.935/3.988，真人4.548，因此当前不能泛称“模型单人概率比真人更散”。需要区分<strong>不同人预期的差异</strong>与<strong>一个人回答中的不确定性</strong>。</p>
+<h2>结论与后续</h2>
+<p>这段明确说明暂不加入主机制；频率材料、价格对应和以前的先验/时间索引候选全部保留。下一步先用已有数据检查合成频率的差异和模型如何保留先验，补购物角色依据，再决定改匹配、信息呈现还是信念更新。当前没有新的运行任务，不自动追加付费调用。</p>
+<p>旧C按本轮376条支持重算为中心0.579、IQR2.322，原报告374条支持的0.588/2.262保持不动；是共同评价集合变化，不是改旧回答。新数据组Q8为0.750、旧C为0.850，仅作描述参照，不据此宣布数据有效。</p>
+<p>768实际输入/回包/参数哈希与费用已核对，三主指标用独立SciPy复算最大差8.89×10⁻¹⁶；15份待审文件原样。记录费用$0.875302低于$4上限，未包含供应商缓存/错峰折扣，不是账单。</p>
+<p><a href="../20261014_mechanism/purchase_frequency_results_20261015.md">完整设计、结果、边界与复算</a> · <a href="../20261014_mechanism/purchase_frequency_results_summary_20261015.json">聚合结果</a> · <a href="../../../outputs/sce_purchase_frequency_preparation_20261015_v1/preview_sample_private.txt">本轮实际输入样例</a> · <a href="../../current_todo.html">任务清单</a></p>
+</section><section id="purchase-frequency-preparation" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>此前进展与频率准备快照</h1><p>本节为运行前记录；真实实验已完成，最新结论见本页顶部。以下准备不代表频率机制已有效。</p>
 <p><strong>单个改动不必解决全部同质化。我们认可已经取得的小步改善，再把购买频率作为独立的下一项检验。</strong></p>
 <h2>同一批人，怎样一步步变化？</h2>
 <div class="table-scroll"><table><thead><tr><th>已有阶段</th><th>总体中位数误差</th><th>跨人分布距离</th><th>个人更新分布距离</th><th>人际差异宽度</th></tr></thead><tbody>
@@ -35,7 +61,7 @@
 判断物价变化时，更关注你购买频率高的类别，并让其产生更多影响。
 再判断这些变化会不会持续到未来12个月；原有信念和其他信息仍然可以重要。
 （按用户要求，不加入限制价格外推的句子。）</pre>
-<p><a href="../../../outputs/sce_purchase_frequency_preparation_20261014_v6/preview_sample_private.txt">查看本地完整真实输入预览（英文，未外发）</a>。长数据局限放在审计记录；模型收到的是简短、可使用的合成特征。</p>
+<p><a href="../../../outputs/sce_purchase_frequency_preparation_20261015_v1/preview_sample_private.txt">查看本地完整真实输入预览（英文，未外发）</a>。长数据局限放在审计记录；模型收到的是简短、可使用的合成特征。</p>
 <h2>接下来具体做什么？</h2>
 <ol><li>把两组接到独立运行入口，完成离线引擎检查。</li><li>调用前登记评价与费用：总体中心、跨人分布、个人更新都看，不能仅因回答变散就算成功。</li><li>明确新调用范围和预算，再运行真实API；有增量后再检验匹配与随机置换，以及其他时期。</li></ol>
 <p>性别仍保留为后续方向；已有性别差异不能直接当成购物责任。当前<strong>0新API调用</strong>，384份仅是材料预览，没有新的模拟结果、预算或运行配置。该材料准备快照为16/22；最新已完成运行接线，清单把真实执行和评价细化为两项，见页面顶部。</p>

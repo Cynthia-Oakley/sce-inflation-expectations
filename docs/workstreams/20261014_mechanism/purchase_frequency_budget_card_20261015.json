@@ -5,12 +5,18 @@
   "sum_job_caps_usd": 3.6202,
   "proposed_cap_usd": 4.0,
   "protocol_sha256": "e4b7aabf4700ef549fc0d731454ca8fc4f10012d8490529d33eedd3fce123702",
-  "status": "offline_passed_auto_review_blocked_pending_explicit_batch_reply",
+  "status": "completed_real_trial_evaluated",
   "pricing_source": "https://api-docs.deepseek.com/quick_start/pricing/",
   "pricing_checked": "2026-10-15",
   "price_peak_input_per_mtok": 0.3,
   "price_peak_output_per_mtok": 1.2,
   "engineering_cells": 16,
   "new_calls_before_dispatch": 0,
-  "focused_tests": 10
+  "focused_tests": 10,
+  "actual_api_calls": 768,
+  "valid_answers": 768,
+  "connection_errors": 0,
+  "retries": 0,
+  "recorded_peak_token_cost_estimate_usd": 0.875302,
+  "cost_is_provider_bill": false
 }

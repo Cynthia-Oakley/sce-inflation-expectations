@@ -3,7 +3,7 @@
 
 更新：2026-10-15（北京时间）。基本流程和八期实验已完成；先验作用真实对照也已完成。此处只统计下一阶段任务，原28/31项历史清单保存在下方。
 
-当前：购买频率两组已接入独立入口，16引擎离线单元及10项定向检查通过；按用户要求删除“不要机械外推”。四期各48人、两组两遍=768请求，估$0.893/$4上限。网络自动审批以本批敏感问卷外发范围未明确为由拒绝，进程未启动、费用0；具体授权问题待回复。其他准备均完成。
+当前：购买频率真实对照已完成，768请求全部有效/0连接错/0重试，记录token高峰价估$0.875。明确作用说明使跨人W1 2.232→2.413、人际IQR2.226→1.961，未过候选筛选，暂不采用该说明；频率数据/旧候选保留。下一步先检查合成频率、原有信念与购物责任的关系；不自动追加付费实验。
 
 ## 已完成的基础
 
@@ -33,8 +33,8 @@
 - [x] 实现条件供体抽样，保留频率联合结构、回退和种子。
 - [x] 对齐购买类别与E价格，补必要来源，生成完整居民提示样例。
 - [x] 将两组接入独立入口，完成引擎干跑、预登记和费用卡。
-- [ ] 明确本批外发授权后完成768次真实请求，保留回答、费用和失败。
-- [ ] 做同样本评价，解释频率作用的增量；有希望后另做匹配与置换。
+- [x] 明确本批外发授权后完成768次真实请求，保留回答、费用和失败。
+- [x] 做同样本评价，解释频率作用的增量；当前候选无增量，未追加匹配与置换付费试验。
 
 ## 3. 事件与记忆：随后开展
 
@@ -51,7 +51,7 @@
 
 最新证据：[控制变量检查与机制准备](literature/sce/heterogeneity_and_probability/behavior_mechanism_evidence_20261014.md)
 
-结果阅读：[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
+结果阅读：[购买频率真实对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#purchase-frequency-results)；[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
 
 使用约定：Agent按实际进展打钩并重新生成可视清单。打钩表示工作完成，不表示实验机制有效。程序保留个人位置的方案作为后备，不与本阶段三条线同时推进。
 <!-- current-todo:end -->
