@@ -220,5 +220,5 @@ def render_frequency(assignment, *, active_rule):
     # usable synthetic profile rather than a long disclaimer inviting disregard.
     lines.append('Recorded days are a weekly contact proxy, not shopping-trip counts. Zero recorded days does not mean you never buy the category.')
     if active_rule:
-        lines.append('When judging price changes, give more attention and influence to the categories you purchase more frequently in this profile. Then consider whether the price changes can persist over the next 12 months; your previous belief and other information can still matter. Do not mechanically treat a past price change as your future inflation forecast.')
+        lines.append('When judging price changes, give more attention and influence to the categories you purchase more frequently in this profile. Then consider whether the price changes can persist over the next 12 months; your previous belief and other information can still matter.')
     return '\n'.join(lines) + '\n\n'

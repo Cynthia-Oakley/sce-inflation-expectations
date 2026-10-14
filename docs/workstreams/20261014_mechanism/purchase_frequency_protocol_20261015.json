@@ -1,0 +1,63 @@
+{
+  "research_line": "A_conditional_returner_reconstruction",
+  "months": [
+    202004,
+    202105,
+    202111,
+    202203
+  ],
+  "n_per_month": 48,
+  "sampling_seed": 20261015,
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "model": "deepseek-flash",
+  "official_advertised_version": "DeepSeek-V4.1-Flash",
+  "model_identity_limit": "Mutable alias, not fixed weights or verified training cutoff",
+  "temperature": 0.5,
+  "max_tokens": 1024,
+  "thinking": "disabled",
+  "retry_max": 0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "baseline_refs": [
+    "copy_previous",
+    "history_anchor_half"
+  ],
+  "q8": "secondary, separate from Q9",
+  "aggregation": "Each month/repeat separately, equal cell average; Q9 headline-style center is median of individually fitted density means, not a nationwide headline.",
+  "intervals": "2000 paired-person resamples within month, both generations together; 4-month resampling sensitivity; seed 20261015",
+  "id": "sce-purchase-frequency-rule-v1",
+  "registered_at_utc": "2026-10-14T16:50:23.570595+00:00",
+  "pricing_verified_date": "2026-10-15",
+  "arms": [
+    "frequency_data",
+    "frequency_rule"
+  ],
+  "budget_cap_usd": 4.0,
+  "planned_calls": 768,
+  "base_candidate": "dated_information",
+  "removed_instruction": "Do not mechanically treat a past price change as your future inflation forecast.",
+  "comparison": "Same parent C, category prices, assigned frequency vector, past beliefs, population and questionnaire; only explicit frequency-influence instruction differs.",
+  "primary_contrast": "frequency_rule minus frequency_data on cross-section W1",
+  "candidate_gate": "Primary W1 paired-person upper 95% bound < 0; center MAE and delta W1 points no worse; new scorable fraction >=99%. Local candidate screening, not overall project success.",
+  "mechanism_check": "Across-person IQR, prior-position slope, rank, category-frequency associations; frequency-rule treatment is instruction increment, not total effect of the new data.",
+  "exploratory_old_C": "Reuse previous C without rerun as descriptive context only; added prices/frequencies and batch differences prevent a clean total-data effect.",
+  "support": "Same truth-scorable person-generations across both new arms and fixed past baselines; explicit failure coverage; no replacement sampling.",
+  "truth_isolation": "Copy frozen roster/sidecar; no current answers read for sampling or prompts. Actual answers and weights confined to evaluation.",
+  "limits": [
+    "Four previously inspected development periods; no independent holdout claim.",
+    "Returners with actual private past answers and retrospective synthetic P; not real-time B.",
+    "2020Q4 CE proxy for 2020-04 is retrospective, not a PIT input.",
+    "Engine seeds do not imply a seeded or deterministic API generation.",
+    "Whole-vector conditional CE Diary 2020Q4 proxy, selected supported contacts; not observed respondent shopping or representative full CE frequency distribution.",
+    "Existing Interview spending shares and Diary frequencies are from different households; no true joint person link.",
+    "No grooming frequency: relevant Diary rows not included for publication. Four categories do not cover all spending.",
+    "Parent C is an exploratory candidate, not an approved main-mechanism upgrade; frequency gains need other periods.",
+    "Public availability does not establish attention; national category changes do not equal observed store prices.",
+    "A returner conditional diagnostic using actual past answers; not recursive B or nationwide causal inference."
+  ],
+  "no_tuning_after_run": true
+}

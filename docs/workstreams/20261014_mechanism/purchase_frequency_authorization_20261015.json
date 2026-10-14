@@ -1,0 +1,47 @@
+{
+  "approved": true,
+  "approved_at_utc": "2026-10-14T16:53:35.132034+00:00",
+  "protocol_sha256": "e4b7aabf4700ef549fc0d731454ca8fc4f10012d8490529d33eedd3fce123702",
+  "cap_usd": 4.0,
+  "planned_calls": 768,
+  "approval_source": "direct_user_message_20261015_current_thread",
+  "approval_kind": "user_automatic_approval_for_proposed_same_spec_simulation",
+  "user_quote": "你可以继续沿着这个方向做下一步计划，包括做模拟。基本上，如果模拟是按照之前的规格，我也还可以承受。自动批准你提出来的模拟请求。",
+  "scope": {
+    "recipient": "DeepSeek official API / api.deepseek.com",
+    "months": [
+      202004,
+      202105,
+      202111,
+      202203
+    ],
+    "n_per_month": 48,
+    "arms": [
+      "frequency_data",
+      "frequency_rule"
+    ],
+    "generations_each": 2,
+    "model": "deepseek-flash",
+    "temperature": 0.5,
+    "thinking": "disabled",
+    "max_tokens": 1024,
+    "retry_max": 0,
+    "sent": [
+      "deidentified age group, education, income band, region/state, housing, employment, numeracy",
+      "synthetic CE spending shares and matched four-category shopping-contact days",
+      "synthetic Fed-confidence label",
+      "public historical price/news/policy facts and earlier/later/same-day publication labels",
+      "real anonymous past Q8 point and Q9 ten probabilities; earlier personal mean/count summaries"
+    ],
+    "excluded": [
+      "raw respondent/CE IDs",
+      "survey weights",
+      "current real inflation answers",
+      "actual response dates",
+      "gender",
+      "actual QSP5 spending",
+      "MIDUS data"
+    ]
+  },
+  "budget_reason": "Past-token estimate 0.893; UTF-8-byte/max-output reserve 3.61949; sum cell caps 3.6202; round total cap to 4 under user automatic approval. Peak rates .30 input / 1.20 output per million, checked 2026-10-15. Not a provider bill."
+}
