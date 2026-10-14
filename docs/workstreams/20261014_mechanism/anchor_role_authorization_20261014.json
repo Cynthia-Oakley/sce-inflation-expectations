@@ -1,0 +1,34 @@
+{
+  "approved": true,
+  "approved_date_beijing": "2026-10-14",
+  "cap_usd": 3.0,
+  "planned_calls": 768,
+  "protocol_sha256": "c8234677bdbc3347b429b8ec8a4c9b13b91509e5fa53c034e0e1e309ffe1a275",
+  "authorization_source": "Human reply to request_user_input_async call_25f5a4e49cbc429cb32f066adf7096dc",
+  "approval_text": "同意上述范围和$3上限，开始实验",
+  "endpoint": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "months": [
+    202004,
+    202105,
+    202111,
+    202203
+  ],
+  "n_per_month": 48,
+  "arms": [
+    "original",
+    "belief_start"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "data_scope": "deidentified age/education/income/region/state/housing/employment/numeracy; synthetic CE shares and Fed confidence; public historical prices/news/policy; actual own t-1 Q8/Q9 and earlier questionnaire mean/count summaries",
+  "excluded": "raw IDs, survey weights, current true Q8/Q9, gender, MIDUS, true QSP5",
+  "retry_max": 0,
+  "input_manifest_sha256": "8405ab239a1b645dee5e5c07e1f91946b320858eb655204dd5c66873a912afdc",
+  "input_path": "outputs/sce_anchor_role_trial_20261014_v3",
+  "engineering_checks_passed": 16,
+  "conservative_reservation_usd": 2.4922044,
+  "sum_job_caps_usd": 2.4928
+}

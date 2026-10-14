@@ -1,0 +1,58 @@
+{
+  "id": "sce-anchor-role-wording-v1",
+  "registered_at_utc": "2026-10-14T10:44:43.039251+00:00",
+  "research_line": "A_conditional_returner_reconstruction",
+  "months": [
+    202004,
+    202105,
+    202111,
+    202203
+  ],
+  "n_per_month": 48,
+  "sampling_seed": 20261015,
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "arms": [
+    "original",
+    "belief_start"
+  ],
+  "model": "deepseek-flash",
+  "official_advertised_version": "DeepSeek-V4.1-Flash",
+  "model_identity_limit": "Mutable alias, not fixed weights or verified training cutoff",
+  "temperature": 0.5,
+  "max_tokens": 1024,
+  "thinking": "disabled",
+  "retry_max": 0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_verified_date": "2026-10-14",
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "budget_cap_usd": 3.0,
+  "comparison": "Both arms newly run in the same batch; only the exact ANCHOR_BLOCK differs. No frequency/gender/personality/model change.",
+  "role_block": "Belief update instruction:\nYour previous survey records your own belief, not an economic news item or someone else's forecast. It is the starting point for your current view. Use the new information to judge whether to retain it or revise it; an unchanged answer is allowed. The forecast window advances by one month. No fixed amount of adjustment is required.\n\n",
+  "planned_calls": 768,
+  "primary_contrast": "belief_start minus original on equal-month/repeat cross-section W1",
+  "guardrails": [
+    "center MAE and delta W1 point values must not worsen for an overall candidate",
+    "at least 99% generated questionnaires structurally valid and scorable"
+  ],
+  "candidate_gate": "W1 paired-person bootstrap upper 95% bound < 0; center MAE and delta W1 no worse; scorable coverage >=99%. This qualifies for further validation, not project success.",
+  "mechanism_check": "Within-month slope on own prior mean, across-person IQR, rank correlation; do not treat a slope as an identified psychological weight.",
+  "baseline_refs": [
+    "copy_previous",
+    "history_anchor_half"
+  ],
+  "q8": "secondary, separate from Q9",
+  "aggregation": "Each month/repeat separately, equal cell average; Q9 headline-style center is median of individually fitted density means, not a nationwide headline.",
+  "intervals": "2000 paired-person resamples within month, both generations together; 4-month resampling sensitivity; seed 20261015",
+  "truth_isolation": "Roster selected from frozen P only; current answers/weights/IDs confined to evaluation sidecar, no outcome screening or resampling.",
+  "limits": [
+    "Four previously inspected development periods; no independent holdout claim.",
+    "Returners with actual private past answers and retrospective synthetic P; not real-time B.",
+    "2020Q4 CE proxy for 2020-04 is retrospective, not a PIT input.",
+    "Engine seeds do not imply a seeded or deterministic API generation."
+  ],
+  "no_tuning_after_run": true
+}
