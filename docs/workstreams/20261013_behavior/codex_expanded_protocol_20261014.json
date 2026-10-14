@@ -1,0 +1,53 @@
+{
+  "version": "sce-expanded-state-v1",
+  "registered_on": "2026-10-14",
+  "status": "registered_before_new_simulation_results",
+  "research_line": "A_conditional_returner_reconstruction",
+  "development_months": [202004, 202105, 202111, 202203],
+  "evaluation_months": [202206, 202306, 202410, 202509],
+  "sample_size_per_month": 96,
+  "sampling_seed": 42,
+  "news_seed": 104729,
+  "generation_repeats": [1, 2],
+  "model_requested": "deepseek-flash",
+  "endpoint": "https://api.deepseek.com",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "retry_max": 0,
+  "simulation_cap_usd": 12.0,
+  "news_cap_usd": 2.5,
+  "arms": {
+    "self_update": "Same P/E, own raw previous Q8/Q9 and source-labeled historical state; LLM answers directly, no halfway guidance.",
+    "new_signal": "Same P/E, no own survey history; LLM answers Q8/Q9. Program combines its raw probability bins with own previous raw bins."
+  },
+  "probability_combination": "final_bin=(1-alpha)*previous_bin+alpha*signal_bin; refit combined bins with pinned scorer, do not mix fitted means",
+  "point_combination": "final_point=(1-alpha)*previous_point+alpha*signal_point; missing previous point makes only this secondary outcome unavailable",
+  "alpha_grid": [0.0, 0.25, 0.5, 0.75, 1.0],
+  "selection": {
+    "periods": "development only",
+    "primary_metrics": ["sample_center_mae_pp", "cross_section_w1_pp", "delta_w1_pp"],
+    "aggregation": "equal mean across month-by-repeat cells, no pooling months as independent people",
+    "objective": "mean of three candidate aggregate metrics divided by the corresponding development copy-previous aggregate metric; denominators bounded below at 0.001pp",
+    "eligibility": "at least 99% scorable candidate responses among otherwise common scorable development cases; all failure coverage reported; no current-answer-based resampling",
+    "tie_break": "lowest alpha among objectives within 1e-10 of minimum",
+    "boundaries": "alpha=0 and alpha=1 eligible; accepting copy-only is an allowed negative result",
+    "freeze": "save weight and hashes before running evaluation-month model calls; never retune on evaluation results"
+  },
+  "evaluation": {
+    "primary": "equal-weight same-cohort Q9 density-implied mean distributions; left inverse empirical CDF median/IQR",
+    "secondary": ["Q8 point outcomes", "survey-weighted same-cohort outcomes", "cross-person IQR", "individual density IQR", "zero-deflation share", "rank association", "validity and scoring coverage"],
+    "baselines": ["copy previous raw questionnaire", "halfway from previous density mean toward past-only personal mean"],
+    "comparison": "program minus self_update and copy_previous, paired within the same subjects and months; negative errors differences are improvement",
+    "intervals": "paired respondent resampling within each month, repeats held together; additional four-month cluster bootstrap sensitivity. Conditional diagnostic intervals, not population significance or nationwide forecast claims.",
+    "success_gate": "evaluation program center MAE, cross W1 and delta W1 all no larger than self_update and copy_previous, with >=99% scorable generated answers. Failure to pass is reported without changing the gate."
+  },
+  "limitations": [
+    "Retrospective current profiles and real previous answers; returners only, not nationwide or recursive B forecast.",
+    "Architecture comparison: LLM information differs and self_update may use longer history; no pure alpha causal effect claim.",
+    "Evaluation months are new to this tuning exercise, not guaranteed untouched by all earlier project work.",
+    "Model alias and training cutoff are not immutable; model knowledge leakage remains unexcluded.",
+    "Probability mixture can widen individual uncertainty; this must be reported separately from cross-person spread.",
+    "CE structural proxy and annual synthetic confidence are not observed respondent attributes; provenance and staleness reported."
+  ]
+}
