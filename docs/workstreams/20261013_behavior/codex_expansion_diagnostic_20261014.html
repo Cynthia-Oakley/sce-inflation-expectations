@@ -1,4 +1,24 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE扩大实验前诊断</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><section id="behavior-mechanism-review" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE扩大实验前诊断</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><section id="behavior-mechanism-evidence" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>机制设计：已做数据检查和离线准备</h1>
+<p><strong>本轮新增API调用0。人口特征的作用需要分开看：有些对应预期高低，有些主要对应不确定性；本人过去信念有更强的信息。</strong></p>
+<h2>SCE控制变量检查</h2>
+<p>2017年1月—2025年10月，106个月、130,216条受访者月记录。控制月份、年龄、教育、收入、数理能力、地区、就业和性别。图中是平均差异与按人聚类的95%区间，不是全国中位数，也不是因果贡献。</p>
+<ul><li>女性Q8点预期平均高2.115pp，Q9个人密度均值高0.431pp，两者不能混用。</li>
+<li>低数理能力Q9均值差−0.031pp、区间跨0；个人密度IQR却宽2.275pp。它更适合先从不确定性机制理解。</li>
+<li>同样的96,683条相邻回访记录，人口变量对同月差异的解释比例约1.25%，加入本人上期信念后约32.77%。这是描述性解释，不是预测成绩。</li></ul>
+<figure><img src="../../../outputs/sce_behavior_mechanism_reading_20261014_v1/conditional_associations.png" alt="人口字段对点预期、密度均值和个人不确定区间的不同关联"><figcaption>三项结果的有效样本略有不同。各项分开解释，不能据不同系数宣称某种问法的因果影响。</figcaption></figure>
+<h2>模型仍压缩原有个人位置</h2>
+<p>复用八期756个完整人月，按同人的可用生成取平均。上期较高者本期仍较高的关系，在模型中比真人弱；年龄、收入、数理能力组都看到这个现象。斜率是统计关系，不等于应注入的更新比例。</p>
+<figure><img src="../../../outputs/sce_behavior_mechanism_reading_20261014_v1/prior_position.png" alt="八期真人与LLM的个人上期位置关系"><figcaption>同月去均值、同一完整样本、等人权重；不能唯一确定压缩来自措辞、信息还是模型。</figcaption></figure>
+<h2>实际准备了什么？</h2>
+<ol><li>CE Diary分类购买日数：2,835个家庭周、1,440个家庭，保留缺失、来源和周权重；各类日集合并集全部复现旧总日数。尚待条件匹配及价格类别对齐。</li>
+<li>本人信念提示：明确“这是你当前判断的起点，回答不变是允许的”，其余P/E、上期回答与问卷保持。已生成完整离线对照预览，尚未真实测试。</li>
+<li>频率提示：明确“高频购买类别的价格变化有更大影响”。后续先比较同一频率数据有无该说明，再比较人口匹配与置换。</li></ol>
+<h2>Events与记忆怎样结合？</h2>
+<p>事件触发与个人经历相关的联想，再影响信念调整。年龄机制继续保留；旧历史叙述失败不证明记忆没有作用。理解风格先做同人随机交叉；构造代表性人口时需要外部调查的条件分布，不能把随机比例称为真实美国比例。</p>
+<p>性别差异通过购物分工传导有研究支持，但SCE没有直接购物频率；本轮只检验性别关联，尚未识别购物的中介作用。</p>
+<p><a href="../../literature/sce/heterogeneity_and_probability/behavior_mechanism_evidence_20261014.md">完整解释、统计边界与下一步</a> · <a href="../../literature/sce/heterogeneity_and_probability/behavior_mechanism_evidence_summary_20261014.json">聚合结果</a></p>
+</section><section id="behavior-mechanism-review" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
 <h1>外部观点：有价值，怎样落实？</h1>
 <p><strong>提示词可以用来表达居民的思考习惯。下一步重点是让信息经过个人理解，再形成回答；每种习惯的依据、分配方式和实际效果都要检查。</strong></p>
 <p>2026-10-14：本节是文献核对与方案草案，新增API调用0，原实验结果及配置未改。</p>

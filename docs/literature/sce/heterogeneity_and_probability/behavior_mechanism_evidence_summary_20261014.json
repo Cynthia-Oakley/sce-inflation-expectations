@@ -1,0 +1,3352 @@
+{
+  "status": "descriptive_offline_analysis_not_mechanism_identification",
+  "completed_at": "2026-10-14T08:26:18.647624+00:00",
+  "new_api_calls": 0,
+  "source_sha256": {
+    "outputs/sce_prior_preparation_20261013_v4/labeled_reference_private.parquet": "03809a5c8ac8c391da7b09e0962043c5fd559bac8b92f7ed9c3fd645770af0e5",
+    "data/raw/sce_p_sources/micro_2017_2019.xlsx": "a88e5a225c9a566dd8cdfdd77abef9ac456eb52d1a120c5ec208184a88c745c9",
+    "data/raw/sce_audit_20260928/micro_2020_2024.xlsx": "1b57ffb75c2170d767f46a001002db8c40c228fe5691f6dd19e39777ffe469c6",
+    "data/raw/sce_baselines_latest_20261007/micro_latest.xlsx": "7da4bbcd3f23a4434ab5a94c4c93a255c46df7a57c38eef807b39466bf158f48",
+    "data/cache/monthly_profiles_f143f8eb1593f6a34d4f.parquet": "b42c21883a87132d2e523e3d61155abddb3d38704f5f753dc4407a251dd4d388",
+    "data/cache/monthly_profiles_7f0ed622ae0915902741.parquet": "ed8af50003e508ab6da66dd5f3afa34413fe88a5efb7454d8a4432477278f2b6",
+    "data/cache/monthly_profiles_0681593a0fc5369b4274.parquet": "37f9ae2449bfafb1b6a69b41d3c7429a65b4e1cf4babce47cd57f12712d431f7"
+  },
+  "private_frame_sha256": "a4eb7d134f603136f7c01303597068777cf5614a372d72ee228312f467c1e7dc",
+  "analysis_code_sha256": "0ab9f2ecc3092fa784ba8120817e3bca3dab650757268800389686aa48acd39b",
+  "official_associations": {
+    "total_rows": 130216,
+    "known_gender_rows": 123499,
+    "complete_profile_positive_weight_rows": 121954,
+    "gender_question": "Q33 Female=1, Male=2; carry own observations forward only, no future backfill",
+    "models": {
+      "q9_mean": {
+        "rows": 119761,
+        "persons": 15465,
+        "months": 106,
+        "rank": 18,
+        "within_month_r2": 0.010896835965613527,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.43074398904462385,
+            "se_person_cluster": 0.11816222599361312,
+            "ci95": [
+              0.19913215356840927,
+              0.6623558245208384
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.33781284057833055,
+            "se_person_cluster": 0.12959499836456653,
+            "ci95": [
+              0.08379142902015047,
+              0.5918342521365106
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": 0.5513463231448574,
+            "se_person_cluster": 0.1827261029347447,
+            "ci95": [
+              0.1931817089100215,
+              0.9095109373796934
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.6812885973103224,
+            "se_person_cluster": 0.0955267020688567,
+            "ci95": [
+              0.4940450461914284,
+              0.8685321484292164
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 0.3861804333660219,
+            "se_person_cluster": 0.1519059799940006,
+            "ci95": [
+              0.0884268784513969,
+              0.683933988280647
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.41241315389876637,
+            "se_person_cluster": 0.11088546527326348,
+            "ci95": [
+              0.19506462374359826,
+              0.6297616840539345
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.6112260739015725,
+            "se_person_cluster": 0.1398609841891893,
+            "ci95": [
+              0.33708212487577394,
+              0.885370022927371
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": -0.030783760125413506,
+            "se_person_cluster": 0.13807572211496974,
+            "ci95": [
+              -0.3014283858916924,
+              0.2398608656408654
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": -0.14914126306852493,
+            "se_person_cluster": 0.16578528476276921,
+            "ci95": [
+              -0.4740998847936045,
+              0.17581735865655462
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.12546550810239065,
+            "se_person_cluster": 0.16271406100872965,
+            "ci95": [
+              -0.1934731544957366,
+              0.4444041707005179
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.1372139952902065,
+            "se_person_cluster": 0.17128629481884064,
+            "ci95": [
+              -0.1985272519765473,
+              0.4729552425569603
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": 0.2425028100682416,
+            "se_person_cluster": 0.27791560930010406,
+            "ci95": [
+              -0.3022444121190492,
+              0.7872500322555324
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 0.8322149870842781,
+            "se_person_cluster": 0.5383398544021214,
+            "ci95": [
+              -0.2229943299339452,
+              1.8874243041025014
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 0.8492203373015275,
+            "se_person_cluster": 0.3602437655835048,
+            "ci95": [
+              0.14310026327576697,
+              1.555340411327288
+            ]
+          },
+          "employment=retired": {
+            "estimate": -0.44024466503611465,
+            "se_person_cluster": 0.1775255020802404,
+            "ci95": [
+              -0.7882154910331086,
+              -0.09227383903912068
+            ]
+          },
+          "employment=student": {
+            "estimate": -0.6670507547406332,
+            "se_person_cluster": 0.46504893694852034,
+            "ci95": [
+              -1.578601269020308,
+              0.24449975953904146
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": -0.4045015126120808,
+            "se_person_cluster": 0.32600904369351313,
+            "ci95": [
+              -1.043517512494999,
+              0.23451448727083724
+            ]
+          },
+          "employment=other": {
+            "estimate": 0.2035611422290975,
+            "se_person_cluster": 0.39719503807758877,
+            "ci95": [
+              -0.5749877640530826,
+              0.9821100485112776
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "q8_point": {
+        "rows": 121500,
+        "persons": 15609,
+        "months": 106,
+        "rank": 18,
+        "within_month_r2": 0.04483561181123985,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 2.1153177888412125,
+            "se_person_cluster": 0.26514035211293885,
+            "ci95": [
+              1.5956119459051983,
+              2.6350236317772264
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.2747919924988592,
+            "se_person_cluster": 0.32783066637514985,
+            "ci95": [
+              -0.36779413764326097,
+              0.9173781226409794
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": -0.06111473764009631,
+            "se_person_cluster": 0.4203995515647298,
+            "ci95": [
+              -0.8851466195273356,
+              0.762917144247143
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 1.4174593206860546,
+            "se_person_cluster": 0.20454498075486024,
+            "ci95": [
+              1.0165274338782153,
+              1.818391207493894
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 2.5271371806392606,
+            "se_person_cluster": 0.33159993628863116,
+            "ci95": [
+              1.8771628442809671,
+              3.177111516997554
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.7697445661515969,
+            "se_person_cluster": 0.22395272335912286,
+            "ci95": [
+              0.33077125279644304,
+              1.2087178795067508
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 2.904622418765566,
+            "se_person_cluster": 0.2917066333356365,
+            "ci95": [
+              2.332843583293749,
+              3.476401254237383
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": 2.6773312680793553,
+            "se_person_cluster": 0.31111528836269625,
+            "ci95": [
+              2.067509217605712,
+              3.2871533185529986
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": -0.23469859815482152,
+            "se_person_cluster": 0.4033574941830895,
+            "ci95": [
+              -1.0253260709194667,
+              0.5559288746098237
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.8404136297650884,
+            "se_person_cluster": 0.3733038650772258,
+            "ci95": [
+              0.1086947558737531,
+              1.5721325036564235
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.23982856447559842,
+            "se_person_cluster": 0.38368278594450916,
+            "ci95": [
+              -0.512234198133966,
+              0.9918913270851628
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": 0.7956078586121369,
+            "se_person_cluster": 0.6312042927344436,
+            "ci95": [
+              -0.4416257665459564,
+              2.0328414837702304
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 0.1161423984929672,
+            "se_person_cluster": 1.3922976930686763,
+            "ci95": [
+              -2.6129225681474444,
+              2.8452073651333785
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 3.2591820208101625,
+            "se_person_cluster": 0.9413992038216022,
+            "ci95": [
+              1.4139303913901418,
+              5.104433650230183
+            ]
+          },
+          "employment=retired": {
+            "estimate": -1.2731686603266592,
+            "se_person_cluster": 0.38195403954874485,
+            "ci95": [
+              -2.021842879488674,
+              -0.5244944411646445
+            ]
+          },
+          "employment=student": {
+            "estimate": -0.7729646921302298,
+            "se_person_cluster": 1.2635554297067875,
+            "ci95": [
+              -3.249679890171554,
+              1.703750505911094
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": -0.20755278730515614,
+            "se_person_cluster": 0.9626930756211773,
+            "ci95": [
+              -2.0945428752614905,
+              1.6794373006511785
+            ]
+          },
+          "employment=other": {
+            "estimate": 1.3342920531715312,
+            "se_person_cluster": 1.3672999828339278,
+            "ci95": [
+              -1.3457745020030676,
+              4.0143586083461305
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "q9_iqr": {
+        "rows": 119761,
+        "persons": 15465,
+        "months": 106,
+        "rank": 18,
+        "within_month_r2": 0.18667300435006284,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.999813142772828,
+            "se_person_cluster": 0.10762691743708104,
+            "ci95": [
+              0.7888517489379088,
+              1.2107745366077471
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": -0.42869419794952246,
+            "se_person_cluster": 0.11525686699930052,
+            "ci95": [
+              -0.6546111887007702,
+              -0.20277720719827474
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": -0.8246876304353781,
+            "se_person_cluster": 0.16826206833649343,
+            "ci95": [
+              -1.154501038745289,
+              -0.49487422212546717
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.7475756727374093,
+            "se_person_cluster": 0.0798542308224888,
+            "ci95": [
+              0.5910520052471097,
+              0.904099340227709
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 1.942549727101122,
+            "se_person_cluster": 0.13684524506346646,
+            "ci95": [
+              1.6743169808167466,
+              2.2107824733854975
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.29527619238303604,
+            "se_person_cluster": 0.09277316055135938,
+            "ci95": [
+              0.11342990591081503,
+              0.47712247885525705
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 1.713154406523874,
+            "se_person_cluster": 0.12203313375114654,
+            "ci95": [
+              1.4739551373890392,
+              1.9523536756587088
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": 2.2749760118561033,
+            "se_person_cluster": 0.1250895760242733,
+            "ci95": [
+              2.0297857570322866,
+              2.52016626667992
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": 0.059940618054936445,
+            "se_person_cluster": 0.1561703808321504,
+            "ci95": [
+              -0.24617166315334832,
+              0.3660528992632212
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.5369314496610504,
+            "se_person_cluster": 0.14858703233605833,
+            "ci95": [
+              0.24568342180840752,
+              0.8281794775136934
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": -0.05216500714253147,
+            "se_person_cluster": 0.14938899779686585,
+            "ci95": [
+              -0.34498498145102563,
+              0.24065496716596269
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": 1.0617316610711012,
+            "se_person_cluster": 0.22982547171339235,
+            "ci95": [
+              0.6112467544512578,
+              1.5122165676909445
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 0.8455856240023054,
+            "se_person_cluster": 0.5675676725195561,
+            "ci95": [
+              -0.2669136479420371,
+              1.958084895946648
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 1.5710527007756134,
+            "se_person_cluster": 0.3389563716542787,
+            "ci95": [
+              0.9066584180422392,
+              2.2354469835089876
+            ]
+          },
+          "employment=retired": {
+            "estimate": -0.32768958801745574,
+            "se_person_cluster": 0.1655524174517248,
+            "ci95": [
+              -0.6521917624737075,
+              -0.0031874135612040555
+            ]
+          },
+          "employment=student": {
+            "estimate": 0.8163167784074661,
+            "se_person_cluster": 0.4017429123671968,
+            "ci95": [
+              0.02885350458630509,
+              1.6037800522286272
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": 0.7348961272719384,
+            "se_person_cluster": 0.2833137917410455,
+            "ci95": [
+              0.17956783374083685,
+              1.29022442080304
+            ]
+          },
+          "employment=other": {
+            "estimate": 0.8718355319623348,
+            "se_person_cluster": 0.4039496379147848,
+            "ci95": [
+              0.0800468169930294,
+              1.66362424693164
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "q9_returners_without_lag": {
+        "rows": 96683,
+        "persons": 12650,
+        "months": 105,
+        "rank": 18,
+        "within_month_r2": 0.012510342868477076,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.3932604998716051,
+            "se_person_cluster": 0.12658168593467542,
+            "ci95": [
+              0.14514121219645623,
+              0.641379787546754
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.36199378171425656,
+            "se_person_cluster": 0.13997644473204787,
+            "ci95": [
+              0.08761873684292348,
+              0.6363688265855896
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": 0.5748292597651007,
+            "se_person_cluster": 0.19809200353897835,
+            "ci95": [
+              0.18653891231626613,
+              0.9631196072139352
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.6335518625163102,
+            "se_person_cluster": 0.10282296963808393,
+            "ci95": [
+              0.4320032593762721,
+              0.8351004656563483
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 0.43220855948397857,
+            "se_person_cluster": 0.16349600262233632,
+            "ci95": [
+              0.11173161679794591,
+              0.7526855021700112
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.38862931180183585,
+            "se_person_cluster": 0.11773623311915331,
+            "ci95": [
+              0.15784845215871773,
+              0.619410171444954
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.6645210668727817,
+            "se_person_cluster": 0.14987533166350783,
+            "ci95": [
+              0.370742703455998,
+              0.9582994302895653
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": 0.09000398748907129,
+            "se_person_cluster": 0.1502522524281372,
+            "ci95": [
+              -0.20451319774809856,
+              0.38452117272624114
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": -0.12418381156922914,
+            "se_person_cluster": 0.1742895792211435,
+            "ci95": [
+              -0.46581780013743834,
+              0.21745017699898006
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.166617442890081,
+            "se_person_cluster": 0.17186475527702716,
+            "ci95": [
+              -0.1702635232696395,
+              0.5034984090498016
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.18836788911827876,
+            "se_person_cluster": 0.1830642874299424,
+            "ci95": [
+              -0.17046585733155664,
+              0.5472016355681142
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": 0.22031724620834225,
+            "se_person_cluster": 0.31493975479181785,
+            "ci95": [
+              -0.3970124017776918,
+              0.8376468941943763
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 1.080875990722992,
+            "se_person_cluster": 0.641651381596989,
+            "ci95": [
+              -0.17685795840280005,
+              2.3386099398487836
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 0.8529952982669146,
+            "se_person_cluster": 0.38702942152695496,
+            "ci95": [
+              0.0943589784113662,
+              1.611631618122463
+            ]
+          },
+          "employment=retired": {
+            "estimate": -0.42328049641160637,
+            "se_person_cluster": 0.19223069797523235,
+            "ci95": [
+              -0.8000817966844256,
+              -0.04647919613878715
+            ]
+          },
+          "employment=student": {
+            "estimate": -0.34119584369392036,
+            "se_person_cluster": 0.5427764477024397,
+            "ci95": [
+              -1.4051199380552282,
+              0.7227282506673873
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": -0.2151808588939988,
+            "se_person_cluster": 0.3484358284993208,
+            "ci95": [
+              -0.8981678876207899,
+              0.4678061698327923
+            ]
+          },
+          "employment=other": {
+            "estimate": 0.11993705145847189,
+            "se_person_cluster": 0.452231428209699,
+            "ci95": [
+              -0.7665050827505179,
+              1.0063791856674618
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "q9_returners_with_lag": {
+        "rows": 96683,
+        "persons": 12650,
+        "months": 105,
+        "rank": 19,
+        "within_month_r2": 0.3277251541540773,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.15681322080062182,
+            "se_person_cluster": 0.060787856350984056,
+            "ci95": [
+              0.03765981005454372,
+              0.2759666315466999
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.1844032455742561,
+            "se_person_cluster": 0.0693552732033829,
+            "ci95": [
+              0.048456399419754936,
+              0.3203500917287573
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": 0.28359390816685165,
+            "se_person_cluster": 0.09711329094970435,
+            "ci95": [
+              0.09323714054831084,
+              0.47395067578539246
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.2368716349408642,
+            "se_person_cluster": 0.05047478098851792,
+            "ci95": [
+              0.137933414834574,
+              0.3358098550471544
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 0.162342294693024,
+            "se_person_cluster": 0.0788221928080629,
+            "ci95": [
+              0.007838851417488246,
+              0.31684573796855975
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.15977432965087324,
+            "se_person_cluster": 0.0573751233491221,
+            "ci95": [
+              0.04731039278243371,
+              0.27223826651931277
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.3125644802780423,
+            "se_person_cluster": 0.07256556753898255,
+            "ci95": [
+              0.17032497071101857,
+              0.454803989845066
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": 0.08118732364386927,
+            "se_person_cluster": 0.07257377970528003,
+            "ci95": [
+              -0.06106828301363759,
+              0.22344293030137613
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": -0.04898728259258234,
+            "se_person_cluster": 0.08516434739433752,
+            "ci95": [
+              -0.2159223100001562,
+              0.11794774481499151
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.07619674234938834,
+            "se_person_cluster": 0.08342111326599862,
+            "ci95": [
+              -0.08732128198241931,
+              0.23971476668119598
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.09230282752840284,
+            "se_person_cluster": 0.08902445429832324,
+            "ci95": [
+              -0.08219859440374018,
+              0.2668042494605459
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": 0.022008382166066487,
+            "se_person_cluster": 0.16724775269232947,
+            "ci95": [
+              -0.30582255922861257,
+              0.34983932356074554
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 0.6479076257166185,
+            "se_person_cluster": 0.43907074658065226,
+            "ci95": [
+              -0.2127375780201095,
+              1.5085528294533466
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 0.39420518075740874,
+            "se_person_cluster": 0.19038876698224502,
+            "ci95": [
+              0.021014344372411675,
+              0.7673960171424058
+            ]
+          },
+          "employment=retired": {
+            "estimate": -0.19452078433516184,
+            "se_person_cluster": 0.09519434022167862,
+            "ci95": [
+              -0.3811161177129929,
+              -0.00792545095733077
+            ]
+          },
+          "employment=student": {
+            "estimate": -0.29471762530401424,
+            "se_person_cluster": 0.3088783496828173,
+            "ci95": [
+              -0.9001660006805821,
+              0.3107307500725536
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": -0.010512642361725888,
+            "se_person_cluster": 0.17658045154596547,
+            "ci95": [
+              -0.3566370878644626,
+              0.3356118031410108
+            ]
+          },
+          "employment=other": {
+            "estimate": 0.03872004480624802,
+            "se_person_cluster": 0.2702383026605771,
+            "ci95": [
+              -0.4909879825721093,
+              0.5684280721846053
+            ]
+          },
+          "lag_q9": {
+            "estimate": 0.556886837911584,
+            "se_person_cluster": 0.01189392786279855,
+            "ci95": [
+              0.5335729367955873,
+              0.5802007390275807
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "q9_returners_with_lag_tail_sensitivity": {
+        "rows": 96683,
+        "persons": 12650,
+        "months": 105,
+        "rank": 19,
+        "within_month_r2": 0.35978191228490564,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.145168215020697,
+            "se_person_cluster": 0.056516585006347306,
+            "ci95": [
+              0.03438714341414864,
+              0.25594928662724536
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.17232380306848175,
+            "se_person_cluster": 0.06545603180982767,
+            "ci95": [
+              0.04402006096887251,
+              0.300627545168091
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": 0.2715968508138708,
+            "se_person_cluster": 0.09173731604337387,
+            "ci95": [
+              0.09177780873176,
+              0.4514158928959816
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.22414470783950158,
+            "se_person_cluster": 0.04721763118219421,
+            "ci95": [
+              0.13159099496922147,
+              0.3166984207097817
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 0.17544830117760946,
+            "se_person_cluster": 0.0740119474060816,
+            "ci95": [
+              0.03037366787461737,
+              0.32052293448060154
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.14429910979447336,
+            "se_person_cluster": 0.053984772606313305,
+            "ci95": [
+              0.03848077418393421,
+              0.2501174454050125
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.2969390892778745,
+            "se_person_cluster": 0.06832535120425971,
+            "ci95": [
+              0.16301104632461436,
+              0.4308671322311346
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": 0.09936235317171144,
+            "se_person_cluster": 0.06766821477105056,
+            "ci95": [
+              -0.03327760278452935,
+              0.23200230912795222
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": -0.02307875829622974,
+            "se_person_cluster": 0.0785358373596089,
+            "ci95": [
+              -0.1770209014961055,
+              0.13086338490364602
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.08963176285708196,
+            "se_person_cluster": 0.07691204244932506,
+            "ci95": [
+              -0.061127496235229645,
+              0.24039102194939357
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.09239107943480368,
+            "se_person_cluster": 0.08308670561097815,
+            "ci95": [
+              -0.070471455214242,
+              0.2552536140838494
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": 0.04911965133649826,
+            "se_person_cluster": 0.15658403763142992,
+            "ci95": [
+              -0.25780879247060245,
+              0.356048095143599
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 0.567636754910102,
+            "se_person_cluster": 0.4141214926611873,
+            "ci95": [
+              -0.24410413012669407,
+              1.379377639946898
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 0.3516772377522357,
+            "se_person_cluster": 0.1792306711697393,
+            "ci95": [
+              0.00035796015054267993,
+              0.7029965153539287
+            ]
+          },
+          "employment=retired": {
+            "estimate": -0.1677942318893697,
+            "se_person_cluster": 0.08872177910347465,
+            "ci95": [
+              -0.34170236456968894,
+              0.006113900790949561
+            ]
+          },
+          "employment=student": {
+            "estimate": -0.25736810665144033,
+            "se_person_cluster": 0.2876641205420928,
+            "ci95": [
+              -0.8212333779311773,
+              0.3064971646282966
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": 0.020778300157651308,
+            "se_person_cluster": 0.1721585435736881,
+            "ci95": [
+              -0.31667853558665054,
+              0.35823513590195316
+            ]
+          },
+          "employment=other": {
+            "estimate": -0.018210717857471193,
+            "se_person_cluster": 0.26168300879649986,
+            "ci95": [
+              -0.5311490727217344,
+              0.494727637006792
+            ]
+          },
+          "lag_q9": {
+            "estimate": 0.5817880146528597,
+            "se_person_cluster": 0.010063585555348316,
+            "ci95": [
+              0.5620618618447865,
+              0.6015141674609329
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      }
+    },
+    "yearly_q9": {
+      "2017": {
+        "rows": 8998,
+        "persons": 1990,
+        "months": 12,
+        "rank": 18,
+        "within_month_r2": 0.027233405686899692,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.7594287744182838,
+            "se_person_cluster": 0.3059239532991692,
+            "ci95": [
+              0.15946375147853153,
+              1.3593937973580361
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.13506873773734263,
+            "se_person_cluster": 0.33184635384245315,
+            "ci95": [
+              -0.5157341926917772,
+              0.7858716681664625
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": 0.6449749347594849,
+            "se_person_cluster": 0.5152957961218829,
+            "ci95": [
+              -0.3656012257763661,
+              1.6555510952953358
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.517427565318309,
+            "se_person_cluster": 0.24242120095627978,
+            "ci95": [
+              0.042001434659674985,
+              0.9928536959769431
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": -0.5100307342044276,
+            "se_person_cluster": 0.3465947443411862,
+            "ci95": [
+              -1.1897575797061395,
+              0.16969611129728435
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.3022222653223975,
+            "se_person_cluster": 0.29104855717706685,
+            "ci95": [
+              -0.2685697645274433,
+              0.8730142951722383
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.8005173798840464,
+            "se_person_cluster": 0.32911679829081125,
+            "ci95": [
+              0.15506753750669688,
+              1.445967222261396
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": 0.3021041868904386,
+            "se_person_cluster": 0.3311716272851976,
+            "ci95": [
+              -0.347375498562156,
+              0.9515838723430332
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": -0.19663817131782857,
+            "se_person_cluster": 0.48111188259012844,
+            "ci95": [
+              -1.140174297083361,
+              0.7468979544477039
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": -0.040686448342513115,
+            "se_person_cluster": 0.5123314278764769,
+            "ci95": [
+              -1.0454490161760703,
+              0.9640761194910441
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.16628017005022555,
+            "se_person_cluster": 0.4837762089506636,
+            "ci95": [
+              -0.7824811190566496,
+              1.1150414591571007
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": 0.7349589456800516,
+            "se_person_cluster": 1.0595878018654514,
+            "ci95": [
+              -1.3430595062821198,
+              2.812977397642223
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": -0.37903900191934004,
+            "se_person_cluster": 0.7612150164341478,
+            "ci95": [
+              -1.871901459637317,
+              1.113823455798637
+            ]
+          },
+          "employment=disabled": {
+            "estimate": -0.27651913645813075,
+            "se_person_cluster": 0.627820702923608,
+            "ci95": [
+              -1.5077743499498975,
+              0.9547360770336359
+            ]
+          },
+          "employment=retired": {
+            "estimate": -1.6160994763586352,
+            "se_person_cluster": 0.5094250734637837,
+            "ci95": [
+              -2.6151622257468636,
+              -0.6170367269704068
+            ]
+          },
+          "employment=student": {
+            "estimate": 0.14197117928729575,
+            "se_person_cluster": 0.7830921894894937,
+            "ci95": [
+              -1.3937958581226537,
+              1.6777382166972452
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": -1.5559022109384948,
+            "se_person_cluster": 1.249273178702765,
+            "ci95": [
+              -4.00592354217257,
+              0.8941191202955805
+            ]
+          },
+          "employment=other": {
+            "estimate": -0.9424474042269202,
+            "se_person_cluster": 0.8815178396268231,
+            "ci95": [
+              -2.6712426331389416,
+              0.786347824685101
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "2018": {
+        "rows": 15385,
+        "persons": 3218,
+        "months": 12,
+        "rank": 18,
+        "within_month_r2": 0.017839306553159573,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.5014731792245227,
+            "se_person_cluster": 0.2591188258255576,
+            "ci95": [
+              -0.0065815364859327374,
+              1.0095278949349782
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.6974092777825657,
+            "se_person_cluster": 0.27255928440842075,
+            "ci95": [
+              0.16300183242161503,
+              1.2318167231435164
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": 1.0662787703902799,
+            "se_person_cluster": 0.3108697898661804,
+            "ci95": [
+              0.45675585282442943,
+              1.6758016879561302
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.6466603779936432,
+            "se_person_cluster": 0.1786796934598593,
+            "ci95": [
+              0.29632280381408954,
+              0.9969979521731969
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": -0.08981551410053357,
+            "se_person_cluster": 0.34433232455431884,
+            "ci95": [
+              -0.7649484794649897,
+              0.5853174512639225
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.1955207476908077,
+            "se_person_cluster": 0.2957527302275275,
+            "ci95": [
+              -0.3843621257268638,
+              0.7754036211084793
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.28945085996548464,
+            "se_person_cluster": 0.39518440914118724,
+            "ci95": [
+              -0.4853878728041478,
+              1.064289592735117
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": -0.2571440027931077,
+            "se_person_cluster": 0.28947421805206686,
+            "ci95": [
+              -0.8247165868745048,
+              0.31042858128828943
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": -0.4384355092211006,
+            "se_person_cluster": 0.3466475819494995,
+            "ci95": [
+              -1.118108003637363,
+              0.24123698519516173
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.0666429894130543,
+            "se_person_cluster": 0.34685465802068927,
+            "ci95": [
+              -0.6134355194027545,
+              0.746721498228863
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.24120780892387544,
+            "se_person_cluster": 0.3742882220275325,
+            "ci95": [
+              -0.49265973477975117,
+              0.975075352627502
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": 0.3671194597542711,
+            "se_person_cluster": 0.6911573782553002,
+            "ci95": [
+              -0.9880339691867679,
+              1.72227288869531
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 0.27523643630397576,
+            "se_person_cluster": 1.6257408612711899,
+            "ci95": [
+              -2.9123563928178133,
+              3.4628292654257646
+            ]
+          },
+          "employment=disabled": {
+            "estimate": -0.5545903150300113,
+            "se_person_cluster": 0.5807828438278987,
+            "ci95": [
+              -1.6933322094886476,
+              0.584151579428625
+            ]
+          },
+          "employment=retired": {
+            "estimate": -1.0369025649827837,
+            "se_person_cluster": 0.2863758308779155,
+            "ci95": [
+              -1.598400136143336,
+              -0.4754049938222312
+            ]
+          },
+          "employment=student": {
+            "estimate": -0.7856068094892534,
+            "se_person_cluster": 1.1353454141543167,
+            "ci95": [
+              -3.01168046424432,
+              1.4404668452658131
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": 0.32210408236230587,
+            "se_person_cluster": 0.4592345957935558,
+            "ci95": [
+              -0.5783179586335601,
+              1.222526123358172
+            ]
+          },
+          "employment=other": {
+            "estimate": 1.2859239629058081,
+            "se_person_cluster": 1.1642435312150237,
+            "ci95": [
+              -0.9968102783622934,
+              3.56865820417391
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "2019": {
+        "rows": 15352,
+        "persons": 3161,
+        "months": 12,
+        "rank": 18,
+        "within_month_r2": 0.024486636593815336,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.3774583507620404,
+            "se_person_cluster": 0.2580603821286768,
+            "ci95": [
+              -0.1285245077761481,
+              0.8834412093002288
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.37801258316354824,
+            "se_person_cluster": 0.23599228181896476,
+            "ci95": [
+              -0.08470102038435717,
+              0.8407261867114537
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": 1.1060489319458722,
+            "se_person_cluster": 0.3416593721477408,
+            "ci95": [
+              0.43615228086102475,
+              1.7759455830307196
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.4439790478373408,
+            "se_person_cluster": 0.18420518900531963,
+            "ci95": [
+              0.08280517325164716,
+              0.8051529224230345
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 0.22311923766410197,
+            "se_person_cluster": 0.28258426169202555,
+            "ci95": [
+              -0.3309479590493361,
+              0.7771864343775401
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.37462738224125247,
+            "se_person_cluster": 0.21100547711193723,
+            "ci95": [
+              -0.039094218864786034,
+              0.788348983347291
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.3588781535998259,
+            "se_person_cluster": 0.2672533911143861,
+            "ci95": [
+              -0.1651295754232751,
+              0.8828858826229269
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": 0.05018139191187376,
+            "se_person_cluster": 0.30465775673769085,
+            "ci95": [
+              -0.5471656373314765,
+              0.647528421155224
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": -0.4970147256894426,
+            "se_person_cluster": 0.36174106084361346,
+            "ci95": [
+              -1.2062858447449105,
+              0.2122563933660253
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.1696050210335387,
+            "se_person_cluster": 0.34548916058287715,
+            "ci95": [
+              -0.5078007536293733,
+              0.8470107956964507
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.07258836624358717,
+            "se_person_cluster": 0.3153296568661063,
+            "ci95": [
+              -0.5456832175108743,
+              0.6908599499980488
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": 0.6484387485824415,
+            "se_person_cluster": 0.6199669424189775,
+            "ci95": [
+              -0.5671397262565129,
+              1.864017223421396
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 3.666974497663209,
+            "se_person_cluster": 1.741211779366413,
+            "ci95": [
+              0.25295446802193755,
+              7.0809945273044805
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 1.4840068539896691,
+            "se_person_cluster": 1.0362476682242723,
+            "ci95": [
+              -0.5477794783277252,
+              3.5157931863070635
+            ]
+          },
+          "employment=retired": {
+            "estimate": -0.08580108888375026,
+            "se_person_cluster": 0.32839067474615685,
+            "ci95": [
+              -0.7296816061283246,
+              0.558079428360824
+            ]
+          },
+          "employment=student": {
+            "estimate": 2.4620185046445844,
+            "se_person_cluster": 1.8456216322126993,
+            "ci95": [
+              -1.1567194881607232,
+              6.080756497449892
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": 0.043414195941571254,
+            "se_person_cluster": 0.7010963372673242,
+            "ci95": [
+              -1.33123589918341,
+              1.4180642910665524
+            ]
+          },
+          "employment=other": {
+            "estimate": 0.6248878296259943,
+            "se_person_cluster": 0.8882153520447871,
+            "ci95": [
+              -1.116649321942778,
+              2.3664249811947666
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "2020": {
+        "rows": 14522,
+        "persons": 3059,
+        "months": 12,
+        "rank": 18,
+        "within_month_r2": 0.025215577290029323,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.2344480306145198,
+            "se_person_cluster": 0.26388537552712266,
+            "ci95": [
+              -0.28296259260992374,
+              0.7518586538389633
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.7297098042572302,
+            "se_person_cluster": 0.2878126915900374,
+            "ci95": [
+              0.16538393424629516,
+              1.2940356742681653
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": 1.640283940390715,
+            "se_person_cluster": 0.45917679607651063,
+            "ci95": [
+              0.7399576083476143,
+              2.540610272433816
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.7335441167932932,
+            "se_person_cluster": 0.21186982626844744,
+            "ci95": [
+              0.3181224639903147,
+              1.1489657695962718
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 1.0066292414955336,
+            "se_person_cluster": 0.35571300441842896,
+            "ci95": [
+              0.3091685090182934,
+              1.7040899739727737
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.2341529356141957,
+            "se_person_cluster": 0.25227292386905514,
+            "ci95": [
+              -0.26048868861755115,
+              0.7287945598459425
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.7577732546026426,
+            "se_person_cluster": 0.3233061383504217,
+            "ci95": [
+              0.12385396217491096,
+              1.3916925470303743
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": 0.1331825909279022,
+            "se_person_cluster": 0.32819850388398963,
+            "ci95": [
+              -0.5103293585188425,
+              0.7766945403746469
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": -0.20068276478404912,
+            "se_person_cluster": 0.4073587297778644,
+            "ci95": [
+              -0.9994073391537226,
+              0.5980418095856244
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.08582272695932963,
+            "se_person_cluster": 0.3513724822091342,
+            "ci95": [
+              -0.6031273698036554,
+              0.7747728237223146
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.09988605476492225,
+            "se_person_cluster": 0.38925611143295874,
+            "ci95": [
+              -0.6633439908870383,
+              0.8631161004168829
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": -0.254959464233985,
+            "se_person_cluster": 0.43964482850021924,
+            "ci95": [
+              -1.1169886852823545,
+              0.6070697568143846
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 1.464754534721778,
+            "se_person_cluster": 1.2157403307645405,
+            "ci95": [
+              -0.9189962167681176,
+              3.8485052862116738
+            ]
+          },
+          "employment=disabled": {
+            "estimate": -0.663779029894468,
+            "se_person_cluster": 0.7950229378338777,
+            "ci95": [
+              -2.2226123412163186,
+              0.8950542814273826
+            ]
+          },
+          "employment=retired": {
+            "estimate": -0.8113123379536705,
+            "se_person_cluster": 0.4867750787671493,
+            "ci95": [
+              -1.7657517280560273,
+              0.14312705214868615
+            ]
+          },
+          "employment=student": {
+            "estimate": -2.729303311416576,
+            "se_person_cluster": 0.8909086284072911,
+            "ci95": [
+              -4.476143536038541,
+              -0.9824630867946105
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": -0.17784121467799446,
+            "se_person_cluster": 0.9112522987149089,
+            "ci95": [
+              -1.9645700883450647,
+              1.608887658989076
+            ]
+          },
+          "employment=other": {
+            "estimate": 0.04264257834491214,
+            "se_person_cluster": 0.7117906450462322,
+            "ci95": [
+              -1.352993843427337,
+              1.438279000117161
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "2021": {
+        "rows": 14589,
+        "persons": 2914,
+        "months": 12,
+        "rank": 18,
+        "within_month_r2": 0.032042719786482765,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.7602800051971202,
+            "se_person_cluster": 0.3396593076642489,
+            "ci95": [
+              0.09428327246562618,
+              1.4262767379286143
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": -0.12899156748843887,
+            "se_person_cluster": 0.38610496476320216,
+            "ci95": [
+              -0.8860579549577532,
+              0.6280748199808754
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": 0.46046113399166577,
+            "se_person_cluster": 0.5526292689566712,
+            "ci95": [
+              -0.6231225607049964,
+              1.544044828688328
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 1.1658527308551883,
+            "se_person_cluster": 0.26615097519351627,
+            "ci95": [
+              0.643989570057019,
+              1.6877158916533577
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 1.8682944552134617,
+            "se_person_cluster": 0.4537265873682462,
+            "ci95": [
+              0.9786370310766669,
+              2.7579518793502564
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.33170406007622977,
+            "se_person_cluster": 0.3227579023529493,
+            "ci95": [
+              -0.3011527572697481,
+              0.9645608774222076
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.2212663435046639,
+            "se_person_cluster": 0.426741523513399,
+            "ci95": [
+              -0.6154793424452176,
+              1.0580120294545454
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": 0.013181691182795108,
+            "se_person_cluster": 0.4228445676485055,
+            "ci95": [
+              -0.8159229267467057,
+              0.842286309112296
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": 0.46429146632007745,
+            "se_person_cluster": 0.42743729134089303,
+            "ci95": [
+              -0.37381846635996807,
+              1.3024013990001229
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.48314751057335914,
+            "se_person_cluster": 0.44920871078472935,
+            "ci95": [
+              -0.39765135742906177,
+              1.36394637857578
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.047700847540676605,
+            "se_person_cluster": 0.48997093517244106,
+            "ci95": [
+              -0.9130237214465651,
+              1.0084254165279183
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": -0.15451122676692922,
+            "se_person_cluster": 0.6586084528584848,
+            "ci95": [
+              -1.4458966469676888,
+              1.1368741934338302
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 1.7725793910704994,
+            "se_person_cluster": 1.2992151694305791,
+            "ci95": [
+              -0.7748940284162917,
+              4.320052810557291
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 1.709623198167053,
+            "se_person_cluster": 1.085372421127535,
+            "ci95": [
+              -0.4185519171821981,
+              3.8377983135163043
+            ]
+          },
+          "employment=retired": {
+            "estimate": 0.09606021524486186,
+            "se_person_cluster": 0.5294943075328935,
+            "ci95": [
+              -0.9421609400706165,
+              1.1342813705603403
+            ]
+          },
+          "employment=student": {
+            "estimate": -3.2568676338788918,
+            "se_person_cluster": 0.6103060029858705,
+            "ci95": [
+              -4.453542639637286,
+              -2.0601926281204976
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": -0.8215415703233662,
+            "se_person_cluster": 0.7585766178013691,
+            "ci95": [
+              -2.308942438141232,
+              0.6658592974944992
+            ]
+          },
+          "employment=other": {
+            "estimate": -1.143585265596227,
+            "se_person_cluster": 1.101028597345594,
+            "ci95": [
+              -3.3024586776593217,
+              1.0152881464668675
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "2022": {
+        "rows": 14409,
+        "persons": 2732,
+        "months": 12,
+        "rank": 18,
+        "within_month_r2": 0.014058266530569963,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.11760168955927496,
+            "se_person_cluster": 0.31524644994957335,
+            "ci95": [
+              -0.5005439553884168,
+              0.7357473345069667
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.9132850282269136,
+            "se_person_cluster": 0.3600718354416493,
+            "ci95": [
+              0.20724428777708237,
+              1.6193257686767448
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": 0.8386943200714336,
+            "se_person_cluster": 0.5072731302780419,
+            "ci95": [
+              -0.1559835782221488,
+              1.833372218365016
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 1.1711912337376242,
+            "se_person_cluster": 0.2961884938902094,
+            "ci95": [
+              0.590415058110157,
+              1.7519674093650914
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 0.6906906534506323,
+            "se_person_cluster": 0.45758897844829305,
+            "ci95": [
+              -0.2065649199241706,
+              1.5879462268254352
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.011580825817508356,
+            "se_person_cluster": 0.32191663729447223,
+            "ci95": [
+              -0.6196439426505085,
+              0.6428055942855251
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.33505540050006877,
+            "se_person_cluster": 0.3904179727654639,
+            "ci95": [
+              -0.43048904770190743,
+              1.100599848702045
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": -0.4791916649544379,
+            "se_person_cluster": 0.35762208821788416,
+            "ci95": [
+              -1.1804288601848532,
+              0.2220455302759774
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": 0.025759069109389965,
+            "se_person_cluster": 0.46369112559334674,
+            "ci95": [
+              -0.883461795811593,
+              0.9349799340303729
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.20345184396622173,
+            "se_person_cluster": 0.43525764118287114,
+            "ci95": [
+              -0.6500157061693448,
+              1.0569193941017883
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": -0.6245324236000479,
+            "se_person_cluster": 0.43307594874535094,
+            "ci95": [
+              -1.4737220391892172,
+              0.22465719198912126
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": -0.11474030274004654,
+            "se_person_cluster": 0.6038972937743916,
+            "ci95": [
+              -1.2988820502586917,
+              1.0694014447785989
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": -2.9580688626075604,
+            "se_person_cluster": 1.022202802159328,
+            "ci95": [
+              -4.962437858703121,
+              -0.9536998665120007
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 0.0580704099913979,
+            "se_person_cluster": 0.797770093883972,
+            "ci95": [
+              -1.5062235234780212,
+              1.6223643434608173
+            ]
+          },
+          "employment=retired": {
+            "estimate": -0.26663649367896564,
+            "se_person_cluster": 0.5151270488611672,
+            "ci95": [
+              -1.2767146147782584,
+              0.7434416274203273
+            ]
+          },
+          "employment=student": {
+            "estimate": -1.75273076743973,
+            "se_person_cluster": 0.8550221346049517,
+            "ci95": [
+              -3.429286392172294,
+              -0.07617514270716597
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": 0.02426947351179564,
+            "se_person_cluster": 0.9965940697000117,
+            "ci95": [
+              -1.9298850746656702,
+              1.9784240216892615
+            ]
+          },
+          "employment=other": {
+            "estimate": 0.6562804845343744,
+            "se_person_cluster": 1.9939178367032384,
+            "ci95": [
+              -3.253459426379086,
+              4.566020395447835
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "2023": {
+        "rows": 13619,
+        "persons": 2663,
+        "months": 12,
+        "rank": 18,
+        "within_month_r2": 0.026609231541001033,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.4974971756855485,
+            "se_person_cluster": 0.27956465321425567,
+            "ci95": [
+              -0.05068872453919815,
+              1.0456830759102953
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.3478285983972708,
+            "se_person_cluster": 0.2985438153226846,
+            "ci95": [
+              -0.23757269707254963,
+              0.9332298938670913
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": 0.8995336117003829,
+            "se_person_cluster": 0.43286928507469413,
+            "ci95": [
+              0.05073947413659463,
+              1.7483277492641713
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.7920707371164346,
+            "se_person_cluster": 0.24590390004471036,
+            "ci95": [
+              0.3098887113670083,
+              1.2742527628658609
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 0.9690213127483789,
+            "se_person_cluster": 0.3717355790688123,
+            "ci95": [
+              0.24010154154529628,
+              1.6979410839514615
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.7615279307271305,
+            "se_person_cluster": 0.26202797308408393,
+            "ci95": [
+              0.24772892696294624,
+              1.2753269344913147
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.4353532190749042,
+            "se_person_cluster": 0.3403391148791138,
+            "ci95": [
+              -0.2320026212527201,
+              1.1027090594025286
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": -0.017020911500093105,
+            "se_person_cluster": 0.33656454786640266,
+            "ci95": [
+              -0.6769753711737908,
+              0.6429335481736046
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": -0.08269955504397453,
+            "se_person_cluster": 0.4009949649596005,
+            "ci95": [
+              -0.8689927552916524,
+              0.7035936452037034
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.3441405252053493,
+            "se_person_cluster": 0.36875493050280933,
+            "ci95": [
+              -0.3789346247316975,
+              1.0672156751423962
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": -0.12393348055482845,
+            "se_person_cluster": 0.38903305382781894,
+            "ci95": [
+              -0.8867711010402156,
+              0.6389041399305587
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": -0.8147919770299253,
+            "se_person_cluster": 0.6467523290909689,
+            "ci95": [
+              -2.0829798672689246,
+              0.453395913209074
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": -1.358230582758315,
+            "se_person_cluster": 0.8968288438988612,
+            "ci95": [
+              -3.1167823935390446,
+              0.40032122802241465
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 1.8033005480461344,
+            "se_person_cluster": 0.917575455725216,
+            "ci95": [
+              0.004067628441795534,
+              3.602533467650473
+            ]
+          },
+          "employment=retired": {
+            "estimate": -0.41538895186955044,
+            "se_person_cluster": 0.4145369926572895,
+            "ci95": [
+              -1.2282361122083016,
+              0.3974582084692007
+            ]
+          },
+          "employment=student": {
+            "estimate": -0.018673055821912504,
+            "se_person_cluster": 1.1496296448784065,
+            "ci95": [
+              -2.272930718788116,
+              2.2355846071442906
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": -0.0895966327896561,
+            "se_person_cluster": 0.7365706815825995,
+            "ci95": [
+              -1.5339053374850997,
+              1.3547120719057877
+            ]
+          },
+          "employment=other": {
+            "estimate": 1.4450453531843714,
+            "se_person_cluster": 0.8329558068910947,
+            "ci95": [
+              -0.18826065885313725,
+              3.07835136522188
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "2024": {
+        "rows": 12622,
+        "persons": 2496,
+        "months": 12,
+        "rank": 18,
+        "within_month_r2": 0.020016100962088723,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": -0.11507099615949692,
+            "se_person_cluster": 0.30591866705317955,
+            "ci95": [
+              -0.7149515751018479,
+              0.48480958278285413
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": 0.10617938546769479,
+            "se_person_cluster": 0.3976066989658025,
+            "ci95": [
+              -0.6734936533321899,
+              0.8858524242675795
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": -1.1539475306531177,
+            "se_person_cluster": 0.509879252946712,
+            "ci95": [
+              -2.1537775325117376,
+              -0.1541175287944978
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.44626589385114923,
+            "se_person_cluster": 0.26455450955176074,
+            "ci95": [
+              -0.07250307791653987,
+              0.9650348656188383
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": 0.37840089098692276,
+            "se_person_cluster": 0.4206387230141955,
+            "ci95": [
+              -0.4464359949670239,
+              1.2032377769408695
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 0.41669831529484425,
+            "se_person_cluster": 0.2785834452856111,
+            "ci95": [
+              -0.1295802104697712,
+              0.9629768410594597
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 0.7946236130256192,
+            "se_person_cluster": 0.37381889847295063,
+            "ci95": [
+              0.0615964349339877,
+              1.5276507911172508
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": 0.5196161210484125,
+            "se_person_cluster": 0.3335837895453647,
+            "ci95": [
+              -0.1345134184329767,
+              1.1737456605298018
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": -0.4238510316621036,
+            "se_person_cluster": 0.40496987512621585,
+            "ci95": [
+              -1.2179626348703363,
+              0.3702605715461291
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": 0.13551800265714664,
+            "se_person_cluster": 0.3960042890602515,
+            "ci95": [
+              -0.6410128461250305,
+              0.9120488514393238
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.32102295534169234,
+            "se_person_cluster": 0.5185692699995778,
+            "ci95": [
+              -0.6958474334632587,
+              1.3378933441466434
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": 0.5691843865751887,
+            "se_person_cluster": 0.9034007702040657,
+            "ci95": [
+              -1.2023079589794343,
+              2.3406767321298116
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 0.1810680744055047,
+            "se_person_cluster": 1.0917250208216254,
+            "ci95": [
+              -1.9597121657963172,
+              2.3218483146073265
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 1.3381658463352837,
+            "se_person_cluster": 0.9177456260654024,
+            "ci95": [
+              -0.46145554581147596,
+              3.1377872384820433
+            ]
+          },
+          "employment=retired": {
+            "estimate": 0.34677236668376094,
+            "se_person_cluster": 0.43731878890796444,
+            "ci95": [
+              -0.5107727148227352,
+              1.204317448190257
+            ]
+          },
+          "employment=student": {
+            "estimate": 0.5633157960416271,
+            "se_person_cluster": 1.3318981067391928,
+            "ci95": [
+              -2.0484235105500725,
+              3.1750551026333267
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": -0.7130246285476085,
+            "se_person_cluster": 0.7240414834080993,
+            "ci95": [
+              -2.132808613712612,
+              0.7067593566173953
+            ]
+          },
+          "employment=other": {
+            "estimate": -2.266071102757038,
+            "se_person_cluster": 1.3110368746091867,
+            "ci95": [
+              -4.836903301168173,
+              0.30476109565409626
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      },
+      "2025": {
+        "rows": 10265,
+        "persons": 2119,
+        "months": 10,
+        "rank": 18,
+        "within_month_r2": 0.03901638439167232,
+        "coefficients": {
+          "gender=Female": {
+            "estimate": 0.9101225010781162,
+            "se_person_cluster": 0.4348654350006431,
+            "ci95": [
+              0.05731456450062178,
+              1.7629304376556107
+            ]
+          },
+          "_AGE_CAT=40 to 60": {
+            "estimate": -0.5213477030105284,
+            "se_person_cluster": 0.49022897589681835,
+            "ci95": [
+              -1.4827282307235337,
+              0.44003282470247695
+            ]
+          },
+          "_AGE_CAT=Over 60": {
+            "estimate": -1.0231370399403423,
+            "se_person_cluster": 0.6009717536657148,
+            "ci95": [
+              -2.2016935310632997,
+              0.15541945118261502
+            ]
+          },
+          "_EDU_CAT=Some College": {
+            "estimate": 0.3212631514074332,
+            "se_person_cluster": 0.3618404974311706,
+            "ci95": [
+              -0.3883366998292934,
+              1.0308630026441599
+            ]
+          },
+          "_EDU_CAT=High School": {
+            "estimate": -0.9560918420083633,
+            "se_person_cluster": 0.5764535006799814,
+            "ci95": [
+              -2.0865659631512434,
+              0.17438227913451665
+            ]
+          },
+          "_HH_INC_CAT=50k to 100k": {
+            "estimate": 1.0664901441491001,
+            "se_person_cluster": 0.3499440925086394,
+            "ci95": [
+              0.3802201501926128,
+              1.7527601381055875
+            ]
+          },
+          "_HH_INC_CAT=Under 50k": {
+            "estimate": 1.1441418476604264,
+            "se_person_cluster": 0.47356407649980425,
+            "ci95": [
+              0.2154425986239341,
+              2.0728410966969184
+            ]
+          },
+          "_NUM_CAT=Low": {
+            "estimate": -0.5784750733151286,
+            "se_person_cluster": 0.4809963994559228,
+            "ci95": [
+              -1.5217497369374584,
+              0.3647995903072013
+            ]
+          },
+          "_REGION_CAT=Midwest": {
+            "estimate": 0.01540875533162378,
+            "se_person_cluster": 0.5067302509109315,
+            "ci95": [
+              -0.9783321697895195,
+              1.009149680452767
+            ]
+          },
+          "_REGION_CAT=South": {
+            "estimate": -0.3784922848183594,
+            "se_person_cluster": 0.5428209461738751,
+            "ci95": [
+              -1.4430101190235567,
+              0.6860255493868379
+            ]
+          },
+          "_REGION_CAT=West": {
+            "estimate": 0.9730688998043586,
+            "se_person_cluster": 0.5696057725483544,
+            "ci95": [
+              -0.14397624669911857,
+              2.0901140463078356
+            ]
+          },
+          "employment=unemployed": {
+            "estimate": 1.2080127183964169,
+            "se_person_cluster": 0.94013894171293,
+            "ci95": [
+              -0.635679344591223,
+              3.051704781384057
+            ]
+          },
+          "employment=on_leave": {
+            "estimate": 6.8580932063091815,
+            "se_person_cluster": 2.444095279451347,
+            "ci95": [
+              2.06501543027344,
+              11.651170982344922
+            ]
+          },
+          "employment=disabled": {
+            "estimate": 3.4723619978144784,
+            "se_person_cluster": 1.2863009625943964,
+            "ci95": [
+              0.9498169035460649,
+              5.994907092082892
+            ]
+          },
+          "employment=retired": {
+            "estimate": -0.04977161524229967,
+            "se_person_cluster": 0.5765888351859699,
+            "ci95": [
+              -1.1805111388097242,
+              1.0809679083251247
+            ]
+          },
+          "employment=student": {
+            "estimate": -0.15509897618943658,
+            "se_person_cluster": 1.245245951984675,
+            "ci95": [
+              -2.597131718667481,
+              2.286933766288608
+            ]
+          },
+          "employment=homemaker": {
+            "estimate": -0.7384689280581426,
+            "se_person_cluster": 0.8130468001317517,
+            "ci95": [
+              -2.3329225409562757,
+              0.8559846848399905
+            ]
+          },
+          "employment=other": {
+            "estimate": 1.680345434260124,
+            "se_person_cluster": 0.9836625181205934,
+            "ci95": [
+              -0.24870004705251425,
+              3.6093909155727624
+            ]
+          }
+        },
+        "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+      }
+    },
+    "tail_sensitivity": "On exactly the same returner sample, cap current and previous Q9 means at their month-specific weighted 1st/99th percentiles; diagnostic only, primary results unmodified."
+  },
+  "expanded_compression": {
+    "source_sha256": {
+      "outputs/sce_expanded_state_trial_20261014_v3/development_cases_private.json": "a7d78f0c8bd2579c22ec1aba14ff908fd51dc01dcb7293d1899ed8b99aed20bd",
+      "outputs/sce_expanded_state_evaluation_20261014_v1/cases_private.json": "83f6347a6dd126764c94f3b16b7e84237b62d84d3b53776e315498653d0cc7c3"
+    },
+    "unique_complete_person_months": 756,
+    "interpretation": "Average available model generations per person-month for this diagnostic only; use equal person weights; not nationwide or causal",
+    "by_month": {
+      "202004": {
+        "persons": 93,
+        "measures": {
+          "actual": {
+            "previous_position_slope": 0.27252492137547263,
+            "previous_variance": 29.40847649662831,
+            "current_variance": 26.21904843511304,
+            "change_variance": 39.59843944170922,
+            "cov_previous_change": -21.393933751612234,
+            "identity_error": -1.7763568394002505e-14,
+            "mean_change": 0.014546888428869087
+          },
+          "self_update": {
+            "previous_position_slope": 0.14129462672631507,
+            "previous_variance": 29.40847649662831,
+            "current_variance": 1.4133044187156565,
+            "change_variance": 22.51126149698255,
+            "cov_previous_change": -25.253216787447595,
+            "identity_error": -1.199040866595169e-14,
+            "mean_change": -1.472943374930603
+          },
+          "new_signal": {
+            "previous_position_slope": -0.0026931741547383276,
+            "previous_variance": 29.40847649662831,
+            "current_variance": 0.03141434744530919,
+            "change_variance": 29.598295141735502,
+            "cov_previous_change": -29.487678645459255,
+            "identity_error": 3.0531133177191805e-15,
+            "mean_change": -1.9009841736151984
+          },
+          "copy_previous": {
+            "previous_position_slope": 1.0,
+            "previous_variance": 29.40847649662831,
+            "current_variance": 29.40847649662831,
+            "change_variance": 0.0,
+            "cov_previous_change": 0.0,
+            "identity_error": 0.0,
+            "mean_change": 0.0
+          },
+          "history_anchor_half": {
+            "previous_position_slope": 0.6998885050637856,
+            "previous_variance": 29.40847649662831,
+            "current_variance": 15.91080789249133,
+            "change_variance": 4.153975086262297,
+            "cov_previous_change": -8.825821845199636,
+            "identity_error": -7.105427357601002e-15,
+            "mean_change": 0.5033896812232986
+          }
+        }
+      },
+      "202105": {
+        "persons": 94,
+        "measures": {
+          "actual": {
+            "previous_position_slope": 0.6204171133908974,
+            "previous_variance": 33.85992007091027,
+            "current_variance": 33.22434606565464,
+            "change_variance": 25.069718396483587,
+            "cov_previous_change": -12.85264620086961,
+            "identity_error": 7.105427357601002e-15,
+            "mean_change": 0.4271395574766382
+          },
+          "self_update": {
+            "previous_position_slope": 0.1773861721691146,
+            "previous_variance": 33.85992007091027,
+            "current_variance": 3.036074346853328,
+            "change_variance": 24.883431195101704,
+            "cov_previous_change": -27.853638459579326,
+            "identity_error": 9.325873406851315e-15,
+            "mean_change": -0.7065316220385289
+          },
+          "new_signal": {
+            "previous_position_slope": 0.024350770789762673,
+            "previous_variance": 33.85992007091027,
+            "current_variance": 0.28010567001355496,
+            "change_variance": 32.490995435710985,
+            "cov_previous_change": -33.035404918303854,
+            "identity_error": 1.4488410471358293e-14,
+            "mean_change": -1.8781263900410174
+          },
+          "copy_previous": {
+            "previous_position_slope": 1.0,
+            "previous_variance": 33.85992007091027,
+            "current_variance": 33.85992007091027,
+            "change_variance": 0.0,
+            "cov_previous_change": 0.0,
+            "identity_error": 0.0,
+            "mean_change": 0.0
+          },
+          "history_anchor_half": {
+            "previous_position_slope": 0.836539112038338,
+            "previous_variance": 33.85992007091027,
+            "current_variance": 25.324835642577547,
+            "change_variance": 2.5344607738710585,
+            "cov_previous_change": -5.534772601101893,
+            "identity_error": 0.0,
+            "mean_change": -0.26621068070668724
+          }
+        }
+      },
+      "202111": {
+        "persons": 95,
+        "measures": {
+          "actual": {
+            "previous_position_slope": 0.6164443423858301,
+            "previous_variance": 31.168977269073682,
+            "current_variance": 35.03056626269273,
+            "change_variance": 27.771664140820395,
+            "cov_previous_change": -11.95503757360067,
+            "identity_error": -7.105427357601002e-15,
+            "mean_change": 1.5534814753348676
+          },
+          "self_update": {
+            "previous_position_slope": 0.28082985556475165,
+            "previous_variance": 31.168977269073682,
+            "current_variance": 3.835172361104845,
+            "change_variance": 17.49779086102855,
+            "cov_previous_change": -22.415797884498698,
+            "identity_error": 6.661338147750939e-15,
+            "mean_change": 0.18206818094018706
+          },
+          "new_signal": {
+            "previous_position_slope": -0.022236076203010876,
+            "previous_variance": 31.168977269073682,
+            "current_variance": 0.4371107256380943,
+            "change_variance": 32.99223950216185,
+            "cov_previous_change": -31.86205302279872,
+            "identity_error": 1.887379141862766e-15,
+            "mean_change": -0.8219713511356768
+          },
+          "copy_previous": {
+            "previous_position_slope": 1.0,
+            "previous_variance": 31.168977269073682,
+            "current_variance": 31.168977269073682,
+            "change_variance": 0.0,
+            "cov_previous_change": 0.0,
+            "identity_error": 0.0,
+            "mean_change": 0.0
+          },
+          "history_anchor_half": {
+            "previous_position_slope": 0.8408192689746191,
+            "previous_variance": 31.168977269073682,
+            "current_variance": 23.209617811826266,
+            "change_variance": 1.9636417167618296,
+            "cov_previous_change": -4.961500587004622,
+            "identity_error": -3.552713678800501e-15,
+            "mean_change": -0.1473839016270731
+          }
+        }
+      },
+      "202203": {
+        "persons": 95,
+        "measures": {
+          "actual": {
+            "previous_position_slope": 0.8119724271932673,
+            "previous_variance": 34.4842011588091,
+            "current_variance": 37.19241796131775,
+            "change_variance": 15.67617809064864,
+            "cov_previous_change": -6.483980644069996,
+            "identity_error": 7.105427357601002e-15,
+            "mean_change": 0.2747490439784197
+          },
+          "self_update": {
+            "previous_position_slope": 0.3675844857812936,
+            "previous_variance": 34.4842011588091,
+            "current_variance": 9.524030355480368,
+            "change_variance": 18.656516813210406,
+            "cov_previous_change": -21.808343808269566,
+            "identity_error": -1.7763568394002505e-15,
+            "mean_change": -0.1306031090260387
+          },
+          "new_signal": {
+            "previous_position_slope": 0.014488308487209637,
+            "previous_variance": 34.4842011588091,
+            "current_variance": 0.35694561020970966,
+            "change_variance": 33.84191128037118,
+            "cov_previous_change": -33.98458341448528,
+            "identity_error": -1.0935696792557792e-14,
+            "mean_change": -1.6377534178333502
+          },
+          "copy_previous": {
+            "previous_position_slope": 1.0,
+            "previous_variance": 34.4842011588091,
+            "current_variance": 34.4842011588091,
+            "change_variance": 0.0,
+            "cov_previous_change": 0.0,
+            "identity_error": 0.0,
+            "mean_change": 0.0
+          },
+          "history_anchor_half": {
+            "previous_position_slope": 0.8082454376146638,
+            "previous_variance": 34.4842011588091,
+            "current_variance": 23.813210688819517,
+            "change_variance": 2.554015334841088,
+            "cov_previous_change": -6.612502902415341,
+            "identity_error": 7.105427357601002e-15,
+            "mean_change": -0.5325247701145279
+          }
+        }
+      },
+      "202206": {
+        "persons": 96,
+        "measures": {
+          "actual": {
+            "previous_position_slope": 0.4584760661733098,
+            "previous_variance": 40.00523971183931,
+            "current_variance": 36.909114668361504,
+            "change_variance": 40.23146452139209,
+            "cov_previous_change": -21.663794782434948,
+            "identity_error": 7.105427357601002e-15,
+            "mean_change": 0.6628289078286443
+          },
+          "self_update": {
+            "previous_position_slope": 0.1464714370832038,
+            "previous_variance": 40.00523971183931,
+            "current_variance": 3.067375730198729,
+            "change_variance": 31.353365539135723,
+            "cov_previous_change": -34.14561476038815,
+            "identity_error": -4.884981308350689e-15,
+            "mean_change": 0.5437731142565964
+          },
+          "new_signal": {
+            "previous_position_slope": 0.0065113564679541765,
+            "previous_variance": 40.00523971183931,
+            "current_variance": 0.5450907743041687,
+            "change_variance": 40.029353733444,
+            "cov_previous_change": -39.74475133548956,
+            "identity_error": -1.6542323066914832e-14,
+            "mean_change": -0.6347540777015125
+          },
+          "copy_previous": {
+            "previous_position_slope": 1.0,
+            "previous_variance": 40.00523971183931,
+            "current_variance": 40.00523971183931,
+            "change_variance": 0.0,
+            "cov_previous_change": 0.0,
+            "identity_error": 0.0,
+            "mean_change": 0.0
+          },
+          "history_anchor_half": {
+            "previous_position_slope": 0.694361449896229,
+            "previous_variance": 40.00523971183931,
+            "current_variance": 21.943552239985582,
+            "change_variance": 6.3925994523070235,
+            "cov_previous_change": -12.227143462080377,
+            "identity_error": 3.552713678800501e-15,
+            "mean_change": -0.054376276059523866
+          }
+        }
+      },
+      "202306": {
+        "persons": 93,
+        "measures": {
+          "actual": {
+            "previous_position_slope": 0.7099685882404148,
+            "previous_variance": 39.32665207522246,
+            "current_variance": 36.63826172987358,
+            "change_variance": 20.123538496960702,
+            "cov_previous_change": -11.405964421154795,
+            "identity_error": 7.105427357601002e-15,
+            "mean_change": 0.10189995531036852
+          },
+          "self_update": {
+            "previous_position_slope": 0.23096567049666986,
+            "previous_variance": 39.32665207522246,
+            "current_variance": 6.916307087807916,
+            "change_variance": 28.076746033144364,
+            "cov_previous_change": -30.243545510279446,
+            "identity_error": -2.042810365310288e-14,
+            "mean_change": -1.4021325597423042
+          },
+          "new_signal": {
+            "previous_position_slope": 0.019611588143889715,
+            "previous_variance": 39.32665207522246,
+            "current_variance": 0.22870220590026802,
+            "change_variance": 38.01283807396812,
+            "cov_previous_change": -38.55539397164516,
+            "identity_error": 5.662137425588298e-15,
+            "mean_change": -2.7515444453753983
+          },
+          "copy_previous": {
+            "previous_position_slope": 1.0,
+            "previous_variance": 39.32665207522246,
+            "current_variance": 39.32665207522246,
+            "change_variance": 0.0,
+            "cov_previous_change": 0.0,
+            "identity_error": 0.0,
+            "mean_change": 0.0
+          },
+          "history_anchor_half": {
+            "previous_position_slope": 0.8538328996783133,
+            "previous_variance": 39.32665207522246,
+            "current_variance": 30.541804254501308,
+            "change_variance": 2.7116775776690547,
+            "cov_previous_change": -5.748262699195107,
+            "identity_error": 0.0,
+            "mean_change": 0.40594376045063807
+          }
+        }
+      },
+      "202410": {
+        "persons": 96,
+        "measures": {
+          "actual": {
+            "previous_position_slope": 0.7229334951809472,
+            "previous_variance": 48.33429006364563,
+            "current_variance": 61.21474285334716,
+            "change_variance": 39.664078411390655,
+            "cov_previous_change": -13.39181281084457,
+            "identity_error": 1.4210854715202004e-14,
+            "mean_change": 0.13844212479967186
+          },
+          "self_update": {
+            "previous_position_slope": 0.27189299621181645,
+            "previous_variance": 48.33429006364563,
+            "current_variance": 11.434400247457617,
+            "change_variance": 33.48518042075196,
+            "cov_previous_change": -35.19253511846998,
+            "identity_error": 0.0,
+            "mean_change": -1.0150873536506757
+          },
+          "new_signal": {
+            "previous_position_slope": 0.0015993863167462405,
+            "previous_variance": 48.33429006364563,
+            "current_variance": 0.08172710069171861,
+            "change_variance": 48.261406760022474,
+            "cov_previous_change": -48.256984861488185,
+            "identity_error": -1.799949078673535e-14,
+            "mean_change": -2.0880515879351162
+          },
+          "copy_previous": {
+            "previous_position_slope": 1.0,
+            "previous_variance": 48.33429006364563,
+            "current_variance": 48.33429006364563,
+            "change_variance": 0.0,
+            "cov_previous_change": 0.0,
+            "identity_error": 0.0,
+            "mean_change": 0.0
+          },
+          "history_anchor_half": {
+            "previous_position_slope": 0.807812108547229,
+            "previous_variance": 48.33429006364563,
+            "current_variance": 34.596013864266915,
+            "change_variance": 4.840254385018624,
+            "cov_previous_change": -9.289265292198671,
+            "identity_error": 0.0,
+            "mean_change": 0.5744396560852237
+          }
+        }
+      },
+      "202509": {
+        "persons": 94,
+        "measures": {
+          "actual": {
+            "previous_position_slope": 0.8443752100897995,
+            "previous_variance": 43.24718500472848,
+            "current_variance": 52.49373021640846,
+            "change_variance": 22.707213372816863,
+            "cov_previous_change": -6.730334080568439,
+            "identity_error": -7.105427357601002e-15,
+            "mean_change": -0.0403414598871519
+          },
+          "self_update": {
+            "previous_position_slope": 0.2503606267816868,
+            "previous_variance": 43.24718500472848,
+            "current_variance": 9.972908836367292,
+            "change_variance": 31.565309152441003,
+            "cov_previous_change": -32.41979266040109,
+            "identity_error": -3.552713678800501e-15,
+            "mean_change": -2.685325414717991
+          },
+          "new_signal": {
+            "previous_position_slope": 0.01120152680458565,
+            "previous_variance": 43.24718500472848,
+            "current_variance": 0.09292581780324655,
+            "change_variance": 42.37124181842504,
+            "cov_previous_change": -42.76275050267514,
+            "identity_error": -1.8318679906315083e-15,
+            "mean_change": -4.43517340032358
+          },
+          "copy_previous": {
+            "previous_position_slope": 1.0,
+            "previous_variance": 43.24718500472848,
+            "current_variance": 43.24718500472848,
+            "change_variance": 0.0,
+            "cov_previous_change": 0.0,
+            "identity_error": 0.0,
+            "mean_change": 0.0
+          },
+          "history_anchor_half": {
+            "previous_position_slope": 0.8556750928985037,
+            "previous_variance": 43.24718500472848,
+            "current_variance": 34.9283866226438,
+            "change_variance": 4.164493534332625,
+            "cov_previous_change": -6.241645958208651,
+            "identity_error": 0.0,
+            "mean_change": 0.1001675602808589
+          }
+        }
+      }
+    },
+    "subgroups": {
+      "age_group": {
+        "40 to 60": {
+          "actual": {
+            "rows": 285,
+            "persons": 279,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.4083429637872036,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.7093934887592556,
+                "se_person_cluster": 0.079717702123687,
+                "ci95": [
+                  0.5524664837484845,
+                  0.8663204937700266
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "self_update": {
+            "rows": 285,
+            "persons": 279,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.323766104262175,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.1985683098356539,
+                "se_person_cluster": 0.04254986149152122,
+                "ci95": [
+                  0.1148074618733351,
+                  0.28232915779797274
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "new_signal": {
+            "rows": 285,
+            "persons": 279,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.01451890156574398,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.01048107600857529,
+                "se_person_cluster": 0.006321527539661405,
+                "ci95": [
+                  -0.001963065724875507,
+                  0.022925217742026088
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          }
+        },
+        "Over 60": {
+          "actual": {
+            "rows": 232,
+            "persons": 220,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.3478886981340299,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.5839474213239424,
+                "se_person_cluster": 0.12909424408248807,
+                "ci95": [
+                  0.32952133750457596,
+                  0.8383735051433088
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "self_update": {
+            "rows": 232,
+            "persons": 220,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.3205329589639174,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.22276834798722403,
+                "se_person_cluster": 0.05670152732974508,
+                "ci95": [
+                  0.1110178385232565,
+                  0.3345188574511916
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "new_signal": {
+            "rows": 232,
+            "persons": 220,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.002676529216805057,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.003938277611721636,
+                "se_person_cluster": 0.00559701110031744,
+                "ci95": [
+                  -0.007092621755390129,
+                  0.0149691769788334
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          }
+        },
+        "Under 40": {
+          "actual": {
+            "rows": 239,
+            "persons": 231,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.4565280120950942,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.6861511000296592,
+                "se_person_cluster": 0.08966097401213007,
+                "ci95": [
+                  0.5094892341107684,
+                  0.86281296594855
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "self_update": {
+            "rows": 239,
+            "persons": 231,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.37899296344472144,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.27665460356916965,
+                "se_person_cluster": 0.06507976347009124,
+                "ci95": [
+                  0.14842587780682226,
+                  0.40488332933151705
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "new_signal": {
+            "rows": 239,
+            "persons": 231,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.009120008099790522,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.008343256050457144,
+                "se_person_cluster": 0.006024519120606541,
+                "ci95": [
+                  -0.003527045391577145,
+                  0.020213557492491433
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          }
+        }
+      },
+      "household_income_band": {
+        "50k_to_100k": {
+          "actual": {
+            "rows": 260,
+            "persons": 251,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.440849170171701,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.7620582678354779,
+                "se_person_cluster": 0.08634740983599246,
+                "ci95": [
+                  0.5919971828874129,
+                  0.932119352783543
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "self_update": {
+            "rows": 260,
+            "persons": 251,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.3481165270190315,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.2272986766167028,
+                "se_person_cluster": 0.04946973000317346,
+                "ci95": [
+                  0.12986812285247445,
+                  0.32472923038093116
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "new_signal": {
+            "rows": 260,
+            "persons": 251,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.006382381258844161,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.006966080217705622,
+                "se_person_cluster": 0.007074631005633813,
+                "ci95": [
+                  -0.006967394181937651,
+                  0.020899554617348895
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          }
+        },
+        "over_100k": {
+          "actual": {
+            "rows": 270,
+            "persons": 263,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.16816342750800917,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.42887384935924255,
+                "se_person_cluster": 0.18540379060769235,
+                "ci95": [
+                  0.06380271421777661,
+                  0.7939449845007085
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "self_update": {
+            "rows": 270,
+            "persons": 263,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.3393298184172858,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.156338841972797,
+                "se_person_cluster": 0.03226197781935913,
+                "ci95": [
+                  0.09281308111419688,
+                  0.21986460283139708
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "new_signal": {
+            "rows": 270,
+            "persons": 263,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.00011099606829922948,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.0008515449228996896,
+                "se_person_cluster": 0.004697081352815157,
+                "ci95": [
+                  -0.008397288748211329,
+                  0.010100378594010709
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          }
+        },
+        "under_50k": {
+          "actual": {
+            "rows": 221,
+            "persons": 211,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.5028345823358693,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.6661256652921311,
+                "se_person_cluster": 0.07034461213177857,
+                "ci95": [
+                  0.5274535873256705,
+                  0.8047977432585918
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "self_update": {
+            "rows": 221,
+            "persons": 211,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.3425087091490753,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.2739131745797659,
+                "se_person_cluster": 0.05758026642657392,
+                "ci95": [
+                  0.16040376777150417,
+                  0.3874225813880276
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "new_signal": {
+            "rows": 221,
+            "persons": 211,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.014038327979179477,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.009203215164631481,
+                "se_person_cluster": 0.005147125526669682,
+                "ci95": [
+                  -0.0009434410000280988,
+                  0.01934987132929106
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          }
+        }
+      },
+      "numeracy": {
+        "high": {
+          "actual": {
+            "rows": 538,
+            "persons": 523,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.3503939439139463,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.6060490596068969,
+                "se_person_cluster": 0.09212264300450741,
+                "ci95": [
+                  0.42507238245284884,
+                  0.787025736760945
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "self_update": {
+            "rows": 538,
+            "persons": 523,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.23593900899789144,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.1234426441595819,
+                "se_person_cluster": 0.018910096009614893,
+                "ci95": [
+                  0.08629340235681816,
+                  0.16059188596234564
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "new_signal": {
+            "rows": 538,
+            "persons": 523,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 6.666998810800351e-06,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.00018265231419610815,
+                "se_person_cluster": 0.0025796312066617985,
+                "ci95": [
+                  -0.004885082054233783,
+                  0.005250386682626
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          }
+        },
+        "low": {
+          "actual": {
+            "rows": 218,
+            "persons": 207,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.4427320155183133,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.6906917687382813,
+                "se_person_cluster": 0.08236156604275356,
+                "ci95": [
+                  0.5283120975163975,
+                  0.8530714399601651
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "self_update": {
+            "rows": 218,
+            "persons": 207,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.4660636085136757,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.341395102644927,
+                "se_person_cluster": 0.05368733920357278,
+                "ci95": [
+                  0.23554800784674695,
+                  0.44724219744310706
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          },
+          "new_signal": {
+            "rows": 218,
+            "persons": 207,
+            "months": 8,
+            "rank": 1,
+            "within_month_r2": 0.01965313806047142,
+            "coefficients": {
+              "lag_q9": {
+                "estimate": 0.01084511931503534,
+                "se_person_cluster": 0.005156226802922818,
+                "ci95": [
+                  0.0006793775348286485,
+                  0.021010861095242032
+                ]
+              }
+            },
+            "inference": "person-cluster CR1; monthly intercepts; repeated rows are not independent people; no full survey design or cross-person residual dependence adjustment"
+          }
+        }
+      }
+    }
+  },
+  "limits": [
+    "Month fixed effects absorb common events; these regressions cannot estimate common CPI or rate effects.",
+    "Gender is observed; shopping responsibility/frequency and causal models are not observed in this core extract.",
+    "Age, cohort and period are not separately identified; no estimate of individual memory weights.",
+    "Lag coefficients mix persistent beliefs, state dependence, measurement error and omitted variables; no person fixed effects.",
+    "These full-span diagnostic outcomes must not initialize personas or be used as an independent forecast test.",
+    "Conditional regressions concern averages, not a reconstruction of the SCE headline median."
+  ],
+  "frequency_preparation": {
+    "status": "offline_category_day_proxy_not_integrated",
+    "new_api_calls": 0,
+    "household_week_rows": 2835,
+    "consumer_unit_pairs": 1440,
+    "categories": {
+      "food_at_home": {
+        "status_counts": {
+          "available": 2239,
+          "no_positive_published_records": 374,
+          "no_expd_rows": 123,
+          "partial_support": 99
+        },
+        "supported_weighted_mean_days_7d": 1.8596308147276384,
+        "supported_unweighted_day_counts": {
+          "2": 662,
+          "1": 828,
+          "0": 374,
+          "4": 195,
+          "3": 413,
+          "6": 32,
+          "5": 93,
+          "7": 16
+        }
+      },
+      "food_away_from_home": {
+        "status_counts": {
+          "no_positive_published_records": 966,
+          "available": 1737,
+          "no_expd_rows": 123,
+          "partial_support": 9
+        },
+        "supported_weighted_mean_days_7d": 1.6484450509324247,
+        "supported_unweighted_day_counts": {
+          "0": 966,
+          "4": 190,
+          "3": 291,
+          "2": 410,
+          "5": 125,
+          "1": 575,
+          "6": 89,
+          "7": 57
+        }
+      },
+      "household_supplies_services": {
+        "status_counts": {
+          "no_positive_published_records": 1349,
+          "available": 1329,
+          "no_expd_rows": 123,
+          "partial_support": 34
+        },
+        "supported_weighted_mean_days_7d": 0.7236890671170666,
+        "supported_unweighted_day_counts": {
+          "0": 1349,
+          "1": 841,
+          "2": 339,
+          "3": 121,
+          "4": 23,
+          "5": 4,
+          "6": 1
+        }
+      },
+      "personal_care_products_services": {
+        "status_counts": {
+          "no_positive_published_records": 1942,
+          "available": 753,
+          "no_expd_rows": 123,
+          "partial_support": 17
+        },
+        "supported_weighted_mean_days_7d": 0.3405270644827008,
+        "supported_unweighted_day_counts": {
+          "0": 1942,
+          "1": 595,
+          "2": 124,
+          "3": 32,
+          "5": 1,
+          "4": 1
+        }
+      },
+      "other_known_ucc": {
+        "status_counts": {
+          "no_positive_published_records": 857,
+          "available": 1796,
+          "no_expd_rows": 123,
+          "partial_support": 59
+        },
+        "supported_weighted_mean_days_7d": 1.4730191828487507,
+        "supported_unweighted_day_counts": {
+          "0": 857,
+          "1": 654,
+          "2": 498,
+          "3": 321,
+          "4": 182,
+          "5": 92,
+          "6": 37,
+          "7": 12
+        }
+      },
+      "unknown_ucc": {
+        "status_counts": {
+          "no_positive_published_records": 2700,
+          "no_expd_rows": 123,
+          "available": 12
+        },
+        "supported_weighted_mean_days_7d": 0.005218609370253485,
+        "supported_unweighted_day_counts": {
+          "0": 2700,
+          "1": 11,
+          "2": 1
+        }
+      }
+    },
+    "source_manifest_sha256": "09a28d3ecb1b2442539071c766caafca3ece05c56b0c3a4da68a126334a7ca51",
+    "source_archive_sha256": "4862a21ef2b9de25c88a4efbdd4f3905aeaf68d942abc9acc31b33644f84db1a",
+    "all_category_unions_match_old_overall": true,
+    "limitations": [
+      "Distinct days, not trips, quantities, person-specific attention or annual habits.",
+      "PUB_FLAG=2 positive costs only; zero published days does not prove no true purchases.",
+      "2020Q4 corrected current file is retrospective A proxy, not automatically available to B at earlier dates.",
+      "Diary reference-person demographics do not identify household shopping responsibility or SCE respondents.",
+      "Two weeks of the same consumer unit are related; per-week survey weights are preserved; no independent-person interpretation.",
+      "Assignment, price-category alignment and prompt integration are still pending."
+    ],
+    "private_output_sha256": "77823b61e85e1a7662ec5549f621a2822adfa1dafbc0c1ba6080c52499d01c99"
+  }
+}
