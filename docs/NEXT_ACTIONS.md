@@ -3,7 +3,7 @@
 
 更新：2026-10-14（北京时间）。基本流程和八期实验已完成；先验作用真实对照也已完成。此处只统计下一阶段任务，原28/31项历史清单保存在下方。
 
-当前：遵照用户节费要求，复用旧A组384份回答，只准备新措辞B／时间索引C两组768请求。16离线单元、4定向测试通过；估$0.698、保守$2.953、新上限$3及派生时间标签发送已获明确授权，正在启动新增真实调用。见[实际准备](workstreams/20261014_mechanism/information_update_preparation_20261014.md)。主要对照C−B同期新跑，B−旧A仅探索并保留批次限制；频率匹配继续独立准备。
+当前：信息时间对照已完成，复用旧A384回答，新增B/C768请求、766有效/2份99%原样保留，0连接错误/重试，约$0.700高峰token估算。C−B中心MAE0.721→0.588、跨人W1 2.419→2.253、更新W1 1.664→1.578；三个配对区间均含0，综合筛选未通过，时间索引保留候选。见[结果与统计解释](workstreams/20261014_mechanism/information_update_results_20261014.md)。不再重复改措辞；下一项CE共同画像、联合供体、价格对应，目前无调用在运行。
 
 ## 已完成的基础
 
@@ -20,6 +20,12 @@
 - [x] 完整干跑，核查实际消息与输出，准备调用范围和费用卡。
 - [x] 取得本批授权后真实运行，保存回答、费用、失败记录。
 - [x] 与原提示及过去信息基线比较，解释差异保留和更新的得失。
+
+### 追加：发布时间对照（复用旧A）
+
+- [x] 核对过去作答日/公开日期边界，封存新增两组，16次离线检查通过。
+- [x] 完成768次新增请求，保留全部回答、费用与失败；旧A不重跑。
+- [x] 评价时间标记的同期增量及措辞的探索差异，记录批次限制和各月得失。
 
 ## 2. 购买频率：同步准备
 
@@ -43,7 +49,7 @@
 
 最新证据：[控制变量检查与机制准备](literature/sce/heterogeneity_and_probability/behavior_mechanism_evidence_20261014.md)
 
-结果阅读：[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
+结果阅读：[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
 
 使用约定：Agent按实际进展打钩并重新生成可视清单。打钩表示工作完成，不表示实验机制有效。程序保留个人位置的方案作为后备，不与本阶段三条线同时推进。
 <!-- current-todo:end -->

@@ -1,8 +1,39 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><aside id="next-stage-checklist" style="background:#eef4ef;border-left:4px solid #326a56;padding:18px 22px;margin-bottom:30px;line-height:1.7">
-<strong>先验对照已完成；下一项是购买频率的匹配与价格对应</strong>
-<p>明确本人信念起点，使跨人分布误差下降约11%；总体中心和更新没有明确改善，暂保留候选，不升级主机制。768次真实调用结束，约$0.58，没有任务在运行。</p>
-<p><a href="../../current_todo.html">打开当前清单（按实际完成打钩）</a> · <a href="../20261014_mechanism/execution_plan.md">每项工作的目的与启动条件</a></p>
-</aside><section id="anchor-role-results" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<strong>信息时间对照已完成；下一项是购买频率匹配与价格对应</strong>
+<p>复用旧A的384回答，仅新增两组768请求，约$0.70。时间索引有改善趋势，统计区间仍含0，保留候选，不升级主机制。目前无调用在运行。</p>
+<p><a href="../../current_todo.html">打开当前清单</a> · <a href="../20261014_mechanism/information_update_results_20261014.md">本轮完整记录</a></p>
+</aside><section id="information-update-results" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>新措辞与信息时间：有改善趋势</h1>
+<p><strong>仅进一步改措辞，没有明确改善；配合发布时间标记，三项误差点值都下降。但尚未通过预登记筛选，个人差异依然被压缩。</strong></p>
+<p>2026-10-14完成。旧A组384回答完整复用，不重复收费；新增B/C各384，共768请求，约$0.700记录token高峰估算，非账单，低于批准$3上限。DeepSeek官方deepseek-flash、温度0.5、关闭思考，无连接错误或重试。</p>
+<h2>三组是什么？</h2>
+<ol><li><strong>A，复用旧明确先验：</strong>自己的上期信念作为当前起点，允许保持或调整。</li>
+<li><strong>B，新时间措辞：</strong>强调“上个月依据彼时信息形成的信念”，E呈现不变。</li>
+<li><strong>C，与B同措辞＋时间索引：</strong>同样事实和新闻，标出上次回答前已公开、后来公开、同日顺序不确定。</li></ol>
+<p>四期2020-04／2021-05／2021-11／2022-03，各48人、各两遍，人物与过去回答不改。C−B是本批同期主要对照；B−A仅探索，有批次差。时间标签来自上月作答日，但不发送实际日期；公开过不代表真人看过。</p>
+<h2>同样本Q9表现</h2>
+<div class="table-scroll"><table style="min-width:660px"><thead><tr><th>方法</th><th>中心MAE</th><th>跨人W1</th><th>更新W1</th><th>人际IQR</th></tr></thead><tbody>
+<tr><td>A：旧明确先验（复用）</td><td>0.705</td><td>2.337</td><td>1.620</td><td>2.086</td></tr>
+<tr><td>B：新时间措辞</td><td>0.721</td><td>2.419</td><td>1.664</td><td>2.159</td></tr>
+<tr><td>C：新措辞＋时间索引</td><td>0.588</td><td>2.253</td><td>1.578</td><td>2.262</td></tr>
+<tr><td>照抄上期</td><td>0.696</td><td>1.152</td><td>3.055</td><td>4.448</td></tr>
+<tr><td>过去个人均值锚</td><td>0.811</td><td>1.259</td><td>2.172</td><td>3.976</td></tr>
+</tbody></table></div>
+<p>误差单位是百分点，越小越好。真人IQR为4.773，模型差异仍不足；IQR要接近真人，不能仅追求变大。Q9是个人密度均值的跨人中位数，Q8单列。新B/C出现无效回答，因此共同支持与上一轮略有不同，复用A的重算值有微小变化，旧回答没有改。</p>
+<figure><img src="../../../outputs/sce_information_update_reading_20261014_v1/errors.png" alt="旧A、新措辞B、时间索引C和两基线的三项误差"><figcaption>C的中心与更新误差点值较小，但跨人分布仍明显落后于过去信息基线。这里不是全国长跨度预测对比。</figcaption></figure>
+<h2>为什么仍不说已经成功？</h2>
+<p>C相对B，中心误差下降0.133pp（约18%），跨人W1下降0.166pp（约7%），更新W1下降0.085pp（约5%）。成对重抽同月受访者并保留每人的两遍生成，95%区间分别为[−0.264,+0.143]、[−0.344,+0.012]、[−0.275,+0.085]。三个区间均含0，不能排除换一批人时改善不明显。</p>
+<p><strong>按预登记标准，综合筛选未通过。</strong> 主W1区间上界虽然接近0，仍大于0，不能四舍五入为通过。四期中心平均方向均改善，但W1在2022-03略差；单个月份或另一种抽样区间不替代主要标准。</p>
+<h2>2021年11月如何？</h2>
+<p>中心误差A 0.627 → B 0.348 → C 0.320，照抄上期1.260。这个月份改善明显，但新措辞在其他月份有代价，且B与A不同批次，不能据此证明新措辞普遍有效。C相对B的中心收益更多出现在2022-03，不能只看11月。</p>
+<figure><img src="../../../outputs/sce_information_update_reading_20261014_v1/personal_differences.png" alt="三组的人际差异和上期个人位置关系"><figcaption>蓝A为复用旧批次，绿B为新措辞，棕C增加时间索引，黑为真人。月份不连续；关系斜率不是心理更新权重。</figcaption></figure>
+<h2>尚未解决什么？</h2>
+<p>人际IQR只有2.262，真人4.773；C的人际排序也没有优于B。通缩五档全填0比例仍约9.5%，真人66.7%。发布时间标记并没有恢复居民完整的价格接触、生活经历或概率填法。</p>
+<p>这是A路线回访者条件诊断，四期已被查看，不是独立测试或B实时预测。当前仍使用统一study截止点，未逐人匹配本期真实作答时刻。192入选人月中4个真人Q9不能计分，未补抽；新B有2份99%概率合计、C全384有效，失败原样保存。共同评价188不同人月、374配对生成，186人月两遍均可比较。</p>
+<h2>下一步</h2>
+<p>保留可追溯时间索引和改善趋势，不覆盖主配置、不再反复修改原四期措辞。推进CE购买日数的共同画像匹配、整条频率供体与食品／家务用品／个人护理价格对应。候选合并或独立验证另登记时期和预算。</p>
+<p><a href="../20261014_mechanism/information_update_results_20261014.md">完整结果与统计解释</a> · <a href="../20261014_mechanism/information_update_summary_20261014.json">无个人记录的聚合结果</a> · <a href="../../current_todo.html">当前清单</a></p>
+</section><section id="anchor-role-results" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
 <h1>本人信念起点：有局部改善</h1>
 <p><strong>不增加数据，只把上期回答更明确地说成“你自己的信念，是当前判断的起点”。分布更接近真人，但还没有解决总体拟合与同质化。</strong></p>
 <p>2026-10-14完成。2020年4月、2021年5月/11月、2022年3月各48人，原提示／明确起点两组各生成两次，共768次请求。DeepSeek官方deepseek-flash，温度0.5、关闭思考、不重试；记录token估约$0.58，低于批准的$3上限，不是厂商账单。</p>
