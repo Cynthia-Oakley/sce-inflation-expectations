@@ -1,0 +1,14 @@
+{
+  "checked_on": "2026-10-14",
+  "scope": "经济学诊断依据；只把文献用于提出候选机制，不移植更新系数",
+  "sources": [
+    {"id":"armantier_information", "title":"The Price Is Right: Updating of Inflation Expectations in a Randomized Price Information Experiment", "url":"https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf", "version":"NY Fed Staff Report 543, 2012; revised January 2013", "read_scope":"官方工作论文摘要；全文已在项目既有研究中记录", "claim":"随机提供信息后，预期向中心收敛；更新与信号强度、原有预期精度有关，信息集合和处理规则均可能产生异质性。", "project_inference":"让居民接收同一组丰富统计数据，本身可能构成统一信息处理，不能预期自动保留原有分歧。不能据此认定本项目的收敛已被因果识别。"},
+    {"id":"cavallo_supermarket", "title":"Inflation Expectations, Learning, and Supermarket Prices: Evidence from Survey Experiments", "url":"https://www.aeaweb.org/articles?id=10.1257/mac.20150147", "version":"AEJ Macro 9(3), 2017", "read_scope":"本次核对官方摘要；项目已有作者/机构全文笔记", "claim":"统计信息可得时，人们仍可能重视不准确的超市价格记忆；低通胀环境中的先验较弱。", "project_inference":"E应表示实际接触与记忆，不应默认等于完整统计简报；更新参数可能随环境不同。"},
+    {"id":"dacunto_frequency", "title":"Exposure to Grocery Prices and Inflation Expectations", "url":"https://www.journals.uchicago.edu/doi/10.1086/713192", "version":"JPE 129(5), 2021", "read_scope":"本次核对期刊官方摘要；项目已有文献记录", "claim":"商品价格影响总体预期的权重与购买频率相关，涨价比降价更显著；研究使用共同匹配的价格、篮子和预期微观资料。", "project_inference":"支出份额不是购买频率或注意力。合成CE篮子改善不明显，不足以排除实际价格接触机制。"},
+    {"id":"coibion_rigidity", "title":"Information Rigidity and the Expectations Formation Process: A Simple Framework and New Facts", "url":"https://www.aeaweb.org/articles?id=10.1257/aer.20110306", "version":"AER 105(8), 2015", "read_scope":"官方摘要", "claim":"预测者的信息刚性存在广泛证据，预期形成具有状态依赖。", "project_inference":"更新速度可能随时期变化；四个月的固定规则不能假定跨时期稳定。"},
+    {"id":"manski_measurement", "title":"Survey Measurement of Probabilistic Macroeconomic Expectations: Progress and Promise", "url":"https://www.nber.org/papers/w23418", "version":"NBER WP 23418, 2017; published 2018", "read_scope":"NBER作者论文摘要", "claim":"综述讨论人是否有明确概率信念、是否能准确通过调查表达的假设。", "project_inference":"真人回答含信念和表达/测量成分，现有每期一次问卷不能把二者误差完全分离。不能凭残差宣布无法模拟的噪声下限。"},
+    {"id":"boctor_design", "title":"On Eliciting Subjective Probability Distributions of Expectations", "url":"https://www.nber.org/papers/w32406", "version":"NBER WP 32406, May 2024", "read_scope":"NBER作者论文摘要", "claim":"美国居民的密度预测对区间式/情景式问法敏感，差别与人口特征系统相关。", "project_inference":"概率填法属于独立测量层；零概率差别应记录，但不能把格式修饰当恢复信念异质性。"},
+    {"id":"nyfed_definitions", "title":"SCE Frequently Asked Questions", "url":"https://www.newyorkfed.org/microeconomics/sce/sce-faq", "version":"网页，2026-10-14核对", "read_scope":"Core定义与样本段落", "claim":"约1200户主轮换面板，最长12个月；一年期密度预期为个人参数密度均值的跨人中位数，点预测单列；官方通常计算插值中位数。", "project_inference":"本次左逆CDF诊断不冒充官方插值headline；回访者不等于全部家庭，首次参与者需单独初始化验证。"}
+  ],
+  "mathematical_note":"Var(Y)=Var(E[Y|X])+E[Var(Y|X)]是条件期望的方差恒等式。只有在输出确为条件均值等假设下，才可把它用于解释点预测压缩；没有证据证明本LLM满足该假设。"
+}
