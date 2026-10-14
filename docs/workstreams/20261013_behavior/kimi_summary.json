@@ -1,0 +1,87 @@
+{
+  "line": "SCE belief retention and updating (Kimi workstream)",
+  "date": "2026-10-13",
+  "status": "first_reviewable_delivery_complete",
+  "new_llm_calls": 0,
+  "paid_api_calls": 0,
+  "acceptance": {
+    "adjacent_pairs": 106351,
+    "valid_q9_pairs": 103630,
+    "reproduced_reference_audit": true,
+    "valid_set_note": "validity requires both months' official Q9_mean finite; 517 bin-legal pairs lack official means",
+    "frozen_scorer_live_matches_pinned": true
+  },
+  "real_panel_facts": {
+    "n_valid_pairs": 103630,
+    "months_with_pairs": 105,
+    "delta_median_pp": 0.0,
+    "delta_mean_abs_pp": 2.826,
+    "delta_q05_q95_pp": [-7.25, 7.04],
+    "share_abs_delta_le_0_5pp": 0.3338,
+    "share_delta_up_down": [0.4179, 0.4280],
+    "lag1_within_month_pearson": 0.5787,
+    "lag1_mean_monthly_spearman": 0.6363,
+    "lag2_within_month_pearson": 0.5547,
+    "lag2_mean_monthly_spearman": 0.6006,
+    "h1_mean_reversion_slope_weighted": -0.4391,
+    "h1_decile_mean_delta_low_to_high_pp": [3.856, -5.31],
+    "h2_mean_abs_delta_by_prior_iqr_quartile_pp": [1.865, 2.218, 2.517, 4.735],
+    "group_mean_abs_delta_pp": {"college": 2.041, "non_college": 3.267, "income_over_100k": 2.122, "income_under_50k": 3.367, "numeracy_high": 2.311, "numeracy_low": 3.749},
+    "adjacent_coverage_min_max": [0.767, 0.874],
+    "caveats": "Returning-respondent conditional; current-wave weights; 11-month overlapping forecast windows inflate persistence correlations; descriptive, not causal update rates."
+  },
+  "llm_same_caliber": {
+    "design": "4 periods x 12 persons x 2 repeats; both sides recomputed with frozen scorer from ten bins; official Q9_mean only as consistency note (pearson 0.99977)",
+    "prior_transmission_mismatches": 0,
+    "delta_w1_vs_real": {"real_mean_abs_delta": 2.955, "persistence_reference": 2.955, "no_prior": 2.195, "own_previous": 1.786, "permuted_previous": 1.943},
+    "center_iqr": {"real": 5.502, "no_prior": 0.719, "own_previous": 0.974, "permuted_previous": 0.803},
+    "identity_elasticity_mean": 0.118,
+    "reading": "Priors improve update distribution (best arm = own_previous), but identity elasticity ~0.12 and cross-person IQR ~1/6 of real; compression is homogeneous updating rules, not insufficient movement."
+  },
+  "baselines_preregistered": {
+    "preregistration": "docs/workstreams/20261013_behavior/kimi_progress.md section 5 (2026-10-13, before any baseline result was viewed)",
+    "split": {"train": "201702..202112 (59 months, 60587 pairs)", "validation": "202201..202510 (46 months, 43043 pairs)"},
+    "line": "A-line diagnostic: month common statistics use realized cross-sections; not PIT B",
+    "selected": {"B2_lambda": 0.30, "B3_rho": 0.70, "B4_rho0": 0.70, "B4_rho1": 0.0},
+    "b4_gate": "triggered (train H2 quartiles strictly increasing) but selected rho1=0: no predictive increment from uncertainty modulation",
+    "validation_metrics": {
+      "B0": {"delta_w1": 2.986, "cross_section_w1": 0.4973, "center_median_mae": 0.2275, "person_mae_aux": 2.986},
+      "B1": {"delta_w1": 3.0183, "cross_section_w1": 0.4679, "center_median_mae": 0.088, "person_mae_aux": 3.0183},
+      "B2": {"delta_w1": 1.7767, "cross_section_w1": 1.2616, "center_median_mae": 0.165, "person_mae_aux": 2.9817},
+      "B3": {"delta_w1": 1.7902, "cross_section_w1": 1.2421, "center_median_mae": 0.0762, "person_mae_aux": 2.9789},
+      "B4": {"delta_w1": 1.7902, "cross_section_w1": 1.2421, "center_median_mae": 0.0762, "person_mae_aux": 2.9789}
+    },
+    "tension": "B2/B3 cut delta-distribution distance ~40% but worsen cross-section W1 (shrinkage destroys personal spread); no baseline improves validation per-person MAE (~2.98 floor)."
+  },
+  "supports_next_round": [
+    "explicit personal state (prior center + uncertainty + long-run anchor) with empirically shaped update rule",
+    "one-parameter rules capture ~40% of delta-distribution distance; structure is simple and parameterizable",
+    "LLM priors move in the right direction; the gap is identity elasticity and cross-person width"
+  ],
+  "does_not_support": [
+    "further compression of per-person error from (own prior, common median) alone",
+    "stronger shrinkage toward the median as a fix (destroys cross-section width)",
+    "writing H2 uncertainty modulation in as a predictive parameter (no increment)"
+  ],
+  "files": {
+    "code": [
+      "studies/sce_inflation_expectations/belief_dynamics/ (5 modules)",
+      "scripts/analyze_sce_belief_dynamics.py",
+      "scripts/run_sce_belief_baselines.py",
+      "tests/test_sce_belief_dynamics.py",
+      "tests/test_sce_belief_baselines.py"
+    ],
+    "outputs": [
+      "outputs/sce_belief_dynamics_20261013_v1/ (analysis_summary.json, llm_comparison_summary.json, pairs_private.parquet)",
+      "outputs/sce_belief_baselines_20261013_v1/ (baseline_summary.json)"
+    ],
+    "docs": [
+      "docs/workstreams/20261013_behavior/kimi_progress.md",
+      "docs/workstreams/20261013_behavior/kimi_results.md",
+      "docs/workstreams/20261013_behavior/kimi_summary.json"
+    ]
+  },
+  "tests": {"new": "13/13", "repo_full": "495 passed, 1 pre-existing failure (test_full_extraction_85_of_85, unrelated gitignored-PDF dependency)"},
+  "git": "no commit performed; scoped add deferred to Codex integration; 15 protected pending files untouched",
+  "next": "merge judgment with Codex reporting-behavior line; if user approves budget, prepare explicit-state/update-rule candidate inputs (new scope + budget registration required)"
+}

@@ -15,5 +15,6 @@ from . import confidence_experiment  # noqa: F401
 from . import lifetime_experiment  # noqa: F401
 from . import lifetime_text_experiment  # noqa: F401
 from . import prior_belief_experiment  # noqa: F401
+from . import u1_state_experiment  # noqa: F401
 
 __all__ = ["model"]
