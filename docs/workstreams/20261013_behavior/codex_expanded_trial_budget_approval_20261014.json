@@ -1,0 +1,14 @@
+{
+  "recorded_on": "2026-10-14",
+  "user_quote": "好的，这个预算是没有问题的，我批准了。不过我想要了解这次实验中不同组的具体配置，以及设计原因。另外简要解释一下“新状态”“旧状态”等术语是什么意思",
+  "simulation_cap_usd": 12.0,
+  "public_news_label_cap_usd": 1.5,
+  "combined_cap_usd": 13.5,
+  "endpoint": "https://api.deepseek.com",
+  "requested_model": "deepseek-flash",
+  "candidate_planned_simulation_calls": 3072,
+  "public_news_articles": 1837,
+  "status": "budget_approved_protocol_and_prompt_preparation_pending",
+  "new_calls_so_far": 0,
+  "execution_note": "Approval of stated caps recorded. Group design, combining weight and actual input artifacts still need freezing and offline checks; no current outcome/MIDUS or expanded model/provider scope inferred."
+}
