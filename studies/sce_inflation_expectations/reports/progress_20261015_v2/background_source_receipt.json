@@ -1,0 +1,33 @@
+{
+  "checked_date": "2026-10-15",
+  "method": "Official New York Fed webpages read using web tool; facts paraphrased, not a byte-identical webpage archive.",
+  "sources": [
+    {
+      "url": "https://www.newyorkfed.org/microeconomics/sce/sce-faq",
+      "page_update_label": "Updated January 2025",
+      "facts": {
+        "launch": "2013-06",
+        "core_frequency": "monthly, online, roughly balanced weekly collection",
+        "population": "household heads, nationwide design",
+        "current_design_size_approx": 1200,
+        "max_panel_months": 12,
+        "rotation": "roughly equal numbers join and leave each month",
+        "core_microdata_release_lag_months": 9,
+        "year_ahead_horizon": "next 12 months",
+        "density_aggregation": "median of respondent fitted density means"
+      },
+      "source_sections": "Launch, sample size, collection timing, horizons, density versus point prediction, microdata release."
+    },
+    {
+      "url": "https://www.newyorkfed.org/microeconomics/sce",
+      "role": "official institution and survey landing page"
+    }
+  ],
+  "aggregate_release_timing": {
+    "statement": "通常调查次月公布，确切日期以官方日历为准。",
+    "basis": "Existing archived monthly release records, not a claimed fixed day-of-month rule.",
+    "source": "docs/sources/sce_baseline_aggregate_sources_latest_20261007.json"
+  },
+  "selection_reasons": "Project judgement: economically important household expectations, transparent questionnaire and probability answers, available demographics and panel observations, usable aggregate and micro validation.",
+  "new_api_simulation_calls": 0
+}

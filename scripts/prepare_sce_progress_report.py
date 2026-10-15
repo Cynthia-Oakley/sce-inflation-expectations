@@ -7,21 +7,28 @@ from pathlib import Path
 import hashlib
 import json
 import os
+from fontTools.ttLib import TTCollection
 
 os.environ.setdefault("MPLCONFIGDIR", "/private/tmp/sce_progress_report_mpl")
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.font_manager import FontProperties
+from matplotlib.font_manager import FontProperties, fontManager
 import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "outputs/sce_progress_report_20261015_v1"
+OUT = ROOT / "outputs/sce_progress_report_20261015_v2"
 ASSETS = OUT / "assets"
-SOURCE = ROOT / "studies/sce_inflation_expectations/reports/progress_20261015"
-FONT = FontProperties(fname="/System/Library/Fonts/Supplemental/Arial Unicode.ttf")
-plt.rcParams.update({"font.family": FONT.get_name(), "font.size": 13,
+SOURCE = ROOT / "studies/sce_inflation_expectations/reports/progress_20261015_v2"
+ASSETS.mkdir(parents=True, exist_ok=True)
+kaiti_path = next(Path('/System/Library/AssetsV2').rglob('Kaiti.ttc'))
+kaiti = TTCollection(kaiti_path).fonts[0]  # Kaiti SC Regular; embedding permission fsType=8.
+kaiti.save(ASSETS / 'kaiti_sc.ttf')
+fontManager.addfont(ASSETS / 'kaiti_sc.ttf')
+fontManager.addfont('/System/Library/Fonts/Supplemental/Times New Roman.ttf')
+FONT = FontProperties(family=["Times New Roman", "Kaiti SC"])
+plt.rcParams.update({"font.family": ["Times New Roman", "Kaiti SC"], "font.size": 13,
                      "axes.spines.top": False, "axes.spines.right": False,
                      "axes.labelcolor": "#243b43", "text.color": "#18343d",
                      "axes.edgecolor": "#cad6d8", "svg.fonttype": "none"})
@@ -85,6 +92,7 @@ def main():
 
     summary = read("outputs/sce_expanded_state_evaluation_20261014_v1/summary.json")
     cases = pd.DataFrame(read("outputs/sce_expanded_state_evaluation_20261014_v1/cases_private.json"))
+    development_cases = pd.DataFrame(read("outputs/sce_expanded_state_trial_20261014_v3/development_cases_private.json"))
     execution = read("outputs/sce_expanded_state_evaluation_20261014_v1/execution_receipt.json")
     coverage = read("outputs/sce_expanded_state_evaluation_20261014_v1/coverage_clarification.json")
     cases = cases[cases.common.eq(True)].copy()
@@ -109,6 +117,27 @@ def main():
     style(ax)
     fig.tight_layout()
     save(fig, "main_centers")
+
+    # Present the full completed experiment, keeping development and evaluation
+    # phases visible. No new fit or pooled success claim is introduced.
+    all_cases = pd.concat([development_cases, cases], ignore_index=True)
+    all_cases = all_cases[all_cases.common.eq(True)]
+    eight_medians = all_cases.groupby(["month", "repeat"])[columns].agg(
+        lambda v: float(np.quantile(v.astype(float), .5, method="inverted_cdf")))
+    eight_centers = eight_medians.groupby(level=0).mean()
+    fig, ax = plt.subplots(figsize=(7.1, 3.5))
+    for key in ["actual", "self_update", "copy_previous"]:
+        ax.plot(range(8), eight_centers[key], color=C[key], lw=2.25, marker="o", ms=4,
+                label=names[key], ls="--" if key == "copy_previous" else "-")
+    ax.axvline(3.5, color="#9fb4b8", ls=":", lw=1.3)
+    ax.axvspan(-.3, 3.5, color="#f1f5f4", zorder=-5)
+    ax.text(1.6, 8.8, "开发期", ha="center", fontproperties=FONT, fontsize=12, color="#526970")
+    ax.text(5.5, 8.8, "固定后评价期", ha="center", fontproperties=FONT, fontsize=12, color="#526970")
+    ax.set_xticks(range(8), [str(m)[:4]+"-"+str(m)[4:] for m in eight_centers.index], rotation=25, ha="right", fontsize=11)
+    ax.set_xlim(-.3, 7.3); ax.set_ylim(0, 10)
+    ax.set_ylabel("同样本Q9中位数（%）", fontproperties=FONT)
+    ax.legend(frameon=False, ncol=3, fontsize=10, loc="upper center", bbox_to_anchor=(.5, 1.16))
+    style(ax); fig.tight_layout(); save(fig, "eight_centers")
 
     c = cases[(cases.month == 202206) & (cases["repeat"] == 1)]
     fig, ax = plt.subplots(figsize=(6.5, 3.5))
@@ -160,6 +189,21 @@ def main():
     frequency = read("docs/workstreams/20261014_mechanism/purchase_frequency_budget_card_20261015.json")
     u1 = read("outputs/sce_u1_trial_20261014_v2/trial_manifest.json")
     read("outputs/sce_behavior_comparison_u1_20261014_v1/summary.json")
+    old_models = read("outputs/sce_qwen_reuse_comparison_20261008_v1/summary.json")
+    cpi_by_month = {r['reference_period']: r for r in headline['cpi_first_releases']}
+    memory_rows = []
+    for month, v in old_models['months'].items():
+        future_month = f"{int(month[:4])+1}-{month[4:]}"
+        cpi = cpi_by_month[future_month]
+        q9 = v['Q9']
+        memory_rows.append({'survey_month': month, 'future_cpi_month': future_month,
+            'future_cpi_yoy': cpi['value'], 'future_cpi_source_url': cpi['archive_url'],
+            'actual_sample_center': q9['matched_real']['median'],
+            **{m+'_center': q9['arms'][m]['distribution']['median'] for m in ('deepseek','qwen')}})
+    memory_aggregate = {m: {
+        'mae_against_sce_sample_pp': float(np.mean([abs(r[m+'_center']-r['actual_sample_center']) for r in memory_rows])),
+        'mae_against_t_plus_12_cpi_yoy_pp': float(np.mean([abs(r[m+'_center']-r['future_cpi_yoy']) for r in memory_rows]))
+    } for m in ('deepseek','qwen')}
     for rel in ["docs/workstreams/20261013_behavior/codex_u1_real_results_20261014.md",
                 "docs/workstreams/20261013_behavior/codex_mapping_results.md",
                 "docs/workstreams/20261013_behavior/codex_expanded_protocol_20261014.json",
@@ -177,9 +221,14 @@ def main():
                  "unique_common_person_months": len(cases[["month", "userid"]].drop_duplicates()),
                  "common_generation_rows": len(cases),
                  "monthly_centers_mean_of_repeats": plotmed.reset_index().to_dict(orient="records"),
+                 "all_eight_monthly_centers": eight_centers.reset_index().to_dict(orient="records"),
+                 "all_eight_common_person_months": len(all_cases[['month','userid']].drop_duplicates()),
                  "execution": execution, "coverage_clarification": coverage,
                  "gate_passed": summary["predefined_success_gate_passed"]},
         "population_associations": evidence,
+        "historical_knowledge_diagnostic": {'sample': '2021, old same-message 20-person panel; not current P/E or an independent recursive trajectory',
+            'aggregates': memory_aggregate, 'monthly_aggregate_rows': memory_rows,
+            'interpretation': 'No stable reproduction of SCE or realised next-12-month CPI; does not exclude partial historical knowledge. t+12 monthly CPI YoY is only an approximate realised horizon.'},
         "experiment_index": {
             "confidence": {"calls": confidence["actual_calls"], "token_cost_estimate_usd": confidence["conservative_cost_usd"], "months": list(confidence["months"])},
             "prior": {"calls": prior["actual_calls"], "token_cost_estimate_usd": prior["conservative_cost_usd"], "months": list(prior["months"])},

@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-15",
+  "pages": 21,
+  "main_pages": 15,
+  "appendix_pages": 6,
+  "new_api_calls": 0,
+  "pdf": "output/pdf/sce_progress_report_20261015_v2.pdf",
+  "html": "outputs/sce_progress_report_20261015_v2/index.html",
+  "pdf_sha256": "3dfcaf72e13fd4250297ee1cf8ddec78ba8cd6cb1bef758e81e4fc75a5465ee2",
+  "html_sha256": "5698b3c5e9d88bb726c6f55d27db0943cb67c2001f71c0d5d5df6ada6cd54ecf",
+  "aggregate_source": "aggregate_data.json",
+  "status": "draft_v2_visual_qa_passed_pending_user_review",
+  "fonts": {
+    "Chinese": "Kaiti SC",
+    "Latin_and_numbers": "Times New Roman"
+  },
+  "qa": {
+    "rendered_pages": 21,
+    "all_pages_contact_sheet_reviewed": true,
+    "detail_pages_reviewed": [
+      2,
+      4,
+      5,
+      12
+    ],
+    "pdf_text_extractable": true,
+    "out_of_page_characters": 0,
+    "incorrect_text_fonts": 0,
+    "embedded_text_fonts": [
+      "AAAAAA+STKaitiSC-Regular",
+      "AAAAAA+TimesNewRomanPSMT",
+      "AAAAAB+STKaitiSC-Regular",
+      "AAAAAC+STKaitiSC-Regular"
+    ],
+    "eight_month_coverage_checked": true,
+    "evaluation_center_mae_unchanged": 0.6355480844242238,
+    "protected_hashes_unchanged": 15,
+    "new_llm_api_calls": 0
+  },
+  "previous_version_preserved": true,
+  "source_script_sha256": {
+    "scripts/prepare_sce_progress_report.py": "432853e8dd46547b17766d86a4dcffc4755f4b1c04bad4af23fa93770815b4de",
+    "scripts/render_sce_progress_report.py": "5a814dcc90ceff118360363c67ab8edfec32f71656bff3694c87f8a7d2b72fff"
+  }
+}
