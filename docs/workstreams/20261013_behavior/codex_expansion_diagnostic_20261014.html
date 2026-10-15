@@ -1,7 +1,29 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><aside id="next-stage-checklist" style="background:#eef4ef;border-left:4px solid #326a56;padding:18px 22px;margin-bottom:30px;line-height:1.7">
-<strong>多季度与家庭匹配核查已完成：供体扩大有帮助，不能替代行为机制</strong>
-<p>新增API0。原四个频率均值在200次重抽的常见范围内，暂未发现抽样种子异常；全年供体显著减少地区、教育的匹配放宽。收入分档已匹配，净资产和实际购物责任尚未匹配。</p>
-<p><a href="#frequency-quarter-matching">看本轮解释和图表</a> · <a href="../../current_todo.html">当前清单（21/27）</a> · <a href="../20261014_mechanism/frequency_quarter_matching_results_20261015.md">方法与完整结果</a></p></aside><section id="frequency-quarter-matching" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<strong>接下来优先研究信念怎样更新；人口覆盖与年龄核查已完成</strong>
+<p>新增API0。192人细收入和首次年龄可追溯，家庭构成191人；CE支持年龄与部分购买日数有关，但原匹配已保留年龄粗组。人口完善继续做，主线转向个人信念的更新、持续性理解和Q9表达。</p>
+<p><a href="#coverage-age-and-priorities">本轮发现与剩余计划</a> · <a href="../../current_todo.html">当前清单（23/31）</a> · <a href="../20261014_mechanism/remaining_priorities_20261015.md">各项依据、希望与下一交付</a></p></aside><section id="coverage-age-and-priorities" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>哪些问题还没解决，接下来做什么？</h1>
+<p><strong>人口匹配值得完善，但不能把所有失败都归到少了几个变量。接下来最重要的是：同一个人看到新信息后，怎样保留自己的原有判断、调整多少，以及怎样把判断写成十档概率。</strong></p>
+<h2>本轮离线检查：更细资料有覆盖，年龄也有作用</h2>
+<ul><li>所选192人均能追溯目标月之前的细收入Q47和首次年龄Q32；191人有可解析家庭构成，其中9人之后有搬家记录。</li><li>记录距目标月1—11个月、中位5个月；细收入转为粗档均与原画像相符，不能由此保证细档和家庭情况没有变化。</li><li>其他住宅192人有记录，财务决策分工181人；前者不是净财富，后者不是买菜责任。</li><li>CE控制收入、季度、住房、地区、教育、家庭人数和子女后，60岁以上比40岁以下在家食品日数约多0.29、外食少0.56、家务用品多0.15；护理用品差异不清晰。</li></ul>
+<figure><img src="../../../outputs/sce_coverage_age_reading_20261015_v1/coverage_age.png" alt="所选人口历史资料覆盖及控制其他变量后年龄与分类购买日数的关联"><figcaption>左图仅本人目标月前有效记录，尚未接入新匹配；年龄无生日，推算当前年龄有范围。右图9,525个家庭周/5,154个消费单元，95%区间按家庭聚类，八项联合年龄检验作BH。是2020年描述关联，不是因果或新模拟成绩。家庭构成可能处在年龄传导路径上，控制它改变了比较问题。</figcaption></figure>
+<p><strong>原192人匹配已经全部保留年龄粗组。</strong> 年龄证据支持继续把生活阶段匹配好，不能用来解释原两组为什么变差。本轮没有改P/E/提示、运行配置或计分，没有调用模型API。</p>
+<h2>尚未完成、值得优先尝试的方向</h2>
+<h3>1. 首先：个人原有判断保留多少，新信息又改变多少？</h3>
+<p>把个人原有高低位置、大家共同的月份变化、个人特有更新分开。本人历史已显示有用，而模型仍明显压缩差异，因此这是与现有瓶颈最直接的候选。先复用已有回答做离线方案，并与不含LLM的同结构基线比较。</p>
+<p>固定加权混合已试过、八期新信息权重选为0，未通过；接下来要改变分工与更新对象，不能只再调几个权重。也不能把本期真人总量补进去后叫作独立预测成功。</p>
+<h3>2. 然后：为什么认为这次涨价会持续或消退？</h3>
+<p>未来12个月的预期还取决于对成本、需求、政策和事件的理解。央行信息曾有改善迹象，但频率说明里也混入持续性要求，尚未单独测出谁起作用。下一对照固定事实和个人起点，每次只改一种理解方式；分配比例需要调查依据。</p>
+<h3>3. 独立检查：怎样把判断写成Q8与Q9？</h3>
+<p>Q8更接近不保证Q9中心跟上；零通缩、概率取整、个人不确定性是不同对象。已有机械取整只改善形式，未解决身份差异。下一项应根据真实历史Q8/Q9关系诊断表达，不强迫两种中心相等或所有人通缩概率为0。</p>
+<h3>4. 同步完善：年龄、细收入、家庭构成与实际价格体验</h3>
+<p>有真实覆盖才能往下做。下一候选处理记录新旧、搬家、收入边界和池稀疏，补非疫情及目标年份CE。它可能改善人群匹配，尚不能承诺修复总体中心偏差；资产和购物责任没有共同实测资料时继续标未知。</p>
+<h3>5. 最终必做：独立月份验证与B路线连续模拟</h3>
+<p>新规则固定后检验额外月份/种子，登记同信息基线与日期/模型历史知识敏感性。B路线要让模拟者沿用自己生成的过去信念，并为新参与者初始化，检查1/3/6/12月累积误差。当前给真实上期回答的A诊断不能代替这一步。</p>
+<h2>暂时不把精力放在哪里？</h2>
+<p>继续大量换模型、添加无依据的人格比例，或靠随机措辞把答案拉散。人格/乐观、财务冲击与社交传播仍是候选库，优先选择有共同数据、能区分传导方式的变量。下一次付费实验须先完成新设计、输入与预算；本轮无新增模拟。</p>
+<p><a href="../20261014_mechanism/remaining_priorities_20261015.md">完整剩余计划与优先依据</a> · <a href="../20261014_mechanism/coverage_age_results_20261015.md">覆盖、年龄方法与复算</a> · <a href="../20261014_mechanism/coverage_age_summary_20261015.json">聚合结果</a> · <a href="../../current_todo.html">可勾选任务清单</a> · <a href="#frequency-quarter-matching">前一轮供体核查</a></p>
+</section><section id="frequency-quarter-matching" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
 <h1>购买频率是否抽得不合适？家庭匹配是否太粗？</h1>
 <p><strong>2026-10-15，离线核查完成，没有新增API费用。结论是：原种子不显得异常，多季度能改善匹配；但“同收入档”还不是“相同资产和生活处境”。</strong> 本轮没有修改旧输入，也没有新的拟合成绩。</p>
 <h2>一、四季度就在本地，之前只用了Q4</h2>

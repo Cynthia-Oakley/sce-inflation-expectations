@@ -1,9 +1,9 @@
 <!-- current-todo:start -->
-# 下一阶段清单：先验、购买频率、事件与记忆
+# 当前清单：信念更新、价格体验与问卷表达
 
-更新：2026-10-15（北京时间）。基本流程和八期实验已完成；先验作用真实对照也已完成。此处只统计下一阶段任务，原28/31项历史清单保存在下方。
+更新：2026-10-15（北京时间）。覆盖与年龄核查已完成；本轮补入两项已完成检查和更新/问卷表达两项待办，23/31是交付进度，不是成功率。此前21/27范围见Git版本7324bf6，历史任务保留在下方。
 
-当前：多季度与家庭匹配离线核查完成，新API0。Q4四类均值在200种抽样的常见范围内；合并四季使地区条件99→187人、教育28→123人可保留。收入/年龄全部分档匹配，但资产未匹配。已发现SCE细收入/家庭构成字段，下一步核查有效覆盖和记录时点，并补跨年CE；不修改旧输入或启动模拟。
+当前：192人细收入/首次年龄历史覆盖完整，家庭构成191人、其中9人之后搬家；CE年龄关联有证据，但原匹配已保留年龄粗组，不能解释此前负效果。接下来优先准备“保留个人位置、单独判断新信息更新”的独立方案，同步拆开持续性与价格注意力；人口细分继续限时补齐，Q8/Q9表达单列。没有新模拟或API费用。
 
 ## 已完成的基础
 
@@ -20,6 +20,7 @@
 - [x] 完整干跑，核查实际消息与输出，准备调用范围和费用卡。
 - [x] 取得本批授权后真实运行，保存回答、费用、失败记录。
 - [x] 与原提示及过去信息基线比较，解释差异保留和更新的得失。
+- [ ] 准备个人原有位置与公共更新分开的独立候选，先离线比较，避免重复已失败的固定权重混合。
 
 ### 追加：发布时间对照（复用旧A）
 
@@ -37,24 +38,30 @@
 - [x] 做同样本评价，解释频率作用的增量；当前候选无增量，未追加匹配与置换付费试验。
 - [x] 复用回答做频率—误差控制变量、同人差值和Q8/Q9分解，记录有限个人化与先验压缩线索。
 - [x] 重建2020四季频率，检查200个种子、条件放宽、收入/住房字典和资产匹配缺口。
-- [ ] 核查SCE细收入/家庭构成的有效历史记录，补跨年CE，再冻结更可靠的联合匹配候选。
+- [x] 核查192人实际年龄、细收入、家庭构成的本人历史覆盖与记录新旧，未用本期补缺。
+- [x] 在CE中控制季度、收入、住房及家庭构成分析年龄与购买日数，明确关联边界。
+- [ ] 处理搬家/缺失和收入边界，结合细收入、家庭规模与年龄补跨年CE并冻结联合匹配候选。
 
-## 3. 事件与记忆：随后开展
+## 3. 信息理解：持续性、政策与事件
 
 - [ ] 查外部调查的事件理解类型及人口关联，区分实验分组与代表性分配。
 - [ ] 选定当期事件与相关历史经历，准备可追溯的年龄—记忆输入。
-- [ ] 单独设计并验证同人联想提示对照，不与其他机制一起改变。
+- [ ] 固定同人P/E事实，单独设计持续性/事件理解对照，与频率注意力分开。
 
-## 4. 有效候选的扩大验证
+## 4. 问卷表达：独立检查
 
-- [ ] 对有希望的机制封存新验证期与额外种子，再检验跨时期、人群表现。
+- [ ] 用真人历史Q8/Q9关系检查中心与概率表达差距，保留旧取整阴性结果，不强迫两种中心相等。
+
+## 5. 有效候选的扩大验证
+
+- [ ] 对有希望的机制封存新验证期/种子、同信息基线及日期/模型知识敏感性，再检验跨时期、人群表现。
 - [ ] 单独准备B路线的模拟信念递推、新参与者初始化和误差累积检查。
 
-计划说明：[每项任务的目的、启动条件和里程碑](workstreams/20261014_mechanism/execution_plan.md)
+计划说明：[优先顺序、依据和下一项交付](workstreams/20261014_mechanism/remaining_priorities_20261015.md)
 
 最新证据：[控制变量检查与机制准备](literature/sce/heterogeneity_and_probability/behavior_mechanism_evidence_20261014.md)
 
-结果阅读：[多季度与匹配核查](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-quarter-matching)；[频率控制变量诊断](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-control-analysis)；[购买频率真实对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#purchase-frequency-results)；[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
+结果阅读：[覆盖、年龄与后续优先级](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#coverage-age-and-priorities)；[多季度与匹配核查](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-quarter-matching)；[频率控制变量诊断](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-control-analysis)；[购买频率真实对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#purchase-frequency-results)；[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
 
 使用约定：Agent按实际进展打钩并重新生成可视清单。打钩表示工作完成，不表示实验机制有效。程序保留个人位置的方案作为后备，不与本阶段三条线同时推进。
 <!-- current-todo:end -->

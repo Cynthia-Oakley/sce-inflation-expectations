@@ -1,0 +1,542 @@
+{
+  "summary": {
+    "status": "completed_offline_profile_coverage_and_age_associations",
+    "new_api_calls": 0,
+    "source_sha256": {
+      "outputs/sce_information_update_trial_20261014_v2/evaluation_links_private.json": "30acc90aa90a59975d1c77a16bc828b5fd2e987bb5945f843da92d1910abfdb2",
+      "outputs/sce_frequency_quarter_audit_20261015_v3/donor_weeks_private.json": "b3da955126615210dd03b4716e52bc7dc101812cb8817b177be17fde87a487eb",
+      "data/raw/ce_experience/20261006/diary/diary20.zip": "4862a21ef2b9de25c88a4efbdd4f3905aeaf68d942abc9acc31b33644f84db1a",
+      "data/raw/sce_p_sources/micro_2017_2019.xlsx": "a88e5a225c9a566dd8cdfdd77abef9ac456eb52d1a120c5ec208184a88c745c9",
+      "data/raw/sce_audit_20260928/micro_2020_2024.xlsx": "1b57ffb75c2170d767f46a001002db8c40c228fe5691f6dd19e39777ffe469c6",
+      "studies/sce_inflation_expectations/evaluation/coverage_age_audit.py": "0c18b045fcb72003347dba10e68bffe60d17a0bf19a22fb37df7d15b4c317e9e"
+    },
+    "coverage": {
+      "overall": {
+        "entry_age": {
+          "available": 192,
+          "total": 192,
+          "record_age_months_min_median_max": [
+            1,
+            5.0,
+            11
+          ],
+          "older_than_12_months": 0
+        },
+        "fine_income": {
+          "available": 192,
+          "total": 192,
+          "record_age_months_min_median_max": [
+            1,
+            5.0,
+            11
+          ],
+          "older_than_12_months": 0,
+          "coarse_income_agrees": 192
+        },
+        "family_composition": {
+          "available": 191,
+          "total": 192,
+          "record_age_months_min_median_max": [
+            1,
+            5.0,
+            11
+          ],
+          "older_than_12_months": 0,
+          "moved_after_record": 9
+        },
+        "other_home": {
+          "available": 192,
+          "total": 192,
+          "record_age_months_min_median_max": [
+            1,
+            5.0,
+            11
+          ],
+          "older_than_12_months": 0
+        },
+        "financial_decision_role": {
+          "available": 181,
+          "total": 192,
+          "record_age_months_min_median_max": [
+            1,
+            5.0,
+            11
+          ],
+          "older_than_12_months": 0
+        }
+      },
+      "by_month": {
+        "202004": {
+          "entry_age": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              11
+            ],
+            "older_than_12_months": 0
+          },
+          "fine_income": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              11
+            ],
+            "older_than_12_months": 0,
+            "coarse_income_agrees": 48
+          },
+          "family_composition": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              11
+            ],
+            "older_than_12_months": 0,
+            "moved_after_record": 2
+          },
+          "other_home": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              11
+            ],
+            "older_than_12_months": 0
+          },
+          "financial_decision_role": {
+            "available": 39,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              11
+            ],
+            "older_than_12_months": 0
+          }
+        },
+        "202105": {
+          "entry_age": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              10
+            ],
+            "older_than_12_months": 0
+          },
+          "fine_income": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              10
+            ],
+            "older_than_12_months": 0,
+            "coarse_income_agrees": 48
+          },
+          "family_composition": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              10
+            ],
+            "older_than_12_months": 0,
+            "moved_after_record": 2
+          },
+          "other_home": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              10
+            ],
+            "older_than_12_months": 0
+          },
+          "financial_decision_role": {
+            "available": 46,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              10
+            ],
+            "older_than_12_months": 0
+          }
+        },
+        "202111": {
+          "entry_age": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.5,
+              11
+            ],
+            "older_than_12_months": 0
+          },
+          "fine_income": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.5,
+              11
+            ],
+            "older_than_12_months": 0,
+            "coarse_income_agrees": 48
+          },
+          "family_composition": {
+            "available": 47,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              11
+            ],
+            "older_than_12_months": 0,
+            "moved_after_record": 3
+          },
+          "other_home": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.5,
+              11
+            ],
+            "older_than_12_months": 0
+          },
+          "financial_decision_role": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.5,
+              11
+            ],
+            "older_than_12_months": 0
+          }
+        },
+        "202203": {
+          "entry_age": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              11
+            ],
+            "older_than_12_months": 0
+          },
+          "fine_income": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              11
+            ],
+            "older_than_12_months": 0,
+            "coarse_income_agrees": 48
+          },
+          "family_composition": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              11
+            ],
+            "older_than_12_months": 0,
+            "moved_after_record": 2
+          },
+          "other_home": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              11
+            ],
+            "older_than_12_months": 0
+          },
+          "financial_decision_role": {
+            "available": 48,
+            "total": 48,
+            "record_age_months_min_median_max": [
+              1,
+              5.0,
+              11
+            ],
+            "older_than_12_months": 0
+          }
+        }
+      },
+      "n_person_months": 192,
+      "unique_people": 192,
+      "historical_rows_considered": 1004
+    },
+    "ce_age": {
+      "complete_week_rows": 9525,
+      "complete_CUs": 5154,
+      "coarse_age_descriptive": {
+        "40 to 60": {
+          "n_week_rows": 3512,
+          "n_CUs": 1927,
+          "mean_days": {
+            "food_at_home": 1.9223180139841374,
+            "food_away_from_home": 1.8517427285608277,
+            "household_cleaning_paper": 0.5746237122818231,
+            "personal_care_products": 0.39868593662522717
+          }
+        },
+        "Over 60": {
+          "n_week_rows": 3729,
+          "n_CUs": 2014,
+          "mean_days": {
+            "food_at_home": 1.7421360443053302,
+            "food_away_from_home": 1.2519455723854302,
+            "household_cleaning_paper": 0.5585755999381279,
+            "personal_care_products": 0.3099747107513544
+          }
+        },
+        "Under 40": {
+          "n_week_rows": 2496,
+          "n_CUs": 1350,
+          "mean_days": {
+            "food_at_home": 1.5550744706787956,
+            "food_away_from_home": 1.8940677350889312,
+            "household_cleaning_paper": 0.43717559356275965,
+            "personal_care_products": 0.35462833803718247
+          }
+        }
+      },
+      "models": {
+        "demographics_only": {
+          "food_at_home": {
+            "n_week_rows": 9525,
+            "n_CUs": 5154,
+            "formula": "food_at_home ~ C(quarter)+C(age_group,Treatment(reference='Under 40'))+C(household_income_band)+C(housing_tenure)+C(region)+C(education_group)",
+            "age_coefficients": {
+              "C(age_group, Treatment(reference='Under 40'))[T.40 to 60]": {
+                "difference_days": 0.34358486734427834,
+                "ci95": [
+                  0.23687069822334836,
+                  0.4502990364652083
+                ]
+              },
+              "C(age_group, Treatment(reference='Under 40'))[T.Over 60]": {
+                "difference_days": 0.2299947859678681,
+                "ci95": [
+                  0.12666032083219758,
+                  0.3333292511035386
+                ]
+              }
+            },
+            "joint_age_p": 1.058888767412673e-09,
+            "method": "WLS descriptive conditional mean; cluster-robust by CU, t intervals",
+            "age_joint_BH_p": 2.8237033797671282e-09
+          },
+          "food_away_from_home": {
+            "n_week_rows": 9525,
+            "n_CUs": 5154,
+            "formula": "food_away_from_home ~ C(quarter)+C(age_group,Treatment(reference='Under 40'))+C(household_income_band)+C(housing_tenure)+C(region)+C(education_group)",
+            "age_coefficients": {
+              "C(age_group, Treatment(reference='Under 40'))[T.40 to 60]": {
+                "difference_days": -0.05565683088158351,
+                "ci95": [
+                  -0.21067503462561005,
+                  0.09936137286244301
+                ]
+              },
+              "C(age_group, Treatment(reference='Under 40'))[T.Over 60]": {
+                "difference_days": -0.5077104593069891,
+                "ci95": [
+                  -0.6564821150063105,
+                  -0.3589388036076677
+                ]
+              }
+            },
+            "joint_age_p": 5.651121952568242e-15,
+            "method": "WLS descriptive conditional mean; cluster-robust by CU, t intervals",
+            "age_joint_BH_p": 2.260448781027297e-14
+          },
+          "household_cleaning_paper": {
+            "n_week_rows": 9525,
+            "n_CUs": 5154,
+            "formula": "household_cleaning_paper ~ C(quarter)+C(age_group,Treatment(reference='Under 40'))+C(household_income_band)+C(housing_tenure)+C(region)+C(education_group)",
+            "age_coefficients": {
+              "C(age_group, Treatment(reference='Under 40'))[T.40 to 60]": {
+                "difference_days": 0.11389378431572791,
+                "ci95": [
+                  0.061263973392919106,
+                  0.16652359523853671
+                ]
+              },
+              "C(age_group, Treatment(reference='Under 40'))[T.Over 60]": {
+                "difference_days": 0.12229572747087032,
+                "ci95": [
+                  0.06827642979635692,
+                  0.17631502514538372
+                ]
+              }
+            },
+            "joint_age_p": 4.9182664795672716e-06,
+            "method": "WLS descriptive conditional mean; cluster-robust by CU, t intervals",
+            "age_joint_BH_p": 6.5576886394230285e-06
+          },
+          "personal_care_products": {
+            "n_week_rows": 9525,
+            "n_CUs": 5154,
+            "formula": "personal_care_products ~ C(quarter)+C(age_group,Treatment(reference='Under 40'))+C(household_income_band)+C(housing_tenure)+C(region)+C(education_group)",
+            "age_coefficients": {
+              "C(age_group, Treatment(reference='Under 40'))[T.40 to 60]": {
+                "difference_days": 0.03082997643168762,
+                "ci95": [
+                  -0.01700497144311081,
+                  0.07866492430648606
+                ]
+              },
+              "C(age_group, Treatment(reference='Under 40'))[T.Over 60]": {
+                "difference_days": -0.03658926786818084,
+                "ci95": [
+                  -0.08150339111127661,
+                  0.008324855374914925
+                ]
+              }
+            },
+            "joint_age_p": 0.0039236228937420455,
+            "method": "WLS descriptive conditional mean; cluster-robust by CU, t intervals",
+            "age_joint_BH_p": 0.004484140449990909
+          }
+        },
+        "with_family_composition": {
+          "food_at_home": {
+            "n_week_rows": 9525,
+            "n_CUs": 5154,
+            "formula": "food_at_home ~ C(quarter)+C(age_group,Treatment(reference='Under 40'))+C(household_income_band)+C(housing_tenure)+C(region)+C(education_group) + family_size + children_under18",
+            "age_coefficients": {
+              "C(age_group, Treatment(reference='Under 40'))[T.40 to 60]": {
+                "difference_days": 0.3069658168054407,
+                "ci95": [
+                  0.20150288602469058,
+                  0.41242874758619086
+                ]
+              },
+              "C(age_group, Treatment(reference='Under 40'))[T.Over 60]": {
+                "difference_days": 0.29075369471528495,
+                "ci95": [
+                  0.1817175272970712,
+                  0.3997898621334987
+                ]
+              }
+            },
+            "joint_age_p": 3.1959726310524124e-09,
+            "method": "WLS descriptive conditional mean; cluster-robust by CU, t intervals",
+            "age_joint_BH_p": 6.391945262104825e-09
+          },
+          "food_away_from_home": {
+            "n_week_rows": 9525,
+            "n_CUs": 5154,
+            "formula": "food_away_from_home ~ C(quarter)+C(age_group,Treatment(reference='Under 40'))+C(household_income_band)+C(housing_tenure)+C(region)+C(education_group) + family_size + children_under18",
+            "age_coefficients": {
+              "C(age_group, Treatment(reference='Under 40'))[T.40 to 60]": {
+                "difference_days": -0.07525238355811513,
+                "ci95": [
+                  -0.2315943040418703,
+                  0.08108953692564007
+                ]
+              },
+              "C(age_group, Treatment(reference='Under 40'))[T.Over 60]": {
+                "difference_days": -0.5644885737729303,
+                "ci95": [
+                  -0.722859821431364,
+                  -0.4061173261144965
+                ]
+              }
+            },
+            "joint_age_p": 1.1952330367126418e-15,
+            "method": "WLS descriptive conditional mean; cluster-robust by CU, t intervals",
+            "age_joint_BH_p": 9.561864293701135e-15
+          },
+          "household_cleaning_paper": {
+            "n_week_rows": 9525,
+            "n_CUs": 5154,
+            "formula": "household_cleaning_paper ~ C(quarter)+C(age_group,Treatment(reference='Under 40'))+C(household_income_band)+C(housing_tenure)+C(region)+C(education_group) + family_size + children_under18",
+            "age_coefficients": {
+              "C(age_group, Treatment(reference='Under 40'))[T.40 to 60]": {
+                "difference_days": 0.10584318168510427,
+                "ci95": [
+                  0.053391543137553454,
+                  0.1582948202326551
+                ]
+              },
+              "C(age_group, Treatment(reference='Under 40'))[T.Over 60]": {
+                "difference_days": 0.14856653416876933,
+                "ci95": [
+                  0.09085641450547154,
+                  0.20627665383206711
+                ]
+              }
+            },
+            "joint_age_p": 1.097781282924707e-06,
+            "method": "WLS descriptive conditional mean; cluster-robust by CU, t intervals",
+            "age_joint_BH_p": 1.7564500526795315e-06
+          },
+          "personal_care_products": {
+            "n_week_rows": 9525,
+            "n_CUs": 5154,
+            "formula": "personal_care_products ~ C(quarter)+C(age_group,Treatment(reference='Under 40'))+C(household_income_band)+C(housing_tenure)+C(region)+C(education_group) + family_size + children_under18",
+            "age_coefficients": {
+              "C(age_group, Treatment(reference='Under 40'))[T.40 to 60]": {
+                "difference_days": 0.03387029623488014,
+                "ci95": [
+                  -0.015324845579183927,
+                  0.0830654380489442
+                ]
+              },
+              "C(age_group, Treatment(reference='Under 40'))[T.Over 60]": {
+                "difference_days": -0.012602782039676321,
+                "ci95": [
+                  -0.06166132780729042,
+                  0.03645576372793777
+                ]
+              }
+            },
+            "joint_age_p": 0.07484499591055947,
+            "method": "WLS descriptive conditional mean; cluster-robust by CU, t intervals",
+            "age_joint_BH_p": 0.07484499591055947
+          }
+        }
+      },
+      "interpretation": "Within-2020 conditional associations, not causal aging effects. Family composition can lie on an age pathway; controlling it changes the question. Includes supported zero-contact weeks; missing frequency still excluded."
+    },
+    "limits": [
+      "Coverage requires own valid records strictly before target month; month timing is not historical public availability.",
+      "Family/income records can change since entry; no current-value imputation or extra prompt fields created.",
+      "CE uses reference-person age and CU purchases, not SCE respondent shopping responsibility.",
+      "2020 quarters cannot establish cross-year stability or explain a past LLM treatment effect."
+    ]
+  },
+  "verification_receipt": {
+    "status": "passed_focused_coverage_checks",
+    "new_api_calls": 0,
+    "target_people": 192,
+    "math_or_time_boundary_tests": 4,
+    "source_hashes_match": true,
+    "protected_files_unchanged": 15,
+    "no_target_inflation_answers_read": true,
+    "old_inputs_or_configuration_modified": false
+  }
+}
