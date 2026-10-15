@@ -1,0 +1,2329 @@
+{
+  "quarter_audit": {
+    "status": "completed_offline_quarter_and_matching_audit",
+    "new_api_calls": 0,
+    "source": {
+      "archive": "data/raw/ce_experience/20261006/diary/diary20.zip",
+      "archive_sha256": "4862a21ef2b9de25c88a4efbdd4f3905aeaf68d942abc9acc31b33644f84db1a",
+      "dictionary": "data/raw/ce_experience/20261006/ce_pumd_dictionary_official.xlsx",
+      "dictionary_sha256": "613810d32de105bcd32fa9030d378472afb4dab23d1922be7b71b0c522d0334c",
+      "members": {
+        "1": {
+          "fmld_sha256": "2ef49300c35b2f372abd177284e06fd8c70c44a46149bef98117601bbc5f9df3",
+          "expd_sha256": "8fdb11f9b6aa43b81c434611d7a0d60e37a42c4f8cead611877d3aac7a1cd582",
+          "category_uccs": {
+            "food_at_home": [
+              "010110",
+              "010120",
+              "010210",
+              "010310",
+              "010320",
+              "020110",
+              "020210",
+              "020310",
+              "020410",
+              "020510",
+              "020610",
+              "020620",
+              "020710",
+              "020810",
+              "020820",
+              "030110",
+              "030210",
+              "030310",
+              "030410",
+              "030510",
+              "030610",
+              "030710",
+              "030810",
+              "040110",
+              "040210",
+              "040310",
+              "040410",
+              "040510",
+              "040610",
+              "050110",
+              "050210",
+              "050310",
+              "050410",
+              "050900",
+              "060110",
+              "060210",
+              "060310",
+              "070110",
+              "070230",
+              "070240",
+              "080110",
+              "090110",
+              "090210",
+              "100110",
+              "100210",
+              "100410",
+              "100510",
+              "110110",
+              "110210",
+              "110310",
+              "110410",
+              "110510",
+              "120110",
+              "120210",
+              "120310",
+              "120410",
+              "130110",
+              "130121",
+              "130122",
+              "130211",
+              "130212",
+              "130310",
+              "130320",
+              "140110",
+              "140210",
+              "140220",
+              "140230",
+              "140310",
+              "140320",
+              "140330",
+              "140340",
+              "140410",
+              "140420",
+              "150110",
+              "150211",
+              "150212",
+              "150310",
+              "160110",
+              "160211",
+              "160212",
+              "160310",
+              "160320",
+              "170110",
+              "170210",
+              "170310",
+              "170410",
+              "170510",
+              "170520",
+              "170531",
+              "170532",
+              "170533",
+              "180110",
+              "180210",
+              "180220",
+              "180310",
+              "180320",
+              "180410",
+              "180420",
+              "180510",
+              "180520",
+              "180611",
+              "180612",
+              "180620",
+              "180710",
+              "180720",
+              "200112"
+            ],
+            "food_away_from_home": [
+              "190111",
+              "190112",
+              "190113",
+              "190114",
+              "190115",
+              "190211",
+              "190212",
+              "190213",
+              "190214",
+              "190215",
+              "190216",
+              "190311",
+              "190312",
+              "190313",
+              "190314",
+              "190315",
+              "190321",
+              "190322",
+              "190323",
+              "190324",
+              "190325",
+              "190902",
+              "190911",
+              "190912",
+              "190914",
+              "190921",
+              "190922",
+              "190923",
+              "190924"
+            ],
+            "household_cleaning_paper": [
+              "330110",
+              "330210",
+              "330310",
+              "330510"
+            ],
+            "personal_care_products": [
+              "640110",
+              "640120",
+              "640130",
+              "640210",
+              "640220",
+              "640310",
+              "640410",
+              "640420"
+            ]
+          }
+        },
+        "2": {
+          "fmld_sha256": "e296c215bf4d34ad7e26bb3e7b6e0878c07170892ba028e93427438e5f9e6926",
+          "expd_sha256": "786ef98d7d7219cbbd09a706dae43601bedaa050f6fed902bfce17dbbbb1c6d4",
+          "category_uccs": {
+            "food_at_home": [
+              "010110",
+              "010120",
+              "010210",
+              "010310",
+              "010320",
+              "020110",
+              "020210",
+              "020310",
+              "020410",
+              "020510",
+              "020610",
+              "020620",
+              "020710",
+              "020810",
+              "020820",
+              "030110",
+              "030210",
+              "030310",
+              "030410",
+              "030510",
+              "030610",
+              "030710",
+              "030810",
+              "040110",
+              "040210",
+              "040310",
+              "040410",
+              "040510",
+              "040610",
+              "050110",
+              "050210",
+              "050310",
+              "050410",
+              "050900",
+              "060110",
+              "060210",
+              "060310",
+              "070110",
+              "070230",
+              "070240",
+              "080110",
+              "090110",
+              "090210",
+              "100110",
+              "100210",
+              "100410",
+              "100510",
+              "110110",
+              "110210",
+              "110310",
+              "110410",
+              "110510",
+              "120110",
+              "120210",
+              "120310",
+              "120410",
+              "130110",
+              "130121",
+              "130122",
+              "130211",
+              "130212",
+              "130310",
+              "130320",
+              "140110",
+              "140210",
+              "140220",
+              "140230",
+              "140310",
+              "140320",
+              "140330",
+              "140340",
+              "140410",
+              "140420",
+              "150110",
+              "150211",
+              "150212",
+              "150310",
+              "160110",
+              "160211",
+              "160212",
+              "160310",
+              "160320",
+              "170110",
+              "170210",
+              "170310",
+              "170410",
+              "170510",
+              "170520",
+              "170531",
+              "170532",
+              "170533",
+              "180110",
+              "180210",
+              "180220",
+              "180310",
+              "180320",
+              "180410",
+              "180420",
+              "180510",
+              "180520",
+              "180611",
+              "180612",
+              "180620",
+              "180710",
+              "180720",
+              "200112"
+            ],
+            "food_away_from_home": [
+              "190111",
+              "190112",
+              "190113",
+              "190114",
+              "190115",
+              "190211",
+              "190212",
+              "190213",
+              "190214",
+              "190215",
+              "190216",
+              "190311",
+              "190312",
+              "190313",
+              "190314",
+              "190315",
+              "190321",
+              "190322",
+              "190323",
+              "190324",
+              "190325",
+              "190902",
+              "190911",
+              "190912",
+              "190914",
+              "190921",
+              "190922",
+              "190923",
+              "190924"
+            ],
+            "household_cleaning_paper": [
+              "330110",
+              "330210",
+              "330310",
+              "330510"
+            ],
+            "personal_care_products": [
+              "640110",
+              "640120",
+              "640130",
+              "640210",
+              "640220",
+              "640310",
+              "640410",
+              "640420"
+            ]
+          }
+        },
+        "3": {
+          "fmld_sha256": "645254935004b57a575901a01dfd7feb1efb6dea1ff64ddcf0211ec7e80967af",
+          "expd_sha256": "4030f4c0037cc68a119ab4d97d90bfc23ab90cd275ac99400167731e0a36e284",
+          "category_uccs": {
+            "food_at_home": [
+              "010110",
+              "010120",
+              "010210",
+              "010310",
+              "010320",
+              "020110",
+              "020210",
+              "020310",
+              "020410",
+              "020510",
+              "020610",
+              "020620",
+              "020710",
+              "020810",
+              "020820",
+              "030110",
+              "030210",
+              "030310",
+              "030410",
+              "030510",
+              "030610",
+              "030710",
+              "030810",
+              "040110",
+              "040210",
+              "040310",
+              "040410",
+              "040510",
+              "040610",
+              "050110",
+              "050210",
+              "050310",
+              "050410",
+              "050900",
+              "060110",
+              "060210",
+              "060310",
+              "070110",
+              "070230",
+              "070240",
+              "080110",
+              "090110",
+              "090210",
+              "100110",
+              "100210",
+              "100410",
+              "100510",
+              "110110",
+              "110210",
+              "110310",
+              "110410",
+              "110510",
+              "120110",
+              "120210",
+              "120310",
+              "120410",
+              "130110",
+              "130121",
+              "130122",
+              "130211",
+              "130212",
+              "130310",
+              "130320",
+              "140110",
+              "140210",
+              "140220",
+              "140230",
+              "140310",
+              "140320",
+              "140330",
+              "140340",
+              "140410",
+              "140420",
+              "150110",
+              "150211",
+              "150212",
+              "150310",
+              "160110",
+              "160211",
+              "160212",
+              "160310",
+              "160320",
+              "170110",
+              "170210",
+              "170310",
+              "170410",
+              "170510",
+              "170520",
+              "170531",
+              "170532",
+              "170533",
+              "180110",
+              "180210",
+              "180220",
+              "180310",
+              "180320",
+              "180410",
+              "180420",
+              "180510",
+              "180520",
+              "180611",
+              "180612",
+              "180620",
+              "180710",
+              "180720",
+              "200112"
+            ],
+            "food_away_from_home": [
+              "190111",
+              "190112",
+              "190113",
+              "190114",
+              "190115",
+              "190211",
+              "190212",
+              "190213",
+              "190214",
+              "190215",
+              "190216",
+              "190311",
+              "190312",
+              "190313",
+              "190314",
+              "190315",
+              "190321",
+              "190322",
+              "190323",
+              "190324",
+              "190325",
+              "190902",
+              "190911",
+              "190912",
+              "190914",
+              "190921",
+              "190922",
+              "190923",
+              "190924"
+            ],
+            "household_cleaning_paper": [
+              "330110",
+              "330210",
+              "330310",
+              "330510"
+            ],
+            "personal_care_products": [
+              "640110",
+              "640120",
+              "640130",
+              "640210",
+              "640220",
+              "640310",
+              "640410",
+              "640420"
+            ]
+          }
+        },
+        "4": {
+          "fmld_sha256": "e3bf184a5c6960d0e63a194ad38745659dc42ffd97566e70374132c4c94c467c",
+          "expd_sha256": "f0c0d2cb0d0bf18b83d7133842f31f266a8e6eab5d8ffd8b250b912006c7f0e6",
+          "category_uccs": {
+            "food_at_home": [
+              "010110",
+              "010120",
+              "010210",
+              "010310",
+              "010320",
+              "020110",
+              "020210",
+              "020310",
+              "020410",
+              "020510",
+              "020610",
+              "020620",
+              "020710",
+              "020810",
+              "020820",
+              "030110",
+              "030210",
+              "030310",
+              "030410",
+              "030510",
+              "030610",
+              "030710",
+              "030810",
+              "040110",
+              "040210",
+              "040310",
+              "040410",
+              "040510",
+              "040610",
+              "050110",
+              "050210",
+              "050310",
+              "050410",
+              "050900",
+              "060110",
+              "060210",
+              "060310",
+              "070110",
+              "070230",
+              "070240",
+              "080110",
+              "090110",
+              "090210",
+              "100110",
+              "100210",
+              "100410",
+              "100510",
+              "110110",
+              "110210",
+              "110310",
+              "110410",
+              "110510",
+              "120110",
+              "120210",
+              "120310",
+              "120410",
+              "130110",
+              "130121",
+              "130122",
+              "130211",
+              "130212",
+              "130310",
+              "130320",
+              "140110",
+              "140210",
+              "140220",
+              "140230",
+              "140310",
+              "140320",
+              "140330",
+              "140340",
+              "140410",
+              "140420",
+              "150110",
+              "150211",
+              "150212",
+              "150310",
+              "160110",
+              "160211",
+              "160212",
+              "160310",
+              "160320",
+              "170110",
+              "170210",
+              "170310",
+              "170410",
+              "170510",
+              "170520",
+              "170531",
+              "170532",
+              "170533",
+              "180110",
+              "180210",
+              "180220",
+              "180310",
+              "180320",
+              "180410",
+              "180420",
+              "180510",
+              "180520",
+              "180611",
+              "180612",
+              "180620",
+              "180710",
+              "180720",
+              "200112"
+            ],
+            "food_away_from_home": [
+              "190111",
+              "190112",
+              "190113",
+              "190114",
+              "190115",
+              "190211",
+              "190212",
+              "190213",
+              "190214",
+              "190215",
+              "190216",
+              "190311",
+              "190312",
+              "190313",
+              "190314",
+              "190315",
+              "190321",
+              "190322",
+              "190323",
+              "190324",
+              "190325",
+              "190902",
+              "190911",
+              "190912",
+              "190914",
+              "190921",
+              "190922",
+              "190923",
+              "190924"
+            ],
+            "household_cleaning_paper": [
+              "330110",
+              "330210",
+              "330310",
+              "330510"
+            ],
+            "personal_care_products": [
+              "640110",
+              "640120",
+              "640130",
+              "640210",
+              "640220",
+              "640310",
+              "640410",
+              "640420"
+            ]
+          }
+        }
+      },
+      "CU_ids_crossing_quarters": 0,
+      "q4_original_vectors_reproduced": 2426
+    },
+    "source_sha256": {
+      "outputs/sce_purchase_frequency_preparation_20261015_v1/assignments_private.json": "fa1fba43ffda2473acdce924500ba4b1cac3aa97a9a10254e3722e66ff56676f",
+      "studies/sce_inflation_expectations/evaluation/frequency_quarter_audit.py": "6f6008383c5928d7f6484316096c8779538c2514beeebae48e9eecd0400cbf36"
+    },
+    "quarterly": {
+      "1": {
+        "source": {
+          "raw_week_rows": 3285,
+          "complete_week_rows_including_zero": 2981,
+          "complete_zero_contact_weeks": 95,
+          "selected_positive_week_rows": 2886,
+          "selected_positive_CUs": 1595,
+          "excluded": {
+            "unknown_or_partial_frequency": 304
+          },
+          "raw_category_status_counts": {
+            "food_at_home": {
+              "available": 2676,
+              "partial_support": 141,
+              "no_positive_published_records": 346,
+              "no_expd_rows": 122
+            },
+            "food_away_from_home": {
+              "available": 2351,
+              "no_positive_published_records": 793,
+              "no_expd_rows": 122,
+              "partial_support": 19
+            },
+            "household_cleaning_paper": {
+              "no_positive_published_records": 1571,
+              "available": 1557,
+              "partial_support": 35,
+              "no_expd_rows": 122
+            },
+            "personal_care_products": {
+              "no_positive_published_records": 1988,
+              "available": 1144,
+              "partial_support": 26,
+              "no_expd_rows": 122,
+              "excluded_only": 5
+            }
+          },
+          "five_imputation_cross_band_week_fraction": 0.12982220731298222
+        },
+        "selected_distribution": {
+          "food_at_home": {
+            "mean_days": 2.1596606363077404,
+            "zero_share": 0.08792589460034164,
+            "day_probabilities": [
+              0.08792589460034164,
+              0.31222813506096914,
+              0.2543895185524888,
+              0.1671905691838308,
+              0.09411090505081196,
+              0.053463433285630885,
+              0.02151983990258869,
+              0.009171704363338112
+            ]
+          },
+          "food_away_from_home": {
+            "mean_days": 2.3385162735082923,
+            "zero_share": 0.2488251014202736,
+            "day_probabilities": [
+              0.2488251014202736,
+              0.20933780734905474,
+              0.14634744591893534,
+              0.11138028702794087,
+              0.09265587985334335,
+              0.07419290991005617,
+              0.06006933536888071,
+              0.05719123315151529
+            ]
+          },
+          "household_cleaning_paper": {
+            "mean_days": 0.688970033575742,
+            "zero_share": 0.5010467138338887,
+            "day_probabilities": [
+              0.5010467138338887,
+              0.3552580333140227,
+              0.10656975157963955,
+              0.02902103515947118,
+              0.007305551173462081,
+              0.0005063027069176849,
+              0.00029261223259830285,
+              0.0
+            ]
+          },
+          "personal_care_products": {
+            "mean_days": 0.4760991070093277,
+            "zero_share": 0.6376872650846899,
+            "day_probabilities": [
+              0.6376872650846899,
+              0.27150504992640534,
+              0.07165627745325655,
+              0.016136074225020638,
+              0.0022033870517917664,
+              0.0008119462588360592,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "including_supported_zero_distribution": {
+          "food_at_home": {
+            "mean_days": 2.086962999208621,
+            "zero_share": 0.12373276761603955,
+            "day_probabilities": [
+              0.12373276761603955,
+              0.29353282513947143,
+              0.2477709154319146,
+              0.16203194037070956,
+              0.09168911465340904,
+              0.051409383081113674,
+              0.020842227877406434,
+              0.008990825829935621
+            ]
+          },
+          "food_away_from_home": {
+            "mean_days": 2.2785601151772625,
+            "zero_share": 0.2706613629889196,
+            "day_probabilities": [
+              0.2706613629889196,
+              0.2004986188195957,
+              0.14346127445762769,
+              0.10881194445385106,
+              0.08914225625968238,
+              0.07247651302272319,
+              0.05888468605469032,
+              0.05606334394291014
+            ]
+          },
+          "household_cleaning_paper": {
+            "mean_days": 0.6626067354785578,
+            "zero_share": 0.5200378465078693,
+            "day_probabilities": [
+              0.5200378465078693,
+              0.3418750916389076,
+              0.10254417746100643,
+              0.027598249417100373,
+              0.00716147572907306,
+              0.0004963177262143109,
+              0.0002868415198287576,
+              0.0
+            ]
+          },
+          "personal_care_products": {
+            "mean_days": 0.4584477394166664,
+            "zero_share": 0.6518735482875564,
+            "day_probabilities": [
+              0.6518735482875564,
+              0.2601564000605077,
+              0.06937061599010472,
+              0.015643568841327588,
+              0.00215993325055072,
+              0.0007959335699527411,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "fixed_income_age_standardized": {
+          "n_profiles": 192,
+          "n_unique_profile_patterns": 109,
+          "categories": {
+            "food_at_home": {
+              "mean_days": 2.205635715051398,
+              "zero_share": 0.07790576440011526,
+              "seed_mean_central95": [
+                2.0104166666666665,
+                2.4375
+              ],
+              "original_assigned_mean": 2.0729166666666665,
+              "original_mean_within_seed_central95": true
+            },
+            "food_away_from_home": {
+              "mean_days": 2.451691020365979,
+              "zero_share": 0.23039607125451453,
+              "seed_mean_central95": [
+                2.1510416666666665,
+                2.750651041666667
+              ],
+              "original_assigned_mean": 1.8020833333333333,
+              "original_mean_within_seed_central95": false
+            },
+            "household_cleaning_paper": {
+              "mean_days": 0.7104369890019576,
+              "zero_share": 0.4918160555811162,
+              "seed_mean_central95": [
+                0.6041666666666666,
+                0.8490885416666667
+              ],
+              "original_assigned_mean": 0.5989583333333334,
+              "original_mean_within_seed_central95": false
+            },
+            "personal_care_products": {
+              "mean_days": 0.4990519359374203,
+              "zero_share": 0.6249741132357256,
+              "seed_mean_central95": [
+                0.3904947916666667,
+                0.609375
+              ],
+              "original_assigned_mean": 0.4010416666666667,
+              "original_mean_within_seed_central95": true
+            }
+          },
+          "retained_field_patterns": {
+            "household_income_band,age_group": 192
+          },
+          "field_retention": {
+            "household_income_band": {
+              "available": 192,
+              "retained": 192
+            },
+            "age_group": {
+              "available": 192,
+              "retained": 192
+            },
+            "housing_tenure": {
+              "available": 179,
+              "retained": 0
+            },
+            "region": {
+              "available": 192,
+              "retained": 0
+            },
+            "education_group": {
+              "available": 191,
+              "retained": 0
+            }
+          },
+          "minimum_CUs": 122,
+          "minimum_effective_CUs": 97.01560783108235,
+          "below_support_profiles": 0,
+          "seed_count": 200,
+          "seed_interpretation": "Central range across donor draws with fixed source/profile; not a survey CI or LLM error interval."
+        },
+        "current_priority_matching": {
+          "n_profiles": 192,
+          "n_unique_profile_patterns": 109,
+          "categories": {
+            "food_at_home": {
+              "mean_days": 2.2060095678182328,
+              "zero_share": 0.08193179035135144,
+              "seed_mean_central95": [
+                2.0519531250000003,
+                2.3960937500000004
+              ],
+              "original_assigned_mean": 2.0729166666666665,
+              "original_mean_within_seed_central95": true
+            },
+            "food_away_from_home": {
+              "mean_days": 2.456693749321427,
+              "zero_share": 0.2297429486281661,
+              "seed_mean_central95": [
+                2.234114583333333,
+                2.7708333333333335
+              ],
+              "original_assigned_mean": 1.8020833333333333,
+              "original_mean_within_seed_central95": false
+            },
+            "household_cleaning_paper": {
+              "mean_days": 0.6992410123394815,
+              "zero_share": 0.48973388084152986,
+              "seed_mean_central95": [
+                0.5729166666666666,
+                0.8177083333333334
+              ],
+              "original_assigned_mean": 0.5989583333333334,
+              "original_mean_within_seed_central95": true
+            },
+            "personal_care_products": {
+              "mean_days": 0.5086227621607592,
+              "zero_share": 0.6126776733777307,
+              "seed_mean_central95": [
+                0.4061197916666667,
+                0.6095052083333333
+              ],
+              "original_assigned_mean": 0.4010416666666667,
+              "original_mean_within_seed_central95": false
+            }
+          },
+          "retained_field_patterns": {
+            "household_income_band,age_group,housing_tenure": 73,
+            "household_income_band,age_group,housing_tenure,region": 69,
+            "household_income_band,age_group,region,education_group": 3,
+            "household_income_band,age_group,housing_tenure,region,education_group": 32,
+            "household_income_band,age_group,region": 7,
+            "household_income_band,age_group": 8
+          },
+          "field_retention": {
+            "household_income_band": {
+              "available": 192,
+              "retained": 192
+            },
+            "age_group": {
+              "available": 192,
+              "retained": 192
+            },
+            "housing_tenure": {
+              "available": 179,
+              "retained": 174
+            },
+            "region": {
+              "available": 192,
+              "retained": 111
+            },
+            "education_group": {
+              "available": 191,
+              "retained": 35
+            }
+          },
+          "minimum_CUs": 25,
+          "minimum_effective_CUs": 20.64705767811815,
+          "below_support_profiles": 0,
+          "seed_count": 200,
+          "seed_interpretation": "Central range across donor draws with fixed source/profile; not a survey CI or LLM error interval."
+        }
+      },
+      "2": {
+        "source": {
+          "raw_week_rows": 1936,
+          "complete_week_rows_including_zero": 1777,
+          "complete_zero_contact_weeks": 138,
+          "selected_positive_week_rows": 1639,
+          "selected_positive_CUs": 931,
+          "excluded": {
+            "unknown_or_partial_frequency": 159
+          },
+          "raw_category_status_counts": {
+            "food_at_home": {
+              "available": 1490,
+              "no_positive_published_records": 313,
+              "no_expd_rows": 61,
+              "partial_support": 72
+            },
+            "food_away_from_home": {
+              "no_positive_published_records": 869,
+              "available": 1000,
+              "no_expd_rows": 61,
+              "partial_support": 6
+            },
+            "household_cleaning_paper": {
+              "available": 683,
+              "no_positive_published_records": 1169,
+              "no_expd_rows": 61,
+              "partial_support": 23
+            },
+            "personal_care_products": {
+              "no_positive_published_records": 1372,
+              "available": 483,
+              "no_expd_rows": 61,
+              "partial_support": 15,
+              "excluded_only": 5
+            }
+          },
+          "five_imputation_cross_band_week_fraction": 0.13111986494091166
+        },
+        "selected_distribution": {
+          "food_at_home": {
+            "mean_days": 1.5898718699632033,
+            "zero_share": 0.12579376934797099,
+            "day_probabilities": [
+              0.12579376934797099,
+              0.46341874396661703,
+              0.22794367130822546,
+              0.10112793859586121,
+              0.051354776503125116,
+              0.022576870561455832,
+              0.0056110992444388,
+              0.0021731304723055862
+            ]
+          },
+          "food_away_from_home": {
+            "mean_days": 1.2737356302438407,
+            "zero_share": 0.4551164844963104,
+            "day_probabilities": [
+              0.4551164844963104,
+              0.22027034026478862,
+              0.13591085110124285,
+              0.08860469330477583,
+              0.03105980448315477,
+              0.036001315708047696,
+              0.019671863102377667,
+              0.013364647539302194
+            ]
+          },
+          "household_cleaning_paper": {
+            "mean_days": 0.49432509756033505,
+            "zero_share": 0.6125829159828404,
+            "day_probabilities": [
+              0.6125829159828404,
+              0.30066463126025134,
+              0.06870898772466191,
+              0.016520233999267206,
+              0.0009343663119367196,
+              0.000588864721042303,
+              0.0,
+              0.0
+            ]
+          },
+          "personal_care_products": {
+            "mean_days": 0.32316342546520405,
+            "zero_share": 0.7323723227445549,
+            "day_probabilities": [
+              0.7323723227445549,
+              0.2191024571798027,
+              0.04366409453569371,
+              0.003408587121116148,
+              0.0007556742434976101,
+              0.0006968641753350124,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "including_supported_zero_distribution": {
+          "food_at_home": {
+            "mean_days": 1.4625317088468806,
+            "zero_share": 0.2049521885872476,
+            "day_probabilities": [
+              0.2049521885872476,
+              0.415889077978273,
+              0.20677047390224995,
+              0.09481304520675439,
+              0.04868762517293589,
+              0.0214811503915646,
+              0.005338776532544022,
+              0.0020676622284305614
+            ]
+          },
+          "food_away_from_home": {
+            "mean_days": 1.186502015409201,
+            "zero_share": 0.4969164648446772,
+            "day_probabilities": [
+              0.4969164648446772,
+              0.19885684063257741,
+              0.12833207208589867,
+              0.08124796389422123,
+              0.029552383241914493,
+              0.03425406877864925,
+              0.018124183593173967,
+              0.012716022928887794
+            ]
+          },
+          "household_cleaning_paper": {
+            "mean_days": 0.4529351897423466,
+            "zero_share": 0.6463206792060774,
+            "day_probabilities": [
+              0.6463206792060774,
+              0.2725981120609061,
+              0.06491613821738645,
+              0.014715766245959236,
+              0.0008890188395636518,
+              0.0005602854301070487,
+              0.0,
+              0.0
+            ]
+          },
+          "personal_care_products": {
+            "mean_days": 0.2964495432124681,
+            "zero_share": 0.7546354940661636,
+            "day_probabilities": [
+              0.7546354940661636,
+              0.20094975578659913,
+              0.03978954894799773,
+              0.003243158628745077,
+              0.0007189992088326536,
+              0.000663043361661536,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "fixed_income_age_standardized": {
+          "n_profiles": 192,
+          "n_unique_profile_patterns": 109,
+          "categories": {
+            "food_at_home": {
+              "mean_days": 1.6014479001611495,
+              "zero_share": 0.12375599534513859,
+              "seed_mean_central95": [
+                1.4322916666666667,
+                1.7553385416666667
+              ],
+              "original_assigned_mean": 2.0729166666666665,
+              "original_mean_within_seed_central95": false
+            },
+            "food_away_from_home": {
+              "mean_days": 1.2984265882940973,
+              "zero_share": 0.4482359020744015,
+              "seed_mean_central95": [
+                1.0673177083333332,
+                1.5209635416666667
+              ],
+              "original_assigned_mean": 1.8020833333333333,
+              "original_mean_within_seed_central95": false
+            },
+            "household_cleaning_paper": {
+              "mean_days": 0.4935862532903011,
+              "zero_share": 0.6115196399267075,
+              "seed_mean_central95": [
+                0.390625,
+                0.5938802083333333
+              ],
+              "original_assigned_mean": 0.5989583333333334,
+              "original_mean_within_seed_central95": false
+            },
+            "personal_care_products": {
+              "mean_days": 0.31516201422427176,
+              "zero_share": 0.7372420648503516,
+              "seed_mean_central95": [
+                0.25,
+                0.3959635416666667
+              ],
+              "original_assigned_mean": 0.4010416666666667,
+              "original_mean_within_seed_central95": false
+            }
+          },
+          "retained_field_patterns": {
+            "household_income_band,age_group": 192
+          },
+          "field_retention": {
+            "household_income_band": {
+              "available": 192,
+              "retained": 192
+            },
+            "age_group": {
+              "available": 192,
+              "retained": 192
+            },
+            "housing_tenure": {
+              "available": 179,
+              "retained": 0
+            },
+            "region": {
+              "available": 192,
+              "retained": 0
+            },
+            "education_group": {
+              "available": 191,
+              "retained": 0
+            }
+          },
+          "minimum_CUs": 61,
+          "minimum_effective_CUs": 41.559395582066855,
+          "below_support_profiles": 0,
+          "seed_count": 200,
+          "seed_interpretation": "Central range across donor draws with fixed source/profile; not a survey CI or LLM error interval."
+        },
+        "current_priority_matching": {
+          "n_profiles": 192,
+          "n_unique_profile_patterns": 109,
+          "categories": {
+            "food_at_home": {
+              "mean_days": 1.6010547066559095,
+              "zero_share": 0.11804264726465385,
+              "seed_mean_central95": [
+                1.4319010416666667,
+                1.75
+              ],
+              "original_assigned_mean": 2.0729166666666665,
+              "original_mean_within_seed_central95": false
+            },
+            "food_away_from_home": {
+              "mean_days": 1.2814959641683283,
+              "zero_share": 0.43816145066662643,
+              "seed_mean_central95": [
+                1.0832031249999998,
+                1.4947916666666667
+              ],
+              "original_assigned_mean": 1.8020833333333333,
+              "original_mean_within_seed_central95": false
+            },
+            "household_cleaning_paper": {
+              "mean_days": 0.4783674543152639,
+              "zero_share": 0.6248261882206129,
+              "seed_mean_central95": [
+                0.3802083333333333,
+                0.5888020833333334
+              ],
+              "original_assigned_mean": 0.5989583333333334,
+              "original_mean_within_seed_central95": false
+            },
+            "personal_care_products": {
+              "mean_days": 0.32330034453867795,
+              "zero_share": 0.7315177685631973,
+              "seed_mean_central95": [
+                0.25,
+                0.3959635416666667
+              ],
+              "original_assigned_mean": 0.4010416666666667,
+              "original_mean_within_seed_central95": false
+            }
+          },
+          "retained_field_patterns": {
+            "household_income_band,age_group,housing_tenure": 111,
+            "household_income_band,age_group,region": 7,
+            "household_income_band,age_group,housing_tenure,region": 44,
+            "household_income_band,age_group": 21,
+            "household_income_band,age_group,housing_tenure,region,education_group": 9
+          },
+          "field_retention": {
+            "household_income_band": {
+              "available": 192,
+              "retained": 192
+            },
+            "age_group": {
+              "available": 192,
+              "retained": 192
+            },
+            "housing_tenure": {
+              "available": 179,
+              "retained": 164
+            },
+            "region": {
+              "available": 192,
+              "retained": 60
+            },
+            "education_group": {
+              "available": 191,
+              "retained": 9
+            }
+          },
+          "minimum_CUs": 26,
+          "minimum_effective_CUs": 15.216283250883762,
+          "below_support_profiles": 0,
+          "seed_count": 200,
+          "seed_interpretation": "Central range across donor draws with fixed source/profile; not a survey CI or LLM error interval."
+        }
+      },
+      "3": {
+        "source": {
+          "raw_week_rows": 2559,
+          "complete_week_rows_including_zero": 2400,
+          "complete_zero_contact_weeks": 196,
+          "selected_positive_week_rows": 2204,
+          "selected_positive_CUs": 1222,
+          "excluded": {
+            "unknown_or_partial_frequency": 155,
+            "missing_age_income_or_weight": 4
+          },
+          "raw_category_status_counts": {
+            "food_at_home": {
+              "available": 1988,
+              "no_positive_published_records": 437,
+              "partial_support": 65,
+              "no_expd_rows": 69
+            },
+            "food_away_from_home": {
+              "no_positive_published_records": 947,
+              "available": 1540,
+              "no_expd_rows": 69,
+              "partial_support": 3
+            },
+            "household_cleaning_paper": {
+              "no_positive_published_records": 1566,
+              "available": 901,
+              "partial_support": 23,
+              "no_expd_rows": 69
+            },
+            "personal_care_products": {
+              "no_positive_published_records": 1819,
+              "available": 651,
+              "partial_support": 17,
+              "no_expd_rows": 69,
+              "excluded_only": 3
+            }
+          },
+          "five_imputation_cross_band_week_fraction": 0.14666666666666667
+        },
+        "selected_distribution": {
+          "food_at_home": {
+            "mean_days": 1.7735611253785617,
+            "zero_share": 0.12128300770630984,
+            "day_probabilities": [
+              0.12128300770630984,
+              0.4003408187839126,
+              0.24382530204594388,
+              0.12115420763940045,
+              0.06576950089585744,
+              0.03168664344268872,
+              0.010987777613522594,
+              0.0049527418723644984
+            ]
+          },
+          "food_away_from_home": {
+            "mean_days": 1.7002765476612753,
+            "zero_share": 0.351499102975039,
+            "day_probabilities": [
+              0.351499102975039,
+              0.23234173692462656,
+              0.14359148670615296,
+              0.09943581636084889,
+              0.06478274320684774,
+              0.05126152385710851,
+              0.03260733365677145,
+              0.024480256312604802
+            ]
+          },
+          "household_cleaning_paper": {
+            "mean_days": 0.4967202631900349,
+            "zero_share": 0.615840960852991,
+            "day_probabilities": [
+              0.615840960852991,
+              0.2929094649211471,
+              0.0746690032045758,
+              0.012225054845584908,
+              0.003979953555524468,
+              0.00037556262017671453,
+              0.0,
+              0.0
+            ]
+          },
+          "personal_care_products": {
+            "mean_days": 0.36261803685203675,
+            "zero_share": 0.715974966417941,
+            "day_probabilities": [
+              0.715974966417941,
+              0.2239013371888338,
+              0.04720089783728309,
+              0.007901127984409045,
+              0.004496832822254996,
+              0.0005248377492779304,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "including_supported_zero_distribution": {
+          "food_at_home": {
+            "mean_days": 1.6451091065889276,
+            "zero_share": 0.19221520000970496,
+            "day_probabilities": [
+              0.19221520000970496,
+              0.359882866895462,
+              0.22789199166993493,
+              0.11455741364686109,
+              0.06074484917768645,
+              0.03017134845011337,
+              0.00982043459996064,
+              0.004715895550276577
+            ]
+          },
+          "food_away_from_home": {
+            "mean_days": 1.5868816334362208,
+            "zero_share": 0.39962831107341396,
+            "day_probabilities": [
+              0.39962831107341396,
+              0.2110640113855487,
+              0.13240485972909238,
+              0.09452697069126684,
+              0.06125693047269485,
+              0.04751351576195452,
+              0.030406116384066532,
+              0.023199284501962254
+            ]
+          },
+          "household_cleaning_paper": {
+            "mean_days": 0.4534859242335043,
+            "zero_share": 0.6497388801775557,
+            "day_probabilities": [
+              0.6497388801775557,
+              0.26654606230735656,
+              0.06871014329896552,
+              0.010857684281374874,
+              0.003789627189644898,
+              0.0003576027451024879,
+              0.0,
+              0.0
+            ]
+          },
+          "personal_care_products": {
+            "mean_days": 0.33407545770687774,
+            "zero_share": 0.7388064443579467,
+            "day_probabilities": [
+              0.7388064443579467,
+              0.205255841336748,
+              0.044274793888959926,
+              0.006881392423662023,
+              0.004281788642194211,
+              0.0004997393504893751,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "fixed_income_age_standardized": {
+          "n_profiles": 192,
+          "n_unique_profile_patterns": 109,
+          "categories": {
+            "food_at_home": {
+              "mean_days": 1.8320525452795462,
+              "zero_share": 0.12145033150335376,
+              "seed_mean_central95": [
+                1.6557291666666667,
+                2.0417968749999997
+              ],
+              "original_assigned_mean": 2.0729166666666665,
+              "original_mean_within_seed_central95": false
+            },
+            "food_away_from_home": {
+              "mean_days": 1.812416076237833,
+              "zero_share": 0.32586285491538125,
+              "seed_mean_central95": [
+                1.5151041666666667,
+                2.015755208333333
+              ],
+              "original_assigned_mean": 1.8020833333333333,
+              "original_mean_within_seed_central95": true
+            },
+            "household_cleaning_paper": {
+              "mean_days": 0.5151788377426688,
+              "zero_share": 0.6101368507268,
+              "seed_mean_central95": [
+                0.421875,
+                0.6459635416666667
+              ],
+              "original_assigned_mean": 0.5989583333333334,
+              "original_mean_within_seed_central95": true
+            },
+            "personal_care_products": {
+              "mean_days": 0.38785548152634286,
+              "zero_share": 0.7023665547673916,
+              "seed_mean_central95": [
+                0.27591145833333336,
+                0.4739583333333333
+              ],
+              "original_assigned_mean": 0.4010416666666667,
+              "original_mean_within_seed_central95": true
+            }
+          },
+          "retained_field_patterns": {
+            "household_income_band,age_group": 192
+          },
+          "field_retention": {
+            "household_income_band": {
+              "available": 192,
+              "retained": 192
+            },
+            "age_group": {
+              "available": 192,
+              "retained": 192
+            },
+            "housing_tenure": {
+              "available": 179,
+              "retained": 0
+            },
+            "region": {
+              "available": 192,
+              "retained": 0
+            },
+            "education_group": {
+              "available": 191,
+              "retained": 0
+            }
+          },
+          "minimum_CUs": 94,
+          "minimum_effective_CUs": 70.2235383858259,
+          "below_support_profiles": 0,
+          "seed_count": 200,
+          "seed_interpretation": "Central range across donor draws with fixed source/profile; not a survey CI or LLM error interval."
+        },
+        "current_priority_matching": {
+          "n_profiles": 192,
+          "n_unique_profile_patterns": 109,
+          "categories": {
+            "food_at_home": {
+              "mean_days": 1.8708725038477378,
+              "zero_share": 0.11983689928036817,
+              "seed_mean_central95": [
+                1.702734375,
+                2.0572916666666665
+              ],
+              "original_assigned_mean": 2.0729166666666665,
+              "original_mean_within_seed_central95": false
+            },
+            "food_away_from_home": {
+              "mean_days": 1.8307006467897944,
+              "zero_share": 0.3195429458659496,
+              "seed_mean_central95": [
+                1.5932291666666667,
+                2.0885416666666665
+              ],
+              "original_assigned_mean": 1.8020833333333333,
+              "original_mean_within_seed_central95": true
+            },
+            "household_cleaning_paper": {
+              "mean_days": 0.5340668202247575,
+              "zero_share": 0.5945476011968479,
+              "seed_mean_central95": [
+                0.4479166666666667,
+                0.6458333333333334
+              ],
+              "original_assigned_mean": 0.5989583333333334,
+              "original_mean_within_seed_central95": true
+            },
+            "personal_care_products": {
+              "mean_days": 0.4023447861978566,
+              "zero_share": 0.6890371939694772,
+              "seed_mean_central95": [
+                0.3225260416666667,
+                0.5053385416666667
+              ],
+              "original_assigned_mean": 0.4010416666666667,
+              "original_mean_within_seed_central95": true
+            }
+          },
+          "retained_field_patterns": {
+            "household_income_band,age_group,housing_tenure": 93,
+            "household_income_band,age_group,region": 9,
+            "household_income_band,age_group,housing_tenure,region": 58,
+            "household_income_band,age_group": 14,
+            "household_income_band,age_group,housing_tenure,region,education_group": 18
+          },
+          "field_retention": {
+            "household_income_band": {
+              "available": 192,
+              "retained": 192
+            },
+            "age_group": {
+              "available": 192,
+              "retained": 192
+            },
+            "housing_tenure": {
+              "available": 179,
+              "retained": 169
+            },
+            "region": {
+              "available": 192,
+              "retained": 85
+            },
+            "education_group": {
+              "available": 191,
+              "retained": 18
+            }
+          },
+          "minimum_CUs": 25,
+          "minimum_effective_CUs": 15.882872880988094,
+          "below_support_profiles": 0,
+          "seed_count": 200,
+          "seed_interpretation": "Central range across donor draws with fixed source/profile; not a survey CI or LLM error interval."
+        }
+      },
+      "4": {
+        "source": {
+          "raw_week_rows": 2835,
+          "complete_week_rows_including_zero": 2579,
+          "complete_zero_contact_weeks": 153,
+          "selected_positive_week_rows": 2426,
+          "selected_positive_CUs": 1348,
+          "excluded": {
+            "unknown_or_partial_frequency": 254,
+            "missing_age_income_or_weight": 2
+          },
+          "raw_category_status_counts": {
+            "food_at_home": {
+              "available": 2239,
+              "no_positive_published_records": 374,
+              "no_expd_rows": 123,
+              "partial_support": 99
+            },
+            "food_away_from_home": {
+              "no_positive_published_records": 965,
+              "available": 1737,
+              "no_expd_rows": 123,
+              "partial_support": 9,
+              "excluded_only": 1
+            },
+            "household_cleaning_paper": {
+              "no_positive_published_records": 1545,
+              "available": 1140,
+              "no_expd_rows": 123,
+              "partial_support": 27
+            },
+            "personal_care_products": {
+              "no_positive_published_records": 1926,
+              "available": 753,
+              "excluded_only": 16,
+              "no_expd_rows": 123,
+              "partial_support": 17
+            }
+          },
+          "five_imputation_cross_band_week_fraction": 0.1485071733229934
+        },
+        "selected_distribution": {
+          "food_at_home": {
+            "mean_days": 1.9459238598743975,
+            "zero_share": 0.10187293387914537,
+            "day_probabilities": [
+              0.10187293387914537,
+              0.358928530743057,
+              0.2499311978254411,
+              0.15927415770997788,
+              0.07191400644980954,
+              0.036029800174750576,
+              0.012840178847195731,
+              0.009209194370622802
+            ]
+          },
+          "food_away_from_home": {
+            "mean_days": 1.6886045614555134,
+            "zero_share": 0.34499245214935037,
+            "day_probabilities": [
+              0.34499245214935037,
+              0.23129061451582206,
+              0.14890769341137844,
+              0.10533772370762781,
+              0.07227659873463504,
+              0.04898474087480985,
+              0.028015946563173463,
+              0.020194230043202928
+            ]
+          },
+          "household_cleaning_paper": {
+            "mean_days": 0.5809788500896553,
+            "zero_share": 0.575765616943236,
+            "day_probabilities": [
+              0.575765616943236,
+              0.3001852189244508,
+              0.09811759165128893,
+              0.020006306573580337,
+              0.005086801395333674,
+              0.0008384645121101877,
+              0.0,
+              0.0
+            ]
+          },
+          "personal_care_products": {
+            "mean_days": 0.3537032988544625,
+            "zero_share": 0.7140607470140825,
+            "day_probabilities": [
+              0.7140607470140825,
+              0.2304703259864862,
+              0.04410152302538098,
+              0.01083725124900161,
+              0.00013259055503477338,
+              0.0003975621700140543,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "including_supported_zero_distribution": {
+          "food_at_home": {
+            "mean_days": 1.8280593328634205,
+            "zero_share": 0.16565973115975074,
+            "day_probabilities": [
+              0.16565973115975074,
+              0.32572339038832626,
+              0.233412753322293,
+              0.15096004645074382,
+              0.06855974634705493,
+              0.034544144649224263,
+              0.01231072593431361,
+              0.008829461748293422
+            ]
+          },
+          "food_away_from_home": {
+            "mean_days": 1.5953840029502353,
+            "zero_share": 0.3863864773556913,
+            "day_probabilities": [
+              0.3863864773556913,
+              0.21253201666772797,
+              0.1396618314092568,
+              0.09982699354493792,
+              0.06929633995563662,
+              0.04627760301686129,
+              0.026657198426890828,
+              0.019361539622997408
+            ]
+          },
+          "household_cleaning_paper": {
+            "mean_days": 0.5492431862359313,
+            "zero_share": 0.6002874315044602,
+            "day_probabilities": [
+              0.6002874315044602,
+              0.28152909304486023,
+              0.09332116740507196,
+              0.01918136500403918,
+              0.00487705183903365,
+              0.0008038912025349883,
+              0.0,
+              0.0
+            ]
+          },
+          "personal_care_products": {
+            "mean_days": 0.3353601586973862,
+            "zero_share": 0.7289290235338628,
+            "day_probabilities": [
+              0.7289290235338628,
+              0.21856993523578414,
+              0.04160236165785447,
+              0.010390387205307043,
+              0.0001271233059863577,
+              0.00038116906120532076,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "fixed_income_age_standardized": {
+          "n_profiles": 192,
+          "n_unique_profile_patterns": 109,
+          "categories": {
+            "food_at_home": {
+              "mean_days": 1.9944898348751827,
+              "zero_share": 0.09996919736545251,
+              "seed_mean_central95": [
+                1.7861979166666666,
+                2.2239583333333335
+              ],
+              "original_assigned_mean": 2.0729166666666665,
+              "original_mean_within_seed_central95": true
+            },
+            "food_away_from_home": {
+              "mean_days": 1.7876373411197248,
+              "zero_share": 0.322849992458812,
+              "seed_mean_central95": [
+                1.5623697916666666,
+                2.047005208333333
+              ],
+              "original_assigned_mean": 1.8020833333333333,
+              "original_mean_within_seed_central95": true
+            },
+            "household_cleaning_paper": {
+              "mean_days": 0.6143355991610623,
+              "zero_share": 0.5527282871388962,
+              "seed_mean_central95": [
+                0.5,
+                0.75
+              ],
+              "original_assigned_mean": 0.5989583333333334,
+              "original_mean_within_seed_central95": true
+            },
+            "personal_care_products": {
+              "mean_days": 0.3651020774322802,
+              "zero_share": 0.7083672857765029,
+              "seed_mean_central95": [
+                0.280859375,
+                0.46875
+              ],
+              "original_assigned_mean": 0.4010416666666667,
+              "original_mean_within_seed_central95": true
+            }
+          },
+          "retained_field_patterns": {
+            "household_income_band,age_group": 192
+          },
+          "field_retention": {
+            "household_income_band": {
+              "available": 192,
+              "retained": 192
+            },
+            "age_group": {
+              "available": 192,
+              "retained": 192
+            },
+            "housing_tenure": {
+              "available": 179,
+              "retained": 0
+            },
+            "region": {
+              "available": 192,
+              "retained": 0
+            },
+            "education_group": {
+              "available": 191,
+              "retained": 0
+            }
+          },
+          "minimum_CUs": 93,
+          "minimum_effective_CUs": 73.10784250732354,
+          "below_support_profiles": 0,
+          "seed_count": 200,
+          "seed_interpretation": "Central range across donor draws with fixed source/profile; not a survey CI or LLM error interval."
+        },
+        "current_priority_matching": {
+          "n_profiles": 192,
+          "n_unique_profile_patterns": 109,
+          "categories": {
+            "food_at_home": {
+              "mean_days": 1.9722153577070358,
+              "zero_share": 0.1017008106753043,
+              "seed_mean_central95": [
+                1.8020833333333333,
+                2.140625
+              ],
+              "original_assigned_mean": 2.0729166666666665,
+              "original_mean_within_seed_central95": true
+            },
+            "food_away_from_home": {
+              "mean_days": 1.7502887547984756,
+              "zero_share": 0.3231425737511386,
+              "seed_mean_central95": [
+                1.4684895833333333,
+                2.0209635416666667
+              ],
+              "original_assigned_mean": 1.8020833333333333,
+              "original_mean_within_seed_central95": true
+            },
+            "household_cleaning_paper": {
+              "mean_days": 0.6158328956031291,
+              "zero_share": 0.5543644869072085,
+              "seed_mean_central95": [
+                0.5204427083333334,
+                0.729296875
+              ],
+              "original_assigned_mean": 0.5989583333333334,
+              "original_mean_within_seed_central95": true
+            },
+            "personal_care_products": {
+              "mean_days": 0.3727351886523101,
+              "zero_share": 0.7075001135799929,
+              "seed_mean_central95": [
+                0.2811197916666667,
+                0.4740885416666667
+              ],
+              "original_assigned_mean": 0.4010416666666667,
+              "original_mean_within_seed_central95": true
+            }
+          },
+          "retained_field_patterns": {
+            "household_income_band,age_group,housing_tenure": 82,
+            "household_income_band,age_group,housing_tenure,region": 67,
+            "household_income_band,age_group,region,education_group": 3,
+            "household_income_band,age_group,housing_tenure,region,education_group": 25,
+            "household_income_band,age_group": 11,
+            "household_income_band,age_group,region": 4
+          },
+          "field_retention": {
+            "household_income_band": {
+              "available": 192,
+              "retained": 192
+            },
+            "age_group": {
+              "available": 192,
+              "retained": 192
+            },
+            "housing_tenure": {
+              "available": 179,
+              "retained": 174
+            },
+            "region": {
+              "available": 192,
+              "retained": 99
+            },
+            "education_group": {
+              "available": 191,
+              "retained": 28
+            }
+          },
+          "minimum_CUs": 25,
+          "minimum_effective_CUs": 18.972299357256656,
+          "below_support_profiles": 0,
+          "seed_count": 200,
+          "seed_interpretation": "Central range across donor draws with fixed source/profile; not a survey CI or LLM error interval."
+        }
+      }
+    },
+    "current_actual_matching": {
+      "household_income_band": {
+        "available": 192,
+        "required_and_kept": 192,
+        "realized_agreement": 192
+      },
+      "age_group": {
+        "available": 192,
+        "required_and_kept": 192,
+        "realized_agreement": 192
+      },
+      "housing_tenure": {
+        "available": 179,
+        "required_and_kept": 174,
+        "realized_agreement": 174
+      },
+      "region": {
+        "available": 192,
+        "required_and_kept": 99,
+        "realized_agreement": 123
+      },
+      "education_group": {
+        "available": 191,
+        "required_and_kept": 28,
+        "realized_agreement": 102
+      }
+    },
+    "dictionary_evidence": {
+      "variables": {
+        "FINCBEFM": [
+          {
+            "description": "Total amount of family income before taxes in the last 12 months (Imputed or collected data)",
+            "start": [
+              2013,
+              1
+            ]
+          }
+        ],
+        "FINCBEF1": [
+          {
+            "description": "Imputation Iteration #1 - FINCBEFX",
+            "start": [
+              2013,
+              1
+            ]
+          }
+        ],
+        "FAM_SIZE": [
+          {
+            "description": "Number of Members in CU",
+            "start": [
+              1990,
+              1
+            ]
+          }
+        ],
+        "PERSLT18": [
+          {
+            "description": "# of CU Members less than 18 AGE < 18",
+            "start": [
+              1990,
+              1
+            ]
+          }
+        ]
+      },
+      "tenure_codes_2020": {
+        "1": "Homeowner w/ Mortgage\n  TENURECU = '1' or '2' and MORT = '1'",
+        "2": "Homeowner w/o Mortgage\n  TENURECU = '1' or '2' and MORT = '2'",
+        "3": "Homeowner-Mortgage status not reported\n  TENURECU = '1' or '2' and MORT is missing",
+        "4": "Rented",
+        "5": "Occupied w/o payment of cash rent:",
+        "6": "Student housing"
+      },
+      "current_income_match": "CE last-12-month before-tax CU income mean/coarse band vs SCE supplied household income category; CU/household boundaries and original SCE categorisation not fully equivalent.",
+      "assets": "Only housing tenure is used; it is not home value, housing equity, liquid assets or net wealth. No common measured asset variable is available in the current matching whitelist.",
+      "unused_joint_variables": [
+        "CE FAM_SIZE",
+        "CE PERSLT18",
+        "actual household shopping responsibility"
+      ],
+      "do_not_infer": "Income matching does not imply wealth matching; two-week imputation category changes are not economic income transitions."
+    },
+    "pooled_equal_quarter_source": {
+      "method": "Each quarter normalized to equal unconditional CU source mass; same current fallback/minimums, not an official CE estimate.",
+      "selected_distribution": {
+        "food_at_home": {
+          "mean_days": 1.8672543728809785,
+          "zero_share": 0.10921890138344195,
+          "day_probabilities": [
+            0.10921890138344195,
+            0.3837290571386388,
+            0.24402242243302483,
+            0.1371867182822676,
+            0.07078729722490101,
+            0.03593918686613151,
+            0.012739723901936457,
+            0.0063766927696577505
+          ]
+        },
+        "food_away_from_home": {
+          "mean_days": 1.7502832532172297,
+          "zero_share": 0.35010828526024335,
+          "day_probabilities": [
+            0.35010828526024335,
+            0.22331012476357304,
+            0.1436893692844274,
+            0.10118963010029836,
+            0.06519375656949522,
+            0.05261012258750557,
+            0.03509111967280083,
+            0.028807591761656308
+          ]
+        },
+        "household_cleaning_paper": {
+          "mean_days": 0.5652485611039417,
+          "zero_share": 0.5763090519032391,
+          "day_probabilities": [
+            0.5763090519032391,
+            0.3122543371049681,
+            0.08701633354004154,
+            0.019443157644475913,
+            0.004326668109064236,
+            0.0005772986400617226,
+            7.315305814957577e-05,
+            0.0
+          ]
+        },
+        "personal_care_products": {
+          "mean_days": 0.37889596704525774,
+          "zero_share": 0.700023825315317,
+          "day_probabilities": [
+            0.700023825315317,
+            0.23624479257038208,
+            0.0516556982129036,
+            0.00957076014488686,
+            0.0018971211681447862,
+            0.0006078025883657643,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "matching": {
+        "n_profiles": 192,
+        "n_unique_profile_patterns": 109,
+        "categories": {
+          "food_at_home": {
+            "mean_days": 1.9486601045715426,
+            "zero_share": 0.10038385613035433,
+            "seed_mean_central95": [
+              1.7549479166666666,
+              2.1617187500000004
+            ],
+            "original_assigned_mean": 2.0729166666666665,
+            "original_mean_within_seed_central95": true
+          },
+          "food_away_from_home": {
+            "mean_days": 1.876111679525744,
+            "zero_share": 0.3141686676686596,
+            "seed_mean_central95": [
+              1.5984375,
+              2.1302083333333335
+            ],
+            "original_assigned_mean": 1.8020833333333333,
+            "original_mean_within_seed_central95": true
+          },
+          "household_cleaning_paper": {
+            "mean_days": 0.5809770178137877,
+            "zero_share": 0.5642780053201872,
+            "seed_mean_central95": [
+              0.4895833333333333,
+              0.682421875
+            ],
+            "original_assigned_mean": 0.5989583333333334,
+            "original_mean_within_seed_central95": true
+          },
+          "personal_care_products": {
+            "mean_days": 0.4065715989365504,
+            "zero_share": 0.6795624926172565,
+            "seed_mean_central95": [
+              0.32786458333333335,
+              0.5104166666666666
+            ],
+            "original_assigned_mean": 0.4010416666666667,
+            "original_mean_within_seed_central95": true
+          }
+        },
+        "retained_field_patterns": {
+          "household_income_band,age_group,housing_tenure,region": 61,
+          "household_income_band,age_group,housing_tenure,region,education_group": 113,
+          "household_income_band,age_group,region,education_group": 10,
+          "household_income_band,age_group,housing_tenure": 2,
+          "household_income_band,age_group,region": 3,
+          "household_income_band,age_group": 3
+        },
+        "field_retention": {
+          "household_income_band": {
+            "available": 192,
+            "retained": 192
+          },
+          "age_group": {
+            "available": 192,
+            "retained": 192
+          },
+          "housing_tenure": {
+            "available": 179,
+            "retained": 176
+          },
+          "region": {
+            "available": 192,
+            "retained": 187
+          },
+          "education_group": {
+            "available": 191,
+            "retained": 123
+          }
+        },
+        "minimum_CUs": 25,
+        "minimum_effective_CUs": 17.503799051498845,
+        "below_support_profiles": 0,
+        "seed_count": 200,
+        "seed_interpretation": "Central range across donor draws with fixed source/profile; not a survey CI or LLM error interval."
+      },
+      "including_supported_zero_matching": {
+        "n_profiles": 192,
+        "n_unique_profile_patterns": 109,
+        "categories": {
+          "food_at_home": {
+            "mean_days": 1.8476482535653085,
+            "zero_share": 0.15601549171355017,
+            "seed_mean_central95": [
+              1.6613281249999998,
+              2.0417968749999997
+            ],
+            "original_assigned_mean": 2.0729166666666665,
+            "original_mean_within_seed_central95": false
+          },
+          "food_away_from_home": {
+            "mean_days": 1.795450550283923,
+            "zero_share": 0.3482248022388727,
+            "seed_mean_central95": [
+              1.5572916666666667,
+              2.1204427083333335
+            ],
+            "original_assigned_mean": 1.8020833333333333,
+            "original_mean_within_seed_central95": true
+          },
+          "household_cleaning_paper": {
+            "mean_days": 0.5499062572688583,
+            "zero_share": 0.5895081820409308,
+            "seed_mean_central95": [
+              0.4635416666666667,
+              0.6565104166666668
+            ],
+            "original_assigned_mean": 0.5989583333333334,
+            "original_mean_within_seed_central95": true
+          },
+          "personal_care_products": {
+            "mean_days": 0.3852409911027843,
+            "zero_share": 0.697015682299538,
+            "seed_mean_central95": [
+              0.3020833333333333,
+              0.49492187500000007
+            ],
+            "original_assigned_mean": 0.4010416666666667,
+            "original_mean_within_seed_central95": true
+          }
+        },
+        "retained_field_patterns": {
+          "household_income_band,age_group,housing_tenure,region": 60,
+          "household_income_band,age_group,housing_tenure,region,education_group": 114,
+          "household_income_band,age_group,region,education_group": 10,
+          "household_income_band,age_group,housing_tenure": 2,
+          "household_income_band,age_group,region": 3,
+          "household_income_band,age_group": 3
+        },
+        "field_retention": {
+          "household_income_band": {
+            "available": 192,
+            "retained": 192
+          },
+          "age_group": {
+            "available": 192,
+            "retained": 192
+          },
+          "housing_tenure": {
+            "available": 179,
+            "retained": 176
+          },
+          "region": {
+            "available": 192,
+            "retained": 187
+          },
+          "education_group": {
+            "available": 191,
+            "retained": 124
+          }
+        },
+        "minimum_CUs": 25,
+        "minimum_effective_CUs": 15.388663944177656,
+        "below_support_profiles": 0,
+        "seed_count": 200,
+        "seed_interpretation": "Central range across donor draws with fixed source/profile; not a survey CI or LLM error interval."
+      }
+    },
+    "limits": [
+      "2020 quarters only: season, COVID and collection effects cannot be separated; not evidence of stability over 2021-2025.",
+      "Current corrected retrospective A inputs; B needs independently established historical availability.",
+      "No target-month SCE answers read; source/matching sensitivity is not a simulated error comparison.",
+      "Random-seed ranges condition on donors and profiles; no survey sampling or donor imputation uncertainty included.",
+      "Supported zero weeks are not never-buy households; missing/partial days still excluded."
+    ]
+  },
+  "matching_field_inventory": {
+    "status": "completed_offline_matching_field_inventory",
+    "new_api_calls": 0,
+    "source_sha256": {
+      "data/raw/sce_audit_20260928/micro_2020_2024.xlsx": "1b57ffb75c2170d767f46a001002db8c40c228fe5691f6dd19e39777ffe469c6",
+      "data/raw/ce_experience/20261006/diary/diary20.zip": "4862a21ef2b9de25c88a4efbdd4f3905aeaf68d942abc9acc31b33644f84db1a",
+      "data/raw/sce_audit_20260928/questionnaire.pdf": "e30e2ef1f925cb90aef1d5d6c9b13c6307b1f311e40c5b894ad27ddf69066e93",
+      "studies/sce_inflation_expectations/evaluation/matching_field_inventory.py": "f3af79a68a0df639fb1abe48fb8a152883ff53467f2dbf90a1deecfd0ed34cef"
+    },
+    "raw_sce_rows": 82535,
+    "fields_in_schema": [
+      "Q44",
+      "Q45new_1",
+      "Q45new_2",
+      "Q45new_3",
+      "Q45new_4",
+      "Q45new_5",
+      "Q45new_6",
+      "Q45new_7",
+      "Q45new_8",
+      "Q45new_9",
+      "Q46",
+      "Q47",
+      "_HH_INC_CAT"
+    ],
+    "nonblank_cell_counts": {
+      "_HH_INC_CAT": 71976,
+      "Q44": 8536,
+      "Q45new_1": 8538,
+      "Q45new_2": 8538,
+      "Q45new_3": 8538,
+      "Q45new_4": 8538,
+      "Q45new_5": 8538,
+      "Q45new_6": 8538,
+      "Q45new_7": 8538,
+      "Q45new_8": 8538,
+      "Q45new_9": 8538,
+      "Q47": 8481,
+      "Q46": 8190
+    },
+    "valid_entry_income_codes": 8481,
+    "q47_to_coarse_income_counts": {
+      "10|Over 100k": 746,
+      "9|Over 100k": 1476,
+      "7|50k to 100k": 943,
+      "3|Under 50k": 618,
+      "5|Under 50k": 671,
+      "11|Over 100k": 749,
+      "8|50k to 100k": 1237,
+      "6|50k to 100k": 700,
+      "2|Under 50k": 427,
+      "4|Under 50k": 616,
+      "1|Under 50k": 298
+    },
+    "ce_income_boundary_by_quarter": {
+      "1": {
+        "valid_income_week_rows": 3285,
+        "exactly_100000": 17
+      },
+      "2": {
+        "valid_income_week_rows": 1936,
+        "exactly_100000": 8
+      },
+      "3": {
+        "valid_income_week_rows": 2559,
+        "exactly_100000": 14
+      },
+      "4": {
+        "valid_income_week_rows": 2835,
+        "exactly_100000": 8
+      }
+    },
+    "questionnaire_evidence": {
+      "Q44": "p32: owns another home; not net wealth",
+      "Q45new": "p33: household composition excluding respondent; counts and living-alone option",
+      "Q46": "p34: household financial decision responsibility; not grocery shopping responsibility",
+      "Q47": "p35: combined pre-tax household income in prior 12 months, 11 brackets; 100000 begins bracket9",
+      "timing": "p27: Q32-Q47 asked of new respondents; coverage across all monthly rows is not current-month missingness."
+    },
+    "limits": [
+      "Nonblank counts are not validated current-month values or representative population rates.",
+      "No individual joining, carrying forward or modification of simulation inputs.",
+      "Household composition and income must respect entry timing, changes and survey boundaries."
+    ]
+  },
+  "verification_receipt": {
+    "status": "passed_focused_source_and_matching_checks",
+    "new_api_calls": 0,
+    "math_tests": 4,
+    "q4_vectors_reproduced": 2426,
+    "q4_field_retention_reproduced": true,
+    "source_hashes_match": true,
+    "protected_files_unchanged": 15,
+    "raw_source_rows_scanned_for_field_inventory": 82535,
+    "nonempty_income_code_pairs": 8481,
+    "no_target_inflation_answers_used": true
+  }
+}

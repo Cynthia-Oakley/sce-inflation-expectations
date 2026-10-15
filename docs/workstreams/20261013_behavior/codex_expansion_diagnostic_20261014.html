@@ -1,7 +1,35 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><aside id="next-stage-checklist" style="background:#eef4ef;border-left:4px solid #326a56;padding:18px 22px;margin-bottom:30px;line-height:1.7">
-<strong>频率控制变量诊断已完成：先查价格体验与信念更新怎样衔接</strong>
-<p>复用已有回答，新增API调用0。188人的共同评价、173人的完整控制分析没有发现稳定的频率—误差改善关系；个人信念仍被压缩。此前Q8的小幅改善是群体中位数，逐人误差基本没变。</p>
-<p><a href="#frequency-control-analysis">看本轮解释与图表</a> · <a href="../../current_todo.html">当前清单（20/25）</a> · <a href="../20261014_mechanism/purchase_frequency_control_results_20261015.md">方法、边界与复算</a></p></aside><section id="frequency-control-analysis" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<strong>多季度与家庭匹配核查已完成：供体扩大有帮助，不能替代行为机制</strong>
+<p>新增API0。原四个频率均值在200次重抽的常见范围内，暂未发现抽样种子异常；全年供体显著减少地区、教育的匹配放宽。收入分档已匹配，净资产和实际购物责任尚未匹配。</p>
+<p><a href="#frequency-quarter-matching">看本轮解释和图表</a> · <a href="../../current_todo.html">当前清单（21/27）</a> · <a href="../20261014_mechanism/frequency_quarter_matching_results_20261015.md">方法与完整结果</a></p></aside><section id="frequency-quarter-matching" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>购买频率是否抽得不合适？家庭匹配是否太粗？</h1>
+<p><strong>2026-10-15，离线核查完成，没有新增API费用。结论是：原种子不显得异常，多季度能改善匹配；但“同收入档”还不是“相同资产和生活处境”。</strong> 本轮没有修改旧输入，也没有新的拟合成绩。</p>
+<h2>一、四季度就在本地，之前只用了Q4</h2>
+<p>按官方字典处理2020年Q1—Q4，同口径可用家庭分别1,595／931／1,222／1,348。Q4原有1,348户、2,426周与全部向量完整复现。家庭先抽、再抽该家庭一周，没有把两周当两个人。</p>
+<p>在固定收入和年龄、标准化到同一192个画像后，在家食品日数约2.21／1.60／1.83／1.99，外食2.45／1.30／1.81／1.79。单季度不宜默认跨年稳定；2020疫情、季节、参与和采集变化尚无法分开。</p>
+<figure><img src="../../../outputs/sce_frequency_quarter_reading_20261015_v1/quarter_matching.png" alt="固定画像后四季度记录日数变化与扩大供体后的匹配保留情况"><figcaption>左图只固定收入—年龄条件，不使用SCE答案；右图保持原优先级及25家庭/有效数15门槛。全年池四季各归一源总质量，属于合成设计，不是官方年度估计或新的真实模拟。</figcaption></figure>
+<h2>二、原来是否只是随机抽得不好？</h2>
+<p>相同Q4供体、同一192个画像，重抽200个种子。原四类平均频率全部落在中央95%的重抽范围内。因此暂时没有证据认为此前主要是一次抽样运气差；这只检查四个平均数，并不证明个体匹配或联合结构正确。</p>
+<figure><img src="../../../outputs/sce_frequency_quarter_reading_20261015_v1/seed_check.png" alt="原始四类平均频率与200种抽样结果范围对照"><figcaption>横线为给定供体与画像的200次抽取中央范围，圆点为原分配均值。不是调查置信区间，也不是模拟误差区间。</figcaption></figure>
+<h2>三、收入、住房、地区、教育实际保留了多少？</h2>
+<div class="table-scroll"><table style="min-width:550px"><thead><tr><th>匹配条件</th><th>目标中已知</th><th>Q4明确保留</th><th>全年池明确保留</th></tr></thead><tbody>
+<tr><td>收入档</td><td>192</td><td>192</td><td>192</td></tr>
+<tr><td>年龄组</td><td>192</td><td>192</td><td>192</td></tr>
+<tr><td>住房身份</td><td>179</td><td>174</td><td>176</td></tr>
+<tr><td>地区</td><td>192</td><td>99</td><td>187</td></tr>
+<tr><td>教育</td><td>191</td><td>28</td><td>123</td></tr>
+</tbody></table></div>
+<p>原供体池不足时先放宽教育和地区，因此它们虽在设计中，却经常没有成为实际约束。全年池明显改善支持；原分配所有保留字段均执行正确，没有发现程序把已要求匹配的字段配错。</p>
+<h2>四、同收入档，为什么还不够？</h2>
+<p>当前仅用三档收入，覆盖范围很宽；消费单元与家庭的边界也不同。CE五套收入插补值约有13%—15%的完整家庭周跨越收入档，提示分档还存在测量不确定性，不是现实收入在两周内突变。</p>
+<p><strong>住房身份只是拥有/租住，不是资产。</strong> 房屋价值、贷款余额、流动资产、净财富均未参与当前匹配。收入高低也不能代替财富，尤其对退休家庭。</p>
+<p>进一步核查发现：SCE问卷Q47本来就有11档过去12个月税前收入，Q45有家庭成员构成，Q44问是否另有住宅，Q46问家庭财务决策分工。原始文件中确有这些字段，但尚需按首次作答时间和有效值核查再接入；Q44不是净财富，Q46也不等于实际买菜责任。</p>
+<p>已对2020—2024原始82,535行清点：Q47有8,481条有效收入码，Q45家庭构成字段各8,538条非空值。这些题仅在首次参与时问，尚需按个人追溯，不可当作当期人口缺失率。另发现原CE程序把恰好10万美元划入中档，SCE Q47却从10万美元起算高档；Q4原始资料涉及8个周，下一候选应修正，旧输入不改。这一小边界问题不能解释全部拟合失败。</p><h2>五、还有一项筛选影响</h2>
+<p>原供体排除了四类均无正支出但记录支持完整的周。全年池纳入这些周后，在家食品期望日数约1.95→1.85，零记录比例约10.0%→15.6%。说明筛选会抬高接触水平，但未证明它造成了预期中心误差。无明细和未知日码继续按缺失处理，不能填0。</p>
+<h2>下一步</h2>
+<ol><li>核查细收入、家庭规模等SCE实测字段的覆盖和记录时点，优先改善共同字段的联合匹配。</li><li>补非疫情和目标年份CE，检查跨年稳定性和当时是否公开；不能把2020四季当作每年重复的真实习惯。</li><li>匹配改进与信念更新分开验证。多季度目前改善的是输入可信度，不保证自动解决模型的系统性偏差。</li></ol>
+<p><a href="../20261014_mechanism/frequency_quarter_matching_results_20261015.md">完整结果、来源与复算</a> · <a href="../20261014_mechanism/frequency_quarter_matching_summary_20261015.json">聚合备份</a> · <a href="#frequency-control-analysis">此前控制变量分析</a> · <a href="../../current_todo.html">当前任务清单</a></p>
+</section><section id="frequency-control-analysis" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
 <h1>控制其他变量后，购买频率与误差有什么关系？</h1>
 <p><strong>还没有找到稳定的“频率提高、误差下降”关系。更明显的线索是：个人价格输入仍比较相似，模型对个人历史信念的差异保留不足。</strong> 这是对实现方式的诊断，不是购买频率理论被否定，也没有确定唯一原因。</p>
 <p>2026-10-15，新增API调用0、费用0。分析四个已看过的开发月：2020-04、2021-05/11、2022-03。每期原选48人；Q9共同支持188个不同人月，每人两次生成先平均，完整控制回归173人。</p>

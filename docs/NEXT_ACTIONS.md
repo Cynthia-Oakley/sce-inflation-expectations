@@ -3,7 +3,7 @@
 
 更新：2026-10-15（北京时间）。基本流程和八期实验已完成；先验作用真实对照也已完成。此处只统计下一阶段任务，原28/31项历史清单保存在下方。
 
-当前：购买频率离线控制诊断已完成，新API0。188人共同评价、173人完整控制；频率与误差无稳定关联，个人历史差异仍被压缩。Q8群体中心改善不等于逐人更准（5.076→5.066）。下一步检查具体价格体验/购物角色、保留个人信念的更新方式与Q8/Q9表达；不追加同配置付费模拟。
+当前：多季度与家庭匹配离线核查完成，新API0。Q4四类均值在200种抽样的常见范围内；合并四季使地区条件99→187人、教育28→123人可保留。收入/年龄全部分档匹配，但资产未匹配。已发现SCE细收入/家庭构成字段，下一步核查有效覆盖和记录时点，并补跨年CE；不修改旧输入或启动模拟。
 
 ## 已完成的基础
 
@@ -36,6 +36,8 @@
 - [x] 明确本批外发授权后完成768次真实请求，保留回答、费用和失败。
 - [x] 做同样本评价，解释频率作用的增量；当前候选无增量，未追加匹配与置换付费试验。
 - [x] 复用回答做频率—误差控制变量、同人差值和Q8/Q9分解，记录有限个人化与先验压缩线索。
+- [x] 重建2020四季频率，检查200个种子、条件放宽、收入/住房字典和资产匹配缺口。
+- [ ] 核查SCE细收入/家庭构成的有效历史记录，补跨年CE，再冻结更可靠的联合匹配候选。
 
 ## 3. 事件与记忆：随后开展
 
@@ -52,7 +54,7 @@
 
 最新证据：[控制变量检查与机制准备](literature/sce/heterogeneity_and_probability/behavior_mechanism_evidence_20261014.md)
 
-结果阅读：[频率控制变量诊断](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-control-analysis)；[购买频率真实对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#purchase-frequency-results)；[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
+结果阅读：[多季度与匹配核查](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-quarter-matching)；[频率控制变量诊断](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-control-analysis)；[购买频率真实对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#purchase-frequency-results)；[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
 
 使用约定：Agent按实际进展打钩并重新生成可视清单。打钩表示工作完成，不表示实验机制有效。程序保留个人位置的方案作为后备，不与本阶段三条线同时推进。
 <!-- current-todo:end -->
