@@ -16,6 +16,9 @@ data/raw/
 data/restricted/
 data/cache/
 outputs/
+# Reading PDFs and visual QA: retain source text/renderers in Git.
+output/pdf/
+tmp/pdfs/
 runs/
 artifacts/
 *.zip
