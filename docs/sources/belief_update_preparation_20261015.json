@@ -1,0 +1,832 @@
+{
+  "status": "offline_preparation_only_not_new_simulation",
+  "new_api_calls": 0,
+  "center_diagnostic": {
+    "status": "completed_offline_center_only_architecture_diagnostic",
+    "new_api_calls": 0,
+    "phases": {
+      "development": {
+        "cells": [
+          {
+            "month": 202004,
+            "repeat": 1,
+            "n": 92,
+            "LLM_common_shift": -1.3772173490958508,
+            "real_cohort_center_change_evaluation_only": -0.20932411868110368,
+            "real_IQR": 4.184273635535432,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 1.1678932304147471,
+                "signed_center_error": -1.1678932304147471,
+                "cross_W1": 2.6452124828588963,
+                "change_W1": 1.7962625803374639,
+                "IQR": 1.0659308457897438,
+                "individual_MAE": 3.267686265103639,
+                "rank_correlation": 0.39460196895985394
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 1.1678932304147471,
+                "signed_center_error": -1.1678932304147471,
+                "cross_W1": 1.1923512489315313,
+                "change_W1": 4.05132337952578,
+                "IQR": 4.000000000043173,
+                "individual_MAE": 4.05132337952578,
+                "rank_correlation": 0.32931138926932735
+              },
+              "copy_previous": {
+                "center_MAE": 0.20932411868110368,
+                "signed_center_error": 0.20932411868110368,
+                "cross_W1": 0.656391482878494,
+                "change_W1": 3.8516384490663493,
+                "IQR": 4.000000000043173,
+                "individual_MAE": 3.8516384490663484,
+                "rank_correlation": 0.32931138926932735
+              }
+            }
+          },
+          {
+            "month": 202004,
+            "repeat": 2,
+            "n": 92,
+            "LLM_common_shift": -1.5043463352126096,
+            "real_cohort_center_change_evaluation_only": -0.19098300562505277,
+            "real_IQR": 4.284409930411924,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 1.3133633295875569,
+                "signed_center_error": -1.3133633295875569,
+                "cross_W1": 2.7769784547582708,
+                "change_W1": 1.906285674878529,
+                "IQR": 1.152994758854561,
+                "individual_MAE": 3.5209742190191724,
+                "rank_correlation": 0.21561646265134116
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 1.3133633295875569,
+                "signed_center_error": -1.3133633295875569,
+                "cross_W1": 1.5190637371857751,
+                "change_W1": 4.35441234778787,
+                "IQR": 4.000000016727,
+                "individual_MAE": 4.354412347787869,
+                "rank_correlation": 0.2853212185206125
+              },
+              "copy_previous": {
+                "center_MAE": 0.19098300562505277,
+                "signed_center_error": 0.19098300562505277,
+                "cross_W1": 0.5570467171608633,
+                "change_W1": 4.11428901620018,
+                "IQR": 4.000000016727,
+                "individual_MAE": 4.114289016200181,
+                "rank_correlation": 0.2853212185206125
+              }
+            }
+          },
+          {
+            "month": 202105,
+            "repeat": 1,
+            "n": 94,
+            "LLM_common_shift": 0.6355327486992,
+            "real_cohort_center_change_evaluation_only": 0.6234837299744553,
+            "real_IQR": 4.113767255086135,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.01204901872474462,
+                "signed_center_error": 0.01204901872474462,
+                "cross_W1": 2.283501614112472,
+                "change_W1": 1.2801806803711773,
+                "IQR": 2.3192611926153663,
+                "individual_MAE": 3.0405426837401133,
+                "rank_correlation": 0.5082933245176502
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.01204901872474462,
+                "signed_center_error": 0.01204901872474462,
+                "cross_W1": 0.46646311417784747,
+                "change_W1": 2.860621517274109,
+                "IQR": 4.881143985958927,
+                "individual_MAE": 2.8606215172741094,
+                "rank_correlation": 0.5754245872159789
+              },
+              "copy_previous": {
+                "center_MAE": 0.6234837299744553,
+                "signed_center_error": -0.6234837299744553,
+                "cross_W1": 0.5950186092566265,
+                "change_W1": 2.8694516830168277,
+                "IQR": 4.881143985958927,
+                "individual_MAE": 2.8694516830168277,
+                "rank_correlation": 0.5754245872159789
+              }
+            }
+          },
+          {
+            "month": 202105,
+            "repeat": 2,
+            "n": 94,
+            "LLM_common_shift": 0.5040267007361194,
+            "real_cohort_center_change_evaluation_only": 0.6234837299744553,
+            "real_IQR": 4.113767255086135,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.1194570292383359,
+                "signed_center_error": -0.1194570292383359,
+                "cross_W1": 2.2096448282683405,
+                "change_W1": 1.1468735822646487,
+                "IQR": 2.213165480309179,
+                "individual_MAE": 3.039815671818333,
+                "rank_correlation": 0.5391766201894364
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.1194570292383359,
+                "signed_center_error": -0.1194570292383359,
+                "cross_W1": 0.45271668325660863,
+                "change_W1": 2.84022313307299,
+                "IQR": 4.881143985958927,
+                "individual_MAE": 2.84022313307299,
+                "rank_correlation": 0.5754245872159789
+              },
+              "copy_previous": {
+                "center_MAE": 0.6234837299744553,
+                "signed_center_error": -0.6234837299744553,
+                "cross_W1": 0.5950186092566265,
+                "change_W1": 2.8694516830168277,
+                "IQR": 4.881143985958927,
+                "individual_MAE": 2.8694516830168277,
+                "rank_correlation": 0.5754245872159789
+              }
+            }
+          },
+          {
+            "month": 202111,
+            "repeat": 1,
+            "n": 95,
+            "LLM_common_shift": 0.20137868172011686,
+            "real_cohort_center_change_evaluation_only": 0.7914532058257233,
+            "real_IQR": 5.9989582750638775,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.5900745241056065,
+                "signed_center_error": -0.5900745241056065,
+                "cross_W1": 2.422858838083613,
+                "change_W1": 1.4716984085208122,
+                "IQR": 2.441152682960862,
+                "individual_MAE": 3.1572202833325473,
+                "rank_correlation": 0.5872838731868933
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.5900745241056065,
+                "signed_center_error": -0.5900745241056065,
+                "cross_W1": 1.3648214471970737,
+                "change_W1": 2.9782012967106395,
+                "IQR": 5.3321266861761245,
+                "individual_MAE": 2.9782012967106377,
+                "rank_correlation": 0.6474397596088712
+              },
+              "copy_previous": {
+                "center_MAE": 0.7914532058257233,
+                "signed_center_error": -0.7914532058257233,
+                "cross_W1": 1.5534814753348674,
+                "change_W1": 2.9683095445951526,
+                "IQR": 5.332126686176125,
+                "individual_MAE": 2.968309544595153,
+                "rank_correlation": 0.6476796254247069
+              }
+            }
+          },
+          {
+            "month": 202111,
+            "repeat": 2,
+            "n": 95,
+            "LLM_common_shift": 0.1905812886624787,
+            "real_cohort_center_change_evaluation_only": 0.7914532058257233,
+            "real_IQR": 5.9989582750638775,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.6008719171632446,
+                "signed_center_error": -0.6008719171632446,
+                "cross_W1": 2.836702768815604,
+                "change_W1": 1.4635834655266966,
+                "IQR": 1.7214218770752527,
+                "individual_MAE": 3.203804049104335,
+                "rank_correlation": 0.6792729659593661
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.6008719171632446,
+                "signed_center_error": -0.6008719171632446,
+                "cross_W1": 1.374936899640545,
+                "change_W1": 2.977178385789389,
+                "IQR": 5.332126686176126,
+                "individual_MAE": 2.9771783857893896,
+                "rank_correlation": 0.6476796254247069
+              },
+              "copy_previous": {
+                "center_MAE": 0.7914532058257233,
+                "signed_center_error": -0.7914532058257233,
+                "cross_W1": 1.5534814753348674,
+                "change_W1": 2.9683095445951526,
+                "IQR": 5.332126686176125,
+                "individual_MAE": 2.968309544595153,
+                "rank_correlation": 0.6476796254247069
+              }
+            }
+          },
+          {
+            "month": 202203,
+            "repeat": 1,
+            "n": 95,
+            "LLM_common_shift": 0.12669412601246677,
+            "real_cohort_center_change_evaluation_only": 0.15741721895202776,
+            "real_IQR": 6.462654637087116,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.030723092939560992,
+                "signed_center_error": -0.030723092939560992,
+                "cross_W1": 2.646457056951059,
+                "change_W1": 0.7336864785308612,
+                "IQR": 2.186343778197835,
+                "individual_MAE": 3.2813887432145736,
+                "rank_correlation": 0.5755648749164994
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.030723092939560992,
+                "signed_center_error": -0.030723092939560992,
+                "cross_W1": 0.5757773906020857,
+                "change_W1": 2.593412658577815,
+                "IQR": 5.711474847709804,
+                "individual_MAE": 2.5934126585778157,
+                "rank_correlation": 0.6676898737541029
+              },
+              "copy_previous": {
+                "center_MAE": 0.15741721895202776,
+                "signed_center_error": -0.15741721895202776,
+                "cross_W1": 0.608495520356138,
+                "change_W1": 2.5926012354524466,
+                "IQR": 5.711474847709804,
+                "individual_MAE": 2.592601235452447,
+                "rank_correlation": 0.6676898737541029
+              }
+            }
+          },
+          {
+            "month": 202203,
+            "repeat": 2,
+            "n": 95,
+            "LLM_common_shift": -0.03798301060591669,
+            "real_cohort_center_change_evaluation_only": 0.15741721895202776,
+            "real_IQR": 6.462654637087116,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.19540022955794445,
+                "signed_center_error": -0.19540022955794445,
+                "cross_W1": 2.5969569207076453,
+                "change_W1": 0.7070363901271166,
+                "IQR": 2.256008803764466,
+                "individual_MAE": 3.376145285683718,
+                "rank_correlation": 0.5578378212294328
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.19540022955794445,
+                "signed_center_error": -0.19540022955794445,
+                "cross_W1": 0.6234951004717856,
+                "change_W1": 2.6052246366462866,
+                "IQR": 5.711474847709804,
+                "individual_MAE": 2.6052246366462866,
+                "rank_correlation": 0.6676898737541029
+              },
+              "copy_previous": {
+                "center_MAE": 0.15741721895202776,
+                "signed_center_error": -0.15741721895202776,
+                "cross_W1": 0.608495520356138,
+                "change_W1": 2.5926012354524466,
+                "IQR": 5.711474847709804,
+                "individual_MAE": 2.592601235452447,
+                "rank_correlation": 0.6676898737541029
+              }
+            }
+          }
+        ],
+        "aggregate": {
+          "LLM_direct": {
+            "center_MAE": 0.5037290464664677,
+            "signed_center_error": -0.5007167917852815,
+            "cross_W1": 2.5522891205694878,
+            "change_W1": 1.3132009075696631,
+            "IQR": 1.9195349274459084,
+            "individual_MAE": 3.235947150127054,
+            "rank_correlation": 0.5072059889513092
+          },
+          "prior_plus_LLM_common_shift": {
+            "center_MAE": 0.5037290464664677,
+            "signed_center_error": -0.5007167917852815,
+            "cross_W1": 0.9462032026829066,
+            "change_W1": 3.1575746694231097,
+            "IQR": 4.981186382057485,
+            "individual_MAE": 3.1575746694231093,
+            "rank_correlation": 0.5494976143454602
+          },
+          "copy_previous": {
+            "center_MAE": 0.44312692922632113,
+            "signed_center_error": -0.3430501481497821,
+            "cross_W1": 0.8409286762418277,
+            "change_W1": 3.103331548924423,
+            "IQR": 4.981186382057485,
+            "individual_MAE": 3.103331548924423,
+            "rank_correlation": 0.5495275975724396
+          }
+        },
+        "common_generations": 752,
+        "unique_person_months": 377
+      },
+      "previous_evaluation": {
+        "cells": [
+          {
+            "month": 202206,
+            "repeat": 1,
+            "n": 96,
+            "LLM_common_shift": 0.46402166142402734,
+            "real_cohort_center_change_evaluation_only": 0.007758571345517495,
+            "real_IQR": 6.04161389121998,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.45626309007850985,
+                "signed_center_error": 0.45626309007850985,
+                "cross_W1": 2.877670110111969,
+                "change_W1": 0.9977808861805118,
+                "IQR": 2.2055723302465147,
+                "individual_MAE": 3.5521840601652612,
+                "rank_correlation": 0.591270790641969
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.45626309007850985,
+                "signed_center_error": 0.45626309007850985,
+                "cross_W1": 0.7755003332319915,
+                "change_W1": 2.853085849751069,
+                "IQR": 5.9084149908309165,
+                "individual_MAE": 2.85308584975107,
+                "rank_correlation": 0.7106310259886153
+              },
+              "copy_previous": {
+                "center_MAE": 0.007758571345517495,
+                "signed_center_error": -0.007758571345517495,
+                "cross_W1": 0.7600644318471248,
+                "change_W1": 2.775319767812705,
+                "IQR": 5.9084149908309165,
+                "individual_MAE": 2.775319767812706,
+                "rank_correlation": 0.7106310259886153
+              }
+            }
+          },
+          {
+            "month": 202206,
+            "repeat": 2,
+            "n": 96,
+            "LLM_common_shift": 0.30909668061378426,
+            "real_cohort_center_change_evaluation_only": 0.007758571345517495,
+            "real_IQR": 6.04161389121998,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.30133810926826676,
+                "signed_center_error": 0.30133810926826676,
+                "cross_W1": 2.8805797303151186,
+                "change_W1": 1.0286483869495373,
+                "IQR": 2.1426111473193092,
+                "individual_MAE": 3.4550848837403887,
+                "rank_correlation": 0.5876265649726145
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.30133810926826676,
+                "signed_center_error": 0.30133810926826676,
+                "cross_W1": 0.7251333775793456,
+                "change_W1": 2.8196381434241102,
+                "IQR": 5.9084149908309165,
+                "individual_MAE": 2.8196381434241116,
+                "rank_correlation": 0.7106310259886153
+              },
+              "copy_previous": {
+                "center_MAE": 0.007758571345517495,
+                "signed_center_error": -0.007758571345517495,
+                "cross_W1": 0.7600644318471248,
+                "change_W1": 2.775319767812705,
+                "IQR": 5.9084149908309165,
+                "individual_MAE": 2.775319767812706,
+                "rank_correlation": 0.7106310259886153
+              }
+            }
+          },
+          {
+            "month": 202306,
+            "repeat": 1,
+            "n": 92,
+            "LLM_common_shift": -1.034642159701174,
+            "real_cohort_center_change_evaluation_only": -0.7513569145085572,
+            "real_IQR": 4.500246474770972,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.28328524519261666,
+                "signed_center_error": -0.28328524519261666,
+                "cross_W1": 2.6426423148585187,
+                "change_W1": 1.5693528319625232,
+                "IQR": 1.740630113676385,
+                "individual_MAE": 3.137354102990336,
+                "rank_correlation": 0.5742191400237927
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.2832852451926158,
+                "signed_center_error": -0.2832852451926158,
+                "cross_W1": 1.1018102493286,
+                "change_W1": 2.824892961001419,
+                "IQR": 4.857870288849179,
+                "individual_MAE": 2.8248929610014195,
+                "rank_correlation": 0.6553562630284
+              },
+              "copy_previous": {
+                "center_MAE": 0.7513569145085572,
+                "signed_center_error": 0.7513569145085572,
+                "cross_W1": 0.5378288939584698,
+                "change_W1": 2.500250305481199,
+                "IQR": 4.857870288849179,
+                "individual_MAE": 2.500250305481199,
+                "rank_correlation": 0.6553562630284
+              }
+            }
+          },
+          {
+            "month": 202306,
+            "repeat": 2,
+            "n": 93,
+            "LLM_common_shift": -0.9883475751952231,
+            "real_cohort_center_change_evaluation_only": -0.36939090325845303,
+            "real_IQR": 4.294260271556524,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.6189566719367701,
+                "signed_center_error": -0.6189566719367701,
+                "cross_W1": 2.623915116318253,
+                "change_W1": 1.5355432477588025,
+                "IQR": 1.8921874959205063,
+                "individual_MAE": 3.2917146851085146,
+                "rank_correlation": 0.5415548998463713
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.6189566719367692,
+                "signed_center_error": -0.6189566719367692,
+                "cross_W1": 1.1730334831338283,
+                "change_W1": 2.8982164235340613,
+                "IQR": 4.857870288849179,
+                "individual_MAE": 2.8982164235340617,
+                "rank_correlation": 0.6370357176108026
+              },
+              "copy_previous": {
+                "center_MAE": 0.36939090325845303,
+                "signed_center_error": 0.36939090325845303,
+                "cross_W1": 0.584694234873506,
+                "change_W1": 2.584357640299209,
+                "IQR": 4.857870288849179,
+                "individual_MAE": 2.584357640299209,
+                "rank_correlation": 0.6370357176108026
+              }
+            }
+          },
+          {
+            "month": 202410,
+            "repeat": 1,
+            "n": 96,
+            "LLM_common_shift": -0.631570364436226,
+            "real_cohort_center_change_evaluation_only": -0.05509426364828096,
+            "real_IQR": 5.20661318714762,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.5764761007879451,
+                "signed_center_error": -0.5764761007879451,
+                "cross_W1": 3.522766044824568,
+                "change_W1": 1.3263457273874464,
+                "IQR": 0.8064252650454273,
+                "individual_MAE": 4.005021521790336,
+                "rank_correlation": 0.5704192484259749
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.5764761007879451,
+                "signed_center_error": -0.5764761007879451,
+                "cross_W1": 1.271230569590767,
+                "change_W1": 3.345874013310894,
+                "IQR": 4.667485060110016,
+                "individual_MAE": 3.345874013310894,
+                "rank_correlation": 0.7107035179276087
+              },
+              "copy_previous": {
+                "center_MAE": 0.05509426364828096,
+                "signed_center_error": 0.05509426364828096,
+                "cross_W1": 0.7710527728475934,
+                "change_W1": 3.1109269226141913,
+                "IQR": 4.667485060110016,
+                "individual_MAE": 3.1109269226141922,
+                "rank_correlation": 0.7107035179276087
+              }
+            }
+          },
+          {
+            "month": 202410,
+            "repeat": 2,
+            "n": 96,
+            "LLM_common_shift": -0.4883710588026462,
+            "real_cohort_center_change_evaluation_only": -0.05509426364828096,
+            "real_IQR": 5.20661318714762,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 0.43327679515436524,
+                "signed_center_error": -0.43327679515436524,
+                "cross_W1": 3.496581905290311,
+                "change_W1": 1.2551663496903271,
+                "IQR": 0.8560864251249747,
+                "individual_MAE": 3.9467383607000506,
+                "rank_correlation": 0.6243945562983342
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 0.43327679515436524,
+                "signed_center_error": -0.43327679515436524,
+                "cross_W1": 1.1478616581685341,
+                "change_W1": 3.285835397896528,
+                "IQR": 4.667485060110016,
+                "individual_MAE": 3.2858353978965282,
+                "rank_correlation": 0.7107035179276087
+              },
+              "copy_previous": {
+                "center_MAE": 0.05509426364828096,
+                "signed_center_error": 0.05509426364828096,
+                "cross_W1": 0.7710527728475934,
+                "change_W1": 3.1109269226141913,
+                "IQR": 4.667485060110016,
+                "individual_MAE": 3.1109269226141922,
+                "rank_correlation": 0.7107035179276087
+              }
+            }
+          },
+          {
+            "month": 202509,
+            "repeat": 1,
+            "n": 94,
+            "LLM_common_shift": -1.1934108853988263,
+            "real_cohort_center_change_evaluation_only": 0.0,
+            "real_IQR": 6.533303393309621,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 1.1934108853988263,
+                "signed_center_error": -1.1934108853988263,
+                "cross_W1": 3.5317308811489605,
+                "change_W1": 2.5663429850083657,
+                "IQR": 1.451340302036094,
+                "individual_MAE": 3.9932283215366002,
+                "rank_correlation": 0.5114116217589078
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 1.1934108853988263,
+                "signed_center_error": -1.1934108853988263,
+                "cross_W1": 1.2635186712957034,
+                "change_W1": 3.082880883433346,
+                "IQR": 5.730172801311292,
+                "individual_MAE": 3.0828808834333454,
+                "rank_correlation": 0.8687556765070635
+              },
+              "copy_previous": {
+                "center_MAE": 0.0,
+                "signed_center_error": 0.0,
+                "cross_W1": 0.6709480887590595,
+                "change_W1": 2.6497155508916865,
+                "IQR": 5.730172801311292,
+                "individual_MAE": 2.649715550891686,
+                "rank_correlation": 0.8687556765070635
+              }
+            }
+          },
+          {
+            "month": 202509,
+            "repeat": 2,
+            "n": 94,
+            "LLM_common_shift": -1.2213777775764907,
+            "real_cohort_center_change_evaluation_only": 0.0,
+            "real_IQR": 6.533303393309621,
+            "metrics": {
+              "LLM_direct": {
+                "center_MAE": 1.2213777775764907,
+                "signed_center_error": -1.2213777775764907,
+                "cross_W1": 3.7154270982226514,
+                "change_W1": 2.7236249246533117,
+                "IQR": 1.424652999282678,
+                "individual_MAE": 4.2114836688727735,
+                "rank_correlation": 0.4893545253441381
+              },
+              "prior_plus_LLM_common_shift": {
+                "center_MAE": 1.2213777775764907,
+                "signed_center_error": -1.2213777775764907,
+                "cross_W1": 1.2873732576570185,
+                "change_W1": 3.096276818601871,
+                "IQR": 5.730172801311292,
+                "individual_MAE": 3.0962768186018716,
+                "rank_correlation": 0.8687556765070635
+              },
+              "copy_previous": {
+                "center_MAE": 0.0,
+                "signed_center_error": 0.0,
+                "cross_W1": 0.6709480887590595,
+                "change_W1": 2.6497155508916865,
+                "IQR": 5.730172801311292,
+                "individual_MAE": 2.649715550891686,
+                "rank_correlation": 0.8687556765070635
+              }
+            }
+          }
+        ],
+        "aggregate": {
+          "LLM_direct": {
+            "center_MAE": 0.6355480844242238,
+            "signed_center_error": -0.4461477845875297,
+            "cross_W1": 3.161414150136294,
+            "change_W1": 1.6253506674488531,
+            "IQR": 1.5649382598314863,
+            "individual_MAE": 3.6991012006130326,
+            "rank_correlation": 0.5612814184140128
+          },
+          "prior_plus_LLM_common_shift": {
+            "center_MAE": 0.6355480844242236,
+            "signed_center_error": -0.44614778458752946,
+            "cross_W1": 1.0931826999982235,
+            "change_W1": 3.0258375613691624,
+            "IQR": 5.2909857852753515,
+            "individual_MAE": 3.025837561369163,
+            "rank_correlation": 0.7340715526857222
+          },
+          "copy_previous": {
+            "center_MAE": 0.1558066859693259,
+            "signed_center_error": 0.15192740029656715,
+            "cross_W1": 0.6908317144674414,
+            "change_W1": 2.7695665535521967,
+            "IQR": 5.2909857852753515,
+            "individual_MAE": 2.769566553552197,
+            "rank_correlation": 0.7340715526857222
+          }
+        },
+        "common_generations": 757,
+        "unique_person_months": 379
+      }
+    },
+    "source_sha256": {
+      "outputs/sce_expanded_state_trial_20261014_v3/development_cases_private.json": "a7d78f0c8bd2579c22ec1aba14ff908fd51dc01dcb7293d1899ed8b99aed20bd",
+      "outputs/sce_expanded_state_evaluation_20261014_v1/cases_private.json": "83f6347a6dd126764c94f3b16b7e84237b62d84d3b53776e315498653d0cc7c3",
+      "studies/sce_inflation_expectations/evaluation/center_shift_diagnostic.py": "419301aa9aa9381659da67b124218ee2ecf8d09e602940eb5f6a1f10a31806ff"
+    },
+    "formula": "prior_i + median(LLM centers in month/repeat) - median(prior centers in same cell)",
+    "limits": [
+      "All months previously exposed: exploratory development diagnostic, not a new independent test.",
+      "Center-only surrogate, not a generated Q9 questionnaire or a re-fitted density. No uncertainty/zero-bin claims.",
+      "LLM common center preserved exactly, hence center MAE cannot improve by construction.",
+      "Inherited prior ranks/width are not new LLM identity information or correct individual updates.",
+      "Actual current answers enter metric evaluation only, never common_shift predictions. No parameter fitted or selected."
+    ]
+  },
+  "frequency_prototype": {
+    "status": "offline_source_limited_prototype_NOT_simulation_ready",
+    "new_api_calls": 0,
+    "n_person_months": 192,
+    "donor_weeks": 9737,
+    "donor_CUs": 5269,
+    "supported_zero_weeks": 582,
+    "source_year": 2020,
+    "source_quarters": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "seed": 20261015,
+    "quarter_weighting": "equal unconditional CU weight mass per quarter, not official annual estimator",
+    "min_unique_CUs": 25,
+    "min_effective_CUs": 15.764619213783094,
+    "field_coverage_and_retention": {
+      "household_income_band": {
+        "available": 192,
+        "retained": 192
+      },
+      "age_group": {
+        "available": 192,
+        "retained": 192
+      },
+      "family_size_group": {
+        "available": 182,
+        "retained": 182
+      },
+      "fine_income_code": {
+        "available": 192,
+        "retained": 183
+      },
+      "housing_tenure": {
+        "available": 179,
+        "retained": 138
+      },
+      "region": {
+        "available": 192,
+        "retained": 57
+      },
+      "education_group": {
+        "available": 191,
+        "retained": 8
+      }
+    },
+    "history_status": {
+      "fine_income": {
+        "historical_available": 192
+      },
+      "family_composition": {
+        "historical_available": 182,
+        "unknown_or_stale": 10
+      }
+    },
+    "quarters_drawn": {
+      "3": 55,
+      "2": 43,
+      "4": 48,
+      "1": 46
+    },
+    "matched_means": {
+      "food_at_home": 1.8541666666666667,
+      "food_away_from_home": 1.515625,
+      "household_cleaning_paper": 0.4947916666666667,
+      "personal_care_products": 0.296875
+    },
+    "permutation_preserves_joint_distribution_each_month": true,
+    "limits": [
+      "Not target-aligned: public 2019/2021/2022 downloads returned HTTP 403.",
+      "2020 pandemic/season/survey effects confounded; no cross-year stability established.",
+      "FINCBEFM mean of imputations vs self-reported household income; CU/household not equivalent.",
+      "Family size 1/2/3+ excludes SCE nonrelatives, which is only an approximate CE crosswalk.",
+      "SCE child field is not equivalent to CE all under-18 CU members; not matched.",
+      "Assets and actual shopping responsibility remain unknown; no gender/sex inference.",
+      "Zero supported diary days do not imply habitual nonpurchase; single-week proxy, not trip rate.",
+      "Own historical fields used only for route A diagnostics, not available as same-month route B P.",
+      "No current SCE target answers loaded; no LLM messages sent; no effectiveness claim."
+    ],
+    "source_sha256": {
+      "outputs/sce_frequency_quarter_audit_20261015_v3/donor_weeks_private.json": "b3da955126615210dd03b4716e52bc7dc101812cb8817b177be17fde87a487eb",
+      "outputs/sce_coverage_age_audit_20261015_v1/person_coverage_private.json": "3754885918d5ac59749ff88ec91e1ebec74d60d0a4e31a1ed9df33bf0bcaf094",
+      "outputs/sce_purchase_frequency_preparation_20261015_v1/assignments_private.json": "fa1fba43ffda2473acdce924500ba4b1cac3aa97a9a10254e3722e66ff56676f",
+      "data/raw/ce_experience/20261006/diary/diary20.zip": "4862a21ef2b9de25c88a4efbdd4f3905aeaf68d942abc9acc31b33644f84db1a",
+      "studies/sce_inflation_expectations/evaluation/frequency_matching_candidate.py": "33ccb3d01914712ff6443d44dd29a1ac69cd5e295a0f7ad1f12f3de253fa619e"
+    }
+  },
+  "revision_format_draft": {
+    "status": "draft_messages_and_adapter_only_NOT_runtime_ready",
+    "new_api_calls": 0,
+    "message_pairs": 191,
+    "months": [
+      202004,
+      202105,
+      202111,
+      202203
+    ],
+    "not_drafted_missing_previous_Q8": 1,
+    "same_P_E_prior_questions_prefix_verified": 191,
+    "zero_revision_roundtrip_verified": 191,
+    "limits": [
+      "All months are already exposed development months; not independent confirmation.",
+      "No decision provider, runtime config or request batch wired; no cost authorization sought.",
+      "Self-same-information placebo must keep forecast date/window fixed, unlike monthly rolling forecasts.",
+      "A real test must compare fixed-population direct vs revision formats with identical P/E/prior.",
+      "Invalid probability revisions rejected; no clipping/renormalization or hidden fixed updating weight.",
+      "One prior Q8 is missing: define direct-Q8 fallback before any real batch; do not substitute the Q9 mean.",
+      "Original Question 1 asks a signed absolute estimate; added response contract encodes it as a delta. This is a task-format intervention, not the unmodified official questionnaire."
+    ],
+    "source_sha256": {
+      "outputs/sce_information_update_trial_20261014_v2/202004/preview_new_wording.json": "c19a962a06dc7ed93395b1ae0c0fdd8a9126bae5adedb563d344b7a9df48bfba",
+      "outputs/sce_information_update_trial_20261014_v2/202105/preview_new_wording.json": "36dc7c3ed7c87f7764544ca83d164bbfd30a4fe75c2fcc39a2cfc9a1ff315b5e",
+      "outputs/sce_information_update_trial_20261014_v2/202111/preview_new_wording.json": "ef0fee342e988ce2fab9d5f3574442b7ceb6719d144be4eeb3e507c57acf4767",
+      "outputs/sce_information_update_trial_20261014_v2/202203/preview_new_wording.json": "e53ac96fa1ed556bf024932e0d49af6d91897bae93feb7fb9abd0ef3e0b5062f",
+      "studies/sce_inflation_expectations/belief_revision.py": "71a9122e1a811fbc5235f0725a8469967668b7bd9dd0417560f39dbdd8d81990"
+    }
+  },
+  "public_download_attempt": {
+    "fetched_at_utc": "2026-10-15T04:05:08.272265+00:00",
+    "listing": "https://www.bls.gov/cex/pumd_data.htm",
+    "new_paid_api_calls": 0,
+    "files": [
+      {
+        "year": 2019,
+        "url": "https://www.bls.gov/cex/pumd/data/comma/diary19.zip",
+        "status": "download_failed",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "year": 2021,
+        "url": "https://www.bls.gov/cex/pumd/data/comma/diary21.zip",
+        "status": "download_failed",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "year": 2022,
+        "url": "https://www.bls.gov/cex/pumd/data/comma/diary22.zip",
+        "status": "download_failed",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 403: Forbidden"
+      }
+    ]
+  }
+}

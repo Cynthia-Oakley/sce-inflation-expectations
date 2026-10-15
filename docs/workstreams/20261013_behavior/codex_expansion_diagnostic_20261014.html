@@ -1,7 +1,29 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><aside id="next-stage-checklist" style="background:#eef4ef;border-left:4px solid #326a56;padding:18px 22px;margin-bottom:30px;line-height:1.7">
-<strong>接下来优先研究信念怎样更新；人口覆盖与年龄核查已完成</strong>
-<p>新增API0。192人细收入和首次年龄可追溯，家庭构成191人；CE支持年龄与部分购买日数有关，但原匹配已保留年龄粗组。人口完善继续做，主线转向个人信念的更新、持续性理解和Q9表达。</p>
-<p><a href="#coverage-age-and-priorities">本轮发现与剩余计划</a> · <a href="../../current_todo.html">当前清单（23/31）</a> · <a href="../20261014_mechanism/remaining_priorities_20261015.md">各项依据、希望与下一交付</a></p></aside><section id="coverage-age-and-priorities" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<strong>本轮已准备：让模型报“改动”，程序还原本月答案</strong>
+<p>新增API0。已完成离线中心/更新拆解、191对输入草稿和四季度匹配原型。机械保留个人位置尚未修复中心与更新；新格式也还没有真实模拟成绩。下一项接独立入口、补缺失分支、干跑后列运行卡。</p>
+<p><a href="#belief-update-preparation">最新发现与具体输入</a> · <a href="../../current_todo.html">当前清单（27/35）</a> · <a href="../20261014_mechanism/belief_update_and_matching_preparation_20261015.md">方法、复算与模拟前缺口</a></p></aside>
+<section id="belief-update-preparation" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>为什么要把“原有判断”与“本月改动”分开？</h1>
+<p><strong>只把回答拉散，解决不了总体预测偏差。</strong>这轮先复用八期回答做离线拆解，再准备真正不同的回答方式；没有付费调用，没有修改原实验、正式配置或计分器。</p>
+<h2>1. 新发现：分布改善了，中心和更新却没解决</h2>
+<p>让每个人保留上月的高低位置，再共同加上LLM判断的群体中心变化。此前后四评价月中，跨人分布距离从3.161降到1.093pp，但总体中心误差仍为0.636pp；个人变化分布距离反而从1.625升至3.026pp。照抄上期仍有优势。</p>
+<figure><img src="../../../outputs/sce_belief_update_preparation_reading_20261015_v1/center_vs_update.png" alt="机械保留上期差异后，横截面分布改善，中心误差不变，个人变化分布距离变差"><figcaption>复用既有、已看过的评价月；同样本等权。横截面和变化分布距离均越低越好。只是个人Q9派生中心数值的离线替代方案，没有生成新十档概率、没有拟合密度，不是新盲测或全国指标。</figcaption></figure>
+<p>中心不变是方案构造所保证的数学结果；差异变宽继承了真人上期信息，不能记为模型识别了新身份。接下来必须改善“大家共同改多少”和“每个人分别改多少”。</p>
+<h2>2. 新草稿：报改动，程序恢复Q8与十档概率</h2>
+<p>对照组仍直接填本月答案；候选组看到相同P、E和本人先验，但回答“相对上月改了多少”。允许不动、上调、下调，不规定更新权重或要求扩大差异。</p>
+<ul><li>上月Q8为3%，报“增加1个百分点”，程序恢复为4%。</li><li>上月某档概率20%，该档报“增加5个概率百分点”，程序恢复为25%；其他档要相应减少，总变化为0。</li><li>恢复后仍用原计分器；非法概率直接判无效，不偷偷裁剪或归一化。</li></ul>
+<p>转换器和191对同内容输入草稿已完成，11项定向检查通过。另1人上期Q8缺失，需补明确回退，不拿Q9均值替代。尚未接真实运行入口，不能把这些草稿叫成已验收运行包。</p>
+<h2>3. 理论给了依据，也提出了约束</h2>
+<p>随机信息实验发现，居民获得相同信息后，分歧本来就可能缩小。因此不能强行让方差越大越好；我们提供的完整统计表也可能改变自然调查中的信息环境。<a href="https://www.newyorkfed.org/research/staff_reports/sr543.html">纽约联储信息实验</a>支持同时考虑原有信念及新信息，但不保证“报改动”的格式有效。</p>
+<p>另一项研究显示，相同事实可因居民联想到不同传导渠道而产生不同判断。它支持后续单独检验成本、需求和持续性理解，不能拿情境回答比例直接当SCE人口的固定人格分布。<a href="https://academic.oup.com/restud/article/89/6/2958/6531988">Andre等的主观宏观模型研究</a>。</p>
+<h2>4. 购买频率：原型更细了，但仍有取舍</h2>
+<p>2020四季度5,269户、9,737个完整家庭周联合抽样；保留582个有支持的全零周。192人全部匹配年龄/粗收入，182人保留家庭规模，183人保留细收入。搬家后不确定的家庭资料不强填。</p>
+<p><strong>更多条件会挤掉其他条件。</strong>住房只保留138/179、地区57/192、教育8/191，不能称全面优于旧匹配。2019、2021、2022年官方ZIP均HTTP403，失败记录已保存；此时只叫2020原型，不能叫目标期对齐或路线B可用。</p>
+<h2>接下来按什么顺序？</h2>
+<ol><li>先把改动格式接入独立入口，补上期Q8缺失处理，验证概率和同信息重复询问。</li><li>准备同P/E/先验的真实小对照，登记独立验证期及具体预算；旧回答继续复用作背景。</li><li>频率线补跨年数据与匹配取舍，再单独比较无频率／条件匹配／整组置换，不同时改信念机制。</li></ol>
+<p><a href="../20261014_mechanism/belief_update_and_matching_preparation_20261015.md">完整方法与复算</a> · <a href="../../literature/sce/belief_updating/evidence_and_design_20261015.md">一手文献与设计依据</a> · <a href="../../sources/belief_update_preparation_20261015.json">聚合封存</a> · <a href="../../current_todo.html">当前待办</a></p>
+</section>
+<section id="coverage-age-and-priorities" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
 <h1>哪些问题还没解决，接下来做什么？</h1>
 <p><strong>人口匹配值得完善，但不能把所有失败都归到少了几个变量。接下来最重要的是：同一个人看到新信息后，怎样保留自己的原有判断、调整多少，以及怎样把判断写成十档概率。</strong></p>
 <h2>本轮离线检查：更细资料有覆盖，年龄也有作用</h2>
