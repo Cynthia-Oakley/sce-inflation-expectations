@@ -1,7 +1,18 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><aside id="next-stage-checklist" style="background:#eef4ef;border-left:4px solid #326a56;padding:18px 22px;margin-bottom:30px;line-height:1.7">
-<strong>真人资料分析已完成：人口特征分别关联回答的哪一部分？</strong>
-<p>70个月、82,535个人月；本轮API调用0。学历和具体答题模式更稳定对应个人不确定性，财务变差与较高预期有关；风险不能直接变成固定规则。真人关联不等于LLM注入后一定有效。</p>
-<p><a href="#population-association-results">本轮结果与图</a> · <a href="../../current_todo.html">当前清单（29/39）</a> · <a href="#population-fields-and-mechanisms">原题和字段回顾</a></p></aside>
+<strong>下一阶段：两项主试、价格匹配补缺、固定后扩大</strong>
+<p>先检验个人怎样更新，以及具体认知答法能否改变概率回答。建议留一周给探索，10月22日收束；日期是内部目标，未冻结新配置、预算或调用。</p>
+<p><a href="#next-priorities-schedule">方向与建议时间</a> · <a href="#population-association-results">真人分析结果</a> · <a href="../../current_todo.html">清单（29/39）</a> · <a href="../../ROADMAP.md">完整日程</a></p></aside>
+<section id="next-priorities-schedule" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>接下来做什么，怎样安排时间？</h1>
+<p><strong>主线仍是历史重建A：让模型更像具体居民一样形成、更新和表达预期。</strong>未来预测B要额外检验模型沿用自己的历史回答，不能每月继续补真人答案就称为连续预测。</p>
+<ol><li><strong>个人信念更新：</strong>比较直接填本期答案与报告相对上期的改动。已有转换器/191对草稿，补缺失分支与入口后可小试；希望改善原有差异保留、共同中心和个人更新，尚不保证有效。</li>
+<li><strong>认知与概率表达：</strong>比较High/Low与具体答题信息，再比较原题+本人作答与忠实转述。前者检验细信息增量，后者才是同内容的呈现方式；不附标准答案或纠错。</li>
+<li><strong>价格体验与财务情境：</strong>同步修补回访收入、家庭更新和跨年CE；频率、财务情境各自独立验证。资料不齐时不急着新增调用。</li>
+<li><strong>持续性与事件理解：</strong>作为备用，查同一信息为何被理解为暂时或持久；没有数据支持的人口比例时，只做清楚标注的情景。</li></ol>
+<h2>建议的内部时间安排</h2>
+<ul><li><strong>10/15—16：</strong>两项主试的完整样例、入口/缺失检查、评价与费用范围；先离线准备。</li><li><strong>10/17—18：</strong>取得具体授权后，完成两项独立小试，判断保留还是搁置。</li><li><strong>10/19—21：</strong>有希望的候选固定后，在未用于调整的时期扩大；目标8—12个月，视资料与精度决定。暂无改善也固定当前版本做失效核查。</li><li><strong>10/22：</strong>建议停止新增机制，确定报告范围；不把阴性结果包装成成功预测。</li><li><strong>10/23—29：</strong>跨期图表、基线、费用、失败记录、复现与用户审阅。B连续3—6个月小试只在输入和初始化就绪后安排。</li></ul>
+<p>评价同时看总体中心、跨人分布、个人变化与不确定性；分布变宽本身不算通过。旧八期可作背景，不能重新命名为新盲测。范围如顺延，优先削减新探索，保留验证和整理时间。</p>
+<p><a href="../../ROADMAP.md">详细日程与每步交付</a> · <a href="../20261014_mechanism/remaining_priorities_20261015.md">依据和暂缓项</a> · <a href="../../current_todo.html">逐项进度</a></p></section>
 <section id="population-association-results" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
 <h1>细学历、财务变化、风险和具体答题，值得怎样使用？</h1>
 <p>2026-10-15完成，新增API调用0、费用0。使用2020-01至2025-10共70个月、82,535个人月、10,974名不同受访者，控制月份、年龄、收入、性别、地区、就业及现有数理标签，分前后时期复核。</p>
