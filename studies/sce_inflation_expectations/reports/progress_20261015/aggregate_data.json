@@ -1,0 +1,354 @@
+{
+  "report_date": "2026-10-15",
+  "new_api_calls": 0,
+  "reference": {
+    "months": 106,
+    "person_months": 130216,
+    "people": 17141,
+    "first_month": 201701,
+    "last_month": 202510,
+    "example_month": 202206,
+    "example_month_rows": 1202,
+    "example_weighted_shares": [
+      8.120029955095937,
+      8.31637422456596,
+      10.742905741849416,
+      31.32006465129985,
+      23.19459274941482,
+      18.306032677774013
+    ]
+  },
+  "headline": {
+    "months": 80,
+    "through": "2026-08",
+    "source_snapshot": "2026-10-07"
+  },
+  "main": {
+    "evaluation_months": [
+      202206,
+      202306,
+      202410,
+      202509
+    ],
+    "aggregates": {
+      "self_update": {
+        "zero_deflation_fraction": 0.10085859556066168,
+        "real_zero_deflation_fraction": 0.6306973674067222,
+        "real_mean_individual_density_iqr_pp": 4.97623830423888,
+        "rank_correlation": 0.5612814184140128,
+        "delta_w1_pp": 1.6253506674488531,
+        "mean_individual_density_iqr_pp": 3.732981693640263,
+        "real_cross_person_iqr_pp": 5.544695961210242,
+        "sample_center_mae_pp": 0.6355480844242238,
+        "cross_person_iqr_gap_pp": 3.979757701378756,
+        "cross_section_w1_pp": 3.161414150136294,
+        "individual_mae_pp": 3.6991012006130326,
+        "cross_person_iqr_pp": 1.5649382598314863,
+        "q8_sample_center_mae_pp": 0.6499999999999999,
+        "center_bias_pp": -0.4461477845875297
+      },
+      "program": {
+        "zero_deflation_fraction": 0.5925558958252515,
+        "real_zero_deflation_fraction": 0.6306973674067222,
+        "real_mean_individual_density_iqr_pp": 4.97623830423888,
+        "rank_correlation": 0.7340715526857222,
+        "delta_w1_pp": 2.769566553552197,
+        "mean_individual_density_iqr_pp": 5.090011639766333,
+        "real_cross_person_iqr_pp": 5.544695961210242,
+        "sample_center_mae_pp": 0.1558066859693259,
+        "cross_person_iqr_gap_pp": 0.48401863377760734,
+        "cross_section_w1_pp": 0.6908317144674414,
+        "individual_mae_pp": 2.769566553552197,
+        "cross_person_iqr_pp": 5.2909857852753515,
+        "q8_sample_center_mae_pp": 0.375,
+        "center_bias_pp": 0.15192740029656715
+      },
+      "new_signal": {
+        "zero_deflation_fraction": 0.0,
+        "real_zero_deflation_fraction": 0.6306973674067222,
+        "real_mean_individual_density_iqr_pp": 4.97623830423888,
+        "rank_correlation": 0.04798107840683441,
+        "delta_w1_pp": 2.933166182044002,
+        "mean_individual_density_iqr_pp": 3.745580572564835,
+        "real_cross_person_iqr_pp": 5.544695961210242,
+        "sample_center_mae_pp": 1.3366448771213335,
+        "cross_person_iqr_gap_pp": 4.936675069987233,
+        "cross_section_w1_pp": 4.3981788697054895,
+        "individual_mae_pp": 4.738430354668921,
+        "cross_person_iqr_pp": 0.6080208912230098,
+        "q8_sample_center_mae_pp": 1.1125,
+        "center_bias_pp": -1.3366448771213335
+      },
+      "copy_previous": {
+        "zero_deflation_fraction": null,
+        "real_zero_deflation_fraction": 0.6306973674067222,
+        "real_mean_individual_density_iqr_pp": 4.97623830423888,
+        "rank_correlation": 0.7340715526857222,
+        "delta_w1_pp": 2.769566553552197,
+        "mean_individual_density_iqr_pp": null,
+        "real_cross_person_iqr_pp": 5.544695961210242,
+        "sample_center_mae_pp": 0.1558066859693259,
+        "cross_person_iqr_gap_pp": 0.48401863377760734,
+        "cross_section_w1_pp": 0.6908317144674414,
+        "individual_mae_pp": 2.769566553552197,
+        "cross_person_iqr_pp": 5.2909857852753515,
+        "q8_sample_center_mae_pp": 0.375,
+        "center_bias_pp": 0.15192740029656715
+      },
+      "history_anchor_half": {
+        "zero_deflation_fraction": null,
+        "real_zero_deflation_fraction": 0.6306973674067222,
+        "real_mean_individual_density_iqr_pp": 4.97623830423888,
+        "rank_correlation": 0.7220297792361122,
+        "delta_w1_pp": 1.7070873166985372,
+        "mean_individual_density_iqr_pp": null,
+        "real_cross_person_iqr_pp": 5.544695961210242,
+        "sample_center_mae_pp": 0.48825778861126123,
+        "cross_section_w1_pp": 1.0521159280189636,
+        "individual_mae_pp": 2.8803327409670025,
+        "cross_person_iqr_pp": 5.060343621935379,
+        "cross_person_iqr_gap_pp": 0.7724884223216029,
+        "center_bias_pp": 0.2888734760691506
+      }
+    },
+    "unique_common_person_months": 379,
+    "common_generation_rows": 757,
+    "monthly_centers_mean_of_repeats": [
+      {
+        "month": 202206,
+        "actual": 7.101594892701572,
+        "self_update": 7.48039549237496,
+        "copy_previous": 7.093836321356054,
+        "history_anchor_half": 6.7028262676173505
+      },
+      {
+        "month": 202306,
+        "actual": 4.190983005625053,
+        "self_update": 3.7398620470603596,
+        "copy_previous": 4.751356914508558,
+        "history_anchor_half": 4.829146166059353
+      },
+      {
+        "month": 202410,
+        "actual": 2.7570966255738534,
+        "self_update": 2.252220177602698,
+        "copy_previous": 2.8121908892221343,
+        "history_anchor_half": 3.164842541658207
+      },
+      {
+        "month": 202509,
+        "actual": 4.0,
+        "self_update": 2.7926056685123415,
+        "copy_previous": 4.0,
+        "history_anchor_half": 4.5083534528421705
+      }
+    ],
+    "execution": {
+      "actual_calls": 3072,
+      "answer_statuses": {
+        "valid": 3069,
+        "invalid": 3
+      },
+      "simulation_token_cost_estimate_usd": 2.1413990000000007,
+      "news_token_cost_estimate_usd": 0.5834595,
+      "simulation_cap_usd": 12.0,
+      "news_cap_usd": 2.5,
+      "total_token_cost_estimate_usd": 2.7248585000000007,
+      "actual_sent_prompt_hash_mismatches": 0,
+      "tokens": {
+        "prompt": 5386552,
+        "completion": 437864
+      },
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "system_fingerprints": [
+        "aeb56401ca74e127821c4f9126dcb669"
+      ],
+      "automatic_retries": 0,
+      "billing_note": "Peak uncached token usage estimate, not provider bill",
+      "common_person_months_unique": 756,
+      "common_generation_rows": 1509,
+      "generated_scorable_rows": 3069,
+      "completed_at_utc": "2026-10-14T06:58:18.080656+00:00"
+    },
+    "coverage_clarification": {
+      "development": {
+        "unique_common_person_months": 377,
+        "common_generation_rows": 752,
+        "both_repeats_scorable": 375
+      },
+      "evaluation": {
+        "unique_common_person_months": 379,
+        "common_generation_rows": 757,
+        "both_repeats_scorable": 378
+      },
+      "note": "Original summary/weight_lock common_person_months field is floor(common_generation_rows/2), not unique count. Main scores and locked alpha unchanged; use explicit unique/paired counts here.",
+      "new_api_calls": 0
+    },
+    "gate_passed": false
+  },
+  "population_associations": [
+    {
+      "period": "2020–2022",
+      "contrast": "高中相对本科：个人不确定性",
+      "estimate": 1.7701820452956376,
+      "se_person_cluster": 0.23655493857009394,
+      "ci95": [
+        1.3064561214282024,
+        2.2339079691630728
+      ]
+    },
+    {
+      "period": "2020–2022",
+      "contrast": "财务差一些相对相同：预期水平",
+      "estimate": 1.2026469021699882,
+      "se_person_cluster": 0.16769040604174634,
+      "ci95": [
+        0.8739182400863924,
+        1.531375564253584
+      ]
+    },
+    {
+      "period": "2023–2025.10",
+      "contrast": "高中相对本科：个人不确定性",
+      "estimate": 1.9843226244957473,
+      "se_person_cluster": 0.2607725829166393,
+      "ci95": [
+        1.473102592776557,
+        2.4955426562149374
+      ]
+    },
+    {
+      "period": "2023–2025.10",
+      "contrast": "财务差一些相对相同：预期水平",
+      "estimate": 1.4243482603438997,
+      "se_person_cluster": 0.16559962767030278,
+      "ci95": [
+        1.0997058230008578,
+        1.7489906976869416
+      ]
+    }
+  ],
+  "experiment_index": {
+    "confidence": {
+      "calls": 768,
+      "token_cost_estimate_usd": 0.495106,
+      "months": [
+        "202203",
+        "202209",
+        "202303",
+        "202403"
+      ]
+    },
+    "prior": {
+      "calls": 288,
+      "token_cost_estimate_usd": 0.20124899999999996,
+      "months": [
+        "202203",
+        "202209",
+        "202303",
+        "202403"
+      ]
+    },
+    "frequency": {
+      "calls": 768,
+      "token_cost_estimate_usd": 0.875302
+    },
+    "u1": {
+      "calls": 192,
+      "months": [
+        "202203",
+        "202209",
+        "202303",
+        "202403"
+      ],
+      "cost_source": "docs/workstreams/20261013_behavior/codex_u1_real_results_20261014.md"
+    }
+  },
+  "revision_format": {
+    "coverage": {
+      "direct:valid": 192,
+      "revision:invalid": 74,
+      "revision:valid": 118
+    },
+    "cost_peak_estimate_usd": 0.43424700000000005,
+    "adopted": false
+  },
+  "sources": [
+    {
+      "path": "docs/sources/sce_baseline_aggregate_sources_latest_20261007.json",
+      "sha256": "a1a275df4fb77e3567a8984293460f9bf671a6eea141319f13d6ed42df609f43"
+    },
+    {
+      "path": "outputs/sce_behavior_mechanism_audit_20261014_v3/reference_with_controls_private.parquet",
+      "sha256": "a4eb7d134f603136f7c01303597068777cf5614a372d72ee228312f467c1e7dc"
+    },
+    {
+      "path": "outputs/sce_expanded_state_evaluation_20261014_v1/summary.json",
+      "sha256": "b358a5d1ad1dcf98c14bbdad663885927fd271804066a669f498ab1eb9e47095"
+    },
+    {
+      "path": "outputs/sce_expanded_state_evaluation_20261014_v1/cases_private.json",
+      "sha256": "83f6347a6dd126764c94f3b16b7e84237b62d84d3b53776e315498653d0cc7c3"
+    },
+    {
+      "path": "outputs/sce_expanded_state_evaluation_20261014_v1/execution_receipt.json",
+      "sha256": "0e7b062b2a819fffc589168ec0869c822a886fa305461e5eb823bbbe89ac8df2"
+    },
+    {
+      "path": "outputs/sce_expanded_state_evaluation_20261014_v1/coverage_clarification.json",
+      "sha256": "091d9c36b2c817ceb55ee9badcec38dbec1843c82af67e9e5b383ebe6c24fb53"
+    },
+    {
+      "path": "outputs/sce_population_associations_20261015_v1/summary.json",
+      "sha256": "9b3eef3218dedc1f3691f25d7c52d691fbf6eecd3dec57180b82c7c3e58cf988"
+    },
+    {
+      "path": "outputs/sce_revision_format_evaluation_20261015_v1/summary.json",
+      "sha256": "cf7d575baa399e2c100d69aaf5a7809cb1dccb4d4c237c8f5f415f9adc772b98"
+    },
+    {
+      "path": "outputs/sce_confidence_analysis_20261011_v2/summary.json",
+      "sha256": "d0155ed3a394c8bef9ec724e8fb06ba2ba120b54746f7ce7162c00117ff9dc01"
+    },
+    {
+      "path": "docs/literature/sce/factual_mechanisms_20261013/prior_trial_summary.json",
+      "sha256": "43084f050214436863eb41c4d904a413e9924cab481a56aaf5a84f02ea31d612"
+    },
+    {
+      "path": "docs/workstreams/20261014_mechanism/purchase_frequency_budget_card_20261015.json",
+      "sha256": "a6871a017895661330ef54fdd744f771ea8444be1946ed7cad55083c5921a781"
+    },
+    {
+      "path": "outputs/sce_u1_trial_20261014_v2/trial_manifest.json",
+      "sha256": "9c31dbd668c65b3626844f95e51bf4dd1725148528318f8c1d317548aa3ba9e9"
+    },
+    {
+      "path": "outputs/sce_behavior_comparison_u1_20261014_v1/summary.json",
+      "sha256": "93fa85e4b74aba32eb47384eb8f2a2f1a3547db74c3ec9b5eb1911afa5b5131c"
+    },
+    {
+      "path": "docs/workstreams/20261013_behavior/codex_u1_real_results_20261014.md",
+      "sha256": "a55d93df1df6c3419b5f7d5b4ca7fc3163455d7bd870e88443170f3f40b6b3fb"
+    },
+    {
+      "path": "docs/workstreams/20261013_behavior/codex_mapping_results.md",
+      "sha256": "55b692e17892498d95f124cee49d0ccb37bcb7fff037c6a7076d5935fd53aff9"
+    },
+    {
+      "path": "docs/workstreams/20261013_behavior/codex_expanded_protocol_20261014.json",
+      "sha256": "3b615709b197e3eedf28a4e406706b6c75efddac0520dbdb30f74f2108129b83"
+    },
+    {
+      "path": "docs/sources/sce_progress_report_planning_20261015.json",
+      "sha256": "39d91e3e19e1551b38f022c01ff48b129276ca3c04950cc87aead721bc2b8a2c"
+    }
+  ],
+  "privacy": "Only aggregates and scientific charts are exported; no respondent rows, identifiers or keys.",
+  "limits": [
+    "Retrospective returner A diagnostic, not national or recursive B forecast.",
+    "Four evaluation months were held after development freeze; now inspected and not fresh holdout.",
+    "Report preparation does not run simulations, refit scorers or retune mechanisms."
+  ]
+}

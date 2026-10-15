@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-15",
+  "pages": 20,
+  "main_pages": 14,
+  "appendix_pages": 6,
+  "new_api_calls": 0,
+  "pdf": "output/pdf/sce_progress_report_20261015_v1.pdf",
+  "html": "outputs/sce_progress_report_20261015_v1/index.html",
+  "pdf_sha256": "d5462bf5f67d553f07230a1a25024ab9fdd3b9232b1d1826984c0acd14595d18",
+  "html_sha256": "da052c7de324311e1557d08ffca013069dd861edcd907017ff8b7c901b1574b8",
+  "aggregate_source": "aggregate_data.json",
+  "status": "draft_v1_visual_qa_passed_pending_user_review",
+  "qa": {
+    "pdf_pages": 20,
+    "rendered_pages": 20,
+    "all_pages_contact_sheet_reviewed": true,
+    "detailed_pages_reviewed": [
+      6,
+      11,
+      12,
+      13,
+      17
+    ],
+    "pdf_text_extractable": true,
+    "out_of_page_characters": 0,
+    "main_center_mae_recomputed": 0.6355480844242238,
+    "html_pages": 20,
+    "local_chart_pairs": 5,
+    "protected_file_hashes_unchanged": 15,
+    "new_api_calls": 0,
+    "contains_person_rows": false
+  },
+  "source_script_sha256": {
+    "scripts/prepare_sce_progress_report.py": "562c20fba3ceb679c623d77691ad6b8336a0a5b9b60b7652a663b66f1daab40d",
+    "scripts/render_sce_progress_report.py": "47c62563a38e68cbcd9c4fc889409c6aa883f7c20da292102caf7e04b843970a"
+  }
+}
