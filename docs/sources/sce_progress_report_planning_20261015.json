@@ -1,0 +1,38 @@
+{
+  "checked_date_beijing": "2026-10-15",
+  "retrieved_at_utc": "2026-10-15T13:08:35.126577+00:00",
+  "page_url": "https://socioverse.fudan-disc.com/challenge/",
+  "dynamic_url": "https://socioverse.fudan-disc.com/challenge/challenge.js?v=20261013a",
+  "html_sha256": "cdc2daaaf285497aa7d18b0ae140be33671b47954a9fc0e83870dd62113f3cfa",
+  "js_sha256": "dce3d93a9ceab1377cf27a5d93d6b5f3fdebaaa70ee6154606339c2fc09bee53",
+  "status": "report_outline_only_not_finished_deck",
+  "proposed_main_pages": 14,
+  "format_proposal": "Landscape PDF plus same-content HTML reading version; not the final 4-8 page paper",
+  "official_weights": [
+    [
+      "社会科学价值与问题创新",
+      25
+    ],
+    [
+      "方法与实验设计严谨性",
+      25
+    ],
+    [
+      "结果与理论贡献",
+      20
+    ],
+    [
+      "可复现性与工程质量",
+      20
+    ],
+    [
+      "呈现与拓展潜力",
+      10
+    ]
+  ],
+  "reproducibility_gate": true,
+  "official_paper_pages": "4-8 including figures",
+  "official_demo_minutes_max": 5,
+  "new_api_calls": 0,
+  "outline_path": "studies/sce_inflation_expectations/reports/progress_20261015/outline.md"
+}
