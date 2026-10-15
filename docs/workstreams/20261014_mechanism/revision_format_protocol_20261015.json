@@ -1,0 +1,62 @@
+{
+  "research_line": "A_conditional_returner_reconstruction",
+  "model": "deepseek-flash",
+  "official_advertised_version": "DeepSeek-V4.1-Flash",
+  "model_identity_limit": "Mutable alias, not fixed weights or verified training cutoff",
+  "temperature": 0.5,
+  "max_tokens": 1024,
+  "thinking": "disabled",
+  "retry_max": 0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "baseline_refs": [
+    "copy_previous",
+    "history_anchor_half"
+  ],
+  "q8": "secondary, separate from Q9",
+  "aggregation": "Each month/repeat separately, equal cell average; Q9 headline-style center is median of individually fitted density means, not a nationwide headline.",
+  "intervals": "2000 paired-person resamples within month, both generations together; 4-month resampling sensitivity; seed 20261015",
+  "id": "sce-revision-format-pilot-v1",
+  "registered_at_utc": "2026-10-15T12:25:07.081237+00:00",
+  "months": [
+    202004,
+    202105,
+    202111,
+    202203
+  ],
+  "n_per_month": 24,
+  "sampling_seed": 20261015,
+  "sampling": "Uniform seeded subsample of the existing frozen 48-person roster; no target answers used.",
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "arms": [
+    "direct",
+    "revision"
+  ],
+  "planned_calls": 384,
+  "pricing_verified_date": "2026-10-15",
+  "budget_cap_usd": 2.0,
+  "comparison": "Same P/E, actual previous Q8/Q9 and earlier summaries, questionnaire and shared state instruction; response representation only differs.",
+  "primary_contrast": "revision minus direct on cross-section W1",
+  "candidate_gate": "Primary W1 paired-person upper 95% bound < 0; center MAE and delta W1 points no worse; new scorable fraction >=99%. Pilot continuation only, not overall success.",
+  "missing_previous_Q8": "Report absolute point_pct for that respondent, still revise Q9; no imputation from Q9 mean, no exclusion.",
+  "missing_previous_Q8_selected_count": 1,
+  "neutral_question": "No required adjustment size/direction, no fixed inertia parameter or forced dispersion.",
+  "no_information_change": "Common context including prior and forecast window verified for every pair. Two repeated generations measure same-message variation; not a behavioural no-news causal test.",
+  "support": "Common truth/prior/scorable support for both arms and past baselines; failures counted explicitly, never replaced or normalized.",
+  "truth_isolation": "Only existing roster/preview/P/E read in preparation; current Q8/Q9 enter evaluation only.",
+  "limits": [
+    "All four months are previously inspected development periods; no independent validation claim.",
+    "Conditional returner A using real past answers; not recursive B or a national headline.",
+    "Uniform subsample of an earlier selected roster, not a fresh nationally representative population.",
+    "Old 2020Q4 synthetic CE shares are retrospective for 2020-04; this is an A diagnostic, not strict real-time B.",
+    "Delta-format arithmetic may fail or alter anchoring. Invalid mass is rejected, never clipped/normalized.",
+    "Model alias may change; returned IDs/fingerprints are recorded but do not verify training cutoff.",
+    "Engine seeds do not fix API random draws; old batches are descriptive background only.",
+    "Modified response format is not the unmodified official survey interface."
+  ],
+  "no_tuning_after_run": true
+}

@@ -1,0 +1,23 @@
+{
+  "planned_calls": 384,
+  "same_context_pairs_verified": 96,
+  "conservative_reservation_usd": 1.785579,
+  "estimated_peak_cost_usd": 0.45929715,
+  "proposed_cap_usd": 2.0,
+  "protocol_sha256": "79ffde8029a8e09c683ef847738ae1234eaa43d8db69704401aaf9d278226e84",
+  "offline_cells_passed": 16,
+  "focused_tests_passed": 9,
+  "pricing_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "pricing_checked": "2026-10-15",
+  "price_peak_input_per_mtok": 0.3,
+  "price_peak_output_per_mtok": 1.2,
+  "cost_is_provider_bill": false,
+  "status": "completed_real_pilot_not_adopted",
+  "actual_api_calls": 384,
+  "recorded_peak_token_cost_estimate_usd": 0.43424700000000005,
+  "valid_answers": 310,
+  "invalid_answers": 74,
+  "retries": 0,
+  "connection_errors": 0,
+  "candidate_continue_gate_passed": false
+}

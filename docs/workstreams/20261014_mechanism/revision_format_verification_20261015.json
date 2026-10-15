@@ -1,0 +1,13 @@
+{
+  "status": "completed_and_independently_checked",
+  "summary_sha256": "cf7d575baa399e2c100d69aaf5a7809cb1dccb4d4c237c8f5f415f9adc772b98",
+  "evaluator_sha256": "22e5f057cb888bd3ae995d7e919082ffcb1131d122a878b2730e6b2cebeda30b",
+  "evaluation_cli_sha256": "7da3700528cdf8493c20f6cb0ef5482d5dafc909eae5b0752418d86b1fb0c9e3",
+  "valid_original_replies_reconstructed_matches": 310,
+  "revision_original_replies_independent_probability_checks": 192,
+  "mapping_gate_disagreements": 0,
+  "focused_runtime_and_conversion_tests": 9,
+  "post_failure_evaluation_guard_tests": 1,
+  "analysis_amendment": "Initial bootstrap stopped on zero supported mass in a resample. No prompts or answers were changed; no new API. Report primary validity failure and descriptive common-row values only, rather than inventing a conditional bootstrap.",
+  "new_calls_for_verification": 0
+}

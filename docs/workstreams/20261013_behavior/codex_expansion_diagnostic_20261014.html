@@ -1,9 +1,25 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><aside id="next-stage-checklist" style="background:#eef4ef;border-left:4px solid #326a56;padding:18px 22px;margin-bottom:30px;line-height:1.7">
-<strong>下一阶段：两项主试、价格匹配补缺、固定后扩大</strong>
-<p>先检验个人怎样更新，以及具体认知答法能否改变概率回答。建议留一周给探索，10月22日收束；日期是内部目标，未冻结新配置、预算或调用。</p>
-<p><a href="#next-priorities-schedule">方向与建议时间</a> · <a href="#population-association-results">真人分析结果</a> · <a href="../../current_todo.html">清单（29/39）</a> · <a href="../../ROADMAP.md">完整日程</a></p></aside>
+<strong>本轮384次实验完成：完整概率改动格式不采用；下一步先做导师汇报</strong>
+<p>直接回答192份全部有效；改动回答118/192有效。74份非法概率经原回包独立核验，未修补。高峰token价记约$0.434（上限$2，非账单），无重试。</p>
+<p><a href="#revision-format-results">本轮结果与解释</a> · <a href="../../current_todo.html">清单（31/41）</a> · <a href="../../ROADMAP.md">10/16—23繁忙后的压缩日程</a></p></aside>
+<section id="revision-format-results" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>让模型报“相对上期的改动”，有什么结果？</h1>
+<p>2026-10-15完成。2020-04、2021-05/11、2022-03各24人，直接组与改动组各生成两次，共384请求。两组P/E、本人上期Q8/Q9、历史摘要、问题和起点说明一致，仅输出表示不同；仍是A条件重建开发小试。</p>
+<h2>一、先遇到了有效率问题</h2>
+<p><strong>直接组192/192有效，改动组118/192有效（61.5%）。</strong>69份加回原值后有负概率，5份十档改动总和不为0。67份从原本为0的档位继续减去概率。四个月都出现，不是一两个异常请求。</p>
+<figure><img src="../../../outputs/sce_revision_format_reading_20261015_v1/validity.png" alt="直接回答与报告改动的有效率，以及四个月有效数量"><figcaption>每组192份、每月每组48份；改动组未过99%门槛。独立用原提示和原回包相加，和转换器零分歧；没有裁剪、归一化或修复调用。</figcaption></figure>
+<p>例如上期某档0%，本期要求减少5个概率百分点，就得到−5%；这是说明算术约束的虚构例子。原问卷填概率已需要合计100，报告改动又要求逐档恢复合法，明显增加任务负担。不能据此说个人信念更新本身没有价值。</p>
+<h2>二、有效部分有改善线索，但不能当成全样本改善</h2>
+<p>双方与真人/过去基线共同可评分115条生成、71个人月，只有44个人月两次都进入共同支持。在这部分，Q9中心MAE约1.181→0.933，跨人W1约1.955→1.622，但更新W1约1.565→1.874（变差）。</p>
+<figure><img src="../../../outputs/sce_revision_format_reading_20261015_v1/conditional_errors.png" alt="共同有效回答的中心、跨人分布和更新误差；仅描述，不是全样本处理效果"><figcaption>两组按完全相同的有效行比较，仍消除不了处理造成的筛选。大量无效导致原重抽区间出现零支持，评价保留有效率失败、只列描述，不用另换算法获得显著性。Copy与Past anchor为同支持的过去信息基线。</figcaption></figure>
+<p>人际IQR约1.64→2.35，真人约3.23；通缩档全0约10.0%→51.9%，真人约64.6%。它们可提出后续假说，不能掩盖非法率，也不能只看分布变宽。这里不是全国官方中位数，不与旧完整样本误差直接比。</p>
+<h2>本轮决定与下一步</h2>
+<ol><li>完整十档差值格式不采用，不追加调用修补。保留所有原回答、转换、失败和费用记录。</li><li>个人更新方向仍可研究；以后可考虑只对点预期报改动、Q9保留原问法，先减轻算术负担。本轮没有运行这个后续版本。</li><li><strong>接下来先整理导师汇报稿。</strong>用户10/16—23课程繁忙，旧多轮试验日程已压缩；汇报之前不开展其他机制。</li></ol>
+<p>工程已完成独立入口/缺失分支、16单元干跑，原回包310份有效答案重建一致，192份改动概率另独立核验；10项定向检查通过。1人缺上期Q8按明确分支直接填本期Q8，未补造先验。模型仍为DeepSeek Flash、温度0.5、关闭思考，无重试。</p>
+<p><a href="../20261014_mechanism/revision_format_results_20261015.md">完整结果、边界与复算</a> · <a href="../20261014_mechanism/revision_format_trial_20261015.md">设计与预算</a> · <a href="../20261014_mechanism/revision_format_results_summary_20261015.json">聚合结果</a> · <a href="../../current_todo.html">下一步清单</a></p>
+</section>
 <section id="next-priorities-schedule" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
-<h1>接下来做什么，怎样安排时间？</h1>
+<h1>此前方向建议（时间已按用户课表压缩）</h1><p>以下为本轮实验前的建议，17—21日试验安排已取消为默认日程；当前以<a href="../../ROADMAP.md">ROADMAP顶部</a>与导师汇报优先为准。</p>
 <p><strong>主线仍是历史重建A：让模型更像具体居民一样形成、更新和表达预期。</strong>未来预测B要额外检验模型沿用自己的历史回答，不能每月继续补真人答案就称为连续预测。</p>
 <ol><li><strong>个人信念更新：</strong>比较直接填本期答案与报告相对上期的改动。已有转换器/191对草稿，补缺失分支与入口后可小试；希望改善原有差异保留、共同中心和个人更新，尚不保证有效。</li>
 <li><strong>认知与概率表达：</strong>比较High/Low与具体答题信息，再比较原题+本人作答与忠实转述。前者检验细信息增量，后者才是同内容的呈现方式；不附标准答案或纠错。</li>

@@ -1,0 +1,33 @@
+{
+  "status": "independent_decimal_reconstruction_from_original_prompt_and_raw_reply",
+  "counts": {
+    "examined": 192,
+    "invalid": 74,
+    "negative_probability": 69,
+    "removes_mass_from_zero_bin": 67,
+    "valid": 118,
+    "nonzero_change_sum": 5,
+    "absolute_point_fallback": 2
+  },
+  "by_month": {
+    "202111": {
+      "invalid": 31,
+      "valid": 17
+    },
+    "202105": {
+      "invalid": 19,
+      "valid": 29
+    },
+    "202004": {
+      "invalid": 11,
+      "valid": 37
+    },
+    "202203": {
+      "valid": 35,
+      "invalid": 13
+    }
+  },
+  "mapping_gate_disagreements": 0,
+  "new_api_calls_for_this_audit": 0,
+  "scope": "Probability checks only, separate from accuracy; categories may overlap; original replies not altered."
+}
