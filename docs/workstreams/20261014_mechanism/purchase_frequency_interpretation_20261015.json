@@ -1,0 +1,18 @@
+{
+  "status": "offline_interpretation_clarification_no_new_experiment",
+  "new_api_calls": 0,
+  "source_sha256": "fa1fba43ffda2473acdce924500ba4b1cac3aa97a9a10254e3722e66ff56676f",
+  "n_person_months": 192,
+  "distinct_four_category_frequency_vectors": 98,
+  "food_category_tied_highest_share": 0.9791666666666666,
+  "household_supplies_zero_recorded_days_share": 0.5677083333333334,
+  "personal_care_zero_recorded_days_share": 0.6979166666666666,
+  "food_share_of_summed_category_days_not_trips_or_attention": 0.7948717948717948,
+  "limits": [
+    "Both new arms already contain frequency and category prices; no clean no-frequency control.",
+    "Treatment paragraph combines frequency emphasis, persistence reasoning and a prior/other-information reminder; do not attribute the block effect to frequency emphasis alone.",
+    "Highest food frequency is not itself a data error; national broad category price signals omit within-category and respondent-shopping-role differences.",
+    "These are implementation hypotheses, not identified causes of the observed W1 increase."
+  ],
+  "primary_reference": "https://www.journals.uchicago.edu/doi/10.1086/713192"
+}
