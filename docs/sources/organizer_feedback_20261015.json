@@ -1,0 +1,61 @@
+{
+  "recorded_on": "2026-10-15",
+  "source": "评审邮件全文由用户提供，邮件发送时间未提供，本轮未登录核验平台余额。",
+  "team": "水上挽月",
+  "funding": {
+    "additional_credit_usd": 70,
+    "uses": ["平台托管研究", "本地调用平台MCP"],
+    "accounting": "平台额度与自购DeepSeek/OpenRouter费用分别列账；资助通知不是新批次调用或数据外发授权。"
+  },
+  "final_submission": {
+    "deadline": "2026-10-31T23:59:00+08:00",
+    "deliverables": ["研究报告", "研究包", "演示视频"],
+    "location": "研究目录页参赛卡片",
+    "status": "尚未提交"
+  },
+  "review": [
+    {
+      "id": "G1",
+      "topic": "月份、信息时点、校准/验证、真值取得时间和模型知识隔离",
+      "covered": "已有A/B定义、BLS发布时间/版本、八期开发/评价划分、输入白名单、模型知识诊断。",
+      "remaining": "最终四类研究月份与时点总表；校准量与独立验证量；合并实际真值取得时间；新独立验证、训练边界检验和预测封存。",
+      "priority": "最高",
+      "boundary": "A可使用声明过的事后资料或统计约束，但被拟合的量不作为独立验证。B须同时控制输入与模型知识；已看过月份不重新命名为未见验证。",
+      "evidence": ["docs/RESEARCH_PROTOCOL.md", "docs/MODEL_TEMPORAL_LEAKAGE.md", "docs/workstreams/20261013_behavior/codex_expanded_protocol_20261014.json"]
+    },
+    {
+      "id": "G2",
+      "topic": "Core、抽样权重、SCE—CE匹配、扩展与跨月身份",
+      "covered": "已有实际抽样人口、历史信念、Core/Normal试验及CE供体匹配/多季度原型。",
+      "remaining": "冻结正式人数/分层/抽样概率/权重、匹配回退、人口收入家庭更新、Normal估计器及误差、新加入者和B自有信念递推。",
+      "evidence": ["docs/CORE_NORMAL_POPULATION_PROPOSAL.md", "docs/CORE_NORMAL_LLM_RECEIPT_20261005.md", "docs/workstreams/20261014_mechanism/belief_update_and_matching_preparation_20261015.md"]
+    },
+    {
+      "id": "G3",
+      "topic": "Q8/Q9清洗、统计、指标、宏观基线与预设分组",
+      "covered": "冻结近似计分器、原回答合法率、MAE/跨人W1/变化W1、同样本过去信息基线、长跨度宏观基线和分组探索。",
+      "remaining": "最终真值/分位数/权重/无效规则、与正式E及月份对齐的宏观基线、预先确定人群地区时期和稀疏组处理。",
+      "boundary": "旧全国基线不能直接与选中回访者中心误差混比。",
+      "evidence": ["docs/SCE_EVALUATION_BASELINES_20261007.md", "docs/SCE_BASELINE_RESULTS_20261007.md", "docs/SCE_ENVIRONMENT_LATEST_2026_20261007.md"]
+    },
+    {
+      "id": "G4",
+      "topic": "实际规模、种子、模型、用量成本运行时间与复现",
+      "covered": "运行级提示/原回答/模型回包/失败重试/token账、干跑和缓存重算，八期3072请求有收据。",
+      "remaining": "最终实验总账、运行时间与种子定义；最终包独立环境验收；无密钥干跑/轨迹重算/真实生成模式。",
+      "boundary": "两次生成不自动等于两个模型随机种子；估算与账单、平台资助与自购API分别报告。",
+      "evidence": ["outputs/sce_expanded_state_evaluation_20261014_v1/execution_receipt.json", "submission/README.md"]
+    },
+    {
+      "id": "G5",
+      "topic": "逐源许可、脱敏发布与新闻/汽油历史版本",
+      "covered": "已留来源/哈希/部分署名和私有数据隔离，已知新闻汽油版本局限；有排除二者的BLS-only B草案。",
+      "remaining": "逐源核实研究/模型处理/再分发依据；脱敏字段和允许发布范围；历史版本证据及严格预测排除清单。",
+      "priority": "最高",
+      "boundary": "当前下载哈希和报道日期不能独自证明历史版本。BLS-only只处理部分外部输入，不能排除LLM参数知识。",
+      "evidence": ["docs/SCE_DATA_AUDIT.md", "docs/SCE_ENVIRONMENT_LATEST_2026_20261007.md", "submission/README.md"]
+    }
+  ],
+  "scope": "对现有计划与证据的定向对照，不是重新全量审计或最终验收。",
+  "new_simulation_calls": 0
+}
