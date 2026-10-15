@@ -1,0 +1,33 @@
+{
+  "status": "local_analysis_plan_before_new_outcome_models_not_public_preregistration",
+  "new_api_calls": 0,
+  "analysis_scope": [202001, 202510],
+  "periods": {"2020_2022": [202001, 202212], "2023_2025_10": [202301, 202510]},
+  "primary_factors": ["education_fine", "financial_change", "financial_risk", "general_risk"],
+  "primary_outcomes": ["Q8v2part2", "Q9_mean", "Q9_iqr", "zero_deflation_pct"],
+  "controls": ["age_group", "income_group", "gender", "region", "employment", "numeracy"],
+  "fixed_effect": "calendar month",
+  "weights": "official current-wave weights normalized to equal total weight per month",
+  "inference": "person-cluster CR1 with absorbed month count included in residual degrees of freedom",
+  "multiplicity": "BH across the 16 primary factor/outcome joint Wald tests, separately within each period",
+  "prespecified_contrasts": {
+    "education_fine": "high school diploma code 2 minus bachelor code 5",
+    "financial_change": "somewhat worse code 2 minus same code 3",
+    "financial_risk": "equal-weight codes 6/7 minus codes 1/2",
+    "general_risk": "equal-weight codes 6/7 minus codes 1/2"
+  },
+  "sensitivity": "Q8 capped at -100/+100, labelled sensitivity only; primary Q8 not trimmed",
+  "secondary": [
+    "add seven individual quiz correctness variables beyond official high/low category, same complete cases",
+    "financial decision role among observed respondents, not imputed for structurally skipped cases",
+    "calendar-adjacent first differences for financial-change categories and Q8/Q9 outcomes"
+  ],
+  "descriptive_distribution": "monthly survey-weighted quantiles within groups, then equal-month averages; cross-person IQR and median individual density IQR reported separately",
+  "limits": [
+    "Associations, not causal effects or learned behavioural weights.",
+    "Previously viewed data periods: temporal replication is not a new blinded experiment.",
+    "Current Q1 is subjective and can itself reflect inflation; reverse causality remains.",
+    "Stable entry traits cannot be identified in person fixed effects; first differences apply to changing Q1.",
+    "No current outcomes or fitted coefficients will be inserted into a simulation provider."
+  ]
+}

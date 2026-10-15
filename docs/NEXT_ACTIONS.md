@@ -1,9 +1,9 @@
 <!-- current-todo:start -->
 # 当前清单：信念更新、价格体验与问卷表达
 
-更新：2026-10-15（北京时间）。人口字段清点新增1完成/2待办，目前28/38是交付进度，不是成功率。发现D6收入与D2家庭更新未充分进入细匹配原型；教育/Numeracy已有标签但机制仍待检验。跨年CE仍HTTP403。历史任务保留在下方。
+更新：2026-10-15（北京时间）。真人字段关联分析已完成，目前29/39是交付进度，不是成功率。70个月82,535人月显示，学历/具体答题模式更稳定对应个人不确定性，财务变差与较高预期有关；风险与财务分工不宜直接写成固定规则。跨年CE仍HTTP403。历史任务保留在下方。
 
-当前：机械保留个人位置能改善跨人分布，却不能修复LLM共同中心，更新分布还变差。已准备“模型报改动、程序恢复Q8/Q9”的独立草稿，不设固定更新权重；下一步接运行入口、补1例缺失Q8分支并做格式干跑，再准备真实对照。频率匹配原型保留更多家庭/细收入条件，但牺牲地区/教育，且跨年数据未补齐，不升级正式输入。本轮新增API0、费用0。
+当前：先把真人关联证据落实为清楚的候选输入，区分“题目+本人实际作答”与“正确答案/反馈”，后者会改变信息条件。下一项先做相同事实的标签/原题/忠实转述草稿与评价设计，不同时全加财务、风险等变量。此前“模型报改动、程序恢复Q8/Q9”仍待接独立入口、补1例缺失分支。频率候选暂不升级。本轮新增API0、费用0。
 
 补充：本轮新格式只有程序和191对草稿，没有模型新回答。人口清点发现166个所选人月有更近D6、69个细档不同，18个家庭变化；先补新匹配状态更新链，不同时改变新格式对照的P/E。教育/Numeracy的理解与概率表达机制另列候选。
 
@@ -52,7 +52,8 @@
 ## 3. 信息理解：持续性、政策与事件
 
 - [x] 核查信息实验、信念精度、主观传导渠道与家庭价格体验的一手依据，明确共同信息收窄的合理性和迁移边界。
-- [ ] 优先分析本人QNUM五题答法、额外QNUM8/9、Q46财务分工与细学历的增量，分别对应中心/不确定性/表达/更新；另留时期复核后再设计机制。
+- [x] 在70个月真人资料中检验细学历、财务变化、风险、七道具体答题及Q46增量，分前后时期、跨人/本人变化与两种分布宽度解释。
+- [ ] 依据真人结果准备High/Low、原题+本人实际作答、忠实转述的独立候选；不附标准答案或纠错反馈，不与其他机制一起改变。
 - [ ] 查外部调查的事件理解类型及人口关联，区分实验分组与代表性分配。
 - [ ] 选定当期事件与相关历史经历，准备可追溯的年龄—记忆输入。
 - [ ] 固定同人P/E事实，单独设计持续性/事件理解对照，与频率注意力分开。
@@ -66,13 +67,13 @@
 - [ ] 对有希望的机制封存新验证期/种子、同信息基线及日期/模型知识敏感性，再检验跨时期、人群表现。
 - [ ] 单独准备B路线的模拟信念递推、新参与者初始化和误差累积检查。
 
-计划说明：[人口信息、使用缺口与具体机制](workstreams/20261014_mechanism/population_fields_and_mechanisms_20261015.md)
+计划说明：[真人字段关联结果与注入边界](workstreams/20261014_mechanism/population_association_results_20261015.md)；[人口信息、使用缺口与具体机制](workstreams/20261014_mechanism/population_fields_and_mechanisms_20261015.md)
 
 最新证据：[控制变量检查与机制准备](literature/sce/heterogeneity_and_probability/behavior_mechanism_evidence_20261014.md)
 
 结果阅读：[人口字段与机制回顾](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#population-fields-and-mechanisms)；[信念更新与匹配候选准备](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#belief-update-preparation)；[覆盖、年龄与后续优先级](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#coverage-age-and-priorities)；[多季度与匹配核查](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-quarter-matching)；[频率控制变量诊断](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-control-analysis)；[购买频率真实对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#purchase-frequency-results)；[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
 
-使用约定：Agent按实际进展打钩并重新生成可视清单。打钩表示工作完成，不表示实验机制有效。机械平移诊断不升级主机制；下一候选是改动格式，频率候选独立验证，不同时改两处。
+使用约定：Agent按实际进展打钩并重新生成可视清单。打钩表示工作完成，不表示实验机制有效。真人条件关联不等于LLM有效机制；认知输入、改动格式、频率候选分别验证，不同时改几处。
 <!-- current-todo:end -->
 
 # 2026-10-14 上阶段任务快照（28/31项完成）

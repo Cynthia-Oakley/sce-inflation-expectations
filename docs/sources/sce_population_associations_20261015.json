@@ -1,0 +1,5207 @@
+{
+  "status": "completed_observational_analysis_not_causal_or_simulation",
+  "new_api_calls": 0,
+  "protocol": {
+    "status": "local_analysis_plan_before_new_outcome_models_not_public_preregistration",
+    "new_api_calls": 0,
+    "analysis_scope": [
+      202001,
+      202510
+    ],
+    "periods": {
+      "2020_2022": [
+        202001,
+        202212
+      ],
+      "2023_2025_10": [
+        202301,
+        202510
+      ]
+    },
+    "primary_factors": [
+      "education_fine",
+      "financial_change",
+      "financial_risk",
+      "general_risk"
+    ],
+    "primary_outcomes": [
+      "Q8v2part2",
+      "Q9_mean",
+      "Q9_iqr",
+      "zero_deflation_pct"
+    ],
+    "controls": [
+      "age_group",
+      "income_group",
+      "gender",
+      "region",
+      "employment",
+      "numeracy"
+    ],
+    "fixed_effect": "calendar month",
+    "weights": "official current-wave weights normalized to equal total weight per month",
+    "inference": "person-cluster CR1 with absorbed month count included in residual degrees of freedom",
+    "multiplicity": "BH across the 16 primary factor/outcome joint Wald tests, separately within each period",
+    "prespecified_contrasts": {
+      "education_fine": "high school diploma code 2 minus bachelor code 5",
+      "financial_change": "somewhat worse code 2 minus same code 3",
+      "financial_risk": "equal-weight codes 6/7 minus codes 1/2",
+      "general_risk": "equal-weight codes 6/7 minus codes 1/2"
+    },
+    "sensitivity": "Q8 capped at -100/+100, labelled sensitivity only; primary Q8 not trimmed",
+    "secondary": [
+      "add seven individual quiz correctness variables beyond official high/low category, same complete cases",
+      "financial decision role among observed respondents, not imputed for structurally skipped cases",
+      "calendar-adjacent first differences for financial-change categories and Q8/Q9 outcomes"
+    ],
+    "descriptive_distribution": "monthly survey-weighted quantiles within groups, then equal-month averages; cross-person IQR and median individual density IQR reported separately",
+    "limits": [
+      "Associations, not causal effects or learned behavioural weights.",
+      "Previously viewed data periods: temporal replication is not a new blinded experiment.",
+      "Current Q1 is subjective and can itself reflect inflation; reverse causality remains.",
+      "Stable entry traits cannot be identified in person fixed effects; first differences apply to changing Q1.",
+      "No current outcomes or fitted coefficients will be inserted into a simulation provider."
+    ]
+  },
+  "source_sha256": {
+    "outputs/sce_behavior_mechanism_audit_20261014_v3/reference_with_controls_private.parquet": "a4eb7d134f603136f7c01303597068777cf5614a372d72ee228312f467c1e7dc",
+    "data/raw/sce_p_sources/micro_2017_2019.xlsx": "a88e5a225c9a566dd8cdfdd77abef9ac456eb52d1a120c5ec208184a88c745c9",
+    "data/raw/sce_audit_20260928/micro_2020_2024.xlsx": "1b57ffb75c2170d767f46a001002db8c40c228fe5691f6dd19e39777ffe469c6",
+    "data/raw/sce_baselines_latest_20261007/micro_latest.xlsx": "7da4bbcd3f23a4434ab5a94c4c93a255c46df7a57c38eef807b39466bf158f48",
+    "studies/sce_inflation_expectations/evaluation/population_association_protocol_20261015.json": "1cd3b94b0a71bec63c675c1e21fb185fb3ad6230ed1764546e9a7065ec7c12a6",
+    "studies/sce_inflation_expectations/evaluation/population_associations.py": "958d650cbeb367fb19d563d08f0681252c3d4fa26b1c7aeefb6b5937e0d0926d",
+    "studies/sce_inflation_expectations/evaluation/population_field_inventory.py": "115dba563f62200e161d3f4a7ea36c314ef4e0b26ee9f3fe5567f768c58872c6"
+  },
+  "limits": [
+    "No causal identification: current Q1 and inflation beliefs may influence one another.",
+    "Month FE, observed controls and person clustering do not resolve every omitted variable or shared residual shock.",
+    "Risk, education and financial role are observed entry traits carried only forward; not experimentally assigned behaviour.",
+    "First differences cancel stable person effects but not time-varying confounders or survey measurement error.",
+    "Adjacent forecasts have rolling overlapping 12-month horizons; revisions are not fixed-target Bayesian updates.",
+    "Conditional regression coefficients refer to means; descriptive group medians/IQR are separate objects.",
+    "Descriptive distributions are not population-standardized for all controls. Secondary models are exploratory.",
+    "No simulation inputs changed, no observed current target values exported to a provider."
+  ],
+  "periods": {
+    "2020_2022": {
+      "rows": 44971,
+      "persons": 6607,
+      "models": {
+        "Q8v2part2": {
+          "rows": 44329,
+          "persons": 6527,
+          "months": 36,
+          "R2_within_month": 0.011278893741051732,
+          "joint": {
+            "education_fine": {
+              "chi2": 35.169994960805596,
+              "df": 8,
+              "p": 2.4897676082588614e-05,
+              "BH_q_primary_16": 6.639380288690297e-05
+            },
+            "financial_change": {
+              "chi2": 15.466967923021853,
+              "df": 4,
+              "p": 0.0038245303939687275,
+              "BH_q_primary_16": 0.007649060787937455
+            },
+            "financial_risk": {
+              "chi2": 4.864995083142221,
+              "df": 6,
+              "p": 0.5612416539135909,
+              "BH_q_primary_16": 0.641419033044104
+            },
+            "general_risk": {
+              "chi2": 3.521577952162204,
+              "df": 6,
+              "p": 0.7410966649445663,
+              "BH_q_primary_16": 0.7422112332934079
+            },
+            "age_group": {
+              "chi2": 0.9493500960476412,
+              "df": 2,
+              "p": 0.6220871720802306
+            },
+            "income_group": {
+              "chi2": 6.920931091323729,
+              "df": 2,
+              "p": 0.03141513343440772
+            },
+            "gender": {
+              "chi2": 0.10416187049644496,
+              "df": 1,
+              "p": 0.7468912610300847
+            },
+            "region": {
+              "chi2": 6.756486026908864,
+              "df": 3,
+              "p": 0.08007800748849382
+            },
+            "employment": {
+              "chi2": 9.372954064851118,
+              "df": 7,
+              "p": 0.22697666500758326
+            },
+            "numeracy": {
+              "chi2": 0.10607900629374771,
+              "df": 1,
+              "p": 0.7446530677130734
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 5.550129482318871,
+              "se_person_cluster": 2.5671099295656656,
+              "ci95": [
+                0.5177531337745185,
+                10.582505830863223
+              ]
+            },
+            "financial_change": {
+              "estimate": 1.9206357187494678,
+              "se_person_cluster": 0.6931062987731595,
+              "ci95": [
+                0.5619203381567479,
+                3.279351099342188
+              ]
+            },
+            "financial_risk": {
+              "estimate": -18.790404593364915,
+              "se_person_cluster": 17.335355224119695,
+              "ci95": [
+                -52.77337922906146,
+                15.192570042331628
+              ]
+            },
+            "general_risk": {
+              "estimate": 25.535185026618834,
+              "se_person_cluster": 24.441688797284694,
+              "ci95": [
+                -22.37853117436503,
+                73.4489012276027
+              ]
+            }
+          }
+        },
+        "Q9_mean": {
+          "rows": 43712,
+          "persons": 6470,
+          "months": 36,
+          "R2_within_month": 0.03763111743425818,
+          "joint": {
+            "education_fine": {
+              "chi2": 50.193850370769226,
+              "df": 8,
+              "p": 3.7507503217772585e-08,
+              "BH_q_primary_16": 2.000400171614538e-07
+            },
+            "financial_change": {
+              "chi2": 103.06347435045873,
+              "df": 4,
+              "p": 2.190143971808487e-21,
+              "BH_q_primary_16": 3.504230354893579e-20
+            },
+            "financial_risk": {
+              "chi2": 11.609680479217822,
+              "df": 6,
+              "p": 0.07126475175005986,
+              "BH_q_primary_16": 0.1036578207273598
+            },
+            "general_risk": {
+              "chi2": 3.5132108081940334,
+              "df": 6,
+              "p": 0.7422112332934079,
+              "BH_q_primary_16": 0.7422112332934079
+            },
+            "age_group": {
+              "chi2": 8.87590891646185,
+              "df": 2,
+              "p": 0.011820092300060314
+            },
+            "income_group": {
+              "chi2": 0.49738708191184583,
+              "df": 2,
+              "p": 0.7798189193298284
+            },
+            "gender": {
+              "chi2": 2.482626013634165,
+              "df": 1,
+              "p": 0.11510991881982333
+            },
+            "region": {
+              "chi2": 2.2127642175799096,
+              "df": 3,
+              "p": 0.5294385963884376
+            },
+            "employment": {
+              "chi2": 28.52902393511642,
+              "df": 7,
+              "p": 0.00017627316479202853
+            },
+            "numeracy": {
+              "chi2": 0.32365500000133873,
+              "df": 1,
+              "p": 0.5694193588402352
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 0.9378364921220808,
+              "se_person_cluster": 0.27195775636997066,
+              "ci95": [
+                0.40470933532754816,
+                1.4709636489166134
+              ]
+            },
+            "financial_change": {
+              "estimate": 1.2026469021699882,
+              "se_person_cluster": 0.16769040604174634,
+              "ci95": [
+                0.8739182400863924,
+                1.531375564253584
+              ]
+            },
+            "financial_risk": {
+              "estimate": -1.0177779712520327,
+              "se_person_cluster": 0.4692852503502897,
+              "ci95": [
+                -1.9377322854231802,
+                -0.09782365708088525
+              ]
+            },
+            "general_risk": {
+              "estimate": 0.38106562510555453,
+              "se_person_cluster": 0.5146897556952001,
+              "ci95": [
+                -0.6278965377965701,
+                1.390027788007679
+              ]
+            }
+          }
+        },
+        "Q9_iqr": {
+          "rows": 43712,
+          "persons": 6470,
+          "months": 36,
+          "R2_within_month": 0.19390710226514873,
+          "joint": {
+            "education_fine": {
+              "chi2": 86.48202033502895,
+              "df": 8,
+              "p": 2.402519474684865e-15,
+              "BH_q_primary_16": 1.922015579747892e-14
+            },
+            "financial_change": {
+              "chi2": 36.85547750198574,
+              "df": 4,
+              "p": 1.9291100398558799e-07,
+              "BH_q_primary_16": 7.716440159423519e-07
+            },
+            "financial_risk": {
+              "chi2": 7.891718040466278,
+              "df": 6,
+              "p": 0.24614417165436325,
+              "BH_q_primary_16": 0.32819222887248434
+            },
+            "general_risk": {
+              "chi2": 23.231285365755493,
+              "df": 6,
+              "p": 0.0007226025127581592,
+              "BH_q_primary_16": 0.0016516628863043638
+            },
+            "age_group": {
+              "chi2": 2.6686852057780324,
+              "df": 2,
+              "p": 0.2633312317574291
+            },
+            "income_group": {
+              "chi2": 35.72112335104016,
+              "df": 2,
+              "p": 1.7508809625365438e-08
+            },
+            "gender": {
+              "chi2": 64.28955262017327,
+              "df": 1,
+              "p": 1.0741380412996545e-15
+            },
+            "region": {
+              "chi2": 9.902108286240795,
+              "df": 3,
+              "p": 0.019416843998942824
+            },
+            "employment": {
+              "chi2": 26.95280529245997,
+              "df": 7,
+              "p": 0.0003398615397710802
+            },
+            "numeracy": {
+              "chi2": 117.92073002441802,
+              "df": 1,
+              "p": 1.804578872422225e-27
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 1.7701820452956376,
+              "se_person_cluster": 0.23655493857009394,
+              "ci95": [
+                1.3064561214282024,
+                2.2339079691630728
+              ]
+            },
+            "financial_change": {
+              "estimate": 0.0594539093565892,
+              "se_person_cluster": 0.13238317837303162,
+              "ci95": [
+                -0.2000609080749274,
+                0.31896872678810584
+              ]
+            },
+            "financial_risk": {
+              "estimate": 0.296721434063823,
+              "se_person_cluster": 0.38188647328524056,
+              "ci95": [
+                -0.45190236853838217,
+                1.0453452366660283
+              ]
+            },
+            "general_risk": {
+              "estimate": 1.2138320583382112,
+              "se_person_cluster": 0.41129731248327567,
+              "ci95": [
+                0.4075532828097732,
+                2.0201108338666494
+              ]
+            }
+          }
+        },
+        "zero_deflation_pct": {
+          "rows": 43875,
+          "persons": 6482,
+          "months": 36,
+          "R2_within_month": 0.04676406007522593,
+          "joint": {
+            "education_fine": {
+              "chi2": 20.446359461287475,
+              "df": 8,
+              "p": 0.00877299868567332,
+              "BH_q_primary_16": 0.015596442107863682
+            },
+            "financial_change": {
+              "chi2": 33.38949080554042,
+              "df": 4,
+              "p": 9.940506486964259e-07,
+              "BH_q_primary_16": 3.180962075828563e-06
+            },
+            "financial_risk": {
+              "chi2": 12.780065425457575,
+              "df": 6,
+              "p": 0.04666455501314886,
+              "BH_q_primary_16": 0.07466328802103818
+            },
+            "general_risk": {
+              "chi2": 4.9339083878740055,
+              "df": 6,
+              "p": 0.5523174558741932,
+              "BH_q_primary_16": 0.641419033044104
+            },
+            "age_group": {
+              "chi2": 38.655747591499576,
+              "df": 2,
+              "p": 4.036556759012855e-09
+            },
+            "income_group": {
+              "chi2": 17.696722357183383,
+              "df": 2,
+              "p": 0.00014361690598320467
+            },
+            "gender": {
+              "chi2": 11.300119789430486,
+              "df": 1,
+              "p": 0.0007750209044836805
+            },
+            "region": {
+              "chi2": 1.940310953722158,
+              "df": 3,
+              "p": 0.5848873409026851
+            },
+            "employment": {
+              "chi2": 37.40449731874962,
+              "df": 7,
+              "p": 3.931488123927138e-06
+            },
+            "numeracy": {
+              "chi2": 26.036234948743417,
+              "df": 1,
+              "p": 3.350692574245397e-07
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 1.8949258711748371,
+              "se_person_cluster": 2.1195235459102757,
+              "ci95": [
+                -2.2600399049157254,
+                6.049891647265399
+              ]
+            },
+            "financial_change": {
+              "estimate": 4.152439010047419,
+              "se_person_cluster": 1.1502904574226105,
+              "ci95": [
+                1.8974900181493939,
+                6.407388001945444
+              ]
+            },
+            "financial_risk": {
+              "estimate": -4.50997281872066,
+              "se_person_cluster": 3.1573400586099027,
+              "ci95": [
+                -10.699401528921577,
+                1.6794558914802584
+              ]
+            },
+            "general_risk": {
+              "estimate": -0.6786396084438353,
+              "se_person_cluster": 3.141168600958428,
+              "ci95": [
+                -6.8363669236680265,
+                5.479087706780356
+              ]
+            }
+          }
+        }
+      },
+      "Q8_tail_sensitivity": {
+        "rows": 44329,
+        "persons": 6527,
+        "months": 36,
+        "R2_within_month": 0.07077724247231554,
+        "joint": {
+          "education_fine": {
+            "chi2": 68.07941884506126,
+            "df": 8,
+            "p": 1.1840015874369787e-11
+          },
+          "financial_change": {
+            "chi2": 54.340474508822865,
+            "df": 4,
+            "p": 4.4658732531223276e-11
+          },
+          "financial_risk": {
+            "chi2": 7.364702817550729,
+            "df": 6,
+            "p": 0.2884319483100587
+          },
+          "general_risk": {
+            "chi2": 4.255570329654043,
+            "df": 6,
+            "p": 0.6421342965628749
+          },
+          "age_group": {
+            "chi2": 0.5329158461234881,
+            "df": 2,
+            "p": 0.766088237695512
+          },
+          "income_group": {
+            "chi2": 29.290781723156538,
+            "df": 2,
+            "p": 4.3610148296904076e-07
+          },
+          "gender": {
+            "chi2": 36.928602586299874,
+            "df": 1,
+            "p": 1.225350955288591e-09
+          },
+          "region": {
+            "chi2": 10.53260833358944,
+            "df": 3,
+            "p": 0.014541319734223556
+          },
+          "employment": {
+            "chi2": 13.124184706476012,
+            "df": 7,
+            "p": 0.06913984375938426
+          },
+          "numeracy": {
+            "chi2": 34.96585017098328,
+            "df": 1,
+            "p": 3.3553884388869276e-09
+          }
+        },
+        "contrasts": {
+          "education_fine": {
+            "estimate": 3.098575928609413,
+            "se_person_cluster": 0.5432488503553334,
+            "ci95": [
+              2.033630234458858,
+              4.163521622759968
+            ]
+          },
+          "financial_change": {
+            "estimate": 1.4894808497623662,
+            "se_person_cluster": 0.3774794501798661,
+            "ci95": [
+              0.74949747964308,
+              2.2294642198816526
+            ]
+          },
+          "financial_risk": {
+            "estimate": -1.2429127711251384,
+            "se_person_cluster": 1.146725166651819,
+            "ci95": [
+              -3.4908697208750703,
+              1.0050441786247934
+            ]
+          },
+          "general_risk": {
+            "estimate": 1.0144462608094607,
+            "se_person_cluster": 1.4492423072340659,
+            "ci95": [
+              -1.8265433774755273,
+              3.8554358990944486
+            ]
+          }
+        },
+        "capped_rows": 13
+      },
+      "secondary": {
+        "quiz_Q9_mean": {
+          "rows": 43469,
+          "persons": 6425,
+          "months": 36,
+          "R2_within_month": 0.040497636222062594,
+          "joint": {
+            "education_fine": {
+              "chi2": 50.22610560732899,
+              "df": 8,
+              "p": 3.697570787541896e-08
+            },
+            "financial_change": {
+              "chi2": 100.29463069408449,
+              "df": 4,
+              "p": 8.51374240059353e-21
+            },
+            "financial_risk": {
+              "chi2": 11.6281476423962,
+              "df": 6,
+              "p": 0.07079745073567276
+            },
+            "general_risk": {
+              "chi2": 3.378467980058493,
+              "df": 6,
+              "p": 0.7600624575921098
+            },
+            "age_group": {
+              "chi2": 6.77381407216688,
+              "df": 2,
+              "p": 0.03381309802303652
+            },
+            "income_group": {
+              "chi2": 0.9140439949534398,
+              "df": 2,
+              "p": 0.6331664118461632
+            },
+            "gender": {
+              "chi2": 3.856337088069082,
+              "df": 1,
+              "p": 0.04955841086474607
+            },
+            "region": {
+              "chi2": 2.2498702064869747,
+              "df": 3,
+              "p": 0.5221924058055623
+            },
+            "employment": {
+              "chi2": 29.594038039172784,
+              "df": 7,
+              "p": 0.00011269767958380809
+            },
+            "numeracy": {
+              "chi2": 0.1313469282125406,
+              "df": 1,
+              "p": 0.7170395651921746
+            },
+            "correct_QNUM1": {
+              "chi2": 2.053898565766129,
+              "df": 1,
+              "p": 0.15181700426231381
+            },
+            "correct_QNUM2": {
+              "chi2": 1.8063114835010692,
+              "df": 1,
+              "p": 0.1789513362949302
+            },
+            "correct_QNUM3": {
+              "chi2": 0.35769243958716784,
+              "df": 1,
+              "p": 0.5497905967996117
+            },
+            "correct_QNUM5": {
+              "chi2": 0.1252580055190758,
+              "df": 1,
+              "p": 0.7234002789417983
+            },
+            "correct_QNUM6": {
+              "chi2": 0.3319607876007332,
+              "df": 1,
+              "p": 0.564506780004925
+            },
+            "correct_QNUM8": {
+              "chi2": 5.472498879201945,
+              "df": 1,
+              "p": 0.01931798509197153
+            },
+            "correct_QNUM9": {
+              "chi2": 0.5477404612136398,
+              "df": 1,
+              "p": 0.45924241298037716
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 0.9530852154891908,
+              "se_person_cluster": 0.2728633455691889,
+              "ci95": [
+                0.4181821031298897,
+                1.487988327848492
+              ]
+            },
+            "financial_change": {
+              "estimate": 1.184724168507549,
+              "se_person_cluster": 0.16715522465359076,
+              "ci95": [
+                0.8570442094136952,
+                1.5124041276014026
+              ]
+            },
+            "financial_risk": {
+              "estimate": -0.955938367467809,
+              "se_person_cluster": 0.46878708788611134,
+              "ci95": [
+                -1.8749173231097314,
+                -0.03695941182588658
+              ]
+            },
+            "general_risk": {
+              "estimate": 0.3647799535381651,
+              "se_person_cluster": 0.5206179534238082,
+              "ci95": [
+                -0.6558047756258756,
+                1.3853646827022057
+              ]
+            },
+            "correct_QNUM1": {
+              "estimate": -1.0507820520770659,
+              "se_person_cluster": 0.7332011717922631,
+              "ci95": [
+                -2.488100750779753,
+                0.38653664662562104
+              ]
+            },
+            "correct_QNUM2": {
+              "estimate": -0.29984297351408984,
+              "se_person_cluster": 0.22309896454202274,
+              "ci95": [
+                -0.7371913108245904,
+                0.13750536379641082
+              ]
+            },
+            "correct_QNUM3": {
+              "estimate": 0.20580560579333035,
+              "se_person_cluster": 0.3441139823822946,
+              "ci95": [
+                -0.46877250508734053,
+                0.8803837166740012
+              ]
+            },
+            "correct_QNUM5": {
+              "estimate": 0.12760133938117907,
+              "se_person_cluster": 0.3605391968509187,
+              "ci95": [
+                -0.579175666965311,
+                0.8343783457276692
+              ]
+            },
+            "correct_QNUM6": {
+              "estimate": -0.17743951290402388,
+              "se_person_cluster": 0.30796895788492773,
+              "ci95": [
+                -0.7811613273495173,
+                0.42628230154146945
+              ]
+            },
+            "correct_QNUM8": {
+              "estimate": 0.75157383914693,
+              "se_person_cluster": 0.32127639210458786,
+              "ci95": [
+                0.12176501779047022,
+                1.3813826605033896
+              ]
+            },
+            "correct_QNUM9": {
+              "estimate": 0.3212612800578679,
+              "se_person_cluster": 0.43408119688026264,
+              "ci95": [
+                -0.5296825605065555,
+                1.1722051206222912
+              ]
+            }
+          },
+          "seven_items_joint": {
+            "chi2": 11.749446696580199,
+            "df": 7,
+            "p": 0.10910538852603814
+          },
+          "same_sample_base_R2": 0.03752869731391173,
+          "incremental_R2": 0.0029689389081508644
+        },
+        "role_Q9_mean": {
+          "rows": 39824,
+          "persons": 5878,
+          "months": 36,
+          "R2_within_month": 0.04060320946716023,
+          "joint": {
+            "education_fine": {
+              "chi2": 47.5499028584807,
+              "df": 8,
+              "p": 1.2042905971981633e-07
+            },
+            "financial_change": {
+              "chi2": 109.93322946056581,
+              "df": 4,
+              "p": 7.520237771461458e-23
+            },
+            "financial_risk": {
+              "chi2": 8.243375877672058,
+              "df": 6,
+              "p": 0.22080974108646717
+            },
+            "general_risk": {
+              "chi2": 5.076134992698094,
+              "df": 6,
+              "p": 0.5340860315232436
+            },
+            "age_group": {
+              "chi2": 8.28916474432841,
+              "df": 2,
+              "p": 0.01585005399303204
+            },
+            "income_group": {
+              "chi2": 0.530976902003962,
+              "df": 2,
+              "p": 0.7668312989676433
+            },
+            "gender": {
+              "chi2": 3.190682092976375,
+              "df": 1,
+              "p": 0.07405910438304926
+            },
+            "region": {
+              "chi2": 1.4854398219670415,
+              "df": 3,
+              "p": 0.6856348660878107
+            },
+            "employment": {
+              "chi2": 25.171939788836017,
+              "df": 7,
+              "p": 0.0007073358572275768
+            },
+            "numeracy": {
+              "chi2": 0.4332701323148552,
+              "df": 1,
+              "p": 0.5103886913034327
+            },
+            "financial_role": {
+              "chi2": 4.558374167747284,
+              "df": 4,
+              "p": 0.33568181982581263
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 0.9276062380414262,
+              "se_person_cluster": 0.2757820908616096,
+              "ci95": [
+                0.3869719294434948,
+                1.4682405466393575
+              ]
+            },
+            "financial_change": {
+              "estimate": 1.2125359643725844,
+              "se_person_cluster": 0.171113995907939,
+              "ci95": [
+                0.8770896104048773,
+                1.5479823183402914
+              ]
+            },
+            "financial_risk": {
+              "estimate": -0.6041808819392491,
+              "se_person_cluster": 0.4492443206160663,
+              "ci95": [
+                -1.4848649463359203,
+                0.276503182457422
+              ]
+            },
+            "general_risk": {
+              "estimate": 0.21328550480444813,
+              "se_person_cluster": 0.4719509418766982,
+              "ci95": [
+                -0.7119118869351397,
+                1.1384828965440361
+              ]
+            },
+            "financial_role": {
+              "estimate": -1.172264468464914,
+              "se_person_cluster": 1.1217353728698098,
+              "ci95": [
+                -3.3712782834904687,
+                1.026749346560641
+              ]
+            }
+          }
+        },
+        "quiz_Q9_iqr": {
+          "rows": 43469,
+          "persons": 6425,
+          "months": 36,
+          "R2_within_month": 0.21649214912213777,
+          "joint": {
+            "education_fine": {
+              "chi2": 59.65001267256387,
+              "df": 8,
+              "p": 5.459101821196522e-10
+            },
+            "financial_change": {
+              "chi2": 34.624290567927034,
+              "df": 4,
+              "p": 5.548429326248336e-07
+            },
+            "financial_risk": {
+              "chi2": 6.797658706392118,
+              "df": 6,
+              "p": 0.33996575746311564
+            },
+            "general_risk": {
+              "chi2": 16.189188507311428,
+              "df": 6,
+              "p": 0.012773745556790913
+            },
+            "age_group": {
+              "chi2": 0.9286248354866414,
+              "df": 2,
+              "p": 0.6285671482583193
+            },
+            "income_group": {
+              "chi2": 24.516444084020428,
+              "df": 2,
+              "p": 4.745935255227181e-06
+            },
+            "gender": {
+              "chi2": 47.37550802367242,
+              "df": 1,
+              "p": 5.861043845514182e-12
+            },
+            "region": {
+              "chi2": 8.895134666017485,
+              "df": 3,
+              "p": 0.030718113177224702
+            },
+            "employment": {
+              "chi2": 23.16782483695269,
+              "df": 7,
+              "p": 0.0015935841307464674
+            },
+            "numeracy": {
+              "chi2": 0.005737057868177826,
+              "df": 1,
+              "p": 0.9396232720181831
+            },
+            "correct_QNUM1": {
+              "chi2": 0.8325445194807315,
+              "df": 1,
+              "p": 0.36153778516869517
+            },
+            "correct_QNUM2": {
+              "chi2": 21.7945587558874,
+              "df": 1,
+              "p": 3.034595202048883e-06
+            },
+            "correct_QNUM3": {
+              "chi2": 9.757001963273925,
+              "df": 1,
+              "p": 0.0017864099826244918
+            },
+            "correct_QNUM5": {
+              "chi2": 8.823504949469703,
+              "df": 1,
+              "p": 0.002973749300095583
+            },
+            "correct_QNUM6": {
+              "chi2": 7.227173058941398,
+              "df": 1,
+              "p": 0.007180819533244323
+            },
+            "correct_QNUM8": {
+              "chi2": 18.667878001979695,
+              "df": 1,
+              "p": 1.55581556160008e-05
+            },
+            "correct_QNUM9": {
+              "chi2": 9.924454164136254,
+              "df": 1,
+              "p": 0.0016309720846556452
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 1.4446262763060844,
+              "se_person_cluster": 0.2381469785515847,
+              "ci95": [
+                0.9777788154993499,
+                1.911473737112819
+              ]
+            },
+            "financial_change": {
+              "estimate": 0.09177321564317457,
+              "se_person_cluster": 0.1293418260216857,
+              "ci95": [
+                -0.1617798775834562,
+                0.34532630886980537
+              ]
+            },
+            "financial_risk": {
+              "estimate": 0.47051565126554173,
+              "se_person_cluster": 0.3738500843499602,
+              "ci95": [
+                -0.2623551315706031,
+                1.2033864341016867
+              ]
+            },
+            "general_risk": {
+              "estimate": 0.8357985429589969,
+              "se_person_cluster": 0.40111977934639265,
+              "ci95": [
+                0.049470067972031906,
+                1.622127017945962
+              ]
+            },
+            "correct_QNUM1": {
+              "estimate": -0.5437328758267395,
+              "se_person_cluster": 0.5959116274771831,
+              "ci95": [
+                -1.711918304190976,
+                0.6244525525374971
+              ]
+            },
+            "correct_QNUM2": {
+              "estimate": -0.812204565368499,
+              "se_person_cluster": 0.1739768189795131,
+              "ci95": [
+                -1.153257123220815,
+                -0.4711520075161831
+              ]
+            },
+            "correct_QNUM3": {
+              "estimate": -0.9568372528819544,
+              "se_person_cluster": 0.3063231923201823,
+              "ci95": [
+                -1.5573328182284354,
+                -0.35634168753547346
+              ]
+            },
+            "correct_QNUM5": {
+              "estimate": -0.8977575991954188,
+              "se_person_cluster": 0.30223066250231634,
+              "ci95": [
+                -1.4902304419133499,
+                -0.30528475647748765
+              ]
+            },
+            "correct_QNUM6": {
+              "estimate": -0.7824462023473115,
+              "se_person_cluster": 0.29105178013977495,
+              "ci95": [
+                -1.3530047093161572,
+                -0.21188769537846575
+              ]
+            },
+            "correct_QNUM8": {
+              "estimate": -1.2504623082440518,
+              "se_person_cluster": 0.28941639435370703,
+              "ci95": [
+                -1.8178149139400421,
+                -0.6831097025480616
+              ]
+            },
+            "correct_QNUM9": {
+              "estimate": -1.0925337156426222,
+              "se_person_cluster": 0.3468019518254475,
+              "ci95": [
+                -1.77238114262755,
+                -0.4126862886576944
+              ]
+            }
+          },
+          "seven_items_joint": {
+            "chi2": 89.18721818812526,
+            "df": 7,
+            "p": 1.8168527667739664e-16
+          },
+          "same_sample_base_R2": 0.19469452564843548,
+          "incremental_R2": 0.021797623473702288
+        },
+        "role_Q9_iqr": {
+          "rows": 39824,
+          "persons": 5878,
+          "months": 36,
+          "R2_within_month": 0.19414537329618697,
+          "joint": {
+            "education_fine": {
+              "chi2": 68.7852032030493,
+              "df": 8,
+              "p": 8.572895550953662e-12
+            },
+            "financial_change": {
+              "chi2": 35.31885320497255,
+              "df": 4,
+              "p": 3.9949078583946294e-07
+            },
+            "financial_risk": {
+              "chi2": 14.0641284147687,
+              "df": 6,
+              "p": 0.028927959882387635
+            },
+            "general_risk": {
+              "chi2": 25.36125108840725,
+              "df": 6,
+              "p": 0.00029266479853417855
+            },
+            "age_group": {
+              "chi2": 3.369763751979317,
+              "df": 2,
+              "p": 0.18546633868979914
+            },
+            "income_group": {
+              "chi2": 37.65403830777474,
+              "df": 2,
+              "p": 6.6608471959348e-09
+            },
+            "gender": {
+              "chi2": 57.65878951095402,
+              "df": 1,
+              "p": 3.117667068517166e-14
+            },
+            "region": {
+              "chi2": 9.051335632683491,
+              "df": 3,
+              "p": 0.028616080547678023
+            },
+            "employment": {
+              "chi2": 23.641820848454472,
+              "df": 7,
+              "p": 0.0013167791291141017
+            },
+            "numeracy": {
+              "chi2": 108.9330705622352,
+              "df": 1,
+              "p": 1.6785924707975274e-25
+            },
+            "financial_role": {
+              "chi2": 3.3852517578272563,
+              "df": 4,
+              "p": 0.49553910984201244
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 1.5897953346685392,
+              "se_person_cluster": 0.2481971352608135,
+              "ci95": [
+                1.1032376825799122,
+                2.076352986757166
+              ]
+            },
+            "financial_change": {
+              "estimate": 0.030124819821967946,
+              "se_person_cluster": 0.13800836430794147,
+              "ci95": [
+                -0.24042232261664856,
+                0.30067196226058446
+              ]
+            },
+            "financial_risk": {
+              "estimate": 0.2805518368199938,
+              "se_person_cluster": 0.4006754119760995,
+              "ci95": [
+                -0.504919306897571,
+                1.0660229805375587
+              ]
+            },
+            "general_risk": {
+              "estimate": 1.340915727102332,
+              "se_person_cluster": 0.4111132314197552,
+              "ci95": [
+                0.5349826190833122,
+                2.146848835121352
+              ]
+            },
+            "financial_role": {
+              "estimate": -0.4701570038821663,
+              "se_person_cluster": 0.7758392618910164,
+              "ci95": [
+                -1.9910872485732953,
+                1.0507732408089627
+              ]
+            }
+          }
+        },
+        "quiz_zero_deflation_pct": {
+          "rows": 43630,
+          "persons": 6437,
+          "months": 36,
+          "R2_within_month": 0.05472548887081108,
+          "joint": {
+            "education_fine": {
+              "chi2": 24.982452019265185,
+              "df": 8,
+              "p": 0.0015652371631038825
+            },
+            "financial_change": {
+              "chi2": 32.22835010627644,
+              "df": 4,
+              "p": 1.7181404554346467e-06
+            },
+            "financial_risk": {
+              "chi2": 12.57165043226468,
+              "df": 6,
+              "p": 0.05036554908060131
+            },
+            "general_risk": {
+              "chi2": 4.155611488607314,
+              "df": 6,
+              "p": 0.6556271088875092
+            },
+            "age_group": {
+              "chi2": 30.909673088872083,
+              "df": 2,
+              "p": 1.9411083153551168e-07
+            },
+            "income_group": {
+              "chi2": 14.013960195960475,
+              "df": 2,
+              "p": 0.0009055391027434186
+            },
+            "gender": {
+              "chi2": 5.810532324671527,
+              "df": 1,
+              "p": 0.01593047135551221
+            },
+            "region": {
+              "chi2": 2.2588449920701494,
+              "df": 3,
+              "p": 0.5204509278240095
+            },
+            "employment": {
+              "chi2": 36.658562776981256,
+              "df": 7,
+              "p": 5.443368243776783e-06
+            },
+            "numeracy": {
+              "chi2": 0.3305568574153743,
+              "df": 1,
+              "p": 0.5653313740949737
+            },
+            "correct_QNUM1": {
+              "chi2": 1.262039938619864,
+              "df": 1,
+              "p": 0.261265310986038
+            },
+            "correct_QNUM2": {
+              "chi2": 0.3608226798660104,
+              "df": 1,
+              "p": 0.5480496948282733
+            },
+            "correct_QNUM3": {
+              "chi2": 1.6276133301622369,
+              "df": 1,
+              "p": 0.20203347656220574
+            },
+            "correct_QNUM5": {
+              "chi2": 3.8000217975318447,
+              "df": 1,
+              "p": 0.051251915646545326
+            },
+            "correct_QNUM6": {
+              "chi2": 0.9518436722502336,
+              "df": 1,
+              "p": 0.32925045001156616
+            },
+            "correct_QNUM8": {
+              "chi2": 16.001905957643277,
+              "df": 1,
+              "p": 6.327874725401875e-05
+            },
+            "correct_QNUM9": {
+              "chi2": 5.39662056277416,
+              "df": 1,
+              "p": 0.020175781448739837
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 3.306569627617066,
+              "se_person_cluster": 2.114126071793762,
+              "ci95": [
+                -0.8378207302187275,
+                7.45095998545286
+              ]
+            },
+            "financial_change": {
+              "estimate": 3.9124131597734566,
+              "se_person_cluster": 1.1381377155710126,
+              "ci95": [
+                1.681284639467358,
+                6.143541680079555
+              ]
+            },
+            "financial_risk": {
+              "estimate": -4.75071593922517,
+              "se_person_cluster": 3.1194014713200646,
+              "ci95": [
+                -10.865780481704745,
+                1.3643486032544043
+              ]
+            },
+            "general_risk": {
+              "estimate": 0.6176561527683955,
+              "se_person_cluster": 3.1655665973382443,
+              "ci95": [
+                -5.5879073933849215,
+                6.823219698921712
+              ]
+            },
+            "correct_QNUM1": {
+              "estimate": -4.253716731952505,
+              "se_person_cluster": 3.7864481669732024,
+              "ci95": [
+                -11.676414688812855,
+                3.168981224907845
+              ]
+            },
+            "correct_QNUM2": {
+              "estimate": 1.0055871517137436,
+              "se_person_cluster": 1.6740668706442507,
+              "ci95": [
+                -2.27614078761569,
+                4.287315091043177
+              ]
+            },
+            "correct_QNUM3": {
+              "estimate": 2.868351839128696,
+              "se_person_cluster": 2.248313161713745,
+              "ci95": [
+                -1.5390898518466436,
+                7.2757935301040355
+              ]
+            },
+            "correct_QNUM5": {
+              "estimate": 4.578204230391893,
+              "se_person_cluster": 2.3485624800096887,
+              "ci95": [
+                -0.02575947205119622,
+                9.182167932834982
+              ]
+            },
+            "correct_QNUM6": {
+              "estimate": 2.076826199605101,
+              "se_person_cluster": 2.12871411718449,
+              "ci95": [
+                -2.096161579862084,
+                6.249813979072286
+              ]
+            },
+            "correct_QNUM8": {
+              "estimate": 8.679310158833246,
+              "se_person_cluster": 2.1696983137727233,
+              "ci95": [
+                4.425979720794236,
+                12.932640596872258
+              ]
+            },
+            "correct_QNUM9": {
+              "estimate": 6.639779629488674,
+              "se_person_cluster": 2.8582007161656136,
+              "ci95": [
+                1.0367554546883344,
+                12.242803804289014
+              ]
+            }
+          },
+          "seven_items_joint": {
+            "chi2": 35.24006330568471,
+            "df": 7,
+            "p": 1.00803430123793e-05
+          },
+          "same_sample_base_R2": 0.046965043399676665,
+          "incremental_R2": 0.007760445471134414
+        },
+        "role_zero_deflation_pct": {
+          "rows": 39977,
+          "persons": 5888,
+          "months": 36,
+          "R2_within_month": 0.05095916109983878,
+          "joint": {
+            "education_fine": {
+              "chi2": 16.71188682923453,
+              "df": 8,
+              "p": 0.03325298424150643
+            },
+            "financial_change": {
+              "chi2": 31.540523408315803,
+              "df": 4,
+              "p": 2.3746641928727828e-06
+            },
+            "financial_risk": {
+              "chi2": 10.949258876866207,
+              "df": 6,
+              "p": 0.08995736457827613
+            },
+            "general_risk": {
+              "chi2": 5.791128372359203,
+              "df": 6,
+              "p": 0.4469902304717883
+            },
+            "age_group": {
+              "chi2": 37.86391041976111,
+              "df": 2,
+              "p": 5.997307551314245e-09
+            },
+            "income_group": {
+              "chi2": 16.96456189402623,
+              "df": 2,
+              "p": 0.0002071057662723001
+            },
+            "gender": {
+              "chi2": 12.238608117250164,
+              "df": 1,
+              "p": 0.0004681073543622222
+            },
+            "region": {
+              "chi2": 1.4738605217872005,
+              "df": 3,
+              "p": 0.6883163145870088
+            },
+            "employment": {
+              "chi2": 38.10498304598888,
+              "df": 7,
+              "p": 2.8940480808476315e-06
+            },
+            "numeracy": {
+              "chi2": 25.68604318814566,
+              "df": 1,
+              "p": 4.0172187109728204e-07
+            },
+            "financial_role": {
+              "chi2": 5.409794176658373,
+              "df": 4,
+              "p": 0.24777316555331044
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 2.685062246867994,
+              "se_person_cluster": 2.2190021120693766,
+              "ci95": [
+                -1.6649963414736968,
+                7.035120835209685
+              ]
+            },
+            "financial_change": {
+              "estimate": 4.225689398884667,
+              "se_person_cluster": 1.2007328543779803,
+              "ci95": [
+                1.8718122948111118,
+                6.5795665029582215
+              ]
+            },
+            "financial_risk": {
+              "estimate": -2.420931418779473,
+              "se_person_cluster": 3.3213821738815095,
+              "ci95": [
+                -8.932059538970526,
+                4.09019670141158
+              ]
+            },
+            "general_risk": {
+              "estimate": -2.6839085734770576,
+              "se_person_cluster": 3.2929459044403644,
+              "ci95": [
+                -9.13929116849261,
+                3.771474021538495
+              ]
+            },
+            "financial_role": {
+              "estimate": -1.1207967985853247,
+              "se_person_cluster": 6.626265887615101,
+              "ci95": [
+                -14.11071000158567,
+                11.86911640441502
+              ]
+            }
+          }
+        }
+      },
+      "first_differences": {
+        "Q8v2part2": {
+          "rows": 37004,
+          "persons": 5418,
+          "coefficients": {
+            "financial_change=1": {
+              "estimate": -1.0054733865355565,
+              "se_person_cluster": 1.1048813556340307,
+              "ci95": [
+                -3.1714850186546224,
+                1.1605382455835096
+              ]
+            },
+            "financial_change=2": {
+              "estimate": -0.0125088288702838,
+              "se_person_cluster": 0.5002071344642877,
+              "ci95": [
+                -0.9931159014702716,
+                0.968098243729704
+              ]
+            },
+            "financial_change=4": {
+              "estimate": 0.04123338204358894,
+              "se_person_cluster": 0.36500423211344163,
+              "ci95": [
+                -0.6743216488191758,
+                0.7567884129063537
+              ]
+            },
+            "financial_change=5": {
+              "estimate": 0.31546864415307824,
+              "se_person_cluster": 0.6838820514422537,
+              "ci95": [
+                -1.0252151051634593,
+                1.6561523934696158
+              ]
+            }
+          }
+        },
+        "Q9_mean": {
+          "rows": 36293,
+          "persons": 5364,
+          "coefficients": {
+            "financial_change=1": {
+              "estimate": 0.025542159862162548,
+              "se_person_cluster": 0.30481268737086126,
+              "ci95": [
+                -0.5720145902800605,
+                0.6230989100043857
+              ]
+            },
+            "financial_change=2": {
+              "estimate": 0.06967841532883284,
+              "se_person_cluster": 0.15515242117012276,
+              "ci95": [
+                -0.23448338768140137,
+                0.37384021833906705
+              ]
+            },
+            "financial_change=4": {
+              "estimate": -0.1539903851904566,
+              "se_person_cluster": 0.11992072575001189,
+              "ci95": [
+                -0.3890837462049438,
+                0.08110297582403062
+              ]
+            },
+            "financial_change=5": {
+              "estimate": -0.29545194853193896,
+              "se_person_cluster": 0.23544226773000332,
+              "ci95": [
+                -0.7570144824420852,
+                0.1661105853782074
+              ]
+            }
+          }
+        },
+        "Q9_iqr": {
+          "rows": 36293,
+          "persons": 5364,
+          "coefficients": {
+            "financial_change=1": {
+              "estimate": 0.26410885709526444,
+              "se_person_cluster": 0.1879127581552054,
+              "ci95": [
+                -0.10427652096108331,
+                0.6324942351516122
+              ]
+            },
+            "financial_change=2": {
+              "estimate": 0.05833942042133984,
+              "se_person_cluster": 0.09248055548579907,
+              "ci95": [
+                -0.12296005455820615,
+                0.23963889540088584
+              ]
+            },
+            "financial_change=4": {
+              "estimate": -0.021629534337603062,
+              "se_person_cluster": 0.0901507248251245,
+              "ci95": [
+                -0.19836159432539535,
+                0.15510252565018923
+              ]
+            },
+            "financial_change=5": {
+              "estimate": -0.021292683072963926,
+              "se_person_cluster": 0.16482380698871657,
+              "ci95": [
+                -0.34441433296155016,
+                0.30182896681562227
+              ]
+            }
+          }
+        }
+      },
+      "distributions": {
+        "education_fine": {
+          "5": {
+            "rows": 14832,
+            "persons": 2119,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.536111109786564,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.1324906018045215,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.0189114113648734,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 4.33273395341437,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 59.49602784463397,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              10.002821733415532,
+              14.198339358671937,
+              22.689191317567015,
+              23.579170569091435,
+              16.761518165605207,
+              5.960510761669432,
+              3.0056977588953475,
+              1.7050849256996203,
+              1.0805034224211527,
+              1.0171619869633255
+            ]
+          },
+          "1": {
+            "rows": 344,
+            "persons": 65,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 10.5,
+                "months": 14
+              },
+              "Q9_mean_median": {
+                "value": 5.753356993198395,
+                "months": 12
+              },
+              "Q9_iqr_median": {
+                "value": 7.966073711713155,
+                "months": 12
+              },
+              "cross_person_IQR": {
+                "value": 10.518083014341608,
+                "months": 12
+              },
+              "zero_deflation_pct": {
+                "value": 51.97417774339334,
+                "months": 12
+              }
+            },
+            "average_probability_by_bin": [
+              25.418167815713122,
+              13.181563333845252,
+              20.42853720722946,
+              11.806161008213211,
+              5.561930154663124,
+              6.596082657046192,
+              4.376225832169975,
+              4.730068717847579,
+              3.453589650685051,
+              4.447673622587035
+            ]
+          },
+          "2": {
+            "rows": 4624,
+            "persons": 712,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 7.972222222222222,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.657238019837274,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 5.710192812813653,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 7.8877081541177585,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 56.31305815189257,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              21.556507173175177,
+              15.616119441325843,
+              17.39836774839739,
+              15.99250933495581,
+              10.97018134398494,
+              4.704945299247582,
+              3.684163144057564,
+              3.1663458949066907,
+              2.964838261052014,
+              3.9460223588969874
+            ]
+          },
+          "3": {
+            "rows": 8360,
+            "persons": 1296,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 6.138888888888889,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.79489250977834,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 4.015166554186079,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 6.054343522051648,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 58.95536129220832,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              16.714374162870598,
+              16.705932362885182,
+              20.056411329075317,
+              18.57082692288655,
+              11.75611878878731,
+              5.2147326344744105,
+              3.393814900985691,
+              2.6653667829624834,
+              2.307206510959814,
+              2.615215604112641
+            ]
+          },
+          "4": {
+            "rows": 5359,
+            "persons": 820,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 6.083333333333333,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.796737823221418,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.486146377192603,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 5.889024805898468,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 63.80399288945421,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              16.52473927073333,
+              16.201218967400923,
+              21.6963856212778,
+              19.45316478415929,
+              13.191848134351323,
+              4.628112277661673,
+              2.7430319549102524,
+              1.9971499528962644,
+              1.6316511802706959,
+              1.932697856338456
+            ]
+          },
+          "6": {
+            "rows": 8927,
+            "persons": 1228,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.027777777777778,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 3.8311768107944064,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 2.849273489581214,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 3.7660649992538913,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 57.53434477866282,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              7.900824744422765,
+              12.76146079714698,
+              23.077080299158798,
+              25.3707727040024,
+              17.539812708029444,
+              6.239998241773438,
+              3.025040512849719,
+              1.7719365359247807,
+              1.1550849590039278,
+              1.1579884976877504
+            ]
+          },
+          "7": {
+            "rows": 1109,
+            "persons": 153,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.069444444444445,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.016233470704821,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 2.7542467978265552,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 3.831653490583793,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 58.144050871094436,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              7.448505094746157,
+              11.244928095947841,
+              26.384279531870007,
+              24.89437099948543,
+              17.722392045101103,
+              5.646185455975602,
+              2.7966757237712705,
+              1.778595983659613,
+              1.021281768730269,
+              1.0627853007127095
+            ]
+          },
+          "8": {
+            "rows": 1170,
+            "persons": 174,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.54722222354677,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.349071505996916,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 2.7437797288099923,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 3.280501669893662,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 61.884830766080164,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              8.662910728610283,
+              13.788241369118316,
+              25.0307098814568,
+              26.302014644079748,
+              17.042004492485585,
+              4.776804053483482,
+              2.0413106229421487,
+              1.2503705057278875,
+              0.5226684094027237,
+              0.5829652926930328
+            ]
+          },
+          "9": {
+            "rows": 222,
+            "persons": 33,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 9.0,
+                "months": 11
+              },
+              "Q9_mean_median": {
+                "value": 5.196029381318525,
+                "months": 11
+              },
+              "Q9_iqr_median": {
+                "value": 5.949578892100941,
+                "months": 11
+              },
+              "cross_person_IQR": {
+                "value": 8.888016642118801,
+                "months": 11
+              },
+              "zero_deflation_pct": {
+                "value": 53.289327610314494,
+                "months": 11
+              }
+            },
+            "average_probability_by_bin": [
+              18.737115671106878,
+              16.673497599235837,
+              23.72760969310224,
+              12.520395966080336,
+              8.324256403766018,
+              5.719866553154808,
+              4.308707189399566,
+              3.302276342015199,
+              3.3119954224708947,
+              3.374279159668221
+            ]
+          }
+        },
+        "financial_change": {
+          "3": {
+            "rows": 19795,
+            "persons": 4657,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.152777777777778,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.087666134039561,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.5896758106019764,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 5.580134159660357,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 57.35654589068312,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              13.848086898925875,
+              14.393728373540029,
+              20.74161148018932,
+              20.451086185252915,
+              14.229070727633614,
+              5.534077618721007,
+              3.530215730111424,
+              2.523771066117127,
+              2.16853146429364,
+              2.5798204552150357
+            ]
+          },
+          "1": {
+            "rows": 2662,
+            "persons": 1060,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 10.444444444444445,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 6.6985230975680885,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 6.90533279048072,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 10.013939145902542,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 61.31021801146143,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              30.183803907427702,
+              16.95978515385376,
+              15.505576552580887,
+              12.64885172113984,
+              8.390276964642016,
+              4.440791946229848,
+              3.2700833343685023,
+              2.715300292691669,
+              2.580522430973404,
+              3.3050076960923698
+            ]
+          },
+          "2": {
+            "rows": 11180,
+            "persons": 3437,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 6.805555555555555,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 5.0897118714120655,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.9644640816582575,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 6.252089629881084,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 61.26611302971134,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              18.362662713441615,
+              17.867255661109724,
+              21.01462084228715,
+              17.089894741235874,
+              11.161057184729817,
+              4.73633290351321,
+              3.1263814953282214,
+              2.3972466291487176,
+              1.9365416935508586,
+              2.308006135654823
+            ]
+          },
+          "4": {
+            "rows": 9292,
+            "persons": 3012,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.241666667991215,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 3.844995333088769,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.218440877066718,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 4.599362690665334,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 55.31126520642258,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              10.61452092702347,
+              13.223555670520904,
+              21.370512469180937,
+              23.561944886269526,
+              15.869551082125716,
+              6.06826381599256,
+              3.4570409346319866,
+              2.4151032200873863,
+              1.6200663757706026,
+              1.799440618396928
+            ]
+          },
+          "5": {
+            "rows": 2011,
+            "persons": 847,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.402777777777778,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.051318685213725,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.3309656514061823,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 4.795241274744192,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 59.08804213385122,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              12.708180969015036,
+              12.80264163037014,
+              20.85596713838767,
+              23.535513699388336,
+              15.313187097184901,
+              5.358463589496981,
+              2.593847493718308,
+              2.250952088142005,
+              2.0297869332931624,
+              2.5514593610034684
+            ]
+          }
+        },
+        "financial_risk": {
+          "4": {
+            "rows": 9673,
+            "persons": 1388,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.316666669315762,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.443004945913951,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.6780464914109974,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 5.404954673515426,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 58.838294710884675,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              14.699195177825832,
+              14.848207570474196,
+              20.38923481326353,
+              21.234947955564046,
+              14.167829138143313,
+              4.917161191354145,
+              3.01930915174538,
+              2.373198772830554,
+              1.9502815401407385,
+              2.4006346886582604
+            ]
+          },
+          "1": {
+            "rows": 4267,
+            "persons": 665,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 8.409722222222221,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.776624017291599,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 6.283653537432353,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 8.677761314864053,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 54.75264749541065,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              23.052148315402697,
+              16.3661980158981,
+              17.02648087102531,
+              13.49671748358652,
+              10.579535373795995,
+              4.909105604935552,
+              3.8951972747576806,
+              3.319778235798952,
+              3.24968259444568,
+              4.105156230353517
+            ]
+          },
+          "2": {
+            "rows": 9182,
+            "persons": 1340,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.708333333333333,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.7365729212760925,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.6305128600862293,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 5.871762251803147,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 62.38336689123725,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              16.024376718042046,
+              16.421017595094426,
+              20.822964485615657,
+              20.17224316903616,
+              13.499133956018877,
+              4.870050198850812,
+              2.9278955333169505,
+              2.018982987550111,
+              1.573948174748273,
+              1.6693871817266706
+            ]
+          },
+          "3": {
+            "rows": 9033,
+            "persons": 1278,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.347222222222222,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.263617237408956,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.7425811688105264,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 5.819809036233711,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 55.72604467635126,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              14.082725223444097,
+              14.985181100868752,
+              21.169503238654872,
+              19.578886082324416,
+              13.800706582381487,
+              5.988853206876609,
+              3.5421372011777255,
+              2.5714664731747257,
+              1.9509157656150602,
+              2.3296251254822575
+            ]
+          },
+          "5": {
+            "rows": 8540,
+            "persons": 1278,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.763888888888889,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.255472958087921,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 2.960109598106808,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 4.702906479405245,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 60.419084058596304,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              12.291196700964074,
+              14.33566492014122,
+              22.679518154033698,
+              22.290354848806608,
+              14.938710675614532,
+              5.691475945562297,
+              2.780673104565493,
+              1.8975520245478552,
+              1.4746436006178925,
+              1.620210025146335
+            ]
+          },
+          "6": {
+            "rows": 2936,
+            "persons": 438,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.027777777777778,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.192518221007453,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.400593009259966,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 4.764473078220139,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 60.036800291117224,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              12.1944787664335,
+              13.86444584127064,
+              22.226067007235418,
+              22.387041333207293,
+              13.730353653198485,
+              5.247377922487541,
+              3.5726995444959737,
+              2.3289737537569866,
+              2.0205439005332297,
+              2.428018277380932
+            ]
+          },
+          "7": {
+            "rows": 1299,
+            "persons": 210,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.741666667991215,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 3.8093179331885443,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 4.746892035007477,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 6.531890653434548,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 50.44775408205463,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              17.028665339806263,
+              13.052830663919412,
+              17.488841904712064,
+              19.14263104008648,
+              12.16450320341387,
+              6.205889817141526,
+              4.880471535805791,
+              3.618927613087789,
+              2.7436332050470713,
+              3.673605676979734
+            ]
+          }
+        },
+        "general_risk": {
+          "4": {
+            "rows": 10548,
+            "persons": 1536,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.202777783075969,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.384249124262068,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.3750721481111317,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 5.620698742653945,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 59.83416968075349,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              13.884868028000682,
+              15.555922039625282,
+              21.258210142731162,
+              20.72446353237478,
+              13.463314907832022,
+              5.291863722079432,
+              3.2527970568024265,
+              2.3734049369574084,
+              2.0018638404988187,
+              2.1932917930979716
+            ]
+          },
+          "1": {
+            "rows": 2713,
+            "persons": 431,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 7.666666666666667,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.667046361499363,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 5.773575550980038,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 7.852018099650656,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 53.31800823384921,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              20.327663443592467,
+              16.037739610790474,
+              18.01656643991342,
+              15.342318477969545,
+              10.712807215317143,
+              4.741531930057159,
+              3.9339872646002316,
+              3.3635319788302542,
+              3.373898551746021,
+              4.149955087183276
+            ]
+          },
+          "2": {
+            "rows": 8110,
+            "persons": 1192,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.244444443119897,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.5187421507305565,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.5864876210689545,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 5.512596623186941,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 60.783397934577316,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              15.548097165395413,
+              15.230076317574174,
+              20.1964698621369,
+              20.44167961082477,
+              15.048354699259356,
+              5.273129680708195,
+              3.1156205992626615,
+              2.017970026068976,
+              1.449773496056461,
+              1.6788285427131016
+            ]
+          },
+          "3": {
+            "rows": 9752,
+            "persons": 1382,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.527777777777778,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.594417062070635,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.4709697167078652,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 5.4963191284073725,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 59.606844848117085,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              15.07784280863897,
+              15.763565104972754,
+              21.554924749962705,
+              20.030755394178602,
+              13.44847752767277,
+              5.292963984661196,
+              2.9434293539168874,
+              2.2676747141959988,
+              1.6564052469330057,
+              1.96396111486711
+            ]
+          },
+          "5": {
+            "rows": 9220,
+            "persons": 1344,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.216666671964857,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.352454291449653,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 3.5950405995051065,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 5.497403684839284,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 58.42165044231129,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              14.365574692922147,
+              14.401006725129703,
+              21.620079303841074,
+              21.106785332000413,
+              14.019426744262065,
+              5.385239491585739,
+              3.0414492574366903,
+              2.1743532055189356,
+              1.83394170194416,
+              2.052143545359086
+            ]
+          },
+          "6": {
+            "rows": 3370,
+            "persons": 496,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.90833334128062,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 4.380026529232661,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 4.132244388262431,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 6.594470911017238,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 58.56498939028141,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              16.799801207120183,
+              14.45792259343697,
+              19.148602223543225,
+              19.075577362435393,
+              13.199280074023468,
+              5.579384870244703,
+              3.720007626880036,
+              2.972447467002102,
+              2.1289083971658425,
+              2.918068178148071
+            ]
+          },
+          "7": {
+            "rows": 1224,
+            "persons": 218,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 9.847222222222221,
+                "months": 36
+              },
+              "Q9_mean_median": {
+                "value": 3.908457186815455,
+                "months": 36
+              },
+              "Q9_iqr_median": {
+                "value": 9.33876030974918,
+                "months": 36
+              },
+              "cross_person_IQR": {
+                "value": 8.664770545781913,
+                "months": 36
+              },
+              "zero_deflation_pct": {
+                "value": 45.1139660583029,
+                "months": 36
+              }
+            },
+            "average_probability_by_bin": [
+              22.576482530862194,
+              14.294519224287209,
+              15.413718911285562,
+              14.429989633636394,
+              7.977456239208201,
+              5.551624273194666,
+              5.000770033652943,
+              3.9218778529503475,
+              4.503231863857544,
+              6.330329437064945
+            ]
+          }
+        }
+      }
+    },
+    "2023_2025_10": {
+      "rows": 37564,
+      "persons": 5443,
+      "models": {
+        "Q8v2part2": {
+          "rows": 37166,
+          "persons": 5394,
+          "months": 34,
+          "R2_within_month": 0.08394720749025364,
+          "joint": {
+            "education_fine": {
+              "chi2": 27.031038201838804,
+              "df": 8,
+              "p": 0.0006983144013314175,
+              "BH_q_primary_16": 0.002234606084260536
+            },
+            "financial_change": {
+              "chi2": 69.85419892157888,
+              "df": 4,
+              "p": 2.4365514793758177e-14,
+              "BH_q_primary_16": 9.746205917503271e-14
+            },
+            "financial_risk": {
+              "chi2": 3.115866539494346,
+              "df": 6,
+              "p": 0.794170209048305,
+              "BH_q_primary_16": 0.794170209048305
+            },
+            "general_risk": {
+              "chi2": 11.43452440061553,
+              "df": 6,
+              "p": 0.0758401270862918,
+              "BH_q_primary_16": 0.09334169487543606
+            },
+            "age_group": {
+              "chi2": 9.23823173001797,
+              "df": 2,
+              "p": 0.0098615111150186
+            },
+            "income_group": {
+              "chi2": 29.550665474128493,
+              "df": 2,
+              "p": 3.829609783866576e-07
+            },
+            "gender": {
+              "chi2": 18.113243584244337,
+              "df": 1,
+              "p": 2.081486680138222e-05
+            },
+            "region": {
+              "chi2": 3.8352159502038226,
+              "df": 3,
+              "p": 0.27981641208611313
+            },
+            "employment": {
+              "chi2": 13.971864702003916,
+              "df": 7,
+              "p": 0.05168403567118202
+            },
+            "numeracy": {
+              "chi2": 18.85611985724879,
+              "df": 1,
+              "p": 1.4095812957223962e-05
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 3.1798254767665046,
+              "se_person_cluster": 0.711414954586228,
+              "ci95": [
+                1.785164781665604,
+                4.574486171867405
+              ]
+            },
+            "financial_change": {
+              "estimate": 1.2972788276915659,
+              "se_person_cluster": 0.38667871827383477,
+              "ci95": [
+                0.5392323366360467,
+                2.055325318747085
+              ]
+            },
+            "financial_risk": {
+              "estimate": -0.3090662226095695,
+              "se_person_cluster": 1.1688702430509927,
+              "ci95": [
+                -2.600524077335715,
+                1.9823916321165758
+              ]
+            },
+            "general_risk": {
+              "estimate": -1.718754270389018,
+              "se_person_cluster": 1.1963904865558865,
+              "ci95": [
+                -4.064162919498175,
+                0.6266543787201391
+              ]
+            }
+          }
+        },
+        "Q9_mean": {
+          "rows": 36729,
+          "persons": 5374,
+          "months": 34,
+          "R2_within_month": 0.06987489629786137,
+          "joint": {
+            "education_fine": {
+              "chi2": 8.510143568278004,
+              "df": 8,
+              "p": 0.3852866500524676,
+              "BH_q_primary_16": 0.4109724267226321
+            },
+            "financial_change": {
+              "chi2": 209.5735113747567,
+              "df": 4,
+              "p": 3.2818711536412594e-44,
+              "BH_q_primary_16": 5.250993845826015e-43
+            },
+            "financial_risk": {
+              "chi2": 15.816246776152203,
+              "df": 6,
+              "p": 0.014774974327132756,
+              "BH_q_primary_16": 0.02626662102601379
+            },
+            "general_risk": {
+              "chi2": 12.685300524967134,
+              "df": 6,
+              "p": 0.04831468253285513,
+              "BH_q_primary_16": 0.07730349205256822
+            },
+            "age_group": {
+              "chi2": 8.712413727741552,
+              "df": 2,
+              "p": 0.012826949856708124
+            },
+            "income_group": {
+              "chi2": 7.049589239416087,
+              "df": 2,
+              "p": 0.029457856811100223
+            },
+            "gender": {
+              "chi2": 1.3957982399135187,
+              "df": 1,
+              "p": 0.23742835097827453
+            },
+            "region": {
+              "chi2": 4.011411343261406,
+              "df": 3,
+              "p": 0.26023454460912215
+            },
+            "employment": {
+              "chi2": 13.347033387899687,
+              "df": 7,
+              "p": 0.06409105887940923
+            },
+            "numeracy": {
+              "chi2": 0.03293062401748538,
+              "df": 1,
+              "p": 0.8560002722306164
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": -0.13352500172749246,
+              "se_person_cluster": 0.28951527971801877,
+              "ci95": [
+                -0.7010923771978984,
+                0.43404237374291343
+              ]
+            },
+            "financial_change": {
+              "estimate": 1.4243482603438997,
+              "se_person_cluster": 0.16559962767030278,
+              "ci95": [
+                1.0997058230008578,
+                1.7489906976869416
+              ]
+            },
+            "financial_risk": {
+              "estimate": -1.3030017793739983,
+              "se_person_cluster": 0.4549839605854801,
+              "ci95": [
+                -2.194954883341932,
+                -0.41104867540606427
+              ]
+            },
+            "general_risk": {
+              "estimate": -0.7304811604826633,
+              "se_person_cluster": 0.4759318659724679,
+              "ci95": [
+                -1.6635006554669023,
+                0.20253833450157566
+              ]
+            }
+          }
+        },
+        "Q9_iqr": {
+          "rows": 36729,
+          "persons": 5374,
+          "months": 34,
+          "R2_within_month": 0.22910918150113557,
+          "joint": {
+            "education_fine": {
+              "chi2": 82.80195878147512,
+              "df": 8,
+              "p": 1.3319716554140987e-14,
+              "BH_q_primary_16": 7.103848828875193e-14
+            },
+            "financial_change": {
+              "chi2": 12.399274547095391,
+              "df": 4,
+              "p": 0.014616465270315697,
+              "BH_q_primary_16": 0.02626662102601379
+            },
+            "financial_risk": {
+              "chi2": 11.976296812590153,
+              "df": 6,
+              "p": 0.062499687180541615,
+              "BH_q_primary_16": 0.08333291624072216
+            },
+            "general_risk": {
+              "chi2": 17.215903366230037,
+              "df": 6,
+              "p": 0.00852167582746498,
+              "BH_q_primary_16": 0.022724468873239947
+            },
+            "age_group": {
+              "chi2": 20.095556092395135,
+              "df": 2,
+              "p": 4.328181248439929e-05
+            },
+            "income_group": {
+              "chi2": 95.90396474185007,
+              "df": 2,
+              "p": 1.495266694570497e-21
+            },
+            "gender": {
+              "chi2": 20.673846287257515,
+              "df": 1,
+              "p": 5.445474005623578e-06
+            },
+            "region": {
+              "chi2": 8.633550522575433,
+              "df": 3,
+              "p": 0.034581455488413675
+            },
+            "employment": {
+              "chi2": 23.582803434733286,
+              "df": 7,
+              "p": 0.0013484971691877852
+            },
+            "numeracy": {
+              "chi2": 98.42774246862638,
+              "df": 1,
+              "p": 3.371033730620731e-23
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 1.9843226244957473,
+              "se_person_cluster": 0.2607725829166393,
+              "ci95": [
+                1.473102592776557,
+                2.4955426562149374
+              ]
+            },
+            "financial_change": {
+              "estimate": -0.009538679545175358,
+              "se_person_cluster": 0.13019478817769725,
+              "ci95": [
+                -0.26477327130113526,
+                0.24569591221078457
+              ]
+            },
+            "financial_risk": {
+              "estimate": 1.0197454605281464,
+              "se_person_cluster": 0.4692884863597714,
+              "ci95": [
+                0.0997496841355624,
+                1.9397412369207303
+              ]
+            },
+            "general_risk": {
+              "estimate": 0.85020254717491,
+              "se_person_cluster": 0.44447698799229585,
+              "ci95": [
+                -0.021152628888627234,
+                1.7215577232384471
+              ]
+            }
+          }
+        },
+        "zero_deflation_pct": {
+          "rows": 36853,
+          "persons": 5385,
+          "months": 34,
+          "R2_within_month": 0.05390728530806532,
+          "joint": {
+            "education_fine": {
+              "chi2": 15.061114194571733,
+              "df": 8,
+              "p": 0.05796796966130863,
+              "BH_q_primary_16": 0.08333291624072216
+            },
+            "financial_change": {
+              "chi2": 134.42161369187215,
+              "df": 4,
+              "p": 4.411341191792095e-28,
+              "BH_q_primary_16": 3.529072953433676e-27
+            },
+            "financial_risk": {
+              "chi2": 16.095814289864883,
+              "df": 6,
+              "p": 0.013248829249153157,
+              "BH_q_primary_16": 0.02626662102601379
+            },
+            "general_risk": {
+              "chi2": 8.912371338505569,
+              "df": 6,
+              "p": 0.17856655438019675,
+              "BH_q_primary_16": 0.20407606214879628
+            },
+            "age_group": {
+              "chi2": 8.14112536171033,
+              "df": 2,
+              "p": 0.01706778209084225
+            },
+            "income_group": {
+              "chi2": 22.876643613701884,
+              "df": 2,
+              "p": 1.0774570249026277e-05
+            },
+            "gender": {
+              "chi2": 1.5488815012671449,
+              "df": 1,
+              "p": 0.21330063755259776
+            },
+            "region": {
+              "chi2": 1.40802142271803,
+              "df": 3,
+              "p": 0.7036555469855218
+            },
+            "employment": {
+              "chi2": 8.123265198326113,
+              "df": 7,
+              "p": 0.32185017842216457
+            },
+            "numeracy": {
+              "chi2": 12.591414954500676,
+              "df": 1,
+              "p": 0.00038752265626642386
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": -8.071413896345703,
+              "se_person_cluster": 2.4202879093573975,
+              "ci95": [
+                -12.81615768179497,
+                -3.326670110896437
+              ]
+            },
+            "financial_change": {
+              "estimate": 8.125971231763671,
+              "se_person_cluster": 1.2601786091680793,
+              "ci95": [
+                5.65551116736833,
+                10.596431296159013
+              ]
+            },
+            "financial_risk": {
+              "estimate": -9.550570025797498,
+              "se_person_cluster": 3.398760197469463,
+              "ci95": [
+                -16.21351548068645,
+                -2.887624570908547
+              ]
+            },
+            "general_risk": {
+              "estimate": -3.655393465853333,
+              "se_person_cluster": 3.2770497893549866,
+              "ci95": [
+                -10.079737265008283,
+                2.7689503333016185
+              ]
+            }
+          }
+        }
+      },
+      "Q8_tail_sensitivity": {
+        "rows": 37166,
+        "persons": 5394,
+        "months": 34,
+        "R2_within_month": 0.09033586373290248,
+        "joint": {
+          "education_fine": {
+            "chi2": 28.514083252800496,
+            "df": 8,
+            "p": 0.0003857518261235895
+          },
+          "financial_change": {
+            "chi2": 68.48942344756212,
+            "df": 4,
+            "p": 4.7293845327855983e-14
+          },
+          "financial_risk": {
+            "chi2": 2.8453324914481906,
+            "df": 6,
+            "p": 0.8279938859513538
+          },
+          "general_risk": {
+            "chi2": 11.954549504661115,
+            "df": 6,
+            "p": 0.06299046378135491
+          },
+          "age_group": {
+            "chi2": 8.870137764654395,
+            "df": 2,
+            "p": 0.011854249331233403
+          },
+          "income_group": {
+            "chi2": 28.965521948162895,
+            "df": 2,
+            "p": 5.131174995313436e-07
+          },
+          "gender": {
+            "chi2": 17.94766422152299,
+            "df": 1,
+            "p": 2.2706289288113937e-05
+          },
+          "region": {
+            "chi2": 3.537182504566607,
+            "df": 3,
+            "p": 0.3159715978370304
+          },
+          "employment": {
+            "chi2": 13.880023547278432,
+            "df": 7,
+            "p": 0.0533568630479384
+          },
+          "numeracy": {
+            "chi2": 17.97041454839593,
+            "df": 1,
+            "p": 2.243651352685897e-05
+          }
+        },
+        "contrasts": {
+          "education_fine": {
+            "estimate": 3.2472674999991535,
+            "se_person_cluster": 0.7088291295599476,
+            "ci95": [
+              1.8576760665230092,
+              4.636858933475298
+            ]
+          },
+          "financial_change": {
+            "estimate": 1.2357665716041655,
+            "se_person_cluster": 0.3822840352322951,
+            "ci95": [
+              0.48633543459195094,
+              1.9851977086163801
+            ]
+          },
+          "financial_risk": {
+            "estimate": -0.2849285462118977,
+            "se_person_cluster": 1.1679985902371095,
+            "ci95": [
+              -2.5746776093088255,
+              2.00482051688503
+            ]
+          },
+          "general_risk": {
+            "estimate": -1.7310267831088302,
+            "se_person_cluster": 1.1954158884128137,
+            "ci95": [
+              -4.074524826157629,
+              0.6124712599399684
+            ]
+          }
+        },
+        "capped_rows": 12
+      },
+      "secondary": {
+        "quiz_Q9_mean": {
+          "rows": 36596,
+          "persons": 5351,
+          "months": 34,
+          "R2_within_month": 0.07367243001815516,
+          "joint": {
+            "education_fine": {
+              "chi2": 8.44745751303317,
+              "df": 8,
+              "p": 0.3910245553040659
+            },
+            "financial_change": {
+              "chi2": 200.74633422248462,
+              "df": 4,
+              "p": 2.5966320151122152e-42
+            },
+            "financial_risk": {
+              "chi2": 16.33267850358913,
+              "df": 6,
+              "p": 0.012075471544280613
+            },
+            "general_risk": {
+              "chi2": 12.151568624317962,
+              "df": 6,
+              "p": 0.058671663169999604
+            },
+            "age_group": {
+              "chi2": 10.858697418044175,
+              "df": 2,
+              "p": 0.004385951403232883
+            },
+            "income_group": {
+              "chi2": 9.721133223441036,
+              "df": 2,
+              "p": 0.007746093620031279
+            },
+            "gender": {
+              "chi2": 2.022046150379092,
+              "df": 1,
+              "p": 0.15503011450703963
+            },
+            "region": {
+              "chi2": 3.8218083458079226,
+              "df": 3,
+              "p": 0.2813596246513501
+            },
+            "employment": {
+              "chi2": 14.72074523883311,
+              "df": 7,
+              "p": 0.039750378804794366
+            },
+            "numeracy": {
+              "chi2": 2.5561517975030794,
+              "df": 1,
+              "p": 0.10986571932389166
+            },
+            "correct_QNUM1": {
+              "chi2": 0.000846653715414276,
+              "df": 1,
+              "p": 0.9767869775521311
+            },
+            "correct_QNUM2": {
+              "chi2": 0.10708883274172933,
+              "df": 1,
+              "p": 0.7434831161857585
+            },
+            "correct_QNUM3": {
+              "chi2": 2.6758574001659308,
+              "df": 1,
+              "p": 0.10188044351340635
+            },
+            "correct_QNUM5": {
+              "chi2": 0.12004162680972232,
+              "df": 1,
+              "p": 0.7289893462989876
+            },
+            "correct_QNUM6": {
+              "chi2": 1.5108165597360617,
+              "df": 1,
+              "p": 0.21901452887661993
+            },
+            "correct_QNUM8": {
+              "chi2": 4.378813868691694,
+              "df": 1,
+              "p": 0.03638831132896201
+            },
+            "correct_QNUM9": {
+              "chi2": 0.46581255270734956,
+              "df": 1,
+              "p": 0.4949199241107688
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": -0.006064315627901048,
+              "se_person_cluster": 0.29234559506643837,
+              "ci95": [
+                -0.5791808123060798,
+                0.5670521810502778
+              ]
+            },
+            "financial_change": {
+              "estimate": 1.3784262193293315,
+              "se_person_cluster": 0.1667075839586792,
+              "ci95": [
+                1.0516114217047305,
+                1.7052410169539325
+              ]
+            },
+            "financial_risk": {
+              "estimate": -1.3881463728590948,
+              "se_person_cluster": 0.4365748514222666,
+              "ci95": [
+                -2.2440109851788517,
+                -0.5322817605393381
+              ]
+            },
+            "general_risk": {
+              "estimate": -0.6256916542676165,
+              "se_person_cluster": 0.48322519340525183,
+              "ci95": [
+                -1.5730099468114636,
+                0.3216266382762305
+              ]
+            },
+            "correct_QNUM1": {
+              "estimate": -0.020114032147018027,
+              "se_person_cluster": 0.6912676458823088,
+              "ci95": [
+                -1.3752803085022534,
+                1.335052244208217
+              ]
+            },
+            "correct_QNUM2": {
+              "estimate": 0.07620271548949215,
+              "se_person_cluster": 0.23286185636780107,
+              "ci95": [
+                -0.3803014138139168,
+                0.5327068447929011
+              ]
+            },
+            "correct_QNUM3": {
+              "estimate": 0.6005858263654883,
+              "se_person_cluster": 0.36715005361828607,
+              "ci95": [
+                -0.11917789176783156,
+                1.320349544498808
+              ]
+            },
+            "correct_QNUM5": {
+              "estimate": 0.13455929618415058,
+              "se_person_cluster": 0.38837187403472273,
+              "ci95": [
+                -0.6268078378222135,
+                0.8959264301905148
+              ]
+            },
+            "correct_QNUM6": {
+              "estimate": 0.39174720520978346,
+              "se_person_cluster": 0.31871319104922985,
+              "ci95": [
+                -0.23306052434655378,
+                1.0165549347661207
+              ]
+            },
+            "correct_QNUM8": {
+              "estimate": 0.7503526394489147,
+              "se_person_cluster": 0.35858091583339263,
+              "ci95": [
+                0.04738792328350416,
+                1.4533173556143253
+              ]
+            },
+            "correct_QNUM9": {
+              "estimate": 0.27778134605264415,
+              "se_person_cluster": 0.40700288172441074,
+              "ci95": [
+                -0.5201101551304226,
+                1.0756728472357109
+              ]
+            }
+          },
+          "seven_items_joint": {
+            "chi2": 9.839105803867955,
+            "df": 7,
+            "p": 0.1978760340840004
+          },
+          "same_sample_base_R2": 0.07034774813682354,
+          "incremental_R2": 0.003324681881331615
+        },
+        "role_Q9_mean": {
+          "rows": 36729,
+          "persons": 5374,
+          "months": 34,
+          "R2_within_month": 0.07142977150112495,
+          "joint": {
+            "education_fine": {
+              "chi2": 8.49667049449376,
+              "df": 8,
+              "p": 0.38651545490617056
+            },
+            "financial_change": {
+              "chi2": 213.2932215330519,
+              "df": 4,
+              "p": 5.199550386416759e-45
+            },
+            "financial_risk": {
+              "chi2": 15.512042060199827,
+              "df": 6,
+              "p": 0.016627021414999884
+            },
+            "general_risk": {
+              "chi2": 12.285199409258977,
+              "df": 6,
+              "p": 0.05590052667161804
+            },
+            "age_group": {
+              "chi2": 8.502150583530316,
+              "df": 2,
+              "p": 0.014248903939312812
+            },
+            "income_group": {
+              "chi2": 5.469170753971156,
+              "df": 2,
+              "p": 0.0649209192315208
+            },
+            "gender": {
+              "chi2": 1.2478909300396834,
+              "df": 1,
+              "p": 0.2639556808294261
+            },
+            "region": {
+              "chi2": 4.612275987521153,
+              "df": 3,
+              "p": 0.20249151124802206
+            },
+            "employment": {
+              "chi2": 13.729304272666791,
+              "df": 7,
+              "p": 0.056210797055212494
+            },
+            "numeracy": {
+              "chi2": 0.037696600265429384,
+              "df": 1,
+              "p": 0.8460536374917667
+            },
+            "financial_role": {
+              "chi2": 5.046935013036341,
+              "df": 4,
+              "p": 0.28251548529087256
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": -0.12001515003137042,
+              "se_person_cluster": 0.28983661325357923,
+              "ci95": [
+                -0.6882124695641633,
+                0.4481821695014224
+              ]
+            },
+            "financial_change": {
+              "estimate": 1.410392035770327,
+              "se_person_cluster": 0.1604955880328769,
+              "ci95": [
+                1.095755586312043,
+                1.725028485228611
+              ]
+            },
+            "financial_risk": {
+              "estimate": -1.2907323958876395,
+              "se_person_cluster": 0.45816382011579043,
+              "ci95": [
+                -2.1889193142840924,
+                -0.39254547749118673
+              ]
+            },
+            "general_risk": {
+              "estimate": -0.7155082951232213,
+              "se_person_cluster": 0.4727611624435616,
+              "ci95": [
+                -1.6423119251553624,
+                0.2112953349089196
+              ]
+            },
+            "financial_role": {
+              "estimate": 1.5021936842963308,
+              "se_person_cluster": 1.5497784951198723,
+              "ci95": [
+                -1.5360007553628643,
+                4.540388123955526
+              ]
+            }
+          }
+        },
+        "quiz_Q9_iqr": {
+          "rows": 36596,
+          "persons": 5351,
+          "months": 34,
+          "R2_within_month": 0.26307644304744704,
+          "joint": {
+            "education_fine": {
+              "chi2": 61.22833398585281,
+              "df": 8,
+              "p": 2.674602416579149e-10
+            },
+            "financial_change": {
+              "chi2": 12.810763400071854,
+              "df": 4,
+              "p": 0.012238424746185209
+            },
+            "financial_risk": {
+              "chi2": 15.503003767217269,
+              "df": 6,
+              "p": 0.01668531700097761
+            },
+            "general_risk": {
+              "chi2": 12.799828535886679,
+              "df": 6,
+              "p": 0.046327134211898734
+            },
+            "age_group": {
+              "chi2": 15.674951566677835,
+              "df": 2,
+              "p": 0.0003946640018269385
+            },
+            "income_group": {
+              "chi2": 76.78878492356162,
+              "df": 2,
+              "p": 2.116056297186854e-17
+            },
+            "gender": {
+              "chi2": 13.94786989289959,
+              "df": 1,
+              "p": 0.0001879505031365916
+            },
+            "region": {
+              "chi2": 9.475594346872143,
+              "df": 3,
+              "p": 0.02359241801454209
+            },
+            "employment": {
+              "chi2": 24.03936181310782,
+              "df": 7,
+              "p": 0.001121341381778489
+            },
+            "numeracy": {
+              "chi2": 0.551505355744874,
+              "df": 1,
+              "p": 0.4577032581718492
+            },
+            "correct_QNUM1": {
+              "chi2": 15.199322776490872,
+              "df": 1,
+              "p": 9.673810713680788e-05
+            },
+            "correct_QNUM2": {
+              "chi2": 22.350902565950705,
+              "df": 1,
+              "p": 2.2710629227955233e-06
+            },
+            "correct_QNUM3": {
+              "chi2": 3.056863328810443,
+              "df": 1,
+              "p": 0.08039672928379624
+            },
+            "correct_QNUM5": {
+              "chi2": 19.484862823349104,
+              "df": 1,
+              "p": 1.0140006099725454e-05
+            },
+            "correct_QNUM6": {
+              "chi2": 13.366056116351684,
+              "df": 1,
+              "p": 0.00025621958754084206
+            },
+            "correct_QNUM8": {
+              "chi2": 8.843134030721277,
+              "df": 1,
+              "p": 0.0029419352238000593
+            },
+            "correct_QNUM9": {
+              "chi2": 9.81011018549687,
+              "df": 1,
+              "p": 0.0017355510759377295
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 1.5686223925063274,
+              "se_person_cluster": 0.24925929329634747,
+              "ci95": [
+                1.0799726048944558,
+                2.057272180118199
+              ]
+            },
+            "financial_change": {
+              "estimate": 0.08707635310287452,
+              "se_person_cluster": 0.12385060946675838,
+              "ci95": [
+                -0.15572131037112025,
+                0.3298740165768693
+              ]
+            },
+            "financial_risk": {
+              "estimate": 1.011917640719173,
+              "se_person_cluster": 0.42319681152423144,
+              "ci95": [
+                0.18227943812876546,
+                1.8415558433095804
+              ]
+            },
+            "general_risk": {
+              "estimate": 0.46029688136494695,
+              "se_person_cluster": 0.4231345781651361,
+              "ci95": [
+                -0.3692193184816426,
+                1.2898130812115365
+              ]
+            },
+            "correct_QNUM1": {
+              "estimate": -2.4315273535511417,
+              "se_person_cluster": 0.6236875009083941,
+              "ci95": [
+                -3.6542090069598556,
+                -1.2088457001424275
+              ]
+            },
+            "correct_QNUM2": {
+              "estimate": -0.9653393446959375,
+              "se_person_cluster": 0.20418906223289626,
+              "ci95": [
+                -1.3656331133785997,
+                -0.5650455760132752
+              ]
+            },
+            "correct_QNUM3": {
+              "estimate": -0.515359497989067,
+              "se_person_cluster": 0.29476252859199814,
+              "ci95": [
+                -1.0932141692737694,
+                0.062495173295635476
+              ]
+            },
+            "correct_QNUM5": {
+              "estimate": -1.4904283556805966,
+              "se_person_cluster": 0.33764663679009116,
+              "ci95": [
+                -2.1523533542369435,
+                -0.8285033571242499
+              ]
+            },
+            "correct_QNUM6": {
+              "estimate": -0.915849980807283,
+              "se_person_cluster": 0.2505086350253576,
+              "ci95": [
+                -1.406948987312709,
+                -0.42475097430185693
+              ]
+            },
+            "correct_QNUM8": {
+              "estimate": -1.1682946754185115,
+              "se_person_cluster": 0.3928703860865458,
+              "ci95": [
+                -1.9384807261826926,
+                -0.3981086246543304
+              ]
+            },
+            "correct_QNUM9": {
+              "estimate": -1.0959535991337135,
+              "se_person_cluster": 0.34990908980128105,
+              "ci95": [
+                -1.7819180025213757,
+                -0.4099891957460513
+              ]
+            }
+          },
+          "seven_items_joint": {
+            "chi2": 81.5270609928082,
+            "df": 7,
+            "p": 6.722189233748724e-15
+          },
+          "same_sample_base_R2": 0.22976435687741514,
+          "incremental_R2": 0.033312086170031896
+        },
+        "role_Q9_iqr": {
+          "rows": 36729,
+          "persons": 5374,
+          "months": 34,
+          "R2_within_month": 0.23302206977494933,
+          "joint": {
+            "education_fine": {
+              "chi2": 71.76755833883567,
+              "df": 8,
+              "p": 2.1837435493499873e-12
+            },
+            "financial_change": {
+              "chi2": 12.57845352924031,
+              "df": 4,
+              "p": 0.01353022385057266
+            },
+            "financial_risk": {
+              "chi2": 12.157860472783263,
+              "df": 6,
+              "p": 0.058538376983671384
+            },
+            "general_risk": {
+              "chi2": 18.13958823413371,
+              "df": 6,
+              "p": 0.005892663207368938
+            },
+            "age_group": {
+              "chi2": 17.525307804421153,
+              "df": 2,
+              "p": 0.00015646880417316444
+            },
+            "income_group": {
+              "chi2": 93.68069396632484,
+              "df": 2,
+              "p": 4.544601157768724e-21
+            },
+            "gender": {
+              "chi2": 21.50851525356163,
+              "df": 1,
+              "p": 3.522609897311373e-06
+            },
+            "region": {
+              "chi2": 8.298394421707224,
+              "df": 3,
+              "p": 0.040231007264974646
+            },
+            "employment": {
+              "chi2": 21.962892260279997,
+              "df": 7,
+              "p": 0.002578103191792214
+            },
+            "numeracy": {
+              "chi2": 95.77017953129229,
+              "df": 1,
+              "p": 1.290246226269081e-22
+            },
+            "financial_role": {
+              "chi2": 12.296271376796502,
+              "df": 4,
+              "p": 0.015278875229728284
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": 1.8951152446658535,
+              "se_person_cluster": 0.26547788071420453,
+              "ci95": [
+                1.3746709207974825,
+                2.415559568534224
+              ]
+            },
+            "financial_change": {
+              "estimate": 0.012230149741712895,
+              "se_person_cluster": 0.12943387934713602,
+              "ci95": [
+                -0.2415127520821836,
+                0.26597305156560935
+              ]
+            },
+            "financial_risk": {
+              "estimate": 1.048413161978463,
+              "se_person_cluster": 0.47062221048985603,
+              "ci95": [
+                0.12580274533320912,
+                1.9710235786237167
+              ]
+            },
+            "general_risk": {
+              "estimate": 0.9301531978906025,
+              "se_person_cluster": 0.4460911359961443,
+              "ci95": [
+                0.055633637042064144,
+                1.804672758739141
+              ]
+            },
+            "financial_role": {
+              "estimate": -1.539701544540478,
+              "se_person_cluster": 1.0691220813939706,
+              "ci95": [
+                -3.63561445934498,
+                0.5562113702640241
+              ]
+            }
+          }
+        },
+        "quiz_zero_deflation_pct": {
+          "rows": 36719,
+          "persons": 5361,
+          "months": 34,
+          "R2_within_month": 0.0638104567361536,
+          "joint": {
+            "education_fine": {
+              "chi2": 11.361987993188578,
+              "df": 8,
+              "p": 0.18201976844574924
+            },
+            "financial_change": {
+              "chi2": 126.36071014172742,
+              "df": 4,
+              "p": 2.3362673707434424e-26
+            },
+            "financial_risk": {
+              "chi2": 16.340558739632964,
+              "df": 6,
+              "p": 0.012038207320728389
+            },
+            "general_risk": {
+              "chi2": 9.375946990588806,
+              "df": 6,
+              "p": 0.153512746122571
+            },
+            "age_group": {
+              "chi2": 6.138199096838701,
+              "df": 2,
+              "p": 0.04646297368478721
+            },
+            "income_group": {
+              "chi2": 14.894875391015963,
+              "df": 2,
+              "p": 0.0005829333529794276
+            },
+            "gender": {
+              "chi2": 0.313624298433402,
+              "df": 1,
+              "p": 0.575464640077467
+            },
+            "region": {
+              "chi2": 1.1706721163156864,
+              "df": 3,
+              "p": 0.7600465973607229
+            },
+            "employment": {
+              "chi2": 12.216030244880432,
+              "df": 7,
+              "p": 0.0936746915243829
+            },
+            "numeracy": {
+              "chi2": 3.3574329975193256,
+              "df": 1,
+              "p": 0.06690227951152526
+            },
+            "correct_QNUM1": {
+              "chi2": 2.596856028625064,
+              "df": 1,
+              "p": 0.10707593773906844
+            },
+            "correct_QNUM2": {
+              "chi2": 7.692797788530045,
+              "df": 1,
+              "p": 0.00554416161133623
+            },
+            "correct_QNUM3": {
+              "chi2": 3.2029573085787124,
+              "df": 1,
+              "p": 0.07350524329621001
+            },
+            "correct_QNUM5": {
+              "chi2": 0.6788767031006423,
+              "df": 1,
+              "p": 0.40997379588624905
+            },
+            "correct_QNUM6": {
+              "chi2": 9.289459430694219,
+              "df": 1,
+              "p": 0.002304761625121642
+            },
+            "correct_QNUM8": {
+              "chi2": 6.002940296643325,
+              "df": 1,
+              "p": 0.014282056899498899
+            },
+            "correct_QNUM9": {
+              "chi2": 4.416852251208818,
+              "df": 1,
+              "p": 0.03558562482669945
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": -6.040113098067771,
+              "se_person_cluster": 2.4161097768809787,
+              "ci95": [
+                -10.776670821848182,
+                -1.3035553742873596
+              ]
+            },
+            "financial_change": {
+              "estimate": 7.545694490402938,
+              "se_person_cluster": 1.2472659305039173,
+              "ci95": [
+                5.100546040085849,
+                9.990842940720027
+              ]
+            },
+            "financial_risk": {
+              "estimate": -9.737812425839508,
+              "se_person_cluster": 3.229788982742795,
+              "ci95": [
+                -16.06951229261459,
+                -3.406112559064427
+              ]
+            },
+            "general_risk": {
+              "estimate": -2.301301766260661,
+              "se_person_cluster": 3.1905352060204835,
+              "ci95": [
+                -8.556048267298513,
+                3.953444734777191
+              ]
+            },
+            "correct_QNUM1": {
+              "estimate": 7.203151536823536,
+              "se_person_cluster": 4.469908313595734,
+              "ci95": [
+                -1.5596865386399168,
+                15.96598961228699
+              ]
+            },
+            "correct_QNUM2": {
+              "estimate": 5.436146201270357,
+              "se_person_cluster": 1.9599679507166243,
+              "ci95": [
+                1.5938119562952737,
+                9.278480446245439
+              ]
+            },
+            "correct_QNUM3": {
+              "estimate": 4.488029803265581,
+              "se_person_cluster": 2.5077264299965267,
+              "ci95": [
+                -0.4281338184312542,
+                9.404193424962417
+              ]
+            },
+            "correct_QNUM5": {
+              "estimate": 2.11058646208065,
+              "se_person_cluster": 2.5615786534626768,
+              "ci95": [
+                -2.9111494177321324,
+                7.132322341893432
+              ]
+            },
+            "correct_QNUM6": {
+              "estimate": 6.872522770394161,
+              "se_person_cluster": 2.254867184282595,
+              "ci95": [
+                2.452066100747216,
+                11.292979440041105
+              ]
+            },
+            "correct_QNUM8": {
+              "estimate": 6.214128360989186,
+              "se_person_cluster": 2.536285903469795,
+              "ci95": [
+                1.241976556983209,
+                11.186280164995162
+              ]
+            },
+            "correct_QNUM9": {
+              "estimate": 6.218998532797707,
+              "se_person_cluster": 2.959129819414014,
+              "ci95": [
+                0.417900695302869,
+                12.020096370292546
+              ]
+            }
+          },
+          "seven_items_joint": {
+            "chi2": 38.747818316305704,
+            "df": 7,
+            "p": 2.1833144612546746e-06
+          },
+          "same_sample_base_R2": 0.05460798873254824,
+          "incremental_R2": 0.009202468003605357
+        },
+        "role_zero_deflation_pct": {
+          "rows": 36853,
+          "persons": 5385,
+          "months": 34,
+          "R2_within_month": 0.054260098178119165,
+          "joint": {
+            "education_fine": {
+              "chi2": 14.090111778543413,
+              "df": 8,
+              "p": 0.07944671163077167
+            },
+            "financial_change": {
+              "chi2": 134.45342739029942,
+              "df": 4,
+              "p": 4.342738297389746e-28
+            },
+            "financial_risk": {
+              "chi2": 16.158939094465474,
+              "df": 6,
+              "p": 0.012925829778519153
+            },
+            "general_risk": {
+              "chi2": 9.013181666793395,
+              "df": 6,
+              "p": 0.17283809934928793
+            },
+            "age_group": {
+              "chi2": 7.838953008077835,
+              "df": 2,
+              "p": 0.01985148419651326
+            },
+            "income_group": {
+              "chi2": 22.52901334345164,
+              "df": 2,
+              "p": 1.281996711348499e-05
+            },
+            "gender": {
+              "chi2": 1.7743260364351165,
+              "df": 1,
+              "p": 0.18284760285753848
+            },
+            "region": {
+              "chi2": 1.4497589836113218,
+              "df": 3,
+              "p": 0.6939135052609624
+            },
+            "employment": {
+              "chi2": 7.821476196734713,
+              "df": 7,
+              "p": 0.3485990242319752
+            },
+            "numeracy": {
+              "chi2": 12.353612990461109,
+              "df": 1,
+              "p": 0.0004401338613564226
+            },
+            "financial_role": {
+              "chi2": 1.3997167017283272,
+              "df": 4,
+              "p": 0.8442442535659374
+            }
+          },
+          "contrasts": {
+            "education_fine": {
+              "estimate": -7.765269504094733,
+              "se_person_cluster": 2.4360901779424404,
+              "ci95": [
+                -12.54099213110041,
+                -2.9895468770890554
+              ]
+            },
+            "financial_change": {
+              "estimate": 8.047593280133677,
+              "se_person_cluster": 1.2575906627630833,
+              "ci95": [
+                5.582206638026117,
+                10.512979922241238
+              ]
+            },
+            "financial_risk": {
+              "estimate": -9.658464062045734,
+              "se_person_cluster": 3.3898815358817123,
+              "ci95": [
+                -16.304003747055525,
+                -3.012924377035943
+              ]
+            },
+            "general_risk": {
+              "estimate": -3.815888779092075,
+              "se_person_cluster": 3.2627136398962184,
+              "ci95": [
+                -10.212127923512035,
+                2.580350365327886
+              ]
+            },
+            "financial_role": {
+              "estimate": 6.402200376656678,
+              "se_person_cluster": 6.68882467167016,
+              "ci95": [
+                -6.710602926687939,
+                19.515003680001293
+              ]
+            }
+          }
+        }
+      },
+      "first_differences": {
+        "Q8v2part2": {
+          "rows": 30961,
+          "persons": 4628,
+          "coefficients": {
+            "financial_change=1": {
+              "estimate": 2.0479058255411795,
+              "se_person_cluster": 0.8966782759025443,
+              "ci95": [
+                0.2899888522485061,
+                3.805822798833853
+              ]
+            },
+            "financial_change=2": {
+              "estimate": -0.4219487293683213,
+              "se_person_cluster": 0.3669718139522366,
+              "ci95": [
+                -1.1413884635553813,
+                0.2974910048187388
+              ]
+            },
+            "financial_change=4": {
+              "estimate": 0.06910213908764928,
+              "se_person_cluster": 0.46830506192263816,
+              "ci95": [
+                -0.848999078658543,
+                0.9872033568338415
+              ]
+            },
+            "financial_change=5": {
+              "estimate": 1.8748989383428398,
+              "se_person_cluster": 1.392782990294449,
+              "ci95": [
+                -0.8556198269161075,
+                4.605417703601788
+              ]
+            }
+          }
+        },
+        "Q9_mean": {
+          "rows": 30413,
+          "persons": 4587,
+          "coefficients": {
+            "financial_change=1": {
+              "estimate": 0.89202681802749,
+              "se_person_cluster": 0.25323786481274246,
+              "ci95": [
+                0.395558693208928,
+                1.388494942846052
+              ]
+            },
+            "financial_change=2": {
+              "estimate": 0.39201763033233383,
+              "se_person_cluster": 0.11637599726728123,
+              "ci95": [
+                0.1638646517882264,
+                0.6201706088764413
+              ]
+            },
+            "financial_change=4": {
+              "estimate": 0.04989342141803216,
+              "se_person_cluster": 0.12759155172450384,
+              "ci95": [
+                -0.20024744307786674,
+                0.30003428591393105
+              ]
+            },
+            "financial_change=5": {
+              "estimate": 0.3327758485701939,
+              "se_person_cluster": 0.30644114596353117,
+              "ci95": [
+                -0.267996319589827,
+                0.9335480167302148
+              ]
+            }
+          }
+        },
+        "Q9_iqr": {
+          "rows": 30413,
+          "persons": 4587,
+          "coefficients": {
+            "financial_change=1": {
+              "estimate": 0.2962222186012757,
+              "se_person_cluster": 0.19242093876868296,
+              "ci95": [
+                -0.08101545364397078,
+                0.6734598908465221
+              ]
+            },
+            "financial_change=2": {
+              "estimate": 0.15019535656360927,
+              "se_person_cluster": 0.09016662245475757,
+              "ci95": [
+                -0.026574630043402464,
+                0.326965343170621
+              ]
+            },
+            "financial_change=4": {
+              "estimate": -0.08203439665576867,
+              "se_person_cluster": 0.10141595099708148,
+              "ci95": [
+                -0.28085848268035873,
+                0.11678968936882136
+              ]
+            },
+            "financial_change=5": {
+              "estimate": 0.39829054930137764,
+              "se_person_cluster": 0.2214598961935954,
+              "ci95": [
+                -0.03587745897435529,
+                0.8324585575771106
+              ]
+            }
+          }
+        }
+      },
+      "distributions": {
+        "education_fine": {
+          "5": {
+            "rows": 12007,
+            "persons": 1691,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 3.7411764649783863,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.4007288498037003,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 2.7590437847025253,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 3.9165710982154396,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 55.66511534431388,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              8.061477510094559,
+              10.536820075868022,
+              23.512938548699864,
+              28.233627911438894,
+              13.89209100620497,
+              7.154902162230124,
+              3.9918423501493456,
+              2.1592507859648533,
+              1.2845548728552738,
+              1.172494776494099
+            ]
+          },
+          "1": {
+            "rows": 466,
+            "persons": 60,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.290322580645161,
+                "months": 31
+              },
+              "Q9_mean_median": {
+                "value": 2.31222183437183,
+                "months": 29
+              },
+              "Q9_iqr_median": {
+                "value": 8.10420246781974,
+                "months": 29
+              },
+              "cross_person_IQR": {
+                "value": 7.6046938655208125,
+                "months": 29
+              },
+              "zero_deflation_pct": {
+                "value": 40.32024548715106,
+                "months": 30
+              }
+            },
+            "average_probability_by_bin": [
+              20.48405628194164,
+              12.231059568743003,
+              12.519066373556534,
+              13.324286088077937,
+              13.096754304850554,
+              8.567703024069173,
+              5.667936619746878,
+              3.975493764868793,
+              4.099005486145305,
+              6.034638488000187
+            ]
+          },
+          "2": {
+            "rows": 3900,
+            "persons": 618,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.911764705882353,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.3943123607074512,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 6.091226002749274,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 6.857090928836537,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 45.13921515638917,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              16.794813049276925,
+              13.867953877231491,
+              16.83724259994785,
+              17.697322869743438,
+              10.307632193410804,
+              6.883205336761663,
+              5.04264276554679,
+              4.091215194506681,
+              3.5173142336126295,
+              4.960657879961739
+            ]
+          },
+          "3": {
+            "rows": 7187,
+            "persons": 1065,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.675000001402462,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.5410359536900238,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.4853244879666496,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 6.182562551168154,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 52.9477132628597,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              13.653666601480277,
+              13.091703441205029,
+              19.472382953251607,
+              20.869112505886104,
+              12.559138039507662,
+              7.565695829523585,
+              4.814691686302221,
+              3.2821204001899478,
+              2.2152675039289025,
+              2.4762210387246575
+            ]
+          },
+          "4": {
+            "rows": 4771,
+            "persons": 706,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.6970588179195625,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.562273446251364,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.4973431054283592,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 5.890308064388057,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 53.66647422769504,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              13.631028221469766,
+              12.497055994876144,
+              20.384417417451765,
+              21.68874847859046,
+              11.188235569610589,
+              7.930823028360125,
+              5.04472724961506,
+              3.149496690592148,
+              2.153272083098388,
+              2.3321952663355656
+            ]
+          },
+          "6": {
+            "rows": 7032,
+            "persons": 980,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 3.6029411764705883,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.4233551025390625,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 2.6345156992183014,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 3.5856445712201737,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 53.78948217942751,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              6.623389655328699,
+              9.382504233710362,
+              23.703442914313328,
+              28.772517221476207,
+              14.384254753177625,
+              8.388136232598987,
+              4.169876493630194,
+              2.171203548068034,
+              1.349564524173041,
+              1.0551104235235087
+            ]
+          },
+          "7": {
+            "rows": 1009,
+            "persons": 148,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 3.5117647016749665,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.3524910912794224,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 2.603719486909754,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 2.9977729505999777,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 51.11878851201754,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              4.0895241848605535,
+              7.767781622107405,
+              24.41879618501694,
+              32.58199327864438,
+              15.884797132989243,
+              8.788825380745077,
+              3.71456089956504,
+              1.4381155625318593,
+              0.7778226195106162,
+              0.5377831340288857
+            ]
+          },
+          "8": {
+            "rows": 898,
+            "persons": 132,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 3.8676470588235294,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.601859590586494,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 2.9763171427390156,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 3.061726549092461,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 51.70089513159006,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              4.874865600377294,
+              9.544840724329818,
+              26.080526038147063,
+              30.184558577315723,
+              14.939941923233702,
+              7.246423967522903,
+              3.5654863182647567,
+              1.5726137918582794,
+              0.8967323631674622,
+              1.0940106957830114
+            ]
+          },
+          "9": {
+            "rows": 264,
+            "persons": 38,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 3.357142857142857,
+                "months": 7
+              },
+              "Q9_mean_median": {
+                "value": 2.4692652026812234,
+                "months": 6
+              },
+              "Q9_iqr_median": {
+                "value": 2.1800792614618936,
+                "months": 6
+              },
+              "cross_person_IQR": {
+                "value": 4.571476937430229,
+                "months": 6
+              },
+              "zero_deflation_pct": {
+                "value": 48.46393089472966,
+                "months": 6
+              }
+            },
+            "average_probability_by_bin": [
+              13.322967290772661,
+              6.634812647831108,
+              15.569756528852002,
+              28.51560812854731,
+              18.137977456399707,
+              11.75120104828109,
+              2.9845776606395575,
+              1.3252952875718442,
+              0.8668549679213539,
+              0.8909489831833675
+            ]
+          }
+        },
+        "financial_change": {
+          "3": {
+            "rows": 15587,
+            "persons": 3750,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 3.9617647072848152,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.0989975929260254,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.482275934780345,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 5.213977250580534,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 48.83110677533162,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              10.705348805143679,
+              10.955002232808502,
+              19.621950498457746,
+              23.432795621644203,
+              13.49664640825601,
+              8.03055594615648,
+              4.988883508568428,
+              3.2424577238554124,
+              2.406091973556385,
+              3.1202672815531574
+            ]
+          },
+          "1": {
+            "rows": 2750,
+            "persons": 1043,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 8.764705882352942,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 5.8742179309620575,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 6.37533889097326,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 10.3859926457841,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 60.947843877129905,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              28.482946725192864,
+              15.201618020843107,
+              18.42562277406153,
+              14.311939539542436,
+              7.364455980883201,
+              4.883234351045093,
+              2.831073101989413,
+              2.752905874105261,
+              2.5545786284041427,
+              3.1916250039329492
+            ]
+          },
+          "2": {
+            "rows": 10366,
+            "persons": 3079,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.838235294117647,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 4.1387739462011,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.529756749377531,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 5.465435564715376,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 57.51615494111886,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              13.70800315891627,
+              14.794506375360498,
+              22.503722330603267,
+              21.894474778252754,
+              10.609103709295658,
+              5.963378323690812,
+              3.7783119044806237,
+              2.653198323068776,
+              1.91226292462808,
+              2.18303817170326
+            ]
+          },
+          "4": {
+            "rows": 7417,
+            "persons": 2304,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 3.4205882409039665,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 2.8918105714461384,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.183291596524856,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 4.454691306975496,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 42.96732585920257,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              7.807092513464528,
+              9.246114009813898,
+              18.941729955462108,
+              25.545191186788998,
+              14.73050358732452,
+              9.63096329678584,
+              5.853585105172449,
+              3.452642689468835,
+              2.2758812593997284,
+              2.5162963963190954
+            ]
+          },
+          "5": {
+            "rows": 1384,
+            "persons": 552,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 2.948529411764706,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 2.3021977888274554,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.9008176537121044,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 4.270199096315747,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 37.194545453337504,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              8.801555451779599,
+              8.45454621211245,
+              16.485888431925304,
+              24.03632751833349,
+              14.125532973571344,
+              9.485341623257298,
+              6.111287679999073,
+              4.207591742590089,
+              4.00140615924809,
+              4.2905222071832565
+            ]
+          }
+        },
+        "financial_risk": {
+          "4": {
+            "rows": 8071,
+            "persons": 1180,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 3.963235294117647,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.2327468465356266,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.6251961764167335,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 5.386642562290786,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 48.201129370186806,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              11.123105968845271,
+              11.643635473718717,
+              19.24825978064436,
+              22.576586468589458,
+              13.876981622319764,
+              7.496674870114214,
+              4.98303873765752,
+              3.2452866489720713,
+              2.4971276782302114,
+              3.309302750908426
+            ]
+          },
+          "1": {
+            "rows": 3870,
+            "persons": 557,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 6.523529417374554,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 4.350109464981976,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 4.857699758866254,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 8.434167224744963,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 57.15938704168519,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              21.76452227358774,
+              14.266440490189446,
+              18.200890060960916,
+              16.642586584315318,
+              8.960988925082296,
+              5.9719597842192575,
+              4.4772361982694795,
+              3.3021901794872353,
+              2.793544325174958,
+              3.619641178713357
+            ]
+          },
+          "2": {
+            "rows": 7475,
+            "persons": 1070,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.352941176470588,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.491771130000844,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.183882138308357,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 5.026187250307594,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 52.87496686166162,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              11.48819358367224,
+              12.533524552686089,
+              20.639621756719258,
+              23.73682218934766,
+              12.592028469951043,
+              7.7177797968940585,
+              4.415192401228571,
+              2.8554064627935296,
+              1.927037326038996,
+              2.094393460668554
+            ]
+          },
+          "3": {
+            "rows": 7430,
+            "persons": 1076,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.235294117647059,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.465067512848798,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.431827986941618,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 5.249282949639789,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 52.21601084823977,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              11.727979581753035,
+              12.009172508653947,
+              20.556518164593246,
+              23.790583761440868,
+              12.76411892894699,
+              7.593611273462092,
+              4.473521835909243,
+              2.873200705236233,
+              1.871129762850884,
+              2.3401634771534634
+            ]
+          },
+          "5": {
+            "rows": 7561,
+            "persons": 1079,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.085294113439672,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.3754867595784805,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.509526722571429,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 4.717005391860028,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 48.68893772616677,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              9.671349487782114,
+              10.999102492906422,
+              22.140674824767583,
+              24.38090921870253,
+              12.90418216669304,
+              7.845504771767575,
+              4.502406260249683,
+              2.997748276561112,
+              2.227785214337634,
+              2.3303372862323037
+            ]
+          },
+          "6": {
+            "rows": 2168,
+            "persons": 316,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 3.5500000014024624,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 2.9900201769436108,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.2779801733353557,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 4.177625540012677,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 45.13978630109919,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              9.505252388391353,
+              9.02457052149385,
+              20.555144010780587,
+              25.644375936323996,
+              13.056174043208367,
+              8.750771427499366,
+              4.759634856356339,
+              3.1656203802133085,
+              2.562064357379943,
+              2.976392078352888
+            ]
+          },
+          "7": {
+            "rows": 959,
+            "persons": 160,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.802941175068126,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 2.2434233689908942,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 5.7537117144640755,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 5.710714775517196,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 41.02797482171883,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              12.322370302675756,
+              13.097717039715798,
+              16.87916655858096,
+              18.76243458169911,
+              9.893807705940176,
+              8.111744833028952,
+              6.084072867008444,
+              4.526737076000864,
+              4.215698882112309,
+              6.1062501532376325
+            ]
+          }
+        },
+        "general_risk": {
+          "4": {
+            "rows": 9494,
+            "persons": 1357,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.220588235294118,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.2841301104601692,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.801110435934628,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 5.652147893941858,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 48.11269803496157,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              11.741010048449155,
+              12.110705888362887,
+              19.53886985857468,
+              21.791592941024454,
+              12.905706509592612,
+              8.168480687852915,
+              5.000897647051248,
+              3.2797082602866676,
+              2.3957559755358333,
+              3.0672721832695413
+            ]
+          },
+          "1": {
+            "rows": 2084,
+            "persons": 305,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 7.0588235294117645,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 4.45036165153279,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 5.250212690409492,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 7.923598904747686,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 58.331309996385144,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              23.284524422898386,
+              12.4934602304482,
+              18.112517001160647,
+              18.651050931122253,
+              7.460894294590965,
+              5.8010973878465295,
+              5.096471545700023,
+              3.2787491887161013,
+              2.716646083524911,
+              3.104588913991987
+            ]
+          },
+          "2": {
+            "rows": 7436,
+            "persons": 1069,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.2411764719906975,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.4824819214203777,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 2.9871706401600555,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 4.895450868150768,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 54.4487952141696,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              11.469077686931909,
+              12.314606520323741,
+              21.13375466367301,
+              24.483623436642016,
+              12.587114686637625,
+              6.997717824176785,
+              4.015305167422802,
+              2.79926352269507,
+              1.9191886570238301,
+              2.2803478344732024
+            ]
+          },
+          "3": {
+            "rows": 7859,
+            "persons": 1103,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.294117647058823,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.4570431779412663,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.1408274243859684,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 4.771760323468377,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 54.11529179268074,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              11.040179932458077,
+              12.053227291223168,
+              21.276689061408042,
+              24.557647800272875,
+              13.754817656094657,
+              7.129536735055898,
+              3.9342166825041467,
+              2.5390656007107903,
+              1.7292572817659233,
+              1.985361958506425
+            ]
+          },
+          "5": {
+            "rows": 7329,
+            "persons": 1089,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.264705882352941,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.277999934028177,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.676877603811376,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 5.338057279590807,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 46.793912534301285,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              10.99977650268921,
+              11.740782716931998,
+              20.247623809778304,
+              22.226297670939292,
+              12.43560772176373,
+              7.98045142932908,
+              5.311118329746229,
+              3.478274566304682,
+              2.6015847942552868,
+              2.97848245826219
+            ]
+          },
+          "6": {
+            "rows": 2241,
+            "persons": 334,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 4.6338235280093025,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 3.8913258103763355,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 3.915825836798724,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 6.015437008647395,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 52.65730710845372,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              14.685719094106624,
+              11.978507625898551,
+              20.118658273314328,
+              21.945167193594887,
+              11.593119835700692,
+              7.910332195487658,
+              4.1245991140681655,
+              2.9101601777457042,
+              2.321885685789592,
+              2.411850804293817
+            ]
+          },
+          "7": {
+            "rows": 1102,
+            "persons": 182,
+            "equal_month": {
+              "Q8v2part2_median": {
+                "value": 5.591176481807933,
+                "months": 34
+              },
+              "Q9_mean_median": {
+                "value": 1.8933873566674724,
+                "months": 34
+              },
+              "Q9_iqr_median": {
+                "value": 8.140028091037975,
+                "months": 34
+              },
+              "cross_person_IQR": {
+                "value": 6.059674660431612,
+                "months": 34
+              },
+              "zero_deflation_pct": {
+                "value": 35.99004202069966,
+                "months": 34
+              }
+            },
+            "average_probability_by_bin": [
+              15.16548376055257,
+              11.604787314843323,
+              15.377510281140173,
+              16.789672952121812,
+              10.589263064073203,
+              7.3764520339616615,
+              6.041593081245473,
+              4.647026909835232,
+              4.801252590002396,
+              7.606958012224164
+            ]
+          }
+        }
+      }
+    }
+  }
+}

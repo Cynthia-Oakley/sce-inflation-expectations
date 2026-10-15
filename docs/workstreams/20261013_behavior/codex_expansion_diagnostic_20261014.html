@@ -1,7 +1,25 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><aside id="next-stage-checklist" style="background:#eef4ef;border-left:4px solid #326a56;padding:18px 22px;margin-bottom:30px;line-height:1.7">
-<strong>人口信息回顾：已有标签，哪些还没有变成具体作用？</strong>
-<p>本轮清点不调用API。新回答格式目前只有程序与草稿，没有新模型回答。原始SCE比现用八项画像更丰富；还发现回访收入与家庭更新没有充分进入细匹配原型。</p>
-<p><a href="#population-fields-and-mechanisms">人口字段与具体作用</a> · <a href="../../current_todo.html">当前清单（28/38）</a> · <a href="#belief-update-preparation">前一轮候选准备</a></p></aside>
+<strong>真人资料分析已完成：人口特征分别关联回答的哪一部分？</strong>
+<p>70个月、82,535个人月；本轮API调用0。学历和具体答题模式更稳定对应个人不确定性，财务变差与较高预期有关；风险不能直接变成固定规则。真人关联不等于LLM注入后一定有效。</p>
+<p><a href="#population-association-results">本轮结果与图</a> · <a href="../../current_todo.html">当前清单（29/39）</a> · <a href="#population-fields-and-mechanisms">原题和字段回顾</a></p></aside>
+<section id="population-association-results" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>细学历、财务变化、风险和具体答题，值得怎样使用？</h1>
+<p>2026-10-15完成，新增API调用0、费用0。使用2020-01至2025-10共70个月、82,535个人月、10,974名不同受访者，控制月份、年龄、收入、性别、地区、就业及现有数理标签，分前后时期复核。</p>
+<h2>1. 不同人口变量，关联的回答部分不同</h2>
+<ul><li><strong>学历：</strong>高中相对本科，个人不确定性宽度前后两段分别高约1.77和1.98个百分点；但Q9预期水平差异没有稳定跨期出现。</li><li><strong>自报财务状况：</strong>相对12个月前“差一些”者，Q9预期水平两期分别高约1.20和1.42个百分点。本人前后比较弱一些，不能把跨人差距直接当成个人变化的因果作用。</li><li><strong>风险偏好：</strong>与部分回答有联系，但不单调、不完全跨期稳定。“敢冒险”不能翻译成“预测高通胀”。</li><li><strong>财务分工：</strong>未出现稳定的跨期证据，且不等于实际购物责任，暂列较低优先级。</li></ul>
+<figure><img src="../../../outputs/sce_population_associations_reading_20261015_v1/adjusted_associations.png" alt="细学历、财务变化、金融与一般风险和预期水平、个人不确定性的条件关联"><figcaption>左：Q9个人密度均值；右：个人密度IQR。两时期分别估计，线为按人聚类95%区间，未作逐对比多重调整；主要判断另参考因素整体BH检验。所有结果为条件关联，不是因果系数。</figcaption></figure>
+<h2>2. 七道具体答题，在High/Low之外还有信息</h2>
+<p>五道数理题加购买力、风险分散知识，最稳定对应个人不确定性和通缩尾部表达。加七题后，个人不确定性的样本内解释比例增加约2.18和3.33个百分点；对预期均值，整组增量没有清楚证据。不能把这些拟合增量当成新样本预测改善。</p>
+<figure><img src="../../../outputs/sce_population_associations_reading_20261015_v1/quiz_uncertainty.png" alt="七道题各自答对相对答错与个人不确定性的条件关联"><figcaption>已控制官方High/Low、学历、财务、风险及其他画像；七题同时进入。逐题区间为探索性，不据此给个人设固定偏差。密度宽度也可能混合真实不确定性与填法差异。</figcaption></figure>
+<h2>3. 两种“分布更宽”，不能混为一谈</h2>
+<p>一个人把未来想得很不确定，是他自己的概率曲线更宽；不同人的中心判断不一样，是人际分歧更宽。下图分开展示高中与本科组的两种宽度，是组内描述，尚未把其他人口差异完全控制掉。</p>
+<figure><img src="../../../outputs/sce_population_associations_reading_20261015_v1/two_kinds_of_spread.png" alt="人际分歧和个人不确定性分开展示"><figcaption>按月使用调查权重，再对月份等权平均。左：个人Q9均值的跨人IQR；右：个人密度IQR的组内中位数。不是教育的纯因果作用，也不能要求这两种宽度相等。</figcaption></figure>
+<h2>下一步怎样写进提示词？</h2>
+<p>先比较现有High/Low、原题+本人实际作答、忠实文字转述。<strong>本人答案可以作为画像；标准答案或对错反馈则会增加信息，可能变成教学干预。</strong>因此暂不附标准答案、不写“你不懂概率所以应当怎样预测”，也不强迫模型故意算错。</p>
+<p>先准备同P/E事实的候选和评价，再分别检验个人不确定性、尾部表达、群体中心、跨人分布及更新分布。财务情境单独试；风险、财务分工不一并全加。本轮没有修改模拟输入、运行配置或计分器。</p>
+<p>边界：观察性关系不证明因果；Q1可能受到通胀感受反向影响；Q8极少数巨大数值另作敏感性检查；分前后时期复核不是盲测。历史重建可披露使用真实特征，路线B仍须解决可得性与初始化。</p>
+<p><a href="../20261014_mechanism/population_association_results_20261015.md">完整方法、数字和复算</a> · <a href="../../sources/sce_population_associations_20261015.json">聚合备份</a> · <a href="../../SCE_POPULATION_GUIDE_20261015.md">原题与数据形式</a> · <a href="../../current_todo.html">当前清单</a></p>
+</section>
 <section id="population-fields-and-mechanisms" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
 <h1>没有调用模型，究竟实现了什么？P里还有什么没用好？</h1>
 <section id="sce-original-cognitive-questions">
