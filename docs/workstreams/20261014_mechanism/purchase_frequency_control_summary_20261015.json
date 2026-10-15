@@ -1,0 +1,3656 @@
+{
+  "summary": {
+    "status": "completed_offline_exploratory_control_analysis",
+    "new_api_calls": 0,
+    "source_sha256": {
+      "outputs/sce_purchase_frequency_evaluation_20261015_v1/cases_private.json": "08382ba770fffbdc66f28cff686dd0b54887d7cd66e84c8283f27f0ab3da06a2",
+      "outputs/sce_purchase_frequency_preparation_20261015_v1/assignments_private.json": "fa1fba43ffda2473acdce924500ba4b1cac3aa97a9a10254e3722e66ff56676f",
+      "outputs/sce_purchase_frequency_preparation_20261015_v1/prices.json": "65b862c86adb3f2fd7e2022b96bf21a1a716d8e7d81754eda0ded49e12b57f4e",
+      "outputs/sce_purchase_frequency_trial_20261015_v1/202004/simulation_frequency_data.json": "d60d88363326b7d044e83a1e5ab0a20942ca869c0abcd5e9475b1825ec75d392",
+      "outputs/sce_purchase_frequency_trial_20261015_v1/202105/simulation_frequency_data.json": "3eecedd7e9cf21d3baae6ed3ce33ae9895ccaee33b0cdd84cb9b0eb864eda38a",
+      "outputs/sce_purchase_frequency_trial_20261015_v1/202111/simulation_frequency_data.json": "1bef80c0eb87a1e2d2b73fac4a1d322d86d19abd1a1457d52ddaa789171b6595",
+      "outputs/sce_purchase_frequency_trial_20261015_v1/202203/simulation_frequency_data.json": "a9200aa8ab39409ac33325205f7f883daa1c835948ff4092b7946dd0142d58da",
+      "studies/sce_inflation_expectations/evaluation/frequency_controls.py": "c54f5a4297ea13752a5998adf66018a02063adb4933efd1f8ea44a2caccbf721"
+    },
+    "sample": {
+      "person_months": 192,
+      "q9_scorable": 188,
+      "full_complete_cases": 173,
+      "distinct_people_q9": 188,
+      "generation_repeats_averaged": 2,
+      "complete_cases_by_month": {
+        "202004": 44,
+        "202105": 43,
+        "202111": 45,
+        "202203": 41
+      },
+      "missing_full_controls": {
+        "education_group": 1,
+        "housing_tenure": 13,
+        "prior_q8": 1
+      }
+    },
+    "full_models": {
+      "real_q9": {
+        "outcome": "real_q9",
+        "formula": "real_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.5699472904588492,
+        "adjusted_r_squared": 0.46399227506465257,
+        "frequency_joint_p_value": 0.7212397898480317,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": 0.006889884500644428,
+            "ci95": [
+              -0.7116452166517463,
+              0.7254249856530351
+            ],
+            "p_value": 0.984900436517588
+          },
+          "f_away": {
+            "coefficient": 0.320030506468311,
+            "ci95": [
+              -0.13847669671207474,
+              0.7785377096486967
+            ],
+            "p_value": 0.16977974275264507
+          },
+          "f_house": {
+            "coefficient": 0.10520064009529567,
+            "ci95": [
+              -0.887111357580143,
+              1.0975126377707343
+            ],
+            "p_value": 0.8342693620650006
+          },
+          "f_care": {
+            "coefficient": -0.10855905971944901,
+            "ci95": [
+              -1.2449407629893638,
+              1.0278226435504658
+            ],
+            "p_value": 0.8504544268487537
+          },
+          "prior_q9": {
+            "coefficient": 0.1502733451674136,
+            "ci95": [
+              -0.3841451081031356,
+              0.6846917984379629
+            ],
+            "p_value": 0.5791120338796282
+          }
+        },
+        "personal_history_joint_p": 0.0006647512265133183,
+        "coherent_prior_level_association": {
+          "coefficient": 0.6125733862015322,
+          "ci95": [
+            0.23965359421916593,
+            0.9854931781838985
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.9806282874411325
+      },
+      "data_q9": {
+        "outcome": "data_q9",
+        "formula": "data_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.8707455815888555,
+        "adjusted_r_squared": 0.8389002900962547,
+        "frequency_joint_p_value": 0.26416465454315974,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": 0.013654610822325108,
+            "ci95": [
+              -0.1569666060921022,
+              0.1842758277367524
+            ],
+            "p_value": 0.8744980439459931
+          },
+          "f_away": {
+            "coefficient": 0.05697457616583415,
+            "ci95": [
+              -0.05500142742896322,
+              0.16895057976063152
+            ],
+            "p_value": 0.316141281386044
+          },
+          "f_house": {
+            "coefficient": 0.16493433403788177,
+            "ci95": [
+              -0.19913029357466433,
+              0.5289989616504278
+            ],
+            "p_value": 0.3719251254488878
+          },
+          "f_care": {
+            "coefficient": 0.13636044084091484,
+            "ci95": [
+              -0.27187287597236953,
+              0.5445937576541993
+            ],
+            "p_value": 0.5100530425079207
+          },
+          "prior_q9": {
+            "coefficient": 0.10538484793589387,
+            "ci95": [
+              -0.06073039729719362,
+              0.2715000931689814
+            ],
+            "p_value": 0.21181088606610476
+          }
+        },
+        "personal_history_joint_p": 2.052525769749053e-05,
+        "coherent_prior_level_association": {
+          "coefficient": 0.3061739691954768,
+          "ci95": [
+            0.1852364090953671,
+            0.4271115292955865
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.903047335548158
+      },
+      "rule_q9": {
+        "outcome": "rule_q9",
+        "formula": "rule_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.8768775434958203,
+        "adjusted_r_squared": 0.8465430252266746,
+        "frequency_joint_p_value": 0.3253891867040262,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.11147472309184331,
+            "ci95": [
+              -0.2628117559848183,
+              0.03986230980113167
+            ],
+            "p_value": 0.14753144640343632
+          },
+          "f_away": {
+            "coefficient": 0.04095362110955228,
+            "ci95": [
+              -0.06971860276108877,
+              0.15162584498019333
+            ],
+            "p_value": 0.4655986105800852
+          },
+          "f_house": {
+            "coefficient": 0.21258299012624232,
+            "ci95": [
+              -0.13681739687821598,
+              0.5619833771307006
+            ],
+            "p_value": 0.23102242766732536
+          },
+          "f_care": {
+            "coefficient": 0.04807470232350622,
+            "ci95": [
+              -0.38409258766019816,
+              0.48024199230721054
+            ],
+            "p_value": 0.8262295813737198
+          },
+          "prior_q9": {
+            "coefficient": 0.059486434747711925,
+            "ci95": [
+              -0.07529639458563114,
+              0.194269264081055
+            ],
+            "p_value": 0.3843515736958584
+          }
+        },
+        "personal_history_joint_p": 3.1455802473536125e-07,
+        "coherent_prior_level_association": {
+          "coefficient": 0.23502588913707145,
+          "ci95": [
+            0.14014810083795004,
+            0.32990367743619287
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.903047335548158
+      },
+      "data_q9_abs_error": {
+        "outcome": "data_q9_abs_error",
+        "formula": "data_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.5376625172070995,
+        "adjusted_r_squared": 0.423753282316095,
+        "frequency_joint_p_value": 0.9241735611056507,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.09608184909529008,
+            "ci95": [
+              -0.5881137717805414,
+              0.39595007358996115
+            ],
+            "p_value": 0.7000030187071977
+          },
+          "f_away": {
+            "coefficient": 0.04872176202789918,
+            "ci95": [
+              -0.26003654544612265,
+              0.357480069501921
+            ],
+            "p_value": 0.7554988505657357
+          },
+          "f_house": {
+            "coefficient": 0.07013996124392022,
+            "ci95": [
+              -0.6292152170111601,
+              0.7694951394990005
+            ],
+            "p_value": 0.8430956349210392
+          },
+          "f_care": {
+            "coefficient": -0.2657859725216145,
+            "ci95": [
+              -1.2162090981139886,
+              0.6846371530707595
+            ],
+            "p_value": 0.5811900591090491
+          },
+          "prior_q9": {
+            "coefficient": 0.05940894932973839,
+            "ci95": [
+              -0.33752317114003494,
+              0.4563410697995117
+            ],
+            "p_value": 0.7677180099432995
+          }
+        },
+        "personal_history_joint_p": 0.00018676025857661087,
+        "coherent_prior_level_association": {
+          "coefficient": 0.2904439819676288,
+          "ci95": [
+            0.05028809456275324,
+            0.5305998693725043
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.9806282874411325
+      },
+      "rule_q9_abs_error": {
+        "outcome": "rule_q9_abs_error",
+        "formula": "rule_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.5258465693942886,
+        "adjusted_r_squared": 0.40902615895520034,
+        "frequency_joint_p_value": 0.9806282874411325,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.04457893011075181,
+            "ci95": [
+              -0.5663408723884,
+              0.47718301216689635
+            ],
+            "p_value": 0.8660917899507045
+          },
+          "f_away": {
+            "coefficient": 0.08475300356185397,
+            "ci95": [
+              -0.23451508634772736,
+              0.40402109347143533
+            ],
+            "p_value": 0.6004980018968389
+          },
+          "f_house": {
+            "coefficient": 0.09265748082055109,
+            "ci95": [
+              -0.6494057450130095,
+              0.8347207066541118
+            ],
+            "p_value": 0.8053561200652859
+          },
+          "f_care": {
+            "coefficient": -0.16794660755092364,
+            "ci95": [
+              -1.131005889099419,
+              0.7951126739975718
+            ],
+            "p_value": 0.7307551906337044
+          },
+          "prior_q9": {
+            "coefficient": 0.10185522683832918,
+            "ci95": [
+              -0.34753364907149664,
+              0.5512441027481549
+            ],
+            "p_value": 0.6547396088257693
+          }
+        },
+        "personal_history_joint_p": 0.0002380677019451763,
+        "coherent_prior_level_association": {
+          "coefficient": 0.2983771134177162,
+          "ci95": [
+            0.048737453593405755,
+            0.5480167732420267
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.9806282874411325
+      },
+      "data_q8_abs_error": {
+        "outcome": "data_q8_abs_error",
+        "formula": "data_q8_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.5872219543688442,
+        "adjusted_r_squared": 0.48552301559015365,
+        "frequency_joint_p_value": 0.9572235886865843,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": 0.23618178257793224,
+            "ci95": [
+              -0.7359625490727084,
+              1.2083261142285728
+            ],
+            "p_value": 0.6317146402080487
+          },
+          "f_away": {
+            "coefficient": 0.06556838718198588,
+            "ci95": [
+              -0.49643617369876325,
+              0.627572948062735
+            ],
+            "p_value": 0.8178976055801244
+          },
+          "f_house": {
+            "coefficient": -0.19945724152386468,
+            "ci95": [
+              -1.7028110836508674,
+              1.303896600603138
+            ],
+            "p_value": 0.7934517306855612
+          },
+          "f_care": {
+            "coefficient": -0.4726090740981833,
+            "ci95": [
+              -2.2167656131588824,
+              1.271547464962516
+            ],
+            "p_value": 0.5929701522820265
+          },
+          "prior_q9": {
+            "coefficient": -0.6213376520160134,
+            "ci95": [
+              -1.7940519443663343,
+              0.5513766403343074
+            ],
+            "p_value": 0.29663953141200394
+          }
+        },
+        "personal_history_joint_p": 0.008564286668038278,
+        "coherent_prior_level_association": {
+          "coefficient": 0.16613219642346644,
+          "ci95": [
+            -0.26736042984807973,
+            0.5996248226950126
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.9806282874411325
+      },
+      "rule_q8_abs_error": {
+        "outcome": "rule_q8_abs_error",
+        "formula": "rule_q8_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.609237568741913,
+        "adjusted_r_squared": 0.5129627668377467,
+        "frequency_joint_p_value": 0.9466947847635961,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": 0.22796994570071874,
+            "ci95": [
+              -0.6421102102448348,
+              1.0980501016462723
+            ],
+            "p_value": 0.6052363401335354
+          },
+          "f_away": {
+            "coefficient": 0.07164952248626469,
+            "ci95": [
+              -0.4928790878570507,
+              0.63617813282958
+            ],
+            "p_value": 0.8022200209673331
+          },
+          "f_house": {
+            "coefficient": -0.08503264009114667,
+            "ci95": [
+              -1.5478847576174464,
+              1.3778194774351529
+            ],
+            "p_value": 0.9086623917213962
+          },
+          "f_care": {
+            "coefficient": -0.47641339791899473,
+            "ci95": [
+              -2.132220909967269,
+              1.1793941141292796
+            ],
+            "p_value": 0.5703384979386472
+          },
+          "prior_q9": {
+            "coefficient": -0.5630732545840519,
+            "ci95": [
+              -1.624212974227802,
+              0.4980664650596983
+            ],
+            "p_value": 0.2959118783915573
+          }
+        },
+        "personal_history_joint_p": 0.002376869304125316,
+        "coherent_prior_level_association": {
+          "coefficient": 0.2128396583649344,
+          "ci95": [
+            -0.19280816803142803,
+            0.6184874847612969
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.9806282874411325
+      },
+      "change_q9": {
+        "outcome": "change_q9",
+        "formula": "change_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.4165583489109129,
+        "adjusted_r_squared": 0.27281185516432627,
+        "frequency_joint_p_value": 0.021363960504316205,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.1251293339141683,
+            "ci95": [
+              -0.2326064242608629,
+              -0.01765224356747372
+            ],
+            "p_value": 0.02282850834447404
+          },
+          "f_away": {
+            "coefficient": -0.016020955056281837,
+            "ci95": [
+              -0.08434887427215079,
+              0.05230696415958711
+            ],
+            "p_value": 0.6436493789993043
+          },
+          "f_house": {
+            "coefficient": 0.04764865608836048,
+            "ci95": [
+              -0.13070256823592702,
+              0.22599988041264796
+            ],
+            "p_value": 0.598167215927997
+          },
+          "f_care": {
+            "coefficient": -0.08828573851740856,
+            "ci95": [
+              -0.30310293092688334,
+              0.12653145389206621
+            ],
+            "p_value": 0.41782775347339685
+          },
+          "prior_q9": {
+            "coefficient": -0.045898413188181976,
+            "ci95": [
+              -0.13191317123227336,
+              0.04011634485590942
+            ],
+            "p_value": 0.29321840567135843
+          }
+        },
+        "personal_history_joint_p": 0.006213557486752565,
+        "coherent_prior_level_association": {
+          "coefficient": -0.07114808005840538,
+          "ci95": [
+            -0.12853829576183656,
+            -0.01375786435497419
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.25636752605179447
+      },
+      "change_q9_abs_error": {
+        "outcome": "change_q9_abs_error",
+        "formula": "change_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.27301356899447327,
+        "adjusted_r_squared": 0.09390097005108267,
+        "frequency_joint_p_value": 0.291240510212415,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": 0.05150291898453834,
+            "ci95": [
+              -0.07273368751971296,
+              0.17573952548878966
+            ],
+            "p_value": 0.4137999023024479
+          },
+          "f_away": {
+            "coefficient": 0.03603124153395473,
+            "ci95": [
+              -0.02966661346111625,
+              0.10172909652902572
+            ],
+            "p_value": 0.2800652538771495
+          },
+          "f_house": {
+            "coefficient": 0.022517519576630937,
+            "ci95": [
+              -0.15986711593049435,
+              0.2049021550837562
+            ],
+            "p_value": 0.807499458921074
+          },
+          "f_care": {
+            "coefficient": 0.09783936497069086,
+            "ci95": [
+              -0.15401285253801644,
+              0.34969158247939813
+            ],
+            "p_value": 0.44371561063168563
+          },
+          "prior_q9": {
+            "coefficient": 0.04244627750859082,
+            "ci95": [
+              -0.047805971985345884,
+              0.13269852700252752
+            ],
+            "p_value": 0.3540260297671326
+          }
+        },
+        "personal_history_joint_p": 0.6984204077204149,
+        "coherent_prior_level_association": {
+          "coefficient": 0.007933131450087415,
+          "ci95": [
+            -0.0424513486907535,
+            0.05831761159092833
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.903047335548158
+      },
+      "change_q8_abs_error": {
+        "outcome": "change_q8_abs_error",
+        "formula": "change_q8_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.24091255483677598,
+        "adjusted_r_squared": 0.05389101037627153,
+        "frequency_joint_p_value": 0.8758170603840465,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.008211836877213548,
+            "ci95": [
+              -0.2320831534417661,
+              0.215659479687339
+            ],
+            "p_value": 0.9422854760487513
+          },
+          "f_away": {
+            "coefficient": 0.006081135304278621,
+            "ci95": [
+              -0.10860591390981804,
+              0.12076818451837527
+            ],
+            "p_value": 0.9166518176890766
+          },
+          "f_house": {
+            "coefficient": 0.11442460143271782,
+            "ci95": [
+              -0.11899872075268028,
+              0.3478479236181159
+            ],
+            "p_value": 0.33410206846564083
+          },
+          "f_care": {
+            "coefficient": -0.0038043238208112437,
+            "ci95": [
+              -0.35239833173035384,
+              0.34478968408873134
+            ],
+            "p_value": 0.9828149714434049
+          },
+          "prior_q9": {
+            "coefficient": 0.058264397431961365,
+            "ci95": [
+              -0.12446993919071335,
+              0.24099873405463607
+            ],
+            "p_value": 0.5294373447853686
+          }
+        },
+        "personal_history_joint_p": 0.608280430897052,
+        "coherent_prior_level_association": {
+          "coefficient": 0.046707461941467666,
+          "ci95": [
+            -0.04030821541020262,
+            0.13372313929313795
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.9806282874411325
+      },
+      "change_gap": {
+        "outcome": "change_gap",
+        "formula": "change_gap ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.250904967662554,
+        "adjusted_r_squared": 0.06634532201419774,
+        "frequency_joint_p_value": 0.8568441392353308,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.008654743010362145,
+            "ci95": [
+              -0.19987651499894607,
+              0.18256702897822177
+            ],
+            "p_value": 0.9288196866645234
+          },
+          "f_away": {
+            "coefficient": 0.03442046433603606,
+            "ci95": [
+              -0.06538776042618137,
+              0.13422868909825347
+            ],
+            "p_value": 0.49644203951459487
+          },
+          "f_house": {
+            "coefficient": 0.07345083057302107,
+            "ci95": [
+              -0.16954775641098166,
+              0.3164494175570238
+            ],
+            "p_value": 0.5510352034918775
+          },
+          "f_care": {
+            "coefficient": 0.11508801655752535,
+            "ci95": [
+              -0.24280944455391837,
+              0.47298547766896903
+            ],
+            "p_value": 0.5259366456678347
+          },
+          "prior_q9": {
+            "coefficient": -0.03487761231991526,
+            "ci95": [
+              -0.17264323451028088,
+              0.10288800987045035
+            ],
+            "p_value": 0.6174595095233625
+          }
+        },
+        "personal_history_joint_p": 0.7657639721358827,
+        "coherent_prior_level_association": {
+          "coefficient": 0.046228810218004256,
+          "ci95": [
+            -0.045743882476252475,
+            0.138201502912261
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.9806282874411325
+      },
+      "change_previous_distance": {
+        "outcome": "change_previous_distance",
+        "formula": "change_previous_distance ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 35,
+        "r_squared": 0.390959899199515,
+        "adjusted_r_squared": 0.24090654103127962,
+        "frequency_joint_p_value": 0.37626972314506585,
+        "max_leverage": 0.5806315229291013,
+        "coefficients": {
+          "f_home": {
+            "coefficient": 0.08814464850792199,
+            "ci95": [
+              -0.025565533773849486,
+              0.20185483078969346
+            ],
+            "p_value": 0.1276279977909679
+          },
+          "f_away": {
+            "coefficient": -0.007664314195795361,
+            "ci95": [
+              -0.07945939614485416,
+              0.06413076775326344
+            ],
+            "p_value": 0.8331343881385898
+          },
+          "f_house": {
+            "coefficient": -0.12023737974248257,
+            "ci95": [
+              -0.30273753622878097,
+              0.06226277674381582
+            ],
+            "p_value": 0.19484159013978203
+          },
+          "f_care": {
+            "coefficient": 0.0872805401357484,
+            "ci95": [
+              -0.15666234737252802,
+              0.3312234276440248
+            ],
+            "p_value": 0.4804729698921373
+          },
+          "prior_q9": {
+            "coefficient": 0.060402009769948764,
+            "ci95": [
+              -0.03179559520475318,
+              0.15259961474465072
+            ],
+            "p_value": 0.1973438069063142
+          }
+        },
+        "personal_history_joint_p": 0.010927011581221545,
+        "coherent_prior_level_association": {
+          "coefficient": 0.03835893096661106,
+          "ci95": [
+            -0.005956351260207424,
+            0.08267421319342955
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations",
+        "frequency_joint_bh_p": 0.903047335548158
+      }
+    },
+    "core_same_sample": {
+      "real_q9": {
+        "outcome": "real_q9",
+        "formula": "real_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.46659063192324157,
+        "adjusted_r_squared": 0.4265849293174847,
+        "frequency_joint_p_value": 0.5336058123750755,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.02069788930323091,
+            "ci95": [
+              -0.6353728471217072,
+              0.5939770685152453
+            ],
+            "p_value": 0.9470622508697475
+          },
+          "f_away": {
+            "coefficient": 0.2970775308374677,
+            "ci95": [
+              -0.14292655390235381,
+              0.7370816155772892
+            ],
+            "p_value": 0.18429773732984464
+          },
+          "f_house": {
+            "coefficient": 0.1704210878941837,
+            "ci95": [
+              -0.7411060566713048,
+              1.081948232459672
+            ],
+            "p_value": 0.7124430817853948
+          },
+          "f_care": {
+            "coefficient": -0.5077095320357614,
+            "ci95": [
+              -1.4944944450343354,
+              0.47907538096281255
+            ],
+            "p_value": 0.3111137872710018
+          },
+          "prior_q9": {
+            "coefficient": 0.3218130630281077,
+            "ci95": [
+              -0.08679204523073997,
+              0.7304181712869553
+            ],
+            "p_value": 0.12182388052528086
+          }
+        },
+        "personal_history_joint_p": 2.29716280028288e-05,
+        "coherent_prior_level_association": {
+          "coefficient": 0.6261823263899107,
+          "ci95": [
+            0.24384384573903334,
+            1.008520807040788
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "data_q9": {
+        "outcome": "data_q9",
+        "formula": "data_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.845588716772082,
+        "adjusted_r_squared": 0.8340078705299881,
+        "frequency_joint_p_value": 0.46823361005011954,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.0024779260529451674,
+            "ci95": [
+              -0.15952331593571017,
+              0.15456746382981984
+            ],
+            "p_value": 0.9751801378024797
+          },
+          "f_away": {
+            "coefficient": 0.054870697428094285,
+            "ci95": [
+              -0.04561773522807471,
+              0.15535913008426327
+            ],
+            "p_value": 0.28248944822855127
+          },
+          "f_house": {
+            "coefficient": 0.10174440309029664,
+            "ci95": [
+              -0.23872399421566276,
+              0.44221280039625604
+            ],
+            "p_value": 0.5559074135061415
+          },
+          "f_care": {
+            "coefficient": 0.12948121287519576,
+            "ci95": [
+              -0.2492592743189852,
+              0.5082217000693767
+            ],
+            "p_value": 0.5005449251108625
+          },
+          "prior_q9": {
+            "coefficient": 0.124480936954692,
+            "ci95": [
+              -0.042467403235699835,
+              0.2914292771450838
+            ],
+            "p_value": 0.1428403280961222
+          }
+        },
+        "personal_history_joint_p": 3.413589501346125e-09,
+        "coherent_prior_level_association": {
+          "coefficient": 0.3034701192119582,
+          "ci95": [
+            0.1991400061049951,
+            0.4078002323189213
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "rule_q9": {
+        "outcome": "rule_q9",
+        "formula": "rule_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.8445263217360012,
+        "adjusted_r_squared": 0.8328657958662012,
+        "frequency_joint_p_value": 0.4021326703353499,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.11316739200666681,
+            "ci95": [
+              -0.25866599938434365,
+              0.03233121537101
+            ],
+            "p_value": 0.12649902912713012
+          },
+          "f_away": {
+            "coefficient": 0.0627796668963,
+            "ci95": [
+              -0.03814012084615015,
+              0.16369945463875016
+            ],
+            "p_value": 0.22104953793214233
+          },
+          "f_house": {
+            "coefficient": 0.11292790609287817,
+            "ci95": [
+              -0.20324092223327112,
+              0.42909673441902746
+            ],
+            "p_value": 0.48159487723175365
+          },
+          "f_care": {
+            "coefficient": 0.1168891695819404,
+            "ci95": [
+              -0.26268444151959214,
+              0.49646278068347294
+            ],
+            "p_value": 0.5439382554089045
+          },
+          "prior_q9": {
+            "coefficient": 0.10297131966167301,
+            "ci95": [
+              0.0024486707555592957,
+              0.20349396856778673
+            ],
+            "p_value": 0.04473722241247597
+          }
+        },
+        "personal_history_joint_p": 1.4651509637807825e-05,
+        "coherent_prior_level_association": {
+          "coefficient": 0.2374332664595073,
+          "ci95": [
+            0.13858003932976568,
+            0.3362864935892489
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "data_q9_abs_error": {
+        "outcome": "data_q9_abs_error",
+        "formula": "data_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.3704884084279928,
+        "adjusted_r_squared": 0.32327503906009225,
+        "frequency_joint_p_value": 0.713047203387877,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.10469928211081853,
+            "ci95": [
+              -0.5810876005789529,
+              0.3716890363573158
+            ],
+            "p_value": 0.6648453377810017
+          },
+          "f_away": {
+            "coefficient": 0.16374375087968282,
+            "ci95": [
+              -0.14951470367703343,
+              0.47700220543639904
+            ],
+            "p_value": 0.3034878340789772
+          },
+          "f_house": {
+            "coefficient": -0.021903316914477777,
+            "ci95": [
+              -0.708617377464589,
+              0.6648107436356334
+            ],
+            "p_value": 0.9498521913591396
+          },
+          "f_care": {
+            "coefficient": -0.2974366791361692,
+            "ci95": [
+              -1.1523385861657123,
+              0.5574652278933739
+            ],
+            "p_value": 0.49301069620631954
+          },
+          "prior_q9": {
+            "coefficient": 0.19780299266564555,
+            "ci95": [
+              -0.06884714334619568,
+              0.4644531286774868
+            ],
+            "p_value": 0.14488418682513904
+          }
+        },
+        "personal_history_joint_p": 0.0011684269128291157,
+        "coherent_prior_level_association": {
+          "coefficient": 0.27813708878842336,
+          "ci95": [
+            0.01002156102307411,
+            0.5462526165537727
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "rule_q9_abs_error": {
+        "outcome": "rule_q9_abs_error",
+        "formula": "rule_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.38161439118558615,
+        "adjusted_r_squared": 0.3352354705245052,
+        "frequency_joint_p_value": 0.7609890467502569,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.053428552827061326,
+            "ci95": [
+              -0.5257741148507502,
+              0.41891700919662755
+            ],
+            "p_value": 0.8235188249638907
+          },
+          "f_away": {
+            "coefficient": 0.18671939836479934,
+            "ci95": [
+              -0.12759320899484677,
+              0.5010320057244455
+            ],
+            "p_value": 0.24245806548125395
+          },
+          "f_house": {
+            "coefficient": 0.027438463159478038,
+            "ci95": [
+              -0.6884498328969344,
+              0.7433267592158905
+            ],
+            "p_value": 0.9397573165544628
+          },
+          "f_care": {
+            "coefficient": -0.22255725618058755,
+            "ci95": [
+              -1.0985541662336153,
+              0.6534396538724402
+            ],
+            "p_value": 0.6165353384054066
+          },
+          "prior_q9": {
+            "coefficient": 0.21386734459374163,
+            "ci95": [
+              -0.08766795785200782,
+              0.515402647039491
+            ],
+            "p_value": 0.16323381095856265
+          }
+        },
+        "personal_history_joint_p": 0.000777203471604178,
+        "coherent_prior_level_association": {
+          "coefficient": 0.29560405288767266,
+          "ci95": [
+            0.032672228635220624,
+            0.5585358771401248
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "data_q8_abs_error": {
+        "outcome": "data_q8_abs_error",
+        "formula": "data_q8_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.41166331477687046,
+        "adjusted_r_squared": 0.3675380633851357,
+        "frequency_joint_p_value": 0.7582728565388173,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.04418899723437865,
+            "ci95": [
+              -0.9846466851831123,
+              0.896268690714355
+            ],
+            "p_value": 0.9261832314312999
+          },
+          "f_away": {
+            "coefficient": 0.4369621311129188,
+            "ci95": [
+              -0.34075096753376743,
+              1.214675229759605
+            ],
+            "p_value": 0.2688326282380012
+          },
+          "f_house": {
+            "coefficient": -0.6646906381365845,
+            "ci95": [
+              -2.2714953090475056,
+              0.9421140327743369
+            ],
+            "p_value": 0.4151648424984543
+          },
+          "f_care": {
+            "coefficient": -0.018335760877294938,
+            "ci95": [
+              -1.4635465837479886,
+              1.4268750619933988
+            ],
+            "p_value": 0.9800414520982734
+          },
+          "prior_q9": {
+            "coefficient": -0.36625564031655966,
+            "ci95": [
+              -1.5505093271759924,
+              0.8179980465428732
+            ],
+            "p_value": 0.5422117012979091
+          }
+        },
+        "personal_history_joint_p": 0.0017003901874946595,
+        "coherent_prior_level_association": {
+          "coefficient": 0.08637234516196834,
+          "ci95": [
+            -0.24386483623754768,
+            0.41660952656148437
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "rule_q8_abs_error": {
+        "outcome": "rule_q8_abs_error",
+        "formula": "rule_q8_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.43430116932195684,
+        "adjusted_r_squared": 0.3918737570211036,
+        "frequency_joint_p_value": 0.7876485969350071,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.06735540992012258,
+            "ci95": [
+              -0.9144620810699846,
+              0.7797512612297395
+            ],
+            "p_value": 0.8754199794271553
+          },
+          "f_away": {
+            "coefficient": 0.402142721181441,
+            "ci95": [
+              -0.3551002085532894,
+              1.1593856509161715
+            ],
+            "p_value": 0.29585431013893515
+          },
+          "f_house": {
+            "coefficient": -0.5054319468261665,
+            "ci95": [
+              -2.035834742238735,
+              1.024970848586402
+            ],
+            "p_value": 0.5151871502050154
+          },
+          "f_care": {
+            "coefficient": -0.1109192946125977,
+            "ci95": [
+              -1.5799819597851679,
+              1.3581433705599726
+            ],
+            "p_value": 0.8816531351732144
+          },
+          "prior_q9": {
+            "coefficient": -0.2985248204652777,
+            "ci95": [
+              -1.3988011747938416,
+              0.8017515338632861
+            ],
+            "p_value": 0.5928226024796253
+          }
+        },
+        "personal_history_joint_p": 0.0005670856283401983,
+        "coherent_prior_level_association": {
+          "coefficient": 0.1502250023508654,
+          "ci95": [
+            -0.1842363842266873,
+            0.4846863889284181
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_q9": {
+        "outcome": "change_q9",
+        "formula": "change_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.2504489602402825,
+        "adjusted_r_squared": 0.19423263225830378,
+        "frequency_joint_p_value": 0.1078644953477422,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.11068946595372166,
+            "ci95": [
+              -0.21089976198052668,
+              -0.010479169926916651
+            ],
+            "p_value": 0.03061165501683272
+          },
+          "f_away": {
+            "coefficient": 0.007908969468205523,
+            "ci95": [
+              -0.05639795390007452,
+              0.07221589283648557
+            ],
+            "p_value": 0.8084025812255904
+          },
+          "f_house": {
+            "coefficient": 0.011183503002581408,
+            "ci95": [
+              -0.17213330302115504,
+              0.19450030902631787
+            ],
+            "p_value": 0.9042527497969479
+          },
+          "f_care": {
+            "coefficient": -0.012592043293255493,
+            "ci95": [
+              -0.1916329250480859,
+              0.1664488384615749
+            ],
+            "p_value": 0.8897070717179596
+          },
+          "prior_q9": {
+            "coefficient": -0.021509617293019,
+            "ci95": [
+              -0.12871122945621785,
+              0.08569199487017987
+            ],
+            "p_value": 0.6924434815929223
+          }
+        },
+        "personal_history_joint_p": 0.02935677518396206,
+        "coherent_prior_level_association": {
+          "coefficient": -0.06603685275245101,
+          "ci95": [
+            -0.11178067226414205,
+            -0.02029303324075997
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_q9_abs_error": {
+        "outcome": "change_q9_abs_error",
+        "formula": "change_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.08730020442840902,
+        "adjusted_r_squared": 0.018847719760539783,
+        "frequency_joint_p_value": 0.15109017007621184,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": 0.05127072928375692,
+            "ci95": [
+              -0.04356346793089601,
+              0.14610492649840984
+            ],
+            "p_value": 0.28726335398106284
+          },
+          "f_away": {
+            "coefficient": 0.022975647485116477,
+            "ci95": [
+              -0.036749157464055,
+              0.08270045243428795
+            ],
+            "p_value": 0.448534770780159
+          },
+          "f_house": {
+            "coefficient": 0.04934178007395591,
+            "ci95": [
+              -0.12422959903388416,
+              0.222913159181796
+            ],
+            "p_value": 0.5753017883008392
+          },
+          "f_care": {
+            "coefficient": 0.07487942295558161,
+            "ci95": [
+              -0.13949243548681062,
+              0.28925128139797385
+            ],
+            "p_value": 0.49130232329570056
+          },
+          "prior_q9": {
+            "coefficient": 0.01606435192809605,
+            "ci95": [
+              -0.09000897456504413,
+              0.12213767842123623
+            ],
+            "p_value": 0.7652592039630269
+          }
+        },
+        "personal_history_joint_p": 0.8515688205453258,
+        "coherent_prior_level_association": {
+          "coefficient": 0.017466964099249298,
+          "ci95": [
+            -0.028165765847463192,
+            0.06309969404596179
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_q8_abs_error": {
+        "outcome": "change_q8_abs_error",
+        "formula": "change_q8_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.1429984310471123,
+        "adjusted_r_squared": 0.07872331337564575,
+        "frequency_joint_p_value": 0.7889145562471055,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.023166412685744115,
+            "ci95": [
+              -0.219336963825286,
+              0.17300413845379775
+            ],
+            "p_value": 0.815886744906902
+          },
+          "f_away": {
+            "coefficient": -0.03481940993147757,
+            "ci95": [
+              -0.1463949456371063,
+              0.07675612577415115
+            ],
+            "p_value": 0.5385670451933959
+          },
+          "f_house": {
+            "coefficient": 0.15925869131041775,
+            "ci95": [
+              -0.10800297513908091,
+              0.4265203577599164
+            ],
+            "p_value": 0.2410130896911148
+          },
+          "f_care": {
+            "coefficient": -0.09258353373530269,
+            "ci95": [
+              -0.36607833009222573,
+              0.18091126262162033
+            ],
+            "p_value": 0.50474962898667
+          },
+          "prior_q9": {
+            "coefficient": 0.06773081985128218,
+            "ci95": [
+              -0.07741948930597789,
+              0.21288112900854225
+            ],
+            "p_value": 0.35815642353013943
+          }
+        },
+        "personal_history_joint_p": 0.11634079857865955,
+        "coherent_prior_level_association": {
+          "coefficient": 0.06385265718889774,
+          "ci95": [
+            0.004165570380825122,
+            0.12353974399697035
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_gap": {
+        "outcome": "change_gap",
+        "formula": "change_gap ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.09519692274606428,
+        "adjusted_r_squared": 0.027336691952019154,
+        "frequency_joint_p_value": 0.6804995424785554,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.005642681760738878,
+            "ci95": [
+              -0.17304947440553553,
+              0.1617641108840578
+            ],
+            "p_value": 0.9470096519200673
+          },
+          "f_away": {
+            "coefficient": -0.004414485694016812,
+            "ci95": [
+              -0.09570330227936191,
+              0.08687433089132829
+            ],
+            "p_value": 0.9240363888301755
+          },
+          "f_house": {
+            "coefficient": 0.13443059713755307,
+            "ci95": [
+              -0.09257595734911694,
+              0.3614371516242231
+            ],
+            "p_value": 0.24393613872127629
+          },
+          "f_care": {
+            "coefficient": 0.027892821799891415,
+            "ci95": [
+              -0.2939932398680979,
+              0.3497788834678808
+            ],
+            "p_value": 0.8643348117241458
+          },
+          "prior_q9": {
+            "coefficient": -0.045265155109097746,
+            "ci95": [
+              -0.14703287492224948,
+              0.05650256470405399
+            ],
+            "p_value": 0.38103611663085546
+          }
+        },
+        "personal_history_joint_p": 0.29099673105865037,
+        "coherent_prior_level_association": {
+          "coefficient": 0.056074788779902116,
+          "ci95": [
+            -0.011990044730683741,
+            0.12413962229048797
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_previous_distance": {
+        "outcome": "change_previous_distance",
+        "formula": "change_previous_distance ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 173,
+        "parameters": 13,
+        "r_squared": 0.23017648538297808,
+        "adjusted_r_squared": 0.17243972178670142,
+        "frequency_joint_p_value": 0.47312659139898716,
+        "max_leverage": 0.3560269060299795,
+        "coefficients": {
+          "f_home": {
+            "coefficient": 0.08185590797624266,
+            "ci95": [
+              -0.022618207719134947,
+              0.18633002367162027
+            ],
+            "p_value": 0.12375607531922443
+          },
+          "f_away": {
+            "coefficient": -0.01946294704119269,
+            "ci95": [
+              -0.07719524320729723,
+              0.03826934912491186
+            ],
+            "p_value": 0.5065060579725592
+          },
+          "f_house": {
+            "coefficient": -0.07742749431935243,
+            "ci95": [
+              -0.2511417280537324,
+              0.09628673941502754
+            ],
+            "p_value": 0.38004498593383085
+          },
+          "f_care": {
+            "coefficient": 0.02557322449493518,
+            "ci95": [
+              -0.16308300554016336,
+              0.21422945453003372
+            ],
+            "p_value": 0.7892696219275332
+          },
+          "prior_q9": {
+            "coefficient": 0.04920058041588477,
+            "ci95": [
+              -0.03157906500206132,
+              0.12998022583383087
+            ],
+            "p_value": 0.2308088726316749
+          }
+        },
+        "personal_history_joint_p": 0.06690202832355673,
+        "coherent_prior_level_association": {
+          "coefficient": 0.041536826272918534,
+          "ci95": [
+            0.0015460685839873145,
+            0.08152758396184975
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      }
+    },
+    "core_all_available": {
+      "real_q9": {
+        "outcome": "real_q9",
+        "formula": "real_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.4604417134418076,
+        "adjusted_r_squared": 0.4234434309349602,
+        "frequency_joint_p_value": 0.6163474717654057,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.015728213186440854,
+            "ci95": [
+              -0.5943815621416926,
+              0.5629251357688108
+            ],
+            "p_value": 0.9572798277237694
+          },
+          "f_away": {
+            "coefficient": 0.24281661516918585,
+            "ci95": [
+              -0.16480965373494444,
+              0.6504428840733161
+            ],
+            "p_value": 0.24133164348377373
+          },
+          "f_house": {
+            "coefficient": 0.014076619046155581,
+            "ci95": [
+              -0.8682351636280872,
+              0.8963884017203982
+            ],
+            "p_value": 0.9749166445864195
+          },
+          "f_care": {
+            "coefficient": -0.4473529698570298,
+            "ci95": [
+              -1.3643093720731447,
+              0.46960343235908514
+            ],
+            "p_value": 0.3369459508423146
+          },
+          "prior_q9": {
+            "coefficient": 0.35759975468045585,
+            "ci95": [
+              -0.04742188873283848,
+              0.7626213980937502
+            ],
+            "p_value": 0.08317200752257804
+          }
+        },
+        "personal_history_joint_p": 1.691748842198356e-05,
+        "coherent_prior_level_association": {
+          "coefficient": 0.6364288051377247,
+          "ci95": [
+            0.27147846297646333,
+            1.0013791472989861
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "data_q9": {
+        "outcome": "data_q9",
+        "formula": "data_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.8476065325407954,
+        "adjusted_r_squared": 0.8371566947721643,
+        "frequency_joint_p_value": 0.6252695179432226,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.012840047074389654,
+            "ci95": [
+              -0.16415982689075742,
+              0.1384797327419781
+            ],
+            "p_value": 0.867194898182345
+          },
+          "f_away": {
+            "coefficient": 0.05644081672210341,
+            "ci95": [
+              -0.04075242857596807,
+              0.15363406202017488
+            ],
+            "p_value": 0.2533222614314394
+          },
+          "f_house": {
+            "coefficient": 0.06297632540856352,
+            "ci95": [
+              -0.2579743324318807,
+              0.38392698324900776
+            ],
+            "p_value": 0.6990354236535362
+          },
+          "f_care": {
+            "coefficient": 0.12109279798911617,
+            "ci95": [
+              -0.23437117659134588,
+              0.4765567725695782
+            ],
+            "p_value": 0.5022582769651603
+          },
+          "prior_q9": {
+            "coefficient": 0.1346252237191456,
+            "ci95": [
+              -0.02382592957459151,
+              0.2930763770128827
+            ],
+            "p_value": 0.09535816976721076
+          }
+        },
+        "personal_history_joint_p": 8.476246355863381e-10,
+        "coherent_prior_level_association": {
+          "coefficient": 0.30313762469903405,
+          "ci95": [
+            0.20522110994357953,
+            0.40105413945448853
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "rule_q9": {
+        "outcome": "rule_q9",
+        "formula": "rule_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.8476653213506291,
+        "adjusted_r_squared": 0.8372195148146723,
+        "frequency_joint_p_value": 0.3702214373736903,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.12720770054212108,
+            "ci95": [
+              -0.2665379834763164,
+              0.012122582392074227
+            ],
+            "p_value": 0.07328289702531078
+          },
+          "f_away": {
+            "coefficient": 0.06290896227423534,
+            "ci95": [
+              -0.03319817735052989,
+              0.15901610189900056
+            ],
+            "p_value": 0.19810572248108987
+          },
+          "f_house": {
+            "coefficient": 0.07557289181543733,
+            "ci95": [
+              -0.22196400839736866,
+              0.37310979202824335
+            ],
+            "p_value": 0.616798620626406
+          },
+          "f_care": {
+            "coefficient": 0.1211538365573129,
+            "ci95": [
+              -0.2291843142824346,
+              0.47149198739706044
+            ],
+            "p_value": 0.49581638413379137
+          },
+          "prior_q9": {
+            "coefficient": 0.11250596696465492,
+            "ci95": [
+              0.013993171445134525,
+              0.21101876248417534
+            ],
+            "p_value": 0.025439694417557043
+          }
+        },
+        "personal_history_joint_p": 3.6989314249413987e-06,
+        "coherent_prior_level_association": {
+          "coefficient": 0.23838816227317414,
+          "ci95": [
+            0.1451576519692866,
+            0.3316186725770617
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "data_q9_abs_error": {
+        "outcome": "data_q9_abs_error",
+        "formula": "data_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.3590151636374955,
+        "adjusted_r_squared": 0.3150619177154953,
+        "frequency_joint_p_value": 0.6865880485066377,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.07878711672126343,
+            "ci95": [
+              -0.529708063620018,
+              0.37213383017749113
+            ],
+            "p_value": 0.7306293192220623
+          },
+          "f_away": {
+            "coefficient": 0.14063974126549814,
+            "ci95": [
+              -0.15533165622460318,
+              0.4366111387555994
+            ],
+            "p_value": 0.3496286377717568
+          },
+          "f_house": {
+            "coefficient": -0.10807497989028517,
+            "ci95": [
+              -0.7610086118448866,
+              0.5448586520643163
+            ],
+            "p_value": 0.7443028909861523
+          },
+          "f_care": {
+            "coefficient": -0.26426047987211015,
+            "ci95": [
+              -1.0452314712196642,
+              0.5167105114754438
+            ],
+            "p_value": 0.5051284800474096
+          },
+          "prior_q9": {
+            "coefficient": 0.20272999875152198,
+            "ci95": [
+              -0.05031127919823741,
+              0.45577127670128137
+            ],
+            "p_value": 0.11563656565367411
+          }
+        },
+        "personal_history_joint_p": 0.0008824556220005547,
+        "coherent_prior_level_association": {
+          "coefficient": 0.25915323061008033,
+          "ci95": [
+            0.0031615964936603236,
+            0.5151448647265003
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "rule_q9_abs_error": {
+        "outcome": "rule_q9_abs_error",
+        "formula": "rule_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.3693739794412295,
+        "adjusted_r_squared": 0.32613105231719963,
+        "frequency_joint_p_value": 0.7630129481177697,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.031724748893369514,
+            "ci95": [
+              -0.47855517087418314,
+              0.4151056730874441
+            ],
+            "p_value": 0.8887219393097856
+          },
+          "f_away": {
+            "coefficient": 0.1634666989173657,
+            "ci95": [
+              -0.1318390866524874,
+              0.4587724844872188
+            ],
+            "p_value": 0.27611754232702435
+          },
+          "f_house": {
+            "coefficient": -0.058628288892878466,
+            "ci95": [
+              -0.7374547373905398,
+              0.6201981596047828
+            ],
+            "p_value": 0.8648490444104528
+          },
+          "f_care": {
+            "coefficient": -0.2191709659713046,
+            "ci95": [
+              -1.0184448882629638,
+              0.5801029563203545
+            ],
+            "p_value": 0.5890653220394261
+          },
+          "prior_q9": {
+            "coefficient": 0.21647609973621385,
+            "ci95": [
+              -0.06793759674571898,
+              0.5008897962181467
+            ],
+            "p_value": 0.13485349899764443
+          }
+        },
+        "personal_history_joint_p": 0.0005634843841999266,
+        "coherent_prior_level_association": {
+          "coefficient": 0.2788004171080879,
+          "ci95": [
+            0.027297986758407444,
+            0.5303028474577683
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "data_q8_abs_error": {
+        "outcome": "data_q8_abs_error",
+        "formula": "data_q8_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.4040422660785171,
+        "adjusted_r_squared": 0.3631765928953298,
+        "frequency_joint_p_value": 0.6544663814078285,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.1354140467413592,
+            "ci95": [
+              -1.0468914949300407,
+              0.7760634014473222
+            ],
+            "p_value": 0.7697085885537867
+          },
+          "f_away": {
+            "coefficient": 0.34134310154917813,
+            "ci95": [
+              -0.3591488063642292,
+              1.0418350094625854
+            ],
+            "p_value": 0.3375158488524119
+          },
+          "f_house": {
+            "coefficient": -0.7131033895639847,
+            "ci95": [
+              -2.1654176664236595,
+              0.7392108872956902
+            ],
+            "p_value": 0.33384920748637736
+          },
+          "f_care": {
+            "coefficient": 0.17776436608941382,
+            "ci95": [
+              -1.2390741003726764,
+              1.5946028325515043
+            ],
+            "p_value": 0.8047184911116657
+          },
+          "prior_q9": {
+            "coefficient": -0.45369053353904254,
+            "ci95": [
+              -1.448002159004231,
+              0.5406210919261458
+            ],
+            "p_value": 0.3690748713194434
+          }
+        },
+        "personal_history_joint_p": 0.0018621051127633687,
+        "coherent_prior_level_association": {
+          "coefficient": 0.044396128276551206,
+          "ci95": [
+            -0.3024213961305627,
+            0.3912136526836651
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "rule_q8_abs_error": {
+        "outcome": "rule_q8_abs_error",
+        "formula": "rule_q8_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.42242526586346885,
+        "adjusted_r_squared": 0.38282014123696384,
+        "frequency_joint_p_value": 0.7376823005541735,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.16137962550629154,
+            "ci95": [
+              -0.9828219193249792,
+              0.6600626683123962
+            ],
+            "p_value": 0.6986843292456195
+          },
+          "f_away": {
+            "coefficient": 0.3094276435294281,
+            "ci95": [
+              -0.3711263051487177,
+              0.9899815922075739
+            ],
+            "p_value": 0.37076880816363667
+          },
+          "f_house": {
+            "coefficient": -0.5660264465542686,
+            "ci95": [
+              -1.9548221535821197,
+              0.8227692604735826
+            ],
+            "p_value": 0.4222700286913371
+          },
+          "f_care": {
+            "coefficient": 0.11663898649327592,
+            "ci95": [
+              -1.3286304266723288,
+              1.5619083996588807
+            ],
+            "p_value": 0.8736332368553046
+          },
+          "prior_q9": {
+            "coefficient": -0.3899881817935591,
+            "ci95": [
+              -1.303849317361509,
+              0.523872953774391
+            ],
+            "p_value": 0.40080615751085535
+          }
+        },
+        "personal_history_joint_p": 0.0007793287065685241,
+        "coherent_prior_level_association": {
+          "coefficient": 0.10671537938339531,
+          "ci95": [
+            -0.2452360638014507,
+            0.4586668225682413
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_q9": {
+        "outcome": "change_q9",
+        "formula": "change_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.24436094821416765,
+        "adjusted_r_squared": 0.19254569894885343,
+        "frequency_joint_p_value": 0.08068222643916477,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.11436765346773145,
+            "ci95": [
+              -0.2098318779393989,
+              -0.018903428996064023
+            ],
+            "p_value": 0.019154228839397054
+          },
+          "f_away": {
+            "coefficient": 0.006468145552131842,
+            "ci95": [
+              -0.05309616817400306,
+              0.06603245927826674
+            ],
+            "p_value": 0.830549804705536
+          },
+          "f_house": {
+            "coefficient": 0.012596566406873948,
+            "ci95": [
+              -0.1566359886441934,
+              0.1818291214579413
+            ],
+            "p_value": 0.8833778211422922
+          },
+          "f_care": {
+            "coefficient": 6.103856819674814e-05,
+            "ci95": [
+              -0.1678736236443134,
+              0.1679957007807069
+            ],
+            "p_value": 0.9994284615165941
+          },
+          "prior_q9": {
+            "coefficient": -0.022119256754490682,
+            "ci95": [
+              -0.1192317433918628,
+              0.07499322988288143
+            ],
+            "p_value": 0.6536066416247578
+          }
+        },
+        "personal_history_joint_p": 0.024633161936686642,
+        "coherent_prior_level_association": {
+          "coefficient": -0.06474946242585994,
+          "ci95": [
+            -0.10820407600792409,
+            -0.02129484884379579
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_q9_abs_error": {
+        "outcome": "change_q9_abs_error",
+        "formula": "change_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.08029278485187719,
+        "adjusted_r_squared": 0.017227147241720253,
+        "frequency_joint_p_value": 0.21096734638433567,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": 0.04706236782789392,
+            "ci95": [
+              -0.04306895528590859,
+              0.13719369094169642
+            ],
+            "p_value": 0.3041842477895101
+          },
+          "f_away": {
+            "coefficient": 0.02282695765186752,
+            "ci95": [
+              -0.03236315188462019,
+              0.07801706718835523
+            ],
+            "p_value": 0.41543955858603243
+          },
+          "f_house": {
+            "coefficient": 0.049446690997406645,
+            "ci95": [
+              -0.11064544736523324,
+              0.20953882936004653
+            ],
+            "p_value": 0.5429321888922662
+          },
+          "f_care": {
+            "coefficient": 0.04508951390080537,
+            "ci95": [
+              -0.15265513390163166,
+              0.2428341617032424
+            ],
+            "p_value": 0.6532523183397474
+          },
+          "prior_q9": {
+            "coefficient": 0.013746100984691922,
+            "ci95": [
+              -0.08199349107246165,
+              0.1094856930418455
+            ],
+            "p_value": 0.7772301801240868
+          }
+        },
+        "personal_history_joint_p": 0.8240829783035433,
+        "coherent_prior_level_association": {
+          "coefficient": 0.019647186498007473,
+          "ci95": [
+            -0.024869464934912038,
+            0.06416383793092698
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_q8_abs_error": {
+        "outcome": "change_q8_abs_error",
+        "formula": "change_q8_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.13667489717957426,
+        "adjusted_r_squared": 0.07747546155760232,
+        "frequency_joint_p_value": 0.8251948509078941,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.025965578764932315,
+            "ci95": [
+              -0.21366082628583055,
+              0.1617296687559659
+            ],
+            "p_value": 0.785153896969459
+          },
+          "f_away": {
+            "coefficient": -0.03191545801975029,
+            "ci95": [
+              -0.13661598111899165,
+              0.07278506507949108
+            ],
+            "p_value": 0.5482131980401737
+          },
+          "f_house": {
+            "coefficient": 0.14707694300971583,
+            "ci95": [
+              -0.10118588912698631,
+              0.39533977514641794
+            ],
+            "p_value": 0.24390670022533598
+          },
+          "f_care": {
+            "coefficient": -0.06112537959613793,
+            "ci95": [
+              -0.30922370938346894,
+              0.18697295019119306
+            ],
+            "p_value": 0.6273982770582044
+          },
+          "prior_q9": {
+            "coefficient": 0.06370235174548344,
+            "ci95": [
+              -0.07566440002266381,
+              0.2030691035136307
+            ],
+            "p_value": 0.36823983983968533
+          }
+        },
+        "personal_history_joint_p": 0.11558732196693715,
+        "coherent_prior_level_association": {
+          "coefficient": 0.06231925110684457,
+          "ci95": [
+            0.0032736372267349254,
+            0.1213648649869542
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_gap": {
+        "outcome": "change_gap",
+        "formula": "change_gap ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.0896338708992167,
+        "adjusted_r_squared": 0.027208764903734473,
+        "frequency_joint_p_value": 0.7116794299272788,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": -0.011728602792866787,
+            "ci95": [
+              -0.17323748745605613,
+              0.14978028187032258
+            ],
+            "p_value": 0.886201068550241
+          },
+          "f_away": {
+            "coefficient": 0.0020926316333611363,
+            "ci95": [
+              -0.08368409419666524,
+              0.08786935746338752
+            ],
+            "p_value": 0.9616525837412977
+          },
+          "f_house": {
+            "coefficient": 0.11684209342014518,
+            "ci95": [
+              -0.09498426540641525,
+              0.3286684522467056
+            ],
+            "p_value": 0.27781300406957565
+          },
+          "f_care": {
+            "coefficient": 0.05136176676400543,
+            "ci95": [
+              -0.24666108498883965,
+              0.34938461851685054
+            ],
+            "p_value": 0.7341622280899897
+          },
+          "prior_q9": {
+            "coefficient": -0.042454859822767,
+            "ci95": [
+              -0.13954883942225638,
+              0.05463911977672239
+            ],
+            "p_value": 0.3893336736161157
+          }
+        },
+        "personal_history_joint_p": 0.2668787484784013,
+        "coherent_prior_level_association": {
+          "coefficient": 0.05256827642405338,
+          "ci95": [
+            -0.012570962584008298,
+            0.11770751543211505
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_previous_distance": {
+        "outcome": "change_previous_distance",
+        "formula": "change_previous_distance ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+        "n": 188,
+        "parameters": 13,
+        "r_squared": 0.22173753749401692,
+        "adjusted_r_squared": 0.16837096863646384,
+        "frequency_joint_p_value": 0.34541668759337396,
+        "max_leverage": 0.3290312885350452,
+        "coefficients": {
+          "f_home": {
+            "coefficient": 0.08676338520801591,
+            "ci95": [
+              -0.0137433088367854,
+              0.18727007925281722
+            ],
+            "p_value": 0.09020464973070762
+          },
+          "f_away": {
+            "coefficient": -0.013740343658761301,
+            "ci95": [
+              -0.06682630295897012,
+              0.03934561564144751
+            ],
+            "p_value": 0.610111113799852
+          },
+          "f_house": {
+            "coefficient": -0.08746918301489297,
+            "ci95": [
+              -0.24865782119977992,
+              0.073719455169994
+            ],
+            "p_value": 0.28565196244018193
+          },
+          "f_care": {
+            "coefficient": 0.04247023407427582,
+            "ci95": [
+              -0.13499356867967577,
+              0.21993403682822737
+            ],
+            "p_value": 0.637286535284403
+          },
+          "prior_q9": {
+            "coefficient": 0.047474882987724044,
+            "ci95": [
+              -0.02784775483427488,
+              0.12279752080972298
+            ],
+            "p_value": 0.21518441666795451
+          }
+        },
+        "personal_history_joint_p": 0.068043867340181,
+        "coherent_prior_level_association": {
+          "coefficient": 0.04008392355406218,
+          "ci95": [
+            0.0016556768848569117,
+            0.07851217022326745
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      }
+    },
+    "proxy_models": {
+      "real_q9": {
+        "outcome": "real_q9",
+        "formula": "real_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + price_contact_proxy + total_category_days",
+        "n": 173,
+        "parameters": 33,
+        "r_squared": 0.5657804786449943,
+        "adjusted_r_squared": 0.4665303023352786,
+        "frequency_joint_p_value": 0.5664469734195905,
+        "max_leverage": 0.5777717897322059,
+        "coefficients": {
+          "price_contact_proxy": {
+            "coefficient": 0.12183987728869616,
+            "ci95": [
+              -0.8111037388209272,
+              1.0547834933983196
+            ],
+            "p_value": 0.796633441383117
+          },
+          "total_category_days": {
+            "coefficient": 0.12142465756036831,
+            "ci95": [
+              -0.10332595870612972,
+              0.34617527382686636
+            ],
+            "p_value": 0.28729980485057643
+          },
+          "prior_q9": {
+            "coefficient": 0.14651720820507236,
+            "ci95": [
+              -0.37879963252550125,
+              0.671834048935646
+            ],
+            "p_value": 0.5822219807999
+          }
+        },
+        "personal_history_joint_p": 0.0005606709065077652,
+        "coherent_prior_level_association": {
+          "coefficient": 0.6114368550158022,
+          "ci95": [
+            0.23783834497901624,
+            0.9850353650525883
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "data_q9": {
+        "outcome": "data_q9",
+        "formula": "data_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + price_contact_proxy + total_category_days",
+        "n": 173,
+        "parameters": 33,
+        "r_squared": 0.8697667930659678,
+        "adjusted_r_squared": 0.8399992029096176,
+        "frequency_joint_p_value": 0.09430832457166785,
+        "max_leverage": 0.5777717897322059,
+        "coefficients": {
+          "price_contact_proxy": {
+            "coefficient": -0.04223489343296957,
+            "ci95": [
+              -0.27541735563774616,
+              0.19094756877180705
+            ],
+            "p_value": 0.720814198344069
+          },
+          "total_category_days": {
+            "coefficient": 0.06836052228654979,
+            "ci95": [
+              0.00256619131915177,
+              0.13415485325394783
+            ],
+            "p_value": 0.04182008158747435
+          },
+          "prior_q9": {
+            "coefficient": 0.10600771723101396,
+            "ci95": [
+              -0.05880142013017853,
+              0.27081685459220645
+            ],
+            "p_value": 0.20559862278754848
+          }
+        },
+        "personal_history_joint_p": 3.5307618902111654e-05,
+        "coherent_prior_level_association": {
+          "coefficient": 0.30236247477037137,
+          "ci95": [
+            0.1828422247610583,
+            0.42188272477968447
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "rule_q9": {
+        "outcome": "rule_q9",
+        "formula": "rule_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + price_contact_proxy + total_category_days",
+        "n": 173,
+        "parameters": 33,
+        "r_squared": 0.8737029736584394,
+        "adjusted_r_squared": 0.8448350819232255,
+        "frequency_joint_p_value": 0.6600475579766247,
+        "max_leverage": 0.5777717897322059,
+        "coefficients": {
+          "price_contact_proxy": {
+            "coefficient": -0.10168167069875578,
+            "ci95": [
+              -0.356928104514656,
+              0.15356476311714445
+            ],
+            "p_value": 0.432266613076145
+          },
+          "total_category_days": {
+            "coefficient": 0.012277266525695364,
+            "ci95": [
+              -0.04843817566796928,
+              0.07299270871936
+            ],
+            "p_value": 0.689927888339683
+          },
+          "prior_q9": {
+            "coefficient": 0.060599469101116715,
+            "ci95": [
+              -0.07561382307302031,
+              0.19681276127525374
+            ],
+            "p_value": 0.38060240776708143
+          }
+        },
+        "personal_history_joint_p": 2.24921902126655e-06,
+        "coherent_prior_level_association": {
+          "coefficient": 0.22797326966799342,
+          "ci95": [
+            0.13445277671426611,
+            0.3214937626217207
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_q9": {
+        "outcome": "change_q9",
+        "formula": "change_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + price_contact_proxy + total_category_days",
+        "n": 173,
+        "parameters": 33,
+        "r_squared": 0.4033367882832345,
+        "adjusted_r_squared": 0.26695662560511657,
+        "frequency_joint_p_value": 0.012522783394358977,
+        "max_leverage": 0.5777717897322059,
+        "coefficients": {
+          "price_contact_proxy": {
+            "coefficient": -0.05944677726578631,
+            "ci95": [
+              -0.21326858150627243,
+              0.0943750269746998
+            ],
+            "p_value": 0.4461158148204015
+          },
+          "total_category_days": {
+            "coefficient": -0.056083255760854434,
+            "ci95": [
+              -0.0938310760028637,
+              -0.018335435518845172
+            ],
+            "p_value": 0.0038716467424035825
+          },
+          "prior_q9": {
+            "coefficient": -0.04540824812989726,
+            "ci95": [
+              -0.1332072857517668,
+              0.04239078949197228
+            ],
+            "p_value": 0.3083077479412684
+          }
+        },
+        "personal_history_joint_p": 0.009541970486008564,
+        "coherent_prior_level_association": {
+          "coefficient": -0.07438920510237809,
+          "ci95": [
+            -0.13395363279567613,
+            -0.014824777409080052
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      },
+      "change_q9_abs_error": {
+        "outcome": "change_q9_abs_error",
+        "formula": "change_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + prior_q8 + C(age_group) + C(education_group) + C(household_income_band) + C(region) + C(numeracy) + C(housing_tenure) + C(employment_coarse) + share_food + share_gasoline + share_shelter + C(fed_confidence) + price_contact_proxy + total_category_days",
+        "n": 173,
+        "parameters": 33,
+        "r_squared": 0.2713977091206704,
+        "adjusted_r_squared": 0.10486004263396642,
+        "frequency_joint_p_value": 0.09006112996004086,
+        "max_leverage": 0.5777717897322059,
+        "coefficients": {
+          "price_contact_proxy": {
+            "coefficient": 0.01047465388283984,
+            "ci95": [
+              -0.1674500151109517,
+              0.18839932287663136
+            ],
+            "p_value": 0.9075089131222667
+          },
+          "total_category_days": {
+            "coefficient": 0.04812621504935423,
+            "ci95": [
+              0.004783829670940418,
+              0.09146860042776804
+            ],
+            "p_value": 0.029791831410605377
+          },
+          "prior_q9": {
+            "coefficient": 0.041787046254369124,
+            "ci95": [
+              -0.047903224085945155,
+              0.1314773165946834
+            ],
+            "p_value": 0.3585738724742744
+          }
+        },
+        "personal_history_joint_p": 0.7156086785605765,
+        "coherent_prior_level_association": {
+          "coefficient": 0.008023084445819378,
+          "ci95": [
+            -0.042630567897569915,
+            0.058676736789208664
+          ],
+          "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+        },
+        "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+      }
+    },
+    "leave_one_month_out": [
+      {
+        "omitted_month": 202004,
+        "rule_minus_data": {
+          "outcome": "change_q9",
+          "formula": "change_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+          "n": 129,
+          "parameters": 12,
+          "r_squared": 0.2534422093670572,
+          "adjusted_r_squared": 0.18325301537592575,
+          "frequency_joint_p_value": 0.1786230970843735,
+          "max_leverage": 0.31454917406703353,
+          "coefficients": {
+            "f_home": {
+              "coefficient": -0.11011604468882487,
+              "ci95": [
+                -0.21880801595632293,
+                -0.0014240734213268047
+              ],
+              "p_value": 0.047120360271151
+            },
+            "f_away": {
+              "coefficient": -0.010550717878095459,
+              "ci95": [
+                -0.08189050011986955,
+                0.06078906436367863
+              ],
+              "p_value": 0.7701203996035826
+            },
+            "f_house": {
+              "coefficient": 0.0076225425118698655,
+              "ci95": [
+                -0.20451858795404174,
+                0.21976367297778146
+              ],
+              "p_value": 0.9433915983130373
+            },
+            "f_care": {
+              "coefficient": 0.01243771266282457,
+              "ci95": [
+                -0.21720521679285598,
+                0.2420806421185051
+              ],
+              "p_value": 0.9147638827753359
+            },
+            "prior_q9": {
+              "coefficient": -0.0400755394415338,
+              "ci95": [
+                -0.12868743956246464,
+                0.048536360679397025
+              ],
+              "p_value": 0.3722651681570882
+            }
+          },
+          "personal_history_joint_p": 0.018054282826079116,
+          "coherent_prior_level_association": {
+            "coefficient": -0.06430652731779865,
+            "ci95": [
+              -0.1025111442168384,
+              -0.026101910418758888
+            ],
+            "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+          },
+          "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+        },
+        "error_difference": {
+          "outcome": "change_q9_abs_error",
+          "formula": "change_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+          "n": 129,
+          "parameters": 12,
+          "r_squared": 0.10709389711592165,
+          "adjusted_r_squared": 0.023145460092632186,
+          "frequency_joint_p_value": 0.022798355489041574,
+          "max_leverage": 0.31454917406703353,
+          "coefficients": {
+            "f_home": {
+              "coefficient": 0.05441942769124748,
+              "ci95": [
+                -0.04664331888486685,
+                0.15548217426736183
+              ],
+              "p_value": 0.2884317294368936
+            },
+            "f_away": {
+              "coefficient": 0.04208598090921281,
+              "ci95": [
+                -0.02441168214959058,
+                0.1085836439680162
+              ],
+              "p_value": 0.21255413743529686
+            },
+            "f_house": {
+              "coefficient": 0.0417877639708919,
+              "ci95": [
+                -0.12202757894631866,
+                0.20560310688810246
+              ],
+              "p_value": 0.6143731262976921
+            },
+            "f_care": {
+              "coefficient": 0.125511015605081,
+              "ci95": [
+                -0.0966413083567515,
+                0.3476633395669135
+              ],
+              "p_value": 0.26547137016102623
+            },
+            "prior_q9": {
+              "coefficient": 0.034627494666958844,
+              "ci95": [
+                -0.06314334553092946,
+                0.13239833486484714
+              ],
+              "p_value": 0.4844368439888964
+            }
+          },
+          "personal_history_joint_p": 0.9553693576702326,
+          "coherent_prior_level_association": {
+            "coefficient": 0.0064253213041880405,
+            "ci95": [
+              -0.031830020560456904,
+              0.044680663168832985
+            ],
+            "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+          },
+          "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+        }
+      },
+      {
+        "omitted_month": 202105,
+        "rule_minus_data": {
+          "outcome": "change_q9",
+          "formula": "change_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+          "n": 130,
+          "parameters": 12,
+          "r_squared": 0.29628668459391183,
+          "adjusted_r_squared": 0.23068629078486969,
+          "frequency_joint_p_value": 0.09646183568880905,
+          "max_leverage": 0.4226855314998258,
+          "coefficients": {
+            "f_home": {
+              "coefficient": -0.12573855277092139,
+              "ci95": [
+                -0.2448578944816157,
+                -0.006619211060227059
+              ],
+              "p_value": 0.03873701418598946
+            },
+            "f_away": {
+              "coefficient": 0.013136165680970069,
+              "ci95": [
+                -0.06131130900177086,
+                0.087583640363711
+              ],
+              "p_value": 0.7273993608736267
+            },
+            "f_house": {
+              "coefficient": 0.04723276272871725,
+              "ci95": [
+                -0.17994860077914548,
+                0.27441412623658
+              ],
+              "p_value": 0.6812960097585893
+            },
+            "f_care": {
+              "coefficient": -0.05082044207932743,
+              "ci95": [
+                -0.25039537078696966,
+                0.1487544866283148
+              ],
+              "p_value": 0.6150166489585392
+            },
+            "prior_q9": {
+              "coefficient": -0.009840263993360375,
+              "ci95": [
+                -0.13335043251783033,
+                0.11366990453110956
+              ],
+              "p_value": 0.8749064138848452
+            }
+          },
+          "personal_history_joint_p": 0.03253576898485383,
+          "coherent_prior_level_association": {
+            "coefficient": -0.07028055859567307,
+            "ci95": [
+              -0.12613585308408887,
+              -0.014425264107257273
+            ],
+            "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+          },
+          "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+        },
+        "error_difference": {
+          "outcome": "change_q9_abs_error",
+          "formula": "change_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+          "n": 130,
+          "parameters": 12,
+          "r_squared": 0.12376329780944073,
+          "adjusted_r_squared": 0.042080215401846255,
+          "frequency_joint_p_value": 0.12990878197977487,
+          "max_leverage": 0.4226855314998258,
+          "coefficients": {
+            "f_home": {
+              "coefficient": 0.07064844987295522,
+              "ci95": [
+                -0.04115172142968264,
+                0.18244862117559307
+              ],
+              "p_value": 0.21327538580968047
+            },
+            "f_away": {
+              "coefficient": 0.002862780198137623,
+              "ci95": [
+                -0.0646651955694964,
+                0.07039075596577166
+              ],
+              "p_value": 0.9332371421254559
+            },
+            "f_house": {
+              "coefficient": 0.160233394462973,
+              "ci95": [
+                -0.0677452832106161,
+                0.38821207213656206
+              ],
+              "p_value": 0.16659424739828682
+            },
+            "f_care": {
+              "coefficient": -0.0013939459359223931,
+              "ci95": [
+                -0.2678562432572564,
+                0.26506835138541157
+              ],
+              "p_value": 0.991752027827477
+            },
+            "prior_q9": {
+              "coefficient": -0.003236060123928239,
+              "ci95": [
+                -0.11767875298121733,
+                0.11120663273336084
+              ],
+              "p_value": 0.9554400654935109
+            }
+          },
+          "personal_history_joint_p": 0.7584915556584451,
+          "coherent_prior_level_association": {
+            "coefficient": 0.027097166247910916,
+            "ci95": [
+              -0.028038213598955464,
+              0.0822325460947773
+            ],
+            "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+          },
+          "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+        }
+      },
+      {
+        "omitted_month": 202111,
+        "rule_minus_data": {
+          "outcome": "change_q9",
+          "formula": "change_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+          "n": 128,
+          "parameters": 12,
+          "r_squared": 0.22553323988359542,
+          "adjusted_r_squared": 0.15209242642428122,
+          "frequency_joint_p_value": 0.6303016929140839,
+          "max_leverage": 0.4082623556442221,
+          "coefficients": {
+            "f_home": {
+              "coefficient": -0.05839159088201177,
+              "ci95": [
+                -0.18518342009651845,
+                0.06840023833249492
+              ],
+              "p_value": 0.3635867608215567
+            },
+            "f_away": {
+              "coefficient": 0.03557879482051255,
+              "ci95": [
+                -0.04978592260598939,
+                0.1209435122470145
+              ],
+              "p_value": 0.41078417235032494
+            },
+            "f_house": {
+              "coefficient": -0.06138572032984098,
+              "ci95": [
+                -0.2861324205193221,
+                0.1633609798596401
+              ],
+              "p_value": 0.5895627545953951
+            },
+            "f_care": {
+              "coefficient": 0.0028921065638713925,
+              "ci95": [
+                -0.23985606822135855,
+                0.24564028134910135
+              ],
+              "p_value": 0.9812144360436562
+            },
+            "prior_q9": {
+              "coefficient": -0.011871008442111726,
+              "ci95": [
+                -0.13345388923525836,
+                0.10971187235103491
+              ],
+              "p_value": 0.8469974523094822
+            }
+          },
+          "personal_history_joint_p": 0.23485448514466342,
+          "coherent_prior_level_association": {
+            "coefficient": -0.06531988197693614,
+            "ci95": [
+              -0.12604333166506587,
+              -0.004596432288806421
+            ],
+            "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+          },
+          "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+        },
+        "error_difference": {
+          "outcome": "change_q9_abs_error",
+          "formula": "change_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+          "n": 128,
+          "parameters": 12,
+          "r_squared": 0.0549884028707367,
+          "adjusted_r_squared": -0.03462476582255558,
+          "frequency_joint_p_value": 0.8882223307405782,
+          "max_leverage": 0.4082623556442221,
+          "coefficients": {
+            "f_home": {
+              "coefficient": 0.02532786096271799,
+              "ci95": [
+                -0.1096383502036703,
+                0.1602940721291063
+              ],
+              "p_value": 0.7108048858297187
+            },
+            "f_away": {
+              "coefficient": 0.00015115798311146622,
+              "ci95": [
+                -0.08782622324811643,
+                0.08812853921433936
+              ],
+              "p_value": 0.9972906458155337
+            },
+            "f_house": {
+              "coefficient": 0.022124407781208305,
+              "ci95": [
+                -0.21147022948282487,
+                0.25571904504524146
+              ],
+              "p_value": 0.85152526933408
+            },
+            "f_care": {
+              "coefficient": 0.04676969640579929,
+              "ci95": [
+                -0.22827337915287618,
+                0.3218127719644748
+              ],
+              "p_value": 0.7368796078971035
+            },
+            "prior_q9": {
+              "coefficient": 0.016603492497882424,
+              "ci95": [
+                -0.11658045319420471,
+                0.14978743818996956
+              ],
+              "p_value": 0.8054093302477826
+            }
+          },
+          "personal_history_joint_p": 0.7027664474144935,
+          "coherent_prior_level_association": {
+            "coefficient": 0.013419776368515834,
+            "ci95": [
+              -0.053563141651460214,
+              0.08040269438849189
+            ],
+            "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+          },
+          "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+        }
+      },
+      {
+        "omitted_month": 202203,
+        "rule_minus_data": {
+          "outcome": "change_q9",
+          "formula": "change_q9 ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+          "n": 132,
+          "parameters": 12,
+          "r_squared": 0.26867731611486556,
+          "adjusted_r_squared": 0.201639403425395,
+          "frequency_joint_p_value": 0.02149858483665547,
+          "max_leverage": 0.4280971832203061,
+          "coefficients": {
+            "f_home": {
+              "coefficient": -0.15288438905090607,
+              "ci95": [
+                -0.2661194099460966,
+                -0.03964936815571553
+              ],
+              "p_value": 0.008558962219483095
+            },
+            "f_away": {
+              "coefficient": -0.002358383578545916,
+              "ci95": [
+                -0.07746939345703847,
+                0.07275262629994665
+              ],
+              "p_value": 0.950533172004733
+            },
+            "f_house": {
+              "coefficient": 0.06707182402913534,
+              "ci95": [
+                -0.13728743951344985,
+                0.2714310875717205
+              ],
+              "p_value": 0.517047965205474
+            },
+            "f_care": {
+              "coefficient": 0.019367011164335403,
+              "ci95": [
+                -0.16191823961323454,
+                0.20065226194190533
+              ],
+              "p_value": 0.8328408669765313
+            },
+            "prior_q9": {
+              "coefficient": -0.035777948774016875,
+              "ci95": [
+                -0.19372923554392085,
+                0.12217333799588709
+              ],
+              "p_value": 0.6546162321237439
+            }
+          },
+          "personal_history_joint_p": 0.12141244910527986,
+          "coherent_prior_level_association": {
+            "coefficient": -0.06412127290605522,
+            "ci95": [
+              -0.12817746973643163,
+              -6.507607567880769e-05
+            ],
+            "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+          },
+          "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+        },
+        "error_difference": {
+          "outcome": "change_q9_abs_error",
+          "formula": "change_q9_abs_error ~ C(month) + prior_q9 + prior_iqr + history_anchor + has_history_anchor + history_n + f_home + f_away + f_house + f_care",
+          "n": 132,
+          "parameters": 12,
+          "r_squared": 0.14372034431669145,
+          "adjusted_r_squared": 0.06522804254572157,
+          "frequency_joint_p_value": 0.12490711285524145,
+          "max_leverage": 0.4280971832203061,
+          "coefficients": {
+            "f_home": {
+              "coefficient": 0.06505783952921902,
+              "ci95": [
+                -0.03167591573729481,
+                0.16179159479573285
+              ],
+              "p_value": 0.18551786912129561
+            },
+            "f_away": {
+              "coefficient": 0.043971585859983946,
+              "ci95": [
+                -0.02305508326990604,
+                0.11099825498987392
+              ],
+              "p_value": 0.19646988944893445
+            },
+            "f_house": {
+              "coefficient": -0.0015420583099436044,
+              "ci95": [
+                -0.2000754491394379,
+                0.19699133251955067
+              ],
+              "p_value": 0.9877556653234068
+            },
+            "f_care": {
+              "coefficient": 0.07981055128763626,
+              "ci95": [
+                -0.14780372173592812,
+                0.30742482431120066
+              ],
+              "p_value": 0.48887245224183395
+            },
+            "prior_q9": {
+              "coefficient": 0.02235184366292017,
+              "ci95": [
+                -0.12146039979754855,
+                0.1661640871233889
+              ],
+              "p_value": 0.7588225604852009
+            }
+          },
+          "personal_history_joint_p": 0.8613370776705399,
+          "coherent_prior_level_association": {
+            "coefficient": 0.027489009505291023,
+            "ci95": [
+              -0.034798205781603406,
+              0.08977622479218546
+            ],
+            "interpretation": "Modelled association when prior Q9/history center and, in full model, Q8 jointly shift by 1pp; not an intervention or update weight."
+          },
+          "interval_method": "OLS HC3, t reference; exploratory conditional associations"
+        }
+      }
+    ],
+    "monthly_inputs": [
+      {
+        "month": 202004,
+        "n": 48,
+        "f_home": {
+          "mean": 1.9166666666666667,
+          "sd": 1.5523280008497626,
+          "iqr": 2.0
+        },
+        "f_away": {
+          "mean": 1.5416666666666667,
+          "sd": 1.8366447367111824,
+          "iqr": 3.0
+        },
+        "f_house": {
+          "mean": 0.4583333333333333,
+          "sd": 0.7058780977540589,
+          "iqr": 1.0
+        },
+        "f_care": {
+          "mean": 0.3541666666666667,
+          "sd": 0.6919050793923175,
+          "iqr": 1.0
+        },
+        "price_contact_proxy": {
+          "mean": 1.565238658910534,
+          "sd": 0.7052109983926425,
+          "iqr": 0.642857142857143
+        },
+        "total_category_days": {
+          "mean": 4.270833333333333,
+          "sd": 3.504399516639367,
+          "iqr": 5.0
+        },
+        "prior_q9": {
+          "mean": 1.5212873750889246,
+          "sd": 6.102833196175376,
+          "iqr": 3.520028927664785
+        }
+      },
+      {
+        "month": 202105,
+        "n": 48,
+        "f_home": {
+          "mean": 2.375,
+          "sd": 1.3010412496663328,
+          "iqr": 2.0
+        },
+        "f_away": {
+          "mean": 2.2708333333333335,
+          "sd": 1.8113022862631796,
+          "iqr": 2.0
+        },
+        "f_house": {
+          "mean": 0.8125,
+          "sd": 0.9049919428738946,
+          "iqr": 1.0
+        },
+        "f_care": {
+          "mean": 0.375,
+          "sd": 0.5994789404140899,
+          "iqr": 1.0
+        },
+        "price_contact_proxy": {
+          "mean": 2.059332519332519,
+          "sd": 0.7644539455084998,
+          "iqr": 1.0499999999999996
+        },
+        "total_category_days": {
+          "mean": 5.833333333333333,
+          "sd": 3.050500869620521,
+          "iqr": 4.0
+        },
+        "prior_q9": {
+          "mean": 4.485861265752266,
+          "sd": 5.399298714775449,
+          "iqr": 4.667590921511267
+        }
+      },
+      {
+        "month": 202111,
+        "n": 48,
+        "f_home": {
+          "mean": 2.1458333333333335,
+          "sd": 1.75581869951187,
+          "iqr": 2.0
+        },
+        "f_away": {
+          "mean": 1.6666666666666667,
+          "sd": 1.9825628755617197,
+          "iqr": 2.0
+        },
+        "f_house": {
+          "mean": 0.4583333333333333,
+          "sd": 0.6757197808427855,
+          "iqr": 1.0
+        },
+        "f_care": {
+          "mean": 0.3541666666666667,
+          "sd": 0.7497105923102745,
+          "iqr": 0.0
+        },
+        "price_contact_proxy": {
+          "mean": 4.801208664021164,
+          "sd": 0.7872451767521169,
+          "iqr": 1.2333333333333334
+        },
+        "total_category_days": {
+          "mean": 4.625,
+          "sd": 3.7728470681966426,
+          "iqr": 5.0
+        },
+        "prior_q9": {
+          "mean": 4.97660798028128,
+          "sd": 4.994375268466306,
+          "iqr": 4.283389277826354
+        }
+      },
+      {
+        "month": 202203,
+        "n": 48,
+        "f_home": {
+          "mean": 1.8541666666666667,
+          "sd": 1.2908263395549724,
+          "iqr": 2.0
+        },
+        "f_away": {
+          "mean": 1.7291666666666667,
+          "sd": 1.6168331099886457,
+          "iqr": 3.0
+        },
+        "f_house": {
+          "mean": 0.6666666666666666,
+          "sd": 0.9204467514322715,
+          "iqr": 1.0
+        },
+        "f_care": {
+          "mean": 0.5208333333333334,
+          "sd": 0.7356851492920654,
+          "iqr": 1.0
+        },
+        "price_contact_proxy": {
+          "mean": 6.9677644751082255,
+          "sd": 1.0150820379583203,
+          "iqr": 1.4272727272727277
+        },
+        "total_category_days": {
+          "mean": 4.770833333333333,
+          "sd": 2.8228205703200873,
+          "iqr": 3.0
+        },
+        "prior_q9": {
+          "mean": 8.423101755891032,
+          "sd": 5.979409660400491,
+          "iqr": 4.659783000687493
+        }
+      }
+    ],
+    "price_proxy_variance": {
+      "total_variance": 5.445931534253938,
+      "between_month_variance": 4.762966809463302,
+      "within_month_variance": 0.6829647247906372,
+      "between_month_share": 0.87459175340437,
+      "within_month_share": 0.12540824659563032
+    },
+    "frequency_correlations": {
+      "f_home": {
+        "f_home": 1.0,
+        "f_away": 0.2071597827640238,
+        "f_house": 0.42810555279532525,
+        "f_care": 0.44278478602804955
+      },
+      "f_away": {
+        "f_home": 0.2071597827640238,
+        "f_away": 1.0,
+        "f_house": 0.0955666332874117,
+        "f_care": 0.15073576880725287
+      },
+      "f_house": {
+        "f_home": 0.42810555279532525,
+        "f_away": 0.0955666332874117,
+        "f_house": 1.0,
+        "f_care": 0.5862732479912516
+      },
+      "f_care": {
+        "f_home": 0.44278478602804955,
+        "f_away": 0.15073576880725287,
+        "f_house": 0.5862732479912516,
+        "f_care": 1.0
+      }
+    },
+    "center_bridges": [
+      {
+        "month": 202004,
+        "repeat": 1,
+        "arm": "reused_C",
+        "n": 47,
+        "q9_center": 0.4364397965489104,
+        "q8_center": 1.0,
+        "real_q9_center": 2.0,
+        "real_q8_center": 2.0,
+        "q9_signed_error": -1.5635602034510896,
+        "q8_signed_error": -1.0,
+        "density_point_gap_error": -0.5635602034510896,
+        "q9_absolute_error": 1.5635602034510896,
+        "q8_absolute_error": 1.0
+      },
+      {
+        "month": 202004,
+        "repeat": 1,
+        "arm": "frequency_data",
+        "n": 47,
+        "q9_center": 0.6972936018577265,
+        "q8_center": 1.2,
+        "real_q9_center": 2.0,
+        "real_q8_center": 2.0,
+        "q9_signed_error": -1.3027063981422735,
+        "q8_signed_error": -0.8,
+        "density_point_gap_error": -0.5027063981422735,
+        "q9_absolute_error": 1.3027063981422735,
+        "q8_absolute_error": 0.8
+      },
+      {
+        "month": 202004,
+        "repeat": 1,
+        "arm": "frequency_rule",
+        "n": 47,
+        "q9_center": 0.6576093894622534,
+        "q8_center": 1.2,
+        "real_q9_center": 2.0,
+        "real_q8_center": 2.0,
+        "q9_signed_error": -1.3423906105377466,
+        "q8_signed_error": -0.8,
+        "density_point_gap_error": -0.5423906105377465,
+        "q9_absolute_error": 1.3423906105377466,
+        "q8_absolute_error": 0.8
+      },
+      {
+        "month": 202004,
+        "repeat": 2,
+        "arm": "reused_C",
+        "n": 47,
+        "q9_center": 0.8181127067944729,
+        "q8_center": 1.2,
+        "real_q9_center": 2.0,
+        "real_q8_center": 2.0,
+        "q9_signed_error": -1.181887293205527,
+        "q8_signed_error": -0.8,
+        "density_point_gap_error": -0.38188729320552706,
+        "q9_absolute_error": 1.181887293205527,
+        "q8_absolute_error": 0.8
+      },
+      {
+        "month": 202004,
+        "repeat": 2,
+        "arm": "frequency_data",
+        "n": 47,
+        "q9_center": 0.5991700184445783,
+        "q8_center": 1.2,
+        "real_q9_center": 2.0,
+        "real_q8_center": 2.0,
+        "q9_signed_error": -1.4008299815554217,
+        "q8_signed_error": -0.8,
+        "density_point_gap_error": -0.6008299815554217,
+        "q9_absolute_error": 1.4008299815554217,
+        "q8_absolute_error": 0.8
+      },
+      {
+        "month": 202004,
+        "repeat": 2,
+        "arm": "frequency_rule",
+        "n": 47,
+        "q9_center": 0.5740535773937907,
+        "q8_center": 1.2,
+        "real_q9_center": 2.0,
+        "real_q8_center": 2.0,
+        "q9_signed_error": -1.4259464226062093,
+        "q8_signed_error": -0.8,
+        "density_point_gap_error": -0.6259464226062093,
+        "q9_absolute_error": 1.4259464226062093,
+        "q8_absolute_error": 0.8
+      },
+      {
+        "month": 202105,
+        "repeat": 1,
+        "arm": "reused_C",
+        "n": 46,
+        "q9_center": 3.2655562235673656,
+        "q8_center": 3.8,
+        "real_q9_center": 3.422309278802384,
+        "real_q8_center": 5.0,
+        "q9_signed_error": -0.15675305523501848,
+        "q8_signed_error": -1.2000000000000002,
+        "density_point_gap_error": 1.0432469447649817,
+        "q9_absolute_error": 0.15675305523501848,
+        "q8_absolute_error": 1.2000000000000002
+      },
+      {
+        "month": 202105,
+        "repeat": 1,
+        "arm": "frequency_data",
+        "n": 46,
+        "q9_center": 3.633454929022804,
+        "q8_center": 3.6,
+        "real_q9_center": 3.422309278802384,
+        "real_q8_center": 5.0,
+        "q9_signed_error": 0.21114565022041987,
+        "q8_signed_error": -1.4,
+        "density_point_gap_error": 1.6111456502204198,
+        "q9_absolute_error": 0.21114565022041987,
+        "q8_absolute_error": 1.4
+      },
+      {
+        "month": 202105,
+        "repeat": 1,
+        "arm": "frequency_rule",
+        "n": 46,
+        "q9_center": 3.8849252260363207,
+        "q8_center": 4.0,
+        "real_q9_center": 3.422309278802384,
+        "real_q8_center": 5.0,
+        "q9_signed_error": 0.4626159472339366,
+        "q8_signed_error": -1.0,
+        "density_point_gap_error": 1.4626159472339366,
+        "q9_absolute_error": 0.4626159472339366,
+        "q8_absolute_error": 1.0
+      },
+      {
+        "month": 202105,
+        "repeat": 2,
+        "arm": "reused_C",
+        "n": 46,
+        "q9_center": 3.468667288292019,
+        "q8_center": 3.6,
+        "real_q9_center": 3.422309278802384,
+        "real_q8_center": 5.0,
+        "q9_signed_error": 0.04635800948963498,
+        "q8_signed_error": -1.4,
+        "density_point_gap_error": 1.4463580094896349,
+        "q9_absolute_error": 0.04635800948963498,
+        "q8_absolute_error": 1.4
+      },
+      {
+        "month": 202105,
+        "repeat": 2,
+        "arm": "frequency_data",
+        "n": 46,
+        "q9_center": 3.7954532588800873,
+        "q8_center": 4.0,
+        "real_q9_center": 3.422309278802384,
+        "real_q8_center": 5.0,
+        "q9_signed_error": 0.3731439800777032,
+        "q8_signed_error": -1.0,
+        "density_point_gap_error": 1.3731439800777032,
+        "q9_absolute_error": 0.3731439800777032,
+        "q8_absolute_error": 1.0
+      },
+      {
+        "month": 202105,
+        "repeat": 2,
+        "arm": "frequency_rule",
+        "n": 46,
+        "q9_center": 3.2120131398684144,
+        "q8_center": 3.8,
+        "real_q9_center": 3.422309278802384,
+        "real_q8_center": 5.0,
+        "q9_signed_error": -0.2102961389339697,
+        "q8_signed_error": -1.2000000000000002,
+        "density_point_gap_error": 0.9897038610660305,
+        "q9_absolute_error": 0.2102961389339697,
+        "q8_absolute_error": 1.2000000000000002
+      },
+      {
+        "month": 202111,
+        "repeat": 1,
+        "arm": "reused_C",
+        "n": 48,
+        "q9_center": 5.535949071798205,
+        "q8_center": 5.5,
+        "real_q9_center": 5.706624542375174,
+        "real_q8_center": 5.0,
+        "q9_signed_error": -0.17067547057696864,
+        "q8_signed_error": 0.5,
+        "density_point_gap_error": -0.6706754705769686,
+        "q9_absolute_error": 0.17067547057696864,
+        "q8_absolute_error": 0.5
+      },
+      {
+        "month": 202111,
+        "repeat": 1,
+        "arm": "frequency_data",
+        "n": 48,
+        "q9_center": 5.044538455445972,
+        "q8_center": 5.5,
+        "real_q9_center": 5.706624542375174,
+        "real_q8_center": 5.0,
+        "q9_signed_error": -0.662086086929202,
+        "q8_signed_error": 0.5,
+        "density_point_gap_error": -1.162086086929202,
+        "q9_absolute_error": 0.662086086929202,
+        "q8_absolute_error": 0.5
+      },
+      {
+        "month": 202111,
+        "repeat": 1,
+        "arm": "frequency_rule",
+        "n": 48,
+        "q9_center": 5.261737722309984,
+        "q8_center": 5.5,
+        "real_q9_center": 5.706624542375174,
+        "real_q8_center": 5.0,
+        "q9_signed_error": -0.4448868200651894,
+        "q8_signed_error": 0.5,
+        "density_point_gap_error": -0.9448868200651894,
+        "q9_absolute_error": 0.4448868200651894,
+        "q8_absolute_error": 0.5
+      },
+      {
+        "month": 202111,
+        "repeat": 2,
+        "arm": "reused_C",
+        "n": 48,
+        "q9_center": 5.236796733939309,
+        "q8_center": 5.6,
+        "real_q9_center": 5.706624542375174,
+        "real_q8_center": 5.0,
+        "q9_signed_error": -0.46982780843586447,
+        "q8_signed_error": 0.5999999999999996,
+        "density_point_gap_error": -1.0698278084358641,
+        "q9_absolute_error": 0.46982780843586447,
+        "q8_absolute_error": 0.5999999999999996
+      },
+      {
+        "month": 202111,
+        "repeat": 2,
+        "arm": "frequency_data",
+        "n": 48,
+        "q9_center": 5.005329994039953,
+        "q8_center": 5.5,
+        "real_q9_center": 5.706624542375174,
+        "real_q8_center": 5.0,
+        "q9_signed_error": -0.7012945483352206,
+        "q8_signed_error": 0.5,
+        "density_point_gap_error": -1.2012945483352206,
+        "q9_absolute_error": 0.7012945483352206,
+        "q8_absolute_error": 0.5
+      },
+      {
+        "month": 202111,
+        "repeat": 2,
+        "arm": "frequency_rule",
+        "n": 48,
+        "q9_center": 5.037710627956827,
+        "q8_center": 5.5,
+        "real_q9_center": 5.706624542375174,
+        "real_q8_center": 5.0,
+        "q9_signed_error": -0.6689139144183471,
+        "q8_signed_error": 0.5,
+        "density_point_gap_error": -1.1689139144183471,
+        "q9_absolute_error": 0.6689139144183471,
+        "q8_absolute_error": 0.5
+      },
+      {
+        "month": 202203,
+        "repeat": 1,
+        "arm": "reused_C",
+        "n": 47,
+        "q9_center": 7.454504720716514,
+        "q8_center": 7.5,
+        "real_q9_center": 7.865996551075478,
+        "real_q8_center": 8.0,
+        "q9_signed_error": -0.41149183035896364,
+        "q8_signed_error": -0.5,
+        "density_point_gap_error": 0.08850816964103636,
+        "q9_absolute_error": 0.41149183035896364,
+        "q8_absolute_error": 0.5
+      },
+      {
+        "month": 202203,
+        "repeat": 1,
+        "arm": "frequency_data",
+        "n": 47,
+        "q9_center": 7.18078073169753,
+        "q8_center": 7.5,
+        "real_q9_center": 7.865996551075478,
+        "real_q8_center": 8.0,
+        "q9_signed_error": -0.6852158193779481,
+        "q8_signed_error": -0.5,
+        "density_point_gap_error": -0.18521581937794807,
+        "q9_absolute_error": 0.6852158193779481,
+        "q8_absolute_error": 0.5
+      },
+      {
+        "month": 202203,
+        "repeat": 1,
+        "arm": "frequency_rule",
+        "n": 47,
+        "q9_center": 6.887283918190365,
+        "q8_center": 7.2,
+        "real_q9_center": 7.865996551075478,
+        "real_q8_center": 8.0,
+        "q9_signed_error": -0.978712632885113,
+        "q8_signed_error": -0.7999999999999998,
+        "density_point_gap_error": -0.1787126328851132,
+        "q9_absolute_error": 0.978712632885113,
+        "q8_absolute_error": 0.7999999999999998
+      },
+      {
+        "month": 202203,
+        "repeat": 2,
+        "arm": "reused_C",
+        "n": 47,
+        "q9_center": 7.234659659239167,
+        "q8_center": 7.2,
+        "real_q9_center": 7.865996551075478,
+        "real_q8_center": 8.0,
+        "q9_signed_error": -0.6313368918363107,
+        "q8_signed_error": -0.7999999999999998,
+        "density_point_gap_error": 0.16866310816368912,
+        "q9_absolute_error": 0.6313368918363107,
+        "q8_absolute_error": 0.7999999999999998
+      },
+      {
+        "month": 202203,
+        "repeat": 2,
+        "arm": "frequency_data",
+        "n": 47,
+        "q9_center": 7.096333868945457,
+        "q8_center": 7.5,
+        "real_q9_center": 7.865996551075478,
+        "real_q8_center": 8.0,
+        "q9_signed_error": -0.7696626821300203,
+        "q8_signed_error": -0.5,
+        "density_point_gap_error": -0.2696626821300203,
+        "q9_absolute_error": 0.7696626821300203,
+        "q8_absolute_error": 0.5
+      },
+      {
+        "month": 202203,
+        "repeat": 2,
+        "arm": "frequency_rule",
+        "n": 47,
+        "q9_center": 6.934012643996839,
+        "q8_center": 7.2,
+        "real_q9_center": 7.865996551075478,
+        "real_q8_center": 8.0,
+        "q9_signed_error": -0.9319839070786387,
+        "q8_signed_error": -0.7999999999999998,
+        "density_point_gap_error": -0.13198390707863883,
+        "q9_absolute_error": 0.9319839070786387,
+        "q8_absolute_error": 0.7999999999999998
+      }
+    ],
+    "per_person_means_common_188": {
+      "old_c": {
+        "q9_abs_error": 3.1535189789343336,
+        "q8_abs_error": 5.075531915400891,
+        "gap": -0.07657549249085022,
+        "deflation_probability": 14.110372340425531,
+        "previous_distance": 2.3920484922969476
+      },
+      "data": {
+        "q9_abs_error": 3.163862228173601,
+        "q8_abs_error": 5.066489362209401,
+        "gap": -0.47097441055580014,
+        "deflation_probability": 13.40558510638298,
+        "previous_distance": 2.3401662951630358
+      },
+      "rule": {
+        "q9_abs_error": 3.1887725033751635,
+        "q8_abs_error": 5.0994680856136565,
+        "gap": -0.32833171895672525,
+        "deflation_probability": 13.940159574468085,
+        "previous_distance": 2.5161893207275647
+      }
+    },
+    "per_person_means_all_192_auxiliary": {
+      "old_c": {
+        "q9_abs_error": 3.1535189789343345,
+        "q8_abs_error": 5.315625000496706,
+        "gap": -0.07659439328902655,
+        "deflation_probability": 14.024739583333334,
+        "previous_distance": 2.45599370833988
+      },
+      "data": {
+        "q9_abs_error": 3.1638622281736004,
+        "q8_abs_error": 5.316927083830039,
+        "gap": -0.4792808385046829,
+        "deflation_probability": 13.30078125,
+        "previous_distance": 2.4159757961917694
+      },
+      "rule": {
+        "q9_abs_error": 3.188772503375164,
+        "q8_abs_error": 5.347656250496705,
+        "gap": -0.3306718611158492,
+        "deflation_probability": 13.819010416666666,
+        "previous_distance": 2.5832102579874174
+      }
+    },
+    "limits": [
+      "Post-result exploratory analysis; no independent confirmation.",
+      "Synthetic frequencies are not observed shopping behavior or personal price perception.",
+      "No simultaneous no-frequency control; regression cannot separate frequency addition, added category prices and earlier-batch drift.",
+      "Person-level error regression does not identify four-period aggregate median-MAE causes.",
+      "Paired differences remove additive fixed backgrounds, not all unobserved treatment-effect heterogeneity.",
+      "HC3 intervals condition on selected periods/donors/two generations; not national inference or full donor/model uncertainty.",
+      "Price contact proxy uses summed category days; not trips, actual attention weights or a personal CPI."
+    ]
+  },
+  "verification_receipt": {
+    "status": "passed_focused_offline_analysis_checks",
+    "new_api_calls": 0,
+    "OLS_HC3_and_t_intervals_checked_against_independent_numpy": [
+      "real_q9",
+      "data_q9",
+      "rule_q9",
+      "change_q9"
+    ],
+    "maximum_coefficient_or_CI_difference": 2.886579864025407e-15,
+    "math_tests": 3,
+    "all_source_hashes_match": true,
+    "protected_files_unchanged": 15,
+    "environment": {
+      "python": "3.10.9",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.15.3",
+      "statsmodels": "0.14.4"
+    },
+    "note": "Full precision original sources reloaded; private person-month JSON is a reading intermediate, not a replacement source."
+  }
+}

@@ -3,7 +3,7 @@
 
 更新：2026-10-15（北京时间）。基本流程和八期实验已完成；先验作用真实对照也已完成。此处只统计下一阶段任务，原28/31项历史清单保存在下方。
 
-当前：购买频率真实对照已完成，768请求全部有效/0连接错/0重试，记录token高峰价估$0.875。明确作用说明使跨人W1 2.232→2.413、人际IQR2.226→1.961，未过候选筛选，暂不采用该说明；频率数据/旧候选保留。下一步审查频率→具体价格体验与购物责任；原处理段混合频率/持续性要求，之后按单一要求设计对照。未判定频率数据无用，不自动追加付费实验。
+当前：购买频率离线控制诊断已完成，新API0。188人共同评价、173人完整控制；频率与误差无稳定关联，个人历史差异仍被压缩。Q8群体中心改善不等于逐人更准（5.076→5.066）。下一步检查具体价格体验/购物角色、保留个人信念的更新方式与Q8/Q9表达；不追加同配置付费模拟。
 
 ## 已完成的基础
 
@@ -35,6 +35,7 @@
 - [x] 将两组接入独立入口，完成引擎干跑、预登记和费用卡。
 - [x] 明确本批外发授权后完成768次真实请求，保留回答、费用和失败。
 - [x] 做同样本评价，解释频率作用的增量；当前候选无增量，未追加匹配与置换付费试验。
+- [x] 复用回答做频率—误差控制变量、同人差值和Q8/Q9分解，记录有限个人化与先验压缩线索。
 
 ## 3. 事件与记忆：随后开展
 
@@ -51,7 +52,7 @@
 
 最新证据：[控制变量检查与机制准备](literature/sce/heterogeneity_and_probability/behavior_mechanism_evidence_20261014.md)
 
-结果阅读：[购买频率真实对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#purchase-frequency-results)；[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
+结果阅读：[频率控制变量诊断](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-control-analysis)；[购买频率真实对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#purchase-frequency-results)；[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
 
 使用约定：Agent按实际进展打钩并重新生成可视清单。打钩表示工作完成，不表示实验机制有效。程序保留个人位置的方案作为后备，不与本阶段三条线同时推进。
 <!-- current-todo:end -->

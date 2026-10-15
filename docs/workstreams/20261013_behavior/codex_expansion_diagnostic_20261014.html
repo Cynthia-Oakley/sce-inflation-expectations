@@ -1,7 +1,32 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><aside id="next-stage-checklist" style="background:#eef4ef;border-left:4px solid #326a56;padding:18px 22px;margin-bottom:30px;line-height:1.7">
-<strong>购买频率对照已完成：这段作用说明暂不采用</strong>
-<p>768次真实请求全部有效，0连接错误、0重试；按记录token及高峰价估$0.875，非账单。明确强调频率后，跨人分布误差增加，回答差异进一步缩小。保留频率材料与旧候选，不把这一结果解释成购买频率理论无效。</p>
-<p><a href="#purchase-frequency-results">看本轮结果</a> · <a href="../../current_todo.html">当前清单（19/24）</a> · <a href="../20261014_mechanism/purchase_frequency_results_20261015.md">完整记录与复算</a></p></aside><section id="purchase-frequency-results" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<strong>频率控制变量诊断已完成：先查价格体验与信念更新怎样衔接</strong>
+<p>复用已有回答，新增API调用0。188人的共同评价、173人的完整控制分析没有发现稳定的频率—误差改善关系；个人信念仍被压缩。此前Q8的小幅改善是群体中位数，逐人误差基本没变。</p>
+<p><a href="#frequency-control-analysis">看本轮解释与图表</a> · <a href="../../current_todo.html">当前清单（20/25）</a> · <a href="../20261014_mechanism/purchase_frequency_control_results_20261015.md">方法、边界与复算</a></p></aside><section id="frequency-control-analysis" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>控制其他变量后，购买频率与误差有什么关系？</h1>
+<p><strong>还没有找到稳定的“频率提高、误差下降”关系。更明显的线索是：个人价格输入仍比较相似，模型对个人历史信念的差异保留不足。</strong> 这是对实现方式的诊断，不是购买频率理论被否定，也没有确定唯一原因。</p>
+<p>2026-10-15，新增API调用0、费用0。分析四个已看过的开发月：2020-04、2021-05/11、2022-03。每期原选48人；Q9共同支持188个不同人月，每人两次生成先平均，完整控制回归173人。</p>
+<h2>怎样做到“控制其他变量”？</h2>
+<p>控制月份、本人上期Q8/Q9及过去均值、次数和概率区间，年龄、教育、收入、地区、住房、就业、数理能力、合成支出及信心。四类频率同时进入；再比较同一个人的说明组减数据组，两组其他输入完全相同。完整模型35个参数，使用稳健区间，并做简化控制与逐月剔除检查。</p>
+<p><strong>两组都有频率，没有同期无频率组。</strong> 原说明段还包含持续性和先验提醒，不能拆出纯频率强调的因果贡献；更早C组跨批次又少了新价格，控制变量也不能修补这个对照缺口。</p>
+<h2>一、所谓个人价格体验，87.5%的差异来自月份</h2>
+<p>离线用四类记录日数加权类别同比，得到透明的价格接触代理。其87.5%的差异在月份之间，只有12.5%在同月不同人之间。97.9%的人至少一种食品类并列最高频，而大家仍看到相同的全国食品大类价格。</p>
+<figure><img src="../../../outputs/sce_frequency_controls_reading_20261015_v2/inputs.png" alt="价格接触代理的月间和月内差异，以及与上期信念宽度的并列描述"><figcaption>192个已分配人月。代理只用于诊断，没有进入模拟；不是个人CPI或真实感知通胀。右图两种量不应被要求相等。全国大类数据尚未区分常买肉、蔬菜或在不同商店购物的体验。</figcaption></figure>
+<h2>二、频率与个人误差的关系不稳定，历史差异压缩仍明显</h2>
+<p>控制后，四类频率与两组Q8/Q9个人误差都没有稳定联系。12项主要联合检验经多重比较校正均未通过。食品频率与说明组预测下调有一条探索关联，但去掉2021-11就减弱、区间跨0，不能单独拿出来当结论。</p>
+<p>个人历史通过多个相关字段进入，不能把一个系数叫“先验权重”。补充检查把上期Q8、Q9及历史均值同时提高1个百分点：真人回答的条件关联约0.61，数据组0.31，再加说明组0.24。模型保留个人差异较弱的方向，在简化控制和逐月剔除后仍在。</p>
+<figure><img src="../../../outputs/sce_frequency_controls_reading_20261015_v2/controlled_associations.png" alt="控制人口与历史后的联合先验关联及四类频率和预测差值的探索关联"><figcaption>173个完整案例，HC3 95%区间。左图是回归中的联合关联，不是LLM真实更新权重或因果干预；右图区间未作多重比较调整，不能挑一个显著系数解释机制。补充历史对比属于事后探索。</figcaption></figure>
+<h2>三、Q8群体中心稍改善，不等于每个人更准</h2>
+<p>更早C→频率数据组，群体Q8中位数MAE为0.85→0.75；同一188人的逐人Q8绝对误差约5.08→5.07，基本没变。Q9群体中心误差为0.58→0.76，逐人误差3.15→3.16。两种聚合方法和两种问法必须分开。</p>
+<figure><img src="../../../outputs/sce_frequency_controls_reading_20261015_v2/aggregate_individual_errors.png" alt="同一188人的群体中位数误差与逐人绝对误差分开展示"><figcaption>两遍绝对误差分别计算后平均。更早C是描述参照，跨批次且输入多处变化，不据此认定频率数据的纯效果。Q9是个人密度均值的跨人中位数，不是全国官方指标。</figcaption></figure>
+<h2>四、为什么点回答接近了，Q9却没有跟上？</h2>
+<p>点回答Q8和十档概率拟合的Q9均值没有必须一致的约束。逐月逐遍精确拆分可见：旧C→数据组，Q8有符号偏差改善0.075个百分点，但模型与真人“Q9中心减Q8中心”的差又下降约0.125，抵消了前面的改善。</p>
+<p>因此既要检查信念怎么更新，也要检查信念怎么表达成十档概率。这个分解不是因果归因；绝对误差不能按这个等式直接相加，也没有证据说明是计分器出了故障。</p>
+<h2>怎样理解文献与此次失败？下一步做什么？</h2>
+<p><a href="https://www.journals.uchicago.edu/doi/10.1086/713192">原研究</a>匹配实际家庭购买和具体商品价格。我们现在是另一批家庭的单周分类记录、全国大类价格和文字说明；尚未验证个人购物角色与具体价格感知。现实中有用的解释变量，也不保证加入LLM后必然提高拟合。</p>
+<ol><li>保留当前数据和负结果，先审查更细的商品、购物责任和价格体验能否匹配。</li><li>把保留原有信念与依据新信息更新分开设计；频率注意力、持续性要求不再捆绑。</li><li>独立查Q8与Q9表达差异，不靠随机噪声把回答拉散。本轮没有新的付费模拟。</li></ol>
+<p>以上是四期、合成供体、两次生成下的探索结果；173人不能代表173个独立月份，区间不包含全部供体和模型不确定性。来源哈希、3项数学检查和独立OLS/HC3计算已核验，15份待审文件原样。</p>
+<p><a href="../20261014_mechanism/purchase_frequency_control_results_20261015.md">完整方法、数字、局限与复算</a> · <a href="../20261014_mechanism/purchase_frequency_control_summary_20261015.json">无个人行的聚合备份</a> · <a href="#purchase-frequency-results">原实验结果</a> · <a href="../../current_todo.html">当前清单</a></p>
+</section><section id="purchase-frequency-results" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
 <h1>频率数据相同，明确作用说明没有更好</h1>
 <p><strong>2026-10-15完成。此次检验的是“这段说明有没有增量”，不是购买频率数据是否有价值。</strong> 两组都拿到相同的四类购买日数和价格，并保留原有信念、时间索引、新闻与政策。只有说明组明确要求高频类别获得更多关注，再判断变化会否持续。你要求删除的“不要机械外推”没有加回。</p>
 <h2>主要结果：中位数、分布、个人更新一起看</h2>
