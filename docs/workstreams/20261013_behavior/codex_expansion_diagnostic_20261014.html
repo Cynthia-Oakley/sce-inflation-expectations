@@ -1,7 +1,23 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><aside id="next-stage-checklist" style="background:#eef4ef;border-left:4px solid #326a56;padding:18px 22px;margin-bottom:30px;line-height:1.7">
-<strong>本轮已准备：让模型报“改动”，程序还原本月答案</strong>
-<p>新增API0。已完成离线中心/更新拆解、191对输入草稿和四季度匹配原型。机械保留个人位置尚未修复中心与更新；新格式也还没有真实模拟成绩。下一项接独立入口、补缺失分支、干跑后列运行卡。</p>
-<p><a href="#belief-update-preparation">最新发现与具体输入</a> · <a href="../../current_todo.html">当前清单（27/35）</a> · <a href="../20261014_mechanism/belief_update_and_matching_preparation_20261015.md">方法、复算与模拟前缺口</a></p></aside>
+<strong>人口信息回顾：已有标签，哪些还没有变成具体作用？</strong>
+<p>本轮清点不调用API。新回答格式目前只有程序与草稿，没有新模型回答。原始SCE比现用八项画像更丰富；还发现回访收入与家庭更新没有充分进入细匹配原型。</p>
+<p><a href="#population-fields-and-mechanisms">人口字段与具体作用</a> · <a href="../../current_todo.html">当前清单（28/38）</a> · <a href="#belief-update-preparation">前一轮候选准备</a></p></aside>
+<section id="population-fields-and-mechanisms" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
+<h1>没有调用模型，究竟实现了什么？P里还有什么没用好？</h1>
+<h2>先澄清：程序准备完成，模型行为尚未验证</h2>
+<p>“新回答方式已实现”指转换器、校验和191对输入草稿。人工测试上期3%、改动+0.5，程序恢复3.5%；这只能证明程序会还原答案，不能证明LLM会这样回答或答得更准。旧回答离线拆解也没有重新调用API。因此费用为0，但还没有新格式的真实效果。</p>
+<h2>SCE资料比当前八项画像丰富</h2>
+<ul><li><strong>基本人口：</strong>实际入组年龄/年龄组、性别、族裔/族群、婚姻/同居、家庭成员与不同年龄子女。</li><li><strong>教育与认知：</strong>Q36九类教育、现用三粗组；五道Numeracy题及高/低分类，另有购买力/金融知识题。现用Numeracy主要仍是一句话。</li><li><strong>经济状态：</strong>11档收入、全职/兼职等工作情况、自雇、工作数量/年限、换工作、配偶工作。现用主画像更粗。</li><li><strong>住房与地理：</strong>租/自有、其他住宅、州/大区/通勤区、本住宅/本州居住年数、搬家。住房身份不等于净财富。</li><li><strong>行为相关：</strong>财务决策分工、财务/一般风险偏好、自评健康、过去财务变好/变差。风险偏好不等于通胀信念，财务分工不等于买菜责任。</li></ul>
+<p>首次入组题很多只答一次，不能把后续空白当作无此特征。2020—2024的60个月71,976人月已核对有效记录；所选192人月中，细教育、健康、两类风险均可找到本人历史记录，性别191、财务分工181。它们还没有被新增到外发输入。</p>
+<h2>一个更优先的修正：人口状态会更新</h2>
+<p>细收入不仅有入组Q47，还有回访D6。192个所选人月中166个有更新近的历史D6，其中69个细档与入组时不同。家庭也不只在搬家时变化：18个出现D1家庭变化并有D2更新。新细分原型此前主要沿用入组记录，需要补更新链。</p>
+<p>这不表示既有所有人口都错了：旧模拟主要使用官方粗分类；直接发现的缺口在尚未运行LLM的新细分匹配。收入是过去12个月总额档，不能把所有档位变化叫工资冲击；是否跨粗组仍待核对。</p>
+<h2>“标签”怎样才算变成了机制？</h2>
+<ol><li><strong>接触什么：</strong>收入、家庭成员、住房、本人/配偶工作 → 对应消费供体、常接触的价格和个人新闻。</li><li><strong>如何理解：</strong>教育/金融知识 → 对统计、生活体验、供需或政策的不同理解。需要同事实对照，不默认高学历一定看联储、低学历一定不懂宏观。</li><li><strong>怎样表达：</strong>Numeracy与本人答题习惯 → 个人不确定性、尾部概率和表达精度。不能用“低数理”直接给预期中心加几个百分点。</li></ol>
+<p>已有本地数据中，低/高Numeracy的Q8中位数月均差约3.00pp，个人不确定性差3.35pp，但Q9派生中心中位数几乎无稳定偏移。教育/Numeracy与不确定性及尾部有关，也见<a href="https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr949.pdf">纽约联储研究§8</a>。这些是机制线索，不是固定因果规则。</p>
+<p>核心文件没有直接的个人购买频率、新闻阅读记录、央行信任或一般乐观人格。未来类别价格预期、未来财务预期等本身也是当期信念，不能冒充客观人口或价格直接塞进独立预测。</p>
+<p><a href="../20261014_mechanism/population_fields_and_mechanisms_20261015.md">完整字段、现状与下一步</a> · <a href="../../sources/sce_population_mechanism_inventory_20261015.json">聚合清点与来源哈希</a> · <a href="../../SCE_NUMERACY_AUDIT_20261008.md">已有Numeracy分析</a> · <a href="../../current_todo.html">当前清单</a></p>
+</section>
 <section id="belief-update-preparation" style="border-bottom:1px solid #ddd;padding-bottom:28px;margin-bottom:36px">
 <h1>为什么要把“原有判断”与“本月改动”分开？</h1>
 <p><strong>只把回答拉散，解决不了总体预测偏差。</strong>这轮先复用八期回答做离线拆解，再准备真正不同的回答方式；没有付费调用，没有修改原实验、正式配置或计分器。</p>

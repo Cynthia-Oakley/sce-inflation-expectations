@@ -1,9 +1,11 @@
 <!-- current-todo:start -->
 # 当前清单：信念更新、价格体验与问卷表达
 
-更新：2026-10-15（北京时间）。新增共同变化离线拆解、改动格式转换器/191对草稿、四季度细收入/家庭匹配原型及理论核查；27/35是交付进度，不是成功率。跨年CE三次下载均HTTP403，未完成目标期供体。历史任务保留在下方。
+更新：2026-10-15（北京时间）。人口字段清点新增1完成/2待办，目前28/38是交付进度，不是成功率。发现D6收入与D2家庭更新未充分进入细匹配原型；教育/Numeracy已有标签但机制仍待检验。跨年CE仍HTTP403。历史任务保留在下方。
 
 当前：机械保留个人位置能改善跨人分布，却不能修复LLM共同中心，更新分布还变差。已准备“模型报改动、程序恢复Q8/Q9”的独立草稿，不设固定更新权重；下一步接运行入口、补1例缺失Q8分支并做格式干跑，再准备真实对照。频率匹配原型保留更多家庭/细收入条件，但牺牲地区/教育，且跨年数据未补齐，不升级正式输入。本轮新增API0、费用0。
+
+补充：本轮新格式只有程序和191对草稿，没有模型新回答。人口清点发现166个所选人月有更近D6、69个细档不同，18个家庭变化；先补新匹配状态更新链，不同时改变新格式对照的P/E。教育/Numeracy的理解与概率表达机制另列候选。
 
 ## 已完成的基础
 
@@ -43,11 +45,14 @@
 - [x] 核查192人实际年龄、细收入、家庭构成的本人历史覆盖与记录新旧，未用本期补缺。
 - [x] 在CE中控制季度、收入、住房及家庭构成分析年龄与购买日数，明确关联边界。
 - [x] 处理搬家/缺失和收入边界，完成四季度细收入/家庭规模联合匹配原型与整组置换，记录其他匹配条件的牺牲。
+- [x] 清点官方人口/认知字段与当前使用情况，识别D6收入、D2家庭及就业变化的历史更新缺口。
+- [ ] 给新匹配候选补Q47/D6、Q45/D2状态更新与缺失失效规则，保留旧快照，核对粗/细档一致性。
 - [ ] 补跨年CE并核对目标期/发布时间，审定匹配优先级，再冻结无频率/匹配/置换的干净对照。
 
 ## 3. 信息理解：持续性、政策与事件
 
 - [x] 核查信息实验、信念精度、主观传导渠道与家庭价格体验的一手依据，明确共同信息收窄的合理性和迁移边界。
+- [ ] 将教育/Numeracy的信息理解与不确定性表达分开登记、验证，不机械上调中心或故意制造计算错误。
 - [ ] 查外部调查的事件理解类型及人口关联，区分实验分组与代表性分配。
 - [ ] 选定当期事件与相关历史经历，准备可追溯的年龄—记忆输入。
 - [ ] 固定同人P/E事实，单独设计持续性/事件理解对照，与频率注意力分开。
@@ -61,11 +66,11 @@
 - [ ] 对有希望的机制封存新验证期/种子、同信息基线及日期/模型知识敏感性，再检验跨时期、人群表现。
 - [ ] 单独准备B路线的模拟信念递推、新参与者初始化和误差累积检查。
 
-计划说明：[本轮准备、发现及模拟前缺口](workstreams/20261014_mechanism/belief_update_and_matching_preparation_20261015.md)
+计划说明：[人口信息、使用缺口与具体机制](workstreams/20261014_mechanism/population_fields_and_mechanisms_20261015.md)
 
 最新证据：[控制变量检查与机制准备](literature/sce/heterogeneity_and_probability/behavior_mechanism_evidence_20261014.md)
 
-结果阅读：[信念更新与匹配候选准备](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#belief-update-preparation)；[覆盖、年龄与后续优先级](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#coverage-age-and-priorities)；[多季度与匹配核查](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-quarter-matching)；[频率控制变量诊断](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-control-analysis)；[购买频率真实对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#purchase-frequency-results)；[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
+结果阅读：[人口字段与机制回顾](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#population-fields-and-mechanisms)；[信念更新与匹配候选准备](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#belief-update-preparation)；[覆盖、年龄与后续优先级](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#coverage-age-and-priorities)；[多季度与匹配核查](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-quarter-matching)；[频率控制变量诊断](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#frequency-control-analysis)；[购买频率真实对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#purchase-frequency-results)；[最新信息时间对照](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#information-update-results)；[先验作用真实对照与图表](workstreams/20261013_behavior/codex_expansion_diagnostic_20261014.html#anchor-role-results)；[完整实验记录](workstreams/20261014_mechanism/anchor_role_results_20261014.md)
 
 使用约定：Agent按实际进展打钩并重新生成可视清单。打钩表示工作完成，不表示实验机制有效。机械平移诊断不升级主机制；下一候选是改动格式，频率候选独立验证，不同时改两处。
 <!-- current-todo:end -->
