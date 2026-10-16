@@ -1,0 +1,19 @@
+{
+  "status": "prepared_and_offline_verified_authorized_not_yet_dispatched",
+  "recorded_at_utc": "2026-10-16T15:22:18.250051+00:00",
+  "folder": "outputs/sce_household_finance_trial_20261016_v1",
+  "protocol_sha256": "4208e676d30bc8c7007500d0d1be639b964e5d7c0f9228ab00174af4f3f64173",
+  "planned_calls": 576,
+  "offline_cells": 24,
+  "scripted_messages": 576,
+  "new_real_calls_at_preparation": 0,
+  "unit_tests_passed": 50,
+  "cap_usd": 3.0,
+  "estimated_peak_cost_usd": 0.6902774999999999,
+  "conservative_reservation_usd": 2.683695599999999,
+  "current_q1_coverage": 96,
+  "previous_q1_coverage": 96,
+  "research_line": "A_conditional_returner_reconstruction",
+  "user_authorization": "同意上述范围和$3上限，开始模拟",
+  "authorization_record": "outputs/sce_household_finance_trial_20261016_v1/authorization.json"
+}

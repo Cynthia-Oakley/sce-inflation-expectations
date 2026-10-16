@@ -1,0 +1,78 @@
+{
+  "research_line": "A_conditional_returner_reconstruction",
+  "model": "deepseek-flash",
+  "official_advertised_version": "DeepSeek-V4.1-Flash",
+  "model_identity_limit": "Mutable alias, not fixed weights or verified training cutoff",
+  "temperature": 0.5,
+  "max_tokens": 1024,
+  "thinking": "disabled",
+  "retry_max": 0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "baseline_refs": [
+    "copy_previous",
+    "history_anchor_half"
+  ],
+  "q8": "secondary, separate from Q9",
+  "aggregation": "Each month/repeat separately, equal cell average; Q9 headline-style center is median of individually fitted density means, not a nationwide headline.",
+  "sampling_seed": 20261016,
+  "stratum_n": {
+    "high": 14,
+    "low": 10
+  },
+  "auxiliary_weights": "Original SCE weight multiplied by within-parent stratum inverse inclusion probability; main paired analysis unweighted and equal-month. Neither implies national representativeness.",
+  "id": "sce-household-finance-pilot-v1",
+  "registered_at_utc": "2026-10-16T15:18:37.294300+00:00",
+  "months": [
+    202004,
+    202105,
+    202111,
+    202203
+  ],
+  "n_per_month": 24,
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "arms": [
+    "baseline",
+    "financial_facts",
+    "financial_perspective"
+  ],
+  "planned_calls": 576,
+  "budget_cap_usd": 3.0,
+  "pricing_verified_date": "2026-10-16",
+  "sampling": "Reuse fixed 24-person cognition roster:14 High and10 Low; Low oversampled; not a national or Q1-stratified sample. No current inflation answer used for selection.",
+  "primary_metric": "individual_density_mean_mae_pp",
+  "primary_contrast": "financial_facts minus baseline",
+  "secondary_contrasts": [
+    "financial_perspective minus financial_facts",
+    "financial_perspective minus baseline"
+  ],
+  "update_mae_identity": "Against the same observed prior, individual update absolute error equals current individual density-mean absolute error algebraically; these are not independent successes.",
+  "comparison": "Facts minus baseline changes the Q1 information package. Perspective minus facts adds only a non-directional household-viewpoint instruction. No invented events or coefficient offsets.",
+  "primary_direction": "Smaller is better; all intervals exploratory paired person-cluster bootstrap.",
+  "intervals": "1000 paired person-cluster draws retaining all months and both generations; equal month/repeat cells; no confirmatory multiplicity claim.",
+  "guardrails": [
+    "valid_fraction >= 0.99 and scorable_fraction >= 0.99 in every arm",
+    "q9_center_mae_pp and cross_section_w1_pp point changes <= 0"
+  ],
+  "candidate_gate": "Detailed-vs-baseline individual-density-mean-MAE upper exploratory95% bound<0, center and W1 point changes<=0, all-arm coverage>=99%. Pilot continuation only.",
+  "support": "All three arms and both repeats scorable for a retained person-month; report human missingness separately from model failures. Q8 support separate.",
+  "financial_groups": "Current Q1 worse=1/2, same=3, better=4/5. Same-person group medians compared with real groups per month/repeat; suppress a gap if either group has fewer than3 common people. Five codes descriptive only.",
+  "truth_isolation": "Preparation projects only date/userid/financial_change from hash-verified cache; no current Q8/Q9 parsed. Runtime receives anonymous Q1 sidecar, existing P/E and observed historical prior only.",
+  "information_boundary": "Current Q1 is contemporaneous private household assessment, explicit A auxiliary condition; public E retains existing cutoff. Does not certify Q1 or prior answers as available inputs to real-time B.",
+  "reused_paid_calls": 0,
+  "old_direct_reference": "Old identical baseline messages may be compared descriptively; all primary arms are newly generated contemporaneously.",
+  "no_tuning_after_run": true,
+  "limits": [
+    "Four inspected development months; not independent validation.",
+    "Q1 is subjective finances relative to12 months earlier; adjacent category shifts are not measured month-on-month income shocks.",
+    "Current Q1 can itself reflect inflation beliefs; not a causal Q1 experiment or strict B forecast.",
+    "Prompt length and explicit instruction effects cannot be separated from household-memory mechanisms by this pilot alone.",
+    "24-person fixed roster has only2 much-worse person-months; no claim for that subgroup or national representativeness.",
+    "Two generations are model variability, not additional respondents or a provider-enforced RNG seed.",
+    "Observed and model raw Q9 use the same frozen approximate fitter; official derived fields auxiliary only."
+  ]
+}
