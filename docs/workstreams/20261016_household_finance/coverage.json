@@ -1,0 +1,82 @@
+{
+  "status": "offline_coverage_only_no_effect_or_simulation",
+  "new_api_calls": 0,
+  "cache_sha256": "6bbb7c6452dd9c265b415433ccdcf0031213d0455a96aec085c6a37fca396806",
+  "selected_total": 96,
+  "months": {
+    "202004": {
+      "selected": 24,
+      "linked": 24,
+      "current_q1_valid": 24,
+      "current_q1_counts": {
+        "2": 9,
+        "3": 9,
+        "4": 5,
+        "5": 1
+      },
+      "previous_q1_valid": 24,
+      "adjacent_q1_pairs": 24,
+      "changed_annual_assessment": 14
+    },
+    "202105": {
+      "selected": 24,
+      "linked": 24,
+      "current_q1_valid": 24,
+      "current_q1_counts": {
+        "2": 4,
+        "3": 14,
+        "4": 5,
+        "5": 1
+      },
+      "previous_q1_valid": 24,
+      "adjacent_q1_pairs": 24,
+      "changed_annual_assessment": 4
+    },
+    "202111": {
+      "selected": 24,
+      "linked": 24,
+      "current_q1_valid": 24,
+      "current_q1_counts": {
+        "1": 1,
+        "2": 4,
+        "3": 15,
+        "4": 2,
+        "5": 2
+      },
+      "previous_q1_valid": 24,
+      "adjacent_q1_pairs": 24,
+      "changed_annual_assessment": 6
+    },
+    "202203": {
+      "selected": 24,
+      "linked": 24,
+      "current_q1_valid": 24,
+      "current_q1_counts": {
+        "1": 1,
+        "2": 8,
+        "3": 11,
+        "4": 4
+      },
+      "previous_q1_valid": 24,
+      "adjacent_q1_pairs": 24,
+      "changed_annual_assessment": 5
+    }
+  },
+  "checked_on": "2026-10-16",
+  "sources": {
+    "outputs/sce_population_associations_20261015_v1/analysis_frame_private.parquet": "6bbb7c6452dd9c265b415433ccdcf0031213d0455a96aec085c6a37fca396806",
+    "outputs/sce_population_associations_20261015_v1/summary.json": "9b3eef3218dedc1f3691f25d7c52d691fbf6eecd3dec57180b82c7c3e58cf988",
+    "outputs/sce_cognition_trial_20261016_v4/evaluation_links_private.json": "d515a020a814bc9ffa105f3ac57f6aafc37b739917ff1432ec8d98cf3d99c480"
+  },
+  "method": [
+    "Verified cached analysis-frame SHA256 against frozen association summary.",
+    "Joined current fixed roster to cache by userid and calendar month, validated one-to-one.",
+    "Joined same userid to strictly preceding calendar month; no forward fill of Q1.",
+    "Only public aggregate counts retained; Q1 codes 1..5 are ordered categories, not equally spaced amounts."
+  ],
+  "limitations": [
+    "No new effect estimate or simulation.",
+    "Current Q1 is contemporaneous subjective annual comparison, not a measured one-month income shock.",
+    "Numeracy-stratified 24-person monthly roster is not financially representative; extreme worse category has only 2 person-months."
+  ]
+}
