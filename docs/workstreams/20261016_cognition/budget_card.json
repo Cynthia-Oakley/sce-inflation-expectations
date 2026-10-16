@@ -1,0 +1,50 @@
+{
+  "status": "awaiting_specific_scope_and_budget_confirmation",
+  "recorded_at_utc": "2026-10-16T03:35:27.701538+00:00",
+  "protocol_sha256": "d34adfa6c082ccd62951071616e7973a2e6c660218961ca21a50505f715010c1",
+  "folder": "outputs/sce_cognition_trial_20261016_v4",
+  "months": [
+    202004,
+    202105,
+    202111,
+    202203
+  ],
+  "n_per_month": 24,
+  "stratum_n": {
+    "high": 14,
+    "low": 10
+  },
+  "arms": [
+    "label_only",
+    "question_answer",
+    "faithful_paraphrase"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "planned_calls": 576,
+  "destination": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "retry_max": 0,
+  "max_tokens": 1024,
+  "cap_usd": 3,
+  "estimated_peak_cost_usd": 0.7268273999999999,
+  "conservative_reservation_usd": 2.829895199999999,
+  "new_real_calls": 0,
+  "new_paid_mcp_calls": 0,
+  "new_fields": [
+    "historical raw answers QNUM1/2/3/5/6/8/9 with source months"
+  ],
+  "excluded": [
+    "original userid",
+    "survey weights",
+    "current inflation answers",
+    "actual survey dates",
+    "gender",
+    "MIDUS"
+  ],
+  "offline_cells_passed": 24
+}

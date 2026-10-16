@@ -1,0 +1,31 @@
+{
+  "status": "prepared_and_engineering_verified_not_real_simulation",
+  "recorded_at_utc": "2026-10-16T03:36:13.605712+00:00",
+  "folder": "outputs/sce_cognition_trial_20261016_v4",
+  "protocol_sha256": "d34adfa6c082ccd62951071616e7973a2e6c660218961ca21a50505f715010c1",
+  "offline_cells": 24,
+  "actual_scripted_prompt_records": 576,
+  "incremental_blocks_removed_restore_control_checks": 192,
+  "unit_tests_passed_so_far": 27,
+  "protected_files_unchanged": 15,
+  "new_real_api_calls": 0,
+  "new_paid_mcp_calls": 0,
+  "n_person_months": 96,
+  "high_low_per_month": [
+    14,
+    10
+  ],
+  "complete_seven_history_person_months": 95,
+  "one_missing_item": "One QNUM9 absent, explicitly retained as missing; no respondent excluded",
+  "estimated_peak_cost_usd": 0.7268273999999999,
+  "conservative_reservation_usd": 2.829895199999999,
+  "proposed_cap_usd": 3,
+  "truth_in_model_inputs": false,
+  "evaluation_tests_passed": 3,
+  "all_targeted_tests_passed": 30,
+  "evaluation_contract": "Same frozen fitter for observed/model ten-bin vectors; official derived values auxiliary only; raw ten-bin probability TV in probability percentage points",
+  "evaluation_source_sha256": {
+    "studies/sce_inflation_expectations/evaluation/cognition.py": "9faccae815b60cd624aeb37f651deff10fdb0a9bc9863b93b58138d0991b2aca",
+    "scripts/analyze_sce_cognition_trial.py": "bc5d69f4c0109795b9d73d63ed309fe4a1683f2d613200d9ddc38f9b0a5520cb"
+  }
+}
