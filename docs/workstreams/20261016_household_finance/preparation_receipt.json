@@ -15,5 +15,12 @@
   "previous_q1_coverage": 96,
   "research_line": "A_conditional_returner_reconstruction",
   "user_authorization": "同意上述范围和$3上限，开始模拟",
-  "authorization_record": "outputs/sce_household_finance_trial_20261016_v1/authorization.json"
+  "authorization_record": "outputs/sce_household_finance_trial_20261016_v1/authorization.json",
+  "evaluation_targeted_tests_passed": 21,
+  "total_new_targeted_tests_passed": 71,
+  "evaluation_source_sha256": {
+    "studies/sce_inflation_expectations/evaluation/household_finance.py": "a33fd12e9fac608d68dfbcf235a7b69e30fba1ca6c1ea1c3611bda48185a3540",
+    "scripts/analyze_sce_household_finance_trial.py": "a55d52909ea6ae23ddd39c7e4ad35d8cd1cb4750cfbb56d6f7a509a76118abd8",
+    "tests/test_sce_household_finance_evaluation.py": "6d5dafc635647e97df911941c9829a582dadb9b7f5a2c11e205c490f9cb83059"
+  }
 }

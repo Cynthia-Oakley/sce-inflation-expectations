@@ -1,0 +1,897 @@
+{
+  "status": "completed_exploratory_observational_increment_not_causal_or_out_of_sample",
+  "new_api_calls": 0,
+  "input_cache": "outputs/sce_population_associations_20261015_v1/analysis_frame_private.parquet",
+  "input_cache_sha256": "6bbb7c6452dd9c265b415433ccdcf0031213d0455a96aec085c6a37fca396806",
+  "input_cache_hash_verified": true,
+  "source_summary_sha256": "9b3eef3218dedc1f3691f25d7c52d691fbf6eecd3dec57180b82c7c3e58cf988",
+  "analysis_source_sha256": "53aaa0bd52c9d5f31a8d53ffbc574c3b0ff4d5ea41b850dc059461e8b841dbd5",
+  "reused_statistics_source_sha256": "958d650cbeb367fb19d563d08f0681252c3d4fa26b1c7aeefb6b5937e0d0926d",
+  "outcome": "Official published Q9_mean, percentage points; no new density fitting",
+  "controls": {
+    "age_group": [
+      "40 to 60",
+      "Under 40",
+      "Over 60"
+    ],
+    "income_group": [
+      "50k to 100k",
+      "Under 50k",
+      "Over 100k"
+    ],
+    "gender": [
+      "Male",
+      "Female"
+    ],
+    "region": [
+      "Northeast",
+      "Midwest",
+      "South",
+      "West"
+    ],
+    "employment": [
+      "employed",
+      "unemployed",
+      "on_leave",
+      "disabled",
+      "retired",
+      "student",
+      "homemaker",
+      "other"
+    ],
+    "numeracy": [
+      "High",
+      "Low"
+    ],
+    "education_fine": [
+      5,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "specification": {
+    "fixed_effects": "current calendar month",
+    "baseline": "month + categorical demographic/education/numeracy controls + strict previous official Q9_mean",
+    "q1_categories": {
+      "worse": [
+        1,
+        2
+      ],
+      "same_reference": [
+        3
+      ],
+      "better": [
+        4,
+        5
+      ]
+    },
+    "transition": "nine categorical previous-to-current groups; same_to_same reference",
+    "weights": "current official positive weight, equal total weight in each month within each common sample",
+    "inference": "person-cluster CR1; absorbed month count included in residual degrees of freedom; 95% t intervals",
+    "R2": "within-month sample fit on identical observations in all nested comparisons",
+    "multiplicity": "exploratory unadjusted intervals and joint p values; no isolated significance claims",
+    "pair_rule": "same userid and exactly one calendar month; current and previous timeline_consistent and tenure_valid",
+    "lag_boundary": "formed on full cached history before period slicing; preceding December retained for January"
+  },
+  "periods": {
+    "2020_2022": {
+      "sample_flow": {
+        "original_period": {
+          "rows": 44971,
+          "persons": 6607,
+          "months": 36
+        },
+        "calendar_adjacent": {
+          "rows": 37604,
+          "persons": 5482,
+          "months": 36
+        },
+        "also_valid_current_and_previous_panel_tenure": {
+          "rows": 37297,
+          "persons": 5482,
+          "months": 36
+        },
+        "complete_weight_q9_lag_q9_controls_before_q1": {
+          "rows": 35997,
+          "persons": 5360,
+          "months": 36
+        },
+        "common_complete_both_q1_all_models": {
+          "rows": 35973,
+          "persons": 5360,
+          "months": 36
+        }
+      },
+      "current_q1_five_category_counts": {
+        "1": 1970,
+        "2": 8872,
+        "3": 16096,
+        "4": 7506,
+        "5": 1529
+      },
+      "previous_q1_five_category_counts": {
+        "1": 2053,
+        "2": 8765,
+        "3": 15866,
+        "4": 7626,
+        "5": 1663
+      },
+      "five_category_unchanged_rows": 23742,
+      "three_category_unchanged_rows": 26030,
+      "transition_counts": {
+        "same_to_same": {
+          "rows": 11569,
+          "persons": 2940,
+          "months": 36
+        },
+        "same_to_worse": {
+          "rows": 2288,
+          "persons": 1675,
+          "months": 36
+        },
+        "same_to_better": {
+          "rows": 2009,
+          "persons": 1498,
+          "months": 36
+        },
+        "worse_to_same": {
+          "rows": 2329,
+          "persons": 1749,
+          "months": 36
+        },
+        "worse_to_worse": {
+          "rows": 7962,
+          "persons": 2173,
+          "months": 36
+        },
+        "worse_to_better": {
+          "rows": 527,
+          "persons": 474,
+          "months": 36
+        },
+        "better_to_same": {
+          "rows": 2198,
+          "persons": 1615,
+          "months": 36
+        },
+        "better_to_worse": {
+          "rows": 592,
+          "persons": 535,
+          "months": 36
+        },
+        "better_to_better": {
+          "rows": 6499,
+          "persons": 1886,
+          "months": 36
+        }
+      },
+      "models_q9_level": {
+        "base": {
+          "rows": 35973,
+          "persons": 5360,
+          "months": 36,
+          "R2_within_month_in_sample": 0.345804053794714,
+          "finance_coefficients_pp": {},
+          "lag_q9_coefficient": {
+            "estimate": 0.5755307880316004,
+            "se_person_cluster": 0.014092454609529945,
+            "ci95": [
+              0.5479038448439294,
+              0.6031577312192714
+            ]
+          },
+          "joint_by_factor": {},
+          "R2_increment_vs_base": 0.0
+        },
+        "add_previous_q1": {
+          "rows": 35973,
+          "persons": 5360,
+          "months": 36,
+          "R2_within_month_in_sample": 0.347123880964492,
+          "finance_coefficients_pp": {
+            "lag_q1_status=worse": {
+              "estimate": 0.5277182796751483,
+              "se_person_cluster": 0.12751179878205576,
+              "ci95": [
+                0.27774328821217464,
+                0.7776932711381219
+              ]
+            },
+            "lag_q1_status=better": {
+              "estimate": -0.01829096631819994,
+              "se_person_cluster": 0.11346174788589376,
+              "ci95": [
+                -0.24072214311955584,
+                0.20414021048315598
+              ]
+            }
+          },
+          "lag_q9_coefficient": {
+            "estimate": 0.5715484125242244,
+            "se_person_cluster": 0.014256566270931477,
+            "ci95": [
+              0.5435997437272398,
+              0.5994970813212089
+            ]
+          },
+          "joint_by_factor": {
+            "lag_q1_status": {
+              "chi2": 19.560456823206668,
+              "df": 2,
+              "p_unadjusted_exploratory": 5.655887586831075e-05
+            }
+          },
+          "joint_all_finance": {
+            "chi2": 19.560456823206668,
+            "df": 2,
+            "p_unadjusted_exploratory": 5.655887586831075e-05
+          },
+          "R2_increment_vs_base": 0.001319827169777965
+        },
+        "add_current_q1": {
+          "rows": 35973,
+          "persons": 5360,
+          "months": 36,
+          "R2_within_month_in_sample": 0.34748123889997284,
+          "finance_coefficients_pp": {
+            "q1_status=worse": {
+              "estimate": 0.5631464027456333,
+              "se_person_cluster": 0.10956930232348837,
+              "ci95": [
+                0.34834600251182835,
+                0.7779468029794383
+              ]
+            },
+            "q1_status=better": {
+              "estimate": -0.10657031551986915,
+              "se_person_cluster": 0.10722973429841974,
+              "ci95": [
+                -0.31678421079742947,
+                0.10364357975769115
+              ]
+            }
+          },
+          "lag_q9_coefficient": {
+            "estimate": 0.5711314426122396,
+            "se_person_cluster": 0.0141701094159244,
+            "ci95": [
+              0.5433522644176835,
+              0.5989106208067957
+            ]
+          },
+          "joint_by_factor": {
+            "q1_status": {
+              "chi2": 31.555432933869103,
+              "df": 2,
+              "p_unadjusted_exploratory": 1.4054804252589855e-07
+            }
+          },
+          "joint_all_finance": {
+            "chi2": 31.555432933869103,
+            "df": 2,
+            "p_unadjusted_exploratory": 1.4054804252589855e-07
+          },
+          "R2_increment_vs_base": 0.0016771851052588271
+        },
+        "add_both_q1": {
+          "rows": 35973,
+          "persons": 5360,
+          "months": 36,
+          "R2_within_month_in_sample": 0.34773912798091233,
+          "finance_coefficients_pp": {
+            "lag_q1_status=worse": {
+              "estimate": 0.29733546372474734,
+              "se_person_cluster": 0.15437335787432127,
+              "ci95": [
+                -0.005299109587966255,
+                0.599970037037461
+              ]
+            },
+            "lag_q1_status=better": {
+              "estimate": 0.07996074339275541,
+              "se_person_cluster": 0.12274552726706055,
+              "ci95": [
+                -0.16067041720396583,
+                0.3205919039894767
+              ]
+            },
+            "q1_status=worse": {
+              "estimate": 0.4038462282014477,
+              "se_person_cluster": 0.13377739871452807,
+              "ci95": [
+                0.14158811231712376,
+                0.6661043440857717
+              ]
+            },
+            "q1_status=better": {
+              "estimate": -0.12953716898707585,
+              "se_person_cluster": 0.11508770594370164,
+              "ci95": [
+                -0.35515588494560724,
+                0.09608154697145552
+              ]
+            }
+          },
+          "lag_q9_coefficient": {
+            "estimate": 0.5702649173360331,
+            "se_person_cluster": 0.014256719106686857,
+            "ci95": [
+              0.5423159489188015,
+              0.5982138857532647
+            ]
+          },
+          "joint_by_factor": {
+            "lag_q1_status": {
+              "chi2": 3.715762577411805,
+              "df": 2,
+              "p_unadjusted_exploratory": 0.15600280537738934
+            },
+            "q1_status": {
+              "chi2": 12.503958405826726,
+              "df": 2,
+              "p_unadjusted_exploratory": 0.0019266371543140402
+            }
+          },
+          "joint_all_finance": {
+            "chi2": 34.117277587351,
+            "df": 4,
+            "p_unadjusted_exploratory": 7.050376580668718e-07
+          },
+          "R2_increment_vs_base": 0.0019350741861983156,
+          "R2_increment_vs_previous_q1": 0.0006152470164203505,
+          "R2_increment_vs_current_q1": 0.0002578890809394885
+        },
+        "add_q1_transition": {
+          "rows": 35973,
+          "persons": 5360,
+          "months": 36,
+          "R2_within_month_in_sample": 0.3479149034307857,
+          "finance_coefficients_pp": {
+            "transition=same_to_worse": {
+              "estimate": 0.28017464430262334,
+              "se_person_cluster": 0.20853462184685692,
+              "ci95": [
+                -0.12863803667132223,
+                0.6889873252765689
+              ]
+            },
+            "transition=same_to_better": {
+              "estimate": 0.02293540093870161,
+              "se_person_cluster": 0.16518177598016479,
+              "ci95": [
+                -0.30088806822163844,
+                0.34675887009904166
+              ]
+            },
+            "transition=worse_to_same": {
+              "estimate": 0.3104741704589423,
+              "se_person_cluster": 0.1977293004701461,
+              "ci95": [
+                -0.07715568551608182,
+                0.6981040264339664
+              ]
+            },
+            "transition=worse_to_worse": {
+              "estimate": 0.7318497880021593,
+              "se_person_cluster": 0.14104151092862052,
+              "ci95": [
+                0.45535105747630317,
+                1.0083485185280154
+              ]
+            },
+            "transition=worse_to_better": {
+              "estimate": -0.4069982175333072,
+              "se_person_cluster": 0.3206607449810183,
+              "ci95": [
+                -1.0356237075253834,
+                0.221627272458769
+              ]
+            },
+            "transition=better_to_same": {
+              "estimate": 0.05840691192108155,
+              "se_person_cluster": 0.17582317086842392,
+              "ci95": [
+                -0.28627801964316785,
+                0.40309184348533095
+              ]
+            },
+            "transition=better_to_worse": {
+              "estimate": 0.5387169703416772,
+              "se_person_cluster": 0.29489668973920063,
+              "ci95": [
+                -0.03940049176089455,
+                1.116834432444249
+              ]
+            },
+            "transition=better_to_better": {
+              "estimate": -0.047514364420447736,
+              "se_person_cluster": 0.13521975380782777,
+              "ci95": [
+                -0.3126000829703919,
+                0.21757135412949644
+              ]
+            }
+          },
+          "lag_q9_coefficient": {
+            "estimate": 0.5703524965180116,
+            "se_person_cluster": 0.014236733809053291,
+            "ci95": [
+              0.5424427074132284,
+              0.5982622856227947
+            ]
+          },
+          "joint_by_factor": {
+            "transition": {
+              "chi2": 38.28013003707624,
+              "df": 8,
+              "p_unadjusted_exploratory": 6.682092842855907e-06
+            }
+          },
+          "joint_all_finance": {
+            "chi2": 38.28013003707624,
+            "df": 8,
+            "p_unadjusted_exploratory": 6.682092842855907e-06
+          },
+          "R2_increment_vs_base": 0.0021108496360716655,
+          "R2_increment_vs_additive_both": 0.00017577544987334992
+        }
+      },
+      "models_q9_update_given_previous_q9": {
+        "base": {
+          "R2_within_month_in_sample": 0.21301136746785754,
+          "lag_q9_coefficient": {
+            "estimate": -0.42446921196840015,
+            "se_person_cluster": 0.014092454609529945,
+            "ci95": [
+              -0.45209615515607116,
+              -0.39684226878072915
+            ]
+          },
+          "R2_increment_vs_base": 0.0
+        },
+        "add_both_q1": {
+          "R2_within_month_in_sample": 0.21533923482392736,
+          "lag_q9_coefficient": {
+            "estimate": -0.42973508266396615,
+            "se_person_cluster": 0.014256719106686851,
+            "ci95": [
+              -0.4576840510811977,
+              -0.4017861142467346
+            ]
+          },
+          "R2_increment_vs_base": 0.0023278673560698238
+        },
+        "add_q1_transition": {
+          "R2_within_month_in_sample": 0.21555069024753715,
+          "lag_q9_coefficient": {
+            "estimate": -0.42964750348198805,
+            "se_person_cluster": 0.014236733809053288,
+            "ci95": [
+              -0.45755729258677125,
+              -0.40173771437720485
+            ]
+          },
+          "R2_increment_vs_base": 0.002539322779679609
+        }
+      },
+      "verification_level_update_max_abs_coefficient_difference": 6.6058269965196814e-15
+    },
+    "2023_2025_10": {
+      "sample_flow": {
+        "original_period": {
+          "rows": 37564,
+          "persons": 5443,
+          "months": 34
+        },
+        "calendar_adjacent": {
+          "rows": 31343,
+          "persons": 4666,
+          "months": 34
+        },
+        "also_valid_current_and_previous_panel_tenure": {
+          "rows": 30813,
+          "persons": 4666,
+          "months": 34
+        },
+        "complete_weight_q9_lag_q9_controls_before_q1": {
+          "rows": 29921,
+          "persons": 4587,
+          "months": 34
+        },
+        "common_complete_both_q1_all_models": {
+          "rows": 29886,
+          "persons": 4584,
+          "months": 34
+        }
+      },
+      "current_q1_five_category_counts": {
+        "1": 2005,
+        "2": 8049,
+        "3": 12782,
+        "4": 5997,
+        "5": 1053
+      },
+      "previous_q1_five_category_counts": {
+        "1": 2195,
+        "2": 8367,
+        "3": 12287,
+        "4": 5948,
+        "5": 1089
+      },
+      "five_category_unchanged_rows": 19505,
+      "three_category_unchanged_rows": 21488,
+      "transition_counts": {
+        "same_to_same": {
+          "rows": 8798,
+          "persons": 2382,
+          "months": 34
+        },
+        "same_to_worse": {
+          "rows": 1925,
+          "persons": 1422,
+          "months": 34
+        },
+        "same_to_better": {
+          "rows": 1564,
+          "persons": 1184,
+          "months": 34
+        },
+        "worse_to_same": {
+          "rows": 2318,
+          "persons": 1677,
+          "months": 34
+        },
+        "worse_to_worse": {
+          "rows": 7724,
+          "persons": 2104,
+          "months": 34
+        },
+        "worse_to_better": {
+          "rows": 520,
+          "persons": 450,
+          "months": 34
+        },
+        "better_to_same": {
+          "rows": 1666,
+          "persons": 1233,
+          "months": 34
+        },
+        "better_to_worse": {
+          "rows": 405,
+          "persons": 359,
+          "months": 34
+        },
+        "better_to_better": {
+          "rows": 4966,
+          "persons": 1427,
+          "months": 34
+        }
+      },
+      "models_q9_level": {
+        "base": {
+          "rows": 29886,
+          "persons": 4584,
+          "months": 34,
+          "R2_within_month_in_sample": 0.3891174139428094,
+          "finance_coefficients_pp": {},
+          "lag_q9_coefficient": {
+            "estimate": 0.6038077620869529,
+            "se_person_cluster": 0.01761678464899025,
+            "ci95": [
+              0.569270377411504,
+              0.6383451467624017
+            ]
+          },
+          "joint_by_factor": {},
+          "R2_increment_vs_base": 0.0
+        },
+        "add_previous_q1": {
+          "rows": 29886,
+          "persons": 4584,
+          "months": 34,
+          "R2_within_month_in_sample": 0.3919303810640131,
+          "finance_coefficients_pp": {
+            "lag_q1_status=worse": {
+              "estimate": 0.5248116595669412,
+              "se_person_cluster": 0.1046834803129778,
+              "ci95": [
+                0.3195816076152459,
+                0.7300417115186365
+              ]
+            },
+            "lag_q1_status=better": {
+              "estimate": -0.4047369741862275,
+              "se_person_cluster": 0.09485726182658231,
+              "ci95": [
+                -0.5907029041922022,
+                -0.21877104418025287
+              ]
+            }
+          },
+          "lag_q9_coefficient": {
+            "estimate": 0.5949571189954925,
+            "se_person_cluster": 0.01780471361043653,
+            "ci95": [
+              0.5600513030221393,
+              0.6298629349688457
+            ]
+          },
+          "joint_by_factor": {
+            "lag_q1_status": {
+              "chi2": 67.28893601254987,
+              "df": 2,
+              "p_unadjusted_exploratory": 2.445643769395782e-15
+            }
+          },
+          "joint_all_finance": {
+            "chi2": 67.28893601254987,
+            "df": 2,
+            "p_unadjusted_exploratory": 2.445643769395782e-15
+          },
+          "R2_increment_vs_base": 0.0028129671212037133
+        },
+        "add_current_q1": {
+          "rows": 29886,
+          "persons": 4584,
+          "months": 34,
+          "R2_within_month_in_sample": 0.39391654026648637,
+          "finance_coefficients_pp": {
+            "q1_status=worse": {
+              "estimate": 0.8376065641455874,
+              "se_person_cluster": 0.10572984469448456,
+              "ci95": [
+                0.6303251339273787,
+                1.0448879943637963
+              ]
+            },
+            "q1_status=better": {
+              "estimate": -0.29054922263411986,
+              "se_person_cluster": 0.09454222073716492,
+              "ci95": [
+                -0.47589752033598365,
+                -0.1052009249322561
+              ]
+            }
+          },
+          "lag_q9_coefficient": {
+            "estimate": 0.5923460133405278,
+            "se_person_cluster": 0.01773175312429331,
+            "ci95": [
+              0.5575832350682219,
+              0.6271087916128337
+            ]
+          },
+          "joint_by_factor": {
+            "q1_status": {
+              "chi2": 102.27142453906916,
+              "df": 2,
+              "p_unadjusted_exploratory": 6.195014584579608e-23
+            }
+          },
+          "joint_all_finance": {
+            "chi2": 102.27142453906916,
+            "df": 2,
+            "p_unadjusted_exploratory": 6.195014584579608e-23
+          },
+          "R2_increment_vs_base": 0.004799126323676961
+        },
+        "add_both_q1": {
+          "rows": 29886,
+          "persons": 4584,
+          "months": 34,
+          "R2_within_month_in_sample": 0.39415862631865795,
+          "finance_coefficients_pp": {
+            "lag_q1_status=worse": {
+              "estimate": 0.0959467422319052,
+              "se_person_cluster": 0.11351795620155236,
+              "ci95": [
+                -0.12660313840868576,
+                0.3184966228724962
+              ]
+            },
+            "lag_q1_status=better": {
+              "estimate": -0.2606683364609347,
+              "se_person_cluster": 0.11456933517537708,
+              "ci95": [
+                -0.4852794263847273,
+                -0.03605724653714207
+              ]
+            },
+            "q1_status=worse": {
+              "estimate": 0.7654607563228213,
+              "se_person_cluster": 0.11517302255031925,
+              "ci95": [
+                0.5396661483219496,
+                0.991255364323693
+              ]
+            },
+            "q1_status=better": {
+              "estimate": -0.13893021788658094,
+              "se_person_cluster": 0.11336452273479172,
+              "ci95": [
+                -0.361179295016816,
+                0.08331885924365415
+              ]
+            }
+          },
+          "lag_q9_coefficient": {
+            "estimate": 0.5913932901934298,
+            "se_person_cluster": 0.017817454691099504,
+            "ci95": [
+              0.5564624955640503,
+              0.6263240848228093
+            ]
+          },
+          "joint_by_factor": {
+            "lag_q1_status": {
+              "chi2": 6.906738468299661,
+              "df": 2,
+              "p_unadjusted_exploratory": 0.03163885787776981
+            },
+            "q1_status": {
+              "chi2": 50.733451584044076,
+              "df": 2,
+              "p_unadjusted_exploratory": 9.62434016854492e-12
+            }
+          },
+          "joint_all_finance": {
+            "chi2": 111.95515290966972,
+            "df": 4,
+            "p_unadjusted_exploratory": 2.7858094540780057e-23
+          },
+          "R2_increment_vs_base": 0.005041212375848536,
+          "R2_increment_vs_previous_q1": 0.002228245254644823,
+          "R2_increment_vs_current_q1": 0.00024208605217157508
+        },
+        "add_q1_transition": {
+          "rows": 29886,
+          "persons": 4584,
+          "months": 34,
+          "R2_within_month_in_sample": 0.39431277727423086,
+          "finance_coefficients_pp": {
+            "transition=same_to_worse": {
+              "estimate": 0.5364300519881819,
+              "se_person_cluster": 0.16386553309635918,
+              "ci95": [
+                0.21517466603891622,
+                0.8576854379374477
+              ]
+            },
+            "transition=same_to_better": {
+              "estimate": -0.22824048761750665,
+              "se_person_cluster": 0.1740504448741082,
+              "ci95": [
+                -0.5694632071615433,
+                0.11298223192653001
+              ]
+            },
+            "transition=worse_to_same": {
+              "estimate": -0.07804882516894561,
+              "se_person_cluster": 0.16448975664432094,
+              "ci95": [
+                -0.40052798998756733,
+                0.2444303396496761
+              ]
+            },
+            "transition=worse_to_worse": {
+              "estimate": 0.8642114725256943,
+              "se_person_cluster": 0.1283374510948476,
+              "ci95": [
+                0.6126082427056931,
+                1.1158147023456955
+              ]
+            },
+            "transition=worse_to_better": {
+              "estimate": -0.28349627285712864,
+              "se_person_cluster": 0.33509448219162735,
+              "ci95": [
+                -0.9404428873879449,
+                0.3734503416736876
+              ]
+            },
+            "transition=better_to_same": {
+              "estimate": -0.38828105081608294,
+              "se_person_cluster": 0.1560075969618664,
+              "ci95": [
+                -0.694131096435685,
+                -0.08243100519648078
+              ]
+            },
+            "transition=better_to_worse": {
+              "estimate": 0.3667611328610578,
+              "se_person_cluster": 0.3299272599648075,
+              "ci95": [
+                -0.280055236831837,
+                1.0135775025539526
+              ]
+            },
+            "transition=better_to_better": {
+              "estimate": -0.4116577125204456,
+              "se_person_cluster": 0.11123543060422683,
+              "ci95": [
+                -0.6297327433994537,
+                -0.19358268164143747
+              ]
+            }
+          },
+          "lag_q9_coefficient": {
+            "estimate": 0.5908944642386963,
+            "se_person_cluster": 0.017767741184794354,
+            "ci95": [
+              0.5560611320308105,
+              0.625727796446582
+            ]
+          },
+          "joint_by_factor": {
+            "transition": {
+              "chi2": 113.78450480394639,
+              "df": 8,
+              "p_unadjusted_exploratory": 6.340329856650754e-21
+            }
+          },
+          "joint_all_finance": {
+            "chi2": 113.78450480394639,
+            "df": 8,
+            "p_unadjusted_exploratory": 6.340329856650754e-21
+          },
+          "R2_increment_vs_base": 0.005195363331421454,
+          "R2_increment_vs_additive_both": 0.00015415095557291814
+        }
+      },
+      "models_q9_update_given_previous_q9": {
+        "base": {
+          "R2_within_month_in_sample": 0.20703245355271904,
+          "lag_q9_coefficient": {
+            "estimate": -0.39619223791304775,
+            "se_person_cluster": 0.017616784648990257,
+            "ci95": [
+              -0.4307296225884967,
+              -0.36165485323759883
+            ]
+          },
+          "R2_increment_vs_base": 0.0
+        },
+        "add_both_q1": {
+          "R2_within_month_in_sample": 0.21357629340023754,
+          "lag_q9_coefficient": {
+            "estimate": -0.4086067098065688,
+            "se_person_cluster": 0.0178174546910995,
+            "ci95": [
+              -0.4435375044359484,
+              -0.37367591517718923
+            ]
+          },
+          "R2_increment_vs_base": 0.006543839847518496
+        },
+        "add_q1_transition": {
+          "R2_within_month_in_sample": 0.21377639192622777,
+          "lag_q9_coefficient": {
+            "estimate": -0.4091055357613057,
+            "se_person_cluster": 0.017767741184794367,
+            "ci95": [
+              -0.44393886796919146,
+              -0.37427220355341995
+            ]
+          },
+          "R2_increment_vs_base": 0.006743938373508729
+        }
+      },
+      "verification_level_update_max_abs_coefficient_difference": 6.8833827526759706e-15
+    }
+  },
+  "limitations": [
+    "Both periods have already been examined; neither is a new independent validation period.",
+    "Q1 is a subjective rolling comparison with 12 months earlier, not an observed income shock.",
+    "Q1 category levels and transitions are modeled categorically; no numeric 1-to-5 subtraction.",
+    "Current Q1 and current inflation answers are contemporaneous; reverse causality and changing omitted factors remain.",
+    "Conditioning on previous Q9 does not identify causal effects or demonstrate LLM improvements.",
+    "This official-derived Q9 truth differs from the later simulation evaluation requirement to score both human and model raw bins with one frozen scorer.",
+    "Cluster intervals do not capture every aspect of the survey design; R2 increments are not held-out prediction gains."
+  ]
+}
