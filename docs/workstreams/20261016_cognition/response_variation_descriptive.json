@@ -1,0 +1,31 @@
+{
+  "status": "post_run_descriptive_only_not_preregistered_success_test",
+  "n_person_months": 96,
+  "scope": "All96 assigned person-months; all model outputs valid, human truth not needed. Equal month/repeat weighting. Cross-arm distance is not a causal estimate net of generation noise. No new API.",
+  "metrics": {
+    "question_answer_vs_label_only": {
+      "mean_probability_tv_pct": 10.536458333333334,
+      "mean_absolute_q9_mean_difference_pp": 0.8248213167178955
+    },
+    "faithful_paraphrase_vs_label_only": {
+      "mean_probability_tv_pct": 11.771875,
+      "mean_absolute_q9_mean_difference_pp": 0.8824255060790974
+    },
+    "faithful_paraphrase_vs_question_answer": {
+      "mean_probability_tv_pct": 10.844791666666666,
+      "mean_absolute_q9_mean_difference_pp": 0.781379990394076
+    },
+    "same_label_only_repeat1_vs_repeat2": {
+      "mean_probability_tv_pct": 10.231250000000001,
+      "mean_absolute_q9_mean_difference_pp": 0.8184695478241508
+    },
+    "same_question_answer_repeat1_vs_repeat2": {
+      "mean_probability_tv_pct": 10.433333333333334,
+      "mean_absolute_q9_mean_difference_pp": 0.7280186333933208
+    },
+    "same_faithful_paraphrase_repeat1_vs_repeat2": {
+      "mean_probability_tv_pct": 12.151041666666666,
+      "mean_absolute_q9_mean_difference_pp": 0.9229550016759811
+    }
+  }
+}

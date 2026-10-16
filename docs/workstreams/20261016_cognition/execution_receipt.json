@@ -1,0 +1,41 @@
+{
+  "status": "completed_real_trial",
+  "recorded_at_utc": "2026-10-16T04:19:13.665295+00:00",
+  "protocol_sha256": "d34adfa6c082ccd62951071616e7973a2e6c660218961ca21a50505f715010c1",
+  "source_commit": "aa83e11",
+  "trial_folder": "outputs/sce_cognition_trial_20261016_v4",
+  "planned_and_actual_calls": 576,
+  "completed_cells": 24,
+  "valid_actions": 576,
+  "retry_count": 0,
+  "endpoint": "https://api.deepseek.com",
+  "requested_model": "deepseek-flash",
+  "returned_model_counts": {
+    "deepseek-flash": 576
+  },
+  "system_fingerprint_counts": {
+    "aeb56401ca74e127821c4f9126dcb669": 576
+  },
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "provider_sampling_seed_not_guaranteed": true,
+  "started_at_utc": "2026-10-16T04:14:06.422750+00:00",
+  "finished_at_utc": "2026-10-16T04:18:18.096781+00:00",
+  "wall_seconds": 251.674031,
+  "tokens": {
+    "prompt_tokens": 1932846,
+    "completion_tokens": 92452,
+    "total_tokens": 2025298
+  },
+  "peak_uncached_token_cost_estimate_usd": 0.6907960000000001,
+  "provider_bill_available": false,
+  "authorized_cap_usd": 3,
+  "budget_cap_exceeded": false,
+  "new_paid_mcp_calls": 0,
+  "actual_call_logs_and_raw_replies": "outputs/local_runs/<trial-run_id>/llm_calls.jsonl (private local, not committed)",
+  "authorization_sha256": "5377e804db32c72e406d9a814226e063d95bba39e197bf1118c3146a3b7151a0"
+}

@@ -1,5 +1,5 @@
 {
-  "status": "awaiting_specific_scope_and_budget_confirmation",
+  "status": "completed_real_trial",
   "recorded_at_utc": "2026-10-16T03:35:27.701538+00:00",
   "protocol_sha256": "d34adfa6c082ccd62951071616e7973a2e6c660218961ca21a50505f715010c1",
   "folder": "outputs/sce_cognition_trial_20261016_v4",
@@ -33,7 +33,7 @@
   "cap_usd": 3,
   "estimated_peak_cost_usd": 0.7268273999999999,
   "conservative_reservation_usd": 2.829895199999999,
-  "new_real_calls": 0,
+  "new_real_calls": 576,
   "new_paid_mcp_calls": 0,
   "new_fields": [
     "historical raw answers QNUM1/2/3/5/6/8/9 with source months"
@@ -46,5 +46,11 @@
     "gender",
     "MIDUS"
   ],
-  "offline_cells_passed": 24
+  "offline_cells_passed": 24,
+  "authorization_record": "outputs/sce_cognition_trial_20261016_v4/authorization.json",
+  "user_authorization": "同意上述范围和$3上限，开始实验",
+  "authorized_at_utc": "2026-10-16T04:13:55.001722+00:00",
+  "actual_calls": 576,
+  "actual_peak_token_cost_estimate_usd": 0.6907960000000001,
+  "provider_bill_available": false
 }

@@ -1,0 +1,16 @@
+{
+  "status": "completed_and_recorded",
+  "real_calls": 576,
+  "raw_replies_reconstructed_and_matched": 576,
+  "new_retries": 0,
+  "all_model_answers_valid_and_scorable": true,
+  "evaluation_summary_sha256": "5e154448da08c392b56530f3185a68c2d5493c4e01d692850d6133dd0f4f2d40",
+  "paired_q9_person_months": 92,
+  "paired_q8_person_months": 96,
+  "new_api_calls_during_analysis": 0,
+  "auxiliary_descriptions_recomputed_exactly": true,
+  "protected_files_unchanged": 15,
+  "plot_visual_qa": "Three v2 PNGs visually checked; v1 group labels issue retained as old artifact",
+  "existing_reading_page_links_checked": true,
+  "source_note": "Main preparation/runtime unchanged since aa83e11; plot and descriptive diagnostics are post-run analysis only"
+}
