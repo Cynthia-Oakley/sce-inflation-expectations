@@ -1,0 +1,56 @@
+{
+  "status": "posthoc_explanation_same_frozen_cases_no_new_simulation",
+  "recorded_on_client": "2026-10-17",
+  "new_api_calls": 0,
+  "source_case_sha256": "8fc358b976340023a95b77af1ef2e27e85a79fef023d624f859e743c5501ed1c",
+  "common_q9_person_months": 92,
+  "aggregation": "First compute group-only metrics in each month/repeat, then equal-weight eight cells; compare equal people with existing individual survey/design weights within the same group. Multiplying all weights in a group by its numeracy calibration constant does not change that group-only distribution.",
+  "aggregate": {
+    "High": {
+      "equal/label_only": {
+        "q9_center_mae_pp": 0.8671147961409879,
+        "individual_density_mean_mae_pp": 2.515158899143337,
+        "cross_section_w1_pp": 1.6778417038633124
+      },
+      "within_group_survey_design_weight/label_only": {
+        "q9_center_mae_pp": 0.9825471939046996,
+        "individual_density_mean_mae_pp": 2.676894515921424,
+        "cross_section_w1_pp": 1.9438401899959847
+      },
+      "equal/question_answer": {
+        "q9_center_mae_pp": 1.089183513626415,
+        "individual_density_mean_mae_pp": 2.453911513417985,
+        "cross_section_w1_pp": 1.764869878371846
+      },
+      "within_group_survey_design_weight/question_answer": {
+        "q9_center_mae_pp": 1.3846716429069312,
+        "individual_density_mean_mae_pp": 2.6511630648196136,
+        "cross_section_w1_pp": 2.0316537819544673
+      }
+    },
+    "Low": {
+      "equal/label_only": {
+        "q9_center_mae_pp": 0.772701766976889,
+        "individual_density_mean_mae_pp": 4.711199913499512,
+        "cross_section_w1_pp": 3.57911455235401
+      },
+      "within_group_survey_design_weight/label_only": {
+        "q9_center_mae_pp": 0.9911533587154,
+        "individual_density_mean_mae_pp": 4.472999841470228,
+        "cross_section_w1_pp": 3.660307160153132
+      },
+      "equal/question_answer": {
+        "q9_center_mae_pp": 0.7376460590384705,
+        "individual_density_mean_mae_pp": 4.953934358894601,
+        "cross_section_w1_pp": 3.5400506949809456
+      },
+      "within_group_survey_design_weight/question_answer": {
+        "q9_center_mae_pp": 1.273170298047551,
+        "individual_density_mean_mae_pp": 4.978695617391267,
+        "cross_section_w1_pp": 4.002902047111641
+      }
+    }
+  },
+  "meaning": "Earlier Low benefit refers only to a small equal-weight group-median MAE reduction. Low individual MAE is higher; using within-group respondent weights also raises group-median MAE. Thus a change of evaluation weighting removes even the subgroup benefit; nonlinear pooled medians are a separate reason not to infer pooled performance from subgroup medians.",
+  "inference": "Descriptive only; no new subgroup significance or causal claims."
+}
