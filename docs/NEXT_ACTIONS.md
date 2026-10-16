@@ -90,7 +90,7 @@
 
 详细验收：[最终提交](../submission/README.md)；反馈与已有覆盖：[评审对照收据](sources/organizer_feedback_20261015.json)。已看八期及机制结果不重新称为全新独立验证。研究框架与后续时间安排未因本轮定向审阅而改变。
 
-计划说明：[仅低数理组加题试算](workstreams/20261016_cognition/low_only_results.md)；[家庭财务处境三组结果](workstreams/20261016_household_finance/results.md)；[认知表达三组结果](workstreams/20261016_cognition/results.md)；[本轮格式实验结果及下一交付](workstreams/20261014_mechanism/revision_format_results_20261015.md)；[真人字段关联结果与注入边界](workstreams/20261014_mechanism/population_association_results_20261015.md)
+计划说明：[当前配置与误差总览](CURRENT_SIMULATION_CONFIGURATION.md)；[仅低数理组加题试算](workstreams/20261016_cognition/low_only_results.md)；[家庭财务处境三组结果](workstreams/20261016_household_finance/results.md)；[认知表达三组结果](workstreams/20261016_cognition/results.md)；[本轮格式实验结果及下一交付](workstreams/20261014_mechanism/revision_format_results_20261015.md)；[真人字段关联结果与注入边界](workstreams/20261014_mechanism/population_association_results_20261015.md)
 
 时间安排：[用户10/16—23繁忙后的压缩安排](ROADMAP.md)
 
