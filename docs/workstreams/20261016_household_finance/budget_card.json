@@ -1,5 +1,5 @@
 {
-  "status": "authorized_ready_for_real_dispatch",
+  "status": "completed_real_trial_and_evaluation",
   "recorded_at_utc": "2026-10-16T15:22:18.250051+00:00",
   "folder": "outputs/sce_household_finance_trial_20261016_v1",
   "protocol_sha256": "4208e676d30bc8c7007500d0d1be639b964e5d7c0f9228ab00174af4f3f64173",
@@ -52,5 +52,10 @@
   ],
   "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
   "pricing_checked_on": "2026-10-16",
-  "provider_bill_available": false
+  "provider_bill_available": false,
+  "actual_calls": 576,
+  "actual_peak_token_cost_estimate_usd": 0.64977,
+  "execution_wall_span_seconds": 288.269431,
+  "new_real_calls": 576,
+  "new_paid_mcp_calls": 0
 }

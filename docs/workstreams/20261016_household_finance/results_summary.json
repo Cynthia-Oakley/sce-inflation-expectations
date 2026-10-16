@@ -1,0 +1,3309 @@
+{
+  "status": "completed_sce_household_finance_development_pilot_evaluation",
+  "completed_at_utc": "2026-10-16T15:28:42.297864+00:00",
+  "protocol": {
+    "research_line": "A_conditional_returner_reconstruction",
+    "model": "deepseek-flash",
+    "official_advertised_version": "DeepSeek-V4.1-Flash",
+    "model_identity_limit": "Mutable alias, not fixed weights or verified training cutoff",
+    "temperature": 0.5,
+    "max_tokens": 1024,
+    "thinking": "disabled",
+    "retry_max": 0,
+    "price_input_per_mtok": 0.3,
+    "price_output_per_mtok": 1.2,
+    "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "baseline_refs": [
+      "copy_previous",
+      "history_anchor_half"
+    ],
+    "q8": "secondary, separate from Q9",
+    "aggregation": "Each month/repeat separately, equal cell average; Q9 headline-style center is median of individually fitted density means, not a nationwide headline.",
+    "sampling_seed": 20261016,
+    "stratum_n": {
+      "high": 14,
+      "low": 10
+    },
+    "auxiliary_weights": "Original SCE weight multiplied by within-parent stratum inverse inclusion probability; main paired analysis unweighted and equal-month. Neither implies national representativeness.",
+    "id": "sce-household-finance-pilot-v1",
+    "registered_at_utc": "2026-10-16T15:18:37.294300+00:00",
+    "months": [
+      202004,
+      202105,
+      202111,
+      202203
+    ],
+    "n_per_month": 24,
+    "generation_repeats": [
+      1,
+      2
+    ],
+    "arms": [
+      "baseline",
+      "financial_facts",
+      "financial_perspective"
+    ],
+    "planned_calls": 576,
+    "budget_cap_usd": 3.0,
+    "pricing_verified_date": "2026-10-16",
+    "sampling": "Reuse fixed 24-person cognition roster:14 High and10 Low; Low oversampled; not a national or Q1-stratified sample. No current inflation answer used for selection.",
+    "primary_metric": "individual_density_mean_mae_pp",
+    "primary_contrast": "financial_facts minus baseline",
+    "secondary_contrasts": [
+      "financial_perspective minus financial_facts",
+      "financial_perspective minus baseline"
+    ],
+    "update_mae_identity": "Against the same observed prior, individual update absolute error equals current individual density-mean absolute error algebraically; these are not independent successes.",
+    "comparison": "Facts minus baseline changes the Q1 information package. Perspective minus facts adds only a non-directional household-viewpoint instruction. No invented events or coefficient offsets.",
+    "primary_direction": "Smaller is better; all intervals exploratory paired person-cluster bootstrap.",
+    "intervals": "1000 paired person-cluster draws retaining all months and both generations; equal month/repeat cells; no confirmatory multiplicity claim.",
+    "guardrails": [
+      "valid_fraction >= 0.99 and scorable_fraction >= 0.99 in every arm",
+      "q9_center_mae_pp and cross_section_w1_pp point changes <= 0"
+    ],
+    "candidate_gate": "Detailed-vs-baseline individual-density-mean-MAE upper exploratory95% bound<0, center and W1 point changes<=0, all-arm coverage>=99%. Pilot continuation only.",
+    "support": "All three arms and both repeats scorable for a retained person-month; report human missingness separately from model failures. Q8 support separate.",
+    "financial_groups": "Current Q1 worse=1/2, same=3, better=4/5. Same-person group medians compared with real groups per month/repeat; suppress a gap if either group has fewer than3 common people. Five codes descriptive only.",
+    "truth_isolation": "Preparation projects only date/userid/financial_change from hash-verified cache; no current Q8/Q9 parsed. Runtime receives anonymous Q1 sidecar, existing P/E and observed historical prior only.",
+    "information_boundary": "Current Q1 is contemporaneous private household assessment, explicit A auxiliary condition; public E retains existing cutoff. Does not certify Q1 or prior answers as available inputs to real-time B.",
+    "reused_paid_calls": 0,
+    "old_direct_reference": "Old identical baseline messages may be compared descriptively; all primary arms are newly generated contemporaneously.",
+    "no_tuning_after_run": true,
+    "limits": [
+      "Four inspected development months; not independent validation.",
+      "Q1 is subjective finances relative to12 months earlier; adjacent category shifts are not measured month-on-month income shocks.",
+      "Current Q1 can itself reflect inflation beliefs; not a causal Q1 experiment or strict B forecast.",
+      "Prompt length and explicit instruction effects cannot be separated from household-memory mechanisms by this pilot alone.",
+      "24-person fixed roster has only2 much-worse person-months; no claim for that subgroup or national representativeness.",
+      "Two generations are model variability, not additional respondents or a provider-enforced RNG seed.",
+      "Observed and model raw Q9 use the same frozen approximate fitter; official derived fields auxiliary only."
+    ]
+  },
+  "protocol_sha256": "4208e676d30bc8c7007500d0d1be639b964e5d7c0f9228ab00174af4f3f64173",
+  "research_line": "A_conditional_returner_reconstruction",
+  "primary_metric": "individual_density_mean_mae_pp",
+  "primary_contrast": "financial_facts minus baseline",
+  "secondary_contrasts": [
+    "financial_perspective minus financial_facts",
+    "financial_perspective minus baseline"
+  ],
+  "intervals_are_exploratory_only": true,
+  "confirmatory_claim": false,
+  "individual_update_mae_identity": {
+    "formula": "|(model_current - real_previous) - (real_current - real_previous)| = |model_current - real_current|",
+    "metric": "individual_density_mean_mae_pp",
+    "independent_evidence": false,
+    "scope": "On the same finite matched real previous belief, individual-update MAE equals current density-mean MAE exactly. It is one piece of evidence; distributional delta-W1 is a different descriptive quantity."
+  },
+  "evaluation_api_calls": 0,
+  "evaluated_llm_calls": 576,
+  "estimated_run_cost_usd_not_provider_bill": 0.64977,
+  "raw_replies_reconstructed_and_matched": 576,
+  "scorer_provenance": {
+    "scorer": "sce_q9_frozen",
+    "variant": "relaxed_tail_skip_zero",
+    "tail_start": 20.0,
+    "holdout_run_id": "20261003T023026Z_77ebb305",
+    "pinned_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_matches_pinned": true,
+    "kernel_migration": {
+      "migrated_at": "2026-10-03",
+      "old_source": "scripts/diagnose_sce_beta.py",
+      "old_source_sha256": "b45a29345f432288fe3b0b18e8c39066998bf19a803a0e7c661dc2a193987e57",
+      "new_source": "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+      "algorithm_unchanged": true,
+      "equivalence_check": "3,741 sealed holdout rows recomputed; zero per-field difference"
+    },
+    "approximation_notice": "Research approximation of the Armantier et al. (2017) Appendix C generalized-beta fit, selected on a preregistered holdout; not the official FRBNY implementation. The same algorithm scores real and simulated questionnaires; differences from official headline values are reported separately."
+  },
+  "reference_truth_verification": {
+    "frozen_rescore_matches_pinned_truth_n": 92,
+    "missing_or_unscorable_bin_truth_n": 4,
+    "comparison_tolerance": 1e-06,
+    "official_summary_field_differences": {
+      "q9_mean": {
+        "n_finite_paired": 92,
+        "mean_absolute_difference": 0.023918595390514788,
+        "max_absolute_difference": 0.6876605786598056,
+        "n_above_0_01": 8,
+        "interpretation": "Sensitivity diagnostic only; official summary fields do not replace ten-bin truth or frozen-scorer metrics."
+      },
+      "q9_iqr": {
+        "n_finite_paired": 92,
+        "mean_absolute_difference": 0.043518212636472556,
+        "max_absolute_difference": 0.9510313911207167,
+        "n_above_0_01": 8,
+        "interpretation": "Sensitivity diagnostic only; official summary fields do not replace ten-bin truth or frozen-scorer metrics."
+      }
+    }
+  },
+  "human_truth_scoring": "Human and model ten-bin Q9 vectors use the same frozen approximate scorer; official summary fields are sensitivity diagnostics only.",
+  "coverage": {
+    "baseline": {
+      "planned": 192,
+      "valid_n": 192,
+      "valid_fraction": 1.0,
+      "scorable_n": 192,
+      "scorable_fraction": 1.0,
+      "validation_status_counts": {
+        "valid": 192
+      }
+    },
+    "financial_facts": {
+      "planned": 192,
+      "valid_n": 192,
+      "valid_fraction": 1.0,
+      "scorable_n": 192,
+      "scorable_fraction": 1.0,
+      "validation_status_counts": {
+        "valid": 192
+      }
+    },
+    "financial_perspective": {
+      "planned": 192,
+      "valid_n": 192,
+      "valid_fraction": 1.0,
+      "scorable_n": 192,
+      "scorable_fraction": 1.0,
+      "validation_status_counts": {
+        "valid": 192
+      }
+    }
+  },
+  "accuracy_is_descriptive_only_due_to_validity_gate": false,
+  "common_support": {
+    "registered_person_months": 96,
+    "q9_common_scorable_person_months": 92,
+    "q9_excluded_person_months": 4,
+    "q9_common_generation_rows": 184,
+    "q9_assigned_generation_rows": 192,
+    "q8_common_person_months": 96,
+    "q8_excluded_person_months": 0,
+    "support_definition": "Each retained person-month has valid answers in all three arms and both repeats, finite matched frozen Q9 mean/IQR/zero and raw bins; Q8 has its own legal all-arm/all-repeat finite-point mask. Missing and invalid cases remain in assigned coverage counts."
+  },
+  "aggregation": "Equal month × repeat cells; paired globally clustered respondent bootstrap retains every sampled person’s months and repeats. Repeated generations are not new humans.",
+  "sampling_design": {
+    "selected_per_month": {
+      "High": 14,
+      "Low": 10
+    },
+    "primary_analysis": "Unweighted within selected roster; equal month and repeat cells; not nationally representative.",
+    "auxiliary_weighting": "Parent survey weight × inverse selection probability, descriptive sensitivity only."
+  },
+  "support_missingness": {
+    "human_q9_missing_or_unscorable_person_months": 4,
+    "human_q8_missing_person_months": 0,
+    "any_model_q9_invalid_or_unscorable_person_months": 0,
+    "any_model_q8_invalid_or_missing_person_months": 0,
+    "human_previous_q9_missing_person_months": 0,
+    "q9_common_support_with_finite_real_prior_person_months": 92,
+    "counts_can_overlap": true,
+    "incomplete_repeat_person_months": 0
+  },
+  "arms": {
+    "baseline": {
+      "q9": {
+        "aggregate_equal_month_repeat_cells": {
+          "probability_tv_pct": 42.70073698945981,
+          "individual_density_iqr_mae_pp": 2.4875164086349217,
+          "individual_density_iqr_bias_pp": -0.27232743327015685,
+          "individual_density_iqr_mean_pp": 4.445269999678499,
+          "real_individual_density_iqr_mean_pp": 4.717597432948656,
+          "individual_density_mean_mae_pp": 3.3524861192550817,
+          "individual_density_mean_bias_pp": -0.9594581510408228,
+          "q9_center_mae_pp": 0.6374646187983493,
+          "q9_center_bias_pp": -0.3934242919671884,
+          "cross_section_w1_pp": 2.391919610242601,
+          "delta_w1_pp": 1.903606985163138,
+          "cross_person_iqr_pp": 2.848055336817472,
+          "real_cross_person_iqr_pp": 5.556145102120589,
+          "cross_person_iqr_gap_pp": -2.708089765303117,
+          "zero_deflation_rate": 0.13527256258234518,
+          "real_zero_deflation_rate": 0.6930171277997366,
+          "zero_deflation_rate_difference": -0.5577445652173914,
+          "person_mean_spearman": 0.6063990434246713
+        },
+        "cells_used_by_metric": {
+          "probability_tv_pct": 8,
+          "individual_density_iqr_mae_pp": 8,
+          "individual_density_iqr_bias_pp": 8,
+          "individual_density_iqr_mean_pp": 8,
+          "real_individual_density_iqr_mean_pp": 8,
+          "individual_density_mean_mae_pp": 8,
+          "individual_density_mean_bias_pp": 8,
+          "q9_center_mae_pp": 8,
+          "q9_center_bias_pp": 8,
+          "cross_section_w1_pp": 8,
+          "delta_w1_pp": 8,
+          "cross_person_iqr_pp": 8,
+          "real_cross_person_iqr_pp": 8,
+          "cross_person_iqr_gap_pp": 8,
+          "zero_deflation_rate": 8,
+          "real_zero_deflation_rate": 8,
+          "zero_deflation_rate_difference": 8,
+          "person_mean_spearman": 8
+        },
+        "expected_cells": 8,
+        "cells_complete": true,
+        "cells": [
+          {
+            "month": 202004,
+            "repeat": 1,
+            "n_person_months": 23,
+            "probability_tv_pct": 58.130434782608695,
+            "individual_density_iqr_mae_pp": 2.773182183737137,
+            "individual_density_iqr_bias_pp": -0.5567466331609189,
+            "individual_density_iqr_mean_pp": 3.726098312279734,
+            "real_individual_density_iqr_mean_pp": 4.282844945440653,
+            "individual_density_mean_mae_pp": 3.6199741474570097,
+            "individual_density_mean_bias_pp": -2.3312363051425073,
+            "q9_center_mae_pp": 1.313595471532448,
+            "q9_center_bias_pp": -1.313595471532448,
+            "cross_section_w1_pp": 2.6000523599131795,
+            "delta_w1_pp": 2.8156139219565866,
+            "cross_person_iqr_pp": 2.4257492907280898,
+            "real_cross_person_iqr_pp": 4.777772746261824,
+            "cross_person_iqr_gap_pp": -2.352023455533734,
+            "zero_deflation_rate": 0.0,
+            "real_zero_deflation_rate": 0.5217391304347826,
+            "zero_deflation_rate_difference": -0.5217391304347826,
+            "person_mean_spearman": 0.739001573232788
+          },
+          {
+            "month": 202004,
+            "repeat": 2,
+            "n_person_months": 23,
+            "probability_tv_pct": 55.608695652173914,
+            "individual_density_iqr_mae_pp": 2.5181614792341396,
+            "individual_density_iqr_bias_pp": -0.6962107560344594,
+            "individual_density_iqr_mean_pp": 3.586634189406194,
+            "real_individual_density_iqr_mean_pp": 4.282844945440653,
+            "individual_density_mean_mae_pp": 3.389018029876516,
+            "individual_density_mean_bias_pp": -2.0164965508441397,
+            "q9_center_mae_pp": 1.3576689147870695,
+            "q9_center_bias_pp": -1.3576689147870695,
+            "cross_section_w1_pp": 2.536175179166307,
+            "delta_w1_pp": 2.644539867884054,
+            "cross_person_iqr_pp": 2.0396490418500797,
+            "real_cross_person_iqr_pp": 4.777772746261824,
+            "cross_person_iqr_gap_pp": -2.738123704411744,
+            "zero_deflation_rate": 0.0,
+            "real_zero_deflation_rate": 0.5217391304347826,
+            "zero_deflation_rate_difference": -0.5217391304347826,
+            "person_mean_spearman": 0.5224914133157572
+          },
+          {
+            "month": 202105,
+            "repeat": 1,
+            "n_person_months": 22,
+            "probability_tv_pct": 36.81818181818182,
+            "individual_density_iqr_mae_pp": 1.9905050090407677,
+            "individual_density_iqr_bias_pp": -0.3879324711417361,
+            "individual_density_iqr_mean_pp": 4.43962894256902,
+            "real_individual_density_iqr_mean_pp": 4.827561413710755,
+            "individual_density_mean_mae_pp": 2.4861916089564104,
+            "individual_density_mean_bias_pp": 0.4621401239056423,
+            "q9_center_mae_pp": 0.7543098987321635,
+            "q9_center_bias_pp": 0.7543098987321635,
+            "cross_section_w1_pp": 1.277947328889877,
+            "delta_w1_pp": 1.6194583056842051,
+            "cross_person_iqr_pp": 1.9667682647586977,
+            "real_cross_person_iqr_pp": 4.5057518181913245,
+            "cross_person_iqr_gap_pp": -2.538983553432627,
+            "zero_deflation_rate": 0.045454545454545456,
+            "real_zero_deflation_rate": 0.5909090909090909,
+            "zero_deflation_rate_difference": -0.5454545454545454,
+            "person_mean_spearman": 0.4269980401845318
+          },
+          {
+            "month": 202105,
+            "repeat": 2,
+            "n_person_months": 22,
+            "probability_tv_pct": 33.40909090909091,
+            "individual_density_iqr_mae_pp": 2.161932046624227,
+            "individual_density_iqr_bias_pp": -0.48863331411784183,
+            "individual_density_iqr_mean_pp": 4.338928099592915,
+            "real_individual_density_iqr_mean_pp": 4.827561413710755,
+            "individual_density_mean_mae_pp": 1.9983795436377512,
+            "individual_density_mean_bias_pp": 0.15134897288793636,
+            "q9_center_mae_pp": 0.22185140859247987,
+            "q9_center_bias_pp": 0.22185140859247987,
+            "cross_section_w1_pp": 1.0289262368851704,
+            "delta_w1_pp": 1.2746250915217265,
+            "cross_person_iqr_pp": 3.1521236347025923,
+            "real_cross_person_iqr_pp": 4.5057518181913245,
+            "cross_person_iqr_gap_pp": -1.3536281834887323,
+            "zero_deflation_rate": 0.13636363636363635,
+            "real_zero_deflation_rate": 0.5909090909090909,
+            "zero_deflation_rate_difference": -0.45454545454545453,
+            "person_mean_spearman": 0.5032476902174838
+          },
+          {
+            "month": 202111,
+            "repeat": 1,
+            "n_person_months": 24,
+            "probability_tv_pct": 36.125,
+            "individual_density_iqr_mae_pp": 2.237660421186318,
+            "individual_density_iqr_bias_pp": 0.27971882637548134,
+            "individual_density_iqr_mean_pp": 4.96142677739221,
+            "real_individual_density_iqr_mean_pp": 4.681707951016729,
+            "individual_density_mean_mae_pp": 2.8209311421263705,
+            "individual_density_mean_bias_pp": -0.7002410853078173,
+            "q9_center_mae_pp": 0.46405092820179483,
+            "q9_center_bias_pp": -0.46405092820179483,
+            "cross_section_w1_pp": 1.4838264142423196,
+            "delta_w1_pp": 1.917477046010449,
+            "cross_person_iqr_pp": 3.3340118987041425,
+            "real_cross_person_iqr_pp": 4.700238096895581,
+            "cross_person_iqr_gap_pp": -1.3662261981914385,
+            "zero_deflation_rate": 0.16666666666666666,
+            "real_zero_deflation_rate": 0.8333333333333334,
+            "zero_deflation_rate_difference": -0.6666666666666666,
+            "person_mean_spearman": 0.5791304347826086
+          },
+          {
+            "month": 202111,
+            "repeat": 2,
+            "n_person_months": 24,
+            "probability_tv_pct": 34.166666666666664,
+            "individual_density_iqr_mae_pp": 2.233455975374625,
+            "individual_density_iqr_bias_pp": 0.11560216621389081,
+            "individual_density_iqr_mean_pp": 4.797310117230619,
+            "real_individual_density_iqr_mean_pp": 4.681707951016729,
+            "individual_density_mean_mae_pp": 2.5129289265139128,
+            "individual_density_mean_bias_pp": -0.5211941685318872,
+            "q9_center_mae_pp": 0.448271911750016,
+            "q9_center_bias_pp": -0.448271911750016,
+            "cross_section_w1_pp": 1.5599281295944272,
+            "delta_w1_pp": 1.749368699474708,
+            "cross_person_iqr_pp": 3.408133545654815,
+            "real_cross_person_iqr_pp": 4.700238096895581,
+            "cross_person_iqr_gap_pp": -1.292104551240766,
+            "zero_deflation_rate": 0.125,
+            "real_zero_deflation_rate": 0.8333333333333334,
+            "zero_deflation_rate_difference": -0.7083333333333334,
+            "person_mean_spearman": 0.7634782608695652
+          },
+          {
+            "month": 202203,
+            "repeat": 1,
+            "n_person_months": 23,
+            "probability_tv_pct": 42.04347826086956,
+            "individual_density_iqr_mae_pp": 2.969432131821347,
+            "individual_density_iqr_bias_pp": -0.2377027334419981,
+            "individual_density_iqr_mean_pp": 4.840572688184487,
+            "real_individual_density_iqr_mean_pp": 5.078275421626486,
+            "individual_density_mean_mae_pp": 4.853827894401403,
+            "individual_density_mean_bias_pp": -1.2538790221064877,
+            "q9_center_mae_pp": 0.27936778757481484,
+            "q9_center_bias_pp": -0.27936778757481484,
+            "cross_section_w1_pp": 4.244730149601118,
+            "delta_w1_pp": 1.5024877780925854,
+            "cross_person_iqr_pp": 3.085054794059955,
+            "real_cross_person_iqr_pp": 8.240817747133626,
+            "cross_person_iqr_gap_pp": -5.155762953073671,
+            "zero_deflation_rate": 0.34782608695652173,
+            "real_zero_deflation_rate": 0.8260869565217391,
+            "zero_deflation_rate_difference": -0.4782608695652174,
+            "person_mean_spearman": 0.7019545313574717
+          },
+          {
+            "month": 202203,
+            "repeat": 2,
+            "n_person_months": 23,
+            "probability_tv_pct": 45.30434782608695,
+            "individual_density_iqr_mae_pp": 3.0158020220608153,
+            "individual_density_iqr_bias_pp": -0.20671455085367285,
+            "individual_density_iqr_mean_pp": 4.871560870772813,
+            "real_individual_density_iqr_mean_pp": 5.078275421626486,
+            "individual_density_mean_mae_pp": 5.138637661071277,
+            "individual_density_mean_bias_pp": -1.4661071731873216,
+            "q9_center_mae_pp": 0.26060062921600746,
+            "q9_center_bias_pp": -0.26060062921600746,
+            "cross_section_w1_pp": 4.40377108364841,
+            "delta_w1_pp": 1.7052851706807914,
+            "cross_person_iqr_pp": 3.372952224081402,
+            "real_cross_person_iqr_pp": 8.240817747133626,
+            "cross_person_iqr_gap_pp": -4.867865523052224,
+            "zero_deflation_rate": 0.2608695652173913,
+            "real_zero_deflation_rate": 0.8260869565217391,
+            "zero_deflation_rate_difference": -0.5652173913043478,
+            "person_mean_spearman": 0.6148904034371651
+          }
+        ]
+      },
+      "q8": {
+        "aggregate_equal_month_repeat_cells": {
+          "q8_person_mae_pp": 6.793229167660077,
+          "q8_person_bias_pp": -1.3984374990065893,
+          "q8_center_mae_pp": 0.7375,
+          "q8_center_bias_pp": -0.48750000000000004,
+          "q8_cross_section_w1_pp": 5.424479167660078,
+          "q8_person_spearman": 0.48982605116821687
+        },
+        "cells_used_by_metric": {
+          "q8_person_mae_pp": 8,
+          "q8_person_bias_pp": 8,
+          "q8_center_mae_pp": 8,
+          "q8_center_bias_pp": 8,
+          "q8_cross_section_w1_pp": 8,
+          "q8_person_spearman": 8
+        },
+        "expected_cells": 8,
+        "cells_complete": true,
+        "cells": [
+          {
+            "month": 202004,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 8.325000000000001,
+            "q8_person_bias_pp": -1.6166666666666665,
+            "q8_center_mae_pp": 1.0,
+            "q8_center_bias_pp": -1.0,
+            "q8_cross_section_w1_pp": 7.866666666666665,
+            "q8_person_spearman": 0.6676929974904343
+          },
+          {
+            "month": 202004,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 8.941666666666666,
+            "q8_person_bias_pp": 0.20833333333333323,
+            "q8_center_mae_pp": 1.0,
+            "q8_center_bias_pp": -1.0,
+            "q8_cross_section_w1_pp": 6.666666666666667,
+            "q8_person_spearman": 0.5057314323622164
+          },
+          {
+            "month": 202105,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 6.350000003973643,
+            "q8_person_bias_pp": -2.9333333293596904,
+            "q8_center_mae_pp": 1.0,
+            "q8_center_bias_pp": -1.0,
+            "q8_cross_section_w1_pp": 5.5500000039736435,
+            "q8_person_spearman": 0.4381721613824015
+          },
+          {
+            "month": 202105,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 6.66666667064031,
+            "q8_person_bias_pp": -3.274999996026357,
+            "q8_center_mae_pp": 1.4,
+            "q8_center_bias_pp": -1.4,
+            "q8_cross_section_w1_pp": 5.858333337306977,
+            "q8_person_spearman": 0.36041615082995754
+          },
+          {
+            "month": 202111,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 4.683333333333334,
+            "q8_person_bias_pp": -1.4500000000000002,
+            "q8_center_mae_pp": 0.0,
+            "q8_center_bias_pp": 0.0,
+            "q8_cross_section_w1_pp": 2.8583333333333325,
+            "q8_person_spearman": 0.5456412351046755
+          },
+          {
+            "month": 202111,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 4.716666666666667,
+            "q8_person_bias_pp": -1.8666666666666665,
+            "q8_center_mae_pp": 0.5,
+            "q8_center_bias_pp": -0.5,
+            "q8_cross_section_w1_pp": 3.2666666666666666,
+            "q8_person_spearman": 0.625777231394967
+          },
+          {
+            "month": 202203,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 7.208333333333333,
+            "q8_person_bias_pp": 0.3333333333333333,
+            "q8_center_mae_pp": 0.5,
+            "q8_center_bias_pp": 0.5,
+            "q8_cross_section_w1_pp": 5.208333333333332,
+            "q8_person_spearman": 0.45003522224132403
+          },
+          {
+            "month": 202203,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 7.454166666666667,
+            "q8_person_bias_pp": -0.5875,
+            "q8_center_mae_pp": 0.5,
+            "q8_center_bias_pp": 0.5,
+            "q8_cross_section_w1_pp": 6.120833333333333,
+            "q8_person_spearman": 0.3251419785397585
+          }
+        ]
+      },
+      "auxiliary_survey_weighted": {
+        "q9": {
+          "aggregate_equal_month_repeat_cells": {
+            "probability_tv_pct": 43.229981174457265,
+            "individual_density_iqr_mae_pp": 2.57052098648823,
+            "individual_density_iqr_bias_pp": 0.000965239264473762,
+            "individual_density_iqr_mean_pp": 4.445071933845798,
+            "real_individual_density_iqr_mean_pp": 4.444106694581324,
+            "individual_density_mean_mae_pp": 3.383103588597219,
+            "individual_density_mean_bias_pp": -1.2312596708770585,
+            "q9_center_mae_pp": 0.6569405631727588,
+            "q9_center_bias_pp": -0.3301115553065398,
+            "cross_section_w1_pp": 2.4778883296295895,
+            "delta_w1_pp": 2.139341373474683,
+            "cross_person_iqr_pp": 2.7084892117855643,
+            "real_cross_person_iqr_pp": 4.360404866050582,
+            "cross_person_iqr_gap_pp": -1.6519156542650175,
+            "zero_deflation_rate": 0.1310321960383999,
+            "real_zero_deflation_rate": 0.7292273465632926,
+            "zero_deflation_rate_difference": -0.5981951505248927,
+            "person_mean_spearman": 0.6063990434246713
+          },
+          "cells_used_by_metric": {
+            "probability_tv_pct": 8,
+            "individual_density_iqr_mae_pp": 8,
+            "individual_density_iqr_bias_pp": 8,
+            "individual_density_iqr_mean_pp": 8,
+            "real_individual_density_iqr_mean_pp": 8,
+            "individual_density_mean_mae_pp": 8,
+            "individual_density_mean_bias_pp": 8,
+            "q9_center_mae_pp": 8,
+            "q9_center_bias_pp": 8,
+            "cross_section_w1_pp": 8,
+            "delta_w1_pp": 8,
+            "cross_person_iqr_pp": 8,
+            "real_cross_person_iqr_pp": 8,
+            "cross_person_iqr_gap_pp": 8,
+            "zero_deflation_rate": 8,
+            "real_zero_deflation_rate": 8,
+            "zero_deflation_rate_difference": 8,
+            "person_mean_spearman": 8
+          },
+          "expected_cells": 8,
+          "cells_complete": true,
+          "cells": [
+            {
+              "month": 202004,
+              "repeat": 1,
+              "n_person_months": 23,
+              "probability_tv_pct": 60.290260102496255,
+              "individual_density_iqr_mae_pp": 2.6969993297929595,
+              "individual_density_iqr_bias_pp": 0.07229652955335233,
+              "individual_density_iqr_mean_pp": 3.695323798961747,
+              "real_individual_density_iqr_mean_pp": 3.6230272694083947,
+              "individual_density_mean_mae_pp": 3.5466745496619425,
+              "individual_density_mean_bias_pp": -2.522015368880175,
+              "q9_center_mae_pp": 0.48612627806099074,
+              "q9_center_bias_pp": -0.48612627806099074,
+              "cross_section_w1_pp": 2.6835645412933364,
+              "delta_w1_pp": 2.846617785475877,
+              "cross_person_iqr_pp": 2.3693445423121564,
+              "real_cross_person_iqr_pp": 2.377147328381171,
+              "cross_person_iqr_gap_pp": -0.007802786069014633,
+              "zero_deflation_rate": 0.0,
+              "real_zero_deflation_rate": 0.556666924411603,
+              "zero_deflation_rate_difference": -0.556666924411603,
+              "person_mean_spearman": 0.739001573232788
+            },
+            {
+              "month": 202004,
+              "repeat": 2,
+              "n_person_months": 23,
+              "probability_tv_pct": 55.731418336623605,
+              "individual_density_iqr_mae_pp": 2.2312243969532735,
+              "individual_density_iqr_bias_pp": -0.2303066384503821,
+              "individual_density_iqr_mean_pp": 3.3927206309580136,
+              "real_individual_density_iqr_mean_pp": 3.6230272694083947,
+              "individual_density_mean_mae_pp": 2.9973152677793027,
+              "individual_density_mean_bias_pp": -1.9222034757501336,
+              "q9_center_mae_pp": 0.4825835824947342,
+              "q9_center_bias_pp": -0.4825835824947342,
+              "cross_section_w1_pp": 2.258519124459378,
+              "delta_w1_pp": 2.2042482182711916,
+              "cross_person_iqr_pp": 1.0865315707919274,
+              "real_cross_person_iqr_pp": 2.377147328381171,
+              "cross_person_iqr_gap_pp": -1.2906157575892436,
+              "zero_deflation_rate": 0.0,
+              "real_zero_deflation_rate": 0.556666924411603,
+              "zero_deflation_rate_difference": -0.556666924411603,
+              "person_mean_spearman": 0.5224914133157572
+            },
+            {
+              "month": 202105,
+              "repeat": 1,
+              "n_person_months": 22,
+              "probability_tv_pct": 36.613949874437004,
+              "individual_density_iqr_mae_pp": 2.067696785895173,
+              "individual_density_iqr_bias_pp": 0.1857823050889956,
+              "individual_density_iqr_mean_pp": 4.472544993856328,
+              "real_individual_density_iqr_mean_pp": 4.286762688767333,
+              "individual_density_mean_mae_pp": 2.4312202739605877,
+              "individual_density_mean_bias_pp": 0.3856363515852523,
+              "q9_center_mae_pp": 0.552547542283345,
+              "q9_center_bias_pp": 0.552547542283345,
+              "cross_section_w1_pp": 1.0410973938094592,
+              "delta_w1_pp": 1.7767948256273023,
+              "cross_person_iqr_pp": 3.301992120893112,
+              "real_cross_person_iqr_pp": 3.406766309821521,
+              "cross_person_iqr_gap_pp": -0.10477418892840928,
+              "zero_deflation_rate": 0.022607650074385626,
+              "real_zero_deflation_rate": 0.6046601100022453,
+              "zero_deflation_rate_difference": -0.5820524599278598,
+              "person_mean_spearman": 0.4269980401845318
+            },
+            {
+              "month": 202105,
+              "repeat": 2,
+              "n_person_months": 22,
+              "probability_tv_pct": 34.08323970643912,
+              "individual_density_iqr_mae_pp": 2.0581264512797612,
+              "individual_density_iqr_bias_pp": 0.030577429288299467,
+              "individual_density_iqr_mean_pp": 4.317340118055633,
+              "real_individual_density_iqr_mean_pp": 4.286762688767333,
+              "individual_density_mean_mae_pp": 2.1539712097389874,
+              "individual_density_mean_bias_pp": 0.21541222603614862,
+              "q9_center_mae_pp": 0.44837467449963064,
+              "q9_center_bias_pp": 0.44837467449963064,
+              "cross_section_w1_pp": 0.9480658649926291,
+              "delta_w1_pp": 1.5375045785694446,
+              "cross_person_iqr_pp": 3.1521236347025923,
+              "real_cross_person_iqr_pp": 3.406766309821521,
+              "cross_person_iqr_gap_pp": -0.2546426751189288,
+              "zero_deflation_rate": 0.18087857040717728,
+              "real_zero_deflation_rate": 0.6046601100022453,
+              "zero_deflation_rate_difference": -0.4237815395950682,
+              "person_mean_spearman": 0.5032476902174838
+            },
+            {
+              "month": 202111,
+              "repeat": 1,
+              "n_person_months": 24,
+              "probability_tv_pct": 33.3951231260319,
+              "individual_density_iqr_mae_pp": 2.3905743792180885,
+              "individual_density_iqr_bias_pp": 0.2835567606047268,
+              "individual_density_iqr_mean_pp": 5.045853293371864,
+              "real_individual_density_iqr_mean_pp": 4.762296532767136,
+              "individual_density_mean_mae_pp": 2.6531168036733144,
+              "individual_density_mean_bias_pp": -0.5664242675873905,
+              "q9_center_mae_pp": 0.3063938146819005,
+              "q9_center_bias_pp": 0.3063938146819005,
+              "cross_section_w1_pp": 1.639436646452047,
+              "delta_w1_pp": 1.8520668994413017,
+              "cross_person_iqr_pp": 2.947967763081465,
+              "real_cross_person_iqr_pp": 4.087763704260897,
+              "cross_person_iqr_gap_pp": -1.1397959411794325,
+              "zero_deflation_rate": 0.1592841395553581,
+              "real_zero_deflation_rate": 0.8516325083790558,
+              "zero_deflation_rate_difference": -0.6923483688236978,
+              "person_mean_spearman": 0.5791304347826086
+            },
+            {
+              "month": 202111,
+              "repeat": 2,
+              "n_person_months": 24,
+              "probability_tv_pct": 31.176806524952287,
+              "individual_density_iqr_mae_pp": 2.2949654003660815,
+              "individual_density_iqr_bias_pp": 0.09699351249993529,
+              "individual_density_iqr_mean_pp": 4.8592900452670715,
+              "real_individual_density_iqr_mean_pp": 4.762296532767136,
+              "individual_density_mean_mae_pp": 2.383388393247969,
+              "individual_density_mean_bias_pp": -0.5057684055660507,
+              "q9_center_mae_pp": 0.08235564311609522,
+              "q9_center_bias_pp": -0.08235564311609522,
+              "cross_section_w1_pp": 1.5721523858524633,
+              "delta_w1_pp": 1.785580691313898,
+              "cross_person_iqr_pp": 3.3443965381020337,
+              "real_cross_person_iqr_pp": 4.087763704260897,
+              "cross_person_iqr_gap_pp": -0.7433671661588637,
+              "zero_deflation_rate": 0.09965680221283299,
+              "real_zero_deflation_rate": 0.8516325083790558,
+              "zero_deflation_rate_difference": -0.7519757061662229,
+              "person_mean_spearman": 0.7634782608695652
+            },
+            {
+              "month": 202203,
+              "repeat": 1,
+              "n_person_months": 23,
+              "probability_tv_pct": 45.79016986388326,
+              "individual_density_iqr_mae_pp": 3.3476470854432367,
+              "individual_density_iqr_bias_pp": -0.1783175256655514,
+              "individual_density_iqr_mean_pp": 4.9260227617168795,
+              "real_individual_density_iqr_mean_pp": 5.10434028738243,
+              "individual_density_mean_mae_pp": 5.336568972356407,
+              "individual_density_mean_bias_pp": -2.372312608816811,
+              "q9_center_mae_pp": 1.2895975027894053,
+              "q9_center_bias_pp": -1.2895975027894053,
+              "cross_section_w1_pp": 4.766606360108758,
+              "delta_w1_pp": 2.505849197097988,
+              "cross_person_iqr_pp": 2.8593673225911296,
+              "real_cross_person_iqr_pp": 7.569942121738739,
+              "cross_person_iqr_gap_pp": -4.71057479914761,
+              "zero_deflation_rate": 0.3405665503508532,
+              "real_zero_deflation_rate": 0.9039498434602662,
+              "zero_deflation_rate_difference": -0.5633832931094129,
+              "person_mean_spearman": 0.7019545313574717
+            },
+            {
+              "month": 202203,
+              "repeat": 2,
+              "n_person_months": 23,
+              "probability_tv_pct": 48.75888186079474,
+              "individual_density_iqr_mae_pp": 3.476934062957265,
+              "individual_density_iqr_bias_pp": -0.2528604588035859,
+              "individual_density_iqr_mean_pp": 4.851479828578842,
+              "real_individual_density_iqr_mean_pp": 5.10434028738243,
+              "individual_density_mean_mae_pp": 5.562573238359242,
+              "individual_density_mean_bias_pp": -2.562401818037307,
+              "q9_center_mae_pp": 1.607545467455969,
+              "q9_center_bias_pp": -1.607545467455969,
+              "cross_section_w1_pp": 4.913664320068644,
+              "delta_w1_pp": 2.6060687920004626,
+              "cross_person_iqr_pp": 2.606190201810101,
+              "real_cross_person_iqr_pp": 7.569942121738739,
+              "cross_person_iqr_gap_pp": -4.963751919928638,
+              "zero_deflation_rate": 0.24526385570659218,
+              "real_zero_deflation_rate": 0.9039498434602662,
+              "zero_deflation_rate_difference": -0.658685987753674,
+              "person_mean_spearman": 0.6148904034371651
+            }
+          ]
+        },
+        "q8": {
+          "aggregate_equal_month_repeat_cells": {
+            "q8_person_mae_pp": 6.601073960700069,
+            "q8_person_bias_pp": -0.4464847302900126,
+            "q8_center_mae_pp": 0.7,
+            "q8_center_bias_pp": 0.050000000000000044,
+            "q8_cross_section_w1_pp": 5.433889303199531,
+            "q8_person_spearman": 0.48982605116821687
+          },
+          "cells_used_by_metric": {
+            "q8_person_mae_pp": 8,
+            "q8_person_bias_pp": 8,
+            "q8_center_mae_pp": 8,
+            "q8_center_bias_pp": 8,
+            "q8_cross_section_w1_pp": 8,
+            "q8_person_spearman": 8
+          },
+          "expected_cells": 8,
+          "cells_complete": true,
+          "cells": [
+            {
+              "month": 202004,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 8.63616168440216,
+              "q8_person_bias_pp": 1.6905774089479215,
+              "q8_center_mae_pp": 0.30000000000000004,
+              "q8_center_bias_pp": -0.30000000000000004,
+              "q8_cross_section_w1_pp": 8.153076152531234,
+              "q8_person_spearman": 0.6676929974904343
+            },
+            {
+              "month": 202004,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 9.507054797500357,
+              "q8_person_bias_pp": 3.5909189108614643,
+              "q8_center_mae_pp": 0.5,
+              "q8_center_bias_pp": -0.5,
+              "q8_cross_section_w1_pp": 8.156956351847978,
+              "q8_person_spearman": 0.5057314323622164
+            },
+            {
+              "month": 202105,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 5.092319883363764,
+              "q8_person_bias_pp": -2.7382950411168085,
+              "q8_center_mae_pp": 0.7999999999999998,
+              "q8_center_bias_pp": -0.7999999999999998,
+              "q8_cross_section_w1_pp": 4.506245732451709,
+              "q8_person_spearman": 0.4381721613824015
+            },
+            {
+              "month": 202105,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 5.319721556555183,
+              "q8_person_bias_pp": -2.6909325465039133,
+              "q8_center_mae_pp": 1.0,
+              "q8_center_bias_pp": -1.0,
+              "q8_cross_section_w1_pp": 4.406350657737876,
+              "q8_person_spearman": 0.36041615082995754
+            },
+            {
+              "month": 202111,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 4.4896457231222415,
+              "q8_person_bias_pp": -1.5976865601463115,
+              "q8_center_mae_pp": 1.2000000000000002,
+              "q8_center_bias_pp": 1.2000000000000002,
+              "q8_cross_section_w1_pp": 3.01960108959953,
+              "q8_person_spearman": 0.5456412351046755
+            },
+            {
+              "month": 202111,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 4.454649049913406,
+              "q8_person_bias_pp": -1.7873689233381111,
+              "q8_center_mae_pp": 0.7999999999999998,
+              "q8_center_bias_pp": 0.7999999999999998,
+              "q8_cross_section_w1_pp": 3.074756245744115,
+              "q8_person_spearman": 0.625777231394967
+            },
+            {
+              "month": 202203,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 7.4274240413889805,
+              "q8_person_bias_pp": 0.3547209222489417,
+              "q8_center_mae_pp": 0.5,
+              "q8_center_bias_pp": 0.5,
+              "q8_cross_section_w1_pp": 5.730845091501852,
+              "q8_person_spearman": 0.45003522224132403
+            },
+            {
+              "month": 202203,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 7.881614949354463,
+              "q8_person_bias_pp": -0.39381201327328413,
+              "q8_center_mae_pp": 0.5,
+              "q8_center_bias_pp": 0.5,
+              "q8_cross_section_w1_pp": 6.423283104181955,
+              "q8_person_spearman": 0.3251419785397585
+            }
+          ]
+        },
+        "weight_definition": "Parent SCE survey weight × parent-stratum size / selected-stratum size; descriptive sensitivity only."
+      }
+    },
+    "financial_facts": {
+      "q9": {
+        "aggregate_equal_month_repeat_cells": {
+          "probability_tv_pct": 44.14739789196311,
+          "individual_density_iqr_mae_pp": 2.409064937399304,
+          "individual_density_iqr_bias_pp": -0.3155078441828474,
+          "individual_density_iqr_mean_pp": 4.402089588765808,
+          "real_individual_density_iqr_mean_pp": 4.717597432948656,
+          "individual_density_mean_mae_pp": 3.53257084226529,
+          "individual_density_mean_bias_pp": -1.190060796715973,
+          "q9_center_mae_pp": 0.5021888184733826,
+          "q9_center_bias_pp": -0.3792902702301991,
+          "cross_section_w1_pp": 2.46376604120546,
+          "delta_w1_pp": 1.9191070860257922,
+          "cross_person_iqr_pp": 2.741827174439397,
+          "real_cross_person_iqr_pp": 5.556145102120589,
+          "cross_person_iqr_gap_pp": -2.8143179276811923,
+          "zero_deflation_rate": 0.14523633069828723,
+          "real_zero_deflation_rate": 0.6930171277997366,
+          "zero_deflation_rate_difference": -0.5477807971014493,
+          "person_mean_spearman": 0.5153606528680104
+        },
+        "cells_used_by_metric": {
+          "probability_tv_pct": 8,
+          "individual_density_iqr_mae_pp": 8,
+          "individual_density_iqr_bias_pp": 8,
+          "individual_density_iqr_mean_pp": 8,
+          "real_individual_density_iqr_mean_pp": 8,
+          "individual_density_mean_mae_pp": 8,
+          "individual_density_mean_bias_pp": 8,
+          "q9_center_mae_pp": 8,
+          "q9_center_bias_pp": 8,
+          "cross_section_w1_pp": 8,
+          "delta_w1_pp": 8,
+          "cross_person_iqr_pp": 8,
+          "real_cross_person_iqr_pp": 8,
+          "cross_person_iqr_gap_pp": 8,
+          "zero_deflation_rate": 8,
+          "real_zero_deflation_rate": 8,
+          "zero_deflation_rate_difference": 8,
+          "person_mean_spearman": 8
+        },
+        "expected_cells": 8,
+        "cells_complete": true,
+        "cells": [
+          {
+            "month": 202004,
+            "repeat": 1,
+            "n_person_months": 23,
+            "probability_tv_pct": 58.95652173913044,
+            "individual_density_iqr_mae_pp": 2.638484354558342,
+            "individual_density_iqr_bias_pp": -0.7276417381000594,
+            "individual_density_iqr_mean_pp": 3.5552032073405937,
+            "real_individual_density_iqr_mean_pp": 4.282844945440653,
+            "individual_density_mean_mae_pp": 3.802123287151563,
+            "individual_density_mean_bias_pp": -2.2598401896736267,
+            "q9_center_mae_pp": 1.1406061831648397,
+            "q9_center_bias_pp": -1.1406061831648397,
+            "cross_section_w1_pp": 2.6835461008963026,
+            "delta_w1_pp": 2.5475975911066637,
+            "cross_person_iqr_pp": 2.3752873433375283,
+            "real_cross_person_iqr_pp": 4.777772746261824,
+            "cross_person_iqr_gap_pp": -2.4024854029242952,
+            "zero_deflation_rate": 0.0,
+            "real_zero_deflation_rate": 0.5217391304347826,
+            "zero_deflation_rate_difference": -0.5217391304347826,
+            "person_mean_spearman": 0.4799802860261119
+          },
+          {
+            "month": 202004,
+            "repeat": 2,
+            "n_person_months": 23,
+            "probability_tv_pct": 59.65217391304348,
+            "individual_density_iqr_mae_pp": 2.451906562230554,
+            "individual_density_iqr_bias_pp": -0.25923708588893224,
+            "individual_density_iqr_mean_pp": 4.023607859551721,
+            "real_individual_density_iqr_mean_pp": 4.282844945440653,
+            "individual_density_mean_mae_pp": 3.900888091085765,
+            "individual_density_mean_bias_pp": -2.592866355217923,
+            "q9_center_mae_pp": 1.1872216568314418,
+            "q9_center_bias_pp": -1.1872216568314418,
+            "cross_section_w1_pp": 2.694111247137476,
+            "delta_w1_pp": 2.9610750058974764,
+            "cross_person_iqr_pp": 2.778198156707207,
+            "real_cross_person_iqr_pp": 4.777772746261824,
+            "cross_person_iqr_gap_pp": -1.9995745895546166,
+            "zero_deflation_rate": 0.0,
+            "real_zero_deflation_rate": 0.5217391304347826,
+            "zero_deflation_rate_difference": -0.5217391304347826,
+            "person_mean_spearman": 0.59070694315263
+          },
+          {
+            "month": 202105,
+            "repeat": 1,
+            "n_person_months": 22,
+            "probability_tv_pct": 37.40909090909091,
+            "individual_density_iqr_mae_pp": 2.1857452996055957,
+            "individual_density_iqr_bias_pp": -0.6553167061710852,
+            "individual_density_iqr_mean_pp": 4.1722447075396705,
+            "real_individual_density_iqr_mean_pp": 4.827561413710755,
+            "individual_density_mean_mae_pp": 2.3390515674998387,
+            "individual_density_mean_bias_pp": 0.039056831776841446,
+            "q9_center_mae_pp": 0.4375138894081605,
+            "q9_center_bias_pp": 0.4375138894081605,
+            "cross_section_w1_pp": 1.0198366934959857,
+            "delta_w1_pp": 1.3188933529416615,
+            "cross_person_iqr_pp": 1.665003033013008,
+            "real_cross_person_iqr_pp": 4.5057518181913245,
+            "cross_person_iqr_gap_pp": -2.8407487851783166,
+            "zero_deflation_rate": 0.09090909090909091,
+            "real_zero_deflation_rate": 0.5909090909090909,
+            "zero_deflation_rate_difference": -0.5,
+            "person_mean_spearman": 0.4953403191029555
+          },
+          {
+            "month": 202105,
+            "repeat": 2,
+            "n_person_months": 22,
+            "probability_tv_pct": 35.54545454545455,
+            "individual_density_iqr_mae_pp": 2.124222650901532,
+            "individual_density_iqr_bias_pp": -0.6172654661572574,
+            "individual_density_iqr_mean_pp": 4.210295947553498,
+            "real_individual_density_iqr_mean_pp": 4.827561413710755,
+            "individual_density_mean_mae_pp": 2.4439068309238032,
+            "individual_density_mean_bias_pp": 0.10164742386918547,
+            "q9_center_mae_pp": 0.021453570262710997,
+            "q9_center_bias_pp": -0.021453570262710997,
+            "cross_section_w1_pp": 0.9710745246342564,
+            "delta_w1_pp": 1.40516786446157,
+            "cross_person_iqr_pp": 2.0966525563425247,
+            "real_cross_person_iqr_pp": 4.5057518181913245,
+            "cross_person_iqr_gap_pp": -2.4090992618488,
+            "zero_deflation_rate": 0.09090909090909091,
+            "real_zero_deflation_rate": 0.5909090909090909,
+            "zero_deflation_rate_difference": -0.5,
+            "person_mean_spearman": 0.36091501015597327
+          },
+          {
+            "month": 202111,
+            "repeat": 1,
+            "n_person_months": 24,
+            "probability_tv_pct": 35.125,
+            "individual_density_iqr_mae_pp": 2.1974126846557787,
+            "individual_density_iqr_bias_pp": 0.2419383609282215,
+            "individual_density_iqr_mean_pp": 4.9236463119449505,
+            "real_individual_density_iqr_mean_pp": 4.681707951016729,
+            "individual_density_mean_mae_pp": 2.6055250687214238,
+            "individual_density_mean_bias_pp": -0.7335074775010705,
+            "q9_center_mae_pp": 0.543853651742686,
+            "q9_center_bias_pp": -0.543853651742686,
+            "cross_section_w1_pp": 1.8108927770499113,
+            "delta_w1_pp": 1.7105871711427705,
+            "cross_person_iqr_pp": 3.0267909306173557,
+            "real_cross_person_iqr_pp": 4.700238096895581,
+            "cross_person_iqr_gap_pp": -1.6734471662782253,
+            "zero_deflation_rate": 0.20833333333333334,
+            "real_zero_deflation_rate": 0.8333333333333334,
+            "zero_deflation_rate_difference": -0.625,
+            "person_mean_spearman": 0.6121739130434782
+          },
+          {
+            "month": 202111,
+            "repeat": 2,
+            "n_person_months": 24,
+            "probability_tv_pct": 35.208333333333336,
+            "individual_density_iqr_mae_pp": 2.0328500466882584,
+            "individual_density_iqr_bias_pp": 0.06885269983450866,
+            "individual_density_iqr_mean_pp": 4.750560650851238,
+            "real_individual_density_iqr_mean_pp": 4.681707951016729,
+            "individual_density_mean_mae_pp": 2.6907320367988894,
+            "individual_density_mean_bias_pp": -0.7518773257584307,
+            "q9_center_mae_pp": 0.6327812928126475,
+            "q9_center_bias_pp": -0.6327812928126475,
+            "cross_section_w1_pp": 1.7802654887525453,
+            "delta_w1_pp": 1.6169113413400185,
+            "cross_person_iqr_pp": 3.6019609861941237,
+            "real_cross_person_iqr_pp": 4.700238096895581,
+            "cross_person_iqr_gap_pp": -1.0982771107014573,
+            "zero_deflation_rate": 0.25,
+            "real_zero_deflation_rate": 0.8333333333333334,
+            "zero_deflation_rate_difference": -0.5833333333333334,
+            "person_mean_spearman": 0.5652173913043478
+          },
+          {
+            "month": 202203,
+            "repeat": 1,
+            "n_person_months": 23,
+            "probability_tv_pct": 44.73913043478261,
+            "individual_density_iqr_mae_pp": 2.7976828322531877,
+            "individual_density_iqr_bias_pp": -0.34481126868864825,
+            "individual_density_iqr_mean_pp": 4.733464152937837,
+            "real_individual_density_iqr_mean_pp": 5.078275421626486,
+            "individual_density_mean_mae_pp": 5.147357107383005,
+            "individual_density_mean_bias_pp": -1.6156161006654302,
+            "q9_center_mae_pp": 8.881784197001252e-16,
+            "q9_center_bias_pp": -8.881784197001252e-16,
+            "cross_section_w1_pp": 4.224956981667651,
+            "delta_w1_pp": 1.8941463928311315,
+            "cross_person_iqr_pp": 3.5382782600041693,
+            "real_cross_person_iqr_pp": 8.240817747133626,
+            "cross_person_iqr_gap_pp": -4.702539487129457,
+            "zero_deflation_rate": 0.2608695652173913,
+            "real_zero_deflation_rate": 0.8260869565217391,
+            "zero_deflation_rate_difference": -0.5652173913043478,
+            "person_mean_spearman": 0.5387092915068968
+          },
+          {
+            "month": 202203,
+            "repeat": 2,
+            "n_person_months": 23,
+            "probability_tv_pct": 46.54347826086956,
+            "individual_density_iqr_mae_pp": 2.844215068301183,
+            "individual_density_iqr_bias_pp": -0.2305815492195266,
+            "individual_density_iqr_mean_pp": 4.84769387240696,
+            "real_individual_density_iqr_mean_pp": 5.078275421626486,
+            "individual_density_mean_mae_pp": 5.330982748558034,
+            "individual_density_mean_bias_pp": -1.7074831805573285,
+            "q9_center_mae_pp": 0.054080303564573384,
+            "q9_center_bias_pp": 0.054080303564573384,
+            "cross_section_w1_pp": 4.5254445160095536,
+            "delta_w1_pp": 1.8984779684850452,
+            "cross_person_iqr_pp": 2.852446129299258,
+            "real_cross_person_iqr_pp": 8.240817747133626,
+            "cross_person_iqr_gap_pp": -5.388371617834368,
+            "zero_deflation_rate": 0.2608695652173913,
+            "real_zero_deflation_rate": 0.8260869565217391,
+            "zero_deflation_rate_difference": -0.5652173913043478,
+            "person_mean_spearman": 0.4798420686516896
+          }
+        ]
+      },
+      "q8": {
+        "aggregate_equal_month_repeat_cells": {
+          "q8_person_mae_pp": 6.678645834326744,
+          "q8_person_bias_pp": -1.9515624990065894,
+          "q8_center_mae_pp": 0.8125000000000001,
+          "q8_center_bias_pp": -0.5625000000000001,
+          "q8_cross_section_w1_pp": 5.8390625009934105,
+          "q8_person_spearman": 0.46556041245723967
+        },
+        "cells_used_by_metric": {
+          "q8_person_mae_pp": 8,
+          "q8_person_bias_pp": 8,
+          "q8_center_mae_pp": 8,
+          "q8_center_bias_pp": 8,
+          "q8_cross_section_w1_pp": 8,
+          "q8_person_spearman": 8
+        },
+        "expected_cells": 8,
+        "cells_complete": true,
+        "cells": [
+          {
+            "month": 202004,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 8.425,
+            "q8_person_bias_pp": -1.625,
+            "q8_center_mae_pp": 1.0,
+            "q8_center_bias_pp": -1.0,
+            "q8_cross_section_w1_pp": 7.933333333333332,
+            "q8_person_spearman": 0.5074365704286964
+          },
+          {
+            "month": 202004,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 8.375,
+            "q8_person_bias_pp": -1.7083333333333333,
+            "q8_center_mae_pp": 1.1,
+            "q8_center_bias_pp": -1.1,
+            "q8_cross_section_w1_pp": 7.683333333333334,
+            "q8_person_spearman": 0.5387480382019142
+          },
+          {
+            "month": 202105,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 7.154166670640309,
+            "q8_person_bias_pp": -3.187499996026357,
+            "q8_center_mae_pp": 1.5,
+            "q8_center_bias_pp": -1.5,
+            "q8_cross_section_w1_pp": 5.745833337306977,
+            "q8_person_spearman": 0.3299692847740237
+          },
+          {
+            "month": 202105,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 6.708333337306976,
+            "q8_person_bias_pp": -2.858333329359691,
+            "q8_center_mae_pp": 1.2000000000000002,
+            "q8_center_bias_pp": -1.2000000000000002,
+            "q8_cross_section_w1_pp": 5.36666667064031,
+            "q8_person_spearman": 0.3769711309591398
+          },
+          {
+            "month": 202111,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 4.1499999999999995,
+            "q8_person_bias_pp": -2.225,
+            "q8_center_mae_pp": 0.20000000000000018,
+            "q8_center_bias_pp": -0.20000000000000018,
+            "q8_cross_section_w1_pp": 3.6249999999999996,
+            "q8_person_spearman": 0.6027910364096241
+          },
+          {
+            "month": 202111,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 4.166666666666667,
+            "q8_person_bias_pp": -2.175,
+            "q8_center_mae_pp": 0.5,
+            "q8_center_bias_pp": -0.5,
+            "q8_cross_section_w1_pp": 3.533333333333333,
+            "q8_person_spearman": 0.5946123534807073
+          },
+          {
+            "month": 202203,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 6.820833333333333,
+            "q8_person_bias_pp": -0.5291666666666667,
+            "q8_center_mae_pp": 0.5,
+            "q8_center_bias_pp": 0.5,
+            "q8_cross_section_w1_pp": 5.987500000000001,
+            "q8_person_spearman": 0.3699588458519955
+          },
+          {
+            "month": 202203,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 7.629166666666667,
+            "q8_person_bias_pp": -1.3041666666666667,
+            "q8_center_mae_pp": 0.5,
+            "q8_center_bias_pp": 0.5,
+            "q8_cross_section_w1_pp": 6.8374999999999995,
+            "q8_person_spearman": 0.4039960395518162
+          }
+        ]
+      },
+      "auxiliary_survey_weighted": {
+        "q9": {
+          "aggregate_equal_month_repeat_cells": {
+            "probability_tv_pct": 44.430115992882406,
+            "individual_density_iqr_mae_pp": 2.4758844661186634,
+            "individual_density_iqr_bias_pp": -0.048515528928030405,
+            "individual_density_iqr_mean_pp": 4.395591165653293,
+            "real_individual_density_iqr_mean_pp": 4.444106694581324,
+            "individual_density_mean_mae_pp": 3.5021620604391113,
+            "individual_density_mean_bias_pp": -1.3851188992811232,
+            "q9_center_mae_pp": 0.4466747487625561,
+            "q9_center_bias_pp": -0.2409931432208997,
+            "cross_section_w1_pp": 2.50138190903771,
+            "delta_w1_pp": 2.1527391218822873,
+            "cross_person_iqr_pp": 2.98666726762493,
+            "real_cross_person_iqr_pp": 4.360404866050582,
+            "cross_person_iqr_gap_pp": -1.3737375984256521,
+            "zero_deflation_rate": 0.14525605103712427,
+            "real_zero_deflation_rate": 0.7292273465632926,
+            "zero_deflation_rate_difference": -0.5839712955261683,
+            "person_mean_spearman": 0.5153606528680104
+          },
+          "cells_used_by_metric": {
+            "probability_tv_pct": 8,
+            "individual_density_iqr_mae_pp": 8,
+            "individual_density_iqr_bias_pp": 8,
+            "individual_density_iqr_mean_pp": 8,
+            "real_individual_density_iqr_mean_pp": 8,
+            "individual_density_mean_mae_pp": 8,
+            "individual_density_mean_bias_pp": 8,
+            "q9_center_mae_pp": 8,
+            "q9_center_bias_pp": 8,
+            "cross_section_w1_pp": 8,
+            "delta_w1_pp": 8,
+            "cross_person_iqr_pp": 8,
+            "real_cross_person_iqr_pp": 8,
+            "cross_person_iqr_gap_pp": 8,
+            "zero_deflation_rate": 8,
+            "real_zero_deflation_rate": 8,
+            "zero_deflation_rate_difference": 8,
+            "person_mean_spearman": 8
+          },
+          "expected_cells": 8,
+          "cells_complete": true,
+          "cells": [
+            {
+              "month": 202004,
+              "repeat": 1,
+              "n_person_months": 23,
+              "probability_tv_pct": 61.11665715142858,
+              "individual_density_iqr_mae_pp": 2.4318448393749605,
+              "individual_density_iqr_bias_pp": -0.300449556421422,
+              "individual_density_iqr_mean_pp": 3.322577712986972,
+              "real_individual_density_iqr_mean_pp": 3.6230272694083947,
+              "individual_density_mean_mae_pp": 3.4833510447626836,
+              "individual_density_mean_bias_pp": -2.1468242221020852,
+              "q9_center_mae_pp": 0.2677587129030252,
+              "q9_center_bias_pp": -0.2677587129030252,
+              "cross_section_w1_pp": 2.404075751691817,
+              "delta_w1_pp": 2.3051170303703636,
+              "cross_person_iqr_pp": 3.0316690097148324,
+              "real_cross_person_iqr_pp": 2.377147328381171,
+              "cross_person_iqr_gap_pp": 0.6545216813336614,
+              "zero_deflation_rate": 0.0,
+              "real_zero_deflation_rate": 0.556666924411603,
+              "zero_deflation_rate_difference": -0.556666924411603,
+              "person_mean_spearman": 0.4799802860261119
+            },
+            {
+              "month": 202004,
+              "repeat": 2,
+              "n_person_months": 23,
+              "probability_tv_pct": 60.467725879454775,
+              "individual_density_iqr_mae_pp": 2.3287007210606476,
+              "individual_density_iqr_bias_pp": 0.1369010957373452,
+              "individual_density_iqr_mean_pp": 3.75992836514574,
+              "real_individual_density_iqr_mean_pp": 3.6230272694083947,
+              "individual_density_mean_mae_pp": 3.425731743941732,
+              "individual_density_mean_bias_pp": -2.417091118800154,
+              "q9_center_mae_pp": 0.35975246335998445,
+              "q9_center_bias_pp": -0.35975246335998445,
+              "cross_section_w1_pp": 2.4779358050099,
+              "delta_w1_pp": 2.6264406462627026,
+              "cross_person_iqr_pp": 2.4994355728496203,
+              "real_cross_person_iqr_pp": 2.377147328381171,
+              "cross_person_iqr_gap_pp": 0.12228824446844921,
+              "zero_deflation_rate": 0.0,
+              "real_zero_deflation_rate": 0.556666924411603,
+              "zero_deflation_rate_difference": -0.556666924411603,
+              "person_mean_spearman": 0.59070694315263
+            },
+            {
+              "month": 202105,
+              "repeat": 1,
+              "n_person_months": 22,
+              "probability_tv_pct": 37.676674691355224,
+              "individual_density_iqr_mae_pp": 2.1797176034661527,
+              "individual_density_iqr_bias_pp": 0.04317926935582922,
+              "individual_density_iqr_mean_pp": 4.329941958123163,
+              "real_individual_density_iqr_mean_pp": 4.286762688767333,
+              "individual_density_mean_mae_pp": 2.4910311669116947,
+              "individual_density_mean_bias_pp": 0.2606573974664199,
+              "q9_center_mae_pp": 0.3571296625225493,
+              "q9_center_bias_pp": 0.3571296625225493,
+              "cross_section_w1_pp": 0.7720415391316459,
+              "delta_w1_pp": 1.7312866272297105,
+              "cross_person_iqr_pp": 2.6833816583524115,
+              "real_cross_person_iqr_pp": 3.406766309821521,
+              "cross_person_iqr_gap_pp": -0.7233846514691096,
+              "zero_deflation_rate": 0.04465446083582454,
+              "real_zero_deflation_rate": 0.6046601100022453,
+              "zero_deflation_rate_difference": -0.5600056491664208,
+              "person_mean_spearman": 0.4953403191029555
+            },
+            {
+              "month": 202105,
+              "repeat": 2,
+              "n_person_months": 22,
+              "probability_tv_pct": 34.865151224502746,
+              "individual_density_iqr_mae_pp": 2.06698708838327,
+              "individual_density_iqr_bias_pp": -0.08856719865981251,
+              "individual_density_iqr_mean_pp": 4.198195490107521,
+              "real_individual_density_iqr_mean_pp": 4.286762688767333,
+              "individual_density_mean_mae_pp": 2.4801857779538063,
+              "individual_density_mean_bias_pp": 0.07369209239152653,
+              "q9_center_mae_pp": 0.10337526215404402,
+              "q9_center_bias_pp": 0.10337526215404402,
+              "cross_section_w1_pp": 0.7964154420400074,
+              "delta_w1_pp": 1.6690930197870235,
+              "cross_person_iqr_pp": 3.4315978588572866,
+              "real_cross_person_iqr_pp": 3.406766309821521,
+              "cross_person_iqr_gap_pp": 0.024831549035765565,
+              "zero_deflation_rate": 0.14749243417210933,
+              "real_zero_deflation_rate": 0.6046601100022453,
+              "zero_deflation_rate_difference": -0.45716767583013607,
+              "person_mean_spearman": 0.36091501015597327
+            },
+            {
+              "month": 202111,
+              "repeat": 1,
+              "n_person_months": 24,
+              "probability_tv_pct": 32.14239147227045,
+              "individual_density_iqr_mae_pp": 2.2022844713490697,
+              "individual_density_iqr_bias_pp": 0.2716032450105544,
+              "individual_density_iqr_mean_pp": 5.033899777777691,
+              "real_individual_density_iqr_mean_pp": 4.762296532767136,
+              "individual_density_mean_mae_pp": 2.427492712261787,
+              "individual_density_mean_bias_pp": -0.6715630653971848,
+              "q9_center_mae_pp": 0.1823797151757791,
+              "q9_center_bias_pp": 0.1823797151757791,
+              "cross_section_w1_pp": 1.7863067262508148,
+              "delta_w1_pp": 1.6768787635937876,
+              "cross_person_iqr_pp": 2.904706221149416,
+              "real_cross_person_iqr_pp": 4.087763704260897,
+              "cross_person_iqr_gap_pp": -1.1830574831114813,
+              "zero_deflation_rate": 0.19027036499509098,
+              "real_zero_deflation_rate": 0.8516325083790558,
+              "zero_deflation_rate_difference": -0.6613621433839648,
+              "person_mean_spearman": 0.6121739130434782
+            },
+            {
+              "month": 202111,
+              "repeat": 2,
+              "n_person_months": 24,
+              "probability_tv_pct": 32.759968853251344,
+              "individual_density_iqr_mae_pp": 2.166274404273951,
+              "individual_density_iqr_bias_pp": 0.09490060101607525,
+              "individual_density_iqr_mean_pp": 4.857197133783212,
+              "real_individual_density_iqr_mean_pp": 4.762296532767136,
+              "individual_density_mean_mae_pp": 2.596076837342191,
+              "individual_density_mean_bias_pp": -0.6242267909190866,
+              "q9_center_mae_pp": 0.17984178231425307,
+              "q9_center_bias_pp": 0.17984178231425307,
+              "cross_section_w1_pp": 1.828927529128009,
+              "delta_w1_pp": 1.6103389871805756,
+              "cross_person_iqr_pp": 3.3775069418925856,
+              "real_cross_person_iqr_pp": 4.087763704260897,
+              "cross_person_iqr_gap_pp": -0.7102567623683118,
+              "zero_deflation_rate": 0.2623724915931465,
+              "real_zero_deflation_rate": 0.8516325083790558,
+              "zero_deflation_rate_difference": -0.5892600167859092,
+              "person_mean_spearman": 0.5652173913043478
+            },
+            {
+              "month": 202203,
+              "repeat": 1,
+              "n_person_months": 23,
+              "probability_tv_pct": 47.13661812323899,
+              "individual_density_iqr_mae_pp": 3.2291863111620396,
+              "individual_density_iqr_bias_pp": -0.41436796888610133,
+              "individual_density_iqr_mean_pp": 4.689972318496329,
+              "real_individual_density_iqr_mean_pp": 5.10434028738243,
+              "individual_density_mean_mae_pp": 5.445538447982406,
+              "individual_density_mean_bias_pp": -2.725437912830948,
+              "q9_center_mae_pp": 0.900498831406459,
+              "q9_center_bias_pp": -0.900498831406459,
+              "cross_section_w1_pp": 4.808601740494025,
+              "delta_w1_pp": 2.76231185908245,
+              "cross_person_iqr_pp": 3.464700613309444,
+              "real_cross_person_iqr_pp": 7.569942121738739,
+              "cross_person_iqr_gap_pp": -4.1052415084292955,
+              "zero_deflation_rate": 0.2617637513782312,
+              "real_zero_deflation_rate": 0.9039498434602662,
+              "zero_deflation_rate_difference": -0.642186092082035,
+              "person_mean_spearman": 0.5387092915068968
+            },
+            {
+              "month": 202203,
+              "repeat": 2,
+              "n_person_months": 23,
+              "probability_tv_pct": 49.275740547557135,
+              "individual_density_iqr_mae_pp": 3.202080289879219,
+              "individual_density_iqr_bias_pp": -0.13132371857671155,
+              "individual_density_iqr_mean_pp": 4.973016568805719,
+              "real_individual_density_iqr_mean_pp": 5.10434028738243,
+              "individual_density_mean_mae_pp": 5.667888752356587,
+              "individual_density_mean_bias_pp": -2.830157574057474,
+              "q9_center_mae_pp": 1.2226615602643545,
+              "q9_center_bias_pp": -1.2226615602643545,
+              "cross_section_w1_pp": 5.1367507385554605,
+              "delta_w1_pp": 2.840446041551685,
+              "cross_person_iqr_pp": 2.500340264873845,
+              "real_cross_person_iqr_pp": 7.569942121738739,
+              "cross_person_iqr_gap_pp": -5.069601856864894,
+              "zero_deflation_rate": 0.2554949053225916,
+              "real_zero_deflation_rate": 0.9039498434602662,
+              "zero_deflation_rate_difference": -0.6484549381376746,
+              "person_mean_spearman": 0.4798420686516896
+            }
+          ]
+        },
+        "q8": {
+          "aggregate_equal_month_repeat_cells": {
+            "q8_person_mae_pp": 6.515641872107869,
+            "q8_person_bias_pp": -0.8901055897474681,
+            "q8_center_mae_pp": 0.775,
+            "q8_center_bias_pp": 0.07500000000000007,
+            "q8_cross_section_w1_pp": 5.683434804060386,
+            "q8_person_spearman": 0.46556041245723967
+          },
+          "cells_used_by_metric": {
+            "q8_person_mae_pp": 8,
+            "q8_person_bias_pp": 8,
+            "q8_center_mae_pp": 8,
+            "q8_center_bias_pp": 8,
+            "q8_cross_section_w1_pp": 8,
+            "q8_person_spearman": 8
+          },
+          "expected_cells": 8,
+          "cells_complete": true,
+          "cells": [
+            {
+              "month": 202004,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 8.82485927034108,
+              "q8_person_bias_pp": 1.999263211574523,
+              "q8_center_mae_pp": 0.30000000000000004,
+              "q8_center_bias_pp": -0.30000000000000004,
+              "q8_cross_section_w1_pp": 8.26718120780054,
+              "q8_person_spearman": 0.5074365704286964
+            },
+            {
+              "month": 202004,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 8.748988623366532,
+              "q8_person_bias_pp": 1.7770159074337755,
+              "q8_center_mae_pp": 0.5,
+              "q8_center_bias_pp": -0.5,
+              "q8_cross_section_w1_pp": 8.085486989342849,
+              "q8_person_spearman": 0.5387480382019142
+            },
+            {
+              "month": 202105,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 5.942808964562576,
+              "q8_person_bias_pp": -2.641704710345045,
+              "q8_center_mae_pp": 1.2000000000000002,
+              "q8_center_bias_pp": -1.2000000000000002,
+              "q8_cross_section_w1_pp": 4.3040908401609235,
+              "q8_person_spearman": 0.3299692847740237
+            },
+            {
+              "month": 202105,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 5.36422882443825,
+              "q8_person_bias_pp": -2.5608483102000825,
+              "q8_center_mae_pp": 0.7999999999999998,
+              "q8_center_bias_pp": -0.7999999999999998,
+              "q8_cross_section_w1_pp": 4.2512890160884265,
+              "q8_person_spearman": 0.3769711309591398
+            },
+            {
+              "month": 202111,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 4.03879301485914,
+              "q8_person_bias_pp": -1.9987560592850198,
+              "q8_center_mae_pp": 1.2000000000000002,
+              "q8_center_bias_pp": 1.2000000000000002,
+              "q8_cross_section_w1_pp": 3.5037505101739748,
+              "q8_person_spearman": 0.6027910364096241
+            },
+            {
+              "month": 202111,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 4.077526659800489,
+              "q8_person_bias_pp": -2.0394254701139136,
+              "q8_center_mae_pp": 1.2000000000000002,
+              "q8_center_bias_pp": 1.2000000000000002,
+              "q8_cross_section_w1_pp": 3.4356999710903144,
+              "q8_person_spearman": 0.5946123534807073
+            },
+            {
+              "month": 202203,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 7.089169687637877,
+              "q8_person_bias_pp": -0.4314497925362092,
+              "q8_center_mae_pp": 0.5,
+              "q8_center_bias_pp": 0.5,
+              "q8_cross_section_w1_pp": 6.344116534236155,
+              "q8_person_spearman": 0.3699588458519955
+            },
+            {
+              "month": 202203,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 8.038759931857005,
+              "q8_person_bias_pp": -1.2249394945077732,
+              "q8_center_mae_pp": 0.5,
+              "q8_center_bias_pp": 0.5,
+              "q8_cross_section_w1_pp": 7.275863363589915,
+              "q8_person_spearman": 0.4039960395518162
+            }
+          ]
+        },
+        "weight_definition": "Parent SCE survey weight × parent-stratum size / selected-stratum size; descriptive sensitivity only."
+      }
+    },
+    "financial_perspective": {
+      "q9": {
+        "aggregate_equal_month_repeat_cells": {
+          "probability_tv_pct": 44.13822669631094,
+          "individual_density_iqr_mae_pp": 2.39695115090558,
+          "individual_density_iqr_bias_pp": -0.22007588509791787,
+          "individual_density_iqr_mean_pp": 4.497521547850738,
+          "real_individual_density_iqr_mean_pp": 4.717597432948656,
+          "individual_density_mean_mae_pp": 3.481233636916836,
+          "individual_density_mean_bias_pp": -1.0814541135759996,
+          "q9_center_mae_pp": 0.6580982157160442,
+          "q9_center_bias_pp": -0.3630161583695599,
+          "cross_section_w1_pp": 2.4727240332484857,
+          "delta_w1_pp": 1.8480606498179637,
+          "cross_person_iqr_pp": 2.6198060524185007,
+          "real_cross_person_iqr_pp": 5.556145102120589,
+          "cross_person_iqr_gap_pp": -2.936339049702088,
+          "zero_deflation_rate": 0.11849472990777338,
+          "real_zero_deflation_rate": 0.6930171277997366,
+          "zero_deflation_rate_difference": -0.5745223978919631,
+          "person_mean_spearman": 0.5103095053936195
+        },
+        "cells_used_by_metric": {
+          "probability_tv_pct": 8,
+          "individual_density_iqr_mae_pp": 8,
+          "individual_density_iqr_bias_pp": 8,
+          "individual_density_iqr_mean_pp": 8,
+          "real_individual_density_iqr_mean_pp": 8,
+          "individual_density_mean_mae_pp": 8,
+          "individual_density_mean_bias_pp": 8,
+          "q9_center_mae_pp": 8,
+          "q9_center_bias_pp": 8,
+          "cross_section_w1_pp": 8,
+          "delta_w1_pp": 8,
+          "cross_person_iqr_pp": 8,
+          "real_cross_person_iqr_pp": 8,
+          "cross_person_iqr_gap_pp": 8,
+          "zero_deflation_rate": 8,
+          "real_zero_deflation_rate": 8,
+          "zero_deflation_rate_difference": 8,
+          "person_mean_spearman": 8
+        },
+        "expected_cells": 8,
+        "cells_complete": true,
+        "cells": [
+          {
+            "month": 202004,
+            "repeat": 1,
+            "n_person_months": 23,
+            "probability_tv_pct": 59.43478260869565,
+            "individual_density_iqr_mae_pp": 2.608188236633748,
+            "individual_density_iqr_bias_pp": -0.17619392382257043,
+            "individual_density_iqr_mean_pp": 4.106651021618083,
+            "real_individual_density_iqr_mean_pp": 4.282844945440653,
+            "individual_density_mean_mae_pp": 3.794883128729492,
+            "individual_density_mean_bias_pp": -2.3227318831441846,
+            "q9_center_mae_pp": 1.2342066594172678,
+            "q9_center_bias_pp": -1.2342066594172678,
+            "cross_section_w1_pp": 2.473798625801119,
+            "delta_w1_pp": 2.770490882298091,
+            "cross_person_iqr_pp": 2.0882060690705044,
+            "real_cross_person_iqr_pp": 4.777772746261824,
+            "cross_person_iqr_gap_pp": -2.689566677191319,
+            "zero_deflation_rate": 0.043478260869565216,
+            "real_zero_deflation_rate": 0.5217391304347826,
+            "zero_deflation_rate_difference": -0.4782608695652174,
+            "person_mean_spearman": 0.557231166595552
+          },
+          {
+            "month": 202004,
+            "repeat": 2,
+            "n_person_months": 23,
+            "probability_tv_pct": 61.391304347826086,
+            "individual_density_iqr_mae_pp": 2.749294469688947,
+            "individual_density_iqr_bias_pp": -0.7816429906000112,
+            "individual_density_iqr_mean_pp": 3.5012019548406412,
+            "real_individual_density_iqr_mean_pp": 4.282844945440653,
+            "individual_density_mean_mae_pp": 3.977767865954441,
+            "individual_density_mean_bias_pp": -2.497155158986472,
+            "q9_center_mae_pp": 1.377206943150373,
+            "q9_center_bias_pp": -1.377206943150373,
+            "cross_section_w1_pp": 2.888904076887299,
+            "delta_w1_pp": 2.6135092206868054,
+            "cross_person_iqr_pp": 1.6285839926171768,
+            "real_cross_person_iqr_pp": 4.777772746261824,
+            "cross_person_iqr_gap_pp": -3.149188753644647,
+            "zero_deflation_rate": 0.0,
+            "real_zero_deflation_rate": 0.5217391304347826,
+            "zero_deflation_rate_difference": -0.5217391304347826,
+            "person_mean_spearman": 0.5397924534917757
+          },
+          {
+            "month": 202105,
+            "repeat": 1,
+            "n_person_months": 22,
+            "probability_tv_pct": 35.5,
+            "individual_density_iqr_mae_pp": 2.0436902641008303,
+            "individual_density_iqr_bias_pp": -0.5115663296763854,
+            "individual_density_iqr_mean_pp": 4.315995084034371,
+            "real_individual_density_iqr_mean_pp": 4.827561413710755,
+            "individual_density_mean_mae_pp": 2.3574229168029786,
+            "individual_density_mean_bias_pp": 0.2674486702144883,
+            "q9_center_mae_pp": 0.606754132819388,
+            "q9_center_bias_pp": 0.606754132819388,
+            "cross_section_w1_pp": 1.055122447678961,
+            "delta_w1_pp": 1.515732280979808,
+            "cross_person_iqr_pp": 2.438475934556283,
+            "real_cross_person_iqr_pp": 4.5057518181913245,
+            "cross_person_iqr_gap_pp": -2.0672758836350416,
+            "zero_deflation_rate": 0.045454545454545456,
+            "real_zero_deflation_rate": 0.5909090909090909,
+            "zero_deflation_rate_difference": -0.5454545454545454,
+            "person_mean_spearman": 0.2970912290172801
+          },
+          {
+            "month": 202105,
+            "repeat": 2,
+            "n_person_months": 22,
+            "probability_tv_pct": 35.95454545454545,
+            "individual_density_iqr_mae_pp": 1.8779871495212583,
+            "individual_density_iqr_bias_pp": -0.5774927312660737,
+            "individual_density_iqr_mean_pp": 4.250068682444684,
+            "real_individual_density_iqr_mean_pp": 4.827561413710755,
+            "individual_density_mean_mae_pp": 2.349842564773326,
+            "individual_density_mean_bias_pp": 0.34450783332576845,
+            "q9_center_mae_pp": 0.5735740965665492,
+            "q9_center_bias_pp": 0.5735740965665492,
+            "cross_section_w1_pp": 0.9681508573506447,
+            "delta_w1_pp": 1.5908452399350572,
+            "cross_person_iqr_pp": 3.1835325073750296,
+            "real_cross_person_iqr_pp": 4.5057518181913245,
+            "cross_person_iqr_gap_pp": -1.322219310816295,
+            "zero_deflation_rate": 0.09090909090909091,
+            "real_zero_deflation_rate": 0.5909090909090909,
+            "zero_deflation_rate_difference": -0.5,
+            "person_mean_spearman": 0.3795538134973616
+          },
+          {
+            "month": 202111,
+            "repeat": 1,
+            "n_person_months": 24,
+            "probability_tv_pct": 34.354166666666664,
+            "individual_density_iqr_mae_pp": 2.1861302393888082,
+            "individual_density_iqr_bias_pp": 0.2094001083205906,
+            "individual_density_iqr_mean_pp": 4.891108059337319,
+            "real_individual_density_iqr_mean_pp": 4.681707951016729,
+            "individual_density_mean_mae_pp": 2.6219752287006766,
+            "individual_density_mean_bias_pp": -0.7932029217116102,
+            "q9_center_mae_pp": 0.40662651898704993,
+            "q9_center_bias_pp": -0.40662651898704993,
+            "cross_section_w1_pp": 1.9637781179120972,
+            "delta_w1_pp": 1.6344133769216067,
+            "cross_person_iqr_pp": 2.929252562657437,
+            "real_cross_person_iqr_pp": 4.700238096895581,
+            "cross_person_iqr_gap_pp": -1.770985534238144,
+            "zero_deflation_rate": 0.16666666666666666,
+            "real_zero_deflation_rate": 0.8333333333333334,
+            "zero_deflation_rate_difference": -0.6666666666666666,
+            "person_mean_spearman": 0.6026086956521738
+          },
+          {
+            "month": 202111,
+            "repeat": 2,
+            "n_person_months": 24,
+            "probability_tv_pct": 35.166666666666664,
+            "individual_density_iqr_mae_pp": 2.2186733670345316,
+            "individual_density_iqr_bias_pp": 0.14981990613386673,
+            "individual_density_iqr_mean_pp": 4.831527857150596,
+            "real_individual_density_iqr_mean_pp": 4.681707951016729,
+            "individual_density_mean_mae_pp": 2.658640376449488,
+            "individual_density_mean_bias_pp": -0.8100371202795849,
+            "q9_center_mae_pp": 0.1951695925067689,
+            "q9_center_bias_pp": -0.1951695925067689,
+            "cross_section_w1_pp": 1.9477593618491766,
+            "delta_w1_pp": 1.3708211949020592,
+            "cross_person_iqr_pp": 2.6167899982971914,
+            "real_cross_person_iqr_pp": 4.700238096895581,
+            "cross_person_iqr_gap_pp": -2.0834480985983896,
+            "zero_deflation_rate": 0.16666666666666666,
+            "real_zero_deflation_rate": 0.8333333333333334,
+            "zero_deflation_rate_difference": -0.6666666666666666,
+            "person_mean_spearman": 0.5895652173913043
+          },
+          {
+            "month": 202203,
+            "repeat": 1,
+            "n_person_months": 23,
+            "probability_tv_pct": 44.26086956521739,
+            "individual_density_iqr_mae_pp": 2.56765975124233,
+            "individual_density_iqr_bias_pp": 0.04532815752204323,
+            "individual_density_iqr_mean_pp": 5.123603579148529,
+            "real_individual_density_iqr_mean_pp": 5.078275421626486,
+            "individual_density_mean_mae_pp": 4.709820639325878,
+            "individual_density_mean_bias_pp": -0.8972339728923602,
+            "q9_center_mae_pp": 0.2046031147120857,
+            "q9_center_bias_pp": -0.2046031147120857,
+            "cross_section_w1_pp": 3.6655364125088123,
+            "delta_w1_pp": 1.2922269494837422,
+            "cross_person_iqr_pp": 3.3830886738747754,
+            "real_cross_person_iqr_pp": 8.240817747133626,
+            "cross_person_iqr_gap_pp": -4.8577290732588505,
+            "zero_deflation_rate": 0.2608695652173913,
+            "real_zero_deflation_rate": 0.8260869565217391,
+            "zero_deflation_rate_difference": -0.5652173913043478,
+            "person_mean_spearman": 0.5462644931165007
+          },
+          {
+            "month": 202203,
+            "repeat": 2,
+            "n_person_months": 23,
+            "probability_tv_pct": 47.04347826086956,
+            "individual_density_iqr_mae_pp": 2.9239857296341882,
+            "individual_density_iqr_bias_pp": -0.118259277394803,
+            "individual_density_iqr_mean_pp": 4.960016144231683,
+            "real_individual_density_iqr_mean_pp": 5.078275421626486,
+            "individual_density_mean_mae_pp": 5.379516374598407,
+            "individual_density_mean_bias_pp": -1.9432283551340428,
+            "q9_center_mae_pp": 0.6666446675688711,
+            "q9_center_bias_pp": -0.6666446675688711,
+            "cross_section_w1_pp": 4.818742365999777,
+            "delta_w1_pp": 1.9964460533365402,
+            "cross_person_iqr_pp": 2.6905186808996095,
+            "real_cross_person_iqr_pp": 8.240817747133626,
+            "cross_person_iqr_gap_pp": -5.550299066234016,
+            "zero_deflation_rate": 0.17391304347826086,
+            "real_zero_deflation_rate": 0.8260869565217391,
+            "zero_deflation_rate_difference": -0.6521739130434783,
+            "person_mean_spearman": 0.5703689743870083
+          }
+        ]
+      },
+      "q8": {
+        "aggregate_equal_month_repeat_cells": {
+          "q8_person_mae_pp": 6.790625000993411,
+          "q8_person_bias_pp": -2.068749999006589,
+          "q8_center_mae_pp": 0.7375,
+          "q8_center_bias_pp": -0.48750000000000004,
+          "q8_cross_section_w1_pp": 5.991666667660077,
+          "q8_person_spearman": 0.47073378869003357
+        },
+        "cells_used_by_metric": {
+          "q8_person_mae_pp": 8,
+          "q8_person_bias_pp": 8,
+          "q8_center_mae_pp": 8,
+          "q8_center_bias_pp": 8,
+          "q8_cross_section_w1_pp": 8,
+          "q8_person_spearman": 8
+        },
+        "expected_cells": 8,
+        "cells_complete": true,
+        "cells": [
+          {
+            "month": 202004,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 8.45,
+            "q8_person_bias_pp": -1.4916666666666665,
+            "q8_center_mae_pp": 1.0,
+            "q8_center_bias_pp": -1.0,
+            "q8_cross_section_w1_pp": 7.699999999999999,
+            "q8_person_spearman": 0.5362921369689369
+          },
+          {
+            "month": 202004,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 8.916666666666666,
+            "q8_person_bias_pp": -1.5416666666666663,
+            "q8_center_mae_pp": 0.8,
+            "q8_center_bias_pp": -0.8,
+            "q8_cross_section_w1_pp": 8.083333333333332,
+            "q8_person_spearman": 0.5275711664955246
+          },
+          {
+            "month": 202105,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 6.71666667064031,
+            "q8_person_bias_pp": -2.899999996026357,
+            "q8_center_mae_pp": 1.0,
+            "q8_center_bias_pp": -1.0,
+            "q8_cross_section_w1_pp": 5.4666666706403095,
+            "q8_person_spearman": 0.4248642242094578
+          },
+          {
+            "month": 202105,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 6.337500003973642,
+            "q8_person_bias_pp": -2.762499996026357,
+            "q8_center_mae_pp": 1.4,
+            "q8_center_bias_pp": -1.4,
+            "q8_cross_section_w1_pp": 5.3625000039736435,
+            "q8_person_spearman": 0.45052647358531345
+          },
+          {
+            "month": 202111,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 4.320833333333334,
+            "q8_person_bias_pp": -2.495833333333333,
+            "q8_center_mae_pp": 0.20000000000000018,
+            "q8_center_bias_pp": -0.20000000000000018,
+            "q8_cross_section_w1_pp": 3.829166666666666,
+            "q8_person_spearman": 0.6103542383767077
+          },
+          {
+            "month": 202111,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 4.425,
+            "q8_person_bias_pp": -2.7416666666666667,
+            "q8_center_mae_pp": 0.5,
+            "q8_center_bias_pp": -0.5,
+            "q8_cross_section_w1_pp": 3.9249999999999994,
+            "q8_person_spearman": 0.5064191020170001
+          },
+          {
+            "month": 202203,
+            "repeat": 1,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 7.083333333333333,
+            "q8_person_bias_pp": -0.7000000000000001,
+            "q8_center_mae_pp": 0.5,
+            "q8_center_bias_pp": 0.5,
+            "q8_cross_section_w1_pp": 6.233333333333333,
+            "q8_person_spearman": 0.3780380552851353
+          },
+          {
+            "month": 202203,
+            "repeat": 2,
+            "n_person_months": 24,
+            "q8_person_mae_pp": 8.075000000000001,
+            "q8_person_bias_pp": -1.9166666666666667,
+            "q8_center_mae_pp": 0.5,
+            "q8_center_bias_pp": 0.5,
+            "q8_cross_section_w1_pp": 7.333333333333332,
+            "q8_person_spearman": 0.3318049125821929
+          }
+        ]
+      },
+      "auxiliary_survey_weighted": {
+        "q9": {
+          "aggregate_equal_month_repeat_cells": {
+            "probability_tv_pct": 44.8468060742173,
+            "individual_density_iqr_mae_pp": 2.4821113680975206,
+            "individual_density_iqr_bias_pp": 0.04908914835876184,
+            "individual_density_iqr_mean_pp": 4.493195842940086,
+            "real_individual_density_iqr_mean_pp": 4.444106694581324,
+            "individual_density_mean_mae_pp": 3.455704562253641,
+            "individual_density_mean_bias_pp": -1.2547802332740003,
+            "q9_center_mae_pp": 0.7140035431098504,
+            "q9_center_bias_pp": -0.3457978414097491,
+            "cross_section_w1_pp": 2.5192358948369638,
+            "delta_w1_pp": 2.0491491197474456,
+            "cross_person_iqr_pp": 2.586718478356339,
+            "real_cross_person_iqr_pp": 4.360404866050582,
+            "cross_person_iqr_gap_pp": -1.773686387694243,
+            "zero_deflation_rate": 0.09858563759152841,
+            "real_zero_deflation_rate": 0.7292273465632926,
+            "zero_deflation_rate_difference": -0.6306417089717642,
+            "person_mean_spearman": 0.5103095053936195
+          },
+          "cells_used_by_metric": {
+            "probability_tv_pct": 8,
+            "individual_density_iqr_mae_pp": 8,
+            "individual_density_iqr_bias_pp": 8,
+            "individual_density_iqr_mean_pp": 8,
+            "real_individual_density_iqr_mean_pp": 8,
+            "individual_density_mean_mae_pp": 8,
+            "individual_density_mean_bias_pp": 8,
+            "q9_center_mae_pp": 8,
+            "q9_center_bias_pp": 8,
+            "cross_section_w1_pp": 8,
+            "delta_w1_pp": 8,
+            "cross_person_iqr_pp": 8,
+            "real_cross_person_iqr_pp": 8,
+            "cross_person_iqr_gap_pp": 8,
+            "zero_deflation_rate": 8,
+            "real_zero_deflation_rate": 8,
+            "zero_deflation_rate_difference": 8,
+            "person_mean_spearman": 8
+          },
+          "expected_cells": 8,
+          "cells_complete": true,
+          "cells": [
+            {
+              "month": 202004,
+              "repeat": 1,
+              "n_person_months": 23,
+              "probability_tv_pct": 61.33287307666736,
+              "individual_density_iqr_mae_pp": 2.508848445943478,
+              "individual_density_iqr_bias_pp": 0.27939696175295375,
+              "individual_density_iqr_mean_pp": 3.9024242311613486,
+              "real_individual_density_iqr_mean_pp": 3.6230272694083947,
+              "individual_density_mean_mae_pp": 3.370669503339739,
+              "individual_density_mean_bias_pp": -2.1257237623107654,
+              "q9_center_mae_pp": 0.4063093664144928,
+              "q9_center_bias_pp": -0.4063093664144928,
+              "cross_section_w1_pp": 2.2506996747068317,
+              "delta_w1_pp": 2.420344479215783,
+              "cross_person_iqr_pp": 1.7259303161173989,
+              "real_cross_person_iqr_pp": 2.377147328381171,
+              "cross_person_iqr_gap_pp": -0.6512170122637722,
+              "zero_deflation_rate": 0.039907377433006916,
+              "real_zero_deflation_rate": 0.556666924411603,
+              "zero_deflation_rate_difference": -0.5167595469785962,
+              "person_mean_spearman": 0.557231166595552
+            },
+            {
+              "month": 202004,
+              "repeat": 2,
+              "n_person_months": 23,
+              "probability_tv_pct": 64.01081140783393,
+              "individual_density_iqr_mae_pp": 2.626615853180643,
+              "individual_density_iqr_bias_pp": -0.24417807175161324,
+              "individual_density_iqr_mean_pp": 3.378849197656782,
+              "real_individual_density_iqr_mean_pp": 3.6230272694083947,
+              "individual_density_mean_mae_pp": 3.614248516316997,
+              "individual_density_mean_bias_pp": -2.262133685080565,
+              "q9_center_mae_pp": 0.2677587129030252,
+              "q9_center_bias_pp": -0.2677587129030252,
+              "cross_section_w1_pp": 2.5233689396173817,
+              "delta_w1_pp": 2.3257207803866917,
+              "cross_person_iqr_pp": 1.6285839926171768,
+              "real_cross_person_iqr_pp": 2.377147328381171,
+              "cross_person_iqr_gap_pp": -0.7485633357639943,
+              "zero_deflation_rate": 0.0,
+              "real_zero_deflation_rate": 0.556666924411603,
+              "zero_deflation_rate_difference": -0.556666924411603,
+              "person_mean_spearman": 0.5397924534917757
+            },
+            {
+              "month": 202105,
+              "repeat": 1,
+              "n_person_months": 22,
+              "probability_tv_pct": 36.38926399063083,
+              "individual_density_iqr_mae_pp": 2.0577689050560646,
+              "individual_density_iqr_bias_pp": 0.022765042440282154,
+              "individual_density_iqr_mean_pp": 4.3095277312076155,
+              "real_individual_density_iqr_mean_pp": 4.286762688767333,
+              "individual_density_mean_mae_pp": 2.5056204558164104,
+              "individual_density_mean_bias_pp": 0.3451720461275138,
+              "q9_center_mae_pp": 0.3008189085868551,
+              "q9_center_bias_pp": 0.3008189085868551,
+              "cross_section_w1_pp": 0.8752798465294994,
+              "delta_w1_pp": 1.8106898340501905,
+              "cross_person_iqr_pp": 3.3680750647426634,
+              "real_cross_person_iqr_pp": 3.406766309821521,
+              "cross_person_iqr_gap_pp": -0.03869124507885768,
+              "zero_deflation_rate": 0.022607650074385626,
+              "real_zero_deflation_rate": 0.6046601100022453,
+              "zero_deflation_rate_difference": -0.5820524599278598,
+              "person_mean_spearman": 0.2970912290172801
+            },
+            {
+              "month": 202105,
+              "repeat": 2,
+              "n_person_months": 22,
+              "probability_tv_pct": 35.933303321126274,
+              "individual_density_iqr_mae_pp": 1.9574395802231581,
+              "individual_density_iqr_bias_pp": 0.008397391483743912,
+              "individual_density_iqr_mean_pp": 4.295160080251077,
+              "real_individual_density_iqr_mean_pp": 4.286762688767333,
+              "individual_density_mean_mae_pp": 2.275105065978317,
+              "individual_density_mean_bias_pp": 0.20709786669914051,
+              "q9_center_mae_pp": 0.5788421012681235,
+              "q9_center_bias_pp": 0.5788421012681235,
+              "cross_section_w1_pp": 0.9173482129019275,
+              "delta_w1_pp": 1.7034979189699127,
+              "cross_person_iqr_pp": 3.1835325073750296,
+              "real_cross_person_iqr_pp": 3.406766309821521,
+              "cross_person_iqr_gap_pp": -0.2232338024464915,
+              "zero_deflation_rate": 0.05599378630945357,
+              "real_zero_deflation_rate": 0.6046601100022453,
+              "zero_deflation_rate_difference": -0.5486663236927919,
+              "person_mean_spearman": 0.3795538134973616
+            },
+            {
+              "month": 202111,
+              "repeat": 1,
+              "n_person_months": 24,
+              "probability_tv_pct": 32.08582652698199,
+              "individual_density_iqr_mae_pp": 2.2684708182087974,
+              "individual_density_iqr_bias_pp": 0.13512910185243313,
+              "individual_density_iqr_mean_pp": 4.89742563461957,
+              "real_individual_density_iqr_mean_pp": 4.762296532767136,
+              "individual_density_mean_mae_pp": 2.5702222078096835,
+              "individual_density_mean_bias_pp": -0.6669783140186869,
+              "q9_center_mae_pp": 0.4133200146311733,
+              "q9_center_bias_pp": 0.4133200146311733,
+              "cross_section_w1_pp": 2.009240824061946,
+              "delta_w1_pp": 1.6468758603620919,
+              "cross_person_iqr_pp": 2.911937748298417,
+              "real_cross_person_iqr_pp": 4.087763704260897,
+              "cross_person_iqr_gap_pp": -1.1758259559624804,
+              "zero_deflation_rate": 0.12728127824199426,
+              "real_zero_deflation_rate": 0.8516325083790558,
+              "zero_deflation_rate_difference": -0.7243512301370615,
+              "person_mean_spearman": 0.6026086956521738
+            },
+            {
+              "month": 202111,
+              "repeat": 2,
+              "n_person_months": 24,
+              "probability_tv_pct": 31.542558693926306,
+              "individual_density_iqr_mae_pp": 2.239702824380844,
+              "individual_density_iqr_bias_pp": 0.10841007761631107,
+              "individual_density_iqr_mean_pp": 4.870706610383448,
+              "real_individual_density_iqr_mean_pp": 4.762296532767136,
+              "individual_density_mean_mae_pp": 2.5068495551938716,
+              "individual_density_mean_bias_pp": -0.5970474682367273,
+              "q9_center_mae_pp": 0.17984178231425307,
+              "q9_center_bias_pp": 0.17984178231425307,
+              "cross_section_w1_pp": 2.0246620590450415,
+              "delta_w1_pp": 1.4618915792336757,
+              "cross_person_iqr_pp": 2.447352673546744,
+              "real_cross_person_iqr_pp": 4.087763704260897,
+              "cross_person_iqr_gap_pp": -1.6404110307141533,
+              "zero_deflation_rate": 0.1473218078877032,
+              "real_zero_deflation_rate": 0.8516325083790558,
+              "zero_deflation_rate_difference": -0.7043107004913526,
+              "person_mean_spearman": 0.5895652173913043
+            },
+            {
+              "month": 202203,
+              "repeat": 1,
+              "n_person_months": 23,
+              "probability_tv_pct": 46.59812724527515,
+              "individual_density_iqr_mae_pp": 2.8845445659929183,
+              "individual_density_iqr_bias_pp": 0.18043523376922585,
+              "individual_density_iqr_mean_pp": 5.284775521151656,
+              "real_individual_density_iqr_mean_pp": 5.10434028738243,
+              "individual_density_mean_mae_pp": 4.954375786788636,
+              "individual_density_mean_bias_pp": -1.8520710028505576,
+              "q9_center_mae_pp": 1.5515479529520473,
+              "q9_center_bias_pp": -1.5515479529520473,
+              "cross_section_w1_pp": 4.1403127918860045,
+              "delta_w1_pp": 1.9208819364212837,
+              "cross_person_iqr_pp": 2.7944403287858357,
+              "real_cross_person_iqr_pp": 7.569942121738739,
+              "cross_person_iqr_gap_pp": -4.775501792952904,
+              "zero_deflation_rate": 0.22415853632473373,
+              "real_zero_deflation_rate": 0.9039498434602662,
+              "zero_deflation_rate_difference": -0.6797913071355325,
+              "person_mean_spearman": 0.5462644931165007
+            },
+            {
+              "month": 202203,
+              "repeat": 2,
+              "n_person_months": 23,
+              "probability_tv_pct": 50.88168433129653,
+              "individual_density_iqr_mae_pp": 3.313499951794262,
+              "individual_density_iqr_bias_pp": -0.09764255029324194,
+              "individual_density_iqr_mean_pp": 5.006697737089188,
+              "real_individual_density_iqr_mean_pp": 5.10434028738243,
+              "individual_density_mean_mae_pp": 5.848545406785472,
+              "individual_density_mean_bias_pp": -3.0865575465213535,
+              "q9_center_mae_pp": 2.0135895058088327,
+              "q9_center_bias_pp": -2.0135895058088327,
+              "cross_section_w1_pp": 5.4129748099470785,
+              "delta_w1_pp": 3.1032905693399337,
+              "cross_person_iqr_pp": 2.6338951953674474,
+              "real_cross_person_iqr_pp": 7.569942121738739,
+              "cross_person_iqr_gap_pp": -4.936046926371292,
+              "zero_deflation_rate": 0.1714146644609501,
+              "real_zero_deflation_rate": 0.9039498434602662,
+              "zero_deflation_rate_difference": -0.7325351789993161,
+              "person_mean_spearman": 0.5703689743870083
+            }
+          ]
+        },
+        "q8": {
+          "aggregate_equal_month_repeat_cells": {
+            "q8_person_mae_pp": 6.604183279586827,
+            "q8_person_bias_pp": -0.9800644384631125,
+            "q8_center_mae_pp": 0.7625,
+            "q8_center_bias_pp": 0.11249999999999999,
+            "q8_cross_section_w1_pp": 5.88296707922324,
+            "q8_person_spearman": 0.47073378869003357
+          },
+          "cells_used_by_metric": {
+            "q8_person_mae_pp": 8,
+            "q8_person_bias_pp": 8,
+            "q8_center_mae_pp": 8,
+            "q8_center_bias_pp": 8,
+            "q8_cross_section_w1_pp": 8,
+            "q8_person_spearman": 8
+          },
+          "expected_cells": 8,
+          "cells_complete": true,
+          "cells": [
+            {
+              "month": 202004,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 8.951961456544092,
+              "q8_person_bias_pp": 2.0318176713110487,
+              "q8_center_mae_pp": 0.30000000000000004,
+              "q8_center_bias_pp": -0.30000000000000004,
+              "q8_cross_section_w1_pp": 8.185221403461039,
+              "q8_person_spearman": 0.5362921369689369
+            },
+            {
+              "month": 202004,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 9.395848382722562,
+              "q8_person_bias_pp": 1.9916799200773798,
+              "q8_center_mae_pp": 0.30000000000000004,
+              "q8_center_bias_pp": -0.30000000000000004,
+              "q8_cross_section_w1_pp": 8.56564483114247,
+              "q8_person_spearman": 0.5275711664955246
+            },
+            {
+              "month": 202105,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 5.391693186615379,
+              "q8_person_bias_pp": -2.4932456559585057,
+              "q8_center_mae_pp": 1.0,
+              "q8_center_bias_pp": -1.0,
+              "q8_cross_section_w1_pp": 4.297656651540127,
+              "q8_person_spearman": 0.4248642242094578
+            },
+            {
+              "month": 202105,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 5.11097177751212,
+              "q8_person_bias_pp": -2.5309375672707426,
+              "q8_center_mae_pp": 1.0,
+              "q8_center_bias_pp": -1.0,
+              "q8_cross_section_w1_pp": 4.317219882065842,
+              "q8_person_spearman": 0.45052647358531345
+            },
+            {
+              "month": 202111,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 4.158910874379419,
+              "q8_person_bias_pp": -2.251343721322172,
+              "q8_center_mae_pp": 1.0,
+              "q8_center_bias_pp": 1.0,
+              "q8_cross_section_w1_pp": 3.6696010886715515,
+              "q8_person_spearman": 0.6103542383767077
+            },
+            {
+              "month": 202111,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 4.179408110180913,
+              "q8_person_bias_pp": -2.3774173043639752,
+              "q8_center_mae_pp": 1.2000000000000002,
+              "q8_center_bias_pp": 1.2000000000000002,
+              "q8_cross_section_w1_pp": 3.7261531460851125,
+              "q8_person_spearman": 0.5064191020170001
+            },
+            {
+              "month": 202203,
+              "repeat": 1,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 7.457140219489007,
+              "q8_person_bias_pp": -0.6466133126649599,
+              "q8_center_mae_pp": 0.7999999999999998,
+              "q8_center_bias_pp": 0.7999999999999998,
+              "q8_cross_section_w1_pp": 6.747175747622877,
+              "q8_person_spearman": 0.3780380552851353
+            },
+            {
+              "month": 202203,
+              "repeat": 2,
+              "n_person_months": 24,
+              "q8_person_mae_pp": 8.187532229251133,
+              "q8_person_bias_pp": -1.5644555375129736,
+              "q8_center_mae_pp": 0.5,
+              "q8_center_bias_pp": 0.5,
+              "q8_cross_section_w1_pp": 7.555063883196905,
+              "q8_person_spearman": 0.3318049125821929
+            }
+          ]
+        },
+        "weight_definition": "Parent SCE survey weight × parent-stratum size / selected-stratum size; descriptive sensitivity only."
+      }
+    }
+  },
+  "financial_group_descriptions": {
+    "descriptive_only": true,
+    "current_q1_grouping": {
+      "worse": [
+        1,
+        2
+      ],
+      "same": [
+        3
+      ],
+      "better": [
+        4,
+        5
+      ]
+    },
+    "assigned_current_q1_code_counts": {
+      "4": 16,
+      "3": 49,
+      "5": 4,
+      "2": 25,
+      "1": 2
+    },
+    "assigned_financial_group_counts": {
+      "better": 20,
+      "same": 49,
+      "worse": 27
+    },
+    "cells": [
+      {
+        "month": 202004,
+        "repeat": 1,
+        "common_group_counts": {
+          "worse": 8,
+          "same": 9,
+          "better": 6,
+          "missing": 0
+        },
+        "contrasts": {
+          "worse_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": -1.015278304249323,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.641398707909044,
+                "signed_deviation_from_real_gap_pp": 0.373879596340279,
+                "absolute_deviation_from_real_gap_pp": 0.373879596340279
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -1.358723201709136,
+                "signed_deviation_from_real_gap_pp": -0.343444897459813,
+                "absolute_deviation_from_real_gap_pp": 0.343444897459813
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -0.9201734504682113,
+                "signed_deviation_from_real_gap_pp": 0.09510485378111166,
+                "absolute_deviation_from_real_gap_pp": 0.09510485378111166
+              }
+            }
+          },
+          "better_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": 0.1948580805077409,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": 0.06028412480783096,
+                "signed_deviation_from_real_gap_pp": -0.13457395569990993,
+                "absolute_deviation_from_real_gap_pp": 0.13457395569990993
+              },
+              "financial_facts": {
+                "model_median_gap_pp": 0.1966895530741697,
+                "signed_deviation_from_real_gap_pp": 0.0018314725664287934,
+                "absolute_deviation_from_real_gap_pp": 0.0018314725664287934
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": 0.08983573202547923,
+                "signed_deviation_from_real_gap_pp": -0.10502234848226166,
+                "absolute_deviation_from_real_gap_pp": 0.10502234848226166
+              }
+            }
+          },
+          "worse_minus_better": {
+            "reported": true,
+            "real_median_gap_pp": -1.2101363847570639,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.7016828327168749,
+                "signed_deviation_from_real_gap_pp": 0.5084535520401889,
+                "absolute_deviation_from_real_gap_pp": 0.5084535520401889
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -1.5554127547833057,
+                "signed_deviation_from_real_gap_pp": -0.3452763700262418,
+                "absolute_deviation_from_real_gap_pp": 0.3452763700262418
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -1.0100091824936905,
+                "signed_deviation_from_real_gap_pp": 0.20012720226337333,
+                "absolute_deviation_from_real_gap_pp": 0.20012720226337333
+              }
+            }
+          }
+        }
+      },
+      {
+        "month": 202004,
+        "repeat": 2,
+        "common_group_counts": {
+          "worse": 8,
+          "same": 9,
+          "better": 6,
+          "missing": 0
+        },
+        "contrasts": {
+          "worse_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": -1.015278304249323,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.5960546186906104,
+                "signed_deviation_from_real_gap_pp": 0.4192236855587126,
+                "absolute_deviation_from_real_gap_pp": 0.4192236855587126
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -1.7249325565339344,
+                "signed_deviation_from_real_gap_pp": -0.7096542522846114,
+                "absolute_deviation_from_real_gap_pp": 0.7096542522846114
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -0.6108102778456885,
+                "signed_deviation_from_real_gap_pp": 0.40446802640363444,
+                "absolute_deviation_from_real_gap_pp": 0.40446802640363444
+              }
+            }
+          },
+          "better_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": 0.1948580805077409,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": 0.04761613882087801,
+                "signed_deviation_from_real_gap_pp": -0.1472419416868629,
+                "absolute_deviation_from_real_gap_pp": 0.1472419416868629
+              },
+              "financial_facts": {
+                "model_median_gap_pp": 0.09199375045695923,
+                "signed_deviation_from_real_gap_pp": -0.10286433005078166,
+                "absolute_deviation_from_real_gap_pp": 0.10286433005078166
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": 0.28197903677589053,
+                "signed_deviation_from_real_gap_pp": 0.08712095626814964,
+                "absolute_deviation_from_real_gap_pp": 0.08712095626814964
+              }
+            }
+          },
+          "worse_minus_better": {
+            "reported": true,
+            "real_median_gap_pp": -1.2101363847570639,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.6436707575114884,
+                "signed_deviation_from_real_gap_pp": 0.5664656272455755,
+                "absolute_deviation_from_real_gap_pp": 0.5664656272455755
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -1.8169263069908936,
+                "signed_deviation_from_real_gap_pp": -0.6067899222338298,
+                "absolute_deviation_from_real_gap_pp": 0.6067899222338298
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -0.8927893146215791,
+                "signed_deviation_from_real_gap_pp": 0.3173470701354848,
+                "absolute_deviation_from_real_gap_pp": 0.3173470701354848
+              }
+            }
+          }
+        }
+      },
+      {
+        "month": 202105,
+        "repeat": 1,
+        "common_group_counts": {
+          "worse": 3,
+          "same": 13,
+          "better": 6,
+          "missing": 0
+        },
+        "contrasts": {
+          "worse_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": -0.9708339132493062,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": 1.0386642454726118,
+                "signed_deviation_from_real_gap_pp": 2.009498158721918,
+                "absolute_deviation_from_real_gap_pp": 2.009498158721918
+              },
+              "financial_facts": {
+                "model_median_gap_pp": 0.18407265934199568,
+                "signed_deviation_from_real_gap_pp": 1.154906572591302,
+                "absolute_deviation_from_real_gap_pp": 1.154906572591302
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": 0.4417362434964538,
+                "signed_deviation_from_real_gap_pp": 1.41257015674576,
+                "absolute_deviation_from_real_gap_pp": 1.41257015674576
+              }
+            }
+          },
+          "better_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": 0.30593522423253283,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.40122381289071685,
+                "signed_deviation_from_real_gap_pp": -0.7071590371232497,
+                "absolute_deviation_from_real_gap_pp": 0.7071590371232497
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -0.4069993755327008,
+                "signed_deviation_from_real_gap_pp": -0.7129345997652337,
+                "absolute_deviation_from_real_gap_pp": 0.7129345997652337
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -0.6596910594236576,
+                "signed_deviation_from_real_gap_pp": -0.9656262836561904,
+                "absolute_deviation_from_real_gap_pp": 0.9656262836561904
+              }
+            }
+          },
+          "worse_minus_better": {
+            "reported": true,
+            "real_median_gap_pp": -1.276769137481839,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": 1.4398880583633287,
+                "signed_deviation_from_real_gap_pp": 2.7166571958451677,
+                "absolute_deviation_from_real_gap_pp": 2.7166571958451677
+              },
+              "financial_facts": {
+                "model_median_gap_pp": 0.5910720348746965,
+                "signed_deviation_from_real_gap_pp": 1.8678411723565356,
+                "absolute_deviation_from_real_gap_pp": 1.8678411723565356
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": 1.1014273029201114,
+                "signed_deviation_from_real_gap_pp": 2.3781964404019504,
+                "absolute_deviation_from_real_gap_pp": 2.3781964404019504
+              }
+            }
+          }
+        }
+      },
+      {
+        "month": 202105,
+        "repeat": 2,
+        "common_group_counts": {
+          "worse": 3,
+          "same": 13,
+          "better": 6,
+          "missing": 0
+        },
+        "contrasts": {
+          "worse_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": -0.9708339132493062,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.2549018093096489,
+                "signed_deviation_from_real_gap_pp": 0.7159321039396573,
+                "absolute_deviation_from_real_gap_pp": 0.7159321039396573
+              },
+              "financial_facts": {
+                "model_median_gap_pp": 1.6104321433723534,
+                "signed_deviation_from_real_gap_pp": 2.5812660566216596,
+                "absolute_deviation_from_real_gap_pp": 2.5812660566216596
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": 1.7014726433532856,
+                "signed_deviation_from_real_gap_pp": 2.672306556602592,
+                "absolute_deviation_from_real_gap_pp": 2.672306556602592
+              }
+            }
+          },
+          "better_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": 0.30593522423253283,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.8556196589065408,
+                "signed_deviation_from_real_gap_pp": -1.1615548831390736,
+                "absolute_deviation_from_real_gap_pp": 1.1615548831390736
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -0.4773548434216721,
+                "signed_deviation_from_real_gap_pp": -0.783290067654205,
+                "absolute_deviation_from_real_gap_pp": 0.783290067654205
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -0.1255812278003341,
+                "signed_deviation_from_real_gap_pp": -0.4315164520328669,
+                "absolute_deviation_from_real_gap_pp": 0.4315164520328669
+              }
+            }
+          },
+          "worse_minus_better": {
+            "reported": true,
+            "real_median_gap_pp": -1.276769137481839,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": 0.6007178495968919,
+                "signed_deviation_from_real_gap_pp": 1.877486987078731,
+                "absolute_deviation_from_real_gap_pp": 1.877486987078731
+              },
+              "financial_facts": {
+                "model_median_gap_pp": 2.0877869867940255,
+                "signed_deviation_from_real_gap_pp": 3.3645561242758646,
+                "absolute_deviation_from_real_gap_pp": 3.3645561242758646
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": 1.8270538711536197,
+                "signed_deviation_from_real_gap_pp": 3.103823008635459,
+                "absolute_deviation_from_real_gap_pp": 3.103823008635459
+              }
+            }
+          }
+        }
+      },
+      {
+        "month": 202111,
+        "repeat": 1,
+        "common_group_counts": {
+          "worse": 5,
+          "same": 15,
+          "better": 4,
+          "missing": 0
+        },
+        "contrasts": {
+          "worse_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": -1.1940085285258704,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": 0.12852038330852267,
+                "signed_deviation_from_real_gap_pp": 1.322528911834393,
+                "absolute_deviation_from_real_gap_pp": 1.322528911834393
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -0.4328579092936389,
+                "signed_deviation_from_real_gap_pp": 0.7611506192322315,
+                "absolute_deviation_from_real_gap_pp": 0.7611506192322315
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": 0.18617987271068426,
+                "signed_deviation_from_real_gap_pp": 1.3801884012365546,
+                "absolute_deviation_from_real_gap_pp": 1.3801884012365546
+              }
+            }
+          },
+          "better_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": -3.900633070901044,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -1.8193500343581626,
+                "signed_deviation_from_real_gap_pp": 2.0812830365428816,
+                "absolute_deviation_from_real_gap_pp": 2.0812830365428816
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -1.4322194730304965,
+                "signed_deviation_from_real_gap_pp": 2.4684135978705477,
+                "absolute_deviation_from_real_gap_pp": 2.4684135978705477
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -1.3310035281721921,
+                "signed_deviation_from_real_gap_pp": 2.569629542728852,
+                "absolute_deviation_from_real_gap_pp": 2.569629542728852
+              }
+            }
+          },
+          "worse_minus_better": {
+            "reported": true,
+            "real_median_gap_pp": 2.706624542375174,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": 1.9478704176666852,
+                "signed_deviation_from_real_gap_pp": -0.7587541247084886,
+                "absolute_deviation_from_real_gap_pp": 0.7587541247084886
+              },
+              "financial_facts": {
+                "model_median_gap_pp": 0.9993615637368576,
+                "signed_deviation_from_real_gap_pp": -1.7072629786383162,
+                "absolute_deviation_from_real_gap_pp": 1.7072629786383162
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": 1.5171834008828764,
+                "signed_deviation_from_real_gap_pp": -1.1894411414922974,
+                "absolute_deviation_from_real_gap_pp": 1.1894411414922974
+              }
+            }
+          }
+        }
+      },
+      {
+        "month": 202111,
+        "repeat": 2,
+        "common_group_counts": {
+          "worse": 5,
+          "same": 15,
+          "better": 4,
+          "missing": 0
+        },
+        "contrasts": {
+          "worse_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": -1.1940085285258704,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.2648571725354891,
+                "signed_deviation_from_real_gap_pp": 0.9291513559903812,
+                "absolute_deviation_from_real_gap_pp": 0.9291513559903812
+              },
+              "financial_facts": {
+                "model_median_gap_pp": 0.2724607984301928,
+                "signed_deviation_from_real_gap_pp": 1.4664693269560631,
+                "absolute_deviation_from_real_gap_pp": 1.4664693269560631
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -0.3298681233209546,
+                "signed_deviation_from_real_gap_pp": 0.8641404052049158,
+                "absolute_deviation_from_real_gap_pp": 0.8641404052049158
+              }
+            }
+          },
+          "better_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": -3.900633070901044,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -1.2399122819988264,
+                "signed_deviation_from_real_gap_pp": 2.6607207889022177,
+                "absolute_deviation_from_real_gap_pp": 2.6607207889022177
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -1.682091130267727,
+                "signed_deviation_from_real_gap_pp": 2.218541940633317,
+                "absolute_deviation_from_real_gap_pp": 2.218541940633317
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -2.7308187783277953,
+                "signed_deviation_from_real_gap_pp": 1.1698142925732489,
+                "absolute_deviation_from_real_gap_pp": 1.1698142925732489
+              }
+            }
+          },
+          "worse_minus_better": {
+            "reported": true,
+            "real_median_gap_pp": 2.706624542375174,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": 0.9750551094633373,
+                "signed_deviation_from_real_gap_pp": -1.7315694329118365,
+                "absolute_deviation_from_real_gap_pp": 1.7315694329118365
+              },
+              "financial_facts": {
+                "model_median_gap_pp": 1.9545519286979198,
+                "signed_deviation_from_real_gap_pp": -0.752072613677254,
+                "absolute_deviation_from_real_gap_pp": 0.752072613677254
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": 2.4009506550068407,
+                "signed_deviation_from_real_gap_pp": -0.3056738873683331,
+                "absolute_deviation_from_real_gap_pp": 0.3056738873683331
+              }
+            }
+          }
+        }
+      },
+      {
+        "month": 202203,
+        "repeat": 1,
+        "common_group_counts": {
+          "worse": 8,
+          "same": 11,
+          "better": 4,
+          "missing": 0
+        },
+        "contrasts": {
+          "worse_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": 2.6602033305425143,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.2850564722997868,
+                "signed_deviation_from_real_gap_pp": -2.945259802842301,
+                "absolute_deviation_from_real_gap_pp": 2.945259802842301
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -0.7863433563055784,
+                "signed_deviation_from_real_gap_pp": -3.4465466868480927,
+                "absolute_deviation_from_real_gap_pp": 3.4465466868480927
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -0.5607372260487473,
+                "signed_deviation_from_real_gap_pp": -3.2209405565912617,
+                "absolute_deviation_from_real_gap_pp": 3.2209405565912617
+              }
+            }
+          },
+          "better_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": 5.936561398919797,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": 0.45888955871058545,
+                "signed_deviation_from_real_gap_pp": -5.4776718402092115,
+                "absolute_deviation_from_real_gap_pp": 5.4776718402092115
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -1.4177231428578567,
+                "signed_deviation_from_real_gap_pp": -7.354284541777654,
+                "absolute_deviation_from_real_gap_pp": 7.354284541777654
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -0.4620415528567854,
+                "signed_deviation_from_real_gap_pp": -6.398602951776582,
+                "absolute_deviation_from_real_gap_pp": 6.398602951776582
+              }
+            }
+          },
+          "worse_minus_better": {
+            "reported": true,
+            "real_median_gap_pp": -3.2763580683772826,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.7439460310103723,
+                "signed_deviation_from_real_gap_pp": 2.5324120373669103,
+                "absolute_deviation_from_real_gap_pp": 2.5324120373669103
+              },
+              "financial_facts": {
+                "model_median_gap_pp": 0.6313797865522783,
+                "signed_deviation_from_real_gap_pp": 3.907737854929561,
+                "absolute_deviation_from_real_gap_pp": 3.907737854929561
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -0.09869567319196193,
+                "signed_deviation_from_real_gap_pp": 3.1776623951853207,
+                "absolute_deviation_from_real_gap_pp": 3.1776623951853207
+              }
+            }
+          }
+        }
+      },
+      {
+        "month": 202203,
+        "repeat": 2,
+        "common_group_counts": {
+          "worse": 8,
+          "same": 11,
+          "better": 4,
+          "missing": 0
+        },
+        "contrasts": {
+          "worse_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": 2.6602033305425143,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.6281094633988715,
+                "signed_deviation_from_real_gap_pp": -3.288312793941386,
+                "absolute_deviation_from_real_gap_pp": 3.288312793941386
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -0.3637981175008038,
+                "signed_deviation_from_real_gap_pp": -3.024001448043318,
+                "absolute_deviation_from_real_gap_pp": 3.024001448043318
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": 0.41476589601601876,
+                "signed_deviation_from_real_gap_pp": -2.2454374345264956,
+                "absolute_deviation_from_real_gap_pp": 2.2454374345264956
+              }
+            }
+          },
+          "better_minus_same": {
+            "reported": true,
+            "real_median_gap_pp": 5.936561398919797,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": -0.8647065612549909,
+                "signed_deviation_from_real_gap_pp": -6.801267960174788,
+                "absolute_deviation_from_real_gap_pp": 6.801267960174788
+              },
+              "financial_facts": {
+                "model_median_gap_pp": 0.4556225268246026,
+                "signed_deviation_from_real_gap_pp": -5.480938872095194,
+                "absolute_deviation_from_real_gap_pp": 5.480938872095194
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": 0.534464584752727,
+                "signed_deviation_from_real_gap_pp": -5.40209681416707,
+                "absolute_deviation_from_real_gap_pp": 5.40209681416707
+              }
+            }
+          },
+          "worse_minus_better": {
+            "reported": true,
+            "real_median_gap_pp": -3.2763580683772826,
+            "arms": {
+              "baseline": {
+                "model_median_gap_pp": 0.23659709785611938,
+                "signed_deviation_from_real_gap_pp": 3.512955166233402,
+                "absolute_deviation_from_real_gap_pp": 3.512955166233402
+              },
+              "financial_facts": {
+                "model_median_gap_pp": -0.8194206443254064,
+                "signed_deviation_from_real_gap_pp": 2.456937424051876,
+                "absolute_deviation_from_real_gap_pp": 2.456937424051876
+              },
+              "financial_perspective": {
+                "model_median_gap_pp": -0.11969868873670819,
+                "signed_deviation_from_real_gap_pp": 3.1566593796405744,
+                "absolute_deviation_from_real_gap_pp": 3.1566593796405744
+              }
+            }
+          }
+        }
+      }
+    ],
+    "aggregate_over_reportable_equal_month_repeat_cells": {
+      "worse_minus_same": {
+        "cells_reported": 8,
+        "expected_cells": 8,
+        "complete_all_registered_cells": true,
+        "arms": {
+          "baseline": {
+            "mean_absolute_deviation_from_real_gap_pp": 1.5004733011461286
+          },
+          "financial_facts": {
+            "mean_absolute_deviation_from_real_gap_pp": 1.6859299825046365
+          },
+          "financial_perspective": {
+            "mean_absolute_deviation_from_real_gap_pp": 1.5368945488865409
+          }
+        }
+      },
+      "better_minus_same": {
+        "cells_reported": 8,
+        "expected_cells": 8,
+        "complete_all_registered_cells": true,
+        "arms": {
+          "baseline": {
+            "mean_absolute_deviation_from_real_gap_pp": 2.3964341804347744
+          },
+          "financial_facts": {
+            "mean_absolute_deviation_from_real_gap_pp": 2.39038742780167
+          },
+          "financial_perspective": {
+            "mean_absolute_deviation_from_real_gap_pp": 2.1411787052106526
+          }
+        }
+      },
+      "worse_minus_better": {
+        "cells_reported": 8,
+        "expected_cells": 8,
+        "complete_all_registered_cells": true,
+        "arms": {
+          "baseline": {
+            "mean_absolute_deviation_from_real_gap_pp": 1.7755942654287875
+          },
+          "financial_facts": {
+            "mean_absolute_deviation_from_real_gap_pp": 1.8760593075236849
+          },
+          "financial_perspective": {
+            "mean_absolute_deviation_from_real_gap_pp": 1.7286163156403491
+          }
+        }
+      }
+    },
+    "sparse_cell_rule": "Do not report a group contrast if either group has fewer than 3 common people; full-sample accuracy retains those people.",
+    "interpretation": "Differences between group medians compared with the matched human median gap; not causal effects or independent validation."
+  },
+  "paired_contrasts": {
+    "financial_facts_minus_baseline": {
+      "primary_metric": "individual_density_mean_mae_pp",
+      "primary_metric_difference_pp": 0.1800847230102085,
+      "interval_95_unadjusted_pp": [
+        -0.031715476757218586,
+        0.4171468637325947
+      ],
+      "draws_requested": 1000,
+      "draws_used": 1000,
+      "empty_cell_draws": 0,
+      "seed": 20261016,
+      "reason": null,
+      "scope": "Exploratory unadjusted respondent-cluster bootstrap; all months and both repeats remain together; equal month-repeat cells.",
+      "other_metric_point_changes": {
+        "probability_tv_pct": 1.4466609025032966,
+        "individual_density_iqr_mae_pp": -0.07845147123561791,
+        "individual_density_iqr_bias_pp": -0.04318041091269054,
+        "individual_density_iqr_mean_pp": -0.04318041091269098,
+        "real_individual_density_iqr_mean_pp": 0.0,
+        "individual_density_mean_mae_pp": 0.1800847230102085,
+        "individual_density_mean_bias_pp": -0.23060264567515032,
+        "q9_center_mae_pp": -0.13527580032496667,
+        "q9_center_bias_pp": 0.0141340217369893,
+        "cross_section_w1_pp": 0.07184643096285903,
+        "delta_w1_pp": 0.015500100862654076,
+        "cross_person_iqr_pp": -0.1062281623780752,
+        "real_cross_person_iqr_pp": 0.0,
+        "cross_person_iqr_gap_pp": -0.1062281623780752,
+        "zero_deflation_rate": 0.009963768115942045,
+        "real_zero_deflation_rate": 0.0,
+        "zero_deflation_rate_difference": 0.009963768115942018,
+        "person_mean_spearman": -0.09103839055666096,
+        "q8_person_mae_pp": -0.11458333333333304,
+        "q8_person_bias_pp": -0.5531250000000001,
+        "q8_center_mae_pp": 0.07500000000000007,
+        "q8_center_bias_pp": -0.07500000000000007,
+        "q8_cross_section_w1_pp": 0.41458333333333286,
+        "q8_person_spearman": -0.0242656387109772
+      },
+      "confirmatory_claim": false
+    },
+    "financial_perspective_minus_financial_facts": {
+      "primary_metric": "individual_density_mean_mae_pp",
+      "primary_metric_difference_pp": -0.051337205348453985,
+      "interval_95_unadjusted_pp": [
+        -0.31725126848954793,
+        0.1443667721650685
+      ],
+      "draws_requested": 1000,
+      "draws_used": 1000,
+      "empty_cell_draws": 0,
+      "seed": 20261016,
+      "reason": null,
+      "scope": "Exploratory unadjusted respondent-cluster bootstrap; all months and both repeats remain together; equal month-repeat cells.",
+      "other_metric_point_changes": {
+        "probability_tv_pct": -0.00917119565217206,
+        "individual_density_iqr_mae_pp": -0.012113786493723744,
+        "individual_density_iqr_bias_pp": 0.09543195908492952,
+        "individual_density_iqr_mean_pp": 0.09543195908493018,
+        "real_individual_density_iqr_mean_pp": 0.0,
+        "individual_density_mean_mae_pp": -0.051337205348453985,
+        "individual_density_mean_bias_pp": 0.10860668313997346,
+        "q9_center_mae_pp": 0.15590939724266162,
+        "q9_center_bias_pp": 0.016274111860639207,
+        "cross_section_w1_pp": 0.008957992043025609,
+        "delta_w1_pp": -0.07104643620782847,
+        "cross_person_iqr_pp": -0.12202112202089621,
+        "real_cross_person_iqr_pp": 0.0,
+        "cross_person_iqr_gap_pp": -0.12202112202089577,
+        "zero_deflation_rate": -0.026741600790513853,
+        "real_zero_deflation_rate": 0.0,
+        "zero_deflation_rate_difference": -0.026741600790513798,
+        "person_mean_spearman": -0.005051147474390838,
+        "q8_person_mae_pp": 0.11197916666666696,
+        "q8_person_bias_pp": -0.11718749999999956,
+        "q8_center_mae_pp": -0.07500000000000007,
+        "q8_center_bias_pp": 0.07500000000000007,
+        "q8_cross_section_w1_pp": 0.15260416666666643,
+        "q8_person_spearman": 0.005173376232793903
+      },
+      "confirmatory_claim": false
+    },
+    "financial_perspective_minus_baseline": {
+      "primary_metric": "individual_density_mean_mae_pp",
+      "primary_metric_difference_pp": 0.12874751766175452,
+      "interval_95_unadjusted_pp": [
+        -0.1003098839097678,
+        0.32763725685844974
+      ],
+      "draws_requested": 1000,
+      "draws_used": 1000,
+      "empty_cell_draws": 0,
+      "seed": 20261016,
+      "reason": null,
+      "scope": "Exploratory unadjusted respondent-cluster bootstrap; all months and both repeats remain together; equal month-repeat cells.",
+      "other_metric_point_changes": {
+        "probability_tv_pct": 1.4374897068511245,
+        "individual_density_iqr_mae_pp": -0.09056525772934165,
+        "individual_density_iqr_bias_pp": 0.05225154817223898,
+        "individual_density_iqr_mean_pp": 0.052251548172239204,
+        "real_individual_density_iqr_mean_pp": 0.0,
+        "individual_density_mean_mae_pp": 0.12874751766175452,
+        "individual_density_mean_bias_pp": -0.12199596253517686,
+        "q9_center_mae_pp": 0.020633596917694952,
+        "q9_center_bias_pp": 0.030408133597628506,
+        "cross_section_w1_pp": 0.08080442300588464,
+        "delta_w1_pp": -0.05554633534517439,
+        "cross_person_iqr_pp": -0.2282492843989714,
+        "real_cross_person_iqr_pp": 0.0,
+        "cross_person_iqr_gap_pp": -0.22824928439897096,
+        "zero_deflation_rate": -0.016777832674571808,
+        "real_zero_deflation_rate": 0.0,
+        "zero_deflation_rate_difference": -0.01677783267457178,
+        "person_mean_spearman": -0.0960895380310518,
+        "q8_person_mae_pp": -0.0026041666666660745,
+        "q8_person_bias_pp": -0.6703124999999996,
+        "q8_center_mae_pp": 0.0,
+        "q8_center_bias_pp": 0.0,
+        "q8_cross_section_w1_pp": 0.5671874999999993,
+        "q8_person_spearman": -0.019092262478183297
+      },
+      "confirmatory_claim": false
+    }
+  },
+  "pilot_continuation_gates": {
+    "financial_facts_minus_baseline": {
+      "pilot_continuation_gate_passed": false,
+      "coverage_gate_passed": true,
+      "all_registered_accuracy_cells_present": true,
+      "registered_1000_bootstrap_draws_complete": true,
+      "primary_mean_mae_upper_interval_below_zero": false,
+      "center_error_point_change_nonworse": true,
+      "cross_section_w1_point_change_nonworse": false,
+      "interpretation": "Exploratory continuation screen only; no automatic default upgrade or confirmed mechanism claim."
+    },
+    "financial_perspective_minus_financial_facts": {
+      "pilot_continuation_gate_passed": false,
+      "coverage_gate_passed": true,
+      "all_registered_accuracy_cells_present": true,
+      "registered_1000_bootstrap_draws_complete": true,
+      "primary_mean_mae_upper_interval_below_zero": false,
+      "center_error_point_change_nonworse": false,
+      "cross_section_w1_point_change_nonworse": false,
+      "interpretation": "Exploratory continuation screen only; no automatic default upgrade or confirmed mechanism claim."
+    },
+    "financial_perspective_minus_baseline": {
+      "pilot_continuation_gate_passed": false,
+      "coverage_gate_passed": true,
+      "all_registered_accuracy_cells_present": true,
+      "registered_1000_bootstrap_draws_complete": true,
+      "primary_mean_mae_upper_interval_below_zero": false,
+      "center_error_point_change_nonworse": false,
+      "cross_section_w1_point_change_nonworse": false,
+      "interpretation": "Exploratory continuation screen only; no automatic default upgrade or confirmed mechanism claim."
+    }
+  },
+  "primary_continuation_gate": {
+    "pilot_continuation_gate_passed": false,
+    "coverage_gate_passed": true,
+    "all_registered_accuracy_cells_present": true,
+    "registered_1000_bootstrap_draws_complete": true,
+    "primary_mean_mae_upper_interval_below_zero": false,
+    "center_error_point_change_nonworse": true,
+    "cross_section_w1_point_change_nonworse": false,
+    "interpretation": "Exploratory continuation screen only; no automatic default upgrade or confirmed mechanism claim."
+  },
+  "source_sha256": {
+    "outputs/sce_information_update_evaluation_20261014_v1/cases_private.json": "c75b2add0e40435c0ac08615ce398369ee50c8038e78643d6cb3a25f2db6dd3f",
+    "outputs/sce_behavior_mechanism_audit_20261014_v3/reference_with_controls_private.parquet": "a4eb7d134f603136f7c01303597068777cf5614a372d72ee228312f467c1e7dc",
+    "outputs/sce_cognition_trial_20261016_v4/evaluation_links_private.json": "d515a020a814bc9ffa105f3ac57f6aafc37b739917ff1432ec8d98cf3d99c480",
+    "outputs/sce_cognition_trial_20261016_v4/202105/preview_label_only.json": "ea5a572fdeaaeb31ce0793d271144302a03d59fc9e23bd381dd8421b28d836b8",
+    "outputs/sce_cognition_trial_20261016_v4/202203/preview_label_only.json": "befffe59019dc2400eceae345cbfada3d23a27645a122b6fb290dfa17bb3a61b",
+    "outputs/sce_cognition_trial_20261016_v4/202111/preview_label_only.json": "1c8d91db1cc0f5039f936ec168f3b397404e7a84bc5d8d3d2620ddff6a1a8af5",
+    "outputs/sce_cognition_trial_20261016_v4/202004/preview_label_only.json": "082819cf41d3a472794a2fd7c66ac7c348294d294731a69e047217b451e7f3ca",
+    "outputs/sce_population_associations_20261015_v1/analysis_frame_private.parquet": "6bbb7c6452dd9c265b415433ccdcf0031213d0455a96aec085c6a37fca396806",
+    "evaluation_links_private.json": "d515a020a814bc9ffa105f3ac57f6aafc37b739917ff1432ec8d98cf3d99c480",
+    "prompt_preview.txt": "ddbed0a993d91985b58e47314453124e5e44fb3a43be6124bb98795e964e6de4",
+    "protocol.json": "4208e676d30bc8c7007500d0d1be639b964e5d7c0f9228ab00174af4f3f64173",
+    "coverage.json": "c5c7c3f6fad241ef05bdbdbf576d805b6ce7bf4d39cbc53bca623e93dfa6a910",
+    "202004/population.json": "9ee7b4f171bcad5797b77bc55bd4862611897e1f4ddb9757b55f22fecb06e260",
+    "202004/preview_baseline.json": "082819cf41d3a472794a2fd7c66ac7c348294d294731a69e047217b451e7f3ca",
+    "202004/household_finance_payloads.json": "0d34bab63944d9dce9a371a170a295d1b86865efeccf89bdcc266fb47fce46ce",
+    "202004/simulation_financial_perspective.json": "3656091762d4c262d891a5ac6a7cdee6d692108c88c18caaa1872b0190ab9555",
+    "202004/preview_financial_facts.json": "d409148298092cf4a181900bc181d22da17a0e04ad1ec9a27fa5abf1f8a16182",
+    "202004/simulation_financial_facts.json": "7702a2142adfce7d2af11eb0549e6130a562756938038421571b1304108a6d46",
+    "202004/preview_financial_perspective.json": "dc02e16e8f41d8fe7a1508c94e2c60a6b7a1afe7348e3bad9d312d1004c8efe4",
+    "202004/simulation_baseline.json": "bffbafbb5d4649862dd5b184330b5a2a42a94bf112257f7a674f8fe1de763fa6",
+    "202004/environment.json": "1251b7c542b3736433db8cc15594099a4a25f31068281a91226aeb0966a18183",
+    "202111/population.json": "b028b353bd129ac24a1ce6197ea9d7d159555e3650910a015d9e223dd3658054",
+    "202111/preview_baseline.json": "1c8d91db1cc0f5039f936ec168f3b397404e7a84bc5d8d3d2620ddff6a1a8af5",
+    "202111/household_finance_payloads.json": "9077fb00b9c487033d8f6a388418aed1e55849d3e850b0eab2ef743358b282d7",
+    "202111/simulation_financial_perspective.json": "5f2b94c1ba9a5912a05cd6d6b814771da5362a0e5453843833e61df7710e4207",
+    "202111/preview_financial_facts.json": "1a32f676be9999a1e2035055f7223ba82e299e769c91aa90d7ddfcbde6abc5c8",
+    "202111/simulation_financial_facts.json": "05e596cf9ac026075b829e61981fd2749726f718316595fb6c0b2afd49dc0e5b",
+    "202111/preview_financial_perspective.json": "1bc119e9bc69721f0045d56465d619d77fd6971998e71ccacac29da4e7de73d5",
+    "202111/simulation_baseline.json": "15db750228484b83c12a7f51f23bf4df4a30b177afc5ab7b358978f605a40080",
+    "202111/environment.json": "392d56f4f694719d8bd0f44ee9dc2e41d038b35456e2bdaa7a933d4a896a027a",
+    "202203/population.json": "b5ae188d665675e0365e300d71353161b319c1ab73886daf5a7e1ee594b9b219",
+    "202203/preview_baseline.json": "befffe59019dc2400eceae345cbfada3d23a27645a122b6fb290dfa17bb3a61b",
+    "202203/household_finance_payloads.json": "c2d069c91a39cc46251529b9a2357927d8739c71f2cf3ac1d4d127e333b97165",
+    "202203/simulation_financial_perspective.json": "3f93739e96499e46a6810ec1ac6f70d38f18a24100cb1d16aebe932244144ef0",
+    "202203/preview_financial_facts.json": "2f43a7d7ad0a611f359052d34d7951735d02fe587418bd51e9f047523259a0c0",
+    "202203/simulation_financial_facts.json": "65d25f8213a8d09888fed57ac1db7f9797dbbf162fcef4ba909261ef95c59794",
+    "202203/preview_financial_perspective.json": "7cc80c8268759e8be8192f946a346a31ac60808183a841ecc3911a4c62c6d497",
+    "202203/simulation_baseline.json": "2676089c4de13e3b0cbab6f51853150ed64f1d626b08b77ee3ca8bf3671238ac",
+    "202203/environment.json": "9ff589cdff42144fa56355bd335f74453a96e6ab55f9234f8bda5e80f0a25a8d",
+    "202105/population.json": "5bb7ba02a9272a57fd23ecceb44a126fedc4dc46237644b0396823e88f122c43",
+    "202105/preview_baseline.json": "ea5a572fdeaaeb31ce0793d271144302a03d59fc9e23bd381dd8421b28d836b8",
+    "202105/household_finance_payloads.json": "c2a86ca3a019d1788aebde886678155d569ecb8ac976b3de9fd3baa8a0034ded",
+    "202105/simulation_financial_perspective.json": "9cb2dc354a8f20083087a64e38b867b3bba50e4317ba499d86e8758a7664466c",
+    "202105/preview_financial_facts.json": "3ba0e0e58a3c996d8c6e0d13502e84422c204354dfc9cb4582b20031adb51660",
+    "202105/simulation_financial_facts.json": "47e1fc2e481cd2b3ce68ac652e909b6970f0ca6cecd1d45379fb2a8c6c89f9a0",
+    "202105/preview_financial_perspective.json": "05f95180effa77779bcc88768480819e41279f89b7aa295e14d7a96054462797",
+    "202105/simulation_baseline.json": "9007c8a65aefe1008fbd96c59ae5f3520c591dc3d9fe636359740e0545376e49",
+    "202105/environment.json": "b7987e24beb78ea5bef25358ceab9cd97511154532285df6d9336e4c6f06e943",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r1/run_manifest.json": "ea2d7776b154dbccbb18551af6f462c72881fd9246b0461f43c5c86508a8b107",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r1/study.duckdb": "fc04e956d836332984ad690b1caa76a50e929b43ef44087aca64827ab1edbd62",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r1/llm_calls.jsonl": "ca628ce5b1da0a2c455a4f333d36ee1f11732a4bc370d65916bd2692e81190ac",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r1/household_finance_payloads.json": "0d34bab63944d9dce9a371a170a295d1b86865efeccf89bdcc266fb47fce46ce",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r1/frozen_preview.json": "082819cf41d3a472794a2fd7c66ac7c348294d294731a69e047217b451e7f3ca",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r2/run_manifest.json": "0e7cbec68d7253c659d4da73b8a008a6bbb08860be866465562a2b2cf7bb6efb",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r2/study.duckdb": "36b8fa2c055fa2abfcda3e2c6fd728ddce273d31005f4df0ca302898954815e1",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r2/llm_calls.jsonl": "7129ebff7f885e3471f9d891cd0b2e4678eb1d9252a66fe7fdc99d38e8d75bfa",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r2/household_finance_payloads.json": "0d34bab63944d9dce9a371a170a295d1b86865efeccf89bdcc266fb47fce46ce",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r2/frozen_preview.json": "082819cf41d3a472794a2fd7c66ac7c348294d294731a69e047217b451e7f3ca",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r1/run_manifest.json": "9f66ed91b4d5f17edae35f1addc6968d4d066757c2b155886285166b9b8798a7",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r1/study.duckdb": "0a6e0584f7f272948ce04088c82cacd8374654c5469b6f9960d7ce198e6b7911",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r1/llm_calls.jsonl": "6c8cd468f1b8233c6626b0a1e4c69d85e0461bba134e4e3a0f35c91c0fb709ac",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r1/household_finance_payloads.json": "0d34bab63944d9dce9a371a170a295d1b86865efeccf89bdcc266fb47fce46ce",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r1/frozen_preview.json": "d409148298092cf4a181900bc181d22da17a0e04ad1ec9a27fa5abf1f8a16182",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r2/run_manifest.json": "557318aa804924b3f9d1435f96648ec76c710fa724ecb3ec97e52cbff62fcbe1",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r2/study.duckdb": "c55a1e03e30cec962faae49b906269b76afebba7c3e6a2aae25caab0b681c09c",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r2/llm_calls.jsonl": "cce5e0c69942aba1c91731c283b1d80e2ed23e5716229a96ed55c74e3dfbc8d8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r2/household_finance_payloads.json": "0d34bab63944d9dce9a371a170a295d1b86865efeccf89bdcc266fb47fce46ce",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r2/frozen_preview.json": "d409148298092cf4a181900bc181d22da17a0e04ad1ec9a27fa5abf1f8a16182",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r1/run_manifest.json": "259d2ad224e7a788299ba9ce4b12cd828a4668a2348c7facc3f25f99ba083eba",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r1/study.duckdb": "67c96fa1cb74c1f9953494a409001233ea0126cb6d4602d4f0fff57aad600329",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r1/llm_calls.jsonl": "43324db3a6c5aa6edf8c5a61609e7eb03fb35cbbfc414d8583f00b48b07de0a7",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r1/household_finance_payloads.json": "0d34bab63944d9dce9a371a170a295d1b86865efeccf89bdcc266fb47fce46ce",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r1/frozen_preview.json": "dc02e16e8f41d8fe7a1508c94e2c60a6b7a1afe7348e3bad9d312d1004c8efe4",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r2/run_manifest.json": "73b196346ed4b2cea730309bfb20fe18a122b317921a795e5e0639795f0ed62a",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r2/study.duckdb": "b22a092d1b450cd7e4ec5ee8563c2c2c9fdd7bd9b3919f9cf3717f6ea73add77",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r2/llm_calls.jsonl": "857c0b400607b3403158c0eaabf0092befcb200c4b3c4538f848c571b683b1f5",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r2/household_finance_payloads.json": "0d34bab63944d9dce9a371a170a295d1b86865efeccf89bdcc266fb47fce46ce",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r2/frozen_preview.json": "dc02e16e8f41d8fe7a1508c94e2c60a6b7a1afe7348e3bad9d312d1004c8efe4",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r1/run_manifest.json": "0603628f622388966fe646accc59d51e5156d93a7aa458ce67cac01c96ea2b78",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r1/study.duckdb": "bf7f82597b598909f08c64dd7edbea7ff2bc24f182ad3c80535d8c1aeb03901d",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r1/llm_calls.jsonl": "92cde2a27e010d82eef21aeccfcbfedc9e77dfe0c366ae2255d30db9e1cb5d9e",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r1/household_finance_payloads.json": "c2a86ca3a019d1788aebde886678155d569ecb8ac976b3de9fd3baa8a0034ded",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r1/frozen_preview.json": "ea5a572fdeaaeb31ce0793d271144302a03d59fc9e23bd381dd8421b28d836b8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r2/run_manifest.json": "94d25ae6543f09ec8e9e2aa537e956f78b67506da26d78d9e59f42c5ddf9001e",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r2/study.duckdb": "3bbe8205e1be61e1119807aeac1b6cb3a704f74bdc82dab68b49727311dea775",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r2/llm_calls.jsonl": "6c4e8aa63e889d5a6ea63a1e038381cf93024550a409944fbb8eab4710cb6134",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r2/household_finance_payloads.json": "c2a86ca3a019d1788aebde886678155d569ecb8ac976b3de9fd3baa8a0034ded",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r2/frozen_preview.json": "ea5a572fdeaaeb31ce0793d271144302a03d59fc9e23bd381dd8421b28d836b8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r1/run_manifest.json": "854828d35ec225b8babedfbc407ab8129d2b8c4e8fef96d6d3dd1656dc6efaf8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r1/study.duckdb": "cb1c0bfdd0745972be14a2cf31653d3c761ec5e934a7d97d498bb9fc20fa28a8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r1/llm_calls.jsonl": "202ab1664b3dc081b560b21234eb5d5bb1dee2184d97647d59e88c958f9e60fa",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r1/household_finance_payloads.json": "c2a86ca3a019d1788aebde886678155d569ecb8ac976b3de9fd3baa8a0034ded",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r1/frozen_preview.json": "3ba0e0e58a3c996d8c6e0d13502e84422c204354dfc9cb4582b20031adb51660",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r2/run_manifest.json": "72334b4684f46f82fd846689a99776954b5ce0a0755e95e12e4141e72a58c7b2",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r2/study.duckdb": "3a254f2f2f2357c8049c0f7d9a4435158ac8afd62f98c9463707e76ab45940e1",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r2/llm_calls.jsonl": "133fd26c6c3554ed0bf570f1e034c20731d70e10241d168d90005f80368c5e00",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r2/household_finance_payloads.json": "c2a86ca3a019d1788aebde886678155d569ecb8ac976b3de9fd3baa8a0034ded",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r2/frozen_preview.json": "3ba0e0e58a3c996d8c6e0d13502e84422c204354dfc9cb4582b20031adb51660",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r1/run_manifest.json": "e004ea1ed01b9e825580b11a0e3e66482bb14a5d5cc9c5a112215fff3a3f82af",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r1/study.duckdb": "eeb1f5b188b376f7bbf68ab3840623044df15d18808a128df3a891b24659f328",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r1/llm_calls.jsonl": "a76692183ceb8609b286751953b7864c2a96d368f7d2501f74a3c3f6eee92a5d",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r1/household_finance_payloads.json": "c2a86ca3a019d1788aebde886678155d569ecb8ac976b3de9fd3baa8a0034ded",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r1/frozen_preview.json": "05f95180effa77779bcc88768480819e41279f89b7aa295e14d7a96054462797",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r2/run_manifest.json": "dcbc7f92410c89c8e47cd113e3b7a4e4809e7089e6f2ceca3ad409eff44b182d",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r2/study.duckdb": "d501033b065dcc83ee80a7a69aa1be97deff38b5f9ac631c4701a32e3890be18",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r2/llm_calls.jsonl": "8dd916f3c2181c6b49f3d1638d7b9bdc8bf07f04adeabbbcac244e22a5e31f08",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r2/household_finance_payloads.json": "c2a86ca3a019d1788aebde886678155d569ecb8ac976b3de9fd3baa8a0034ded",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r2/frozen_preview.json": "05f95180effa77779bcc88768480819e41279f89b7aa295e14d7a96054462797",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r1/run_manifest.json": "948a7d7b66312390ccb3e9237a7fd232dd7d867fa5063c154ccce8dd7959d139",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r1/study.duckdb": "f18f1d4b4a39a14ac212da1b11f96660fb0d71c3d837ec78cc697dbf1e64bb4e",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r1/llm_calls.jsonl": "58c0d8265d48000a6644360f70242b45705c1dfe425e87fb107254aedcfd9527",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r1/household_finance_payloads.json": "9077fb00b9c487033d8f6a388418aed1e55849d3e850b0eab2ef743358b282d7",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r1/frozen_preview.json": "1c8d91db1cc0f5039f936ec168f3b397404e7a84bc5d8d3d2620ddff6a1a8af5",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r2/run_manifest.json": "f141fbeab4670887bf620d26ecb51e24258708b29ff5d914cbb4ce035d248c37",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r2/study.duckdb": "4ba8ed517d5250e4e2f76290ec5500d1008fb343885f136c3a544554fb475c56",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r2/llm_calls.jsonl": "da625c328555a0aa561ea4191b01f1cc20a26c5b8205662ca7f5c36ce065f30d",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r2/household_finance_payloads.json": "9077fb00b9c487033d8f6a388418aed1e55849d3e850b0eab2ef743358b282d7",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r2/frozen_preview.json": "1c8d91db1cc0f5039f936ec168f3b397404e7a84bc5d8d3d2620ddff6a1a8af5",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r1/run_manifest.json": "ae2d2330667487404aac89e9da1392115fa4cdf1013bb17e49b97e2b02f8aa21",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r1/study.duckdb": "6f47c94afa1495e503926518da54ed184c6d78af884d35dd5c2e4cda0030f822",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r1/llm_calls.jsonl": "ce246748dfddeca75e071ba9f41f1d1ddfe95d08927a426eacd974515b6d4b7f",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r1/household_finance_payloads.json": "9077fb00b9c487033d8f6a388418aed1e55849d3e850b0eab2ef743358b282d7",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r1/frozen_preview.json": "1a32f676be9999a1e2035055f7223ba82e299e769c91aa90d7ddfcbde6abc5c8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r2/run_manifest.json": "af923278dee4996fcda8567dea7401133c83f90888ab14523aec25ef389d2e18",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r2/study.duckdb": "7c3a2de1c5e9afdd396221cb0ec743097b829282498a4f51d2d45cbba87f366a",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r2/llm_calls.jsonl": "b613604f079f1a273eadf8dc325f82c82bc19f21b549c754bcd0c877b3da195e",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r2/household_finance_payloads.json": "9077fb00b9c487033d8f6a388418aed1e55849d3e850b0eab2ef743358b282d7",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r2/frozen_preview.json": "1a32f676be9999a1e2035055f7223ba82e299e769c91aa90d7ddfcbde6abc5c8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r1/run_manifest.json": "b70c31a9644a453027eaeb0dac0cb9d160a708f9976bb1f8b2521eeff52e48a6",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r1/study.duckdb": "a5dbdafa65f0821fc1ac72467cf29dc96adc0516d6fdf4fcd800f40ff1b0ec16",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r1/llm_calls.jsonl": "8b7eb8c4b5cb0743b0c5f6ac155617a26d830071af30685fa8f0b30e17a65777",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r1/household_finance_payloads.json": "9077fb00b9c487033d8f6a388418aed1e55849d3e850b0eab2ef743358b282d7",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r1/frozen_preview.json": "1bc119e9bc69721f0045d56465d619d77fd6971998e71ccacac29da4e7de73d5",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r2/run_manifest.json": "64513e2ef9d809cfde48fb2b95865b9c2a7d09bd32460093ea5fffbb104283ec",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r2/study.duckdb": "e5c5d2b1529c475a85b549b3ed2ae1783a73fc3f30a39f0c2363e1da7d8b625a",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r2/llm_calls.jsonl": "6dd342d8afeada04f9bdc10138dd9e93da5cf336a23b30a5b86bd57103d6abf8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r2/household_finance_payloads.json": "9077fb00b9c487033d8f6a388418aed1e55849d3e850b0eab2ef743358b282d7",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r2/frozen_preview.json": "1bc119e9bc69721f0045d56465d619d77fd6971998e71ccacac29da4e7de73d5",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r1/run_manifest.json": "c65049382f79e3ff9d2f70cf26e37d2909c81f8b9b868143f0378f5fbcde5ef8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r1/study.duckdb": "2f821b11729a2f69d2dd5f8affba16a8df152be2a07bda9c38e085e9b7cfa9d0",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r1/llm_calls.jsonl": "74aad5d82dfe3c69b16fbd16d36d4542115be623cee709e4d314223d65fd141b",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r1/household_finance_payloads.json": "c2d069c91a39cc46251529b9a2357927d8739c71f2cf3ac1d4d127e333b97165",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r1/frozen_preview.json": "befffe59019dc2400eceae345cbfada3d23a27645a122b6fb290dfa17bb3a61b",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r2/run_manifest.json": "d9542305c8fa5a834ca4c587c03259f1c22dbf3acf081a9ed12873f7d347d229",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r2/study.duckdb": "8fb9932d1b6db9f258e0b7edb2241daa612f612c09b8688fb6dfc3ecf039dedd",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r2/llm_calls.jsonl": "74930831fcac2c124f996a7fc0912ef787fffd747993a08af7261e018998106f",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r2/household_finance_payloads.json": "c2d069c91a39cc46251529b9a2357927d8739c71f2cf3ac1d4d127e333b97165",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r2/frozen_preview.json": "befffe59019dc2400eceae345cbfada3d23a27645a122b6fb290dfa17bb3a61b",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r1/run_manifest.json": "2be8347ae2c8df014f199e1e70e0818c81f467dbe96d349de68fcaf326652183",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r1/study.duckdb": "d3747144060efee9c74f1e746fa42316d0d255d63e3d6a338e367fb573aaa3bb",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r1/llm_calls.jsonl": "6a87029dd07acff3e1452f26405572f5e7c20e24cd1fccb84715ce63ffd88908",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r1/household_finance_payloads.json": "c2d069c91a39cc46251529b9a2357927d8739c71f2cf3ac1d4d127e333b97165",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r1/frozen_preview.json": "2f43a7d7ad0a611f359052d34d7951735d02fe587418bd51e9f047523259a0c0",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r2/run_manifest.json": "bbd4cd02fd8ced72c37c6942b25f05e54465111cafa749cedfd0cc472a6bf6a8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r2/study.duckdb": "21b1e86646a15c8bdf99b26270c4de719d83c2395fa5a3af3950c66da5fa96b7",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r2/llm_calls.jsonl": "d94b61b6a5c971f484a1f0e7e86f3e79d8e659ef6b25a955135790be237d0849",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r2/household_finance_payloads.json": "c2d069c91a39cc46251529b9a2357927d8739c71f2cf3ac1d4d127e333b97165",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r2/frozen_preview.json": "2f43a7d7ad0a611f359052d34d7951735d02fe587418bd51e9f047523259a0c0",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r1/run_manifest.json": "c0c4b4c6b48ec6ccfbf5d6602759f30215bb2e173898cec0ef123d2b64552788",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r1/study.duckdb": "20866b6e7c0fc4b29c9239efd3727ba35e59f6ff11333af017af5b524384bd9b",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r1/llm_calls.jsonl": "17accaf2956f55137ee1a81b6bb7c0104f9effbed6df356cf706725ca9f81fa9",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r1/household_finance_payloads.json": "c2d069c91a39cc46251529b9a2357927d8739c71f2cf3ac1d4d127e333b97165",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r1/frozen_preview.json": "7cc80c8268759e8be8192f946a346a31ac60808183a841ecc3911a4c62c6d497",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r2/run_manifest.json": "01411518129e0f89faae113374fa8130f738968e0d0913ca9e1f08d1192279db",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r2/study.duckdb": "8884cf60d96b52a6f6a1762e93cc3edddcff2019301c17825fb6ab2cacbc3f4e",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r2/llm_calls.jsonl": "c7a768410343974258c1a913d32f5a8b2d8c49bcaae8b272301484b61289953f",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r2/household_finance_payloads.json": "c2d069c91a39cc46251529b9a2357927d8739c71f2cf3ac1d4d127e333b97165",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r2/frozen_preview.json": "7cc80c8268759e8be8192f946a346a31ac60808183a841ecc3911a4c62c6d497"
+  },
+  "prepared_file_count_verified": 40,
+  "evaluator_sha256": {
+    "studies/sce_inflation_expectations/evaluation/household_finance.py": "a33fd12e9fac608d68dfbcf235a7b69e30fba1ca6c1ea1c3611bda48185a3540",
+    "studies/sce_inflation_expectations/evaluation/cognition.py": "9faccae815b60cd624aeb37f651deff10fdb0a9bc9863b93b58138d0991b2aca"
+  },
+  "bootstrap": {
+    "draws_requested": 1000,
+    "seed": 20261016,
+    "person_clustered_across_months": true,
+    "all_intervals_unadjusted_and_exploratory": true
+  },
+  "metric_units": {
+    "density_mean_iqr_center_w1_q8": "inflation percentage points",
+    "probability_tv_pct": "probability percentage points",
+    "rates": "fractions"
+  },
+  "limitations": [
+    "Current Q1 and inflation answers were collected in the same survey. This is A historical conditional reconstruction, not B ex ante forecasting or a causal financial-shock estimate.",
+    "Four previously inspected development months, numeracy-stratified roster and few extreme financial states; no independent validation or national inference.",
+    "Public information, earlier beliefs and price news are held fixed across arms. Financial facts and household-perspective wording remain exploratory interventions.",
+    "Group comparisons are descriptive; groups with fewer than 3 common respondents in a cell are suppressed without deleting full-sample rows.",
+    "Accuracy conditions on common legal/scorable support; assigned counts retain invalid and missing cases."
+  ]
+}

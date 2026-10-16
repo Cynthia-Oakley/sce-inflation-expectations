@@ -1,0 +1,64 @@
+{
+  "status": "completed_real_trial_and_evaluation",
+  "recorded_at_utc": "2026-10-16T15:28:49.328491+00:00",
+  "folder": "outputs/sce_household_finance_trial_20261016_v1",
+  "protocol_sha256": "4208e676d30bc8c7007500d0d1be639b964e5d7c0f9228ab00174af4f3f64173",
+  "source_freeze_commit": "59ca949",
+  "evaluation_freeze_commit": "e92ab91",
+  "actual_calls": 576,
+  "validation_statuses": {
+    "valid": 576
+  },
+  "call_attempt_indices": {
+    "0": 576
+  },
+  "returned_model_counts": {
+    "deepseek-flash": 576
+  },
+  "system_fingerprint_counts": {
+    "aeb56401ca74e127821c4f9126dcb669": 576
+  },
+  "usage": {
+    "prompt_tokens": 1795442,
+    "completion_tokens": 92615,
+    "total_tokens": 1888057
+  },
+  "peak_token_cost_estimate_usd_not_bill": 0.64977,
+  "cap_usd": 3.0,
+  "provider_bill_available": false,
+  "new_paid_mcp_calls": 0,
+  "started_at_utc": "2026-10-16T15:23:01.580701+00:00",
+  "finished_at_utc": "2026-10-16T15:27:49.850132+00:00",
+  "execution_wall_span_seconds": 288.269431,
+  "source_receipts_sha256": {
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r2/run_manifest.json": "73b196346ed4b2cea730309bfb20fe18a122b317921a795e5e0639795f0ed62a",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r1/run_manifest.json": "2be8347ae2c8df014f199e1e70e0818c81f467dbe96d349de68fcaf326652183",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r1/run_manifest.json": "948a7d7b66312390ccb3e9237a7fd232dd7d867fa5063c154ccce8dd7959d139",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r2/run_manifest.json": "64513e2ef9d809cfde48fb2b95865b9c2a7d09bd32460093ea5fffbb104283ec",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r1/run_manifest.json": "ea2d7776b154dbccbb18551af6f462c72881fd9246b0461f43c5c86508a8b107",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r2/run_manifest.json": "af923278dee4996fcda8567dea7401133c83f90888ab14523aec25ef389d2e18",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_perspective-r1/run_manifest.json": "259d2ad224e7a788299ba9ce4b12cd828a4668a2348c7facc3f25f99ba083eba",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r1/run_manifest.json": "c0c4b4c6b48ec6ccfbf5d6602759f30215bb2e173898cec0ef123d2b64552788",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r2/run_manifest.json": "72334b4684f46f82fd846689a99776954b5ce0a0755e95e12e4141e72a58c7b2",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-baseline-r2/run_manifest.json": "f141fbeab4670887bf620d26ecb51e24258708b29ff5d914cbb4ce035d248c37",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-baseline-r2/run_manifest.json": "0e7cbec68d7253c659d4da73b8a008a6bbb08860be866465562a2b2cf7bb6efb",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r1/run_manifest.json": "c65049382f79e3ff9d2f70cf26e37d2909c81f8b9b868143f0378f5fbcde5ef8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_facts-r2/run_manifest.json": "bbd4cd02fd8ced72c37c6942b25f05e54465111cafa749cedfd0cc472a6bf6a8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_facts-r1/run_manifest.json": "854828d35ec225b8babedfbc407ab8129d2b8c4e8fef96d6d3dd1656dc6efaf8",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-baseline-r2/run_manifest.json": "d9542305c8fa5a834ca4c587c03259f1c22dbf3acf081a9ed12873f7d347d229",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202203-financial_perspective-r2/run_manifest.json": "01411518129e0f89faae113374fa8130f738968e0d0913ca9e1f08d1192279db",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r2/run_manifest.json": "94d25ae6543f09ec8e9e2aa537e956f78b67506da26d78d9e59f42c5ddf9001e",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-baseline-r1/run_manifest.json": "0603628f622388966fe646accc59d51e5156d93a7aa458ce67cac01c96ea2b78",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_perspective-r1/run_manifest.json": "b70c31a9644a453027eaeb0dac0cb9d160a708f9976bb1f8b2521eeff52e48a6",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r1/run_manifest.json": "9f66ed91b4d5f17edae35f1addc6968d4d066757c2b155886285166b9b8798a7",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202004-financial_facts-r2/run_manifest.json": "557318aa804924b3f9d1435f96648ec76c710fa724ecb3ec97e52cbff62fcbe1",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r2/run_manifest.json": "dcbc7f92410c89c8e47cd113e3b7a4e4809e7089e6f2ceca3ad409eff44b182d",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202105-financial_perspective-r1/run_manifest.json": "e004ea1ed01b9e825580b11a0e3e66482bb14a5d5cc9c5a112215fff3a3f82af",
+    "outputs/local_runs/sce_household_finance_trial_20261016_v1-202111-financial_facts-r1/run_manifest.json": "ae2d2330667487404aac89e9da1392115fa4cdf1013bb17e49b97e2b02f8aa21"
+  },
+  "input_hashes_match": true,
+  "evaluation_summary_sha256": "4e3a082a6a2a695f56594a8e17d1c88d12ead2bc6f4556175c26edd359e6fb48",
+  "raw_replies_independently_reconstructed": 576,
+  "q9_common_person_months": 92,
+  "evaluation_api_calls": 0
+}

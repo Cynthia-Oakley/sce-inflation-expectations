@@ -1,0 +1,104 @@
+{
+  "status": "posthoc_descriptive_only_not_causal_or_significance_test",
+  "new_api_calls": 0,
+  "source_sha256": "e71dfcb2620e1090c36ae8533e0371ea59f72ed2991af3e211c1b47d9537f15d",
+  "method": "Within each month and financial group, average paired model-mean differences over persons and both generations; equal respondents within cells; descriptive, not a cross-month standardized effect. All models same Q9 fitter.",
+  "cells": [
+    {
+      "month": 202004,
+      "group": "better",
+      "unique_person_months": 6,
+      "generation_rows": 12,
+      "facts_minus_baseline_mean_pp": 0.5337673057113921,
+      "perspective_minus_baseline_mean_pp": -0.10162447226182603
+    },
+    {
+      "month": 202004,
+      "group": "same",
+      "unique_person_months": 9,
+      "generation_rows": 18,
+      "facts_minus_baseline_mean_pp": 0.2132548120793024,
+      "perspective_minus_baseline_mean_pp": 0.15608859203975026
+    },
+    {
+      "month": 202004,
+      "group": "worse",
+      "unique_person_months": 8,
+      "generation_rows": 16,
+      "facts_minus_baseline_mean_pp": -1.3661368206735571,
+      "perspective_minus_baseline_mean_pp": -0.7781029544303621
+    },
+    {
+      "month": 202105,
+      "group": "better",
+      "unique_person_months": 6,
+      "generation_rows": 12,
+      "facts_minus_baseline_mean_pp": -0.39358534231385395,
+      "perspective_minus_baseline_mean_pp": -0.0894608902630341
+    },
+    {
+      "month": 202105,
+      "group": "same",
+      "unique_person_months": 13,
+      "generation_rows": 26,
+      "facts_minus_baseline_mean_pp": -0.17904578229742546,
+      "perspective_minus_baseline_mean_pp": -0.10297593853402358
+    },
+    {
+      "month": 202105,
+      "group": "worse",
+      "unique_person_months": 3,
+      "generation_rows": 6,
+      "facts_minus_baseline_mean_pp": -0.17050867629113794,
+      "perspective_minus_baseline_mean_pp": 0.6195313389113241
+    },
+    {
+      "month": 202111,
+      "group": "better",
+      "unique_person_months": 4,
+      "generation_rows": 8,
+      "facts_minus_baseline_mean_pp": 0.3224219552021921,
+      "perspective_minus_baseline_mean_pp": -0.0018075774746688644
+    },
+    {
+      "month": 202111,
+      "group": "same",
+      "unique_person_months": 15,
+      "generation_rows": 30,
+      "facts_minus_baseline_mean_pp": -0.2524765401717489,
+      "perspective_minus_baseline_mean_pp": -0.3631293664941746
+    },
+    {
+      "month": 202111,
+      "group": "worse",
+      "unique_person_months": 5,
+      "generation_rows": 10,
+      "facts_minus_baseline_mean_pp": -0.13398686225401812,
+      "perspective_minus_baseline_mean_pp": 0.17450266989868135
+    },
+    {
+      "month": 202203,
+      "group": "better",
+      "unique_person_months": 4,
+      "generation_rows": 8,
+      "facts_minus_baseline_mean_pp": -1.1306490393131443,
+      "perspective_minus_baseline_mean_pp": 1.179018039013971
+    },
+    {
+      "month": 202203,
+      "group": "same",
+      "unique_person_months": 11,
+      "generation_rows": 22,
+      "facts_minus_baseline_mean_pp": 0.15639936105181754,
+      "perspective_minus_baseline_mean_pp": -0.13306304317593848
+    },
+    {
+      "month": 202203,
+      "group": "worse",
+      "unique_person_months": 8,
+      "generation_rows": 16,
+      "facts_minus_baseline_mean_pp": -0.5166996628125416,
+      "perspective_minus_baseline_mean_pp": -0.5797317759431735
+    }
+  ]
+}
