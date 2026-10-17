@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "raw_replies_reconstructed_and_matched": 768,
+  "independent_primary_and_micro_cell_checks": 96,
+  "max_absolute_difference": 5.551115123125783e-15,
+  "independent_quantile_method": "sorted cumulative weights, left inverse; no shared quantile function",
+  "independent_w1_method": "scipy.stats.wasserstein_distance",
+  "common_q9_person_months": 190,
+  "protected_files_unchanged": 15,
+  "runtime_and_prepared_source_hashes_unchanged": true,
+  "original_protocol_unchanged": true,
+  "new_evaluation_api_calls": 0,
+  "summary_sha256": "7a43bf07ffd96a3930087768a721426c02146f13f50eeccddfde977272710edd",
+  "all_16_jobs_completed": true,
+  "all_calls_first_attempt": true
+}

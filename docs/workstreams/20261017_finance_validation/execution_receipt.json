@@ -1,0 +1,63 @@
+{
+  "status": "completed_real_trial_and_evaluation",
+  "recorded_at_utc": "2026-10-17T01:33:44.562410+00:00",
+  "folder": "outputs/sce_finance_validation_trial_20261017_v1",
+  "protocol_sha256": "bf3b18870a2b368d04bfe0af60a2e94547e9416eff9c89bfdf7cde4cc96137b3",
+  "source_freeze_commit": "130d7af5cd168b1896e2caeed2427ea9a9be69f8",
+  "evaluation_freeze_commit": "130d7af5cd168b1896e2caeed2427ea9a9be69f8",
+  "authorized_at_utc": "2026-10-17T01:25:35.501532+00:00",
+  "user_authorization": "同意上述发送范围及$4上限，开始模拟",
+  "destination": "https://api.deepseek.com",
+  "planned_calls": 768,
+  "actual_calls": 768,
+  "validation_statuses": {
+    "valid": 768
+  },
+  "call_attempt_indices": {
+    "0": 768
+  },
+  "returned_model_counts": {
+    "deepseek-flash": 768
+  },
+  "system_fingerprint_counts": {
+    "aeb56401ca74e127821c4f9126dcb669": 768
+  },
+  "usage": {
+    "completion_tokens": 123668,
+    "prompt_tokens": 2391818,
+    "total_tokens": 2515486
+  },
+  "peak_token_cost_estimate_usd_not_bill": 0.8659480000000003,
+  "cap_usd": 4.0,
+  "provider_bill_available": false,
+  "new_paid_mcp_calls": 0,
+  "started_at_utc": "2026-10-17T01:25:54.937671+00:00",
+  "finished_at_utc": "2026-10-17T01:29:59.062847+00:00",
+  "execution_wall_span_seconds": 244.125176,
+  "source_receipts_sha256": {
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202509-financial_facts-r2/run_manifest.json": "00d222c480152e10bb27c8a200b9ac7696857b6d161e14e2a4b40f83d60eee1c",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202410-financial_facts-r2/run_manifest.json": "99aca2fa70211e04de81f868b4a0a1d4fd319de9f08a122464cfea4f9d0c24e0",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202509-baseline-r2/run_manifest.json": "62fe8933a7100e6bfc255cff1375561c03d9c5b82736fa48a0fc62b95ad0fd96",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202306-financial_facts-r1/run_manifest.json": "4155627486e30c1a903b63555ca45548b41e65d677644f737cfec0d2bcf14aaa",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202206-baseline-r2/run_manifest.json": "f5ffc7c330874aac506c71aca545afc453265bc45b31364c3dfeaa680c0e4b20",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202410-baseline-r2/run_manifest.json": "f7fed19d049b0a66d6108f836227ac2a3d5bf8137f948e79347915f05ad07050",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202306-baseline-r2/run_manifest.json": "0bd6433f789380ce2b3d6cfbd84440a6f762e10b3299e91ea483790f935750ee",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202306-baseline-r1/run_manifest.json": "db6435c42d3e5cd2ceafff09f9d36c8cb5b140ba1620fa3dc6d542ec47f21996",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202410-financial_facts-r1/run_manifest.json": "141adf059ddb0d3a8f13e8819c372406316734e363aa93f6e0873b2e4c3e5775",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202206-financial_facts-r2/run_manifest.json": "ee7f556c35c3b5fcf242e1f36b2386e02e73fab73bdc67ffdae2ae838a9ab3f8",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202509-financial_facts-r1/run_manifest.json": "6eb848a53f371a4b32d3000e77fe90a2262eebd470a815e49be1a8ec26c60aad",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202306-financial_facts-r2/run_manifest.json": "8b13f095bead01d65ac51e94412a6a517239ef941315cee7b344a6d53e55cc8a",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202410-baseline-r1/run_manifest.json": "115750e5aa0e3c8bb0b346b17c2503695d2b2c89fe4cf1bc485f718a05b9309c",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202509-baseline-r1/run_manifest.json": "dd22a1d7859a71ddf2f984ac9f12753241be38de55d8548851417d60f4987fad",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202206-baseline-r1/run_manifest.json": "c7db7b80902f228d15db896eb5141fc5824cbf5279f691831fc58cad9c777330",
+    "outputs/local_runs/sce_finance_validation_trial_20261017_v1-202206-financial_facts-r1/run_manifest.json": "30a02bfa9c9541e10c15722f8317d8bd4e1ed2b45a74d1ff8ecad6aac6ba3969"
+  },
+  "input_hashes_match": true,
+  "retry_count": 0,
+  "error_records": 0,
+  "evaluation_api_calls": 0,
+  "evaluation_summary_sha256": "7a43bf07ffd96a3930087768a721426c02146f13f50eeccddfde977272710edd",
+  "raw_replies_independently_reconstructed": 768,
+  "q9_common_person_months": 190,
+  "figures": "outputs/sce_finance_validation_reading_20261017_v2"
+}
