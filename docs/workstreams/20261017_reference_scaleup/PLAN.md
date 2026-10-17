@@ -52,3 +52,7 @@
 - 模拟预计$5.457899，保守最长预留$21.212281，硬上限建议$21.50。新闻另账，不能把两者混成已批准总预算。范围与预算卡已呈用户；未获答复前不创建authorization.json或执行run。
 - 用户答复后：授权记录须绑定protocol_sha256、cap_usd=21.5、planned_calls=4608。启动scripts/run_sce_reference_validation_trial.py run --folder outputs/sce_reference_validation_trial_20261017_v2 --workers4（参数实际写--workers 4）。不要重跑dry-run或prepare。
 - 完成24真实jobs后才运行scripts/analyze_sce_reference_validation.py --folder上述 --out outputs/sce_reference_validation_evaluation_20261017_v1 --draws1000。此阶段才读取本期真值；不按结果改提示、换月/权重或选种子。
+
+## 启动授权
+
+用户call_66052d8baab648e59a312f2e7d2478ec明确同意已列数据范围与$21.50上限，已绑定正式v2协议并启动24jobs/4608。运行中若中断，先查看real_dispatch与local_runs，禁止重新启动整个run或自动重试；当前不是等待授权。费用按实际usage记录，不以$21.50代替实际支出。全部完成才读targets分析。
