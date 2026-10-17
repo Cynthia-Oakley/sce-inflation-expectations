@@ -1,0 +1,60 @@
+{
+  "status": "posthoc_exploratory_already_provided_past_information",
+  "completed_at_utc": "2026-10-17T08:43:10.077370+00:00",
+  "n": 2284,
+  "new_api_calls": 0,
+  "baseline_full_r2": 0.38961948744571573,
+  "blocks": {
+    "history_summary": {
+      "r2": 0.4206237628815226,
+      "rank": 39,
+      "columns": 39,
+      "increment_r2_points": 3.100427543580686,
+      "drop_from_extended_full_r2_points": 3.0431186337281257
+    },
+    "previous_uncertainty_shape": {
+      "r2": 0.3905829149835699,
+      "rank": 38,
+      "columns": 38,
+      "increment_r2_points": 0.09634275378541668,
+      "drop_from_extended_full_r2_points": 0.08629323819411283
+    },
+    "previous_Q8_vs_Q9": {
+      "r2": 0.39001204612539164,
+      "rank": 38,
+      "columns": 38,
+      "increment_r2_points": 0.039255867967591396,
+      "drop_from_extended_full_r2_points": 0.03207370888065331
+    }
+  },
+  "all_past_blocks_r2": 0.4216878057287461,
+  "all_past_blocks_increment_r2_points": 3.206831828303036,
+  "specification": {
+    "history_summary": "rounded displayed typical past mean minus rounded last mean; anchor available indicator; number of valid earlier surveys including t-1",
+    "previous_uncertainty_shape": "displayed prior p75-p25; displayed quartile midpoint minus displayed prior mean",
+    "previous_Q8_vs_Q9": "actual prior Q8 point minus raw fitted prior mean; missing point indicator"
+  },
+  "limits": [
+    "All added information is already in frozen prompt; no current answers or new population variables added.",
+    "Coefficients/R2 are exploratory conditional associations, not evidence a model ignored a variable or a new causal mechanism.",
+    "Older personal average includes last response, is correlated with it, and may capture reporting style as well as beliefs.",
+    "No out-of-sample improvement or new successful configuration is claimed; do not add separate single-block increments.",
+    "Sample-only weighted linear fit, few time cells, no p-values or attainable-ceiling estimate."
+  ],
+  "source_cases_sha256": "8bf039c3e4a64e2f31da0ee5c30a3db33d7c1712c0ba45d6e9ccd3959ba64336",
+  "past_file_sha256_by_month": {
+    "202003": "b176632e0a3da499fa55bb299bfaad2ee8ff75c4bf5e803b35481c07e87d05b9",
+    "202009": "c51e0f3531ff8633aad4d80e13ec3238abe73997f99561496c68cb3803468315",
+    "202103": "8750e62e5af1b52e025e2e06d1e33b7ed0943408b66103625d3dfedff3c8b355",
+    "202109": "4d3f65f1b409c167e28573a7cb304c1b3e1f3de5efce568d65e058ede0ec90c3",
+    "202206": "a17596915c6c7edd3fe8f6d915ad2df8b172ed7c1c365ad3343b48661b80ce07",
+    "202212": "2bcb0e7bd64e2371913c91caeb047074fcf994cc67f814e368ff033ba3b1b42f",
+    "202306": "cfaa3c48e5a1eccb0e3bb792037658119d0c995bf03b1c2d34d525a640b7bcb6",
+    "202312": "21b353d9494f8277e0cec9d5fd4059696496f2d101d23e8d0eb5828b22614f65",
+    "202404": "5684ecda0391523483044cde2edf0b98916555f3f2bf579ca8032da29a19cfc7",
+    "202410": "85f2bc2858e2b1edd3bd9e200723556e53c8c08d410f5e2b62d6d83fadf69f93",
+    "202503": "98eb0157309027d4ace1ebb180c384710045068ddb3f1598bda5215e92f6a74c",
+    "202509": "17f77e411f5cd4fb4e0f03d66de56f78481271eca524548da6b91f7f0ecb4914"
+  },
+  "script_sha256": "4cd4247c89784db459808a63bee4b80c7425740012cf772debea784407436596"
+}

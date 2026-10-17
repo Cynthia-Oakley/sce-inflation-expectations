@@ -1,0 +1,205 @@
+{
+  "status": "posthoc_descriptive_same_frozen_answers",
+  "completed_at_utc": "2026-10-17T08:40:04.410424+00:00",
+  "n_person_months": 2284,
+  "n_months": 12,
+  "new_api_calls": 0,
+  "outcome": "actual current personal Q9 fitted mean; two model generations averaged before regression",
+  "weight": "design-survey weights normalized within month; months equally weighted",
+  "units": "r2 is0-1; r2_points is100*(R2 difference), not inflation pp or fraction of all causal influences",
+  "population_contributions_base": "month fixed effects + own actual previous Q9 mean + current Sim Q9 mean",
+  "population_factor_contributions": [
+    {
+      "factor": "employment_status",
+      "dummy_count": 7,
+      "add_alone_r2_points": 0.6503551703124222,
+      "drop_from_full_r2_points": 0.6403453841853479,
+      "average_order_r2_points": 0.647192189259049
+    },
+    {
+      "factor": "education_group",
+      "dummy_count": 3,
+      "add_alone_r2_points": 0.28210784934147304,
+      "drop_from_full_r2_points": 0.2360138040168991,
+      "average_order_r2_points": 0.2609454530627972
+    },
+    {
+      "factor": "region",
+      "dummy_count": 3,
+      "add_alone_r2_points": 0.1616326517646649,
+      "drop_from_full_r2_points": 0.17129073528550087,
+      "average_order_r2_points": 0.16650103620731846
+    },
+    {
+      "factor": "age_group",
+      "dummy_count": 2,
+      "add_alone_r2_points": 0.1439805668032812,
+      "drop_from_full_r2_points": 0.11134169706897845,
+      "average_order_r2_points": 0.13037494808387953
+    },
+    {
+      "factor": "household_income_band",
+      "dummy_count": 3,
+      "add_alone_r2_points": 0.016140049892199304,
+      "drop_from_full_r2_points": 0.027830156754671265,
+      "average_order_r2_points": 0.023651296722518714
+    },
+    {
+      "factor": "housing_tenure",
+      "dummy_count": 3,
+      "add_alone_r2_points": 0.010935640171383376,
+      "drop_from_full_r2_points": 0.019838389583248794,
+      "average_order_r2_points": 0.017105749536809534
+    },
+    {
+      "factor": "numeracy",
+      "dummy_count": 1,
+      "add_alone_r2_points": 0.01883696849113159,
+      "drop_from_full_r2_points": 0.012926287756065413,
+      "average_order_r2_points": 0.015324873213271977
+    }
+  ],
+  "population_total_r2_points_given_base": 1.2610955460856443,
+  "population_decomposition_method": "Exact seven-block Shapley/average ordering over128 subsets. Descriptive allocation of shared linear explanatory power; not causal.",
+  "nested_r2": {
+    "month": {
+      "r2": 0.031683953364205375,
+      "rank": 12,
+      "columns": 12
+    },
+    "month_P": {
+      "r2": 0.0580435636647294,
+      "rank": 34,
+      "columns": 34
+    },
+    "month_prior": {
+      "r2": 0.3665341798612727,
+      "rank": 13,
+      "columns": 13
+    },
+    "month_prior_P": {
+      "r2": 0.3805574444712333,
+      "rank": 35,
+      "columns": 35
+    },
+    "month_sim": {
+      "r2": 0.27614809984614985,
+      "rank": 13,
+      "columns": 13
+    },
+    "month_sim_P": {
+      "r2": 0.2918571768246193,
+      "rank": 35,
+      "columns": 35
+    },
+    "month_prior_sim": {
+      "r2": 0.3770085319848593,
+      "rank": 14,
+      "columns": 14
+    },
+    "full": {
+      "r2": 0.38961948744571573,
+      "rank": 36,
+      "columns": 36
+    }
+  },
+  "collinearity": {
+    "raw_weighted_prior_sim_correlation": 0.7242715894220294,
+    "within_month_prior_sim_correlation": 0.7344014138784192,
+    "sim_level_explained_by_month_prior_P_r2": 0.6435174763958671,
+    "sim_level_weighted_VIF": 2.805186604632773,
+    "sim_update_weighted_VIF": 5.529837365159889,
+    "outcome_sim_partial_correlation": 0.12095185676260821,
+    "outcome_sim_partial_r2": 0.014629351654322357,
+    "full_design_rank": 36,
+    "full_design_columns": 36,
+    "level_update_residual_max_difference": 9.769962616701378e-15
+  },
+  "temporal_drop_one_sensitivity": [
+    {
+      "scope": "2020_2022",
+      "n": 1144,
+      "full_r2": 0.3589893013811811,
+      "drop_one_r2_points": {
+        "age_group": 0.3272872943077876,
+        "education_group": 0.12954758540993927,
+        "household_income_band": 0.24333943601947405,
+        "numeracy": 0.3124173178621015,
+        "region": 0.19484233378468385,
+        "housing_tenure": 0.014624041226662943,
+        "employment_status": 1.231549049260261
+      }
+    },
+    {
+      "scope": "2023_2025",
+      "n": 1140,
+      "full_r2": 0.4362805971613829,
+      "drop_one_r2_points": {
+        "age_group": 0.05099854496508627,
+        "education_group": 0.4845293070180223,
+        "household_income_band": 0.22443384430150815,
+        "numeracy": 0.089006976119832,
+        "region": 0.16937975108323178,
+        "housing_tenure": 0.08270135558062774,
+        "employment_status": 0.49161618052148137
+      }
+    }
+  ],
+  "macro_12_month_descriptive_only": {
+    "prior_center": {
+      "r2": 0.952876503767283,
+      "rank": 2,
+      "columns": 2,
+      "coefficients": [
+        -0.0768479202315593,
+        1.0628311010822102
+      ]
+    },
+    "sim_center": {
+      "r2": 0.894062485400622,
+      "rank": 2,
+      "columns": 2,
+      "coefficients": [
+        0.828055360977864,
+        0.7964130915069743
+      ]
+    },
+    "prior_and_sim": {
+      "r2": 0.961349247451925,
+      "rank": 3,
+      "columns": 3,
+      "coefficients": [
+        -0.4838572900689453,
+        1.6338939708598863,
+        -0.4485177122746031
+      ]
+    },
+    "prior_sim_correlation": 0.984946937015239,
+    "sim_increment_given_prior_r2_points": 0.8472743684642015
+  },
+  "squared_error_tail_concentration": {
+    "top_1_percent_rows_squared_error_share": 0.3735763853471457,
+    "top_5_percent_rows_squared_error_share": 0.6902808016703535
+  },
+  "checks": {
+    "previous_full_r2_absolute_difference": 0.0,
+    "population_sum_r2_points_error": 0.0,
+    "FWL_partial_r2_identity_error": 1.3530843112619095e-16
+  },
+  "limits": [
+    "Sample-only, not a nationwide causal or forecast model; all responses already inspected.",
+    "Shared information is allocated by convention; unique drop-one losses cannot be summed.",
+    "Individual residual contains omitted information, nonlinear effects, response noise and scoring/measurement error; no estimated achievable R2 ceiling.",
+    "No p-values: heteroskedastic, overlapping households and only12 time cells.",
+    "National E variables are collinear with month indicators; macro contribution cannot be inferred from individual R2 shares.",
+    "Macro center fits only12 points and must not be advertised as new calibration success.",
+    "Full rank and VIF do not establish stable coefficients or causality."
+  ],
+  "method_sources": [
+    "https://www.jstatsoft.org/article/view/v017i01",
+    "https://www.statsmodels.org/stable/generated/statsmodels.stats.outliers_influence.variance_inflation_factor.html"
+  ],
+  "source_cases_sha256": "8bf039c3e4a64e2f31da0ee5c30a3db33d7c1712c0ba45d6e9ccd3959ba64336",
+  "source_summary_sha256": "01b8f0be4cc90d6eb798ee5b5277ad4ba1401fd7e4bd5bad0985e4ce7a3218ac",
+  "script_sha256": "95ed270d11bfec5e2d973c52e88920570ea820057785d296d9b20fa266f1b32d"
+}
