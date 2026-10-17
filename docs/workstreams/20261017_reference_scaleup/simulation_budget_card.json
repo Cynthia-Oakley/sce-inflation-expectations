@@ -1,0 +1,27 @@
+{
+  "destination": "https://api.deepseek.com",
+  "months": [
+    202003,
+    202009,
+    202103,
+    202109,
+    202206,
+    202212,
+    202306,
+    202312,
+    202404,
+    202410,
+    202503,
+    202509
+  ],
+  "n_per_month": 192,
+  "generation_repeats": 2,
+  "planned_calls": 4608,
+  "estimated_peak_cost_usd": 5.457898950000001,
+  "conservative_reservation_usd": 21.212280599999996,
+  "proposed_cap_usd": 21.5,
+  "protocol_sha256": "2ed9e360938390aa9e52351458e4707c273fbd342b0547ec54cd8e42f8bc6acd",
+  "prepared_manifest_sha256": "0015d8e53c3cefb02f2e755b86fba4c7ad20d5e445e20c908ea7e08e799ba047",
+  "status": "pending_explicit_scope_and_budget_approval",
+  "new_simulation_calls": 0
+}

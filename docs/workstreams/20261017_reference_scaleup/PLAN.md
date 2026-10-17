@@ -43,3 +43,12 @@
 - 新reference运行和评价实现完成；38项定向运行/评价检查、3项抽样/协议检查通过。最终物化模块已写好，等待真实新闻标签齐全后生成输入；未冒称已完成24引擎干跑。
 - 新闻授权记录：outputs/sce_reference_news_prepared_20261017_v1/authorization.json，用户“同意新闻分类，上限$3”；run_parent=outputs/sce_reference_news_run_20261017_v1。检查每part的state.json，不以进程exit0代替completed。失败保留现场，禁止自动续跑。
 - 只允许下一步本地合成/干跑；4608模拟发送范围与最终cap另待用户批准。
+
+## 当前停点：模拟待本批许可
+
+- 新闻全部完成：4316篇、540个唯一请求，约$0.711038（高峰token估算，非账单）；没有重发。原part11回包507重复一条完全相同标签，离线去重后沿原ledger只发508—517。原失败状态保留，completion_summary及news_completion_receipt给出完整链。
+- 运行包正式入口：outputs/sce_reference_validation_trial_20261017_v2。v1仅是0API未完成准备快照，不复用。1人的上期wave实际作答日跨月，保留同一选样，按实际日期处理，不按wave月份伪造日期。
+- v2协议2ed9e360938390aa9e52351458e4707c273fbd342b0547ec54cd8e42f8bc6acd，源码415a605；124个准备文件通过哈希/白名单/先验核对，24官方引擎scripted单元、4608条实际提示路径全部通过；42项定向测试。未读当前通胀真值，真实模拟0。
+- 模拟预计$5.457899，保守最长预留$21.212281，硬上限建议$21.50。新闻另账，不能把两者混成已批准总预算。范围与预算卡已呈用户；未获答复前不创建authorization.json或执行run。
+- 用户答复后：授权记录须绑定protocol_sha256、cap_usd=21.5、planned_calls=4608。启动scripts/run_sce_reference_validation_trial.py run --folder outputs/sce_reference_validation_trial_20261017_v2 --workers4（参数实际写--workers 4）。不要重跑dry-run或prepare。
+- 完成24真实jobs后才运行scripts/analyze_sce_reference_validation.py --folder上述 --out outputs/sce_reference_validation_evaluation_20261017_v1 --draws1000。此阶段才读取本期真值；不按结果改提示、换月/权重或选种子。

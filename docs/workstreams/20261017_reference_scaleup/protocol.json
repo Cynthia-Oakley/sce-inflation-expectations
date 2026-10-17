@@ -1,0 +1,109 @@
+{
+  "id": "sce-reference-scaleup-v1",
+  "registered_at_utc": "2026-10-17T05:25:03.883488+00:00",
+  "research_line": "A_conditional_returner_reconstruction",
+  "months": [
+    202003,
+    202009,
+    202103,
+    202109,
+    202206,
+    202212,
+    202306,
+    202312,
+    202404,
+    202410,
+    202503,
+    202509
+  ],
+  "old_months": [
+    202206,
+    202306,
+    202410,
+    202509
+  ],
+  "new_months": [
+    202003,
+    202009,
+    202103,
+    202109,
+    202212,
+    202312,
+    202404,
+    202503
+  ],
+  "n_per_month": 192,
+  "arms": [
+    "reference"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "planned_calls": 4608,
+  "sampling_seed": 20261017,
+  "dispatch_order_seed": 20261027,
+  "model": "deepseek-flash",
+  "official_advertised_version": "DeepSeek-V4.1-Flash",
+  "model_identity_limit": "Mutable alias, no independently verified weights or training cutoff.",
+  "temperature": 0.5,
+  "max_tokens": 1024,
+  "thinking": "disabled",
+  "retry_max": 0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_verified_date": "2026-10-17",
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "budget_cap_usd": 21.5,
+  "primary_metric": "q9_center_mae_pp",
+  "primary_weight": "design_survey_weight",
+  "primary_month_scope": "new_months",
+  "configuration": "Same common reference as the completed four-month validation: demographics, synthetic CE shares/Fed confidence, public price trends/news/policy, own observed prior Q8/Q9 and older state, publication timing, direct current response. No Q1, detailed quiz, frequency cue or new update rule.",
+  "month_selection": "Two preselected months per year2020-2025; original4, additional8 and all12 reported separately. No month chosen from the new responses. Existing aggregate data and earlier configurations were explored; not project-level blind.",
+  "sampling": "Fresh192 from complete eligible adjacent returners per month; age_group x income_band proportional stratified SRS, bounded largest remainder with minimum1 per observed stratum. No current inflation answer or expected error used. Do not force the old48 favorable sample into the new roster.",
+  "eligibility": "Adjacent panel/timeline eligibility, valid strict prior Q9 fit, usable demographics and finite positive survey weight. Strict prior sum tolerance1e-6 is the existing input contract; current truth cleaning is separate, never a reason to resample.",
+  "primary_estimand": "Conditional reconstruction of eligible SCE returners. Per month/repeat left-inverse weighted median of fitted individual Q9 means, compared with the same selected real people. Months equally averaged; repeats are not extra people.",
+  "weights": "Main=survey_weight/(stratum_n/stratum_N). Model receives weight1 only. Equal-person sensitivity separate. Weights correct this sampling stage, not returner nonresponse or proxy measurement.",
+  "full_wave": "Also fit all available current raw-bin SCE responses with positive survey weight using the same scorer; distinguish full wave, eligible returners and selected sample. Signed identity model-sample + sample-eligible + eligible-full = model-full; do not add absolute errors.",
+  "secondary_metrics": [
+    "individual_density_mean_mae_pp",
+    "cross_section_w1_pp",
+    "delta_w1_pp",
+    "across_person_iqr_pp",
+    "individual_iqr_mae_pp",
+    "q8_sample_center_mae_pp",
+    "full_wave_center_mae_pp"
+  ],
+  "baseline_refs": [
+    "copy_previous",
+    "history_anchor_half",
+    "full_wave_previous_center"
+  ],
+  "baseline_status": "Own prior and fixed .5 historical anchor executable offline; full-wave previous center executable. AR1/same-information regression pending and not claimed implemented here.",
+  "nested_samples": "Thirty prespecified fixed-seed SRS48 subset SRS96 subset192 per month. Reuse answers; sub-inclusion probability n/192 multiplies parent inclusion. These correlated subsets diagnose sample sensitivity, not30 independent model runs.",
+  "intervals": "Year-block bootstrap for monthly centers, two selected months per year; average repeats first. Six year blocks give exploratory intervals. Other person/seed summaries retain their conditional nature.",
+  "project_goal": "User goal center MAE<=.3pp is a project benchmark, not a published scientific threshold. Report mean, monthly fraction below.3, worst month and repeat variation. Nationwide claims require the separately reported full-wave comparison.",
+  "coverage_rule": "All24 jobs completed, no missing planned prompts. Report model validation and scorer failures separately from human missingness; Q9 common support and Q8 support separately. No current-target replacement.",
+  "groups": [
+    "age_group",
+    "household_income_band",
+    "numeracy",
+    "education_group",
+    "region",
+    "housing_tenure",
+    "employment_status"
+  ],
+  "group_reporting": "Descriptive only; at least3 common people per month/repeat/group cell, missing categories explicit. Report cells used; do not imply causal group effects or fill suppressed cells.",
+  "truth_isolation": "Preparation reads only profile fields, actual previous response date, and strictly past responses. Current Q8/Q9 stay in hash-pinned evaluation-only reference, opened after24 complete real jobs.",
+  "information_boundary": "A conditions use current retrospective demographics and actual own past beliefs; each selected month is one step, not a consecutive autonomous B forecast. Public E retains frozen cutoffs; private true dates only derive earlier/later/same-day labels.",
+  "scorer": "Same frozen approximate Q9 raw-bin fitter for model and real; official derived means are not substituted. Current common legal gate .5pp sum tolerance followed by frozen fitter; prior input contract remains stricter.",
+  "generations": "Engine seeds42/43; same prompts in both generations. Provider alias does not guarantee a fixed model or provider-enforced seed.",
+  "reused_paid_simulation_calls": 0,
+  "no_tuning_after_run": true,
+  "limits": [
+    "Returner-only conditional sample; full-wave diagnostics quantify rather than remove selection.",
+    "CE2020Q4 and national Fed confidence are synthetic structural proxies, not measured household traits.",
+    "Current NYT archive/gas snapshots do not establish original historical bytes; not automatically strict B inputs.",
+    "Selected time coverage cannot prove all-month or future accuracy."
+  ]
+}

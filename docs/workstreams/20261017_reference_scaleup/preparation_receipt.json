@@ -1,36 +1,213 @@
 {
-  "status": "population_sources_and_engineering_prepared_news_running_simulation_not_authorized",
-  "months": [
-    202003,
-    202009,
-    202103,
-    202109,
-    202206,
-    202212,
-    202306,
-    202312,
-    202404,
-    202410,
-    202503,
-    202509
+  "status": "all_inputs_frozen_24_official_engineering_cells_passed_pending_simulation_authorization",
+  "prepared_folder": "outputs/sce_reference_validation_trial_20261017_v2",
+  "protocol_sha256": "2ed9e360938390aa9e52351458e4707c273fbd342b0547ec54cd8e42f8bc6acd",
+  "source_freeze_commit": "415a605",
+  "engineering_cells": [
+    {
+      "month": 202212,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202503,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202410,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202503,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202212,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202312,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202109,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202003,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202509,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202312,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202003,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202206,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202410,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202009,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202103,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202103,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202404,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202509,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202109,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202306,
+      "repeat": 2,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202206,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202306,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202404,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    },
+    {
+      "month": 202009,
+      "repeat": 1,
+      "status": "completed",
+      "n": 192,
+      "new_api_calls": 0,
+      "actual_input_hashes_match": true
+    }
   ],
-  "person_months": 2304,
-  "population_manifest_sha256": "7d080667fd8d7745ea5c57e2fefe69d4af069a99b963370e7eaa32f74e83a32e",
-  "current_inflation_targets_read_during_preparation": false,
-  "full_eligible_n_range": [
-    795,
-    1053
-  ],
-  "weight_ess_range": [
-    107.85342107229107,
-    131.6678984437122
-  ],
-  "tests_passed": 41,
-  "tests_scope": "23 runtime+15 evaluator+3 sampling/protocol synthetic tests; no API",
-  "news_scope_approved": true,
-  "news_articles": 4316,
-  "news_batches": 540,
-  "news_cap_usd": 3.0,
-  "simulation_authorized": false,
-  "new_simulation_calls": 0
+  "engineering_cells_n": 24,
+  "engineering_decisions_n": 4608,
+  "tests_passed": 42,
+  "new_simulation_calls": 0,
+  "estimated_simulation_cost_usd": 5.457898950000001,
+  "conservative_reservation_usd": 21.212280599999996,
+  "proposed_simulation_cap_usd": 21.5,
+  "current_targets_read_during_preparation": false,
+  "notes": [
+    "v1 is incomplete zeroAPI preparation archive due one prior response crossing month end; do not run or overwrite. v2 preserves same192 and uses actual prior response day.",
+    "No authorization.json exists yet in v2; real dispatch prohibited until explicit approval.",
+    "Old protected15 remain excluded from commits."
+  ]
 }

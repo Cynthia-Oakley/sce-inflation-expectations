@@ -1,0 +1,27 @@
+{
+  "status": "completed_all4316_with_one_offline_exact_duplicate_recovery",
+  "unique_articles": 4316,
+  "unique_paid_batches": 540,
+  "resubmitted_batches": 0,
+  "unresolved_errors": 0,
+  "original_validation_errors_preserved": 1,
+  "provider_connection_errors": 0,
+  "offline_repair": "Remove one fully identical duplicate row from response507; original response and failed-state retained; eight original unique labels passed the unchanged semantic validator. Only previously unattempted508-517 subsequently dispatched.",
+  "decisions": {
+    "keep": 1516,
+    "background": 1334,
+    "exclude": 1429,
+    "uncertain": 37
+  },
+  "prompt_tokens": 903424,
+  "completion_tokens": 366676,
+  "estimated_peak_token_cost_usd_not_bill": 0.7110384000000001,
+  "approved_cap_usd": 3.0,
+  "authorization_reply": "同意新闻分类，上限$3",
+  "authorization_sha256": "45085af6f7b0ba9ea043f7fa63b3c6a66a6b9281a36ec76715f507ecc7a51e59",
+  "new_simulation_calls": 0,
+  "notes": [
+    "Original root dispatch retains stopped part11; completion is linked rather than overwritten.",
+    "No population or SCE responses sent. All requests within original540."
+  ]
+}
