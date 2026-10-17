@@ -1,0 +1,208 @@
+{
+  "status": "posthoc_exploratory_no_new_API_or_Q9_fitting",
+  "completed_at_utc": "2026-10-17T08:27:36.859827+00:00",
+  "observations": 2284,
+  "months": [
+    202003,
+    202009,
+    202103,
+    202109,
+    202206,
+    202212,
+    202306,
+    202312,
+    202404,
+    202410,
+    202503,
+    202509
+  ],
+  "new_api_calls": 0,
+  "unit": "one person-month; average two independent model generation Q9 means, not new people",
+  "weights": "design-survey weights normalized within each month, months equally weighted",
+  "outcome": "current actual personal Q9 fitted mean; same frozen scorer",
+  "sim_variable": "model current Q9 mean minus actual previous Q9 mean; conditional on prior this spans same space as model level",
+  "P_controls": [
+    "age_group",
+    "education_group",
+    "household_income_band",
+    "numeracy",
+    "region",
+    "housing_tenure",
+    "employment_status"
+  ],
+  "P_dummy_count": 22,
+  "individual_nested_models": {
+    "month_only": {
+      "n": 2284,
+      "rank": 12,
+      "columns": 12,
+      "weighted_r2_in_sample": 0.031683953364205375,
+      "weighted_rmse_in_sample_pp": 6.702308219791579,
+      "weighted_mae_in_sample_pp": 4.399990798753172
+    },
+    "month_prior": {
+      "n": 2284,
+      "rank": 13,
+      "columns": 13,
+      "weighted_r2_in_sample": 0.36653417986127257,
+      "weighted_rmse_in_sample_pp": 5.420975253910529,
+      "weighted_mae_in_sample_pp": 3.216210301674416,
+      "prior_coefficient": 0.6036745862008109
+    },
+    "month_prior_sim_update": {
+      "n": 2284,
+      "rank": 14,
+      "columns": 14,
+      "weighted_r2_in_sample": 0.3770085319848593,
+      "weighted_rmse_in_sample_pp": 5.375970549739406,
+      "weighted_mae_in_sample_pp": 3.171646226892983,
+      "prior_coefficient": 0.8203634228714718,
+      "sim_update_coefficient": 0.3322167674930621,
+      "r2_increment_over_reduced": 0.010474352123586717,
+      "partial_r2": 0.016534991771604755
+    },
+    "month_prior_P": {
+      "n": 2284,
+      "rank": 35,
+      "columns": 35,
+      "weighted_r2_in_sample": 0.3805574444712332,
+      "weighted_rmse_in_sample_pp": 5.360636392978975,
+      "weighted_mae_in_sample_pp": 3.232896731388291,
+      "prior_coefficient": 0.5982591971697556
+    },
+    "month_prior_P_sim_update": {
+      "n": 2284,
+      "rank": 36,
+      "columns": 36,
+      "weighted_r2_in_sample": 0.38961948744571573,
+      "weighted_rmse_in_sample_pp": 5.321280607817913,
+      "weighted_mae_in_sample_pp": 3.1906335006190942,
+      "prior_coefficient": 0.8071481136283138,
+      "sim_update_coefficient": 0.3187001191830034,
+      "r2_increment_over_reduced": 0.009062042974482543,
+      "partial_r2": 0.014629351654322534
+    }
+  },
+  "macro_two_parameter_diagnostic": {
+    "n": 12,
+    "rank": 2,
+    "columns": 2,
+    "weighted_r2_in_sample": 0.894062485400622,
+    "weighted_rmse_in_sample_pp": 0.41349812271111686,
+    "weighted_mae_in_sample_pp": 0.3603366686410184,
+    "intercept": 0.8280553609778641,
+    "slope": 0.7964130915069739,
+    "interpretation": "Only12 months, descriptive two-parameter fit; not a calibrated model validation."
+  },
+  "expanding_year_descriptive_checks": [
+    {
+      "test_year": 2022,
+      "train_n": 760,
+      "test_n": 384,
+      "prior_only": {
+        "coefficients": [
+          2.426101233274078,
+          0.4895156060690882
+        ],
+        "mae_pp": 3.521359100298928,
+        "rmse_pp": 5.392049470498173,
+        "r2_oos_relative_to_copy_previous": -0.00933649849993623
+      },
+      "prior_and_sim_update": {
+        "coefficients": [
+          1.0631837893522524,
+          0.848212345738722,
+          0.6230801251649397
+        ],
+        "mae_pp": 3.640899972886273,
+        "rmse_pp": 5.577024792489617,
+        "r2_oos_relative_to_copy_previous": -0.07977530854253145
+      }
+    },
+    {
+      "test_year": 2023,
+      "train_n": 1144,
+      "test_n": 382,
+      "prior_only": {
+        "coefficients": [
+          2.0990247675882836,
+          0.5979668793759487
+        ],
+        "mae_pp": 3.1550646858581204,
+        "rmse_pp": 5.256785905009734,
+        "r2_oos_relative_to_copy_previous": 0.278719724739823
+      },
+      "prior_and_sim_update": {
+        "coefficients": [
+          0.9563865623603817,
+          0.8283160942513755,
+          0.39348818412400766
+        ],
+        "mae_pp": 3.0556049042768345,
+        "rmse_pp": 5.047841729337445,
+        "r2_oos_relative_to_copy_previous": 0.3349183961875808
+      }
+    },
+    {
+      "test_year": 2024,
+      "train_n": 1526,
+      "test_n": 375,
+      "prior_only": {
+        "coefficients": [
+          2.1813660179135383,
+          0.570729008064381
+        ],
+        "mae_pp": 3.11568294210236,
+        "rmse_pp": 5.117986779509,
+        "r2_oos_relative_to_copy_previous": 0.04434146375655801
+      },
+      "prior_and_sim_update": {
+        "coefficients": [
+          0.7909510902435303,
+          0.8657124652325751,
+          0.479252404689396
+        ],
+        "mae_pp": 3.003420721691823,
+        "rmse_pp": 5.099510152297186,
+        "r2_oos_relative_to_copy_previous": 0.051229122738904675
+      }
+    },
+    {
+      "test_year": 2025,
+      "train_n": 1901,
+      "test_n": 383,
+      "prior_only": {
+        "coefficients": [
+          1.8799038474012257,
+          0.5995255795620783
+        ],
+        "mae_pp": 3.032069468970447,
+        "rmse_pp": 5.508530674194861,
+        "r2_oos_relative_to_copy_previous": 0.19596175434044172
+      },
+      "prior_and_sim_update": {
+        "coefficients": [
+          0.6321907721089887,
+          0.8745378832811828,
+          0.44678529728578537
+        ],
+        "mae_pp": 3.0029375006310506,
+        "rmse_pp": 5.641955481093174,
+        "r2_oos_relative_to_copy_previous": 0.15654003617278356
+      }
+    }
+  ],
+  "limits": [
+    "No causal interpretation or automatic prompt-policy identification.",
+    "Twelve selected months; no p-values or conventional significance claims.",
+    "National macro variables collinear with month fixed effects; not added to individual month-FE fit.",
+    "Two generations collapsed before regression. Same respondent may occur in more than one month.",
+    "R2 is squared-loss variance explanation, not median MAE or W1 success.",
+    "All outputs were previously inspected; expanding-time checks remain retrospective diagnostics, not untouched tests.",
+    "Own previous actual answers remain A-line conditional inputs, not recursive B forecasts.",
+    "No tail trimming or best-specification selection."
+  ],
+  "source_cases_sha256": "8bf039c3e4a64e2f31da0ee5c30a3db33d7c1712c0ba45d6e9ccd3959ba64336",
+  "source_summary_sha256": "01b8f0be4cc90d6eb798ee5b5277ad4ba1401fd7e4bd5bad0985e4ce7a3218ac",
+  "script_sha256": "c3990569636d272d42e45d533395350d63fa4cc7e36da108f2b900ae0ce11f32"
+}
