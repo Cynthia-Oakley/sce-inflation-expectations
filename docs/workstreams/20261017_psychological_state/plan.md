@@ -1,6 +1,6 @@
 # 心理状态小试：数据、配置与执行约定
 
-2026-10-17（北京时间）。已完成材料准备、16个官方引擎离线单元和16项定向/兼容测试；新增真实API调用0。具体范围与$4预算卡已发送，等待答复，不以本文件代替授权。
+2026-10-17（北京时间）。已完成材料准备、16个官方引擎离线单元和16项定向/兼容测试。用户已明确授权本批数据发送及$4上限，已完成768次真实模拟和三组统一评价。未见可升级的整体收益；详results.md，授权记录见同目录authorization.json。
 
 ## 研究什么
 
@@ -60,7 +60,7 @@ MIDUS本轮完全不读取、不外发；其特殊AI条款不能靠去标识免�
 
 配置见同目录`trial_config.json`。完整protocol、coverage、preparation_receipt也同步在本目录。共用入口仍为`scripts/run_sce_frozen_trial.py`，只加心理准备适配器；运行、预算门、官方Core、回包解析和计分复用，不复制另一套引擎。
 
-授权后执行：
+以下为运行与评价命令记录；真实批次已完成，禁止再次执行run：
 
 ```sh
 /Users/wushuyue/anaconda3/envs/socioverse/bin/python scripts/run_sce_frozen_trial.py run --folder outputs/sce_psychological_state_trial_20261017_v2 --workers 4

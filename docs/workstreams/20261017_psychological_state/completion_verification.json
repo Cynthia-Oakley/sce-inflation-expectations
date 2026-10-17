@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "raw_reply_action_checks": "Common evaluator verified all 768 new raw replies, input hashes and action probabilities/points; reused baseline cache/prompt/roster/weights/target aligned.",
+  "new_call_parameters_checked": 768,
+  "independent_aggregate_checks": 144,
+  "independent_max_abs_difference": 3.1086244689504383e-15,
+  "protected_files_unchanged": 15,
+  "frozen_sources_unchanged": true,
+  "new_api_calls_for_evaluation": 0,
+  "no_repeated_Q9_fits": true
+}

@@ -1,0 +1,32 @@
+{
+  "status": "all16_real_jobs_completed",
+  "new_calls": 768,
+  "reused_baseline_calls": 384,
+  "decision_statuses": {
+    "valid": 768
+  },
+  "estimated_cost_usd_not_bill": 0.8653460000000001,
+  "approved_cap_usd": 4,
+  "retry_count": 0,
+  "call_errors": 0,
+  "started_at_utc": "2026-10-17T15:45:34.050573+00:00",
+  "finished_at_utc": "2026-10-17T15:49:42.901158+00:00",
+  "api_wall_span_seconds": 248.850585,
+  "source_freeze_commit": "5878465",
+  "protocol_sha256": "189f495c21ca01903d32026d772779dc37fa1e53e660bbb32953b6cf26598ada",
+  "fingerprints": {
+    "e72d3c7f663d3e1383b00b3884cb4501": 768
+  },
+  "evaluation_status": "completed_offline_no_API",
+  "tokens": {
+    "prompt_tokens": 2399464,
+    "completion_tokens": 121255
+  },
+  "returned_models": {
+    "deepseek-flash": 768
+  },
+  "evaluation_seconds": 21.92821166710928,
+  "common_q9_person_months": 192,
+  "common_q8_person_months": 192,
+  "scorer_cache_distinct_vectors": 692
+}

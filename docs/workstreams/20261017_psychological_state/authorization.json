@@ -1,0 +1,18 @@
+{
+  "approved": true,
+  "protocol_sha256": "189f495c21ca01903d32026d772779dc37fa1e53e660bbb32953b6cf26598ada",
+  "cap_usd": 4,
+  "planned_calls": 768,
+  "destination": "https://api.deepseek.com",
+  "user_confirmation": "同意上述范围及$4上限，开始模拟并分析",
+  "question_item_id": "[\"request_user_input_async\",\"call_b6ad4a85d9754acf8837f87d7a59bea6\",0]",
+  "recorded_at_utc": "2026-10-17T15:45:26.514268+00:00",
+  "source_freeze_commit": "5878465",
+  "data_scope": "Deidentified frozen P, synthetic CE and Fed confidence, public historical price/news/policy, own prior true Q8/Q9 and older summaries; synthetic GSS HAPPY/SATFIN joint categories, matched/permuted. No raw IDs, survey weights, current inflation answers, actual response dates, Q1/Q2, original GSS rows or MIDUS.",
+  "new_arms": [
+    "matched_psychology",
+    "permuted_psychology"
+  ],
+  "reused_baseline_calls": 384,
+  "retry_max": 0
+}
