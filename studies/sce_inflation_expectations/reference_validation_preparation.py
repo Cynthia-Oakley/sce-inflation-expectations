@@ -101,6 +101,24 @@ def completed_news():
         dest=NEWS_RUN/Path(part['folder']).name
         state_path,label_path=dest/'state.json',dest/'labels.jsonl'
         state=json.loads(state_path.read_text())
+        if state.get('status')=='stopped_on_error' and Path(part['folder']).name=='part_11':
+            # One exact duplicate label row was recovered from the saved raw
+            # response. The original failure is preserved, not overwritten.
+            completion=NEWS_RUN/'part_11_completion_v1'
+            recovered=json.loads((completion/'state.json').read_text())
+            if (recovered.get('prior_state_sha256')!=sha(state_path)
+                    or recovered.get('prior_errors_recorded')!=1
+                    or recovered.get('validation_adapter_sha256')!=sha(Path(__file__).with_name('reference_news_completion_adapter.py'))):
+                raise ValueError('Unverified news completion chain')
+            before=[json.loads(s) for s in (dest/'calls.jsonl').read_text().splitlines()]
+            after=[json.loads(s) for s in (completion/'calls.jsonl').read_text().splitlines()]
+            if ({r['batch_id'] for r in before}!={*range(471,508)}
+                    or {r['batch_id'] for r in after}!={*range(508,518)}
+                    or len(before)!=37 or len(after)!=10):
+                raise ValueError('Completion must only send original unattempted batches508-517')
+            for p in (state_path,dest/'calls.jsonl',completion/'calls.jsonl',completion/'recovered_prior_batches.jsonl'):
+                sources[str(p.relative_to(ROOT))]=sha(p)
+            dest=completion;state_path,label_path=dest/'state.json',dest/'labels.jsonl';state=recovered
         if state.get('status')!='completed' or state.get('articles_valid')!=part['articles'] or state.get('errors')!=0:
             raise ValueError('Incomplete/error news part; preserve and do not auto retry: '+str(dest))
         for p in (state_path,label_path):sources[str(p.relative_to(ROOT))]=sha(p)
