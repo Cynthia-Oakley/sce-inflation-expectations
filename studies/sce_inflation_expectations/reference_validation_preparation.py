@@ -45,6 +45,18 @@ OLD = (202206,202306,202410,202509)
 NEW = tuple(m for m in MONTHS if m not in OLD)
 
 
+def prior_response_day(value, as_of):
+    """Prior wave identity is checked separately; collection may spill a day.
+
+    The actual response must precede this scenario cutoff. Do not replace its
+    date with the calendar month printed on the wave or silently resample.
+    """
+    when=pd.Timestamp(value)
+    if pd.isna(when) or when.date()>=datetime.fromisoformat(as_of).date():
+        raise ValueError('Missing or not strictly prior response date')
+    return when.date().isoformat()
+
+
 def registered_protocol(cap):
     return {
         'id':'sce-reference-scaleup-v1', 'registered_at_utc':datetime.now(timezone.utc).isoformat(),
@@ -222,9 +234,8 @@ def prepare(out):
             messages,_=add_state_block(messages,past[aid]['state'],month,False)
             expanded['rows'][aid]={**past[aid],'messages_sha256':message_hash(messages)}
             anchored=insert_block(messages,ANCHOR_BLOCK,require_prior=True);anchor['messages_sha256'][aid]=message_hash(anchored)
-            previous_day=pd.Timestamp(dates.loc[(month_offset(month,-1),idmap[aid]['userid'])])
-            if pd.isna(previous_day) or previous_day.year*100+previous_day.month!=month_offset(month,-1):raise ValueError('Missing adjacent prior response date')
-            timing,detail=time_index(env['provider_args']['signals_by_step']['0'],common,rows[aid]['personal_news'],base['policy'],previous_day.date().isoformat(),target['as_of'])
+            previous_day=prior_response_day(dates.loc[(month_offset(month,-1),idmap[aid]['userid'])],target['as_of'])
+            timing,detail=time_index(env['provider_args']['signals_by_step']['0'],common,rows[aid]['personal_news'],base['policy'],previous_day,target['as_of'])
             info['time_index_by_id'][aid]=timing;dated=dated_transform(anchored,'dated_information',timing)
             info['messages_sha256'][aid]=message_hash(dated);final=transform(dated)
             digest=message_hash(final);bundle['messages_sha256'][aid]=digest

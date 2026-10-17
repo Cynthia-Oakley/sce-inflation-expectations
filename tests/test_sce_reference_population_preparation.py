@@ -4,7 +4,7 @@ from collections import Counter
 import pytest
 
 from studies.sce_inflation_expectations.reference_population_preparation import sample_strata, anonymous_id
-from studies.sce_inflation_expectations.reference_validation_preparation import registered_protocol
+from studies.sce_inflation_expectations.reference_validation_preparation import registered_protocol, prior_response_day
 
 
 def test_sparse_strata_have_positive_known_inclusion_and_reproducible_sample():
@@ -38,3 +38,11 @@ def test_private_identity_is_stable_and_protocol_keeps_new_months_primary():
     assert len(p['new_months'])==8 and len(p['old_months'])==4
     assert not set(p['new_months'])&set(p['old_months'])
     assert p['primary_month_scope']=='new_months' and p['budget_cap_usd']==20
+
+
+def test_real_response_day_can_spill_past_the_reference_wave_month():
+    cutoff='2025-09-10T23:59:59-04:00'
+    assert prior_response_day('2025-09-01',cutoff)=='2025-09-01'
+    assert prior_response_day('2025-08-31',cutoff)=='2025-08-31'
+    for value in (None,'2025-09-10','2025-09-11'):
+        with pytest.raises(ValueError):prior_response_day(value,cutoff)
