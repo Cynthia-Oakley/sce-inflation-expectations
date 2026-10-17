@@ -1,5 +1,43 @@
 # 本地运行方案（socioverse2_repo harness + 自备 LLM API）
 
+## 2026-10-17平台资助与Simulation接口复核（最新）
+
+用户希望将恢复的额度用于模拟和MCP，不使用平台Chat Agent。本轮只读取官网、官方本地源码，以及现有凭证下的免费MCP能力；付费问卷、结构化数据及真实LLM调用均为0，未改运行配置。用户对上一张扩大模拟卡回复“暂不启动”的限制继续有效，不追加或重跑实验。
+
+### 已核实的可用路径
+
+- **Event MCP**用于获取环境资料，可以从本地脚本直接调用，不需要平台Chat。它不负责为本地SCE Agent生成Q8/Q9回答，也不代付现有DeepSeek请求。历史发布时间和修订版本仍须单独验收。
+- **人群问卷MCP**确实包含`run_user_pool_distribution_simulation`，可以由本地脚本直接提交问卷并返回原始JSONL，免去Chat编排；它本身是付费LLM问卷服务。今日免费返回serverInfo为`user_pool_mcp`版本`1.27.0`，默认`llm.model=gpt-4o-mini`、`mock_enabled=false`。
+- **托管study的Simulation**按官网计入Sim额度；当前公开工作流主要经研究助手启动。尚未验证存在无需Chat即可上传完整study、直接启动并导出全部轨迹的受支持入口。
+- **本地自带P/E的通用模型网关**：公开文档和今日MCP工具目录没有提供可直接将现有任意SCE模型请求记入平台额度的接口。结论是“尚未找到/未获支持确认”，不能断言服务方不能开通。
+
+### 人群问卷MCP为何不能直接替换当前实验
+
+实际schema要求`platform_id`、`distributions`、`user_count`、`questionnaire`。可选项包含语言、并发、抽样种子、虚拟人口开关及联合分布抽样；没有自带persona列表、指定既有受访者ID、逐人E、逐人过去Q8/Q9或跨月记忆的顶层参数，也没有选择模型、temperature或max_tokens的参数。`questionnaire`允许附加字段，但没有证据表明服务会把附加字段作为上述控制执行，不能据此宣称支持。
+
+能力查询同时返回GPT/Qwen/DeepSeek别名表，但这不等于此问卷工具可以按请求切换模型。当前默认`gpt-4o-mini`也不等于我们现有DeepSeek Flash。即使问卷文本相同，人口及模型变化仍使它成为另一项方法对照，不能作为原配置的无成本迁移。
+
+服务今日列有已索引的`nemotron_usa`、`x_mode_1`等池，可考虑美国合成人口的横截面对照；如采用须先检查字段、分布、原始输出和许可。原组委会邮件的每受访者$0.004、单次2000人上限是账号沟通依据；今日通用schema上限100000不能覆盖账号限制，且能力查询未返回现行费率，正式开跑前仍需确认实际费率/预算。
+
+### 额度与账号状态
+
+官网当前写Agent和Sim两条额度线，模拟及数据服务计入Sim。此前组委会给参赛账号的邮件写“总额度”，因此$70实际分配必须以该账号余额/组委会确认为准。Chrome现有SocioVerse页面停留在登录页，并有登录错误提示；未读取或更改密码，未核到最新余额。Kimi桥接无法定位窗口后，改用现有浏览器只读确认登录状态，没有发送平台对话。
+
+### 建议的下一步
+
+1. 保留本地官方SocioVerse2引擎和已冻结P/E/计分，不为消费额度迁移主线。
+2. 优先向组委会确认：是否可提供面向本地参赛者的受支持Simulation调用入口，以平台key及额度结算，同时允许自带逐人prompt/P/E/历史状态、记录模型版本/参数/usage并获取原始回答；如仅支持托管study，是否有无Chat的导入、启动、导出方式。未授权发送邮件，本轮未联系。
+3. 若有受支持入口，先离线接适配器，确认输入一致及成本控制，再另列小规模模型对照；若只有现有人群问卷工具，把它保留为可选的独立平台人口对照，不混作当前SCE原实验复现。
+4. Event额度仅补实际缺口，不重复取已有BLS/CE/NYT；不能核历史版本的内容继续排除严格B输入。暂不产生付费调用。
+
+### 证据与来源
+
+- 免费调用归档（已递归脱敏、gitignored）：`data/raw/mcp_checks/2026-10-17_platform_credit/user_pool_capabilities.json`；仅`initialize`、`tools/list`、`get_user_pool_simulation_capabilities`，没有调用付费问卷。
+- [官方额度与计费](https://socioverse.fudan-disc.com/docs/zh/hosted/quotas-and-billing/)
+- [官方数据服务说明](https://socioverse.fudan-disc.com/docs/zh/guides/data-services/)
+- [官方本地LLM接入说明](https://socioverse.fudan-disc.com/docs/zh/guides/llm-clients/)
+- [托管限制](https://socioverse.fudan-disc.com/docs/zh/hosted/limits-and-fair-use/)。公开FAQ的上传说明与此前实际上传经历不一致，不能只凭FAQ否定部署端能力；本轮未实际验证导入/导出。
+
 ## 2026-10-16实际链路与资助使用建议（当前）
 
 用户询问是否仍在使用SocioVerse2，以及如何使用恢复的$70。本轮只核对本地源码、已保存的运行配置及免费探测缓存，没有新模型或付费MCP调用。
