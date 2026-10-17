@@ -1,0 +1,15 @@
+{
+  "full_wave_recomputed": {
+    "dense_grid_size": 100001,
+    "grid_mae_minus_exact_pp": 5.302328021095093e-10,
+    "grid_mse_minus_exact_pp_squared": 1.464800503114816e-12
+  },
+  "official_first_release_public_anchor": {
+    "dense_grid_size": 100001,
+    "grid_mae_minus_exact_pp": 3.446826610242759e-08,
+    "grid_mse_minus_exact_pp_squared": 5.249536916274167e-12
+  },
+  "protected_files_unchanged": 15,
+  "new_api_calls": 0,
+  "aggregate_summary_sha256": "703bf30fa67bc9c87ca946130f80fec0ea779b5390623e6739626b4c085d90d9"
+}

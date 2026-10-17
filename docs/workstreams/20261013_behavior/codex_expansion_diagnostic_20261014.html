@@ -1,4 +1,42 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><section id="history-coefficients-and-outlook-20261017" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;border-bottom:1px solid #ddd;padding-bottom:30px;margin-bottom:36px">
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body><main><section id="aggregate-blend-fit-20261017" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;border-bottom:1px solid #ddd;padding-bottom:30px;margin-bottom:36px">
+<h1>上月真实指标＋本月模拟指标：加权能降低多少误差？</h1>
+<p>2026-10-17。复用十二期、每期192人的两遍模拟；新增API调用和费用均为0。不改原始问卷、计分器与默认配置。下面区分<strong>同十二个月内选最优权重</strong>与<strong>仅用先前年份拟权、再向后评价</strong>。</p>
+<p><strong>组合＝历史权重×历史SCE＋模拟权重×本月Simulation。</strong>两权重非负、合计1，不加截距。分别按MAE或MSE拟合；与<a href="https://arxiv.org/html/2606.30395v1#S4.SS6">ConsumerSim总体加权形式</a>相同，但重新估计SCE权重。</p>
+<nav><a href="../20261017_reference_scaleup/aggregate_blend_results_20261017.md">完整结果与方法</a> · <a href="../20261017_reference_scaleup/aggregate_blend_summary_20261017.json">聚合数值</a> · <a href="#history-coefficients-and-outlook-20261017">个人历史与财务前景诊断</a> · <a href="../../current_todo.html">工作清单</a></nav>
+<h2>1. 对官方全国SCE指标：能明显改善纯模拟，但只略优于历史延续</h2>
+<p>目标是纽约联储公开的一年期预期首发值；历史锚取各实验截止前最近已公布的SCE指标。它通常是上月，但2020-09、2022-06、2024-10的截止前上月值尚未发布，分别使用2020-07、2022-04、2024-08。不能提前取尚未公布的值。</p>
+<div class="table-scroll"><table><thead><tr><th>方法</th><th>历史 / 模拟权重</th><th>MAE，pp</th><th>MSE，pp²</th><th>RMSE，pp</th></tr></thead><tbody>
+<tr><td>纯Simulation</td><td>0% / 100%</td><td>0.361</td><td>0.2019</td><td>0.449</td></tr>
+<tr><td>最近公开值延续</td><td>100% / 0%</td><td>0.233</td><td>0.0800</td><td>0.283</td></tr>
+<tr><td>全期按MAE拟权</td><td>65.0% / 35.0%</td><td><strong>0.220</strong></td><td>0.0706</td><td>0.266</td></tr>
+<tr><td>全期按MSE拟权</td><td>76.7% / 23.3%</td><td>0.225</td><td><strong>0.0675</strong></td><td>0.260</td></tr>
+</tbody></table></div>
+<p>按MAE拟权，比纯模拟下降约<strong>39.0%</strong>；但比历史延续只下降<strong>0.013pp，约5.6%</strong>。按MSE拟权，比延续的MSE下降约15.6%，MAE下降约3.7%。所以组合有用，但改善的主要部分来自历史值本身很准，不能全部归功于Agent。</p>
+<p>这些是<strong>同一批十二个月选权重、同一批月份计误差</strong>的最佳拟合，不是已经验证的未来表现。逐遍计算误差后按月等权；两遍不算24个独立月份。</p>
+<h2>2. 先拟权、后评价：组合增量仍有限</h2>
+<p>先用2020—2021四期定权重，固定用于后八期：MAE和MSE目标都选中模拟权重0，因此后八期MAE是0.3125pp，与历史延续相同。全十二期回头拟合的正权重，并不是早期数据就能选出来的。</p>
+<p>再做逐年前推：预测2022只用2020—2021拟权；预测2023用2020—2022，依此类推。以下都评价同一组后八期：</p>
+<div class="table-scroll"><table style="min-width:620px"><thead><tr><th>方法</th><th>MAE，pp</th><th>MSE，pp²</th><th>RMSE，pp</th></tr></thead><tbody>
+<tr><td>纯Simulation</td><td>0.381</td><td>0.2258</td><td>0.475</td></tr>
+<tr><td>最近公开值延续</td><td>0.3125</td><td>0.1163</td><td>0.341</td></tr>
+<tr><td>逐年前推，按MAE拟权</td><td>0.308</td><td>0.1142</td><td>0.338</td></tr>
+<tr><td>逐年前推，按MSE拟权</td><td>0.297</td><td>0.1092</td><td>0.331</td></tr>
+</tbody></table></div>
+<p>按MSE拟权的前推MAE约0.297pp，是一个可以记录的小幅收益；不能称为稳定低于0.3：只有八个已看月份，2025年这两期平均仍约0.339pp。所有分期都是事后时间顺序检查，不是新登记的独立盲测，未证明显著胜出。</p>
+<h2>3. 与此前“0.376pp”对齐：不是换口径制造提升</h2>
+<p>此前0.376pp来自<strong>完整微观波次、冻结近似计分器重算的Q9中心</strong>，与官方公布值有小差别。沿用那套口径，加权结果为：</p>
+<div class="table-scroll"><table style="min-width:620px"><thead><tr><th>方法</th><th>历史 / 模拟权重</th><th>MAE，pp</th><th>RMSE，pp</th></tr></thead><tbody>
+<tr><td>纯Simulation</td><td>0% / 100%</td><td>0.376</td><td>0.459</td></tr>
+<tr><td>上月微观复算值延续</td><td>100% / 0%</td><td>0.213</td><td>0.257</td></tr>
+<tr><td>全期按MAE拟权</td><td>84.2% / 15.8%</td><td>0.208</td><td>0.256</td></tr>
+<tr><td>全期按MSE拟权</td><td>91.0% / 9.0%</td><td>0.209</td><td>0.255</td></tr>
+</tbody></table></div>
+<p>此口径相对纯模拟改善约44.6%，相对延续只改善约2.0%。微观历史资料当时尚未及时公开，属于A回顾分析，不作为严格B的可得输入。两套口径分别比较，不交叉选择最有利数字。</p>
+<h2>4. 对项目的意义</h2>
+<p>可以保留一个<strong>宏观组合预测层</strong>，分别展示纯Agent、历史延续、历史与Agent组合。它确实降低总体误差，但还没有建立稳定的额外预测优势，也没有改变任何人的Q9概率、人际IQR或W1；组合值不是原始个人回答直接聚合的结果。</p>
+<p>本轮不冻结全期最佳权重。后续仍优先检验个人常态和财务前景机制；正式检验组合时另登记拟权时期与独立评价期。当前模拟含回顾性P及本人真实历史问卷，规范总体公开锚不能将原模拟直接变成严格B预测。</p>
+<details><summary>怎样核验与复算</summary><p>MAE在目标折点与端点精确求最小，MSE解析求最小并限制在0至1。两套口径以100001点密网格独立检查，MAE最小值差&lt;3.5e−8pp，MSE差&lt;5.3e−12pp²；已知权重的人工算例通过。首发新闻稿哈希及公开日期核验，15份待审文件未变。<a href="../20261017_reference_scaleup/aggregate_blend_verification_20261017.json">核验收据</a>；复算入口见<a href="../20261017_reference_scaleup/aggregate_blend_results_20261017.md">完整报告</a>，不需新API。</p></details>
+</section><section id="history-coefficients-and-outlook-20261017" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;border-bottom:1px solid #ddd;padding-bottom:30px;margin-bottom:36px">
 <h1>个人历史是否还有用？答题经验与财务前景的进一步检查</h1>
 <p>2026-10-17。复用十二期模拟，2284个共同可评分个人月，两遍回答先平均；沿用调查与抽样权重，各月等权。本轮新增API调用和费用均为0，没有改模拟配置。目标为<strong>真人本期Q9概率分布派生的个人均值</strong>，不是Q8，也不是未来实际CPI。</p>
 <nav><a href="../20261017_reference_scaleup/history_mechanism_results_20261017.md">完整方法与解释</a> · <a href="../20261017_reference_scaleup/history_mechanism_diagnostic_20261017.json">全部聚合数值</a> · <a href="../../current_todo.html">当前清单</a> · <a href="#regression-factor-contributions-20261017">上轮因素分解</a></nav>
