@@ -1,0 +1,9 @@
+{
+  "status": "passed_independent_24_cell_aggregate_check",
+  "checks": 144,
+  "maximum_absolute_difference": 9.325873406851315e-15,
+  "source_summary_sha256": "01b8f0be4cc90d6eb798ee5b5277ad4ba1401fd7e4bd5bad0985e4ce7a3218ac",
+  "method": "Independent sorted cumulative-weight median, arithmetic weighted MAE, scipy Wasserstein; no second fitting pass.",
+  "checked_at_utc": "2026-10-17T06:27:51.511140+00:00",
+  "new_api_calls": 0
+}

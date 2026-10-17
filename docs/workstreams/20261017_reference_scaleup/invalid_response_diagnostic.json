@@ -1,0 +1,24 @@
+{
+  "invalid_cases": [
+    {
+      "month": 202410,
+      "repeat": 1,
+      "validation_status": "invalid",
+      "q9_sum": 50.0,
+      "q9_min": 0.0,
+      "q9_max": 50.0,
+      "reason": "invalid"
+    },
+    {
+      "month": 202404,
+      "repeat": 1,
+      "validation_status": "invalid",
+      "q9_sum": 105.0,
+      "q9_min": 0.0,
+      "q9_max": 45.0,
+      "reason": "invalid"
+    }
+  ],
+  "new_api_calls": 0,
+  "action": "preserved_unmodified_no_retry"
+}

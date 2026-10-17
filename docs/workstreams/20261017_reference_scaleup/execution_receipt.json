@@ -1,0 +1,38 @@
+{
+  "status": "completed_all24_real_cells_no_retry",
+  "protocol_sha256": "2ed9e360938390aa9e52351458e4707c273fbd342b0547ec54cd8e42f8bc6acd",
+  "actual_call_count": 4608,
+  "jobs_completed": 24,
+  "decisions_by_validation_status": {
+    "valid": 4606,
+    "invalid": 2
+  },
+  "call_errors": 0,
+  "retry_count": 0,
+  "started_at_utc": "2026-10-17T05:55:10.191345+00:00",
+  "finished_at_utc": "2026-10-17T06:19:17.264032+00:00",
+  "wall_clock_seconds": 1447.072687,
+  "prompt_tokens": 14239698,
+  "completion_tokens": 735816,
+  "estimated_peak_token_cost_usd_not_bill": 5.1548886,
+  "sum_rounded_job_ledgers_usd": 5.154885999999999,
+  "ledger_rounding_delta_usd": -2.600000000185787e-06,
+  "approved_cap_usd": 21.5,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "returned_model_counts": {
+    "deepseek-flash": 4608
+  },
+  "requested_model_counts": {
+    "deepseek-flash": 4608
+  },
+  "fingerprint_counts": {
+    "e72d3c7f663d3e1383b00b3884cb4501": 4608
+  },
+  "authorization_sha256": "d8e077e89d017394f5ec75bd27a2233185f7625b64282fd1c8e05992c5dc4bf2",
+  "evaluation_process_observed_running_at_utc": "2026-10-17T06:20:39.347861+00:00",
+  "new_mcp_calls": 0,
+  "news_token_estimate_usd_separate": 0.7110384,
+  "cost_note": "Peak uncached token estimate reconciled to all4608 usage objects within per-job six-decimal ledger rounding; not provider invoice.",
+  "target_isolation": "All24 real cells complete before evaluating current answers. Current targets not in frozen model input. No project-level blind or training-data exclusion claim."
+}

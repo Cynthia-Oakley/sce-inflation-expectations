@@ -1,0 +1,191 @@
+{
+  "status": "posthoc_descriptive_no_new_fitting_or_api",
+  "method": "Within each month/generation, weighted OLS of current fitted Q9 mean on observed previous fitted mean, with intercept; retain the same common Q9 support/design-survey weights. Average cell slopes without treating repeats as new people. No causal or prospective claim; overlapping one-year windows share11months.",
+  "cells": [
+    {
+      "month": 202003,
+      "repeat": 1,
+      "n": 191,
+      "model_slope_on_prior": 0.6016015544722109,
+      "real_slope_on_prior": 0.24788265578236304
+    },
+    {
+      "month": 202003,
+      "repeat": 2,
+      "n": 191,
+      "model_slope_on_prior": 0.5412569653753464,
+      "real_slope_on_prior": 0.24788265578236304
+    },
+    {
+      "month": 202009,
+      "repeat": 1,
+      "n": 192,
+      "model_slope_on_prior": 0.20687955174144754,
+      "real_slope_on_prior": 0.5255328258563262
+    },
+    {
+      "month": 202009,
+      "repeat": 2,
+      "n": 192,
+      "model_slope_on_prior": 0.20180376075205073,
+      "real_slope_on_prior": 0.5255328258563262
+    },
+    {
+      "month": 202103,
+      "repeat": 1,
+      "n": 187,
+      "model_slope_on_prior": 0.4486255359658508,
+      "real_slope_on_prior": 0.6251839336312355
+    },
+    {
+      "month": 202103,
+      "repeat": 2,
+      "n": 187,
+      "model_slope_on_prior": 0.553640276692264,
+      "real_slope_on_prior": 0.6251839336312355
+    },
+    {
+      "month": 202109,
+      "repeat": 1,
+      "n": 190,
+      "model_slope_on_prior": 0.34631259378489077,
+      "real_slope_on_prior": 0.538904470936385
+    },
+    {
+      "month": 202109,
+      "repeat": 2,
+      "n": 190,
+      "model_slope_on_prior": 0.3906634418212758,
+      "real_slope_on_prior": 0.538904470936385
+    },
+    {
+      "month": 202206,
+      "repeat": 1,
+      "n": 192,
+      "model_slope_on_prior": 0.39563921444587113,
+      "real_slope_on_prior": 0.7558387776612521
+    },
+    {
+      "month": 202206,
+      "repeat": 2,
+      "n": 192,
+      "model_slope_on_prior": 0.3368799390503721,
+      "real_slope_on_prior": 0.7558387776612521
+    },
+    {
+      "month": 202212,
+      "repeat": 1,
+      "n": 192,
+      "model_slope_on_prior": 0.22585425901614772,
+      "real_slope_on_prior": 0.704367689701793
+    },
+    {
+      "month": 202212,
+      "repeat": 2,
+      "n": 192,
+      "model_slope_on_prior": 0.2917233185839531,
+      "real_slope_on_prior": 0.704367689701793
+    },
+    {
+      "month": 202306,
+      "repeat": 1,
+      "n": 190,
+      "model_slope_on_prior": 0.356642668607085,
+      "real_slope_on_prior": 0.3638325543395062
+    },
+    {
+      "month": 202306,
+      "repeat": 2,
+      "n": 190,
+      "model_slope_on_prior": 0.2266701246122873,
+      "real_slope_on_prior": 0.3638325543395062
+    },
+    {
+      "month": 202312,
+      "repeat": 1,
+      "n": 192,
+      "model_slope_on_prior": 0.3002656583674585,
+      "real_slope_on_prior": 0.6431526502351522
+    },
+    {
+      "month": 202312,
+      "repeat": 2,
+      "n": 192,
+      "model_slope_on_prior": 0.3085346967421437,
+      "real_slope_on_prior": 0.6431526502351522
+    },
+    {
+      "month": 202404,
+      "repeat": 1,
+      "n": 186,
+      "model_slope_on_prior": 0.4311513696675683,
+      "real_slope_on_prior": 0.45110872787321366
+    },
+    {
+      "month": 202404,
+      "repeat": 2,
+      "n": 186,
+      "model_slope_on_prior": 0.49170835716143596,
+      "real_slope_on_prior": 0.45110872787321366
+    },
+    {
+      "month": 202410,
+      "repeat": 1,
+      "n": 189,
+      "model_slope_on_prior": 0.29990131798513975,
+      "real_slope_on_prior": 0.9503909246420613
+    },
+    {
+      "month": 202410,
+      "repeat": 2,
+      "n": 189,
+      "model_slope_on_prior": 0.28975028679904263,
+      "real_slope_on_prior": 0.9503909246420613
+    },
+    {
+      "month": 202503,
+      "repeat": 1,
+      "n": 191,
+      "model_slope_on_prior": 0.2880121785230263,
+      "real_slope_on_prior": 0.5922801593978335
+    },
+    {
+      "month": 202503,
+      "repeat": 2,
+      "n": 191,
+      "model_slope_on_prior": 0.2687257426298885,
+      "real_slope_on_prior": 0.5922801593978335
+    },
+    {
+      "month": 202509,
+      "repeat": 1,
+      "n": 192,
+      "model_slope_on_prior": 0.48135838030767075,
+      "real_slope_on_prior": 0.7770224806409279
+    },
+    {
+      "month": 202509,
+      "repeat": 2,
+      "n": 192,
+      "model_slope_on_prior": 0.3418287271777624,
+      "real_slope_on_prior": 0.7770224806409279
+    }
+  ],
+  "scopes": {
+    "new_months": {
+      "model": 0.3685474538310599,
+      "real": 0.5410516391767878
+    },
+    "old_months": {
+      "model": 0.3410838323731539,
+      "real": 0.7117711843209369
+    },
+    "all_months": {
+      "model": 0.35939291334509127,
+      "real": 0.5979581542248374
+    }
+  },
+  "source_summary_sha256": "01b8f0be4cc90d6eb798ee5b5277ad4ba1401fd7e4bd5bad0985e4ce7a3218ac",
+  "diagnostic_script_sha256": "dd83a5caca72e4ad529dfc2b7e6c20850152a8ac95ff3ea0c1ea8967af10d42d",
+  "new_api_calls": 0
+}

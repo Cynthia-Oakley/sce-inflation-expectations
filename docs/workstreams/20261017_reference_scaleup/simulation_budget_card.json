@@ -22,8 +22,12 @@
   "proposed_cap_usd": 21.5,
   "protocol_sha256": "2ed9e360938390aa9e52351458e4707c273fbd342b0547ec54cd8e42f8bc6acd",
   "prepared_manifest_sha256": "0015d8e53c3cefb02f2e755b86fba4c7ad20d5e445e20c908ea7e08e799ba047",
-  "status": "approved_real_trial_running",
+  "status": "completed_real_trial_and_frozen_evaluation",
   "authorization_reply": "同意上述范围及$21.50上限，开始模拟并分析",
   "authorization_call_id": "call_66052d8baab648e59a312f2e7d2478ec",
-  "simulation_calls_at_approval": 0
+  "simulation_calls_at_approval": 0,
+  "actual_call_count": 4608,
+  "valid_answers": 4606,
+  "invalid_answers": 2,
+  "estimated_peak_token_cost_usd_not_bill": 5.1548886
 }

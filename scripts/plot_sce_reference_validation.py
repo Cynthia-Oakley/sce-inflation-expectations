@@ -69,6 +69,7 @@ def render(source, out):
         ax.set_xticks(x,[SCOPE_NAMES[k] for k in scopes],fontsize=9)
         ax.set_title(title,fontsize=12);ax.set_xlabel('Pre-registered time scope')
         ax.set_ylabel('Center MAE (percentage points, lower is better)');ax.grid(axis='y',alpha=.15)
+        ax.set_ylim(0,ax.get_ylim()[1]*1.45)
         ax.legend(loc='upper left',fontsize=8,frameon=False)
     fig.suptitle('Macro accuracy: compare each model with a baseline for the same target',fontsize=14)
     fig.subplots_adjust(left=.07,right=.98,top=.82,bottom=.23,wspace=.25)
@@ -89,7 +90,8 @@ def render(source, out):
             real=[s['scopes'][scope]['model_metrics_equal_month_repeat_cells']['real_cross_person_iqr_pp'] for scope in scopes]
             ax.plot(x,real,'s--',color=COLORS['truth'],label='Real same respondents')
         ax.set_title(title,fontsize=12);ax.set_xlabel('Time scope');ax.set_xticks(x,['New 8','Old 4','All 12'])
-        ax.set_ylabel('Inflation percentage points');ax.grid(axis='y',alpha=.15);ax.legend(fontsize=8,frameon=False)
+        ax.set_ylabel('Inflation percentage points');ax.grid(axis='y',alpha=.15)
+        ax.set_ylim(0,ax.get_ylim()[1]*1.35);ax.legend(fontsize=8,frameon=False)
     fig.suptitle('Microstructure: center accuracy alone does not establish realistic households',fontsize=14)
     fig.subplots_adjust(left=.065,right=.98,top=.81,bottom=.22,wspace=.28)
     fig.text(.04,.05,'Same scored respondents and design-survey weights, equal month/generation averages.\n'
