@@ -1,0 +1,324 @@
+{
+  "status": "free_public_original_wave_sources_complete_no_simulation",
+  "construct": "confidence_in_Fed_chair_to_do_or_recommend_right_thing_for_economy",
+  "categories": [
+    "great_deal",
+    "fair_amount",
+    "only_a_little",
+    "almost_none",
+    "dont_know_or_refused"
+  ],
+  "original_survey_category_labels": [
+    "Great deal",
+    "Fair amount",
+    "Only a little",
+    "Almost none",
+    "No opinion"
+  ],
+  "waves": [
+    {
+      "wave_id": "gallup_2019_april",
+      "field_dates": [
+        "2019-04-01",
+        "2019-04-09"
+      ],
+      "published_date": "2019-04-26",
+      "published_at_conservative": "2019-04-26T23:59:59-04:00",
+      "publication_time_precision": "date_only_end_of_America_New_York_day_for_latest_wave",
+      "national_source_percent": [
+        9,
+        41,
+        18,
+        14,
+        19
+      ],
+      "national_sum": 101,
+      "candidate_probabilities": [
+        0.0891089108910891,
+        0.40594059405940597,
+        0.1782178217821782,
+        0.13861386138613863,
+        0.18811881188118812
+      ],
+      "source_url": "https://news.gallup.com/file/poll/249137/econ%20leaders%20topline.pdf",
+      "article_url": "https://news.gallup.com/poll/249122/americans-confidence-economic-leaders-edges.aspx",
+      "local_file": "data/raw/reference_scaleup_20261017/gallup_20190426_topline.pdf",
+      "sha256": "fe492106a5f3b87db66f4f3dde58910228de7471265e520de9020cc627b23a98",
+      "article_local_file": "data/raw/reference_scaleup_20261017/gallup_2019_article.html",
+      "article_sha256": "04eed6478c069ea72783f3abef5314dd7dfd0cdc3dbf2d9dfe2d985604917982",
+      "source_location": "PDF page 2, Fed chair Jerome Powell trend row; article visible date and article:published_time metadata",
+      "publication_date_evidence": "current original article displays this date and directly links this original-wave topline; PDF filename not used as release date",
+      "original_historical_bytes": "not_independently_recovered",
+      "retrospective_later_topline_proxy_required": false,
+      "education_source": null
+    },
+    {
+      "wave_id": "gallup_2020_april",
+      "field_dates": [
+        "2020-04-01",
+        "2020-04-14"
+      ],
+      "published_date": "2020-04-23",
+      "published_at_conservative": "2020-04-23T23:59:59-04:00",
+      "publication_time_precision": "date_only_end_of_America_New_York_day_for_latest_wave",
+      "national_source_percent": [
+        12,
+        46,
+        19,
+        12,
+        11
+      ],
+      "national_sum": 100,
+      "candidate_probabilities": [
+        0.12,
+        0.46,
+        0.19,
+        0.12,
+        0.11
+      ],
+      "source_url": "https://news.gallup.com/file/poll/309191/200422ConfidenceEconomicLeaders.pdf",
+      "article_url": "https://news.gallup.com/poll/309173/americans-trust-governors-among-economic-players.aspx",
+      "local_file": "data/raw/reference_scaleup_20261017/gallup_20200422_topline.pdf",
+      "sha256": "4484874b33e9ebd3e4fe8fc815ba7d42afcd8a8839632dd73e1f22990d2c6c61",
+      "article_local_file": "data/raw/reference_scaleup_20261017/gallup_2020_article.html",
+      "article_sha256": "5acfda96e96ad7138c249a9e91b9100f615660fd50100b9a3776bbd6e1d54618",
+      "source_location": "PDF page 4, Fed chair Jerome Powell trend row; article visible date and article:published_time metadata",
+      "publication_date_evidence": "current original article displays this date and directly links this original-wave topline; PDF filename not used as release date",
+      "original_historical_bytes": "not_independently_recovered",
+      "retrospective_later_topline_proxy_required": false,
+      "education_source": null
+    },
+    {
+      "wave_id": "gallup_2021_april",
+      "field_dates": [
+        "2021-04-01",
+        "2021-04-21"
+      ],
+      "published_date": "2021-04-26",
+      "national_source_percent": [
+        12,
+        43,
+        17,
+        17,
+        11
+      ],
+      "source_url": "https://news.gallup.com/file/poll/348980/210426Economy.pdf",
+      "article_url": "https://news.gallup.com/poll/348959/economic-confidence-positive-first-time-pandemic.aspx",
+      "local_file": "data/raw/belief_proxies/20261010/gallup_fed_confidence_20210426.pdf",
+      "sha256": "a1d12f54a22ea66d0886a9da302942dda2610c7ebeb9a82fbbdbcbc1f63032ef",
+      "source_location": "Fed chair topline; existing education cross-tabs on PDF page 14",
+      "education_source": {
+        "college_graduate": {
+          "source_percent": [
+            18,
+            46,
+            13,
+            12,
+            10
+          ],
+          "source_sum": 99,
+          "candidate_probabilities": [
+            0.18181818181818182,
+            0.46464646464646464,
+            0.13131313131313133,
+            0.12121212121212122,
+            0.10101010101010101
+          ]
+        },
+        "some_college": {
+          "source_percent": [
+            6,
+            43,
+            18,
+            19,
+            14
+          ],
+          "source_sum": 100,
+          "candidate_probabilities": [
+            0.06,
+            0.43,
+            0.18,
+            0.19,
+            0.14
+          ]
+        },
+        "high_school_or_less": {
+          "source_percent": [
+            11,
+            40,
+            19,
+            20,
+            10
+          ],
+          "source_sum": 100,
+          "candidate_probabilities": [
+            0.11,
+            0.4,
+            0.19,
+            0.2,
+            0.1
+          ]
+        }
+      },
+      "national_sum": 100,
+      "candidate_probabilities": [
+        0.12,
+        0.43,
+        0.17,
+        0.17,
+        0.11
+      ],
+      "original_historical_bytes": "not_independently_recovered",
+      "source_reuse": "unchanged_existing_confidence_waves_entry"
+    },
+    {
+      "wave_id": "gallup_2022_april",
+      "field_dates": [
+        "2022-04-01",
+        "2022-04-19"
+      ],
+      "published_date": "2022-05-02",
+      "national_source_percent": [
+        8,
+        35,
+        26,
+        22,
+        10
+      ],
+      "source_url": "https://news.gallup.com/poll/392306/confidence-economic-leaders-flagging.aspx",
+      "article_url": "https://news.gallup.com/poll/392306/confidence-economic-leaders-flagging.aspx",
+      "local_file": "data/raw/belief_proxies/20261011/gallup_economic_leaders_2022_page.html",
+      "sha256": "f0d0b08bd29533240ab65ffd22c90bb71a2f76c0fbd66198b4fd4771774d327b",
+      "source_location": "HTML table Confidence in Leaders on Economy, 2022; Federal Reserve Chairman Jerome Powell row",
+      "education_source": null,
+      "national_sum": 101,
+      "candidate_probabilities": [
+        0.07920792079207921,
+        0.3465346534653465,
+        0.25742574257425743,
+        0.21782178217821782,
+        0.09900990099009901
+      ],
+      "original_historical_bytes": "not_independently_recovered",
+      "source_reuse": "unchanged_existing_confidence_waves_entry"
+    },
+    {
+      "wave_id": "gallup_2023_april",
+      "field_dates": [
+        "2023-04-03",
+        "2023-04-25"
+      ],
+      "published_date": "2023-05-09",
+      "national_source_percent": [
+        4,
+        32,
+        26,
+        28,
+        9
+      ],
+      "source_url": "https://news.gallup.com/file/poll/505484/230510ConfidenceLeaders.pdf",
+      "article_url": "https://news.gallup.com/poll/505478/americans-lack-confidence-major-economic-leaders.aspx",
+      "local_file": "data/raw/belief_proxies/20261011/gallup_economic_leaders_2023.pdf",
+      "sha256": "9b42e3bb729bd3a4eee1e97278d398588bb35bc5b4d80ff32dfb6a51f7829eae",
+      "source_location": "PDF page 4 Q11B; education cross-tabs page 7, not yet transcribed in this preparation",
+      "education_source": null,
+      "national_sum": 99,
+      "candidate_probabilities": [
+        0.04040404040404041,
+        0.32323232323232326,
+        0.26262626262626265,
+        0.2828282828282828,
+        0.09090909090909091
+      ],
+      "original_historical_bytes": "not_independently_recovered",
+      "source_reuse": "unchanged_existing_confidence_waves_entry"
+    },
+    {
+      "wave_id": "gallup_2024_april",
+      "field_dates": [
+        "2024-04-01",
+        "2024-04-22"
+      ],
+      "published_date": "2024-05-06",
+      "national_source_percent": [
+        8,
+        31,
+        23,
+        22,
+        16
+      ],
+      "national_sum": 100,
+      "candidate_probabilities": [
+        0.08,
+        0.31,
+        0.23,
+        0.22,
+        0.16
+      ],
+      "local_file": "data/raw/belief_proxies/20261010/gallup_fed_confidence_20240506.pdf",
+      "sha256": "63492e4bb2070752b32109f39ead01efafffd49412a51ab2f6a264fcab2c94dd",
+      "source_url": "https://news.gallup.com/file/poll/644756/2024_05_06%20Economic%20Leaders.pdf",
+      "source_reuse": "unchanged_existing_expanded_state_inputs_confidence_waves_entry",
+      "original_historical_bytes": "not_independently_recovered"
+    },
+    {
+      "wave_id": "gallup_2025_april",
+      "field_dates": [
+        "2025-04-01",
+        "2025-04-14"
+      ],
+      "published_date": "2025-04-17",
+      "national_source_percent": [
+        11,
+        26,
+        28,
+        22,
+        14
+      ],
+      "national_sum": 101,
+      "candidate_probabilities": [
+        0.10891089108910891,
+        0.25742574257425743,
+        0.27722772277227725,
+        0.21782178217821782,
+        0.13861386138613863
+      ],
+      "local_file": "data/raw/expanded_policy_20261014/gallup_2025.pdf",
+      "sha256": "8e78414ed54999ae66ceb21590893763762c2643522c3aa02cc62f2382b7b911",
+      "source_url": "https://news.gallup.com/file/poll/659537/2025_04_17_Trump%20Approval%20and%20Economic%20Leaders%20Topline%20and%20Tabs.pdf",
+      "source_reuse": "unchanged_existing_expanded_state_inputs_confidence_waves_entry",
+      "original_historical_bytes": "not_independently_recovered"
+    }
+  ],
+  "selected_wave_by_target_month": {
+    "202003": "gallup_2019_april",
+    "202009": "gallup_2020_april",
+    "202103": "gallup_2020_april",
+    "202109": "gallup_2021_april",
+    "202206": "gallup_2022_april",
+    "202212": "gallup_2022_april",
+    "202306": "gallup_2023_april",
+    "202312": "gallup_2023_april",
+    "202404": "gallup_2023_april",
+    "202410": "gallup_2024_april",
+    "202503": "gallup_2024_april",
+    "202509": "gallup_2025_april"
+  },
+  "normalization": "rounded national percentages normalized by their own sum; preserve raw values, including 2019 total 101 and 2025 total 101",
+  "selection_rule": "coverage_preparation.latest_wave: date-only publication admitted at end of America/New_York local day",
+  "retrospective_fallback": {
+    "required": false,
+    "available_later_topline": "data/raw/belief_proxies/20261010/gallup_fed_confidence_20240506.pdf",
+    "sha256": "63492e4bb2070752b32109f39ead01efafffd49412a51ab2f6a264fcab2c94dd",
+    "note": "2024 historical table agrees with 2019 and 2020 original-wave rows; original articles and directly linked toplines now recovered, so no guessed 2019 release date or later-wave publication proxy is used"
+  },
+  "limitations": [
+    "Synthetic national marginal assignment, not measured SCE individual confidence or monthly confidence changes.",
+    "US adult source population differs from SCE household heads.",
+    "Confidence in Fed chair to do or recommend the right thing for the economy is not specifically confidence in inflation control.",
+    "Current official original-wave archives support the displayed historical release dates; original historical bytes have not been independently recovered.",
+    "Existing generator category dont_know_or_refused maps the published No opinion bucket; preserve five-category ordering."
+  ],
+  "new_paid_api_calls": 0,
+  "new_llm_calls": 0
+}

@@ -1,0 +1,20 @@
+{
+  "status": "prepared_offline_validated_pending_budget",
+  "articles": 4316,
+  "batches": 540,
+  "parts": 12,
+  "offline_parts_passed": 12,
+  "batch_size": 8,
+  "conservative_reservation_usd": 2.8299560999999986,
+  "proposed_cap_usd": 3.0,
+  "model": "deepseek-flash",
+  "temperature": 0,
+  "thinking": "disabled",
+  "retry_max": 0,
+  "destination": "https://api.deepseek.com",
+  "manifest_sha256": "d5b2b449f23957ecc80c9b938c98068f8141487bd6c55c34cde2f5c33c6c2fbe",
+  "runner_sha256": "66869815a254f9267301d29f63aa35970408fd205aa5e6fc3032ef1ef98ffe00",
+  "new_api_calls": 0,
+  "new_simulation_calls": 0,
+  "scope": "public article_id/title/abstract/snippet/source/section/news_desk only; no population or SCE answers"
+}

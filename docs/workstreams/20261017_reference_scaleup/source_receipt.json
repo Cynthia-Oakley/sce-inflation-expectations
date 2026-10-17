@@ -1,0 +1,91 @@
+{
+  "status": "complete_free_public_source_supplement_no_llm_or_paid_api",
+  "checked_at_utc": "2026-10-17T02:11:49.827624+00:00",
+  "new_llm_calls": 0,
+  "new_paid_api_calls": 0,
+  "new_simulation_calls": 0,
+  "new_policy_months": [
+    202003,
+    202009,
+    202103,
+    202109,
+    202212,
+    202312,
+    202404,
+    202503
+  ],
+  "reused_policy_months": [
+    202004,
+    202105,
+    202111,
+    202206,
+    202306,
+    202410,
+    202509,
+    202203
+  ],
+  "all_target_policy_months_covered": true,
+  "new_confidence_waves": [
+    "gallup_2019_april",
+    "gallup_2020_april"
+  ],
+  "all_target_confidence_months_covered": true,
+  "confidence_selection_by_target": {
+    "202003": "gallup_2019_april",
+    "202009": "gallup_2020_april",
+    "202103": "gallup_2020_april",
+    "202109": "gallup_2021_april",
+    "202206": "gallup_2022_april",
+    "202212": "gallup_2022_april",
+    "202306": "gallup_2023_april",
+    "202312": "gallup_2023_april",
+    "202404": "gallup_2023_april",
+    "202410": "gallup_2024_april",
+    "202503": "gallup_2024_april",
+    "202509": "gallup_2025_april"
+  },
+  "critical_data_missing": [],
+  "notes": [
+    "Eight newly authored briefs have three concise facts, verified official release times with New York offsets and cutoff checks.",
+    "2020-03 uses March 3, not March 15; 2020-09 uses July 29 policy-rate statement, excluding August 27 longer-run strategy document.",
+    "Gallup original publication dates: 2019-04-26 and 2020-04-23. The 2020 PDF filename contains 200422, which is not used as the publication date.",
+    "2020-09 and 2021-03 now select the 2020 April wave; prior coverage needs_explicit_A_retrospective_2019_proxy_or_source flags are superseded by these evidence-backed sources.",
+    "Current archived official sources do not establish original historical bytes; no full B historical-vintage certification claimed.",
+    "Year-specific Fed historical paths for 2021-2025 returned 404; the official current calendar covers those years and was used instead. These are noncritical failed lookups preserved in the raw download receipt."
+  ],
+  "file_sha256": {
+    "data/raw/reference_scaleup_20261017/download_receipt.json": "275fb2cb8752de2ec1c265920aa71208395efd0dbee02f0cc828748b79383576",
+    "data/raw/reference_scaleup_20261017/download_receipt_2019_topline.json": "8083fa10c94265be3c10e6f76fb7af1661b91a4302ad82ab7a1dc5db9ccae3bf",
+    "data/raw/reference_scaleup_20261017/download_receipt_calendar.json": "41d95edca1de32c803690fa6a26ad12e6ba10ac27988479458c0192acad9cf70",
+    "data/raw/reference_scaleup_20261017/fomccalendars.html": "55626afcdc5cecb2325111ff7ca2959e5b63e1b4e3ed4b7b1f4316599574b39b",
+    "data/raw/reference_scaleup_20261017/fomchistorical2020.html": "e0083f042fd0ea804d626d86c83dcd74c629480b9744a29b00887b0a5cf5efbe",
+    "data/raw/reference_scaleup_20261017/gallup_20190426_topline.pdf": "fe492106a5f3b87db66f4f3dde58910228de7471265e520de9020cc627b23a98",
+    "data/raw/reference_scaleup_20261017/gallup_2019_article.html": "04eed6478c069ea72783f3abef5314dd7dfd0cdc3dbf2d9dfe2d985604917982",
+    "data/raw/reference_scaleup_20261017/gallup_20200422_topline.pdf": "4484874b33e9ebd3e4fe8fc815ba7d42afcd8a8839632dd73e1f22990d2c6c61",
+    "data/raw/reference_scaleup_20261017/gallup_2020_article.html": "5acfda96e96ad7138c249a9e91b9100f615660fd50100b9a3776bbd6e1d54618",
+    "data/raw/reference_scaleup_20261017/monetary20200303a.html": "44ee2d169b6bfa865ab7faad517cba4064836d6ee014106f380ff9829ef97e30",
+    "data/raw/reference_scaleup_20261017/monetary20200729a.html": "673590e53cb4141fc35976d91782d514ebf97e9986533f7e1063fe2d9a0c1d14",
+    "data/raw/reference_scaleup_20261017/monetary20210127a.html": "e2a7493730d9fba98e4dfb317950dc1ef0e0446bec352c1b61aef3f9f7c651d1",
+    "data/raw/reference_scaleup_20261017/monetary20210728a.html": "f185fa2f83abe01057159d979deaa4c1e2ddd07052dbb1746148b43467997e9e",
+    "data/raw/reference_scaleup_20261017/monetary20221102a.html": "5c77263232a0f390d34da963069ba53bae096b2e2b63ad73cfa083d8c0c7ba54",
+    "data/raw/reference_scaleup_20261017/monetary20231101a.html": "f0eab92c1b9ed664c6724633ea1f055df7838c3dba965837af2b42f4d5da2b0b",
+    "data/raw/reference_scaleup_20261017/monetary20240320a.html": "606edd3e9a732f325cac5a9a4dfa00a50b407e050812dceb3d70de4729d1d4af",
+    "data/raw/reference_scaleup_20261017/monetary20250129a.html": "321e5b7b5a2cd26a0a3a128bed01dabad1b5bfac891cf771a79dcafb7ec76614",
+    "docs/workstreams/20261017_reference_scaleup/policy_sources.json": "7fac971f7938a044ff560a96ab9945995a0fed9820ac6a17151ba6f7b50fabff",
+    "docs/workstreams/20261017_reference_scaleup/confidence_sources.json": "063fe7c7d857e69ab796820c27e917621dd84da26f721d672e5a23520b276b63",
+    "docs/workstreams/20261013_behavior/codex_expanded_policy_sources_20261014.json": "a8c70540016834be82a993aa5e04e51e9373cc9a69ff8491d9f81774448e239a",
+    "docs/workstreams/20261017_finance_validation/scaleup_coverage.json": "2fb22482465979ceb9b78a43f2e371a412669664329a475f6e5b2b15239f036c",
+    "docs/literature/sce/belief_proxies/gallup_waves_20261011.json": "6f38a177b1a8a673fa3309e7d3cf32448b6226e6b1ff4056b49403880f2d6a2f",
+    "studies/sce_inflation_expectations/expanded_state_inputs.py": "4ff6bd548697a7ddb938688b2cf3c86fb15e92811fdd8dde5069b26e9d52d851",
+    "studies/sce_inflation_expectations/coverage_preparation.py": "f6f587090e5e5e721c92ea917b6bc35d0fc00d15cca5fd12ccdf745316e2af85"
+  },
+  "checks": {
+    "old_policy_eight_entries_exact_json_value_equality": true,
+    "existing_confidence_waves_six_integration_fields_unchanged": true,
+    "all_confidence_source_hashes_verified": true,
+    "actual_latest_wave_function_ast_matches_all_twelve_targets": true,
+    "all_twelve_policy_dates_before_cutoffs": true,
+    "all_policy_three_fact_counts": true
+  },
+  "verification_note": "Executed the unmodified confidence_waves and latest_wave function ASTs to avoid unrelated socioverse runtime imports; no model or API code executed."
+}

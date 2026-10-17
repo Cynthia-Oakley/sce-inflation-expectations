@@ -1,0 +1,36 @@
+{
+  "status": "population_sources_and_engineering_prepared_news_running_simulation_not_authorized",
+  "months": [
+    202003,
+    202009,
+    202103,
+    202109,
+    202206,
+    202212,
+    202306,
+    202312,
+    202404,
+    202410,
+    202503,
+    202509
+  ],
+  "person_months": 2304,
+  "population_manifest_sha256": "7d080667fd8d7745ea5c57e2fefe69d4af069a99b963370e7eaa32f74e83a32e",
+  "current_inflation_targets_read_during_preparation": false,
+  "full_eligible_n_range": [
+    795,
+    1053
+  ],
+  "weight_ess_range": [
+    107.85342107229107,
+    131.6678984437122
+  ],
+  "tests_passed": 41,
+  "tests_scope": "23 runtime+15 evaluator+3 sampling/protocol synthetic tests; no API",
+  "news_scope_approved": true,
+  "news_articles": 4316,
+  "news_batches": 540,
+  "news_cap_usd": 3.0,
+  "simulation_authorized": false,
+  "new_simulation_calls": 0
+}
