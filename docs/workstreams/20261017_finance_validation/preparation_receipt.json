@@ -1,0 +1,43 @@
+{
+  "status": "prepared_dry_run_passed_requires_specific_batch_authorization",
+  "new_api_calls": 0,
+  "new_api_cost_usd": 0,
+  "model": "deepseek-flash",
+  "official_advertised_version": "DeepSeek-V4.1-Flash",
+  "planned_calls": 768,
+  "n_per_month": 48,
+  "generation_repeats": 2,
+  "arms": [
+    "baseline",
+    "financial_facts"
+  ],
+  "dry_run_cells": 16,
+  "dry_run_passed": 16,
+  "scripted_calls": 0,
+  "actual_messages_hash_match": true,
+  "prepared_directory": "outputs/sce_finance_validation_trial_20261017_v1",
+  "protocol_sha256": "bf3b18870a2b368d04bfe0af60a2e94547e9416eff9c89bfdf7cde4cc96137b3",
+  "manifest_sha256": "de1e11657f0b97de6f1ef0038b3bb2055794c3d6f58c51b5096130fbc29c51b8",
+  "estimated_peak_cost_usd": 0.9173872499999999,
+  "conservative_reservation_usd": 3.5663298000000005,
+  "proposed_cap_usd": 4.0,
+  "prior_plan_changed": false,
+  "raw_or_individual_records_in_public_receipt": false,
+  "prepared_files_hash_verified": 40,
+  "prepared_messages_checked": 384,
+  "evaluation_preparation_audit": "passed_without_reading_current_targets",
+  "preparation_runner_tests_passed": 33,
+  "authorization_file_exists": false,
+  "real_run_directories_exist": 0,
+  "focused_tests_passed": 46,
+  "focused_tests_warnings": "2 constant-input Spearman warnings in synthetic fixtures; undefined correlations remain null",
+  "evaluation_ready": true,
+  "group_dimensions": [
+    "Q1",
+    "age_group",
+    "numeracy",
+    "household_income_band",
+    "region"
+  ],
+  "small_group_min_n": 3
+}

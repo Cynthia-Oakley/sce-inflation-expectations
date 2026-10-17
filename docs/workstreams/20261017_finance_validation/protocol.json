@@ -1,0 +1,74 @@
+{
+  "id": "sce-household-finance-crossmonth-v1",
+  "registered_at_utc": "2026-10-17T00:38:40.260396+00:00",
+  "research_line": "A_conditional_returner_reconstruction",
+  "months": [
+    202206,
+    202306,
+    202410,
+    202509
+  ],
+  "n_per_month": 48,
+  "arms": [
+    "baseline",
+    "financial_facts"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "planned_calls": 768,
+  "sampling_seed": 20261017,
+  "dispatch_order_seed": 20261027,
+  "model": "deepseek-flash",
+  "official_advertised_version": "DeepSeek-V4.1-Flash",
+  "model_identity_limit": "Mutable alias; no verified fixed weights or training cutoff",
+  "temperature": 0.5,
+  "max_tokens": 1024,
+  "thinking": "disabled",
+  "retry_max": 0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "pricing_verified_date": "2026-10-17",
+  "budget_cap_usd": 4.0,
+  "comparison": "Exact financial_facts block from the completed pilot versus the same base without it; no perspective cue, cognition answer block or purchase-frequency block.",
+  "month_selection": "The four archived eight-period evaluation months, chosen for coverage across high inflation and later periods; none was used to tune Q1 wording. Previously inspected old simulations and full-sample associations exist. Not a pristine project-level blind holdout.",
+  "sampling": "Within each archived SRS96 roster, proportionally sample48 by numeracy with largest-remainder rounding and fixed seed. No current Q8/Q9 or Q1 used to select; no missing-target replacement.",
+  "primary_metric": "q9_center_mae_pp",
+  "primary_weight": "design_survey_weight",
+  "primary_contrast": "financial_facts minus baseline",
+  "aggregation": "Per month/repeat weighted median of fitted individual Q9 means for both model and observed same roster, then absolute error; equal average of8 month/repeat cells. Left-inverse empirical CDF throughout.",
+  "auxiliary_weights": "Equal-person results reported separately. Primary evaluation weight=survey_weight / ((96/eligible_returners)*(selected_stratum_n/parent_stratum_n)); this is a sequential two-stage design weight, not proof of national representativeness.",
+  "secondary_metrics": [
+    "individual_density_mean_mae_pp",
+    "cross_section_w1_pp",
+    "delta_w1_pp",
+    "across_person_iqr_pp",
+    "individual_iqr_mae_pp",
+    "q8_sample_center_mae_pp"
+  ],
+  "macro_replication_screen": "Primary center point contrast<0 and at least3 of4 monthly mean contrasts<=0; exploratory replication screen only.",
+  "overall_upgrade_rule": "Macro screen alone is insufficient. Any worsening of personal density-mean MAE or cross-sectional W1 is explicitly a tradeoff; no overall upgrade. Report paired intervals and monthly results, never select another weight/prompt after inspecting results.",
+  "coverage_rule": "Model valid and scorable fractions>=.99 in each arm; human missingness separate. All-arm/both-repeat common Q9 support, Q8 separate. Never resample to replace a missing or extreme current outcome.",
+  "intervals": "1000 paired person-cluster resamples retaining all available months/repeats for a person; exploratory.4 selected calendar months do not support a population claim over time. Monthly/repeat values always shown.",
+  "baseline_refs": [
+    "copy_previous",
+    "history_anchor_half"
+  ],
+  "baseline_history": "Same own valid prior bins and strict earlier histories, coefficient.5 fixed from existing baseline, not fitted to new months; scalar history anchor has no invented density.",
+  "q8": "Separate secondary signed point response; abs<=100 sensitivity as in the existing evaluator; report exclusions.",
+  "financial_groups": "worse Q1=1/2, same=3, better=4/5; other groups age/numeracy/income/region. Suppress group gaps unless both groups have>=3 common people in a cell; no subgroup claim from tiny samples.",
+  "truth_isolation": "Only date/userid/financial_change/survey_date projected from hash-verified cache. Current Q8/Q9 are not loaded in preparation; only reference hash pinned. Actual current targets first read by the evaluation stage after frozen execution.",
+  "information_boundary": "Current real Q1 and current demographics are explicitly retrospective A conditions; actual own prior Q8/Q9 and older summaries are supplied. Public E uses existing cutoffs. Not strict B, nationwide forecast, or free recursive belief simulation.",
+  "generations": "Two repeats are API variability, not additional people. Engine seeds42/43 do not imply provider-enforced identical random seeds.",
+  "scorer": "Same frozen approximate Q9 scorer for model and human raw bins; cannot claim exact official fitting.",
+  "reused_paid_calls": 0,
+  "no_tuning_after_run": true,
+  "limits": [
+    "Returner-only conditional sample; four months are not enough to prove stability over all periods.",
+    "Q1 is subjective finances versus12 months earlier; current Q1 is not an identified exogenous income shock.",
+    "CE spending and Fed confidence remain synthetic proxies; NYT/gas snapshots do not gain strict historical-vintage certification from reuse.",
+    "Current target datasets have been explored in earlier aggregate research; only this preparation is target-isolated."
+  ]
+}
