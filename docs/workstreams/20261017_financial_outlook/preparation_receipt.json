@@ -12,5 +12,6 @@
   "prepare_seconds": 0.33967720810323954,
   "offline_diagnostic_seconds": 0.27624737517908216,
   "reused": "Frozen original prompts/P/E/actual past beliefs; officialCore; existing SCEDecision/cost/audit/parser; existing Q9 scorer and cognition metrics.",
-  "new": "Reusable frozen-prompt provider,batch gate/dispatch and evaluator; Q2-specific adapter/config only."
+  "new": "Reusable frozen-prompt provider,batch gate/dispatch and evaluator; Q2-specific adapter/config only.",
+  "historical_receipt_note": "This receipt records the pre-launch state; current completion is in execution_receipt.json and results.md."
 }
