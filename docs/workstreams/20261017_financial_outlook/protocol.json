@@ -1,0 +1,50 @@
+{
+  "id": "sce-previous-financial-outlook-pilot-v1",
+  "mechanism": "previous_financial_outlook",
+  "months": [
+    202003,
+    202206,
+    202312,
+    202509
+  ],
+  "n_per_month": 48,
+  "arms": [
+    "baseline",
+    "previous_financial_outlook"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "sampling_seed": 20261017,
+  "destination": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "retry_max": 0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_verified_date": "2026-10-17",
+  "budget_cap_usd": 4,
+  "month_selection": "Four already archived phases: pandemic onset, high inflation, disinflation, recent period. Fixed before new Q2 simulations; not a project-level blind holdout.",
+  "planned_calls": 768,
+  "max_prompt_chars": 11677,
+  "research_line": "A_conditional_returner_reconstruction",
+  "comparison": "Same exact base plus only observed previous-month Q2; no prescribed inflation effect.",
+  "primary_metric": "q9_center_mae_pp",
+  "primary_weight": "design_survey_weight",
+  "secondary_metrics": [
+    "individual_density_mean_mae_pp",
+    "cross_section_w1_pp",
+    "delta_w1_pp",
+    "individual_density_iqr_mae_pp"
+  ],
+  "decision_rule": "No automatic upgrade. Report center and individual/distribution tradeoffs, coverage and per-month changes.",
+  "truth_isolation": "Preparation reads only frozen P/E/prompt/links and validated Q2 cache, not current inflation answers.",
+  "limits": [
+    "Four inspected months; exploratory, not new independent blind validation.",
+    "Previous real Q2 and prior Q8/Q9 are private A conditions, not strict public B inputs.",
+    "Two generations are API variability, not additional respondents. Mutable model alias remains."
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "202003": {
+    "n": 48,
+    "prior_q2_codes": {
+      "2": 3,
+      "3": 25,
+      "5": 4,
+      "4": 16
+    },
+    "allocation": {
+      "parent_stratum_n": {
+        "high": 152,
+        "low": 40
+      },
+      "selected_stratum_n": {
+        "high": 38,
+        "low": 10
+      },
+      "tie_rule": "largest fractional remainder, then alphabetic category"
+    }
+  },
+  "202206": {
+    "n": 48,
+    "prior_q2_codes": {
+      "4": 13,
+      "3": 20,
+      "2": 13,
+      "1": 2
+    },
+    "allocation": {
+      "parent_stratum_n": {
+        "high": 142,
+        "low": 50
+      },
+      "selected_stratum_n": {
+        "high": 36,
+        "low": 12
+      },
+      "tie_rule": "largest fractional remainder, then alphabetic category"
+    }
+  },
+  "202312": {
+    "n": 48,
+    "prior_q2_codes": {
+      "2": 8,
+      "3": 22,
+      "1": 1,
+      "4": 14,
+      "5": 3
+    },
+    "allocation": {
+      "parent_stratum_n": {
+        "high": 129,
+        "low": 63
+      },
+      "selected_stratum_n": {
+        "high": 32,
+        "low": 16
+      },
+      "tie_rule": "largest fractional remainder, then alphabetic category"
+    }
+  },
+  "202509": {
+    "n": 48,
+    "prior_q2_codes": {
+      "3": 21,
+      "4": 15,
+      "2": 6,
+      "1": 2,
+      "5": 4
+    },
+    "allocation": {
+      "parent_stratum_n": {
+        "high": 140,
+        "low": 52
+      },
+      "selected_stratum_n": {
+        "high": 35,
+        "low": 13
+      },
+      "tie_rule": "largest fractional remainder, then alphabetic category"
+    }
+  }
+}

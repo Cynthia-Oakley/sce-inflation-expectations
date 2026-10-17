@@ -1,0 +1,16 @@
+{
+  "status": "prepared_16_engine_checks_passed_authorized_not_started",
+  "trial_folder": "outputs/sce_financial_outlook_trial_20261017_v1",
+  "protocol_sha256": "f6ea10d10800e0ae021d6aded14f92b37e3bfb3319f288d6bd2d29ab505768ef",
+  "new_api_calls": 0,
+  "planned_calls": 768,
+  "estimate_usd": 0.8847705149999998,
+  "conservative_reservation_usd": 3.5574279999999994,
+  "cap_usd": 4,
+  "engineering_units": 16,
+  "engineering_call_count": 0,
+  "prepare_seconds": 0.33967720810323954,
+  "offline_diagnostic_seconds": 0.27624737517908216,
+  "reused": "Frozen original prompts/P/E/actual past beliefs; officialCore; existing SCEDecision/cost/audit/parser; existing Q9 scorer and cognition metrics.",
+  "new": "Reusable frozen-prompt provider,batch gate/dispatch and evaluator; Q2-specific adapter/config only."
+}
