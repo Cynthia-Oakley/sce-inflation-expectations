@@ -1,0 +1,164 @@
+{
+  "status": "posthoc_same_blend_loss_comparison",
+  "completed_at_utc": "2026-10-17T11:22:34.513611+00:00",
+  "new_api_calls": 0,
+  "source_sha256": "703bf30fa67bc9c87ca946130f80fec0ea779b5390623e6739626b4c085d90d9",
+  "simulation_weight_all_twelve": 0.23345479082570794,
+  "comparisons": {
+    "all_twelve": {
+      "mae_pp": {
+        "baseline": 0.23333333333333328,
+        "blend": 0.22458303360284051,
+        "reduction_fraction": 0.03750128455925472
+      },
+      "mse_pp_squared": {
+        "baseline": 0.07999999999999997,
+        "blend": 0.06753455785312423,
+        "reduction_fraction": 0.1558180268359468
+      },
+      "rmse_pp": {
+        "baseline": 0.28284271247461895,
+        "blend": 0.25987411924453774,
+        "reduction_fraction": 0.08120624013652933
+      }
+    },
+    "forward_later_eight": {
+      "mae_pp": {
+        "baseline": 0.31249999999999994,
+        "blend": 0.2967366655732208,
+        "reduction_fraction": 0.05044267016569326
+      },
+      "mse_pp_squared": {
+        "baseline": 0.11624999999999996,
+        "blend": 0.1092327292367581,
+        "reduction_fraction": 0.06036361946874724
+      },
+      "rmse_pp": {
+        "baseline": 0.34095454242464635,
+        "blend": 0.33050375071511384,
+        "reduction_fraction": 0.03065156907784039
+      }
+    }
+  },
+  "monthly_all_twelve_fitted_weight": [
+    {
+      "month": 202003,
+      "carry_abs_error_pp": 0.0,
+      "blend_mean_abs_error_pp": 0.03459626075626976,
+      "carry_mse_pp_squared": 0.0,
+      "blend_mse_pp_squared": 0.0011969979664578478,
+      "squared_error_reduction_pp_squared": -0.0011969979664578478,
+      "share_of_total_net_squared_error_reduction": -0.008002109300483555
+    },
+    {
+      "month": 202009,
+      "carry_abs_error_pp": 0.10000000000000009,
+      "blend_mean_abs_error_pp": 0.23763947418556652,
+      "carry_mse_pp_squared": 0.010000000000000018,
+      "blend_mse_pp_squared": 0.05660193078513749,
+      "squared_error_reduction_pp_squared": -0.046601930785137476,
+      "share_of_total_net_squared_error_reduction": -0.3115408331559364
+    },
+    {
+      "month": 202103,
+      "carry_abs_error_pp": 0.10000000000000009,
+      "blend_mean_abs_error_pp": 0.11301704480198937,
+      "carry_mse_pp_squared": 0.010000000000000018,
+      "blend_mse_pp_squared": 0.013122699896520857,
+      "squared_error_reduction_pp_squared": -0.00312269989652084,
+      "share_of_total_net_squared_error_reduction": -0.020875712895748185
+    },
+    {
+      "month": 202109,
+      "carry_abs_error_pp": 0.09999999999999964,
+      "blend_mean_abs_error_pp": 0.1446082275118239,
+      "carry_mse_pp_squared": 0.009999999999999929,
+      "blend_mse_pp_squared": 0.021000147226277487,
+      "squared_error_reduction_pp_squared": -0.011000147226277558,
+      "share_of_total_net_squared_error_reduction": -0.0735376190208288
+    },
+    {
+      "month": 202206,
+      "carry_abs_error_pp": 0.5,
+      "blend_mean_abs_error_pp": 0.18390102502101335,
+      "carry_mse_pp_squared": 0.25,
+      "blend_mse_pp_squared": 0.03412863911069525,
+      "squared_error_reduction_pp_squared": 0.21587136088930475,
+      "share_of_total_net_squared_error_reduction": 1.4431321297830948
+    },
+    {
+      "month": 202212,
+      "carry_abs_error_pp": 0.20000000000000018,
+      "blend_mean_abs_error_pp": 0.330214518410306,
+      "carry_mse_pp_squared": 0.04000000000000007,
+      "blend_mse_pp_squared": 0.10904537798594323,
+      "squared_error_reduction_pp_squared": -0.06904537798594315,
+      "share_of_total_net_squared_error_reduction": -0.4615786131798535
+    },
+    {
+      "month": 202306,
+      "carry_abs_error_pp": 0.2999999999999998,
+      "blend_mean_abs_error_pp": 0.3111665644470105,
+      "carry_mse_pp_squared": 0.0899999999999999,
+      "blend_mse_pp_squared": 0.09682526530178662,
+      "squared_error_reduction_pp_squared": -0.006825265301786718,
+      "share_of_total_net_squared_error_reduction": -0.04562791289555504
+    },
+    {
+      "month": 202312,
+      "carry_abs_error_pp": 0.3999999999999999,
+      "blend_mean_abs_error_pp": 0.3823706513145737,
+      "carry_mse_pp_squared": 0.15999999999999992,
+      "blend_mse_pp_squared": 0.14621086403084876,
+      "squared_error_reduction_pp_squared": 0.013789135969151156,
+      "share_of_total_net_squared_error_reduction": 0.09218242325916472
+    },
+    {
+      "month": 202404,
+      "carry_abs_error_pp": 0.2999999999999998,
+      "blend_mean_abs_error_pp": 0.22390887448311636,
+      "carry_mse_pp_squared": 0.0899999999999999,
+      "blend_mse_pp_squared": 0.050412153159837395,
+      "squared_error_reduction_pp_squared": 0.039587846840162505,
+      "share_of_total_net_squared_error_reduction": 0.26465063956893403
+    },
+    {
+      "month": 202410,
+      "carry_abs_error_pp": 0.10000000000000009,
+      "blend_mean_abs_error_pp": 0.055658584716137494,
+      "carry_mse_pp_squared": 0.010000000000000018,
+      "blend_mse_pp_squared": 0.0031197096796314497,
+      "squared_error_reduction_pp_squared": 0.0068802903203685675,
+      "share_of_total_net_squared_error_reduction": 0.04599576332244931
+    },
+    {
+      "month": 202503,
+      "carry_abs_error_pp": 0.5,
+      "blend_mean_abs_error_pp": 0.49425005733749305,
+      "carry_mse_pp_squared": 0.25,
+      "blend_mse_pp_squared": 0.24430243686631578,
+      "squared_error_reduction_pp_squared": 0.005697563133684219,
+      "share_of_total_net_squared_error_reduction": 0.038089056305637636
+    },
+    {
+      "month": 202509,
+      "carry_abs_error_pp": 0.19999999999999973,
+      "blend_mean_abs_error_pp": 0.18366512024878623,
+      "carry_mse_pp_squared": 0.0399999999999999,
+      "blend_mse_pp_squared": 0.034448472228038714,
+      "squared_error_reduction_pp_squared": 0.005551527771961183,
+      "share_of_total_net_squared_error_reduction": 0.037112788209124926
+    }
+  ],
+  "ConsumerSim_source": {
+    "url": "https://arxiv.org/html/2606.30395v1#S4.SS6",
+    "checked_on": "2026-10-17",
+    "facts": "4.6 and 11 choose weights on January-June2024 validation RMSE; 4.7 and Table1 report MAE, RMSE, Pearson and Spearman.",
+    "local_archived_pdf_sha256": "5b7bf75fb3ff46206649fa85810a608e64be2c1323688370e140e9cb69513dee"
+  },
+  "limits": [
+    "Same already-fitted MSE combination used across metrics; percentage changes in squared and unsquared losses are not directly comparable.",
+    "2022-06 contributes144.3% of the total net in-sample squared-error reduction; other months partially offset it.",
+    "No new independent evaluation, tail-performance guarantee, or primary-metric change."
+  ]
+}
