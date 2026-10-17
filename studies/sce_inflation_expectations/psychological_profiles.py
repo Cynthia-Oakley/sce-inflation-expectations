@@ -16,7 +16,7 @@ def valid_key(row,keys):
     return None if any(pd.isna(x) for x in vals) else tuple(map(str,vals))
 
 
-def build_sidecars(profiles,donors,*,seed=42,draw=0,min_ess=10.,source_hash):
+def build_sidecars(profiles,donors,*,seed=42,draw=0,min_ess=10.,source_hash,include_household_state=True):
     if not np.isfinite(min_ess) or min_ess<=0:raise ValueError('min_ess must be positive')
     if profiles.duplicated(['date','userid']).any():raise ValueError('duplicate recipient-month')
     if donors.id.duplicated().any():raise ValueError('duplicate donors')
@@ -40,9 +40,10 @@ def build_sidecars(profiles,donors,*,seed=42,draw=0,min_ess=10.,source_hash):
              'source_survey':'GSS','source_wave':2018,'source_hash':source_hash,
              'eligibility':'A_exploratory_only_not_verified_B_vintage',
              'temporal_assumption':'held_constant_synthetic_state_if_matching_covariates_unchanged',
-             'observed_household_state':{'financial_change_12m_code':int(p.Q1),'source':'SCE_Q1_current_microdata'},
              'psychological_attributes':{'HAPPY':None,'SATFIN':None},'support_status':'unsupported',
              'donor_local_id':None,'fallback_tier':None,'donor_ess':0.,'donor_n':0,'match_fields':None}
+        if include_household_state:
+            rec['observed_household_state']={'financial_change_12m_code':int(p.Q1),'source':'SCE_Q1_current_microdata'}
         if selected:
             tier,keys,key,(g,prob,ess)=selected
             token=json.dumps([seed,draw,uid,list(key),tier],ensure_ascii=False).encode()

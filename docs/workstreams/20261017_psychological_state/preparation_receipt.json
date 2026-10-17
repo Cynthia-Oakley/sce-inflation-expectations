@@ -1,0 +1,17 @@
+{
+  "status": "prepared_and_official_engine_dry_run_complete_waiting_specific_budget",
+  "new_api_calls": 0,
+  "planned_calls": 768,
+  "reused_baseline_calls": 384,
+  "protocol_sha256": "189f495c21ca01903d32026d772779dc37fa1e53e660bbb32953b6cf26598ada",
+  "estimated_cost_usd": 0.8939444799999998,
+  "conservative_reservation_usd": 3.5777559999999995,
+  "requested_cap_usd": 4,
+  "offline_units": 16,
+  "targeted_and_compatibility_tests_passed": 16,
+  "protected_files_unchanged": 15,
+  "preparation_seconds": 0.5227929579559714,
+  "source_commit_before_changes": "bb49811",
+  "invalid_preparation": "v1 kept; missing education now unsupported, no imputation",
+  "trial_folder": "outputs/sce_psychological_state_trial_20261017_v2"
+}

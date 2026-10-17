@@ -1,0 +1,53 @@
+{
+  "id": "sce-synthetic-psychological-state-pilot-v1",
+  "mechanism": "synthetic_psychological_state",
+  "months": [
+    202003,
+    202206,
+    202312,
+    202509
+  ],
+  "n_per_month": 48,
+  "arms": [
+    "matched_psychology",
+    "permuted_psychology"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "reuse_baseline_trial": "outputs/sce_financial_outlook_trial_20261017_v1",
+  "reuse_baseline_evaluation": "outputs/sce_financial_outlook_evaluation_20261017_v1",
+  "donor_seed": 42,
+  "donor_draw": 0,
+  "donor_sensitivity_draws": 5,
+  "min_donor_ess": 10,
+  "permutation_seed": 20261017,
+  "destination": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "retry_max": 0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_verified_date": "2026-10-17",
+  "budget_cap_usd": 4,
+  "planned_calls": 768,
+  "max_prompt_chars": 11679,
+  "research_line": "A_conditional_returner_reconstruction",
+  "primary_metric": "q9_center_mae_pp",
+  "primary_weight": "design_survey_weight",
+  "reused_baseline_calls": 384,
+  "comparison": "Original baseline reused. Matched versus within-month permuted joint synthetic psychological categories.",
+  "truth_isolation": "Prepare reads archived P/E, earlier answer prompts and linkage only; current target cache is hashed, not parsed.",
+  "decision_rule": "No automatic upgrade. Check macro MAE, personal MAE, cross-person W1, IQR and all months. Matching increment requires matched vs permuted evidence.",
+  "limits": [
+    "Already inspected months; not independent blind validation or strict B.",
+    "GSS 2018 current public release transferred across dates, adults vs SCE household heads, historical nominal family income proxy.",
+    "Synthetic categories are not observed psychology of these SCE people; assignment cannot identify its true relationship with inflation beliefs.",
+    "One frozen donor draw in paid trial; five offline draws assess allocation variability only.",
+    "Reused baseline is from an earlier API batch; mutable model alias/time may confound cross-batch contrasts.",
+    "Two generations do not double the number of respondents."
+  ]
+}

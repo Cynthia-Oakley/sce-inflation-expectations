@@ -43,6 +43,29 @@ def paired_intervals(cases, arms, months, repeats, support, draws=1000, seed=202
         'scope': 'Exploratory unadjusted paired person clusters, months/repeats kept together; not time-generalization intervals.'}
 
 
+def attach_reused_baseline(cases, folder, protocol):
+    """Reuse already checked/scored answers only for exactly matching P/E prompts.
+
+    Cache and original run artifacts are pinned in the new preparation manifest.
+    No new API calls, invented run receipts, or replacement baseline responses.
+    """
+    parent = ROOT/protocol['reuse_baseline_trial']
+    old = read_json(ROOT/protocol['reuse_baseline_evaluation']/'cases_private.json')
+    index = {(r['month'], r['agent_id'], r['repeat']): r for r in old}
+    if len(index) != len(old): raise ValueError('Duplicate reused baseline cases')
+    for month in protocol['months']:
+        original = read_json(parent/str(month)/'prompts_baseline.json')
+        if original != read_json(folder/str(month)/'prompts_baseline.json'):
+            raise ValueError('Reused baseline prompt changed')
+    for row in cases:
+        previous = index[row['month'], row['agent_id'], row['repeat']]
+        if (previous['userid'] != row['userid'] or previous['profile'] != row['profile']
+                or abs(previous['survey_weight']-row['survey_weight']) > 1e-12
+                or previous['real'] != row['real']):
+            raise ValueError('Reused baseline roster, weight or target mismatch')
+        row['arms']['baseline'] = previous['arms']['baseline']
+
+
 def evaluate(folder, out):
     started = perf_counter(); folder, out = Path(folder).resolve(), Path(out).resolve()
     if out.exists() or not out.is_relative_to(ROOT/'outputs'): raise ValueError('Fresh ignored evaluation output required')
@@ -90,7 +113,11 @@ def evaluate(folder, out):
             m, aid = link['month'], link['agent_id']
             cases.append({**link, 'repeat': repeat, 'survey_weight': link['design_survey_weight'],
                 'real': truth[m, aid, repeat], 'arms': {arm: actions[m, repeat, aid, arm] for arm in protocol['arms']}})
-    arms, months, repeats = protocol['arms'], protocol['months'], protocol['generation_repeats']
+    arms, months, repeats = list(protocol['arms']), protocol['months'], protocol['generation_repeats']
+    if protocol.get('reuse_baseline_evaluation'):
+        attach_reused_baseline(cases, folder, protocol)
+        arms = ['baseline', *arms]
+        coverage['baseline'] = Counter(r['arms']['baseline']['validation_status'] for r in cases)
     support9 = shared._common_person_months(cases, arms, repeats, 'q9')
     support8 = shared._common_person_months(cases, arms, repeats, 'q8')
     summaries = {arm: shared._summarize_arm(cases, arm, months, repeats, support9, support8) for arm in arms}
@@ -102,10 +129,13 @@ def evaluate(folder, out):
         'new_api_calls': 0, 'estimated_actual_cost_usd': cost, 'coverage': {k: dict(v) for k, v in coverage.items()},
         'common_q9_person_months': len(support9), 'common_q8_person_months': len(support8), 'scorable_counts': scorable,
         'arms': summaries, 'primary_view': 'auxiliary_survey_weighted: its survey_weight is frozen design-survey weight here.',
-        'paired_intervals': paired_intervals(cases, arms, months, repeats, support9) if valid else None,
+        'paired_intervals': paired_intervals(cases, arms[:2], months, repeats, support9) if valid else None,
+        'additional_paired_intervals': {f'{other}_minus_{base}': paired_intervals(cases, [base, other], months, repeats, support9)
+            for base, other in ([('baseline', arms[2]), (arms[2], arms[1])] if len(arms) == 3 else [])} if valid else None,
         'accuracy_descriptive_only': not valid, 'automatic_upgrade': False,
         'evaluation_seconds': perf_counter()-started, 'scorer_cache_distinct_vectors': score_bins.cache_info().currsize,
         'notes': ['No correction of invalid replies. Human scores are reused from frozen evaluation; new model vectors use the same scorer.',
-                  'All-arm/both-repeat common support; macro and individual metrics are distinct; repeats are not extra people.']}
+                  'All-arm/both-repeat common support; macro and individual metrics are distinct; repeats are not extra people.',
+                  'Reused baseline cost is historical, excluded from this batch estimated_actual_cost_usd.']}
     out.mkdir(parents=True); dump(out/'summary.json', result); dump(out/'cases_private.json', cases)
     return result

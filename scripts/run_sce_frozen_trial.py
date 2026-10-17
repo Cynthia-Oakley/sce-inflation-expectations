@@ -22,8 +22,14 @@ def main():
     args = parser.parse_args()
     if args.action == 'prepare':
         if args.config is None: parser.error('prepare requires --config')
-        from studies.sce_inflation_expectations.experiments.financial_outlook import prepare
-        prepare(args.folder, read_json(args.config)); return
+        config = read_json(args.config)
+        if config['mechanism'] == 'synthetic_psychological_state':
+            from studies.sce_inflation_expectations.experiments.psychological_state import prepare
+        elif config['mechanism'] == 'previous_financial_outlook':
+            from studies.sce_inflation_expectations.experiments.financial_outlook import prepare
+        else:
+            parser.error('Unknown mechanism adapter')
+        prepare(args.folder, config); return
     if args.action == 'evaluate':
         if args.out is None: parser.error('evaluate requires --out')
         from studies.sce_inflation_expectations.evaluation.frozen_trial import evaluate
