@@ -29,3 +29,6 @@
 本批预算卡已另发。`authorization.json`当前为false；只有收到该批范围/目的地/$2明确同意后才写入批准并运行，不沿用MCP许可。运行命令为`python scripts/run_sce_frozen_trial.py run --folder outputs/sce_consumer_context_trial_20261018_v1 --workers 4`。完成后才用同入口`evaluate`读本期真值，输出须新目录。出错保留现场、不重启已发任务；不自动补发。
 
 来源与可读文字：[取数结果](event_probe_results.md)、[候选输入](consumer_context_candidate_inputs.md)、[准备收据](consumer_context_trial_receipt.json)。原始报告只留本地，未上传PDF全文，也不使用MIDUS。
+
+
+> 执行更新：用户明确批准后，288次真实调用已全部完成，0错误/重试，用量估$0.3273。上述执行前登记保留，未据结果调参；当前见[结果](consumer_context_results.md)及[执行收据](consumer_context_execution_receipt.json)。

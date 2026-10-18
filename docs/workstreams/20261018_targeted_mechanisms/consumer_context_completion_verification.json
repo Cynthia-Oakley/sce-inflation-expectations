@@ -1,0 +1,19 @@
+{
+  "status": "completed_context_trial_and_direction_diagnostic_verified",
+  "protected_files_unchanged": 15,
+  "real_simulation_jobs_completed": 12,
+  "real_simulation_calls": 288,
+  "valid_replies": 288,
+  "automatic_retries": 0,
+  "independent_aggregate_checks": 36,
+  "direction_unit_tests_passed": 4,
+  "source_and_frozen_input_hashes_match": true,
+  "public_context_summary_matches_authority": true,
+  "public_figures_visually_checked": 2,
+  "new_reading_links_checked": 9,
+  "old_q9_vectors_refitted": false,
+  "old_primary_configuration_changed": false,
+  "goal_achieved": false,
+  "active_processes": 0,
+  "note": "Report v2 threshold fix only; no rerun of real calls or density evaluation. New evaluation did score its new 288 model replies, not old vectors."
+}

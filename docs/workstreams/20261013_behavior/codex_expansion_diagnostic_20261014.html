@@ -1,4 +1,15 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body>
+<section id="consumer-context-results-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
+<h1>消费者处境背景试验：局部改善，尚未通过筛查</h1>
+<p>2026-10-18。三期各24人、两组各两遍，<strong>288次真实调用全部有效</strong>，0错误/重试；用量估算$0.327／上限$2。模型请求与返回均为deepseek-flash，温度0.5、关闭思考。并行运行约98秒、评分约9秒。</p>
+<p><strong>预先固定的加权结果：</strong>总体中位数MAE从原输入<strong>0.584降至0.485pp</strong>；同批人照抄上期为<strong>0.374pp</strong>，新配置仍未超过它。个人MAE从4.021降至3.770，W1从3.026小降至2.978；人际IQR反而2.625→2.562，真人5.571，同质化尚未改善。</p>
+<figure><img src="../20261018_targeted_mechanisms/consumer_context_readout_v2/context_results.png" alt="三期中位数误差与错误更新比例：改善集中在2020年9月"><figcaption>2020-09改善，2022-06和2025-03略退步。右图只作真值事后分组评价，不用于选人或构造输入。</figcaption></figure>
+<p><strong>有用的局部变化：</strong>真人稳定组的模型错动率由80.1%降至64.6%，真人变动组漏动率由33.7%降至31.2%；明显反向更新未改善。背景信息可能影响了更新方式，但不能仅凭理由文字断言是哪条心理机制。</p>
+<p><strong>为什么不升级：</strong>仅一期中位数改善，未过“至少两期一致”的原定门槛；探索差异区间[-0.320,+0.183]pp跨0。等权中心0.148→0.183，方向相反。每期有效样本量约15—19，小样中位数对权重敏感，不得换成等权宣布低于0.20pp。</p>
+<p>保留全部结果和合法数据源，主配置不改；原十二期192人的0.459pp也不能与本批三期24人直接当同样本比较。下一步先用既有长面板检验有依据的个人变化分布，并与共同事件影响区分；不凭空加噪声或继续在同三期调词。</p>
+<nav><a href="../20261018_targeted_mechanisms/consumer_context_results.md">完整结果与解释</a> · <a href="../20261018_targeted_mechanisms/consumer_context_execution_receipt.json">调用与费用收据</a> · <a href="../20261018_targeted_mechanisms/consumer_context_readout_v2/summary.json">聚合证据</a> · <a href="../../current_todo.html">任务清单</a></nav>
+</section>
+
 <section id="event-mcp-results-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
 <style>.em-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.em-card{background:#fff;border:1px solid #d5dedb;border-radius:10px;padding:16px 20px;min-width:0}.em-card h3{margin:0 0 8px}.em-card p{margin:0}.em-note{background:#edf3ef;border-left:4px solid #47705e;padding:14px 18px}@media(max-width:720px){.em-cards{grid-template-columns:1fr}#event-mcp-results-20261018{padding:20px 16px!important}}</style>
 <h1>Event MCP已取回：哪些信息能用于下一步？</h1>
@@ -14,9 +25,19 @@
 <h2>下一步只改变一件事：补具体的消费者处境背景</h2>
 <p>保持人口、本人先验、问卷和模型相同，先比较原E与“原E＋已核验的消费者处境/政策背景”。第一轮不放另一调查的通胀预期数字，不指令模型必须上调，也不据此给每个人分配心理状态。</p>
 <p>旧2025年3月输入中，189／192份已经提到关税，所以问题不能简单归为没有关税新闻；要检验的是新资料是否补出了原输入没有表达清楚的价格风险和家庭处境。中心MAE、分布W1、稳定者错动和变动者漏动一起看。</p>
-<p><strong>当前阶段：</strong>三期各24人、两组各两遍，共288份实际提示已冻结，12个官方引擎离线单元通过。预计$0.34、保守预留$1.36、拟批上限$2，另发许可卡待答，真实模拟调用0。<a href="../20261018_targeted_mechanisms/consumer_context_trial_prereg.md">具体配置与评价登记</a>。三期是开发窗口，不是最终独立验证；原Simulation的0.459pp误差尚未改变。</p>
+<p><strong>执行更新：</strong>三期各24人的288次模拟已获批准并完成，估$0.327。实际结果见<a href="#consumer-context-results-20261018">页首</a>；以下保留来源核查与执行前设计。<a href="../20261018_targeted_mechanisms/consumer_context_trial_prereg.md">具体配置与评价登记</a>。三期是开发窗口，不是最终独立验证；原Simulation的0.459pp误差尚未改变。</p>
 </section>
 
+
+<section id="update-direction-results-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
+<h1>个人历史能判断变化方向，但还不能直接替代模拟</h1>
+<p>2026-10-18。70个月、66,476个连续回访人月，往年训练、下一年评价，0次API。只用本人过去信息，三分类方向准确率由32.4%升至53.5%；再加过去人口/处境，增量很小。</p>
+<p><strong>个人常态有用：</strong>上期比自己的更早均值高2pp以上者，下一期约59%下调；低2pp以上者约56%上调；两者接近时约52%保持。它不是必然规则，也不能排除答题波动与测量误差。</p>
+<figure><img src="../20261018_targeted_mechanisms/update_direction_readout_v1/direction_and_center.png" alt="过去个人常态与后续方向、原十二期各统计方法的中位数误差"><figcaption>左图是按个人历史差距分组的观察比例，不是因果效应。右图统计模型只预测个人均值，没有生成新Q9十档。</figcaption></figure>
+<p><strong>幅度仍未解决：</strong>历史稳健回归个人MAE从照抄的3.074小降至3.000pp，但群体中位数MAE为0.479，仍不及照抄0.239，W1也恶化。2021年9月和2022年6月尤其差，说明只靠本人过去难以跟上共同经济变化。原LLM仍为0.459，未更改。</p>
+<p>因此保留本人历史作为状态，但不直接采用这版回归。下一步一边检验已授权的消费者背景E，一边区分“预测个人最可能给出的数值”和“生成真实的人群分布”，不能用任意噪声或统一收缩来替代。</p>
+<nav><a href="../20261018_targeted_mechanisms/update_direction_plan.md">执行前方案</a> · <a href="../20261018_targeted_mechanisms/update_direction_results.md">方法与完整结论</a> · <a href="../20261018_targeted_mechanisms/update_direction_readout_v1/summary.json">聚合证据</a></nav>
+</section>
 <section id="goal-retention-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
 <h1>0.20pp目标：先检验个人更新规律能否预测</h1>
 <p>2026-10-18。持续目标已登记：Q9群体中位数MAE低于<strong>0.20pp</strong>，并优于同样本、同月份的持续性基线。<strong>当前尚未达成，原Simulation仍为0.459pp，基线0.239pp。</strong>以下是零API的机制筛查，没有新模型回答或Q9重拟合。</p>

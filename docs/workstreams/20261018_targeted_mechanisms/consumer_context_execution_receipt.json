@@ -1,0 +1,28 @@
+{
+  "status": "completed_frozen_trial_aggregate_readout",
+  "protocol_sha256": "a9e65fa07c42543da98c9697e62843152ba213c4d33822369f74573439dff723",
+  "planned_and_actual_calls": 288,
+  "estimated_cost_usd_not_bill": 0.327309,
+  "cap_usd": 2.0,
+  "started_at_utc": "2026-10-18T12:30:27.808759+00:00",
+  "finished_at_utc": "2026-10-18T12:32:05.511029+00:00",
+  "parallel_job_window_seconds": 97.70227,
+  "returned_model_ids": [
+    "deepseek-flash"
+  ],
+  "request_temperatures": [
+    0.5
+  ],
+  "automatic_retries": 0,
+  "independent_numeric_checks": 36,
+  "valid_replies": 288,
+  "source_commit": "0a302d7",
+  "all_actual_inputs_matched_frozen_prompts": true,
+  "evaluation_seconds": 8.909437583060935,
+  "evaluation_common_person_months": 72,
+  "question_item_id": "[\"request_user_input_async\",\"call_135d99be80994349bdbf339d6040d50c\",0]",
+  "user_confirmation": "同意上述范围及$2上限，开始模拟并分析",
+  "authority_evaluation": "outputs/sce_consumer_context_evaluation_20261018_v1",
+  "authority_readout": "outputs/sce_consumer_context_readout_20261018_v2",
+  "readout_v1_note": "First readout counted opposite signs even below movement threshold. v2 consistently uses +/-0.5pp. Main center, MAE, W1 and costs unchanged; no new API or density fitting."
+}

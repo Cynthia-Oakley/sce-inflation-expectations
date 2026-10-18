@@ -1,0 +1,224 @@
+{
+  "status": "completed_frozen_trial_aggregate_readout",
+  "protocol_sha256": "a9e65fa07c42543da98c9697e62843152ba213c4d33822369f74573439dff723",
+  "common_person_months": 72,
+  "planned_and_actual_calls": 288,
+  "estimated_cost_usd_not_bill": 0.327309,
+  "cap_usd": 2.0,
+  "started_at_utc": "2026-10-18T12:30:27.808759+00:00",
+  "finished_at_utc": "2026-10-18T12:32:05.511029+00:00",
+  "parallel_job_window_seconds": 97.70227,
+  "returned_model_ids": [
+    "deepseek-flash"
+  ],
+  "request_temperatures": [
+    0.5
+  ],
+  "automatic_retries": 0,
+  "weighted_metrics": {
+    "carry": {
+      "center_mae_pp": 0.37363277617474333,
+      "center_bias_pp": -0.3126217801263252,
+      "personal_mae_pp": 3.070604785856363,
+      "w1_pp": 2.1199890841537097,
+      "wrong_move_given_true_stable": 0.0,
+      "missed_move_given_true_moving": 1.0,
+      "opposite_direction_given_true_moving": 0.0
+    },
+    "baseline": {
+      "center_mae_pp": 0.5836882410156543,
+      "center_bias_pp": -0.5402509302134801,
+      "personal_mae_pp": 4.020986569183015,
+      "w1_pp": 3.02648892980511,
+      "wrong_move_given_true_stable": 0.8012788015397633,
+      "missed_move_given_true_moving": 0.33669777727794253,
+      "opposite_direction_given_true_moving": 0.17793289072713958
+    },
+    "consumer_context": {
+      "center_mae_pp": 0.4854843303988523,
+      "center_bias_pp": -0.24209917434310357,
+      "personal_mae_pp": 3.769822088525921,
+      "w1_pp": 2.9778325373571444,
+      "wrong_move_given_true_stable": 0.6457431767583165,
+      "missed_move_given_true_moving": 0.3117342973370689,
+      "opposite_direction_given_true_moving": 0.18412896708435747
+    }
+  },
+  "weighted_monthly": [
+    {
+      "month": 202009,
+      "n": 24,
+      "effective_n": 14.782315422197165,
+      "arms": {
+        "carry": {
+          "center_mae_pp": 0.024041958078790948,
+          "center_bias_pp": 0.024041958078790948,
+          "personal_mae_pp": 4.603349692585639,
+          "w1_pp": 3.5501028722867956,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "baseline": {
+          "center_mae_pp": 1.503957903415012,
+          "center_bias_pp": -1.503957903415012,
+          "personal_mae_pp": 4.081549765687015,
+          "w1_pp": 2.4793206417742,
+          "wrong_move_given_true_stable": 0.47643912570098,
+          "missed_move_given_true_moving": 0.32723253866718394,
+          "opposite_direction_given_true_moving": 0.07475029703048018
+        },
+        "consumer_context": {
+          "center_mae_pp": 0.983707745989904,
+          "center_bias_pp": -0.983707745989904,
+          "personal_mae_pp": 3.043018591514338,
+          "w1_pp": 1.7321919679512234,
+          "wrong_move_given_true_stable": 0.27807596222119135,
+          "missed_move_given_true_moving": 0.25024823749874975,
+          "opposite_direction_given_true_moving": 0.08786868689871688
+        }
+      }
+    },
+    {
+      "month": 202206,
+      "n": 24,
+      "effective_n": 19.431822216445706,
+      "arms": {
+        "carry": {
+          "center_mae_pp": 1.0293818344516028,
+          "center_bias_pp": -1.0293818344516028,
+          "personal_mae_pp": 1.882763973415535,
+          "w1_pp": 1.2475699731782872,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "baseline": {
+          "center_mae_pp": 0.22152176302560278,
+          "center_bias_pp": -0.09120983061908028,
+          "personal_mae_pp": 4.666431661381971,
+          "w1_pp": 3.7692139265149605,
+          "wrong_move_given_true_stable": 0.9273972789183097,
+          "missed_move_given_true_moving": 0.2981253193077924,
+          "opposite_direction_given_true_moving": 0.1378150775430804
+        },
+        "consumer_context": {
+          "center_mae_pp": 0.3041213317789584,
+          "center_bias_pp": 0.19018137591435824,
+          "personal_mae_pp": 4.590372412998063,
+          "w1_pp": 3.908275102342825,
+          "wrong_move_given_true_stable": 0.7273525223406798,
+          "missed_move_given_true_moving": 0.34798119510828307,
+          "opposite_direction_given_true_moving": 0.11408398932390772
+        }
+      }
+    },
+    {
+      "month": 202503,
+      "n": 24,
+      "effective_n": 19.025355719461594,
+      "arms": {
+        "carry": {
+          "center_mae_pp": 0.06747453599383624,
+          "center_bias_pp": 0.06747453599383624,
+          "personal_mae_pp": 2.7257006915679147,
+          "w1_pp": 1.5622944069960465,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "baseline": {
+          "center_mae_pp": 0.025585056606348244,
+          "center_bias_pp": -0.025585056606348244,
+          "personal_mae_pp": 3.3149782804800605,
+          "w1_pp": 2.8309322211261687,
+          "wrong_move_given_true_stable": 1.0,
+          "missed_move_given_true_moving": 0.3847354738588513,
+          "opposite_direction_given_true_moving": 0.32123329760785824
+        },
+        "consumer_context": {
+          "center_mae_pp": 0.16862391342769456,
+          "center_bias_pp": 0.067228847046235,
+          "personal_mae_pp": 3.6760752610653613,
+          "w1_pp": 3.2930305417773846,
+          "wrong_move_given_true_stable": 0.9318010457130783,
+          "missed_move_given_true_moving": 0.3369734594041739,
+          "opposite_direction_given_true_moving": 0.35043422503044785
+        }
+      }
+    }
+  ],
+  "unweighted_metrics": {
+    "baseline": {
+      "probability_tv_pct": 43.99097222222222,
+      "individual_density_iqr_mae_pp": 3.1050738701649085,
+      "individual_density_iqr_bias_pp": -0.860787009426112,
+      "individual_density_iqr_mean_pp": 4.307693919912786,
+      "real_individual_density_iqr_mean_pp": 5.168480929338898,
+      "individual_density_mean_mae_pp": 3.3795173126338973,
+      "individual_density_mean_bias_pp": 0.07427266384971214,
+      "q9_center_mae_pp": 0.1475215987549431,
+      "q9_center_bias_pp": 0.028493457957208628,
+      "cross_section_w1_pp": 2.3642922839489593,
+      "delta_w1_pp": 1.4926347114934921,
+      "cross_person_iqr_pp": 2.557822512956975,
+      "real_cross_person_iqr_pp": 5.533077584587524,
+      "cross_person_iqr_gap_pp": -2.975255071630548,
+      "zero_deflation_rate": 0.14583333333333334,
+      "real_zero_deflation_rate": 0.5972222222222222,
+      "zero_deflation_rate_difference": -0.45138888888888884,
+      "person_mean_spearman": 0.6183122446528221
+    },
+    "consumer_context": {
+      "probability_tv_pct": 42.956250000000004,
+      "individual_density_iqr_mae_pp": 2.957552828682216,
+      "individual_density_iqr_bias_pp": -0.8354572231876647,
+      "individual_density_iqr_mean_pp": 4.333023706151234,
+      "real_individual_density_iqr_mean_pp": 5.168480929338898,
+      "individual_density_mean_mae_pp": 3.313805836296138,
+      "individual_density_mean_bias_pp": -0.2014483651190652,
+      "q9_center_mae_pp": 0.18273260743826972,
+      "q9_center_bias_pp": 0.1354836265522897,
+      "cross_section_w1_pp": 2.4146457296433024,
+      "delta_w1_pp": 1.5877368040784574,
+      "cross_person_iqr_pp": 2.4816889566357947,
+      "real_cross_person_iqr_pp": 5.533077584587524,
+      "cross_person_iqr_gap_pp": -3.0513886279517286,
+      "zero_deflation_rate": 0.10416666666666667,
+      "real_zero_deflation_rate": 0.5972222222222222,
+      "zero_deflation_rate_difference": -0.4930555555555555,
+      "person_mean_spearman": 0.6291353268325187
+    }
+  },
+  "paired_intervals": {
+    "draws_used": 1000,
+    "seed": 20261017,
+    "intervals": {
+      "q9_center_mae_pp": [
+        -0.32039045686277895,
+        0.18330462698101335
+      ],
+      "individual_density_mean_mae_pp": [
+        -0.9467119544392901,
+        0.3479293734665633
+      ],
+      "cross_section_w1_pp": [
+        -0.8244127957231928,
+        0.4404258888118987
+      ]
+    },
+    "scope": "Exploratory unadjusted paired person clusters, months/repeats kept together; not time-generalization intervals."
+  },
+  "monthly_center_wins": 1,
+  "pilot_screen_passed": false,
+  "automatic_upgrade": false,
+  "independent_numeric_checks": 36,
+  "new_api_calls_from_reporting": 0,
+  "new_q9_fits_from_reporting": 0,
+  "group_definition": "True and predicted movement use +/-0.5pp; opposite-direction errors require both to exceed that threshold with opposing signs. Post-hoc evaluation only. Conditional rates equally average nonempty month/repeat cells.",
+  "pilot_screen_rule": "Center MAE improves, center improves in at least ceil(2/3 * months) months and W1 does not worsen; screening only, never automatic promotion.",
+  "source_sha256": {
+    "outputs/sce_consumer_context_evaluation_20261018_v1/summary.json": "ac02a80372510f86de84ac8ca2afc49f7b7a0ed1ae1ec8105f60b2cf77eaff14",
+    "outputs/sce_consumer_context_evaluation_20261018_v1/cases_private.json": "2bb1a7bd726f8c8fd8652bc5b707879e62b676019e3d5bf19fd53dd8c91c2f7c"
+  }
+}
