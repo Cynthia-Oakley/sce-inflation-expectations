@@ -1,0 +1,112 @@
+{
+  "id": "sce-information-exposure-v1",
+  "registered_at_utc": "2026-10-18T15:21:40.602954+00:00",
+  "mechanism": "news_count_by_macro_visibility",
+  "months": [
+    202009,
+    202109,
+    202206,
+    202312,
+    202410,
+    202503
+  ],
+  "n_per_month": 96,
+  "arms": [
+    "baseline",
+    "news_3_complete",
+    "news_20_complete",
+    "news_3_reduced",
+    "news_8_reduced",
+    "news_20_reduced"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "planned_calls": 6912,
+  "research_line": "A_conditional_returner_reconstruction",
+  "model": "deepseek-flash",
+  "official_advertised_version": "DeepSeek-V4.1-Flash-1017",
+  "model_identity_limit": "Mutable alias; exact weights and request-level switch time unverified.",
+  "destination": "https://api.deepseek.com",
+  "temperature": 0.5,
+  "max_tokens": 1024,
+  "thinking": "disabled",
+  "retry_max": 0,
+  "budget_cap_usd": 30.0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_verified_date": "2026-10-18",
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "sampling_seed": 20261018,
+  "dispatch_order_seed": 20261028,
+  "sampling": "Nested96 from archived192, age x income bounded largest remainder then SRS; missing income retained as its own stratum. Inclusion probabilities multiply.",
+  "primary_metric": "q9_center_mae_pp",
+  "primary_weight": "design_survey_weight",
+  "primary_comparator": "baseline = eight news articles plus complete macro statistics, freshly generated in this same batch",
+  "prespecified_contrasts": [
+    [
+      "baseline",
+      "news_3_complete"
+    ],
+    [
+      "baseline",
+      "news_20_complete"
+    ],
+    [
+      "news_3_complete",
+      "news_3_reduced"
+    ],
+    [
+      "baseline",
+      "news_8_reduced"
+    ],
+    [
+      "news_20_complete",
+      "news_20_reduced"
+    ]
+  ],
+  "interactions": "(reduced-complete at3 or20) minus (reduced-complete at8); never select favorable contrasts only.",
+  "secondary_metrics": [
+    "individual_density_mean_mae_pp",
+    "cross_section_w1_pp",
+    "delta_w1_pp",
+    "across_person_iqr_pp",
+    "individual_density_iqr_mae_pp",
+    "q8_center_mae_pp",
+    "stable_false_move",
+    "moving_missed_move",
+    "moving_wrong_direction"
+  ],
+  "population_groups": [
+    "education_group",
+    "numeracy",
+    "household_income_band",
+    "region"
+  ],
+  "sampling_and_truth_boundary": "Only frozen P/linkage and strict past answers are parsed. Current truth cache is hashed only. Actual past dates derive availability labels and never enter prompt text.",
+  "information_change": [
+    "Same P/prior/history/CE/confidence/policy/questionnaire in every arm.",
+    "Reduced removes official-statistics and trends blocks and their release-group timing, not numbers naturally appearing in identical news or policy.",
+    "First five of seventeen personalized draws reproduce archived eight-news control, after chronological display.",
+    "No Andre donor rows or synthetic attention/channel personality are included in prompts.",
+    "No paid authorization, run jobs or engineering receipts are produced by this preparation."
+  ],
+  "reused_paid_calls": 0,
+  "coverage_rule": "Complete all72 cells; report invalid/scorer fractions, use all-arm/both-generation common support, no resampling or automatic retries.",
+  "baseline_refs": [
+    "copy_previous",
+    "history_anchor_half"
+  ],
+  "screen": "Development evidence only: center MAE and cross-section W1 both improve vs concurrent baseline, at least4/6 monthly center contrasts nonpositive, generation sensitivity and update errors reported. Raw center below.20 and below persistence is a separate project goal, never inferred from a scalar blend.",
+  "uncertainty": "Paired household clusters retain months/generations. Six selected months only; report every month and leave-one-month-out, no time-generalization confidence from thousands of requests.",
+  "independent_validation": "Not yet executed. If a candidate survives, freeze it and register four other unaffiliated months before calls. Do not relabel any current six as independent.",
+  "limits": [
+    "All six months already explored; no new blind-test claim.",
+    "Returner-only conditional historical reconstruction with real own prior, not national census or autonomous B prediction.",
+    "3/8/20 are treatment levels, not measured actual reading counts.",
+    "News vintage limitations and synthetic CE/Fed confidence remain; no new Andre rows, Q1/Q2, psychology, quiz details or Event data added.",
+    "Both generations are model repeats, not new households. No automatic upgrade or tuning on this batch."
+  ],
+  "max_prompt_chars": 15516
+}

@@ -1,0 +1,1724 @@
+{
+  "new_api_calls": 0,
+  "new_density_fits": 0,
+  "current_sce_answers_read": false,
+  "archive_sha256": "ae34b5e4e67c5240bae5516eb10096e33e4a94266f8e4962631e437227e189d3",
+  "source": "Andre et al. v1.0.1, Wave 3 household sample, February 2021",
+  "plan_sha256": "c391f8d4a84068cb10d36d0d9ea351eba8c36cd7d1839dfb0d4d17ffebd09165",
+  "method": "Fixed C=1 L2 multinomial logistic; training-fold one-hot; five stratified folds repeated with seeds42/43/44; no tuning.",
+  "common_features": [
+    "age_group",
+    "education_group",
+    "household_income_band",
+    "region"
+  ],
+  "attention": {
+    "n": 2053,
+    "class_counts": [
+      192,
+      207,
+      257,
+      537,
+      565,
+      295
+    ],
+    "folds": 5,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "by_seed": [
+      {
+        "seed": 42,
+        "scores": {
+          "population": {
+            "log_loss": 1.6977071051814165,
+            "brier": 0.8006143537563779,
+            "accuracy": 0.2752070141256697,
+            "rps": 0.1650517014912921
+          },
+          "demographics": {
+            "log_loss": 1.6838358806431335,
+            "brier": 0.7969239731486849,
+            "accuracy": 0.2810521188504627,
+            "rps": 0.1607579671432086
+          }
+        },
+        "delta_vs_population": {
+          "demographics": {
+            "log_loss": -0.013871224538283045,
+            "brier": -0.003690380607693,
+            "accuracy": 0.005845104724792993,
+            "rps": -0.0042937343480835
+          }
+        }
+      },
+      {
+        "seed": 43,
+        "scores": {
+          "population": {
+            "log_loss": 1.6977071051814165,
+            "brier": 0.8006143537563779,
+            "accuracy": 0.2752070141256697,
+            "rps": 0.16505170149129206
+          },
+          "demographics": {
+            "log_loss": 1.6838285749863702,
+            "brier": 0.7970439465180342,
+            "accuracy": 0.28397467121285924,
+            "rps": 0.16073253401520807
+          }
+        },
+        "delta_vs_population": {
+          "demographics": {
+            "log_loss": -0.013878530195046368,
+            "brier": -0.003570407238343676,
+            "accuracy": 0.008767657087189518,
+            "rps": -0.00431916747608399
+          }
+        }
+      },
+      {
+        "seed": 44,
+        "scores": {
+          "population": {
+            "log_loss": 1.6977071051814165,
+            "brier": 0.8006143537563779,
+            "accuracy": 0.2752070141256697,
+            "rps": 0.16505170149129209
+          },
+          "demographics": {
+            "log_loss": 1.6776681232518644,
+            "brier": 0.7953415221266535,
+            "accuracy": 0.2864101315148563,
+            "rps": 0.1601154540272167
+          }
+        },
+        "delta_vs_population": {
+          "demographics": {
+            "log_loss": -0.020038981929552113,
+            "brier": -0.005272831629724362,
+            "accuracy": 0.011203117389186557,
+            "rps": -0.004936247464075394
+          }
+        }
+      }
+    ],
+    "mean_scores": {
+      "population": {
+        "log_loss": 1.6977071051814165,
+        "brier": 0.8006143537563779,
+        "accuracy": 0.2752070141256697,
+        "rps": 0.16505170149129209
+      },
+      "demographics": {
+        "log_loss": 1.6817775262937893,
+        "brier": 0.7964364805977908,
+        "accuracy": 0.28381230719272604,
+        "rps": 0.16053531839521115
+      }
+    }
+  },
+  "channels": {
+    "oil": {
+      "n": 557,
+      "class_counts": [
+        90,
+        69,
+        162,
+        236
+      ],
+      "folds": 5,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "by_seed": [
+        {
+          "seed": 42,
+          "scores": {
+            "population": {
+              "log_loss": 1.2762944126943092,
+              "brier": 0.694448493055411,
+              "accuracy": 0.4236983842010772
+            },
+            "demographics": {
+              "log_loss": 1.3182368469101688,
+              "brier": 0.7158524056361125,
+              "accuracy": 0.39317773788150806
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.3240601552486055,
+              "brier": 0.7180114895514607,
+              "accuracy": 0.40394973070017953
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.041942434215859636,
+              "brier": 0.021403912580701512,
+              "accuracy": -0.030520646319569134
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.04776574255429633,
+              "brier": 0.02356299649604965,
+              "accuracy": -0.01974865350089766
+            }
+          }
+        },
+        {
+          "seed": 43,
+          "scores": {
+            "population": {
+              "log_loss": 1.276294412694309,
+              "brier": 0.694448493055411,
+              "accuracy": 0.4236983842010772
+            },
+            "demographics": {
+              "log_loss": 1.3085445033263872,
+              "brier": 0.7117372876579825,
+              "accuracy": 0.400359066427289
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.3207324503664026,
+              "brier": 0.7197079483187225,
+              "accuracy": 0.38420107719928187
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.03225009063207818,
+              "brier": 0.01728879460257149,
+              "accuracy": -0.02333931777378817
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.044438037672093644,
+              "brier": 0.025259455263311525,
+              "accuracy": -0.03949730700179532
+            }
+          }
+        },
+        {
+          "seed": 44,
+          "scores": {
+            "population": {
+              "log_loss": 1.276294412694309,
+              "brier": 0.694448493055411,
+              "accuracy": 0.4236983842010772
+            },
+            "demographics": {
+              "log_loss": 1.31646039069506,
+              "brier": 0.7144075385161229,
+              "accuracy": 0.39317773788150806
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.3265139686015346,
+              "brier": 0.7201697189601943,
+              "accuracy": 0.3895870736086176
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.04016597800075106,
+              "brier": 0.01995904546071192,
+              "accuracy": -0.030520646319569134
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.0502195559072256,
+              "brier": 0.025721225904783318,
+              "accuracy": -0.03411131059245959
+            }
+          }
+        }
+      ],
+      "mean_scores": {
+        "population": {
+          "log_loss": 1.276294412694309,
+          "brier": 0.694448493055411,
+          "accuracy": 0.42369838420107725
+        },
+        "demographics": {
+          "log_loss": 1.314413913643872,
+          "brier": 0.7139990772700727,
+          "accuracy": 0.39557151406343505
+        },
+        "demographics_and_observed_attention": {
+          "log_loss": 1.323768858072181,
+          "brier": 0.7192963856101259,
+          "accuracy": 0.39257929383602636
+        }
+      },
+      "attention_channel_joint_6_by_4_counts": [
+        [
+          17,
+          4,
+          17,
+          15
+        ],
+        [
+          4,
+          5,
+          19,
+          25
+        ],
+        [
+          14,
+          7,
+          21,
+          23
+        ],
+        [
+          26,
+          14,
+          41,
+          65
+        ],
+        [
+          15,
+          23,
+          42,
+          64
+        ],
+        [
+          12,
+          16,
+          16,
+          39
+        ]
+      ],
+      "joint_cells_fewer_than_5": 2,
+      "observed_attention_missing": 13
+    },
+    "int": {
+      "n": 520,
+      "class_counts": [
+        113,
+        127,
+        80,
+        200
+      ],
+      "folds": 5,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "by_seed": [
+        {
+          "seed": 42,
+          "scores": {
+            "population": {
+              "log_loss": 1.3314926824596856,
+              "brier": 0.721548410826728,
+              "accuracy": 0.38461538461538464
+            },
+            "demographics": {
+              "log_loss": 1.3391318063329942,
+              "brier": 0.7245737814815676,
+              "accuracy": 0.36730769230769234
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.3424326023394473,
+              "brier": 0.7236922877713295,
+              "accuracy": 0.38461538461538464
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.007639123873308673,
+              "brier": 0.003025370654839543,
+              "accuracy": -0.0173076923076923
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.010939919879761728,
+              "brier": 0.002143876944601497,
+              "accuracy": 0.0
+            }
+          }
+        },
+        {
+          "seed": 43,
+          "scores": {
+            "population": {
+              "log_loss": 1.3314926824596858,
+              "brier": 0.721548410826728,
+              "accuracy": 0.38461538461538464
+            },
+            "demographics": {
+              "log_loss": 1.3425178311255723,
+              "brier": 0.7281608349937285,
+              "accuracy": 0.37884615384615383
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.332883499001671,
+              "brier": 0.7230704528580212,
+              "accuracy": 0.38461538461538464
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.011025148665886553,
+              "brier": 0.006612424167000475,
+              "accuracy": -0.005769230769230804
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.0013908165419851404,
+              "brier": 0.001522042031293136,
+              "accuracy": 0.0
+            }
+          }
+        },
+        {
+          "seed": 44,
+          "scores": {
+            "population": {
+              "log_loss": 1.3314926824596856,
+              "brier": 0.7215484108267282,
+              "accuracy": 0.38461538461538464
+            },
+            "demographics": {
+              "log_loss": 1.3422796062715963,
+              "brier": 0.7255437779221651,
+              "accuracy": 0.37884615384615383
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.3449729370673609,
+              "brier": 0.7235093050896546,
+              "accuracy": 0.39807692307692305
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.01078692381191071,
+              "brier": 0.003995367095436908,
+              "accuracy": -0.005769230769230804
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.013480254607675324,
+              "brier": 0.001960894262926449,
+              "accuracy": 0.013461538461538414
+            }
+          }
+        }
+      ],
+      "mean_scores": {
+        "population": {
+          "log_loss": 1.3314926824596856,
+          "brier": 0.721548410826728,
+          "accuracy": 0.38461538461538464
+        },
+        "demographics": {
+          "log_loss": 1.3413097479100544,
+          "brier": 0.7260927981324871,
+          "accuracy": 0.375
+        },
+        "demographics_and_observed_attention": {
+          "log_loss": 1.3400963461361597,
+          "brier": 0.7234240152396684,
+          "accuracy": 0.3891025641025641
+        }
+      },
+      "attention_channel_joint_6_by_4_counts": [
+        [
+          21,
+          14,
+          4,
+          7
+        ],
+        [
+          14,
+          9,
+          8,
+          18
+        ],
+        [
+          21,
+          10,
+          13,
+          23
+        ],
+        [
+          24,
+          37,
+          25,
+          51
+        ],
+        [
+          10,
+          30,
+          19,
+          59
+        ],
+        [
+          17,
+          20,
+          9,
+          35
+        ]
+      ],
+      "joint_cells_fewer_than_5": 1,
+      "observed_attention_missing": 22
+    },
+    "gov": {
+      "n": 519,
+      "class_counts": [
+        146,
+        224,
+        90,
+        59
+      ],
+      "folds": 5,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "by_seed": [
+        {
+          "seed": 42,
+          "scores": {
+            "population": {
+              "log_loss": 1.2704892963648617,
+              "brier": 0.6916052758468058,
+              "accuracy": 0.43159922928709055
+            },
+            "demographics": {
+              "log_loss": 1.29051627019457,
+              "brier": 0.6940461840007601,
+              "accuracy": 0.4508670520231214
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.2967360130095675,
+              "brier": 0.6960368870714134,
+              "accuracy": 0.441233140655106
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.020026973829708306,
+              "brier": 0.0024409081539543687,
+              "accuracy": 0.019267822736030837
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.026246716644705792,
+              "brier": 0.004431611224607668,
+              "accuracy": 0.009633911368015446
+            }
+          }
+        },
+        {
+          "seed": 43,
+          "scores": {
+            "population": {
+              "log_loss": 1.270489296364862,
+              "brier": 0.6916052758468058,
+              "accuracy": 0.43159922928709055
+            },
+            "demographics": {
+              "log_loss": 1.302444100946537,
+              "brier": 0.6977573167605077,
+              "accuracy": 0.45472061657032753
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.31368374961786,
+              "brier": 0.700974467714155,
+              "accuracy": 0.43545279383429675
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.0319548045816751,
+              "brier": 0.006152040913701917,
+              "accuracy": 0.023121387283236983
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.04319445325299798,
+              "brier": 0.009369191867349191,
+              "accuracy": 0.003853564547206201
+            }
+          }
+        },
+        {
+          "seed": 44,
+          "scores": {
+            "population": {
+              "log_loss": 1.270489296364862,
+              "brier": 0.6916052758468058,
+              "accuracy": 0.43159922928709055
+            },
+            "demographics": {
+              "log_loss": 1.2986115885204166,
+              "brier": 0.6984855340270768,
+              "accuracy": 0.4624277456647399
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.3162245622985427,
+              "brier": 0.7060209222873135,
+              "accuracy": 0.4238921001926782
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.028122292155554618,
+              "brier": 0.006880258180271048,
+              "accuracy": 0.03082851637764933
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.04573526593368071,
+              "brier": 0.014415646440507746,
+              "accuracy": -0.007707129094412346
+            }
+          }
+        }
+      ],
+      "mean_scores": {
+        "population": {
+          "log_loss": 1.270489296364862,
+          "brier": 0.6916052758468058,
+          "accuracy": 0.43159922928709055
+        },
+        "demographics": {
+          "log_loss": 1.2971906532205078,
+          "brier": 0.696763011596115,
+          "accuracy": 0.45600513808606297
+        },
+        "demographics_and_observed_attention": {
+          "log_loss": 1.30888144164199,
+          "brier": 0.7010107590242939,
+          "accuracy": 0.43352601156069365
+        }
+      },
+      "attention_channel_joint_6_by_4_counts": [
+        [
+          21,
+          15,
+          11,
+          2
+        ],
+        [
+          12,
+          22,
+          12,
+          3
+        ],
+        [
+          24,
+          25,
+          14,
+          5
+        ],
+        [
+          40,
+          42,
+          18,
+          19
+        ],
+        [
+          31,
+          83,
+          21,
+          21
+        ],
+        [
+          16,
+          30,
+          11,
+          6
+        ]
+      ],
+      "joint_cells_fewer_than_5": 2,
+      "observed_attention_missing": 15
+    },
+    "tax": {
+      "n": 530,
+      "class_counts": [
+        146,
+        134,
+        113,
+        137
+      ],
+      "folds": 5,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "by_seed": [
+        {
+          "seed": 42,
+          "scores": {
+            "population": {
+              "log_loss": 1.3820609685039873,
+              "brier": 0.747933195913538,
+              "accuracy": 0.27547169811320754
+            },
+            "demographics": {
+              "log_loss": 1.4025012084924802,
+              "brier": 0.7590278211348379,
+              "accuracy": 0.2660377358490566
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.420581752292634,
+              "brier": 0.768803689668046,
+              "accuracy": 0.27358490566037735
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.02044023998849287,
+              "brier": 0.011094625221299892,
+              "accuracy": -0.009433962264150941
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.03852078378864676,
+              "brier": 0.020870493754508,
+              "accuracy": -0.0018867924528301883
+            }
+          }
+        },
+        {
+          "seed": 43,
+          "scores": {
+            "population": {
+              "log_loss": 1.382060968503987,
+              "brier": 0.7479331959135379,
+              "accuracy": 0.27547169811320754
+            },
+            "demographics": {
+              "log_loss": 1.4199247771205852,
+              "brier": 0.7683726388253951,
+              "accuracy": 0.22452830188679246
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.4227205557787166,
+              "brier": 0.7715192036096432,
+              "accuracy": 0.2679245283018868
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.037863808616598105,
+              "brier": 0.020439442911857175,
+              "accuracy": -0.05094339622641508
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.040659587274729514,
+              "brier": 0.023586007696105304,
+              "accuracy": -0.007547169811320753
+            }
+          }
+        },
+        {
+          "seed": 44,
+          "scores": {
+            "population": {
+              "log_loss": 1.382060968503987,
+              "brier": 0.747933195913538,
+              "accuracy": 0.27547169811320754
+            },
+            "demographics": {
+              "log_loss": 1.4201605041166907,
+              "brier": 0.7678155123421028,
+              "accuracy": 0.24339622641509434
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 1.4255127673118981,
+              "brier": 0.7709500679196665,
+              "accuracy": 0.27358490566037735
+            }
+          },
+          "delta_vs_population": {
+            "demographics": {
+              "log_loss": 0.03809953561270363,
+              "brier": 0.01988231642856475,
+              "accuracy": -0.0320754716981132
+            },
+            "demographics_and_observed_attention": {
+              "log_loss": 0.04345179880791106,
+              "brier": 0.023016872006128453,
+              "accuracy": -0.0018867924528301883
+            }
+          }
+        }
+      ],
+      "mean_scores": {
+        "population": {
+          "log_loss": 1.3820609685039873,
+          "brier": 0.747933195913538,
+          "accuracy": 0.27547169811320754
+        },
+        "demographics": {
+          "log_loss": 1.4141954965765855,
+          "brier": 0.7650719907674453,
+          "accuracy": 0.24465408805031444
+        },
+        "demographics_and_observed_attention": {
+          "log_loss": 1.422938358461083,
+          "brier": 0.7704243203991186,
+          "accuracy": 0.27169811320754716
+        }
+      },
+      "attention_channel_joint_6_by_4_counts": [
+        [
+          19,
+          6,
+          7,
+          12
+        ],
+        [
+          19,
+          12,
+          17,
+          8
+        ],
+        [
+          23,
+          13,
+          11,
+          10
+        ],
+        [
+          39,
+          37,
+          26,
+          33
+        ],
+        [
+          29,
+          40,
+          35,
+          43
+        ],
+        [
+          13,
+          17,
+          10,
+          28
+        ]
+      ],
+      "joint_cells_fewer_than_5": 0,
+      "observed_attention_missing": 23
+    }
+  },
+  "sce_192_support_by_month": {
+    "202009": {
+      "attention_donors": {
+        "n": 192,
+        "min_donors": 1,
+        "median_donors": 21.0,
+        "donor_cell_counts": {
+          "1": 2,
+          "2": 3,
+          "3": 1,
+          "4": 2,
+          "5": 5,
+          "6": 3,
+          "7": 5,
+          "8": 4,
+          "9": 2,
+          "10": 2,
+          "11": 9,
+          "12": 2,
+          "13": 3,
+          "14": 5,
+          "15": 20,
+          "17": 8,
+          "18": 1,
+          "19": 5,
+          "20": 9,
+          "21": 11,
+          "22": 4,
+          "23": 15,
+          "24": 5,
+          "26": 2,
+          "30": 12,
+          "31": 3,
+          "33": 6,
+          "34": 4,
+          "35": 7,
+          "37": 4,
+          "40": 10,
+          "43": 4,
+          "45": 1,
+          "47": 3,
+          "52": 2,
+          "58": 1,
+          "60": 5,
+          "77": 2
+        },
+        "weighted_share_no_donor": 0.0,
+        "weighted_share_fewer_than_10_donors": 0.19703895206489283
+      },
+      "shock_donors": {
+        "oil": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 6.0,
+          "donor_cell_counts": {
+            "0": 19,
+            "1": 5,
+            "2": 11,
+            "3": 22,
+            "4": 14,
+            "5": 21,
+            "6": 20,
+            "7": 8,
+            "8": 11,
+            "9": 23,
+            "10": 5,
+            "11": 2,
+            "12": 10,
+            "13": 11,
+            "14": 5,
+            "15": 1,
+            "16": 2,
+            "20": 2
+          },
+          "weighted_share_no_donor": 0.13259610289343873,
+          "weighted_share_fewer_than_10_donors": 0.8137178695824625
+        },
+        "int": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 4.0,
+          "donor_cell_counts": {
+            "0": 7,
+            "1": 10,
+            "2": 26,
+            "3": 18,
+            "4": 45,
+            "5": 24,
+            "6": 8,
+            "7": 9,
+            "8": 5,
+            "9": 4,
+            "10": 17,
+            "11": 4,
+            "13": 1,
+            "14": 4,
+            "16": 5,
+            "17": 5
+          },
+          "weighted_share_no_donor": 0.05406820408601594,
+          "weighted_share_fewer_than_10_donors": 0.8270274642220906
+        },
+        "gov": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 11,
+            "1": 12,
+            "2": 25,
+            "3": 13,
+            "4": 19,
+            "5": 21,
+            "6": 22,
+            "7": 28,
+            "8": 6,
+            "9": 12,
+            "10": 2,
+            "11": 8,
+            "12": 5,
+            "16": 5,
+            "18": 1,
+            "20": 2
+          },
+          "weighted_share_no_donor": 0.044873326066974695,
+          "weighted_share_fewer_than_10_donors": 0.8347565285034053
+        },
+        "tax": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 8,
+            "1": 13,
+            "2": 14,
+            "3": 16,
+            "4": 25,
+            "5": 27,
+            "6": 19,
+            "7": 9,
+            "8": 11,
+            "9": 13,
+            "10": 6,
+            "11": 9,
+            "12": 2,
+            "13": 5,
+            "14": 13,
+            "21": 2
+          },
+          "weighted_share_no_donor": 0.06306422579708502,
+          "weighted_share_fewer_than_10_donors": 0.8039981209666784
+        }
+      }
+    },
+    "202109": {
+      "attention_donors": {
+        "n": 192,
+        "min_donors": 0,
+        "median_donors": 20.0,
+        "donor_cell_counts": {
+          "0": 2,
+          "2": 1,
+          "3": 2,
+          "4": 3,
+          "5": 4,
+          "6": 2,
+          "7": 2,
+          "8": 9,
+          "10": 2,
+          "11": 7,
+          "12": 3,
+          "13": 5,
+          "14": 7,
+          "15": 17,
+          "16": 3,
+          "17": 11,
+          "18": 2,
+          "19": 8,
+          "20": 8,
+          "21": 10,
+          "22": 2,
+          "23": 9,
+          "24": 5,
+          "26": 6,
+          "27": 1,
+          "30": 17,
+          "31": 3,
+          "33": 5,
+          "34": 5,
+          "35": 10,
+          "37": 5,
+          "40": 4,
+          "43": 1,
+          "45": 1,
+          "58": 3,
+          "60": 4,
+          "77": 3
+        },
+        "weighted_share_no_donor": 0.016634623231199703,
+        "weighted_share_fewer_than_10_donors": 0.16711853237965635
+      },
+      "shock_donors": {
+        "oil": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 6.0,
+          "donor_cell_counts": {
+            "0": 18,
+            "1": 6,
+            "2": 12,
+            "3": 22,
+            "4": 13,
+            "5": 19,
+            "6": 28,
+            "7": 16,
+            "8": 15,
+            "9": 12,
+            "10": 5,
+            "11": 3,
+            "12": 9,
+            "13": 4,
+            "14": 4,
+            "15": 3,
+            "20": 3
+          },
+          "weighted_share_no_donor": 0.12230789920422924,
+          "weighted_share_fewer_than_10_donors": 0.8388088451079941
+        },
+        "int": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 4.0,
+          "donor_cell_counts": {
+            "0": 5,
+            "1": 10,
+            "2": 18,
+            "3": 30,
+            "4": 46,
+            "5": 17,
+            "6": 8,
+            "7": 12,
+            "8": 8,
+            "9": 6,
+            "10": 12,
+            "11": 5,
+            "12": 4,
+            "13": 3,
+            "14": 1,
+            "16": 3,
+            "17": 4
+          },
+          "weighted_share_no_donor": 0.029194807325249084,
+          "weighted_share_fewer_than_10_donors": 0.8400667441055981
+        },
+        "gov": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 16,
+            "1": 9,
+            "2": 21,
+            "3": 12,
+            "4": 25,
+            "5": 27,
+            "6": 14,
+            "7": 25,
+            "8": 12,
+            "9": 15,
+            "11": 6,
+            "16": 4,
+            "18": 3,
+            "20": 3
+          },
+          "weighted_share_no_donor": 0.06757208356793272,
+          "weighted_share_fewer_than_10_donors": 0.9048494090161902
+        },
+        "tax": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 6,
+            "1": 12,
+            "2": 18,
+            "3": 19,
+            "4": 28,
+            "5": 24,
+            "6": 18,
+            "7": 8,
+            "8": 5,
+            "9": 19,
+            "10": 10,
+            "11": 9,
+            "12": 4,
+            "13": 4,
+            "14": 5,
+            "21": 3
+          },
+          "weighted_share_no_donor": 0.05099992206671348,
+          "weighted_share_fewer_than_10_donors": 0.8329578648519748
+        }
+      }
+    },
+    "202206": {
+      "attention_donors": {
+        "n": 192,
+        "min_donors": 0,
+        "median_donors": 22.5,
+        "donor_cell_counts": {
+          "0": 3,
+          "2": 1,
+          "4": 6,
+          "6": 5,
+          "7": 1,
+          "8": 8,
+          "9": 1,
+          "10": 6,
+          "11": 11,
+          "13": 1,
+          "14": 4,
+          "15": 12,
+          "16": 2,
+          "17": 6,
+          "18": 3,
+          "19": 14,
+          "20": 7,
+          "21": 4,
+          "22": 1,
+          "23": 19,
+          "24": 7,
+          "26": 4,
+          "30": 20,
+          "31": 7,
+          "33": 7,
+          "34": 8,
+          "35": 2,
+          "37": 4,
+          "40": 4,
+          "43": 5,
+          "45": 1,
+          "47": 2,
+          "52": 1,
+          "58": 2,
+          "60": 1,
+          "77": 2
+        },
+        "weighted_share_no_donor": 0.010749018601589397,
+        "weighted_share_fewer_than_10_donors": 0.13299301607780936
+      },
+      "shock_donors": {
+        "oil": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 6.0,
+          "donor_cell_counts": {
+            "0": 13,
+            "1": 6,
+            "2": 10,
+            "3": 17,
+            "4": 19,
+            "5": 23,
+            "6": 26,
+            "7": 22,
+            "8": 14,
+            "9": 17,
+            "10": 7,
+            "11": 1,
+            "12": 8,
+            "13": 3,
+            "14": 1,
+            "15": 2,
+            "16": 1,
+            "20": 2
+          },
+          "weighted_share_no_donor": 0.05991398289796456,
+          "weighted_share_fewer_than_10_donors": 0.8310262659030829
+        },
+        "int": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 9,
+            "1": 12,
+            "2": 13,
+            "3": 21,
+            "4": 33,
+            "5": 24,
+            "6": 16,
+            "7": 6,
+            "8": 13,
+            "9": 12,
+            "10": 16,
+            "11": 2,
+            "12": 3,
+            "13": 2,
+            "14": 5,
+            "16": 4,
+            "17": 1
+          },
+          "weighted_share_no_donor": 0.04169815418594126,
+          "weighted_share_fewer_than_10_donors": 0.8117628942312737
+        },
+        "gov": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 13,
+            "1": 7,
+            "2": 25,
+            "3": 15,
+            "4": 13,
+            "5": 30,
+            "6": 14,
+            "7": 25,
+            "8": 12,
+            "9": 20,
+            "10": 1,
+            "11": 9,
+            "12": 3,
+            "16": 1,
+            "18": 2,
+            "20": 2
+          },
+          "weighted_share_no_donor": 0.045300153755012514,
+          "weighted_share_fewer_than_10_donors": 0.8431642267724624
+        },
+        "tax": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 9,
+            "1": 16,
+            "2": 17,
+            "3": 19,
+            "4": 17,
+            "5": 25,
+            "6": 27,
+            "7": 14,
+            "8": 9,
+            "9": 13,
+            "10": 2,
+            "11": 12,
+            "12": 3,
+            "13": 1,
+            "14": 6,
+            "21": 2
+          },
+          "weighted_share_no_donor": 0.069968317029628,
+          "weighted_share_fewer_than_10_donors": 0.8515653500419941
+        }
+      }
+    },
+    "202312": {
+      "attention_donors": {
+        "n": 192,
+        "min_donors": 0,
+        "median_donors": 21.0,
+        "donor_cell_counts": {
+          "0": 2,
+          "1": 1,
+          "3": 2,
+          "4": 3,
+          "5": 1,
+          "6": 6,
+          "7": 2,
+          "8": 9,
+          "9": 2,
+          "10": 8,
+          "11": 9,
+          "12": 2,
+          "13": 2,
+          "14": 3,
+          "15": 11,
+          "17": 6,
+          "18": 3,
+          "19": 6,
+          "20": 5,
+          "21": 15,
+          "22": 2,
+          "23": 12,
+          "24": 13,
+          "26": 5,
+          "29": 1,
+          "30": 21,
+          "31": 6,
+          "33": 2,
+          "34": 1,
+          "35": 5,
+          "37": 4,
+          "40": 4,
+          "43": 4,
+          "45": 2,
+          "47": 3,
+          "60": 6,
+          "77": 3
+        },
+        "weighted_share_no_donor": 0.008686424617478468,
+        "weighted_share_fewer_than_10_donors": 0.20911237428414461
+      },
+      "shock_donors": {
+        "oil": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 6.0,
+          "donor_cell_counts": {
+            "0": 14,
+            "1": 11,
+            "2": 7,
+            "3": 25,
+            "4": 25,
+            "5": 13,
+            "6": 21,
+            "7": 17,
+            "8": 9,
+            "9": 9,
+            "10": 13,
+            "11": 4,
+            "12": 8,
+            "13": 7,
+            "14": 6,
+            "20": 3
+          },
+          "weighted_share_no_donor": 0.07645247354986302,
+          "weighted_share_fewer_than_10_donors": 0.7956371743960255
+        },
+        "int": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 4.0,
+          "donor_cell_counts": {
+            "0": 5,
+            "1": 10,
+            "2": 14,
+            "3": 26,
+            "4": 48,
+            "5": 21,
+            "6": 6,
+            "7": 7,
+            "8": 20,
+            "10": 13,
+            "11": 3,
+            "12": 3,
+            "14": 4,
+            "16": 6,
+            "17": 6
+          },
+          "weighted_share_no_donor": 0.027270861767460932,
+          "weighted_share_fewer_than_10_donors": 0.8275440591411435
+        },
+        "gov": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 13,
+            "1": 15,
+            "2": 14,
+            "3": 18,
+            "4": 21,
+            "5": 33,
+            "6": 9,
+            "7": 23,
+            "8": 15,
+            "9": 9,
+            "10": 2,
+            "11": 8,
+            "12": 3,
+            "16": 6,
+            "20": 3
+          },
+          "weighted_share_no_donor": 0.03729255099898477,
+          "weighted_share_fewer_than_10_donors": 0.8465424152697573
+        },
+        "tax": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 7,
+            "1": 15,
+            "2": 17,
+            "3": 15,
+            "4": 16,
+            "5": 34,
+            "6": 20,
+            "7": 17,
+            "8": 8,
+            "9": 16,
+            "10": 5,
+            "11": 6,
+            "12": 1,
+            "13": 6,
+            "14": 6,
+            "21": 3
+          },
+          "weighted_share_no_donor": 0.07330783111981004,
+          "weighted_share_fewer_than_10_donors": 0.8494521798688064
+        }
+      }
+    },
+    "202410": {
+      "attention_donors": {
+        "n": 192,
+        "min_donors": 0,
+        "median_donors": 21.5,
+        "donor_cell_counts": {
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 2,
+          "4": 4,
+          "5": 2,
+          "6": 5,
+          "7": 3,
+          "8": 2,
+          "9": 1,
+          "10": 4,
+          "11": 11,
+          "12": 4,
+          "13": 4,
+          "14": 3,
+          "15": 12,
+          "16": 1,
+          "17": 3,
+          "18": 3,
+          "19": 5,
+          "20": 10,
+          "21": 14,
+          "22": 6,
+          "23": 13,
+          "24": 8,
+          "26": 5,
+          "27": 1,
+          "30": 17,
+          "31": 6,
+          "33": 4,
+          "34": 6,
+          "35": 5,
+          "37": 5,
+          "40": 4,
+          "43": 2,
+          "45": 3,
+          "47": 3,
+          "58": 2,
+          "60": 3,
+          "77": 3
+        },
+        "weighted_share_no_donor": 0.001170660470536761,
+        "weighted_share_fewer_than_10_donors": 0.166794873986057
+      },
+      "shock_donors": {
+        "oil": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 6.0,
+          "donor_cell_counts": {
+            "0": 16,
+            "1": 8,
+            "2": 10,
+            "3": 16,
+            "4": 18,
+            "5": 16,
+            "6": 32,
+            "7": 20,
+            "8": 13,
+            "9": 13,
+            "10": 8,
+            "11": 1,
+            "12": 7,
+            "13": 6,
+            "14": 3,
+            "15": 2,
+            "20": 3
+          },
+          "weighted_share_no_donor": 0.1102633196277547,
+          "weighted_share_fewer_than_10_donors": 0.8678829874823276
+        },
+        "int": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 4.0,
+          "donor_cell_counts": {
+            "0": 7,
+            "1": 11,
+            "2": 19,
+            "3": 16,
+            "4": 47,
+            "5": 23,
+            "6": 6,
+            "7": 7,
+            "8": 21,
+            "9": 3,
+            "10": 10,
+            "11": 6,
+            "12": 3,
+            "13": 2,
+            "14": 2,
+            "16": 6,
+            "17": 3
+          },
+          "weighted_share_no_donor": 0.045107064487328444,
+          "weighted_share_fewer_than_10_donors": 0.855408923902191
+        },
+        "gov": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 8,
+            "1": 8,
+            "2": 27,
+            "3": 13,
+            "4": 18,
+            "5": 27,
+            "6": 17,
+            "7": 20,
+            "8": 20,
+            "9": 15,
+            "10": 1,
+            "11": 7,
+            "12": 3,
+            "16": 3,
+            "18": 2,
+            "20": 3
+          },
+          "weighted_share_no_donor": 0.042561208564482186,
+          "weighted_share_fewer_than_10_donors": 0.8969450273229277
+        },
+        "tax": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 9,
+            "1": 15,
+            "2": 9,
+            "3": 14,
+            "4": 24,
+            "5": 32,
+            "6": 18,
+            "7": 14,
+            "8": 8,
+            "9": 16,
+            "10": 6,
+            "11": 9,
+            "12": 5,
+            "13": 3,
+            "14": 7,
+            "21": 3
+          },
+          "weighted_share_no_donor": 0.10384727907699605,
+          "weighted_share_fewer_than_10_donors": 0.8563256092865188
+        }
+      }
+    },
+    "202503": {
+      "attention_donors": {
+        "n": 192,
+        "min_donors": 0,
+        "median_donors": 22.0,
+        "donor_cell_counts": {
+          "0": 1,
+          "3": 1,
+          "4": 5,
+          "5": 1,
+          "6": 6,
+          "7": 1,
+          "8": 4,
+          "10": 2,
+          "11": 8,
+          "12": 3,
+          "13": 3,
+          "15": 16,
+          "16": 3,
+          "17": 10,
+          "19": 9,
+          "20": 11,
+          "21": 9,
+          "22": 5,
+          "23": 13,
+          "24": 8,
+          "26": 7,
+          "27": 1,
+          "30": 14,
+          "31": 2,
+          "33": 4,
+          "34": 4,
+          "35": 8,
+          "37": 7,
+          "40": 10,
+          "43": 3,
+          "47": 2,
+          "58": 2,
+          "60": 2,
+          "77": 7
+        },
+        "weighted_share_no_donor": 0.007181840717735705,
+        "weighted_share_fewer_than_10_donors": 0.13706190495193066
+      },
+      "shock_donors": {
+        "oil": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 6.0,
+          "donor_cell_counts": {
+            "0": 12,
+            "1": 7,
+            "2": 6,
+            "3": 14,
+            "4": 19,
+            "5": 13,
+            "6": 32,
+            "7": 15,
+            "8": 19,
+            "9": 21,
+            "10": 8,
+            "11": 1,
+            "12": 7,
+            "13": 7,
+            "14": 2,
+            "15": 2,
+            "20": 7
+          },
+          "weighted_share_no_donor": 0.06725357318608724,
+          "weighted_share_fewer_than_10_donors": 0.8401057383124606
+        },
+        "int": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 4.0,
+          "donor_cell_counts": {
+            "0": 6,
+            "1": 7,
+            "2": 21,
+            "3": 14,
+            "4": 51,
+            "5": 23,
+            "6": 6,
+            "7": 11,
+            "8": 12,
+            "9": 5,
+            "10": 15,
+            "11": 4,
+            "12": 1,
+            "13": 2,
+            "14": 3,
+            "16": 9,
+            "17": 2
+          },
+          "weighted_share_no_donor": 0.033636995652587834,
+          "weighted_share_fewer_than_10_donors": 0.8328389047993079
+        },
+        "gov": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 8,
+            "1": 7,
+            "2": 25,
+            "3": 13,
+            "4": 23,
+            "5": 26,
+            "6": 14,
+            "7": 28,
+            "8": 11,
+            "9": 13,
+            "10": 1,
+            "11": 10,
+            "12": 2,
+            "16": 2,
+            "18": 2,
+            "20": 7
+          },
+          "weighted_share_no_donor": 0.03984803420768088,
+          "weighted_share_fewer_than_10_donors": 0.8714035752881294
+        },
+        "tax": {
+          "n": 192,
+          "min_donors": 0,
+          "median_donors": 5.0,
+          "donor_cell_counts": {
+            "0": 6,
+            "1": 12,
+            "2": 12,
+            "3": 18,
+            "4": 26,
+            "5": 29,
+            "6": 14,
+            "7": 13,
+            "8": 5,
+            "9": 17,
+            "10": 7,
+            "11": 12,
+            "12": 2,
+            "13": 2,
+            "14": 10,
+            "21": 7
+          },
+          "weighted_share_no_donor": 0.05645920228597881,
+          "weighted_share_fewer_than_10_donors": 0.8393589846090489
+        }
+      }
+    }
+  },
+  "limits": [
+    "External sample unweighted: no survey weight field in this file.",
+    "Attention is agreement, not article counts; demographic prediction is not individual identification.",
+    "Cross-validation is within the external 2021 sample, not time validation or cross-survey validation.",
+    "Cost/demand are shock-specific, jointly selectable; tariffs are not one of the four shocks.",
+    "Observed external attention is unavailable for SCE; its channel prediction increment is diagnostic only.",
+    "Exact-cell sparsity does not invalidate all transfer, but bars unsupported deterministic personal labels.",
+    "No new SCE simulation or improvement in its MAE is produced."
+  ],
+  "seconds": 2.710191916907206
+}

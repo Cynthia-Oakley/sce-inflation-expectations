@@ -1,0 +1,640 @@
+{
+  "status": "offline_views_prepared_not_authorized_not_engine_dry_run",
+  "new_api_calls": 0,
+  "current_target_answers_read": false,
+  "months": [
+    202009,
+    202109,
+    202206,
+    202312,
+    202410,
+    202503
+  ],
+  "inventory": {
+    "202009": {
+      "as_of": "2020-09-11T23:59:59-04:00",
+      "selected_n": 96,
+      "sampling": {
+        "frame_n": 192,
+        "selected_n": 96,
+        "seed": 20261018,
+        "stratum_N": {
+          "40 to 60|50k_to_100k": 25,
+          "40 to 60|over_100k": 28,
+          "40 to 60|under_50k": 21,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 23,
+          "Over 60|over_100k": 14,
+          "Over 60|under_50k": 29,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 23,
+          "Under 40|over_100k": 16,
+          "Under 40|under_50k": 10,
+          "Under 40|unknown": 1
+        },
+        "stratum_n": {
+          "40 to 60|50k_to_100k": 13,
+          "40 to 60|over_100k": 14,
+          "40 to 60|under_50k": 10,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 11,
+          "Over 60|over_100k": 7,
+          "Over 60|under_50k": 14,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 11,
+          "Under 40|over_100k": 8,
+          "Under 40|under_50k": 5,
+          "Under 40|unknown": 1
+        },
+        "design": "age_group_x_income_band_stratified_SRS",
+        "allocation": "bounded largest remainder, minimum1 per nonempty stratum; alphabetic ties"
+      },
+      "raw_window_articles": 5589,
+      "coarse_candidates": 584,
+      "unlabelled_coarse_candidates": 0,
+      "eligible_personal_articles_after_exact_dedup": 166,
+      "common_frontpage_candidates": 247,
+      "eight_complete_byte_identity_checks": 96,
+      "weight_ess": 56.529388028532445,
+      "attribute_counts": {
+        "age_group": {
+          "40 to 60": 38,
+          "Over 60": 33,
+          "Under 40": 25
+        },
+        "household_income_band": {
+          "over_100k": 29,
+          "under_50k": 29,
+          "50k_to_100k": 35,
+          "None": 3
+        },
+        "education_group": {
+          "college": 49,
+          "some_college": 35,
+          "high_school": 12
+        },
+        "numeracy": {
+          "high": 68,
+          "low": 28
+        },
+        "region": {
+          "West": 23,
+          "South": 31,
+          "Midwest": 22,
+          "Northeast": 20
+        }
+      },
+      "prompt_bytes_by_arm": {
+        "news_3_complete": {
+          "min": 9440,
+          "max": 9752
+        },
+        "news_3_reduced": {
+          "min": 5770,
+          "max": 6081
+        },
+        "news_8_complete": {
+          "min": 10706,
+          "max": 11846
+        },
+        "news_8_reduced": {
+          "min": 7036,
+          "max": 8176
+        },
+        "news_20_complete": {
+          "min": 13706,
+          "max": 15446
+        },
+        "news_20_reduced": {
+          "min": 10040,
+          "max": 11765
+        }
+      }
+    },
+    "202109": {
+      "as_of": "2021-09-14T23:59:59-04:00",
+      "selected_n": 96,
+      "sampling": {
+        "frame_n": 192,
+        "selected_n": 96,
+        "seed": 20261018,
+        "stratum_N": {
+          "40 to 60|50k_to_100k": 25,
+          "40 to 60|over_100k": 27,
+          "40 to 60|under_50k": 18,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 20,
+          "Over 60|over_100k": 14,
+          "Over 60|under_50k": 23,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 23,
+          "Under 40|over_100k": 21,
+          "Under 40|under_50k": 18,
+          "Under 40|unknown": 1
+        },
+        "stratum_n": {
+          "40 to 60|50k_to_100k": 13,
+          "40 to 60|over_100k": 13,
+          "40 to 60|under_50k": 9,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 10,
+          "Over 60|over_100k": 7,
+          "Over 60|under_50k": 11,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 11,
+          "Under 40|over_100k": 10,
+          "Under 40|under_50k": 9,
+          "Under 40|unknown": 1
+        },
+        "design": "age_group_x_income_band_stratified_SRS",
+        "allocation": "bounded largest remainder, minimum1 per nonempty stratum; alphabetic ties"
+      },
+      "raw_window_articles": 5605,
+      "coarse_candidates": 613,
+      "unlabelled_coarse_candidates": 0,
+      "eligible_personal_articles_after_exact_dedup": 182,
+      "common_frontpage_candidates": 254,
+      "eight_complete_byte_identity_checks": 96,
+      "weight_ess": 60.10064888140572,
+      "attribute_counts": {
+        "age_group": {
+          "Over 60": 29,
+          "40 to 60": 36,
+          "Under 40": 31
+        },
+        "household_income_band": {
+          "50k_to_100k": 34,
+          "over_100k": 30,
+          "under_50k": 29,
+          "None": 3
+        },
+        "education_group": {
+          "college": 56,
+          "some_college": 24,
+          "high_school": 15,
+          "None": 1
+        },
+        "numeracy": {
+          "low": 34,
+          "high": 62
+        },
+        "region": {
+          "South": 27,
+          "Northeast": 22,
+          "Midwest": 29,
+          "West": 18
+        }
+      },
+      "prompt_bytes_by_arm": {
+        "news_3_complete": {
+          "min": 9396,
+          "max": 9699
+        },
+        "news_3_reduced": {
+          "min": 5735,
+          "max": 6036
+        },
+        "news_8_complete": {
+          "min": 10646,
+          "max": 11299
+        },
+        "news_8_reduced": {
+          "min": 6987,
+          "max": 7636
+        },
+        "news_20_complete": {
+          "min": 13591,
+          "max": 14525
+        },
+        "news_20_reduced": {
+          "min": 9930,
+          "max": 10862
+        }
+      }
+    },
+    "202206": {
+      "as_of": "2022-06-10T23:59:59-04:00",
+      "selected_n": 96,
+      "sampling": {
+        "frame_n": 192,
+        "selected_n": 96,
+        "seed": 20261018,
+        "stratum_N": {
+          "40 to 60|50k_to_100k": 24,
+          "40 to 60|over_100k": 35,
+          "40 to 60|under_50k": 17,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 16,
+          "Over 60|over_100k": 13,
+          "Over 60|under_50k": 24,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 24,
+          "Under 40|over_100k": 22,
+          "Under 40|under_50k": 15
+        },
+        "stratum_n": {
+          "40 to 60|50k_to_100k": 12,
+          "40 to 60|over_100k": 18,
+          "40 to 60|under_50k": 8,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 8,
+          "Over 60|over_100k": 6,
+          "Over 60|under_50k": 12,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 12,
+          "Under 40|over_100k": 11,
+          "Under 40|under_50k": 7
+        },
+        "design": "age_group_x_income_band_stratified_SRS",
+        "allocation": "bounded largest remainder, minimum1 per nonempty stratum; alphabetic ties"
+      },
+      "raw_window_articles": 5036,
+      "coarse_candidates": 561,
+      "unlabelled_coarse_candidates": 0,
+      "eligible_personal_articles_after_exact_dedup": 219,
+      "common_frontpage_candidates": 215,
+      "eight_complete_byte_identity_checks": 96,
+      "weight_ess": 65.34116036648702,
+      "attribute_counts": {
+        "age_group": {
+          "40 to 60": 39,
+          "Over 60": 27,
+          "Under 40": 30
+        },
+        "household_income_band": {
+          "over_100k": 35,
+          "50k_to_100k": 32,
+          "under_50k": 27,
+          "None": 2
+        },
+        "education_group": {
+          "college": 50,
+          "high_school": 8,
+          "some_college": 36,
+          "None": 2
+        },
+        "numeracy": {
+          "high": 67,
+          "low": 29
+        },
+        "region": {
+          "Midwest": 27,
+          "West": 26,
+          "South": 34,
+          "Northeast": 9
+        }
+      },
+      "prompt_bytes_by_arm": {
+        "news_3_complete": {
+          "min": 9593,
+          "max": 9858
+        },
+        "news_3_reduced": {
+          "min": 5935,
+          "max": 6200
+        },
+        "news_8_complete": {
+          "min": 10839,
+          "max": 11492
+        },
+        "news_8_reduced": {
+          "min": 7181,
+          "max": 7838
+        },
+        "news_20_complete": {
+          "min": 13713,
+          "max": 14558
+        },
+        "news_20_reduced": {
+          "min": 10055,
+          "max": 10904
+        }
+      }
+    },
+    "202312": {
+      "as_of": "2023-12-12T23:59:59-05:00",
+      "selected_n": 96,
+      "sampling": {
+        "frame_n": 192,
+        "selected_n": 96,
+        "seed": 20261018,
+        "stratum_N": {
+          "40 to 60|50k_to_100k": 25,
+          "40 to 60|over_100k": 41,
+          "40 to 60|under_50k": 20,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 14,
+          "Over 60|over_100k": 12,
+          "Over 60|under_50k": 17,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 20,
+          "Under 40|over_100k": 27,
+          "Under 40|under_50k": 14
+        },
+        "stratum_n": {
+          "40 to 60|50k_to_100k": 13,
+          "40 to 60|over_100k": 20,
+          "40 to 60|under_50k": 10,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 7,
+          "Over 60|over_100k": 6,
+          "Over 60|under_50k": 8,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 10,
+          "Under 40|over_100k": 13,
+          "Under 40|under_50k": 7
+        },
+        "design": "age_group_x_income_band_stratified_SRS",
+        "allocation": "bounded largest remainder, minimum1 per nonempty stratum; alphabetic ties"
+      },
+      "raw_window_articles": 4947,
+      "coarse_candidates": 503,
+      "unlabelled_coarse_candidates": 0,
+      "eligible_personal_articles_after_exact_dedup": 148,
+      "common_frontpage_candidates": 226,
+      "eight_complete_byte_identity_checks": 96,
+      "weight_ess": 55.34472249715061,
+      "attribute_counts": {
+        "age_group": {
+          "Over 60": 22,
+          "40 to 60": 44,
+          "Under 40": 30
+        },
+        "household_income_band": {
+          "None": 2,
+          "50k_to_100k": 30,
+          "under_50k": 25,
+          "over_100k": 39
+        },
+        "education_group": {
+          "college": 54,
+          "some_college": 33,
+          "high_school": 9
+        },
+        "numeracy": {
+          "high": 65,
+          "low": 31
+        },
+        "region": {
+          "Northeast": 21,
+          "Midwest": 16,
+          "South": 38,
+          "West": 21
+        }
+      },
+      "prompt_bytes_by_arm": {
+        "news_3_complete": {
+          "min": 9532,
+          "max": 9823
+        },
+        "news_3_reduced": {
+          "min": 5864,
+          "max": 6149
+        },
+        "news_8_complete": {
+          "min": 10718,
+          "max": 11216
+        },
+        "news_8_reduced": {
+          "min": 7048,
+          "max": 7533
+        },
+        "news_20_complete": {
+          "min": 13592,
+          "max": 14317
+        },
+        "news_20_reduced": {
+          "min": 9911,
+          "max": 10634
+        }
+      }
+    },
+    "202410": {
+      "as_of": "2024-10-10T23:59:59-04:00",
+      "selected_n": 96,
+      "sampling": {
+        "frame_n": 192,
+        "selected_n": 96,
+        "seed": 20261018,
+        "stratum_N": {
+          "40 to 60|50k_to_100k": 25,
+          "40 to 60|over_100k": 33,
+          "40 to 60|under_50k": 19,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 17,
+          "Over 60|over_100k": 10,
+          "Over 60|under_50k": 20,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 21,
+          "Under 40|over_100k": 25,
+          "Under 40|under_50k": 19,
+          "unknown|unknown": 1
+        },
+        "stratum_n": {
+          "40 to 60|50k_to_100k": 13,
+          "40 to 60|over_100k": 17,
+          "40 to 60|under_50k": 9,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 8,
+          "Over 60|over_100k": 5,
+          "Over 60|under_50k": 10,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 10,
+          "Under 40|over_100k": 12,
+          "Under 40|under_50k": 9,
+          "unknown|unknown": 1
+        },
+        "design": "age_group_x_income_band_stratified_SRS",
+        "allocation": "bounded largest remainder, minimum1 per nonempty stratum; alphabetic ties"
+      },
+      "raw_window_articles": 5169,
+      "coarse_candidates": 486,
+      "unlabelled_coarse_candidates": 0,
+      "eligible_personal_articles_after_exact_dedup": 163,
+      "common_frontpage_candidates": 213,
+      "eight_complete_byte_identity_checks": 96,
+      "weight_ess": 69.1282908226658,
+      "attribute_counts": {
+        "age_group": {
+          "Under 40": 31,
+          "40 to 60": 40,
+          "Over 60": 24,
+          "None": 1
+        },
+        "household_income_band": {
+          "over_100k": 34,
+          "under_50k": 28,
+          "50k_to_100k": 31,
+          "None": 3
+        },
+        "education_group": {
+          "college": 53,
+          "some_college": 35,
+          "high_school": 8
+        },
+        "numeracy": {
+          "high": 65,
+          "low": 31
+        },
+        "region": {
+          "Midwest": 19,
+          "Northeast": 22,
+          "South": 35,
+          "West": 20
+        }
+      },
+      "prompt_bytes_by_arm": {
+        "news_3_complete": {
+          "min": 9438,
+          "max": 9724
+        },
+        "news_3_reduced": {
+          "min": 5771,
+          "max": 6057
+        },
+        "news_8_complete": {
+          "min": 10558,
+          "max": 11129
+        },
+        "news_8_reduced": {
+          "min": 6891,
+          "max": 7462
+        },
+        "news_20_complete": {
+          "min": 13554,
+          "max": 14251
+        },
+        "news_20_reduced": {
+          "min": 9891,
+          "max": 10584
+        }
+      }
+    },
+    "202503": {
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "selected_n": 96,
+      "sampling": {
+        "frame_n": 192,
+        "selected_n": 96,
+        "seed": 20261018,
+        "stratum_N": {
+          "40 to 60|50k_to_100k": 28,
+          "40 to 60|over_100k": 32,
+          "40 to 60|under_50k": 17,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 21,
+          "Over 60|over_100k": 9,
+          "Over 60|under_50k": 16,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 22,
+          "Under 40|over_100k": 24,
+          "Under 40|under_50k": 21
+        },
+        "stratum_n": {
+          "40 to 60|50k_to_100k": 14,
+          "40 to 60|over_100k": 16,
+          "40 to 60|under_50k": 9,
+          "40 to 60|unknown": 1,
+          "Over 60|50k_to_100k": 10,
+          "Over 60|over_100k": 4,
+          "Over 60|under_50k": 8,
+          "Over 60|unknown": 1,
+          "Under 40|50k_to_100k": 11,
+          "Under 40|over_100k": 12,
+          "Under 40|under_50k": 10
+        },
+        "design": "age_group_x_income_band_stratified_SRS",
+        "allocation": "bounded largest remainder, minimum1 per nonempty stratum; alphabetic ties"
+      },
+      "raw_window_articles": 5476,
+      "coarse_candidates": 674,
+      "unlabelled_coarse_candidates": 0,
+      "eligible_personal_articles_after_exact_dedup": 351,
+      "common_frontpage_candidates": 224,
+      "eight_complete_byte_identity_checks": 96,
+      "weight_ess": 61.07498027133634,
+      "attribute_counts": {
+        "age_group": {
+          "Over 60": 23,
+          "Under 40": 33,
+          "40 to 60": 40
+        },
+        "household_income_band": {
+          "under_50k": 27,
+          "50k_to_100k": 35,
+          "over_100k": 32,
+          "None": 2
+        },
+        "education_group": {
+          "high_school": 11,
+          "college": 60,
+          "some_college": 25
+        },
+        "numeracy": {
+          "low": 30,
+          "high": 66
+        },
+        "region": {
+          "Northeast": 22,
+          "South": 35,
+          "West": 19,
+          "Midwest": 20
+        }
+      },
+      "prompt_bytes_by_arm": {
+        "news_3_complete": {
+          "min": 9510,
+          "max": 9812
+        },
+        "news_3_reduced": {
+          "min": 5850,
+          "max": 6154
+        },
+        "news_8_complete": {
+          "min": 10593,
+          "max": 11257
+        },
+        "news_8_reduced": {
+          "min": 6918,
+          "max": 7595
+        },
+        "news_20_complete": {
+          "min": 13325,
+          "max": 14296
+        },
+        "news_20_reduced": {
+          "min": 9667,
+          "max": 10634
+        }
+      }
+    }
+  },
+  "totals": {
+    "unique_prompts": 3456,
+    "generation_repeats": 2,
+    "planned_requests_if_authorized": 6912,
+    "estimated_input_bytes_times_two": 67486058,
+    "conservative_reservation_at_last_recorded_prices_usd": 29.270124599999985,
+    "rough_input_cost_using_four_bytes_per_token_usd": 5.06145435
+  },
+  "boundaries": [
+    "Same P/prior/history/CE/confidence/policy/questionnaire in every arm.",
+    "Reduced removes official-statistics and trends blocks and their release-group timing, not numbers naturally appearing in identical news or policy.",
+    "First five of seventeen personalized draws reproduce archived eight-news control, after chronological display.",
+    "No Andre donor rows or synthetic attention/channel personality are included in prompts.",
+    "No paid authorization, run jobs or engineering receipts are produced by this preparation."
+  ],
+  "seconds": 10.35745120793581,
+  "engineering_checks": {
+    "cells": 72,
+    "failed": 0,
+    "paid_calls": 0
+  },
+  "platform_free_check": {
+    "user_pool_version": "1.27.0",
+    "default_model": "gpt-4o-mini",
+    "event_version": "1.28.1",
+    "own_persona_and_model_parameters_supported": false,
+    "paid_calls": 0
+  }
+}
