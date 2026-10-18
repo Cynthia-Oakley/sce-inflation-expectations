@@ -1,4 +1,27 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body>
+<section id="experiment-status-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1020px;margin:24px auto 36px;padding:20px 24px 32px;border-bottom:1px solid #ddd">
+<h1>实验复盘：哪些已采用，哪些暂缓？</h1>
+<p>2026-10-18。此次只整理已有结果，新增API调用0。<strong>目前有完整可运行的研究流程，也有局部机制进展；尚未证明在扩大验证中稳定胜过持续性基线。</strong>下方旧章节保留当时语境，当前状态以本节及完整台账为准。</p>
+<nav><a href="../../EXPERIMENT_STATUS_20261018.md">完整实验台账与逐项来源</a> · <a href="../../CURRENT_SIMULATION_CONFIGURATION.md">实际参考配置</a> · <a href="../../current_todo.html">后续清单</a></nav>
+<h2>心理匹配变差，能说明什么？</h2>
+<p>四期各48人，原输入／匹配／打乱的主加权Q9中位数MAE为<strong>0.459／0.540／0.459pp</strong>。匹配个人误差几乎不变，人际差异稍宽，但整体分布没有更像真人。配对差异区间均包含0，改善和恶化仍可能随样本变化，不能断言心理有害。</p>
+<ol><li><strong>人口相近，不等于心理相同。</strong>供体能恢复同类人群的幸福感与财务满意度比例，却不知道这位SCE居民真正的心理，以及心理与他本人通胀信念的关系。</li><li><strong>2018状态迁移到后来时期有误差。</strong>疫情、高通胀等阶段的心理变化没有被直接观测；粗收入和跨调查口径也有限制。191/192有供体，仅说明能匹配，不证明分配准确。</li><li><strong>两句状态还没有验证行为传导。</strong>模型看到“幸福／满意”，不等于实现了真人的记忆、注意和信念更新。幸福感与财务满意也不等同稳定乐观人格。</li></ol>
+<p>打乱标签同样扩大分歧，尚未显示按人口匹配的额外价值。<strong>当前暂停这套GSS标签；若再做，优先寻找本人实测状态／变化及可检验的行为机制。</strong>失败原因暂不能在匹配与模型理解之间唯一定位。<a href="../20261017_psychological_state/results.md">完整结果与区间</a>。</p>
+<h2>一、已纳入工作参考</h2>
+<ul><li><strong>本人过去信念：</strong>上期Q8/Q9、更早均值与次数，明确允许保持或更新；先验与时间表达有局部收益，未全面通过跨期验证。</li><li><strong>政策与合成美联储信心：</strong>早期四期中心误差有所下降，继续保留；信心不是本人实测。</li><li><strong>P/E信息：</strong>SCE画像、合成CE背景、按时点整理的价格和新闻、共同／个人新闻50/50分配。已经接入，不表示每项均被独立证明有效。</li><li><strong>工程与评价：</strong>官方引擎、直接填写本期Q8/Q9、冻结近似计分器、同样本权重／基线、原始轨迹与成本记录，已经实际运行。</li></ul>
+<h2>二、有局部收益，未成为默认机制</h2>
+<div class="table-scroll"><table style="min-width:680px"><thead><tr><th>方向</th><th>已经看到什么</th><th>当前处置</th></tr></thead><tbody>
+<tr><td>Q1家庭财务状况</td><td>开发中心MAE 0.637→0.502；另四期0.290→0.476，微观部分略好</td><td>跨月中心收益未复现，不加入默认</td></tr>
+<tr><td>数理／金融原题实答</td><td>开发中心0.736→0.652；个人概率结构未稳定改善，低组单独加入对权重敏感</td><td>保留原题候选，不采用低组选择规则</td></tr>
+<tr><td>个人状态与更早常态</td><td>部分分布或个人RMSE改善，中心及更新存在代价</td><td>研究如何保留个人位置，不强制半程更新</td></tr>
+<tr><td>总体历史＋Sim组合</td><td>样本内能降MAE，前推增益较小；不改变个人结构</td><td>保留衍生指标候选，不冻结最优权重</td></tr>
+<tr><td>近期价格／地区匹配</td><td>两月近期价格有小幅迹象，地区匹配未稳定胜过随机</td><td>保留数据，不宣布地区机制成功</td></tr>
+</tbody></table></div>
+<h2>三、当前实现暂缓</h2>
+<ul><li><strong>明确强调高频购买影响：</strong>相对同样有频率数据的组，分布变差；暂停这段提示，频率理论与数据问题继续保留。</li><li><strong>个人历史经历：</strong>详细数字与简要文字均未优于原输入，暂停现有注入。</li><li><strong>概率取整映射：</strong>刻度更像真人，身份差异没有恢复；只作格式诊断。</li><li><strong>十档概率填写改动：</strong>大量恢复为负概率，现有格式不采用，继续直接填写本期答案。</li><li><strong>上期Q2、GSS心理标签：</strong>已完成真实试验，未见稳定拟合增量，暂不默认加入。</li></ul>
+<p><strong>暂停的是当前实现，数据、代码和阴性结果全部保留。</strong>十二期192人的参考配置同样本Q9中心MAE 0.459pp，对应照抄0.239；对完整波次为0.376／0.213。不能把开发小样最低误差或不同模块的局部收益拼成最终成绩。</p>
+<h2>接下来的重点</h2><p>先聚焦个人原有信念如何保留与更新，再考虑有实测支持的状态机制；同时收束验证、基线和研究包。已有历史摘要已在提示中，待检验的是如何使用，不能把重复增加同一资料称作新信息。本轮不启动新模拟或改运行配置。</p>
+</section>
 <section id="psychological-state-preparation-20261017" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;border-bottom:1px solid #ddd;padding:24px 0;margin-bottom:36px">
 <h1>心理状态实验完成：尚无稳定拟合收益</h1>
 <p>2026-10-17。四期各48人，768次新增调用全部有效，0错误/重试；旧原输入384份复用。费用按token估<strong>$0.865/$4</strong>，API约4.15分钟，评价约22秒。全部三组均有192个共同可评分人月，两遍不当成更多真人。</p>
