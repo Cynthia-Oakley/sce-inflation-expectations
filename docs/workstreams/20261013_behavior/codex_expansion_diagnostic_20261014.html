@@ -1,4 +1,19 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body>
+<section id="goal-retention-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
+<h1>0.20pp目标：先检验个人更新规律能否预测</h1>
+<p>2026-10-18。持续目标已登记：Q9群体中位数MAE低于<strong>0.20pp</strong>，并优于同样本、同月份的持续性基线。<strong>当前尚未达成，原Simulation仍为0.459pp，基线0.239pp。</strong>以下是零API的机制筛查，没有新模型回答或Q9重拟合。</p>
+<nav><a href="../20261018_targeted_mechanisms/goal_020_plan.md">目标与执行前方案</a> · <a href="../20261018_targeted_mechanisms/retention_results.md">本轮方法和结论</a> · <a href="../20261018_targeted_mechanisms/retention_readout_v2/summary.json">聚合证据</a> · <a href="../../current_todo.html">任务清单</a></nav>
+<h2>一、过去实际回答，比再增加人口标签更能判断谁会保持</h2>
+<p>利用已缓存的2017—2025年问卷，分别用往年训练、下一年评价，共70个月、<strong>66,476个人月</strong>。只使用本人此前记录，不用本期答案作特征。本人过去改动、保持和填答的模式，能提高对本月“变化是否不超过0.5pp”的预测力；六个年份方向一致。再加人口、财务和风险，额外收益较小。</p>
+<p>概率预测的Brier分数由0.221降至0.190，越小越好；它<strong>不是通胀误差的百分点</strong>。月内区分能力AUC约0.707，随机排序是0.5；不能说70.7%的所有人都被预测正确。</p>
+<h2>二、但直接把这个概率当更新权重，仍不够好</h2>
+<p>将已生成的个人均值与本人上期值，按预测保持概率加权：十二期中位数MAE约<strong>0.340pp</strong>，优于原模型0.459，仍落后于照抄0.239。只用总体稳定率加权还略低，约0.326。因此<strong>个人更新规律有信号，但这一使用方式不升级默认</strong>。加权结果是程序标量诊断，不是新生成的十档回答。</p>
+<figure><img loading="lazy" src="../20261018_targeted_mechanisms/retention_readout_v2/retention_and_goal.png" alt="左图为六年时间前推的稳定概率Brier分数；右图为十二期同支持Q9中心MAE，0.20目标尚未达到"><figcaption>个人历史带来稳定预测增量，但尚未转化为超过持续性基线的总体拟合。短历史不删除，主十二期仍逐遍评价。</figcaption></figure>
+<h2>三、下一步要同时检查改变的方向与幅度</h2>
+<p>约66%的真人本期个人均值，落在“本人上期值—模型本期值”这段区间外。对这些人，只调两者之间的标量比例不能到达真实答案。<strong>这不是群体中位数的误差下界，也不是十档混合的结论</strong>，但说明方向和幅度还缺少信息。</p>
+<ol><li><strong>P：</strong>保留本人可测的过去更新模式，短历史标未知，不把它冒充真实注意力或人格。</li><li><strong>E：</strong>继续核查公共统计展示及关税、家庭压力、公众关注的增量资料；12次MCP取数预算卡仍待回复，付费调用0。</li><li><strong>行为：</strong>将“是否改变”和“改向哪里、改多少”分开检验，不再直接把保持概率当LLM学习权重。</li><li><strong>验证：</strong>十二期已看过，只作开发；新机制固定后，另登记未用于调整的月份，不能在这些月反复调到0.20就宣布成功。</li></ol>
+<details><summary>统计解释和核验边界</summary><p>每年训练截止上一年；该年已经发生的真实上期回答可进入个人历史，所以是一步条件回放，非自主连续预测。训练标签来自公开微观派生均值，主十二期用冻结项目计分器；2,282可比较人月中27个稳定标签不同，全部2,284主支持均保留。六项新增定向测试通过。计算约8.27秒，另有开发和说明时间。当前无新增API、Q9拟合或运行配置变更，目标仍未完成。</p></details>
+</section>
 <section id="targeted-mechanisms-20261018" class="tm-review" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
 <style>.tm-review p,.tm-review li{max-width:1020px}.tm-review h2{margin-top:30px}.tm-review .tm-note{padding:12px 18px;border-left:3px solid #326a56;background:#f1f5f2}.tm-review table{min-width:670px}.tm-review summary{cursor:pointer;font-weight:600}.tm-review a{overflow-wrap:anywhere}@media(max-width:700px){.tm-review{padding:18px 14px!important}}</style>
 <h1>从人群差距确定下一项P/E改动</h1>

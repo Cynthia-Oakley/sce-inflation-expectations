@@ -1,0 +1,12 @@
+{
+  "objective": "Q9 same-support simulated group-median MAE below 0.20pp and below matched persistence; confirm on separately frozen unselected months.",
+  "status": "active_not_achieved",
+  "raw_simulation_mae_pp": 0.4591912957196014,
+  "matched_persistence_mae_pp": 0.23948056006172466,
+  "new_offline_scalar_candidate_mae_pp": 0.34030310814401776,
+  "candidate_is_new_llm_answers": false,
+  "independent_validation_done": false,
+  "new_api_calls": 0,
+  "completed_step": "Past-only retention prediction tested across 70 months/66476 person-months; scalar use not adopted.",
+  "next": "Check direction/magnitude of missed updates and targeted E increments; paid Event probe awaits exact existing budget response."
+}
