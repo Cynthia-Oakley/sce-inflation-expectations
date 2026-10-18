@@ -1,0 +1,258 @@
+{
+  "new_api_calls": 0,
+  "new_q9_fits": 0,
+  "status": "completed_past_only_selection_of_existing_answers",
+  "development_after_exposure_results": true,
+  "threshold_fixed": 0.5,
+  "missing_predictions": 0,
+  "common_person_months": 567,
+  "selected_reduced_n": 75,
+  "matched_gate": {
+    "center_mae_pp": 0.3106758595047377,
+    "center_bias_pp": -0.17894329205020518,
+    "predicted_center_pp": 4.043499722849248,
+    "truth_center_pp": 4.222443014899453,
+    "personal_mae_pp": 3.193471038857042,
+    "w1_pp": 2.414753032575963,
+    "delta_w1_pp": 1.438060216645406,
+    "across_person_iqr_pp": 2.3364282906070204,
+    "truth_across_person_iqr_pp": 4.731559737599851,
+    "wrong_move_given_true_stable": 0.5826178636072076,
+    "missed_move_given_true_moving": 0.36514709218041547,
+    "opposite_direction_given_true_moving": 0.19623145690377616,
+    "weighted_reduced_share": 0.1288288849248194
+  },
+  "all_complete": {
+    "center_mae_pp": 0.3551371448988309,
+    "center_bias_pp": -0.22636912177345256,
+    "predicted_center_pp": 3.9960738931260003,
+    "truth_center_pp": 4.222443014899453,
+    "personal_mae_pp": 3.2244628516066953,
+    "w1_pp": 2.4571274426057705,
+    "delta_w1_pp": 1.4552860837904849,
+    "across_person_iqr_pp": 2.2631211795172415,
+    "truth_across_person_iqr_pp": 4.731559737599851,
+    "wrong_move_given_true_stable": 0.6087771339817254,
+    "missed_move_given_true_moving": 0.3506697612679748,
+    "opposite_direction_given_true_moving": 0.20169028542777198
+  },
+  "all_reduced": {
+    "center_mae_pp": 0.3917170070382543,
+    "center_bias_pp": -0.3702195940989285,
+    "predicted_center_pp": 3.8522234208005255,
+    "truth_center_pp": 4.222443014899453,
+    "personal_mae_pp": 2.895188309388504,
+    "w1_pp": 1.7535760841226684,
+    "delta_w1_pp": 1.5414469693119617,
+    "across_person_iqr_pp": 3.6787072294966787,
+    "truth_across_person_iqr_pp": 4.731559737599851,
+    "wrong_move_given_true_stable": 0.46181723037281247,
+    "missed_move_given_true_moving": 0.5546718985207971,
+    "opposite_direction_given_true_moving": 0.12179143783058043
+  },
+  "carry": {
+    "center_mae_pp": 0.3382349646188816,
+    "center_bias_pp": -0.31629251899106386,
+    "predicted_center_pp": 3.9061504959083906,
+    "truth_center_pp": 4.222443014899453,
+    "personal_mae_pp": 2.648837124932389,
+    "w1_pp": 0.9032252252908922,
+    "delta_w1_pp": 2.6488371249323897,
+    "across_person_iqr_pp": 5.551444106107955,
+    "truth_across_person_iqr_pp": 4.731559737599851,
+    "wrong_move_given_true_stable": 0.0,
+    "missed_move_given_true_moving": 1.0,
+    "opposite_direction_given_true_moving": 0.0
+  },
+  "shuffled_range_20_draws_not_confidence_interval": {
+    "center_mae_pp": [
+      0.29796727816142526,
+      0.3352689258599141,
+      0.3610862967050443
+    ],
+    "center_bias_pp": [
+      -0.25440684589480755,
+      -0.23100247824757286,
+      -0.19950274161135784
+    ],
+    "predicted_center_pp": [
+      3.968036169004646,
+      3.9914405366518806,
+      4.0229402732880954
+    ],
+    "truth_center_pp": [
+      4.222443014899453,
+      4.222443014899453,
+      4.222443014899453
+    ],
+    "personal_mae_pp": [
+      3.0793485487069128,
+      3.173233297908391,
+      3.230238015516418
+    ],
+    "w1_pp": [
+      2.2528303577397852,
+      2.3420181690478974,
+      2.389886932934945
+    ],
+    "delta_w1_pp": [
+      1.3908655621251356,
+      1.4336189757000404,
+      1.4755647306144513
+    ],
+    "across_person_iqr_pp": [
+      2.30521743742621,
+      2.368937265061022,
+      2.451378451750325
+    ],
+    "truth_across_person_iqr_pp": [
+      4.731559737599851,
+      4.731559737599851,
+      4.731559737599851
+    ],
+    "wrong_move_given_true_stable": [
+      0.5712393230549905,
+      0.5912292971769499,
+      0.60473960024493
+    ],
+    "missed_move_given_true_moving": [
+      0.35473403911599327,
+      0.379681870464857,
+      0.40106493080546474
+    ],
+    "opposite_direction_given_true_moving": [
+      0.1794549410884566,
+      0.19066803529232182,
+      0.19796703505489407
+    ],
+    "weighted_reduced_share": [
+      0.11180904349489494,
+      0.1332788217482266,
+      0.14496934469087427
+    ]
+  },
+  "monthly_matched": [
+    {
+      "month": 202009,
+      "metrics": {
+        "center_mae_pp": 0.4292142421177534,
+        "center_bias_pp": -0.4292142421177534,
+        "predicted_center_pp": 2.5707857578822466,
+        "truth_center_pp": 3.0,
+        "personal_mae_pp": 1.9963429288321923,
+        "w1_pp": 1.1112406195994766,
+        "delta_w1_pp": 0.9149108606929426,
+        "across_person_iqr_pp": 1.5655095176263072,
+        "truth_across_person_iqr_pp": 3.5398709565172872,
+        "wrong_move_given_true_stable": 0.5338991656461716,
+        "missed_move_given_true_moving": 0.46653394928666597,
+        "opposite_direction_given_true_moving": 0.09903384803176007,
+        "weighted_reduced_share": 0.12298567616078077
+      }
+    },
+    {
+      "month": 202109,
+      "metrics": {
+        "center_mae_pp": 0.2441724668370533,
+        "center_bias_pp": -0.2441724668370533,
+        "predicted_center_pp": 5.050778086572944,
+        "truth_center_pp": 5.294950553409997,
+        "personal_mae_pp": 3.152170934239229,
+        "w1_pp": 2.3291378269766843,
+        "delta_w1_pp": 1.4768300170574706,
+        "across_person_iqr_pp": 2.8751268521751006,
+        "truth_across_person_iqr_pp": 4.517782863886323,
+        "wrong_move_given_true_stable": 0.5624550833863338,
+        "missed_move_given_true_moving": 0.3551568739127403,
+        "opposite_direction_given_true_moving": 0.23946429907644384,
+        "weighted_reduced_share": 0.10434148074614506
+      }
+    },
+    {
+      "month": 202206,
+      "metrics": {
+        "center_mae_pp": 0.37393275065211906,
+        "center_bias_pp": 0.37393275065211906,
+        "predicted_center_pp": 7.387758100879497,
+        "truth_center_pp": 7.0138253502273775,
+        "personal_mae_pp": 3.6347987329423064,
+        "w1_pp": 2.980986229717126,
+        "delta_w1_pp": 1.561070470826942,
+        "across_person_iqr_pp": 3.4319105934043708,
+        "truth_across_person_iqr_pp": 5.694386972517011,
+        "wrong_move_given_true_stable": 0.6218229918037019,
+        "missed_move_given_true_moving": 0.25808864687654215,
+        "opposite_direction_given_true_moving": 0.34083668360956665,
+        "weighted_reduced_share": 0.12866976618723475
+      }
+    },
+    {
+      "month": 202312,
+      "metrics": {
+        "center_mae_pp": 0.044718470846354386,
+        "center_bias_pp": -0.036805687904343465,
+        "predicted_center_pp": 2.9631943120956565,
+        "truth_center_pp": 3.0,
+        "personal_mae_pp": 2.6453653958713947,
+        "w1_pp": 1.8545158878596988,
+        "delta_w1_pp": 0.7578200063409548,
+        "across_person_iqr_pp": 2.2063137842925453,
+        "truth_across_person_iqr_pp": 3.826349598141393,
+        "wrong_move_given_true_stable": 0.6623840326300858,
+        "missed_move_given_true_moving": 0.40419623273488575,
+        "opposite_direction_given_true_moving": 0.15360394227503144,
+        "weighted_reduced_share": 0.19483574148206204
+      }
+    },
+    {
+      "month": 202410,
+      "metrics": {
+        "center_mae_pp": 0.02578391960293791,
+        "center_bias_pp": 0.008833200878008096,
+        "predicted_center_pp": 2.9896752986298707,
+        "truth_center_pp": 2.9808420977518626,
+        "personal_mae_pp": 2.756677638904605,
+        "w1_pp": 2.0575060014191147,
+        "delta_w1_pp": 0.8943008913023275,
+        "across_person_iqr_pp": 1.7852707021871963,
+        "truth_across_person_iqr_pp": 4.875949651719467,
+        "wrong_move_given_true_stable": 0.39470997544857894,
+        "missed_move_given_true_moving": 0.24332364321618444,
+        "opposite_direction_given_true_moving": 0.2429184298961547,
+        "weighted_reduced_share": 0.1009471439400697
+      }
+    },
+    {
+      "month": 202503,
+      "metrics": {
+        "center_mae_pp": 0.746233306972208,
+        "center_bias_pp": -0.746233306972208,
+        "predicted_center_pp": 3.2988067810352764,
+        "truth_center_pp": 4.045040088007484,
+        "personal_mae_pp": 4.975470602352521,
+        "w1_pp": 4.15513162988368,
+        "delta_w1_pp": 3.0234290536517987,
+        "across_person_iqr_pp": 2.1544382939566025,
+        "truth_across_person_iqr_pp": 5.9350183828176215,
+        "wrong_move_given_true_stable": 0.7204359327283729,
+        "missed_move_given_true_moving": 0.4635832070554745,
+        "opposite_direction_given_true_moving": 0.1015315385337002,
+        "weighted_reduced_share": 0.12119350103262402
+      }
+    }
+  ],
+  "automatic_upgrade": false,
+  "limits": [
+    "Only selects whole previously generated Q9 replies, no new simulated answers or observed true attention.",
+    "All six development months inspected; not independent verification; threshold not tuned.",
+    "Shuffling preserves counts rather than survey-weight totals; differences are descriptive.",
+    "Official-derived stability labels and frozen approximate score differ for some responses."
+  ],
+  "source_sha256": {
+    "outputs/sce_retention_predictability_20261018_v2/predictions_private.parquet": "8ab1f10b3758686ff2d463a2745ca82674aa7d58cc6eb965f6dd2f5c0571c154",
+    "outputs/sce_retention_predictability_20261018_v2/summary.json": "e1f65f971dc6dda8845abc685334030d0729981cf4ec6ecc561479936dd7f8ad",
+    "outputs/sce_information_exposure_readout_20261019_v1/summary.json": "c2be7dc3002820a314c01c3b11f82e9fd3e49142eb74a4b5ea928cada16d4e24",
+    "outputs/sce_information_exposure_evaluation_20261019_v1/cases_private.json": "f4ef3ce891f8b664353f6313060cce44adebea7c0aaf34c92221ed8975d26def",
+    "docs/workstreams/20261018_targeted_mechanisms/past_only_exposure_gate_plan_20261019.md": "ed73d1db07a3f8cc8e752012360a29a6897efc5a36f9b689f30e1d4e6bb04150"
+  }
+}

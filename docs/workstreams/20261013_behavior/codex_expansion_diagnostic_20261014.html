@@ -1,22 +1,30 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body>
 <section id="news-attention-design-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
-<h1>新闻接触实验已准备：六个月、六组，等待预算确认</h1>
-<p>2026-10-18。用户已确认推进本地准备。<strong>3,456份输入、72项官方引擎离线检查全部通过；新增付费调用0</strong>。本轮还没有真实回答，原十二期主MAE仍是0.459pp，持续性基线0.239pp。免费MCP核查已完成，Household Pulse保留后续研究。</p>
-<nav><a href="../20261018_targeted_mechanisms/attention_support_results.md">完整设计、依据与费用</a> · <a href="../20261018_targeted_mechanisms/attention_preparation_readout_v1/preparation_summary.json">库存与检查收据</a> · <a href="../20261018_targeted_mechanisms/attention_preparation_readout_v1/protocol.json">实验登记</a> · <a href="../../current_todo.html">任务清单</a></nav>
-<h2>这次要区分两个问题</h2>
-<p><strong>新闻多少：</strong>每人3／8／20篇，三篇共同头版不变，个人新闻分别0／5／17篇。继续按50%随机＋50%相关抽取，五篇是十七篇的前缀，再按日期展示。篇数是实验档位，不冒充真人实际阅读量。</p>
-<p><strong>统计是否完整：</strong>各档分别保留或省去额外宏观统计与12个月序列；删表时也删对应发布日期标签。相同新闻、政策中自然出现的数字继续保留。人口、本人上期信念及更早历史、CE和央行信心、问卷全部不变。</p>
-<h2>时间与规模</h2>
-<p>2020-09、2021-09、2022-06、2023-12、2024-10、2025-03；每月96名回访者，六组各两遍，<strong>6,912次请求</strong>。按年龄×收入从原192人分层抽样，权重随入样概率调整；这些是开发月份，不称独立验证或严格B预测。</p>
-<p>六个月已有148—351篇可分配个人新闻，<strong>无需抓新新闻或重做标签</strong>。576份原配置提示逐字复现；回答会同期重跑，避免把DeepSeek更新误当机制改善。</p>
-<h2>人口特征能否决定关注或联想？先做了检验</h2>
-<p>Andre等2021年外部调查中，2,053人有新闻关注回答。年龄、教育、收入、地区的留出概率预测只有小幅改善：对数损失下降约0.94%。四类冲击的成本／需求联想没有获得稳定预测收益，细分供体也偏少。因此<strong>本轮不硬贴“高关注者”或经济学流派</strong>，先直接检验信息展示；不代表这些经济机制没有作用。</p>
-<p><a href="../20261018_targeted_mechanisms/attention_preparation_readout_v1/attention_summary.json">留出检验与供体覆盖</a> · <a href="../20261018_targeted_mechanisms/attention_support_plan.md">执行前方法</a> · <a href="../20261018_targeted_mechanisms/subjective_models_reference_inventory.md">原题、字段及许可</a></p>
-<h2>费用、判读与下一步</h2>
-<p>沿用DeepSeek官方Flash，温度0.5、关闭思考、每份最多1,024输出token、无自动重试。<strong>粗估$7.55，保守预留$29.27，拟申请$30硬上限</strong>；上限不是预计花费。<a href="https://api-docs.deepseek.com/quick_start/pricing/">10/18官方价格及Flash-1017版本</a>已核，新旧回答不混作同期对照。</p>
-<p>批准具体发送范围和预算后再真实调用。先看同样本群体中位数MAE，再看W1、变化分布、IQR以及该保持却被改动／该改变却没改变的情况；各月都报告。只因少看信息而接近照抄，不算新增信息收益。候选固定后再另四月验证。</p>
-<p>平台免费核查仍显示gpt-4o-mini，问卷接口没有自带逐人P/E和模型参数入口；当前不能直接替代这一批。USTR／Trends与Household Pulse继续分开准备，不叠入本轮。</p>
-<details><summary>上一轮为何提出这个实验？</summary><p>在392个个人历史与公共CPI指向相反的人月中，真人沿个人方向约37.7%，模型逐遍约3.5%；模型沿CPI方向54.4%。这是描述性差距，不是CPI因果权重。<a href="../20261018_targeted_mechanisms/anchor_direction_results.md">诊断与边界</a>、<a href="../20261018_targeted_mechanisms/next_experiment_plan_20261018.md">原完整方案</a>。原主误差未变。</p></details>
+<span id="news-attention-results-20261019"></span>
+<h1>完整统计压缩了人际差异，但统一删表仍不能解决预测误差</h1>
+<p>2026-10-19。六个开发月×96人×六组×两遍，<strong>6,912次调用全部完成，费用估算$6.56／上限$30</strong>；6904份格式有效、8份无效原样保留，0接口错误/重试。使用DeepSeek官方API，平台$70未动用。没有配置通过预登记整体筛选，暂不升级默认方案。</p>
+<nav><a href="../20261018_targeted_mechanisms/information_exposure_results_20261019.md">完整结果、原理和后续</a> · <a href="../20261018_targeted_mechanisms/information_exposure_readout_v1/summary.json">聚合证据与区间</a> · <a href="../20261018_targeted_mechanisms/attention_preparation_readout_v1/protocol.json">执行前登记</a> · <a href="../../current_todo.html">任务清单</a></nav>
+<h2>只精简宏观资料：分布改善，中心误差未改善</h2>
+<p>新闻同为8篇、内容不变，省去额外统计及12个月序列后，<strong>W1从2.457降至1.754pp，人际IQR从2.263扩大到3.679pp</strong>，更接近真人4.732。六个月W1均改善；但群体中位数MAE从<strong>0.355变成0.392pp</strong>。</p>
+<p>它使模型少改动那些真人保持的判断（错动60.9%→46.2%），也更容易漏掉真人实际的改变（漏动35.1%→55.5%）；两个方向在六个月都出现。<strong>需要研究谁在何时吸收信息，而非让所有人统一看完整表或统一删表。</strong></p>
+<figure><img src="../20261018_targeted_mechanisms/information_exposure_readout_v1/metric_comparison.png" alt="六组中位数误差与跨人分布W1比较"><figcaption>相同可评分567人月、558位不同受访者；设计/调查权重不变，月份与两次生成等权。W1越低越好；真人跨人IQR为4.732pp。这里的群体中位数先对每人Q9拟合密度取均值，再跨人取加权中位数，Q8另列。</figcaption></figure>
+<h2>六组完整结果</h2>
+<div class="table-scroll"><table><thead><tr><th>输入配置</th><th>群体中位数MAE</th><th>个人均值MAE</th><th>跨人W1</th><th>人际IQR</th></tr></thead><tbody><tr><td>8篇＋完整（同期对照）</td><td>0.355</td><td>3.224</td><td>2.457</td><td>2.263</td></tr><tr><td>3篇＋完整</td><td>0.406</td><td>3.286</td><td>2.466</td><td>2.325</td></tr><tr><td>20篇＋完整</td><td>0.451</td><td>3.248</td><td>2.546</td><td>2.324</td></tr><tr><td>3篇＋精简</td><td>0.303</td><td>2.787</td><td>1.602</td><td>3.760</td></tr><tr><td>8篇＋精简</td><td>0.392</td><td>2.895</td><td>1.754</td><td>3.679</td></tr><tr><td>20篇＋精简</td><td>0.376</td><td>2.972</td><td>1.822</td><td>3.410</td></tr><tr><td>照抄本人上期</td><td>0.338</td><td>2.649</td><td>0.903</td><td>5.551</td></tr></tbody></table></div>
+<p>单位：百分点。3篇＝共同头版3篇；8／20篇另有个人5／17篇，50%随机＋50%相关，一次抽取并嵌套。精简只删额外统计、趋势及对应发布时间标签；新闻中的数字、政策、P、真实上期先验和更早历史不变。新闻量是实验档位，不是真人实际阅读量。</p>
+<h2>为什么不能凭0.303宣布成功</h2>
+<p>六组最低是3篇＋精简，0.303低于本批照抄0.338，但<strong>只在2／6个月优于同期参照</strong>，未满足预先登记的至少4期不恶化等条件。主要收益来自2025-03；去掉该月后反而比参照差0.058pp。两次生成自身MAE为0.373／0.234，波动也较大。</p>
+<figure><img src="../20261018_targeted_mechanisms/information_exposure_readout_v1/monthly_centers.png" alt="完整及精简宏观资料下六个开发月的真人与模型中位数"><figcaption>散布于不同经济时期的六个选定月份，并非连续模拟。图显示两次生成的平均中位数，MAE表则先逐次计算绝对误差再平均，二者不可混算。使用真实个人上期回答的A条件重建，不能称全国完整重建或严格B预测。</figcaption></figure>
+<div class="table-scroll"><table><thead><tr><th>月份</th><th>共同人数</th><th>8篇完整</th><th>3篇精简</th><th>8篇精简</th><th>照抄</th></tr></thead><tbody><tr><td>2020-09</td><td>93</td><td>0.556</td><td>0.438</td><td>0.658</td><td>0.521</td></tr><tr><td>2021-09</td><td>94</td><td>0.235</td><td>0.461</td><td>0.606</td><td>0.559</td></tr><tr><td>2022-06</td><td>95</td><td>0.374</td><td>0.425</td><td>0.431</td><td>0.648</td></tr><tr><td>2023-12</td><td>96</td><td>0.025</td><td>0.091</td><td>0.066</td><td>0.000</td></tr><tr><td>2024-10</td><td>93</td><td>0.076</td><td>0.142</td><td>0.064</td><td>0.066</td></tr><tr><td>2025-03</td><td>96</td><td>0.864</td><td>0.264</td><td>0.524</td><td>0.236</td></tr></tbody></table></div>
+<h2>统计解释与边界</h2>
+<p>固定8篇，精简相对完整的W1差约−0.704pp，配对区间[−0.820,−0.443]；中心误差差约+0.037，区间[−0.305,+0.272]。这支持本批<strong>人群分布更接近</strong>，不支持总体预测稳定改善。区间对家庭配对重抽、保留两遍和重复月份，固定了六个月，且多重对照未校正；不是跨时期有效证明。</p>
+<p>外部Andre调查中，共有人口字段对关注程度预测仅小幅改善，不能硬分经济学流派。本轮未叠加人格/财务/购买频率、没有新Event资料。减少统计的效果还混合了数字、趋势、时间标签及长度变化，模型仍可能利用预训练知识；不能单独归因于某个CPI数。</p>
+<h2>继续做了一项零API检查</h2>
+<p>用早于目标年份训练的保持概率，固定0.5阈值，为75／567人选已有8篇精简回答，其余保留8篇完整回答。<strong>没有生成新回答，也没有重拟合Q9。</strong>中心MAE0.355→0.311，但W1仅2.457→2.415、人际IQR2.263→2.336；打乱分配20次的W1为2.253—2.390，没有看到本人分配的分布优势。</p>
+<p>它提醒我们，过去较少改答案，并不等于实际较少看新闻，亦不等于删表就会更像他。规则是在六组结果之后登记的开发诊断，不是独立验证，不升级默认。<a href="../20261018_targeted_mechanisms/past_only_exposure_gate_results_20261019.md">完整结果和限制</a>。</p>
+<h2>下一步</h2>
+<p>保留本批和原默认，不自动扩大付费验证、不再调新闻篇数。先利用已有回答，检查<strong>个人先验与公共信号的距离、信号方向及月份冲击</strong>，找出该保留和该响应的具体情境；不靠本期真值给人选输入。规则若有可迁移收益，冻结后再另四月验证。</p>
+<p>原十二期主MAE0.459／照抄0.239来自不同月份与样本，仍保留；本轮0.355／0.303／0.338不是十二期版本直接改善。目标低于0.20并优于基线尚未实现。Household Pulse、USTR/Trends及平台模型桥接后续分开处理。</p>
+<details><summary>准备工作、数据依据与运行记录</summary><p>六期库存齐全，没有新增新闻抓取或打标；72项官方引擎离线检查通过。<a href="../20261018_targeted_mechanisms/attention_support_results.md">准备和外部支持检验</a>。调用北京时间10/18 23:29—10/19 00:05，约36.94分钟；统一计分144秒，聚合约1.27秒，216项独立数值对账一致。模型为deepseek-flash，温度0.5、关闭思考、无自动重试；可变别名不等于权重快照锁定。原始记录本地保留，聚合选入Git，未推送。</p></details>
 </section>
 
 <section id="consumer-context-results-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
