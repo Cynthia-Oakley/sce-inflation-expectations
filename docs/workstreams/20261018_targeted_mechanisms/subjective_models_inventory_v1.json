@@ -1,0 +1,547 @@
+{
+  "checked_at_utc": "2026-10-18T14:21:49.354886+00:00",
+  "new_api_calls": 0,
+  "source_url": "https://zenodo.org/records/5838445",
+  "version": "1.0.1",
+  "archive_relative_path": "data/raw/behavior_references/2026-10-18_subjective_models_v1/SubMod_Replication_220111.zip",
+  "archive_sha256": "ae34b5e4e67c5240bae5516eb10096e33e4a94266f8e4962631e437227e189d3",
+  "archive_md5": "1538f753c65672ce884c52d3b99f0eba",
+  "bytes": 28011361,
+  "data_file": "out/data/associations.dta",
+  "total_households_and_experts": 2501,
+  "household_rows": 2126,
+  "expert_rows_excluded": 375,
+  "household_follow_news_observed": 2053,
+  "household_follow_news_missing": 73,
+  "follow_news_1_to_6_counts_unweighted": {
+    "1": 192,
+    "2": 207,
+    "3": 257,
+    "4": 537,
+    "5": 565,
+    "6": 295
+  },
+  "question_sources": [
+    {
+      "source": "qualtrics/SubMod__Wave_1_Experts.qsf",
+      "question_html": "I usually<strong> follow news on the national economy</strong>.",
+      "choices": {
+        "1": {
+          "Display": "Fully disagree"
+        },
+        "2": {
+          "Display": "Disagree"
+        },
+        "3": {
+          "Display": "Rather disagree"
+        },
+        "4": {
+          "Display": "Rather agree"
+        },
+        "5": {
+          "Display": "Agree"
+        },
+        "6": {
+          "Display": "Fully agree"
+        }
+      },
+      "recode": null
+    },
+    {
+      "source": "qualtrics/SubMod__Wave_1_Households.qsf",
+      "question_html": "I usually<strong> follow news on the national economy</strong>.",
+      "choices": {
+        "1": {
+          "Display": "Fully disagree"
+        },
+        "2": {
+          "Display": "Disagree"
+        },
+        "3": {
+          "Display": "Rather disagree"
+        },
+        "4": {
+          "Display": "Rather agree"
+        },
+        "5": {
+          "Display": "Agree"
+        },
+        "6": {
+          "Display": "Fully agree"
+        }
+      },
+      "recode": null
+    },
+    {
+      "source": "qualtrics/SubMod__Wave_3_Experts.qsf",
+      "question_html": "<div>To what extent do you agree with the following statement?</div><div>I usually<strong> follow news on the national economy</strong>.</div>",
+      "choices": {
+        "1": {
+          "Display": "Fully disagree"
+        },
+        "2": {
+          "Display": "Somewhat disagree"
+        },
+        "3": {
+          "Display": "Rather disagree"
+        },
+        "4": {
+          "Display": "Rather agree"
+        },
+        "5": {
+          "Display": "Somewhat agree"
+        },
+        "6": {
+          "Display": "Fully agree"
+        }
+      },
+      "recode": null
+    },
+    {
+      "source": "qualtrics/SubMod__Wave_2_Households.qsf",
+      "question_html": "<div>To what extent do you agree with the following statement?</div><div>I usually<strong> follow news on the national economy</strong>.</div>",
+      "choices": {
+        "1": {
+          "Display": "Fully disagree"
+        },
+        "2": {
+          "Display": "Disagree"
+        },
+        "3": {
+          "Display": "Rather disagree"
+        },
+        "4": {
+          "Display": "Rather agree"
+        },
+        "5": {
+          "Display": "Agree"
+        },
+        "6": {
+          "Display": "Fully agree"
+        }
+      },
+      "recode": null
+    },
+    {
+      "source": "qualtrics/SubMod__Wave_5_Households.qsf",
+      "question_html": "<div>To what extent do you agree with the following statement?</div><div>I usually<strong> follow news on the national economy</strong>.</div>",
+      "choices": {
+        "1": {
+          "Display": "Fully disagree"
+        },
+        "2": {
+          "Display": "Somewhat disagree"
+        },
+        "3": {
+          "Display": "Rather disagree"
+        },
+        "4": {
+          "Display": "Rather agree"
+        },
+        "5": {
+          "Display": "Somewhat agree"
+        },
+        "6": {
+          "Display": "Fully agree"
+        }
+      },
+      "recode": null
+    },
+    {
+      "source": "qualtrics/SubMod__Wave_4_Households.qsf",
+      "question_html": "<div>To what extent do you agree with the following statement?</div><div>I usually<strong> follow news on the national economy</strong>.</div>",
+      "choices": {
+        "1": {
+          "Display": "Fully disagree"
+        },
+        "2": {
+          "Display": "Disagree"
+        },
+        "3": {
+          "Display": "Rather disagree"
+        },
+        "4": {
+          "Display": "Rather agree"
+        },
+        "5": {
+          "Display": "Agree"
+        },
+        "6": {
+          "Display": "Fully agree"
+        }
+      },
+      "recode": null
+    },
+    {
+      "source": "qualtrics/SubMod__Wave_3_Households.qsf",
+      "question_html": "<div>To what extent do you agree with the following statement?</div><div>I usually<strong> follow news on the national economy</strong>.</div>",
+      "choices": {
+        "1": {
+          "Display": "Fully disagree"
+        },
+        "2": {
+          "Display": "Somewhat disagree"
+        },
+        "3": {
+          "Display": "Rather disagree"
+        },
+        "4": {
+          "Display": "Rather agree"
+        },
+        "5": {
+          "Display": "Somewhat agree"
+        },
+        "6": {
+          "Display": "Fully agree"
+        }
+      },
+      "recode": null
+    }
+  ],
+  "fields": {
+    "age": {
+      "in_file": true,
+      "observed_households": 2126,
+      "description": "Age"
+    },
+    "region": {
+      "in_file": true,
+      "observed_households": 2126,
+      "description": "Census region: 1: Northeast, 2: Midwest, 3: South, 4: West"
+    },
+    "income": {
+      "in_file": true,
+      "observed_households": 2051,
+      "description": "Income"
+    },
+    "education": {
+      "in_file": true,
+      "observed_households": 2126,
+      "description": "Education: 1: 12th grade or less, 2: Graduated high school or equivalent, 3: Some college, no degree, 4: Associate degree, 5: Bachelor's degree, 6: Post-graduate degree"
+    },
+    "college": {
+      "in_file": true,
+      "observed_households": 2126,
+      "description": "Dummy. Takes value 1 for respondents with at least a college education"
+    },
+    "follow_news": {
+      "in_file": true,
+      "observed_households": 2053,
+      "description": null
+    },
+    "econ_college": {
+      "in_file": true,
+      "observed_households": 2126,
+      "description": "Dummy. Takes value 1 for respondents who took a course in economics on college level or higher."
+    },
+    "politics": {
+      "in_file": true,
+      "observed_households": 2053,
+      "description": "Political party preferences: 1: Republican, 2: Democrat, 3: Other"
+    },
+    "rat_att_model": {
+      "in_file": true,
+      "observed_households": 2116,
+      "description": "Std. index of rational inattention. How important is it to have a correct model of the economy?"
+    },
+    "num_std": {
+      "in_file": true,
+      "observed_households": 2001,
+      "description": "Std. numeracy index"
+    },
+    "sources_1": {
+      "in_file": true,
+      "observed_households": 2122,
+      "description": "Dummy. Takes value 1 if respondent indicates that he/she thought about: News"
+    },
+    "sources_2": {
+      "in_file": true,
+      "observed_households": 2122,
+      "description": "Dummy. Takes value 1 if respondent indicates that he/she thought about: Knowledge"
+    },
+    "sources_3": {
+      "in_file": true,
+      "observed_households": 2122,
+      "description": "Dummy. Takes value 1 if respondent indicates that he/she thought about: Personal situation"
+    },
+    "sources_4": {
+      "in_file": true,
+      "observed_households": 2122,
+      "description": "Dummy. Takes value 1 if respondent indicates that he/she thought about: Macro experiences"
+    },
+    "sources_5": {
+      "in_file": true,
+      "observed_households": 2122,
+      "description": "Dummy. Takes value 1 if respondent indicates that he/she thought about: Gut feeling"
+    },
+    "sources_6": {
+      "in_file": true,
+      "observed_households": 2122,
+      "description": "Dummy. Takes value 1 if respondent indicates that he/she thought about: Other"
+    }
+  },
+  "channels_by_shock": [
+    {
+      "shock": "oil",
+      "n_households": 557,
+      "n_joint_observed": 557,
+      "cost_selected_share": 0.7145421903052065,
+      "demand_selected_share": 0.547576301615799,
+      "joint_counts_cost_demand": {
+        "0_0": 90,
+        "0_1": 69,
+        "1_0": 162,
+        "1_1": 236
+      },
+      "definition": {
+        "super_narra_oil_costs": "Dummy. Takes value 1 if respondent chooses negative supply side channel in oil vignette.",
+        "super_narra_oil_demand": "Dummy. Takes value 1 if respondent chooses negative demand side channel in oil vignette."
+      }
+    },
+    {
+      "shock": "int",
+      "n_households": 520,
+      "n_joint_observed": 520,
+      "cost_selected_share": 0.5384615384615384,
+      "demand_selected_share": 0.6288461538461538,
+      "joint_counts_cost_demand": {
+        "0_0": 113,
+        "0_1": 127,
+        "1_0": 80,
+        "1_1": 200
+      },
+      "definition": {
+        "super_narra_int_costs": "Dummy. Takes value 1 if respondent chooses negative supply side channel in int vignette.",
+        "super_narra_int_demand": "Dummy. Takes value 1 if respondent chooses negative demand side channel in int vignette."
+      }
+    },
+    {
+      "shock": "gov",
+      "n_households": 519,
+      "n_joint_observed": 519,
+      "cost_selected_share": 0.28709055876685935,
+      "demand_selected_share": 0.5452793834296724,
+      "joint_counts_cost_demand": {
+        "0_0": 146,
+        "0_1": 224,
+        "1_0": 90,
+        "1_1": 59
+      },
+      "definition": {
+        "super_narra_gov_costs": "Dummy. Takes value 1 if respondent chooses negative crowding-out channel in gov vignette.",
+        "super_narra_gov_demand": "Dummy. Takes value 1 if respondent chooses positive demand side channel in gov vignette."
+      }
+    },
+    {
+      "shock": "tax",
+      "n_households": 530,
+      "n_joint_observed": 530,
+      "cost_selected_share": 0.4716981132075472,
+      "demand_selected_share": 0.5113207547169811,
+      "joint_counts_cost_demand": {
+        "0_0": 146,
+        "0_1": 134,
+        "1_0": 113,
+        "1_1": 137
+      },
+      "definition": {
+        "super_narra_tax_costs": "Dummy. Takes value 1 if respondent chooses negative supply side channel in tax vignette.",
+        "super_narra_tax_demand": "Dummy. Takes value 1 if respondent chooses negative demand side channel in tax vignette."
+      }
+    }
+  ],
+  "demographic_attention_inventory_unweighted": {
+    "age_group": {
+      "40_to_59": {
+        "n": 680,
+        "follow_news_observed_n": 650,
+        "follow_news_mean_ordinal_not_cardinal": 3.8723076923076922,
+        "follow_news_1_to_6_counts": {
+          "1": 68,
+          "2": 70,
+          "3": 85,
+          "4": 165,
+          "5": 178,
+          "6": 84
+        }
+      },
+      "60_plus": {
+        "n": 557,
+        "follow_news_observed_n": 532,
+        "follow_news_mean_ordinal_not_cardinal": 4.133458646616542,
+        "follow_news_1_to_6_counts": {
+          "1": 31,
+          "2": 55,
+          "3": 66,
+          "4": 137,
+          "5": 146,
+          "6": 97
+        }
+      },
+      "under_40": {
+        "n": 889,
+        "follow_news_observed_n": 871,
+        "follow_news_mean_ordinal_not_cardinal": 3.9081515499425947,
+        "follow_news_1_to_6_counts": {
+          "1": 93,
+          "2": 82,
+          "3": 106,
+          "4": 235,
+          "5": 241,
+          "6": 114
+        }
+      }
+    },
+    "college": {
+      "0.0": {
+        "n": 1016,
+        "follow_news_observed_n": 982,
+        "follow_news_mean_ordinal_not_cardinal": 3.6995926680244398,
+        "follow_news_1_to_6_counts": {
+          "1": 129,
+          "2": 113,
+          "3": 128,
+          "4": 268,
+          "5": 242,
+          "6": 102
+        }
+      },
+      "1.0": {
+        "n": 1110,
+        "follow_news_observed_n": 1071,
+        "follow_news_mean_ordinal_not_cardinal": 4.189542483660131,
+        "follow_news_1_to_6_counts": {
+          "1": 63,
+          "2": 94,
+          "3": 129,
+          "4": 269,
+          "5": 323,
+          "6": 193
+        }
+      }
+    },
+    "income_group": {
+      "50k_to_100k": {
+        "n": 725,
+        "follow_news_observed_n": 704,
+        "follow_news_mean_ordinal_not_cardinal": 4.15625,
+        "follow_news_1_to_6_counts": {
+          "1": 44,
+          "2": 71,
+          "3": 70,
+          "4": 180,
+          "5": 224,
+          "6": 115
+        }
+      },
+      "missing": {
+        "n": 75,
+        "follow_news_observed_n": 73,
+        "follow_news_mean_ordinal_not_cardinal": 3.493150684931507,
+        "follow_news_1_to_6_counts": {
+          "1": 11,
+          "2": 10,
+          "3": 12,
+          "4": 22,
+          "5": 8,
+          "6": 10
+        }
+      },
+      "over_100k": {
+        "n": 341,
+        "follow_news_observed_n": 329,
+        "follow_news_mean_ordinal_not_cardinal": 4.334346504559271,
+        "follow_news_1_to_6_counts": {
+          "1": 20,
+          "2": 17,
+          "3": 39,
+          "4": 79,
+          "5": 105,
+          "6": 69
+        }
+      },
+      "under_50k": {
+        "n": 985,
+        "follow_news_observed_n": 947,
+        "follow_news_mean_ordinal_not_cardinal": 3.70960929250264,
+        "follow_news_1_to_6_counts": {
+          "1": 117,
+          "2": 109,
+          "3": 136,
+          "4": 256,
+          "5": 228,
+          "6": 101
+        }
+      }
+    },
+    "region": {
+      "1.0": {
+        "n": 466,
+        "follow_news_observed_n": 448,
+        "follow_news_mean_ordinal_not_cardinal": 3.9598214285714284,
+        "follow_news_1_to_6_counts": {
+          "1": 42,
+          "2": 52,
+          "3": 49,
+          "4": 111,
+          "5": 127,
+          "6": 67
+        }
+      },
+      "2.0": {
+        "n": 506,
+        "follow_news_observed_n": 489,
+        "follow_news_mean_ordinal_not_cardinal": 3.8139059304703475,
+        "follow_news_1_to_6_counts": {
+          "1": 59,
+          "2": 52,
+          "3": 62,
+          "4": 122,
+          "5": 136,
+          "6": 58
+        }
+      },
+      "3.0": {
+        "n": 767,
+        "follow_news_observed_n": 738,
+        "follow_news_mean_ordinal_not_cardinal": 4.028455284552845,
+        "follow_news_1_to_6_counts": {
+          "1": 60,
+          "2": 64,
+          "3": 102,
+          "4": 202,
+          "5": 189,
+          "6": 121
+        }
+      },
+      "4.0": {
+        "n": 387,
+        "follow_news_observed_n": 378,
+        "follow_news_mean_ordinal_not_cardinal": 3.9894179894179893,
+        "follow_news_1_to_6_counts": {
+          "1": 31,
+          "2": 39,
+          "3": 44,
+          "4": 102,
+          "5": 113,
+          "6": 49
+        }
+      }
+    }
+  },
+  "license": {
+    "zenodo_metadata": "CC-BY-4.0",
+    "bundled_README": "CC-BY-NC-4.0",
+    "handling": "Record discrepancy; use the more restrictive bundled noncommercial attribution terms for local academic research. No raw redistribution or LLM upload."
+  },
+  "interpretation": [
+    "Wave 3 household sample (February 2021), not SCE identities or annual US attention series.",
+    "Follow-news is a six-level agreement statement, not article counts, credibility, or observed clicks.",
+    "Cost/demand indicators may both equal one: not mutually exclusive economic schools.",
+    "Matching demographics can transfer external conditional distributions, not recover an SCE person’s actual cognition.",
+    "Economic knowledge and survey numeracy instruments are not automatically interchangeable with SCE quizzes.",
+    "No year-ahead SCE answers, synthetic personality allocation, or new simulation is produced.",
+    "Income uses original authors’ bracket midpoints; reference group summaries here are unweighted and descriptive."
+  ],
+  "nonexecuted_upstream_code": true
+}

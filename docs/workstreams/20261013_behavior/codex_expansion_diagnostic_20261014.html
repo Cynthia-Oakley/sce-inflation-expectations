@@ -1,4 +1,22 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body>
+<section id="news-attention-design-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
+<h1>个人历史与共同信息：找到更具体的差距，也找到了可用数据</h1>
+<p>2026-10-18。本轮<strong>0次新API、0次密度拟合</strong>；原十二期主中位数MAE仍为模型0.459、照抄上期0.239pp。完成的是机制诊断与数据准备，还没有证明新配置能降低误差。</p>
+<nav><a href="../20261018_targeted_mechanisms/anchor_direction_results.md">同样本诊断与边界</a> · <a href="../20261018_targeted_mechanisms/information_exposure_design.md">新闻接触与解释方案</a> · <a href="../20261018_targeted_mechanisms/subjective_models_reference_inventory.md">新数据原题与字段</a> · <a href="../../current_todo.html">任务清单</a></nav>
+<h2>一、当个人常态与公共统计指向相反方向时，模型怎样改？</h2>
+<p>例：上期报5%、较早通常报8%、最新公开CPI为2%。上调与个人历史方向一致，下调与CPI方向一致。在<strong>392个方向冲突的人月</strong>中，真人沿个人方向约37.7%、沿CPI方向32.0%；模型两遍分别统计约为<strong>3.5%和54.4%</strong>。模型较少恢复那些与公共统计方向相反的个人更新，不能简单称为“回到本人均值更强”。</p>
+<figure><img src="../20261018_targeted_mechanisms/anchor_direction_readout_v1/anchor_directions.png" alt="个人与公共方向相反时真人和模型的更新选择，以及控制其他变量后的个人历史关联"><figcaption>十二期共同支持2,284人月，2,013人有较早历史；较早常态严格去掉上期。方向阈值0.5pp，原权重不变。CPI是过去同比，不能当未来预期真值；上述是关联诊断，不是CPI的因果效应。</figcaption></figure>
+<p>较长历史、排除极端先验及其他阈值仍有相同差距。与此同时，真人也可能大幅跳过个人常态，因此不应强制所有人回归、直接写一个固定权重。把CPI差距和月份/上期值一起回归，还存在代数共线，不能解释成独立的心理权重。</p>
+<h2>二、固定每人八篇新闻，确实是一项简化</h2>
+<p>当前为<strong>3篇共同头版＋5篇个人新闻</strong>；原50/50只改变内容抽取，不改变接触量。而所有人还收到完整价格序列和政策摘要，所以只把个人新闻变少，可能仍通过统计表获得全部共同信号。下一步应分开检验新闻量与宏观资料可见性；少/多是实验档位，不能直接冒充真实人口比例或每月阅读篇数。</p>
+<h2>三、已经取得可同时研究关注与联想的数据</h2>
+<p>Andre等论文公开复现包已下载并核对MD5，约28MB。2021年一轮样本有<strong>2,126名美国家庭</strong>，其中<strong>2,053名</strong>回答了“我通常关注全国经济新闻”的六档同意度；同一人还有成本/需求渠道选择、年龄、教育、收入及地区。</p>
+<p>六档关注不是点击记录，也不能直接换成5/50/100篇。油价情境557名家庭中236人同时选择成本和需求渠道，说明不适合硬分互斥的经济学流派。新数据可支持概率/供体分配，但不能恢复SCE本人真实思想；2021波次也不是逐年关注分布。包内许可与网页元数据不同，当前按包内非商业署名要求作本地学术研究，原记录不公开或上传。</p>
+<h2>四、接下来做什么</h2>
+<ol><li>先离线检查共同人口字段对新闻关注和渠道联合分布的预测支持，明确稀疏和未知。</li><li>再准备接触量与宏观资料可见性分开的输入对照，原P、本人先验、题目及时间范围保持一致。</li><li>成本/需求线索属于机制干预；语义等价的措辞变体只作稳健性，不能混成同一个处理。</li><li>若需真实模拟，再提交具体输入与预算；要求既减少错动，又增加对真实变化的判断信息，不能只因接近照抄就算成功。</li></ol>
+<p><a href="#consumer-context-results-20261018">上一批消费者背景288次模拟结果</a>继续保留；不在旧三期改词追结果，不覆盖旧配置。</p>
+</section>
+
 <section id="consumer-context-results-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
 <h1>消费者处境背景试验：局部改善，尚未通过筛查</h1>
 <p>2026-10-18。三期各24人、两组各两遍，<strong>288次真实调用全部有效</strong>，0错误/重试；用量估算$0.327／上限$2。模型请求与返回均为deepseek-flash，温度0.5、关闭思考。并行运行约98秒、评分约9秒。</p>

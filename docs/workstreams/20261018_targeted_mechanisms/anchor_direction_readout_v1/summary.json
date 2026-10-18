@@ -1,0 +1,1888 @@
+{
+  "completed_at_utc": "2026-10-18T14:09:05.779836+00:00",
+  "new_api_calls": 0,
+  "new_density_fits": 0,
+  "n_person_months": 2284,
+  "months": [
+    202003,
+    202009,
+    202103,
+    202109,
+    202206,
+    202212,
+    202306,
+    202312,
+    202404,
+    202410,
+    202503,
+    202509
+  ],
+  "n_with_older_history": 2013,
+  "n_with_at_least_four_past_answers": 1545,
+  "original_same_support_scores": {
+    "prior": {
+      "center_mae_pp": 0.23948056006172466,
+      "personal_mae_pp": 3.073890750945504,
+      "personal_mse_pp_squared": 36.32952187073034,
+      "cross_person_w1_pp": 0.8734307505483131,
+      "update_w1_pp": 3.0738907509455036,
+      "predicted_cross_person_iqr_pp": 5.560583959361607,
+      "real_cross_person_iqr_pp": 5.054654795617317,
+      "personal_rmse_pp": 6.0273976035043795
+    },
+    "sim": {
+      "center_mae_pp": 0.4591912957196014,
+      "personal_mae_pp": 3.468529127076613,
+      "personal_mse_pp_squared": 35.28116085301517,
+      "cross_person_w1_pp": 2.4337224759717384,
+      "update_w1_pp": 1.38317189544326,
+      "predicted_cross_person_iqr_pp": 2.4236160552363017,
+      "real_cross_person_iqr_pp": 5.054654795617317,
+      "personal_rmse_pp": 5.939794681048762
+    }
+  },
+  "reference_definitions": {
+    "latest_cpi_yoy_pp": "Official latest eligible CPI: past inflation, not a year-ahead household forecast or rational target.",
+    "other_model_center_pp": "Leave-one-person-out weighted median of averaged generated outcomes. Evaluation-only and mechanically outcome-related; not an exogenous news signal.",
+    "older": "Exact frozen personal historical mean excluding t-1; never imputed for one-answer histories."
+  },
+  "weighting": "Original design-survey weights normalized within each month, then months equally weighted. Subgroup summaries condition on these weights, not an equal mean of subgroup-month cells.",
+  "profiles": {
+    "all": {
+      "latest_cpi_yoy_pp": {
+        "threshold_pp": 0.5,
+        "n_person_months": 2284,
+        "counts": {
+          "near_either_anchor": 676,
+          "opposed": 392,
+          "same_direction": 945,
+          "no_older_history": 271
+        },
+        "weighted_share_of_full_support": {
+          "near_either_anchor": 0.26735473744942245,
+          "opposed": 0.1798276186006848,
+          "same_direction": 0.4234480598069806
+        },
+        "model_basis": "mean_of_two_generations",
+        "groups": {
+          "opposed": {
+            "truth": {
+              "average_absolute_update_pp": 2.8651211847328657,
+              "personal_distance_change_pp": 1.220086230567334,
+              "common_distance_change_pp": 1.4391275459286927,
+              "direction_shares": {
+                "stable": 0.30387737300752393,
+                "personal_direction": 0.37650025342332283,
+                "common_direction": 0.31962237356915335
+              }
+            },
+            "model": {
+              "average_absolute_update_pp": 1.073554396487364,
+              "personal_distance_change_pp": 1.0124134260829523,
+              "common_distance_change_pp": -0.9757513753751273,
+              "direction_shares": {
+                "stable": 0.46457737747424555,
+                "personal_direction": 0.011696517534130662,
+                "common_direction": 0.5237261049916238
+              }
+            }
+          },
+          "same_direction": {
+            "truth": {
+              "average_absolute_update_pp": 3.8063610515414084,
+              "personal_distance_change_pp": -0.24856343879798048,
+              "common_distance_change_pp": -0.9438368557965815
+            },
+            "model": {
+              "average_absolute_update_pp": 3.9176391642270483,
+              "personal_distance_change_pp": -1.975428377809144,
+              "common_distance_change_pp": -3.819699346157234
+            }
+          },
+          "near_either_anchor": {
+            "truth": {
+              "average_absolute_update_pp": 1.5841387904598223,
+              "personal_distance_change_pp": 1.0070441120655549,
+              "common_distance_change_pp": 0.5744475836245542
+            },
+            "model": {
+              "average_absolute_update_pp": 1.1942472109015387,
+              "personal_distance_change_pp": 0.986568634892601,
+              "common_distance_change_pp": -0.969825945240305
+            }
+          }
+        }
+      },
+      "other_model_center_pp": {
+        "threshold_pp": 0.5,
+        "n_person_months": 2284,
+        "counts": {
+          "near_either_anchor": 698,
+          "same_direction": 941,
+          "opposed": 374,
+          "no_older_history": 271
+        },
+        "weighted_share_of_full_support": {
+          "near_either_anchor": 0.2801911531951834,
+          "same_direction": 0.41848393584738286,
+          "opposed": 0.1719553268145215
+        },
+        "model_basis": "mean_of_two_generations",
+        "groups": {
+          "opposed": {
+            "truth": {
+              "average_absolute_update_pp": 2.8949187978959974,
+              "personal_distance_change_pp": 1.318049073046685,
+              "common_distance_change_pp": 1.4275505949127338,
+              "direction_shares": {
+                "stable": 0.3041440329694557,
+                "personal_direction": 0.3645734827381344,
+                "common_direction": 0.33128248429241003
+              }
+            },
+            "model": {
+              "average_absolute_update_pp": 1.1194815936002849,
+              "personal_distance_change_pp": 1.0493668725341827,
+              "common_distance_change_pp": -1.023361910690753,
+              "direction_shares": {
+                "stable": 0.43709620108785896,
+                "personal_direction": 0.013868570984236658,
+                "common_direction": 0.5490352279279045
+              }
+            }
+          },
+          "same_direction": {
+            "truth": {
+              "average_absolute_update_pp": 3.8253751122806143,
+              "personal_distance_change_pp": -0.27507814789291757,
+              "common_distance_change_pp": -1.0071144262986036
+            },
+            "model": {
+              "average_absolute_update_pp": 3.9581576234102442,
+              "personal_distance_change_pp": -1.997309032581176,
+              "common_distance_change_pp": -3.8824795047542278
+            }
+          },
+          "near_either_anchor": {
+            "truth": {
+              "average_absolute_update_pp": 1.6128146304157738,
+              "personal_distance_change_pp": 0.9702652399837328,
+              "common_distance_change_pp": 0.6043613860539956
+            },
+            "model": {
+              "average_absolute_update_pp": 1.1504034844766426,
+              "personal_distance_change_pp": 0.9448189154537999,
+              "common_distance_change_pp": -0.9445734173104259
+            }
+          }
+        }
+      }
+    },
+    "at_least_four_past_answers": {
+      "latest_cpi_yoy_pp": {
+        "threshold_pp": 0.5,
+        "n_person_months": 1545,
+        "counts": {
+          "near_either_anchor": 532,
+          "opposed": 292,
+          "same_direction": 721
+        },
+        "weighted_share_of_full_support": {
+          "near_either_anchor": 0.3189870960833652,
+          "opposed": 0.19549255056190096,
+          "same_direction": 0.4855203533547333
+        },
+        "model_basis": "mean_of_two_generations",
+        "groups": {
+          "opposed": {
+            "truth": {
+              "average_absolute_update_pp": 2.6972803549084907,
+              "personal_distance_change_pp": 1.116561572758263,
+              "common_distance_change_pp": 1.4248514555835823,
+              "direction_shares": {
+                "stable": 0.345062544739417,
+                "personal_direction": 0.36426117470403785,
+                "common_direction": 0.29067628055654526
+              }
+            },
+            "model": {
+              "average_absolute_update_pp": 0.9968822279882843,
+              "personal_distance_change_pp": 0.9672640700956749,
+              "common_distance_change_pp": -0.9340014410105135,
+              "direction_shares": {
+                "stable": 0.468690614948166,
+                "personal_direction": 0.003585047377001713,
+                "common_direction": 0.5277243376748324
+              }
+            }
+          },
+          "same_direction": {
+            "truth": {
+              "average_absolute_update_pp": 3.5407840138842026,
+              "personal_distance_change_pp": -0.14862852225491768,
+              "common_distance_change_pp": -0.8052910392755264
+            },
+            "model": {
+              "average_absolute_update_pp": 4.006169483799228,
+              "personal_distance_change_pp": -1.689693894462103,
+              "common_distance_change_pp": -3.9061735336446586
+            }
+          },
+          "near_either_anchor": {
+            "truth": {
+              "average_absolute_update_pp": 1.4435990360538435,
+              "personal_distance_change_pp": 0.8771046547776105,
+              "common_distance_change_pp": 0.7026884979033765
+            },
+            "model": {
+              "average_absolute_update_pp": 1.0650518349168623,
+              "personal_distance_change_pp": 0.8570171614282436,
+              "common_distance_change_pp": -0.8518270008034112
+            }
+          }
+        }
+      },
+      "other_model_center_pp": {
+        "threshold_pp": 0.5,
+        "n_person_months": 1545,
+        "counts": {
+          "near_either_anchor": 545,
+          "same_direction": 724,
+          "opposed": 276
+        },
+        "weighted_share_of_full_support": {
+          "near_either_anchor": 0.33208080691698877,
+          "same_direction": 0.48502123020129295,
+          "opposed": 0.18289796288171775
+        },
+        "model_basis": "mean_of_two_generations",
+        "groups": {
+          "opposed": {
+            "truth": {
+              "average_absolute_update_pp": 2.720369971647715,
+              "personal_distance_change_pp": 1.2396943784839194,
+              "common_distance_change_pp": 1.380818108284319,
+              "direction_shares": {
+                "stable": 0.34833369088652233,
+                "personal_direction": 0.35425296661275046,
+                "common_direction": 0.29741334250072715
+              }
+            },
+            "model": {
+              "average_absolute_update_pp": 1.048457665287138,
+              "personal_distance_change_pp": 1.0052030483944128,
+              "common_distance_change_pp": -0.9803482435495139,
+              "direction_shares": {
+                "stable": 0.44693114154918745,
+                "personal_direction": 0.006206128394672732,
+                "common_direction": 0.5468627300561397
+              }
+            }
+          },
+          "same_direction": {
+            "truth": {
+              "average_absolute_update_pp": 3.5447025435985866,
+              "personal_distance_change_pp": -0.1825219534320127,
+              "common_distance_change_pp": -0.8481362421457426
+            },
+            "model": {
+              "average_absolute_update_pp": 4.007201082263724,
+              "personal_distance_change_pp": -1.6878030547624272,
+              "common_distance_change_pp": -3.9324755332819983
+            }
+          },
+          "near_either_anchor": {
+            "truth": {
+              "average_absolute_update_pp": 1.4758584701484736,
+              "personal_distance_change_pp": 0.866330735899652,
+              "common_distance_change_pp": 0.7131969685746933
+            },
+            "model": {
+              "average_absolute_update_pp": 1.0369743984771693,
+              "personal_distance_change_pp": 0.8337135944163937,
+              "common_distance_change_pp": -0.8345113092005001
+            }
+          }
+        }
+      }
+    },
+    "prior_between_zero_and_ten": {
+      "latest_cpi_yoy_pp": {
+        "threshold_pp": 0.5,
+        "n_person_months": 1698,
+        "counts": {
+          "near_either_anchor": 591,
+          "opposed": 338,
+          "same_direction": 571,
+          "no_older_history": 198
+        },
+        "weighted_share_of_full_support": {
+          "near_either_anchor": 0.3191188680741932,
+          "opposed": 0.21702794088833868,
+          "same_direction": 0.33638856932159716
+        },
+        "model_basis": "mean_of_two_generations",
+        "groups": {
+          "opposed": {
+            "truth": {
+              "average_absolute_update_pp": 2.5102365484316387,
+              "personal_distance_change_pp": 0.8684130183654194,
+              "common_distance_change_pp": 1.2694743544378158,
+              "direction_shares": {
+                "stable": 0.2990498838026995,
+                "personal_direction": 0.395960774628484,
+                "common_direction": 0.3049893415688164
+              }
+            },
+            "model": {
+              "average_absolute_update_pp": 0.8245832562098159,
+              "personal_distance_change_pp": 0.7549183293838022,
+              "common_distance_change_pp": -0.7372751296668894,
+              "direction_shares": {
+                "stable": 0.5088815056453467,
+                "personal_direction": 0.013774238602021743,
+                "common_direction": 0.4773442557526316
+              }
+            }
+          },
+          "same_direction": {
+            "truth": {
+              "average_absolute_update_pp": 2.7044488612859308,
+              "personal_distance_change_pp": 0.43717933198949666,
+              "common_distance_change_pp": 0.4294986001802881
+            },
+            "model": {
+              "average_absolute_update_pp": 1.4587692598239408,
+              "personal_distance_change_pp": -0.9880245616968388,
+              "common_distance_change_pp": -1.358163437265357
+            }
+          },
+          "near_either_anchor": {
+            "truth": {
+              "average_absolute_update_pp": 1.513368662774948,
+              "personal_distance_change_pp": 0.837716458967174,
+              "common_distance_change_pp": 0.7992775465709432
+            },
+            "model": {
+              "average_absolute_update_pp": 0.5611125183547979,
+              "personal_distance_change_pp": 0.34718290107187444,
+              "common_distance_change_pp": -0.31521210097355196
+            }
+          }
+        }
+      },
+      "other_model_center_pp": {
+        "threshold_pp": 0.5,
+        "n_person_months": 1698,
+        "counts": {
+          "near_either_anchor": 613,
+          "same_direction": 567,
+          "opposed": 320,
+          "no_older_history": 198
+        },
+        "weighted_share_of_full_support": {
+          "near_either_anchor": 0.33736261574690635,
+          "same_direction": 0.32933331131743965,
+          "opposed": 0.20583945121978264
+        },
+        "model_basis": "mean_of_two_generations",
+        "groups": {
+          "opposed": {
+            "truth": {
+              "average_absolute_update_pp": 2.526325093367026,
+              "personal_distance_change_pp": 0.9656081082078857,
+              "common_distance_change_pp": 1.2701218097162534,
+              "direction_shares": {
+                "stable": 0.29910408666716587,
+                "personal_direction": 0.38285800784284785,
+                "common_direction": 0.31803790548998634
+              }
+            },
+            "model": {
+              "average_absolute_update_pp": 0.8655792890017455,
+              "personal_distance_change_pp": 0.7847965824834304,
+              "common_distance_change_pp": -0.7585797166845757,
+              "direction_shares": {
+                "stable": 0.47866151231040216,
+                "personal_direction": 0.016466034257773238,
+                "common_direction": 0.5048724534318246
+              }
+            }
+          },
+          "same_direction": {
+            "truth": {
+              "average_absolute_update_pp": 2.7151818132353682,
+              "personal_distance_change_pp": 0.40398480936569325,
+              "common_distance_change_pp": 0.4252215091144868
+            },
+            "model": {
+              "average_absolute_update_pp": 1.4792688668413196,
+              "personal_distance_change_pp": -1.0063876264989813,
+              "common_distance_change_pp": -1.3840605067555882
+            }
+          },
+          "near_either_anchor": {
+            "truth": {
+              "average_absolute_update_pp": 1.5510445867934965,
+              "personal_distance_change_pp": 0.8034596504321528,
+              "common_distance_change_pp": 0.8238066940809177
+            },
+            "model": {
+              "average_absolute_update_pp": 0.5435979374933619,
+              "personal_distance_change_pp": 0.33247811884530426,
+              "common_distance_change_pp": -0.3083404647109238
+            }
+          }
+        }
+      }
+    }
+  },
+  "associations": {
+    "all": {
+      "real": {
+        "n": 2013,
+        "months": 12,
+        "prior_and_history_common_level_slope": 0.791626078782684,
+        "older_only_slope_holding_prior_fixed": 0.3466159892267646,
+        "rank": 37,
+        "columns": 37
+      },
+      "sim": {
+        "n": 2013,
+        "months": 12,
+        "prior_and_history_common_level_slope": 0.442578218108031,
+        "older_only_slope_holding_prior_fixed": 0.19505029659901937,
+        "rank": 37,
+        "columns": 37
+      },
+      "cpi_gap_collinear_with_month_and_prior_max_error_pp": 3.197442310920451e-14
+    },
+    "at_least_four_past_answers": {
+      "real": {
+        "n": 1545,
+        "months": 12,
+        "prior_and_history_common_level_slope": 0.8579089745774203,
+        "older_only_slope_holding_prior_fixed": 0.4960358615280047,
+        "rank": 37,
+        "columns": 37
+      },
+      "sim": {
+        "n": 1545,
+        "months": 12,
+        "prior_and_history_common_level_slope": 0.4397382454914381,
+        "older_only_slope_holding_prior_fixed": 0.2385324046245485,
+        "rank": 37,
+        "columns": 37
+      },
+      "cpi_gap_collinear_with_month_and_prior_max_error_pp": 3.197442310920451e-14
+    },
+    "prior_between_zero_and_ten": {
+      "real": {
+        "n": 1500,
+        "months": 12,
+        "prior_and_history_common_level_slope": 0.8671299829582715,
+        "older_only_slope_holding_prior_fixed": 0.2717262292049149,
+        "rank": 37,
+        "columns": 37
+      },
+      "sim": {
+        "n": 1500,
+        "months": 12,
+        "prior_and_history_common_level_slope": 0.5853998825960042,
+        "older_only_slope_holding_prior_fixed": 0.07385368456395126,
+        "rank": 37,
+        "columns": 37
+      },
+      "cpi_gap_collinear_with_month_and_prior_max_error_pp": 7.478462293875054e-13
+    }
+  },
+  "sources_sha256": {
+    "cases_sha256": "8bf039c3e4a64e2f31da0ee5c30a3db33d7c1712c0ba45d6e9ccd3959ba64336",
+    "summary_sha256": "01b8f0be4cc90d6eb798ee5b5277ad4ba1401fd7e4bd5bad0985e4ce7a3218ac",
+    "past_sha256_by_month": {
+      "202003": "b176632e0a3da499fa55bb299bfaad2ee8ff75c4bf5e803b35481c07e87d05b9",
+      "202009": "c51e0f3531ff8633aad4d80e13ec3238abe73997f99561496c68cb3803468315",
+      "202103": "8750e62e5af1b52e025e2e06d1e33b7ed0943408b66103625d3dfedff3c8b355",
+      "202109": "4d3f65f1b409c167e28573a7cb304c1b3e1f3de5efce568d65e058ede0ec90c3",
+      "202206": "a17596915c6c7edd3fe8f6d915ad2df8b172ed7c1c365ad3343b48661b80ce07",
+      "202212": "2bcb0e7bd64e2371913c91caeb047074fcf994cc67f814e368ff033ba3b1b42f",
+      "202306": "cfaa3c48e5a1eccb0e3bb792037658119d0c995bf03b1c2d34d525a640b7bcb6",
+      "202312": "21b353d9494f8277e0cec9d5fd4059696496f2d101d23e8d0eb5828b22614f65",
+      "202404": "5684ecda0391523483044cde2edf0b98916555f3f2bf579ca8032da29a19cfc7",
+      "202410": "85f2bc2858e2b1edd3bd9e200723556e53c8c08d410f5e2b62d6d83fadf69f93",
+      "202503": "98eb0157309027d4ace1ebb180c384710045068ddb3f1598bda5215e92f6a74c",
+      "202509": "17f77e411f5cd4fb4e0f03d66de56f78481271eca524548da6b91f7f0ecb4914"
+    },
+    "environment_202003": "b4751b6c252b681f9ea603769257a4cc1af6cf5f77e6ef6d66fd750da8c7f6ed",
+    "environment_202009": "dce3dd14b7b266eed8cd0720467e9e31019d50b32ba8e52dbb5e418d21717742",
+    "environment_202103": "9e5617442a9a18c4077a87cd86296b2cb8e4d6cbcc9f1618f3fb80c6b37747b8",
+    "environment_202109": "14162c0dd5b04dae01104e0db06d4c7b7acd5e64f37ba7aaf37e4d1e92f99ba3",
+    "environment_202206": "804ad63abddfa09e22d9fb6f84c89c718343178395ee4e79faa239cae3d89fee",
+    "environment_202212": "b69e08e3e139f4ef86cde3e25d9aaf851ce828367ca07ef6ca77e9f0303ef020",
+    "environment_202306": "d8d3d39bb360dcdbcfcd8bc1005e2f05256dfd592a45b3ab6af9508f61c8ed61",
+    "environment_202312": "7445e719b7db903ae16b266f0b75677975123a3e4cf9799805ba3dd7ab4e69a2",
+    "environment_202404": "d5f318d83e050219e782bd7e12e4e24e5dc2d7e69931698758aaf2a6852c5a91",
+    "environment_202410": "d48b26c81d6f6e068cd6cff6e497f766c3957f17f21ca6590b05eff0199f9f3e",
+    "environment_202503": "b98561fece585e06c87a6029cd2a129c94d293b284569f1d338d6acc19f8617f",
+    "environment_202509": "b1f29abe7df5e5e6921d71b71e995f167da5aa0485e6bf7f763544a4773f82d5"
+  },
+  "limitations": [
+    "All twelve months inspected: exploratory, not independent validation.",
+    "No news-reception or interpretation-type labels are measured for these SCE people.",
+    "All alignment gaps share the prior; association and mathematical coupling are not causal update weights.",
+    "CPI and SCE forecast horizons differ; model consensus is endogenous.",
+    "Two-repeat average profiles do not replace official per-repeat MAE.",
+    "No old prompts, populations, scorer, or simulation configuration changed."
+  ],
+  "threshold_sensitivity": {
+    "0.25": {
+      "threshold_pp": 0.25,
+      "n_person_months": 2284,
+      "counts": {
+        "near_either_anchor": 397,
+        "same_direction": 1111,
+        "opposed": 505,
+        "no_older_history": 271
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.16325973065612448,
+        "same_direction": 0.4836799528512391,
+        "opposed": 0.22369073234972472
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 2.692219981034055,
+            "personal_distance_change_pp": 1.219801638309972,
+            "common_distance_change_pp": 1.3140984637880622,
+            "direction_shares": {
+              "stable": 0.2178185505912515,
+              "personal_direction": 0.41580347883975816,
+              "common_direction": 0.3663779705689904
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.041307037387128,
+            "personal_distance_change_pp": 0.9684566198161971,
+            "common_distance_change_pp": -0.9017291475477326,
+            "direction_shares": {
+              "stable": 0.29592279752823275,
+              "personal_direction": 0.04258462043848944,
+              "common_direction": 0.6614925820332778
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 3.5113102449631093,
+            "personal_distance_change_pp": -0.14098951525860431,
+            "common_distance_change_pp": -0.7451317326469533
+          },
+          "model": {
+            "average_absolute_update_pp": 3.5260543578861157,
+            "personal_distance_change_pp": -1.6916752627758815,
+            "common_distance_change_pp": -3.411060455133547
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.5311558969334094,
+            "personal_distance_change_pp": 1.0947279478736047,
+            "common_distance_change_pp": 0.48489551119622754
+          },
+          "model": {
+            "average_absolute_update_pp": 1.4262337864431762,
+            "personal_distance_change_pp": 1.2919721225448497,
+            "common_distance_change_pp": -1.228893800103751
+          }
+        }
+      }
+    },
+    "1.0": {
+      "threshold_pp": 1.0,
+      "n_person_months": 2284,
+      "counts": {
+        "near_either_anchor": 1030,
+        "same_direction": 755,
+        "opposed": 228,
+        "no_older_history": 271
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.4195892664273029,
+        "same_direction": 0.3393385514145956,
+        "opposed": 0.11170259801518871
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 3.348727269718879,
+            "personal_distance_change_pp": 1.4091713234685634,
+            "common_distance_change_pp": 1.4051173024975137,
+            "direction_shares": {
+              "stable": 0.4115916896541883,
+              "personal_direction": 0.282523178939831,
+              "common_direction": 0.30588513140598067
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.196108498394326,
+            "personal_distance_change_pp": 1.1575841139648766,
+            "common_distance_change_pp": -1.1364490275042554,
+            "direction_shares": {
+              "stable": 0.5909715300481192,
+              "personal_direction": 0.004296080566866272,
+              "common_direction": 0.4047323893850145
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 4.207593541054999,
+            "personal_distance_change_pp": -0.6585498362056376,
+            "common_distance_change_pp": -1.4513963756351032
+          },
+          "model": {
+            "average_absolute_update_pp": 4.615660868863884,
+            "personal_distance_change_pp": -2.4979156987274562,
+            "common_distance_change_pp": -4.522653831716814
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.7843423531773692,
+            "personal_distance_change_pp": 1.0711731570569092,
+            "common_distance_change_pp": 0.8300254445991742
+          },
+          "model": {
+            "average_absolute_update_pp": 1.123429556166588,
+            "personal_distance_change_pp": 0.7809216011158586,
+            "common_distance_change_pp": -0.9307763731769174
+          }
+        }
+      }
+    }
+  },
+  "per_generation_sensitivity": {
+    "threshold_pp": 0.5,
+    "n_person_months": 2284,
+    "counts": {
+      "near_either_anchor": 676,
+      "opposed": 392,
+      "same_direction": 945,
+      "no_older_history": 271
+    },
+    "weighted_share_of_full_support": {
+      "near_either_anchor": 0.26735473744942245,
+      "opposed": 0.1798276186006848,
+      "same_direction": 0.4234480598069806
+    },
+    "model_basis": "each_generation_then_average",
+    "groups": {
+      "opposed": {
+        "truth": {
+          "average_absolute_update_pp": 2.8651211847328657,
+          "personal_distance_change_pp": 1.220086230567334,
+          "common_distance_change_pp": 1.4391275459286927,
+          "direction_shares": {
+            "stable": 0.30387737300752393,
+            "personal_direction": 0.37650025342332283,
+            "common_direction": 0.31962237356915335
+          }
+        },
+        "model": {
+          "average_absolute_update_pp": 1.109468405633633,
+          "personal_distance_change_pp": 1.0132892853406663,
+          "common_distance_change_pp": -0.95673474644568,
+          "direction_shares": {
+            "stable": 0.4213644567830218,
+            "personal_direction": 0.03485001988452858,
+            "common_direction": 0.5437855233324497
+          }
+        }
+      },
+      "same_direction": {
+        "truth": {
+          "average_absolute_update_pp": 3.8063610515414084,
+          "personal_distance_change_pp": -0.24856343879798048,
+          "common_distance_change_pp": -0.9438368557965815
+        },
+        "model": {
+          "average_absolute_update_pp": 3.9271954710500583,
+          "personal_distance_change_pp": -1.8463385293250172,
+          "common_distance_change_pp": -3.8083935130937845
+        }
+      },
+      "near_either_anchor": {
+        "truth": {
+          "average_absolute_update_pp": 1.5841387904598223,
+          "personal_distance_change_pp": 1.0070441120655549,
+          "common_distance_change_pp": 0.5744475836245542
+        },
+        "model": {
+          "average_absolute_update_pp": 1.2092906366303513,
+          "personal_distance_change_pp": 1.0021287555317255,
+          "common_distance_change_pp": -0.9604279168703905
+        }
+      }
+    }
+  },
+  "per_month": {
+    "202003": {
+      "threshold_pp": 0.5,
+      "n_person_months": 191,
+      "counts": {
+        "near_either_anchor": 70,
+        "opposed": 26,
+        "same_direction": 69,
+        "no_older_history": 26
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.3312868847112376,
+        "opposed": 0.13764118744162127,
+        "same_direction": 0.3941069834847837
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 5.068387709253108,
+            "personal_distance_change_pp": 4.415314674877966,
+            "common_distance_change_pp": 1.8527540226466388,
+            "direction_shares": {
+              "stable": 0.17173025621829272,
+              "personal_direction": 0.31508144749533573,
+              "common_direction": 0.5131882962863713
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 0.6345954567265579,
+            "personal_distance_change_pp": 0.5489671349904107,
+            "common_distance_change_pp": -0.5285610680264585,
+            "direction_shares": {
+              "stable": 0.7165847922469459,
+              "personal_direction": 0.0,
+              "common_direction": 0.28341520775305395
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 6.886071827356597,
+            "personal_distance_change_pp": 1.3416021587463445,
+            "common_distance_change_pp": 1.2569414656500335
+          },
+          "model": {
+            "average_absolute_update_pp": 2.4125080768610156,
+            "personal_distance_change_pp": -2.076951872777115,
+            "common_distance_change_pp": -2.2971495240271342
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.9368156597160155,
+            "personal_distance_change_pp": 1.1582369817805236,
+            "common_distance_change_pp": 1.2699990525744875
+          },
+          "model": {
+            "average_absolute_update_pp": 0.3349367262902435,
+            "personal_distance_change_pp": 0.06444386524162574,
+            "common_distance_change_pp": -0.10746717496788347
+          }
+        }
+      }
+    },
+    "202009": {
+      "threshold_pp": 0.5,
+      "n_person_months": 192,
+      "counts": {
+        "same_direction": 76,
+        "near_either_anchor": 59,
+        "opposed": 28,
+        "no_older_history": 29
+      },
+      "weighted_share_of_full_support": {
+        "same_direction": 0.39652830179010157,
+        "near_either_anchor": 0.2827613467419592,
+        "opposed": 0.1623679359330955
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 3.7805898715304354,
+            "personal_distance_change_pp": 1.8071830358554488,
+            "common_distance_change_pp": 2.5222519821147484,
+            "direction_shares": {
+              "stable": 0.4383394344362553,
+              "personal_direction": 0.34092992143703865,
+              "common_direction": 0.22073064412670607
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 0.9050093980342889,
+            "personal_distance_change_pp": 0.9005834573858901,
+            "common_distance_change_pp": -0.7223509402963461,
+            "direction_shares": {
+              "stable": 0.6399455987935732,
+              "personal_direction": 0.0,
+              "common_direction": 0.3600544012064268
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 4.574067156387162,
+            "personal_distance_change_pp": -0.5913231722974724,
+            "common_distance_change_pp": -1.2209752487792325
+          },
+          "model": {
+            "average_absolute_update_pp": 3.8423347977391766,
+            "personal_distance_change_pp": -2.5162948587611718,
+            "common_distance_change_pp": -3.615758665216356
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.389995856794021,
+            "personal_distance_change_pp": 0.43884287537899963,
+            "common_distance_change_pp": 0.8262930789090316
+          },
+          "model": {
+            "average_absolute_update_pp": 0.5928937498080745,
+            "personal_distance_change_pp": 0.48336474619554404,
+            "common_distance_change_pp": -0.41677548173818746
+          }
+        }
+      }
+    },
+    "202103": {
+      "threshold_pp": 0.5,
+      "n_person_months": 187,
+      "counts": {
+        "same_direction": 69,
+        "near_either_anchor": 59,
+        "opposed": 31,
+        "no_older_history": 28
+      },
+      "weighted_share_of_full_support": {
+        "same_direction": 0.412155709519571,
+        "near_either_anchor": 0.21057019795866852,
+        "opposed": 0.18260346851585185
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 3.678750541720768,
+            "personal_distance_change_pp": 0.6843974422656827,
+            "common_distance_change_pp": 1.924252963399714,
+            "direction_shares": {
+              "stable": 0.2944424654149497,
+              "personal_direction": 0.4459732876280674,
+              "common_direction": 0.25958424695698296
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 0.7627255567743041,
+            "personal_distance_change_pp": 0.7032465392771068,
+            "common_distance_change_pp": -0.6507934940715975,
+            "direction_shares": {
+              "stable": 0.6506736542019553,
+              "personal_direction": 0.015224372599519727,
+              "common_direction": 0.33410197319852497
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 2.971495237859619,
+            "personal_distance_change_pp": -0.38815130511360557,
+            "common_distance_change_pp": -0.7705570650805689
+          },
+          "model": {
+            "average_absolute_update_pp": 2.179108404518718,
+            "personal_distance_change_pp": -1.3785526767999674,
+            "common_distance_change_pp": -1.9672342168899817
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 2.0121023429535616,
+            "personal_distance_change_pp": 1.6545977785925465,
+            "common_distance_change_pp": 1.7498115587172187
+          },
+          "model": {
+            "average_absolute_update_pp": 0.8640393586104838,
+            "personal_distance_change_pp": 0.5787118094959856,
+            "common_distance_change_pp": -0.11928171125218814
+          }
+        }
+      }
+    },
+    "202109": {
+      "threshold_pp": 0.5,
+      "n_person_months": 190,
+      "counts": {
+        "near_either_anchor": 55,
+        "same_direction": 77,
+        "opposed": 35,
+        "no_older_history": 23
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.24857572075483905,
+        "same_direction": 0.4023897806897647,
+        "opposed": 0.2024976623292334
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 1.698908096886701,
+            "personal_distance_change_pp": 0.431586297901712,
+            "common_distance_change_pp": 1.1806248521707252,
+            "direction_shares": {
+              "stable": 0.4060969370708495,
+              "personal_direction": 0.4347798662474952,
+              "common_direction": 0.15912319668165548
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 0.8645792254198512,
+            "personal_distance_change_pp": 0.8509441345988431,
+            "common_distance_change_pp": -0.8320209686287855,
+            "direction_shares": {
+              "stable": 0.38379285875520575,
+              "personal_direction": 0.0,
+              "common_direction": 0.6162071412447945
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 3.250890961665107,
+            "personal_distance_change_pp": -0.9030511510750764,
+            "common_distance_change_pp": -1.7598173533320458
+          },
+          "model": {
+            "average_absolute_update_pp": 3.527782793771932,
+            "personal_distance_change_pp": -1.8465357302185685,
+            "common_distance_change_pp": -3.514401444496715
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.2439065383167254,
+            "personal_distance_change_pp": 0.8773076466484712,
+            "common_distance_change_pp": 0.22109675954794555
+          },
+          "model": {
+            "average_absolute_update_pp": 1.0501350115224026,
+            "personal_distance_change_pp": 0.7739391021071986,
+            "common_distance_change_pp": -0.9108419143347009
+          }
+        }
+      }
+    },
+    "202206": {
+      "threshold_pp": 0.5,
+      "n_person_months": 192,
+      "counts": {
+        "same_direction": 99,
+        "opposed": 40,
+        "near_either_anchor": 37,
+        "no_older_history": 16
+      },
+      "weighted_share_of_full_support": {
+        "same_direction": 0.5484066230876442,
+        "opposed": 0.20523880557179341,
+        "near_either_anchor": 0.18100208792969533
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 2.335354400502105,
+            "personal_distance_change_pp": -0.31961068025546435,
+            "common_distance_change_pp": 1.571097370340231,
+            "direction_shares": {
+              "stable": 0.24474350525515445,
+              "personal_direction": 0.4423169516953753,
+              "common_direction": 0.3129395430494703
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.2295593779898346,
+            "personal_distance_change_pp": 1.2170395159419893,
+            "common_distance_change_pp": -1.2170365608975997,
+            "direction_shares": {
+              "stable": 0.28725563871488924,
+              "personal_direction": 0.0,
+              "common_direction": 0.712744361285111
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 2.9522133782597364,
+            "personal_distance_change_pp": -0.6744204828956685,
+            "common_distance_change_pp": -1.125431284593879
+          },
+          "model": {
+            "average_absolute_update_pp": 4.463982825480111,
+            "personal_distance_change_pp": -1.805210442094439,
+            "common_distance_change_pp": -4.423647883884841
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 3.1243739163628637,
+            "personal_distance_change_pp": 2.841713348646024,
+            "common_distance_change_pp": 0.5570117819937377
+          },
+          "model": {
+            "average_absolute_update_pp": 1.5087958293009436,
+            "personal_distance_change_pp": 1.167088988381225,
+            "common_distance_change_pp": -1.3603791554212434
+          }
+        }
+      }
+    },
+    "202212": {
+      "threshold_pp": 0.5,
+      "n_person_months": 192,
+      "counts": {
+        "near_either_anchor": 32,
+        "same_direction": 110,
+        "opposed": 30,
+        "no_older_history": 20
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.163522909312839,
+        "same_direction": 0.5524079448502603,
+        "opposed": 0.16373098388918067
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 4.0798452018874585,
+            "personal_distance_change_pp": 2.4856421992450017,
+            "common_distance_change_pp": 2.4590773337591187,
+            "direction_shares": {
+              "stable": 0.1527603904061188,
+              "personal_direction": 0.47101838391218964,
+              "common_direction": 0.37622122568169164
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.5678798739012096,
+            "personal_distance_change_pp": 1.5129174567645358,
+            "common_distance_change_pp": -1.463781839772431,
+            "direction_shares": {
+              "stable": 0.25080290538335037,
+              "personal_direction": 0.0,
+              "common_direction": 0.7491970946166497
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 2.51800035724566,
+            "personal_distance_change_pp": 0.12156512086066168,
+            "common_distance_change_pp": -0.3382863268593894
+          },
+          "model": {
+            "average_absolute_update_pp": 3.874557069254774,
+            "personal_distance_change_pp": -0.6226369112535268,
+            "common_distance_change_pp": -3.8144058572468977
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 2.4873318494476195,
+            "personal_distance_change_pp": 1.9896863591711396,
+            "common_distance_change_pp": -1.1000069739058065
+          },
+          "model": {
+            "average_absolute_update_pp": 2.6919907622323374,
+            "personal_distance_change_pp": 2.46137755924629,
+            "common_distance_change_pp": -2.35246578917823
+          }
+        }
+      }
+    },
+    "202306": {
+      "threshold_pp": 0.5,
+      "n_person_months": 190,
+      "counts": {
+        "near_either_anchor": 55,
+        "opposed": 37,
+        "same_direction": 76,
+        "no_older_history": 22
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.293362991587337,
+        "opposed": 0.1851698552917736,
+        "same_direction": 0.42625902831799767
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 2.834583545631818,
+            "personal_distance_change_pp": 1.245115011000752,
+            "common_distance_change_pp": 1.5504860070561717,
+            "direction_shares": {
+              "stable": 0.2999812858083577,
+              "personal_direction": 0.3736249677582893,
+              "common_direction": 0.3263937464333529
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.4605004782412538,
+            "personal_distance_change_pp": 1.4248293300546795,
+            "common_distance_change_pp": -1.4207148859131271,
+            "direction_shares": {
+              "stable": 0.26510665207524553,
+              "personal_direction": 0.014421328353224015,
+              "common_direction": 0.7204720195715304
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 4.2231971000396875,
+            "personal_distance_change_pp": -0.8766661543069958,
+            "common_distance_change_pp": -1.677420665912985
+          },
+          "model": {
+            "average_absolute_update_pp": 4.536078087917346,
+            "personal_distance_change_pp": -2.6091595698618613,
+            "common_distance_change_pp": -4.402289592479834
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.5521198175144406,
+            "personal_distance_change_pp": 0.9394818666262741,
+            "common_distance_change_pp": -0.12480528677748134
+          },
+          "model": {
+            "average_absolute_update_pp": 1.4594952699801353,
+            "personal_distance_change_pp": 1.2991264370750537,
+            "common_distance_change_pp": -1.2061839701466768
+          }
+        }
+      }
+    },
+    "202312": {
+      "threshold_pp": 0.5,
+      "n_person_months": 192,
+      "counts": {
+        "near_either_anchor": 58,
+        "opposed": 40,
+        "same_direction": 73,
+        "no_older_history": 21
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.3288067451030297,
+        "opposed": 0.17647750680287094,
+        "same_direction": 0.36662126218689606
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 2.763594038978193,
+            "personal_distance_change_pp": 1.222686552070586,
+            "common_distance_change_pp": 1.5250883795237702,
+            "direction_shares": {
+              "stable": 0.272721432131661,
+              "personal_direction": 0.38460696778105324,
+              "common_direction": 0.3426716000872857
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.5130035634975445,
+            "personal_distance_change_pp": 1.504655996377612,
+            "common_distance_change_pp": -1.504655996377612,
+            "direction_shares": {
+              "stable": 0.3424403540458332,
+              "personal_direction": 0.0,
+              "common_direction": 0.6575596459541667
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 4.304050272384188,
+            "personal_distance_change_pp": -0.1854805941734598,
+            "common_distance_change_pp": -2.295556373702617
+          },
+          "model": {
+            "average_absolute_update_pp": 3.957248474888604,
+            "personal_distance_change_pp": -1.2685006003078683,
+            "common_distance_change_pp": -3.9197764088470253
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.4003048602507238,
+            "personal_distance_change_pp": 1.1135592488213608,
+            "common_distance_change_pp": 0.5329706362930697
+          },
+          "model": {
+            "average_absolute_update_pp": 2.0222981595592113,
+            "personal_distance_change_pp": 1.7671884242269615,
+            "common_distance_change_pp": -1.6681451990492784
+          }
+        }
+      }
+    },
+    "202404": {
+      "threshold_pp": 0.5,
+      "n_person_months": 186,
+      "counts": {
+        "near_either_anchor": 73,
+        "same_direction": 65,
+        "opposed": 25,
+        "no_older_history": 23
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.3029250535339965,
+        "same_direction": 0.3870428807197536,
+        "opposed": 0.1624871887601955
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 1.6823720047473827,
+            "personal_distance_change_pp": 0.6179662870824828,
+            "common_distance_change_pp": -0.020154479045701446,
+            "direction_shares": {
+              "stable": 0.2630308728555199,
+              "personal_direction": 0.3945544012031474,
+              "common_direction": 0.3424147259413329
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.0551428103541385,
+            "personal_distance_change_pp": 0.8301170392249246,
+            "common_distance_change_pp": -0.8271444731331898,
+            "direction_shares": {
+              "stable": 0.45127487014959866,
+              "personal_direction": 0.03544033453441724,
+              "common_direction": 0.5132847953159843
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 4.288983041514607,
+            "personal_distance_change_pp": 0.04589784465806457,
+            "common_distance_change_pp": -0.3659611010550171
+          },
+          "model": {
+            "average_absolute_update_pp": 3.4111715710994828,
+            "personal_distance_change_pp": -1.5164420389642117,
+            "common_distance_change_pp": -3.34239542750693
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.4371030277380805,
+            "personal_distance_change_pp": 0.08722901587526141,
+            "common_distance_change_pp": 0.7842897245054681
+          },
+          "model": {
+            "average_absolute_update_pp": 0.5774015592026698,
+            "personal_distance_change_pp": 0.40310173358965773,
+            "common_distance_change_pp": -0.4440959492165527
+          }
+        }
+      }
+    },
+    "202410": {
+      "threshold_pp": 0.5,
+      "n_person_months": 189,
+      "counts": {
+        "near_either_anchor": 65,
+        "same_direction": 71,
+        "opposed": 33,
+        "no_older_history": 20
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.31766438383029943,
+        "same_direction": 0.36889159988093195,
+        "opposed": 0.20419989640208944
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 3.378301355845724,
+            "personal_distance_change_pp": 1.9487296335679178,
+            "common_distance_change_pp": 1.7999427965895907,
+            "direction_shares": {
+              "stable": 0.1588540070877101,
+              "personal_direction": 0.3722635026634018,
+              "common_direction": 0.4688824902488883
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 0.7592810474126965,
+            "personal_distance_change_pp": 0.7592810474126965,
+            "common_distance_change_pp": -0.7592810474126965,
+            "direction_shares": {
+              "stable": 0.46582021861959055,
+              "personal_direction": 0.0,
+              "common_direction": 0.5341797813804096
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 3.205495777157565,
+            "personal_distance_change_pp": -0.47142592787205917,
+            "common_distance_change_pp": -0.4697765954335349
+          },
+          "model": {
+            "average_absolute_update_pp": 4.565129387221951,
+            "personal_distance_change_pp": -2.7191739082131123,
+            "common_distance_change_pp": -4.444844396029701
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.3048127854390792,
+            "personal_distance_change_pp": 0.9643849773912627,
+            "common_distance_change_pp": 0.3988715913686821
+          },
+          "model": {
+            "average_absolute_update_pp": 1.0442555731240402,
+            "personal_distance_change_pp": 0.8467451812920824,
+            "common_distance_change_pp": -1.0064587684097215
+          }
+        }
+      }
+    },
+    "202503": {
+      "threshold_pp": 0.5,
+      "n_person_months": 191,
+      "counts": {
+        "same_direction": 90,
+        "near_either_anchor": 49,
+        "opposed": 29,
+        "no_older_history": 23
+      },
+      "weighted_share_of_full_support": {
+        "same_direction": 0.4640117169504182,
+        "near_either_anchor": 0.26159755148733377,
+        "opposed": 0.1486906412701914
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 2.4604175416006164,
+            "personal_distance_change_pp": 0.8553782327597872,
+            "common_distance_change_pp": 0.41439870369070736,
+            "direction_shares": {
+              "stable": 0.24586786242914105,
+              "personal_direction": 0.34857045958777694,
+              "common_direction": 0.40556167798308196
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.2339141575067198,
+            "personal_distance_change_pp": 0.9139414980424023,
+            "common_distance_change_pp": -0.816805423662752,
+            "direction_shares": {
+              "stable": 0.48969116883718866,
+              "personal_direction": 0.0943654809407927,
+              "common_direction": 0.41594335022201856
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 4.191624975718672,
+            "personal_distance_change_pp": 0.14253980227549098,
+            "common_distance_change_pp": -1.198291276395985
+          },
+          "model": {
+            "average_absolute_update_pp": 6.216961564853213,
+            "personal_distance_change_pp": -3.959509856405581,
+            "common_distance_change_pp": -6.173932693223596
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.3520875688438803,
+            "personal_distance_change_pp": 1.0059884256514449,
+            "common_distance_change_pp": 1.097255820215486
+          },
+          "model": {
+            "average_absolute_update_pp": 0.9352568658750495,
+            "personal_distance_change_pp": 0.7949729787130855,
+            "common_distance_change_pp": -0.7694056877753628
+          }
+        }
+      }
+    },
+    "202509": {
+      "threshold_pp": 0.5,
+      "n_person_months": 192,
+      "counts": {
+        "near_either_anchor": 64,
+        "opposed": 38,
+        "same_direction": 70,
+        "no_older_history": 20
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.2861809764418384,
+        "opposed": 0.2268262910003218,
+        "same_direction": 0.36255488620564036
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 1.6159690158833742,
+            "personal_distance_change_pp": 0.467727161585211,
+            "common_distance_change_pp": 0.6318779991924841,
+            "direction_shares": {
+              "stable": 0.5920066740602319,
+              "personal_direction": 0.2087255581513543,
+              "common_direction": 0.19926776778841387
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 0.9325851179942699,
+            "personal_distance_change_pp": 0.9236641000471707,
+            "common_distance_change_pp": -0.8785965921172513,
+            "direction_shares": {
+              "stable": 0.6729958854552389,
+              "personal_direction": 0.0,
+              "common_direction": 0.3270041145447611
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 3.0493076629659925,
+            "personal_distance_change_pp": -0.5504102901186938,
+            "common_distance_change_pp": -1.5165836281064784
+          },
+          "model": {
+            "average_absolute_update_pp": 3.4563700794384107,
+            "personal_distance_change_pp": -1.5774809028963237,
+            "common_distance_change_pp": -3.311343569819228
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 0.7799388015048919,
+            "personal_distance_change_pp": 0.2766228821255585,
+            "common_distance_change_pp": 0.1896610512182865
+          },
+          "model": {
+            "average_absolute_update_pp": 1.9294349221308944,
+            "personal_distance_change_pp": 1.8097909310405975,
+            "common_distance_change_pp": -1.808962743346139
+          }
+        }
+      }
+    }
+  },
+  "leave_one_year_out": {
+    "2020": {
+      "threshold_pp": 0.5,
+      "n_person_months": 1901,
+      "counts": {
+        "same_direction": 800,
+        "near_either_anchor": 547,
+        "opposed": 338,
+        "no_older_history": 216
+      },
+      "weighted_share_of_full_support": {
+        "same_direction": 0.429074143240888,
+        "near_either_anchor": 0.2594208617939876,
+        "opposed": 0.18579222998335018
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 2.62189089366389,
+            "personal_distance_change_pp": 0.9320651794514392,
+            "common_distance_change_pp": 1.3138280549349939,
+            "direction_shares": {
+              "stable": 0.30191634304197457,
+              "personal_direction": 0.3841589368706971,
+              "common_direction": 0.3139247200873283
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.1208034839359249,
+            "personal_distance_change_pp": 1.0565201678027436,
+            "common_distance_change_pp": -1.0310259746053252,
+            "direction_shares": {
+              "stable": 0.4305819967508722,
+              "personal_direction": 0.013585219753952237,
+              "common_direction": 0.5558327834951754
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 3.452540448318022,
+            "personal_distance_change_pp": -0.36294493662861543,
+            "common_distance_change_pp": -1.1203678589310537
+          },
+          "model": {
+            "average_absolute_update_pp": 4.062845533561224,
+            "personal_distance_change_pp": -1.9161192841360524,
+            "common_distance_change_pp": -3.9783935439341707
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.5602621047093106,
+            "personal_distance_change_pp": 1.049668722647307,
+            "common_distance_change_pp": 0.45817349192801904
+          },
+          "model": {
+            "average_absolute_update_pp": 1.3695291079813536,
+            "personal_distance_change_pp": 1.1591740485089117,
+            "common_distance_change_pp": -1.140232226880887
+          }
+        }
+      }
+    },
+    "2021": {
+      "threshold_pp": 0.5,
+      "n_person_months": 1907,
+      "counts": {
+        "near_either_anchor": 562,
+        "opposed": 326,
+        "same_direction": 799,
+        "no_older_history": 220
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.2749110930679567,
+        "opposed": 0.17728302923631337,
+        "same_direction": 0.42668312274744297
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 2.9145246057887775,
+            "personal_distance_change_pp": 1.3653274445795658,
+            "common_distance_change_pp": 1.4186859995157501,
+            "direction_shares": {
+              "stable": 0.29317337274458216,
+              "personal_direction": 0.3626875932505246,
+              "common_direction": 0.3441390340048933
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.1294398404010737,
+            "personal_distance_change_pp": 1.0627014318376642,
+            "common_distance_change_pp": -1.0256396856100898,
+            "direction_shares": {
+              "stable": 0.45463669139093366,
+              "personal_direction": 0.012669153716015064,
+              "common_direction": 0.5326941548930512
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 3.939389561265865,
+            "personal_distance_change_pp": -0.17335748712529053,
+            "common_distance_change_pp": -0.883622625454376
+          },
+          "model": {
+            "average_absolute_update_pp": 4.122338987499437,
+            "personal_distance_change_pp": -2.045239156900407,
+            "common_distance_change_pp": -4.027430279994115
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.5821225412771018,
+            "personal_distance_change_pp": 0.9691750805949042,
+            "common_distance_change_pp": 0.5163698293394177
+          },
+          "model": {
+            "average_absolute_update_pp": 1.2325704104053963,
+            "personal_distance_change_pp": 1.0370347802489692,
+            "common_distance_change_pp": -1.0403073738201882
+          }
+        }
+      }
+    },
+    "2022": {
+      "threshold_pp": 0.5,
+      "n_person_months": 1900,
+      "counts": {
+        "near_either_anchor": 607,
+        "opposed": 322,
+        "same_direction": 736,
+        "no_older_history": 235
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.28637318521505417,
+        "opposed": 0.17889616337472458,
+        "same_direction": 0.39805621497458604
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 2.814723649785983,
+            "personal_distance_change_pp": 1.2809007438297253,
+            "common_distance_change_pp": 1.3306385164539543,
+            "direction_shares": {
+              "stable": 0.32449217878889797,
+              "personal_direction": 0.3602988511721002,
+              "common_direction": 0.3152089700390018
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.0104146003539642,
+            "personal_distance_change_pp": 0.9431300891363292,
+            "common_distance_change_pp": -0.903403937095324,
+            "direction_shares": {
+              "stable": 0.5044858948867568,
+              "personal_direction": 0.014108901081426189,
+              "common_direction": 0.4814052040318171
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 4.102831972001646,
+            "personal_distance_change_pp": -0.24125772030740553,
+            "common_distance_change_pp": -1.0028544836811066
+          },
+          "model": {
+            "average_absolute_update_pp": 3.8483475465123833,
+            "personal_distance_change_pp": -2.186614980490095,
+            "common_distance_change_pp": -3.737227273014291
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.4352147457565139,
+            "personal_distance_change_pp": 0.8349737133751844,
+            "common_distance_change_pp": 0.671163202110769
+          },
+          "model": {
+            "average_absolute_update_pp": 1.0888430197314845,
+            "personal_distance_change_pp": 0.8909452940827902,
+            "common_distance_change_pp": -0.8661904613244134
+          }
+        }
+      }
+    },
+    "2023": {
+      "threshold_pp": 0.5,
+      "n_person_months": 1902,
+      "counts": {
+        "near_either_anchor": 563,
+        "opposed": 315,
+        "same_direction": 796,
+        "no_older_history": 228
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.2586087112702709,
+        "opposed": 0.17962840611135772,
+        "same_direction": 0.42884964271788817
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 2.8782437794711813,
+            "personal_distance_change_pp": 1.2172506690784632,
+            "common_distance_change_pp": 1.419202866696245,
+            "direction_shares": {
+              "stable": 0.307339943769794,
+              "personal_direction": 0.37600020082744223,
+              "common_direction": 0.31665985540276365
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 0.990492008664279,
+            "personal_distance_change_pp": 0.9215387485527662,
+            "common_distance_change_pp": -0.8779196339975781,
+            "direction_shares": {
+              "stable": 0.4971392667690756,
+              "personal_direction": 0.012564765191276608,
+              "common_direction": 0.4902959680396477
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 3.7223820660301854,
+            "personal_distance_change_pp": -0.19152551298137954,
+            "common_distance_change_pp": -0.7553638439631278
+          },
+          "model": {
+            "average_absolute_update_pp": 3.852782682502445,
+            "personal_distance_change_pp": -1.9728729628139845,
+            "common_distance_change_pp": -3.753236720809589
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.611144461529183,
+            "personal_distance_change_pp": 1.0011654883696317,
+            "common_distance_change_pp": 0.6590436565532076
+          },
+          "model": {
+            "average_absolute_update_pp": 1.0588756297927464,
+            "personal_distance_change_pp": 0.851860897370884,
+            "common_distance_change_pp": -0.8542262901894428
+          }
+        }
+      }
+    },
+    "2024": {
+      "threshold_pp": 0.5,
+      "n_person_months": 1909,
+      "counts": {
+        "near_either_anchor": 538,
+        "opposed": 334,
+        "same_direction": 809,
+        "no_older_history": 228
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.25876674120287796,
+        "opposed": 0.1791244338045937,
+        "same_direction": 0.4325442237083088
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 2.913908639147236,
+            "personal_distance_change_pp": 1.1916411271209402,
+            "common_distance_change_pp": 1.5303692562692357,
+            "direction_shares": {
+              "stable": 0.3241151420863344,
+              "personal_direction": 0.37534551221464774,
+              "common_direction": 0.30053934569901786
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.111051364805857,
+            "personal_distance_change_pp": 1.0578066933191153,
+            "common_distance_change_pp": -1.0139091715327813,
+            "direction_shares": {
+              "stable": 0.4656423907418387,
+              "personal_direction": 0.010876060841057942,
+              "common_direction": 0.5234815484171034
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 3.814420053412609,
+            "personal_distance_change_pp": -0.2559053570390841,
+            "common_distance_change_pp": -1.0359753061223755
+          },
+          "model": {
+            "average_absolute_update_pp": 3.907737511243366,
+            "personal_distance_change_pp": -1.9530690262061325,
+            "common_distance_change_pp": -3.809093800773095
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.6356418309769578,
+            "personal_distance_change_pp": 1.1199590576368585,
+            "common_distance_change_pp": 0.5714362992808002
+          },
+          "model": {
+            "average_absolute_update_pp": 1.2848713004453816,
+            "personal_distance_change_pp": 1.072036988560257,
+            "common_distance_change_pp": -1.0268734016883923
+          }
+        }
+      }
+    },
+    "2025": {
+      "threshold_pp": 0.5,
+      "n_person_months": 1901,
+      "counts": {
+        "near_either_anchor": 563,
+        "opposed": 325,
+        "same_direction": 785,
+        "no_older_history": 228
+      },
+      "weighted_share_of_full_support": {
+        "near_either_anchor": 0.2660478321463897,
+        "opposed": 0.1782414490937704,
+        "same_direction": 0.4254810114527701
+      },
+      "model_basis": "mean_of_two_generations",
+      "groups": {
+        "opposed": {
+          "truth": {
+            "average_absolute_update_pp": 3.0578463894051717,
+            "personal_distance_change_pp": 1.3462541249215438,
+            "common_distance_change_pp": 1.627340226527919,
+            "direction_shares": {
+              "stable": 0.2720498549711404,
+              "personal_direction": 0.40018083446819286,
+              "common_direction": 0.3277693105606666
+            }
+          },
+          "model": {
+            "average_absolute_update_pp": 1.0781164907292027,
+            "personal_distance_change_pp": 1.0319220952268182,
+            "common_distance_change_pp": -1.0013745033618793,
+            "direction_shares": {
+              "stable": 0.43595946444505096,
+              "personal_direction": 0.006288671300160406,
+              "common_direction": 0.5577518642547886
+            }
+          }
+        },
+        "same_direction": {
+          "truth": {
+            "average_absolute_update_pp": 3.8288547534067927,
+            "personal_distance_change_pp": -0.2654949665569484,
+            "common_distance_change_pp": -0.8672830344320828
+          },
+          "model": {
+            "average_absolute_update_pp": 3.7061897340117,
+            "personal_distance_change_pp": -1.792962126420063,
+            "common_distance_change_pp": -3.606273843634477
+          }
+        },
+        "near_either_anchor": {
+          "truth": {
+            "average_absolute_update_pp": 1.6934615265789326,
+            "personal_distance_change_pp": 1.0857174934987008,
+            "common_distance_change_pp": 0.5644318023235277
+          },
+          "model": {
+            "average_absolute_update_pp": 1.1406307255503714,
+            "personal_distance_change_pp": 0.9168557548770624,
+            "common_distance_change_pp": -0.8992688810783889
+          }
+        }
+      }
+    }
+  },
+  "elapsed_seconds": 0.3888844170141965
+}
