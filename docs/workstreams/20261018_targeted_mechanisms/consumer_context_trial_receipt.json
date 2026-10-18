@@ -1,0 +1,61 @@
+{
+  "status": "prepared_and_twelve_scripted_checks_passed_not_authorized_for_real_calls",
+  "protocol": {
+    "mechanism": "public_consumer_context",
+    "id": "sce-public-consumer-context-v1",
+    "months": [
+      202009,
+      202206,
+      202503
+    ],
+    "n_per_month": 24,
+    "arms": [
+      "baseline",
+      "consumer_context"
+    ],
+    "generation_repeats": [
+      1,
+      2
+    ],
+    "sampling_seed": 20261018,
+    "model": "deepseek-flash",
+    "model_identity_limit": "Mutable alias; weights and training cutoff not independently verified.",
+    "temperature": 0.5,
+    "thinking": "disabled",
+    "max_tokens": 1024,
+    "retry_max": 0,
+    "destination": "https://api.deepseek.com",
+    "price_input_per_mtok": 0.3,
+    "price_output_per_mtok": 1.2,
+    "pricing_verified_date": "2026-10-17",
+    "budget_cap_usd": 2.0,
+    "sample_selection": "Fixed random numeracy-proportional subset of the frozen 192-per-month age/income design; no current outcomes used, retain sequential inclusion weights.",
+    "month_selection": "Same three windows chosen for the Event probe before source retrieval: pandemic, high inflation and tariff-risk stages. Inspected development windows, not blind holdout.",
+    "planned_calls": 288,
+    "max_prompt_chars": 12027,
+    "research_line": "A_conditional_returner_reconstruction",
+    "primary_metric": "q9_center_mae_pp",
+    "primary_weight": "design_survey_weight",
+    "comparison": "Exact old prompts versus the same prompts plus dated public consumer-context/policy brief; no peer inflation forecast numbers.",
+    "decision_rule": "No automatic upgrade. Report center, W1, individual error, stable-case false moves and moving-case missed moves; do not retune text on these results.",
+    "truth_isolation": "Preparation hashes but never parses current SCE targets. Sampling uses only frozen P and links.",
+    "limits": [
+      "Three inspected development months, not independent goal confirmation.",
+      "Twenty-four people per month is a mechanism screen, not national reconstruction.",
+      "Public survey background is not personal measured exposure or beliefs.",
+      "Narrative and policy facts are bundled; no separate causal attribution.",
+      "True previous answers are A conditions; not recurrent or strict public B.",
+      "Two generations are repeated calls, not new people. Mutable model alias remains."
+    ]
+  },
+  "protocol_sha256": "a9e65fa07c42543da98c9697e62843152ba213c4d33822369f74573439dff723",
+  "manifest_sha256": "0edd09a411de37fb90411e30a9caa9154826981928f181e8c4f8b4fc553829e3",
+  "planned_calls": 288,
+  "new_real_calls": 0,
+  "estimated_cost_usd": 0.33949387499999994,
+  "conservative_reservation_usd": 1.3531300000000002,
+  "requested_cap_usd": 2,
+  "engineering_cells_passed": 12,
+  "api_cost_during_preparation": 0,
+  "protected_old_experiments_unchanged": true
+}

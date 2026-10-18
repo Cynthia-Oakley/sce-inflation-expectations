@@ -1,0 +1,32 @@
+{
+  "mechanism": "public_consumer_context",
+  "id": "sce-public-consumer-context-v1",
+  "months": [
+    202009,
+    202206,
+    202503
+  ],
+  "n_per_month": 24,
+  "arms": [
+    "baseline",
+    "consumer_context"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "sampling_seed": 20261018,
+  "model": "deepseek-flash",
+  "model_identity_limit": "Mutable alias; weights and training cutoff not independently verified.",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "retry_max": 0,
+  "destination": "https://api.deepseek.com",
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_verified_date": "2026-10-17",
+  "budget_cap_usd": 2.0,
+  "sample_selection": "Fixed random numeracy-proportional subset of the frozen 192-per-month age/income design; no current outcomes used, retain sequential inclusion weights.",
+  "month_selection": "Same three windows chosen for the Event probe before source retrieval: pandemic, high inflation and tariff-risk stages. Inspected development windows, not blind holdout."
+}

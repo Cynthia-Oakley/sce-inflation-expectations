@@ -29,6 +29,8 @@ def main():
             from studies.sce_inflation_expectations.experiments.psychological_wave_state import prepare
         elif config['mechanism'] == 'previous_financial_outlook':
             from studies.sce_inflation_expectations.experiments.financial_outlook import prepare
+        elif config['mechanism'] == 'public_consumer_context':
+            from studies.sce_inflation_expectations.experiments.public_consumer_context import prepare
         else:
             parser.error('Unknown mechanism adapter')
         prepare(args.folder, config); return

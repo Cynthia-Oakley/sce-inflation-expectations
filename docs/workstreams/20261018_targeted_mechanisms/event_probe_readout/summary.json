@@ -1,0 +1,446 @@
+{
+  "status": "completed_twelve_event_probe_and_content_audit",
+  "checked_at_utc": "2026-10-18T11:53:57.302799+00:00",
+  "attempts": 12,
+  "top_level_status_counts": {
+    "ok": 10,
+    "error": 2
+  },
+  "classification_counts": {
+    "mixed_events_require_item_level_screening": 1,
+    "full_month_aggregate_not_cutoff_safe": 1,
+    "unverified_period_and_aggregation": 1,
+    "snapshot_missing_release_and_vintage": 3,
+    "empty_count_without_archive_coverage": 2,
+    "empty_payload_despite_tool_ok": 2,
+    "source_error_no_retry": 2
+  },
+  "maximum_estimated_charge_not_bill_usd": 0.06,
+  "approved_cap_usd": 0.1,
+  "automatic_retries": 0,
+  "new_simulation_calls": 0,
+  "started_at_utc": "2026-10-18T11:41:35.060479+00:00",
+  "finished_at_utc": "2026-10-18T11:42:31.185226+00:00",
+  "automatic_admissions": 0,
+  "rows": [
+    {
+      "source": "ustr",
+      "tool_status": "ok",
+      "target_date": "2025-03",
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "from_cache": true,
+      "fetched_at": "2026-10-18T11:41:35.751341Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "Examples mix dated releases, later reports and undated navigation/report pages.",
+        "No historical coverage or counting rule, so reported counts are not admitted as economic indicators."
+      ],
+      "reported_trade_count": 14,
+      "reported_tariff_count": 3,
+      "examples": [
+        {
+          "title": "definitive countervailing duties on new battery electric vehicles from china",
+          "url": "https://ustr.gov/node/14325",
+          "date_screen": "undated_or_non_event_page"
+        },
+        {
+          "title": "u.s. trade representative",
+          "url": "https://ustr.gov/about/leadership/us-trade-representative",
+          "date_screen": "undated_or_non_event_page"
+        },
+        {
+          "title": "assistant u.s. trade representatives",
+          "url": "https://ustr.gov/about/leadership/assistant-us-trade-representatives",
+          "date_screen": "undated_or_non_event_page"
+        },
+        {
+          "title": "2024 report on the implementation and enforcement of russia’s wto commitments",
+          "url": "https://ustr.gov/countries-regions/europe-middle-east/russia/2024-report-implementation-and-enforcement-russias-wto-commitments",
+          "date_screen": "undated_or_non_event_page"
+        },
+        {
+          "title": "anti-dumping measures on imports of fatty acid from indonesia",
+          "url": "https://ustr.gov/node/14099",
+          "date_screen": "undated_or_non_event_page"
+        },
+        {
+          "title": "ustr releases 2025 national trade estimate report",
+          "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2025/march/ustr-releases-2025-national-trade-estimate-report",
+          "date": "2025-03-31",
+          "date_screen": "after_cutoff"
+        },
+        {
+          "title": "wto remarks and mentions",
+          "url": "https://ustr.gov/trade-topics/trade-organizations/world-trade-organization-wto/wto-remarks-and-mentions",
+          "date_screen": "undated_or_non_event_page"
+        },
+        {
+          "title": "ambassador jamieson greer issues statement on the european union's announced retaliatory tariffs",
+          "url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2025/march/ambassador-jamieson-greer-issues-statement-european-unions-announced-retaliatory-tariffs",
+          "date": "2025-03-12",
+          "date_screen": "dated_candidate_requires_primary_page"
+        },
+        {
+          "title": "u.s. trade representative announces 2025 trade policy agenda",
+          "url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2025/march/us-trade-representative-announces-2025-trade-policy-agenda",
+          "date": "2025-03-03",
+          "date_screen": "dated_candidate_requires_primary_page"
+        },
+        {
+          "title": "ustr announces appointment of indigenous representatives to the united states observer delegation to the indigenous peoples economic and trade cooperation arrangement",
+          "url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2025/january/ustr-announces-appointment-indigenous-representatives-united-states-observer-delegation-indigenous",
+          "date_screen": "undated_or_non_event_page"
+        }
+      ],
+      "classification": "mixed_events_require_item_level_screening",
+      "job_id": "ustr_202503",
+      "raw_sha256": "702c793cb51683768ce69b2adace701f53cc496768f459aac106da7fa8d700f5"
+    },
+    {
+      "source": "google_trends",
+      "tool_status": "ok",
+      "target_date": "2025-03",
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "from_cache": true,
+      "fetched_at": "2026-10-18T11:41:37.858623Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "Only whole-month summary, no daily sequence to truncate.",
+        "Normalization window includes dates after the experiment cutoff; current retrieval is not a historical vintage."
+      ],
+      "keyword_count": 5,
+      "returned_keyword_count": 5,
+      "upstream_error_count": 0,
+      "timeframe": "2025-03-01 2025-03-31",
+      "classification": "full_month_aggregate_not_cutoff_safe",
+      "job_id": "google_trends_202503",
+      "raw_sha256": "33b9d22f554254a4d41f71a47aab8c0270fec47a98e331de1569b822d2563393"
+    },
+    {
+      "source": "household_pulse",
+      "tool_status": "ok",
+      "target_date": "2025-03",
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "from_cache": true,
+      "fetched_at": "2026-10-18T11:41:38.863873Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "Survey year differs from requested monthly target; no cycle, collection dates or release version.",
+        "State-count rollup lacks universe/denominator/weighting provenance; not an identified national or individual rate."
+      ],
+      "survey_year": 2024,
+      "available_measures": [
+        "DISPLACED",
+        "DISPLACEDTIME",
+        "EMOTIONAL",
+        "ENERGYBILL",
+        "EVICTFOR",
+        "EXPENSE",
+        "FOODFORCHLD1",
+        "FOODSCARCE",
+        "GASIMPACT",
+        "LONELY",
+        "LONGCOVID_1",
+        "PRICEINCR",
+        "PRICEWORRY"
+      ],
+      "national_summary": {
+        "DISPLACED": {
+          "avg_rate": 1.2,
+          "state_count": 451
+        },
+        "EMOTIONAL": {
+          "avg_rate": 80.9,
+          "state_count": 459
+        },
+        "ENERGYBILL": {
+          "avg_rate": 22.6,
+          "state_count": 459
+        }
+      },
+      "classification": "unverified_period_and_aggregation",
+      "job_id": "household_pulse_202503",
+      "raw_sha256": "d642ac71c6a2d1e520bf176657d493b0ad8156b7050a19b05e741debaf25109f"
+    },
+    {
+      "source": "fred",
+      "tool_status": "ok",
+      "target_date": "2025-03",
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "from_cache": true,
+      "fetched_at": "2026-10-18T11:41:41.600485Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "No original publication date or preliminary/final version in MCP response.",
+        "Requested observation month is not proof that its value was available by as_of."
+      ],
+      "snapshot": {
+        "UMCSENT": 57.0
+      },
+      "requested_series_only": true,
+      "classification": "snapshot_missing_release_and_vintage",
+      "job_id": "fred_202503",
+      "raw_sha256": "bcac9f16691c6d12910ae9a2562f504971b3262a9517d85358e766e472a1330a"
+    },
+    {
+      "source": "ustr",
+      "tool_status": "ok",
+      "target_date": "2022-06",
+      "as_of": "2022-06-10T23:59:59-04:00",
+      "from_cache": true,
+      "fetched_at": "2026-10-18T11:41:43.073423Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "Zero returned examples is not verified absence of historical trade events."
+      ],
+      "reported_trade_count": 0,
+      "reported_tariff_count": 0,
+      "examples": [],
+      "classification": "empty_count_without_archive_coverage",
+      "job_id": "ustr_202206",
+      "raw_sha256": "0a7e101d739df8a980e99903229c8a0de522819f54479486a1982768d29266c6"
+    },
+    {
+      "source": "google_trends",
+      "tool_status": "ok",
+      "target_date": "2022-06",
+      "as_of": "2022-06-10T23:59:59-04:00",
+      "from_cache": true,
+      "fetched_at": "2026-10-18T11:41:45.160499Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "No observations; cached upstream errors do not mean search interest was zero."
+      ],
+      "keyword_count": 5,
+      "returned_keyword_count": 0,
+      "upstream_error_count": 5,
+      "timeframe": "2022-06-01 2022-06-30",
+      "classification": "empty_payload_despite_tool_ok",
+      "job_id": "google_trends_202206",
+      "raw_sha256": "996ac5533f13d75223ac5bc647629d87f898e2b010da0b53c13c4c7179908a15"
+    },
+    {
+      "source": "household_pulse",
+      "tool_status": "error",
+      "target_date": "2022-06",
+      "as_of": "2022-06-10T23:59:59-04:00",
+      "from_cache": false,
+      "fetched_at": "2026-10-18T11:42:06.286915Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "Provider returned an error, not an observed zero."
+      ],
+      "classification": "source_error_no_retry",
+      "job_id": "household_pulse_202206",
+      "raw_sha256": "021e915090752265975805a225293e288d2a6713787b0b55a422b321537c9316"
+    },
+    {
+      "source": "fred",
+      "tool_status": "ok",
+      "target_date": "2022-06",
+      "as_of": "2022-06-10T23:59:59-04:00",
+      "from_cache": true,
+      "fetched_at": "2026-10-18T11:42:06.802843Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "No original publication date or preliminary/final version in MCP response.",
+        "Requested observation month is not proof that its value was available by as_of."
+      ],
+      "snapshot": {
+        "UMCSENT": 50.0
+      },
+      "requested_series_only": true,
+      "classification": "snapshot_missing_release_and_vintage",
+      "job_id": "fred_202206",
+      "raw_sha256": "f6eea2cc624f60243610df34caa60d980831ce00bded5debce0f51afb9c830ae"
+    },
+    {
+      "source": "ustr",
+      "tool_status": "ok",
+      "target_date": "2020-09",
+      "as_of": "2020-09-11T23:59:59-04:00",
+      "from_cache": true,
+      "fetched_at": "2026-10-18T11:42:07.511156Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "Zero returned examples is not verified absence of historical trade events."
+      ],
+      "reported_trade_count": 0,
+      "reported_tariff_count": 0,
+      "examples": [],
+      "classification": "empty_count_without_archive_coverage",
+      "job_id": "ustr_202009",
+      "raw_sha256": "0fee12a58573c4a56d6ab5347a5cbd288e10a779f428791a11689e78031e87de"
+    },
+    {
+      "source": "google_trends",
+      "tool_status": "ok",
+      "target_date": "2020-09",
+      "as_of": "2020-09-11T23:59:59-04:00",
+      "from_cache": true,
+      "fetched_at": "2026-10-18T11:42:08.250550Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "No observations; cached upstream errors do not mean search interest was zero."
+      ],
+      "keyword_count": 5,
+      "returned_keyword_count": 0,
+      "upstream_error_count": 5,
+      "timeframe": "2020-09-01 2020-09-30",
+      "classification": "empty_payload_despite_tool_ok",
+      "job_id": "google_trends_202009",
+      "raw_sha256": "9a16bec099ba1d1404d949af372c87956a6f5ea13ed26c81f9824740f2ee701f"
+    },
+    {
+      "source": "household_pulse",
+      "tool_status": "error",
+      "target_date": "2020-09",
+      "as_of": "2020-09-11T23:59:59-04:00",
+      "from_cache": false,
+      "fetched_at": "2026-10-18T11:42:29.725878Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "Provider returned an error, not an observed zero."
+      ],
+      "classification": "source_error_no_retry",
+      "job_id": "household_pulse_202009",
+      "raw_sha256": "43ee18e9ca7c842c1e5aad44211f5b6686a5d18d025f16ff34242b924e042aa9"
+    },
+    {
+      "source": "fred",
+      "tool_status": "ok",
+      "target_date": "2020-09",
+      "as_of": "2020-09-11T23:59:59-04:00",
+      "from_cache": true,
+      "fetched_at": "2026-10-18T11:42:31.088810Z",
+      "automatic_environment_admission": false,
+      "issues": [
+        "No original publication date or preliminary/final version in MCP response.",
+        "Requested observation month is not proof that its value was available by as_of."
+      ],
+      "snapshot": {
+        "UMCSENT": 80.4
+      },
+      "requested_series_only": true,
+      "classification": "snapshot_missing_release_and_vintage",
+      "job_id": "fred_202009",
+      "raw_sha256": "b657b925790812c816a6b9fc2c6688dd58414d6397b4617818f2dd51e3752b22"
+    }
+  ],
+  "official_archive_records": [
+    {
+      "file": "ustr_agenda_20250303.html",
+      "source_url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2025/march/us-trade-representative-announces-2025-trade-policy-agenda",
+      "fetched_at_utc": "2026-10-18T11:51:38.611404+00:00",
+      "content_type": "text/html; charset=UTF-8",
+      "status": "archived",
+      "bytes": 30489,
+      "sha256": "6f33809513ccd6539e5ebb383467fe5136b4eb41801f51a669cbb59bdd7bf59f"
+    },
+    {
+      "file": "ustr_eu_statement_20250312.html",
+      "source_url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2025/march/ambassador-jamieson-greer-issues-statement-european-unions-announced-retaliatory-tariffs",
+      "fetched_at_utc": "2026-10-18T11:51:40.717516+00:00",
+      "content_type": "text/html; charset=UTF-8",
+      "status": "archived",
+      "bytes": 29652,
+      "sha256": "9e2f158e05c6ec793512c2656c51ced8f4dc0a91f02824d973bf6693752ab792"
+    },
+    {
+      "file": "umich_202008_final.pdf",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=65950",
+      "fetched_at_utc": "2026-10-18T11:51:41.893836+00:00",
+      "content_type": "application/pdf",
+      "status": "archived",
+      "bytes": 209813,
+      "sha256": "ee47de25b0b04ec566d54b7f4dd17a2ce8e8634e1367515c5f4283c50ebe4732",
+      "pages": 1
+    },
+    {
+      "file": "umich_202206_preliminary.pdf",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=70216",
+      "fetched_at_utc": "2026-10-18T11:51:44.354592+00:00",
+      "content_type": "application/pdf",
+      "status": "archived",
+      "bytes": 264903,
+      "sha256": "5cdd7dff4911a5b602697561098b0975afc881cbc46a8266fc938fb59ff30ea8",
+      "pages": 1
+    },
+    {
+      "file": "umich_202502_final.pdf",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=78142",
+      "fetched_at_utc": "2026-10-18T11:51:46.557642+00:00",
+      "content_type": "application/pdf",
+      "status": "archived",
+      "bytes": 888499,
+      "sha256": "f99652c328d4e24b2db394494497f9f3fc843e879e7ae62f7cd6fdbc392653af",
+      "pages": 2
+    },
+    {
+      "file": "audit_only_umich_202009_final.pdf",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=66156",
+      "fetched_at_utc": "2026-10-18T11:51:49.459752+00:00",
+      "content_type": "application/pdf",
+      "status": "archived",
+      "bytes": 224636,
+      "sha256": "3fb95acc2ac998327bb39bce60067ac8892abb8817fbe10196a3c9d158e07785",
+      "pages": 1
+    },
+    {
+      "file": "audit_only_umich_202206_final.pdf",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=70332",
+      "fetched_at_utc": "2026-10-18T11:51:51.755712+00:00",
+      "content_type": "application/pdf",
+      "status": "archived",
+      "bytes": 354159,
+      "sha256": "4997e9d1b3224437d923304fd7ece4b9a6d494b27249925f533ef2ea5eede963",
+      "pages": 1
+    },
+    {
+      "file": "audit_only_umich_202503_final.pdf",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=78363",
+      "fetched_at_utc": "2026-10-18T11:51:53.785584+00:00",
+      "content_type": "application/pdf",
+      "status": "archived",
+      "bytes": 568084,
+      "sha256": "64766c31a9aa20cc41d135de82863ea0977a6794ce84b0f8681618534cd1ea2e",
+      "pages": 1
+    },
+    {
+      "file": "audit_only_umich_release_calendar.pdf",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=75443",
+      "fetched_at_utc": "2026-10-18T11:51:57.003710+00:00",
+      "content_type": "application/pdf",
+      "status": "archived",
+      "bytes": 132835,
+      "sha256": "954a67f429b06236ff64e47f67489de9bc283a90957d6874aca2dd080d47d42a",
+      "pages": 9
+    },
+    {
+      "file": "umich_usage_agreement.html",
+      "source_url": "https://data.sca.isr.umich.edu/agreement.php",
+      "fetched_at_utc": "2026-10-18T11:51:58.693192+00:00",
+      "content_type": "text/html; charset=UTF-8",
+      "status": "archived",
+      "bytes": 12274,
+      "sha256": "9c6701e8c51ed0c02995996f9241716281ea9d3ff7082fbbd1f6807f3f61eb89"
+    }
+  ],
+  "source_sha256": {
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_ustr_202503.json": "702c793cb51683768ce69b2adace701f53cc496768f459aac106da7fa8d700f5",
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_google_trends_202503.json": "33b9d22f554254a4d41f71a47aab8c0270fec47a98e331de1569b822d2563393",
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_household_pulse_202503.json": "d642ac71c6a2d1e520bf176657d493b0ad8156b7050a19b05e741debaf25109f",
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_fred_202503.json": "bcac9f16691c6d12910ae9a2562f504971b3262a9517d85358e766e472a1330a",
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_ustr_202206.json": "0a7e101d739df8a980e99903229c8a0de522819f54479486a1982768d29266c6",
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_google_trends_202206.json": "996ac5533f13d75223ac5bc647629d87f898e2b010da0b53c13c4c7179908a15",
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_household_pulse_202206.json": "021e915090752265975805a225293e288d2a6713787b0b55a422b321537c9316",
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_fred_202206.json": "f6eea2cc624f60243610df34caa60d980831ce00bded5debce0f51afb9c830ae",
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_ustr_202009.json": "0fee12a58573c4a56d6ab5347a5cbd288e10a779f428791a11689e78031e87de",
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_google_trends_202009.json": "9a16bec099ba1d1404d949af372c87956a6f5ea13ed26c81f9824740f2ee701f",
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_household_pulse_202009.json": "43ee18e9ca7c842c1e5aad44211f5b6686a5d18d025f16ff34242b924e042aa9",
+    "outputs/sce_event_mechanism_probe_20261018_v1/raw_fred_202009.json": "b657b925790812c816a6b9fc2c6688dd58414d6397b4617818f2dd51e3752b22",
+    "outputs/sce_event_mechanism_probe_20261018_v1/protocol.json": "3616ec7f22a9a5ef828d50b67aecefd3de765fb2e2054e648454e900f58a7ac3",
+    "outputs/sce_event_mechanism_probe_20261018_v1/ledger.jsonl": "2f52f4ce131c6aa7d54c9d4209510f0b9e81684dc021cfb763a311e24cc64855"
+  },
+  "note": "No missing value is replaced by zero. Direct official releases are separately curated after this source-level screen; this does not certify the simulation as strict B."
+}

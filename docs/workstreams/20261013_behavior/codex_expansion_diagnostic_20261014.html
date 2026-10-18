@@ -1,4 +1,22 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body>
+<section id="event-mcp-results-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
+<style>.em-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.em-card{background:#fff;border:1px solid #d5dedb;border-radius:10px;padding:16px 20px;min-width:0}.em-card h3{margin:0 0 8px}.em-card p{margin:0}.em-note{background:#edf3ef;border-left:4px solid #47705e;padding:14px 18px}@media(max-width:720px){.em-cards{grid-template-columns:1fr}#event-mcp-results-20261018{padding:20px 16px!important}}</style>
+<h1>Event MCP已取回：哪些信息能用于下一步？</h1>
+<p>2026-10-18。已完成批准的<strong>12次取数、0次重试</strong>，保守全部计费估算<strong>最多$0.06／上限$0.10</strong>，未取得平台账单。没有发送人口或问卷，也没有启动新的Simulation。</p>
+<nav><a href="../20261018_targeted_mechanisms/event_probe_results.md">完整结论与来源</a> · <a href="../20261018_targeted_mechanisms/event_probe_readout/summary.json">执行与审计收据</a> · <a href="../20261018_targeted_mechanisms/consumer_context_candidate_inputs.md">候选提示块</a> · <a href="../../current_todo.html">任务清单</a></nav>
+<p class="em-note"><strong>主要发现：经济信心下降，不等于居民预期物价下跌。</strong>当时的消费者调查显示，担心关税推高未来价格、担心收入追不上涨价和担心经济转弱可以同时出现。这比再加一个“悲观”标签更具体，但仍需对照实验检验。</p>
+<div class="em-cards">
+<article class="em-card"><h3>USTR：筛出2条有日期的政策候选</h3><p>2025年3月结果混有后发报告和无日期页面。已核3月3日议程、3月12日欧盟报复关税声明；另两期返回零条，不代表历史上没有事件。网页日期与历史正文版本分开记录。</p></article>
+<article class="em-card"><h3>Google Trends：暂不直接入模</h3><p>2025年只有整月汇总，含截止日后信息；2020/2022没有实际观测，上游限流。缺失不填零，也不把相对热度冒充个人注意力比例。</p></article>
+<article class="em-card"><h3>Household Pulse：汇总口径不足</h3><p>两期报错，2025请求返回2024汇总，缺调查周期、分母和权重。先隔离，不能把全国或跨期均值当成某个家庭的真实困难。</p></article>
+<article class="em-card"><h3>UMCSENT：三条终值均晚于截止</h3><p>已找到原发布稿，改列当时已公布的候选：2020年8月终稿、2022年6月初稿、2025年2月终稿。它是消费者情绪指数，不是SCE或个人央行信任。</p></article>
+</div>
+<h2>下一步只改变一件事：补具体的消费者处境背景</h2>
+<p>保持人口、本人先验、问卷和模型相同，先比较原E与“原E＋已核验的消费者处境/政策背景”。第一轮不放另一调查的通胀预期数字，不指令模型必须上调，也不据此给每个人分配心理状态。</p>
+<p>旧2025年3月输入中，189／192份已经提到关税，所以问题不能简单归为没有关税新闻；要检验的是新资料是否补出了原输入没有表达清楚的价格风险和家庭处境。中心MAE、分布W1、稳定者错动和变动者漏动一起看。</p>
+<p><strong>当前阶段：</strong>三期各24人、两组各两遍，共288份实际提示已冻结，12个官方引擎离线单元通过。预计$0.34、保守预留$1.36、拟批上限$2，另发许可卡待答，真实模拟调用0。<a href="../20261018_targeted_mechanisms/consumer_context_trial_prereg.md">具体配置与评价登记</a>。三期是开发窗口，不是最终独立验证；原Simulation的0.459pp误差尚未改变。</p>
+</section>
+
 <section id="goal-retention-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
 <h1>0.20pp目标：先检验个人更新规律能否预测</h1>
 <p>2026-10-18。持续目标已登记：Q9群体中位数MAE低于<strong>0.20pp</strong>，并优于同样本、同月份的持续性基线。<strong>当前尚未达成，原Simulation仍为0.459pp，基线0.239pp。</strong>以下是零API的机制筛查，没有新模型回答或Q9重拟合。</p>
@@ -36,7 +54,7 @@
 <h2>三、Event MCP的实际进度</h2>
 <p>已成功核查免费目录：<strong>Event MCP 1.28.1、21个来源</strong>。已封存三期2020-09、2022-06、2025-03 × 四类来源的12项取数清单。按组委会邮件费率预计<strong>$0.06</strong>、请求硬上限<strong>$0.10</strong>，计入平台额度。</p>
 <ul><li><strong>USTR：</strong>关税宣布、生效、暂停等事实，先与旧NYT内容对账。</li><li><strong>Google Trends：</strong>公共关注变化，不能把相对热度当作个人注意力百分比。</li><li><strong>Household Pulse：</strong>群体压力资料，不能冒充SCE某个家庭的实测心理。</li><li><strong>FRED的UMCSENT：</strong>消费者情绪，区别于政府信任、美联储信任和本人财务前景。</li></ul>
-<p id="tm-mcp-status" class="tm-note"><strong>付费取数仍待本批预算卡回复，当前付费调用0。</strong>本次不发送人口或问卷，也不启动Simulation。接口只有年月、没有as_of；取回后还要核验发布日期和历史版本，版本不明的内容不进严格事前预测。</p>
+<p id="tm-mcp-status" class="tm-note"><strong>执行更新：用户已批准，12次取数完成。</strong>最多估$0.06，0次重试、新Simulation为0；逐源问题与新增原始证据见<a href="#event-mcp-results-20261018">页首结果</a>。下文清单保留为执行前设计，原协议不改。</p>
 <h2>四、接下来按什么顺序做？</h2>
 <ol><li>取得MCP小样后，逐条列出旧E已有内容、真正新增事实及截止前可得性。</li><li>据实选一项E展示或事件补齐对照；P×E连接须先有同人数据支持。</li><li>下一次模拟同时看中位数MAE、跨人W1、稳定者错动与变动者漏动，避免只改善总体中心。</li><li>十二期均已查看，用于开发；新验证月份与新增Simulation预算单独冻结。</li></ol>
 </section>

@@ -1,0 +1,182 @@
+{
+  "status": "source_checked_candidate_records_not_live_environment",
+  "checked_at_utc": "2026-10-18T12:02:15.685144+00:00",
+  "scope": "New A development input candidates only; whole experiment not certified strict B.",
+  "records": [
+    {
+      "evidence_id": "umich_202008_final",
+      "target_month": 202009,
+      "as_of": "2020-09-11T23:59:59-04:00",
+      "source": "Surveys of Consumers, Survey Research Center, University of Michigan",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=65950",
+      "source_file_local": "data/raw/mcp_checks/2026-10-18_event_mechanisms_v1/official_evidence/umich_202008_final.pdf",
+      "source_sha256": "ee47de25b0b04ec566d54b7f4dd17a2ce8e8634e1367515c5f4283c50ebe4732",
+      "fetched_at_utc": "2026-10-18T11:51:41.893836+00:00",
+      "published_date": "2020-08-28",
+      "publication_precision": "date_only",
+      "reference_period": "2020-08",
+      "source_version": "final",
+      "date_gate_passed": true,
+      "same_day_rule": "Published date <= cutoff date; same-day admission applies only to this end-of-day cutoff. No intraday release time invented.",
+      "evidence_class": "official_dated_release_version",
+      "automatic_environment_admission": false,
+      "consumer_sentiment_index": 74.1,
+      "separate_year_ahead_point_expectation_median_pct": 3.1,
+      "expectation_definition": "Separate Michigan point-expectation statistic; never SCE Q9 density-mean median.",
+      "first_trial_includes_expectation_number": false,
+      "context_facts": {
+        "economic_context": "Weak current economy and expected recovery can coexist.",
+        "price_context": "Some pandemic-demand items raised middle/lower income price concerns."
+      }
+    },
+    {
+      "evidence_id": "umich_202206_preliminary",
+      "target_month": 202206,
+      "as_of": "2022-06-10T23:59:59-04:00",
+      "source": "Surveys of Consumers, Survey Research Center, University of Michigan",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=70216",
+      "source_file_local": "data/raw/mcp_checks/2026-10-18_event_mechanisms_v1/official_evidence/umich_202206_preliminary.pdf",
+      "source_sha256": "5cdd7dff4911a5b602697561098b0975afc881cbc46a8266fc938fb59ff30ea8",
+      "fetched_at_utc": "2026-10-18T11:51:44.354592+00:00",
+      "published_date": "2022-06-10",
+      "publication_precision": "date_only",
+      "reference_period": "2022-06",
+      "source_version": "preliminary",
+      "date_gate_passed": true,
+      "same_day_rule": "Published date <= cutoff date; same-day admission applies only to this end-of-day cutoff. No intraday release time invented.",
+      "evidence_class": "official_dated_release_version",
+      "automatic_environment_admission": false,
+      "consumer_sentiment_index": 50.2,
+      "separate_year_ahead_point_expectation_median_pct": 5.4,
+      "expectation_definition": "Separate Michigan point-expectation statistic; never SCE Q9 density-mean median.",
+      "first_trial_includes_expectation_number": false,
+      "context_facts": {
+        "gas_spontaneous_mention_percent": 50,
+        "income_expected_to_outpace_prices_percent": 13,
+        "economic_context": "Gasoline, shortages and purchasing power concerns can coexist with weaker growth expectations."
+      }
+    },
+    {
+      "evidence_id": "umich_202502_final",
+      "target_month": 202503,
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "source": "Surveys of Consumers, Survey Research Center, University of Michigan",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=78142",
+      "source_file_local": "data/raw/mcp_checks/2026-10-18_event_mechanisms_v1/official_evidence/umich_202502_final.pdf",
+      "source_sha256": "f99652c328d4e24b2db394494497f9f3fc843e879e7ae62f7cd6fdbc392653af",
+      "fetched_at_utc": "2026-10-18T11:51:46.557642+00:00",
+      "published_date": "2025-02-21",
+      "publication_precision": "date_only",
+      "reference_period": "2025-02",
+      "source_version": "final_including_January_weight_revision",
+      "date_gate_passed": true,
+      "same_day_rule": "Published date <= cutoff date; same-day admission applies only to this end-of-day cutoff. No intraday release time invented.",
+      "evidence_class": "official_dated_release_version",
+      "automatic_environment_admission": false,
+      "consumer_sentiment_index": 64.7,
+      "separate_year_ahead_point_expectation_median_pct": 4.3,
+      "expectation_definition": "Separate Michigan point-expectation statistic; never SCE Q9 density-mean median.",
+      "first_trial_includes_expectation_number": false,
+      "context_facts": {
+        "tariff_spontaneous_mention_percent": 40,
+        "economic_context": "Anticipated tariff price increases accompanied weaker sentiment and some advance durable buying.",
+        "revision_note": "January comparison values in this February release incorporate corrected January survey weights."
+      }
+    },
+    {
+      "evidence_id": "ustr_agenda_20250303",
+      "target_month": 202503,
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "source": "Office of the United States Trade Representative",
+      "source_url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2025/march/us-trade-representative-announces-2025-trade-policy-agenda",
+      "source_file_local": "data/raw/mcp_checks/2026-10-18_event_mechanisms_v1/official_evidence/ustr_agenda_20250303.html",
+      "source_sha256": "6f33809513ccd6539e5ebb383467fe5136b4eb41801f51a669cbb59bdd7bf59f",
+      "fetched_at_utc": "2026-10-18T11:51:38.611404+00:00",
+      "published_date": "2025-03-03",
+      "publication_precision": "date_only",
+      "date_gate_passed": true,
+      "evidence_class": "currently_retrieved_official_dated_webpage",
+      "historical_body_version_verified": false,
+      "automatic_environment_admission": false,
+      "context_fact": "Policy agenda goals, not realized economic outcomes."
+    },
+    {
+      "evidence_id": "ustr_eu_statement_20250312",
+      "target_month": 202503,
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "source": "Office of the United States Trade Representative",
+      "source_url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2025/march/ambassador-jamieson-greer-issues-statement-european-unions-announced-retaliatory-tariffs",
+      "source_file_local": "data/raw/mcp_checks/2026-10-18_event_mechanisms_v1/official_evidence/ustr_eu_statement_20250312.html",
+      "source_sha256": "9e2f158e05c6ec793512c2656c51ced8f4dc0a91f02824d973bf6693752ab792",
+      "fetched_at_utc": "2026-10-18T11:51:40.717516+00:00",
+      "published_date": "2025-03-12",
+      "publication_precision": "date_only",
+      "date_gate_passed": true,
+      "evidence_class": "currently_retrieved_official_dated_webpage",
+      "historical_body_version_verified": false,
+      "automatic_environment_admission": false,
+      "context_fact": "USTR statement on EU announced retaliation, not a quantified household price effect."
+    }
+  ],
+  "excluded_current_mcp_final_values": [
+    {
+      "target_month": 202009,
+      "as_of": "2020-09-11T23:59:59-04:00",
+      "mcp_umcsent_snapshot": 80.4,
+      "published_date": "2020-10-02",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=66156",
+      "source_sha256": "3fb95acc2ac998327bb39bce60067ac8892abb8817fbe10196a3c9d158e07785",
+      "eligibility": "after_cutoff_excluded",
+      "evidence_use": "audit_only_not_agent_input"
+    },
+    {
+      "target_month": 202206,
+      "as_of": "2022-06-10T23:59:59-04:00",
+      "mcp_umcsent_snapshot": 50.0,
+      "published_date": "2022-06-24",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=70332",
+      "source_sha256": "4997e9d1b3224437d923304fd7ece4b9a6d494b27249925f533ef2ea5eede963",
+      "eligibility": "after_cutoff_excluded",
+      "evidence_use": "audit_only_not_agent_input"
+    },
+    {
+      "target_month": 202503,
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "mcp_umcsent_snapshot": 57.0,
+      "published_date": "2025-03-28",
+      "source_url": "https://data.sca.isr.umich.edu/fetchdoc.php?docid=78363",
+      "source_sha256": "64766c31a9aa20cc41d135de82863ea0977a6794ce84b0f8681618534cd1ea2e",
+      "eligibility": "after_cutoff_excluded",
+      "evidence_use": "audit_only_not_agent_input"
+    }
+  ],
+  "rights": {
+    "usage_agreement_url": "https://data.sca.isr.umich.edu/agreement.php",
+    "attribution": "Surveys of Consumers, Survey Research Center, University of Michigan.",
+    "raw_report_git_or_public_redistribution": false
+  },
+  "no_current_sce_answers_in_records": true,
+  "new_simulation_calls": 0,
+  "candidate_blocks": {
+    "202009": {
+      "evidence_ids": [
+        "umich_202008_final"
+      ],
+      "text": "Public consumer-survey background, published August 28, 2020:\n\nThe University of Michigan reported weak current economic sentiment alongside expectations of recovery from the shutdown. Income and job uncertainty remained important, while pandemic demand had raised some prices faced by middle- and lower-income households. This describes another survey's respondents, not your own recorded circumstances."
+    },
+    "202206": {
+      "evidence_ids": [
+        "umich_202206_preliminary"
+      ],
+      "text": "Public consumer-survey background, preliminary release published June 10, 2022:\n\nThe University of Michigan reported strong concerns about gasoline, shortages, and purchasing power. Consumers could expect wage gains yet worry that prices would rise faster; weaker economic prospects and concerns about continuing inflation appeared together. These are reported consumer views, not instructions about how you should answer."
+    },
+    "202503": {
+      "evidence_ids": [
+        "umich_202502_final",
+        "ustr_agenda_20250303",
+        "ustr_eu_statement_20250312"
+      ],
+      "text": "Public consumer-survey background, published February 21, 2025:\n\nThe University of Michigan reported concerns that tariffs would raise future prices. Some consumers considered earlier durable purchases to avoid anticipated price increases, while the economic outlook weakened. These concerns preceded a corresponding realized inflation surge and are not a guarantee that prices will rise.\n\nPublic trade-policy statements:\n\n- March 3, 2025: USTR announced the administration's trade agenda, including rebalancing trade and supporting domestic production. These are stated policy goals, not measured outcomes.\n- March 12, 2025: USTR responded to announced EU retaliatory tariffs. This is the US agency's statement about a trade dispute, not an independent estimate of household inflation."
+    }
+  }
+}
