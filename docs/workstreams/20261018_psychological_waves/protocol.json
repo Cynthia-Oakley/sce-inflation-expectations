@@ -1,0 +1,76 @@
+{
+  "id": "sce-wave-psychological-state-pilot-v1",
+  "mechanism": "wave_psychological_state",
+  "months": [
+    202206,
+    202312,
+    202509
+  ],
+  "wave_by_month": {
+    "202206": 2022,
+    "202312": 2022,
+    "202509": 2024
+  },
+  "n_per_month": 48,
+  "arms": [
+    "matched_psychology",
+    "permuted_psychology"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "allow_archived_month_subset": true,
+  "reuse_baseline_trial": "outputs/sce_financial_outlook_trial_20261017_v1",
+  "reuse_baseline_evaluation": "outputs/sce_financial_outlook_evaluation_20261017_v1",
+  "wave_audit": "outputs/sce_psychological_wave_audit_20261018_v1/summary.json",
+  "donor_seed": 42,
+  "donor_draw": 0,
+  "donor_sensitivity_draws": 5,
+  "min_donor_ess": 10,
+  "permutation_seed": 20261017,
+  "destination": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "retry_max": 0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_verified_date": "2026-10-18",
+  "budget_cap_usd": 3,
+  "comparison_note": "Same archived baseline and unchanged psychological text; source-wave update. New matched vs same-wave permuted is concurrent; old 2018 comparisons are cross-batch descriptions.",
+  "protocol_limits": [
+    "Already inspected A conditional returner reconstruction; not blind validation or B forecasting.",
+    "GSS 2022 full annual wave extends after June 2022. It is an annual proxy, not June measurement or eligible June B input.",
+    "2023 and 2025 use prior-wave 2022 and 2024 backgrounds, not monthly psychological distributions.",
+    "2020-03 is unchanged and excluded from new calls; no contemporaneous GSS cross section, 2020 panel collected later.",
+    "Current revised public files, FILEVERSION 7224.31; no first-release byte-vintage proof.",
+    "WTSSPS baseline sample only, exclude AmeriSpeak supplement without this weight. Mode changes may confound wave trends.",
+    "Adult vs household-head population, prior-year nominal family income vs rolling-year household income, ambiguous 100k bands excluded.",
+    "Synthetic states are not actual SCE psychology or its joint relation to beliefs. Sparse cells pool region only; unknown preserved.",
+    "One paid donor draw, five offline draws, two generations are not additional respondents.",
+    "Permutation preserves unweighted counts; weighted state proportions can change. Reused control is from an earlier mutable-model batch."
+  ],
+  "planned_calls": 576,
+  "max_prompt_chars": 11676,
+  "research_line": "A_conditional_returner_reconstruction",
+  "primary_metric": "q9_center_mae_pp",
+  "primary_weight": "design_survey_weight",
+  "reused_baseline_calls": 288,
+  "comparison": "Same archived baseline and unchanged psychological text; source-wave update. New matched vs same-wave permuted is concurrent; old 2018 comparisons are cross-batch descriptions.",
+  "truth_isolation": "Prepare reads archived P/E, earlier answer prompts and linkage only; current target cache is hashed, not parsed.",
+  "decision_rule": "No automatic upgrade. Check macro MAE, personal MAE, cross-person W1, IQR and all months. Matching increment requires matched vs permuted evidence.",
+  "limits": [
+    "Already inspected A conditional returner reconstruction; not blind validation or B forecasting.",
+    "GSS 2022 full annual wave extends after June 2022. It is an annual proxy, not June measurement or eligible June B input.",
+    "2023 and 2025 use prior-wave 2022 and 2024 backgrounds, not monthly psychological distributions.",
+    "2020-03 is unchanged and excluded from new calls; no contemporaneous GSS cross section, 2020 panel collected later.",
+    "Current revised public files, FILEVERSION 7224.31; no first-release byte-vintage proof.",
+    "WTSSPS baseline sample only, exclude AmeriSpeak supplement without this weight. Mode changes may confound wave trends.",
+    "Adult vs household-head population, prior-year nominal family income vs rolling-year household income, ambiguous 100k bands excluded.",
+    "Synthetic states are not actual SCE psychology or its joint relation to beliefs. Sparse cells pool region only; unknown preserved.",
+    "One paid donor draw, five offline draws, two generations are not additional respondents.",
+    "Permutation preserves unweighted counts; weighted state proportions can change. Reused control is from an earlier mutable-model batch."
+  ]
+}

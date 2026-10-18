@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "independent_aggregate_checks": 144,
+  "max_difference": 2.6645352591003757e-15,
+  "method": "Independent sorted weighted median, numpy MAE and scipy.stats.wasserstein_distance; no Q9 refit",
+  "actual_parameter_checks": 576,
+  "raw_reply_action_checks": "576, performed by common evaluator",
+  "frozen_source_check": "passed",
+  "protected_files_unchanged": 15,
+  "common_q9_person_months": 144,
+  "new_api_calls": 0
+}

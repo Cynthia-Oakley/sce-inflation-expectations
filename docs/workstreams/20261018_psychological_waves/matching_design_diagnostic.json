@@ -1,0 +1,101 @@
+{
+  "scope": "Input-assignment diagnostic only, no target responses read, no LLM calls; marginal differences need not imply correct individual matching.",
+  "months": {
+    "202206": {
+      "donor_wave": 2022,
+      "expected_old_joint": {
+        "1|1": 0.18478821403567783,
+        "1|2": 0.13680464422408875,
+        "1|3": 0.028190873711695062,
+        "2|1": 0.13598934952457428,
+        "2|2": 0.2799705884376375,
+        "2|3": 0.12147268203845817,
+        "3|1": 0.022133793909711087,
+        "3|2": 0.040662182118565496,
+        "3|3": 0.04998767199959186
+      },
+      "expected_new_joint": {
+        "1|1": 0.11734232307133292,
+        "1|2": 0.09951914971791347,
+        "1|3": 0.04583756585006443,
+        "2|1": 0.15111931699067338,
+        "2|2": 0.24972812251879267,
+        "2|3": 0.11417633694977943,
+        "3|1": 0.034627309878048705,
+        "3|2": 0.08943262228485509,
+        "3|3": 0.09821725273853991
+      },
+      "expected_joint_total_variation": 0.14227019647804373,
+      "old_expected_not_too_happy": 0.11278364802786844,
+      "new_expected_not_too_happy": 0.22227718490144371,
+      "old_expected_not_satisfied": 0.19965122774974509,
+      "new_expected_not_satisfied": 0.25823115553838377,
+      "paid_draw_label_change_n": 41,
+      "note": "A changed donor realization is not the same as an observed within-person psychological change. Old/new fallback pools can also differ."
+    },
+    "202312": {
+      "donor_wave": 2022,
+      "expected_old_joint": {
+        "1|1": 0.1926042315827795,
+        "1|2": 0.11586321986718368,
+        "1|3": 0.035064520652742334,
+        "2|1": 0.17376067576496998,
+        "2|2": 0.2820511477896206,
+        "2|3": 0.12164878487055665,
+        "3|1": 0.014109133657520399,
+        "3|2": 0.02496788475346338,
+        "3|3": 0.039930401061163544
+      },
+      "expected_new_joint": {
+        "1|1": 0.12099864222148263,
+        "1|2": 0.0822551133731754,
+        "1|3": 0.032032554978789145,
+        "2|1": 0.18841796167804076,
+        "2|2": 0.27966230350769433,
+        "2|3": 0.10974385067079252,
+        "3|1": 0.037544292020058295,
+        "3|2": 0.06744156238751935,
+        "3|3": 0.08190371916244782
+      },
+      "expected_joint_total_variation": 0.12253944001094882,
+      "old_expected_not_too_happy": 0.07900741947214732,
+      "new_expected_not_too_happy": 0.18688957357002545,
+      "old_expected_not_satisfied": 0.19664370658446254,
+      "new_expected_not_satisfied": 0.22368012481202948,
+      "paid_draw_label_change_n": 38,
+      "note": "A changed donor realization is not the same as an observed within-person psychological change. Old/new fallback pools can also differ."
+    },
+    "202509": {
+      "donor_wave": 2024,
+      "expected_old_joint": {
+        "1|1": 0.17686453732328497,
+        "1|2": 0.14047679308397945,
+        "1|3": 0.018066391503858265,
+        "2|1": 0.17061500836346577,
+        "2|2": 0.2817881290886458,
+        "2|3": 0.11789129288436576,
+        "3|1": 0.015617574043793232,
+        "3|2": 0.03867175333785429,
+        "3|3": 0.0400085203707526
+      },
+      "expected_new_joint": {
+        "1|1": 0.12277803658202589,
+        "1|2": 0.11127394671772751,
+        "1|3": 0.03124820734108566,
+        "2|1": 0.11660224729480564,
+        "2|2": 0.28918891310497713,
+        "2|3": 0.17126145788134833,
+        "3|1": 0.015905731301471895,
+        "3|2": 0.07450315170372944,
+        "3|3": 0.06723830807282866
+      },
+      "expected_joint_total_variation": 0.13730210817617117,
+      "old_expected_not_too_happy": 0.09429784775240012,
+      "new_expected_not_too_happy": 0.15764719107803,
+      "old_expected_not_satisfied": 0.17596620475897662,
+      "new_expected_not_satisfied": 0.2697479732952627,
+      "paid_draw_label_change_n": 41,
+      "note": "A changed donor realization is not the same as an observed within-person psychological change. Old/new fallback pools can also differ."
+    }
+  }
+}

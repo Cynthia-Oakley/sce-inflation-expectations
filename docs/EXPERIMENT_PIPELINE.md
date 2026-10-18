@@ -42,3 +42,7 @@
 源码变化形成新提交；旧Q2完整源冻结在`bccbe1f`，解释旧试验应使用该冻结版本，不更新旧manifest的来源哈希来冒充同版重算。[本轮准备方案](workstreams/20261017_psychological_state/plan.md)。
 
 心理轮已实际验收：768新增全valid、384旧原输入复用、估$0.865；准备0.523秒、API248.851秒、评价21.928秒（非Agent开发总时长）。三组支持及144独立聚合检查通过，未见稳定机制增量、不默认升级。[结果](workstreams/20261017_psychological_state/results.md)。
+
+## 心理波次更新验收（2026-10-18）
+
+共用prepare新增wave_psychological_state小适配器，支持从已归档对照选按原顺序的月份子集；明确过滤联结表，保持原人数／参数／权重。3期×48、两组两遍576新增和288旧对照已真实运行／评价，无新引擎。GSS多波次审计单独入口audit_sce_psychological_waves.py；旧2018同样本报告入口summarize_sce_psychological_waves.py只调既有指标、无Q9重拟合。当前输入准备0.673秒、API192.373秒、评价31.067秒，非全部Agent耗时。结果未支持心理默认升级，见[结果](workstreams/20261018_psychological_waves/results.md)。旧源码／manifest不改；本批冻结51366d3，2022全波次仅A年度代理。

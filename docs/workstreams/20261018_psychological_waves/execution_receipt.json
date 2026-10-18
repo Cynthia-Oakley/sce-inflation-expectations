@@ -1,0 +1,30 @@
+{
+  "status": "all_real_jobs_completed",
+  "trial_folder": "outputs/sce_psychological_wave_trial_20261018_v1",
+  "source_freeze": "51366d3",
+  "protocol_sha256": "0ee7ffd85c8db2392747420c218f512410262d41bbb41651eb0a0d5b0512d424",
+  "new_api_calls": 576,
+  "reused_baseline_calls": 288,
+  "jobs": 12,
+  "connection_errors": 0,
+  "retries": 0,
+  "validation_status_counts": {
+    "valid": 576
+  },
+  "prompt_tokens": 1801756,
+  "completion_tokens": 91174,
+  "token_price_estimated_usd": 0.6499356,
+  "ledger_sum_estimated_usd": 0.649937,
+  "cap_usd": 3,
+  "cost_note": "Conservative peak input cache-miss token estimate, not vendor billing; historical reused calls excluded.",
+  "started_at_utc": "2026-10-18T01:07:28.833726+00:00",
+  "finished_at_utc": "2026-10-18T01:10:41.206640+00:00",
+  "api_span_seconds": 192.372914,
+  "returned_models": {
+    "deepseek-flash": 576
+  },
+  "fingerprints": {
+    "e72d3c7f663d3e1383b00b3884cb4501": 576
+  },
+  "note": "All complete before target evaluation began. Same returned fingerprint as old batch, not proof of immutable weights."
+}

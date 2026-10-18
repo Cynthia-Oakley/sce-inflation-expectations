@@ -1,4 +1,24 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body>
+<section id="psychological-wave-results-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1020px;margin:24px auto 36px;padding:20px 24px 32px;border-bottom:1px solid #ddd">
+<h1>心理背景换成较新波次后，结果怎样？</h1>
+<p>2026-10-18。576次新增请求全部有效，0连接错误／重试；复用288份原输入回答，费用按token估<strong>$0.650／$3上限</strong>。官方引擎API约3.2分钟、评价31秒。原输入与新旧心理在<strong>同三个时期、每期48人、相同设计×调查权重</strong>下比较。</p>
+<p><strong>新波次的总体中心MAE比旧2018略低，但仍未优于不加心理；不升级默认。</strong>人与人的差异稍宽，个人误差和整个分布没有更像真人。旧四期的数值不能直接与本三期相比。</p>
+<nav><a href="../20261018_psychological_waves/results.md">完整结果、逐期匹配与设计反思</a> · <a href="../20261018_psychological_waves/plan.md">执行前方案</a> · <a href="../../EXPERIMENT_STATUS_20261018.md">全部实验台账</a> · <a href="../../current_todo.html">后续清单</a></nav>
+<div class="table-scroll"><table style="min-width:700px"><thead><tr><th>主加权Q9指标（pp）</th><th>不加心理</th><th>旧2018匹配</th><th>新波次匹配</th><th>新波次打乱</th></tr></thead><tbody>
+<tr><td>群体中位数MAE</td><td>0.440</td><td>0.582</td><td>0.514</td><td>0.438</td></tr>
+<tr><td>个人均值MAE</td><td>2.459</td><td>2.775</td><td>2.797</td><td>2.922</td></tr>
+<tr><td>跨人分布距离W1</td><td>1.875</td><td>2.148</td><td>2.174</td><td>2.277</td></tr>
+<tr><td>人际IQR（真人5.546）</td><td>3.145</td><td>3.383</td><td>3.593</td><td>3.261</td></tr>
+</tbody></table></div>
+<h2>每期用了什么，怎么分配？</h2>
+<ul><li><strong>2022年6月：</strong>GSS 2022同年年度代理，48/48分配，18人供体不足而放宽地区。该调查跨5—12月，含6月之后的观察，不能称6月实测或B预测输入。</li><li><strong>2023年12月：</strong>没有2023波次，使用GSS 2022；47/48分配，16人放宽地区，1人缺教育保持未知。</li><li><strong>2025年9月：</strong>没有2025波次，使用GSS 2024；48/48分配，10人放宽地区。</li><li><strong>2020年3月：</strong>没有合适同期测量，旧2018结果存档、不重复付费，不计为新波次验证。</li></ul>
+<p>每位先按<strong>年龄段＋教育＋粗收入＋地区</strong>找供体，依GSS调查权重抽取整对幸福／财务满意；池太小只放宽地区，仍不支持则未知。原来的两句状态文字不变，没有规定悲观者必须高报通胀。种子预先固定，未选择结果最好的分配。</p>
+<h2>哪些设计问题还没解决？</h2>
+<ol><li><strong>年度背景不能冒充当月心理。</strong>且各波次访问方式不同，新版资料更近不等于无测量误差。</li><li><strong>收入与家庭单位不完全一致。</strong>GSS是一般成年人的上年family income，SCE是户主的过去12个月household income；新波次只减少时间距离。</li><li><strong>合成人设与本人信念缺少共同观测。</strong>模型收到本人真实过去回答，心理却来自另一批人，不能保证两者对应；可能只增加扰动，这仍是解释候选。</li><li><strong>细格供体有限，分配有随机性。</strong>143人可分配中44人放宽地区，最小ESS约10；固定一套分配不能估计全部供体不确定性。换供体标签变化不等于真人心理变化。</li></ol>
+<p>新匹配相对不加心理，仅2022年6月的中心改善（0.564→0.287）；另两期变差。新匹配对打乱的主要区间均跨0，尚无稳定匹配增量。个人误差增加的固定时期人员重抽区间为[+0.036,+0.766]，但未覆盖换时期／供体分配或模型批次。不能由本轮否定真人心理作用，也不继续靠换标签调同三期。</p>
+<figure><img src="../20261018_psychological_waves/figures/wave_psychology_results.png" alt="相同三个时期下原输入、旧2018匹配、新波次匹配和打乱的误差与人际差异"><figcaption>144个共同有效人月，两遍不算更多真人；Q8另计，非全国headline或未来实际CPI误差。</figcaption></figure>
+<p>当前共同配置保持。若再研究心理，先找心理／财务状态与通胀信念的共同观测或具体传导依据，暂不自动追加付费试验。资料、输入、完整回包、阴性结果与成本记录均保留；144项独立聚合核验通过，没有重拟合旧Q9。</p>
+</section>
 <section id="experiment-status-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1020px;margin:24px auto 36px;padding:20px 24px 32px;border-bottom:1px solid #ddd">
 <h1>实验复盘：哪些已采用，哪些暂缓？</h1>
 <p>2026-10-18。此次只整理已有结果，新增API调用0。<strong>目前有完整可运行的研究流程，也有局部机制进展；尚未证明在扩大验证中稳定胜过持续性基线。</strong>下方旧章节保留当时语境，当前状态以本节及完整台账为准。</p>
