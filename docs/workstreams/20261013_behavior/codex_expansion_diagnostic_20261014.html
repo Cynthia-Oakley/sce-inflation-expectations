@@ -4,6 +4,18 @@
 <h1>完整统计压缩了人际差异，但统一删表仍不能解决预测误差</h1>
 <p>2026-10-19。六个开发月×96人×六组×两遍，<strong>6,912次调用全部完成，费用估算$6.56／上限$30</strong>；6904份格式有效、8份无效原样保留，0接口错误/重试。使用DeepSeek官方API，平台$70未动用。没有配置通过预登记整体筛选，暂不升级默认方案。</p>
 <nav><a href="../20261018_targeted_mechanisms/information_exposure_results_20261019.md">完整结果、原理和后续</a> · <a href="../20261018_targeted_mechanisms/information_exposure_readout_v1/summary.json">聚合证据与区间</a> · <a href="../20261018_targeted_mechanisms/attention_preparation_readout_v1/protocol.json">执行前登记</a> · <a href="../../current_todo.html">任务清单</a></nav>
+<aside id="personal-information-assignment-20261019" style="margin:22px 0;padding:14px 18px;border:1px solid #d7dfdc;line-height:1.7">
+<h2>下一步：按人分配信息，先核实分配依据</h2>
+<p>用户澄清的是<strong>同一群体中，有人少接触经济新闻，有人多接触</strong>。旧3／8／20篇实验每组内部篇数一致，尚未检验这种人群内差异。</p>
+<ul>
+<li><strong>接触多少：</strong>优先用经济新闻关注调查。既有外部留出检验中，年龄、教育、收入、地区合起来只使预测损失改善约0.94%，不足以按学历硬分3篇或40篇。</li>
+<li><strong>接触什么：</strong>购物、驾驶等角色可决定价格信息侧重。文献支持购物分工与价格感知有关；SCE的Q46问财务决策，不是买菜责任，本人驾驶频率也未核实，不能直接赋值。</li>
+<li><strong>如何理解：</strong>教育、数理和金融知识用于研究理解与表达，与阅读数量分开。</li>
+</ul>
+<p>本轮只核查文献、复用旧统计，<strong>0新增API、运行配置未改</strong>。先考虑旧3／8／20回答的离线组合与打乱对照；不按本期误差选档，不把实验档位当真人实际篇数。</p>
+<p><a href="../20261018_targeted_mechanisms/personal_information_assignment_20261019.md">完整依据、数据缺口与实施方案</a></p>
+</aside>
+
 <h2>只精简宏观资料：分布改善，中心误差未改善</h2>
 <p>新闻同为8篇、内容不变，省去额外统计及12个月序列后，<strong>W1从2.457降至1.754pp，人际IQR从2.263扩大到3.679pp</strong>，更接近真人4.732。六个月W1均改善；但群体中位数MAE从<strong>0.355变成0.392pp</strong>。</p>
 <p>它使模型少改动那些真人保持的判断（错动60.9%→46.2%），也更容易漏掉真人实际的改变（漏动35.1%→55.5%）；两个方向在六个月都出现。<strong>需要研究谁在何时吸收信息，而非让所有人统一看完整表或统一删表。</strong></p>
