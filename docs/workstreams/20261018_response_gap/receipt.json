@@ -1,0 +1,51 @@
+{
+  "completed_at_utc": "2026-10-18T03:21:34.948774+00:00",
+  "new_api_calls": 0,
+  "source_sha256": {
+    "outputs/sce_response_gap_diagnostic_20261018_v1/summary.json": "12397414366513b8f4929576af34f2c266a2414c354ce81f8fac939e42e40b84",
+    "outputs/sce_response_gap_diagnostic_20261018_v1/update_details.json": "2c49a381da9676854f69f872392746d6847ec0bdc76412af3305545941f7b13a",
+    "outputs/sce_response_gap_controls_20261018_v3/summary.json": "ed59ae1c4badd725edbc7363615501264fb5f3860f73b861bac3b1003459d453"
+  },
+  "generated_sha256": {
+    "analysis_summary.json": "4c34dcaa3148010b6d138caebe1b8831f7ecec3789d35f14e88b951ed010733e",
+    "reading_section.html": "1ee8062b62a891af5ec87cde1fca58d2ca69924571947661b7e13e51ceff2494",
+    "figures/monthly_gaps.svg": "82fde870f4e453dd08ca0ad0a503875b54d2c1d1a3bb54302a86876bcb8c8900",
+    "figures/monthly_gaps.png": "f26eb8028b43ad2e87251e75bd9cb849575bd22a3e37157d45ecf86be6289ca2",
+    "figures/updating_gaps.svg": "f9d7412c3d18bc69ed8f73e9f29e68792e77a17b202ceee374b4890c3179917e",
+    "figures/history_and_probability.png": "c51b98e8966d5a2f8b3ec9031d164ee2f50d9708afb55a3dcda6cde61c9c3d14",
+    "figures/population_gaps.png": "e2424511c6c5ca1ac344e329bb8d2225dc653268ca615234523dad95cffd5964",
+    "figures/population_gaps.svg": "ea823cedce58dd5997eabe9025b692252d575967d5cf5dccb0f79b13fe231c28",
+    "figures/history_and_probability.svg": "fa709b4432e004c43809e9eb6afe3138942f60549e99fc247b9e6b2db6bd1b15",
+    "figures/updating_gaps.png": "eb7c096abd19caf2e97570ef99f4d3e291982f96bdc3a41d8606dad21a7ee58d"
+  },
+  "module_sha256": "159f858da03606482ce86042e657cf2072a5ed8479f74927b7eec5ea104b7dc0",
+  "packaging_note": "Public SVG only: stripped trailing whitespace in path lines; no geometry or data change. Original generated snapshots remain unchanged.",
+  "public_svg_normalization": {
+    "monthly_gaps.svg": {
+      "generated_sha256": "82fde870f4e453dd08ca0ad0a503875b54d2c1d1a3bb54302a86876bcb8c8900",
+      "packaged_sha256": "e9691f4c2670374411c5d84cdf7b732a27889af36b91e8b7ef44f5c46e2a310e"
+    },
+    "updating_gaps.svg": {
+      "generated_sha256": "f9d7412c3d18bc69ed8f73e9f29e68792e77a17b202ceee374b4890c3179917e",
+      "packaged_sha256": "00b57867f17e6f9d35cb44721f24aaac24ac82d2a3e6565456c3d95fbb961311"
+    },
+    "population_gaps.svg": {
+      "generated_sha256": "ea823cedce58dd5997eabe9025b692252d575967d5cf5dccb0f79b13fe231c28",
+      "packaged_sha256": "4fb49245a6bf05ed661a21d3faeff2d8ec5b21996795967891400654a6d6b008"
+    },
+    "history_and_probability.svg": {
+      "generated_sha256": "fa709b4432e004c43809e9eb6afe3138942f60549e99fc247b9e6b2db6bd1b15",
+      "packaged_sha256": "b48a8b0a718a5d4541b1268cfe375b7355bdc76ac305b615fb6e411e465c859d"
+    }
+  },
+  "packaged_figure_sha256": {
+    "figures/monthly_gaps.svg": "e9691f4c2670374411c5d84cdf7b732a27889af36b91e8b7ef44f5c46e2a310e",
+    "figures/monthly_gaps.png": "f26eb8028b43ad2e87251e75bd9cb849575bd22a3e37157d45ecf86be6289ca2",
+    "figures/updating_gaps.svg": "00b57867f17e6f9d35cb44721f24aaac24ac82d2a3e6565456c3d95fbb961311",
+    "figures/history_and_probability.png": "c51b98e8966d5a2f8b3ec9031d164ee2f50d9708afb55a3dcda6cde61c9c3d14",
+    "figures/population_gaps.png": "e2424511c6c5ca1ac344e329bb8d2225dc653268ca615234523dad95cffd5964",
+    "figures/population_gaps.svg": "4fb49245a6bf05ed661a21d3faeff2d8ec5b21996795967891400654a6d6b008",
+    "figures/history_and_probability.svg": "b48a8b0a718a5d4541b1268cfe375b7355bdc76ac305b615fb6e411e465c859d",
+    "figures/updating_gaps.png": "eb7c096abd19caf2e97570ef99f4d3e291982f96bdc3a41d8606dad21a7ee58d"
+  }
+}

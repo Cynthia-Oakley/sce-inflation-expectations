@@ -1,0 +1,2573 @@
+{
+  "status": "complete_no_new_api",
+  "date_beijing": "2026-10-18",
+  "new_api_calls": 0,
+  "density_refits": 0,
+  "common_person_months": 2284,
+  "independent_small_tests": {
+    "response_gap": 14,
+    "controls_probability_Q8": 4
+  },
+  "reconciliation": {
+    "passed": true,
+    "n_cell_metric_checks": 360,
+    "max_absolute_residual": 2.4424906541753444e-14,
+    "checks": [
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 8.881784197001252e-16
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.865174681370263e-14
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 2.3092638912203256e-14
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 5.551115123125783e-17
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.3766765505351941e-14
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 2.1316282072803006e-14
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 2.220446049250313e-16
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202003,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.3322676295501878e-15
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 6.217248937900877e-15
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 2.220446049250313e-16
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.1102230246251565e-16
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 7.105427357601002e-15
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 7.105427357601002e-15
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 1.1102230246251565e-16
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.1102230246251565e-16
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202009,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 8.881784197001252e-16
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 2.4424906541753444e-14
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 5.551115123125783e-17
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 8.881784197001252e-16
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 3.1086244689504383e-15
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 1.687538997430238e-14
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 8.326672684688674e-17
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 3.1086244689504383e-15
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202103,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.2878587085651816e-14
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 1.3322676295501878e-14
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.2434497875801753e-14
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 2.0650148258027912e-14
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 1.6653345369377348e-16
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202109,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.3322676295501878e-15
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 1.3322676295501878e-14
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 2.220446049250313e-15
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 4.884981308350689e-15
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 1.7319479184152442e-14
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 1.1102230246251565e-16
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 2.220446049250313e-15
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202206,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 8.881784197001252e-16
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 3.552713678800501e-15
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 6.8833827526759706e-15
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 3.885780586188048e-16
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 3.1086244689504383e-15
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 4.884981308350689e-15
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 8.881784197001252e-15
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 2.7755575615628914e-16
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 3.1086244689504383e-15
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202212,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 8.881784197001252e-16
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 2.042810365310288e-14
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.1102230246251565e-16
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.7763568394002505e-15
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 3.552713678800501e-15
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 8.881784197001252e-16
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.1102230246251565e-16
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202306,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.3766765505351941e-14
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 1.3877787807814457e-14
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 2.7755575615628914e-17
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.2212453270876722e-14
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 8.881784197001252e-15
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 1.687538997430238e-14
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 1.3877787807814457e-16
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.2212453270876722e-14
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202312,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 2.220446049250313e-15
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 8.881784197001252e-16
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.4432899320127035e-15
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.7763568394002505e-15
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 1.9984014443252818e-15
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 2.220446049250313e-16
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.4432899320127035e-15
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202404,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 4.884981308350689e-15
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 6.8833827526759706e-15
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 2.55351295663786e-15
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.199040866595169e-14
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 1.1102230246251565e-16
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 2.55351295663786e-15
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202410,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 1.7763568394002505e-15
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 2.6645352591003757e-15
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 4.884981308350689e-15
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 2.220446049250313e-16
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 6.439293542825908e-15
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 8.881784197001252e-16
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.3322676295501878e-15
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 4.884981308350689e-15
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 8.881784197001252e-16
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 6.439293542825908e-15
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202503,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.3322676295501878e-15
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 5.551115123125783e-16
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 2.42861286636753e-16
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.0436096431476471e-14
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 1,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "model",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 5.773159728050814e-15
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "model",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "model",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "model",
+        "metric": "delta_w1_pp",
+        "absolute_residual": 6.661338147750939e-16
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_mean_bias_pp",
+        "absolute_residual": 5.551115123125783e-17
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "model",
+        "metric": "individual_density_iqr_mae_pp",
+        "absolute_residual": 4.440892098500626e-16
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "q9_center_bias_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "individual_density_mean_mae_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_section_w1_pp",
+        "absolute_residual": 1.0436096431476471e-14
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      },
+      {
+        "month": 202509,
+        "repeat": 2,
+        "role": "copy_previous",
+        "metric": "real_cross_person_iqr_pp",
+        "absolute_residual": 0.0
+      }
+    ],
+    "method": "Same common paired support, positive design weights, archived weighted empirical left-CDF median/W1 conventions; every original month-repeat model/copy metric is checked."
+  },
+  "conditional_coefficient_linearity_max_abs_residual": 3.552713678800501e-15,
+  "actual_prompt_reply_audit": {
+    "actual_prompt_equals_preview_n": 4608,
+    "raw_reply_equals_scored_n": 4608
+  },
+  "protected_files_unchanged": 15,
+  "figures_visually_inspected": 4,
+  "new_markdown_local_links_verified": true,
+  "interactive_script_syntax_checked": true,
+  "public_aggregate_privacy_check": "No raw userid/agent_id, original bins or prompt/reply text fields; only group/count aggregates.",
+  "authoritative_outputs": {
+    "main": "outputs/sce_response_gap_diagnostic_20261018_v1",
+    "controls": "outputs/sce_response_gap_controls_20261018_v3",
+    "reply": "outputs/sce_reply_audit_20261018_v1/final",
+    "reading": "outputs/sce_response_gap_reading_20261018_v2"
+  },
+  "source_sha256": {
+    "outputs/sce_response_gap_diagnostic_20261018_v1/summary.json": "12397414366513b8f4929576af34f2c266a2414c354ce81f8fac939e42e40b84",
+    "outputs/sce_response_gap_diagnostic_20261018_v1/update_details.json": "2c49a381da9676854f69f872392746d6847ec0bdc76412af3305545941f7b13a",
+    "outputs/sce_response_gap_controls_20261018_v3/summary.json": "ed59ae1c4badd725edbc7363615501264fb5f3860f73b861bac3b1003459d453",
+    "outputs/sce_reply_audit_20261018_v1/final/aggregate_summary.json": "2570ee1091f10b6664b9fd45b82745241b74e61cb0f0280f8f3b20de94625d6c"
+  },
+  "implementation_sha256": {
+    "studies/sce_inflation_expectations/evaluation/response_gap.py": "6f56f24e53c1dd5ec4af50eab1be81f4d55395ea5fea2c9cf94097b009831b7c",
+    "studies/sce_inflation_expectations/evaluation/response_gap_controls.py": "ec09c7c8122ce74a61d5a9f86d56a8912e89dd14f222809106c2d51605f8f876",
+    "studies/sce_inflation_expectations/evaluation/response_gap_report.py": "ab8d541c37883497e525006ff3ec5480bcfca9a6529de751fd45d009b15d1ad6",
+    "scripts/audit_sce_replies_20261018.py": "e5ca261e9c8b088e58305f3349a92ffb31e78dd7d7f1a53d8a7f881af899a235"
+  },
+  "limits": [
+    "Exploratory, already inspected twelve periods; no new independent validation or identified cause.",
+    "Truth-defined stable/up/down buckets cannot be used prospectively.",
+    "No raw respondent records committed."
+  ],
+  "svg_packaging_geometry_unchanged": true
+}

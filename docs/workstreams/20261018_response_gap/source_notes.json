@@ -1,0 +1,344 @@
+{
+  "checked_on": "2026-10-18",
+  "scope": "New literature/environment note only; no paid model calls; no runtime or scorer changes",
+  "internal_sources_reused": [
+    "docs/literature/sce/themes/expectation_formation.md",
+    "docs/literature/sce/themes/household_price_experience.md",
+    "docs/literature/sce/belief_updating/evidence_and_design_20261015.md",
+    "docs/literature/sce/heterogeneity_and_probability/literature_review_20261012.md",
+    "docs/literature/sce/heterogeneity_and_probability/behavior_mechanism_evidence_20261014.md",
+    "docs/literature/sce/sources/archive_manifest.json",
+    "docs/literature/sce/heterogeneity_and_probability/archive_manifest_20261012.json",
+    "docs/workstreams/20261017_reference_scaleup/results.md",
+    "docs/workstreams/20261017_reference_scaleup/protocol.json",
+    "docs/workstreams/20261017_reference_scaleup/coverage.json",
+    "docs/workstreams/20261017_reference_scaleup/policy_sources.json",
+    "docs/workstreams/20261017_reference_scaleup/source_receipt.json",
+    "docs/NEXT_ACTIONS.md",
+    "docs/workstreams/20261013_behavior/codex_mapping_results.md"
+  ],
+  "literature": [
+    {
+      "id": "armantier_sr543",
+      "url": "https://www.newyorkfed.org/research/staff_reports/sr543.html",
+      "pdf_url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf",
+      "version": "January 2013 revised Staff Report 543",
+      "checked": "Official abstract and PDF freshly read; PDF page 14 nonrevision discussion independently checked against existing local PDF",
+      "supports": "Random information changes expectations; distribution convergence; revisions relate to signal strength and prior precision",
+      "limit": "Does not identify cause of project shrinkage",
+      "nonrevision_evidence": {
+        "population": "Respondents receiving randomized information in treatment groups",
+        "outcome": "One-year point forecast not revised within the same survey",
+        "range_percent": [
+          40.15,
+          52.83
+        ],
+        "locator": "PDF page 14 (printed page 12); Section 3, Table 1 discussion and footnote 13",
+        "interpretation_limit": "Not monthly SCE no-update rates; no revision does not uniquely imply inattention"
+      }
+    },
+    {
+      "id": "cg_2015",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20110306",
+      "version": "AER 105(8), 2015",
+      "checked": "official abstract freshly read; detailed micro estimates not reproduced",
+      "supports": "Framework and evidence consistent with information rigidity",
+      "limit": "Project prior slope is not identified sticky/noisy-information parameter"
+    },
+    {
+      "id": "carroll_2003",
+      "url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+      "version": "Author manuscript linked in existing project review",
+      "checked": "reused docs/literature/sce/themes/expectation_formation.md checked 2026-10-05; no fresh fetch",
+      "supports": "News diffusion and aggregate expectation sluggishness",
+      "limit": "Aggregate model is not randomized individual exposure evidence"
+    },
+    {
+      "id": "malmendier_nagel_2016",
+      "url": "https://eml.berkeley.edu/~ulrike/Papers/InflExp_44.pdf",
+      "version": "2013-04-04 author draft; QJE publication 2016",
+      "checked": "reused 2026-10-12 source archive and review; no fresh fetch",
+      "supports": "Lifetime inflation experience and cohort heterogeneity",
+      "limit": "Observational/model dependent; not justification for exact survey-answer copy"
+    },
+    {
+      "id": "dmow_2021",
+      "url": "https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf",
+      "version": "2020-08-03 author draft; JPE publication 2021",
+      "checked": "fresh PDF abstract/introduction and existing project review",
+      "supports": "Personal grocery price exposure; purchase frequency versus expenditure share; asymmetric price changes",
+      "limit": "Synthetic CE donors are not matched personal scanner histories"
+    },
+    {
+      "id": "weber_et_al_attention",
+      "url": "https://www.nber.org/papers/w31485",
+      "pdf_url": "https://www.nber.org/system/files/working_papers/w31485/w31485.pdf",
+      "version": "NBER working paper July 2023; revised February 2024; related Econometrica article 2025 in existing review",
+      "checked": "fresh official NBER abstract via search result; prior project journal review reused",
+      "supports": "In high-inflation environments agents more informed, less responsive to additional information; context-dependent attention",
+      "limit": "Cross-period attention changes not separately randomized from media supply/environment"
+    },
+    {
+      "id": "gmm_rounding",
+      "url": "https://molinari.economics.cornell.edu/docs/GMM_Rounding_Paper_Final.pdf",
+      "nber_url": "https://www.nber.org/papers/w24559",
+      "version": "Author final; Journal of Econometrics 231(1), 2022; online 2020",
+      "checked": "fresh author/NBER search abstract; existing local text abstract and sections on measurement/stability revisited",
+      "local_text": "outputs/sce_heterogeneity_literature_20261012_v1/tail_center_rounding_author_final.txt",
+      "local_pdf": "data/raw/literature/sce/20261012_heterogeneity_probability/tail_center_rounding_author_final.pdf",
+      "sha256": "5dd1028bab0755548df99477ce0b0e4ac8b02176cd78cc6c565f33d8cf7308e6",
+      "supports": "Person-specific rounding stable across waves; tails and center can differ",
+      "limit": "HRS standalone probabilities do not identify SCE simplex reporting kernel"
+    }
+  ],
+  "cpi_first_release_environment": [
+    {
+      "survey_month": "202003",
+      "reference_period": "2020-02",
+      "published_at": "2020-03-11T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2020-03-11T23:59:59-04:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 2.3,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_03112020.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2020-02/cpi_2020_02_released_2020_03_11.pdf",
+      "sha256": "bea9b8d4146b7731a10dec7a5ad504eec0c2358c43492556431ad3e18b7675dc",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    },
+    {
+      "survey_month": "202009",
+      "reference_period": "2020-08",
+      "published_at": "2020-09-11T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2020-09-11T23:59:59-04:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 1.3,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_09112020.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2020-08/cpi_2020_08_released_2020_09_11.pdf",
+      "sha256": "e9cc012f3c70bdc97d251434fdba9c9a50646c9721eeb6ba1b529504f6356d15",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    },
+    {
+      "survey_month": "202103",
+      "reference_period": "2021-02",
+      "published_at": "2021-03-10T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2021-03-10T23:59:59-05:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 1.7,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_03102021.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2021-02/cpi_2021_02_released_2021_03_10.pdf",
+      "sha256": "16b2d5cf6e7aeeb7e79512f07b086ea37f62823b0cdb21658b9ef570fbd45a9d",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    },
+    {
+      "survey_month": "202109",
+      "reference_period": "2021-08",
+      "published_at": "2021-09-14T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2021-09-14T23:59:59-04:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 5.3,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_09142021.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2021-08/cpi_2021_08_released_2021_09_14.pdf",
+      "sha256": "f7cfc3a444ab5a5f438918f2878b7ef03b5864dcf597ea573fd3a868fc3cc6a2",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    },
+    {
+      "survey_month": "202206",
+      "reference_period": "2022-05",
+      "published_at": "2022-06-10T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2022-06-10T23:59:59-04:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 8.6,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_06102022.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2022-05/cpi_2022_05_released_2022_06_10.pdf",
+      "sha256": "9b0ed1f67b41dbfd91bac8cf3aa51d5c30dae38e44f4e048a9f37acbb35db19b",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18; also checked official HTML via web tool",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    },
+    {
+      "survey_month": "202212",
+      "reference_period": "2022-11",
+      "published_at": "2022-12-13T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2022-12-13T23:59:59-05:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 7.1,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_12132022.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2022-11/cpi_2022_11_released_2022_12_13.pdf",
+      "sha256": "df4d812bf1f5fecd9c2c543e6e1b3ad9c28c42c8a43f677f4e8471b293a21319",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18; also checked official HTML via web tool",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    },
+    {
+      "survey_month": "202306",
+      "reference_period": "2023-05",
+      "published_at": "2023-06-13T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2023-06-13T23:59:59-04:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 4.0,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_06132023.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2023-05/cpi_2023_05_released_2023_06_13.pdf",
+      "sha256": "e02373bac4efeba014942538963a46d8c472076900f9e4afac57d3d205861dda",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18; also checked official HTML via web tool",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    },
+    {
+      "survey_month": "202312",
+      "reference_period": "2023-11",
+      "published_at": "2023-12-12T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2023-12-12T23:59:59-05:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 3.1,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_12122023.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2023-11/cpi_2023_11_released_2023_12_12.pdf",
+      "sha256": "671c67fbc9dc7a7203f20e62d1d45c8f98a4e112fe89cda946eb5820ac919db5",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    },
+    {
+      "survey_month": "202404",
+      "reference_period": "2024-03",
+      "published_at": "2024-04-10T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2024-04-10T23:59:59-04:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 3.5,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_04102024.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2024-03/cpi_2024_03_released_2024_04_10.pdf",
+      "sha256": "96f5fa7899741fbcd6bbf22b8ba67b8b6c535933ca00b82cfbdc7463e9cc6d7e",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18; also checked official HTML via web tool",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    },
+    {
+      "survey_month": "202410",
+      "reference_period": "2024-09",
+      "published_at": "2024-10-10T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2024-10-10T23:59:59-04:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 2.4,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_10102024.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2024-09/cpi_2024_09_released_2024_10_10.pdf",
+      "sha256": "25601528ab2c5cd5f7d0b8c1ce0fdc7c404de9cc5cc78b4ea6cc00e7c1db2b04",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    },
+    {
+      "survey_month": "202503",
+      "reference_period": "2025-02",
+      "published_at": "2025-03-12T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 2.8,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_03122025.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2025-02/cpi_2025_02_released_2025_03_12.pdf",
+      "sha256": "65c086e8597e3dcafbb3f182e0cb833811ed99bbe8b809de96b550fce9b19d72",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    },
+    {
+      "survey_month": "202509",
+      "reference_period": "2025-08",
+      "published_at": "2025-09-11T08:30:00",
+      "published_timezone": "America/New_York",
+      "as_of": "2025-09-11T23:59:59-04:00",
+      "statistic": "all_items_CPI_U_12_month_unadjusted_change_percent",
+      "value": 2.9,
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_09112025.htm",
+      "local_pdf": "data/raw/bls_initial_releases/2025-08/cpi_2025_08_released_2025_09_11.pdf",
+      "sha256": "3aa9202df2adbf1a33eda30c017c8eaacad0baee02f47858d847975d4ee99e21",
+      "verification": "re-extracted first page of existing initial-release PDF on 2026-10-18; also checked official HTML via web tool",
+      "vintage_limit": "Existing initial-release PDF and current archived official HTML; no claim to independently recovered original publication bytes"
+    }
+  ],
+  "fresh_policy_checks": [
+    {
+      "survey_month": "202003",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20200303a.htm",
+      "published_at": "2020-03-03T10:00:00-05:00",
+      "local_file": "data/raw/reference_scaleup_20261017/monetary20200303a.html",
+      "sha256": "44ee2d169b6bfa865ab7faad517cba4064836d6ee014106f380ff9829ef97e30",
+      "checked": "Fresh official web statement read on 2026-10-18; compared with prior receipt",
+      "vintage_limit": "current official archived page; original publication bytes not independently recovered"
+    },
+    {
+      "survey_month": "202109",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20210728a.htm",
+      "published_at": "2021-07-28T14:00:00-04:00",
+      "local_file": "data/raw/reference_scaleup_20261017/monetary20210728a.html",
+      "sha256": "f185fa2f83abe01057159d979deaa4c1e2ddd07052dbb1746148b43467997e9e",
+      "checked": "Fresh official web statement read on 2026-10-18; compared with prior receipt",
+      "vintage_limit": "current official archived page; original publication bytes not independently recovered"
+    },
+    {
+      "survey_month": "202509",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20250730a.htm",
+      "published_at": "2025-07-30T14:00:00-04:00",
+      "local_file": "data/raw/expanded_policy_20261014/monetary20250730a.html",
+      "sha256": "eae477d73459e082ae60fac0ec62f3b44d17b1bcaaffda4b6667cd2eaa8ff43a",
+      "checked": "Fresh official web statement read on 2026-10-18; compared with prior receipt",
+      "vintage_limit": "current official archived page; original publication bytes not independently recovered"
+    }
+  ],
+  "excluded_future_CPI_example": {
+    "survey_month": "202206",
+    "reference_period": "2022-06",
+    "value_percent": 9.1,
+    "published_at": "2022-07-13T08:30:00-04:00",
+    "as_of": "2022-06-10T23:59:59-04:00",
+    "source_url": "https://www.bls.gov/news.release/archives/cpi_07132022.htm",
+    "local_pdf": "data/raw/bls_initial_releases/2022-06/cpi_2022_06_released_2022_07_13.pdf",
+    "sha256": "066dc5e73e5b4129cc17b5ca445a0e4634cacd14bc9e6a71c410ebe5ccbb6542",
+    "checked": "Existing PDF first page re-extracted; explicitly excluded from historical input interpretation"
+  },
+  "web_access_limits": [
+    {
+      "url": "https://www.nber.org/papers/w16537",
+      "result": "403 via direct open; AEA official abstract used instead"
+    },
+    {
+      "url": "https://www.nber.org/papers/w26237",
+      "result": "403 via direct open; author PDF used instead"
+    },
+    {
+      "url": "https://molinari.economics.cornell.edu/docs/GMM_Rounding_Paper_Final.pdf",
+      "result": "Direct open inaccessible; author/NBER indexed abstract and existing archived full text used"
+    },
+    {
+      "url": "https://www.econometricsociety.org/publications/econometrica/2025/01/01/Tell-Me-Something-I-Dont-Already-Know-Learning-in-Low-and-High-Inflation-Settings/file/ecta200738.pdf",
+      "result": "Direct open unavailable / robots; NBER official abstract used instead"
+    }
+  ],
+  "identification_limits": [
+    "12 preselected but already examined months; exploratory environment grouping, no new holdout",
+    "SCE beliefs are target; CPI is environment, not survey truth",
+    "Adjacent rolling horizons overlap 11 months but targets differ",
+    "Shared information, missing private experience, reporting and latent model knowledge not causally separated",
+    "Input availability does not establish household knowledge or historically original bytes"
+  ],
+  "prior_experiment_constraints": [
+    {
+      "mechanism": "Probability reporting mapping",
+      "source": "docs/workstreams/20261013_behavior/codex_mapping_results.md",
+      "finding": "Matched personal reporting style improved probability granularity/zeros but little identity increment or across-person IQR recovery; retained as diagnosis, not priority intervention"
+    },
+    {
+      "mechanism": "Personal belief persistence",
+      "finding": "Do not rerun anchor/time/U1/delta-format prompts; distinguish a train-frozen individual retention/update transition model from existing linear history and aggregate blending"
+    }
+  ],
+  "priority_mechanisms": [
+    "Individual retention/update mixture estimated on independent historical continuous panels, then frozen out-of-development-period evaluation; information exposure experiments only for causal LLM response",
+    "Zero-API disambiguation audit of price level vs inflation rate, past year-over-year vs future-12-month target, and known vs newly published information"
+  ]
+}
