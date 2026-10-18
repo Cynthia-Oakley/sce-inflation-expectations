@@ -1,0 +1,379 @@
+{
+  "months": {
+    "202206": {
+      "source_wave": 2022,
+      "n": 48,
+      "assigned_n": 48,
+      "unknown_n": 0,
+      "pooled_region_n": 18,
+      "min_assigned_ess": 10.058668959798965,
+      "joint_counts": {
+        "2|3": 11,
+        "1|2": 2,
+        "2|2": 10,
+        "3|1": 4,
+        "2|1": 8,
+        "3|2": 2,
+        "3|3": 3,
+        "1|3": 2,
+        "1|1": 6
+      },
+      "weighted_joint_diagnostic": [
+        {
+          "arm": "matched",
+          "weighted_joint": {
+            "2|3": 0.31450905623358166,
+            "1|2": 0.048890912456209655,
+            "2|2": 0.160805435628254,
+            "3|1": 0.09994079598028123,
+            "2|1": 0.12092291329430453,
+            "3|2": 0.043761623659217465,
+            "3|3": 0.07215308877983533,
+            "1|3": 0.03522869234645237,
+            "1|1": 0.1037874816218638
+          }
+        },
+        {
+          "arm": "permuted",
+          "weighted_joint": {
+            "3|1": 0.10183546818507958,
+            "2|2": 0.1614748383141276,
+            "1|1": 0.10880076289579535,
+            "2|1": 0.18859075203549563,
+            "3|3": 0.043285047283081565,
+            "1|2": 0.024953703179190403,
+            "3|2": 0.06166360697669061,
+            "2|3": 0.26995060990806163,
+            "1|3": 0.03944521122247761
+          }
+        }
+      ],
+      "offline_donor_draw_joint_counts": [
+        {
+          "2|3": 11,
+          "1|2": 2,
+          "2|2": 10,
+          "3|1": 4,
+          "2|1": 8,
+          "3|2": 2,
+          "3|3": 3,
+          "1|3": 2,
+          "1|1": 6
+        },
+        {
+          "1|2": 4,
+          "2|3": 8,
+          "1|1": 7,
+          "2|2": 12,
+          "3|3": 8,
+          "3|1": 1,
+          "2|1": 6,
+          "3|2": 2
+        },
+        {
+          "2|1": 9,
+          "2|3": 5,
+          "1|1": 6,
+          "1|2": 4,
+          "2|2": 14,
+          "3|1": 3,
+          "3|3": 5,
+          "3|2": 2
+        },
+        {
+          "2|1": 10,
+          "2|2": 14,
+          "1|2": 3,
+          "3|2": 4,
+          "3|3": 9,
+          "1|1": 4,
+          "1|3": 1,
+          "3|1": 1,
+          "2|3": 2
+        },
+        {
+          "2|3": 6,
+          "3|2": 4,
+          "1|1": 3,
+          "2|1": 7,
+          "2|2": 16,
+          "3|3": 7,
+          "1|2": 4,
+          "3|1": 1
+        }
+      ],
+      "labels_changed_by_permutation_n": 38,
+      "source_year_distance": 0,
+      "same_year_note": "2022 full-wave fieldwork extends beyond June; annual A proxy, not June measurement or B input",
+      "matching_fields": [
+        "age 18-39/40-59/60+",
+        "education",
+        "nominal prior-year family-income proxy",
+        "Census four-region; pooled only when ESS<10"
+      ],
+      "permutation_note": "Unweighted joint counts preserved; unequal survey weights may change weighted proportions; not a pure causal randomization."
+    },
+    "202312": {
+      "source_wave": 2022,
+      "n": 48,
+      "assigned_n": 47,
+      "unknown_n": 1,
+      "pooled_region_n": 16,
+      "min_assigned_ess": 10.247604534661201,
+      "joint_counts": {
+        "3|3": 2,
+        "2|2": 14,
+        "1|2": 5,
+        "2|3": 2,
+        "2|1": 12,
+        "1|1": 8,
+        "3|2": 4,
+        "None|None": 1
+      },
+      "weighted_joint_diagnostic": [
+        {
+          "arm": "matched",
+          "weighted_joint": {
+            "3|3": 0.07353418578592837,
+            "2|2": 0.24711587619042624,
+            "1|2": 0.10745638827792166,
+            "2|3": 0.038047026236347405,
+            "2|1": 0.1735804034632198,
+            "1|1": 0.17837710118655914,
+            "3|2": 0.16055605936447603,
+            "None|None": 0.021332959495121318
+          }
+        },
+        {
+          "arm": "permuted",
+          "weighted_joint": {
+            "1|1": 0.1929228614977752,
+            "1|2": 0.07834263007096763,
+            "2|2": 0.2873026027418051,
+            "2|1": 0.20211724452081833,
+            "3|3": 0.044276445686379,
+            "3|2": 0.14876445746089934,
+            "2|3": 0.02494079852623406,
+            "None|None": 0.021332959495121318
+          }
+        }
+      ],
+      "offline_donor_draw_joint_counts": [
+        {
+          "3|3": 2,
+          "2|2": 14,
+          "1|2": 5,
+          "2|3": 2,
+          "2|1": 12,
+          "1|1": 8,
+          "3|2": 4,
+          "None|None": 1
+        },
+        {
+          "2|1": 8,
+          "3|2": 6,
+          "2|2": 9,
+          "2|3": 3,
+          "3|3": 3,
+          "1|2": 4,
+          "1|1": 10,
+          "3|1": 2,
+          "1|3": 2,
+          "None|None": 1
+        },
+        {
+          "3|1": 1,
+          "2|3": 7,
+          "2|2": 11,
+          "3|2": 4,
+          "3|3": 3,
+          "1|1": 5,
+          "2|1": 12,
+          "1|2": 3,
+          "1|3": 1,
+          "None|None": 1
+        },
+        {
+          "2|2": 18,
+          "2|1": 13,
+          "3|3": 2,
+          "1|2": 4,
+          "2|3": 1,
+          "3|2": 3,
+          "1|1": 5,
+          "1|3": 1,
+          "None|None": 1
+        },
+        {
+          "2|1": 10,
+          "1|3": 1,
+          "1|2": 5,
+          "2|3": 6,
+          "3|3": 5,
+          "1|1": 5,
+          "3|2": 3,
+          "2|2": 12,
+          "None|None": 1
+        }
+      ],
+      "labels_changed_by_permutation_n": 38,
+      "source_year_distance": 1,
+      "same_year_note": "Adjacent-wave background, not monthly interpolation",
+      "matching_fields": [
+        "age 18-39/40-59/60+",
+        "education",
+        "nominal prior-year family-income proxy",
+        "Census four-region; pooled only when ESS<10"
+      ],
+      "permutation_note": "Unweighted joint counts preserved; unequal survey weights may change weighted proportions; not a pure causal randomization."
+    },
+    "202509": {
+      "source_wave": 2024,
+      "n": 48,
+      "assigned_n": 48,
+      "unknown_n": 0,
+      "pooled_region_n": 10,
+      "min_assigned_ess": 10.131202813571804,
+      "joint_counts": {
+        "2|2": 19,
+        "2|3": 6,
+        "2|1": 6,
+        "3|2": 4,
+        "1|2": 3,
+        "1|3": 1,
+        "1|1": 7,
+        "3|3": 1,
+        "3|1": 1
+      },
+      "weighted_joint_diagnostic": [
+        {
+          "arm": "matched",
+          "weighted_joint": {
+            "2|2": 0.32041675523805685,
+            "2|3": 0.15762178088091625,
+            "2|1": 0.12381714586972598,
+            "3|2": 0.1197365225897223,
+            "1|2": 0.0430303198651412,
+            "1|3": 0.017616777343080498,
+            "1|1": 0.18946875684025177,
+            "3|3": 0.013312357838969379,
+            "3|1": 0.014979583534135924
+          }
+        },
+        {
+          "arm": "permuted",
+          "weighted_joint": {
+            "2|2": 0.41441660680022796,
+            "1|2": 0.10563428555932176,
+            "2|3": 0.09646091460382472,
+            "1|1": 0.13681879204617112,
+            "3|2": 0.09373246141510586,
+            "3|3": 0.012832450254398574,
+            "2|1": 0.10430311693311792,
+            "1|3": 0.02082178885369637,
+            "3|1": 0.014979583534135924
+          }
+        }
+      ],
+      "offline_donor_draw_joint_counts": [
+        {
+          "2|2": 19,
+          "2|3": 6,
+          "2|1": 6,
+          "3|2": 4,
+          "1|2": 3,
+          "1|3": 1,
+          "1|1": 7,
+          "3|3": 1,
+          "3|1": 1
+        },
+        {
+          "2|2": 19,
+          "3|2": 4,
+          "2|1": 7,
+          "2|3": 9,
+          "3|3": 3,
+          "1|1": 5,
+          "1|3": 1
+        },
+        {
+          "2|3": 9,
+          "3|2": 4,
+          "2|1": 7,
+          "1|2": 7,
+          "2|2": 14,
+          "1|1": 2,
+          "3|3": 4,
+          "3|1": 1
+        },
+        {
+          "1|3": 4,
+          "2|2": 11,
+          "2|3": 10,
+          "1|1": 3,
+          "3|1": 3,
+          "1|2": 4,
+          "2|1": 9,
+          "3|2": 2,
+          "3|3": 2
+        },
+        {
+          "2|2": 10,
+          "2|1": 7,
+          "2|3": 10,
+          "1|2": 8,
+          "3|3": 6,
+          "1|1": 5,
+          "1|3": 1,
+          "3|2": 1
+        }
+      ],
+      "labels_changed_by_permutation_n": 35,
+      "source_year_distance": 1,
+      "same_year_note": "Adjacent-wave background, not monthly interpolation",
+      "matching_fields": [
+        "age 18-39/40-59/60+",
+        "education",
+        "nominal prior-year family-income proxy",
+        "Census four-region; pooled only when ESS<10"
+      ],
+      "permutation_note": "Unweighted joint counts preserved; unequal survey weights may change weighted proportions; not a pure causal randomization."
+    }
+  },
+  "comparison_to_2018": {
+    "202206": {
+      "source_wave": 2022,
+      "n": 48,
+      "assigned_n": 48,
+      "unknown_n": 0,
+      "pooled_region_n": 18,
+      "min_assigned_ess": 10.058668959798965,
+      "labels_changed_by_permutation_n": 38,
+      "old_pooled_region_n": 18,
+      "labels_changed_from_2018_n": 41
+    },
+    "202312": {
+      "source_wave": 2022,
+      "n": 48,
+      "assigned_n": 47,
+      "unknown_n": 1,
+      "pooled_region_n": 16,
+      "min_assigned_ess": 10.247604534661201,
+      "labels_changed_by_permutation_n": 38,
+      "old_pooled_region_n": 16,
+      "labels_changed_from_2018_n": 38
+    },
+    "202509": {
+      "source_wave": 2024,
+      "n": 48,
+      "assigned_n": 48,
+      "unknown_n": 0,
+      "pooled_region_n": 10,
+      "min_assigned_ess": 10.131202813571804,
+      "labels_changed_by_permutation_n": 35,
+      "old_pooled_region_n": 16,
+      "labels_changed_from_2018_n": 41
+    }
+  },
+  "new_api_calls": 0
+}

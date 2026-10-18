@@ -22,7 +22,13 @@ def prepare_blocks(out, config, parent_folder, make_blocks, extra_sources):
     parent = read_json(parent_folder/'manifest.json'); old_protocol = read_json(parent_folder/'protocol.json')
     if sha(parent_folder/'protocol.json') != parent['protocol_sha256']:
         raise ValueError('Archived parent protocol changed')
-    for key in ('months', 'n_per_month', 'generation_repeats', 'destination', 'model', 'temperature', 'thinking', 'max_tokens', 'retry_max'):
+    if config.get('allow_archived_month_subset'):
+        requested = config['months']
+        if not requested or requested != [m for m in old_protocol['months'] if m in requested]:
+            raise ValueError('Subset months must be unique and in archived order')
+    elif config['months'] != old_protocol['months']:
+        raise ValueError('Reused baseline must have identical months')
+    for key in ('n_per_month', 'generation_repeats', 'destination', 'model', 'temperature', 'thinking', 'max_tokens', 'retry_max'):
         if config[key] != old_protocol[key]: raise ValueError('Reused baseline must have identical '+key)
     source = {str(p.relative_to(ROOT)): sha(p) for p in extra_sources}
     source[str((parent_folder/'manifest.json').relative_to(ROOT))] = sha(parent_folder/'manifest.json')
@@ -30,7 +36,8 @@ def prepare_blocks(out, config, parent_folder, make_blocks, extra_sources):
         path = parent_folder/name
         if sha(path) != parent['prepared_file_sha256'][name]: raise ValueError('Parent input changed: '+name)
         source[str(path.relative_to(ROOT))] = sha(path); return read_json(path)
-    links = frozen('evaluation_links_private.json'); out.mkdir(parents=True)
+    links = [r for r in frozen('evaluation_links_private.json') if r['month'] in config['months']]
+    out.mkdir(parents=True)
     dump(out/'evaluation_links_private.json', links)
     coverage = {}; jobs = []; reserve = estimate = 0.; max_chars = 0
     for month in config['months']:
@@ -78,15 +85,15 @@ def prepare_blocks(out, config, parent_folder, make_blocks, extra_sources):
     protocol = {**deepcopy(config), 'planned_calls': len(jobs)*config['n_per_month'], 'max_prompt_chars': max_chars+100,
         'research_line': 'A_conditional_returner_reconstruction', 'primary_metric': 'q9_center_mae_pp',
         'primary_weight': 'design_survey_weight', 'reused_baseline_calls': len(config['months'])*config['n_per_month']*len(config['generation_repeats']),
-        'comparison': 'Original baseline reused. Matched versus within-month permuted joint synthetic psychological categories.',
+        'comparison': config.get('comparison_note', 'Original baseline reused. Matched versus within-month permuted joint synthetic psychological categories.'),
         'truth_isolation': 'Prepare reads archived P/E, earlier answer prompts and linkage only; current target cache is hashed, not parsed.',
         'decision_rule': 'No automatic upgrade. Check macro MAE, personal MAE, cross-person W1, IQR and all months. Matching increment requires matched vs permuted evidence.',
-        'limits': ['Already inspected months; not independent blind validation or strict B.',
+        'limits': config.get('protocol_limits', ['Already inspected months; not independent blind validation or strict B.',
                    'GSS 2018 current public release transferred across dates, adults vs SCE household heads, historical nominal family income proxy.',
                    'Synthetic categories are not observed psychology of these SCE people; assignment cannot identify its true relationship with inflation beliefs.',
                    'One frozen donor draw in paid trial; five offline draws assess allocation variability only.',
                    'Reused baseline is from an earlier API batch; mutable model alias/time may confound cross-batch contrasts.',
-                   'Two generations do not double the number of respondents.']}
+                   'Two generations do not double the number of respondents.'])}
     dump(out/'protocol.json', protocol); dump(out/'coverage.json', coverage)
     for p in (ROOT/'studies/sce_inflation_expectations').rglob('*.py'): source[str(p.relative_to(ROOT))] = sha(p)
     source['scripts/run_sce_frozen_trial.py'] = sha(ROOT/'scripts/run_sce_frozen_trial.py')

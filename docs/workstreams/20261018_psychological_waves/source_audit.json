@@ -1,0 +1,257 @@
+{
+  "waves": {
+    "2021": {
+      "wave": 2021,
+      "source_path": "data/raw/psychological/gss/wave_refresh_20261018_v1/2021/GSS2021.dta",
+      "source_sha256": "f5b773d6fe8d55590e9478d2d3d8adab11fa3567edb70f520c3fe49e2378209c",
+      "fileversion": [
+        7224.31
+      ],
+      "file_rows": 4032,
+      "positive_main_weight_n": 4032,
+      "not_in_main_weight_n": 0,
+      "joint_raw_n": 4002,
+      "joint_weighted_n": 4002,
+      "complete_matching_n": 2996,
+      "ambiguous_90k_110k_joint_n": 325,
+      "weight": "wtssps",
+      "weighted_joint": {
+        "1|1": 0.08166075667226853,
+        "1|2": 0.08336801335976103,
+        "1|3": 0.028510781185655837,
+        "2|1": 0.15241539700577467,
+        "2|2": 0.286525960532106,
+        "2|3": 0.1296656664654072,
+        "3|1": 0.0355687350413456,
+        "3|2": 0.0951840116486274,
+        "3|3": 0.10710067808905384
+      },
+      "actual_field_labels": {
+        "region": {
+          "1": "northeast",
+          "4": "west",
+          "2": "midwest",
+          "3": "south"
+        },
+        "income16": {
+          "26": "$170,000 or over",
+          "22": "$90,000 to $109,999",
+          "20": "$60,000 to $74,999",
+          "8": "$8,000 to $9,999",
+          "21": "$75,000 to $89,999",
+          "18": "$40,000 to $49,999",
+          "23": "$110,000 to $129,999",
+          "13": "$20,000 to $22,499",
+          "15": "$25,000 to $29,999",
+          "25": "$150,000 to $169,999",
+          "19": "$50,000 to $59,999",
+          "14": "$22,500 to $24,999",
+          "24": "$130,000 to $149,999",
+          "9": "$10,000 to $12,499",
+          "11": "$15,000 to $17,499",
+          "16": "$30,000 to $34,999",
+          "10": "$12,500 to $14,999",
+          "17": "$35,000 to $39,999",
+          "1": "under $1,000",
+          "2": "$1,000 to $2,999",
+          "12": "$17,500 to $19,999",
+          "6": "$6,000 to $6,999",
+          "4": "$4,000 to $4,999",
+          "3": "$3,000 to $3,999",
+          "7": "$7,000 to $7,999",
+          "5": "$5,000 to $5,999"
+        },
+        "happy": {
+          "2": "pretty happy",
+          "3": "not too happy",
+          "1": "very happy"
+        },
+        "satfin": {
+          "2": "more or less satisfied",
+          "1": "pretty well satisfied",
+          "3": "not satisfied at all"
+        }
+      },
+      "mode_weighted_shares": {
+        "2": 0.06156748931876029,
+        "3": 0.0612268660592849,
+        "4": 0.8772056446219549
+      },
+      "age_rule": "18-39 / 40-59 / 60+; SCE legacy strings 40 to 60 and Over 60 retained only for keys",
+      "income_rule": "Previous-calendar-year nominal family income proxy; crossing 100k band excluded, no midpoint imputation",
+      "weight_rule": "WTSSPS baseline sample only; AmeriSpeak oversample requires different composite weights and is not mixed in",
+      "donor_path": "outputs/sce_psychological_wave_audit_20261018_v1/gss2021_donors_private.jsonl",
+      "donor_sha256": "542a23feca257da999ee1f3169cf05b4e841019af98d35d642edaadc429a8b5c"
+    },
+    "2022": {
+      "wave": 2022,
+      "source_path": "data/raw/psychological/gss/wave_refresh_20261018_v1/2022/GSS2022.dta",
+      "source_sha256": "334ac5a7d7623e779800dedf5b1b39e3b6883c5d2bac6a26302b3b3f26773148",
+      "fileversion": [
+        7224.31
+      ],
+      "file_rows": 4149,
+      "positive_main_weight_n": 3544,
+      "not_in_main_weight_n": 605,
+      "joint_raw_n": 4102,
+      "joint_weighted_n": 3504,
+      "complete_matching_n": 2720,
+      "ambiguous_90k_110k_joint_n": 246,
+      "weight": "wtssps",
+      "weighted_joint": {
+        "1|1": 0.10124128653825681,
+        "1|2": 0.10180864214132644,
+        "1|3": 0.043408417878176016,
+        "2|1": 0.14244759655240924,
+        "2|2": 0.2603833450749263,
+        "2|3": 0.14720714730801396,
+        "3|1": 0.02326350600275676,
+        "3|2": 0.07051179346112328,
+        "3|3": 0.10972826504301132
+      },
+      "actual_field_labels": {
+        "region": {
+          "1": "northeast",
+          "4": "west",
+          "2": "midwest",
+          "3": "south"
+        },
+        "income16": {
+          "22": "$90,000 to $109,999",
+          "18": "$40,000 to $49,999",
+          "15": "$25,000 to $29,999",
+          "19": "$50,000 to $59,999",
+          "17": "$35,000 to $39,999",
+          "26": "$170,000 or over",
+          "14": "$22,500 to $24,999",
+          "9": "$10,000 to $12,499",
+          "16": "$30,000 to $34,999",
+          "24": "$130,000 to $149,999",
+          "2": "$1,000 to $2,999",
+          "11": "$15,000 to $17,499",
+          "10": "$12,500 to $14,999",
+          "21": "$75,000 to $89,999",
+          "1": "under $1,000",
+          "25": "$150,000 to $169,999",
+          "23": "$110,000 to $129,999",
+          "5": "$5,000 to $5,999",
+          "6": "$6,000 to $6,999",
+          "12": "$17,500 to $19,999",
+          "8": "$8,000 to $9,999",
+          "20": "$60,000 to $74,999",
+          "13": "$20,000 to $22,499",
+          "7": "$7,000 to $7,999",
+          "3": "$3,000 to $3,999",
+          "4": "$4,000 to $4,999"
+        },
+        "happy": {
+          "3": "not too happy",
+          "2": "pretty happy",
+          "1": "very happy"
+        },
+        "satfin": {
+          "3": "not satisfied at all",
+          "2": "more or less satisfied",
+          "1": "pretty well satisfied"
+        }
+      },
+      "mode_weighted_shares": {
+        "1": 0.5345438929141041,
+        "2": 0.05209843345812272,
+        "3": 0.03389906066932233,
+        "4": 0.37945861295845096
+      },
+      "age_rule": "18-39 / 40-59 / 60+; SCE legacy strings 40 to 60 and Over 60 retained only for keys",
+      "income_rule": "Previous-calendar-year nominal family income proxy; crossing 100k band excluded, no midpoint imputation",
+      "weight_rule": "WTSSPS baseline sample only; AmeriSpeak oversample requires different composite weights and is not mixed in",
+      "donor_path": "outputs/sce_psychological_wave_audit_20261018_v1/gss2022_donors_private.jsonl",
+      "donor_sha256": "a5cc9c661541bfc9f1b32bc66b7b49ff1e624acf3f69728d1a25abfaf6d4d6f5"
+    },
+    "2024": {
+      "wave": 2024,
+      "source_path": "data/raw/psychological/gss/wave_refresh_20261018_v1/2024/GSS2024.dta",
+      "source_sha256": "1a97ee856ed245e2ffe96f929b168e0c6c6fbe5cf098654a16099b29cbdbda0a",
+      "fileversion": [
+        7224.31
+      ],
+      "file_rows": 3986,
+      "positive_main_weight_n": 3309,
+      "not_in_main_weight_n": 677,
+      "joint_raw_n": 3937,
+      "joint_weighted_n": 3267,
+      "complete_matching_n": 2608,
+      "ambiguous_90k_110k_joint_n": 242,
+      "weight": "wtssps",
+      "weighted_joint": {
+        "1|1": 0.08900797474419253,
+        "1|2": 0.10512496876437499,
+        "1|3": 0.03925891521576496,
+        "2|1": 0.11897729519478112,
+        "2|2": 0.2881888955903432,
+        "2|3": 0.15759533475860468,
+        "3|1": 0.019968933896533723,
+        "3|2": 0.07198190345251315,
+        "3|3": 0.10989577838289155
+      },
+      "actual_field_labels": {
+        "region": {
+          "1": "northeast",
+          "4": "west",
+          "2": "midwest",
+          "3": "south"
+        },
+        "income16": {
+          "23": "$110,000 to $129,999",
+          "20": "$60,000 to $74,999",
+          "25": "$150,000 to $169,999",
+          "7": "$7,000 to $7,999",
+          "26": "$170,000 or over",
+          "8": "$8,000 to $9,999",
+          "21": "$75,000 to $89,999",
+          "12": "$17,500 to $19,999",
+          "22": "$90,000 to $109,999",
+          "15": "$25,000 to $29,999",
+          "24": "$130,000 to $149,999",
+          "16": "$30,000 to $34,999",
+          "17": "$35,000 to $39,999",
+          "18": "$40,000 to $49,999",
+          "19": "$50,000 to $59,999",
+          "3": "$3,000 to $3,999",
+          "9": "$10,000 to $12,499",
+          "10": "$12,500 to $14,999",
+          "6": "$6,000 to $6,999",
+          "2": "$1,000 to $2,999",
+          "13": "$20,000 to $22,499",
+          "1": "under $1,000",
+          "14": "$22,500 to $24,999",
+          "11": "$15,000 to $17,499",
+          "5": "$5,000 to $5,999",
+          "4": "$4,000 to $4,999"
+        },
+        "happy": {
+          "3": "not too happy",
+          "2": "pretty happy",
+          "1": "very happy"
+        },
+        "satfin": {
+          "3": "not satisfied at all",
+          "2": "more or less satisfied",
+          "1": "pretty well satisfied"
+        }
+      },
+      "mode_weighted_shares": {
+        "1": 0.3465806129834788,
+        "2": 0.07621075262348333,
+        "3": 0.032660094121976284,
+        "4": 0.5445485402710617
+      },
+      "age_rule": "18-39 / 40-59 / 60+; SCE legacy strings 40 to 60 and Over 60 retained only for keys",
+      "income_rule": "Previous-calendar-year nominal family income proxy; crossing 100k band excluded, no midpoint imputation",
+      "weight_rule": "WTSSPS baseline sample only; AmeriSpeak oversample requires different composite weights and is not mixed in",
+      "donor_path": "outputs/sce_psychological_wave_audit_20261018_v1/gss2024_donors_private.jsonl",
+      "donor_sha256": "848267f55f41c606e9ef6915c9e78ff7e4f82c8d0fca77a38e7e44db214cedb1"
+    }
+  },
+  "scope": "A offline; current releases, no historical byte-vintage proof",
+  "new_api_calls": 0
+}

@@ -25,6 +25,8 @@ def main():
         config = read_json(args.config)
         if config['mechanism'] == 'synthetic_psychological_state':
             from studies.sce_inflation_expectations.experiments.psychological_state import prepare
+        elif config['mechanism'] == 'wave_psychological_state':
+            from studies.sce_inflation_expectations.experiments.psychological_wave_state import prepare
         elif config['mechanism'] == 'previous_financial_outlook':
             from studies.sce_inflation_expectations.experiments.financial_outlook import prepare
         else:
