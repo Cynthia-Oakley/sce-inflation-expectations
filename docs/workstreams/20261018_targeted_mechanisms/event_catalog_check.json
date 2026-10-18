@@ -1,0 +1,70 @@
+{
+  "status": "free_catalog_verified_paid_probe_waits_for_budget_answer",
+  "checked_at_utc": "2026-10-18T10:39:35.896255+00:00",
+  "server_info": {
+    "name": "event_mcp",
+    "version": "1.28.1"
+  },
+  "source_count": 21,
+  "paid_calls_so_far": 0,
+  "llm_simulation_calls": 0,
+  "sources": [
+    {
+      "name": "fred",
+      "description": "FRED macroeconomic indicators: unemployment, CPI, rates, S&P500, VIX, etc.",
+      "default_enabled": true
+    },
+    {
+      "name": "ustr",
+      "description": "USTR press releases: trade/tariff event counts and headlines",
+      "default_enabled": true
+    },
+    {
+      "name": "household_pulse",
+      "description": "Census Household Pulse Survey: food, energy, health, anxiety, spending indicators",
+      "default_enabled": false
+    },
+    {
+      "name": "google_trends",
+      "description": "Google Trends: search interest for macro-related keywords",
+      "default_enabled": false
+    }
+  ],
+  "get_source_detail_schema": {
+    "properties": {
+      "source": {
+        "title": "Source",
+        "type": "string"
+      },
+      "year": {
+        "title": "Year",
+        "type": "integer"
+      },
+      "month": {
+        "title": "Month",
+        "type": "integer"
+      },
+      "series": {
+        "default": "",
+        "title": "Series",
+        "type": "string"
+      },
+      "use_cache": {
+        "default": true,
+        "title": "Use Cache",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "source",
+      "year",
+      "month"
+    ],
+    "title": "get_source_detailArguments",
+    "type": "object"
+  },
+  "raw_catalog_sha256": "2557b54a3a3aeb2d22586531bd4e54e61e8821dd874fea63c2bb695a4568ecdc",
+  "rate_source": "Organizer email supplied by user: $0.005 per structured Event query; current public docs confirm fixed per-call Sim-plane billing but do not give dollar rate.",
+  "current_billing_docs": "https://socioverse.fudan-disc.com/docs/zh/hosted/quotas-and-billing/",
+  "budget_confirmation_required": "Project AGENTS.md §11; pending question card for 12 calls / $0.10."
+}

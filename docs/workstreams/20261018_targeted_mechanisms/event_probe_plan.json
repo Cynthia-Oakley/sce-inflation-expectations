@@ -1,0 +1,140 @@
+{
+  "status": "prepared_not_authorized",
+  "destination_host": "mcp.socioverse.fudan-disc.com",
+  "jobs": [
+    {
+      "job_id": "ustr_202503",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "ustr",
+        "year": 2025,
+        "month": 3,
+        "use_cache": true
+      }
+    },
+    {
+      "job_id": "google_trends_202503",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "google_trends",
+        "year": 2025,
+        "month": 3,
+        "use_cache": true
+      }
+    },
+    {
+      "job_id": "household_pulse_202503",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "household_pulse",
+        "year": 2025,
+        "month": 3,
+        "use_cache": true
+      }
+    },
+    {
+      "job_id": "fred_202503",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "fred",
+        "year": 2025,
+        "month": 3,
+        "use_cache": true,
+        "series": "UMCSENT"
+      }
+    },
+    {
+      "job_id": "ustr_202206",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "ustr",
+        "year": 2022,
+        "month": 6,
+        "use_cache": true
+      }
+    },
+    {
+      "job_id": "google_trends_202206",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "google_trends",
+        "year": 2022,
+        "month": 6,
+        "use_cache": true
+      }
+    },
+    {
+      "job_id": "household_pulse_202206",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "household_pulse",
+        "year": 2022,
+        "month": 6,
+        "use_cache": true
+      }
+    },
+    {
+      "job_id": "fred_202206",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "fred",
+        "year": 2022,
+        "month": 6,
+        "use_cache": true,
+        "series": "UMCSENT"
+      }
+    },
+    {
+      "job_id": "ustr_202009",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "ustr",
+        "year": 2020,
+        "month": 9,
+        "use_cache": true
+      }
+    },
+    {
+      "job_id": "google_trends_202009",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "google_trends",
+        "year": 2020,
+        "month": 9,
+        "use_cache": true
+      }
+    },
+    {
+      "job_id": "household_pulse_202009",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "household_pulse",
+        "year": 2020,
+        "month": 9,
+        "use_cache": true
+      }
+    },
+    {
+      "job_id": "fred_202009",
+      "tool": "get_source_detail",
+      "arguments": {
+        "source": "fred",
+        "year": 2020,
+        "month": 9,
+        "use_cache": true,
+        "series": "UMCSENT"
+      }
+    }
+  ],
+  "planned_calls": 12,
+  "unit_price_usd_email": 0.005,
+  "estimated_usd": 0.06,
+  "hard_cap_usd": 0.1,
+  "automatic_retries": 0,
+  "charged_account": "existing SocioVerse participant account",
+  "excluded_source": "nyfed_sce",
+  "personal_data_sent": false,
+  "new_simulation_calls": 0,
+  "catalog_sha256": "2557b54a3a3aeb2d22586531bd4e54e61e8821dd874fea63c2bb695a4568ecdc",
+  "purpose": "Verify tariff/trade, public attention, household pressure and consumer sentiment sources; do not modify frozen environment or use unknown vintages for strict B."
+}

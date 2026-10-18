@@ -1,0 +1,718 @@
+{
+  "status": "completed_posthoc_update_mismatch_profiles",
+  "new_api_calls": 0,
+  "person_months": 2284,
+  "months": 12,
+  "scope": "Post-hoc profiles use two-generation means, not revised primary performance; month-equal design weights.",
+  "1_prior_distance_precision_profiles": {
+    "profiles_0_5pp": {
+      "truth_stable_model_moves": {
+        "n_person_months": 414,
+        "months_reported": [
+          202003,
+          202009,
+          202103,
+          202109,
+          202206,
+          202212,
+          202306,
+          202312,
+          202404,
+          202410,
+          202503,
+          202509
+        ],
+        "weighted_share_of_all_equal_months": 0.19351120081960746,
+        "weighted_share_of_truth_stratum_equal_months": 0.5987428943295524,
+        "features": {
+          "abs_prior_minus_cpi_pp": {
+            "mean": 5.974173901696736,
+            "median": 3.5544334980366687,
+            "n_months_reported": 12
+          },
+          "prior_iqr_pp": {
+            "mean": 7.3526067261750425,
+            "median": 6.024621526392667,
+            "n_months_reported": 12
+          },
+          "prior_active_bins": {
+            "mean": 5.169814903529512,
+            "median": 5.0,
+            "n_months_reported": 12
+          },
+          "prior_probabilities_multiple_5": {
+            "mean": 0.9022949644464239,
+            "median": 1.0,
+            "n_months_reported": 12
+          },
+          "prior_point_multiple_5": {
+            "mean": 0.5389610407975481,
+            "median": 0.5833333333333334,
+            "n_months_reported": 12
+          },
+          "truth_same_bins_as_prior": {
+            "mean": 0.6139714626836685,
+            "median": 0.8333333333333334,
+            "n_months_reported": 12
+          },
+          "history_cached_sd_pp": {
+            "mean": 2.880522772057901,
+            "median": 1.7700126869371513,
+            "n_months_reported": 12
+          }
+        }
+      },
+      "truth_stable_model_stable": {
+        "n_person_months": 326,
+        "months_reported": [
+          202003,
+          202009,
+          202103,
+          202109,
+          202206,
+          202212,
+          202306,
+          202312,
+          202404,
+          202410,
+          202503,
+          202509
+        ],
+        "weighted_share_of_all_equal_months": 0.1266080960280679,
+        "weighted_share_of_truth_stratum_equal_months": 0.40125710567044753,
+        "features": {
+          "abs_prior_minus_cpi_pp": {
+            "mean": 1.693950287079396,
+            "median": 0.8550793005153432,
+            "n_months_reported": 12
+          },
+          "prior_iqr_pp": {
+            "mean": 3.0004640547443446,
+            "median": 2.2829790902034883,
+            "n_months_reported": 12
+          },
+          "prior_active_bins": {
+            "mean": 4.204330683077159,
+            "median": 3.9166666666666665,
+            "n_months_reported": 12
+          },
+          "prior_probabilities_multiple_5": {
+            "mean": 0.7517111143603287,
+            "median": 1.0,
+            "n_months_reported": 12
+          },
+          "prior_point_multiple_5": {
+            "mean": 0.29712280477616654,
+            "median": 0.0,
+            "n_months_reported": 12
+          },
+          "truth_same_bins_as_prior": {
+            "mean": 0.3424918393775494,
+            "median": 0.16666666666666666,
+            "n_months_reported": 12
+          },
+          "history_cached_sd_pp": {
+            "mean": 1.8349133681555447,
+            "median": 1.2911904327057888,
+            "n_months_reported": 12
+          }
+        }
+      },
+      "truth_moves_model_stable": {
+        "n_person_months": 574,
+        "months_reported": [
+          202003,
+          202009,
+          202103,
+          202109,
+          202206,
+          202212,
+          202306,
+          202312,
+          202404,
+          202410,
+          202503,
+          202509
+        ],
+        "weighted_share_of_all_equal_months": 0.2370483371176134,
+        "weighted_share_of_truth_stratum_equal_months": 0.3460765042436527,
+        "features": {
+          "abs_prior_minus_cpi_pp": {
+            "mean": 1.7862451562339074,
+            "median": 1.0527433711209777,
+            "n_months_reported": 12
+          },
+          "prior_iqr_pp": {
+            "mean": 4.0762580897392375,
+            "median": 3.003338668536022,
+            "n_months_reported": 12
+          },
+          "prior_active_bins": {
+            "mean": 4.809846529104185,
+            "median": 4.166666666666667,
+            "n_months_reported": 12
+          },
+          "prior_probabilities_multiple_5": {
+            "mean": 0.7811669969612872,
+            "median": 1.0,
+            "n_months_reported": 12
+          },
+          "prior_point_multiple_5": {
+            "mean": 0.3882935634287552,
+            "median": 0.16666666666666666,
+            "n_months_reported": 12
+          },
+          "truth_same_bins_as_prior": {
+            "mean": 0.0,
+            "median": 0.0,
+            "n_months_reported": 12
+          },
+          "history_cached_sd_pp": {
+            "mean": 2.298418560787653,
+            "median": 1.7173001840764426,
+            "n_months_reported": 12
+          }
+        }
+      },
+      "truth_moves_model_underreacts": {
+        "n_person_months": 996,
+        "months_reported": [
+          202003,
+          202009,
+          202103,
+          202109,
+          202206,
+          202212,
+          202306,
+          202312,
+          202404,
+          202410,
+          202503,
+          202509
+        ],
+        "weighted_share_of_all_equal_months": 0.44094129517079467,
+        "weighted_share_of_truth_stratum_equal_months": 0.6459829277320548,
+        "features": {
+          "abs_prior_minus_cpi_pp": {
+            "mean": 3.803715988378446,
+            "median": 2.1406480314660645,
+            "n_months_reported": 12
+          },
+          "prior_iqr_pp": {
+            "mean": 5.617585319816761,
+            "median": 3.679644042424927,
+            "n_months_reported": 12
+          },
+          "prior_active_bins": {
+            "mean": 4.822050309938523,
+            "median": 4.25,
+            "n_months_reported": 12
+          },
+          "prior_probabilities_multiple_5": {
+            "mean": 0.7879203154609474,
+            "median": 1.0,
+            "n_months_reported": 12
+          },
+          "prior_point_multiple_5": {
+            "mean": 0.5173764692797495,
+            "median": 0.5,
+            "n_months_reported": 12
+          },
+          "truth_same_bins_as_prior": {
+            "mean": 0.0,
+            "median": 0.0,
+            "n_months_reported": 12
+          },
+          "history_cached_sd_pp": {
+            "mean": 3.0731900637152703,
+            "median": 2.210039874004562,
+            "n_months_reported": 12
+          }
+        }
+      }
+    },
+    "stable_error_gap_slope": {
+      "estimate": -0.5521899358821434,
+      "support_person_months": 740,
+      "leave_one_year_out": {
+        "n_leave_year_fits": 6,
+        "minimum": -0.6008079162191643,
+        "maximum": -0.5168323315551603,
+        "positive_count": 0,
+        "negative_count": 6
+      }
+    },
+    "stable_mismatch_probability": {
+      "abs_prior_minus_cpi_pp": {
+        "estimate": 0.028211972622214115,
+        "support_person_months": 740,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": 0.024767592959266775,
+          "maximum": 0.04393158566794502,
+          "positive_count": 6,
+          "negative_count": 0
+        }
+      },
+      "prior_iqr_pp": {
+        "estimate": 0.02431498178475121,
+        "support_person_months": 740,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": 0.021034340371247035,
+          "maximum": 0.029235122742726355,
+          "positive_count": 6,
+          "negative_count": 0
+        }
+      }
+    },
+    "mover_model_stable_probability": {
+      "abs_prior_minus_cpi_pp": {
+        "estimate": -0.03969594217891772,
+        "support_person_months": 1544,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": -0.04624337438671644,
+          "maximum": -0.036687171655597824,
+          "positive_count": 0,
+          "negative_count": 6
+        }
+      },
+      "prior_iqr_pp": {
+        "estimate": -0.010889330853647832,
+        "support_person_months": 1544,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": -0.014175783642948409,
+          "maximum": -0.007208412249263129,
+          "positive_count": 0,
+          "negative_count": 6
+        }
+      }
+    },
+    "interior_prior_0_to_10pp": {
+      "n_person_months": 1698,
+      "profiles": {
+        "truth_stable_model_moves": {
+          "n_person_months": 237,
+          "months_reported": [
+            202003,
+            202009,
+            202103,
+            202109,
+            202206,
+            202212,
+            202306,
+            202312,
+            202404,
+            202410,
+            202503,
+            202509
+          ],
+          "weighted_share_of_all_equal_months": 0.1365755705921874,
+          "weighted_share_of_truth_stratum_equal_months": 0.44782869252561125,
+          "features": {
+            "abs_prior_minus_cpi_pp": {
+              "mean": 2.848414980518036,
+              "median": 2.6665529165626336,
+              "n_months_reported": 12
+            },
+            "prior_iqr_pp": {
+              "mean": 4.441476876908542,
+              "median": 2.7652023196421,
+              "n_months_reported": 12
+            },
+            "prior_active_bins": {
+              "mean": 4.511202869741608,
+              "median": 3.9166666666666665,
+              "n_months_reported": 12
+            },
+            "prior_probabilities_multiple_5": {
+              "mean": 0.868363175338028,
+              "median": 1.0,
+              "n_months_reported": 12
+            },
+            "prior_point_multiple_5": {
+              "mean": 0.3953708520707237,
+              "median": 0.25,
+              "n_months_reported": 12
+            },
+            "truth_same_bins_as_prior": {
+              "mean": 0.47614018629836846,
+              "median": 0.5,
+              "n_months_reported": 12
+            },
+            "history_cached_sd_pp": {
+              "mean": 2.3289280786865425,
+              "median": 1.45032306801036,
+              "n_months_reported": 12
+            }
+          }
+        },
+        "truth_stable_model_stable": {
+          "n_person_months": 316,
+          "months_reported": [
+            202003,
+            202009,
+            202103,
+            202109,
+            202206,
+            202212,
+            202306,
+            202312,
+            202404,
+            202410,
+            202503,
+            202509
+          ],
+          "weighted_share_of_all_equal_months": 0.17485849814072107,
+          "weighted_share_of_truth_stratum_equal_months": 0.5521713074743887,
+          "features": {
+            "abs_prior_minus_cpi_pp": {
+              "mean": 1.1664668078315528,
+              "median": 0.8094026370984734,
+              "n_months_reported": 12
+            },
+            "prior_iqr_pp": {
+              "mean": 2.7193547455398632,
+              "median": 2.2891096235724,
+              "n_months_reported": 12
+            },
+            "prior_active_bins": {
+              "mean": 4.258305331130934,
+              "median": 3.9166666666666665,
+              "n_months_reported": 12
+            },
+            "prior_probabilities_multiple_5": {
+              "mean": 0.7424776342451528,
+              "median": 1.0,
+              "n_months_reported": 12
+            },
+            "prior_point_multiple_5": {
+              "mean": 0.2904264634780798,
+              "median": 0.0,
+              "n_months_reported": 12
+            },
+            "truth_same_bins_as_prior": {
+              "mean": 0.3206705862387968,
+              "median": 0.16666666666666666,
+              "n_months_reported": 12
+            },
+            "history_cached_sd_pp": {
+              "mean": 1.7835241219073925,
+              "median": 1.2907513789238405,
+              "n_months_reported": 12
+            }
+          }
+        },
+        "truth_moves_model_stable": {
+          "n_person_months": 552,
+          "months_reported": [
+            202003,
+            202009,
+            202103,
+            202109,
+            202206,
+            202212,
+            202306,
+            202312,
+            202404,
+            202410,
+            202503,
+            202509
+          ],
+          "weighted_share_of_all_equal_months": 0.3148836702578145,
+          "weighted_share_of_truth_stratum_equal_months": 0.45603266101427503,
+          "features": {
+            "abs_prior_minus_cpi_pp": {
+              "mean": 1.4404565691681717,
+              "median": 0.9565094089814745,
+              "n_months_reported": 12
+            },
+            "prior_iqr_pp": {
+              "mean": 3.86176844138795,
+              "median": 2.9179399008379274,
+              "n_months_reported": 12
+            },
+            "prior_active_bins": {
+              "mean": 4.819000387065233,
+              "median": 4.083333333333333,
+              "n_months_reported": 12
+            },
+            "prior_probabilities_multiple_5": {
+              "mean": 0.783722820169117,
+              "median": 1.0,
+              "n_months_reported": 12
+            },
+            "prior_point_multiple_5": {
+              "mean": 0.3646753434831273,
+              "median": 0.0,
+              "n_months_reported": 12
+            },
+            "truth_same_bins_as_prior": {
+              "mean": 0.0,
+              "median": 0.0,
+              "n_months_reported": 12
+            },
+            "history_cached_sd_pp": {
+              "mean": 2.24926312304414,
+              "median": 1.7163863788743454,
+              "n_months_reported": 12
+            }
+          }
+        }
+      },
+      "stable_error_gap_slope": {
+        "estimate": -0.4225178878595728,
+        "support_person_months": 553,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": -0.4600746914737768,
+          "maximum": -0.3913009604807652,
+          "positive_count": 0,
+          "negative_count": 6
+        }
+      }
+    },
+    "threshold_sensitivity": {
+      "0.25": {
+        "truth_stable_model_moves": {
+          "n_person_months": 398,
+          "n_months_reported": 12,
+          "abs_gap_mean": 5.896459107649353,
+          "prior_iqr_mean": 7.205211572203773
+        },
+        "truth_stable_model_stable": {
+          "n_person_months": 150,
+          "n_months_reported": 8,
+          "abs_gap_mean": 1.3723920269401142,
+          "prior_iqr_mean": 2.4045292251958577
+        }
+      },
+      "0.5": {
+        "truth_stable_model_moves": {
+          "n_person_months": 414,
+          "n_months_reported": 12,
+          "abs_gap_mean": 5.974173901696736,
+          "prior_iqr_mean": 7.3526067261750425
+        },
+        "truth_stable_model_stable": {
+          "n_person_months": 326,
+          "n_months_reported": 12,
+          "abs_gap_mean": 1.693950287079396,
+          "prior_iqr_mean": 3.0004640547443446
+        }
+      },
+      "1.0": {
+        "truth_stable_model_moves": {
+          "n_person_months": 393,
+          "n_months_reported": 12,
+          "abs_gap_mean": 6.631876266905187,
+          "prior_iqr_mean": 8.21250908297768
+        },
+        "truth_stable_model_stable": {
+          "n_person_months": 655,
+          "n_months_reported": 12,
+          "abs_gap_mean": 1.7403936671202551,
+          "prior_iqr_mean": 3.122745128148896
+        }
+      }
+    }
+  },
+  "2_measured_household_state_and_history": {
+    "r2_increment_points": {
+      "all": {
+        "prior_risk_and_outlook": 1.9048685631492424,
+        "current_finances_outlook_posthoc": 1.7667621873385664,
+        "history_volatility_complete_cases": 0.3395783262528096
+      },
+      "truth_stable": {
+        "prior_risk_and_outlook": 0.38282940089813255,
+        "current_finances_outlook_posthoc": 0.995032761113035,
+        "history_volatility_complete_cases": 0.11266823177942253
+      },
+      "truth_moves": {
+        "prior_risk_and_outlook": 2.908548056222493,
+        "current_finances_outlook_posthoc": 3.098847095810775,
+        "history_volatility_complete_cases": 0.47629697126815307
+      }
+    },
+    "all_error_coefficients_current_Q2": {
+      "outlook_current=1": {
+        "estimate": -2.483906434256702,
+        "support_person_months": 106,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": -2.935111880208119,
+          "maximum": -2.173239868567313,
+          "positive_count": 0,
+          "negative_count": 6
+        }
+      },
+      "outlook_current=2": {
+        "estimate": -0.4616408664434502,
+        "support_person_months": 458,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": -0.8680783881969556,
+          "maximum": 0.017370368442187707,
+          "positive_count": 1,
+          "negative_count": 5
+        }
+      },
+      "outlook_current=4": {
+        "estimate": 1.036331314538306,
+        "support_person_months": 606,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": 0.6866442355914363,
+          "maximum": 1.4519191423540834,
+          "positive_count": 6,
+          "negative_count": 0
+        }
+      }
+    },
+    "note": "Prior risk/Q1/Q2 block has joint residual association; not a separately identified effect of risk alone. Current Q1/Q2 are same-survey post-hoc explanations only. Category associations need not be monotone."
+  },
+  "3_reporting_habits": {
+    "stable_mismatch_added_r2_points": 5.772516275673167,
+    "stable_mismatch_coefficients": {
+      "prior_probabilities_multiple_5": {
+        "estimate": 0.3087767845054077,
+        "support_person_months": 739,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": 0.2500541538599759,
+          "maximum": 0.350920431970756,
+          "positive_count": 6,
+          "negative_count": 0
+        }
+      },
+      "prior_point_multiple_5": {
+        "estimate": 0.08453221738637415,
+        "support_person_months": 739,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": 0.026439241380207566,
+          "maximum": 0.13525818975417767,
+          "positive_count": 6,
+          "negative_count": 0
+        }
+      }
+    },
+    "note": "Controls month FE, P, prior mean/IQR/history and absolute prior-CPI distance. Reporting grids can proxy response habits, uncertainty or unmeasured heterogeneity; no causal survey-style claim."
+  },
+  "P_at_most_three": {
+    "numeracy": {
+      "raw_stable_mismatch_rates": {
+        "high": {
+          "n_person_months": 551,
+          "n_months_reported": 12,
+          "mismatch_weighted_rate": 0.5295002414427302,
+          "weak_support_months": []
+        },
+        "low": {
+          "n_person_months": 189,
+          "n_months_reported": 10,
+          "mismatch_weighted_rate": 0.7321560714283313,
+          "weak_support_months": [
+            202103
+          ]
+        }
+      },
+      "conditional_stable_mismatch_coefficient": {
+        "estimate": -0.021501134885457462,
+        "support_person_months": 189,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": -0.04242170259690444,
+          "maximum": -0.004021238503966728,
+          "positive_count": 0,
+          "negative_count": 6
+        }
+      }
+    },
+    "household_income_band": {
+      "raw_stable_mismatch_rates": {
+        "over_100k": {
+          "n_person_months": 266,
+          "n_months_reported": 12,
+          "mismatch_weighted_rate": 0.48790500747402943,
+          "weak_support_months": []
+        },
+        "under_50k": {
+          "n_person_months": 226,
+          "n_months_reported": 12,
+          "mismatch_weighted_rate": 0.6585859129524395,
+          "weak_support_months": []
+        }
+      },
+      "conditional_stable_mismatch_coefficient": {
+        "estimate": -0.06276338877165796,
+        "support_person_months": 226,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": -0.11234262087248115,
+          "maximum": -0.010061032689983745,
+          "positive_count": 0,
+          "negative_count": 6
+        }
+      }
+    },
+    "education_group": {
+      "raw_stable_mismatch_rates": {
+        "college": {
+          "n_person_months": 431,
+          "n_months_reported": 12,
+          "mismatch_weighted_rate": 0.49386792855272094,
+          "weak_support_months": []
+        },
+        "some_college": {
+          "n_person_months": 218,
+          "n_months_reported": 12,
+          "mismatch_weighted_rate": 0.5826418734094029,
+          "weak_support_months": []
+        }
+      },
+      "conditional_stable_mismatch_coefficient": {
+        "estimate": 0.021083501907809384,
+        "support_person_months": 218,
+        "leave_one_year_out": {
+          "n_leave_year_fits": 6,
+          "minimum": 0.001729851212585865,
+          "maximum": 0.03720254200175838,
+          "positive_count": 6,
+          "negative_count": 0
+        }
+      }
+    }
+  },
+  "q8_check": {
+    "truth_stable": {
+      "n_person_months": 830,
+      "mismatch_rate": 0.6779479485483425,
+      "truth_abs_delta_mean_pp": 0.027316605195845434,
+      "model_abs_delta_mean_pp": 4.8453307562527295
+    },
+    "truth_moves": {
+      "n_person_months": 1447,
+      "mismatch_rate": 0.19643038618968786,
+      "truth_abs_delta_mean_pp": 10.78130783318227,
+      "model_abs_delta_mean_pp": 9.304150209200209
+    }
+  },
+  "interpretation": [
+    "Distance and prior width describe who is compressed, including in the interior-prior sensitivity; this cannot uniquely identify public-news or Bayesian mechanisms.",
+    "With month FE, prior-CPI equals prior up to a month constant. Stable selection and model-prior mathematical coupling prohibit causal interpretation; the stable-model R2 is not forecasting performance.",
+    "Bayesian common-signal updating can predict more movement under a less precise prior. Actual respondents may not have seen the shared signal, may already know it, may use different horizons/consumption signals, or may repeat/hear/round the survey differently. Prior density IQR is only a proxy for precision, not calibrated inverse-variance information.",
+    "Raw P contrasts can change after controls. No evidence supports fixing errors by simply adding points to demographic labels.",
+    "Truth-stable group copy accuracy is partly guaranteed by selection. Threshold sensitivity uses finite reportable-month subsets; .25 correct-stable cells cover only eight months.",
+    "Q8 also shows stable-person overmovement, so Q9 fitting alone cannot explain the entire pattern; Q8 and Q9 target different reported quantities."
+  ],
+  "artifacts": {
+    "authoritative_detailed_summary": "summary.json",
+    "private_person_frame": "profile_frame_private.json",
+    "failed_first_attempt": "failed_attempt_1_incomplete_summary.json.txt",
+    "earlier_complete_attempt": "completed_attempt/summary.json"
+  }
+}

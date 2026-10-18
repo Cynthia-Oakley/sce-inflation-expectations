@@ -1,4 +1,30 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body>
+<section id="targeted-mechanisms-20261018" class="tm-review" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
+<style>.tm-review p,.tm-review li{max-width:1020px}.tm-review h2{margin-top:30px}.tm-review .tm-note{padding:12px 18px;border-left:3px solid #326a56;background:#f1f5f2}.tm-review table{min-width:670px}.tm-review summary{cursor:pointer;font-weight:600}.tm-review a{overflow-wrap:anywhere}@media(max-width:700px){.tm-review{padding:18px 14px!important}}</style>
+<h1>从人群差距确定下一项P/E改动</h1>
+<p>2026-10-18。复用十二期、2,284个共同有效回访者人月，没有新增Simulation调用、没有重新拟合Q9。本节继续追查：<strong>哪些人被模型改多了，哪些人该改却没改，以及具体要补哪一环。</strong></p>
+<nav><a href="../20261018_targeted_mechanisms/results.md">完整结果</a> · <a href="../20261018_targeted_mechanisms/theory_and_design.md">经济学依据</a> · <a href="../20261018_targeted_mechanisms/candidate_inputs.md">P/E输入与对照草案</a> · <a href="../../current_todo.html">任务清单</a> · <a href="#response-gap-diagnostic-20261018">上一轮逐月、分组结果</a></nav>
+<p class="tm-note"><strong>目前最清楚的线索：</strong>真人仍保持原判断、模型却大改的人，原有预期通常离公共CPI更远，概率范围也更宽。它提示我们检查：完整宏观资料是否让模型统一“纠正”个人原信念。另一条线索是家庭处境如何改变对具体事件的理解。两者都需要对照检验，尚不能当作已证明的原因。</p>
+<h2>一、错误发生在哪类个人状态？</h2>
+<p>以个人Q9派生均值相对上期变化不超过0.5pp为基本稳定。本次为定位人群，将模型两遍结果取均值；原主实验仍逐遍评价。真人稳定740个人月中，414个模型明显改动，326个模型也稳定；按设计和调查权重、各月等权，错动约占<strong>59.9%</strong>。真人有变化的1,544个人月中，574个模型基本不动，加权约占<strong>34.6%</strong>。</p>
+<div class="table-scroll"><table><thead><tr><th>事后定位的人群</th><th>个人月数</th><th>上期预期与最新公开CPI的绝对距离</th><th>上期个人概率范围IQR</th></tr></thead><tbody><tr><td>真人稳定，模型明显改变</td><td>414</td><td>5.97pp</td><td>7.35pp</td></tr><tr><td>真人与模型都稳定</td><td>326</td><td>1.69pp</td><td>3.00pp</td></tr><tr><td>真人改变，模型基本稳定</td><td>574</td><td>1.79pp</td><td>4.08pp</td></tr></tbody></table></div>
+<p><strong>过去实际CPI与未来一年预期不是同一目标，距离大不代表真人错了。</strong>IQR在这里是一个人的不确定范围。将原预期限制在0—10%后，前两组距离仍为2.85/1.17pp、范围仍为4.44/2.72pp，差异不完全来自极端值。Q8另查也存在错动，不能只归结为Q9拟合。</p>
+<figure><img loading="lazy" src="../20261018_targeted_mechanisms/figures/prior_distance_and_width.png" alt="真人稳定人群中，模型错动与正确稳定两组的原信念距离及概率宽度；包含排除极端原信念的敏感性比较"><figcaption>组内使用设计×调查权重，再对月份等权。这里只作事后画像；不能把本期真人稳定与否输入未来模型。</figcaption></figure>
+<h2>二、数据和理论对应到两项具体调整</h2>
+<h3>1. E：先检查共同资料怎样呈现，而不是继续提醒“要保留先验”</h3>
+<p>纽约联储的信息实验表明，共同信息会使不同人的预期靠近，但部分人仍不修正。我们目前让所有Agent实际读到较完整的宏观表，可能把普通居民的判断变成统一的数据纠正过程。<a href="https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr543.pdf">原研究</a>支持区分信息接触与个人信念，不能据此直接指定每个人的注意力。</p>
+<p><strong>具体对照：</strong>固定同一事实、同一P、同一问卷，比较原展示与整理后的展示：同一首发数值不重复突出，已知背景、新发布事实、政策承诺和预测分别呈现。<strong>跨日期的重复新闻仍保留</strong>。先检验这一项，再单独测试信息是否被看到，避免同时改很多东西。若只使所有人统一升降，没有减轻错动/漏动，就不算恢复微观机制。</p>
+<h3>2. P×E：家庭处境需要与具体事件连接</h3>
+<p>财务、前景、风险在控制原信念后仍有少量残余关联：上期联合字段约增加1.90个R²百分点，本期财务/前景约增加1.77个百分点；不同档并非完全单调。美国研究支持个人经历影响宏观判断，也表明相同事件可引出不同的成本或需求联想；它们没有证明“财务差就一定报高通胀”。</p>
+<p><strong>具体工作：</strong>核查本人过去就业/财务变化与具体价格、关税事件的连接。只有实际测到或有依据的消费暴露才匹配；行业未知就不猜行业。先离线检查能否跨期解释差距，再比较真实连接与打乱连接。以前Q1、上期Q2的单句标签已试过，不重复当作新机制。</p>
+<details><summary>为什么暂时不按低收入、低数理直接补一个偏差？</summary><p>粗看，这两组错动更多；控制原信念、历史、月份和其他特征后，关系发生变化，说明不能把组间原始差异当作标签的独立作用。真人还更常按5的倍数填概率或照旧填十档，报告习惯是竞争解释，但旧取整实验已表明外形变化不保证身份和准确度改善。当前回归有选择与数学耦合问题，也没有随机改变CPI，不能解释为因果权重。</p></details>
+<h2>三、Event MCP的实际进度</h2>
+<p>已成功核查免费目录：<strong>Event MCP 1.28.1、21个来源</strong>。已封存三期2020-09、2022-06、2025-03 × 四类来源的12项取数清单。按组委会邮件费率预计<strong>$0.06</strong>、请求硬上限<strong>$0.10</strong>，计入平台额度。</p>
+<ul><li><strong>USTR：</strong>关税宣布、生效、暂停等事实，先与旧NYT内容对账。</li><li><strong>Google Trends：</strong>公共关注变化，不能把相对热度当作个人注意力百分比。</li><li><strong>Household Pulse：</strong>群体压力资料，不能冒充SCE某个家庭的实测心理。</li><li><strong>FRED的UMCSENT：</strong>消费者情绪，区别于政府信任、美联储信任和本人财务前景。</li></ul>
+<p id="tm-mcp-status" class="tm-note"><strong>付费取数仍待本批预算卡回复，当前付费调用0。</strong>本次不发送人口或问卷，也不启动Simulation。接口只有年月、没有as_of；取回后还要核验发布日期和历史版本，版本不明的内容不进严格事前预测。</p>
+<h2>四、接下来按什么顺序做？</h2>
+<ol><li>取得MCP小样后，逐条列出旧E已有内容、真正新增事实及截止前可得性。</li><li>据实选一项E展示或事件补齐对照；P×E连接须先有同人数据支持。</li><li>下一次模拟同时看中位数MAE、跨人W1、稳定者错动与变动者漏动，避免只改善总体中心。</li><li>十二期均已查看，用于开发；新验证月份与新增Simulation预算单独冻结。</li></ol>
+</section>
 <section id="response-gap-diagnostic-20261018" class="rg-review" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
 <style>.rg-review p,.rg-review li{max-width:1020px}.rg-review table{font-size:15px;min-width:740px}.rg-review select{font:inherit;padding:6px 10px;margin:4px 12px 4px 0;max-width:100%}.rg-review figcaption{color:#596774;line-height:1.6}.rg-note{border-left:3px solid #366b5e;padding:8px 16px;background:#f3f6f4}@media(max-width:700px){.rg-review{padding:18px 14px!important}}</style>
 <h1>真人和模型究竟差在哪里？</h1>

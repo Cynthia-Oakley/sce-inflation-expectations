@@ -1,0 +1,16 @@
+{
+  "status": "completed_local_checks_paid_probe_pending",
+  "checked_at_utc": "2026-10-18T11:06:18.594578+00:00",
+  "new_simulation_calls": 0,
+  "new_paid_mcp_calls": 0,
+  "protected_files_unchanged": 15,
+  "public_summary_matches_authority": true,
+  "private_output_hashes_match_receipt": true,
+  "targeted_links_checked": 14,
+  "python_syntax_files_checked": 5,
+  "event_runner_guard_tests": 5,
+  "figure_visually_checked": true,
+  "old_scoring_refit": false,
+  "protocol_sha256": "3616ec7f22a9a5ef828d50b67aecefd3de765fb2e2054e648454e900f58a7ac3",
+  "note": "No complete experiment rerun or density refit. New profiles are post-hoc two-generation mean diagnostics, not changed primary scores."
+}
