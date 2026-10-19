@@ -1,0 +1,25 @@
+{
+  "real_api_calls": 384,
+  "api_errors": 0,
+  "retries": 0,
+  "estimated_cost_usd": 0.43229899999999993,
+  "hard_cap_usd": 2.0,
+  "api_elapsed_seconds": 129.536476,
+  "evaluation_seconds": 12.385492499917746,
+  "returned_model_aliases": [
+    "deepseek-flash"
+  ],
+  "q8_real_equal_person_iqr_pp": 4.5,
+  "candidate_gate_checks": {
+    "q8_w1_upper95_below_zero": true,
+    "q8_center_point_no_worse": true,
+    "q9_center_point_no_worse": false,
+    "q9_w1_point_no_worse": true,
+    "model_q8_q9_validity_at_least_99pct": true
+  },
+  "protocol_sha256": "6585e60589e535bc401c777d84d65f6cc4c3e4cc1efd626821db7054bdfee584",
+  "source_evaluation": "outputs/sce_q8_only_evaluation_20261019_v1",
+  "source_trial": "outputs/sce_q8_only_trial_20261019_v3",
+  "source_summary_sha256": "7ce61de0136b3154f2fee0ad2bea89b40e611265ed48a6e45a927bf78049bb4e",
+  "note": "API cost is a usage-based ledger estimate, not the vendor invoice. No raw person records published."
+}

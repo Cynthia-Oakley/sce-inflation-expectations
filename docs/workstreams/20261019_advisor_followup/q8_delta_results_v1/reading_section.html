@@ -1,0 +1,14 @@
+<section id="q8-only-delta-results-20261019" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 36px;border-bottom:1px solid #d7dfdc;line-height:1.75">
+<h1>Q8变化值对照：改善点预期分布，尚未改善主Q9中心</h1>
+<p>2026-10-19。四个开发月×24人×两组×两遍，<strong>384次调用全部合法，估算费用$0.432／上限$2</strong>；0接口错误、0重试。官方引擎调用约2.2分钟，评价12.4秒；没有重复抓数据或重拟合真人Q9。</p>
+<h2>实验只改变一件事</h2><p>对照直接填本期Q8；候选填“本期Q8−本人上期Q8”，程序再加回上期值。例：上期3%、变化−1个百分点，恢复本期2%。<strong>两组Q9始终直接填十档绝对概率</strong>，人口、环境、历史说明完全相同，不裁剪或归一化。1个人月缺上期Q8，两组都直接填本期值。DeepSeek官方Flash别名、温度0.5、关闭思考、最多1024输出token。</p>
+<h2>Q8：分布改善比中心改善更明确</h2><div class="table-scroll"><table><thead><tr><th>指标（百分点）</th><th>直接填写</th><th>仅Q8填变化值</th></tr></thead><tbody><tr><td>群体中位数MAE</td><td>0.787</td><td>0.613</td></tr><tr><td>逐人MAE</td><td>5.030</td><td>4.086</td></tr><tr><td>跨人分布W1</td><td>4.392</td><td>3.126</td></tr><tr><td>跨人IQR（不是误差）</td><td>1.487</td><td>2.850</td></tr></tbody></table></div>
+<p>真人Q8跨人IQR为4.500pp；模型恢复了一部分差异，仍未达到真人。Q8分布W1下降约28.8%。按人配对重抽样的W1差95%区间为[−2.346,−0.324]pp，四期固定条件下支持改善；中心误差差区间[−0.613,+0.337]跨0，中心优势还不稳定。两遍的W1均改善，但2021-11的W1反而上升。</p>
+<p>照抄比较仅用95个确有上期Q8的人月：中心MAE为直接0.788、候选0.713、照抄0.900；个人MAE为4.850、3.901、3.415，W1为4.207、2.926、2.093。<strong>候选中心较好，但个人和分布仍未胜照抄。</strong>这组95人月不能与上表96人月直接混算。</p>
+<figure><img src="../20261019_advisor_followup/q8_delta_results_v1/figures/metrics.png" alt="Q8和Q9分别比较误差和分布距离，权重与样本在图中标明"><figcaption>Q8等人主口径；Q9保留旧调查权重作保护指标。均按每月、每遍先计分后等权平均。</figcaption></figure>
+<h2>Q9：中心略差，未过执行前筛选</h2><p>94个共同有效人月：Q9中位数MAE为<strong>1.012→1.037pp</strong>，W1为2.162→1.940pp，跨人IQR为2.575→2.833pp（真人5.681）。照抄上期的中心MAE为0.730、W1为1.784。2个人月真人Q9缺失，仅排出Q9评价，Q8仍保留。模型两组Q8/Q9均100%有效。</p>
+<p>Q9中心差95%区间[−0.485,+0.277]、W1差区间[−0.417,+0.052]均跨0，不能称已证实伤害，也不能称保证无退步。预登记要求Q8 W1改善、Q8中心不差、Q9中心和W1均不差及合法率≥99%；<strong>本轮只未满足Q9中心点值不差这一条，所以不升级默认配置。</strong>不是事后新增门槛。</p>
+<figure><img src="../20261019_advisor_followup/q8_delta_results_v1/figures/monthly_center_errors.png" alt="四个开发月份两组Q8和Q9中心误差"><figcaption>同一接口改动的效果随月份和题型变化，不能用总体均值掩盖2021-11及2022-03的差别。</figcaption></figure>
+<h2>含义与下一步</h2><p>原有信念相同，换一种回答任务即可改变模型分布，说明不能把f(P,E)视为固定的人类推理方式。差值格式让上期答案成为明确计算起点，可能减弱把所有人拉向公共判断的倾向；这是与结果相容的解释，不是已证明真人心理过程。Q8与Q9联合生成，因此Q8格式也可能影响未改格式的Q9。</p>
+<p>保留Q8差值作为有信号的开发候选；不重启Q9概率差值、不立刻扩样或反复调措辞。下一主任务仍为采购角色对应的可见价格及匹配／打乱输入预检，随机新闻量等候选另定独立时期。四个月均参与过开发、每月24人、两遍不是新增人、Flash别名不等于固定权重；本轮不是全国或B线预测成绩，十二期主MAE仍0.459／照抄0.239pp。</p>
+<p><a href="../20261019_advisor_followup/q8_delta_results_20261019.md">完整结果与复算</a> · <a href="../20261019_advisor_followup/q8_delta_results_v1/summary.json">聚合评价</a> · <a href="../20261019_advisor_followup/q8_delta_results_v1/run_receipt.json">调用与费用收据</a> · <a href="../../current_todo.html">当前清单</a></p></section>

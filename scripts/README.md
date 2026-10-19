@@ -17,9 +17,10 @@
 
 - [analyze_sce_advisor_diagnostics.py](analyze_sce_advisor_diagnostics.py)：复用十二期缓存诊断年龄×学历九格，并从旧原回包单独恢复Q8；不重拟合Q9。
 - [report_sce_advisor_diagnostics.py](report_sce_advisor_diagnostics.py)：将上述聚合结果作图并接入既有阅读页；同名输出存在时拒绝覆盖。
+- [report_sce_q8_delta.py](report_sce_q8_delta.py)：从共用评价缓存生成Q8单改对照图文与费用收据，不发API或重拟合Q9。
 - [check_sce_simulation_capabilities.py](check_sce_simulation_capabilities.py)：仅核免费Simulation能力与受支持参数，不执行付费问卷。
 
-Q8单改已接共用runner；准备/干跑实物见`docs/workstreams/20261019_advisor_followup/next_trial_design.md`，新调用仍需本批授权。人口六格只做设计，不随格式实验更换。
+Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_advisor_followup/q8_delta_results_20261019.md`，不重复运行旧包。人口六格只做设计，不随格式实验更换。
 
 ## 按用途查找全部入口
 
@@ -111,9 +112,10 @@ Q8单改已接共用runner；准备/干跑实物见`docs/workstreams/20261019_ad
 - [prepare_sce_u1a_state.py](prepare_sce_u1a_state.py) — Prepare the U1 explicit personal-state arms (offline, zero API calls).
 
 
-### 评价与报告（11）
+### 评价与报告（12）
 
 - [report_sce_advisor_diagnostics.py](report_sce_advisor_diagnostics.py) — Plot cached household-grid and recovered Q8 diagnostics in the existing reader.
+- [report_sce_q8_delta.py](report_sce_q8_delta.py) — Render the completed Q8-only pilot from cached evaluation; no API or refit.
 
 - [evaluate_sce_dev_run.py](evaluate_sce_dev_run.py) — Same-person development analysis: actual answers are read only after the run.
 - [evaluate_sce_outputs.py](evaluate_sce_outputs.py) — Evaluate normalized SCE bundles without loading inputs into the simulation engine.

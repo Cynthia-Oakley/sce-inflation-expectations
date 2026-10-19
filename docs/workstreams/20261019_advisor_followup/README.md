@@ -1,10 +1,10 @@
 # 下一阶段：同类家庭差距诊断
 
-本轮为零新增付费调用的开发诊断，参考配置和旧实验保持不变。
+先完成零API诊断，再按用户本批授权完成Q8单改384次调用。参考配置和旧实验保持不变。
 
 1. [结果与结论](diagnostic_results.md)：十二期九格诊断、旧Q8独立复算与平台免费能力。
 2. [图文阅读章节](../20261013_behavior/codex_expansion_diagnostic_20261014.html#household-grid-q8-20261019)：四图、逐格支持、基线和边界。
-3. [Q8单改对照](next_trial_design.md)：已通过引擎干跑与转换检查，待本批外发/$2授权，尚未付费运行。
+3. [Q8单改结果](q8_delta_results_20261019.md)：384调用、估$0.432，全合法；Q8分布改善，Q9中心未过保护门槛，不改默认。[执行前对照](next_trial_design.md)保留。
 4. [执行前固定口径](diagnostic_plan.md)及[原反馈衔接](plan.md)。
 
 补充：[网格维度与十类变量关系](../20261013_behavior/codex_expansion_diagnostic_20261014.html#grid-variable-priority-20261019)、[排名聚合](population_factor_priority_20261019.json)。年龄×学历只是初诊；ConsumerSim扩展维度已核，真人水平与个人不确定性的变量侧重不同。

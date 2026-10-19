@@ -51,7 +51,7 @@ SCE是纽约联储的消费者预期调查，每月约1,300名受访者，采用
 - **最新候选：**六期96人，随机分配3/8/20篇新闻的中心MAE为0.339，固定8篇0.389、人口匹配0.354、照抄0.369；分布仍明显落后。相对照抄的优势删去特定月份即反转，仅保留独立验证候选。它与十二期支持不同，不能替换主成绩。见[新闻量结果](workstreams/20261018_targeted_mechanisms/news_breadth_results_20261019.md)。
 - **主要困难：**公共信息下回答仍过度集中；个人既有信念的保留与变化未匹配真人；多项合成变量没有恢复本人与其信念的真实联合关系。已完成大量局部对照，未形成跨时期稳定胜过基线的新默认机制。详[实验台账](EXPERIMENT_STATUS_20261018.md)。
 
-10月19日零API预检已完成：旧九格诊断下约89%的方差缺口在格内；后续变量比较提示预期水平侧重财务、概率密度宽度侧重数理/学历。当前[六格候选](workstreams/20261019_advisor_followup/stratification_draft.md)为学历×是否在职，仅完成支持与分配示例，未改P或Normal。旧Q8独立恢复有有限信号、两遍排序反转，不改主Q9成绩；[Q8变化值/Q9绝对概率对照](workstreams/20261019_advisor_followup/next_trial_design.md)已完成16项引擎干跑、384次转换及23项测试，待本批$2授权。平台仍未确认同输入模型切换。采购角色与随机新闻量独立验证保留，相关指标先评估SCE财务前景，不同时铺开多个目标。详[诊断](workstreams/20261019_advisor_followup/diagnostic_results.md)、[当前任务](NEXT_ACTIONS.md)，时间安排只见[日程](ROADMAP.md)。
+10月19日零API预检已完成：旧九格诊断下约89%的方差缺口在格内；后续变量比较提示预期水平侧重财务、概率密度宽度侧重数理/学历。当前[六格候选](workstreams/20261019_advisor_followup/stratification_draft.md)为学历×是否在职，仅完成支持与分配示例，未改P或Normal。旧Q8独立恢复有有限信号、两遍排序反转，不改主Q9成绩；[Q8变化值/Q9绝对概率对照](workstreams/20261019_advisor_followup/q8_delta_results_20261019.md)已完成384调用，估$0.432；Q8中心0.788→0.613、W1 4.392→3.126，Q9中心1.012→1.037未过保护门槛，保留开发证据，不升级默认。平台仍未确认同输入模型切换。采购角色与随机新闻量独立验证保留，相关指标先评估SCE财务前景，不同时铺开多个目标。详[诊断](workstreams/20261019_advisor_followup/diagnostic_results.md)、[当前任务](NEXT_ACTIONS.md)，时间安排只见[日程](ROADMAP.md)。
 
 ## 6. 工程与复现
 

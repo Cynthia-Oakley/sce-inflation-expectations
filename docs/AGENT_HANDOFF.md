@@ -8,11 +8,12 @@
 - 本地官方SocioVerse2引擎、真实DeepSeek回答、冻结近似Q9计分和评价链已实际运行。当前是A线回访者条件重建，使用本人真实上期信念，不是严格B自主预测。
 - 12期×192×两遍主MAE 0.459/照抄0.239；分布仍过窄。全国完整波次成绩另报，不混入同支持成绩。详[配置](CURRENT_SIMULATION_CONFIGURATION.md)和[台账](EXPERIMENT_STATUS_20261018.md)。
 - 最新六期新闻量试验完成3456请求，估$3.859845/$16，3454有效/2无效保留，0接口错误/重试。固定8/匹配/随机中心MAE为0.389/0.354/0.339，照抄0.369；随机相对照抄优势受月份影响，不升级默认。
-- 本对话没有在跑模拟、没有待执行的新付费授权。已完成授权不得当成新实验通行证。
+- Q8单改384请求完成，全合法、估$0.4323/$2、0错误/重试；Q8分布改善，Q9中心保护门槛未过，不改默认。当前无运行中任务或待执行付费批次。已完成授权不得当成新实验通行证。
 
 ## 2. 有效运行包与复算入口
 
-- 最新有效运行包：`outputs/sce_news_breadth_trial_20261019_v2/`；v1是准备失败存档，勿复用。
+- 最新Q8有效包：`outputs/sce_q8_only_trial_20261019_v3/`；评价`outputs/sce_q8_only_evaluation_20261019_v1/`，聚合见[结果](workstreams/20261019_advisor_followup/q8_delta_results_20261019.md)。Q8完整96人月、照抄95人月、Q9为94人月；两遍不增加真人数。
+- 新闻量有效运行包：`outputs/sce_news_breadth_trial_20261019_v2/`；v1是准备失败存档，勿复用。
 - 评价：`outputs/sce_news_breadth_evaluation_20261019_v1/`；汇总：`outputs/sce_news_breadth_readout_20261019_v1/`。
 - 公共聚合与图：[news_breadth_results_v1](workstreams/20261018_targeted_mechanisms/news_breadth_results_v1/)，[结果说明](workstreams/20261018_targeted_mechanisms/news_breadth_results_20261019.md)。完整提示、人月、回复只在本地忽略目录。
 - 共用入口：`scripts/run_sce_frozen_trial.py`；机制特定准备入口见[scripts索引](../scripts/README.md)与该批运行计划。新增机制不是自动支持，须明确适配。
@@ -25,7 +26,7 @@
 
 平台仅完成免费元数据回查，证据`data/raw/mcp_checks/2026-10-19_advisor_free_v1/`；仍登记gpt-4o-mini，未确认自带逐人P/E/先验或模型选择，不运行问卷。
 
-[Q8单改](workstreams/20261019_advisor_followup/next_trial_design.md)已接入共用runner，当前有效包`outputs/sce_q8_only_trial_20261019_v3/`。四旧开发月各24人、直接/q8_delta两臂各两遍，共384请求；Q9都填绝对概率。16官方引擎离线单元及384次转换通过，23项测试通过。预计$0.457、保守预留$1.777、上限$2；已发本批外发/预算确认卡，尚无新付费授权。不要将旧授权拿来启动。v1/v2是付费前修复旧真值缺失适配的存档，禁止复用；原manifest未改。共享三入口修改前副本在`outputs/sce_shared_runtime_snapshot_20261019_q8_v1/`，旧批次有源码pin时用其冻结版本，不改旧manifest绕过。
+[Q8单改](workstreams/20261019_advisor_followup/q8_delta_results_20261019.md)已完成真实批次。四旧开发月各24人、直接/q8_delta两臂各两遍，384请求；Q9都填绝对概率。估算$0.4323、上限$2，全有效、0错误/重试；调用跨度129.5秒、评价12.4秒。Q8等人中心0.788→0.613、W1 4.392→3.126（差区间低于0），IQR 1.488→2.850／真人4.500；Q9调查权重敏感性中心1.012→1.037、W1 2.162→1.940，中心点值门槛未过，不升级。原16干跑/384转换/23测试仍保留。v1/v2为未调用准备残留，禁止复用；旧manifest未改。共享三入口修改前副本在`outputs/sce_shared_runtime_snapshot_20261019_q8_v1/`，旧批次需用原冻结源码，不能改manifest绕过。图文脚本`report_sce_q8_delta.py`只读缓存，不重新调用。
 
 [人口六格草案](workstreams/20261019_advisor_followup/stratification_draft.md)为学历×是否在职，63/72格月达到初步支持；未知独立池。支持与192人分配示例在`outputs/sce_stratification_support_20261019_v1/`。尚未实际抽样、改旧P或接新Normal，年龄/收入边际与财务/数理另作诊断。本轮Q8用旧样本，不同时换网格。相关指标扩展仍先评估Q2。
 
