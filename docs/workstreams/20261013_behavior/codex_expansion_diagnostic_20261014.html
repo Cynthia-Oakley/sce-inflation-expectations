@@ -1,15 +1,26 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body>
 <section id="news-breadth-preparation-20261019" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 36px;border-bottom:1px solid #d7dfdc;line-height:1.75">
-<h1>下一轮：检验不同家庭接触不同数量的新闻</h1>
-<p>2026-10-19。<strong>36个官方引擎离线单元全部通过，真实模拟尚未启动，新增费用$0。</strong>六期各96人、三组各生成两遍，共计划3,456次请求。预计$4.09，拟硬上限$16；具体发送范围与预算确认卡已发送。</p>
-<div style="display:flex;flex-wrap:wrap;gap:12px;margin:18px 0">
-<div style="flex:1 1 240px;padding:14px 18px;border:1px solid #d7dfdc"><strong>固定新闻量</strong><p>每人8篇；同期共同对照。</p></div>
-<div style="flex:1 1 240px;padding:14px 18px;border:1px solid #d7dfdc"><strong>随机分配数量</strong><p>48人3篇、28人8篇、20人20篇。</p></div>
-<div style="flex:1 1 240px;padding:14px 18px;border:1px solid #d7dfdc"><strong>按关注概率分配</strong><p>名额相同；年龄、教育、收入、地区影响外部关注概率，再随机分配。</p></div>
-</div>
-<p><strong>主要比较后两组：</strong>总名额相同，加权篇数与文字长度差小于1%，粗主题占比差小于2个百分点。价格统计、个人先验、CE、政策和问卷沿用原输入。本轮单独检验新闻量分配，购物角色对应的价格信息仍作为另一项机制推进。</p>
-<p>六期覆盖2020-09、2021-09、2022-06、2023-12、2024-10、2025-03，都是开发期；改善后仍需独立月份验证。各档篇数是实验配置，不是美国居民实测阅读量。三组普通平均都是8篇，但匹配组调查加权均值6.64—7.87篇，因此相对固定8篇的辅助比较不应全部归因为匹配本身。</p>
-<p><a href="../20261018_targeted_mechanisms/news_breadth_readiness_20261019.md">三组设计、依据、限制与运行交接</a> · <a href="../20261018_targeted_mechanisms/news_breadth_readiness_v1/summary.json">聚合准备回执</a> · <a href="../../current_todo.html">当前清单</a></p>
+<span id="news-breadth-results-20261019"></span>
+<h1>新闻数量分配实验：人口匹配未优于随机分配</h1>
+<p>2026-10-19。六个开发月×96人×三组×两遍，<strong>3,456次调用全部完成，估算费用$3.86／上限$16</strong>。0接口错误、0重试；3,454份有效、2份无效原样保留。共同可评价支持571个人月、562人。以下为同批、同支持比较，不替代此前12期扩大验证。</p>
+<h2>具体比较了什么？</h2>
+<p>固定组人人8篇；随机组与匹配组每月均48人看3篇、28人看8篇、20人看20篇。匹配组依据年龄、学历、收入、地区的外部经济新闻关注概率分配。其余价格统计、个人先验、政策与问卷一致；两种差异化分配的加权篇数及文字长度差小于1%、粗主题占比差小于2个百分点。</p>
+<div class="table-scroll"><table><thead><tr><th>方案</th><th>群体中位数MAE ↓</th><th>跨人分布W1 ↓</th><th>人际IQR（真人4.710）</th></tr></thead><tbody>
+<tr><td>照抄本人上期</td><td>0.369</td><td>0.952</td><td>5.583</td></tr>
+<tr><td>固定8篇</td><td>0.389</td><td>2.505</td><td>2.461</td></tr>
+<tr><td>按人口关注概率匹配</td><td>0.354</td><td>2.530</td><td>2.464</td></tr>
+<tr><td>随机分配同样篇数名额</td><td>0.339</td><td>2.479</td><td>2.447</td></tr>
+</tbody></table></div>
+<p>主口径是个人Q9拟合密度均值的群体设计加权中位数误差，单位为百分点。匹配相对固定8篇MAE下降约9%，但比随机高0.015pp；匹配对随机仅2/6个月更好，两遍生成的排序反转。<strong>没有通过执行前筛选，不升级默认配置。</strong></p>
+<figure><img src="../20261018_targeted_mechanisms/news_breadth_results_v1/metric_comparison.png" alt="三组与个人历史基线的中位数误差、分布距离和人际宽度比较"><figcaption>中位数出现小幅改善，但模型的人际宽度仍约为真人的一半，分布距离没有明显改善。</figcaption></figure>
+<h2>大误差有缓解，但不够稳定</h2>
+<p>补充看RMSE，固定8篇0.500、匹配0.431、随机0.483pp。匹配缓解了2025-03等较大的偏差，但在2023-12等原本误差较小的月份反而变差，因此不同误差指标的排序不同。RMSE局部信号保留，不能替代预登记MAE与分布要求。</p>
+<p>匹配对随机的MAE差95%区间约[-0.092,+0.140]pp，同时容许改善和变差；现在不能认定匹配有效，也不能认定两者等效。六期均为开发期，两遍生成并非新增真人。</p>
+<figure><img src="../20261018_targeted_mechanisms/news_breadth_results_v1/monthly_centers.png" alt="六个开发月份的真人中位数、三组模拟与照抄上期比较"><figcaption>2020-09、2021-09、2022-06、2023-12、2024-10、2025-03，不连续；每点为两遍的中位数均值。</figcaption></figure>
+<h2>下一步的重点</h2>
+<p>当前四个人口变量对关注程度的预测本来较弱；而且三组仍获得完整统计表，新闻量减少不一定减少实际可得信息。这些是待检解释，不能由本次对照直接确认。保留全部结果，暂不继续调新闻篇数；下一项优先离线准备<strong>购物责任如何改变可见价格类别与呈现</strong>，保留匹配/打乱对照，并防止整张统计表抵消个体信息差异。新付费批次另行确认。</p>
+<p>本轮官方引擎调用约18.7分钟，评价约1.5分钟，汇总不足1秒；原新闻标签、时间标签、执行器均已复用。无重复付费运行，原15项保护文件不变，本轮未推送。</p>
+<p><a href="../20261018_targeted_mechanisms/news_breadth_results_20261019.md">完整结果、统计解释和复算</a> · <a href="../20261018_targeted_mechanisms/news_breadth_results_v1/summary.json">聚合数据与区间</a> · <a href="../20261018_targeted_mechanisms/news_breadth_trial_plan_20261019.md">执行前方案</a> · <a href="../../current_todo.html">当前清单</a></p>
 </section>
 <section id="news-attention-design-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
 <span id="news-attention-results-20261019"></span>

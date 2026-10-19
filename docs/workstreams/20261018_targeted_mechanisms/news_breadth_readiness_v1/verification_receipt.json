@@ -6,6 +6,7 @@
   "protected_files_unchanged": 15,
   "source_trial": "outputs/sce_news_breadth_trial_20261019_v2",
   "protocol_sha256": "b075f87c585c27a1e626b23a709c861f3a8ea85041e15a3ce92aa2f5c41326e3",
-  "authorized": false,
-  "partial_prepare_v1": "Retained without execution; preliminary cap15 below computed conservative reserve. Use v2 only."
+  "authorized": true,
+  "partial_prepare_v1": "Retained without execution; preliminary cap15 below computed conservative reserve. Use v2 only.",
+  "authorization_question_item": "call_0c2701736b5a4cdf9efafbfba83dfe97"
 }

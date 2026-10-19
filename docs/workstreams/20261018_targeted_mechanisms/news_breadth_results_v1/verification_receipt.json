@@ -1,0 +1,32 @@
+{
+  "engine_cells_completed": 36,
+  "planned_and_actual_calls": 3456,
+  "valid_answers": 3454,
+  "invalid_answers_retained": 2,
+  "api_errors": 0,
+  "automatic_retries": 0,
+  "common_person_months": 571,
+  "independent_people": 562,
+  "exclusions_person_months": {
+    "human_Q9_mean_or_iqr_missing": 3,
+    "model_invalid_or_unscorable": 2
+  },
+  "independent_aggregate_checks": 108,
+  "protected_files_unchanged": 15,
+  "authorization_question_item": "call_0c2701736b5a4cdf9efafbfba83dfe97",
+  "local_preparation_commit": "2680769",
+  "budget_cap_usd": 16,
+  "estimated_token_cost_usd_not_bill": 3.859845,
+  "paid_batch_repeated": false,
+  "public_files_sha256": {
+    "summary.json": "6907bb756db97a948a03ddc9aadec7d372b485f72a2f95335837b70791d728de",
+    "metric_comparison.png": "be00d25e05012cb0e4c0128f07976e647f75857c932bdb4db695dcbc7e41965f",
+    "monthly_centers.png": "8b11da6dd6af454b6e55ea31588aaf44bcbd4d006fa1e222bcf1a614148c166c"
+  },
+  "analysis_and_plot_code_sha256": {
+    "studies/sce_inflation_expectations/evaluation/news_breadth_readout.py": "03873a8226e969694ca3d1d67d8407267532a2518d347a3977b0e16154d247c4",
+    "scripts/report_sce_news_breadth.py": "462d53cabbff80a582dde63e4848890fe854c8c340c619a6988ebedc20f538ac",
+    "scripts/plot_sce_news_breadth.py": "0f7ec99eab98a8d7eed54400db4ee66702549fbb48262fa8169b6ad49edf865a",
+    "scripts/report_sce_information_exposure.py": "c9ae4fd48659d514b2c5d4bd22cf9b03069aeab688e9bf1b121581049589167f"
+  }
+}

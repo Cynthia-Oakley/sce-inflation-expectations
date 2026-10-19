@@ -1,0 +1,3200 @@
+{
+  "status": "completed_news_breadth_readout",
+  "protocol_sha256": "b075f87c585c27a1e626b23a709c861f3a8ea85041e15a3ce92aa2f5c41326e3",
+  "new_api_calls_from_reporting": 0,
+  "new_q9_fits_from_reporting": 0,
+  "independent_numeric_checks": 108,
+  "common_person_months": 571,
+  "independent_people": 562,
+  "weighted_metrics": {
+    "carry": {
+      "center_mae_pp": 0.3690717396933591,
+      "center_bias_pp": -0.3018992702436007,
+      "predicted_center_pp": 3.9527349335538045,
+      "truth_center_pp": 4.254634203797405,
+      "personal_mae_pp": 2.721101226185608,
+      "w1_pp": 0.9516828822874303,
+      "delta_w1_pp": 2.721101226185608,
+      "across_person_iqr_pp": 5.583236536995542,
+      "truth_across_person_iqr_pp": 4.710409896991195,
+      "wrong_move_given_true_stable": 0.0,
+      "missed_move_given_true_moving": 1.0,
+      "opposite_direction_given_true_moving": 0.0
+    },
+    "history_anchor_half": {
+      "center_mae_pp": 0.5307122646722663,
+      "center_bias_pp": -0.21744428262020912,
+      "predicted_center_pp": 4.0371899211771956,
+      "truth_center_pp": 4.254634203797405,
+      "personal_mae_pp": 2.7158027020651136,
+      "w1_pp": 1.241403285055435,
+      "delta_w1_pp": 1.8183026388148813,
+      "across_person_iqr_pp": 4.9496812263011165,
+      "truth_across_person_iqr_pp": 4.710409896991195,
+      "wrong_move_given_true_stable": 0.3884464621318757,
+      "missed_move_given_true_moving": 0.4513864445071003,
+      "opposite_direction_given_true_moving": 0.1618167527440477
+    },
+    "baseline": {
+      "center_mae_pp": 0.3892711428047096,
+      "center_bias_pp": -0.24272392639907103,
+      "predicted_center_pp": 4.011910277398333,
+      "truth_center_pp": 4.254634203797405,
+      "personal_mae_pp": 3.253613709734371,
+      "w1_pp": 2.5052979041463765,
+      "delta_w1_pp": 1.4695406273675535,
+      "across_person_iqr_pp": 2.460886650266796,
+      "truth_across_person_iqr_pp": 4.710409896991195,
+      "wrong_move_given_true_stable": 0.6108654695021334,
+      "missed_move_given_true_moving": 0.3210103615180769,
+      "opposite_direction_given_true_moving": 0.21310256219650917
+    },
+    "news_matched": {
+      "center_mae_pp": 0.35393651670747556,
+      "center_bias_pp": -0.21240750122767774,
+      "predicted_center_pp": 4.042226702569727,
+      "truth_center_pp": 4.254634203797405,
+      "personal_mae_pp": 3.292213355108549,
+      "w1_pp": 2.5304703112556783,
+      "delta_w1_pp": 1.4729695258977344,
+      "across_person_iqr_pp": 2.46440114677579,
+      "truth_across_person_iqr_pp": 4.710409896991195,
+      "wrong_move_given_true_stable": 0.5927596056538776,
+      "missed_move_given_true_moving": 0.35426666402865736,
+      "opposite_direction_given_true_moving": 0.21058320151009943
+    },
+    "news_randomized": {
+      "center_mae_pp": 0.3388652796438931,
+      "center_bias_pp": -0.284161872097072,
+      "predicted_center_pp": 3.9704723317003325,
+      "truth_center_pp": 4.254634203797405,
+      "personal_mae_pp": 3.1771581012860963,
+      "w1_pp": 2.478891387441164,
+      "delta_w1_pp": 1.3949631090375165,
+      "across_person_iqr_pp": 2.4465841856440727,
+      "truth_across_person_iqr_pp": 4.710409896991195,
+      "wrong_move_given_true_stable": 0.6236263187742975,
+      "missed_move_given_true_moving": 0.3542501407971225,
+      "opposite_direction_given_true_moving": 0.20439862423536348
+    }
+  },
+  "weighted_monthly": [
+    {
+      "month": 202009,
+      "n": 95,
+      "arms": {
+        "carry": {
+          "center_mae_pp": 0.5110531424269871,
+          "center_bias_pp": -0.5110531424269871,
+          "predicted_center_pp": 2.488946857573013,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.0997297252358633,
+          "w1_pp": 0.5647916668532227,
+          "delta_w1_pp": 2.0997297252358633,
+          "across_person_iqr_pp": 3.616097818855444,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.4810874434785912,
+          "center_bias_pp": -0.4810874434785912,
+          "predicted_center_pp": 2.5189125565214088,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 1.9037070818594009,
+          "w1_pp": 0.4762009894658219,
+          "delta_w1_pp": 1.4936456576216597,
+          "across_person_iqr_pp": 3.0366833876160415,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.2277618038815846,
+          "missed_move_given_true_moving": 0.6090910775130673,
+          "opposite_direction_given_true_moving": 0.09178750792298114
+        },
+        "baseline": {
+          "center_mae_pp": 0.6664093674369957,
+          "center_bias_pp": -0.6664093674369957,
+          "predicted_center_pp": 2.3335906325630043,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.1637623515349134,
+          "w1_pp": 1.2773348983536918,
+          "delta_w1_pp": 1.0677682538226774,
+          "across_person_iqr_pp": 1.686019939309559,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.5937156497047846,
+          "missed_move_given_true_moving": 0.4166904041342695,
+          "opposite_direction_given_true_moving": 0.11260166284237041
+        },
+        "news_matched": {
+          "center_mae_pp": 0.5982271631583362,
+          "center_bias_pp": -0.5982271631583362,
+          "predicted_center_pp": 2.4017728368416638,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.3096824824170117,
+          "w1_pp": 1.2854004994418948,
+          "delta_w1_pp": 1.1471023617783174,
+          "across_person_iqr_pp": 1.7856061142840756,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.5214407575518911,
+          "missed_move_given_true_moving": 0.475982324806412,
+          "opposite_direction_given_true_moving": 0.1353481885815258
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.5397525081433137,
+          "center_bias_pp": -0.5397525081433137,
+          "predicted_center_pp": 2.4602474918566863,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.082041877808298,
+          "w1_pp": 1.3167284156949208,
+          "delta_w1_pp": 0.9084071206188492,
+          "across_person_iqr_pp": 1.671690411030605,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.5730838147022094,
+          "missed_move_given_true_moving": 0.41422632015529137,
+          "opposite_direction_given_true_moving": 0.13187051462529953
+        }
+      }
+    },
+    {
+      "month": 202109,
+      "n": 94,
+      "arms": {
+        "carry": {
+          "center_mae_pp": 0.5591819289882132,
+          "center_bias_pp": -0.5591819289882132,
+          "predicted_center_pp": 4.735768624421784,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.1395718398868815,
+          "w1_pp": 1.1796542145861189,
+          "delta_w1_pp": 3.1395718398868784,
+          "across_person_iqr_pp": 5.207537454024012,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.6841840461574922,
+          "center_bias_pp": -0.6841840461574922,
+          "predicted_center_pp": 4.610766507252505,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 2.999021959269431,
+          "w1_pp": 1.4086047492073044,
+          "delta_w1_pp": 2.170980039610396,
+          "across_person_iqr_pp": 4.761634795321891,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.3309786965991191,
+          "missed_move_given_true_moving": 0.4749804965310616,
+          "opposite_direction_given_true_moving": 0.1816746185684775
+        },
+        "baseline": {
+          "center_mae_pp": 0.20872334094721445,
+          "center_bias_pp": -0.20872334094721445,
+          "predicted_center_pp": 5.0862272124627825,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.268788235705795,
+          "w1_pp": 2.2872755982168194,
+          "delta_w1_pp": 1.6174716641339864,
+          "across_person_iqr_pp": 2.9271487758618435,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.623868951757877,
+          "missed_move_given_true_moving": 0.35193448253624027,
+          "opposite_direction_given_true_moving": 0.2585176951230753
+        },
+        "news_matched": {
+          "center_mae_pp": 0.32043383807825476,
+          "center_bias_pp": -0.32043383807825476,
+          "predicted_center_pp": 4.974516715331742,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.0881985926467856,
+          "w1_pp": 2.40962149483546,
+          "delta_w1_pp": 1.4935900405736546,
+          "across_person_iqr_pp": 2.7013038501538045,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.5259722802398507,
+          "missed_move_given_true_moving": 0.32709261633936393,
+          "opposite_direction_given_true_moving": 0.2653194497188875
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.24364975089293184,
+          "center_bias_pp": -0.24364975089293184,
+          "predicted_center_pp": 5.051300802517066,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.0916216964898333,
+          "w1_pp": 2.3288038016735726,
+          "delta_w1_pp": 1.5417314192161053,
+          "across_person_iqr_pp": 2.85641711820052,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.6005791285373632,
+          "missed_move_given_true_moving": 0.369887779048253,
+          "opposite_direction_given_true_moving": 0.2331226232781769
+        }
+      }
+    },
+    {
+      "month": 202206,
+      "n": 96,
+      "arms": {
+        "carry": {
+          "center_mae_pp": 0.7066548647631423,
+          "center_bias_pp": -0.7066548647631423,
+          "predicted_center_pp": 6.486080520651769,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 2.9229873761208904,
+          "w1_pp": 0.9814357870459682,
+          "delta_w1_pp": 2.92298737612089,
+          "across_person_iqr_pp": 6.336640658543288,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.7083053587743304,
+          "center_bias_pp": -0.7083053587743304,
+          "predicted_center_pp": 6.484430026640581,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 2.9818288185386272,
+          "w1_pp": 1.5264770404619792,
+          "delta_w1_pp": 1.850078272259709,
+          "across_person_iqr_pp": 5.463183115762222,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.5622070380369429,
+          "missed_move_given_true_moving": 0.34653715446123473,
+          "opposite_direction_given_true_moving": 0.2128795005373659
+        },
+        "baseline": {
+          "center_mae_pp": 0.4178747835540273,
+          "center_bias_pp": 0.4178747835540273,
+          "predicted_center_pp": 7.610610168968939,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 3.6959611239082157,
+          "w1_pp": 3.182340427066484,
+          "delta_w1_pp": 1.520062538161056,
+          "across_person_iqr_pp": 3.5836781548021044,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.5873298294499648,
+          "missed_move_given_true_moving": 0.21236723158065318,
+          "opposite_direction_given_true_moving": 0.35731009602686503
+        },
+        "news_matched": {
+          "center_mae_pp": 0.21261810974837703,
+          "center_bias_pp": 0.21261810974837703,
+          "predicted_center_pp": 7.405353495163288,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 3.5235768296809726,
+          "w1_pp": 2.96747680682321,
+          "delta_w1_pp": 1.4949736197643089,
+          "across_person_iqr_pp": 3.3097181300129948,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.6654571859098048,
+          "missed_move_given_true_moving": 0.3269356828347628,
+          "opposite_direction_given_true_moving": 0.30984298584025805
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.16015383116945792,
+          "center_bias_pp": 0.16015383116945792,
+          "predicted_center_pp": 7.352889216584369,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 3.497822750191205,
+          "w1_pp": 2.987076637384314,
+          "delta_w1_pp": 1.4372697359467033,
+          "across_person_iqr_pp": 3.571437897177053,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.5732625335588151,
+          "missed_move_given_true_moving": 0.2355286294269074,
+          "opposite_direction_given_true_moving": 0.35332555615853
+        }
+      }
+    },
+    {
+      "month": 202312,
+      "n": 96,
+      "arms": {
+        "carry": {
+          "center_mae_pp": 0.0,
+          "center_bias_pp": 0.0,
+          "predicted_center_pp": 3.0,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.2793802037735675,
+          "w1_pp": 0.6508712048297278,
+          "delta_w1_pp": 2.2793802037735684,
+          "across_person_iqr_pp": 5.714263847259619,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.2999999999999998,
+          "center_bias_pp": 0.2999999999999998,
+          "predicted_center_pp": 3.3,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.156389311468974,
+          "w1_pp": 0.6266263316847279,
+          "delta_w1_pp": 1.5640574419550353,
+          "across_person_iqr_pp": 5.142176896251348,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.3028645521071054,
+          "missed_move_given_true_moving": 0.4439140166454952,
+          "opposite_direction_given_true_moving": 0.1699631878574633
+        },
+        "baseline": {
+          "center_mae_pp": 0.037879974796878546,
+          "center_bias_pp": 0.005653756528898324,
+          "predicted_center_pp": 3.0056537565288983,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.7335825946988503,
+          "w1_pp": 1.9946583235720978,
+          "delta_w1_pp": 0.6849067556534569,
+          "across_person_iqr_pp": 2.0191668575652155,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.6721075326873516,
+          "missed_move_given_true_moving": 0.3835832056329185,
+          "opposite_direction_given_true_moving": 0.15584815142814212
+        },
+        "news_matched": {
+          "center_mae_pp": 0.18834138869910655,
+          "center_bias_pp": 0.18834138869910655,
+          "predicted_center_pp": 3.1883413886991065,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.721791704452194,
+          "w1_pp": 2.0728963888217278,
+          "delta_w1_pp": 0.579375026904984,
+          "across_person_iqr_pp": 2.0665602836768544,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.6953037193006721,
+          "missed_move_given_true_moving": 0.347290489218792,
+          "opposite_direction_given_true_moving": 0.1706652208668905
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.009053398016527048,
+          "center_bias_pp": -0.001140615074516127,
+          "predicted_center_pp": 2.998859384925484,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.7604217838815295,
+          "w1_pp": 2.1571048818130696,
+          "delta_w1_pp": 0.6738045221738618,
+          "across_person_iqr_pp": 1.8836293785083744,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.8191300350299504,
+          "missed_move_given_true_moving": 0.37231562573540056,
+          "opposite_direction_given_true_moving": 0.15624757839921186
+        }
+      }
+    },
+    {
+      "month": 202410,
+      "n": 94,
+      "arms": {
+        "carry": {
+          "center_mae_pp": 0.20151740834927523,
+          "center_bias_pp": 0.20151740834927523,
+          "predicted_center_pp": 3.1965966043013125,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.880917178053741,
+          "w1_pp": 1.1447258944252703,
+          "delta_w1_pp": 2.8809171780537404,
+          "across_person_iqr_pp": 4.492546105967146,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.6398039461561718,
+          "center_bias_pp": 0.6398039461561718,
+          "predicted_center_pp": 3.634883142108209,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.8195626202601063,
+          "w1_pp": 1.6111284273821491,
+          "delta_w1_pp": 2.1162603085054075,
+          "across_person_iqr_pp": 3.848056498834308,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.3370246882224647,
+          "missed_move_given_true_moving": 0.3919026757770446,
+          "opposite_direction_given_true_moving": 0.20351019514660487
+        },
+        "baseline": {
+          "center_mae_pp": 0.09984076318858737,
+          "center_bias_pp": -0.09984076318858737,
+          "predicted_center_pp": 2.89523843276345,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.8089887843366697,
+          "w1_pp": 2.072978851073857,
+          "delta_w1_pp": 0.9402658452749587,
+          "across_person_iqr_pp": 2.028464420687956,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.4400106262670496,
+          "missed_move_given_true_moving": 0.22860494823290195,
+          "opposite_direction_given_true_moving": 0.23368013554851608
+        },
+        "news_matched": {
+          "center_mae_pp": 0.07329223994894374,
+          "center_bias_pp": -0.02603714396512391,
+          "predicted_center_pp": 2.9690420519869134,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.834274015529764,
+          "w1_pp": 2.0162481213793955,
+          "delta_w1_pp": 0.8609368520142344,
+          "across_person_iqr_pp": 2.1556440257057936,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.4779545630528098,
+          "missed_move_given_true_moving": 0.25354601909721186,
+          "opposite_direction_given_true_moving": 0.23171520749793237
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.07715298257581615,
+          "center_bias_pp": -0.07715298257581615,
+          "predicted_center_pp": 2.917926213376221,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.7461235664719195,
+          "w1_pp": 1.9685103721607078,
+          "delta_w1_pp": 0.9054314111823172,
+          "across_person_iqr_pp": 1.9425710652696937,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.4574937013117708,
+          "missed_move_given_true_moving": 0.25224310489572727,
+          "opposite_direction_given_true_moving": 0.21740841615625006
+        }
+      }
+    },
+    {
+      "month": 202503,
+      "n": 96,
+      "arms": {
+        "carry": {
+          "center_mae_pp": 0.2360230936325367,
+          "center_bias_pp": -0.2360230936325367,
+          "predicted_center_pp": 3.8090169943749475,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 3.0040210340427036,
+          "w1_pp": 1.1886185259842739,
+          "delta_w1_pp": 3.0040210340427063,
+          "across_person_iqr_pp": 8.132333337323743,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.37089279346701254,
+          "center_bias_pp": -0.37089279346701254,
+          "predicted_center_pp": 3.6741472945404716,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 3.4343064209941416,
+          "w1_pp": 1.7993821721306285,
+          "delta_w1_pp": 1.7147941129370816,
+          "across_person_iqr_pp": 7.446352664020883,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.5698419939440378,
+          "missed_move_given_true_moving": 0.44189324611469827,
+          "opposite_direction_given_true_moving": 0.1110855064313933
+        },
+        "baseline": {
+          "center_mae_pp": 0.9048986269045542,
+          "center_bias_pp": -0.9048986269045542,
+          "predicted_center_pp": 3.14014146110293,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 4.850599168221782,
+          "w1_pp": 4.21719932659531,
+          "delta_w1_pp": 2.9867687071591846,
+          "across_person_iqr_pp": 2.520841753374096,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.7481602271457726,
+          "missed_move_given_true_moving": 0.3328818969914777,
+          "opposite_direction_given_true_moving": 0.16065763221008608
+        },
+        "news_matched": {
+          "center_mae_pp": 0.7307063606118351,
+          "center_bias_pp": -0.7307063606118351,
+          "predicted_center_pp": 3.314333727395649,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 5.275756505924565,
+          "w1_pp": 4.431178556232381,
+          "delta_w1_pp": 3.2618392543509094,
+          "across_person_iqr_pp": 2.7675744768212165,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.6704291278682369,
+          "missed_move_given_true_moving": 0.39475285187540154,
+          "opposite_direction_given_true_moving": 0.15060815655510218
+        },
+        "news_randomized": {
+          "center_mae_pp": 1.0034292070653121,
+          "center_bias_pp": -1.0034292070653121,
+          "predicted_center_pp": 3.041610880942172,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 4.884916932873794,
+          "w1_pp": 4.1151242159204,
+          "delta_w1_pp": 2.9031344450872627,
+          "across_person_iqr_pp": 2.7537592436781866,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.7182086995056769,
+          "missed_move_given_true_moving": 0.4812993855211551,
+          "opposite_direction_given_true_moving": 0.13441705679471255
+        }
+      }
+    }
+  ],
+  "weighted_cells": [
+    {
+      "month": 202009,
+      "repeat": 1,
+      "n": 95,
+      "effective_n": 55.53091608839612,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.7071060290164741,
+          "center_bias_pp": -0.7071060290164741,
+          "predicted_center_pp": 2.292893970983526,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.202313345284415,
+          "w1_pp": 1.173821427206767,
+          "delta_w1_pp": 1.088301736404118,
+          "across_person_iqr_pp": 1.9048060833765383,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.6029027411400355,
+          "missed_move_given_true_moving": 0.4351017586386999,
+          "opposite_direction_given_true_moving": 0.11824879743386266
+        },
+        "news_matched": {
+          "center_mae_pp": 0.5207598124610602,
+          "center_bias_pp": -0.5207598124610602,
+          "predicted_center_pp": 2.47924018753894,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.3172404876011554,
+          "w1_pp": 1.206960434695671,
+          "delta_w1_pp": 1.1329885747914836,
+          "across_person_iqr_pp": 1.88316371404819,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.43675519288400416,
+          "missed_move_given_true_moving": 0.5087379283453758,
+          "opposite_direction_given_true_moving": 0.13777549637701442
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.6408480761552182,
+          "center_bias_pp": -0.6408480761552182,
+          "predicted_center_pp": 2.359151923844782,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.0513597093112694,
+          "w1_pp": 1.3540892355835226,
+          "delta_w1_pp": 0.9591340786865138,
+          "across_person_iqr_pp": 1.5338598006512214,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.5498677239011972,
+          "missed_move_given_true_moving": 0.38942597904973886,
+          "opposite_direction_given_true_moving": 0.0941410073398057
+        },
+        "carry": {
+          "center_mae_pp": 0.5110531424269871,
+          "center_bias_pp": -0.5110531424269871,
+          "predicted_center_pp": 2.488946857573013,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.0997297252358633,
+          "w1_pp": 0.5647916668532227,
+          "delta_w1_pp": 2.0997297252358633,
+          "across_person_iqr_pp": 3.616097818855444,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.4810874434785912,
+          "center_bias_pp": -0.4810874434785912,
+          "predicted_center_pp": 2.5189125565214088,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 1.9037070818594009,
+          "w1_pp": 0.4762009894658219,
+          "delta_w1_pp": 1.4936456576216597,
+          "across_person_iqr_pp": 3.0366833876160415,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.2277618038815846,
+          "missed_move_given_true_moving": 0.6090910775130673,
+          "opposite_direction_given_true_moving": 0.09178750792298114
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 6.824103053839486,
+        "news_randomized": 7.182471198690273
+      }
+    },
+    {
+      "month": 202009,
+      "repeat": 2,
+      "n": 95,
+      "effective_n": 55.53091608839612,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.6257127058575174,
+          "center_bias_pp": -0.6257127058575174,
+          "predicted_center_pp": 2.3742872941424826,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.1252113577854113,
+          "w1_pp": 1.3808483695006166,
+          "delta_w1_pp": 1.0472347712412367,
+          "across_person_iqr_pp": 1.4672337952425796,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.5845285582695338,
+          "missed_move_given_true_moving": 0.3982790496298391,
+          "opposite_direction_given_true_moving": 0.10695452825087817
+        },
+        "news_matched": {
+          "center_mae_pp": 0.6756945138556123,
+          "center_bias_pp": -0.6756945138556123,
+          "predicted_center_pp": 2.3243054861443877,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.302124477232868,
+          "w1_pp": 1.3638405641881186,
+          "delta_w1_pp": 1.161216148765151,
+          "across_person_iqr_pp": 1.688048514519961,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.6061263222197781,
+          "missed_move_given_true_moving": 0.4432267212674483,
+          "opposite_direction_given_true_moving": 0.13292088078603717
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.4386569401314091,
+          "center_bias_pp": -0.4386569401314091,
+          "predicted_center_pp": 2.561343059868591,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.1127240463053263,
+          "w1_pp": 1.279367595806319,
+          "delta_w1_pp": 0.8576801625511846,
+          "across_person_iqr_pp": 1.8095210214099886,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.5962999055032215,
+          "missed_move_given_true_moving": 0.4390266612608439,
+          "opposite_direction_given_true_moving": 0.16960002191079335
+        },
+        "carry": {
+          "center_mae_pp": 0.5110531424269871,
+          "center_bias_pp": -0.5110531424269871,
+          "predicted_center_pp": 2.488946857573013,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.0997297252358633,
+          "w1_pp": 0.5647916668532227,
+          "delta_w1_pp": 2.0997297252358633,
+          "across_person_iqr_pp": 3.616097818855444,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.4810874434785912,
+          "center_bias_pp": -0.4810874434785912,
+          "predicted_center_pp": 2.5189125565214088,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 1.9037070818594009,
+          "w1_pp": 0.4762009894658219,
+          "delta_w1_pp": 1.4936456576216597,
+          "across_person_iqr_pp": 3.0366833876160415,
+          "truth_across_person_iqr_pp": 3.2771638753151104,
+          "wrong_move_given_true_stable": 0.2277618038815846,
+          "missed_move_given_true_moving": 0.6090910775130673,
+          "opposite_direction_given_true_moving": 0.09178750792298114
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 6.824103053839486,
+        "news_randomized": 7.182471198690273
+      }
+    },
+    {
+      "month": 202109,
+      "repeat": 1,
+      "n": 94,
+      "effective_n": 59.06377138817582,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.2619618539222186,
+          "center_bias_pp": -0.2619618539222186,
+          "predicted_center_pp": 5.032988699487778,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.3928841804419636,
+          "w1_pp": 2.2487990971865983,
+          "delta_w1_pp": 1.5936223579576116,
+          "across_person_iqr_pp": 2.965112489545904,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.6275800827744242,
+          "missed_move_given_true_moving": 0.4057677381616551,
+          "opposite_direction_given_true_moving": 0.238052702394564
+        },
+        "news_matched": {
+          "center_mae_pp": 0.26317654445202354,
+          "center_bias_pp": -0.26317654445202354,
+          "predicted_center_pp": 5.031774008957973,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.0674588736838717,
+          "w1_pp": 2.3670575172191817,
+          "delta_w1_pp": 1.4527217099577059,
+          "across_person_iqr_pp": 2.653832283388093,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.4906253854304897,
+          "missed_move_given_true_moving": 0.37193811355683953,
+          "opposite_direction_given_true_moving": 0.23783128540198364
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.22533764786364507,
+          "center_bias_pp": -0.22533764786364507,
+          "predicted_center_pp": 5.069612905546352,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.1481594791161145,
+          "w1_pp": 2.402433728367125,
+          "delta_w1_pp": 1.5568311594589583,
+          "across_person_iqr_pp": 2.809979591680828,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.6881387764844304,
+          "missed_move_given_true_moving": 0.34098807033662737,
+          "opposite_direction_given_true_moving": 0.2495570904215476
+        },
+        "carry": {
+          "center_mae_pp": 0.5591819289882132,
+          "center_bias_pp": -0.5591819289882132,
+          "predicted_center_pp": 4.735768624421784,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.1395718398868815,
+          "w1_pp": 1.1796542145861189,
+          "delta_w1_pp": 3.1395718398868784,
+          "across_person_iqr_pp": 5.207537454024012,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.6841840461574922,
+          "center_bias_pp": -0.6841840461574922,
+          "predicted_center_pp": 4.610766507252505,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 2.999021959269431,
+          "w1_pp": 1.4086047492073044,
+          "delta_w1_pp": 2.170980039610396,
+          "across_person_iqr_pp": 4.761634795321891,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.3309786965991191,
+          "missed_move_given_true_moving": 0.4749804965310616,
+          "opposite_direction_given_true_moving": 0.1816746185684775
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 7.536243483996816,
+        "news_randomized": 7.522879254973593
+      }
+    },
+    {
+      "month": 202109,
+      "repeat": 2,
+      "n": 94,
+      "effective_n": 59.06377138817582,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.1554848279722103,
+          "center_bias_pp": -0.1554848279722103,
+          "predicted_center_pp": 5.139465725437787,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.1446922909696267,
+          "w1_pp": 2.32575209924704,
+          "delta_w1_pp": 1.641320970310361,
+          "across_person_iqr_pp": 2.8891850621777833,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.6201578207413299,
+          "missed_move_given_true_moving": 0.2981012269108254,
+          "opposite_direction_given_true_moving": 0.2789826878515867
+        },
+        "news_matched": {
+          "center_mae_pp": 0.377691131704486,
+          "center_bias_pp": -0.377691131704486,
+          "predicted_center_pp": 4.917259421705511,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.1089383116096996,
+          "w1_pp": 2.452185472451739,
+          "delta_w1_pp": 1.5344583711896034,
+          "across_person_iqr_pp": 2.748775416919516,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.5613191750492116,
+          "missed_move_given_true_moving": 0.28224711912188827,
+          "opposite_direction_given_true_moving": 0.2928076140357913
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.2619618539222186,
+          "center_bias_pp": -0.2619618539222186,
+          "predicted_center_pp": 5.032988699487778,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.035083913863552,
+          "w1_pp": 2.25517387498002,
+          "delta_w1_pp": 1.5266316789732524,
+          "across_person_iqr_pp": 2.902854644720212,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.5130194805902959,
+          "missed_move_given_true_moving": 0.39878748775987866,
+          "opposite_direction_given_true_moving": 0.21668815613480616
+        },
+        "carry": {
+          "center_mae_pp": 0.5591819289882132,
+          "center_bias_pp": -0.5591819289882132,
+          "predicted_center_pp": 4.735768624421784,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 3.1395718398868815,
+          "w1_pp": 1.1796542145861189,
+          "delta_w1_pp": 3.1395718398868784,
+          "across_person_iqr_pp": 5.207537454024012,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.6841840461574922,
+          "center_bias_pp": -0.6841840461574922,
+          "predicted_center_pp": 4.610766507252505,
+          "truth_center_pp": 5.294950553409997,
+          "personal_mae_pp": 2.999021959269431,
+          "w1_pp": 1.4086047492073044,
+          "delta_w1_pp": 2.170980039610396,
+          "across_person_iqr_pp": 4.761634795321891,
+          "truth_across_person_iqr_pp": 4.517782863886323,
+          "wrong_move_given_true_stable": 0.3309786965991191,
+          "missed_move_given_true_moving": 0.4749804965310616,
+          "opposite_direction_given_true_moving": 0.1816746185684775
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 7.536243483996816,
+        "news_randomized": 7.522879254973593
+      }
+    },
+    {
+      "month": 202206,
+      "repeat": 1,
+      "n": 96,
+      "effective_n": 65.341160366487,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.46455778101127265,
+          "center_bias_pp": 0.46455778101127265,
+          "predicted_center_pp": 7.657293166426184,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 3.9054525516724308,
+          "w1_pp": 3.4236864326732857,
+          "delta_w1_pp": 1.4979497765814596,
+          "across_person_iqr_pp": 3.4631885428511424,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.6143844486201849,
+          "missed_move_given_true_moving": 0.1978021922067417,
+          "opposite_direction_given_true_moving": 0.3771096492775477
+        },
+        "news_matched": {
+          "center_mae_pp": 0.2574246663543782,
+          "center_bias_pp": 0.2574246663543782,
+          "predicted_center_pp": 7.45016005176929,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 3.48409690484437,
+          "w1_pp": 2.943816065027267,
+          "delta_w1_pp": 1.4424842126957889,
+          "across_person_iqr_pp": 3.275466920675946,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.7687358336053357,
+          "missed_move_given_true_moving": 0.2713190285794702,
+          "opposite_direction_given_true_moving": 0.35006873788204684
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.14834104108619783,
+          "center_bias_pp": 0.14834104108619783,
+          "predicted_center_pp": 7.341076426501109,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 3.4583390321075056,
+          "w1_pp": 2.9387961364695245,
+          "delta_w1_pp": 1.4765467513412585,
+          "across_person_iqr_pp": 3.739520598777183,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.5415832354858989,
+          "missed_move_given_true_moving": 0.2354526817566303,
+          "opposite_direction_given_true_moving": 0.34846166112937466
+        },
+        "carry": {
+          "center_mae_pp": 0.7066548647631423,
+          "center_bias_pp": -0.7066548647631423,
+          "predicted_center_pp": 6.486080520651769,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 2.9229873761208904,
+          "w1_pp": 0.9814357870459682,
+          "delta_w1_pp": 2.92298737612089,
+          "across_person_iqr_pp": 6.336640658543288,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.7083053587743304,
+          "center_bias_pp": -0.7083053587743304,
+          "predicted_center_pp": 6.484430026640581,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 2.9818288185386272,
+          "w1_pp": 1.5264770404619792,
+          "delta_w1_pp": 1.850078272259709,
+          "across_person_iqr_pp": 5.463183115762222,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.5622070380369429,
+          "missed_move_given_true_moving": 0.34653715446123473,
+          "opposite_direction_given_true_moving": 0.2128795005373659
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 7.7324706218629515,
+        "news_randomized": 7.763720944936891
+      }
+    },
+    {
+      "month": 202206,
+      "repeat": 2,
+      "n": 96,
+      "effective_n": 65.341160366487,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.37119178609678194,
+          "center_bias_pp": 0.37119178609678194,
+          "predicted_center_pp": 7.563927171511693,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 3.4864696961440007,
+          "w1_pp": 2.940994421459682,
+          "delta_w1_pp": 1.5421752997406526,
+          "across_person_iqr_pp": 3.7041677667530664,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.5602752102797447,
+          "missed_move_given_true_moving": 0.2269322709545647,
+          "opposite_direction_given_true_moving": 0.3375105427761824
+        },
+        "news_matched": {
+          "center_mae_pp": 0.16781155314237584,
+          "center_bias_pp": 0.16781155314237584,
+          "predicted_center_pp": 7.360546938557287,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 3.563056754517575,
+          "w1_pp": 2.991137548619153,
+          "delta_w1_pp": 1.5474630268328289,
+          "across_person_iqr_pp": 3.3439693393500436,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.5621785382142741,
+          "missed_move_given_true_moving": 0.3825523370900555,
+          "opposite_direction_given_true_moving": 0.2696172337984692
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.171966621252718,
+          "center_bias_pp": 0.171966621252718,
+          "predicted_center_pp": 7.364702006667629,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 3.5373064682749042,
+          "w1_pp": 3.035357138299103,
+          "delta_w1_pp": 1.397992720552148,
+          "across_person_iqr_pp": 3.403355195576923,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.6049418316317312,
+          "missed_move_given_true_moving": 0.23560457709718446,
+          "opposite_direction_given_true_moving": 0.35818945118768536
+        },
+        "carry": {
+          "center_mae_pp": 0.7066548647631423,
+          "center_bias_pp": -0.7066548647631423,
+          "predicted_center_pp": 6.486080520651769,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 2.9229873761208904,
+          "w1_pp": 0.9814357870459682,
+          "delta_w1_pp": 2.92298737612089,
+          "across_person_iqr_pp": 6.336640658543288,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.7083053587743304,
+          "center_bias_pp": -0.7083053587743304,
+          "predicted_center_pp": 6.484430026640581,
+          "truth_center_pp": 7.192735385414911,
+          "personal_mae_pp": 2.9818288185386272,
+          "w1_pp": 1.5264770404619792,
+          "delta_w1_pp": 1.850078272259709,
+          "across_person_iqr_pp": 5.463183115762222,
+          "truth_across_person_iqr_pp": 5.6256585722640065,
+          "wrong_move_given_true_stable": 0.5622070380369429,
+          "missed_move_given_true_moving": 0.34653715446123473,
+          "opposite_direction_given_true_moving": 0.2128795005373659
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 7.7324706218629515,
+        "news_randomized": 7.763720944936891
+      }
+    },
+    {
+      "month": 202312,
+      "repeat": 1,
+      "n": 96,
+      "effective_n": 55.34472249715061,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.04353373132577687,
+          "center_bias_pp": 0.04353373132577687,
+          "predicted_center_pp": 3.043533731325777,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.7344536209663852,
+          "w1_pp": 1.9881277918948854,
+          "delta_w1_pp": 0.7062961284552858,
+          "across_person_iqr_pp": 1.9332244136570544,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.6704707888334428,
+          "missed_move_given_true_moving": 0.40936892346830417,
+          "opposite_direction_given_true_moving": 0.13669857962245968
+        },
+        "news_matched": {
+          "center_mae_pp": 0.06045295644600479,
+          "center_bias_pp": 0.06045295644600479,
+          "predicted_center_pp": 3.060452956446005,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.763914022698057,
+          "w1_pp": 2.025281045736061,
+          "delta_w1_pp": 0.5198711361347014,
+          "across_person_iqr_pp": 2.0112702044877135,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.7256593783366265,
+          "missed_move_given_true_moving": 0.3617572992298496,
+          "opposite_direction_given_true_moving": 0.17775518187668615
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.010194013091043175,
+          "center_bias_pp": -0.010194013091043175,
+          "predicted_center_pp": 2.989805986908957,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.771632679754636,
+          "w1_pp": 2.184765898175929,
+          "delta_w1_pp": 0.6532405828309682,
+          "across_person_iqr_pp": 1.7977940102110859,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.7997862950307248,
+          "missed_move_given_true_moving": 0.35210614809594515,
+          "opposite_direction_given_true_moving": 0.1634771223625742
+        },
+        "carry": {
+          "center_mae_pp": 0.0,
+          "center_bias_pp": 0.0,
+          "predicted_center_pp": 3.0,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.2793802037735675,
+          "w1_pp": 0.6508712048297278,
+          "delta_w1_pp": 2.2793802037735684,
+          "across_person_iqr_pp": 5.714263847259619,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.2999999999999998,
+          "center_bias_pp": 0.2999999999999998,
+          "predicted_center_pp": 3.3,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.156389311468974,
+          "w1_pp": 0.6266263316847279,
+          "delta_w1_pp": 1.5640574419550353,
+          "across_person_iqr_pp": 5.142176896251348,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.3028645521071054,
+          "missed_move_given_true_moving": 0.4439140166454952,
+          "opposite_direction_given_true_moving": 0.1699631878574633
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 7.475567230337428,
+        "news_randomized": 7.48906132150928
+      }
+    },
+    {
+      "month": 202312,
+      "repeat": 2,
+      "n": 96,
+      "effective_n": 55.34472249715061,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.03222621826798022,
+          "center_bias_pp": -0.03222621826798022,
+          "predicted_center_pp": 2.9677737817320198,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.7327115684313155,
+          "w1_pp": 2.0011888552493104,
+          "delta_w1_pp": 0.6635173828516282,
+          "across_person_iqr_pp": 2.1051093014733766,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.6737442765412605,
+          "missed_move_given_true_moving": 0.3577974877975328,
+          "opposite_direction_given_true_moving": 0.17499772323382454
+        },
+        "news_matched": {
+          "center_mae_pp": 0.3162298209522083,
+          "center_bias_pp": 0.3162298209522083,
+          "predicted_center_pp": 3.3162298209522083,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.6796693862063314,
+          "w1_pp": 2.1205117319073947,
+          "delta_w1_pp": 0.6388789176752665,
+          "across_person_iqr_pp": 2.1218503628659953,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.6649480602647179,
+          "missed_move_given_true_moving": 0.3328236792077344,
+          "opposite_direction_given_true_moving": 0.1635752598570949
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.00791278294201092,
+          "center_bias_pp": 0.00791278294201092,
+          "predicted_center_pp": 3.007912782942011,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.7492108880084225,
+          "w1_pp": 2.1294438654502104,
+          "delta_w1_pp": 0.6943684615167554,
+          "across_person_iqr_pp": 1.969464746805663,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.8384737750291759,
+          "missed_move_given_true_moving": 0.392525103374856,
+          "opposite_direction_given_true_moving": 0.14901803443584952
+        },
+        "carry": {
+          "center_mae_pp": 0.0,
+          "center_bias_pp": 0.0,
+          "predicted_center_pp": 3.0,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.2793802037735675,
+          "w1_pp": 0.6508712048297278,
+          "delta_w1_pp": 2.2793802037735684,
+          "across_person_iqr_pp": 5.714263847259619,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.2999999999999998,
+          "center_bias_pp": 0.2999999999999998,
+          "predicted_center_pp": 3.3,
+          "truth_center_pp": 3.0,
+          "personal_mae_pp": 2.156389311468974,
+          "w1_pp": 0.6266263316847279,
+          "delta_w1_pp": 1.5640574419550353,
+          "across_person_iqr_pp": 5.142176896251348,
+          "truth_across_person_iqr_pp": 3.826349598141393,
+          "wrong_move_given_true_stable": 0.3028645521071054,
+          "missed_move_given_true_moving": 0.4439140166454952,
+          "opposite_direction_given_true_moving": 0.1699631878574633
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 7.475567230337428,
+        "news_randomized": 7.48906132150928
+      }
+    },
+    {
+      "month": 202410,
+      "repeat": 1,
+      "n": 94,
+      "effective_n": 68.16727606525608,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.10123564480190694,
+          "center_bias_pp": -0.10123564480190694,
+          "predicted_center_pp": 2.8938435511501304,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.8876136608889893,
+          "w1_pp": 2.1333719482201774,
+          "delta_w1_pp": 1.0525962378793177,
+          "across_person_iqr_pp": 1.851802554966822,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.4782937621352989,
+          "missed_move_given_true_moving": 0.20282542078635094,
+          "opposite_direction_given_true_moving": 0.24974827762043705
+        },
+        "news_matched": {
+          "center_mae_pp": 0.04725509598381983,
+          "center_bias_pp": 0.04725509598381983,
+          "predicted_center_pp": 3.042334291935857,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.7842306596391095,
+          "w1_pp": 1.9974986768720655,
+          "delta_w1_pp": 0.7736213524226339,
+          "across_person_iqr_pp": 2.1290932074344324,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.46304965899674344,
+          "missed_move_given_true_moving": 0.25397306133795094,
+          "opposite_direction_given_true_moving": 0.23476583493010594
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.09690167309965592,
+          "center_bias_pp": -0.09690167309965592,
+          "predicted_center_pp": 2.8981775228523814,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.6697016293454134,
+          "w1_pp": 1.832924052106529,
+          "delta_w1_pp": 0.9484511013061446,
+          "across_person_iqr_pp": 1.9895212627334082,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.33795506461200714,
+          "missed_move_given_true_moving": 0.2666398138003542,
+          "opposite_direction_given_true_moving": 0.2177600244852543
+        },
+        "carry": {
+          "center_mae_pp": 0.20151740834927523,
+          "center_bias_pp": 0.20151740834927523,
+          "predicted_center_pp": 3.1965966043013125,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.880917178053741,
+          "w1_pp": 1.1447258944252703,
+          "delta_w1_pp": 2.8809171780537404,
+          "across_person_iqr_pp": 4.492546105967146,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.6398039461561718,
+          "center_bias_pp": 0.6398039461561718,
+          "predicted_center_pp": 3.634883142108209,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.8195626202601063,
+          "w1_pp": 1.6111284273821491,
+          "delta_w1_pp": 2.1162603085054075,
+          "across_person_iqr_pp": 3.848056498834308,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.3370246882224647,
+          "missed_move_given_true_moving": 0.3919026757770446,
+          "opposite_direction_given_true_moving": 0.20351019514660487
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 7.917168041242509,
+        "news_randomized": 7.84201718015964
+      }
+    },
+    {
+      "month": 202410,
+      "repeat": 2,
+      "n": 94,
+      "effective_n": 68.16727606525608,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.09844588157526779,
+          "center_bias_pp": -0.09844588157526779,
+          "predicted_center_pp": 2.8966333143767695,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.73036390778435,
+          "w1_pp": 2.012585753927537,
+          "delta_w1_pp": 0.8279354526705998,
+          "across_person_iqr_pp": 2.2051262864090906,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.40172749039880035,
+          "missed_move_given_true_moving": 0.254384475679453,
+          "opposite_direction_given_true_moving": 0.21761199347659507
+        },
+        "news_matched": {
+          "center_mae_pp": 0.09932938391406765,
+          "center_bias_pp": -0.09932938391406765,
+          "predicted_center_pp": 2.8957498120379697,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.8843173714204178,
+          "w1_pp": 2.0349975658867256,
+          "delta_w1_pp": 0.948252351605835,
+          "across_person_iqr_pp": 2.1821948439771544,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.4928594671088761,
+          "missed_move_given_true_moving": 0.25311897685647283,
+          "opposite_direction_given_true_moving": 0.2286645800657588
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.05740429205197639,
+          "center_bias_pp": -0.05740429205197639,
+          "predicted_center_pp": 2.937674903900061,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.8225455035984255,
+          "w1_pp": 2.1040966922148865,
+          "delta_w1_pp": 0.8624117210584896,
+          "across_person_iqr_pp": 1.8956208678059792,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.5770323380115344,
+          "missed_move_given_true_moving": 0.23784639599110038,
+          "opposite_direction_given_true_moving": 0.21705680782724582
+        },
+        "carry": {
+          "center_mae_pp": 0.20151740834927523,
+          "center_bias_pp": 0.20151740834927523,
+          "predicted_center_pp": 3.1965966043013125,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.880917178053741,
+          "w1_pp": 1.1447258944252703,
+          "delta_w1_pp": 2.8809171780537404,
+          "across_person_iqr_pp": 4.492546105967146,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.6398039461561718,
+          "center_bias_pp": 0.6398039461561718,
+          "predicted_center_pp": 3.634883142108209,
+          "truth_center_pp": 2.9950791959520373,
+          "personal_mae_pp": 2.8195626202601063,
+          "w1_pp": 1.6111284273821491,
+          "delta_w1_pp": 2.1162603085054075,
+          "across_person_iqr_pp": 3.848056498834308,
+          "truth_across_person_iqr_pp": 5.080486089522718,
+          "wrong_move_given_true_stable": 0.3370246882224647,
+          "missed_move_given_true_moving": 0.3919026757770446,
+          "opposite_direction_given_true_moving": 0.20351019514660487
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 7.917168041242509,
+        "news_randomized": 7.84201718015964
+      }
+    },
+    {
+      "month": 202503,
+      "repeat": 1,
+      "n": 96,
+      "effective_n": 61.07498027133634,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.8661823322589299,
+          "center_bias_pp": -0.8661823322589299,
+          "predicted_center_pp": 3.1788577557485542,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 4.951531996002503,
+          "w1_pp": 4.349637382630883,
+          "delta_w1_pp": 3.091307405179073,
+          "across_person_iqr_pp": 2.487258393585595,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.742016803940233,
+          "missed_move_given_true_moving": 0.34456767340507843,
+          "opposite_direction_given_true_moving": 0.17309685911119438
+        },
+        "news_matched": {
+          "center_mae_pp": 0.6604840006369521,
+          "center_bias_pp": -0.6604840006369521,
+          "predicted_center_pp": 3.384556087370532,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 5.742146111129784,
+          "w1_pp": 4.743268232454053,
+          "delta_w1_pp": 3.6046980142594105,
+          "across_person_iqr_pp": 2.2857085868132714,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.7101812422727556,
+          "missed_move_given_true_moving": 0.4507163471507804,
+          "opposite_direction_given_true_moving": 0.14441341743337893
+        },
+        "news_randomized": {
+          "center_mae_pp": 0.9830314513729217,
+          "center_bias_pp": -0.9830314513729217,
+          "predicted_center_pp": 3.0620086366345625,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 4.7656884841345,
+          "w1_pp": 4.077823661965216,
+          "delta_w1_pp": 2.8306744101682817,
+          "across_person_iqr_pp": 2.7016744361486342,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.727320740273073,
+          "missed_move_given_true_moving": 0.47703260931565505,
+          "opposite_direction_given_true_moving": 0.13423598326144387
+        },
+        "carry": {
+          "center_mae_pp": 0.2360230936325367,
+          "center_bias_pp": -0.2360230936325367,
+          "predicted_center_pp": 3.8090169943749475,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 3.0040210340427036,
+          "w1_pp": 1.1886185259842739,
+          "delta_w1_pp": 3.0040210340427063,
+          "across_person_iqr_pp": 8.132333337323743,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.37089279346701254,
+          "center_bias_pp": -0.37089279346701254,
+          "predicted_center_pp": 3.6741472945404716,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 3.4343064209941416,
+          "w1_pp": 1.7993821721306285,
+          "delta_w1_pp": 1.7147941129370816,
+          "across_person_iqr_pp": 7.446352664020883,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.5698419939440378,
+          "missed_move_given_true_moving": 0.44189324611469827,
+          "opposite_direction_given_true_moving": 0.1110855064313933
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 6.638506538222207,
+        "news_randomized": 6.674111952441601
+      }
+    },
+    {
+      "month": 202503,
+      "repeat": 2,
+      "n": 96,
+      "effective_n": 61.07498027133634,
+      "arms": {
+        "baseline": {
+          "center_mae_pp": 0.9436149215501786,
+          "center_bias_pp": -0.9436149215501786,
+          "predicted_center_pp": 3.1014251664573056,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 4.7496663404410615,
+          "w1_pp": 4.084761270559736,
+          "delta_w1_pp": 2.8822300091392963,
+          "across_person_iqr_pp": 2.554425113162597,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.7543036503513122,
+          "missed_move_given_true_moving": 0.32119612057787694,
+          "opposite_direction_given_true_moving": 0.14821840530897779
+        },
+        "news_matched": {
+          "center_mae_pp": 0.8009287205867182,
+          "center_bias_pp": -0.8009287205867182,
+          "predicted_center_pp": 3.244111367420766,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 4.809366900719346,
+          "w1_pp": 4.119088880010709,
+          "delta_w1_pp": 2.9189804944424083,
+          "across_person_iqr_pp": 3.2494403668291616,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.6306770134637183,
+          "missed_move_given_true_moving": 0.3387893566000227,
+          "opposite_direction_given_true_moving": 0.15680289567682545
+        },
+        "news_randomized": {
+          "center_mae_pp": 1.0238269627577026,
+          "center_bias_pp": -1.0238269627577026,
+          "predicted_center_pp": 3.0212131252497816,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 5.004145381613087,
+          "w1_pp": 4.152424769875582,
+          "delta_w1_pp": 2.9755944800062437,
+          "across_person_iqr_pp": 2.805844051207739,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.7090966587382809,
+          "missed_move_given_true_moving": 0.4855661617266551,
+          "opposite_direction_given_true_moving": 0.13459813032798124
+        },
+        "carry": {
+          "center_mae_pp": 0.2360230936325367,
+          "center_bias_pp": -0.2360230936325367,
+          "predicted_center_pp": 3.8090169943749475,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 3.0040210340427036,
+          "w1_pp": 1.1886185259842739,
+          "delta_w1_pp": 3.0040210340427063,
+          "across_person_iqr_pp": 8.132333337323743,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.0,
+          "missed_move_given_true_moving": 1.0,
+          "opposite_direction_given_true_moving": 0.0
+        },
+        "history_anchor_half": {
+          "center_mae_pp": 0.37089279346701254,
+          "center_bias_pp": -0.37089279346701254,
+          "predicted_center_pp": 3.6741472945404716,
+          "truth_center_pp": 4.045040088007484,
+          "personal_mae_pp": 3.4343064209941416,
+          "w1_pp": 1.7993821721306285,
+          "delta_w1_pp": 1.7147941129370816,
+          "across_person_iqr_pp": 7.446352664020883,
+          "truth_across_person_iqr_pp": 5.9350183828176215,
+          "wrong_move_given_true_stable": 0.5698419939440378,
+          "missed_move_given_true_moving": 0.44189324611469827,
+          "opposite_direction_given_true_moving": 0.1110855064313933
+        }
+      },
+      "weighted_news_on_common_support": {
+        "baseline": 8.0,
+        "news_matched": 6.638506538222207,
+        "news_randomized": 6.674111952441601
+      }
+    }
+  ],
+  "generation_sensitivity": {
+    "1": {
+      "carry": {
+        "center_mae_pp": 0.3690717396933591,
+        "center_bias_pp": -0.3018992702436007,
+        "predicted_center_pp": 3.9527349335538045,
+        "truth_center_pp": 4.254634203797405,
+        "personal_mae_pp": 2.7211012261856076,
+        "w1_pp": 0.9516828822874303,
+        "delta_w1_pp": 2.7211012261856076,
+        "across_person_iqr_pp": 5.583236536995543,
+        "truth_across_person_iqr_pp": 4.710409896991195,
+        "wrong_move_given_true_stable": 0.0,
+        "missed_move_given_true_moving": 1.0,
+        "opposite_direction_given_true_moving": 0.0
+      },
+      "history_anchor_half": {
+        "center_mae_pp": 0.5307122646722663,
+        "center_bias_pp": -0.21744428262020912,
+        "predicted_center_pp": 4.0371899211771956,
+        "truth_center_pp": 4.254634203797405,
+        "personal_mae_pp": 2.7158027020651136,
+        "w1_pp": 1.241403285055435,
+        "delta_w1_pp": 1.8183026388148813,
+        "across_person_iqr_pp": 4.949681226301116,
+        "truth_across_person_iqr_pp": 4.710409896991195,
+        "wrong_move_given_true_stable": 0.3884464621318758,
+        "missed_move_given_true_moving": 0.4513864445071003,
+        "opposite_direction_given_true_moving": 0.16181675274404766
+      },
+      "baseline": {
+        "center_mae_pp": 0.40742956205609654,
+        "center_bias_pp": -0.23806572461041334,
+        "predicted_center_pp": 4.016568479186991,
+        "truth_center_pp": 4.254634203797405,
+        "personal_mae_pp": 3.3457082258761144,
+        "w1_pp": 2.552907346635433,
+        "delta_w1_pp": 1.505012273742811,
+        "across_person_iqr_pp": 2.434232079663843,
+        "truth_across_person_iqr_pp": 4.710409896991195,
+        "wrong_move_given_true_stable": 0.6226081045739366,
+        "missed_move_given_true_moving": 0.3325722844444717,
+        "opposite_direction_given_true_moving": 0.21549247757667755
+      },
+      "news_matched": {
+        "center_mae_pp": 0.30159217938903976,
+        "center_bias_pp": -0.17988127312763882,
+        "predicted_center_pp": 4.074752930669767,
+        "truth_center_pp": 4.254634203797405,
+        "personal_mae_pp": 3.359847843266058,
+        "w1_pp": 2.5473136620007164,
+        "delta_w1_pp": 1.487730833376954,
+        "across_person_iqr_pp": 2.373089152807941,
+        "truth_across_person_iqr_pp": 4.710409896991195,
+        "wrong_move_given_true_stable": 0.5991677819209925,
+        "missed_move_given_true_moving": 0.3697402963667111,
+        "opposite_direction_given_true_moving": 0.21376832565020265
+      },
+      "news_randomized": {
+        "center_mae_pp": 0.3507756504447803,
+        "center_bias_pp": -0.30132863674938104,
+        "predicted_center_pp": 3.9533055670480244,
+        "truth_center_pp": 4.254634203797405,
+        "personal_mae_pp": 3.14414683562824,
+        "w1_pp": 2.465138785444641,
+        "delta_w1_pp": 1.4041463472986875,
+        "across_person_iqr_pp": 2.4287249500337267,
+        "truth_across_person_iqr_pp": 4.710409896991195,
+        "wrong_move_given_true_stable": 0.6074419726312219,
+        "missed_move_given_true_moving": 0.3436075503924918,
+        "opposite_direction_given_true_moving": 0.20127214816666672
+      }
+    },
+    "2": {
+      "carry": {
+        "center_mae_pp": 0.3690717396933591,
+        "center_bias_pp": -0.3018992702436007,
+        "predicted_center_pp": 3.9527349335538045,
+        "truth_center_pp": 4.254634203797405,
+        "personal_mae_pp": 2.7211012261856076,
+        "w1_pp": 0.9516828822874303,
+        "delta_w1_pp": 2.7211012261856076,
+        "across_person_iqr_pp": 5.583236536995543,
+        "truth_across_person_iqr_pp": 4.710409896991195,
+        "wrong_move_given_true_stable": 0.0,
+        "missed_move_given_true_moving": 1.0,
+        "opposite_direction_given_true_moving": 0.0
+      },
+      "history_anchor_half": {
+        "center_mae_pp": 0.5307122646722663,
+        "center_bias_pp": -0.21744428262020912,
+        "predicted_center_pp": 4.0371899211771956,
+        "truth_center_pp": 4.254634203797405,
+        "personal_mae_pp": 2.7158027020651136,
+        "w1_pp": 1.241403285055435,
+        "delta_w1_pp": 1.8183026388148813,
+        "across_person_iqr_pp": 4.949681226301116,
+        "truth_across_person_iqr_pp": 4.710409896991195,
+        "wrong_move_given_true_stable": 0.3884464621318758,
+        "missed_move_given_true_moving": 0.4513864445071003,
+        "opposite_direction_given_true_moving": 0.16181675274404766
+      },
+      "baseline": {
+        "center_mae_pp": 0.3711127235533227,
+        "center_bias_pp": -0.24738212818772873,
+        "predicted_center_pp": 4.007252075609675,
+        "truth_center_pp": 4.254634203797405,
+        "personal_mae_pp": 3.161519193592628,
+        "w1_pp": 2.45768846165732,
+        "delta_w1_pp": 1.434068980992296,
+        "across_person_iqr_pp": 2.487541220869749,
+        "truth_across_person_iqr_pp": 4.710409896991195,
+        "wrong_move_given_true_stable": 0.5991228344303302,
+        "missed_move_given_true_moving": 0.30944843859168203,
+        "opposite_direction_given_true_moving": 0.2107126468163408
+      },
+      "news_matched": {
+        "center_mae_pp": 0.40628085402591135,
+        "center_bias_pp": -0.24493372932771665,
+        "predicted_center_pp": 4.009700474469689,
+        "truth_center_pp": 4.254634203797405,
+        "personal_mae_pp": 3.2245788669510396,
+        "w1_pp": 2.51362696051064,
+        "delta_w1_pp": 1.4582082184185154,
+        "across_person_iqr_pp": 2.5557131407436384,
+        "truth_across_person_iqr_pp": 4.710409896991195,
+        "wrong_move_given_true_stable": 0.5863514293867627,
+        "missed_move_given_true_moving": 0.33879303169060365,
+        "opposite_direction_given_true_moving": 0.20739807736999616
+      },
+      "news_randomized": {
+        "center_mae_pp": 0.32695490884300593,
+        "center_bias_pp": -0.26699510744476296,
+        "predicted_center_pp": 3.9876390963526425,
+        "truth_center_pp": 4.254634203797405,
+        "personal_mae_pp": 3.2101693669439526,
+        "w1_pp": 2.4926439894376866,
+        "delta_w1_pp": 1.3857798707763456,
+        "across_person_iqr_pp": 2.4644434212544177,
+        "truth_across_person_iqr_pp": 4.710409896991195,
+        "wrong_move_given_true_stable": 0.6398106649173733,
+        "missed_move_given_true_moving": 0.3648927312017531,
+        "opposite_direction_given_true_moving": 0.20752510030406024
+      }
+    }
+  },
+  "prespecified_contrasts": {
+    "news_matched_minus_news_randomized": {
+      "difference": {
+        "center_mae_pp": 0.015071237063582432,
+        "center_bias_pp": 0.07175437086939426,
+        "predicted_center_pp": 0.07175437086939462,
+        "truth_center_pp": 0.0,
+        "personal_mae_pp": 0.11505525382245274,
+        "w1_pp": 0.051578923814514344,
+        "delta_w1_pp": 0.07800641686021792,
+        "across_person_iqr_pp": 0.017816961131717157,
+        "truth_across_person_iqr_pp": 0.0,
+        "wrong_move_given_true_stable": -0.030866713120419886,
+        "missed_move_given_true_moving": 1.6523231534837368e-05,
+        "opposite_direction_given_true_moving": 0.006184577274735953
+      },
+      "paired_interval_from_shared_evaluator": {
+        "draws_used": 1000,
+        "seed": 20261017,
+        "intervals": {
+          "q9_center_mae_pp": [
+            -0.09227877910425782,
+            0.1399558245239589
+          ],
+          "individual_density_mean_mae_pp": [
+            -0.0010021626222904067,
+            0.24433959373479897
+          ],
+          "cross_section_w1_pp": [
+            -0.04282731771603552,
+            0.18327565643855617
+          ]
+        },
+        "scope": "Exploratory unadjusted paired person clusters, months/repeats kept together; not time-generalization intervals."
+      },
+      "monthly_center_nonworse": 2,
+      "leave_one_month_out_center_difference": {
+        "202009": 0.006390553473294425,
+        "202109": 0.002728667039234356,
+        "202206": 0.0075926287605151185,
+        "202312": -0.01777211366021696,
+        "202410": 0.018857633001673424,
+        "202503": 0.07263005376699434
+      }
+    },
+    "news_randomized_minus_baseline": {
+      "difference": {
+        "center_mae_pp": -0.050405863160816466,
+        "center_bias_pp": -0.041437945698000966,
+        "predicted_center_pp": -0.04143794569800052,
+        "truth_center_pp": 0.0,
+        "personal_mae_pp": -0.07645560844827459,
+        "w1_pp": -0.026406516705212546,
+        "delta_w1_pp": -0.07457751833003701,
+        "across_person_iqr_pp": -0.014302464622723221,
+        "truth_across_person_iqr_pp": 0.0,
+        "wrong_move_given_true_stable": 0.012760849272164143,
+        "missed_move_given_true_moving": 0.033239779279045645,
+        "opposite_direction_given_true_moving": -0.008703937961145686
+      },
+      "paired_interval_from_shared_evaluator": {
+        "draws_used": 1000,
+        "seed": 20261017,
+        "intervals": {
+          "q9_center_mae_pp": [
+            -0.13292391317708202,
+            0.09367043038163177
+          ],
+          "individual_density_mean_mae_pp": [
+            -0.17488061648872974,
+            0.021789267772806275
+          ],
+          "cross_section_w1_pp": [
+            -0.12849280980133018,
+            0.05316808093175389
+          ]
+        },
+        "scope": "Exploratory unadjusted paired person clusters, months/repeats kept together; not time-generalization intervals."
+      },
+      "monthly_center_nonworse": 4,
+      "leave_one_month_out_center_difference": {
+        "202009": -0.03515566393424337,
+        "202109": -0.06747231778212326,
+        "202206": -0.008942845316065906,
+        "202312": -0.05472172043690948,
+        "202410": -0.05594947967042554,
+        "202503": -0.08019315182513136
+      }
+    },
+    "news_matched_minus_baseline": {
+      "difference": {
+        "center_mae_pp": -0.035334626097234034,
+        "center_bias_pp": 0.030316425171393296,
+        "predicted_center_pp": 0.0303164251713941,
+        "truth_center_pp": 0.0,
+        "personal_mae_pp": 0.03859964537417815,
+        "w1_pp": 0.025172407109301798,
+        "delta_w1_pp": 0.0034288985301809127,
+        "across_person_iqr_pp": 0.003514496508993936,
+        "truth_across_person_iqr_pp": 0.0,
+        "wrong_move_given_true_stable": -0.018105863848255743,
+        "missed_move_given_true_moving": 0.03325630251058048,
+        "opposite_direction_given_true_moving": -0.002519360686409733
+      },
+      "paired_interval_from_shared_evaluator": {
+        "draws_used": 1000,
+        "seed": 20261017,
+        "intervals": {
+          "q9_center_mae_pp": [
+            -0.12395384593368872,
+            0.1156175635528598
+          ],
+          "individual_density_mean_mae_pp": [
+            -0.0899502742085701,
+            0.16698528958733885
+          ],
+          "cross_section_w1_pp": [
+            -0.07761471431452198,
+            0.14543471204725356
+          ]
+        },
+        "scope": "Exploratory unadjusted paired person clusters, months/repeats kept together; not time-generalization intervals."
+      },
+      "monthly_center_nonworse": 4,
+      "leave_one_month_out_center_difference": {
+        "202009": -0.02876511046094894,
+        "202109": -0.0647436507428889,
+        "202206": -0.0013502165555507872,
+        "202312": -0.07249383409712644,
+        "202410": -0.037091846668752114,
+        "202503": -0.0075630980581370185
+      }
+    }
+  },
+  "development_screen_passed": false,
+  "automatic_upgrade": false,
+  "group_metrics": {
+    "education_group": {
+      "college": {
+        "cells_used": 12,
+        "min_cell_n": 49,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.7756956884471383,
+            "center_bias_pp": -0.2609076639688683,
+            "predicted_center_pp": 3.8896553831453047,
+            "truth_center_pp": 4.150563047114173,
+            "personal_mae_pp": 2.6772771367886468,
+            "w1_pp": 1.4142558466538577,
+            "delta_w1_pp": 2.6772771367886476,
+            "across_person_iqr_pp": 4.558786396365659,
+            "truth_across_person_iqr_pp": 3.500409307339402,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.8536155249745819,
+            "center_bias_pp": -0.39997937444288995,
+            "predicted_center_pp": 3.750583672671283,
+            "truth_center_pp": 4.150563047114173,
+            "personal_mae_pp": 2.6147621321693557,
+            "w1_pp": 1.4829178909056646,
+            "delta_w1_pp": 1.9787589867324773,
+            "across_person_iqr_pp": 4.045952727884497,
+            "truth_across_person_iqr_pp": 3.500409307339402,
+            "wrong_move_given_true_stable": 0.3833241305692432,
+            "missed_move_given_true_moving": 0.47413207865230067,
+            "opposite_direction_given_true_moving": 0.14274014277554756
+          },
+          "baseline": {
+            "center_mae_pp": 0.6009933346856878,
+            "center_bias_pp": -0.320200742691608,
+            "predicted_center_pp": 3.830362304422565,
+            "truth_center_pp": 4.150563047114173,
+            "personal_mae_pp": 2.581918843109658,
+            "w1_pp": 1.9246627425853229,
+            "delta_w1_pp": 1.272672470352179,
+            "across_person_iqr_pp": 1.9516425364019054,
+            "truth_across_person_iqr_pp": 3.500409307339402,
+            "wrong_move_given_true_stable": 0.5721610519376484,
+            "missed_move_given_true_moving": 0.328262366406375,
+            "opposite_direction_given_true_moving": 0.17348238245529535
+          },
+          "news_matched": {
+            "center_mae_pp": 0.5587968934632156,
+            "center_bias_pp": -0.30700938814992074,
+            "predicted_center_pp": 3.843553658964252,
+            "truth_center_pp": 4.150563047114173,
+            "personal_mae_pp": 2.5788522560465856,
+            "w1_pp": 1.887844230747689,
+            "delta_w1_pp": 1.331039819431417,
+            "across_person_iqr_pp": 2.214606161843332,
+            "truth_across_person_iqr_pp": 3.500409307339402,
+            "wrong_move_given_true_stable": 0.5830657835088855,
+            "missed_move_given_true_moving": 0.3523007154549141,
+            "opposite_direction_given_true_moving": 0.1595281734673538
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.5353440072194567,
+            "center_bias_pp": -0.33135680376251075,
+            "predicted_center_pp": 3.819206243351662,
+            "truth_center_pp": 4.150563047114173,
+            "personal_mae_pp": 2.527017520117775,
+            "w1_pp": 1.835866965412599,
+            "delta_w1_pp": 1.2886706469103795,
+            "across_person_iqr_pp": 1.900259366819543,
+            "truth_across_person_iqr_pp": 3.500409307339402,
+            "wrong_move_given_true_stable": 0.5680556819404021,
+            "missed_move_given_true_moving": 0.3542644349478565,
+            "opposite_direction_given_true_moving": 0.15083758318822335
+          }
+        },
+        "descriptive_only": true
+      },
+      "high_school": {
+        "cells_used": 12,
+        "min_cell_n": 8,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.8188629472670744,
+            "center_bias_pp": -0.6176614992328048,
+            "predicted_center_pp": 4.084995216290868,
+            "truth_center_pp": 4.702656715523673,
+            "personal_mae_pp": 2.626455662683076,
+            "w1_pp": 1.8686992338603128,
+            "delta_w1_pp": 2.6264556626830764,
+            "across_person_iqr_pp": 7.1468818856969465,
+            "truth_across_person_iqr_pp": 8.045332945162404,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 1.044785056714143,
+            "center_bias_pp": -0.2890499409055209,
+            "predicted_center_pp": 4.4136067746181515,
+            "truth_center_pp": 4.702656715523673,
+            "personal_mae_pp": 2.8051466911839733,
+            "w1_pp": 2.1250280999328113,
+            "delta_w1_pp": 2.238830793236405,
+            "across_person_iqr_pp": 6.707693299535617,
+            "truth_across_person_iqr_pp": 8.045332945162404,
+            "wrong_move_given_true_stable": 0.3703114075574953,
+            "missed_move_given_true_moving": 0.499785836174516,
+            "opposite_direction_given_true_moving": 0.1839316063819143
+          },
+          "baseline": {
+            "center_mae_pp": 0.6730040462498641,
+            "center_bias_pp": -0.2688071385521209,
+            "predicted_center_pp": 4.433849576971552,
+            "truth_center_pp": 4.702656715523673,
+            "personal_mae_pp": 3.813202403312316,
+            "w1_pp": 3.2861894148819584,
+            "delta_w1_pp": 2.5018981320897917,
+            "across_person_iqr_pp": 2.7522309675359673,
+            "truth_across_person_iqr_pp": 8.045332945162404,
+            "wrong_move_given_true_stable": 0.6774209428300868,
+            "missed_move_given_true_moving": 0.32940859223327634,
+            "opposite_direction_given_true_moving": 0.21569246571959763
+          },
+          "news_matched": {
+            "center_mae_pp": 0.6073668723550779,
+            "center_bias_pp": -0.31146078826234563,
+            "predicted_center_pp": 4.391195927261328,
+            "truth_center_pp": 4.702656715523673,
+            "personal_mae_pp": 3.8608586579987993,
+            "w1_pp": 3.2281996728152826,
+            "delta_w1_pp": 2.504165206300758,
+            "across_person_iqr_pp": 2.6768474821399693,
+            "truth_across_person_iqr_pp": 8.045332945162404,
+            "wrong_move_given_true_stable": 0.6526369859595864,
+            "missed_move_given_true_moving": 0.3902558874978072,
+            "opposite_direction_given_true_moving": 0.21369607272023436
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.672878932740522,
+            "center_bias_pp": -0.3600548692440082,
+            "predicted_center_pp": 4.342601846279666,
+            "truth_center_pp": 4.702656715523673,
+            "personal_mae_pp": 3.7498489308726977,
+            "w1_pp": 3.2676693649935196,
+            "delta_w1_pp": 2.3763172657526233,
+            "across_person_iqr_pp": 2.7463347714262625,
+            "truth_across_person_iqr_pp": 8.045332945162404,
+            "wrong_move_given_true_stable": 0.7568594179843281,
+            "missed_move_given_true_moving": 0.40997455611650163,
+            "opposite_direction_given_true_moving": 0.22307511174735886
+          }
+        },
+        "descriptive_only": true
+      },
+      "some_college": {
+        "cells_used": 12,
+        "min_cell_n": 24,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.8712792260074963,
+            "center_bias_pp": -0.13601481916317523,
+            "predicted_center_pp": 4.157591321176702,
+            "truth_center_pp": 4.293606140339878,
+            "personal_mae_pp": 2.8521052761381704,
+            "w1_pp": 1.3342377573704916,
+            "delta_w1_pp": 2.8521052761381704,
+            "across_person_iqr_pp": 5.584266341546083,
+            "truth_across_person_iqr_pp": 4.9066909019211105,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.6782804231130579,
+            "center_bias_pp": -0.09761705651920605,
+            "predicted_center_pp": 4.195989083820671,
+            "truth_center_pp": 4.293606140339878,
+            "personal_mae_pp": 2.6995980174358802,
+            "w1_pp": 1.4497062893930186,
+            "delta_w1_pp": 1.8497960740320358,
+            "across_person_iqr_pp": 5.7121258718736145,
+            "truth_across_person_iqr_pp": 4.9066909019211105,
+            "wrong_move_given_true_stable": 0.36638650606524087,
+            "missed_move_given_true_moving": 0.38252303246668945,
+            "opposite_direction_given_true_moving": 0.16088253281593828
+          },
+          "baseline": {
+            "center_mae_pp": 0.6333000708536934,
+            "center_bias_pp": -0.16601011518681055,
+            "predicted_center_pp": 4.127596025153068,
+            "truth_center_pp": 4.293606140339878,
+            "personal_mae_pp": 3.426458935394059,
+            "w1_pp": 2.659383778431392,
+            "delta_w1_pp": 1.6769985952939723,
+            "across_person_iqr_pp": 2.6136271669945654,
+            "truth_across_person_iqr_pp": 4.9066909019211105,
+            "wrong_move_given_true_stable": 0.6409723415490798,
+            "missed_move_given_true_moving": 0.31437022942928355,
+            "opposite_direction_given_true_moving": 0.2501867416481778
+          },
+          "news_matched": {
+            "center_mae_pp": 0.5277911676055161,
+            "center_bias_pp": -0.21997458267295203,
+            "predicted_center_pp": 4.073631557666926,
+            "truth_center_pp": 4.293606140339878,
+            "personal_mae_pp": 3.483139820424478,
+            "w1_pp": 2.8259019543917865,
+            "delta_w1_pp": 1.7419357622849596,
+            "across_person_iqr_pp": 2.418581342228192,
+            "truth_across_person_iqr_pp": 4.9066909019211105,
+            "wrong_move_given_true_stable": 0.5603150902899522,
+            "missed_move_given_true_moving": 0.31406928895412084,
+            "opposite_direction_given_true_moving": 0.2735815398701125
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.6269745352294538,
+            "center_bias_pp": -0.23115092525857875,
+            "predicted_center_pp": 4.062455215081299,
+            "truth_center_pp": 4.293606140339878,
+            "personal_mae_pp": 3.289478019479924,
+            "w1_pp": 2.6324488752544974,
+            "delta_w1_pp": 1.6531127776723604,
+            "across_person_iqr_pp": 2.6645539067218755,
+            "truth_across_person_iqr_pp": 4.9066909019211105,
+            "wrong_move_given_true_stable": 0.603692759860873,
+            "missed_move_given_true_moving": 0.3400869153772612,
+            "opposite_direction_given_true_moving": 0.23930209211660583
+          }
+        },
+        "descriptive_only": true
+      }
+    },
+    "age_group": {
+      "40 to 60": {
+        "cells_used": 12,
+        "min_cell_n": 35,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.546884042471482,
+            "center_bias_pp": -0.4699728801519598,
+            "predicted_center_pp": 3.864733454025276,
+            "truth_center_pp": 4.334706334177235,
+            "personal_mae_pp": 3.2581858363765135,
+            "w1_pp": 1.7342327945094678,
+            "delta_w1_pp": 3.2581858363765135,
+            "across_person_iqr_pp": 5.945348028955153,
+            "truth_across_person_iqr_pp": 5.582893690794964,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.79950790118091,
+            "center_bias_pp": -0.479750769181466,
+            "predicted_center_pp": 3.8549555649957683,
+            "truth_center_pp": 4.334706334177235,
+            "personal_mae_pp": 3.293008776264862,
+            "w1_pp": 1.8751747286423373,
+            "delta_w1_pp": 2.3336136877393443,
+            "across_person_iqr_pp": 5.96450573869351,
+            "truth_across_person_iqr_pp": 5.582893690794964,
+            "wrong_move_given_true_stable": 0.4306568933751889,
+            "missed_move_given_true_moving": 0.39414277782292545,
+            "opposite_direction_given_true_moving": 0.2322145017454009
+          },
+          "baseline": {
+            "center_mae_pp": 0.7011921488556548,
+            "center_bias_pp": -0.41565921057478716,
+            "predicted_center_pp": 3.919047123602448,
+            "truth_center_pp": 4.334706334177235,
+            "personal_mae_pp": 3.512418562778258,
+            "w1_pp": 2.9583852950988647,
+            "delta_w1_pp": 1.9252217575598465,
+            "across_person_iqr_pp": 2.4301514746058204,
+            "truth_across_person_iqr_pp": 5.582893690794964,
+            "wrong_move_given_true_stable": 0.6051383308602233,
+            "missed_move_given_true_moving": 0.2801257198370426,
+            "opposite_direction_given_true_moving": 0.21500915960847225
+          },
+          "news_matched": {
+            "center_mae_pp": 0.7654329871913087,
+            "center_bias_pp": -0.4098777144923765,
+            "predicted_center_pp": 3.924828619684858,
+            "truth_center_pp": 4.334706334177235,
+            "personal_mae_pp": 3.5251624821809364,
+            "w1_pp": 3.0163867590295426,
+            "delta_w1_pp": 1.9064473106733775,
+            "across_person_iqr_pp": 2.4170219649157016,
+            "truth_across_person_iqr_pp": 5.582893690794964,
+            "wrong_move_given_true_stable": 0.6241339964968277,
+            "missed_move_given_true_moving": 0.2916793229934916,
+            "opposite_direction_given_true_moving": 0.2249933398430096
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.7466601768179922,
+            "center_bias_pp": -0.4747906390090273,
+            "predicted_center_pp": 3.859915695168207,
+            "truth_center_pp": 4.334706334177235,
+            "personal_mae_pp": 3.4685415263146875,
+            "w1_pp": 2.958164727153166,
+            "delta_w1_pp": 1.8962081301844942,
+            "across_person_iqr_pp": 2.4810770743426063,
+            "truth_across_person_iqr_pp": 5.582893690794964,
+            "wrong_move_given_true_stable": 0.6230623471362365,
+            "missed_move_given_true_moving": 0.313771919267077,
+            "opposite_direction_given_true_moving": 0.21521663065297547
+          }
+        },
+        "descriptive_only": true
+      },
+      "Over 60": {
+        "cells_used": 12,
+        "min_cell_n": 22,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.5545030422955374,
+            "center_bias_pp": -0.24779148170277798,
+            "predicted_center_pp": 3.892805360112204,
+            "truth_center_pp": 4.140596841814983,
+            "personal_mae_pp": 2.376459111846268,
+            "w1_pp": 1.0902507859430373,
+            "delta_w1_pp": 2.3764591118462675,
+            "across_person_iqr_pp": 4.379572550070622,
+            "truth_across_person_iqr_pp": 4.419859145693784,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.777161774011024,
+            "center_bias_pp": -0.2680263829607618,
+            "predicted_center_pp": 3.87257045885422,
+            "truth_center_pp": 4.140596841814983,
+            "personal_mae_pp": 2.372369878011808,
+            "w1_pp": 1.3310615906926966,
+            "delta_w1_pp": 1.7358170183355013,
+            "across_person_iqr_pp": 4.225453994082737,
+            "truth_across_person_iqr_pp": 4.419859145693784,
+            "wrong_move_given_true_stable": 0.4320554799502802,
+            "missed_move_given_true_moving": 0.5346490534435967,
+            "opposite_direction_given_true_moving": 0.08118649181574451
+          },
+          "baseline": {
+            "center_mae_pp": 0.5080231478521379,
+            "center_bias_pp": -0.019324841553277,
+            "predicted_center_pp": 4.121272000261706,
+            "truth_center_pp": 4.140596841814983,
+            "personal_mae_pp": 3.0337198687325304,
+            "w1_pp": 2.285176013616844,
+            "delta_w1_pp": 1.7127297480548245,
+            "across_person_iqr_pp": 2.265315092319788,
+            "truth_across_person_iqr_pp": 4.419859145693784,
+            "wrong_move_given_true_stable": 0.6462539419427696,
+            "missed_move_given_true_moving": 0.3643807009739663,
+            "opposite_direction_given_true_moving": 0.20539652047871618
+          },
+          "news_matched": {
+            "center_mae_pp": 0.4537092297537348,
+            "center_bias_pp": -0.1911667724115856,
+            "predicted_center_pp": 3.949430069403397,
+            "truth_center_pp": 4.140596841814983,
+            "personal_mae_pp": 3.05112420939949,
+            "w1_pp": 2.3085128506818813,
+            "delta_w1_pp": 1.7577637768001804,
+            "across_person_iqr_pp": 2.130380327091546,
+            "truth_across_person_iqr_pp": 4.419859145693784,
+            "wrong_move_given_true_stable": 0.5814313636974521,
+            "missed_move_given_true_moving": 0.44252485772471645,
+            "opposite_direction_given_true_moving": 0.1714147377813686
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.36105504591085064,
+            "center_bias_pp": 0.027620328549990452,
+            "predicted_center_pp": 4.168217170364973,
+            "truth_center_pp": 4.140596841814983,
+            "personal_mae_pp": 2.873646616990918,
+            "w1_pp": 2.1758402738684666,
+            "delta_w1_pp": 1.63622767470034,
+            "across_person_iqr_pp": 2.1921595873230433,
+            "truth_across_person_iqr_pp": 4.419859145693784,
+            "wrong_move_given_true_stable": 0.6266368362432013,
+            "missed_move_given_true_moving": 0.4108921910849645,
+            "opposite_direction_given_true_moving": 0.17119488416818093
+          }
+        },
+        "descriptive_only": true
+      },
+      "Under 40": {
+        "cells_used": 12,
+        "min_cell_n": 24,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.645942644974349,
+            "center_bias_pp": 0.5589471582230866,
+            "predicted_center_pp": 4.514023126973335,
+            "truth_center_pp": 3.955075968750249,
+            "personal_mae_pp": 2.4665735184076905,
+            "w1_pp": 1.2789115125556652,
+            "delta_w1_pp": 2.46657351840769,
+            "across_person_iqr_pp": 6.470251317453773,
+            "truth_across_person_iqr_pp": 5.992066114550412,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.8217945693263283,
+            "center_bias_pp": 0.4975781684907851,
+            "predicted_center_pp": 4.4526541372410335,
+            "truth_center_pp": 3.955075968750249,
+            "personal_mae_pp": 2.3838557265882163,
+            "w1_pp": 1.4823803970628726,
+            "delta_w1_pp": 1.729395713781723,
+            "across_person_iqr_pp": 5.4989686543932565,
+            "truth_across_person_iqr_pp": 5.992066114550412,
+            "wrong_move_given_true_stable": 0.2903123351663357,
+            "missed_move_given_true_moving": 0.4175428185625703,
+            "opposite_direction_given_true_moving": 0.17400850310401142
+          },
+          "baseline": {
+            "center_mae_pp": 0.9866326104651414,
+            "center_bias_pp": 0.284772051076375,
+            "predicted_center_pp": 4.239848019826623,
+            "truth_center_pp": 3.955075968750249,
+            "personal_mae_pp": 3.1144484990839696,
+            "w1_pp": 2.376331369469948,
+            "delta_w1_pp": 1.7859805552056012,
+            "across_person_iqr_pp": 2.539492779232538,
+            "truth_across_person_iqr_pp": 5.992066114550412,
+            "wrong_move_given_true_stable": 0.5955172656214546,
+            "missed_move_given_true_moving": 0.30629266573384933,
+            "opposite_direction_given_true_moving": 0.23466390535237114
+          },
+          "news_matched": {
+            "center_mae_pp": 0.8905749574716321,
+            "center_bias_pp": 0.36070539437011534,
+            "predicted_center_pp": 4.315781363120364,
+            "truth_center_pp": 3.955075968750249,
+            "personal_mae_pp": 3.211770176555292,
+            "w1_pp": 2.4589727068676104,
+            "delta_w1_pp": 1.8837614826840376,
+            "across_person_iqr_pp": 2.802379045160458,
+            "truth_across_person_iqr_pp": 5.992066114550412,
+            "wrong_move_given_true_stable": 0.5798292855612929,
+            "missed_move_given_true_moving": 0.3039235341106665,
+            "opposite_direction_given_true_moving": 0.251619435331307
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.8530358367389708,
+            "center_bias_pp": 0.422203975413981,
+            "predicted_center_pp": 4.37727994416423,
+            "truth_center_pp": 3.955075968750249,
+            "personal_mae_pp": 3.0942418862761456,
+            "w1_pp": 2.369439365722815,
+            "delta_w1_pp": 1.7479674599399662,
+            "across_person_iqr_pp": 2.7025725597919945,
+            "truth_across_person_iqr_pp": 5.992066114550412,
+            "wrong_move_given_true_stable": 0.6194146750910501,
+            "missed_move_given_true_moving": 0.33549526377682265,
+            "opposite_direction_given_true_moving": 0.23956212923495326
+          }
+        },
+        "descriptive_only": true
+      }
+    },
+    "household_income_band": {
+      "50k_to_100k": {
+        "cells_used": 12,
+        "min_cell_n": 30,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.36723256327723375,
+            "center_bias_pp": -0.19154724187550487,
+            "predicted_center_pp": 4.534717289331154,
+            "truth_center_pp": 4.726264531206659,
+            "personal_mae_pp": 2.507608224664977,
+            "w1_pp": 1.2410518968036486,
+            "delta_w1_pp": 2.507608224664977,
+            "across_person_iqr_pp": 5.962898209809732,
+            "truth_across_person_iqr_pp": 4.452232032177423,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.5488517146933816,
+            "center_bias_pp": 0.017181607598855786,
+            "predicted_center_pp": 4.743446138805516,
+            "truth_center_pp": 4.726264531206659,
+            "personal_mae_pp": 2.47250484778502,
+            "w1_pp": 1.2468042769623073,
+            "delta_w1_pp": 1.5837015924708355,
+            "across_person_iqr_pp": 4.643977542541834,
+            "truth_across_person_iqr_pp": 4.452232032177423,
+            "wrong_move_given_true_stable": 0.401156125409651,
+            "missed_move_given_true_moving": 0.41487425802221506,
+            "opposite_direction_given_true_moving": 0.1631613509086207
+          },
+          "baseline": {
+            "center_mae_pp": 0.7075728755063592,
+            "center_bias_pp": -0.3884574253572784,
+            "predicted_center_pp": 4.337807105849381,
+            "truth_center_pp": 4.726264531206659,
+            "personal_mae_pp": 2.784293192713671,
+            "w1_pp": 2.1739311329704765,
+            "delta_w1_pp": 1.4285245173015884,
+            "across_person_iqr_pp": 2.221320988301254,
+            "truth_across_person_iqr_pp": 4.452232032177423,
+            "wrong_move_given_true_stable": 0.621060195145621,
+            "missed_move_given_true_moving": 0.27705617496240803,
+            "opposite_direction_given_true_moving": 0.16726343416549963
+          },
+          "news_matched": {
+            "center_mae_pp": 0.630776320764982,
+            "center_bias_pp": -0.5289759453732213,
+            "predicted_center_pp": 4.197288585833438,
+            "truth_center_pp": 4.726264531206659,
+            "personal_mae_pp": 2.826381548071906,
+            "w1_pp": 2.15417895913772,
+            "delta_w1_pp": 1.4170112808113589,
+            "across_person_iqr_pp": 2.1388994322937065,
+            "truth_across_person_iqr_pp": 4.452232032177423,
+            "wrong_move_given_true_stable": 0.5926919177385069,
+            "missed_move_given_true_moving": 0.3011306910192965,
+            "opposite_direction_given_true_moving": 0.17671210318944167
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.6513215982382615,
+            "center_bias_pp": -0.46998681131694714,
+            "predicted_center_pp": 4.256277719889712,
+            "truth_center_pp": 4.726264531206659,
+            "personal_mae_pp": 2.8036938733058725,
+            "w1_pp": 2.086390717751059,
+            "delta_w1_pp": 1.4093953225476754,
+            "across_person_iqr_pp": 2.2674394520688828,
+            "truth_across_person_iqr_pp": 4.452232032177423,
+            "wrong_move_given_true_stable": 0.5898684270253395,
+            "missed_move_given_true_moving": 0.3344962170933797,
+            "opposite_direction_given_true_moving": 0.15781561907711011
+          }
+        },
+        "descriptive_only": true
+      },
+      "None": {
+        "cells_used": 4,
+        "min_cell_n": 3,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 1.5000000000215863,
+            "center_bias_pp": -1.5000000000215863,
+            "predicted_center_pp": 12.499999999978414,
+            "truth_center_pp": 14.0,
+            "personal_mae_pp": 3.1710561540420867,
+            "w1_pp": 3.0960634846882336,
+            "delta_w1_pp": 3.1710561540420867,
+            "across_person_iqr_pp": 0.0,
+            "truth_across_person_iqr_pp": 10.000000000021586,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 4.700237864874049,
+            "center_bias_pp": -4.700237864874049,
+            "predicted_center_pp": 9.29976213512595,
+            "truth_center_pp": 14.0,
+            "personal_mae_pp": 4.450556312491434,
+            "w1_pp": 4.389916675966124,
+            "delta_w1_pp": 4.450556312491433,
+            "across_person_iqr_pp": 0.9198136029881974,
+            "truth_across_person_iqr_pp": 10.000000000021586,
+            "wrong_move_given_true_stable": 0.5,
+            "missed_move_given_true_moving": 0.049782531979138234,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "baseline": {
+            "center_mae_pp": 9.902876148304959,
+            "center_bias_pp": -9.902876148304959,
+            "predicted_center_pp": 4.0971238516950415,
+            "truth_center_pp": 14.0,
+            "personal_mae_pp": 7.28459178294951,
+            "w1_pp": 7.1954257450886825,
+            "delta_w1_pp": 7.248215111255333,
+            "across_person_iqr_pp": 0.5795489556890079,
+            "truth_across_person_iqr_pp": 10.000000000021586,
+            "wrong_move_given_true_stable": 1.0,
+            "missed_move_given_true_moving": 0.049782531979138234,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "news_matched": {
+            "center_mae_pp": 9.57189206839064,
+            "center_bias_pp": -9.57189206839064,
+            "predicted_center_pp": 4.428107931609359,
+            "truth_center_pp": 14.0,
+            "personal_mae_pp": 6.9588849382421865,
+            "w1_pp": 6.743422668739173,
+            "delta_w1_pp": 6.786353224945346,
+            "across_person_iqr_pp": 1.335897147846738,
+            "truth_across_person_iqr_pp": 10.000000000021586,
+            "wrong_move_given_true_stable": 1.0,
+            "missed_move_given_true_moving": 0.024891265989569117,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "news_randomized": {
+            "center_mae_pp": 9.867732315889437,
+            "center_bias_pp": -9.867732315889437,
+            "predicted_center_pp": 4.1322676841105626,
+            "truth_center_pp": 14.0,
+            "personal_mae_pp": 7.189638657531432,
+            "w1_pp": 7.160601313467819,
+            "delta_w1_pp": 7.189638657531432,
+            "across_person_iqr_pp": 0.8614399958700849,
+            "truth_across_person_iqr_pp": 10.000000000021586,
+            "wrong_move_given_true_stable": 1.0,
+            "missed_move_given_true_moving": 0.0,
+            "opposite_direction_given_true_moving": 0.0
+          }
+        },
+        "descriptive_only": true
+      },
+      "over_100k": {
+        "cells_used": 12,
+        "min_cell_n": 28,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.3513872877373436,
+            "center_bias_pp": -0.008277031474092459,
+            "predicted_center_pp": 3.6517031265004793,
+            "truth_center_pp": 3.6599801579745725,
+            "personal_mae_pp": 2.15155889689683,
+            "w1_pp": 1.166405175811998,
+            "delta_w1_pp": 2.1515588968968298,
+            "across_person_iqr_pp": 4.2510607935272295,
+            "truth_across_person_iqr_pp": 3.8987749673361805,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.5461807518103284,
+            "center_bias_pp": 0.05456029801049186,
+            "predicted_center_pp": 3.7145404559850643,
+            "truth_center_pp": 3.6599801579745725,
+            "personal_mae_pp": 2.18810186313616,
+            "w1_pp": 1.3611999863279725,
+            "delta_w1_pp": 1.4992754087442046,
+            "across_person_iqr_pp": 3.990046492885323,
+            "truth_across_person_iqr_pp": 3.8987749673361805,
+            "wrong_move_given_true_stable": 0.41678634181192753,
+            "missed_move_given_true_moving": 0.43771463841015446,
+            "opposite_direction_given_true_moving": 0.18720148322955077
+          },
+          "baseline": {
+            "center_mae_pp": 0.5930243185902503,
+            "center_bias_pp": 0.17475676529052728,
+            "predicted_center_pp": 3.834736923265099,
+            "truth_center_pp": 3.6599801579745725,
+            "personal_mae_pp": 2.004241037395177,
+            "w1_pp": 1.6129827205583798,
+            "delta_w1_pp": 0.996141016486627,
+            "across_person_iqr_pp": 1.910873114461998,
+            "truth_across_person_iqr_pp": 3.8987749673361805,
+            "wrong_move_given_true_stable": 0.5033248460079077,
+            "missed_move_given_true_moving": 0.33018563342473034,
+            "opposite_direction_given_true_moving": 0.1926973624946183
+          },
+          "news_matched": {
+            "center_mae_pp": 0.5243919388894951,
+            "center_bias_pp": 0.22130445851359,
+            "predicted_center_pp": 3.8812846164881623,
+            "truth_center_pp": 3.6599801579745725,
+            "personal_mae_pp": 2.0264359476703384,
+            "w1_pp": 1.5850748838300177,
+            "delta_w1_pp": 0.9455002938493694,
+            "across_person_iqr_pp": 1.9360842568047862,
+            "truth_across_person_iqr_pp": 3.8987749673361805,
+            "wrong_move_given_true_stable": 0.5152975892062919,
+            "missed_move_given_true_moving": 0.3453996670574462,
+            "opposite_direction_given_true_moving": 0.19523276164031422
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.460602269094845,
+            "center_bias_pp": 0.10730564771892108,
+            "predicted_center_pp": 3.767285805693493,
+            "truth_center_pp": 3.6599801579745725,
+            "personal_mae_pp": 2.0610257726801904,
+            "w1_pp": 1.631597942736242,
+            "delta_w1_pp": 0.9520286444820779,
+            "across_person_iqr_pp": 1.9928920067675417,
+            "truth_across_person_iqr_pp": 3.8987749673361805,
+            "wrong_move_given_true_stable": 0.554994671696453,
+            "missed_move_given_true_moving": 0.37546417231927265,
+            "opposite_direction_given_true_moving": 0.16005906413370616
+          }
+        },
+        "descriptive_only": true
+      },
+      "under_50k": {
+        "cells_used": 12,
+        "min_cell_n": 25,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.8256185272952843,
+            "center_bias_pp": -0.646024460884336,
+            "predicted_center_pp": 3.6892525873607567,
+            "truth_center_pp": 4.335277048245093,
+            "personal_mae_pp": 3.2962822316055473,
+            "w1_pp": 1.6881548053337152,
+            "delta_w1_pp": 3.2962822316055482,
+            "across_person_iqr_pp": 7.567572059226069,
+            "truth_across_person_iqr_pp": 6.810426618302259,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.8557397073728018,
+            "center_bias_pp": -0.7491768166053837,
+            "predicted_center_pp": 3.5861002316397097,
+            "truth_center_pp": 4.335277048245093,
+            "personal_mae_pp": 3.2553764899423947,
+            "w1_pp": 1.946670302296468,
+            "delta_w1_pp": 2.560765899865664,
+            "across_person_iqr_pp": 6.537189451839127,
+            "truth_across_person_iqr_pp": 6.810426618302259,
+            "wrong_move_given_true_stable": 0.376153314931748,
+            "missed_move_given_true_moving": 0.4710856107934028,
+            "opposite_direction_given_true_moving": 0.16335404470612075
+          },
+          "baseline": {
+            "center_mae_pp": 0.6546857633698145,
+            "center_bias_pp": -0.3300609485930185,
+            "predicted_center_pp": 4.005216099652075,
+            "truth_center_pp": 4.335277048245093,
+            "personal_mae_pp": 4.416882885013544,
+            "w1_pp": 3.5130562271647015,
+            "delta_w1_pp": 2.5112164218197504,
+            "across_person_iqr_pp": 2.8566599113909255,
+            "truth_across_person_iqr_pp": 6.810426618302259,
+            "wrong_move_given_true_stable": 0.6352748641041223,
+            "missed_move_given_true_moving": 0.35646457882360766,
+            "opposite_direction_given_true_moving": 0.2625681480021769
+          },
+          "news_matched": {
+            "center_mae_pp": 0.6178589840131636,
+            "center_bias_pp": -0.2705451662684746,
+            "predicted_center_pp": 4.064731881976617,
+            "truth_center_pp": 4.335277048245093,
+            "personal_mae_pp": 4.425169873569507,
+            "w1_pp": 3.601384118508807,
+            "delta_w1_pp": 2.5323476906895053,
+            "across_person_iqr_pp": 2.990999853572291,
+            "truth_across_person_iqr_pp": 6.810426618302259,
+            "wrong_move_given_true_stable": 0.6027812688060432,
+            "missed_move_given_true_moving": 0.39380117043575735,
+            "opposite_direction_given_true_moving": 0.25106041081726554
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.6028058745493031,
+            "center_bias_pp": -0.3244460772381044,
+            "predicted_center_pp": 4.010830971006989,
+            "truth_center_pp": 4.335277048245093,
+            "personal_mae_pp": 4.1370506729561685,
+            "w1_pp": 3.4272068022906903,
+            "delta_w1_pp": 2.331872463759516,
+            "across_person_iqr_pp": 3.1335668690158713,
+            "truth_across_person_iqr_pp": 6.810426618302259,
+            "wrong_move_given_true_stable": 0.6482014945979382,
+            "missed_move_given_true_moving": 0.36257085080222184,
+            "opposite_direction_given_true_moving": 0.2627699656831995
+          }
+        },
+        "descriptive_only": true
+      }
+    },
+    "region": {
+      "Midwest": {
+        "cells_used": 12,
+        "min_cell_n": 16,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.6685975515621396,
+            "center_bias_pp": -0.26480637405698126,
+            "predicted_center_pp": 3.9621175408464713,
+            "truth_center_pp": 4.226923914903454,
+            "personal_mae_pp": 3.182513375772119,
+            "w1_pp": 2.030084833092692,
+            "delta_w1_pp": 3.182513375772119,
+            "across_person_iqr_pp": 6.036793390182718,
+            "truth_across_person_iqr_pp": 5.187300557314141,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.6473185279524968,
+            "center_bias_pp": -0.11690371813232255,
+            "predicted_center_pp": 4.11002019677113,
+            "truth_center_pp": 4.226923914903454,
+            "personal_mae_pp": 3.0728894101933264,
+            "w1_pp": 1.966056378659724,
+            "delta_w1_pp": 2.2660822024461145,
+            "across_person_iqr_pp": 5.829558230339257,
+            "truth_across_person_iqr_pp": 5.187300557314141,
+            "wrong_move_given_true_stable": 0.5594348067012788,
+            "missed_move_given_true_moving": 0.5096852008959388,
+            "opposite_direction_given_true_moving": 0.17010553496381323
+          },
+          "baseline": {
+            "center_mae_pp": 0.7680468254391167,
+            "center_bias_pp": -0.24157877957614526,
+            "predicted_center_pp": 3.9853451353273077,
+            "truth_center_pp": 4.226923914903454,
+            "personal_mae_pp": 3.4508211346157935,
+            "w1_pp": 2.778122904138985,
+            "delta_w1_pp": 1.9978691090575982,
+            "across_person_iqr_pp": 2.2946147091547053,
+            "truth_across_person_iqr_pp": 5.187300557314141,
+            "wrong_move_given_true_stable": 0.6488802754335831,
+            "missed_move_given_true_moving": 0.36394062059436755,
+            "opposite_direction_given_true_moving": 0.26481244725794745
+          },
+          "news_matched": {
+            "center_mae_pp": 0.6072853657771216,
+            "center_bias_pp": -0.31330423083654263,
+            "predicted_center_pp": 3.91361968406691,
+            "truth_center_pp": 4.226923914903454,
+            "personal_mae_pp": 3.531145560263635,
+            "w1_pp": 2.8810594643552307,
+            "delta_w1_pp": 2.141216302962577,
+            "across_person_iqr_pp": 2.2760445833467906,
+            "truth_across_person_iqr_pp": 5.187300557314141,
+            "wrong_move_given_true_stable": 0.708419096231923,
+            "missed_move_given_true_moving": 0.393971196688937,
+            "opposite_direction_given_true_moving": 0.23298671550895514
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.6678180070311824,
+            "center_bias_pp": -0.332623603585622,
+            "predicted_center_pp": 3.8943003113178314,
+            "truth_center_pp": 4.226923914903454,
+            "personal_mae_pp": 3.3542910333882716,
+            "w1_pp": 2.6781005279372763,
+            "delta_w1_pp": 1.9080665136214936,
+            "across_person_iqr_pp": 2.6485813363005244,
+            "truth_across_person_iqr_pp": 5.187300557314141,
+            "wrong_move_given_true_stable": 0.7894873226489546,
+            "missed_move_given_true_moving": 0.4336205942904781,
+            "opposite_direction_given_true_moving": 0.24492533418403184
+          }
+        },
+        "descriptive_only": true
+      },
+      "Northeast": {
+        "cells_used": 12,
+        "min_cell_n": 9,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.6480399199552003,
+            "center_bias_pp": 0.0695234317770385,
+            "predicted_center_pp": 4.5748891192503125,
+            "truth_center_pp": 4.505365687473273,
+            "personal_mae_pp": 1.86831057816464,
+            "w1_pp": 1.0387903575071775,
+            "delta_w1_pp": 1.8683105781646407,
+            "across_person_iqr_pp": 6.462192807492689,
+            "truth_across_person_iqr_pp": 6.3463902485105015,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.7268483526300447,
+            "center_bias_pp": 0.08996962436681777,
+            "predicted_center_pp": 4.595335311840091,
+            "truth_center_pp": 4.505365687473273,
+            "personal_mae_pp": 1.919050825595514,
+            "w1_pp": 1.2629219423397238,
+            "delta_w1_pp": 1.4732900536012359,
+            "across_person_iqr_pp": 5.898825245256283,
+            "truth_across_person_iqr_pp": 6.3463902485105015,
+            "wrong_move_given_true_stable": 0.40259451224688236,
+            "missed_move_given_true_moving": 0.39838493419749255,
+            "opposite_direction_given_true_moving": 0.14525987754845376
+          },
+          "baseline": {
+            "center_mae_pp": 0.766755382143688,
+            "center_bias_pp": -0.18739473420533015,
+            "predicted_center_pp": 4.317970953267943,
+            "truth_center_pp": 4.505365687473273,
+            "personal_mae_pp": 2.365282179834659,
+            "w1_pp": 1.9552666995684496,
+            "delta_w1_pp": 1.454343726963385,
+            "across_person_iqr_pp": 3.9369003991344282,
+            "truth_across_person_iqr_pp": 6.3463902485105015,
+            "wrong_move_given_true_stable": 0.6125664750272879,
+            "missed_move_given_true_moving": 0.3548461724028953,
+            "opposite_direction_given_true_moving": 0.16175989782733238
+          },
+          "news_matched": {
+            "center_mae_pp": 0.6374097705636558,
+            "center_bias_pp": -0.15061292038564852,
+            "predicted_center_pp": 4.354752767087626,
+            "truth_center_pp": 4.505365687473273,
+            "personal_mae_pp": 2.265839254545257,
+            "w1_pp": 1.741489596299674,
+            "delta_w1_pp": 1.3166871553529846,
+            "across_person_iqr_pp": 4.835929569421395,
+            "truth_across_person_iqr_pp": 6.3463902485105015,
+            "wrong_move_given_true_stable": 0.5607630867395724,
+            "missed_move_given_true_moving": 0.36990123974688865,
+            "opposite_direction_given_true_moving": 0.17294997849324545
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.5873996117071921,
+            "center_bias_pp": -0.06773562863966258,
+            "predicted_center_pp": 4.437630058833611,
+            "truth_center_pp": 4.505365687473273,
+            "personal_mae_pp": 2.3623837589795347,
+            "w1_pp": 1.9587514590216184,
+            "delta_w1_pp": 1.4252677286437532,
+            "across_person_iqr_pp": 4.1750780522414495,
+            "truth_across_person_iqr_pp": 6.3463902485105015,
+            "wrong_move_given_true_stable": 0.5578087512843346,
+            "missed_move_given_true_moving": 0.41255250130706206,
+            "opposite_direction_given_true_moving": 0.15968815844119363
+          }
+        },
+        "descriptive_only": true
+      },
+      "South": {
+        "cells_used": 12,
+        "min_cell_n": 27,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.7851170802657802,
+            "center_bias_pp": -0.5302864583499278,
+            "predicted_center_pp": 4.037674892448475,
+            "truth_center_pp": 4.567961350798402,
+            "personal_mae_pp": 2.904794914991164,
+            "w1_pp": 1.4175682861934271,
+            "delta_w1_pp": 2.904794914991163,
+            "across_person_iqr_pp": 6.206815215394486,
+            "truth_across_person_iqr_pp": 6.090298236337213,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.9035004595878755,
+            "center_bias_pp": -0.4140123525685355,
+            "predicted_center_pp": 4.153948998229867,
+            "truth_center_pp": 4.567961350798402,
+            "personal_mae_pp": 3.0542800327787547,
+            "w1_pp": 1.831303785190057,
+            "delta_w1_pp": 2.2269920358115436,
+            "across_person_iqr_pp": 5.907788167840043,
+            "truth_across_person_iqr_pp": 6.090298236337213,
+            "wrong_move_given_true_stable": 0.3664841148748759,
+            "missed_move_given_true_moving": 0.4863878159989692,
+            "opposite_direction_given_true_moving": 0.17824573180736855
+          },
+          "baseline": {
+            "center_mae_pp": 0.7757447071336729,
+            "center_bias_pp": -0.39977140930091526,
+            "predicted_center_pp": 4.168189941497487,
+            "truth_center_pp": 4.567961350798402,
+            "personal_mae_pp": 3.783101723522055,
+            "w1_pp": 3.116281027239309,
+            "delta_w1_pp": 2.3586191133307484,
+            "across_person_iqr_pp": 2.245883615739412,
+            "truth_across_person_iqr_pp": 6.090298236337213,
+            "wrong_move_given_true_stable": 0.7040827684207195,
+            "missed_move_given_true_moving": 0.3267264519337704,
+            "opposite_direction_given_true_moving": 0.2033907250917167
+          },
+          "news_matched": {
+            "center_mae_pp": 0.828445458904977,
+            "center_bias_pp": -0.22456260424605037,
+            "predicted_center_pp": 4.343398746552353,
+            "truth_center_pp": 4.567961350798402,
+            "personal_mae_pp": 3.796921363450346,
+            "w1_pp": 3.1091338295066877,
+            "delta_w1_pp": 2.2598401781892092,
+            "across_person_iqr_pp": 2.3644907629554184,
+            "truth_across_person_iqr_pp": 6.090298236337213,
+            "wrong_move_given_true_stable": 0.6761479196123266,
+            "missed_move_given_true_moving": 0.3579220204432907,
+            "opposite_direction_given_true_moving": 0.22248894091246552
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.6191378189962881,
+            "center_bias_pp": -0.3955494831754443,
+            "predicted_center_pp": 4.172411867622959,
+            "truth_center_pp": 4.567961350798402,
+            "personal_mae_pp": 3.6104688689052864,
+            "w1_pp": 2.9909553640187583,
+            "delta_w1_pp": 2.2662152717866064,
+            "across_person_iqr_pp": 2.5101928227318275,
+            "truth_across_person_iqr_pp": 6.090298236337213,
+            "wrong_move_given_true_stable": 0.6713854745067261,
+            "missed_move_given_true_moving": 0.28785745281202735,
+            "opposite_direction_given_true_moving": 0.2354240815705129
+          }
+        },
+        "descriptive_only": true
+      },
+      "West": {
+        "cells_used": 12,
+        "min_cell_n": 18,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.742506487490716,
+            "center_bias_pp": 0.22848045380667528,
+            "predicted_center_pp": 4.189304884865808,
+            "truth_center_pp": 3.9608244310591325,
+            "personal_mae_pp": 2.4670449793355025,
+            "w1_pp": 1.351432958600083,
+            "delta_w1_pp": 2.467044979335503,
+            "across_person_iqr_pp": 5.757852703069197,
+            "truth_across_person_iqr_pp": 4.377439117745961,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.9586550757287143,
+            "center_bias_pp": 0.493825000183204,
+            "predicted_center_pp": 4.454649431242337,
+            "truth_center_pp": 3.9608244310591325,
+            "personal_mae_pp": 2.3297213233113907,
+            "w1_pp": 1.4725353810509525,
+            "delta_w1_pp": 1.694106445918208,
+            "across_person_iqr_pp": 4.855755341779352,
+            "truth_across_person_iqr_pp": 4.377439117745961,
+            "wrong_move_given_true_stable": 0.32683826433385793,
+            "missed_move_given_true_moving": 0.35565972465503176,
+            "opposite_direction_given_true_moving": 0.1627879520450469
+          },
+          "baseline": {
+            "center_mae_pp": 1.3923224124336293,
+            "center_bias_pp": -0.12372351316967638,
+            "predicted_center_pp": 3.837100917889456,
+            "truth_center_pp": 3.9608244310591325,
+            "personal_mae_pp": 2.9831990872386114,
+            "w1_pp": 2.5144839068283003,
+            "delta_w1_pp": 2.2184076691030783,
+            "across_person_iqr_pp": 2.085907501901811,
+            "truth_across_person_iqr_pp": 4.377439117745961,
+            "wrong_move_given_true_stable": 0.45679118489279696,
+            "missed_move_given_true_moving": 0.26572426660606135,
+            "opposite_direction_given_true_moving": 0.2135936804715343
+          },
+          "news_matched": {
+            "center_mae_pp": 1.444311182069568,
+            "center_bias_pp": -0.16463717351459572,
+            "predicted_center_pp": 3.7961872575445366,
+            "truth_center_pp": 3.9608244310591325,
+            "personal_mae_pp": 3.0584140537634674,
+            "w1_pp": 2.608086018037936,
+            "delta_w1_pp": 2.202685557904575,
+            "across_person_iqr_pp": 1.9318185568649442,
+            "truth_across_person_iqr_pp": 4.377439117745961,
+            "wrong_move_given_true_stable": 0.4597153113855577,
+            "missed_move_given_true_moving": 0.3101862609069755,
+            "opposite_direction_given_true_moving": 0.20853766673810015
+          },
+          "news_randomized": {
+            "center_mae_pp": 1.4717054245987662,
+            "center_bias_pp": -0.2330352348555584,
+            "predicted_center_pp": 3.727789196203574,
+            "truth_center_pp": 3.9608244310591325,
+            "personal_mae_pp": 3.0204142713207003,
+            "w1_pp": 2.5995643351581026,
+            "delta_w1_pp": 2.176771939296287,
+            "across_person_iqr_pp": 1.7894345225525516,
+            "truth_across_person_iqr_pp": 4.377439117745961,
+            "wrong_move_given_true_stable": 0.5112227464069279,
+            "missed_move_given_true_moving": 0.3265099747664394,
+            "opposite_direction_given_true_moving": 0.1569657664478066
+          }
+        },
+        "descriptive_only": true
+      }
+    },
+    "numeracy": {
+      "high": {
+        "cells_used": 12,
+        "min_cell_n": 60,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.31171225582234036,
+            "center_bias_pp": 0.007060623142855753,
+            "predicted_center_pp": 4.320150218142015,
+            "truth_center_pp": 4.313089594999159,
+            "personal_mae_pp": 2.2663465242600402,
+            "w1_pp": 0.863424977571443,
+            "delta_w1_pp": 2.2663465242600407,
+            "across_person_iqr_pp": 4.694788597791158,
+            "truth_across_person_iqr_pp": 3.9966063146869266,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 0.45309344419104675,
+            "center_bias_pp": -0.26440142321565846,
+            "predicted_center_pp": 4.048688171783501,
+            "truth_center_pp": 4.313089594999159,
+            "personal_mae_pp": 2.2289462243911924,
+            "w1_pp": 1.017325673021867,
+            "delta_w1_pp": 1.47670420508205,
+            "across_person_iqr_pp": 4.228541649274186,
+            "truth_across_person_iqr_pp": 3.9966063146869266,
+            "wrong_move_given_true_stable": 0.3834845653724703,
+            "missed_move_given_true_moving": 0.48370263660325447,
+            "opposite_direction_given_true_moving": 0.16341814386501746
+          },
+          "baseline": {
+            "center_mae_pp": 0.3391515067629351,
+            "center_bias_pp": -0.24340124116969086,
+            "predicted_center_pp": 4.069688353829469,
+            "truth_center_pp": 4.313089594999159,
+            "personal_mae_pp": 2.587274867608365,
+            "w1_pp": 2.011012412564135,
+            "delta_w1_pp": 1.1433015349260705,
+            "across_person_iqr_pp": 2.015754019754216,
+            "truth_across_person_iqr_pp": 3.9966063146869266,
+            "wrong_move_given_true_stable": 0.5574697230473566,
+            "missed_move_given_true_moving": 0.33299300807628196,
+            "opposite_direction_given_true_moving": 0.2010097163124559
+          },
+          "news_matched": {
+            "center_mae_pp": 0.3364014515091924,
+            "center_bias_pp": -0.27622769583992896,
+            "predicted_center_pp": 4.036861899159231,
+            "truth_center_pp": 4.313089594999159,
+            "personal_mae_pp": 2.598140102261426,
+            "w1_pp": 2.0254576295457114,
+            "delta_w1_pp": 1.164559256807361,
+            "across_person_iqr_pp": 1.9483366037802927,
+            "truth_across_person_iqr_pp": 3.9966063146869266,
+            "wrong_move_given_true_stable": 0.5524912032110508,
+            "missed_move_given_true_moving": 0.38382764659815427,
+            "opposite_direction_given_true_moving": 0.17762343918421544
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.40406578492791095,
+            "center_bias_pp": -0.3579170626482721,
+            "predicted_center_pp": 3.9551725323508875,
+            "truth_center_pp": 4.313089594999159,
+            "personal_mae_pp": 2.5927671923427376,
+            "w1_pp": 2.02407482411826,
+            "delta_w1_pp": 1.1396311456347494,
+            "across_person_iqr_pp": 1.934982049337899,
+            "truth_across_person_iqr_pp": 3.9966063146869266,
+            "wrong_move_given_true_stable": 0.5792938154122461,
+            "missed_move_given_true_moving": 0.37763501164457175,
+            "opposite_direction_given_true_moving": 0.17340558701719325
+          }
+        },
+        "descriptive_only": true
+      },
+      "low": {
+        "cells_used": 12,
+        "min_cell_n": 28,
+        "weighted_metrics": {
+          "carry": {
+            "center_mae_pp": 0.7304362338978336,
+            "center_bias_pp": -0.7304362338978336,
+            "predicted_center_pp": 3.397490302284263,
+            "truth_center_pp": 4.127926536182096,
+            "personal_mae_pp": 3.347900188333631,
+            "w1_pp": 1.8075967854660817,
+            "delta_w1_pp": 3.347900188333632,
+            "across_person_iqr_pp": 6.968694742660188,
+            "truth_across_person_iqr_pp": 7.0925655683704,
+            "wrong_move_given_true_stable": 0.0,
+            "missed_move_given_true_moving": 1.0,
+            "opposite_direction_given_true_moving": 0.0
+          },
+          "history_anchor_half": {
+            "center_mae_pp": 1.1609266220037016,
+            "center_bias_pp": -0.38525627931889467,
+            "predicted_center_pp": 3.7426702568632018,
+            "truth_center_pp": 4.127926536182096,
+            "personal_mae_pp": 3.390083108433492,
+            "w1_pp": 2.1626168625615683,
+            "delta_w1_pp": 2.558875281924086,
+            "across_person_iqr_pp": 5.990017844357449,
+            "truth_across_person_iqr_pp": 7.0925655683704,
+            "wrong_move_given_true_stable": 0.41467563878827307,
+            "missed_move_given_true_moving": 0.4022820075485038,
+            "opposite_direction_given_true_moving": 0.15717657170691676
+          },
+          "baseline": {
+            "center_mae_pp": 0.5215950806937802,
+            "center_bias_pp": -0.14439550516900757,
+            "predicted_center_pp": 3.9835310310130887,
+            "truth_center_pp": 4.127926536182096,
+            "personal_mae_pp": 4.1864608699675605,
+            "w1_pp": 3.3805645756038687,
+            "delta_w1_pp": 2.4318501639881993,
+            "across_person_iqr_pp": 3.0546642659526335,
+            "truth_across_person_iqr_pp": 7.0925655683704,
+            "wrong_move_given_true_stable": 0.671221397896303,
+            "missed_move_given_true_moving": 0.3114427841452992,
+            "opposite_direction_given_true_moving": 0.23383416401905158
+          },
+          "news_matched": {
+            "center_mae_pp": 0.6311140504934036,
+            "center_bias_pp": 0.09472276953858356,
+            "predicted_center_pp": 4.2226493057206795,
+            "truth_center_pp": 4.127926536182096,
+            "personal_mae_pp": 4.257390955328662,
+            "w1_pp": 3.401261097370725,
+            "delta_w1_pp": 2.4841275658942172,
+            "across_person_iqr_pp": 3.0076527886622855,
+            "truth_across_person_iqr_pp": 7.0925655683704,
+            "wrong_move_given_true_stable": 0.6453981282382192,
+            "missed_move_given_true_moving": 0.3135189952410284,
+            "opposite_direction_given_true_moving": 0.263824223808667
+          },
+          "news_randomized": {
+            "center_mae_pp": 0.48179871843292216,
+            "center_bias_pp": -0.20751354135685765,
+            "predicted_center_pp": 3.9204129948252384,
+            "truth_center_pp": 4.127926536182096,
+            "personal_mae_pp": 3.9794732916979174,
+            "w1_pp": 3.271874762655616,
+            "delta_w1_pp": 2.286593530047187,
+            "across_person_iqr_pp": 3.1416882878857835,
+            "truth_across_person_iqr_pp": 7.0925655683704,
+            "wrong_move_given_true_stable": 0.7034663812110166,
+            "missed_move_given_true_moving": 0.32471667466954346,
+            "opposite_direction_given_true_moving": 0.25403983546319997
+          }
+        },
+        "descriptive_only": true
+      }
+    }
+  },
+  "coverage": {
+    "baseline": {
+      "valid": 1151,
+      "invalid": 1
+    },
+    "news_matched": {
+      "valid": 1152
+    },
+    "news_randomized": {
+      "valid": 1151,
+      "invalid": 1
+    }
+  },
+  "accuracy_descriptive_only": false,
+  "q8_weighted_metrics": {
+    "baseline": {
+      "q8_person_mae_pp": 7.220161348617164,
+      "q8_person_bias_pp": -3.002871457090967,
+      "q8_center_mae_pp": 1.1083333492279055,
+      "q8_center_bias_pp": -1.1083333492279055,
+      "q8_cross_section_w1_pp": 6.66793973196049,
+      "q8_person_spearman": 0.5362622041548286
+    },
+    "news_matched": {
+      "q8_person_mae_pp": 7.180628725459191,
+      "q8_person_bias_pp": -2.9407146252371983,
+      "q8_center_mae_pp": 1.133333349227905,
+      "q8_center_bias_pp": -1.133333349227905,
+      "q8_cross_section_w1_pp": 6.670548911986898,
+      "q8_person_spearman": 0.5351841588271999
+    },
+    "news_randomized": {
+      "q8_person_mae_pp": 7.216242294800452,
+      "q8_person_bias_pp": -3.040419151892031,
+      "q8_center_mae_pp": 1.133333349227905,
+      "q8_center_bias_pp": -1.133333349227905,
+      "q8_cross_section_w1_pp": 6.6961698339945706,
+      "q8_person_spearman": 0.5413711602694247
+    }
+  },
+  "unweighted_metrics": {
+    "baseline": {
+      "probability_tv_pct": 40.772070385405,
+      "individual_density_iqr_mae_pp": 2.4879153352545598,
+      "individual_density_iqr_bias_pp": -0.8147917360719555,
+      "individual_density_iqr_mean_pp": 4.191478677163301,
+      "real_individual_density_iqr_mean_pp": 5.0062704132352565,
+      "individual_density_mean_mae_pp": 3.0422054915948364,
+      "individual_density_mean_bias_pp": -0.4840088166424703,
+      "q9_center_mae_pp": 0.44060618112557065,
+      "q9_center_bias_pp": -0.23761757564210562,
+      "cross_section_w1_pp": 2.267274808286535,
+      "delta_w1_pp": 1.2168876168012595,
+      "cross_person_iqr_pp": 2.3258073165321576,
+      "real_cross_person_iqr_pp": 4.376294006743741,
+      "cross_person_iqr_gap_pp": -2.050486690211583,
+      "zero_deflation_rate": 0.09958570517606073,
+      "real_zero_deflation_rate": 0.5778952034341173,
+      "zero_deflation_rate_difference": -0.47830949825805646,
+      "person_mean_spearman": 0.5789301625152085
+    },
+    "news_matched": {
+      "probability_tv_pct": 40.625631065696155,
+      "individual_density_iqr_mae_pp": 2.471494316239512,
+      "individual_density_iqr_bias_pp": -0.8806827321160077,
+      "individual_density_iqr_mean_pp": 4.125587681119249,
+      "real_individual_density_iqr_mean_pp": 5.0062704132352565,
+      "individual_density_mean_mae_pp": 3.074393489118334,
+      "individual_density_mean_bias_pp": -0.468753197281312,
+      "q9_center_mae_pp": 0.47743001457533185,
+      "q9_center_bias_pp": -0.21184284761641567,
+      "cross_section_w1_pp": 2.2702228886200655,
+      "delta_w1_pp": 1.2453682296738764,
+      "cross_person_iqr_pp": 2.3614947008751046,
+      "real_cross_person_iqr_pp": 4.376294006743741,
+      "cross_person_iqr_gap_pp": -2.014799305868636,
+      "zero_deflation_rate": 0.10396292148811746,
+      "real_zero_deflation_rate": 0.5778952034341173,
+      "zero_deflation_rate_difference": -0.47393228194599973,
+      "person_mean_spearman": 0.5698390150766914
+    },
+    "news_randomized": {
+      "probability_tv_pct": 40.419989093411715,
+      "individual_density_iqr_mae_pp": 2.4528963170228364,
+      "individual_density_iqr_bias_pp": -0.8595204175073792,
+      "individual_density_iqr_mean_pp": 4.146749995727879,
+      "real_individual_density_iqr_mean_pp": 5.0062704132352565,
+      "individual_density_mean_mae_pp": 2.9832895381663094,
+      "individual_density_mean_bias_pp": -0.5050978936738348,
+      "q9_center_mae_pp": 0.47172524695812496,
+      "q9_center_bias_pp": -0.2513899788876297,
+      "cross_section_w1_pp": 2.238149345443031,
+      "delta_w1_pp": 1.190309072025501,
+      "cross_person_iqr_pp": 2.304679793969201,
+      "real_cross_person_iqr_pp": 4.376294006743741,
+      "cross_person_iqr_gap_pp": -2.071614212774539,
+      "zero_deflation_rate": 0.11005797405748415,
+      "real_zero_deflation_rate": 0.5778952034341173,
+      "zero_deflation_rate_difference": -0.4678372293766331,
+      "person_mean_spearman": 0.5903608342017278
+    }
+  },
+  "median_rmse_pp_descriptive": {
+    "carry": 0.4415006622457423,
+    "history_anchor_half": 0.5534979633085699,
+    "baseline": 0.5001222400841111,
+    "news_matched": 0.43084951740993443,
+    "news_randomized": 0.48317603940647225
+  },
+  "planned_and_actual_calls": 3456,
+  "estimated_cost_usd_not_bill": 3.859844999999999,
+  "cap_usd": 16.0,
+  "api_errors": 0,
+  "automatic_retries": 0,
+  "started_at_utc": "2026-10-19T02:28:01.237473+00:00",
+  "finished_at_utc": "2026-10-19T02:46:45.457159+00:00",
+  "parallel_window_seconds": 1124.219686,
+  "returned_model_ids": [
+    "deepseek-flash"
+  ],
+  "returned_fingerprints": [
+    "e72d3c7f663d3e1383b00b3884cb4501"
+  ],
+  "notes": [
+    "Matched/randomized is the primary allocation comparison; uniform8 differs in weighted news quantity.",
+    "Intervals condition on six selected development months; repeated generations are not new respondents.",
+    "Group summaries are descriptive and skip cells below3; do not select post-hoc population-specific treatment.",
+    "History anchor uses the same previously scored strictly past cache and fixed half coefficient; no new fits."
+  ],
+  "seconds": 0.5538617079146206,
+  "source_sha256": {
+    "studies/sce_inflation_expectations/evaluation/news_breadth_readout.py": "03873a8226e969694ca3d1d67d8407267532a2518d347a3977b0e16154d247c4",
+    "scripts/report_sce_news_breadth.py": "462d53cabbff80a582dde63e4848890fe854c8c340c619a6988ebedc20f538ac",
+    "outputs/sce_news_breadth_evaluation_20261019_v1/summary.json": "9c41dc58733d75549da8f22feba44af3701f65ca8f618fb9074cf776c867bbf4",
+    "outputs/sce_news_breadth_evaluation_20261019_v1/cases_private.json": "c3bfcc67934b3718ed81f93fdfa82a881fe0a1f88d78c375f05bc76dc9c06b5b",
+    "outputs/sce_reference_validation_evaluation_20261017_v1/cases_private.json": "8bf039c3e4a64e2f31da0ee5c30a3db33d7c1712c0ba45d6e9ccd3959ba64336"
+  }
+}
