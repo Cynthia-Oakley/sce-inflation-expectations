@@ -23,7 +23,11 @@
 
 10月19日[网格/Q8预检](workstreams/20261019_advisor_followup/diagnostic_results.md)已完成。权威输出为`outputs/sce_advisor_diagnostic_20261019_v2/`，v1是分位数/旧运行精度对齐前草稿，勿引用。公开聚合与四图见同workstream的`diagnostic_readout_v1/`；复算入口`analyze_sce_advisor_diagnostics.py`，9项测试通过。十二期主结果对账一致；九格中五格全期有支持，约89%方差缺口在格内。旧Q9失败的74份Q8全部恢复，两臂Q8均192/192合法；两遍中心排序反转，不升级参考配置。
 
-平台仅完成免费元数据回查，证据`data/raw/mcp_checks/2026-10-19_advisor_free_v1/`；仍登记gpt-4o-mini，未确认自带逐人P/E/先验或模型选择，不运行问卷。下一项已选择[Q8单改草案](workstreams/20261019_advisor_followup/next_trial_design.md)：输入在`outputs/sce_q8_only_candidate_preparation_20261019_v1/`，96人月×两臂×两遍拟384请求，仅草稿；没有引擎适配、干跑或新付费授权。Q9保持绝对概率，旧四期仅开发，需同时重生成对照。Core/Normal已有开发链可复用；不马上扩人，相关指标扩展先评估Q2。
+平台仅完成免费元数据回查，证据`data/raw/mcp_checks/2026-10-19_advisor_free_v1/`；仍登记gpt-4o-mini，未确认自带逐人P/E/先验或模型选择，不运行问卷。
+
+[Q8单改](workstreams/20261019_advisor_followup/next_trial_design.md)已接入共用runner，当前有效包`outputs/sce_q8_only_trial_20261019_v3/`。四旧开发月各24人、直接/q8_delta两臂各两遍，共384请求；Q9都填绝对概率。16官方引擎离线单元及384次转换通过，23项测试通过。预计$0.457、保守预留$1.777、上限$2；已发本批外发/预算确认卡，尚无新付费授权。不要将旧授权拿来启动。v1/v2是付费前修复旧真值缺失适配的存档，禁止复用；原manifest未改。共享三入口修改前副本在`outputs/sce_shared_runtime_snapshot_20261019_q8_v1/`，旧批次有源码pin时用其冻结版本，不改旧manifest绕过。
+
+[人口六格草案](workstreams/20261019_advisor_followup/stratification_draft.md)为学历×是否在职，63/72格月达到初步支持；未知独立池。支持与192人分配示例在`outputs/sce_stratification_support_20261019_v1/`。尚未实际抽样、改旧P或接新Normal，年龄/收入边际与财务/数理另作诊断。本轮Q8用旧样本，不同时换网格。相关指标扩展仍先评估Q2。
 
 采购角色对应的可见价格信息保留为已准备方向；新闻量与购物价格分开实验，避免完整宏观表让个体菜单变化失去含义。ATUS/SCE匹配、三种子菜单已备，尚未接新真实模拟。详[匹配结果](workstreams/20261018_targeted_mechanisms/atus_sce_matching_results_20261019.md)。
 

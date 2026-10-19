@@ -1,0 +1,35 @@
+{
+  "status": "offline_ready_waiting_explicit_paid_authorization",
+  "checked_at_utc": "2026-10-19T12:15:16.484568+00:00",
+  "trial_folder": "outputs/sce_q8_only_trial_20261019_v3",
+  "planned_requests": 384,
+  "months": [
+    202004,
+    202105,
+    202111,
+    202203
+  ],
+  "people_per_month": 24,
+  "arms": [
+    "direct",
+    "q8_delta"
+  ],
+  "generations": 2,
+  "engineering_units_passed": 16,
+  "scripted_response_roundtrips": 384,
+  "new_llm_calls": 0,
+  "estimated_usd": 0.45717375000000005,
+  "conservative_reservation_usd": 1.777092,
+  "hard_cap_usd": 2.0,
+  "protocol_sha256": "6585e60589e535bc401c777d84d65f6cc4c3e4cc1efd626821db7054bdfee584",
+  "tests_passed": 23,
+  "original_grid_and_reference_unchanged": true,
+  "actual_q9_missing_person_months": 2,
+  "missing_previous_q8_absolute_branch_person_months": 1,
+  "scope": "A conditional development pilot. Q8 independent validity; no strict B or national representativeness claim.",
+  "superseded_preparations": [
+    "outputs/sce_q8_only_trial_20261019_v1/",
+    "outputs/sce_q8_only_trial_20261019_v2/"
+  ],
+  "reason": "Legacy Q9 missing-value adapter repaired before paid calls; old manifests preserved, source snapshots retained."
+}

@@ -1,0 +1,1570 @@
+{
+  "status": "six_cell_design_support_only_not_applied",
+  "new_llm_calls": 0,
+  "fields": [
+    "education_group_3",
+    "employment_attached_2"
+  ],
+  "cells": [
+    "high_school|attached",
+    "high_school|not_attached",
+    "some_college|attached",
+    "some_college|not_attached",
+    "college|attached",
+    "college|not_attached"
+  ],
+  "unknown": "separate",
+  "employment_definition": "employed or on_leave vs unemployed/retired/disabled/student/homemaker/other; not a BLS/CPS employment rate definition",
+  "primary_cells_total": 72,
+  "current_primary_cells_strong": 63,
+  "monthly": [
+    {
+      "month": 202003,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 11,
+          "ess": 10.523390379468022,
+          "mass": 184.53844120492147,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 13,
+          "ess": 12.28591193472882,
+          "mass": 220.41239176818814,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 22,
+          "ess": 20.739496525968757,
+          "mass": 115.03680670376528,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 28,
+          "ess": 26.529838131678144,
+          "mass": 145.1788326254862,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 83,
+          "ess": 78.155509295538,
+          "mass": 295.5551148261535,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 35,
+          "ess": 32.917559594670784,
+          "mass": 104.67505715949218,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 0,
+          "ess": 0.0,
+          "mass": 0,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 49,
+          "ess": 46.596991479395655,
+          "mass": 150.33718156814575,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 66,
+          "ess": 62.63644544929414,
+          "mass": 203.39490818977356,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 180,
+          "ess": 170.00630768513923,
+          "mass": 170.49825435876846,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 154,
+          "ess": 147.26609981112856,
+          "mass": 142.14050620794296,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 439,
+          "ess": 409.9023209278335,
+          "mass": 286.2646578550339,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 170,
+          "ess": 161.06509333294977,
+          "mass": 96.01157554984093,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 0,
+          "ess": 0.0,
+          "mass": 0,
+          "status": "sparse"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 29,
+          "frame_n": 49,
+          "within_cell_inclusion_probability_if_srs": 0.5918367346938775
+        },
+        "high_school|not_attached": {
+          "n": 35,
+          "frame_n": 66,
+          "within_cell_inclusion_probability_if_srs": 0.5303030303030303
+        },
+        "some_college|attached": {
+          "n": 31,
+          "frame_n": 180,
+          "within_cell_inclusion_probability_if_srs": 0.17222222222222222
+        },
+        "some_college|not_attached": {
+          "n": 28,
+          "frame_n": 154,
+          "within_cell_inclusion_probability_if_srs": 0.18181818181818182
+        },
+        "college|attached": {
+          "n": 47,
+          "frame_n": 439,
+          "within_cell_inclusion_probability_if_srs": 0.1070615034168565
+        },
+        "college|not_attached": {
+          "n": 22,
+          "frame_n": 170,
+          "within_cell_inclusion_probability_if_srs": 0.12941176470588237
+        },
+        "unknown": {
+          "n": 0,
+          "frame_n": 0,
+          "within_cell_inclusion_probability_if_srs": null
+        }
+      }
+    },
+    {
+      "month": 202009,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 11,
+          "ess": 10.798242331220099,
+          "mass": 169.24568887326708,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 14,
+          "ess": 11.470994877685506,
+          "mass": 222.12538847824928,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 41,
+          "ess": 37.64038359098054,
+          "mass": 213.0456792419214,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 32,
+          "ess": 30.611294584604455,
+          "mass": 149.0343104645029,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 64,
+          "ess": 59.60206123712579,
+          "mass": 195.04963155293527,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 30,
+          "ess": 27.568104116096766,
+          "mass": 76.1064587002114,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 0,
+          "ess": 0.0,
+          "mass": 0,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 42,
+          "ess": 40.388319595772934,
+          "mass": 133.38943362236023,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 49,
+          "ess": 43.17384897156912,
+          "mass": 169.8649901151657,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 155,
+          "ess": 145.4842115342569,
+          "mass": 158.7216558456421,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 136,
+          "ess": 129.29542289725765,
+          "mass": 132.841919362545,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 398,
+          "ess": 368.89503475424937,
+          "mass": 245.82902365922928,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 154,
+          "ess": 145.18952630135905,
+          "mass": 80.16359776258469,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 0,
+          "ess": 0.0,
+          "mass": 0,
+          "status": "sparse"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 29,
+          "frame_n": 42,
+          "within_cell_inclusion_probability_if_srs": 0.6904761904761905
+        },
+        "high_school|not_attached": {
+          "n": 34,
+          "frame_n": 49,
+          "within_cell_inclusion_probability_if_srs": 0.6938775510204082
+        },
+        "some_college|attached": {
+          "n": 32,
+          "frame_n": 155,
+          "within_cell_inclusion_probability_if_srs": 0.2064516129032258
+        },
+        "some_college|not_attached": {
+          "n": 29,
+          "frame_n": 136,
+          "within_cell_inclusion_probability_if_srs": 0.21323529411764705
+        },
+        "college|attached": {
+          "n": 46,
+          "frame_n": 398,
+          "within_cell_inclusion_probability_if_srs": 0.11557788944723618
+        },
+        "college|not_attached": {
+          "n": 22,
+          "frame_n": 154,
+          "within_cell_inclusion_probability_if_srs": 0.14285714285714285
+        },
+        "unknown": {
+          "n": 0,
+          "frame_n": 0,
+          "within_cell_inclusion_probability_if_srs": null
+        }
+      }
+    },
+    {
+      "month": 202103,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 13,
+          "ess": 11.985842036187895,
+          "mass": 229.05996694609968,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 14,
+          "ess": 12.858813403116793,
+          "mass": 200.318471209384,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 34,
+          "ess": 29.949702858966866,
+          "mass": 186.41798064018994,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 22,
+          "ess": 19.802181563399945,
+          "mass": 121.12677222698622,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 77,
+          "ess": 68.93605074006602,
+          "mass": 243.05583248480826,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 30,
+          "ess": 25.226211722255,
+          "mass": 89.2499630875552,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 2,
+          "ess": 1.8929982719850404,
+          "mass": 5.911705977762276,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 46,
+          "ess": 40.66189511489836,
+          "mass": 145.88132590055466,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 57,
+          "ess": 51.95815201648704,
+          "mass": 172.84721606969833,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 168,
+          "ess": 146.46698734722003,
+          "mass": 179.51411467790604,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 119,
+          "ess": 106.8406091223857,
+          "mass": 118.054418861866,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 410,
+          "ess": 361.84015198858737,
+          "mass": 245.92671352624893,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 180,
+          "ess": 157.78132407559704,
+          "mass": 100.83093684911728,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 4,
+          "ess": 3.4982357456963196,
+          "mass": 3.592600494623184,
+          "status": "sparse"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 29,
+          "frame_n": 46,
+          "within_cell_inclusion_probability_if_srs": 0.6304347826086957
+        },
+        "high_school|not_attached": {
+          "n": 32,
+          "frame_n": 57,
+          "within_cell_inclusion_probability_if_srs": 0.5614035087719298
+        },
+        "some_college|attached": {
+          "n": 33,
+          "frame_n": 168,
+          "within_cell_inclusion_probability_if_srs": 0.19642857142857142
+        },
+        "some_college|not_attached": {
+          "n": 26,
+          "frame_n": 119,
+          "within_cell_inclusion_probability_if_srs": 0.2184873949579832
+        },
+        "college|attached": {
+          "n": 44,
+          "frame_n": 410,
+          "within_cell_inclusion_probability_if_srs": 0.1073170731707317
+        },
+        "college|not_attached": {
+          "n": 24,
+          "frame_n": 180,
+          "within_cell_inclusion_probability_if_srs": 0.13333333333333333
+        },
+        "unknown": {
+          "n": 4,
+          "frame_n": 4,
+          "within_cell_inclusion_probability_if_srs": 1.0
+        }
+      }
+    },
+    {
+      "month": 202109,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 16,
+          "ess": 15.049197290816984,
+          "mass": 237.9116885174069,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 7,
+          "ess": 6.962546786597883,
+          "mass": 98.96649565189934,
+          "status": "sparse"
+        },
+        "some_college|attached": {
+          "n": 31,
+          "ess": 28.290167539433497,
+          "mass": 189.3728534042043,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 18,
+          "ess": 15.191614812008929,
+          "mass": 101.66445791674983,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 89,
+          "ess": 81.93366692020196,
+          "mass": 269.4291023292783,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 30,
+          "ess": 26.895201028964017,
+          "mass": 100.36267613375158,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 1,
+          "ess": 1.0,
+          "mass": 5.131973491774665,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 60,
+          "ess": 54.927895981041395,
+          "mass": 155.4698145389557,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 66,
+          "ess": 61.933805200609676,
+          "mass": 176.22031843662262,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 179,
+          "ess": 151.3532737752246,
+          "mass": 211.25302824378014,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 107,
+          "ess": 94.2469089714585,
+          "mass": 119.3642962872982,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 468,
+          "ess": 434.91304357551866,
+          "mass": 268.8261259198189,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 164,
+          "ess": 148.89965782879548,
+          "mass": 97.90000435709953,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 9,
+          "ess": 8.182991182788983,
+          "mass": 8.726360321044922,
+          "status": "sparse"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 28,
+          "frame_n": 60,
+          "within_cell_inclusion_probability_if_srs": 0.4666666666666667
+        },
+        "high_school|not_attached": {
+          "n": 31,
+          "frame_n": 66,
+          "within_cell_inclusion_probability_if_srs": 0.4696969696969697
+        },
+        "some_college|attached": {
+          "n": 34,
+          "frame_n": 179,
+          "within_cell_inclusion_probability_if_srs": 0.18994413407821228
+        },
+        "some_college|not_attached": {
+          "n": 24,
+          "frame_n": 107,
+          "within_cell_inclusion_probability_if_srs": 0.22429906542056074
+        },
+        "college|attached": {
+          "n": 44,
+          "frame_n": 468,
+          "within_cell_inclusion_probability_if_srs": 0.09401709401709402
+        },
+        "college|not_attached": {
+          "n": 22,
+          "frame_n": 164,
+          "within_cell_inclusion_probability_if_srs": 0.13414634146341464
+        },
+        "unknown": {
+          "n": 9,
+          "frame_n": 9,
+          "within_cell_inclusion_probability_if_srs": 1.0
+        }
+      }
+    },
+    {
+      "month": 202206,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 12,
+          "ess": 11.473907664477366,
+          "mass": 155.60385022789112,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 2,
+          "ess": 1.4394861395819443,
+          "mass": 22.868889247669895,
+          "status": "sparse"
+        },
+        "some_college|attached": {
+          "n": 34,
+          "ess": 31.230488241613934,
+          "mass": 183.47715345836878,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 29,
+          "ess": 22.365114861319764,
+          "mass": 197.76005688392863,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 82,
+          "ess": 78.09781888238463,
+          "mass": 248.1786598829851,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 31,
+          "ess": 29.90612714170321,
+          "mass": 113.42483432935533,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 2,
+          "ess": 1.9331098523485943,
+          "mass": 6.901509258092618,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 75,
+          "ess": 66.87288948545235,
+          "mass": 172.47832590341568,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 45,
+          "ess": 41.14413032284956,
+          "mass": 127.93289029598236,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 185,
+          "ess": 165.70437600600619,
+          "mass": 185.53637340664864,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 130,
+          "ess": 108.13248345007929,
+          "mass": 166.8475859761238,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 445,
+          "ess": 429.1026460259384,
+          "mass": 256.58866342902184,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 136,
+          "ess": 128.58546168572585,
+          "mass": 97.32458901405334,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 10,
+          "ess": 7.626384739145316,
+          "mass": 13.245684146881104,
+          "status": "weak"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 30,
+          "frame_n": 75,
+          "within_cell_inclusion_probability_if_srs": 0.4
+        },
+        "high_school|not_attached": {
+          "n": 25,
+          "frame_n": 45,
+          "within_cell_inclusion_probability_if_srs": 0.5555555555555556
+        },
+        "some_college|attached": {
+          "n": 32,
+          "frame_n": 185,
+          "within_cell_inclusion_probability_if_srs": 0.17297297297297298
+        },
+        "some_college|not_attached": {
+          "n": 30,
+          "frame_n": 130,
+          "within_cell_inclusion_probability_if_srs": 0.23076923076923078
+        },
+        "college|attached": {
+          "n": 43,
+          "frame_n": 445,
+          "within_cell_inclusion_probability_if_srs": 0.09662921348314607
+        },
+        "college|not_attached": {
+          "n": 22,
+          "frame_n": 136,
+          "within_cell_inclusion_probability_if_srs": 0.16176470588235295
+        },
+        "unknown": {
+          "n": 10,
+          "frame_n": 10,
+          "within_cell_inclusion_probability_if_srs": 1.0
+        }
+      }
+    },
+    {
+      "month": 202212,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 10,
+          "ess": 9.783852230235507,
+          "mass": 152.54252306587375,
+          "status": "weak"
+        },
+        "high_school|not_attached": {
+          "n": 6,
+          "ess": 5.815772200143438,
+          "mass": 90.44796811898786,
+          "status": "sparse"
+        },
+        "some_college|attached": {
+          "n": 49,
+          "ess": 37.99093716357565,
+          "mass": 235.4609221214592,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 27,
+          "ess": 22.12114516178455,
+          "mass": 142.7501015824984,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 76,
+          "ess": 73.89649186746067,
+          "mass": 237.66995605301463,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 23,
+          "ess": 16.167400812495746,
+          "mass": 111.01868740504683,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 1,
+          "ess": 1.0,
+          "mass": 3.8988849297545594,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 55,
+          "ess": 49.701306049900985,
+          "mass": 141.15493515264748,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 46,
+          "ess": 42.79195275773745,
+          "mass": 130.4739124891219,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 213,
+          "ess": 172.82650900777156,
+          "mass": 209.55674695644066,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 124,
+          "ess": 99.06488526718901,
+          "mass": 142.96643090097746,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 413,
+          "ess": 362.61664725661956,
+          "mass": 258.17391691497585,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 132,
+          "ess": 108.01897572768162,
+          "mass": 102.39259929834554,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 8,
+          "ess": 5.39859258586504,
+          "mass": 9.482532179543396,
+          "status": "sparse"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 28,
+          "frame_n": 55,
+          "within_cell_inclusion_probability_if_srs": 0.509090909090909
+        },
+        "high_school|not_attached": {
+          "n": 26,
+          "frame_n": 46,
+          "within_cell_inclusion_probability_if_srs": 0.5652173913043478
+        },
+        "some_college|attached": {
+          "n": 35,
+          "frame_n": 213,
+          "within_cell_inclusion_probability_if_srs": 0.1643192488262911
+        },
+        "some_college|not_attached": {
+          "n": 28,
+          "frame_n": 124,
+          "within_cell_inclusion_probability_if_srs": 0.22580645161290322
+        },
+        "college|attached": {
+          "n": 44,
+          "frame_n": 413,
+          "within_cell_inclusion_probability_if_srs": 0.10653753026634383
+        },
+        "college|not_attached": {
+          "n": 23,
+          "frame_n": 132,
+          "within_cell_inclusion_probability_if_srs": 0.17424242424242425
+        },
+        "unknown": {
+          "n": 8,
+          "frame_n": 8,
+          "within_cell_inclusion_probability_if_srs": 1.0
+        }
+      }
+    },
+    {
+      "month": 202306,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 13,
+          "ess": 12.017729767668884,
+          "mass": 159.8445554491524,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 11,
+          "ess": 10.760397749063186,
+          "mass": 204.87894224307524,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 35,
+          "ess": 32.200631225269355,
+          "mass": 143.04616893435244,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 13,
+          "ess": 12.59728204874583,
+          "mass": 78.33425392681477,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 84,
+          "ess": 62.81960806932096,
+          "mass": 261.1878033848682,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 33,
+          "ess": 24.284195442749915,
+          "mass": 131.02175860034092,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 3,
+          "ess": 2.9122465227880623,
+          "mass": 20.880707451449634,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 57,
+          "ess": 53.823234661986554,
+          "mass": 157.39775669574738,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 38,
+          "ess": 36.91913480351544,
+          "mass": 135.0757932662964,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 198,
+          "ess": 184.70198714370358,
+          "mass": 171.83025789260864,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 117,
+          "ess": 99.10371394071181,
+          "mass": 130.38294234871864,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 410,
+          "ess": 370.27504546944544,
+          "mass": 248.44273507595062,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 120,
+          "ess": 95.01133559039215,
+          "mass": 89.55875319242477,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 6,
+          "ess": 5.390053953427583,
+          "mass": 9.895077288150787,
+          "status": "sparse"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 31,
+          "frame_n": 57,
+          "within_cell_inclusion_probability_if_srs": 0.543859649122807
+        },
+        "high_school|not_attached": {
+          "n": 28,
+          "frame_n": 38,
+          "within_cell_inclusion_probability_if_srs": 0.7368421052631579
+        },
+        "some_college|attached": {
+          "n": 33,
+          "frame_n": 198,
+          "within_cell_inclusion_probability_if_srs": 0.16666666666666666
+        },
+        "some_college|not_attached": {
+          "n": 27,
+          "frame_n": 117,
+          "within_cell_inclusion_probability_if_srs": 0.23076923076923078
+        },
+        "college|attached": {
+          "n": 45,
+          "frame_n": 410,
+          "within_cell_inclusion_probability_if_srs": 0.10975609756097561
+        },
+        "college|not_attached": {
+          "n": 22,
+          "frame_n": 120,
+          "within_cell_inclusion_probability_if_srs": 0.18333333333333332
+        },
+        "unknown": {
+          "n": 6,
+          "frame_n": 6,
+          "within_cell_inclusion_probability_if_srs": 1.0
+        }
+      }
+    },
+    {
+      "month": 202312,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 9,
+          "ess": 8.19730274939862,
+          "mass": 113.13660585884433,
+          "status": "sparse"
+        },
+        "high_school|not_attached": {
+          "n": 4,
+          "ess": 3.971196193229168,
+          "mass": 78.80370219094414,
+          "status": "sparse"
+        },
+        "some_college|attached": {
+          "n": 44,
+          "ess": 40.10493189067565,
+          "mass": 187.0867617277441,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 24,
+          "ess": 21.86615079338844,
+          "mass": 139.48713766048678,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 89,
+          "ess": 79.6220263310282,
+          "mass": 233.4032688179663,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 21,
+          "ess": 19.3176842298384,
+          "mass": 81.27733060154226,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 1,
+          "ess": 1.0,
+          "mass": 4.251922616958618,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 60,
+          "ess": 55.905706995614324,
+          "mass": 186.9103147983551,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 30,
+          "ess": 28.226432949518113,
+          "mass": 122.77447175979614,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 189,
+          "ess": 170.87570082322367,
+          "mass": 158.45093476772308,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 100,
+          "ess": 91.93006310894229,
+          "mass": 128.6327052116394,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 424,
+          "ess": 389.1353781552414,
+          "mass": 228.78226056694984,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 114,
+          "ess": 103.84713181987843,
+          "mass": 91.33574995398521,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 5,
+          "ess": 4.550434871317485,
+          "mass": 5.555363297462463,
+          "status": "sparse"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 35,
+          "frame_n": 60,
+          "within_cell_inclusion_probability_if_srs": 0.5833333333333334
+        },
+        "high_school|not_attached": {
+          "n": 27,
+          "frame_n": 30,
+          "within_cell_inclusion_probability_if_srs": 0.9
+        },
+        "some_college|attached": {
+          "n": 31,
+          "frame_n": 189,
+          "within_cell_inclusion_probability_if_srs": 0.164021164021164
+        },
+        "some_college|not_attached": {
+          "n": 28,
+          "frame_n": 100,
+          "within_cell_inclusion_probability_if_srs": 0.28
+        },
+        "college|attached": {
+          "n": 43,
+          "frame_n": 424,
+          "within_cell_inclusion_probability_if_srs": 0.10141509433962265
+        },
+        "college|not_attached": {
+          "n": 23,
+          "frame_n": 114,
+          "within_cell_inclusion_probability_if_srs": 0.20175438596491227
+        },
+        "unknown": {
+          "n": 5,
+          "frame_n": 5,
+          "within_cell_inclusion_probability_if_srs": 1.0
+        }
+      }
+    },
+    {
+      "month": 202404,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 13,
+          "ess": 12.422713044772628,
+          "mass": 156.8272051183881,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 8,
+          "ess": 7.8638633346587605,
+          "mass": 145.72051361212655,
+          "status": "sparse"
+        },
+        "some_college|attached": {
+          "n": 44,
+          "ess": 39.910204274695865,
+          "mass": 210.77479318442417,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 14,
+          "ess": 13.428814275914359,
+          "mass": 87.86708595187336,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 89,
+          "ess": 84.22905153962235,
+          "mass": 215.9338860129932,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 24,
+          "ess": 22.48701796508626,
+          "mass": 78.19482647191508,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 0,
+          "ess": 0.0,
+          "mass": 0,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 55,
+          "ess": 52.24857209510477,
+          "mass": 148.55943644046783,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 38,
+          "ess": 36.90039241394316,
+          "mass": 134.38003754615784,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 154,
+          "ess": 145.01013695920574,
+          "mass": 152.17719793319702,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 88,
+          "ess": 83.62338945077332,
+          "mass": 112.92504739761353,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 421,
+          "ess": 401.063436554717,
+          "mass": 227.14435252547264,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 122,
+          "ess": 114.84278550691953,
+          "mass": 86.78974962234497,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 11,
+          "ess": 9.968268166588096,
+          "mass": 10.820000052452087,
+          "status": "weak"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 30,
+          "frame_n": 55,
+          "within_cell_inclusion_probability_if_srs": 0.5454545454545454
+        },
+        "high_school|not_attached": {
+          "n": 28,
+          "frame_n": 38,
+          "within_cell_inclusion_probability_if_srs": 0.7368421052631579
+        },
+        "some_college|attached": {
+          "n": 31,
+          "frame_n": 154,
+          "within_cell_inclusion_probability_if_srs": 0.2012987012987013
+        },
+        "some_college|not_attached": {
+          "n": 26,
+          "frame_n": 88,
+          "within_cell_inclusion_probability_if_srs": 0.29545454545454547
+        },
+        "college|attached": {
+          "n": 44,
+          "frame_n": 421,
+          "within_cell_inclusion_probability_if_srs": 0.10451306413301663
+        },
+        "college|not_attached": {
+          "n": 22,
+          "frame_n": 122,
+          "within_cell_inclusion_probability_if_srs": 0.18032786885245902
+        },
+        "unknown": {
+          "n": 11,
+          "frame_n": 11,
+          "within_cell_inclusion_probability_if_srs": 1.0
+        }
+      }
+    },
+    {
+      "month": 202410,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 10,
+          "ess": 9.397970956623265,
+          "mass": 97.46417201938159,
+          "status": "weak"
+        },
+        "high_school|not_attached": {
+          "n": 16,
+          "ess": 15.223448800695222,
+          "mass": 219.71549440555899,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 43,
+          "ess": 39.967617131116995,
+          "mass": 167.56919281256637,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 24,
+          "ess": 22.927257049526148,
+          "mass": 120.49479032540422,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 76,
+          "ess": 70.71547713109173,
+          "mass": 229.18221246014028,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 23,
+          "ess": 20.998745651459902,
+          "mass": 83.85922126058952,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 0,
+          "ess": 0.0,
+          "mass": 0,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 55,
+          "ess": 51.86130907140259,
+          "mass": 126.1278486251831,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 62,
+          "ess": 58.84575487186713,
+          "mass": 168.97198450565338,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 187,
+          "ess": 174.59982334961077,
+          "mass": 156.66454485058784,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 113,
+          "ess": 108.25931590187442,
+          "mass": 122.778211414814,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 376,
+          "ess": 352.74521023649066,
+          "mass": 236.5417778789997,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 108,
+          "ess": 101.55227953690768,
+          "mass": 85.65400585532188,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 5,
+          "ess": 4.722294934945709,
+          "mass": 5.375,
+          "status": "sparse"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 28,
+          "frame_n": 55,
+          "within_cell_inclusion_probability_if_srs": 0.509090909090909
+        },
+        "high_school|not_attached": {
+          "n": 33,
+          "frame_n": 62,
+          "within_cell_inclusion_probability_if_srs": 0.532258064516129
+        },
+        "some_college|attached": {
+          "n": 32,
+          "frame_n": 187,
+          "within_cell_inclusion_probability_if_srs": 0.1711229946524064
+        },
+        "some_college|not_attached": {
+          "n": 27,
+          "frame_n": 113,
+          "within_cell_inclusion_probability_if_srs": 0.23893805309734514
+        },
+        "college|attached": {
+          "n": 45,
+          "frame_n": 376,
+          "within_cell_inclusion_probability_if_srs": 0.1196808510638298
+        },
+        "college|not_attached": {
+          "n": 22,
+          "frame_n": 108,
+          "within_cell_inclusion_probability_if_srs": 0.2037037037037037
+        },
+        "unknown": {
+          "n": 5,
+          "frame_n": 5,
+          "within_cell_inclusion_probability_if_srs": 1.0
+        }
+      }
+    },
+    {
+      "month": 202503,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 12,
+          "ess": 11.591619713012635,
+          "mass": 118.7846912036939,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 12,
+          "ess": 10.88760420469259,
+          "mass": 154.05061201108435,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 27,
+          "ess": 25.73531075314094,
+          "mass": 103.18757962250785,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 24,
+          "ess": 23.05862936195641,
+          "mass": 113.17623404649291,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 91,
+          "ess": 87.00448650264424,
+          "mass": 245.65569440558087,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 25,
+          "ess": 22.598952412592652,
+          "mass": 81.14729447919247,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 1,
+          "ess": 1.0,
+          "mass": 5.902790046873547,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 65,
+          "ess": 62.194629802872896,
+          "mass": 147.11401903629303,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 53,
+          "ess": 50.11300350783763,
+          "mass": 149.05178332328796,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 157,
+          "ess": 147.66059161149482,
+          "mass": 131.60656893253326,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 118,
+          "ess": 113.362494237624,
+          "mass": 124.74260157346725,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 353,
+          "ess": 338.281640517931,
+          "mass": 221.19872415065765,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 94,
+          "ess": 88.5545244709716,
+          "mass": 72.88930279016495,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 5,
+          "ess": 4.718614556181975,
+          "mass": 7.5731589794158936,
+          "status": "sparse"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 31,
+          "frame_n": 65,
+          "within_cell_inclusion_probability_if_srs": 0.47692307692307695
+        },
+        "high_school|not_attached": {
+          "n": 32,
+          "frame_n": 53,
+          "within_cell_inclusion_probability_if_srs": 0.6037735849056604
+        },
+        "some_college|attached": {
+          "n": 29,
+          "frame_n": 157,
+          "within_cell_inclusion_probability_if_srs": 0.18471337579617833
+        },
+        "some_college|not_attached": {
+          "n": 28,
+          "frame_n": 118,
+          "within_cell_inclusion_probability_if_srs": 0.23728813559322035
+        },
+        "college|attached": {
+          "n": 46,
+          "frame_n": 353,
+          "within_cell_inclusion_probability_if_srs": 0.13031161473087818
+        },
+        "college|not_attached": {
+          "n": 21,
+          "frame_n": 94,
+          "within_cell_inclusion_probability_if_srs": 0.22340425531914893
+        },
+        "unknown": {
+          "n": 5,
+          "frame_n": 5,
+          "within_cell_inclusion_probability_if_srs": 1.0
+        }
+      }
+    },
+    {
+      "month": 202509,
+      "current_assigned": {
+        "high_school|attached": {
+          "n": 19,
+          "ess": 17.73746932862252,
+          "mass": 201.24281371197162,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 8,
+          "ess": 7.759693531871479,
+          "mass": 113.74217481083339,
+          "status": "sparse"
+        },
+        "some_college|attached": {
+          "n": 37,
+          "ess": 35.071459328241076,
+          "mass": 131.4259623180399,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 23,
+          "ess": 21.748114563606364,
+          "mass": 108.2672635295748,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 79,
+          "ess": 76.08174098921334,
+          "mass": 195.3436163966857,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 26,
+          "ess": 24.842299810071083,
+          "mass": 81.63803833803958,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 0,
+          "ess": 0.0,
+          "mass": 0,
+          "status": "sparse"
+        }
+      },
+      "available_historical_prior_frame": {
+        "high_school|attached": {
+          "n": 54,
+          "ess": 51.330929962383486,
+          "mass": 132.821040391922,
+          "status": "strong"
+        },
+        "high_school|not_attached": {
+          "n": 41,
+          "ess": 38.97674769824863,
+          "mass": 126.13064277172089,
+          "status": "strong"
+        },
+        "some_college|attached": {
+          "n": 150,
+          "ess": 143.72033182943935,
+          "mass": 131.60690015554428,
+          "status": "strong"
+        },
+        "some_college|not_attached": {
+          "n": 92,
+          "ess": 87.0693894795304,
+          "mass": 101.90615999698639,
+          "status": "strong"
+        },
+        "college|attached": {
+          "n": 349,
+          "ess": 336.8564135338973,
+          "mass": 206.44372457265854,
+          "status": "strong"
+        },
+        "college|not_attached": {
+          "n": 101,
+          "ess": 96.56668846091365,
+          "mass": 76.25768527388573,
+          "status": "strong"
+        },
+        "unknown": {
+          "n": 7,
+          "ess": 6.769393219737319,
+          "mass": 7.305881202220917,
+          "status": "sparse"
+        }
+      },
+      "draft_n192_allocation": {
+        "high_school|attached": {
+          "n": 31,
+          "frame_n": 54,
+          "within_cell_inclusion_probability_if_srs": 0.5740740740740741
+        },
+        "high_school|not_attached": {
+          "n": 30,
+          "frame_n": 41,
+          "within_cell_inclusion_probability_if_srs": 0.7317073170731707
+        },
+        "some_college|attached": {
+          "n": 31,
+          "frame_n": 150,
+          "within_cell_inclusion_probability_if_srs": 0.20666666666666667
+        },
+        "some_college|not_attached": {
+          "n": 26,
+          "frame_n": 92,
+          "within_cell_inclusion_probability_if_srs": 0.2826086956521739
+        },
+        "college|attached": {
+          "n": 44,
+          "frame_n": 349,
+          "within_cell_inclusion_probability_if_srs": 0.12607449856733524
+        },
+        "college|not_attached": {
+          "n": 23,
+          "frame_n": 101,
+          "within_cell_inclusion_probability_if_srs": 0.22772277227722773
+        },
+        "unknown": {
+          "n": 7,
+          "frame_n": 7,
+          "within_cell_inclusion_probability_if_srs": 1.0
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "outputs/sce_reference_validation_evaluation_20261017_v1/cases_private.json": "8bf039c3e4a64e2f31da0ee5c30a3db33d7c1712c0ba45d6e9ccd3959ba64336",
+    "outputs/sce_population_associations_20261015_v1/analysis_frame_private.parquet": "6bbb7c6452dd9c265b415433ccdcf0031213d0455a96aec085c6a37fca396806"
+  },
+  "limits": [
+    "No actual resampling, population change or Normal expansion performed.",
+    "Available frame uses only adjacent-returner/prior validity and P; current inflation answers not used to select.",
+    "Historical-prior frame count is a preparation pool, not nationwide coverage or a completed runtime eligibility audit.",
+    "Minimum 12 is a draft coverage floor, not a power calculation or guarantee of sampled ESS>=10.",
+    "Age/income margins and retired/other subgroups remain separate diagnostics; do not multiply all attributes.",
+    "Normal donors must later preserve whole Q8/Q9 payloads and disclose fallback, not invent individual histories."
+  ]
+}

@@ -19,6 +19,8 @@
 - [report_sce_advisor_diagnostics.py](report_sce_advisor_diagnostics.py)：将上述聚合结果作图并接入既有阅读页；同名输出存在时拒绝覆盖。
 - [check_sce_simulation_capabilities.py](check_sce_simulation_capabilities.py)：仅核免费Simulation能力与受支持参数，不执行付费问卷。
 
+Q8单改已接共用runner；准备/干跑实物见`docs/workstreams/20261019_advisor_followup/next_trial_design.md`，新调用仍需本批授权。人口六格只做设计，不随格式实验更换。
+
 ## 按用途查找全部入口
 
 下列英文简介保留自原文件，帮助识别；不是新的方法或有效性认定。
@@ -125,7 +127,9 @@
 - [summarize_sce_retention_predictability.py](summarize_sce_retention_predictability.py) — Small public readout and capacity check; no refit, API, or model selection.
 
 
-### 分析（57）
+### 分析（58）
+
+- [analyze_sce_stratification_support.py](analyze_sce_stratification_support.py) — Outcome-free six-cell support and minimum-plus-proportional Core allocation draft.
 
 - [analyze_sce_population_factor_priority.py](analyze_sce_population_factor_priority.py) — Compare ten cached trait blocks on identical monthly support; descriptive R2 only.
 

@@ -1,0 +1,22 @@
+{
+  "mechanism": "q8_delta_absolute_q9",
+  "months": [202004, 202105, 202111, 202203],
+  "n_per_month": 24,
+  "arms": ["direct", "q8_delta"],
+  "generation_repeats": [1, 2],
+  "sampling_seed": 20261015,
+  "model": "deepseek-flash",
+  "official_advertised_version": "DeepSeek-V4.1-Flash-1017",
+  "model_identity_limit": "Mutable alias; official page declaration, not verified fixed weights. Both arms regenerated contemporaneously.",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "retry_max": 0,
+  "destination": "https://api.deepseek.com",
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_verified_date": "2026-10-19",
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/?model_version=DeepSeek-V4-Pro-0813",
+  "price_basis": "Official peak cache-miss input/output rates, USD per million tokens; cache/off-peak savings not assumed in reserve.",
+  "budget_cap_usd": 2.0
+}

@@ -99,6 +99,8 @@ def worker(folder, index, scripted):
     from socioverse.engine import build_simulator
     from socioverse.schemas import EnvironmentBundle, PopulationBundle, SimulationConfig
     from ..frozen_prompt_runtime import FrozenPromptDecision, REF, PROMPT
+    if protocol['mechanism'] == 'q8_delta_absolute_q9':
+        from ..q8_delta_runtime import Q8DeltaDecision as FrozenPromptDecision, REF, PROMPT
     from ..model import SCEEnvironmentProvider
     from ..prior_belief_experiment import message_hash
     job = manifest['jobs'][index]; month = folder/str(job['month'])
