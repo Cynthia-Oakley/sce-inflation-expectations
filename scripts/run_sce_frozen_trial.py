@@ -39,6 +39,8 @@ def main():
             from studies.sce_inflation_expectations.experiments.model_migration import prepare
         elif config['mechanism'] == 'fixed_model_migration_completion':
             from studies.sce_inflation_expectations.experiments.model_migration import prepare_completion as prepare
+        elif config['mechanism'] == 'procurement_price_engineering':
+            from studies.sce_inflation_expectations.experiments.procurement_prices import prepare
         else:
             parser.error('Unknown mechanism adapter')
         prepare(args.folder, config); return

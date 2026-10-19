@@ -70,6 +70,8 @@ def evaluate(folder, out):
     started = perf_counter(); folder, out = Path(folder).resolve(), Path(out).resolve()
     if out.exists() or not out.is_relative_to(ROOT/'outputs'): raise ValueError('Fresh ignored evaluation output required')
     manifest, protocol = verify(folder)
+    if protocol.get('execution_mode') == 'engineering_only':
+        raise ValueError('Engineering-only answers are not research results; no truth read or accuracy scoring')
     truth_file=(ROOT/protocol.get('evaluation_truth',str(TRUTH.relative_to(ROOT)))).resolve()
     if not truth_file.is_relative_to(ROOT/'outputs') or truth_file.name!='cases_private.json':
         raise ValueError('Safe cached evaluation truth required')

@@ -42,9 +42,11 @@
 
 [人口六格草案](workstreams/20261019_advisor_followup/stratification_draft.md)为学历×是否在职，63/72格月达到初步支持；未知独立池。支持与192人分配示例在`outputs/sce_stratification_support_20261019_v1/`。尚未实际抽样、改旧P或接新Normal，年龄/收入边际与财务/数理另作诊断。本轮Q8用旧样本，不同时换网格。相关指标扩展仍先评估Q2。
 
-采购角色—可见价格本轮已落实为[六期完整离线提示](workstreams/20261020_procurement/README.md)：有效包`outputs/sce_procurement_price_views_20261020_v3/`，576个人月×三组×三种子共5184提示；v1因平衡失败停止，v2是共享加载格式对齐前草稿，均0调用。解析6份已有首发PDF共60项，食品6类用于角色视图，清洁/纸品/护理仅储备。原固定8新闻/先验/问卷不变，三组共同移除完整统计表；新共同背景不能复用旧回答。匹配/打乱交换整套角色/类别，接收者时间标签重算；权重排序约12人块内受限随机，18项平衡均通过，不能说无限制随机。共享加载54文件及8测试通过，尚未引擎干跑或付费。脚本`prepare_sce_procurement_views.py`，模块`procurement_price_views.py`。没有改旧源文件/manifest、默认模型或配置。
+采购角色—可见价格本轮已落实为[六期完整离线提示](workstreams/20261020_procurement/README.md)：有效包`outputs/sce_procurement_price_views_20261020_v3/`，576个人月×三组×三种子共5184提示；v1因平衡失败停止，v2是共享加载格式对齐前草稿，均0调用。解析6份已有首发PDF共60项，食品6类用于角色视图，清洁/纸品/护理仅储备。原固定8新闻/先验/问卷不变，三组共同移除完整统计表；新共同背景不能复用旧回答。匹配/打乱交换整套角色/类别，接收者时间标签重算；权重排序约12人块内受限随机，18项平衡均通过，不能说无限制随机。共享加载54文件及8项价格测试通过；后续引擎验收见下段，仍未付费。脚本`prepare_sce_procurement_views.py`，模块`procurement_price_views.py`。没有改旧源文件/manifest、默认模型或配置。
 
-今日官方免费回查成功，证据`data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json`，user_pool_mcp1.27.0，实际gpt-4o-mini，别名GPT=gpt-4o-2024-08-06不能等同执行模型；逐人同输入/模型选择仍未明确。要求与未发送询问草稿见[GPT接入](workstreams/20261020_procurement/platform_gpt_requirements.md)。无新付费调用或运行任务；下一步先确认通道，再引擎干跑/冻结一批种子和预算。新增全部study文件没有改旧在册入口；旧运行继续用原冻结源。
+后续[共用管线验收](workstreams/20261020_procurement/engineering_and_validation.md)已完成：`outputs/sce_procurement_engineering_20261020_v1/`，一个分配种子20261019、六期×三组18单元、1728脚本动作、0模型请求/费用。新增`procurement_price_engineering`准备适配和`engineering_only`模式，run与研究evaluate明确拒绝该包；没有真人真值输入。共用worker/评价器/CLI做小范围改动前206份Python源已保全在`outputs/sce_shared_runtime_snapshot_20261020_before_procurement_engineering_v1/`；旧manifest未改，旧结果须用冻结源。原5,184提示包与三种子加载事实不变，其他两种子未引擎验收。
+
+今日官方免费证据仍为`data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json`，user_pool_mcp1.27.0，实际gpt-4o-mini，别名不等同执行模型；逐人同输入/计价仍未明确。配置只发现本地DeepSeek通道，未找到官方通用网关。已向用户索取可能已有的接口说明，未发送平台消息、未重复免费请求或发收费问卷。要求及未发送草稿见[GPT接入](workstreams/20261020_procurement/platform_gpt_requirements.md)。无运行任务或待执行付费授权；下一步确认传输能力和价格，再冻结模型专用批次与预算。
 
 已有ATUS 2016/2022/2023文件和字典在`data/raw/behavior_references/2026-10-19_atus_roles_v2/`及同日supplement目录；不要重复下载。2022→2023采购角色预测支持不等于SCE预测收益；whole-residence人数、未知儿童/搬家/信息年龄按原规则保留。金融决策者不等于购物者，CE汽油支出不等于本人驾车。
 

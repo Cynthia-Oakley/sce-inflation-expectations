@@ -1,0 +1,56 @@
+{
+  "status": "all_scripted_engine_cells_passed_not_real_simulation",
+  "new_paid_calls": 0,
+  "new_model_calls": 0,
+  "new_cost_usd": 0,
+  "months": [
+    202009,
+    202109,
+    202206,
+    202312,
+    202410,
+    202503
+  ],
+  "arms": [
+    "shared_price",
+    "matched_role",
+    "shuffled_role"
+  ],
+  "n_per_month": 96,
+  "allocation_seed": 20261019,
+  "engineering_generations": 1,
+  "completed_engine_cells": 18,
+  "scripted_decisions": 1728,
+  "scripted_validation_statuses": {
+    "valid": 1728
+  },
+  "actual_messages_match_prepared_hashes": true,
+  "source_and_prepared_hash_checks_passed": true,
+  "no_current_target_answers_read": true,
+  "live_execution_rejected": true,
+  "research_scoring_rejected": true,
+  "live_model_destination_prices": null,
+  "protocol_sha256": "7bb7749600b1b72cbecd68a7ead6a597c0b3a3254308eaefd5466b0cf38a03e1",
+  "engineering_checks_sha256": "4d0281425b3915d1d3287f063899766319f470f655672225886bd2e6b4fad19f",
+  "local_engineering_package": "outputs/sce_procurement_engineering_20261020_v1",
+  "old_source_snapshot": "outputs/sce_shared_runtime_snapshot_20261020_before_procurement_engineering_v1/",
+  "worker_execution_window_seconds": 6.298587,
+  "execution_window_scope": "Worker sim.run windows only; excludes export, import, schema and prompt checks and agent development.",
+  "limits": [
+    "Deterministic scripted answers validate code plumbing only; no accuracy or behavioral evidence.",
+    "Other two allocation seeds passed shared prompt loading, not these 18 engine cells.",
+    "A future paid package requires actual transport/fees, new freeze and authorization."
+  ],
+  "cli_rejection_checks": {
+    "run": {
+      "exit_code": 1,
+      "message": "ValueError: Engineering-only package cannot run paid calls; prepare a new model-specific package"
+    },
+    "evaluate": {
+      "exit_code": 1,
+      "message": "ValueError: Engineering-only answers are not research results; no truth read or accuracy scoring"
+    }
+  },
+  "targeted_tests_passed": 31,
+  "additional_free_mcp_calls_this_stage": 0
+}

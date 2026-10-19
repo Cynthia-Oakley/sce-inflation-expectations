@@ -13,6 +13,7 @@ from time import perf_counter
 
 ROOT = Path(__file__).resolve().parents[3]
 OFFICIAL = ROOT.parent/'socioverse2_repo'
+ENGINEERING_ONLY = 'engineering_only'
 
 
 def sha(path):
@@ -55,10 +56,18 @@ def verify(folder):
         path = (ROOT/name).resolve()
         if not path.is_relative_to(ROOT) or sha(path) != digest:
             raise ValueError('Source changed: '+name)
+    engineering_only = protocol.get('execution_mode') == ENGINEERING_ONLY
+    if engineering_only and (protocol.get('destination') is not None
+            or protocol.get('model') != 'NOT_CONFIGURED_ENGINEERING_ONLY'
+            or protocol.get('transport') or protocol.get('reused_completed_jobs')
+            or protocol['budget_cap_usd'] != 0
+            or any(protocol[k] != 0 for k in ('price_input_per_mtok', 'price_output_per_mtok'))):
+        raise ValueError('Engineering-only packages require no live model, destination or spend')
     expected = Counter((month, arm, repeat) for month in protocol['months']
                        for arm in protocol['arms'] for repeat in protocol['generation_repeats'])
     if (type(protocol['n_per_month']) is not int or protocol['n_per_month'] < 1
-            or not math.isfinite(protocol['budget_cap_usd']) or protocol['budget_cap_usd'] <= 0
+            or not math.isfinite(protocol['budget_cap_usd'])
+            or (protocol['budget_cap_usd'] != 0 if engineering_only else protocol['budget_cap_usd'] <= 0)
             or not 0 <= protocol['temperature'] <= 2 or not 1 <= protocol['max_tokens'] <= 4096
             or protocol['thinking'] != 'disabled'
             or any(not math.isfinite(protocol[k]) or protocol[k] < 0
@@ -71,9 +80,12 @@ def verify(folder):
         raise ValueError('Incomplete or duplicated configured cells')
     if len({j['run_id'] for j in jobs}) != len(jobs) or any(Path(j['run_id']).name != j['run_id'] for j in jobs):
         raise ValueError('Unsafe/nonunique run identifiers')
-    if any(not math.isfinite(j['cap_usd']) or j['cap_usd'] <= 0 for j in jobs):
-        raise ValueError('Positive finite job caps required')
-    if (protocol['retry_max'] != 0 or protocol['planned_calls'] != len(jobs)*protocol['n_per_month']
+    if any(not math.isfinite(j['cap_usd']) or (j['cap_usd'] != 0 if engineering_only else j['cap_usd'] <= 0) for j in jobs):
+        raise ValueError('Finite job caps required; zero only for engineering-only jobs')
+    expected_calls = 0 if engineering_only else len(jobs)*protocol['n_per_month']
+    if engineering_only and protocol.get('engineering_decision_count') != len(jobs)*protocol['n_per_month']:
+        raise ValueError('Engineering decisions and paid requests must be counted separately')
+    if (protocol['retry_max'] != 0 or protocol['planned_calls'] != expected_calls
             or manifest['planned_calls'] != protocol['planned_calls']
             or sum(j['cap_usd'] for j in jobs) > protocol['budget_cap_usd']+1e-9):
         raise ValueError('Scope/retry/budget mismatch')
@@ -96,6 +108,8 @@ def verify(folder):
 
 
 def authorize(folder, manifest, protocol):
+    if protocol.get('execution_mode') == ENGINEERING_ONLY:
+        raise ValueError('Engineering-only package cannot run paid calls; prepare a new model-specific package')
     auth = read_json(folder/'authorization.json')
     expected = {'approved': True, 'protocol_sha256': manifest['protocol_sha256'],
                 'cap_usd': protocol['budget_cap_usd'], 'planned_calls': protocol['planned_calls'],

@@ -1,16 +1,16 @@
 # 共用实验流程：固定底座，替换一个机制
 
-更新：2026-10-17。首个真实验收是[上期财务前景Q2](workstreams/20261017_financial_outlook/results.md)：768次调用完成，工程可用；该机制没有稳定拟合收益。工程验收与机制成效分开。
+更新：2026-10-20。首个真实验收是[上期财务前景Q2](workstreams/20261017_financial_outlook/results.md)：768次调用完成，工程可用；该机制没有稳定拟合收益。工程验收与机制成效分开。
 
 ## 目前实际支持什么
 
-同一人口/环境下的**单月独立、双组、直接Q8/Q9回答实验**，可配置月份、人数、重复次数、模型参数和预算。沿用官方SocioVerse2 Core、现有SCEDecision接口、原Q9拟合器与现有评价函数。不是新造一个模拟引擎，也不支持直接把此流程冒充B的连续递推。
+同一人口/环境下的**单月独立、多组、冻结提示回答实验**，可配置月份、人数、重复次数、模型参数和预算。沿用官方SocioVerse2 Core、现有SCEDecision接口、原Q9拟合器与现有评价函数。不是新造一个模拟引擎，也不支持直接把此流程冒充B的连续递推。具体已接机制由CLI注册表决定，不表示任意机制/模型都可直接运行。
 
 入口：`scripts/run_sce_frozen_trial.py`，动作是prepare、dry-run、run、worker、evaluate。
 
 ## 每次新增机制需要做什么
 
-1. 在`studies/sce_inflation_expectations/experiments/`增加小型准备适配器：提取白名单事实、生成一段输入、记录缺失与来源。当前prepare按mechanism选择Q2或心理状态适配器；心理模块复用新增的additive block准备器，其余新机制仍须明确增加适配器，没有宣称任意机制已经即插即用。
+1. 在`studies/sce_inflation_expectations/experiments/`增加小型准备适配器：提取白名单事实、生成一段输入、记录缺失与来源。prepare按mechanism选择已注册适配器；心理模块复用additive block准备器，模型/温度及后续机制使用各自适配，其余新机制仍须明确增加适配器。
 2. 用配置确定月份、样本量、重复及参数。直接复用冻结人口、E与原提示；在确定位置插入信息块，并保存完整实际消息与哈希。保留抽样概率、权重、来源、假设和信息边界。
 3. 共用执行器检查协议/预算、来源与提示哈希、干跑、授权、官方API目的地。错误后停止新任务，不自动重试或覆盖旧run。只导出一次源码，不每个job重复复制整仓。
 4. 共用评价器核对原回答与动作，调用原解析器/计分器/指标；真人分数直接复用冻结缓存，新模型概率向量按内容缓存。报告共同支持、失败、权重、分月结果和按人配对区间。
@@ -46,3 +46,10 @@
 ## 心理波次更新验收（2026-10-18）
 
 共用prepare新增wave_psychological_state小适配器，支持从已归档对照选按原顺序的月份子集；明确过滤联结表，保持原人数／参数／权重。3期×48、两组两遍576新增和288旧对照已真实运行／评价，无新引擎。GSS多波次审计单独入口audit_sce_psychological_waves.py；旧2018同样本报告入口summarize_sce_psychological_waves.py只调既有指标、无Q9重拟合。当前输入准备0.673秒、API192.373秒、评价31.067秒，非全部Agent耗时。结果未支持心理默认升级，见[结果](workstreams/20261018_psychological_waves/results.md)。旧源码／manifest不改；本批冻结51366d3，2022全波次仅A年度代理。
+
+
+## 只做工程验收的机制包（2026-10-20）
+
+`procurement_price_engineering`将已有采购角色提示接入同一prepare/dry-run入口，`execution_mode=engineering_only`明确禁止run和研究evaluate。模型、目的地和真实价格均未配置，费用预算与计划模型请求均为0；`engineering_decision_count`单独统计脚本动作，不把它写成API调用量。旧付费协议仍要求正预算和授权，规则未放宽。
+
+六期×三组18项实际验收完成，1,728脚本动作、0模型调用。更换为真实GPT传输层后需要新的模型专用封存与定向验收，不能给工程包补个授权就付费运行。[入口和收据](workstreams/20261020_procurement/engineering_and_validation.md)。
