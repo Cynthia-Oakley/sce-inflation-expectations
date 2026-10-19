@@ -758,9 +758,9 @@
     {
       "from": "CLAUDE.md",
       "path": "CLAUDE.md",
-      "reason": "link/path rebasing",
+      "reason": "link/path rebasing and correction of outdated assistant entry instructions",
       "sha256_before": "b1b24fed1721de7133226ee115076d6f21819c1b6c75a36b64402e75a912f3d9",
-      "sha256_after": "5cab649eb7d1eefc7e54c3508f8f7b53406f89737c0e79f838860387a43419dd"
+      "sha256_after": "eeb1050bdbf5f9eede0613027d576697d6c6784fde5a9ce455739ddcd69c63f3"
     },
     {
       "from": "docs/B_SCE_SURVEY_SPEC.md",
@@ -1201,5 +1201,6 @@
     "Historical source metadata may still retain documentary paths; files referenced by pinned/protected/code/metadata were kept in place."
   ],
   "navigation_commit": "9491668",
-  "script_index_entry_count": 247
+  "script_index_entry_count": 247,
+  "additional_entry_correction": "CLAUDE.md now points to DESIGN/HANDOFF/NEXT and records that real LLM runs are completed; archived KIMI_START_PROMPT is no longer an active task."
 }
