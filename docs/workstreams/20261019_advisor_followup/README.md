@@ -24,6 +24,6 @@ python -m pytest tests/test_sce_advisor_diagnostics.py -q
 
 其余当前任务统一在[任务板](../../NEXT_ACTIONS.md)：采购角色—价格菜单、候选独立时期/种子、最终研究包持续推进，本轮没有把所有后续工作标为完成。
 
-## 新准备：温度对照
+## 已完成：温度对照
 
-[三组方案](temperature_trial_plan.md)、[配置](temperature_config_v1.json)、[48单元离线收据](temperature_readiness_v1.json)。0.5/0.8/1.0×四旧开发月×24人×4遍，1152请求，预计$1.36、硬上限$6；本批授权待确认。只改变API温度，不改变网格、先验或回答格式。
+[三组方案](temperature_trial_plan.md)、[配置](temperature_config_v1.json)、[48单元离线收据](temperature_readiness_v1.json)。0.5/0.8/1.0×四旧开发月×24人×4遍，1152请求已完成，全合法，估$1.2875/$6；主比较未过筛选，保留0.5参考。[结果与复算](temperature_results_20261019.md)。只改变API温度，不改变网格、先验或回答格式。

@@ -1,0 +1,74 @@
+{
+  "calls": 1152,
+  "errors": 0,
+  "retries": 0,
+  "input_tokens": 3543552,
+  "output_tokens": 186995,
+  "estimated_cost_usd": 1.2874580000000004,
+  "cap_usd": 6.0,
+  "api_elapsed_seconds": 398.107884,
+  "evaluation_seconds": 37.448293916881084,
+  "returned_model_aliases": [
+    "deepseek-flash"
+  ],
+  "finish_reasons": {
+    "stop": 1152
+  },
+  "candidate_gate_checks": {
+    "primary_q9_w1_upper95_below_zero": false,
+    "q9_center_point_no_worse": false,
+    "model_validity_and_scorability_gate": true
+  },
+  "candidate_passed": false,
+  "same_support_carry_q9": {
+    "center_mae_pp": 0.7296272383136979,
+    "w1_pp": 1.7836138073386352,
+    "personal_mae_pp": 3.0701458222764693
+  },
+  "mean_variance_components_equal_months": {
+    "Q9_density_mean": {
+      "baseline": {
+        "within_person_repeat_variance_pp2": 0.3149128815187976,
+        "noise_adjusted_between_variance_pp2": 2.5672587657459003
+      },
+      "temperature_08": {
+        "within_person_repeat_variance_pp2": 0.6436789944636153,
+        "noise_adjusted_between_variance_pp2": 2.8226738702699903
+      },
+      "temperature_10": {
+        "within_person_repeat_variance_pp2": 0.9145822343641523,
+        "noise_adjusted_between_variance_pp2": 2.801445778496282
+      }
+    },
+    "Q8_point": {
+      "baseline": {
+        "within_person_repeat_variance_pp2": 0.548185763888889,
+        "noise_adjusted_between_variance_pp2": 3.055894285929952
+      },
+      "temperature_08": {
+        "within_person_repeat_variance_pp2": 1.2874131944444445,
+        "noise_adjusted_between_variance_pp2": 3.298708861714976
+      },
+      "temperature_10": {
+        "within_person_repeat_variance_pp2": 5.997022569444446,
+        "noise_adjusted_between_variance_pp2": 4.558546384359902
+      }
+    }
+  },
+  "protocol_sha256": "1e409b4705ad7e1039ac96e49258a1b7bf2e778d195d6faf73146e7ee5d2479b",
+  "source_summary_sha256": "42140cfde3e0b54fec526b8f3c2f79f451c3c9ce86917886879484885d21e32f",
+  "note": "Usage-based peak-price estimate, not vendor invoice; no private row records published.",
+  "evaluation_adapter_receipt": {
+    "completed_at_utc": "2026-10-19T13:51:52.109618+00:00",
+    "reason": "Legacy truth uses two API-repeat keys; one factual person-month target reused for four repeats.",
+    "frozen_protocol_sha256": "1e409b4705ad7e1039ac96e49258a1b7bf2e778d195d6faf73146e7ee5d2479b",
+    "adapter_source": "scripts/evaluate_sce_temperature.py",
+    "adapter_sha256": "db6d879c52a41e5160d51538e25ad9288ee9e7e548c1db36a4ee02921e8d0b65",
+    "pinned_sources_inputs_and_answers_unchanged": true,
+    "new_api_calls": 0,
+    "original_cached_keys": 192,
+    "expanded_keys": 384,
+    "factual_person_months": 96,
+    "cached_copies_identical": true
+  }
+}

@@ -885,4 +885,14 @@
 <h2>含义与下一步</h2><p>原有信念相同，换一种回答任务即可改变模型分布，说明不能把f(P,E)视为固定的人类推理方式。差值格式让上期答案成为明确计算起点，可能减弱把所有人拉向公共判断的倾向；这是与结果相容的解释，不是已证明真人心理过程。Q8与Q9联合生成，因此Q8格式也可能影响未改格式的Q9。</p>
 <p>保留Q8差值作为有信号的开发候选；不重启Q9概率差值、不立刻扩样或反复调措辞。下一主任务仍为采购角色对应的可见价格及匹配／打乱输入预检，随机新闻量等候选另定独立时期。四个月均参与过开发、每月24人、两遍不是新增人、Flash别名不等于固定权重；本轮不是全国或B线预测成绩，十二期主MAE仍0.459／照抄0.239pp。</p>
 <p><a href="../20261019_advisor_followup/q8_delta_results_20261019.md">完整结果与复算</a> · <a href="../20261019_advisor_followup/q8_delta_results_v1/summary.json">聚合评价</a> · <a href="../20261019_advisor_followup/q8_delta_results_v1/run_receipt.json">调用与费用收据</a> · <a href="../../current_todo.html">当前清单</a></p></section>
+<section id="temperature-results-20261019" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 36px;border-bottom:1px solid #d7dfdc;line-height:1.75">
+<h1>温度对照：拟合质量与重复波动分开检查</h1><p>2026-10-19。四个开发月、每月24人、三组各4遍；<strong>1152次调用，估算$1.287／上限$6</strong>，接口错误0、重试0。调用约6.6分钟，评价37.4秒。</p>
+<p>DeepSeek官方Flash；温度0.5／0.8／1.0。其余画像、历史信念、公共信息与提示完全相同，全部直接填Q8/Q9，关闭思考；没有网格化、差值格式或新增人格标签。四遍是相同虚拟人的重复回答，不能增加真实人数。</p>
+<div class="table-scroll"><table><thead><tr><th>组别</th><th>Q9中心MAE↓</th><th>Q9分布W1↓</th><th>Q9跨人IQR</th><th>Q8中心MAE↓（等人）</th></tr></thead><tbody><tr><td>温度0.5</td><td>1.037</td><td>2.665</td><td>2.002</td><td>0.756</td></tr><tr><td>温度0.8</td><td>1.032</td><td>2.420</td><td>2.164</td><td>0.744</td></tr><tr><td>温度1.0</td><td>1.047</td><td>2.505</td><td>2.071</td><td>0.744</td></tr></tbody></table></div>
+<p>单位为百分点。Q9共同支持94个人月、Q8为96个人月；Q9原调查权重为敏感性口径，Q8等人权重。相同支持照抄本人上期Q9：中心0.730、W1 1.784。不能当全国成绩或替换十二期主结果。</p>
+<figure><img src="../20261019_advisor_followup/temperature_results_v1/figures/accuracy.png" alt="三种温度的同支持Q9拟合误差"><figcaption>先对每月、每遍计分再平均，没有用四遍均值作为最终模拟答案。</figcaption></figure>
+<h2>主要比较与不确定性</h2><p>执行前固定1.0对0.5为主比较，0.8为辅助。中位数MAE差的95%区间为[-0.451, +0.186]pp；分布W1差的95%区间为[-0.344, +0.033]pp；负数代表高温组误差下降。未满足预登记继续条件，保留温度0.5工作参考。分布W1改善区间低于0：未通过；中位数误差点值不增加：未通过；合法与可计分覆盖达标：通过。区间保留同人的各月份与重复，仅适用于固定四个开发月，不代表新时期风险。</p>
+<h2>同一个人摇摆，与不同人有差异</h2><p><strong>主Q9同一人的重复方差从0.315升至0.915pp²；扣除重复噪声后的跨人方差仅从2.567升至2.801pp²。</strong>温度增加了波动，却没有明显恢复主Q9的人际差异。0.8的W1改善作为辅助信号保留，不事后替换预定主比较。</p><p>下图把重复方差与各人平均回答的差异分开。跨人方差再减去平均重复方差÷4，估计扣除重复噪声后的差异；该估计不等于真实人格参数，负数原样报告。稳定差异扩大也需要同时改善W1、个人排序或误差，才有实际价值。</p>
+<figure><img src="../20261019_advisor_followup/temperature_results_v1/figures/dispersion.png" alt="Q8和Q9的重复噪声与经修正跨人方差"><figcaption>此图按人等权、月份等权，单位为百分点²；与上方调查权重敏感性误差口径分别解释。</figcaption></figure>
+<p><a href="../20261019_advisor_followup/temperature_results_20261019.md">结果解释与下一步</a> · <a href="../20261019_advisor_followup/temperature_results_v1/summary.json">完整聚合</a> · <a href="../20261019_advisor_followup/temperature_results_v1/run_receipt.json">费用与分解收据</a> · <a href="../../current_todo.html">当前清单</a></p></section>
 </body></html>
