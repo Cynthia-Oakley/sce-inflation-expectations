@@ -42,6 +42,9 @@ def effective_temperature(protocol, job):
 def verify(folder):
     folder = Path(folder).resolve(); manifest = read_json(folder/'manifest.json')
     protocol = read_json(folder/'protocol.json')
+    if protocol.get('transport'):
+        from .model_migration import validate_transport
+        validate_transport(protocol)
     if sha(folder/'protocol.json') != manifest['protocol_sha256']:
         raise ValueError('Protocol changed')
     for name, digest in manifest['prepared_file_sha256'].items():
@@ -74,6 +77,21 @@ def verify(folder):
             or manifest['planned_calls'] != protocol['planned_calls']
             or sum(j['cap_usd'] for j in jobs) > protocol['budget_cap_usd']+1e-9):
         raise ValueError('Scope/retry/budget mismatch')
+    reused = protocol.get('reused_completed_jobs', {})
+    if not set(reused) <= {j['run_id'] for j in jobs}:
+        raise ValueError('Unknown reused completed job')
+    for job in jobs:
+        if job['run_id'] not in reused: continue
+        path = ROOT/'outputs/local_runs'/job['run_id']/'run_manifest.json'
+        receipt = read_json(path)
+        if (manifest['source_sha256'].get(str(path.relative_to(ROOT))) != sha(path)
+                or receipt['protocol_sha256'] != reused[job['run_id']]
+                or receipt['status'] != 'completed' or receipt['llm_kind'] != 'openai'
+                or receipt['cost']['call_count'] != protocol['n_per_month']
+                or (receipt['month'], receipt['arm'], receipt['repeat']) != (job['month'], job['arm'], job['repeat'])):
+            raise ValueError('Only pinned, complete, matching real jobs can be reused')
+    if reused and protocol.get('new_planned_calls') != (len(jobs)-len(reused))*protocol['n_per_month']:
+        raise ValueError('Completion new-call scope mismatch')
     return manifest, protocol
 
 
@@ -82,6 +100,8 @@ def authorize(folder, manifest, protocol):
     expected = {'approved': True, 'protocol_sha256': manifest['protocol_sha256'],
                 'cap_usd': protocol['budget_cap_usd'], 'planned_calls': protocol['planned_calls'],
                 'destination': protocol['destination']}
+    if protocol.get('reused_completed_jobs'):
+        expected['new_planned_calls'] = protocol['new_planned_calls']
     if any(auth.get(k) != v for k, v in expected.items()) or not auth.get('user_confirmation'):
         raise ValueError('Explicit matching data-scope/destination/budget authorization required')
     checks = read_json(folder/'engineering_checks.json')
@@ -91,12 +111,16 @@ def authorize(folder, manifest, protocol):
         job = manifest['jobs'][check['job_index']]
         receipt = read_json(ROOT/'outputs/local_runs'/(job['run_id']+'-engineering')/'run_manifest.json')
         if (check['exit_code'] or check['run_id'] != job['run_id']
-                or receipt.get('protocol_sha256') != manifest['protocol_sha256']
+                or receipt.get('protocol_sha256') != protocol.get('reused_completed_jobs', {}).get(job['run_id'], manifest['protocol_sha256'])
                 or receipt.get('status') != 'completed' or receipt.get('llm_kind') != 'scripted'
                 or receipt.get('cost', {}).get('call_count') != 0 or receipt.get('actual_input_hashes_match') is not True):
             raise ValueError('Invalid offline engine receipt')
     from ..news_label_trial import dotenv_values
     values = dotenv_values(OFFICIAL/'.env')
+    if protocol.get('transport') == 'openrouter_locked':
+        if not (os.environ.get('OPENROUTER_API_KEY') or values.get('OPENROUTER_API_KEY')):
+            raise ValueError('Authorized OpenRouter credential unavailable')
+        return
     destination = (os.environ.get('SV_LLM_BASE_URL') or values.get('SV_LLM_BASE_URL') or '').rstrip('/')
     if destination not in (protocol['destination'], protocol['destination']+'/v1') or not (os.environ.get('SV_LLM_API_KEY') or values.get('SV_LLM_API_KEY')):
         raise ValueError('Authorized endpoint/credential unavailable')
@@ -107,12 +131,18 @@ def worker(folder, index, scripted):
     manifest, protocol = verify(folder)
     if type(index) is not int or not 0 <= index < len(manifest['jobs']):
         raise ValueError('Valid job index required')
+    if manifest['jobs'][index]['run_id'] in protocol.get('reused_completed_jobs', {}):
+        raise ValueError('Reused completed job must never be generated again')
     if not scripted:
         authorize(folder, manifest, protocol)
     sys.path.insert(0, str(OFFICIAL))
     from socioverse.engine import build_simulator
     from socioverse.schemas import EnvironmentBundle, PopulationBundle, SimulationConfig
     from ..frozen_prompt_runtime import FrozenPromptDecision, REF, PROMPT
+    if protocol.get('transport') == 'openrouter_locked':
+        from ..openrouter_frozen_runtime import OpenRouterFrozenDecision as FrozenPromptDecision, REF, configure_live
+        if not scripted:
+            directory = configure_live(protocol, OFFICIAL/'.env')
     if protocol['mechanism'] == 'q8_delta_absolute_q9':
         from ..q8_delta_runtime import Q8DeltaDecision as FrozenPromptDecision, REF, PROMPT
     from ..model import SCEEnvironmentProvider
@@ -120,6 +150,8 @@ def worker(folder, index, scripted):
     job = manifest['jobs'][index]; month = folder/str(job['month'])
     run_id = job['run_id']+('-engineering' if scripted else '')
     audit = ROOT/'outputs/local_runs'/run_id; audit.mkdir(parents=True, exist_ok=False)
+    if protocol.get('transport') == 'openrouter_locked' and not scripted:
+        dump(audit/'provider_directory.json', directory)
     env = EnvironmentBundle.model_validate_json((month/'environment.json').read_text())
     pop = PopulationBundle.model_validate_json((month/'population.json').read_text())
     cfg = SimulationConfig.model_validate_json((month/'simulation.json').read_text())
@@ -132,7 +164,7 @@ def worker(folder, index, scripted):
         prompts_file=str(prompt_file), prompts_sha256=sha(prompt_file), model=protocol['model'],
         temperature=effective_temperature(protocol, job), max_tokens=protocol['max_tokens'],
         max_prompt_chars=protocol['max_prompt_chars'], retry_max=0, max_calls=len(pop.personas),
-        extra_body={'thinking': {'type': protocol['thinking']}},
+        extra_body=protocol.get('request_extra_body', {'thinking': {'type': protocol['thinking']}}),
         price_input_per_mtok=protocol['price_input_per_mtok'],
         price_output_per_mtok=protocol['price_output_per_mtok'], cost_cap_usd=job['cap_usd'])
     env.provider_args.update(audit_dir=str(audit), run_id=run_id,
@@ -176,13 +208,18 @@ def dispatch(folder, scripted=True, workers=4):
         raise ValueError('Workers must be 1..4')
     if not scripted:
         authorize(folder, manifest, protocol)
-    for job in manifest['jobs']:
+    reused = protocol.get('reused_completed_jobs', {})
+    pending = [i for i,j in enumerate(manifest['jobs']) if j['run_id'] not in reused]
+    for i in pending:
+        job = manifest['jobs'][i]
         if (ROOT/'outputs/local_runs'/(job['run_id']+('-engineering' if scripted else ''))).exists():
             raise ValueError('Existing job; no automatic rerun or resume')
     # One shared source export per batch; reuse official Core and legacy audit.
     subprocess.run([sys.executable, str(ROOT/'scripts/export_study_runtime.py')], cwd=ROOT,
                    capture_output=True, text=True, check=True)
-    results = []; next_index = 0; failed = False
+    results = [{'job_index':i, 'run_id':j['run_id'], 'exit_code':0, 'reused_existing_job':True}
+               for i,j in enumerate(manifest['jobs']) if j['run_id'] in reused]
+    next_index = 0; failed = False
     def one(index):
         job = manifest['jobs'][index]
         command = [sys.executable, str(ROOT/'scripts/run_sce_frozen_trial.py'), 'worker',
@@ -196,14 +233,14 @@ def dispatch(folder, scripted=True, workers=4):
         return {'job_index': index, 'run_id': job['run_id'], 'exit_code': rc}
     with ThreadPoolExecutor(max_workers=workers) as pool:
         active = {}
-        while next_index < len(manifest['jobs']) and len(active) < workers:
-            active[pool.submit(one, next_index)] = next_index; next_index += 1
+        while next_index < len(pending) and len(active) < workers:
+            index = pending[next_index]; active[pool.submit(one, index)] = index; next_index += 1
         while active:
             done, _ = wait(active, return_when=FIRST_COMPLETED)
             for future in done:
                 active.pop(future); result = future.result(); results.append(result); failed |= bool(result['exit_code'])
             dump(folder/('engineering_checks.json' if scripted else 'real_dispatch.json'), results)
-            while not failed and next_index < len(manifest['jobs']) and len(active) < workers:
-                active[pool.submit(one, next_index)] = next_index; next_index += 1
+            while not failed and next_index < len(pending) and len(active) < workers:
+                index = pending[next_index]; active[pool.submit(one, index)] = index; next_index += 1
     if failed:
         raise RuntimeError('Batch stopped; preserve results, no automatic retry')

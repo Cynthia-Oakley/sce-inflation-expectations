@@ -35,6 +35,10 @@ def main():
             from studies.sce_inflation_expectations.experiments.q8_delta import prepare
         elif config['mechanism'] == 'temperature_sensitivity':
             from studies.sce_inflation_expectations.experiments.temperature import prepare
+        elif config['mechanism'] == 'fixed_model_migration':
+            from studies.sce_inflation_expectations.experiments.model_migration import prepare
+        elif config['mechanism'] == 'fixed_model_migration_completion':
+            from studies.sce_inflation_expectations.experiments.model_migration import prepare_completion as prepare
         else:
             parser.error('Unknown mechanism adapter')
         prepare(args.folder, config); return

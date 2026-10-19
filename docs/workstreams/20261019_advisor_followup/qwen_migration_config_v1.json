@@ -1,0 +1,46 @@
+{
+  "mechanism": "fixed_model_migration",
+  "transport": "openrouter_locked",
+  "destination": "https://openrouter.ai/api/v1",
+  "model": "qwen/qwen-2.5-72b-instruct",
+  "route": "deepinfra/fp8",
+  "months": [
+    202004,
+    202105,
+    202111,
+    202203
+  ],
+  "n_per_month": 24,
+  "arms": [
+    "qwen"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "retry_max": 0,
+  "price_input_per_mtok": 0.36,
+  "price_output_per_mtok": 0.4,
+  "budget_cap_usd": 1.0,
+  "provider_metadata": "outputs/sce_qwen_migration_metadata_20261019_v1/qwen_endpoints.json",
+  "request_extra_body": {
+    "provider": {
+      "order": [
+        "deepinfra/fp8"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "max_price": {
+        "prompt": 0.36,
+        "completion": 0.4
+      }
+    }
+  },
+  "model_identity_limit": "Named 2024 Qwen2.5 model and locked FP8 provider; hosted weights/hash and complete training cutoff not verified.",
+  "published_repository_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+  "knowledge_cutoff": "unknown",
+  "sampling_seed": 20261015
+}

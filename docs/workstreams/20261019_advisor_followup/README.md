@@ -30,4 +30,4 @@ python -m pytest tests/test_sce_advisor_diagnostics.py -q
 
 ## 当前下一步：固定模型与两层评价
 
-[最新安排](next_stage_model_and_evaluation.md)：官方同输入能力优先核；条件不足则单一固定备选。微观W1/分组/更新与宏观冻结组合分别验证，不改旧试验结果。现阶段只有免费核查与计划，无新模型真实调用。
+[最新安排](next_stage_model_and_evaluation.md)：官方同输入能力优先核；条件不足则单一固定备选。微观W1/分组/更新与宏观冻结组合分别验证，不改旧试验结果。[Qwen同输入迁移](qwen_migration_plan.md)已完成8个离线单元/14项测试，用户明确批准$1后已发75请求，因连接错误停止；[停止现场](qwen_migration_partial_v1.json)、[补齐离线收据](qwen_completion_readiness_v1.json)，无自动重试，不重跑DeepSeek。[授权前离线收据](qwen_migration_readiness_v1.json)。

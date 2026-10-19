@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-19T15:38:41.401772+00:00",
+  "status": "ready_pending_one_time_completion_authorization",
+  "trial": "outputs/sce_qwen_completion_trial_20261019_v2",
+  "protocol_sha256": "22f7df2217788af0f9666710f3588c3069de0b2b9ceae5a94890a2277664a1a1",
+  "evaluated_responses": 192,
+  "reused_original_qwen_responses": 72,
+  "new_planned_calls": 120,
+  "archived_partial_responses_excluded": 2,
+  "archived_interface_errors": 1,
+  "new_engineering_units": 5,
+  "reused_engineering_units": 3,
+  "source_input_and_truth_checks_passed": true,
+  "tests_passed": 16,
+  "original_cost_estimate_plus_new_reservation_usd": 0.6669229999999999,
+  "cap_usd": 1,
+  "new_real_calls": 0,
+  "authorization_approved": false,
+  "v1_completion_folder": "incomplete prepare residue; no API, do not use"
+}

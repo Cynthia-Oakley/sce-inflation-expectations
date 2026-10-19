@@ -1,6 +1,6 @@
 ## 2026-10-19后续模型与评价安排
 
-用户要求后续新模拟优先官方可核版本模型；若不能原样传入逐人SCE画像、E与本人历史，则选择单一固定Qwen／LLaMA候选。**新增实验不再默认沿用DeepSeek可变Flash；新模型尚未接入验收或付费运行。**下文DeepSeek/0.5为已执行的历史参考，不是本轮新调用授权。温度0.8微观W1信号保留；宏观组合权重仍未冻结。新候选按微观结构与独立组合误差两层预登记，不事后更改旧门槛。[下一步安排](workstreams/20261019_advisor_followup/next_stage_model_and_evaluation.md)。
+用户要求后续新模拟优先官方可核版本模型；最新免费核查仍未确认原样传入逐人SCE画像、E与本人历史。按用户格式经验，单一Qwen2.5-72B/DeepInfra迁移批次已完成8单元离线验收并获$1明确授权，75次已发后因一次连接错误停止；另备120次补齐包等待人工补发授权。[本批配置](workstreams/20261019_advisor_followup/qwen_migration_plan.md)。**新增实验不再默认沿用DeepSeek可变Flash；Qwen已有3份Q9概率和错误，完整科学评价未完成，不升级参考配置。**下文DeepSeek/0.5为已执行的历史参考，不是本轮新调用授权。温度0.8微观W1信号保留；宏观组合权重仍未冻结。新候选按微观结构与独立组合误差两层预登记，不事后更改旧门槛。[下一步安排](workstreams/20261019_advisor_followup/next_stage_model_and_evaluation.md)。
 
 ## 2026-10-18心理波次重做结果
 

@@ -88,7 +88,8 @@ def evaluate(folder, out):
     actions = {}; cost = 0.; coverage = {a: Counter() for a in protocol['arms']}
     for job in manifest['jobs']:
         audit = ROOT/'outputs/local_runs'/job['run_id']; receipt = read_json(audit/'run_manifest.json')
-        if receipt['status'] != 'completed' or receipt['llm_kind'] != 'openai' or receipt['protocol_sha256'] != manifest['protocol_sha256']:
+        expected_protocol = protocol.get('reused_completed_jobs', {}).get(job['run_id'], manifest['protocol_sha256'])
+        if receipt['status'] != 'completed' or receipt['llm_kind'] != 'openai' or receipt['protocol_sha256'] != expected_protocol:
             raise ValueError('Complete real run required; engineering outputs are not experiments')
         previews = read_json(folder/str(job['month'])/f"prompts_{job['arm']}.json")['rows']
         calls = [json.loads(line) for line in (audit/'llm_calls.jsonl').read_text().splitlines() if line]
@@ -109,6 +110,10 @@ def evaluate(folder, out):
         for aid, payload in rows:
             payload = json.loads(payload) if isinstance(payload, str) else payload
             call = calls[aid]; raw = call.get('raw_response_text') or ''
+            if protocol.get('transport') == 'openrouter_locked' and (
+                    call.get('returned_model') != protocol['model'] or call.get('returned_provider') != 'DeepInfra'
+                    or call['extra_body'] != protocol['request_extra_body'] or call['temperature'] != protocol['temperature']):
+                raise ValueError('Locked model/provider/request evidence mismatch')
             if protocol['mechanism'] == 'temperature_sensitivity' and (
                     call['temperature'] != effective_temperature(protocol, job)
                     or call['max_tokens'] != protocol['max_tokens']

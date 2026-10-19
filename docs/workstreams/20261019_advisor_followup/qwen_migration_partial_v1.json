@@ -1,0 +1,84 @@
+{
+  "status": "stopped_connection_error_no_retry",
+  "recorded_at": "2026-10-19T15:34:33.833118+00:00",
+  "planned_requests": 192,
+  "attempted_requests": 75,
+  "successful_returned_responses": 74,
+  "interface_errors": 1,
+  "error_types": [
+    "APIConnectionError: Connection error."
+  ],
+  "retries": 0,
+  "completed_units": 3,
+  "unstarted_units": 4,
+  "reported_cost_usd": 0.09584896000000004,
+  "estimated_usage_cost_usd": 0.100331,
+  "cap_usd": 1,
+  "unreceived_request_billing_unknown": true,
+  "returned_models": [
+    "qwen/qwen-2.5-72b-instruct"
+  ],
+  "returned_providers": [
+    "DeepInfra"
+  ],
+  "units": [
+    {
+      "month": 202004,
+      "repeat": 1,
+      "status": "completed",
+      "calls": 24,
+      "model_statuses": {
+        "valid": 23,
+        "invalid": 1
+      },
+      "estimated_usd": 0.031042,
+      "api_reported_usd": 0.031041800000000005,
+      "seconds": 188.8709834171459
+    },
+    {
+      "month": 202004,
+      "repeat": 2,
+      "status": "completed",
+      "calls": 24,
+      "model_statuses": {
+        "valid": 24
+      },
+      "estimated_usd": 0.031075,
+      "api_reported_usd": 0.031075000000000002,
+      "seconds": 192.11551799997687
+    },
+    {
+      "month": 202105,
+      "repeat": 1,
+      "status": "stopped_partial_no_retry",
+      "calls": 3,
+      "model_statuses": {},
+      "estimated_usd": 0.007058,
+      "api_reported_usd": 0.0025762,
+      "seconds": 45.07176454202272
+    },
+    {
+      "month": 202105,
+      "repeat": 2,
+      "status": "completed",
+      "calls": 24,
+      "model_statuses": {
+        "valid": 22,
+        "invalid": 2
+      },
+      "estimated_usd": 0.031156,
+      "api_reported_usd": 0.031155959999999996,
+      "seconds": 191.13967120810412
+    }
+  ],
+  "full_scientific_evaluation": "not_run_incomplete_design",
+  "note": "Partial run preserved. No invented answers, no automatic retry. Successful units can be reused in a separately authorized completion.",
+  "json_parse_successes": 74,
+  "q9_probability_sum_valid_responses": 71,
+  "q9_sum_error_values": [
+    105,
+    105,
+    99
+  ],
+  "technical_gate_at_least_99pct_unattainable_in_original_192": true
+}

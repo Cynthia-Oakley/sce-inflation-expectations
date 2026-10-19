@@ -1,0 +1,29 @@
+{
+  "status": "ready_pending_new_authorization",
+  "checked_at": "2026-10-19T15:29:01.858810+00:00",
+  "trial": "outputs/sce_qwen_migration_trial_20261019_v1",
+  "model": "qwen/qwen-2.5-72b-instruct",
+  "provider_route": "deepinfra/fp8",
+  "months": [
+    202004,
+    202105,
+    202111,
+    202203
+  ],
+  "n_per_month": 24,
+  "generation_repeats": 2,
+  "new_planned_calls": 192,
+  "reused_deepseek_calls": 192,
+  "new_real_calls": 0,
+  "engineering_units_passed": 8,
+  "engine_scripted_answers": 192,
+  "identical_messages": true,
+  "reused_baseline_and_truth_matches": 192,
+  "tests_passed": 14,
+  "estimated_usd": 0.21226284,
+  "reservation_usd": 0.906318,
+  "cap_usd": 1,
+  "paid_gate_closed": true,
+  "protocol_sha256": "1ac21a316d54981dc7979613de4e8ae01dc90e5871f2c933788a9640adeae150",
+  "protected_files_unchanged": 15
+}
