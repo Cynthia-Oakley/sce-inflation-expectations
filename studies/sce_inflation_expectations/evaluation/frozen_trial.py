@@ -9,7 +9,7 @@ import duckdb
 import numpy as np
 from . import cognition as shared
 from .metrics import quantile, wasserstein1
-from ..experiments.frozen_batch import ROOT, verify, read_json, dump, sha
+from ..experiments.frozen_batch import ROOT, verify, read_json, dump, sha, effective_temperature
 from ..model import parse_sce_response
 
 TRUTH = ROOT/'outputs/sce_reference_validation_evaluation_20261017_v1/cases_private.json'
@@ -76,7 +76,7 @@ def evaluate(folder, out):
     relative = str(truth_file.relative_to(ROOT))
     if manifest['source_sha256'].get(relative) != sha(truth_file): raise ValueError('Pinned evaluation truth required')
     q8_only=protocol['mechanism']=='q8_delta_absolute_q9'
-    if q8_only:
+    if protocol.get('evaluation_truth_format') == 'legacy_revision_format':
         from .q8_delta import legacy_truth
         reference=(ROOT/protocol['evaluation_bin_reference']).resolve()
         if not reference.is_relative_to(ROOT/'outputs') or manifest['source_sha256'].get(str(reference.relative_to(ROOT)))!=sha(reference):
@@ -109,6 +109,11 @@ def evaluate(folder, out):
         for aid, payload in rows:
             payload = json.loads(payload) if isinstance(payload, str) else payload
             call = calls[aid]; raw = call.get('raw_response_text') or ''
+            if protocol['mechanism'] == 'temperature_sensitivity' and (
+                    call['temperature'] != effective_temperature(protocol, job)
+                    or call['max_tokens'] != protocol['max_tokens']
+                    or call['extra_body'] != {'thinking': {'type': 'disabled'}}):
+                raise ValueError('Temperature-only request settings differ from protocol')
             if (call['prompt_sha256'] != previews[aid]['prompt_sha256'] or call['prompt_text'] != json.dumps(previews[aid]['messages'], ensure_ascii=False)
                     or call['raw_response_sha256'] != hashlib.sha256(raw.encode()).hexdigest()
                     or call['attempt_idx'] != 0 or payload.get('actual_messages_sha256') != previews[aid]['prompt_sha256']):
@@ -185,5 +190,8 @@ def evaluate(folder, out):
             and point['equal_people'][candidate]['center_mae_pp']<=point['equal_people'][base]['center_mae_pp']
             and guard(candidate,'q9_center_mae_pp')<=guard(base,'q9_center_mae_pp')
             and guard(candidate,'cross_section_w1_pp')<=guard(base,'cross_section_w1_pp'))
+    if protocol['mechanism'] == 'temperature_sensitivity':
+        from .temperature import dispersion_readout
+        result['temperature_dispersion'] = dispersion_readout(cases, protocol)
     out.mkdir(parents=True); dump(out/'summary.json', result); dump(out/'cases_private.json', cases)
     return result

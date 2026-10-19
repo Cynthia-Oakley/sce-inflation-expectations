@@ -1,0 +1,30 @@
+{
+  "status": "offline_ready_waiting_batch_authorization",
+  "checked_at_utc": "2026-10-19T13:20:33.611468+00:00",
+  "trial_folder": "outputs/sce_temperature_trial_20261019_v1",
+  "months": [
+    202004,
+    202105,
+    202111,
+    202203
+  ],
+  "n_per_month": 24,
+  "arm_temperatures": {
+    "baseline": 0.5,
+    "temperature_08": 0.8,
+    "temperature_10": 1.0
+  },
+  "generation_repeats": 4,
+  "planned_calls": 1152,
+  "new_real_calls": 0,
+  "engineering_units_passed": 48,
+  "temperature_parameter_checks_passed": 48,
+  "identical_messages_between_arms": true,
+  "tests_passed": 23,
+  "estimated_usd": 1.3608341999999993,
+  "conservative_reservation_usd": 5.288532,
+  "hard_cap_usd": 6.0,
+  "paid_gate_closed": true,
+  "protocol_sha256": "1e409b4705ad7e1039ac96e49258a1b7bf2e778d195d6faf73146e7ee5d2479b",
+  "protected_files_unchanged": 15
+}

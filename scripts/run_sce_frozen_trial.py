@@ -33,6 +33,8 @@ def main():
             from studies.sce_inflation_expectations.experiments.public_consumer_context import prepare
         elif config['mechanism'] == 'q8_delta_absolute_q9':
             from studies.sce_inflation_expectations.experiments.q8_delta import prepare
+        elif config['mechanism'] == 'temperature_sensitivity':
+            from studies.sce_inflation_expectations.experiments.temperature import prepare
         else:
             parser.error('Unknown mechanism adapter')
         prepare(args.folder, config); return

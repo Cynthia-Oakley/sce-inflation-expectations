@@ -8,7 +8,7 @@
 - 本地官方SocioVerse2引擎、真实DeepSeek回答、冻结近似Q9计分和评价链已实际运行。当前是A线回访者条件重建，使用本人真实上期信念，不是严格B自主预测。
 - 12期×192×两遍主MAE 0.459/照抄0.239；分布仍过窄。全国完整波次成绩另报，不混入同支持成绩。详[配置](CURRENT_SIMULATION_CONFIGURATION.md)和[台账](EXPERIMENT_STATUS_20261018.md)。
 - 最新六期新闻量试验完成3456请求，估$3.859845/$16，3454有效/2无效保留，0接口错误/重试。固定8/匹配/随机中心MAE为0.389/0.354/0.339，照抄0.369；随机相对照抄优势受月份影响，不升级默认。
-- Q8单改384请求完成，全合法、估$0.4323/$2、0错误/重试；Q8分布改善，Q9中心保护门槛未过，不改默认。当前无运行中任务或待执行付费批次。已完成授权不得当成新实验通行证。
+- Q8单改384请求完成，全合法、估$0.4323/$2、0错误/重试；Q8分布改善，Q9中心保护门槛未过，不改默认。当前无运行中任务；新增温度批次已准备、等待本批明确外发/$6授权。已完成授权不得当成新实验通行证。
 
 ## 2. 有效运行包与复算入口
 
@@ -21,6 +21,8 @@
 - Python：`/Users/wushuyue/anaconda3/envs/socioverse/bin/python`。官方宿主`../socioverse2_repo/`；源码单向导出，核心只读。运行协议与版本要求见[EXPERIMENT_PIPELINE](EXPERIMENT_PIPELINE.md)。
 
 ## 3. 下一步研究及现有材料
+
+温度对照有效包`outputs/sce_temperature_trial_20261019_v1/`，协议哈希`1e409b4705ad7e1039ac96e49258a1b7bf2e778d195d6faf73146e7ee5d2479b`。四旧开发月24人，温度0.5/0.8/1.0×4遍，1152请求；原P/E及直接Q8/Q9不变。48干跑、逐单元温度核对及23项测试通过，真实调用0，预计$1.361／保守$5.289／上限$6。确认卡已发送，授权文件仍false；不得据旧预算启动。[方案](workstreams/20261019_advisor_followup/temperature_trial_plan.md)。共用三入口修改前副本见`outputs/sce_shared_runtime_snapshot_20261019_temperature_v1/`；旧Q8复算用原冻结版本，不绕过pin。
 
 10月19日[网格/Q8预检](workstreams/20261019_advisor_followup/diagnostic_results.md)已完成。权威输出为`outputs/sce_advisor_diagnostic_20261019_v2/`，v1是分位数/旧运行精度对齐前草稿，勿引用。公开聚合与四图见同workstream的`diagnostic_readout_v1/`；复算入口`analyze_sce_advisor_diagnostics.py`，9项测试通过。十二期主结果对账一致；九格中五格全期有支持，约89%方差缺口在格内。旧Q9失败的74份Q8全部恢复，两臂Q8均192/192合法；两遍中心排序反转，不升级参考配置。
 

@@ -3,7 +3,7 @@
 
 更新：2026-10-19（北京时间）。本页只列当前工作；原86/111项完整记录已归档，分母变化来自清单收束，不表示研究倒退。打钩只表示交付完成，不表示机制有效。
 
-当前：Q8单改对照384请求已完成，全合法、估$0.432/$2、0错误/重试。等人Q8中心MAE 0.788→0.613、W1 4.392→3.126；Q9中心1.012→1.037，未过预登记保护门槛，不改默认。六格仅草案、旧P与Normal未改；下一主任务是采购角色—可见价格离线预检，独立验证继续保留。十二期主MAE仍0.459、照抄0.239pp。
+当前：Q8单改对照384请求已完成，全合法、估$0.432/$2、0错误/重试。等人Q8中心MAE 0.788→0.613、W1 4.392→3.126；Q9中心1.012→1.037，未过预登记保护门槛，不改默认。六格仅草案、旧P与Normal未改；按用户新建议，温度0.5/0.8/1.0对照已完成48单元干跑，1152请求待本批$6授权；采购角色预检与独立验证继续保留。十二期主MAE仍0.459、照抄0.239pp。
 
 汇报：[2026-10-19阶段汇报](reports/20261019/index.html)已更新为16页正文＋4页附录，[PDF](reports/20261019/SCE项目进展汇报_20261019.pdf)同目录。Kimi真人更新六项发现只作初步材料；F3a/F3b解释、工具有效性及CPI覆盖列入后续复核，本轮未复跑或新增模拟。
 
@@ -25,9 +25,11 @@
 - [x] 核平台免费能力与参数：登记gpt-4o-mini；没有已确认的逐人自带P/E/先验或模型切换入口，未做付费模型验证。
 - [x] 接入并冻结Q8单改对照：16单元、384次确定性转换与23项测试通过；两份缺Q9真人记录保留合法Q8，不改P/E或概率。
 - [x] 完成384请求及Q8/Q9分开评价；Q8分布改善、Q9中心未过保护门槛，保存全部回答与同支持基线，不升级默认。
+- [x] 准备温度三组同输入对照及重复噪声分解，23项测试、48个官方引擎离线单元通过，未新增真实调用。
+- [ ] 本批外发/$6获确认后运行1152请求，区分人内随机性与跨人稳定差异，同时报告Q8/Q9误差、合法率及同支持基线。
 - [ ] 评估SCE Q2等一个相关指标的字段与基线，扩展不挤掉主线独立验证；本期目标字段排除输入。
 
-方案：[师兄建议衔接](workstreams/20261019_advisor_followup/plan.md)、[本轮发现](workstreams/20261019_advisor_followup/diagnostic_results.md)、[六格设计](workstreams/20261019_advisor_followup/stratification_draft.md)、[Q8单改](workstreams/20261019_advisor_followup/next_trial_design.md)。Core/Normal已有实现可复用；扩大Normal不增加独立信息，不同时启动全部候选。
+方案：[师兄建议衔接](workstreams/20261019_advisor_followup/plan.md)、[本轮发现](workstreams/20261019_advisor_followup/diagnostic_results.md)、[六格设计](workstreams/20261019_advisor_followup/stratification_draft.md)、[Q8单改](workstreams/20261019_advisor_followup/next_trial_design.md)。[温度对照方案](workstreams/20261019_advisor_followup/temperature_trial_plan.md)与[离线收据](workstreams/20261019_advisor_followup/temperature_readiness_v1.json)已就绪。Core/Normal已有实现可复用；扩大Normal不增加独立信息，不同时启动全部候选。
 
 ## 3. 已准备方向：采购角色与价格信息
 

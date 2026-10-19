@@ -4,7 +4,7 @@
 
 ## 优先使用的入口
 
-- [run_sce_frozen_trial.py](run_sce_frozen_trial.py)：共用prepare / dry-run / run / worker / evaluate。新增机制须有已接入适配器及冻结配置，真实调用另需有效授权。
+- [run_sce_frozen_trial.py](run_sce_frozen_trial.py)：共用prepare / dry-run / run / worker / evaluate。已接Q8单改和温度三组适配；旧协议仍用原标量温度。新增机制须有适配器及冻结配置，真实调用另需有效授权。
 - [prepare_sce_news_breadth_trial.py](prepare_sce_news_breadth_trial.py)：最新已完成新闻量三组试验的准备入口；不要重启旧包。
 - [report_sce_news_breadth.py](report_sce_news_breadth.py)、[plot_sce_news_breadth.py](plot_sce_news_breadth.py)：基于已有评价缓存汇总/作图，不再发API。
 - [prepare_sce_personal_information.py](prepare_sce_personal_information.py)、[prepare_sce_personal_information_views.py](prepare_sce_personal_information_views.py)：ATUS/SCE角色与菜单的离线准备，不等于真实模拟入口已接通。

@@ -27,6 +27,18 @@ def read_json(path):
     return json.loads(Path(path).read_text())
 
 
+def effective_temperature(protocol, job):
+    """Optional registered contrast; old protocols keep their scalar setting."""
+    values = protocol.get('arm_temperatures')
+    if values is None:
+        return protocol['temperature']
+    if (protocol['mechanism'] != 'temperature_sensitivity'
+            or set(values) != set(protocol['arms'])
+            or any(type(v) not in (int, float) or not math.isfinite(v) or not 0 <= v <= 2 for v in values.values())):
+        raise ValueError('Registered finite temperature per configured arm required')
+    return values[job['arm']]
+
+
 def verify(folder):
     folder = Path(folder).resolve(); manifest = read_json(folder/'manifest.json')
     protocol = read_json(folder/'protocol.json')
@@ -50,6 +62,8 @@ def verify(folder):
                    for k in ('price_input_per_mtok', 'price_output_per_mtok'))):
         raise ValueError('Invalid model/count/price/budget configuration')
     jobs = manifest['jobs']
+    for job in jobs:
+        effective_temperature(protocol, job)
     if Counter((j['month'], j['arm'], j['repeat']) for j in jobs) != expected:
         raise ValueError('Incomplete or duplicated configured cells')
     if len({j['run_id'] for j in jobs}) != len(jobs) or any(Path(j['run_id']).name != j['run_id'] for j in jobs):
@@ -116,7 +130,7 @@ def worker(folder, index, scripted):
     cfg.decision_args = dict(llm_kind='scripted' if scripted else 'openai', prompt_version=PROMPT,
         model_version=protocol['model'], seed=cfg.seed, run_id=run_id, audit_dir=str(audit),
         prompts_file=str(prompt_file), prompts_sha256=sha(prompt_file), model=protocol['model'],
-        temperature=protocol['temperature'], max_tokens=protocol['max_tokens'],
+        temperature=effective_temperature(protocol, job), max_tokens=protocol['max_tokens'],
         max_prompt_chars=protocol['max_prompt_chars'], retry_max=0, max_calls=len(pop.personas),
         extra_body={'thinking': {'type': protocol['thinking']}},
         price_input_per_mtok=protocol['price_input_per_mtok'],

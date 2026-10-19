@@ -23,3 +23,7 @@ python -m pytest tests/test_sce_advisor_diagnostics.py -q
 分析直接复用已计分轨迹，不重新拟合Q9。平台工具仅核免费目录/能力，没有付费模型问卷。`scripts/report_sce_advisor_diagnostics.py --source outputs/<fresh_output>`负责聚合图文；同名公共目录/章节已存在时拒绝覆盖，重做应使用新版本标识。
 
 其余当前任务统一在[任务板](../../NEXT_ACTIONS.md)：采购角色—价格菜单、候选独立时期/种子、最终研究包持续推进，本轮没有把所有后续工作标为完成。
+
+## 新准备：温度对照
+
+[三组方案](temperature_trial_plan.md)、[配置](temperature_config_v1.json)、[48单元离线收据](temperature_readiness_v1.json)。0.5/0.8/1.0×四旧开发月×24人×4遍，1152请求，预计$1.36、硬上限$6；本批授权待确认。只改变API温度，不改变网格、先验或回答格式。
