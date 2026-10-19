@@ -1,4 +1,16 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE机制实验与当前进度</title><style>body{margin:0;background:#f7f8fa;color:#202a32;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1080px;margin:36px auto;background:white;padding:36px 44px}h1{font-size:28px;line-height:1.35}h2{font-size:22px;margin-top:42px;border-top:1px solid #dde3e8;padding-top:24px}h3{font-size:18px;margin-top:26px}p{max-width:920px}strong{color:#164f47}a{color:#245e8a}code{font:14px/1.6 monospace;overflow-wrap:anywhere}.table-scroll{overflow-x:auto;margin:24px 0}table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}th,td{border:1px solid #d5dce2;padding:10px 14px;text-align:left;white-space:normal}th{background:#edf2f4}figure{margin:24px 0}img{width:100%;height:auto}figcaption{font-size:13px;color:#596774}.item{padding-left:12px}nav{font-size:14px;margin:12px 0 24px}@media(max-width:760px){main{margin:0;padding:24px 18px}h1{font-size:24px}h2{font-size:20px}}</style></head><body>
+<section id="news-breadth-preparation-20261019" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 36px;border-bottom:1px solid #d7dfdc;line-height:1.75">
+<h1>下一轮：检验不同家庭接触不同数量的新闻</h1>
+<p>2026-10-19。<strong>36个官方引擎离线单元全部通过，真实模拟尚未启动，新增费用$0。</strong>六期各96人、三组各生成两遍，共计划3,456次请求。预计$4.09，拟硬上限$16；具体发送范围与预算确认卡已发送。</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin:18px 0">
+<div style="flex:1 1 240px;padding:14px 18px;border:1px solid #d7dfdc"><strong>固定新闻量</strong><p>每人8篇；同期共同对照。</p></div>
+<div style="flex:1 1 240px;padding:14px 18px;border:1px solid #d7dfdc"><strong>随机分配数量</strong><p>48人3篇、28人8篇、20人20篇。</p></div>
+<div style="flex:1 1 240px;padding:14px 18px;border:1px solid #d7dfdc"><strong>按关注概率分配</strong><p>名额相同；年龄、教育、收入、地区影响外部关注概率，再随机分配。</p></div>
+</div>
+<p><strong>主要比较后两组：</strong>总名额相同，加权篇数与文字长度差小于1%，粗主题占比差小于2个百分点。价格统计、个人先验、CE、政策和问卷沿用原输入。本轮单独检验新闻量分配，购物角色对应的价格信息仍作为另一项机制推进。</p>
+<p>六期覆盖2020-09、2021-09、2022-06、2023-12、2024-10、2025-03，都是开发期；改善后仍需独立月份验证。各档篇数是实验配置，不是美国居民实测阅读量。三组普通平均都是8篇，但匹配组调查加权均值6.64—7.87篇，因此相对固定8篇的辅助比较不应全部归因为匹配本身。</p>
+<p><a href="../20261018_targeted_mechanisms/news_breadth_readiness_20261019.md">三组设计、依据、限制与运行交接</a> · <a href="../20261018_targeted_mechanisms/news_breadth_readiness_v1/summary.json">聚合准备回执</a> · <a href="../../current_todo.html">当前清单</a></p>
+</section>
 <section id="news-attention-design-20261018" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc">
 <span id="news-attention-results-20261019"></span>
 <h1>完整统计压缩了人际差异，但统一删表仍不能解决预测误差</h1>

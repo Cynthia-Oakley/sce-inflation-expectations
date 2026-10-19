@@ -1,0 +1,206 @@
+{
+  "status": "offline_ready_pending_specific_spend_authorization",
+  "months": [
+    202009,
+    202109,
+    202206,
+    202312,
+    202410,
+    202503
+  ],
+  "n_per_month": 96,
+  "jobs": 36,
+  "planned_calls": 3456,
+  "inventories": [
+    {
+      "month": 202009,
+      "as_of": "2020-09-11T23:59:59-04:00",
+      "n": 96,
+      "quota": {
+        "3": 48,
+        "8": 28,
+        "20": 20
+      },
+      "balance": {
+        "weighted_count_relative_gap": 0.008967608286609696,
+        "weighted_news_bytes_relative_gap": 0.0050580225721730265,
+        "weighted_prompt_bytes_relative_gap": 0.0008899413209578766,
+        "topic_share_absolute_gaps": {
+          "food": 0.006800253094333648,
+          "labor_income": 0.01227902716921711,
+          "owned_housing": 0.006193724866447937,
+          "rental_housing": 0.001425998968054329,
+          "road_fuel": 0.0009411583053314122,
+          "utilities": 0.0037303922406166064
+        },
+        "weighted_mean_news_reference": 7.048147091451586,
+        "weighted_mean_news_candidate": 7.111352113714131,
+        "attempts": 182,
+        "same_level_fraction": 0.3645833333333333
+      },
+      "unweighted_mean_news": 8.0,
+      "weighted_mean_news_uniform": 8.0
+    },
+    {
+      "month": 202109,
+      "as_of": "2021-09-14T23:59:59-04:00",
+      "n": 96,
+      "quota": {
+        "3": 48,
+        "8": 28,
+        "20": 20
+      },
+      "balance": {
+        "weighted_count_relative_gap": 0.003351442866988852,
+        "weighted_news_bytes_relative_gap": 0.004776701023049723,
+        "weighted_prompt_bytes_relative_gap": 0.0008857414612755132,
+        "topic_share_absolute_gaps": {
+          "food": 0.005101076891779622,
+          "labor_income": 0.017883941144091087,
+          "owned_housing": 0.008283780106080194,
+          "rental_housing": 0.004615466588825497,
+          "road_fuel": 0.006980791646718668,
+          "utilities": 0.0024429589728484774
+        },
+        "weighted_mean_news_reference": 7.608590848298015,
+        "weighted_mean_news_candidate": 7.58309109077165,
+        "attempts": 6,
+        "same_level_fraction": 0.3333333333333333
+      },
+      "unweighted_mean_news": 8.0,
+      "weighted_mean_news_uniform": 8.0
+    },
+    {
+      "month": 202206,
+      "as_of": "2022-06-10T23:59:59-04:00",
+      "n": 96,
+      "quota": {
+        "3": 48,
+        "8": 28,
+        "20": 20
+      },
+      "balance": {
+        "weighted_count_relative_gap": 0.004041440905780069,
+        "weighted_news_bytes_relative_gap": 0.0088130927887613,
+        "weighted_prompt_bytes_relative_gap": 0.0015998227076441385,
+        "topic_share_absolute_gaps": {
+          "food": 0.008230328024580257,
+          "labor_income": 0.0006068878809566275,
+          "owned_housing": 0.004009237327020965,
+          "rental_housing": 0.0059598165476419385,
+          "road_fuel": 0.00695397032441003,
+          "utilities": 0.006478722880886545
+        },
+        "weighted_mean_news_reference": 7.7324706218629515,
+        "weighted_mean_news_candidate": 7.763720944936891,
+        "attempts": 2,
+        "same_level_fraction": 0.3125
+      },
+      "unweighted_mean_news": 8.0,
+      "weighted_mean_news_uniform": 8.0
+    },
+    {
+      "month": 202312,
+      "as_of": "2023-12-12T23:59:59-05:00",
+      "n": 96,
+      "quota": {
+        "3": 48,
+        "8": 28,
+        "20": 20
+      },
+      "balance": {
+        "weighted_count_relative_gap": 0.0018050926111787824,
+        "weighted_news_bytes_relative_gap": 0.00958562175288069,
+        "weighted_prompt_bytes_relative_gap": 0.0016989791896597772,
+        "topic_share_absolute_gaps": {
+          "food": 0.0009633785256173331,
+          "labor_income": 0.004881260950923949,
+          "owned_housing": 0.0050648610056818425,
+          "rental_housing": 0.006448474908614561,
+          "road_fuel": 0.0060114718878073944,
+          "utilities": 0.0008777374677903464
+        },
+        "weighted_mean_news_reference": 7.475567230337428,
+        "weighted_mean_news_candidate": 7.48906132150928,
+        "attempts": 14,
+        "same_level_fraction": 0.3645833333333333
+      },
+      "unweighted_mean_news": 8.0,
+      "weighted_mean_news_uniform": 8.0
+    },
+    {
+      "month": 202410,
+      "as_of": "2024-10-10T23:59:59-04:00",
+      "n": 96,
+      "quota": {
+        "3": 48,
+        "8": 28,
+        "20": 20
+      },
+      "balance": {
+        "weighted_count_relative_gap": 0.004473479591744489,
+        "weighted_news_bytes_relative_gap": 0.007504135271053314,
+        "weighted_prompt_bytes_relative_gap": 0.0014551678141779822,
+        "topic_share_absolute_gaps": {
+          "food": 0.0005865923143927951,
+          "labor_income": 0.003702002841036528,
+          "owned_housing": 0.014584008126386518,
+          "rental_housing": 0.009502268867902609,
+          "road_fuel": 0.0010600655267992629,
+          "utilities": 0.0011128430145215373
+        },
+        "weighted_mean_news_reference": 7.872173330059156,
+        "weighted_mean_news_candidate": 7.836957323324461,
+        "attempts": 32,
+        "same_level_fraction": 0.34375
+      },
+      "unweighted_mean_news": 8.0,
+      "weighted_mean_news_uniform": 8.0
+    },
+    {
+      "month": 202503,
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "n": 96,
+      "quota": {
+        "3": 48,
+        "8": 28,
+        "20": 20
+      },
+      "balance": {
+        "weighted_count_relative_gap": 0.005363467523062715,
+        "weighted_news_bytes_relative_gap": 0.0018192991843550832,
+        "weighted_prompt_bytes_relative_gap": 0.0003021469051613934,
+        "topic_share_absolute_gaps": {
+          "food": 0.00014897239656055591,
+          "labor_income": 0.006949152843253065,
+          "owned_housing": 0.0009853465079721156,
+          "rental_housing": 0.005306145255795314,
+          "road_fuel": 0.001176302076739022,
+          "utilities": 0.0016552063146318564
+        },
+        "weighted_mean_news_reference": 6.638506538222207,
+        "weighted_mean_news_candidate": 6.674111952441601,
+        "attempts": 310,
+        "same_level_fraction": 0.3645833333333333
+      },
+      "unweighted_mean_news": 8.0,
+      "weighted_mean_news_uniform": 8.0
+    }
+  ],
+  "estimated_cost_usd": 4.09417965,
+  "conservative_reservation_usd": 15.912249999999998,
+  "proposed_hard_cap_usd": 16.0,
+  "new_api_calls": 0,
+  "new_cost_usd": 0.0,
+  "target_answers_parsed": false,
+  "seconds": 1.2474573750514537,
+  "engine_dry_run_cells": 36,
+  "new_llm_answers": 0,
+  "limits": [
+    "All six months are development months, not a new independent test.",
+    "Assignment quotas are experimental levels, not measured reading counts.",
+    "Matched versus randomized holds weighted count/news bytes/total bytes within1% and coarse topic shares within2pp.",
+    "Uniform8 has a different weighted mean from heterogeneous arms; comparison is descriptive of the full allocation policy.",
+    "No new ATUS role or price-view changes in this batch."
+  ]
+}

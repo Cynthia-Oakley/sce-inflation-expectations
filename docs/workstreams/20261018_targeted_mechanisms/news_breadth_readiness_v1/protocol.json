@@ -1,0 +1,92 @@
+{
+  "id": "sce-news-breadth-v1",
+  "registered_at_utc": "2026-10-19T02:24:16.551876+00:00",
+  "mechanism": "externally_matched_news_breadth",
+  "months": [
+    202009,
+    202109,
+    202206,
+    202312,
+    202410,
+    202503
+  ],
+  "n_per_month": 96,
+  "arms": [
+    "baseline",
+    "news_matched",
+    "news_randomized"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "planned_calls": 3456,
+  "research_line": "A_conditional_returner_reconstruction",
+  "model": "deepseek-flash",
+  "official_advertised_version": "DeepSeek-V4.1-Flash-1017",
+  "model_identity_limit": "Mutable alias; record returned model/fingerprint and concurrent controls.",
+  "destination": "https://api.deepseek.com",
+  "temperature": 0.5,
+  "max_tokens": 1024,
+  "thinking": "disabled",
+  "retry_max": 0,
+  "budget_cap_usd": 16.0,
+  "price_input_per_mtok": 0.3,
+  "price_output_per_mtok": 1.2,
+  "pricing_verified_date": "2026-10-19",
+  "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "allocation_seed": 20261019,
+  "shuffle_seed_rule": "20261019 + target YYYYMM",
+  "dispatch_order_seed": 20261029,
+  "sampling": "Same frozen age x income stratified 96 returners per wave; design weights unchanged.",
+  "allocation": "External six-class economic-news interest probabilities conditional on age, education, income and region; stable person draw and wave ranks; quotas 48x3/28x8/20x20.",
+  "input_balance": "Matched/random preserve count multiset; design-weighted count/news bytes/total bytes relative gaps <=1%, coarse topic shares absolute gaps <=.02. First acceptable shuffle out of <=4096. Bytes are a token proxy.",
+  "primary_metric": "q9_center_mae_pp",
+  "primary_weight": "design_survey_weight",
+  "primary_comparator": "news_randomized vs news_matched isolates allocation conditional on approximate input balance.",
+  "prespecified_contrasts": [
+    [
+      "news_randomized",
+      "news_matched"
+    ],
+    [
+      "baseline",
+      "news_randomized"
+    ],
+    [
+      "baseline",
+      "news_matched"
+    ]
+  ],
+  "secondary_metrics": [
+    "cross_section_w1_pp",
+    "delta_w1_pp",
+    "across_person_iqr_pp",
+    "individual_density_mean_mae_pp",
+    "q8_center_mae_pp"
+  ],
+  "population_groups": [
+    "education_group",
+    "age_group",
+    "household_income_band",
+    "region",
+    "numeracy"
+  ],
+  "screen": "Exploratory candidate only: matched improves center MAE and cross-section W1 vs randomized; >=4/6 monthly center contrasts nonpositive; show repeats, leave-one-month-out and false/missed moves. No automatic default upgrade.",
+  "coverage_rule": "Complete all36 cells; all-arm/both-repeat common support, retain invalid responses, no automatic retries.",
+  "baseline_refs": [
+    "copy_previous",
+    "history_anchor_half"
+  ],
+  "limits": [
+    "All six months previously explored; this is prospective mechanism execution on development months, not independent validation.",
+    "Shared interest P has weak out-of-sample predictive support; counts and quotas are experimental, not observed readership.",
+    "2021 external attention data used retrospectively for 2020; not strict B. Own true prior is conditional A input.",
+    "Assignment seed fixed once, two generations do not test alternative allocation seeds or create more people.",
+    "Macro statistics, P, CE, Fed confidence, prior/history, news relevance rules, policy, questionnaire all retained.",
+    "No new shopping role, personal receipts, Q1/Q2, quiz answers, psychology, or Event data are added.",
+    "Input balance does not identify equal semantic information value or actual token count. Topic tags are coarse.",
+    "Future independent months must be registered after mechanism selection, before new input construction/calls."
+  ],
+  "max_prompt_chars": 15156
+}
