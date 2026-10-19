@@ -1,0 +1,327 @@
+{
+  "status": "descriptive_cached_trait_priority_not_causal_or_validation",
+  "completed_at_utc": "2026-10-19T10:53:08.567218+00:00",
+  "new_llm_calls": 0,
+  "q9_refits": 0,
+  "variables": [
+    "age_group",
+    "income_group",
+    "gender",
+    "region",
+    "employment",
+    "numeracy",
+    "education_fine",
+    "financial_change",
+    "financial_risk",
+    "general_risk"
+  ],
+  "periods": {
+    "2020_2022": {
+      "Q9_mean": {
+        "r2_within_month": 0.03763111743425884,
+        "ranked_factors": [
+          {
+            "factor": "financial_change",
+            "dummy_count": 4,
+            "drop_from_full_r2_points": 1.690184222505109,
+            "alone_r2_points": 2.1366419546942184
+          },
+          {
+            "factor": "education_fine",
+            "dummy_count": 8,
+            "drop_from_full_r2_points": 0.4725689233674224,
+            "alone_r2_points": 1.0866622918819013
+          },
+          {
+            "factor": "financial_risk",
+            "dummy_count": 6,
+            "drop_from_full_r2_points": 0.23642593417622093,
+            "alone_r2_points": 0.5628813565550561
+          },
+          {
+            "factor": "employment",
+            "dummy_count": 7,
+            "drop_from_full_r2_points": 0.1992070787715461,
+            "alone_r2_points": 0.41094441293790807
+          },
+          {
+            "factor": "age_group",
+            "dummy_count": 2,
+            "drop_from_full_r2_points": 0.17696291440288947,
+            "alone_r2_points": 0.47984488052882357
+          },
+          {
+            "factor": "general_risk",
+            "dummy_count": 6,
+            "drop_from_full_r2_points": 0.08319939031935508,
+            "alone_r2_points": 0.07679084256614344
+          },
+          {
+            "factor": "gender",
+            "dummy_count": 1,
+            "drop_from_full_r2_points": 0.04988033958752691,
+            "alone_r2_points": 0.11009196529764287
+          },
+          {
+            "factor": "region",
+            "dummy_count": 3,
+            "drop_from_full_r2_points": 0.04233600850215291,
+            "alone_r2_points": 0.07571492432012494
+          },
+          {
+            "factor": "numeracy",
+            "dummy_count": 1,
+            "drop_from_full_r2_points": 0.007954592405923222,
+            "alone_r2_points": 0.10446788841185217
+          },
+          {
+            "factor": "income_group",
+            "dummy_count": 2,
+            "drop_from_full_r2_points": 0.006710892889638664,
+            "alone_r2_points": 0.5506701432393846
+          }
+        ],
+        "n_person_months": 43712,
+        "n_persons": 6470,
+        "n_months": 36,
+        "existing_full_r2_difference": 6.661338147750939e-16
+      },
+      "Q9_iqr": {
+        "r2_within_month": 0.19390710226514807,
+        "ranked_factors": [
+          {
+            "factor": "numeracy",
+            "dummy_count": 1,
+            "drop_from_full_r2_points": 2.6315973643670443,
+            "alone_r2_points": 10.032122077362438
+          },
+          {
+            "factor": "education_fine",
+            "dummy_count": 8,
+            "drop_from_full_r2_points": 1.4491968424333423,
+            "alone_r2_points": 7.404678785962304
+          },
+          {
+            "factor": "gender",
+            "dummy_count": 1,
+            "drop_from_full_r2_points": 1.2430035379080717,
+            "alone_r2_points": 4.2136957336630365
+          },
+          {
+            "factor": "employment",
+            "dummy_count": 7,
+            "drop_from_full_r2_points": 0.8899796255153025,
+            "alone_r2_points": 4.536221135097307
+          },
+          {
+            "factor": "income_group",
+            "dummy_count": 2,
+            "drop_from_full_r2_points": 0.6641517493709448,
+            "alone_r2_points": 7.214474241564261
+          },
+          {
+            "factor": "general_risk",
+            "dummy_count": 6,
+            "drop_from_full_r2_points": 0.6027760840998764,
+            "alone_r2_points": 2.84913040885878
+          },
+          {
+            "factor": "financial_change",
+            "dummy_count": 4,
+            "drop_from_full_r2_points": 0.28725592345807405,
+            "alone_r2_points": 1.6642950268691004
+          },
+          {
+            "factor": "region",
+            "dummy_count": 3,
+            "drop_from_full_r2_points": 0.21155608646357127,
+            "alone_r2_points": 0.4678247926069967
+          },
+          {
+            "factor": "financial_risk",
+            "dummy_count": 6,
+            "drop_from_full_r2_points": 0.1733900002792721,
+            "alone_r2_points": 2.648622348920693
+          },
+          {
+            "factor": "age_group",
+            "dummy_count": 2,
+            "drop_from_full_r2_points": 0.04674077844828428,
+            "alone_r2_points": 0.030194794008497894
+          }
+        ],
+        "n_person_months": 43712,
+        "n_persons": 6470,
+        "n_months": 36,
+        "existing_full_r2_difference": 6.661338147750939e-16
+      }
+    },
+    "2023_2025_10": {
+      "Q9_mean": {
+        "r2_within_month": 0.06987489629786225,
+        "ranked_factors": [
+          {
+            "factor": "financial_change",
+            "dummy_count": 4,
+            "drop_from_full_r2_points": 3.8239138902401493,
+            "alone_r2_points": 4.495818472766356
+          },
+          {
+            "factor": "employment",
+            "dummy_count": 7,
+            "drop_from_full_r2_points": 0.42266273623798867,
+            "alone_r2_points": 0.9110526373578787
+          },
+          {
+            "factor": "financial_risk",
+            "dummy_count": 6,
+            "drop_from_full_r2_points": 0.4204930713068489,
+            "alone_r2_points": 1.4938105401587465
+          },
+          {
+            "factor": "general_risk",
+            "dummy_count": 6,
+            "drop_from_full_r2_points": 0.35381664854892136,
+            "alone_r2_points": 1.0779214550792893
+          },
+          {
+            "factor": "age_group",
+            "dummy_count": 2,
+            "drop_from_full_r2_points": 0.17457091773618316,
+            "alone_r2_points": 0.05599580515511793
+          },
+          {
+            "factor": "education_fine",
+            "dummy_count": 8,
+            "drop_from_full_r2_points": 0.11774874478291952,
+            "alone_r2_points": 0.3829421262397381
+          },
+          {
+            "factor": "income_group",
+            "dummy_count": 2,
+            "drop_from_full_r2_points": 0.07742220371080855,
+            "alone_r2_points": 0.534478930564608
+          },
+          {
+            "factor": "region",
+            "dummy_count": 3,
+            "drop_from_full_r2_points": 0.07641011246590779,
+            "alone_r2_points": 0.0670858054741541
+          },
+          {
+            "factor": "gender",
+            "dummy_count": 1,
+            "drop_from_full_r2_points": 0.032982149799376526,
+            "alone_r2_points": 0.17056780349329337
+          },
+          {
+            "factor": "numeracy",
+            "dummy_count": 1,
+            "drop_from_full_r2_points": 0.0007946258810842544,
+            "alone_r2_points": 0.13781622799792226
+          }
+        ],
+        "n_person_months": 36729,
+        "n_persons": 5374,
+        "n_months": 34,
+        "existing_full_r2_difference": 8.881784197001252e-16
+      },
+      "Q9_iqr": {
+        "r2_within_month": 0.2291091815011348,
+        "ranked_factors": [
+          {
+            "factor": "numeracy",
+            "dummy_count": 1,
+            "drop_from_full_r2_points": 2.4626712692128017,
+            "alone_r2_points": 10.886889289961577
+          },
+          {
+            "factor": "income_group",
+            "dummy_count": 2,
+            "drop_from_full_r2_points": 1.9427505123288502,
+            "alone_r2_points": 10.094183163668792
+          },
+          {
+            "factor": "education_fine",
+            "dummy_count": 8,
+            "drop_from_full_r2_points": 1.9309548356687523,
+            "alone_r2_points": 9.36592605249026
+          },
+          {
+            "factor": "employment",
+            "dummy_count": 7,
+            "drop_from_full_r2_points": 0.7828277154639185,
+            "alone_r2_points": 5.239715078949181
+          },
+          {
+            "factor": "gender",
+            "dummy_count": 1,
+            "drop_from_full_r2_points": 0.5350104289689406,
+            "alone_r2_points": 2.4170831685008443
+          },
+          {
+            "factor": "general_risk",
+            "dummy_count": 6,
+            "drop_from_full_r2_points": 0.4968706100663134,
+            "alone_r2_points": 2.7234416108493753
+          },
+          {
+            "factor": "financial_change",
+            "dummy_count": 4,
+            "drop_from_full_r2_points": 0.495647196832516,
+            "alone_r2_points": 1.737536240157278
+          },
+          {
+            "factor": "age_group",
+            "dummy_count": 2,
+            "drop_from_full_r2_points": 0.4664818609597887,
+            "alone_r2_points": 0.8296798245613246
+          },
+          {
+            "factor": "financial_risk",
+            "dummy_count": 6,
+            "drop_from_full_r2_points": 0.29528800772545827,
+            "alone_r2_points": 1.5739704851453706
+          },
+          {
+            "factor": "region",
+            "dummy_count": 3,
+            "drop_from_full_r2_points": 0.20134009944734466,
+            "alone_r2_points": 0.549462041467319
+          }
+        ],
+        "n_person_months": 36729,
+        "n_persons": 5374,
+        "n_months": 34,
+        "existing_full_r2_difference": 7.771561172376096e-16
+      }
+    }
+  },
+  "source_sha256": {
+    "outputs/sce_population_associations_20261015_v1/analysis_frame_private.parquet": "6bbb7c6452dd9c265b415433ccdcf0031213d0455a96aec085c6a37fca396806",
+    "outputs/sce_population_associations_20261015_v1/summary.json": "9b3eef3218dedc1f3691f25d7c52d691fbf6eecd3dec57180b82c7c3e58cf988",
+    "studies/sce_inflation_expectations/evaluation/population_factor_priority.py": "bfd635fb4b84ecce9159bec9f77c082513b6f0db0c18c14668b86f9e5153494e"
+  },
+  "method": "Survey-weighted month fixed effects; equal monthly weight. Remove whole factor on identical complete cases; R2 loss is within-month R2 percentage points. Alone fit also controls month.",
+  "limits": [
+    "Ten available trait blocks, not an inventory of every SCE field.",
+    "No historical answer or Simulation predictor included; Q1 is a current subjective condition.",
+    "In-sample descriptive linear fit, not causal influence, out-of-sample ranking or statistical significance.",
+    "Unique increments overlap and are not additive; correlated traits share information.",
+    "No adjustment for number of factor levels in this descriptive R2 ranking.",
+    "Official supplied Q9 mean and individual density IQR; these are not monthly headline medians or cross-person IQR.",
+    "Previously inspected periods; outcome noise, nonlinearities and unmeasured traits remain."
+  ],
+  "ConsumerSim_source": {
+    "url": "https://arxiv.org/html/2606.30395v1#S4.SS5.SSS1",
+    "checked_on": "2026-10-19",
+    "section": "4.5.1",
+    "stratification_dimensions": [
+      "residence type",
+      "age group",
+      "income tier",
+      "racial or ethnic identity"
+    ],
+    "distinction": "Persona attributes in section 4.2.1 are broader than post-stratification dimensions; cutpoints not specified in this paragraph."
+  }
+}

@@ -125,7 +125,9 @@
 - [summarize_sce_retention_predictability.py](summarize_sce_retention_predictability.py) — Small public readout and capacity check; no refit, API, or model selection.
 
 
-### 分析（56）
+### 分析（57）
+
+- [analyze_sce_population_factor_priority.py](analyze_sce_population_factor_priority.py) — Compare ten cached trait blocks on identical monthly support; descriptive R2 only.
 
 - [analyze_sce_advisor_diagnostics.py](analyze_sce_advisor_diagnostics.py) — Cached nine-cell household comparisons and independent Q8 recovery.
 

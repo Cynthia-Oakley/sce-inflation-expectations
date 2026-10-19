@@ -7,6 +7,8 @@
 3. [下一项对照草案](next_trial_design.md)：Q8变化值、Q9仍直接填概率；输入已备，尚未引擎验收或付费运行。
 4. [执行前固定口径](diagnostic_plan.md)及[原反馈衔接](plan.md)。
 
+补充：[网格维度与十类变量关系](../20261013_behavior/codex_expansion_diagnostic_20261014.html#grid-variable-priority-20261019)、[排名聚合](population_factor_priority_20261019.json)。年龄×学历只是初诊；ConsumerSim扩展维度已核，真人水平与个人不确定性的变量侧重不同。
+
 公共聚合与图在[diagnostic_readout_v1](diagnostic_readout_v1/)。权威私有输出为`outputs/sce_advisor_diagnostic_20261019_v2/`；v1是已标记失效的草稿。原始回包与逐人输入不进Git。
 
 ## 复算入口
