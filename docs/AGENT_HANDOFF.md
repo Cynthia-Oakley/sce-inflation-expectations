@@ -21,7 +21,9 @@
 
 ## 3. 下一步研究及现有材料
 
-先核采购角色对应的可见价格信息；新闻量与购物价格分开实验，避免完整宏观表让个体菜单变化失去含义。ATUS/SCE匹配、三种子菜单已备，尚未接新真实模拟。详[匹配结果](workstreams/20261018_targeted_mechanisms/atus_sce_matching_results_20261019.md)。
+10月19日汇报后，先按[师兄反馈衔接方案](workstreams/20261019_advisor_followup/plan.md)做旧Q8变化值、人口网格支持的零API预检，并核平台实际模型接口。旧完整十档差值有效率仅61.5%；Q8自身的差值尚须全支持单独评价。平台此前登记GPT-4o-mini而非已确认GPT-4o，逐人自带P/E/先验支持未定。Core/Normal已有开发链，先复用而非重建；相关指标扩展先评估Q2，不立刻另开大规模实验。
+
+采购角色对应的可见价格信息保留为已准备方向；新闻量与购物价格分开实验，避免完整宏观表让个体菜单变化失去含义。ATUS/SCE匹配、三种子菜单已备，尚未接新真实模拟。详[匹配结果](workstreams/20261018_targeted_mechanisms/atus_sce_matching_results_20261019.md)。
 
 已有ATUS 2016/2022/2023文件和字典在`data/raw/behavior_references/2026-10-19_atus_roles_v2/`及同日supplement目录；不要重复下载。2022→2023采购角色预测支持不等于SCE预测收益；whole-residence人数、未知儿童/搬家/信息年龄按原规则保留。金融决策者不等于购物者，CE汽油支出不等于本人驾车。
 
