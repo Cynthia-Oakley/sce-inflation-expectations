@@ -8,6 +8,7 @@
 - [交接](AGENT_HANDOFF.md)：现场、有效运行包、保护文件及下一步。
 - [日程](ROADMAP.md)：唯一时间安排。
 - [当前配置](CURRENT_SIMULATION_CONFIGURATION.md)与[实验台账](EXPERIMENT_STATUS_20261018.md)：实际采用、候选及暂缓方向。
+- [九类家庭与Q8复算](workstreams/20261019_advisor_followup/diagnostic_results.md)：本轮零API诊断、补样位置及下一项格式对照。
 - [运行流程](EXPERIMENT_PIPELINE.md)、[目录职责](PROJECT_STRUCTURE.md)、[脚本索引](../scripts/README.md)。
 
 ## 研究边界与评价

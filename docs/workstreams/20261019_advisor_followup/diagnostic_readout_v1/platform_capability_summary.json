@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-10-19T10:02:16.685659+00:00",
+  "server": {
+    "name": "user_pool_mcp",
+    "version": "1.27.0"
+  },
+  "registered_model": "gpt-4o-mini",
+  "mock_enabled": false,
+  "simulation_fields": [
+    "allow_virtual_users",
+    "auth",
+    "distributions",
+    "max_workers",
+    "platform_id",
+    "prompt_language",
+    "questionnaire",
+    "sampling_mode",
+    "seed",
+    "user_count"
+  ],
+  "required_fields": [
+    "platform_id",
+    "distributions",
+    "user_count",
+    "questionnaire"
+  ],
+  "paid_calls": 0,
+  "source_sha256": "e81790c9ecb00c18a004a18b6ea4eaadbcdb552b7ee3dbcf413938844ebdb88d",
+  "limitation": "Registry and supported top-level schema only; no actual model or paid questionnaire tested. Arbitrary questionnaire properties do not establish individual P/E or history support."
+}

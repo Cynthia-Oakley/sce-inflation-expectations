@@ -1,0 +1,49 @@
+{
+  "completed_at_utc": "2026-10-19T10:20:10.639737+00:00",
+  "date_beijing": "2026-10-19",
+  "status": "cached_diagnostics_complete_next_inputs_draft_only",
+  "new_llm_calls": 0,
+  "new_paid_mcp_calls": 0,
+  "q9_refits": 0,
+  "reference_configuration_changed": false,
+  "analysis_output": "outputs/sce_advisor_diagnostic_20261019_v2/",
+  "superseded_draft": "outputs/sce_advisor_diagnostic_20261019_v1/",
+  "source_hashes": {
+    "outputs/sce_reference_validation_evaluation_20261017_v1/cases_private.json": "8bf039c3e4a64e2f31da0ee5c30a3db33d7c1712c0ba45d6e9ccd3959ba64336",
+    "outputs/sce_reference_validation_evaluation_20261017_v1/summary.json": "01b8f0be4cc90d6eb798ee5b5277ad4ba1401fd7e4bd5bad0985e4ce7a3218ac"
+  },
+  "code_sha256": {
+    "scripts/analyze_sce_advisor_diagnostics.py": "867a48655dfcafb90bd8d16505143b869ededa857251e18ba799b9aeb593a71f",
+    "scripts/check_sce_simulation_capabilities.py": "9e440620209c4973a953365aac2d3ff1fb3604b84bf20c28e15b8ed985153c85",
+    "scripts/report_sce_advisor_diagnostics.py": "c63862799c03fcc0810d9c0304a1e213656ce04f716bbc1b87ee0852e38ab314",
+    "studies/sce_inflation_expectations/evaluation/advisor_diagnostics.py": "886dd8b050831fc0bd6addef0c87cd1a25f451c820a565ef21bdc51bde054217",
+    "tests/test_sce_advisor_diagnostics.py": "47f79e9657023e0bd73bd28387c48eb7449fa0335598b8d446ae47c161bc120a"
+  },
+  "public_json_sha256": {
+    "grid_summary.json": "81c558de71ab8f5896883356e6c06e447b94171c01fd255badc484872d98602c",
+    "platform_capability_summary.json": "2a30548008a7a88e95e2f2120697603dbb9cf36e46cb56564514a0d8721da6f8",
+    "input_draft_summary.json": "fb3b187d29d16830e2eb8cab5a932b1eabb9ed623993e3c77192378cb6a2a824",
+    "q8_summary.json": "aa36bfd002609cdc454be59884adc6c5e7d1a61ecda290a0b543821befe510f7"
+  },
+  "checks": {
+    "shared_main_metrics_reconciled": true,
+    "old_q9_valid_subset_q8_metrics_reconciled": true,
+    "tests_passed": 9,
+    "protected_unchanged": 15,
+    "new_workstream_links_and_figures_resolve": true,
+    "all_four_figures_visually_checked": true
+  },
+  "draft_next_trial": {
+    "path": "outputs/sce_q8_only_candidate_preparation_20261019_v1/",
+    "person_months": 96,
+    "planned_requests_if_authorized": 384,
+    "only_q8_contract_changed": true,
+    "engine_validated": false,
+    "new_paid_authorization": false
+  },
+  "limitations": [
+    "Exploratory analysis of already inspected months; no independent validation or causal effects.",
+    "Platform check is free metadata/schema only; actual model invocation not tested.",
+    "No population expansion, new budget or reference change is authorized by preparing draft inputs."
+  ]
+}

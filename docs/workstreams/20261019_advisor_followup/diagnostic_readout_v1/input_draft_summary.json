@@ -1,0 +1,34 @@
+{
+  "status": "draft_inputs_prepared_not_engine_validated",
+  "new_llm_calls": 0,
+  "paid_calls": 0,
+  "months": [
+    "202004",
+    "202105",
+    "202111",
+    "202203"
+  ],
+  "people_per_month": 24,
+  "person_months": 96,
+  "arms": [
+    "direct_q8_absolute_q9",
+    "delta_q8_absolute_q9"
+  ],
+  "planned_generations": 2,
+  "planned_requests_if_authorized": 384,
+  "missing_prior_q8_absolute_branch_person_months": 1,
+  "all_common_prefixes_unchanged": true,
+  "source_preview_sha256": {
+    "outputs/sce_revision_format_trial_20261015_v1/202004/preview_direct.json": "ce5ee734191f4f3b95e6d902c3b01efa3a61d91d51a6def804cdb0d42134eeee",
+    "outputs/sce_revision_format_trial_20261015_v1/202105/preview_direct.json": "a74193f0f9fe93af4b71fd42a811d2ba6ecb2f2f186781ab1c2a8af672017d79",
+    "outputs/sce_revision_format_trial_20261015_v1/202111/preview_direct.json": "0ab5668702a186f6ab43b4cafc5e3d0ac13cffc5321ddec255e2415817f78b04",
+    "outputs/sce_revision_format_trial_20261015_v1/202203/preview_direct.json": "c905bd5f0bda877f62ee8f93384e5ab939d71b8f48bb1d5e88e0a20cd1838319"
+  },
+  "source_runtime_readonly_sha256": "216932319a3a861a99507ff5fde0479a37577dfa3a67063faed7d8fdd840e1a8",
+  "limitations": [
+    "Development months already inspected; not independent validation.",
+    "Draft prompt hash is local provenance only; runtime canonical hashes to be frozen after adapter validation.",
+    "No runtime adapter, engine dry run, provider verification or new paid authorization completed for this candidate.",
+    "Current reference configuration remains unchanged."
+  ]
+}

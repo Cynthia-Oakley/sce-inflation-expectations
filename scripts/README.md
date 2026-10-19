@@ -15,6 +15,10 @@
 
 运行、预算、失败和新输出目录要求见[共用流程](../docs/EXPERIMENT_PIPELINE.md)。当前任务见[任务板](../docs/NEXT_ACTIONS.md)；每轮证据见[workstreams](../docs/workstreams/)。
 
+- [analyze_sce_advisor_diagnostics.py](analyze_sce_advisor_diagnostics.py)：复用十二期缓存诊断年龄×学历九格，并从旧原回包单独恢复Q8；不重拟合Q9。
+- [report_sce_advisor_diagnostics.py](report_sce_advisor_diagnostics.py)：将上述聚合结果作图并接入既有阅读页；同名输出存在时拒绝覆盖。
+- [check_sce_simulation_capabilities.py](check_sce_simulation_capabilities.py)：仅核免费Simulation能力与受支持参数，不执行付费问卷。
+
 ## 按用途查找全部入口
 
 下列英文简介保留自原文件，帮助识别；不是新的方法或有效性认定。
@@ -105,7 +109,9 @@
 - [prepare_sce_u1a_state.py](prepare_sce_u1a_state.py) — Prepare the U1 explicit personal-state arms (offline, zero API calls).
 
 
-### 评价与报告（10）
+### 评价与报告（11）
+
+- [report_sce_advisor_diagnostics.py](report_sce_advisor_diagnostics.py) — Plot cached household-grid and recovered Q8 diagnostics in the existing reader.
 
 - [evaluate_sce_dev_run.py](evaluate_sce_dev_run.py) — Same-person development analysis: actual answers are read only after the run.
 - [evaluate_sce_outputs.py](evaluate_sce_outputs.py) — Evaluate normalized SCE bundles without loading inputs into the simulation engine.
@@ -119,7 +125,9 @@
 - [summarize_sce_retention_predictability.py](summarize_sce_retention_predictability.py) — Small public readout and capacity check; no refit, API, or model selection.
 
 
-### 分析（55）
+### 分析（56）
+
+- [analyze_sce_advisor_diagnostics.py](analyze_sce_advisor_diagnostics.py) — Cached nine-cell household comparisons and independent Q8 recovery.
 
 - [analyze_nyt_selection_trial.py](analyze_nyt_selection_trial.py) — Offline verification of news trial; no classifier or simulation calls.
 - [analyze_sce_aggregate_blend.py](analyze_sce_aggregate_blend.py) — Fit MAE/MSE convex weights on existing aggregate trajectories; zero APIs.
@@ -178,7 +186,9 @@
 - [diagnose_sce_reference_update.py](diagnose_sce_reference_update.py) — Post-hoc slope diagnostic from existing fitted cases; zero new model calls.
 
 
-### 审计与验证（41）
+### 审计与验证（42）
+
+- [check_sce_simulation_capabilities.py](check_sce_simulation_capabilities.py) — Free registry/schema verification only; never runs a paid questionnaire.
 
 - [audit_cloud_v2_environment.py](audit_cloud_v2_environment.py) — Verify the pasted v2 cloud environment against the archived local inputs.
 - [audit_cloud_v2_model.py](audit_cloud_v2_model.py) — Replay the archived v2 scripted formula against local P/E and raw answers.
