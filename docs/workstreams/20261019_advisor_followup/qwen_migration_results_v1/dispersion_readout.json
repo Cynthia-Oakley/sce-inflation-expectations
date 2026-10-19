@@ -1,0 +1,158 @@
+{
+  "cells": [
+    {
+      "month": 202004,
+      "question": "Q9_density_mean",
+      "common_people": 22,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 21.92351841593575,
+      "arms": {
+        "baseline": {
+          "within_person_repeat_variance_pp2": 0.08700354290868996,
+          "between_person_repeat_mean_variance_pp2": 1.0390049418807759,
+          "noise_adjusted_between_variance_pp2": 0.9955031704264309,
+          "pooled_population_variance_pp2": 1.0352792159769038,
+          "between_means_population_variance_pp2": 0.9917774445225589,
+          "within_person_population_variance_pp2": 0.04350177145434498
+        },
+        "qwen": {
+          "within_person_repeat_variance_pp2": 0.07952873831078912,
+          "between_person_repeat_mean_variance_pp2": 1.5245147300513904,
+          "noise_adjusted_between_variance_pp2": 1.4847503608959958,
+          "pooled_population_variance_pp2": 1.4949829751135402,
+          "between_means_population_variance_pp2": 1.4552186059581453,
+          "within_person_population_variance_pp2": 0.03976436915539456
+        }
+      }
+    },
+    {
+      "month": 202105,
+      "question": "Q9_density_mean",
+      "common_people": 20,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 5.179573108767973,
+      "arms": {
+        "baseline": {
+          "within_person_repeat_variance_pp2": 0.2593619189839749,
+          "between_person_repeat_mean_variance_pp2": 1.6408585569963237,
+          "noise_adjusted_between_variance_pp2": 1.5111775975043362,
+          "pooled_population_variance_pp2": 1.688496588638495,
+          "between_means_population_variance_pp2": 1.5588156291465074,
+          "within_person_population_variance_pp2": 0.12968095949198746
+        },
+        "qwen": {
+          "within_person_repeat_variance_pp2": 0.2706534151559133,
+          "between_person_repeat_mean_variance_pp2": 1.2847725014048998,
+          "noise_adjusted_between_variance_pp2": 1.1494457938269431,
+          "pooled_population_variance_pp2": 1.3558605839126112,
+          "between_means_population_variance_pp2": 1.2205338763346547,
+          "within_person_population_variance_pp2": 0.13532670757795665
+        }
+      }
+    },
+    {
+      "month": 202111,
+      "question": "Q9_density_mean",
+      "common_people": 23,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 24.456819497037216,
+      "arms": {
+        "baseline": {
+          "within_person_repeat_variance_pp2": 0.3887356793557563,
+          "between_person_repeat_mean_variance_pp2": 2.1441471578804396,
+          "noise_adjusted_between_variance_pp2": 1.9497793182025616,
+          "pooled_population_variance_pp2": 2.245291208085255,
+          "between_means_population_variance_pp2": 2.050923368407377,
+          "within_person_population_variance_pp2": 0.19436783967787816
+        },
+        "qwen": {
+          "within_person_repeat_variance_pp2": 0.11696004328136934,
+          "between_person_repeat_mean_variance_pp2": 1.7198390647745976,
+          "noise_adjusted_between_variance_pp2": 1.661359043133913,
+          "pooled_population_variance_pp2": 1.7035434749033431,
+          "between_means_population_variance_pp2": 1.6450634532626587,
+          "within_person_population_variance_pp2": 0.05848002164068467
+        }
+      }
+    },
+    {
+      "month": 202004,
+      "question": "Q8_point",
+      "common_people": 24,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 226.2807971014493,
+      "arms": {
+        "baseline": {
+          "within_person_repeat_variance_pp2": 0.04374999999999999,
+          "between_person_repeat_mean_variance_pp2": 1.015271739130435,
+          "noise_adjusted_between_variance_pp2": 0.9933967391304349,
+          "pooled_population_variance_pp2": 0.9948437499999999,
+          "between_means_population_variance_pp2": 0.97296875,
+          "within_person_population_variance_pp2": 0.021874999999999995
+        },
+        "qwen": {
+          "within_person_repeat_variance_pp2": 0.124375,
+          "between_person_repeat_mean_variance_pp2": 1.9187635869565218,
+          "noise_adjusted_between_variance_pp2": 1.8565760869565218,
+          "pooled_population_variance_pp2": 1.9010026041666668,
+          "between_means_population_variance_pp2": 1.8388151041666667,
+          "within_person_population_variance_pp2": 0.0621875
+        }
+      }
+    },
+    {
+      "month": 202105,
+      "question": "Q8_point",
+      "common_people": 24,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 56.224184782608695,
+      "arms": {
+        "baseline": {
+          "within_person_repeat_variance_pp2": 0.047291666666666676,
+          "between_person_repeat_mean_variance_pp2": 0.9463722826086957,
+          "noise_adjusted_between_variance_pp2": 0.9227264492753623,
+          "pooled_population_variance_pp2": 0.9305859375000001,
+          "between_means_population_variance_pp2": 0.9069401041666666,
+          "within_person_population_variance_pp2": 0.023645833333333338
+        },
+        "qwen": {
+          "within_person_repeat_variance_pp2": 0.14104166666666665,
+          "between_person_repeat_mean_variance_pp2": 0.6459374999999999,
+          "noise_adjusted_between_variance_pp2": 0.5754166666666666,
+          "pooled_population_variance_pp2": 0.6895442708333333,
+          "between_means_population_variance_pp2": 0.6190234375,
+          "within_person_population_variance_pp2": 0.07052083333333332
+        }
+      }
+    },
+    {
+      "month": 202111,
+      "question": "Q8_point",
+      "common_people": 24,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 15.259057971014492,
+      "arms": {
+        "baseline": {
+          "within_person_repeat_variance_pp2": 1.2385416666666667,
+          "between_person_repeat_mean_variance_pp2": 2.0955389492753627,
+          "noise_adjusted_between_variance_pp2": 1.4762681159420294,
+          "pooled_population_variance_pp2": 2.6274956597222228,
+          "between_means_population_variance_pp2": 2.008224826388889,
+          "within_person_population_variance_pp2": 0.6192708333333333
+        },
+        "qwen": {
+          "within_person_repeat_variance_pp2": 0.05395833333333333,
+          "between_person_repeat_mean_variance_pp2": 1.0551041666666665,
+          "noise_adjusted_between_variance_pp2": 1.0281249999999997,
+          "pooled_population_variance_pp2": 1.0381206597222221,
+          "between_means_population_variance_pp2": 1.0111414930555556,
+          "within_person_population_variance_pp2": 0.026979166666666665
+        }
+      }
+    }
+  ],
+  "weight": "equal_people; separate from survey-weighted accuracy",
+  "identity": "pooled population variance = variance of person repeat means + average within-person population variance",
+  "noise_adjustment": "sample variance of person repeat means minus mean within-person sample variance / R; negative estimates retained",
+  "limits": "Only two repetitions: noisy API-repeat variance estimates, not human personality. Equal people, separate from design-weighted accuracy."
+}

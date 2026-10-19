@@ -1,0 +1,78 @@
+{
+  "requests": 150,
+  "input_tokens": 508081,
+  "output_tokens": 22448,
+  "original_requests": 75,
+  "interface_errors": 2,
+  "automatic_retry_requests": 0,
+  "received_responses": 148,
+  "reported_cost_calls": 148,
+  "completion_requests": 75,
+  "evaluated_qwen_responses": 144,
+  "reused_original_qwen_responses": 72,
+  "new_completion_requests": 75,
+  "planned_completion_requests": 120,
+  "reused_deepseek_responses": 144,
+  "excluded_partial_successes": 4,
+  "excluded_incomplete_months": [
+    202203
+  ],
+  "manual_replayed_units": 1,
+  "reported_cost_usd": 0.1918883599999999,
+  "estimated_usage_cost_usd": 0.20080900000000002,
+  "combined_cap_usd": 1.0,
+  "unreceived_request_billing_unknown": true,
+  "returned_models": [
+    "qwen/qwen-2.5-72b-instruct"
+  ],
+  "returned_providers": [
+    "DeepInfra"
+  ],
+  "invalid_q9_sum_counts_in_evaluated_answers": {
+    "105.0": 3,
+    "99.0": 2
+  },
+  "phase_api_span_seconds": {
+    "original": 191.091895,
+    "completion": 275.891613
+  },
+  "evaluation_seconds": 5.217770457966253,
+  "technical_gate_passed": false,
+  "automatic_upgrade": false,
+  "q9_common_person_months": 65,
+  "q8_common_person_months": 72,
+  "unique_respondents": 72,
+  "same_support_carry_q9": {
+    "carry_center_mae_pp": 1.3169828198811764,
+    "carry_w1_pp": 2.0019641310589926,
+    "carry_iqr_pp": 4.2206430888367645,
+    "carry_person_mae_pp": 2.9071583078539445,
+    "real_cross_iqr_pp": 5.7907096780062615,
+    "real_mean_absolute_update_pp": 2.9071583078539445
+  },
+  "mean_variance_components_equal_people_months": {
+    "Q9_density_mean": {
+      "baseline": {
+        "within_person_repeat_variance_pp2": 0.24503371374947372,
+        "noise_adjusted_between_variance_pp2": 1.4854866953777763
+      },
+      "qwen": {
+        "within_person_repeat_variance_pp2": 0.15571406558269058,
+        "noise_adjusted_between_variance_pp2": 1.4318517326189504
+      }
+    },
+    "Q8_point": {
+      "baseline": {
+        "within_person_repeat_variance_pp2": 0.44319444444444445,
+        "noise_adjusted_between_variance_pp2": 1.1307971014492757
+      },
+      "qwen": {
+        "within_person_repeat_variance_pp2": 0.10645833333333332,
+        "noise_adjusted_between_variance_pp2": 1.1533725845410627
+      }
+    }
+  },
+  "protocol_sha256": "8986f8897bf1b319d8e657456cf506560a634980e994d30282b4e42817d8ab19",
+  "source_summary_sha256": "50539637cd8a0d74df4839893401a59536ad30481679b3b9d62f48a621775229",
+  "note": "Costs deduplicate reused jobs and include excluded partial answers. Reported successful-call cost is not a vendor invoice; failed connection may be billable. No probability repair, no new API or refit by this report."
+}

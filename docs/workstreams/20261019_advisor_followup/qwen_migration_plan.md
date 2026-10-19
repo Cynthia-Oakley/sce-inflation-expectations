@@ -1,6 +1,6 @@
 # Qwen2.5 同输入模型迁移：执行方案
 
-2026-10-19。用户已明确批准OpenRouter→DeepInfra的192次新请求，硬上限$1；本批因一次连接错误停止：75请求、74回包、3份Q9合计错误；等待一次补齐授权，未自动重试。只换模拟模型，不改变P/E、本人过去信念、新闻数量、网格或回答形式。不是一次新机制实验。
+2026-10-19。执行前方案及准备证据保留；当前两次连接错误后已停止，实际三期结果见[最终记录](qwen_migration_results.md)。没有继续补发或升级默认。
 
 ## 为什么选Qwen
 
@@ -48,4 +48,6 @@ python scripts/run_sce_frozen_trial.py evaluate --folder outputs/sce_qwen_migrat
 
 已离线准备一次人工补齐：保留72份原整单元，仅新发120份（中断单元24人整体新跑＋四个未启动单元）。原2份部分成功不用于评价，但保留费用和原答。另行请求允许这一次补发，不是自动重试。累计使用量保守估算加新预留约$0.6669，仍在原$1上限内。
 
-有效补齐包`outputs/sce_qwen_completion_trial_20261019_v2/`，5新＋3复用干跑通过；16项测试通过，授权当前为false。v1补齐目录仅为prepare残留，0调用勿复用。[补齐收据](qwen_completion_readiness_v1.json)。共用入口只增加有哈希证据的完整单元复用，禁止把部分轨迹伪装成完成，旧源码副本在`outputs/sce_shared_runtime_snapshot_20261019_qwen_before_completion_v1/`。
+有效补齐包`outputs/sce_qwen_completion_trial_20261019_v2/`，5新＋3复用干跑通过；16项测试通过，该收据记录授权前false；随后已获授权执行并停止，以结果与原授权记录为准。v1补齐目录仅为prepare残留，0调用勿复用。[补齐收据](qwen_completion_readiness_v1.json)。共用入口只增加有哈希证据的完整单元复用，禁止把部分轨迹伪装成完成，旧源码副本在`outputs/sce_shared_runtime_snapshot_20261019_qwen_before_completion_v1/`。
+
+执行终态：原75＋一次补齐75=150请求，三期144份评价、保守估$0.201/$1，无运行中任务。此前待授权/计划192等表述为历史准备语境，当前以[结果](qwen_migration_results.md)为准。

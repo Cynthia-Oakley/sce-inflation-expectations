@@ -19,6 +19,8 @@
 - [report_sce_advisor_diagnostics.py](report_sce_advisor_diagnostics.py)：将上述聚合结果作图并接入既有阅读页；同名输出存在时拒绝覆盖。
 - [report_sce_q8_delta.py](report_sce_q8_delta.py)：从共用评价缓存生成Q8单改对照图文与费用收据，不发API或重拟合Q9。
 - [check_sce_simulation_capabilities.py](check_sce_simulation_capabilities.py)：仅核免费Simulation能力与受支持参数，不执行付费问卷。
+- [evaluate_sce_model_migration.py](evaluate_sce_model_migration.py)：连接中断后仅评价全部重复完整的月份，生成只读派生manifest，不补API或改原答。
+- [report_sce_model_migration.py](report_sce_model_migration.py)：模型迁移的公共图文、分组、重复分解与去重费用收据，读取已计分缓存。
 
 Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_advisor_followup/q8_delta_results_20261019.md`，不重复运行旧包。人口六格只做设计，不随格式实验更换。温度批次复算用`evaluate_sce_temperature.py`的四遍真值索引适配，再用`report_sce_temperature.py`作图；不重跑已完成API。
 
@@ -112,8 +114,10 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 - [prepare_sce_u1a_state.py](prepare_sce_u1a_state.py) — Prepare the U1 explicit personal-state arms (offline, zero API calls).
 
 
-### 评价与报告（14）
+### 评价与报告（16）
 
+- [evaluate_sce_model_migration.py](evaluate_sce_model_migration.py) — Evaluate only fully completed repeated months from a stopped model-migration batch, without reruns.
+- [report_sce_model_migration.py](report_sce_model_migration.py) — Plot cached model comparisons and publish aggregate execution/cost evidence only.
 - [report_sce_advisor_diagnostics.py](report_sce_advisor_diagnostics.py) — Plot cached household-grid and recovered Q8 diagnostics in the existing reader.
 - [report_sce_q8_delta.py](report_sce_q8_delta.py) — Render the completed Q8-only pilot from cached evaluation; no API or refit.
 - [evaluate_sce_temperature.py](evaluate_sce_temperature.py) — Reuse invariant person-month truth across four temperature repeats; no source or answer rewriting.

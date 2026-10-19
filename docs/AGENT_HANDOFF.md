@@ -1,6 +1,6 @@
 # SCE 项目当前交接
 
-更新：2026-10-19。先读[DESIGN](DESIGN.md)和[NEXT_ACTIONS](NEXT_ACTIONS.md)。本页只维护当前现场；旧运行中/待授权描述见[原文快照](reviews/20261019_repository_cleanup/README.md)，不能据其重启任务。
+更新：2026-10-20。先读[DESIGN](DESIGN.md)和[NEXT_ACTIONS](NEXT_ACTIONS.md)。本页只维护当前现场；旧运行中/待授权描述见[原文快照](reviews/20261019_repository_cleanup/README.md)，不能据其重启任务。
 
 ## 1. 当前状态
 
@@ -8,7 +8,7 @@
 - 本地官方SocioVerse2引擎、真实DeepSeek回答、冻结近似Q9计分和评价链已实际运行。当前是A线回访者条件重建，使用本人真实上期信念，不是严格B自主预测。
 - 12期×192×两遍主MAE 0.459/照抄0.239；分布仍过窄。全国完整波次成绩另报，不混入同支持成绩。详[配置](CURRENT_SIMULATION_CONFIGURATION.md)和[台账](EXPERIMENT_STATUS_20261018.md)。
 - 最新六期新闻量试验完成3456请求，估$3.859845/$16，3454有效/2无效保留，0接口错误/重试。固定8/匹配/随机中心MAE为0.389/0.354/0.339，照抄0.369；随机相对照抄优势受月份影响，不升级默认。
-- Q8单改384请求完成，全合法、估$0.4323/$2、0错误/重试；Q8分布改善，Q9中心保护门槛未过，不改默认。温度三组1152请求已完成，全合法、估$1.2875/$6、0错误/重试；当前Qwen迁移因连接错误停止，75请求/74回包，等待人工补齐授权（总上限仍$1），详下节；此前已完成授权不得当成其他新实验通行证。
+- Q8单改384请求完成，全合法、估$0.4323/$2、0错误/重试；Q8分布改善，Q9中心保护门槛未过，不改默认。温度三组1152请求已完成，全合法、估$1.2875/$6、0错误/重试；Qwen迁移及一次补齐均按再次失败停止，150请求、三期已描述评价，保守估$0.201/$1，无运行中任务，详下节；此前已完成授权不得当成其他新实验通行证。
 
 ## 2. 有效运行包与复算入口
 
@@ -22,13 +22,14 @@
 
 ## 3. 下一步研究及现有材料
 
-用户10月19日新方向：微观结构优先看W1/人际差异/更新，宏观组合另冻结拟权与验证。Qwen2.5格式遵循优先，LLaMA保留后备；暂停默认新增DeepSeek。本批Qwen已执行75次后因一次连接错误停止，用户原批准OpenRouter→DeepInfra及$1，详情[方案](workstreams/20261019_advisor_followup/qwen_migration_plan.md)。
+用户10月19日新方向：微观结构优先看W1/人际差异/更新，宏观组合另冻结拟权与验证；暂停默认新增DeepSeek。Qwen同输入迁移及一次人工补齐已停止并完成可评价三期：150请求/148回包/2连接错误，费用保守估$0.201/$1；三期144份中139份Q9合法。Q9中心MAE DeepSeek1.563/Qwen1.644，W1 2.748/2.868，IQR 1.866/1.651（真人5.791），未显示整体改善。2022-03未完成排除，无任务运行、不再补发，不升级默认。 详[本批结果](workstreams/20261019_advisor_followup/qwen_migration_results.md)。
 
-有效包`outputs/sce_qwen_migration_trial_20261019_v1/`，202004/202105/202111/202203各24人两遍。逐字复用既有P/E/本人历史和直接Q8/Q9、温度0.5、输出1024；复用温度0.5前两遍192条旧DeepSeek对照。8个官方引擎离线单元、14测试及全部缓存对齐通过；预计$0.2123、预留$0.9063、上限$1。固定`qwen/qwen-2.5-72b-instruct`、`deepinfra/fp8`，禁止回退/重试，审计返回模型/供应商/费用。授权前[离线收据](workstreams/20261019_advisor_followup/qwen_migration_readiness_v1.json)不是实时运行状态；实际看authorization/real_dispatch。原包为停止现场不可覆写或重新run。75次请求含74回包，JSON均可解析，其中3份Q9合计为105/105/99，71份合计合法；已收成本约$0.09585，连接失败是否计费未知，使用量保守估算$0.10033。
+原始包`outputs/sce_qwen_migration_trial_20261019_v1/`及一次人工补齐`outputs/sce_qwen_completion_trial_20261019_v2/`均为停止现场。用户明确授权一次补齐后又遇连接错误；不再请求/触发自动补发。原75＋补齐75=150请求；完整202004/202105/202111共72人月×2，202203部分原答保留、整月不入评价。144回答5份Q9和不合法（105三份、99两份），共同Q9为65人月、Q8为72，不归一化。供应商报告$0.191888，失败计费未知，保守使用量估$0.200809。无运行中任务或待执行授权。
 
-仅3个完整单元72份可直接复用。一次人工补齐包`outputs/sce_qwen_completion_trial_20261019_v2/`已封存：原72份＋新120份，原中断单元的2份回包只保留存档，不计入192份评价。5新＋3复用离线单元通过，累计保守预算$0.6669/$1；[收据](workstreams/20261019_advisor_followup/qwen_completion_readiness_v1.json)。补发授权尚未到达，无任务运行；v1补齐目录是prepare缺目录残留，0调用勿复用。原3份Q9不合法已使99%技术门槛不可达到，即使补齐也只描述拟合、不宣称验收通过。
+只读评价范围`outputs/sce_qwen_partial_scope_20261019_v1/`，评价`outputs/sce_qwen_migration_evaluation_20261019_v1/`；共享评价器按完整月份复用原收据，不改旧manifest。复算用`evaluate_sce_model_migration.py --folder ... --scope outputs/<fresh_scope> --out outputs/<fresh_eval>`。`report_sce_model_migration.py`只读缓存，公开两图/分组/费用在workstream的`qwen_migration_results_v1/`，阅读页#qwen-migration-results-20261019。原授权前readiness是历史状态。
 
-最新官方免费核查15:19 UTC成功，仍登记gpt-4o-mini，没有明确的本地逐人P/E/历史或模型/温度覆盖参数；证据`data/raw/mcp_checks/2026-10-19_qwen_migration_v1/`。未发真实问卷。Qwen完整知识截止未知，发布仓库revision不等同托管权重hash。共用运行源码本次修改前副本`outputs/sce_shared_runtime_snapshot_20261019_qwen_v1/`；旧产物复算用对应冻结版本，不改旧pin。
+最新官方免费证据`data/raw/mcp_checks/2026-10-19_qwen_migration_v1/`仍只登记gpt-4o-mini，未确认同输入接口；不发付费问卷。Qwen完整知识截止和托管权重修订未核实。冻结源码副本在`outputs/sce_shared_runtime_snapshot_20261019_qwen_v1/`、`outputs/sce_shared_runtime_snapshot_20261019_qwen_before_completion_v1/`。补齐v1是prepare残留0调用，勿复用。当前没有一项模型替换被升级默认，后续回到采购角色—可见价格离线准备。
+
 温度对照完成，运行包`outputs/sce_temperature_trial_20261019_v1/`，评价`outputs/sce_temperature_evaluation_20261019_v1/`。四旧开发月24人、三组×4遍，共1152请求，全合法，估$1.2875/$6，0错误/重试，调用398.1秒。Q9中心0.5/0.8/1.0为1.037/1.032/1.047、W1 2.665/2.420/2.505；照抄0.730/1.784。主1.0比较区间跨0、未过预定筛选；0.8仅保留辅助W1信号，参考温度仍0.5。Q9人内重复方差0.315→0.915，修正跨人方差2.567→2.801，未解决同质化。[结果](workstreams/20261019_advisor_followup/temperature_results_20261019.md)。
 
 本批复算须用`evaluate_sce_temperature.py --folder ... --out outputs/<fresh>`：旧真人缓存只有两遍索引，新增评价层适配先核同人同月192个缓存键一致，再映射到4遍384键；96个真人事实数不变，没有修改真值、原答、源码pin或manifest，没有新API。适配收据与哈希在评价目录及公共费用收据。原共用evaluate缺此索引适配；不要为修复重跑模拟。`report_sce_temperature.py`只读缓存作图。共用三入口修改前副本见`outputs/sce_shared_runtime_snapshot_20261019_temperature_v1/`，旧Q8复算用对应冻结版本。

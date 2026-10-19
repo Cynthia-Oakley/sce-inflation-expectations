@@ -1,0 +1,284 @@
+[
+  {
+    "field": "education_group",
+    "label": "college",
+    "n_common_person_months": 43,
+    "n_by_month": {
+      "202004": 14,
+      "202105": 15,
+      "202111": 14
+    },
+    "sparse_months_below_8": [],
+    "by_arm": {
+      "baseline": {
+        "probability_tv_pct": 37.909860393676844,
+        "individual_density_iqr_mae_pp": 1.2054666266755443,
+        "individual_density_iqr_bias_pp": 0.8349728963579598,
+        "individual_density_iqr_mean_pp": 3.4872635119524937,
+        "real_individual_density_iqr_mean_pp": 2.652290615594534,
+        "individual_density_mean_mae_pp": 1.7106129250742166,
+        "individual_density_mean_bias_pp": -0.2167042449454278,
+        "q9_center_mae_pp": 0.6537792321885408,
+        "q9_center_bias_pp": -0.002416876092527017,
+        "cross_section_w1_pp": 1.4155962628274035,
+        "delta_w1_pp": 1.33087522126805,
+        "cross_person_iqr_pp": 1.0184962714367038,
+        "real_cross_person_iqr_pp": 3.566256807565594,
+        "cross_person_iqr_gap_pp": -2.54776053612889,
+        "zero_deflation_rate": 0.009190735989662548,
+        "real_zero_deflation_rate": 0.6478193429541828,
+        "zero_deflation_rate_difference": -0.6386286069645202,
+        "person_mean_spearman": 0.5811813186813186
+      },
+      "qwen": {
+        "probability_tv_pct": 38.03240459533199,
+        "individual_density_iqr_mae_pp": 1.1583271276647469,
+        "individual_density_iqr_bias_pp": 0.009206547648836846,
+        "individual_density_iqr_mean_pp": 2.66149716324337,
+        "real_individual_density_iqr_mean_pp": 2.652290615594534,
+        "individual_density_mean_mae_pp": 1.70786143154628,
+        "individual_density_mean_bias_pp": -0.9139185402935525,
+        "q9_center_mae_pp": 0.5897498408904277,
+        "q9_center_bias_pp": -0.36500733920463074,
+        "cross_section_w1_pp": 1.3009437691746986,
+        "delta_w1_pp": 1.344909110443773,
+        "cross_person_iqr_pp": 1.4967375971396528,
+        "real_cross_person_iqr_pp": 3.566256807565594,
+        "cross_person_iqr_gap_pp": -2.069519210425941,
+        "zero_deflation_rate": 0.3332393658844801,
+        "real_zero_deflation_rate": 0.6478193429541828,
+        "zero_deflation_rate_difference": -0.3145799770697026,
+        "person_mean_spearman": 0.5253756286608021
+      }
+    },
+    "interpretation": "Descriptive only; sparse cells, no fitted calibration or causal attribution."
+  },
+  {
+    "field": "education_group",
+    "label": "high_school",
+    "n_common_person_months": 5,
+    "n_by_month": {
+      "202004": 1,
+      "202105": 2,
+      "202111": 2
+    },
+    "sparse_months_below_8": [
+      202004,
+      202105,
+      202111
+    ],
+    "by_arm": {
+      "baseline": {
+        "probability_tv_pct": 52.5060020291206,
+        "individual_density_iqr_mae_pp": 2.3506382279169666,
+        "individual_density_iqr_bias_pp": -0.4376293308413444,
+        "individual_density_iqr_mean_pp": 3.8299654188224523,
+        "real_individual_density_iqr_mean_pp": 4.267594749663797,
+        "individual_density_mean_mae_pp": 5.247635889001775,
+        "individual_density_mean_bias_pp": -4.762193260896342,
+        "q9_center_mae_pp": 4.9156032111539085,
+        "q9_center_bias_pp": -4.9156032111539085,
+        "cross_section_w1_pp": 5.247635889001775,
+        "delta_w1_pp": 5.19853157624569,
+        "cross_person_iqr_pp": 0.9747684686325542,
+        "real_cross_person_iqr_pp": 2.565391341157769,
+        "cross_person_iqr_gap_pp": -1.5906228725252147,
+        "zero_deflation_rate": 0.2127471468187593,
+        "real_zero_deflation_rate": 1.0,
+        "zero_deflation_rate_difference": -0.7872528531812405,
+        "person_mean_spearman": 0.0
+      },
+      "qwen": {
+        "probability_tv_pct": 57.66345041833654,
+        "individual_density_iqr_mae_pp": 2.7030143395504633,
+        "individual_density_iqr_bias_pp": -1.2257701690984064,
+        "individual_density_iqr_mean_pp": 3.041824580565391,
+        "real_individual_density_iqr_mean_pp": 4.267594749663797,
+        "individual_density_mean_mae_pp": 5.631820206007415,
+        "individual_density_mean_bias_pp": -5.352413879806222,
+        "q9_center_mae_pp": 5.549991853867184,
+        "q9_center_bias_pp": -5.549991853867184,
+        "cross_section_w1_pp": 5.631820206007416,
+        "delta_w1_pp": 5.552956899533444,
+        "cross_person_iqr_pp": 0.8640689102464898,
+        "real_cross_person_iqr_pp": 2.565391341157769,
+        "cross_person_iqr_gap_pp": -1.7013224309112793,
+        "zero_deflation_rate": 0.5460804801520927,
+        "real_zero_deflation_rate": 1.0,
+        "zero_deflation_rate_difference": -0.45391951984790735,
+        "person_mean_spearman": 0.0
+      }
+    },
+    "interpretation": "Descriptive only; sparse cells, no fitted calibration or causal attribution."
+  },
+  {
+    "field": "education_group",
+    "label": "some_college",
+    "n_common_person_months": 17,
+    "n_by_month": {
+      "202004": 7,
+      "202105": 3,
+      "202111": 7
+    },
+    "sparse_months_below_8": [
+      202004,
+      202105,
+      202111
+    ],
+    "by_arm": {
+      "baseline": {
+        "probability_tv_pct": 54.159563998192304,
+        "individual_density_iqr_mae_pp": 3.5525514431217218,
+        "individual_density_iqr_bias_pp": -0.13905299560311465,
+        "individual_density_iqr_mean_pp": 4.5140631704792655,
+        "real_individual_density_iqr_mean_pp": 4.6531161660823805,
+        "individual_density_mean_mae_pp": 3.6448747081976705,
+        "individual_density_mean_bias_pp": 0.3297896913209276,
+        "q9_center_mae_pp": 1.7234139087699074,
+        "q9_center_bias_pp": 0.387083392054899,
+        "cross_section_w1_pp": 3.591603194496061,
+        "delta_w1_pp": 2.9896095210845477,
+        "cross_person_iqr_pp": 2.5441772811191243,
+        "real_cross_person_iqr_pp": 3.5322345073357897,
+        "cross_person_iqr_gap_pp": -0.988057226216665,
+        "zero_deflation_rate": 0.0,
+        "real_zero_deflation_rate": 0.6525121542196054,
+        "zero_deflation_rate_difference": -0.6525121542196054,
+        "person_mean_spearman": 0.5535714285714287
+      },
+      "qwen": {
+        "probability_tv_pct": 53.45809262164252,
+        "individual_density_iqr_mae_pp": 3.3741042817643625,
+        "individual_density_iqr_bias_pp": -1.0192591840106695,
+        "individual_density_iqr_mean_pp": 3.633856982071711,
+        "real_individual_density_iqr_mean_pp": 4.6531161660823805,
+        "individual_density_mean_mae_pp": 3.0812526661067086,
+        "individual_density_mean_bias_pp": -0.7696054298465129,
+        "q9_center_mae_pp": 1.1958344130157126,
+        "q9_center_bias_pp": -0.19544059247215081,
+        "cross_section_w1_pp": 2.898628046915014,
+        "delta_w1_pp": 2.2354579425294907,
+        "cross_person_iqr_pp": 1.972066452977538,
+        "real_cross_person_iqr_pp": 3.5322345073357897,
+        "cross_person_iqr_gap_pp": -1.5601680543582512,
+        "zero_deflation_rate": 0.18366031176107447,
+        "real_zero_deflation_rate": 0.6525121542196054,
+        "zero_deflation_rate_difference": -0.4688518424585309,
+        "person_mean_spearman": 0.40733407924617443
+      }
+    },
+    "interpretation": "Descriptive only; sparse cells, no fitted calibration or causal attribution."
+  },
+  {
+    "field": "numeracy",
+    "label": "high",
+    "n_common_person_months": 56,
+    "n_by_month": {
+      "202004": 19,
+      "202105": 17,
+      "202111": 20
+    },
+    "sparse_months_below_8": [],
+    "by_arm": {
+      "baseline": {
+        "probability_tv_pct": 45.477437698898086,
+        "individual_density_iqr_mae_pp": 1.9669877246373968,
+        "individual_density_iqr_bias_pp": 0.31258549340787734,
+        "individual_density_iqr_mean_pp": 3.6596010123916556,
+        "real_individual_density_iqr_mean_pp": 3.3470155189837776,
+        "individual_density_mean_mae_pp": 3.2040360033762822,
+        "individual_density_mean_bias_pp": -1.948861731773676,
+        "q9_center_mae_pp": 1.5157778112762799,
+        "q9_center_bias_pp": -0.44829420632606737,
+        "cross_section_w1_pp": 2.7642159947672695,
+        "delta_w1_pp": 2.6062717590290236,
+        "cross_person_iqr_pp": 1.7329070491867486,
+        "real_cross_person_iqr_pp": 6.706669131606902,
+        "cross_person_iqr_gap_pp": -4.973762082420154,
+        "zero_deflation_rate": 0.05228610863568394,
+        "real_zero_deflation_rate": 0.8087436292487307,
+        "zero_deflation_rate_difference": -0.7564575206130469,
+        "person_mean_spearman": 0.5415818024540182
+      },
+      "qwen": {
+        "probability_tv_pct": 46.83650353344651,
+        "individual_density_iqr_mae_pp": 1.9873005396456962,
+        "individual_density_iqr_bias_pp": -0.4838387481517891,
+        "individual_density_iqr_mean_pp": 2.863176770831989,
+        "real_individual_density_iqr_mean_pp": 3.3470155189837776,
+        "individual_density_mean_mae_pp": 3.284924264002538,
+        "individual_density_mean_bias_pp": -2.6081070562697963,
+        "q9_center_mae_pp": 1.7620272420321978,
+        "q9_center_bias_pp": -0.8076991715494187,
+        "cross_section_w1_pp": 2.9749155272448626,
+        "delta_w1_pp": 2.8116774061890975,
+        "cross_person_iqr_pp": 1.1511020244551646,
+        "real_cross_person_iqr_pp": 6.706669131606902,
+        "cross_person_iqr_gap_pp": -5.555567107151738,
+        "zero_deflation_rate": 0.425089858059377,
+        "real_zero_deflation_rate": 0.8087436292487307,
+        "zero_deflation_rate_difference": -0.38365377118935373,
+        "person_mean_spearman": 0.45784196480888234
+      }
+    },
+    "interpretation": "Descriptive only; sparse cells, no fitted calibration or causal attribution."
+  },
+  {
+    "field": "numeracy",
+    "label": "low",
+    "n_common_person_months": 9,
+    "n_by_month": {
+      "202004": 3,
+      "202105": 3,
+      "202111": 3
+    },
+    "sparse_months_below_8": [
+      202004,
+      202105,
+      202111
+    ],
+    "by_arm": {
+      "baseline": {
+        "probability_tv_pct": 45.51169104636605,
+        "individual_density_iqr_mae_pp": 2.854150709438205,
+        "individual_density_iqr_bias_pp": -0.9536483807879618,
+        "individual_density_iqr_mean_pp": 4.190883484621222,
+        "real_individual_density_iqr_mean_pp": 5.144531865409184,
+        "individual_density_mean_mae_pp": 2.873135319751094,
+        "individual_density_mean_bias_pp": 1.8082816230390255,
+        "q9_center_mae_pp": 1.7674943075470761,
+        "q9_center_bias_pp": 0.3901291324091023,
+        "cross_section_w1_pp": 2.843468967545015,
+        "delta_w1_pp": 2.5604970824880304,
+        "cross_person_iqr_pp": 2.123153966744254,
+        "real_cross_person_iqr_pp": 8.031799392498591,
+        "cross_person_iqr_gap_pp": -5.9086454257543375,
+        "zero_deflation_rate": 0.04238358015315042,
+        "real_zero_deflation_rate": 0.45664132483098047,
+        "zero_deflation_rate_difference": -0.4142577446778301,
+        "person_mean_spearman": 0.4166666666666667
+      },
+      "qwen": {
+        "probability_tv_pct": 45.870607979896086,
+        "individual_density_iqr_mae_pp": 2.767613852461865,
+        "individual_density_iqr_bias_pp": -1.9296139940346289,
+        "individual_density_iqr_mean_pp": 3.214917871374554,
+        "real_individual_density_iqr_mean_pp": 5.144531865409184,
+        "individual_density_mean_mae_pp": 2.4257363450600744,
+        "individual_density_mean_bias_pp": 0.8514498607510085,
+        "q9_center_mae_pp": 0.9138071615824321,
+        "q9_center_bias_pp": -0.6136916166548098,
+        "cross_section_w1_pp": 2.313925628023023,
+        "delta_w1_pp": 1.8381842916242548,
+        "cross_person_iqr_pp": 2.141379624617008,
+        "real_cross_person_iqr_pp": 8.031799392498591,
+        "cross_person_iqr_gap_pp": -5.890419767881582,
+        "zero_deflation_rate": 0.14381717728063326,
+        "real_zero_deflation_rate": 0.45664132483098047,
+        "zero_deflation_rate_difference": -0.31282414755034726,
+        "person_mean_spearman": 0.4166666666666667
+      }
+    },
+    "interpretation": "Descriptive only; sparse cells, no fitted calibration or causal attribution."
+  }
+]

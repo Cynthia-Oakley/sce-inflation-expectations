@@ -895,4 +895,16 @@
 <h2>同一个人摇摆，与不同人有差异</h2><p><strong>主Q9同一人的重复方差从0.315升至0.915pp²；扣除重复噪声后的跨人方差仅从2.567升至2.801pp²。</strong>温度增加了波动，却没有明显恢复主Q9的人际差异。0.8的W1改善作为辅助信号保留，不事后替换预定主比较。</p><p>下图把重复方差与各人平均回答的差异分开。跨人方差再减去平均重复方差÷4，估计扣除重复噪声后的差异；该估计不等于真实人格参数，负数原样报告。稳定差异扩大也需要同时改善W1、个人排序或误差，才有实际价值。</p>
 <figure><img src="../20261019_advisor_followup/temperature_results_v1/figures/dispersion.png" alt="Q8和Q9的重复噪声与经修正跨人方差"><figcaption>此图按人等权、月份等权，单位为百分点²；与上方调查权重敏感性误差口径分别解释。</figcaption></figure>
 <p><a href="../20261019_advisor_followup/temperature_results_20261019.md">结果解释与下一步</a> · <a href="../20261019_advisor_followup/temperature_results_v1/summary.json">完整聚合</a> · <a href="../20261019_advisor_followup/temperature_results_v1/run_receipt.json">费用与分解收据</a> · <a href="../../current_todo.html">当前清单</a></p></section>
+<section id="qwen-migration-results-20261019" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 36px;border-bottom:1px solid #d7dfdc;line-height:1.75">
+<h1>Qwen2.5同输入迁移：微观结构与数值合法性</h1>
+<p>2026-10-19启动，10-20完成本轮整理。原计划2020-04、2021-05/11、2022-03各24人，两次生成。实际只纳入全部重复完成的月份：2020-04、2021-05、2021-11；2022年3月未完成，整月排除。只换模型，直接填Q8/Q9；P/E、本人真实上期信念、提示和温度0.5均保持一致。Qwen2.5-72B固定DeepInfra，DeepSeek前两遍旧回答直接复用。</p>
+<p>共发出<strong>150次Qwen请求</strong>，成功收到148份，其中144份用于完整月份评价；其余4份成功回包与2次连接错误保留存档。首次中断获用户允许一次整单元补发；再次中断便停止。自动重试0次。供应商报告费用$0.1919，含未知计费请求的保守使用量估$0.2008／合计上限$1。</p>
+<p><strong>数值合法性未达到99%技术门槛。</strong>不合法Q9保留原值、不归一化；下列Q9只比较两模型均有效且两遍可计分的65个人月。模型失败可能不是随机缺失，因此以下数值仅作描述，不能据此宣布模型替换成功。Q8独立保留72个人月。</p>
+<div class="table-scroll"><table><thead><tr><th>模型</th><th>Q9中心MAE↓</th><th>跨人W1↓</th><th>变化W1↓</th><th>跨人IQR</th><th>Q8中心MAE↓（等人）</th></tr></thead><tbody><tr><td>DeepSeek旧回答</td><td>1.563</td><td>2.748</td><td>2.345</td><td>1.866</td><td>0.850</td></tr><tr><td>Qwen2.5新回答</td><td>1.644</td><td>2.868</td><td>2.506</td><td>1.651</td><td>0.933</td></tr></tbody></table></div>
+<p>Q9按原设计调查权重、月份/遍数等权；Q8此列按人等权。同支持照抄上期Q9中心MAE 1.317、分布W1 2.002；真人跨人IQR 5.791。不是全国SCE成绩，不能与旧四遍或十二期的数值直接拼比。</p>
+<p>局部填法差异：通缩各档全部填0%的比例为DeepSeek5.2%、Qwen39.7%、真人77.2%。Qwen这一项更接近真人，但整体分布与中心没有同步改善；不据此称微观结构已恢复。</p>
+<figure><img src="../20261019_advisor_followup/qwen_migration_results_v1/figures/structure.png" alt="Qwen与DeepSeek的Q9拟合及跨人差异"><figcaption>人际IQR扩大只有在分布距离也改善时才有意义；不把随机撒宽视为恢复真实异质性。</figcaption></figure>
+<figure><img src="../20261019_advisor_followup/qwen_migration_results_v1/figures/monthly.png" alt="实际完成的非连续开发月的真人、两个模型及照抄上期中心"><figcaption>同一支持、同权重比较；两遍重复没有增加真人样本量。</figcaption></figure>
+<p>本次是历史A线回访者条件重建。这些开发月都已看过，旧DeepSeek不是同期随机对照；同一温度不代表两模型同等随机性。Qwen完整知识截止与托管权重修订仍未核实。没有在本批拟合宏观组合权重，也没有改默认模型。</p>
+<p><a href="../20261019_advisor_followup/qwen_migration_results.md">完整解释与下一步</a> · <a href="../20261019_advisor_followup/qwen_migration_results_v1/run_receipt.json">调用与费用</a> · <a href="../20261019_advisor_followup/qwen_migration_results_v1/group_descriptions.json">学历/数理分组</a> · <a href="../../current_todo.html">当前清单</a></p></section>
 </body></html>
