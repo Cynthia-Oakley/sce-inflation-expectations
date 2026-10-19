@@ -27,3 +27,7 @@ python -m pytest tests/test_sce_advisor_diagnostics.py -q
 ## 已完成：温度对照
 
 [三组方案](temperature_trial_plan.md)、[配置](temperature_config_v1.json)、[48单元离线收据](temperature_readiness_v1.json)。0.5/0.8/1.0×四旧开发月×24人×4遍，1152请求已完成，全合法，估$1.2875/$6；主比较未过筛选，保留0.5参考。[结果与复算](temperature_results_20261019.md)。只改变API温度，不改变网格、先验或回答格式。
+
+## 当前下一步：固定模型与两层评价
+
+[最新安排](next_stage_model_and_evaluation.md)：官方同输入能力优先核；条件不足则单一固定备选。微观W1/分组/更新与宏观冻结组合分别验证，不改旧试验结果。现阶段只有免费核查与计划，无新模型真实调用。

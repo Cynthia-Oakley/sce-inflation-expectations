@@ -22,6 +22,10 @@
 
 ## 3. 下一步研究及现有材料
 
+用户10月19日新方向：微观结构是温度/机制重点；宏观以历史真实SCE与模拟的组合单独验证，权重尚未冻结，不能将组合拟合当微观修复。后续不再默认新调用DeepSeek可变Flash；先官方同输入模型，条件不足选择单一固定LLaMA/Qwen。新[顺序与证据](workstreams/20261019_advisor_followup/next_stage_model_and_evaluation.md)；现无新付费授权。
+
+本轮免费重查在initialize读超时，0付费/0人口；attempt记录在`data/raw/mcp_checks/2026-10-19_model_transition_v1/`。此前成功记录仍为gpt-4o-mini，未确认自带逐人P/E/先验或snapshot选择。不能以注册名称当实际固定GPT-4o。已核Llama 3.1-70B静态模型卡/2023-12预训练截止及OpenRouter公开DeepInfra目录，但未做本账户真实健康检查。下一步准备单一新模型192份兼容性/开发小批，其余输入固定；未授权直接调用。
+
 温度对照完成，运行包`outputs/sce_temperature_trial_20261019_v1/`，评价`outputs/sce_temperature_evaluation_20261019_v1/`。四旧开发月24人、三组×4遍，共1152请求，全合法，估$1.2875/$6，0错误/重试，调用398.1秒。Q9中心0.5/0.8/1.0为1.037/1.032/1.047、W1 2.665/2.420/2.505；照抄0.730/1.784。主1.0比较区间跨0、未过预定筛选；0.8仅保留辅助W1信号，参考温度仍0.5。Q9人内重复方差0.315→0.915，修正跨人方差2.567→2.801，未解决同质化。[结果](workstreams/20261019_advisor_followup/temperature_results_20261019.md)。
 
 本批复算须用`evaluate_sce_temperature.py --folder ... --out outputs/<fresh>`：旧真人缓存只有两遍索引，新增评价层适配先核同人同月192个缓存键一致，再映射到4遍384键；96个真人事实数不变，没有修改真值、原答、源码pin或manifest，没有新API。适配收据与哈希在评价目录及公共费用收据。原共用evaluate缺此索引适配；不要为修复重跑模拟。`report_sce_temperature.py`只读缓存作图。共用三入口修改前副本见`outputs/sce_shared_runtime_snapshot_20261019_temperature_v1/`，旧Q8复算用对应冻结版本。
