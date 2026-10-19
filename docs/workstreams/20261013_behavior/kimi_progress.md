@@ -128,3 +128,14 @@
 另：盘点 Codex 10/17–10/19 工作并向用户汇报（扩大验证 0.459/0.239、心理/处境/新闻量/新闻分配多组阴性结果、ATUS 采购角色菜单已备待运行）。注意：NEXT_ACTIONS 任务板称差异化新闻量 3456 请求批次"正在运行"，但 `outputs/sce_news_breadth_evaluation_20261019_v1` 评价已生成、系统无相关进程，疑似已完成而状态未更新——已提醒用户与 Codex 同步时核实。
 
 未改动任何现有文件、未提交、无付费调用。下一步等用户/Codex 对两份文档的评审意见。
+
+---
+
+## 2026-10-19 真人预期更新六条微观事实（F1–F6，零 API/零网络）
+
+用户要求把"真人如何更新预期"从口头结论升级为有回归与图表佐证的系统分析。交付 `docs/workstreams/20261019_updating_facts/README.md`（教学式，逐事实：问题→方法→数字→图→机制含义→caveat + 参数汇总表 + 与既有工作关系）。
+
+- 数据：`outputs/sce_age_reporting_audit_20261012_v1/reference_private.parquet`（sha256 复算一致），与 20261013 线同一有效集口径（103,630 相邻对）；CPI 事后真值用本地 ALFRED CPIAUCNS vintage 2024-03-12，故 F3a 仅覆盖预测月 2017-02..2023-02（74,952 对，报告已醒目标注）。
+- 关键数字：F1 惰性 |Δ|=0 占 13.8%/15.4%（unweighted/weighted），十档完全相同 13.7%——不动≈整份复投；F2 变动者 Δ q05/q95≈±8pp、超额峰度 +20~24（高斯不可用）；F3a CG 式回归斜率 **−0.483**（聚类 SE 0.0032，逐年 −0.46..−0.50）——与专业预测者文献正斜率相反，本样本呈过度反应（含测量误差/机械耦合成分，标为描述性）；F3b OLS −0.43 与 20261013 复算一致，t−2 IV 塌缩至 −0.05，建议校准取 |β|∈[0.05,0.43] 敏感性区间；F4 非零格 81.1% 为 5 的倍数、52.2% 为 10 的倍数；F5 between 方差占 52.5%、持续度 0.573、split-half 0.852；F6 k=4 类型表：主流型 60.3%(p=.92,m=1.8)、高频中幅偏高 19.8%、低频小幅 14.6%、通胀担忧型 5.4%(m=13.0,ℓ=14.4)。
+- 产出（全部新建）：`studies/sce_inflation_expectations/belief_dynamics/updating_facts.py`、`scripts/analyze_sce_updating_facts.py`（拒绝覆盖）、`outputs/sce_updating_facts_20261019_v1/`（summary+json 6 图+per-person 私有 parquet）、`tests/test_sce_updating_facts.py`（11/11 通过；全量 876 passed，唯一失败为既有 test_extract_cpi_components PDF 归档问题，与本次无关）。
+- 用途：F1/F2/F3/F6 直接给出两阶段"改不改→改多少"更新机制与类型分配表的校准参数；F4 支撑与 Codex 表达线汇合的报告层后处理；F5 支撑持久个人成分。待与 Codex 讨论采纳。
