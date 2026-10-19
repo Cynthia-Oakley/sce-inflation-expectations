@@ -2,7 +2,7 @@
 
 适用范围：整个 `socioverse_challenge/`。
 
-1. 首次接手先读 `docs/AGENT_HANDOFF.md` 与 `docs/NEXT_ACTIONS.md`。确定任务后按需读取：目录看 `docs/PROJECT_STRUCTURE.md`，方法看 `docs/SCE_PROJECT_PLAN.md`，研究边界/实验变更看 `docs/PROJECT_CHARTER.md`、`docs/RESEARCH_PROTOCOL.md`、`docs/DECISIONS.md`。候选指数文档仅在回溯选题时读，不每轮重读全部资料。
+1. 首次接手先读 `docs/DESIGN.md`、`docs/AGENT_HANDOFF.md` 与 `docs/NEXT_ACTIONS.md`。确定任务后按需读取：目录看 `docs/PROJECT_STRUCTURE.md`，方法看 `docs/SCE_PROJECT_PLAN.md`，研究边界/实验变更看 `docs/PROJECT_CHARTER.md`、`docs/RESEARCH_PROTOCOL.md`、`docs/DECISIONS.md`。候选指数文档仅在回溯选题时读，不每轮重读全部资料。
 2. 唯一主线：水上挽月、赛道 A、美国 SCE 一年期通胀预期。BIE 是扩展；不得自行换目标、as_of、测试期或数据口径。方向已确定不等于实验配置已冻结。
 3. `../socioverse/`、`../指标跟踪/` 为外部只读参考。`../socioverse2_repo/` 是官方参考与本地工作流宿主，上游核心默认只读；T03-L 可管理必要运行副本和已有配置。SCE 新实现唯一放本仓库 `studies/sce_inflation_expectations/`，运行副本从这里单向导出并记录哈希，不复制第三方整仓或维护第二份源码。
 4. 遵守 `CONTRIBUTING.md`。开工检查 git status；保留用户与其他 Agent 改动。多 Agent 获授权后每项任务划定文件范围，不同时改公共决策/配置。
@@ -17,3 +17,5 @@
 12. 2026-10-01 起按用户协作安排允许 T03-L 本地开发验收；历史云端方案仍见 `docs/CLOUD_PILOT_PLAN.md`。先用现有 Conda 环境和小样验收，不因本地工具可用就扩大真实调用。Codex 主导独立调研/复核，Kimi 主导实现/测试；文件分工和任务状态以任务板为准，公共文件同一时间由一人整合。
 
 13. Token 节俭（2026-10-03 用户定）：机械重复且消耗大的批量转录任务（如 PDF 数值转录）优先用确定性解析脚本；遇到解析失败或新版式变体时，用 DeepSeek API（项目 key，成本低）做转录或交用户处理，不让编码 Agent 在上下文里逐份通读大量 PDF。文本型 PDF 的提取工具链：pypdf（已装）；精度不足时按用户习惯用 DeepSeek VLM 提取。
+
+14. 文档维护：DESIGN负责全貌，CURRENT_SIMULATION_CONFIGURATION负责配置，EXPERIMENT_STATUS负责台账，NEXT_ACTIONS负责当前任务，ROADMAP负责日程。新增实验计划/运行卡/结果放对应workstream；只更新当前条目，不在任务板/交接页反复前置长快照。历史文档归档前检查程序、配置、冻结哈希和受保护引用；不为归档改写旧manifest。脚本索引见 `scripts/README.md`，新统计优先复用现有evaluation模块，旧冻结入口不自动重构。
