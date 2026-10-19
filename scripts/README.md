@@ -8,6 +8,7 @@
 - [prepare_sce_news_breadth_trial.py](prepare_sce_news_breadth_trial.py)：最新已完成新闻量三组试验的准备入口；不要重启旧包。
 - [report_sce_news_breadth.py](report_sce_news_breadth.py)、[plot_sce_news_breadth.py](plot_sce_news_breadth.py)：基于已有评价缓存汇总/作图，不再发API。
 - [prepare_sce_personal_information.py](prepare_sce_personal_information.py)、[prepare_sce_personal_information_views.py](prepare_sce_personal_information_views.py)：ATUS/SCE角色与菜单的离线准备，不等于真实模拟入口已接通。
+- [prepare_sce_procurement_views.py](prepare_sce_procurement_views.py)：六期食品采购角色—价格视图离线准备，复用首发PDF、匹配/打乱及完整提示；不发API，不是付费运行入口。
 - [evaluate_sce_outputs.py](evaluate_sce_outputs.py)：统一规范包评价，旧批次须遵守其计分版本和支持定义。
 - [render_current_todo.py](render_current_todo.py)：从当前任务板生成固定路径`docs/current_todo.html`。
 

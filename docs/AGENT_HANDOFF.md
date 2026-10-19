@@ -42,11 +42,13 @@
 
 [人口六格草案](workstreams/20261019_advisor_followup/stratification_draft.md)为学历×是否在职，63/72格月达到初步支持；未知独立池。支持与192人分配示例在`outputs/sce_stratification_support_20261019_v1/`。尚未实际抽样、改旧P或接新Normal，年龄/收入边际与财务/数理另作诊断。本轮Q8用旧样本，不同时换网格。相关指标扩展仍先评估Q2。
 
-采购角色对应的可见价格信息保留为已准备方向；新闻量与购物价格分开实验，避免完整宏观表让个体菜单变化失去含义。ATUS/SCE匹配、三种子菜单已备，尚未接新真实模拟。详[匹配结果](workstreams/20261018_targeted_mechanisms/atus_sce_matching_results_20261019.md)。
+采购角色—可见价格本轮已落实为[六期完整离线提示](workstreams/20261020_procurement/README.md)：有效包`outputs/sce_procurement_price_views_20261020_v3/`，576个人月×三组×三种子共5184提示；v1因平衡失败停止，v2是共享加载格式对齐前草稿，均0调用。解析6份已有首发PDF共60项，食品6类用于角色视图，清洁/纸品/护理仅储备。原固定8新闻/先验/问卷不变，三组共同移除完整统计表；新共同背景不能复用旧回答。匹配/打乱交换整套角色/类别，接收者时间标签重算；权重排序约12人块内受限随机，18项平衡均通过，不能说无限制随机。共享加载54文件及8测试通过，尚未引擎干跑或付费。脚本`prepare_sce_procurement_views.py`，模块`procurement_price_views.py`。没有改旧源文件/manifest、默认模型或配置。
+
+今日官方免费回查成功，证据`data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json`，user_pool_mcp1.27.0，实际gpt-4o-mini，别名GPT=gpt-4o-2024-08-06不能等同执行模型；逐人同输入/模型选择仍未明确。要求与未发送询问草稿见[GPT接入](workstreams/20261020_procurement/platform_gpt_requirements.md)。无新付费调用或运行任务；下一步先确认通道，再引擎干跑/冻结一批种子和预算。新增全部study文件没有改旧在册入口；旧运行继续用原冻结源。
 
 已有ATUS 2016/2022/2023文件和字典在`data/raw/behavior_references/2026-10-19_atus_roles_v2/`及同日supplement目录；不要重复下载。2022→2023采购角色预测支持不等于SCE预测收益；whole-residence人数、未知儿童/搬家/信息年龄按原规则保留。金融决策者不等于购物者，CE汽油支出不等于本人驾车。
 
-先查本地食品/日用品新闻路由、候选覆盖及历史BLS细分类表，再审定菜单、完整提示、时间与主题/文字量平衡、干跑及预登记；有新付费批次再报具体范围预算。新闻随机分配保留另一次独立验证候选，不按六期真值调篇数或挑分配种子。
+本地路由补查与BLS分类表解析已完成，不重复抓取。食品角色只说明采购分工，不识别本人价格；0/1/3/6/6可见条数是实验假设，不能按结果反选。六期仍是开发期，尚未登记独立验证月份。新闻随机分配保留独立验证候选，不按六期真值调篇数或挑分配种子。
 
 [财经关注文献](literature/sce/information_exposure/news_attention_demographics_20261019.md)已核8项一手材料，人口关联不能直接当个体数量定律。Kimi新[六项更新事实](workstreams/20261019_updating_facts/README.md)已交付但本线未做完整独立复核，不直接据此设置回摆系数。
 

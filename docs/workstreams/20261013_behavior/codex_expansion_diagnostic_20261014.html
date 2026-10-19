@@ -907,4 +907,38 @@
 <figure><img src="../20261019_advisor_followup/qwen_migration_results_v1/figures/monthly.png" alt="实际完成的非连续开发月的真人、两个模型及照抄上期中心"><figcaption>同一支持、同权重比较；两遍重复没有增加真人样本量。</figcaption></figure>
 <p>本次是历史A线回访者条件重建。这些开发月都已看过，旧DeepSeek不是同期随机对照；同一温度不代表两模型同等随机性。Qwen完整知识截止与托管权重修订仍未核实。没有在本批拟合宏观组合权重，也没有改默认模型。</p>
 <p><a href="../20261019_advisor_followup/qwen_migration_results.md">完整解释与下一步</a> · <a href="../20261019_advisor_followup/qwen_migration_results_v1/run_receipt.json">调用与费用</a> · <a href="../20261019_advisor_followup/qwen_migration_results_v1/group_descriptions.json">学历/数理分组</a> · <a href="../../current_todo.html">当前清单</a></p></section>
+
+<section id="procurement-price-design-20261020" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 40px;border-bottom:1px solid #d7dfdc;line-height:1.8">
+<h1>食品采购角色如何改变可见价格</h1>
+<p>2026-10-20。已完成六期576个人月、三组与三个分配种子的<strong>5,184份完整离线提示</strong>。新增模型调用与费用均为0，尚无拟合改善的结论；未改变默认配置。</p>
+<h2>传导路径</h2>
+<p style="font-size:1.12em"><strong>家庭构成与年龄 → 采购责任概率 → 可见食品类别 → 结合原有信念回答Q8/Q9</strong></p>
+<p>复用ATUS中同类人的五档食品采购责任，不按性别硬指定角色。食品采购责任不等于本人购买次数，也不等于负责日用品或驾驶。0/1/3/6/6条可见细分是实验设置，并非真实测量的接触量。</p>
+<h2>三组如何对照</h2>
+<ol><li><strong>共同背景：</strong>同一在家食品价格摘要，不加采购角色和食品细分。</li><li><strong>角色匹配：</strong>加入合成角色，依责任档位分配六类食品中的一部分。</li><li><strong>同月打乱：</strong>把同样的“角色＋信息包”换给同月其他人；控制权重下的总量与类别占比，单独检验分给谁是否有用。</li></ol>
+<p>三组新闻都固定为原8篇，个人先验、政策、问卷不变；统一移除完整宏观表，避免覆盖个人视图。匹配/打乱在相近权重块内交换，是受约束的负对照，不是彻底随机化。信息发布时间标签按接收者重新生成。</p>
+<h2>价格资料已补齐，个人真实价格仍缺失</h2>
+<p>本地六份BLS首发PDF提取60项：6项在家食品背景、36项食品细分类、18项清洁/纸品/护理储备。同比与环比明确区分，均按未季调口径；60项同比与同份表7对账、42项食品同比/环比与表1对账。日用品数据暂不按食品采购角色分配。</p>
+<p><strong>这些是全国分类价格代理，不是个人收据。</strong>类别选择没有看涨幅大小或本期真实回答，也没有捏造购物记忆。采购越多不被强制写成预期越高。</p>
+<details><summary>展开看一个实际准备的价格片段</summary><pre style="white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:1em;max-width:100%">Household grocery context for this simulation:
+You do all of the usual grocery shopping for your household.
+National category prices proxy the information available here; they are not your actual receipts.
+General grocery-price background:
+- Food at home: decreased 0.1% from the previous month; increased 4.6% from the same month a year earlier. Reference month 2020-08 (not seasonally adjusted).
+Additional grocery categories in your information view:
+- Fruits and vegetables: increased 0.2% from the previous month; increased 2.7% from the same month a year earlier. Reference month 2020-08 (not seasonally adjusted).
+- Other food at home: increased 0.2% from the previous month; increased 4.2% from the same month a year earlier. Reference month 2020-08 (not seasonally adjusted).
+- Meats, poultry, fish, and eggs: decreased 1.5% from the previous month; increased 7.1% from the same month a year earlier. Reference month 2020-08 (not seasonally adjusted).
+- Cereals and bakery products: decreased 0.3% from the previous month; increased 2.8% from the same month a year earlier. Reference month 2020-08 (not seasonally adjusted).
+- Nonalcoholic beverages and beverage materials: increased 0.3% from the previous month; increased 5.1% from the same month a year earlier. Reference month 2020-08 (not seasonally adjusted).
+- Dairy and related products: increased 1.8% from the previous month; increased 5.7% from the same month a year earlier. Reference month 2020-08 (not seasonally adjusted).
+BLS release 2020-09-11T08:30:00-04:00; availability relative to your previous survey: later.
+
+</pre></details>
+<h2>官方GPT接口还差什么</h2>
+<p>今日免费回查实际模型仍为<strong>GPT-4o-mini</strong>；别名目录的GPT-4o不是已确认的运行模型。现工具抽平台人口池，未明确接受逐人本地P/E/历史，不能把另一套人口模拟称为同输入模型替换。已整理最小接入要求，没有发送付费问卷试探。</p>
+<h2>下一步</h2>
+<p>先确认官方GPT同输入与原答/费用接口，再接共用引擎干跑、冻结一个主要分配种子并报预算。主要看匹配对打乱的分布W1、组内差异与更新；中心MAE继续披露，宏观加权另拟权验证。这六期已用过，正式独立验证需另登记。</p>
+<p><a href="../20261020_procurement/README.md">完整设计、理论与局限</a> · <a href="../20261020_procurement/platform_gpt_requirements.md">官方GPT接入要求</a> · <a href="../20261020_procurement/readiness.json">离线准备收据</a> · <a href="../../current_todo.html">当前清单</a></p>
+</section>
 </body></html>

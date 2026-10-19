@@ -1,0 +1,509 @@
+{
+  "status": "offline_complete_prompts_not_engine_or_paid_trial",
+  "created_at_utc": "2026-10-19T16:12:13.754094+00:00",
+  "new_api_calls": 0,
+  "new_cost_usd": 0,
+  "current_target_answers_read": false,
+  "model_or_run_config_changed": false,
+  "months": [
+    202009,
+    202109,
+    202206,
+    202312,
+    202410,
+    202503
+  ],
+  "n_person_months": 576,
+  "allocation_seeds": [
+    20261019,
+    20261020,
+    20261021
+  ],
+  "arms": [
+    "shared_price",
+    "matched_role",
+    "shuffled_role"
+  ],
+  "complete_prompt_variants": 5184,
+  "price_facts": 60,
+  "inventory": [
+    {
+      "month": 202009,
+      "as_of": "2020-09-11T23:59:59-04:00",
+      "person_months": 96,
+      "categories_extracted": 10,
+      "grocery_detail_categories": 6,
+      "reserve_categories_not_assigned": 3,
+      "existing_news_count_per_person": 8,
+      "news_candidates_audit_only": {
+        "existing_food_tag": 3,
+        "additional_food_candidates": 0,
+        "household_goods_candidates": 0
+      },
+      "balance": [
+        {
+          "attempts": 2,
+          "weighted_detail_count_relative_gap": 0.002086990388256131,
+          "weighted_view_bytes_relative_gap": 0.0012572639585978393,
+          "max_category_and_role_share_absolute_gap": 0.005547966223857004,
+          "same_bundle_fraction": 0.041666666666666664,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.3541666666666667,
+          "seed": 20261019
+        },
+        {
+          "attempts": 4,
+          "weighted_detail_count_relative_gap": 0.009674323171639817,
+          "weighted_view_bytes_relative_gap": 0.006447253900977387,
+          "max_category_and_role_share_absolute_gap": 0.019766188964775472,
+          "same_bundle_fraction": 0.07291666666666667,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.28125,
+          "seed": 20261020
+        },
+        {
+          "attempts": 5,
+          "weighted_detail_count_relative_gap": 0.00018773387997484623,
+          "weighted_view_bytes_relative_gap": 0.00016125496970505334,
+          "max_category_and_role_share_absolute_gap": 0.0047887814777900495,
+          "same_bundle_fraction": 0.13541666666666666,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.40625,
+          "seed": 20261021
+        }
+      ]
+    },
+    {
+      "month": 202109,
+      "as_of": "2021-09-14T23:59:59-04:00",
+      "person_months": 96,
+      "categories_extracted": 10,
+      "grocery_detail_categories": 6,
+      "reserve_categories_not_assigned": 3,
+      "existing_news_count_per_person": 8,
+      "news_candidates_audit_only": {
+        "existing_food_tag": 8,
+        "additional_food_candidates": 2,
+        "household_goods_candidates": 0
+      },
+      "balance": [
+        {
+          "attempts": 2,
+          "weighted_detail_count_relative_gap": 0.005410788446595071,
+          "weighted_view_bytes_relative_gap": 0.00350018700048907,
+          "max_category_and_role_share_absolute_gap": 0.01192468934971469,
+          "same_bundle_fraction": 0.11458333333333333,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.3645833333333333,
+          "seed": 20261019
+        },
+        {
+          "attempts": 2,
+          "weighted_detail_count_relative_gap": 0.0031497423363340323,
+          "weighted_view_bytes_relative_gap": 0.001972163477886589,
+          "max_category_and_role_share_absolute_gap": 0.008308400314984365,
+          "same_bundle_fraction": 0.07291666666666667,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.4166666666666667,
+          "seed": 20261020
+        },
+        {
+          "attempts": 1,
+          "weighted_detail_count_relative_gap": 0.00361309371740591,
+          "weighted_view_bytes_relative_gap": 0.0020991251634942605,
+          "max_category_and_role_share_absolute_gap": 0.007056139982287615,
+          "same_bundle_fraction": 0.11458333333333333,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.40625,
+          "seed": 20261021
+        }
+      ]
+    },
+    {
+      "month": 202206,
+      "as_of": "2022-06-10T23:59:59-04:00",
+      "person_months": 96,
+      "categories_extracted": 10,
+      "grocery_detail_categories": 6,
+      "reserve_categories_not_assigned": 3,
+      "existing_news_count_per_person": 8,
+      "news_candidates_audit_only": {
+        "existing_food_tag": 12,
+        "additional_food_candidates": 1,
+        "household_goods_candidates": 0
+      },
+      "balance": [
+        {
+          "attempts": 3,
+          "weighted_detail_count_relative_gap": 0.00016968501480625324,
+          "weighted_view_bytes_relative_gap": 0.00018021672083878574,
+          "max_category_and_role_share_absolute_gap": 0.009539821454058517,
+          "same_bundle_fraction": 0.07291666666666667,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.4270833333333333,
+          "seed": 20261019
+        },
+        {
+          "attempts": 1,
+          "weighted_detail_count_relative_gap": 0.007472836282169404,
+          "weighted_view_bytes_relative_gap": 0.0042227682091623454,
+          "max_category_and_role_share_absolute_gap": 0.017962248212110454,
+          "same_bundle_fraction": 0.0625,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.375,
+          "seed": 20261020
+        },
+        {
+          "attempts": 3,
+          "weighted_detail_count_relative_gap": 0.0042379051308448394,
+          "weighted_view_bytes_relative_gap": 0.0026173980328165272,
+          "max_category_and_role_share_absolute_gap": 0.006799980067784428,
+          "same_bundle_fraction": 0.052083333333333336,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.28125,
+          "seed": 20261021
+        }
+      ]
+    },
+    {
+      "month": 202312,
+      "as_of": "2023-12-12T23:59:59-05:00",
+      "person_months": 96,
+      "categories_extracted": 10,
+      "grocery_detail_categories": 6,
+      "reserve_categories_not_assigned": 3,
+      "existing_news_count_per_person": 8,
+      "news_candidates_audit_only": {
+        "existing_food_tag": 1,
+        "additional_food_candidates": 0,
+        "household_goods_candidates": 0
+      },
+      "balance": [
+        {
+          "attempts": 18,
+          "weighted_detail_count_relative_gap": 0.0034878141538184472,
+          "weighted_view_bytes_relative_gap": 0.0017000744638783882,
+          "max_category_and_role_share_absolute_gap": 0.01853341092787464,
+          "same_bundle_fraction": 0.07291666666666667,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.3645833333333333,
+          "seed": 20261019
+        },
+        {
+          "attempts": 87,
+          "weighted_detail_count_relative_gap": 0.0006858022904456431,
+          "weighted_view_bytes_relative_gap": 0.0013714559635390733,
+          "max_category_and_role_share_absolute_gap": 0.016186374086454708,
+          "same_bundle_fraction": 0.03125,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.2604166666666667,
+          "seed": 20261020
+        },
+        {
+          "attempts": 125,
+          "weighted_detail_count_relative_gap": 0.008071881861246829,
+          "weighted_view_bytes_relative_gap": 0.004889937304211735,
+          "max_category_and_role_share_absolute_gap": 0.014146504362921197,
+          "same_bundle_fraction": 0.125,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.4166666666666667,
+          "seed": 20261021
+        }
+      ]
+    },
+    {
+      "month": 202410,
+      "as_of": "2024-10-10T23:59:59-04:00",
+      "person_months": 96,
+      "categories_extracted": 10,
+      "grocery_detail_categories": 6,
+      "reserve_categories_not_assigned": 3,
+      "existing_news_count_per_person": 8,
+      "news_candidates_audit_only": {
+        "existing_food_tag": 2,
+        "additional_food_candidates": 0,
+        "household_goods_candidates": 0
+      },
+      "balance": [
+        {
+          "attempts": 2,
+          "weighted_detail_count_relative_gap": 0.0002613563002588164,
+          "weighted_view_bytes_relative_gap": 0.00025005336666932107,
+          "max_category_and_role_share_absolute_gap": 0.01854191530674787,
+          "same_bundle_fraction": 0.10416666666666667,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.3645833333333333,
+          "seed": 20261019
+        },
+        {
+          "attempts": 3,
+          "weighted_detail_count_relative_gap": 0.007228873081735338,
+          "weighted_view_bytes_relative_gap": 0.004268211217070089,
+          "max_category_and_role_share_absolute_gap": 0.014711030920334434,
+          "same_bundle_fraction": 0.0625,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.3229166666666667,
+          "seed": 20261020
+        },
+        {
+          "attempts": 4,
+          "weighted_detail_count_relative_gap": 0.005605450802988045,
+          "weighted_view_bytes_relative_gap": 0.00332826134002777,
+          "max_category_and_role_share_absolute_gap": 0.019698158189221576,
+          "same_bundle_fraction": 0.041666666666666664,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.3229166666666667,
+          "seed": 20261021
+        }
+      ]
+    },
+    {
+      "month": 202503,
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "person_months": 96,
+      "categories_extracted": 10,
+      "grocery_detail_categories": 6,
+      "reserve_categories_not_assigned": 3,
+      "existing_news_count_per_person": 8,
+      "news_candidates_audit_only": {
+        "existing_food_tag": 10,
+        "additional_food_candidates": 7,
+        "household_goods_candidates": 0
+      },
+      "balance": [
+        {
+          "attempts": 3,
+          "weighted_detail_count_relative_gap": 0.008717884131598543,
+          "weighted_view_bytes_relative_gap": 0.005261793313951354,
+          "max_category_and_role_share_absolute_gap": 0.01738637322740677,
+          "same_bundle_fraction": 0.10416666666666667,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.3333333333333333,
+          "seed": 20261019
+        },
+        {
+          "attempts": 1,
+          "weighted_detail_count_relative_gap": 0.003923626568832681,
+          "weighted_view_bytes_relative_gap": 0.002418882347375382,
+          "max_category_and_role_share_absolute_gap": 0.010488932460271272,
+          "same_bundle_fraction": 0.041666666666666664,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.25,
+          "seed": 20261020
+        },
+        {
+          "attempts": 14,
+          "weighted_detail_count_relative_gap": 0.0026214099790541068,
+          "weighted_view_bytes_relative_gap": 0.0010463793516891794,
+          "max_category_and_role_share_absolute_gap": 0.012610830885712021,
+          "same_bundle_fraction": 0.11458333333333333,
+          "proposal": "within adjacent survey-weight rank blocks of about 12",
+          "weight_rank_block_sizes": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "same_role_fraction": 0.3020833333333333,
+          "seed": 20261021
+        }
+      ]
+    }
+  ],
+  "gates_remaining": [
+    "Official same-input GPT transport and budget not confirmed.",
+    "No official-engine dry run has been executed for these new prompts.",
+    "Months are already explored, not an independent validation set.",
+    "Proposed future sample/repeats/one primary allocation seed not frozen.",
+    "No known personal receipts or observed SCE shopping roles; proxy validity unproven.",
+    "ATUS2022 for earlier months is retrospective A-only structural assumption."
+  ],
+  "seconds": 5.819941374938935,
+  "official_model": "gpt-4o-mini",
+  "official_server": {
+    "name": "user_pool_mcp",
+    "version": "1.27.0"
+  },
+  "shared_prompt_loader_files_passed": 54,
+  "shared_prompt_loader_messages_passed": 5184,
+  "meaningful_tests_passed": 8,
+  "official_engine_dry_run": false,
+  "canonical_local_output": "outputs/sce_procurement_price_views_20261020_v3",
+  "prepared_manifest_sha256": "98bc3bc5e67d48b3557b24b2fd4d77a38c3c21e3c5a929548e543d9d524167c1",
+  "max_actual_weighted_price_fragment_byte_relative_gap": 0.006620507011095511,
+  "max_actual_weighted_full_prompt_byte_relative_gap": 0.0010363017680294906
+}
