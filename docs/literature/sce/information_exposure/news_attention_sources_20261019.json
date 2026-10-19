@@ -1,0 +1,167 @@
+{
+  "checked_on": "2026-10-19",
+  "purpose": "literature review of demographic news attention after matched/random/uniform trial; no parameter changes",
+  "n_primary_materials": 8,
+  "sources": [
+    {
+      "id": "pfajfar_winkler_2024",
+      "authors": [
+        "Damjan Pfajfar",
+        "Fabian Winkler"
+      ],
+      "title": "Households’ Preferences Over Inflation and Monetary Policy Tradeoffs",
+      "version": "June2024 conference/working paper hosted by ECB",
+      "url": "https://www.ecb.europa.eu/press/conferences/shared/pdf/20241001_expectation_surveys/Pfajfar_paper.pdf",
+      "checked_sections": [
+        "Section3: printedp5",
+        "Section4.1 / Table1: printedp6–8",
+        "Footnote14: printedp6"
+      ],
+      "access_level": "paper methods, attention results/table and sample qualification",
+      "measured_construct": "topic-specific self-reported attention frequency",
+      "population": "June2023 special SCE survey;2155 former full12-month participants",
+      "microdata_status": "Not obtained; availability not verified; not a field established in project monthly Excel",
+      "causal_status": "weighted ordered-probit associations, not causal demographic effects"
+    },
+    {
+      "id": "blinder_krueger_2004",
+      "authors": [
+        "Alan S. Blinder",
+        "Alan B. Krueger"
+      ],
+      "title": "What Does the Public Know about Economic Policy, and How Does It Know It?",
+      "version": "Brookings Papers on Economic Activity 2004(1),327–397",
+      "url": "https://www.brookings.edu/wp-content/uploads/2004/01/2004a_bpea_blinder.pdf",
+      "checked_sections": [
+        "printedpp335–337: desire for information and reasons",
+        "conclusion"
+      ],
+      "access_level": "primary PDF selected sections",
+      "measured_construct": "desire to be informed, source use, knowledge, opinions as distinct variables",
+      "population": "2003 US adults telephone survey,n1002",
+      "causal_status": "survey/recursive-regression associations"
+    },
+    {
+      "id": "pew_2009_personal_stake",
+      "authors": [
+        "Pew Research Center"
+      ],
+      "title": "Most Feel a Personal Stake in Tracking Economic News",
+      "version": "2009-02-19 report;2009-02-13/16 fieldwork",
+      "url": "https://www.pewresearch.org/politics/2009/02/19/most-feel-a-personal-stake-in-tracking-economic-news/",
+      "checked_sections": [
+        "A Personal Stake",
+        "survey methods"
+      ],
+      "access_level": "original survey report",
+      "measured_construct": "economic-news attention, perceived relevance and background difficulty",
+      "population": "US adults,n1002,financial-crisis period",
+      "causal_status": "self-report association; crisis-period external validity limited"
+    },
+    {
+      "id": "ahn_xie_2024",
+      "authors": [
+        "Hie Joo Ahn",
+        "Shihan Xie"
+      ],
+      "title": "Stock-driven Household Attention",
+      "version": "arXiv2407.16141,2024-07-23",
+      "url": "https://arxiv.org/abs/2407.16141",
+      "checked_sections": [
+        "author abstract"
+      ],
+      "access_level": "abstract only; identification and replication not audited",
+      "measured_construct": "forecast/backcast accuracy used as attention proxy; not article frequency",
+      "causal_status": "do not promote abstract mechanism claim to causal identification in this review"
+    },
+    {
+      "id": "weber_etal_2024_revision",
+      "authors": [
+        "Michael Weber et al."
+      ],
+      "title": "Tell Me Something I Don’t Already Know: Learning in Low and High-Inflation Settings",
+      "version": "NBER WP31485,issuedJuly2023,revisedFebruary2024; version explicitly used here",
+      "url": "https://www.nber.org/papers/w31485",
+      "doi": "10.3386/w31485",
+      "checked_sections": [
+        "official abstract",
+        "version metadata"
+      ],
+      "access_level": "institutional author abstract/version",
+      "measured_construct": "learning from randomized information across inflation environments",
+      "causal_status": "information RCTs; not an experiment assigning age or income"
+    },
+    {
+      "id": "mccowage_rickards_2024",
+      "authors": [
+        "Madeleine McCowage",
+        "Peter Rickards"
+      ],
+      "title": "Inflation Expectations and Economic Literacy",
+      "version": "RBA Bulletin,2024-01-25",
+      "url": "https://www.rba.gov.au/publications/bulletin/2024/jan/inflation-expectations-and-economic-literacy.html",
+      "checked_sections": [
+        "The data",
+        "economic-news frequency definition",
+        "literacy and expectations discussion"
+      ],
+      "access_level": "original central-bank survey article",
+      "measured_construct": "written/website economics-business news frequency separated from literacy/target knowledge",
+      "population": "Australian adults,January2023,n3000",
+      "causal_status": "country/channel-specific survey association"
+    },
+    {
+      "id": "pew_2024_local_news",
+      "authors": [
+        "Elisa Shearer",
+        "Katerina Eva Matsa",
+        "Michael Lipka",
+        "Kirsten Eddy",
+        "Naomi Forman-Katz"
+      ],
+      "title": "Attention to local news",
+      "version": "Americans’ Changing Relationship With Local News,2024-05-07",
+      "url": "https://www.pewresearch.org/2024/05/07/attention-to-local-news/",
+      "checked_sections": [
+        "age/education comparisons"
+      ],
+      "access_level": "original survey report",
+      "measured_construct": "local-news attention, not financial or inflation news",
+      "causal_status": "used only to show topic specificity; never transport coefficients to financial news"
+    },
+    {
+      "id": "buelens_linden_2025",
+      "authors": [
+        "Christian Buelens",
+        "Staffan Lindén"
+      ],
+      "title": "Self-Reported and Revealed Inflation Inattention",
+      "version": "European Economy Discussion Paper225,2025-09-19",
+      "url": "https://economy-finance.ec.europa.eu/publications/self-reported-and-revealed-inflation-inattention_en",
+      "doi": "10.2765/4188129",
+      "checked_sections": [
+        "official description and highlights"
+      ],
+      "access_level": "institutional abstract/highlights; fulltext not audited",
+      "measured_construct": "dont-know-based self-reported inattention vs revealed attention",
+      "population": "Euro-area Business and Consumer Survey",
+      "causal_status": "no demographic causal effect asserted from abstract"
+    }
+  ],
+  "new_paid_calls": 0,
+  "simulation_calls": 0,
+  "raw_papers_or_microdata_redistributed": false,
+  "not_supported": [
+    "zero demographic relationship inferred from randomized-arm win",
+    "converting interest categories directly into observed monthly article counts",
+    "applying ordered-probit coefficients without cutpoints and full coding",
+    "using target forecast accuracy to assign input attention",
+    "treating special SCE module as observed monthly public field"
+  ],
+  "unverified_lead": {
+    "title": "Mass Media Flow and Differential Growth in Knowledge",
+    "authors": "Tichenor,Donohue,Olien(1970)",
+    "doi": "10.1086/267786",
+    "status": "publisher text access failed; not used as empirical evidence or parameter source"
+  }
+}
