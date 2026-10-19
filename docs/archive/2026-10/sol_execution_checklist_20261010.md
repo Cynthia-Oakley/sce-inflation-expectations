@@ -2,7 +2,7 @@
 
 更新：2026-10-10。供用户与后续 Sol 接力使用。**本轮交付的是执行计划；以下任务尚未因此执行，人数、月份、预算也未冻结。**
 
-项目根目录：`/Users/wushuyue/Documents/科研/DISC/socioverse_challenge`。下文代码路径均相对此目录。日历只在 [ROADMAP.md](ROADMAP.md) 维护；方向依据见 [上一版方案](next_stage_plan_20261010.md)，实际进度见 [project_status.md](project_status.md)。
+项目根目录：`/Users/wushuyue/Documents/科研/DISC/socioverse_challenge`。下文代码路径均相对此目录。日历只在 [ROADMAP.md](../../ROADMAP.md) 维护；方向依据见 [上一版方案](next_stage_plan_20261010.md)，实际进度见 [project_status.md](../../project_status.md)。
 
 ## 一、方向不变，先把问题收窄
 
@@ -19,7 +19,7 @@
 
 ### □ 00｜接手与保护现场：先做，零 API
 
-**操作：**读 `AGENTS.md`、`docs/AGENT_HANDOFF.md`、`docs/NEXT_ACTIONS.md` 的顶部，再读本清单。检查当前分支和未提交文件，对照 [保护清单](sources/sol_handoff_protected_files_20261010.json)；后续出现新改动先辨认归属，不自动覆盖。
+**操作：**读 `AGENTS.md`、`docs/AGENT_HANDOFF.md`、`docs/NEXT_ACTIONS.md` 的顶部，再读本清单。检查当前分支和未提交文件，对照 [保护清单](../../sources/sol_handoff_protected_files_20261010.json)；后续出现新改动先辨认归属，不自动覆盖。
 
 **特别注意：**15份旧待审文件不得修改、提交、还原或混入新提交。`scoring/sce_q9_frozen.py` 与它引用的 `beta_fit_kernel.py` 在其中；现有运行可读取，但不能声称仅靠当前 Git 提交已能完整复现。`DECISIONS.md` 亦受保护，本阶段新记录另存。正式配置与旧输出保持原样，新实验另建目录。
 
@@ -45,7 +45,7 @@
 
 ### □ 02｜确定评价、人群规模与月份：与01衔接，零 API
 
-**操作：**沿用 [统一评价口径](SCE_EVALUATION_CONTRACT_V1.md)，在新运行卡固定以下内容：
+**操作：**沿用 [统一评价口径](../../SCE_EVALUATION_CONTRACT_V1.md)，在新运行卡固定以下内容：
 
 - A 的分布距离与总体中位数误差共同报告；Q8独立报告，个人误差只作辅助。分组最多先选2—3项有依据的关系，样本不足就不作强结论。
 - 同一批 Core 与对应真人比较，以及扩展至全月人口后的比较，分成两张成绩单。Normal 是统计扩展，不能增加独立样本数。
@@ -77,9 +77,9 @@
 
 文献分别写成“支持什么机制／不支持什么数值参数／可检验预期”。不默认注入幸福度，不直接把前景理论的决策权重当成问卷主观概率，也不为了增加分散而随意加噪声。
 
-**用户10-10补充方向已初核：**见[持续性、政策与信任笔记](literature/sce/themes/persistence_policy_trust_20261010.md)。清单01增加已有新闻解释和重复曝光核查；第二轮可候选检验“涨价会持续多久”与消息信任，不直接默认党派偏移或加息抑制预期。现有输入已经含部分政策/供应链内容，先验证缺口。此补充不替代第一轮准备，也未授权新付费调用。
+**用户10-10补充方向已初核：**见[持续性、政策与信任笔记](../../literature/sce/themes/persistence_policy_trust_20261010.md)。清单01增加已有新闻解释和重复曝光核查；第二轮可候选检验“涨价会持续多久”与消息信任，不直接默认党派偏移或加息抑制预期。现有输入已经含部分政策/供应链内容，先验证缺口。此补充不替代第一轮准备，也未授权新付费调用。
 
-**数据可行性后续已核查：**先读[笔记第7节](literature/sce/themes/persistence_policy_trust_20261010.md#7-落地核查有什么数据怎样分配先做哪一种)与[数据验收](../studies/sce_inflation_expectations/reports/BELIEF_PROXY_DATA_AUDIT_20261010.md)。Gallup2021教育分组信心有公开参考，可离线准备无新增/条件分配/同标签置换；SCE专题价格回落信念尚缺人口联合微观，先作情景、不报全国分布。Q9c仅分析，不偷作P；ANES/Pew数据未取得、B版本仍有缺口。已有候选分布文件但没有新画像或真实调用；第一轮同事实表达与问卷对照仍按原顺序。
+**数据可行性后续已核查：**先读[笔记第7节](../../literature/sce/themes/persistence_policy_trust_20261010.md#7-落地核查有什么数据怎样分配先做哪一种)与[数据验收](../../../studies/sce_inflation_expectations/reports/BELIEF_PROXY_DATA_AUDIT_20261010.md)。Gallup2021教育分组信心有公开参考，可离线准备无新增/条件分配/同标签置换；SCE专题价格回落信念尚缺人口联合微观，先作情景、不报全国分布。Q9c仅分析，不偷作P；ANES/Pew数据未取得、B版本仍有缺口。已有候选分布文件但没有新画像或真实调用；第一轮同事实表达与问卷对照仍按原顺序。
 
 **交付：**运行卡附完整提示预览、事实一致性检查、机制依据；实现放 study 内新模块，`scripts/` 只作入口。新的候选配置不覆盖旧配置。
 
@@ -135,19 +135,19 @@
 
 下面均为已有文件；第二节中标“拟新建”的报告与目录尚未生成。
 
-- **主实验与实际输入：**[300人记录](CORE_NORMAL_LLM_RECEIPT_20261005.md)；`outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/`、`outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/`。
-- **已有差距诊断：**[P/E诊断](SCE_PE_DIAGNOSTIC_20261008.md)；`outputs/sce_pe_diagnostic_20261008_v3/`；入口 `scripts/audit_sce_pe_diagnostic.py`。旧全年存在记忆/单位问题，不能当新输入独立全年验证。
-- **最新价格试验：**[记录](PRICE_CONTACT_EXPERIMENT_RECEIPT_20261010.md)；`outputs/sce_price_contact_trial_20261010_v1/`；study模块 `price_contact.py`、`price_contact_trial.py`、`price_contact_analysis.py`。地区处理实际是汽油PADD，尚不是水电燃气。
+- **主实验与实际输入：**[300人记录](../../CORE_NORMAL_LLM_RECEIPT_20261005.md)；`outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/`、`outputs/local_runs/sce-local-openai-20261005T092656Z-202106-e4f49f76/`。
+- **已有差距诊断：**[P/E诊断](../../SCE_PE_DIAGNOSTIC_20261008.md)；`outputs/sce_pe_diagnostic_20261008_v3/`；入口 `scripts/audit_sce_pe_diagnostic.py`。旧全年存在记忆/单位问题，不能当新输入独立全年验证。
+- **最新价格试验：**[记录](../../PRICE_CONTACT_EXPERIMENT_RECEIPT_20261010.md)；`outputs/sce_price_contact_trial_20261010_v1/`；study模块 `price_contact.py`、`price_contact_trial.py`、`price_contact_analysis.py`。地区处理实际是汽油PADD，尚不是水电燃气。
 - **抽样精度：**`outputs/population_precision_20261005T042754Z_64e2388c/summary.json`；入口 `scripts/check_sce_population_precision.py`，支持 `--months`、`--sizes`、`--repeats`。先读封存结果，检查数据源覆盖再扩展。
-- **理论：**[文献目录](literature/sce/README.md)、[家庭价格体验](literature/sce/themes/household_price_experience.md)、[预期形成](literature/sce/themes/expectation_formation.md)、[原生篮子依据](literature/sce/native_spending/DATA_AND_METHOD_20261009.md)。原生篮子试验只准备未运行，旧准备包不能跳过源码复核直接执行。
-- **评价与基线：**[统一口径](SCE_EVALUATION_CONTRACT_V1.md)、[最新基线说明](SCE_BASELINE_METHODS_AND_LATEST_20261007.md)；`outputs/sce_baselines_20261007T055057Z_f99c2f6b/`；`scripts/evaluate_sce_outputs.py`。月份范围以最新说明和实际包为准，不照抄旧版60月标题。
+- **理论：**[文献目录](../../literature/sce/README.md)、[家庭价格体验](../../literature/sce/themes/household_price_experience.md)、[预期形成](../../literature/sce/themes/expectation_formation.md)、[原生篮子依据](../../literature/sce/native_spending/DATA_AND_METHOD_20261009.md)。原生篮子试验只准备未运行，旧准备包不能跳过源码复核直接执行。
+- **评价与基线：**[统一口径](../../SCE_EVALUATION_CONTRACT_V1.md)、[最新基线说明](../../SCE_BASELINE_METHODS_AND_LATEST_20261007.md)；`outputs/sce_baselines_20261007T055057Z_f99c2f6b/`；`scripts/evaluate_sce_outputs.py`。月份范围以最新说明和实际包为准，不照抄旧版60月标题。
 - **较长E：**`outputs/sce_e_extension_2020_2025_verified_20261007/`；共同输入 `outputs/sce_shared_e_2020_2025_20261007/`。B延伸草稿 `outputs/sce_e_B_through_2026_10_draft_v2_20261007/` 仍有历史版本缺口。
 
 已有运行环境为 `/Users/wushuyue/anaconda3/envs/socioverse/bin/python`，官方框架目录为 `/Users/wushuyue/Documents/科研/DISC/socioverse2_repo`。这是本机接力信息，最终交付不能依赖这些个人绝对路径。
 
 ## 四、如果比赛前仍然模拟得不像，如何处理
 
-**可以提交诚实、有实证内容的成果，但不能保证获奖，也不能把“失败了”本身包装成理论贡献。** 官网强调经验有效性、基线、适用边界和可复现性；不意味着负结果自动满足高分要求。依据为当天[官网核查记录](sources/project_design_review_20261010.json)。
+**可以提交诚实、有实证内容的成果，但不能保证获奖，也不能把“失败了”本身包装成理论贡献。** 官网强调经验有效性、基线、适用边界和可复现性；不意味着负结果自动满足高分要求。依据为当天[官网核查记录](../../sources/project_design_review_20261010.json)。
 
 ### 情况1：部分机制有帮助，仍未整体超过简单方法
 

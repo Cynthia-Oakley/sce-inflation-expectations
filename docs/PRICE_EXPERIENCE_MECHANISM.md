@@ -52,7 +52,7 @@
 - `prompt_preview_<arm>.jsonl` 是每人的实际提示词与 Observation，适合检查输入，而不是输出回答。
 - `source_snapshot/` 和 `manifest.json` 保留构建时的代码、配置及文件哈希。
 
-详细工程证据见 [验收记录](PRICE_EXPERIENCE_ACCEPTANCE_20261006.md)，下一轮设计见 [真实对照运行卡](PRICE_EXPERIENCE_RUN_CARD_20261006.md)。早期无快照输出与中途调试运行不作为后续实验输入。
+详细工程证据见 [验收记录](archive/2026-10/PRICE_EXPERIENCE_ACCEPTANCE_20261006.md)，下一轮设计见 [真实对照运行卡](archive/2026-10/PRICE_EXPERIENCE_RUN_CARD_20261006.md)。早期无快照输出与中途调试运行不作为后续实验输入。
 
 ## 5. 如何使用
 

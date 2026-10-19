@@ -114,4 +114,4 @@ W1 可理解为：把模拟人群的预期分布搬到真人分布，平均需�
 
 现有月度/配对分析工具可以复用；`studies/sce_inflation_expectations/evaluation/README.md` 所列跨期基线仍未完成实现。本稿只完成资料核对和设计，未声称上述模型已跑通；旧开发结果和筛查条件不变。
 
-接力入口：[总改进方案](SCE_IMPROVEMENT_PLAN_20261007.md)、[两月主实验](CORE_NORMAL_LLM_RECEIPT_20261005.md)、[最近信息接触试验](INFORMATION_EXPOSURE_RECEIPT_20261006.md)。来源核查日：2026-10-07；官方定义、论文机制与本项目提出的指标/工程安排分别陈述。
+接力入口：[总改进方案](archive/2026-10/SCE_IMPROVEMENT_PLAN_20261007.md)、[两月主实验](CORE_NORMAL_LLM_RECEIPT_20261005.md)、[最近信息接触试验](INFORMATION_EXPOSURE_RECEIPT_20261006.md)。来源核查日：2026-10-07；官方定义、论文机制与本项目提出的指标/工程安排分别陈述。

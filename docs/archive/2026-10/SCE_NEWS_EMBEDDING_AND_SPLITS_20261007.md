@@ -1,6 +1,6 @@
 # 新闻句向量与基线训练／评价用途
 
-**同日最新用户调整：先补E，高阶新闻基线暂缓。** 768维直接月度回归不适合本项目样本量；一维正负情绪也不等同通胀方向。下文MPNet/PCA和示例日期是历史候选，未实施或冻结，不再是下一项任务。见[当前资料补齐入口](SCE_ENVIRONMENT_EXTENSION_20261007.md)与[ConsumerSim新闻披露核查](literature/sce/news_baselines/CONSUMERSIM_NEWS_BASELINES_20261007.md)。已有AR/ARX仍使用按可得历史逐月训练，并非下文示例三段划分。
+**同日最新用户调整：先补E，高阶新闻基线暂缓。** 768维直接月度回归不适合本项目样本量；一维正负情绪也不等同通胀方向。下文MPNet/PCA和示例日期是历史候选，未实施或冻结，不再是下一项任务。见[当前资料补齐入口](../../SCE_ENVIRONMENT_EXTENSION_20261007.md)与[ConsumerSim新闻披露核查](../../literature/sce/news_baselines/CONSUMERSIM_NEWS_BASELINES_20261007.md)。已有AR/ARX仍使用按可得历史逐月训练，并非下文示例三段划分。
 
 2026-10-07。用户决定暂不使用 TF-IDF，直接采用句向量。本文说明实现候选和时间划分，不宣布模型已下载、基线已训练或新测试期已冻结。零 API，未修改既有运行配置。
 
@@ -51,7 +51,7 @@ MPNet默认超过384 word pieces会截断，因此先审计每篇标题＋摘要
 
 A历史重建可以做明确标注的全期描述拟合，但它不能充当独立准确率证据；若提供当前宏观结果作约束，拟合该约束是达成输入要求。B必须遵守截止前训练和输入规则。本文新监督基线比较默认评价目标均不进入该次拟合。
 
-来源：[时间序列滚动验证](https://otexts.com/fpp3/tscv.html)、本项目[评价契约](SCE_EVALUATION_CONTRACT_V1.md)。
+来源：[时间序列滚动验证](https://otexts.com/fpp3/tscv.html)、本项目[评价契约](../../SCE_EVALUATION_CONTRACT_V1.md)。
 
 ## 4. ConsumerSim哪些模型可借鉴
 

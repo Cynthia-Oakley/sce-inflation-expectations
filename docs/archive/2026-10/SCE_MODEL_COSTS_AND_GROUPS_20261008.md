@@ -2,7 +2,7 @@
 
 ## 本次回答的问题
 
-本页补充既有模型小试，零新增LLM/付费MCP调用，不改模型、P、E或运行配置。原实验见[SCE_MODEL_FOLLOWUP_20261008](SCE_MODEL_FOLLOWUP_20261008.md)。费用和群体评价独立复算，不能用没跑完模型的较低总花费判断性价比。
+本页补充既有模型小试，零新增LLM/付费MCP调用，不改模型、P、E或运行配置。原实验见[SCE_MODEL_FOLLOWUP_20261008](../../SCE_MODEL_FOLLOWUP_20261008.md)。费用和群体评价独立复算，不能用没跑完模型的较低总花费判断性价比。
 
 ## 1. 哪个模型便宜
 
@@ -70,6 +70,6 @@
 ## 复算与文件
 
 - 本地结果：`outputs/sce_model_costs_groups_20261008_v1/summary.json`，只含汇总、不含个人记录。
-- 可提交汇总：[sources/sce_model_costs_groups_20261008.json](sources/sce_model_costs_groups_20261008.json)。含输入来源哈希与复算指标。
+- 可提交汇总：[sources/sce_model_costs_groups_20261008.json](../../sources/sce_model_costs_groups_20261008.json)。含输入来源哈希与复算指标。
 - 入口：`scripts/analyze_sce_model_costs_groups.py`；默认只读本地封存记录，无网络、无API密钥。
 - 复算：`python scripts/analyze_sce_model_costs_groups.py --out outputs/sce_model_costs_groups_recheck_new`（输出目录必须不存在）。各组中位数、个人MAE及W1均与封存分析逐项对账；全部已报费用＋预留与原预算账本一致。

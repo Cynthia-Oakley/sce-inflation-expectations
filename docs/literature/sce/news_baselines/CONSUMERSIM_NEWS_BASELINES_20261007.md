@@ -30,9 +30,9 @@
 
 可以据此称“参考 ConsumerSim 的新闻语义 FAAR / 宏观市场新闻 Ridge 基线类别”，也可将它们作为方法参照。若在 SCE 实现中采用固定句编码器、月内等权汇总、训练内 PCA 和按日期滚动 Ridge，应标为**本项目对论文概念描述的具体化实现**，而非 ConsumerSim 原实现或完整复现。需单独记录编码器及版本、文章字段/截断、月聚合、变换拟合窗、参数选择期、预测 cutoff 和历史发布时间证据。
 
-本项目已经写明的 MPNet 候选、按月汇总、候选 PCA 及时间划分均属于本项目方案，尚未下载模型或训练新基线，见[本项目新闻句向量与训练/评价说明](../../../SCE_NEWS_EMBEDDING_AND_SPLITS_20261007.md)。
+本项目已经写明的 MPNet 候选、按月汇总、候选 PCA 及时间划分均属于本项目方案，尚未下载模型或训练新基线，见[本项目新闻句向量与训练/评价说明](../../../archive/2026-10/SCE_NEWS_EMBEDDING_AND_SPLITS_20261007.md)。
 
 ## 来源
 
 - Huang et al., *Uncovering Salience-Driven Dynamics in Consumer Confidence with Generative Social Simulation*, arXiv:2606.30395v1（2026-06-29），[论文全文 §6 基线、§9 评价协议、§10 截止后检查](https://arxiv.org/html/2606.30395v1)。其中 News Semantic FAAR 的定义在 §6；Macro + Market + News Ridge 在 §6；时间规则在 §6、§9、§10。
-- 仓库既有新闻时间划分说明：[SCE_NEWS_EMBEDDING_AND_SPLITS_20261007.md](../../../SCE_NEWS_EMBEDDING_AND_SPLITS_20261007.md)。仅用于区分本项目候选与论文披露，不作为 ConsumerSim 方法的来源。
+- 仓库既有新闻时间划分说明：[SCE_NEWS_EMBEDDING_AND_SPLITS_20261007.md](../../../archive/2026-10/SCE_NEWS_EMBEDDING_AND_SPLITS_20261007.md)。仅用于区分本项目候选与论文披露，不作为 ConsumerSim 方法的来源。

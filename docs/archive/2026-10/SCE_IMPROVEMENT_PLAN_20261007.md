@@ -110,7 +110,7 @@
 
 ## 9. analysis：评价需要与重建目标一致
 
-评价对象、A/B主指标及非Agent/规则Agent基线的具体建议见 [评价与基线方案](SCE_EVALUATION_BASELINES_20261007.md)。该稿尚未冻结，不替代旧实验的预设筛查。
+评价对象、A/B主指标及非Agent/规则Agent基线的具体建议见 [评价与基线方案](../../SCE_EVALUATION_BASELINES_20261007.md)。该稿尚未冻结，不替代旧实验的预设筛查。
 
 **现状**：已有月度、配对、人群、分布与调用审计，发现了低估、集中和扩展收益不稳。正式跨期基线比较尚未完成。
 
@@ -167,10 +167,10 @@
 
 当前事实来自下列实验收据，而不是早期计划中“尚未运行”的历史文字：
 
-- [两月主基线](CORE_NORMAL_LLM_RECEIPT_20261005.md)、[Core/Normal 离线验收](CORE_NORMAL_ACCEPTANCE_20261005.md)。
-- [消费篮子五组小试](PRICE_EXPERIENCE_PILOT_RECEIPT_20261006.md)、[Q1 财务经历小试](HOUSEHOLD_STATE_PILOT_RECEIPT_20261006.md)、[信息接触三组小试](INFORMATION_EXPOSURE_RECEIPT_20261006.md)。
-- [消费数据入口](CE_CONSUMPTION_DATA_INDEX.md)、[心理属性验收](PSYCHOLOGICAL_PROFILES_ACCEPTANCE_20261006.md)、[计分器新月份复查](SCORER_HOLDOUT_REVIEW_20261003.md)。
-- [A/B 研究定义](A_B_RESEARCH_DESIGN.md)、[文献整合方案](literature/sce/research_design.md)、[平台案例借鉴](literature/sce/themes/socioverse_cases.md)。
+- [两月主基线](../../CORE_NORMAL_LLM_RECEIPT_20261005.md)、[Core/Normal 离线验收](../../CORE_NORMAL_ACCEPTANCE_20261005.md)。
+- [消费篮子五组小试](../../PRICE_EXPERIENCE_PILOT_RECEIPT_20261006.md)、[Q1 财务经历小试](../../HOUSEHOLD_STATE_PILOT_RECEIPT_20261006.md)、[信息接触三组小试](../../INFORMATION_EXPOSURE_RECEIPT_20261006.md)。
+- [消费数据入口](../../CE_CONSUMPTION_DATA_INDEX.md)、[心理属性验收](../../PSYCHOLOGICAL_PROFILES_ACCEPTANCE_20261006.md)、[计分器新月份复查](../../SCORER_HOLDOUT_REVIEW_20261003.md)。
+- [A/B 研究定义](../../A_B_RESEARCH_DESIGN.md)、[文献整合方案](../../literature/sce/research_design.md)、[平台案例借鉴](../../literature/sce/themes/socioverse_cases.md)。
 
 理论支撑：购物价格研究发现购买频率与涨价显著性的重要性，但未为本项目的 CE 注意力规则提供参数；信息实验发现更新取决于信息与初始信念精度，支持进一步拆解信息集和处理过程。这些机制不能直接证明我们失败的原因。[D’Acunto 等作者稿](https://eml.berkeley.edu/~ulrike/Papers/paper_DMOW.pdf)、[Armantier 等纽约联储研究](https://www.newyorkfed.org/research/staff_reports/sr543)，2026-10-07 复核。
 

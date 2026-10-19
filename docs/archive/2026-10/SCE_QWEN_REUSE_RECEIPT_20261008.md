@@ -1,8 +1,8 @@
 # 低成本模型对照进度与接力
 
-> **2026-10-08 输入审计更正：**Qwen的220/240份消息继承DeepSeek上一月点预测，其中161份不同于Qwen自身上一月回答。结果数值不变；这是相同消息下的条件回答比较，不是Qwen独立更新的年度轨迹。详见[P/E诊断](SCE_PE_DIAGNOSTIC_20261008.md)。
+> **2026-10-08 输入审计更正：**Qwen的220/240份消息继承DeepSeek上一月点预测，其中161份不同于Qwen自身上一月回答。结果数值不变；这是相同消息下的条件回答比较，不是Qwen独立更新的年度轨迹。详见[P/E诊断](../../SCE_PE_DIAGNOSTIC_20261008.md)。
 
-**后续已完成：**用户对具体数据发送确认卡授权后，本实验已生成240份Qwen回答并完成全年同口径评价，总费用含预留$0.08263024。最终结论与路径见[SCE_QWEN_REUSE_RESULT_20261008](SCE_QWEN_REUSE_RESULT_20261008.md)。以下保存调用前/阻断时的免费复算记录，不是当前状态。
+**后续已完成：**用户对具体数据发送确认卡授权后，本实验已生成240份Qwen回答并完成全年同口径评价，总费用含预留$0.08263024。最终结论与路径见[SCE_QWEN_REUSE_RESULT_20261008](../../SCE_QWEN_REUSE_RESULT_20261008.md)。以下保存调用前/阻断时的免费复算记录，不是当前状态。
 
 2026-10-08。本轮完成输入、入口、验收与免费基线复算，**Qwen尚未运行**。
 
@@ -33,9 +33,9 @@
 ## 准确路径
 
 - 输入：`outputs/sce_qwen_reuse_prepared_20261008_v1/`。
-- 封存：[sources/sce_qwen_reuse_preparation_20261008.json](sources/sce_qwen_reuse_preparation_20261008.json)。
+- 封存：[sources/sce_qwen_reuse_preparation_20261008.json](../../sources/sce_qwen_reuse_preparation_20261008.json)。
 - 离线基线结果：`outputs/sce_deepseek_reuse_analysis_20261008_v1/summary.json`，同目录`monthly_comparison.png`和本地个人评价。
-- 基线无个人记录封存：[sources/sce_deepseek_reuse_baseline_20261008.json](sources/sce_deepseek_reuse_baseline_20261008.json)。
+- 基线无个人记录封存：[sources/sce_deepseek_reuse_baseline_20261008.json](../../sources/sce_deepseek_reuse_baseline_20261008.json)。
 - 待运行：`outputs/sce_qwen_reuse_run_20261008_v1/`，当前不存在。
 
 续跑命令（必须先收到具体外发授权；`--authorization-note`填实际人类回复）：
@@ -58,6 +58,6 @@ python scripts/analyze_sce_reuse_probe.py \
   --out outputs/<new_comparison_folder>
 ```
 
-按[运行卡](SCE_QWEN_REUSE_RUN_CARD_20261008.md)中预先登记的全年误差/分布/稳定性判据决定是否值得复核；不因当月有利结果追改提示。如无明确改善或差异，优先回P/E；即使改善也不能直接换正式模型。
+按[运行卡](../../SCE_QWEN_REUSE_RUN_CARD_20261008.md)中预先登记的全年误差/分布/稳定性判据决定是否值得复核；不因当月有利结果追改提示。如无明确改善或差异，优先回P/E；即使改善也不能直接换正式模型。
 
 15份用户/Kimi待审改动原样，未改正式study配置、DECISIONS、原计分程序或.env。

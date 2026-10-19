@@ -136,7 +136,7 @@ QNUM8与我们的研究尤其直接相关，可检查居民是否理解购买力
 - [官方问卷网页地址](https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-survey-core-module-public-questionnaire.pdf)。
 - 数据：`data/raw/sce_audit_20260928/micro_2020_2024.xlsx`；补历史`data/raw/sce_p_sources/micro_2017_2019.xlsx`；不外发个人记录。
 - 聚合清点：`outputs/sce_population_mechanism_inventory_20261015_v1/summary.json`，副本`docs/sources/sce_population_mechanism_inventory_20261015.json`。
-- 已有Numeracy研究：[SCE_NUMERACY_AUDIT_20261008](../../SCE_NUMERACY_AUDIT_20261008.md)。
+- 已有Numeracy研究：[SCE_NUMERACY_AUDIT_20261008](../../archive/2026-10/SCE_NUMERACY_AUDIT_20261008.md)。
 
 ```bash
 /Users/wushuyue/anaconda3/bin/python scripts/inventory_sce_population_mechanisms.py --out outputs/<新目录>

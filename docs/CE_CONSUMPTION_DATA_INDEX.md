@@ -1,6 +1,6 @@
 # 消费篮子数据入口与本轮验收
 
-更新：2026-10-06。用户已同意继续 Interview 主篮子、官方分组表核查、Diary 后续购买频率研究。本页是查找入口；执行顺序见 [本轮计划](CE_DATA_BUILD_PLAN_20261006.md)，已有机制见 [机制说明](PRICE_EXPERIENCE_MECHANISM.md)。
+更新：2026-10-06。用户已同意继续 Interview 主篮子、官方分组表核查、Diary 后续购买频率研究。本页是查找入口；执行顺序见 [本轮计划](archive/2026-10/CE_DATA_BUILD_PLAN_20261006.md)，已有机制见 [机制说明](PRICE_EXPERIENCE_MECHANISM.md)。
 
 ## 1. 本轮做了什么
 

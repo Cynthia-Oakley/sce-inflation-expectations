@@ -1,7 +1,53 @@
 # 2026年10月历史文档
 
-本目录保存已结束阶段的计划、运行卡与接力材料；不能将其中的旧日期、授权和“正在运行”状态作为当前指令。
+2026-10-19整理。本目录保存37份已结束阶段的计划、运行卡与接力材料。正文保留历史研究语境，调整了文件位置与链接；旧“正在运行”、旧授权、旧截止日期不是当前操作指令。
 
-当前研究从[DESIGN](../../DESIGN.md)进入，当前工作见[NEXT_ACTIONS](../../NEXT_ACTIONS.md)。本轮移动清单与保护检查见[整理记录](../../reviews/20261019_repository_cleanup/README.md)。
+当前从[DESIGN](../../DESIGN.md)进入，任务见[NEXT_ACTIONS](../../NEXT_ACTIONS.md)，最新执行状态见[AGENT_HANDOFF](../../AGENT_HANDOFF.md)。
 
-本轮先完成入口和索引，随后按扫描清单分批移入历史文档。程序、冻结证据、受保护记录和稳定阅读页保留原路径。
+## 归档文件
+
+- [CE_DATA_BUILD_PLAN_20261006.md](CE_DATA_BUILD_PLAN_20261006.md)：CE 消费背景数据落地计划
+- [CLOUD_PILOT_PLAN.md](CLOUD_PILOT_PLAN.md)：云端优先的 SCE 验证方案
+- [CODEX_AUDIT_D050_D052_20261005.md](CODEX_AUDIT_D050_D052_20261005.md)：D050–D052 独立复核与开发月运行评审（2026-10-05）
+- [CORE_NORMAL_IMPLEMENTATION_PLAN_20261005.md](CORE_NORMAL_IMPLEMENTATION_PLAN_20261005.md)：Core/Normal 开发任务与接力计划
+- [DEV_RUN_CARD_20261005.md](DEV_RUN_CARD_20261005.md)：两个月真实 LLM 开发运行卡（待明确授权）
+- [HOUSEHOLD_STATE_RUN_CARD_20261006.md](HOUSEHOLD_STATE_RUN_CARD_20261006.md)：Q1家庭财务经历：第一轮对照运行卡
+- [INDEX_TAXONOMY_AUDIT.md](INDEX_TAXONOMY_AUDIT.md)：两份指数候选清单：分类、分布与生成机制
+- [INFLATION_MECHANISM_DIAGNOSTIC_20261005.md](INFLATION_MECHANISM_DIAGNOSTIC_20261005.md)：开发结果：价格体验、共享信息与历史知识
+- [KIMI_START_PROMPT.txt](KIMI_START_PROMPT.txt)：KIMI_START_PROMPT
+- [KIMI_TO_CODEX_HANDOFF_20261005.md](KIMI_TO_CODEX_HANDOFF_20261005.md)：Kimi → Codex 交接说明（2026-10-05）
+- [MECHANISM_DATA_FEASIBILITY_20261006.md](MECHANISM_DATA_FEASIBILITY_20261006.md)：SCE 个人价格体验机制：CE 数据可行性核查
+- [MECHANISM_IMPLEMENTATION_PLAN_20261006.md](MECHANISM_IMPLEMENTATION_PLAN_20261006.md)：价格体验机制落地计划
+- [MECHANISM_OUTPUT_DIAGNOSTIC_20261006.md](MECHANISM_OUTPUT_DIAGNOSTIC_20261006.md)：两月 LLM 输出格式与分布诊断
+- [MONTHLY_POPULATION_ACCEPTANCE_20261005.md](MONTHLY_POPULATION_ACCEPTANCE_20261005.md)：按月人口、运行与评价：本轮验收及接力
+- [NEXT_EXECUTION_PLAN_20261005.md](NEXT_EXECUTION_PLAN_20261005.md)：接下来的执行顺序
+- [PRICE_EXPERIENCE_ACCEPTANCE_20261006.md](PRICE_EXPERIENCE_ACCEPTANCE_20261006.md)：价格体验机制 v1：工程验收
+- [PRICE_EXPERIENCE_RUN_CARD_20261006.md](PRICE_EXPERIENCE_RUN_CARD_20261006.md)：下一轮价格体验真实 LLM 对照卡
+- [REGISTRATION_PLAN.md](REGISTRATION_PLAN.md)：报名与开题的最短路径
+- [SCE_DATA_REQUESTS.md](SCE_DATA_REQUESTS.md)：学校数据库获取清单：SCE 项目
+- [SCE_DEEPSEEK_REUSE_20261008.md](SCE_DEEPSEEK_REUSE_20261008.md)：复用DeepSeek，缩为单模型对照
+- [SCE_EARLY_MODEL_RUN_CARD_20261007.md](SCE_EARLY_MODEL_RUN_CARD_20261007.md)：较早模型匹配对照运行卡（待确认）
+- [SCE_FAIR_BASELINES_AND_LONG_RUN_20261007.md](SCE_FAIR_BASELINES_AND_LONG_RUN_20261007.md)：同信息基线与长窗口 Agent 实验
+- [SCE_IMPROVEMENT_PLAN_20261007.md](SCE_IMPROVEMENT_PLAN_20261007.md)：SCE：距离成功模拟还缺什么，怎样推进
+- [SCE_LONG_RUN_CARD_DRAFT_20261007.md](SCE_LONG_RUN_CARD_DRAFT_20261007.md)：长跨度实验运行卡草案
+- [SCE_MACRO_POPULATION_AND_MODEL_STATUS_20261007.md](SCE_MACRO_POPULATION_AND_MODEL_STATUS_20261007.md)：路线 B 人口宏观更新与较早模型对照：2026-10-07
+- [SCE_MODEL_COSTS_AND_GROUPS_20261008.md](SCE_MODEL_COSTS_AND_GROUPS_20261008.md)：模型成本与群体评价补充（2026-10-08）
+- [SCE_MODEL_DATES_AND_TRIAL_STATUS_20261008.md](SCE_MODEL_DATES_AND_TRIAL_STATUS_20261008.md)：模型发布时间、知识边界与小试状态
+- [SCE_NEWS_EMBEDDING_AND_SPLITS_20261007.md](SCE_NEWS_EMBEDDING_AND_SPLITS_20261007.md)：新闻句向量与基线训练／评价用途
+- [SCE_NUMERACY_AUDIT_20261008.md](SCE_NUMERACY_AUDIT_20261008.md)：Numeracy 是否在真人和 Agent 中起作用？
+- [SCE_QWEN_REUSE_RECEIPT_20261008.md](SCE_QWEN_REUSE_RECEIPT_20261008.md)：低成本模型对照进度与接力
+- [SCE_SPENDING_RESEARCH_PLAN_20261009.md](SCE_SPENDING_RESEARCH_PLAN_20261009.md)：SCE真实消费篮子：调研与实验接力计划
+- [SOCIOVERSE_MCP_AND_PMI.md](SOCIOVERSE_MCP_AND_PMI.md)：Case 6 与数据 MCP 对 SCE 项目的适用性
+- [TODAY_PEB_EXECUTION_PLAN.md](TODAY_PEB_EXECUTION_PLAN.md)：2026-09-29｜P/E/B 材料准备与云端首试执行计划
+- [next_stage_plan_20261010.md](next_stage_plan_20261010.md)：接下来做什么，做到什么程度再扩大
+- [project_design_review_20261010.md](project_design_review_20261010.md)：水上挽月：项目设计复核与下一阶段主线
+- [sol_execution_checklist_20261010.md](sol_execution_checklist_20261010.md)：水上挽月：下一阶段执行清单与结果不理想时的安排
+- [sol_start_here_20261010.txt](sol_start_here_20261010.txt)：sol_start_here_20261010
+
+## 为什么还有历史文件留在根目录
+
+部分方法页、运行回执和来源文件仍被程序、受保护材料或冻结记录引用，保留原路径与原字节。HTML阅读页和current_todo也维持稳定路径；不能以根目录还有旧文件判断清理未完成。
+
+脚本本轮只补索引、不搬动；没有改研究算法、运行配置、旧manifest或重跑API。后续新实验计划/运行卡/结果直接进入对应workstream。
+
+完整移动映射、保留原因与核查收据见[整理记录](../../reviews/20261019_repository_cleanup/README.md)。

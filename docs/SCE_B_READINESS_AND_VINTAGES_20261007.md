@@ -95,7 +95,7 @@ PopulationBundle 校验通过，现有 Core/Normal 分布计划的总质量也�
 - 人口统计与两套候选：`outputs/sce_b_readiness_population_v5_20261007/`。先看 `summary.json`；逐月见 `monthly_profile_stats.json`，滞后对照见 `forecast_distribution_validation.json`。候选子目录为 `population_B_2026_10_window_1/` 和 `population_B_2026_10_window_12/`，上传材料为 `population_candidate.json`；private donor追溯文件不上传模型。
 - 修订示例：`outputs/sce_vintage_examples_v2_20261007/summary.json` 与 `source_versions.jsonl`。
 - 最新日期提示：`outputs/sce_dated_preview_bls_20261007/`、`outputs/sce_dated_preview_full_v2_20261007/`。
-- 长跨度运行卡草案：[SCE_LONG_RUN_CARD_DRAFT_20261007](SCE_LONG_RUN_CARD_DRAFT_20261007.md)。
+- 长跨度运行卡草案：[SCE_LONG_RUN_CARD_DRAFT_20261007](archive/2026-10/SCE_LONG_RUN_CARD_DRAFT_20261007.md)。
 
 失败/被替代的早期输出目录保留，不作为验收结果：人口初版因缺失权重中止；后续增加联合分布、Core支持检查及源码哈希，以 v5 为最终，数值与 v4 一致。完整新闻预览初版因无时区时间中止，v2 显式标注日期级证据后通过。没有覆盖已完成的运行产物。
 

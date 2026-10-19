@@ -1,6 +1,6 @@
 # Q1家庭财务经历：第一轮对照运行卡
 
-2026-10-06。**状态：用户已授权，200次真实调用完成，参考价估算$0.179942。结果见[实验记录](HOUSEHOLD_STATE_PILOT_RECEIPT_20261006.md)。以下为预先冻结方案，不能当成未运行授权请求；不要重跑已完成模拟。**
+2026-10-06。**状态：用户已授权，200次真实调用完成，参考价估算$0.179942。结果见[实验记录](../../HOUSEHOLD_STATE_PILOT_RECEIPT_20261006.md)。以下为预先冻结方案，不能当成未运行授权请求；不要重跑已完成模拟。**
 
 ## 要检验什么
 
@@ -41,14 +41,14 @@ Q1是SCE已有问题“与12个月前相比，你的家庭财务状况如何？�
 
 ## 准确路径与接力
 
-准备包：[trial_manifest.json](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_q1_trial_20261006T142504Z_a6740800/trial_manifest.json)。其中包含原始输入/代码哈希与4条待执行命令；`initial_plan.json`是未运行初始版本。
+准备包：[trial_manifest.json](../../../outputs/sce_q1_trial_20261006T142504Z_a6740800/trial_manifest.json)。其中包含原始输入/代码哈希与4条待执行命令；`initial_plan.json`是未运行初始版本。
 
 每个月子目录包含：`population.json`、`environment.json`、`simulation.json`、`household_state.json`、`prompt_preview_baseline.json`、`prompt_preview_q1_state.json`。源码快照在同包`source_snapshot/`；所有个人数据与自动结果保留本地，不上传Git。
 
-- [5月实际Q1提示预览](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_q1_trial_20261006T142504Z_a6740800/202105/prompt_preview_q1_state.json)
-- [6月实际Q1提示预览](/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_q1_trial_20261006T142504Z_a6740800/202106/prompt_preview_q1_state.json)
-- 唯一实现：[household_state_mechanism.py](../studies/sce_inflation_expectations/household_state_mechanism.py)
-- 准备/执行入口：[run_sce_household_state_trial.py](../scripts/run_sce_household_state_trial.py)，默认只离线prepare。不得从看到命令中的confirm-spend推定用户已授权。
+- [5月实际Q1提示预览](../../../outputs/sce_q1_trial_20261006T142504Z_a6740800/202105/prompt_preview_q1_state.json)
+- [6月实际Q1提示预览](../../../outputs/sce_q1_trial_20261006T142504Z_a6740800/202106/prompt_preview_q1_state.json)
+- 唯一实现：[household_state_mechanism.py](../../../studies/sce_inflation_expectations/household_state_mechanism.py)
+- 准备/执行入口：[run_sce_household_state_trial.py](../../../scripts/run_sce_household_state_trial.py)，默认只离线prepare。不得从看到命令中的confirm-spend推定用户已授权。
 
 离线测试：17项Q1/消费机制/配对评价测试通过；两月各50人已在SocioVerse引擎规则式跑通、100条Q1观察已注入，模拟API=0。规则式回答不使用Q1，不是效果结果。接线禁止B输入、目标字段、错配月份/画像/ID，以及有Q1却使用旧提示的静默忽略。旧配置和Kimi待审批次保留。
 

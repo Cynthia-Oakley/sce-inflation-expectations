@@ -10,7 +10,7 @@
 - **后续v2-abstract：**2021-05/06各300人，共600份有效回答，temperature=0.5。可以复用这两个月的完整消息和答案；不是已有全年新版输入结果。
 - 不能把早期全年结果与后期两月结果直接拼成一个统一P/E版本，或把旧DeepSeek与新E上的Qwen差距归因于模型。
 
-**2026-10-08 更正：**原审计只搜索`prior/previous`，漏掉`Last month`。803/876份实际API提示确实带入上一月DeepSeek点预测；Qwen复用220/240份也带入DeepSeek历史，而非自己的历史。旧输出原件保留。本轮比较应解释为同输入条件下的回答比较，不能解释为独立年度轨迹。详见[P/E诊断](SCE_PE_DIAGNOSTIC_20261008.md)。
+**2026-10-08 更正：**原审计只搜索`prior/previous`，漏掉`Last month`。803/876份实际API提示确实带入上一月DeepSeek点预测；Qwen复用220/240份也带入DeepSeek历史，而非自己的历史。旧输出原件保留。本轮比较应解释为同输入条件下的回答比较，不能解释为独立年度轨迹。详见[P/E诊断](../../SCE_PE_DIAGNOSTIC_20261008.md)。
 
 旧73人为固定面板，不能视为每月完整SCE代表人口；小样本对照评价同一子样本，不拿20人Qwen与73人DeepSeek直接比较总体统计，不使用Normal制造额外独立观测。
 
@@ -32,7 +32,7 @@
 - 旧全年轨迹：`outputs/local_runs/sce-local-openai-20261003T055121Z-1dc7cd15/`。
 - 新版两月：`outputs/local_runs/sce-local-openai-20261005T092656Z-202105-8d2e3b2c/`及`...-202106-e4f49f76/`。
 - 本轮审计：`outputs/sce_deepseek_reuse_audit_20261008_v1/summary.json`。
-- 可版本管理的无个人记录汇总：[sources/sce_deepseek_reuse_20261008.json](sources/sce_deepseek_reuse_20261008.json)。
+- 可版本管理的无个人记录汇总：[sources/sce_deepseek_reuse_20261008.json](../../sources/sce_deepseek_reuse_20261008.json)。
 - 离线复核入口：`python scripts/audit_sce_deepseek_reuse.py --out outputs/<new_audit_folder>`。不读取密钥、不联网，输出目录不可覆盖。
 
 本轮审计只验存档结构/哈希和复用条件，没有新做全年SCE拟合评价，也没有推断旧`deepseek-flash`的确切权重版本。

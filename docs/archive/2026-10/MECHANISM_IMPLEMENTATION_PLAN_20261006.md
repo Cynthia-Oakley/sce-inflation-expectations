@@ -17,8 +17,8 @@
 ## 范围与分工
 
 - 主 Agent：study 内新体验/机制模块、构建脚本、运行入口接线、测试、验收与公共交接。
-- 数据子 Agent：只写 `docs/MECHANISM_DATA_FEASIBILITY_20261006.md` 与本轮 CE 来源清单。
-- 诊断子 Agent：只写 `docs/MECHANISM_OUTPUT_DIAGNOSTIC_20261006.md`，机器统计留忽略输出目录。
+- 数据子 Agent：只写 `docs/archive/2026-10/MECHANISM_DATA_FEASIBILITY_20261006.md` 与本轮 CE 来源清单。
+- 诊断子 Agent：只写 `docs/archive/2026-10/MECHANISM_OUTPUT_DIAGNOSTIC_20261006.md`，机器统计留忽略输出目录。
 - Kimi 的 10-03 未审文件不修改、不提交、不还原；现有计分器、Normal 算法、两月运行及开题保留。
 
 ## 研究边界

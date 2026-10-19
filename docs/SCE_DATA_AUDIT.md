@@ -54,7 +54,7 @@ Source: Survey of Consumer Expectations, © 2013-2026 Federal Reserve Bank of Ne
 
 ## 项目级数据可得性审查（T00，2026-09-29 展开）
 
-执行方式补充：按 [云端预试验方案](CLOUD_PILOT_PLAN.md)，本清单可通过托管助手获取样例并在本地复核；不要求先自建取数或完整本地部署。计分小样/平台 scripted 演示可以并行，正式历史输入验收标准不变。
+执行方式补充：按 [云端预试验方案](archive/2026-10/CLOUD_PILOT_PLAN.md)，本清单可通过托管助手获取样例并在本地复核；不要求先自建取数或完整本地部署。计分小样/平台 scripted 演示可以并行，正式历史输入验收标准不变。
 
 ### A. 与三个准备任务的关系
 

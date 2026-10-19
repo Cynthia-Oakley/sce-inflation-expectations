@@ -49,4 +49,4 @@
 
 ### 平台反馈后的补救（同日）
 
-用户转述 SocioVerse Agent：`fred` 两次成功取回当前 CPI/失业率，但没有发布时间与历史版本，按协议隔离后只能退回合成 E。这表明原输入包缺少真实历史 E 的后备来源。现已下载四份 2021 年 BLS 归档 CPI/就业首发 PDF，整理成[六条真实历史信号](../proposal/cloud_input/sce_2021_05_06_bls_release_e.json)，发布时间和首页数值已通过 `python3 scripts/verify_bls_pit_e.py` 核验。修正操作见[补救说明](E_PIT_RECOVERY.md)及[给平台的补救提示词](../proposal/cloud_input/real_e_recovery_prompt.md)。下一步在**同一 study**导入这份 JSON、检查 E 物化并继续 20×2 scripted；平台实际导入、运行与导出仍未验证。
+用户转述 SocioVerse Agent：`fred` 两次成功取回当前 CPI/失业率，但没有发布时间与历史版本，按协议隔离后只能退回合成 E。这表明原输入包缺少真实历史 E 的后备来源。现已下载四份 2021 年 BLS 归档 CPI/就业首发 PDF，整理成[六条真实历史信号](../../../proposal/cloud_input/sce_2021_05_06_bls_release_e.json)，发布时间和首页数值已通过 `python3 scripts/verify_bls_pit_e.py` 核验。修正操作见[补救说明](../../E_PIT_RECOVERY.md)及[给平台的补救提示词](../../../proposal/cloud_input/real_e_recovery_prompt.md)。下一步在**同一 study**导入这份 JSON、检查 E 物化并继续 20×2 scripted；平台实际导入、运行与导出仍未验证。

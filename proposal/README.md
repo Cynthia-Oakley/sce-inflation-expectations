@@ -31,7 +31,7 @@
 ## 本版依据与复算
 
 - [两月真实实验记录](../docs/CORE_NORMAL_LLM_RECEIPT_20261005.md)：输入、配置、结果、费用与准确路径。
-- [机制诊断与 CPI 对照](../docs/INFLATION_MECHANISM_DIAGNOSTIC_20261005.md)：确认事实、候选解释、经济学参考与诊断边界。
+- [机制诊断与 CPI 对照](../docs/archive/2026-10/INFLATION_MECHANISM_DIAGNOSTIC_20261005.md)：确认事实、候选解释、经济学参考与诊断边界。
 - [当前任务板](../docs/NEXT_ACTIONS.md)：下一步推进，以最新条目为准。
 
 2026-10-05 按用户排版要求更新：A4 两页，中文楷体（Kaiti SC）、英文与数字 Times New Roman、正文 10pt、首行缩进两汉字、1.25 倍行距；P/E/B 表格使用完整横竖边框，并按内容调整三列宽度。验证方案从第二页开始，避免列表跨页。报告正文未改。

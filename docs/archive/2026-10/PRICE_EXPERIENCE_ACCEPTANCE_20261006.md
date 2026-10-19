@@ -2,7 +2,7 @@
 
 日期：2026-10-06。用户要求按文献方案落地；主 Agent 实现，两个 Luna Max 子 Agent 分别核查数据和已有输出，并独立复审关键接线。**本轮真实 LLM / 付费 MCP 调用均为 0；没有新机制效果结论。**
 
-使用入口：[PRICE_EXPERIENCE_MECHANISM.md](PRICE_EXPERIENCE_MECHANISM.md)。下一轮：[对照运行卡](PRICE_EXPERIENCE_RUN_CARD_20261006.md)。
+使用入口：[PRICE_EXPERIENCE_MECHANISM.md](../../PRICE_EXPERIENCE_MECHANISM.md)。下一轮：[对照运行卡](PRICE_EXPERIENCE_RUN_CARD_20261006.md)。
 
 ## 1. 已落地
 
