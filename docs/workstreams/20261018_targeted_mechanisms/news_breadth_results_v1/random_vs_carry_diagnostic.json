@@ -1,0 +1,17 @@
+{
+  "comparison": "randomized_news_minus_copy_previous",
+  "mae_difference_pp": -0.03020646004946596,
+  "relative_reduction": 0.0818444134318244,
+  "monthly_wins": 3,
+  "leave_one_month_out_difference_pp": {
+    "202009": -0.041987625202624466,
+    "202109": 0.026858683559697116,
+    "202206": 0.07305245465937774,
+    "202312": -0.03805843166266456,
+    "202410": -0.011374866904667335,
+    "202503": -0.18972897474591424
+  },
+  "new_api_calls": 0,
+  "new_q9_fits": 0,
+  "interpretation": "Positive candidate in a secondary contrast; advantage over persistence reverses without202109 or202206. Not independent confirmation."
+}
