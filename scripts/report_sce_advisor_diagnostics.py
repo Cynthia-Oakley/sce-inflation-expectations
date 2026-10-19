@@ -46,7 +46,9 @@ def main(source):
                          'axes.spines.right':False,'axes.unicode_minus':False,'svg.fonttype':'none'})
     def save(fig,name):
         fig.savefig(figdir/(name+'.png'),dpi=165,bbox_inches='tight',facecolor='white')
-        fig.savefig(figdir/(name+'.svg'),bbox_inches='tight',facecolor='white');plt.close(fig)
+        svg=figdir/(name+'.svg')
+        fig.savefig(svg,bbox_inches='tight',facecolor='white');plt.close(fig)
+        svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     grids=list(g['grids'].values())
     fig,ax=plt.subplots(figsize=(13,6.2));a=np.array([[{'sparse':0,'weak':1,'strong':2}[c['support']] for c in r['monthly']] for r in grids])
     ax.imshow(a,cmap=ListedColormap(['#e5eaea','#e9d9ba','#b7d2ce']),vmin=0,vmax=2,aspect='auto')
