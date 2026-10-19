@@ -1,0 +1,574 @@
+{
+  "status": "A_line_matching_prototype_no_simulation",
+  "new_api_calls": 0,
+  "new_cost_usd": 0,
+  "n_person_months": 576,
+  "n_unique_people": 567,
+  "months": [
+    202009,
+    202109,
+    202206,
+    202312,
+    202410,
+    202503
+  ],
+  "matching_features": [
+    "age_group",
+    "household_size_group",
+    "children_group"
+  ],
+  "role_source": 2022,
+  "alpha_fixed": 20,
+  "allocation_seeds": [
+    20261019,
+    20261020,
+    20261021
+  ],
+  "quantity_balance_checks": [
+    {
+      "seed": 20261019,
+      "month": 202009,
+      "news": {
+        "attempts": 4,
+        "relative_weighted_quantity_difference": 0.0022134556865806903
+      },
+      "food_details": {
+        "attempts": 32,
+        "relative_weighted_quantity_difference": 0.005916299930726738
+      },
+      "weighted_news_matched": 7.048147091451584,
+      "weighted_news_shuffled": 7.063747852711015,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261019,
+      "month": 202109,
+      "news": {
+        "attempts": 2,
+        "relative_weighted_quantity_difference": 0.009595958348573146
+      },
+      "food_details": {
+        "attempts": 14,
+        "relative_weighted_quantity_difference": 0.009379225932596562
+      },
+      "weighted_news_matched": 7.608590848298015,
+      "weighted_news_shuffled": 7.535579127426413,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261019,
+      "month": 202206,
+      "news": {
+        "attempts": 2,
+        "relative_weighted_quantity_difference": 0.004041440905780015
+      },
+      "food_details": {
+        "attempts": 2,
+        "relative_weighted_quantity_difference": 0.00977710099823016
+      },
+      "weighted_news_matched": 7.7324706218629515,
+      "weighted_news_shuffled": 7.763720944936891,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261019,
+      "month": 202312,
+      "news": {
+        "attempts": 14,
+        "relative_weighted_quantity_difference": 0.0018050926111787338
+      },
+      "food_details": {
+        "attempts": 4,
+        "relative_weighted_quantity_difference": 0.006132324147051979
+      },
+      "weighted_news_matched": 7.475567230337428,
+      "weighted_news_shuffled": 7.48906132150928,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261019,
+      "month": 202410,
+      "news": {
+        "attempts": 8,
+        "relative_weighted_quantity_difference": 0.009988525967322642
+      },
+      "food_details": {
+        "attempts": 7,
+        "relative_weighted_quantity_difference": 0.002835164934886484
+      },
+      "weighted_news_matched": 7.872173330059155,
+      "weighted_news_shuffled": 7.793541922332595,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261019,
+      "month": 202503,
+      "news": {
+        "attempts": 310,
+        "relative_weighted_quantity_difference": 0.0053634675230627045
+      },
+      "food_details": {
+        "attempts": 2,
+        "relative_weighted_quantity_difference": 0.0047499661431414765
+      },
+      "weighted_news_matched": 6.638506538222207,
+      "weighted_news_shuffled": 6.674111952441601,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261020,
+      "month": 202009,
+      "news": {
+        "attempts": 4,
+        "relative_weighted_quantity_difference": 0.007676062346989972
+      },
+      "food_details": {
+        "attempts": 9,
+        "relative_weighted_quantity_difference": 0.005529062425232154
+      },
+      "weighted_news_matched": 7.936976443286702,
+      "weighted_news_shuffled": 7.876051717261443,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261020,
+      "month": 202109,
+      "news": {
+        "attempts": 41,
+        "relative_weighted_quantity_difference": 0.009231213901963329
+      },
+      "food_details": {
+        "attempts": 3,
+        "relative_weighted_quantity_difference": 0.0070521931813513836
+      },
+      "weighted_news_matched": 7.23853729800487,
+      "weighted_news_shuffled": 7.305357784140092,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261020,
+      "month": 202206,
+      "news": {
+        "attempts": 9,
+        "relative_weighted_quantity_difference": 0.005778747388660314
+      },
+      "food_details": {
+        "attempts": 1,
+        "relative_weighted_quantity_difference": 0.0012837522333830139
+      },
+      "weighted_news_matched": 7.499575006414946,
+      "weighted_news_shuffled": 7.5429131558993285,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261020,
+      "month": 202312,
+      "news": {
+        "attempts": 3,
+        "relative_weighted_quantity_difference": 0.0038523061374348216
+      },
+      "food_details": {
+        "attempts": 64,
+        "relative_weighted_quantity_difference": 0.009959350404073456
+      },
+      "weighted_news_matched": 7.671118875366649,
+      "weighted_news_shuffled": 7.700670373691216,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261020,
+      "month": 202410,
+      "news": {
+        "attempts": 14,
+        "relative_weighted_quantity_difference": 0.00608385850957369
+      },
+      "food_details": {
+        "attempts": 1,
+        "relative_weighted_quantity_difference": 0.008246249584713665
+      },
+      "weighted_news_matched": 7.440381288962099,
+      "weighted_news_shuffled": 7.395115061942774,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261020,
+      "month": 202503,
+      "news": {
+        "attempts": 33,
+        "relative_weighted_quantity_difference": 0.009692425946380123
+      },
+      "food_details": {
+        "attempts": 26,
+        "relative_weighted_quantity_difference": 0.008956055921587443
+      },
+      "weighted_news_matched": 8.207358034596929,
+      "weighted_news_shuffled": 8.12780882463117,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261021,
+      "month": 202009,
+      "news": {
+        "attempts": 8,
+        "relative_weighted_quantity_difference": 0.007785089609265826
+      },
+      "food_details": {
+        "attempts": 1,
+        "relative_weighted_quantity_difference": 0.006833582630209811
+      },
+      "weighted_news_matched": 7.29654803123308,
+      "weighted_news_shuffled": 7.239743750971618,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261021,
+      "month": 202109,
+      "news": {
+        "attempts": 28,
+        "relative_weighted_quantity_difference": 0.007928925450604378
+      },
+      "food_details": {
+        "attempts": 2,
+        "relative_weighted_quantity_difference": 0.0042323820692408455
+      },
+      "weighted_news_matched": 7.030451085996373,
+      "weighted_news_shuffled": 6.974707163451387,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261021,
+      "month": 202206,
+      "news": {
+        "attempts": 11,
+        "relative_weighted_quantity_difference": 9.107258448223285e-05
+      },
+      "food_details": {
+        "attempts": 5,
+        "relative_weighted_quantity_difference": 0.007783221172103509
+      },
+      "weighted_news_matched": 7.069542044288046,
+      "weighted_news_shuffled": 7.0701858857531255,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261021,
+      "month": 202312,
+      "news": {
+        "attempts": 16,
+        "relative_weighted_quantity_difference": 0.004990573744002241
+      },
+      "food_details": {
+        "attempts": 27,
+        "relative_weighted_quantity_difference": 0.0021906642097261203
+      },
+      "weighted_news_matched": 8.193411846845292,
+      "weighted_news_shuffled": 8.234301672881955,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261021,
+      "month": 202410,
+      "news": {
+        "attempts": 1,
+        "relative_weighted_quantity_difference": 0.005969365812613656
+      },
+      "food_details": {
+        "attempts": 7,
+        "relative_weighted_quantity_difference": 0.004640002633082394
+      },
+      "weighted_news_matched": 7.530841579967707,
+      "weighted_news_shuffled": 7.485887231700039,
+      "unweighted_mean_news": 8.0
+    },
+    {
+      "seed": 20261021,
+      "month": 202503,
+      "news": {
+        "attempts": 32,
+        "relative_weighted_quantity_difference": 0.008148964484551118
+      },
+      "food_details": {
+        "attempts": 6,
+        "relative_weighted_quantity_difference": 0.0034550279857484814
+      },
+      "weighted_news_matched": 7.4063271769691434,
+      "weighted_news_shuffled": 7.466681074095231,
+      "unweighted_mean_news": 8.0
+    }
+  ],
+  "role_feature_diagnostic_2022_to_2023": {
+    "age_family": {
+      "scores": {
+        "log_loss": 1.3876530746202866,
+        "brier": 0.6847963686069003,
+        "rps": 0.17320420762082123,
+        "accuracy": 0.40356118267919966
+      },
+      "weighted_fraction_cell_n_below_10": 0.0
+    },
+    "plus_income": {
+      "scores": {
+        "log_loss": 1.3928186571936114,
+        "brier": 0.6865158298918557,
+        "rps": 0.17327417466937428,
+        "accuracy": 0.40159488020189066
+      },
+      "weighted_fraction_cell_n_below_10": 0.0005082779429663931
+    },
+    "plus_income_education_region": {
+      "scores": {
+        "log_loss": 1.4450192087866998,
+        "brier": 0.7122850953730732,
+        "rps": 0.18224059321253422,
+        "accuracy": 0.3952723164507852
+      },
+      "weighted_fraction_cell_n_below_10": 0.21781756333602273
+    }
+  },
+  "whole_residence_coverage": {
+    "all": {
+      "n": 576,
+      "observed_past_composition": 545,
+      "record_age_months_min_median_max": [
+        1,
+        5.0,
+        12
+      ],
+      "nonrelatives_recorded": 17,
+      "child_presence_unknown": 33,
+      "missing_composition": 31,
+      "invalidations": {
+        "moved_without_complete_roster": 36
+      }
+    },
+    "202009": {
+      "n": 96,
+      "observed_past_composition": 93,
+      "record_age_months_min_median_max": [
+        1,
+        5.0,
+        11
+      ],
+      "nonrelatives_recorded": 4,
+      "child_presence_unknown": 8,
+      "missing_composition": 3,
+      "invalidations": {
+        "moved_without_complete_roster": 2
+      }
+    },
+    "202109": {
+      "n": 96,
+      "observed_past_composition": 90,
+      "record_age_months_min_median_max": [
+        1,
+        5.0,
+        11
+      ],
+      "nonrelatives_recorded": 2,
+      "child_presence_unknown": 4,
+      "missing_composition": 6,
+      "invalidations": {
+        "moved_without_complete_roster": 9
+      }
+    },
+    "202206": {
+      "n": 96,
+      "observed_past_composition": 89,
+      "record_age_months_min_median_max": [
+        1,
+        6.0,
+        11
+      ],
+      "nonrelatives_recorded": 2,
+      "child_presence_unknown": 4,
+      "missing_composition": 7,
+      "invalidations": {
+        "moved_without_complete_roster": 9
+      }
+    },
+    "202312": {
+      "n": 96,
+      "observed_past_composition": 92,
+      "record_age_months_min_median_max": [
+        1,
+        5.0,
+        11
+      ],
+      "nonrelatives_recorded": 3,
+      "child_presence_unknown": 5,
+      "missing_composition": 4,
+      "invalidations": {
+        "moved_without_complete_roster": 4
+      }
+    },
+    "202410": {
+      "n": 96,
+      "observed_past_composition": 90,
+      "record_age_months_min_median_max": [
+        1,
+        5.0,
+        11
+      ],
+      "nonrelatives_recorded": 3,
+      "child_presence_unknown": 7,
+      "missing_composition": 6,
+      "invalidations": {
+        "moved_without_complete_roster": 6
+      }
+    },
+    "202503": {
+      "n": 96,
+      "observed_past_composition": 91,
+      "record_age_months_min_median_max": [
+        1,
+        5.0,
+        12
+      ],
+      "nonrelatives_recorded": 3,
+      "child_presence_unknown": 5,
+      "missing_composition": 5,
+      "invalidations": {
+        "moved_without_complete_roster": 6
+      }
+    }
+  },
+  "support": {
+    "n_below_10": 0,
+    "zero_donor_cells": 0,
+    "minimum_donor_n": 10,
+    "median_donor_n": 984.0,
+    "minimum_donor_effective_n": 6.2813823628442105
+  },
+  "limits": [
+    "Synthetic role transport, not identified actual SCE shopping roles or proven causal effects.",
+    "SCE financial decision makers and ATUS adults have different selection; transfer conditional independence is unverified.",
+    "Source 2022 for pre-2022 targets is explicit retrospective A assumption, not strict B input.",
+    "Three news amounts and 0/1/2 food details are experimental levels, not estimated real counts.",
+    "SCE roster is last observed, not known current: D1 same excludes nonrelatives.",
+    "External shopping and news-attention records are not observed jointly; no empirical joint dependence is claimed."
+  ],
+  "menu_inventory": [
+    {
+      "month": 202009,
+      "as_of": "2020-09-11T23:59:59-04:00",
+      "eligible_personal_articles": 166,
+      "topic_tag_article_counts": {
+        "rental_housing": 14,
+        "labor_income": 55,
+        "road_fuel": 5,
+        "owned_housing": 3,
+        "utilities": 2,
+        "food": 3
+      },
+      "news_40_menu_available": true,
+      "missing_price_domains": [
+        "No verified individual receipts or store-level paid prices.",
+        "No separate cleaning/paper/personal-care price series in this frozen environment.",
+        "No verified respondent driving role; gasoline is not automatically personal exposure."
+      ]
+    },
+    {
+      "month": 202109,
+      "as_of": "2021-09-14T23:59:59-04:00",
+      "eligible_personal_articles": 182,
+      "topic_tag_article_counts": {
+        "labor_income": 47,
+        "food": 8,
+        "owned_housing": 7,
+        "rental_housing": 9,
+        "road_fuel": 3,
+        "utilities": 2
+      },
+      "news_40_menu_available": true,
+      "missing_price_domains": [
+        "No verified individual receipts or store-level paid prices.",
+        "No separate cleaning/paper/personal-care price series in this frozen environment.",
+        "No verified respondent driving role; gasoline is not automatically personal exposure."
+      ]
+    },
+    {
+      "month": 202206,
+      "as_of": "2022-06-10T23:59:59-04:00",
+      "eligible_personal_articles": 219,
+      "topic_tag_article_counts": {
+        "labor_income": 37,
+        "rental_housing": 11,
+        "road_fuel": 21,
+        "food": 12,
+        "utilities": 5,
+        "owned_housing": 7
+      },
+      "news_40_menu_available": true,
+      "missing_price_domains": [
+        "No verified individual receipts or store-level paid prices.",
+        "No separate cleaning/paper/personal-care price series in this frozen environment.",
+        "No verified respondent driving role; gasoline is not automatically personal exposure."
+      ]
+    },
+    {
+      "month": 202312,
+      "as_of": "2023-12-12T23:59:59-05:00",
+      "eligible_personal_articles": 148,
+      "topic_tag_article_counts": {
+        "rental_housing": 7,
+        "road_fuel": 8,
+        "labor_income": 26,
+        "owned_housing": 3,
+        "utilities": 2,
+        "food": 1
+      },
+      "news_40_menu_available": true,
+      "missing_price_domains": [
+        "No verified individual receipts or store-level paid prices.",
+        "No separate cleaning/paper/personal-care price series in this frozen environment.",
+        "No verified respondent driving role; gasoline is not automatically personal exposure."
+      ]
+    },
+    {
+      "month": 202410,
+      "as_of": "2024-10-10T23:59:59-04:00",
+      "eligible_personal_articles": 163,
+      "topic_tag_article_counts": {
+        "labor_income": 46,
+        "rental_housing": 6,
+        "food": 2,
+        "owned_housing": 8,
+        "road_fuel": 11,
+        "utilities": 3
+      },
+      "news_40_menu_available": true,
+      "missing_price_domains": [
+        "No verified individual receipts or store-level paid prices.",
+        "No separate cleaning/paper/personal-care price series in this frozen environment.",
+        "No verified respondent driving role; gasoline is not automatically personal exposure."
+      ]
+    },
+    {
+      "month": 202503,
+      "as_of": "2025-03-12T23:59:59-04:00",
+      "eligible_personal_articles": 351,
+      "topic_tag_article_counts": {
+        "road_fuel": 14,
+        "labor_income": 28,
+        "owned_housing": 6,
+        "utilities": 5,
+        "food": 10,
+        "rental_housing": 3
+      },
+      "news_40_menu_available": true,
+      "missing_price_domains": [
+        "No verified individual receipts or store-level paid prices.",
+        "No separate cleaning/paper/personal-care price series in this frozen environment.",
+        "No verified respondent driving role; gasoline is not automatically personal exposure."
+      ]
+    }
+  ],
+  "n_role_menus": 3456,
+  "input_source_and_result_sha256": {
+    "outputs/sce_atus_sce_matching_20261019_v1/summary.json": "586a578256306130d18a973782644ad2fe456854821ba235c17beaa5e00bc6e1",
+    "outputs/sce_atus_sce_matching_20261019_v1/historical_profiles_and_role_probabilities_private.json": "147a1d3fdd3abe9ed94f711e6bdf2f34843ab14ac509d3564e9d5b4d8725391f",
+    "outputs/sce_atus_sce_matching_20261019_v1/allocations_private.json": "e509b65a770cc9bbf041157b040b17b8ef5a12d404016e4daf6b931d22b681ad",
+    "outputs/sce_personal_information_menus_20261019_v1/summary.json": "eca65743b4a08fea94c9682f2315284ad5749dc09c3dd32bd3e443210b76deba",
+    "outputs/sce_personal_information_menus_20261019_v1/menus_private.json": "554684fe431505c158acf20461f4ae8b201099106169b2a1303a559f28a609a4"
+  }
+}

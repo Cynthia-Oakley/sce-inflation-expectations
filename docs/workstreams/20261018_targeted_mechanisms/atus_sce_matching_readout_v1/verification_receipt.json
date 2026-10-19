@@ -1,0 +1,17 @@
+{
+  "new_api_calls": 0,
+  "new_cost_usd": 0,
+  "tests_passed": 4,
+  "independent_checks": {
+    "past_roster_source_strictly_before_target": true,
+    "role_probabilities_are_normalized": true,
+    "nonrelative_counts_not_lost": true,
+    "all_18_wave_seed_count_and_role_multisets_identical": true,
+    "weighted_quantity_imbalance_within_1pct": true,
+    "menu_counts_unique_and_nested": true,
+    "new_menus_not_claimed_as_model_responses": true,
+    "price_menu_fact_ids_all_have_sources": true
+  },
+  "menus_checked": 3456,
+  "scorer_fits": 0
+}

@@ -4,6 +4,34 @@
 <h1>完整统计压缩了人际差异，但统一删表仍不能解决预测误差</h1>
 <p>2026-10-19。六个开发月×96人×六组×两遍，<strong>6,912次调用全部完成，费用估算$6.56／上限$30</strong>；6904份格式有效、8份无效原样保留，0接口错误/重试。使用DeepSeek官方API，平台$70未动用。没有配置通过预登记整体筛选，暂不升级默认方案。</p>
 <nav><a href="../20261018_targeted_mechanisms/information_exposure_results_20261019.md">完整结果、原理和后续</a> · <a href="../20261018_targeted_mechanisms/information_exposure_readout_v1/summary.json">聚合证据与区间</a> · <a href="../20261018_targeted_mechanisms/attention_preparation_readout_v1/protocol.json">执行前登记</a> · <a href="../../current_todo.html">任务清单</a></nav>
+<article id="atus-sce-matching-20261019" style="margin:24px 0;line-height:1.75;border-bottom:1px solid #d7dfdc;padding-bottom:26px">
+<h2>ATUS与SCE已建立概率匹配，个人信息菜单已准备</h2>
+<p>2026-10-19最新进展。完成六期<strong>576个人月</strong>的历史家庭核查、采购角色概率与<strong>3,456个</strong>新闻/价格信息菜单。<strong>0新增API费用、0新模型回答；正式配置未改，尚无新的MAE结果。</strong></p>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin:18px 0" aria-label="人口到环境的传导路径">
+<div style="flex:1 1 180px;padding:12px 16px;border:1px solid #d7dfdc"><strong>人口与家庭</strong><br>年龄、同住人数、儿童</div>
+<div style="flex:1 1 180px;padding:12px 16px;border:1px solid #d7dfdc"><strong>合成购物责任</strong><br>依据同类家庭的概率</div>
+<div style="flex:1 1 180px;padding:12px 16px;border:1px solid #d7dfdc"><strong>个人信息选择</strong><br>食品等主题与细分程度</div>
+<div style="flex:1 1 180px;padding:12px 16px;border:1px solid #d7dfdc"><strong>待检验的结果</strong><br>预期水平与人际分布</div>
+</div>
+<h3>三项实测发现</h3>
+<ul>
+<li><strong>545/576有可用的过去家庭构成</strong>，记录中位年龄5个月；不是当月重新测量。31个无法可靠沿用者保留未知。全住所人数与剔除室友的家庭人数已分开；未知的儿童情况不当作没有孩子。</li>
+<li><strong>匹配字段越多未必越好。</strong>外部2022→2023角色预测的对数损失，年龄/家庭结构为1.3877，加收入1.3928，再加学历地区1.4450，越低越好。先以有支持的家庭结构为主，未知维度不硬填。</li>
+<li><strong>信息内容比单纯篇数更紧缺。</strong>六期现有食品路由标签命中3/8/12/1/2/10篇，需审核漏标及库存覆盖；多给宏观新闻不等于补足生活价格。现有E仍缺独立清洁纸品/个人护理价格。</li>
+</ul>
+<h3>匹配如何落地？</h3>
+<p>同类ATUS家庭形成五档采购责任的概率，再用固定个人随机数抽取合成角色，跨重复保留。新闻广度独立分配，暂沿用3/8/20篇实验名额、同一排序取前缀；另备40篇可行性菜单。保留3篇A1背景、50%随机/50%相关。<strong>购物责任不等于学历，不自动决定是否看完整统计表，也不规定通胀答案。</strong></p>
+<p>匹配/打乱对照保留相同各档人数，18个期×种子组合的调查加权平均新闻篇数及食品细分条数差异均小于1%。字符数、主题与事实信息价值仍需再核；不能仅凭数量相近就声称完全可比。</p>
+<details><summary>一个价格片段会是什么样？</summary>
+<p>“你承担较多家庭日常采购。你接触到的公开食品资料是：2020年8月全国食品价格同比上涨4.1%，在家食品价格同比上涨4.6%，均于2020年9月11日首发。”</p>
+<p>这是有来源的实验片段，<strong>不是该人的实际购物收据或已经测量的价格感受</strong>。现阶段的0/1/2条细分仍是实验设置，不是ATUS测出的知识量。完整提示词尚需适配和干跑，未发送给模型。</p>
+</details>
+<h3>接下来</h3>
+<ol><li>检查食品/日用品新闻的漏标及BLS首发分类价格覆盖，先利用本地存档。</li><li>核定如何把分类价格表达为合理的信息接触，避免把全国统计伪装成本人体验。</li><li>完成完整提示词、时间标签、对照平衡和引擎干跑，再封存机制、月份、种子及新预算。</li></ol>
+<p>该匹配依赖跨调查可迁移假设，并未找回每位真人的实际购物责任。2022角色用于更早月份为明确的A线结构假设；当前文件不自动进入严格B。<strong>信息菜单准备完成，不代表机制已证明能降低SCE误差。</strong></p>
+<p><a href="../20261018_targeted_mechanisms/atus_sce_matching_results_20261019.md">完整方法、统计解释与后续</a> · <a href="../20261018_targeted_mechanisms/atus_sce_matching_readout_v1/summary.json">聚合证据</a> · <a href="../../current_todo.html">任务清单</a></p>
+</article>
+
 <article id="atus-roles-and-attention-20261019" style="margin:24px 0;line-height:1.7;border-bottom:1px solid #d7dfdc;padding-bottom:24px">
 <h2>ATUS已下载：采购角色有跨年支持，新闻接触继续细化</h2>
 <p>2026-10-19后续。通过真实浏览器下载官方文件，解决直连403。2016／2022／2023年的采购角色、受访者、CPS人口及家庭成员表已一对一连接，18岁以上有效记录分别为<strong>9,847／7,723／8,174</strong>。26份文件/页面及来源哈希已保存；数据为文本，无需逐页识别。<strong>本轮0新增API费用，没有新SCE模拟或角色注入。</strong></p>
