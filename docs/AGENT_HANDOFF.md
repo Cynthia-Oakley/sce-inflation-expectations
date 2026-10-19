@@ -1,3 +1,5 @@
+**2026-10-19不同人不同新闻量离线交付（最新）：**heterogeneous_news_offline_plan/results_20261019.md；evaluation/heterogeneous_news.py＋analyze_sce_heterogeneous_news.py。权威outputs/sce_heterogeneous_news_offline_20261019_v1，私人分配先于读真值写出、hash固定；20分配×20打乱×两宏观模式，567人月。全表uniform/random/matched MAE .355/.395/.408；精简.392/.344/.341，W1 1.754/1.688/1.666；匹配增量.003不稳，carry.338，设计加权篇数7.493对8.018，不能称纯身份识别。无升级、无新LLM回答/API/密度拟合；8.78秒，2定向测试/120名额/36独立聚合，旧联合CV一致。公读原HTML#heterogeneous-news-results-20261019、聚合heterogeneous_news_readout_v1/。新核ATUS采购分工EUGROSHP2、角色权重EUFINLWGT与连接，NHTS DRIVER/WHOMAIN/VEHFUEL；BLS公开页面本机HTTP403，未下载角色CSV、未合成人物，不声称当前SCE本人角色已知。下一步先取得采购角色与人口文件/检验条件概率，暂不大批重跑新闻量。无在跑任务/新预算请求，保护15不动。
+
 **2026-10-19用户澄清已记录：**同一群体按关注概率分不同新闻量，并按购物/驾驶角色区分价格接触；旧3/8/20是组间数量对照，非此机制的验证。本轮只核文献/读取旧聚合，新增API与Q9拟合0，运行配置未改。方案personal_information_assignment_20261019.md＋原阅读页#personal-information-assignment-20261019。教育/年龄/收入只作弱关注概率线索；Q46不是实际采购责任，未核到本人驾驶记录。先考虑旧3/8/20回答的离线分配与打乱比较，不从本期误差选档；无30—40档旧回答。保留原默认和15protected，无后台任务/新授权请求。
 
 **当前状态：**本轮全部运行/分析已结束，无在跑任务；以下“待授权/正在运行/未提交”按历史过程理解，文件保存状态以最新Git提交为准。原十五项protected未改，真实逐人记录只在本地，聚合与图表选入Git；没有推送授权，不推送。

@@ -1,0 +1,14 @@
+{
+  "independent_monthly_aggregation_checks": 36,
+  "quota_checks": 120,
+  "existing_joint_cv_reproduced": true,
+  "new_api_calls": 0,
+  "new_q9_fits": 0,
+  "analysis_source_sha256": {
+    "studies/sce_inflation_expectations/evaluation/heterogeneous_news.py": "7e022f8fb7e59eabc1f58273c6de65ad4c990c036b6bc4ab683a6b0b33e77ba9",
+    "scripts/analyze_sce_heterogeneous_news.py": "1bbd3b742edfb91479bb90836079cbb3aca7d44d3d6a6170fa0c2803e966eafc",
+    "studies/sce_inflation_expectations/evaluation/attention_support.py": "e03e91941e48714f48aa500c356343c565c678a42da8aea3f50c4a3600b15016",
+    "scripts/report_sce_information_exposure.py": "c9ae4fd48659d514b2c5d4bd22cf9b03069aeab688e9bf1b121581049589167f",
+    "tests/test_sce_heterogeneous_news.py": "7f7cf719850ea70a155e223b1733f4d70b44db13242fdd98e1169011a0fd81fa"
+  }
+}

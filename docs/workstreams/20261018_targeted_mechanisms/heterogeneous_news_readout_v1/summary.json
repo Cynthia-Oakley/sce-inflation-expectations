@@ -1,0 +1,722 @@
+{
+  "status": "completed_offline_development_only",
+  "new_api_calls": 0,
+  "new_q9_fits": 0,
+  "new_llm_answers": 0,
+  "new_cost_usd": 0,
+  "automatic_upgrade": false,
+  "common_person_months": 567,
+  "full_input_person_months": 576,
+  "independent_people": 558,
+  "months": [
+    202009,
+    202109,
+    202206,
+    202312,
+    202410,
+    202503
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "assignment_seeds": [
+    20261019,
+    20261020,
+    20261021,
+    20261022,
+    20261023,
+    20261024,
+    20261025,
+    20261026,
+    20261027,
+    20261028,
+    20261029,
+    20261030,
+    20261031,
+    20261032,
+    20261033,
+    20261034,
+    20261035,
+    20261036,
+    20261037,
+    20261038
+  ],
+  "shuffle_controls_per_seed": 20,
+  "quota_per_96": {
+    "3": 48,
+    "8": 28,
+    "20": 20
+  },
+  "quota_is_design_not_measured_population_frequency": true,
+  "modes": {
+    "complete": {
+      "uniform_8": {
+        "center_mae_pp": 0.3551371448988309,
+        "center_bias_pp": -0.22636912177345256,
+        "predicted_center_pp": 3.9960738931260003,
+        "truth_center_pp": 4.222443014899453,
+        "personal_mae_pp": 3.2244628516066953,
+        "w1_pp": 2.4571274426057705,
+        "delta_w1_pp": 1.4552860837904849,
+        "across_person_iqr_pp": 2.2631211795172415,
+        "truth_across_person_iqr_pp": 4.731559737599851,
+        "wrong_move_given_true_stable": 0.6087771339817254,
+        "missed_move_given_true_moving": 0.3506697612679748,
+        "opposite_direction_given_true_moving": 0.20169028542777198
+      },
+      "carry": {
+        "center_mae_pp": 0.3382349646188816,
+        "center_bias_pp": -0.31629251899106386,
+        "predicted_center_pp": 3.9061504959083906,
+        "truth_center_pp": 4.222443014899453,
+        "personal_mae_pp": 2.648837124932389,
+        "w1_pp": 0.9032252252908922,
+        "delta_w1_pp": 2.6488371249323897,
+        "across_person_iqr_pp": 5.551444106107955,
+        "truth_across_person_iqr_pp": 4.731559737599851,
+        "wrong_move_given_true_stable": 0.0,
+        "missed_move_given_true_moving": 1.0,
+        "opposite_direction_given_true_moving": 0.0
+      },
+      "matched_assignment_range_not_confidence_interval": {
+        "center_mae_pp": {
+          "min": 0.34980605458093716,
+          "mean": 0.4076412244597762,
+          "max": 0.46908873973894694
+        },
+        "center_bias_pp": {
+          "min": -0.3151341142627029,
+          "mean": -0.26930617663493595,
+          "max": -0.1824236298700597
+        },
+        "predicted_center_pp": {
+          "min": 3.907308900636751,
+          "mean": 3.9531368382645176,
+          "max": 4.040019385029393
+        },
+        "truth_center_pp": {
+          "min": 4.222443014899453,
+          "mean": 4.222443014899453,
+          "max": 4.222443014899453
+        },
+        "personal_mae_pp": {
+          "min": 3.219878481775165,
+          "mean": 3.2808858271069057,
+          "max": 3.3329624573955967
+        },
+        "w1_pp": {
+          "min": 2.4312831172273506,
+          "mean": 2.4888365410818234,
+          "max": 2.5272393363639414
+        },
+        "delta_w1_pp": {
+          "min": 1.4055817826688732,
+          "mean": 1.4479877693748617,
+          "max": 1.485808880626968
+        },
+        "across_person_iqr_pp": {
+          "min": 2.1891658277332504,
+          "mean": 2.2871252424846182,
+          "max": 2.387050050319879
+        },
+        "truth_across_person_iqr_pp": {
+          "min": 4.731559737599851,
+          "mean": 4.731559737599851,
+          "max": 4.731559737599851
+        },
+        "wrong_move_given_true_stable": {
+          "min": 0.5809332280918088,
+          "mean": 0.6045852218494491,
+          "max": 0.6172445210443712
+        },
+        "missed_move_given_true_moving": {
+          "min": 0.3212413718214397,
+          "mean": 0.3429991331943999,
+          "max": 0.3655541146557841
+        },
+        "opposite_direction_given_true_moving": {
+          "min": 0.1944850294701819,
+          "mean": 0.21016761492468924,
+          "max": 0.22455218573229863
+        },
+        "weighted_average_news_count": {
+          "min": 7.159077209206296,
+          "mean": 7.492967232377609,
+          "max": 7.777956143615874
+        },
+        "unweighted_average_news_count": {
+          "min": 7.950278349729277,
+          "mean": 8.00938157995079,
+          "max": 8.071400618911726
+        }
+      },
+      "shuffled_mean_assignment_range_not_confidence_interval": {
+        "center_mae_pp": {
+          "min": 0.38387184757052295,
+          "mean": 0.3953680127874281,
+          "max": 0.40851915765162045
+        },
+        "center_bias_pp": {
+          "min": -0.2625785034320836,
+          "mean": -0.24457666173910772,
+          "max": -0.22895429779692708
+        },
+        "predicted_center_pp": {
+          "min": 3.9598645114673703,
+          "mean": 3.9778663531603455,
+          "max": 3.993488717102525
+        },
+        "truth_center_pp": {
+          "min": 4.222443014899453,
+          "mean": 4.222443014899453,
+          "max": 4.222443014899453
+        },
+        "personal_mae_pp": {
+          "min": 3.2398997445679045,
+          "mean": 3.2562196077999,
+          "max": 3.2790148018776266
+        },
+        "w1_pp": {
+          "min": 2.4603315577839906,
+          "mean": 2.476515162026603,
+          "max": 2.4918008753242136
+        },
+        "delta_w1_pp": {
+          "min": 1.4264796998047413,
+          "mean": 1.4381174410038207,
+          "max": 1.4476990616785357
+        },
+        "across_person_iqr_pp": {
+          "min": 2.243076466935601,
+          "mean": 2.299785801059661,
+          "max": 2.328955894243074
+        },
+        "truth_across_person_iqr_pp": {
+          "min": 4.731559737599851,
+          "mean": 4.731559737599851,
+          "max": 4.731559737599851
+        },
+        "wrong_move_given_true_stable": {
+          "min": 0.597803559321399,
+          "mean": 0.6036676674582349,
+          "max": 0.6084006245361894
+        },
+        "missed_move_given_true_moving": {
+          "min": 0.3375116591213134,
+          "mean": 0.34115215406503047,
+          "max": 0.3455698905381045
+        },
+        "opposite_direction_given_true_moving": {
+          "min": 0.20691103746544054,
+          "mean": 0.21062610449713975,
+          "max": 0.21396959185799172
+        },
+        "weighted_average_news_count": {
+          "min": 7.894069094594451,
+          "mean": 8.017545779280733,
+          "max": 8.17001097187444
+        },
+        "unweighted_average_news_count": {
+          "min": 7.950278349729277,
+          "mean": 8.00938157995079,
+          "max": 8.071400618911726
+        }
+      },
+      "matched_minus_shuffled_range_not_confidence_interval": {
+        "center_mae_pp": {
+          "min": -0.05140517874717887,
+          "mean": 0.012273211672348096,
+          "max": 0.08165792614355505
+        },
+        "center_bias_pp": {
+          "min": -0.0861798164657758,
+          "mean": -0.02472951489582816,
+          "max": 0.06297455376573649
+        },
+        "predicted_center_pp": {
+          "min": -0.0861798164657741,
+          "mean": -0.02472951489582782,
+          "max": 0.06297455376573602
+        },
+        "truth_center_pp": {
+          "min": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "personal_mae_pp": {
+          "min": -0.029103990930512857,
+          "mean": 0.024666219307006278,
+          "max": 0.09306271282769218
+        },
+        "w1_pp": {
+          "min": -0.05407454541548473,
+          "mean": 0.012321379055220082,
+          "max": 0.05135395843274182
+        },
+        "delta_w1_pp": {
+          "min": -0.042117279009662445,
+          "mean": 0.009870328371041081,
+          "max": 0.0422341595230169
+        },
+        "across_person_iqr_pp": {
+          "min": -0.11567213604971371,
+          "mean": -0.012660558575043201,
+          "max": 0.08674435808092174
+        },
+        "truth_across_person_iqr_pp": {
+          "min": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "wrong_move_given_true_stable": {
+          "min": -0.021915130701159802,
+          "mean": 0.000917554391214176,
+          "max": 0.015801567453843535
+        },
+        "missed_move_given_true_moving": {
+          "min": -0.024328518716664804,
+          "mean": 0.0018469791293694942,
+          "max": 0.02285777199920841
+        },
+        "opposite_direction_given_true_moving": {
+          "min": -0.015748913458987907,
+          "mean": -0.0004584895724505142,
+          "max": 0.017641148266858087
+        },
+        "weighted_average_news_count": {
+          "min": -0.8282171638864702,
+          "mean": -0.5245785469031224,
+          "max": -0.23144764446138488
+        },
+        "unweighted_average_news_count": {
+          "min": -1.7763568394002505e-15,
+          "mean": 1.7763568394002506e-16,
+          "max": 1.7763568394002505e-15
+        }
+      },
+      "matched_minus_uniform_8_range_not_confidence_interval": {
+        "center_mae_pp": {
+          "min": -0.00533109031789375,
+          "mean": 0.052504079560945306,
+          "max": 0.11395159484011602
+        },
+        "center_bias_pp": {
+          "min": -0.08876499248925032,
+          "mean": -0.042937054861483345,
+          "max": 0.043945491903392864
+        },
+        "predicted_center_pp": {
+          "min": -0.0887649924892493,
+          "mean": -0.04293705486148234,
+          "max": 0.04394549190339303
+        },
+        "truth_center_pp": {
+          "min": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "personal_mae_pp": {
+          "min": -0.004584369831530211,
+          "mean": 0.05642297550021076,
+          "max": 0.10849960578890139
+        },
+        "w1_pp": {
+          "min": -0.025844325378419963,
+          "mean": 0.03170909847605301,
+          "max": 0.07011189375817084
+        },
+        "delta_w1_pp": {
+          "min": -0.049704301121611616,
+          "mean": -0.00729831441562293,
+          "max": 0.03052279683648318
+        },
+        "across_person_iqr_pp": {
+          "min": -0.07395535178399104,
+          "mean": 0.02400406296737643,
+          "max": 0.12392887080263737
+        },
+        "truth_across_person_iqr_pp": {
+          "min": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "wrong_move_given_true_stable": {
+          "min": -0.027843905889916587,
+          "mean": -0.0041919121322762706,
+          "max": 0.008467387062645826
+        },
+        "missed_move_given_true_moving": {
+          "min": -0.029428389446535086,
+          "mean": -0.007670628073574848,
+          "max": 0.014884353387809302
+        },
+        "opposite_direction_given_true_moving": {
+          "min": -0.007205255957590084,
+          "mean": 0.008477329496917256,
+          "max": 0.022861900304526644
+        }
+      },
+      "seeds_center_and_w1_better_than_shuffled_mean": 1
+    },
+    "reduced": {
+      "uniform_8": {
+        "center_mae_pp": 0.3917170070382543,
+        "center_bias_pp": -0.3702195940989285,
+        "predicted_center_pp": 3.8522234208005255,
+        "truth_center_pp": 4.222443014899453,
+        "personal_mae_pp": 2.895188309388504,
+        "w1_pp": 1.7535760841226684,
+        "delta_w1_pp": 1.5414469693119617,
+        "across_person_iqr_pp": 3.6787072294966787,
+        "truth_across_person_iqr_pp": 4.731559737599851,
+        "wrong_move_given_true_stable": 0.46181723037281247,
+        "missed_move_given_true_moving": 0.5546718985207971,
+        "opposite_direction_given_true_moving": 0.12179143783058043
+      },
+      "carry": {
+        "center_mae_pp": 0.3382349646188816,
+        "center_bias_pp": -0.31629251899106386,
+        "predicted_center_pp": 3.9061504959083906,
+        "truth_center_pp": 4.222443014899453,
+        "personal_mae_pp": 2.648837124932389,
+        "w1_pp": 0.9032252252908922,
+        "delta_w1_pp": 2.6488371249323897,
+        "across_person_iqr_pp": 5.551444106107955,
+        "truth_across_person_iqr_pp": 4.731559737599851,
+        "wrong_move_given_true_stable": 0.0,
+        "missed_move_given_true_moving": 1.0,
+        "opposite_direction_given_true_moving": 0.0
+      },
+      "matched_assignment_range_not_confidence_interval": {
+        "center_mae_pp": {
+          "min": 0.27973248741846835,
+          "mean": 0.3411145224248445,
+          "max": 0.3892357342159956
+        },
+        "center_bias_pp": {
+          "min": -0.33481400519574933,
+          "mean": -0.2793256438874482,
+          "max": -0.2012129087850174
+        },
+        "predicted_center_pp": {
+          "min": 3.8876290097037045,
+          "mean": 3.9431173710120055,
+          "max": 4.0212301061144355
+        },
+        "truth_center_pp": {
+          "min": 4.222443014899453,
+          "mean": 4.222443014899453,
+          "max": 4.222443014899453
+        },
+        "personal_mae_pp": {
+          "min": 2.787412992748482,
+          "mean": 2.8480262252218287,
+          "max": 2.966176578323532
+        },
+        "w1_pp": {
+          "min": 1.6173163219883024,
+          "mean": 1.666184523735182,
+          "max": 1.7300358582448034
+        },
+        "delta_w1_pp": {
+          "min": 1.527877119778756,
+          "mean": 1.5572942596814605,
+          "max": 1.5806991083320003
+        },
+        "across_person_iqr_pp": {
+          "min": 3.5475123101803754,
+          "mean": 3.6480210138041342,
+          "max": 3.7549853422379886
+        },
+        "truth_across_person_iqr_pp": {
+          "min": 4.731559737599851,
+          "mean": 4.731559737599851,
+          "max": 4.731559737599851
+        },
+        "wrong_move_given_true_stable": {
+          "min": 0.383538348013647,
+          "mean": 0.41380921566205836,
+          "max": 0.46164568905279285
+        },
+        "missed_move_given_true_moving": {
+          "min": 0.5364605535840514,
+          "mean": 0.5516815009832065,
+          "max": 0.5668878213402252
+        },
+        "opposite_direction_given_true_moving": {
+          "min": 0.1169872289922194,
+          "mean": 0.12912115348705305,
+          "max": 0.14265150165769339
+        },
+        "weighted_average_news_count": {
+          "min": 7.159077209206296,
+          "mean": 7.492967232377609,
+          "max": 7.777956143615874
+        },
+        "unweighted_average_news_count": {
+          "min": 7.950278349729277,
+          "mean": 8.00938157995079,
+          "max": 8.071400618911726
+        }
+      },
+      "shuffled_mean_assignment_range_not_confidence_interval": {
+        "center_mae_pp": {
+          "min": 0.33098449728516516,
+          "mean": 0.34437126515208805,
+          "max": 0.36086316676665675
+        },
+        "center_bias_pp": {
+          "min": -0.3048143301718585,
+          "mean": -0.28984074242984714,
+          "max": -0.27793403559261254
+        },
+        "predicted_center_pp": {
+          "min": 3.9176286847275947,
+          "mean": 3.9326022724696066,
+          "max": 3.9445089793068404
+        },
+        "truth_center_pp": {
+          "min": 4.222443014899453,
+          "mean": 4.222443014899453,
+          "max": 4.222443014899453
+        },
+        "personal_mae_pp": {
+          "min": 2.848703229257954,
+          "mean": 2.855926091201327,
+          "max": 2.8759297424616905
+        },
+        "w1_pp": {
+          "min": 1.6729352490079932,
+          "mean": 1.6875314442485387,
+          "max": 1.7089295020821667
+        },
+        "delta_w1_pp": {
+          "min": 1.5413567177330678,
+          "mean": 1.554497263356855,
+          "max": 1.5650421493439204
+        },
+        "across_person_iqr_pp": {
+          "min": 3.583161634739052,
+          "mean": 3.638651257871847,
+          "max": 3.6681703829205157
+        },
+        "truth_across_person_iqr_pp": {
+          "min": 4.731559737599851,
+          "mean": 4.731559737599851,
+          "max": 4.731559737599851
+        },
+        "wrong_move_given_true_stable": {
+          "min": 0.40955902969101327,
+          "mean": 0.4177976627883779,
+          "max": 0.4254067783576586
+        },
+        "missed_move_given_true_moving": {
+          "min": 0.5425012018806873,
+          "mean": 0.5492523720362246,
+          "max": 0.5552402343941454
+        },
+        "opposite_direction_given_true_moving": {
+          "min": 0.12316037695590795,
+          "mean": 0.12636031328123526,
+          "max": 0.12917982798049885
+        },
+        "weighted_average_news_count": {
+          "min": 7.894069094594451,
+          "mean": 8.017545779280733,
+          "max": 8.17001097187444
+        },
+        "unweighted_average_news_count": {
+          "min": 7.950278349729277,
+          "mean": 8.00938157995079,
+          "max": 8.071400618911726
+        }
+      },
+      "matched_minus_shuffled_range_not_confidence_interval": {
+        "center_mae_pp": {
+          "min": -0.06244699143513566,
+          "mean": -0.003256742727243528,
+          "max": 0.048770689736871764
+        },
+        "center_bias_pp": {
+          "min": -0.05272230567035907,
+          "mean": 0.010515098542399006,
+          "max": 0.08871295533871715
+        },
+        "predicted_center_pp": {
+          "min": -0.05272230567035896,
+          "mean": 0.010515098542399204,
+          "max": 0.0887129553387167
+        },
+        "truth_center_pp": {
+          "min": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "personal_mae_pp": {
+          "min": -0.06169732837798181,
+          "mean": -0.007899865979497923,
+          "max": 0.11160843403061671
+        },
+        "w1_pp": {
+          "min": -0.09028029072002619,
+          "mean": -0.021346920513356894,
+          "max": 0.03467660087334545
+        },
+        "delta_w1_pp": {
+          "min": -0.029132185398257793,
+          "mean": 0.002796996324605461,
+          "max": 0.03724723995083079
+        },
+        "across_person_iqr_pp": {
+          "min": -0.10591443103192333,
+          "mean": 0.009369755932288282,
+          "max": 0.12519218609186877
+        },
+        "truth_across_person_iqr_pp": {
+          "min": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "wrong_move_given_true_stable": {
+          "min": -0.03196093109597736,
+          "mean": -0.003988447126319547,
+          "max": 0.039160644129854594
+        },
+        "missed_move_given_true_moving": {
+          "min": -0.015035043339287957,
+          "mean": 0.002429128946981607,
+          "max": 0.013782871744342451
+        },
+        "opposite_direction_given_true_moving": {
+          "min": -0.009308377656959563,
+          "mean": 0.0027608402058178216,
+          "max": 0.017066251898799706
+        },
+        "weighted_average_news_count": {
+          "min": -0.8282171638864702,
+          "mean": -0.5245785469031224,
+          "max": -0.23144764446138488
+        },
+        "unweighted_average_news_count": {
+          "min": -1.7763568394002505e-15,
+          "mean": 1.7763568394002506e-16,
+          "max": 1.7763568394002505e-15
+        }
+      },
+      "matched_minus_uniform_8_range_not_confidence_interval": {
+        "center_mae_pp": {
+          "min": -0.11198451961978595,
+          "mean": -0.05060248461340975,
+          "max": -0.0024812728222586844
+        },
+        "center_bias_pp": {
+          "min": 0.035405588903179186,
+          "mean": 0.09089395021148036,
+          "max": 0.1690066853139111
+        },
+        "predicted_center_pp": {
+          "min": 0.03540558890317902,
+          "mean": 0.09089395021147992,
+          "max": 0.16900668531391005
+        },
+        "truth_center_pp": {
+          "min": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "personal_mae_pp": {
+          "min": -0.10777531664002193,
+          "mean": -0.04716208416667487,
+          "max": 0.0709882689350283
+        },
+        "w1_pp": {
+          "min": -0.13625976213436597,
+          "mean": -0.08739156038748644,
+          "max": -0.023540225877864973
+        },
+        "delta_w1_pp": {
+          "min": -0.013569849533205725,
+          "mean": 0.015847290369498602,
+          "max": 0.03925213902003866
+        },
+        "across_person_iqr_pp": {
+          "min": -0.13119491931630334,
+          "mean": -0.030686215692544018,
+          "max": 0.07627811274130991
+        },
+        "truth_across_person_iqr_pp": {
+          "min": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "wrong_move_given_true_stable": {
+          "min": -0.07827888235916547,
+          "mean": -0.04800801471075411,
+          "max": -0.0001715413200196192
+        },
+        "missed_move_given_true_moving": {
+          "min": -0.0182113449367457,
+          "mean": -0.002990397537590772,
+          "max": 0.012215922819428071
+        },
+        "opposite_direction_given_true_moving": {
+          "min": -0.004804208838361024,
+          "mean": 0.0073297156564726546,
+          "max": 0.02086006382711296
+        }
+      },
+      "seeds_center_and_w1_better_than_shuffled_mean": 7
+    }
+  },
+  "limits": [
+    "All six months already inspected; no independent confirmation or causal human attention estimate.",
+    "Ranks/quota translate survey agreement into experimental exposure, not measured article counts.",
+    "Counts match but survey-weighted article totals may differ; report the discrepancy.",
+    "Same stable random quantiles reused per ID; monthly quota rank may change exposure.",
+    "External sample is unweighted and cross-survey/time transport remains unvalidated.",
+    "Ranges describe assignment sensitivity, not confidence intervals or significance.",
+    "Whole archived replies selected; no new simulation, cross-person interaction or 30-40 news condition."
+  ],
+  "seconds": 8.778570000082254,
+  "allocation_sha256_before_truth": "ff58792bde6698fa5c6e4793d009d3d7321e046c395d8c48b7e44ac7fea52172",
+  "external_cv_mean_scores": {
+    "population": {
+      "log_loss": 1.6977071051814165,
+      "brier": 0.8006143537563779,
+      "accuracy": 0.2752070141256697,
+      "rps": 0.16505170149129209
+    },
+    "age_group_only": {
+      "log_loss": 1.698510123442799,
+      "brier": 0.8012112262544573,
+      "accuracy": 0.2666017210586134,
+      "rps": 0.16501303138872175
+    },
+    "education_group_only": {
+      "log_loss": 1.6813684168905525,
+      "brier": 0.7960221992711093,
+      "accuracy": 0.2894950478973859,
+      "rps": 0.16153391381611518
+    },
+    "household_income_band_only": {
+      "log_loss": 1.684777728487903,
+      "brier": 0.7968595516434126,
+      "accuracy": 0.29566488066244523,
+      "rps": 0.16231173913308306
+    },
+    "region_only": {
+      "log_loss": 1.701179976419013,
+      "brier": 0.8019912234225973,
+      "accuracy": 0.27228446176327326,
+      "rps": 0.1652525791885604
+    },
+    "joint_demographics": {
+      "log_loss": 1.6817775262937893,
+      "brier": 0.7964364805977908,
+      "accuracy": 0.28381230719272604,
+      "rps": 0.16053531839521115
+    }
+  },
+  "source_summary_sha256": "2881c82c74ce5397c573d9983755a61821288a8a15c2dba482b8f9ae0a8b0aee"
+}

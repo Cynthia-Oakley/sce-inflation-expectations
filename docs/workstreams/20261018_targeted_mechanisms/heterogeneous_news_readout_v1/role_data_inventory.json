@@ -1,0 +1,48 @@
+{
+  "checked_on": "2026-10-19",
+  "new_paid_calls": 0,
+  "population_roles_assigned": false,
+  "microdata_downloaded": false,
+  "atus": {
+    "source": "BLS American Time Use Survey Eating and Health Module",
+    "data_page": "https://www.bls.gov/tus/modules/ehdatafiles.htm",
+    "survey_periods": [
+      "2014-2016",
+      "2022-2023"
+    ],
+    "questionnaire_2022_2023": "https://www.bls.gov/tus/questionnaires/ehmquestionnaire2223.pdf",
+    "dictionary_2022_2023": "https://www.bls.gov/tus/dictionaries/ehmintcodebk2223.pdf",
+    "dictionary_version": "October 2024",
+    "data_format": "CSV inside ZIP",
+    "download_attempt": "BLS 2023 download page HTTP403 from local network; archive not materialized",
+    "fields": {
+      "EUGROSHP2": "Grocery shopping role, ordinal 1 None / 2 A little / 3 Some / 4 A lot / 5 All",
+      "EUPRPMEL2": "Food preparation role, five ordinal levels",
+      "EUONLINE1": "Online grocery purchases during last 30 days, topcoded 9; not all shopping",
+      "EUFINLWGT": "Final EH Module weight; use instead of basic ATUS weight"
+    },
+    "join": "EH respondent and ATUS respondent via TUCASEID; TULINENO=1; ATUS-CPS via TUCASEID and TULINENO; validate cardinality",
+    "limits": [
+      "Question changed between old and new periods; no exact share conversion",
+      "Same SCE person not observed",
+      "Retrieved current documentation is not a historical release-date proof"
+    ]
+  },
+  "nhts": {
+    "source": "FHWA National Household Travel Survey",
+    "dictionary": "https://nhts.ornl.gov/assets/2022/doc/codebook.pdf",
+    "dictionary_version": "2022 Public Use v2.0.1 December 2024",
+    "fields": {
+      "DRIVER": "Driver status, not driving frequency",
+      "WHOMAIN": "Main driver of household vehicle",
+      "VEHFUEL": "Vehicle fuel type including gasoline/diesel/hybrids/electric",
+      "DRVR_FLG": "Driver or non-driver on trip"
+    },
+    "limits": [
+      "Driver does not imply gasoline exposure",
+      "Travel-day observations are not monthly habits",
+      "Current site advertises a newer V2.1; source dictionary inspected is v2.0.1",
+      "No raw driver records downloaded or assigned"
+    ]
+  }
+}

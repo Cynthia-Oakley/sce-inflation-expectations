@@ -16,6 +16,23 @@
 <p><a href="../20261018_targeted_mechanisms/personal_information_assignment_20261019.md">完整依据、数据缺口与实施方案</a></p>
 </aside>
 
+
+<article id="heterogeneous-news-results-20261019" style="margin:24px 0;line-height:1.7">
+<h2>不同人看不同篇数：离线检验已完成</h2>
+<p>先按外部调查预测的关注概率分配，再用旧回答评价。每96人中48人看3篇、28人看8篇、20人看20篇，人均8篇；<strong>这些是实验名额，不是美国实际阅读分布</strong>。六期、567共同人月、两遍回答，20个分配种子，每个另作20次随机对照。<strong>0新增API、0新回答、0重拟合，约8.8秒完成计算。</strong></p>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;min-width:420px"><thead><tr><th style="text-align:left;padding:8px;border-bottom:1px solid #d7dfdc">信息配置</th><th style="padding:8px;border-bottom:1px solid #d7dfdc">群体中位数MAE（pp）</th><th style="padding:8px;border-bottom:1px solid #d7dfdc">跨人W1（pp）</th></tr></thead><tbody>
+<tr><td style="padding:8px">完整统计，全员8篇</td><td style="text-align:center">0.355</td><td style="text-align:center">2.457</td></tr>
+<tr><td style="padding:8px">完整统计，随机分不同篇数</td><td style="text-align:center">0.395</td><td style="text-align:center">2.476</td></tr>
+<tr><td style="padding:8px">完整统计，按人口关注概率分配</td><td style="text-align:center">0.408</td><td style="text-align:center">2.489</td></tr>
+<tr><td style="padding:8px;border-top:1px solid #d7dfdc">不另附完整统计，全员8篇</td><td style="text-align:center;border-top:1px solid #d7dfdc">0.392</td><td style="text-align:center;border-top:1px solid #d7dfdc">1.754</td></tr>
+<tr><td style="padding:8px">不另附完整统计，随机分不同篇数</td><td style="text-align:center">0.344</td><td style="text-align:center">1.688</td></tr>
+<tr><td style="padding:8px">不另附完整统计，按人口关注概率分配</td><td style="text-align:center">0.341</td><td style="text-align:center">1.666</td></tr>
+</tbody></table></div>
+<p>人口匹配相对随机的局部MAE收益仅约<strong>0.003pp</strong>，分配种子间方向不稳定；相同支持持续性基线为0.338。人数相同但调查加权新闻量约7.49对8.02，尚非纯身份对照。以上为已看六期的事后组合诊断，不是新模拟或独立验证，不挑最好种子、不升级默认。</p>
+<h3>新找到的依据：采购分工可以直接调查</h3>
+<p>BLS的ATUS饮食与健康模块在2022—2023年直接记录五档采购承担程度，还含做饭分工、购物渠道和线上采购次数；NHTS也记录驾驶身份、车辆主要驾驶者与燃料类型。<strong>原题/字典已核，角色数据尚未物化或分配给SCE个人</strong>；本机BLS下载页面返回403。下一步先取得并核验采购角色与人口特征的关系，不把Q46财务决策当买菜责任，也不把开车等同汽油消费。</p>
+<p><a href="../20261018_targeted_mechanisms/heterogeneous_news_offline_results_20261019.md">完整结果、数据依据及下一步</a> · <a href="../20261018_targeted_mechanisms/heterogeneous_news_readout_v1/summary.json">聚合证据</a></p>
+</article>
 <h2>只精简宏观资料：分布改善，中心误差未改善</h2>
 <p>新闻同为8篇、内容不变，省去额外统计及12个月序列后，<strong>W1从2.457降至1.754pp，人际IQR从2.263扩大到3.679pp</strong>，更接近真人4.732。六个月W1均改善；但群体中位数MAE从<strong>0.355变成0.392pp</strong>。</p>
 <p>它使模型少改动那些真人保持的判断（错动60.9%→46.2%），也更容易漏掉真人实际的改变（漏动35.1%→55.5%）；两个方向在六个月都出现。<strong>需要研究谁在何时吸收信息，而非让所有人统一看完整表或统一删表。</strong></p>
