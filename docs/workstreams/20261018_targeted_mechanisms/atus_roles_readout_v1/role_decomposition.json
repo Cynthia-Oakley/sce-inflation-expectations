@@ -1,0 +1,84 @@
+{
+  "status": "post_result_source_role_decomposition_only",
+  "new_api_calls": 0,
+  "sce_truth_read": false,
+  "train_year": 2022,
+  "test_year": 2023,
+  "alpha_fixed": 20,
+  "baseline": {
+    "log_loss": 1.5043021606377363,
+    "brier": 0.7511323151478148,
+    "rps": 0.19667643395983697,
+    "accuracy": 0.39303605098403943
+  },
+  "results": {
+    "age_family": {
+      "features": [
+        "age_group",
+        "household_size_group",
+        "children_group"
+      ],
+      "scores": {
+        "log_loss": 1.3876530746202866,
+        "brier": 0.6847963686069003,
+        "rps": 0.17320420762082123,
+        "accuracy": 0.40356118267919966
+      },
+      "relative_log_loss_improvement_vs_population": 0.07754365384145777,
+      "weighted_share_training_cell_n_below_10": 0.0
+    },
+    "age_sex": {
+      "features": [
+        "age_group",
+        "sex_cps"
+      ],
+      "scores": {
+        "log_loss": 1.4629848063453246,
+        "brier": 0.729841443910936,
+        "rps": 0.18521348001673035,
+        "accuracy": 0.39303605098403943
+      },
+      "relative_log_loss_improvement_vs_population": 0.027466127067779744,
+      "weighted_share_training_cell_n_below_10": 0.0
+    },
+    "age_family_sex": {
+      "features": [
+        "age_group",
+        "household_size_group",
+        "children_group",
+        "sex_cps"
+      ],
+      "scores": {
+        "log_loss": 1.3468046641800213,
+        "brier": 0.6661732175362608,
+        "rps": 0.16200840369579264,
+        "accuracy": 0.4380366009509125
+      },
+      "relative_log_loss_improvement_vs_population": 0.10469804576425337,
+      "weighted_share_training_cell_n_below_10": 0.0005082779429663931
+    },
+    "age_family_sex_labor": {
+      "features": [
+        "age_group",
+        "household_size_group",
+        "children_group",
+        "sex_cps",
+        "labor_group"
+      ],
+      "scores": {
+        "log_loss": 1.3561131723980353,
+        "brier": 0.6702302777283891,
+        "rps": 0.16362153461269024,
+        "accuracy": 0.43408689580549764
+      },
+      "relative_log_loss_improvement_vs_population": 0.0985101212490963,
+      "weighted_share_training_cell_n_below_10": 0.014517710488709168
+    }
+  },
+  "source_sha256": {
+    "outputs/sce_atus_roles_attention_support_20261019_v1/summary.json": "e55c727b059756c4aa83a0fc2d61df5905ee74c0d48c4fb2186b18f49befe7f4",
+    "outputs/sce_atus_roles_attention_support_20261019_v1/role_donors_2022_private.parquet": "432cb50fe80d72740dc30a18bc56add3238d295df824959f7bc4cb1e4d5b5e4c",
+    "outputs/sce_atus_roles_attention_support_20261019_v1/role_donors_2023_private.parquet": "f14c734e8bd7bee7268bd84f9e4e294d7743078898939b00683079aa7799f1ff",
+    "docs/workstreams/20261018_targeted_mechanisms/atus_and_attention_support_plan_20261019.md": "66c07a7aa73406308985d78134f6793db54ce3575b5ef76abea28b7e406cab4d"
+  }
+}

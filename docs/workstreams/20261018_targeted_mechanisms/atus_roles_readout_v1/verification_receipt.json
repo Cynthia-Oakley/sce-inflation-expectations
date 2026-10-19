@@ -1,0 +1,12 @@
+{
+  "new_api_calls": 0,
+  "independent_proportion_baseline_and_cv_checks": 18,
+  "unit_tests_passed": 2,
+  "original_plan_snapshot_sha256": "b3bf7eb6167c89d67e1ce481a69aac34fcbad822ca8ccd789b01f294b5d1ee78",
+  "analysis_source_sha256": {
+    "scripts/download_sce_atus_reference.py": "7442c523cf3ce15b064a8091d33fbdcfd0454109ff3233dd3ce5ebc4f7a23890",
+    "scripts/analyze_sce_atus_roles.py": "aff94d8d33ad76bd3c8570d5f219d919a730b5a30e0e84f4119700ef6c28e687",
+    "studies/sce_inflation_expectations/evaluation/atus_roles.py": "38908920a528dd659e0e56dbd406568bf4315a3b2a460fd0b2d4331cbc801f4f",
+    "tests/test_sce_atus_roles.py": "e87113a1f2ef6fc0ef27e141f76e15046337e16bea9aedee3f202dab5c3b327f"
+  }
+}

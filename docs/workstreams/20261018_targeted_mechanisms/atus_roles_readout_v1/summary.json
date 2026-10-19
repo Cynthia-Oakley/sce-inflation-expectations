@@ -1,0 +1,462 @@
+{
+  "status": "completed_external_support_only",
+  "new_api_calls": 0,
+  "new_llm_answers": 0,
+  "new_cost_usd": 0,
+  "new_q9_fits": 0,
+  "sce_truth_read": false,
+  "sce_roles_assigned": false,
+  "run_configuration_changed": false,
+  "annual_role_inventory": {
+    "2016": {
+      "eh_rows": 10210,
+      "basic_respondent_rows": 10493,
+      "all_cps_person_rows": 66332,
+      "joined_eh_rows": 10210,
+      "adult_valid_role_n": 9847,
+      "invalid_or_missing_role_among_adults": 4,
+      "role_question": "EUGROSHP",
+      "weight": "EUFINLWGT",
+      "role_proportions": {
+        "1": {
+          "n": 6399,
+          "weighted_share": 0.545298454790303
+        },
+        "2": {
+          "n": 2296,
+          "weighted_share": 0.3122040497569293
+        },
+        "3": {
+          "n": 1152,
+          "weighted_share": 0.14249749545276766
+        }
+      }
+    },
+    "2022": {
+      "eh_rows": 7894,
+      "basic_respondent_rows": 8136,
+      "all_cps_person_rows": 62896,
+      "joined_eh_rows": 7894,
+      "adult_valid_role_n": 7723,
+      "invalid_or_missing_role_among_adults": 9,
+      "role_question": "EUGROSHP2",
+      "weight": "EUFINLWGT",
+      "role_proportions": {
+        "1": {
+          "n": 719,
+          "weighted_share": 0.10875148324238955
+        },
+        "2": {
+          "n": 916,
+          "weighted_share": 0.1402349194687958
+        },
+        "3": {
+          "n": 1297,
+          "weighted_share": 0.19059996314655414
+        },
+        "4": {
+          "n": 1231,
+          "weighted_share": 0.16324207739621904
+        },
+        "5": {
+          "n": 3560,
+          "weighted_share": 0.39717155674604154
+        }
+      }
+    },
+    "2023": {
+      "eh_rows": 8334,
+      "basic_respondent_rows": 8548,
+      "all_cps_person_rows": 62972,
+      "joined_eh_rows": 8334,
+      "adult_valid_role_n": 8174,
+      "invalid_or_missing_role_among_adults": 5,
+      "role_question": "EUGROSHP2",
+      "weight": "EUFINLWGT",
+      "role_proportions": {
+        "1": {
+          "n": 771,
+          "weighted_share": 0.12270108506067687
+        },
+        "2": {
+          "n": 985,
+          "weighted_share": 0.13750092646075765
+        },
+        "3": {
+          "n": 1440,
+          "weighted_share": 0.190283319862752
+        },
+        "4": {
+          "n": 1214,
+          "weighted_share": 0.156478617631774
+        },
+        "5": {
+          "n": 3764,
+          "weighted_share": 0.39303605098403943
+        }
+      }
+    }
+  },
+  "role_2022_to_2023_validation": {
+    "train_year": 2022,
+    "test_year": 2023,
+    "alpha_fixed": 20,
+    "features": {
+      "common_demographics": [
+        "age_group",
+        "education_group",
+        "income_group",
+        "region"
+      ],
+      "common_plus_labor": [
+        "age_group",
+        "education_group",
+        "income_group",
+        "region",
+        "labor_group"
+      ],
+      "common_plus_labor_family": [
+        "age_group",
+        "education_group",
+        "income_group",
+        "region",
+        "labor_group",
+        "household_size_group",
+        "children_group"
+      ],
+      "role_related_features": [
+        "age_group",
+        "household_size_group",
+        "children_group",
+        "sex_cps"
+      ]
+    },
+    "weighted_scores": {
+      "population": {
+        "log_loss": 1.5043021606377363,
+        "brier": 0.7511323151478148,
+        "rps": 0.19667643395983697,
+        "accuracy": 0.39303605098403943
+      },
+      "common_demographics": {
+        "log_loss": 1.4915581007314453,
+        "brier": 0.7415208938407876,
+        "rps": 0.190431465351951,
+        "accuracy": 0.39652836963869603
+      },
+      "common_plus_labor": {
+        "log_loss": 1.4959672934199553,
+        "brier": 0.7442048040435792,
+        "rps": 0.19193423011707034,
+        "accuracy": 0.3958807085761854
+      },
+      "common_plus_labor_family": {
+        "log_loss": 1.4553306201948566,
+        "brier": 0.7182928158424805,
+        "rps": 0.18482658235099073,
+        "accuracy": 0.39567938462850605
+      },
+      "role_related_features": {
+        "log_loss": 1.3468046641800213,
+        "brier": 0.6661732175362608,
+        "rps": 0.16200840369579264,
+        "accuracy": 0.4380366009509125
+      }
+    },
+    "support": {
+      "common_demographics": {
+        "zero_training_donor_weighted_share": 0.0,
+        "fewer_than_10_training_donors_weighted_share": 0.0,
+        "median_training_cell_n": 100.0
+      },
+      "common_plus_labor": {
+        "zero_training_donor_weighted_share": 0.003071116019467683,
+        "fewer_than_10_training_donors_weighted_share": 0.06537690181677976,
+        "median_training_cell_n": 59.0
+      },
+      "common_plus_labor_family": {
+        "zero_training_donor_weighted_share": 0.032950899428296494,
+        "fewer_than_10_training_donors_weighted_share": 0.37212271822397525,
+        "median_training_cell_n": 20.0
+      },
+      "role_related_features": {
+        "zero_training_donor_weighted_share": 0.0,
+        "fewer_than_10_training_donors_weighted_share": 0.0005082779429663931,
+        "median_training_cell_n": 481.0
+      }
+    },
+    "relative_log_loss_improvement_vs_population": {
+      "population": 0.0,
+      "common_demographics": 0.008471742074004713,
+      "common_plus_labor": 0.005540686861905115,
+      "common_plus_labor_family": 0.03255432434007712,
+      "role_related_features": 0.10469804576425337
+    }
+  },
+  "external_attention_joint_complete_n": 2053,
+  "attention_joint_counts": {
+    "1|1|1": 141,
+    "1|1|2": 13,
+    "1|1|3": 1,
+    "1|1|4": 2,
+    "1|2|2": 13,
+    "1|2|3": 4,
+    "1|2|4": 1,
+    "1|3|1": 1,
+    "1|3|2": 3,
+    "1|3|3": 2,
+    "1|3|5": 2,
+    "1|4|4": 5,
+    "1|4|5": 2,
+    "1|5|5": 2,
+    "2|1|1": 91,
+    "2|1|2": 32,
+    "2|1|3": 3,
+    "2|1|4": 3,
+    "2|2|1": 7,
+    "2|2|2": 37,
+    "2|2|3": 6,
+    "2|2|4": 6,
+    "2|3|2": 4,
+    "2|3|3": 5,
+    "2|3|4": 3,
+    "2|4|4": 6,
+    "2|4|5": 1,
+    "2|5|3": 1,
+    "2|5|4": 1,
+    "2|5|5": 1,
+    "3|1|1": 79,
+    "3|1|2": 37,
+    "3|1|3": 7,
+    "3|1|4": 10,
+    "3|1|5": 1,
+    "3|2|1": 3,
+    "3|2|2": 61,
+    "3|2|3": 11,
+    "3|2|4": 8,
+    "3|2|5": 1,
+    "3|3|1": 1,
+    "3|3|2": 2,
+    "3|3|3": 15,
+    "3|3|4": 3,
+    "3|4|2": 1,
+    "3|4|3": 1,
+    "3|4|4": 10,
+    "3|4|5": 2,
+    "3|5|1": 1,
+    "3|5|5": 3,
+    "4|1|1": 51,
+    "4|1|2": 65,
+    "4|1|3": 21,
+    "4|1|4": 9,
+    "4|1|5": 6,
+    "4|2|1": 4,
+    "4|2|2": 151,
+    "4|2|3": 43,
+    "4|2|4": 21,
+    "4|2|5": 3,
+    "4|3|1": 1,
+    "4|3|2": 15,
+    "4|3|3": 50,
+    "4|3|4": 17,
+    "4|3|5": 3,
+    "4|4|2": 2,
+    "4|4|3": 2,
+    "4|4|4": 57,
+    "4|4|5": 6,
+    "4|5|2": 2,
+    "4|5|4": 2,
+    "4|5|5": 6,
+    "5|1|1": 18,
+    "5|1|2": 24,
+    "5|1|3": 13,
+    "5|1|4": 10,
+    "5|1|5": 3,
+    "5|2|1": 2,
+    "5|2|2": 134,
+    "5|2|3": 49,
+    "5|2|4": 37,
+    "5|2|5": 2,
+    "5|3|2": 17,
+    "5|3|3": 55,
+    "5|3|4": 32,
+    "5|3|5": 5,
+    "5|4|1": 2,
+    "5|4|2": 3,
+    "5|4|3": 16,
+    "5|4|4": 92,
+    "5|4|5": 19,
+    "5|5|1": 1,
+    "5|5|2": 1,
+    "5|5|3": 1,
+    "5|5|4": 4,
+    "5|5|5": 25,
+    "6|1|1": 4,
+    "6|1|2": 6,
+    "6|1|3": 1,
+    "6|1|4": 2,
+    "6|1|5": 2,
+    "6|2|1": 1,
+    "6|2|2": 32,
+    "6|2|3": 9,
+    "6|2|4": 18,
+    "6|2|5": 5,
+    "6|3|2": 7,
+    "6|3|3": 23,
+    "6|3|4": 12,
+    "6|3|5": 3,
+    "6|4|2": 1,
+    "6|4|3": 5,
+    "6|4|4": 57,
+    "6|4|5": 24,
+    "6|5|2": 3,
+    "6|5|3": 3,
+    "6|5|4": 10,
+    "6|5|5": 67
+  },
+  "limits": [
+    "Source-only development, not improvement in SCE simulation MAE or causal role effects.",
+    "2016 three-category and 2022/23 five-category shopping questions are not pooled or equated.",
+    "ATUS current age/sex and household/labor fields used where available; CPS income/education/region observed two-five months earlier.",
+    "CPS family income and ATUS household size are not automatically SCE household/family equivalents.",
+    "Only EH final weights used; no replicate-weight uncertainty or population-level significance is claimed.",
+    "External news data are unweighted 2021 self-reports, not counts or annual distributions.",
+    "Economic coursework is not observed compatibly in SCE; diagnostic cannot be deployed by assuming it from education.",
+    "Browser downloaded current files; original historical release vintages not established, strict B inclusion not approved."
+  ],
+  "seconds": 20.986015332862735,
+  "external_attention": {
+    "follow_news": {
+      "n": 2053,
+      "class_counts": [
+        192,
+        207,
+        257,
+        537,
+        565,
+        295
+      ],
+      "mean_scores": {
+        "population": {
+          "log_loss": 1.6977071051814165,
+          "brier": 0.8006143537563779,
+          "accuracy": 0.2752070141256697,
+          "rps": 0.16505170149129209
+        },
+        "common_demographics": {
+          "log_loss": 1.6817775262937893,
+          "brier": 0.7964364805977908,
+          "accuracy": 0.28381230719272604,
+          "rps": 0.16053531839521115
+        },
+        "common_plus_labor": {
+          "log_loss": 1.6811910827112821,
+          "brier": 0.7959200437567531,
+          "accuracy": 0.2909563240785842,
+          "rps": 0.16021741584547508
+        },
+        "plus_economic_course_diagnostic_only": {
+          "log_loss": 1.660369147208085,
+          "brier": 0.7906801426058374,
+          "accuracy": 0.2914434161389836,
+          "rps": 0.1558204035522864
+        }
+      },
+      "unweighted_category_shares": [
+        0.09352167559668777,
+        0.10082805650267901,
+        0.1251826595226498,
+        0.26156843643448613,
+        0.2752070141256697,
+        0.14369215781782757
+      ]
+    },
+    "know_news_pi": {
+      "n": 2060,
+      "class_counts": [
+        658,
+        670,
+        281,
+        316,
+        135
+      ],
+      "mean_scores": {
+        "population": {
+          "log_loss": 1.467756811190361,
+          "brier": 0.7457581572184585,
+          "accuracy": 0.32524271844660196,
+          "rps": 0.16967617777594746
+        },
+        "common_demographics": {
+          "log_loss": 1.4654596780395537,
+          "brier": 0.7426997558426881,
+          "accuracy": 0.3561488673139159,
+          "rps": 0.16836694463144355
+        },
+        "common_plus_labor": {
+          "log_loss": 1.4667062808551792,
+          "brier": 0.7436282182389934,
+          "accuracy": 0.35453074433656956,
+          "rps": 0.16812037905147825
+        },
+        "plus_economic_course_diagnostic_only": {
+          "log_loss": 1.4524541541396259,
+          "brier": 0.7350448994336567,
+          "accuracy": 0.3843042071197411,
+          "rps": 0.16575141904598054
+        }
+      },
+      "unweighted_category_shares": [
+        0.3194174757281553,
+        0.32524271844660196,
+        0.13640776699029125,
+        0.1533980582524272,
+        0.06553398058252427
+      ]
+    },
+    "know_news_u": {
+      "n": 2060,
+      "class_counts": [
+        408,
+        667,
+        350,
+        439,
+        196
+      ],
+      "mean_scores": {
+        "population": {
+          "log_loss": 1.5402514865116395,
+          "brier": 0.7726023593694201,
+          "accuracy": 0.3237864077669903,
+          "rps": 0.17692025817876034
+        },
+        "common_demographics": {
+          "log_loss": 1.537416247301864,
+          "brier": 0.770998484769602,
+          "accuracy": 0.32556634304207116,
+          "rps": 0.17646162847946503
+        },
+        "common_plus_labor": {
+          "log_loss": 1.5346921142296364,
+          "brier": 0.7701290878390199,
+          "accuracy": 0.32265372168284795,
+          "rps": 0.17572832444320519
+        },
+        "plus_economic_course_diagnostic_only": {
+          "log_loss": 1.528092430750598,
+          "brier": 0.7672745003649588,
+          "accuracy": 0.3339805825242719,
+          "rps": 0.17407075873188604
+        }
+      },
+      "unweighted_category_shares": [
+        0.19805825242718447,
+        0.3237864077669903,
+        0.16990291262135923,
+        0.21310679611650485,
+        0.09514563106796116
+      ]
+    }
+  },
+  "source_summary_sha256": "e55c727b059756c4aa83a0fc2d61df5905ee74c0d48c4fb2186b18f49befe7f4"
+}
