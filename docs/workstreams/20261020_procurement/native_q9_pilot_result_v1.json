@@ -1,0 +1,55 @@
+{
+  "inspected_at_utc": "2026-10-20T03:22:34.782487+00:00",
+  "status": "call_success_but_q9_probability_allocation_not_returned",
+  "paid_tool_attempts": 1,
+  "requested_people": 1,
+  "returned_people": 1,
+  "service_reported_model": "gpt-4o-mini",
+  "provider_identity_independently_verified": false,
+  "service_elapsed_seconds": 15.956,
+  "local_paid_attempt_to_saved_completion_seconds": 17.11,
+  "client_automatic_retries": 0,
+  "input_questionnaire": {
+    "question_count": 1,
+    "option_count": 10,
+    "options_are_genuine_q9_ranges": true,
+    "requested_response": "ten percentage probabilities summing to 100"
+  },
+  "observed_answer": {
+    "q_id": 0,
+    "answer": "A",
+    "mapped_range": "12% or more",
+    "reason_field_present": true,
+    "ten_probabilities_returned": false
+  },
+  "sample": {
+    "source": "index",
+    "requested_count": 1,
+    "count": 1,
+    "virtual_user_count": 0,
+    "sampling_mode": "preserve_joint",
+    "fields": [
+      "GENDER"
+    ]
+  },
+  "attribution": {
+    "project": "Nemotron-Personas-USA",
+    "author": "NVIDIA",
+    "license": "CC-BY-4.0",
+    "url": "https://huggingface.co/datasets/nvidia/Nemotron-Personas-USA",
+    "citation": "NVIDIA Nemotron-Personas-USA, synthetic personas aligned to real-world demographic, geographic and personality trait distributions (CC-BY-4.0).\n",
+    "source_type": "open_dataset"
+  },
+  "estimated_new_cost_usd_email_rate": "0.004",
+  "prior_attempt_reserved_usd_email_rate": "0.040",
+  "combined_reservation_usd_email_rate": "0.044",
+  "approved_combined_cap_usd": "0.10",
+  "actual_charge_usd": null,
+  "cost_note": "No charge, token usage or billing receipt in tool payload. Estimated reservation is not an invoice.",
+  "protocol_sha256": "66b3879faab586b37f9e4822c3d6e9c2e0d3dcf544c17fa0bc389b9924231c72",
+  "request_sha256": "61dd541a883881faadf73ec28b443e29c5cbcfb0a6ea71a66a801f87050359e4",
+  "raw_sha256": "49f96fc30dcc1bc870aefbff662095c4d3758a7c38e5300f9d9c197641687314",
+  "mechanism_claim": "This particular route returned one option and a reason. Server prompt, model response and parsing effects cannot be distinguished without unprocessed model text.",
+  "fit_metrics": null,
+  "next_step": "Confirm official numeric/probability and unprocessed-output interface before additional Q8 or model-comparison trials."
+}
