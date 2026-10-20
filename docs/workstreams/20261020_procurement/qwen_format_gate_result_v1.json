@@ -1,0 +1,92 @@
+{
+  "checked_at_utc": "2026-10-20T05:26:36.411682+00:00",
+  "status": "technical_gate_failed_no_main_expansion",
+  "protocol_sha256": "dbf088b84accaa2450c63dffe239cea732b599ca4db39717b86ba86237718e30",
+  "model": "qwen/qwen-2.5-72b-instruct",
+  "route": "deepinfra/fp8",
+  "months": [
+    202206,
+    202503
+  ],
+  "n_per_month": 12,
+  "arms": [
+    "shared_price",
+    "matched_role",
+    "shuffled_role"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "counts": {
+    "completed_gate_units": 12,
+    "requests": 144,
+    "model_interface_errors": 0,
+    "automatic_model_retries": 0,
+    "prompt_tokens": 334664,
+    "completion_tokens": 21851,
+    "reported_cost_calls": 144,
+    "json_objects": 144,
+    "strict_nested_ten_bin_shape": 144,
+    "ten_finite_numeric_probabilities": 144,
+    "finite_numeric_q8": 144,
+    "normal_stop": 144,
+    "strict_valid": 140
+  },
+  "gate": {
+    "scope": "Technical format only; no truth or fit metrics read",
+    "calls": 144,
+    "valid": 140,
+    "fraction": 0.9722222222222222,
+    "passed": false,
+    "protocol_sha256": "dbf088b84accaa2450c63dffe239cea732b599ca4db39717b86ba86237718e30",
+    "new_api_calls": 0
+  },
+  "by_arm_format_only": {
+    "shared_price": {
+      "requests": 48,
+      "valid": 48
+    },
+    "matched_role": {
+      "requests": 48,
+      "valid": 44,
+      "invalid": 4
+    },
+    "shuffled_role": {
+      "requests": 48,
+      "valid": 48
+    }
+  },
+  "format_error_counts": {
+    "q9_sum_95.0": 3,
+    "q9_sum_105.0": 1
+  },
+  "probability_sum_counts": {
+    "100.0": 137,
+    "100": 3,
+    "95.0": 3,
+    "105.0": 1
+  },
+  "returned_models": [
+    "qwen/qwen-2.5-72b-instruct"
+  ],
+  "returned_providers": [
+    "DeepInfra"
+  ],
+  "api_reported_cost_usd": 0.12921944000000007,
+  "token_based_estimated_or_reserved_cost_usd": 0.12922,
+  "batch_cap_usd": 16,
+  "model_api_span_seconds": 356.517194,
+  "public_catalog_get_failures": 1,
+  "completed_responses_reused_without_resending": 36,
+  "new_api_calls_by_this_report": 0,
+  "probability_repair_or_normalization": false,
+  "fit_metrics": null,
+  "reference_configuration_upgraded": false,
+  "notes": [
+    "Technical gate only; no current human truth read or fitting evaluated.",
+    "Invalid original probabilities preserved. Costs are API-reported, not an account invoice.",
+    "Both passing and failing replies are retained; these tiny group counts do not identify a mechanism effect."
+  ],
+  "report_source_sha256": "e676b13591783361ccd0b932ff8968c2d166db79b59849308e4c2d5377bd1827"
+}

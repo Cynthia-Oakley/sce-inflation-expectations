@@ -1,6 +1,6 @@
 # Qwen采购角色—可见价格实验
 
-2026-10-20。输入与离线引擎检查完成，**尚未新增真实模型调用，等待本批数据范围和预算批准**。这是新的机制对照，不重启旧Qwen迁移包，也没有升级默认模型。
+2026-10-20。本批已获用户批准并完成144次技术检查，140份数值合法（97.22%），未达到99%门槛，**剩余3,312次不启动**。全部嵌套结构正确，失败为3份合计95%、1份105%；未修补或归一化。API报告$0.12921944。以下为执行前冻结方案，实际结果见[技术检查结果](qwen_format_gate_results_v1.md)。
 
 ## 研究问题与三组
 
@@ -47,7 +47,7 @@
 
 新有效包：`outputs/sce_procurement_qwen_trial_20261020_v1/`。48个分段单元完成官方引擎干跑，共3,456脚本动作；模型调用0、费用0。分段只改变调度，完整人与消息集合不变。旧工程包保持零费用/禁止付费执行。
 
-共用执行器增加可选的互斥人口分段和技术门槛；原未分段协议保持原路径。修改前208份源码保存在`outputs/sce_shared_runtime_snapshot_20261020_before_qwen_procurement_v1/`，旧manifest不改。新评价器按分段逐人合并，防重复；主对照显式固定为匹配减打乱。授权前状态为approved=false。
+共用执行器增加可选的互斥人口分段和技术门槛；原未分段协议保持原路径。修改前208份源码保存在`outputs/sce_shared_runtime_snapshot_20261020_before_qwen_procurement_v1/`，旧manifest不改。新评价器按分段逐人合并，防重复；主对照显式固定为匹配减打乱。准备时授权为approved=false；随后已按用户明确回复登记approved=true，原准备快照另存。
 
 批准后，先运行技术段；仅在门槛通过时使用同一授权运行剩余段：
 
@@ -57,4 +57,4 @@ python scripts/run_sce_frozen_trial.py run --folder outputs/sce_procurement_qwen
 python scripts/run_sce_frozen_trial.py evaluate --folder outputs/sce_procurement_qwen_trial_20261020_v1 --out outputs/<fresh_evaluation>
 ```
 
-命令不能绕过授权，main阶段及独立worker均检查技术段。禁止重复执行已运行段；连接失败保留现场，不自动续跑。当前没有启动上述真实命令。离线收据见[qwen_trial_readiness_v1.json](qwen_trial_readiness_v1.json)。
+命令不能绕过授权，main阶段及独立worker均检查技术段。禁止重复执行已运行段；连接失败保留现场，不自动续跑。当前技术段已完成并因未达门槛停止，main未启动、没有运行进程。离线收据是调用前快照，见[qwen_trial_readiness_v1.json](qwen_trial_readiness_v1.json)。

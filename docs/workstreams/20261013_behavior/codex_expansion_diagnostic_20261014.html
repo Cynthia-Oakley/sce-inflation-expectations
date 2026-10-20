@@ -967,4 +967,14 @@ BLS release 2020-09-11T08:30:00-04:00; availability relative to your previous su
 <p>用时9.667秒，522输入/97输出token，API报告$0.00022672。仅验证这一次的结构和数值合法性，不能据单份回答声称稳定率或拟合改善。<a href="../20261020_procurement/output_structure_example_v1.md">完整模板和说明</a> · <a href="../20261020_procurement/output_structure_result_v1.json">真实检查收据</a>。</p>
 <p><a href="../20261020_procurement/official_pool_pilot.md">配置、原始错误与记录</a> · <a href="../20261020_procurement/official_pool_pilot_result_v1.json">技术摘要</a> · <a href="../20261020_procurement/platform_gpt_requirements.md">可转发给平台的确认问题</a> · <a href="../../current_todo.html">当前清单</a></p>
 </section>
+<section id="procurement-qwen-format-results-20261020" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 36px;border-bottom:1px solid #d7dfdc;line-height:1.75">
+<h1>采购角色实验：技术检查完成，概率加总未达门槛</h1>
+<p>2026-10-20。先按冻结安排完成2022年6月、2025年3月各12人的三组、各两遍，共144请求。模型为Qwen2.5-72B，固定OpenRouter→DeepInfra/fp8，温度0.5；完整人口、环境和本人上期信念实际进入提示，三组统一追加无答案数值的结构示例。</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:20px 0"><div><strong style="font-size:28px">144/144</strong><br>嵌套十档与数字字段正确</div><div><strong style="font-size:28px">140/144</strong><br>概率合计合法（97.22%）</div><div><strong style="font-size:28px">$0.1292</strong><br>API报告费用，非账户账单</div><div><strong style="font-size:28px">0</strong><br>后续大样本单元启动数</div></div>
+<p>三份合计95%、一份105%，均保留原答，未归一化、修补或付费重试。全部正常结束，无模型接口错误或供应商回退；模板结构已经匹配，十个数字的加总仍不够可靠。未达到事先固定的99%技术门槛，剩余3,312次没有启动。</p>
+<p>共同背景48/48、角色匹配44/48、同月打乱48/48数值合法。错误集中在匹配组值得记录，但小样本不能证明机制导致算术错误；也不能删除后直接宣称三组公平可比。本轮没有读取本期真人目标或计算拟合成绩，不能据此判定采购角色机制失败。</p>
+<p>首次调度有一次免费模型目录GET连接重置，该单元尚未发送模型请求。已完成36份保留，仅继续从未发送的108份；没有重发已调用的模型请求。144请求的首末时间跨度356.5秒，费用远低于批准上限$16。</p>
+<p>下一步候选是仅给四份错误回答提供问卷合计反馈，让模型自行纠正，并保留初答/纠正答；需要另冻结调用范围，尚未执行。当前没有运行进程，不绕过门槛扩样。</p>
+<p><a href="../20261020_procurement/qwen_format_gate_results_v1.md">完整结果与下一步</a> · <a href="../20261020_procurement/qwen_format_gate_result_v1.json">数值与费用收据</a> · <a href="../../current_todo.html">当前清单</a></p>
+</section>
 </body></html>
