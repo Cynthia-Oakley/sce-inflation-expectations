@@ -16,15 +16,10 @@ from pathlib import Path
 
 from studies.sce_inflation_expectations.population_stratification import cell_key
 
-# batch dir name -> (中文显示名, 说明)
-REGISTRY = {
-    'sce_reference_validation_evaluation_20261017_v1': (
-        '参考12期', '12 个非连续月 × 192 人 × 2 遍，单臂 reference（DeepSeek-Flash）'),
-    'sce_information_exposure_evaluation_20261019_v1': (
-        '新闻量6期', '6 个月 × 96 人 × 2 遍，新闻条数与完整/精简信息块对照（DeepSeek-Flash）'),
-    'sce_procurement_qwen_evaluation_20261020_v2': (
-        'Qwen采购6期', '6 个月 × 96 人 × 2 遍，Qwen-2.5-72B 采购角色与可见价格对照'),
-}
+from studies.sce_inflation_expectations.panel.registry import CATALOG, entry_for
+
+# batch dir name -> (中文显示名, 说明)；已知批次的展示元数据集中在 registry.CATALOG
+REGISTRY = {k: (v['label'], v['note']) for k, v in CATALOG.items()}
 
 PROFILE_FIELDS = ('age_group', 'region', 'state', 'education_group',
                   'household_income_band', 'numeracy', 'employment_status',
@@ -83,8 +78,11 @@ def load_batch(case_path):
     batch = case_path.parent.name
     summary_path = case_path.parent / 'summary.json'
     summary = json.loads(summary_path.read_text()) if summary_path.exists() else {}
-    label, description = REGISTRY.get(batch, (batch, '未登记批次：同契约自动接入'))
-    meta = {'batch': batch, 'label': label, 'registered': batch in REGISTRY,
+    entry = entry_for(batch)
+    label, description = entry['label'], entry['note']
+    meta = {'batch': batch, 'label': label, 'registered': batch in CATALOG,
+            'registry': {k: entry[k] for k in ('section', 'mechanism_group', 'parent',
+                                               'run_status', 'evidence_stage')},
             'description': description, 'summary_path': str(summary_path),
             'protocol': _protocol_summary(summary), 'weight_field': None,
             'n_cases': 0, 'n_records': 0}
