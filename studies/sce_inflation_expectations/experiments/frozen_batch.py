@@ -10,6 +10,7 @@ from pathlib import Path
 import subprocess
 import sys
 from time import perf_counter
+from .staged_rosters import expected_cells, job_n, job_directory, verify_segments, technical_gate
 
 ROOT = Path(__file__).resolve().parents[3]
 OFFICIAL = ROOT.parent/'socioverse2_repo'
@@ -63,8 +64,7 @@ def verify(folder):
             or protocol['budget_cap_usd'] != 0
             or any(protocol[k] != 0 for k in ('price_input_per_mtok', 'price_output_per_mtok'))):
         raise ValueError('Engineering-only packages require no live model, destination or spend')
-    expected = Counter((month, arm, repeat) for month in protocol['months']
-                       for arm in protocol['arms'] for repeat in protocol['generation_repeats'])
+    expected = expected_cells(protocol)
     if (type(protocol['n_per_month']) is not int or protocol['n_per_month'] < 1
             or not math.isfinite(protocol['budget_cap_usd'])
             or (protocol['budget_cap_usd'] != 0 if engineering_only else protocol['budget_cap_usd'] <= 0)
@@ -76,13 +76,14 @@ def verify(folder):
     jobs = manifest['jobs']
     for job in jobs:
         effective_temperature(protocol, job)
-    if Counter((j['month'], j['arm'], j['repeat']) for j in jobs) != expected:
+    if Counter((j['month'], j['arm'], j['repeat'], j.get('segment')) for j in jobs) != expected:
         raise ValueError('Incomplete or duplicated configured cells')
+    verify_segments(folder, protocol, jobs)
     if len({j['run_id'] for j in jobs}) != len(jobs) or any(Path(j['run_id']).name != j['run_id'] for j in jobs):
         raise ValueError('Unsafe/nonunique run identifiers')
     if any(not math.isfinite(j['cap_usd']) or (j['cap_usd'] != 0 if engineering_only else j['cap_usd'] <= 0) for j in jobs):
         raise ValueError('Finite job caps required; zero only for engineering-only jobs')
-    expected_calls = 0 if engineering_only else len(jobs)*protocol['n_per_month']
+    expected_calls = 0 if engineering_only else sum(job_n(protocol, j) for j in jobs)
     if engineering_only and protocol.get('engineering_decision_count') != len(jobs)*protocol['n_per_month']:
         raise ValueError('Engineering decisions and paid requests must be counted separately')
     if (protocol['retry_max'] != 0 or protocol['planned_calls'] != expected_calls
@@ -149,6 +150,9 @@ def worker(folder, index, scripted):
         raise ValueError('Reused completed job must never be generated again')
     if not scripted:
         authorize(folder, manifest, protocol)
+        if manifest['jobs'][index].get('phase') == 'main':
+            if not technical_gate(folder, manifest, protocol, ROOT)['passed']:
+                raise ValueError('Technical gate failed; main workers cannot bypass it')
     sys.path.insert(0, str(OFFICIAL))
     from socioverse.engine import build_simulator
     from socioverse.schemas import EnvironmentBundle, PopulationBundle, SimulationConfig
@@ -161,7 +165,7 @@ def worker(folder, index, scripted):
         from ..q8_delta_runtime import Q8DeltaDecision as FrozenPromptDecision, REF, PROMPT
     from ..model import SCEEnvironmentProvider
     from ..prior_belief_experiment import message_hash
-    job = manifest['jobs'][index]; month = folder/str(job['month'])
+    job = manifest['jobs'][index]; month = job_directory(folder, protocol, job)
     run_id = job['run_id']+('-engineering' if scripted else '')
     audit = ROOT/'outputs/local_runs'/run_id; audit.mkdir(parents=True, exist_ok=False)
     if protocol.get('transport') == 'openrouter_locked' and not scripted:
@@ -169,7 +173,7 @@ def worker(folder, index, scripted):
     env = EnvironmentBundle.model_validate_json((month/'environment.json').read_text())
     pop = PopulationBundle.model_validate_json((month/'population.json').read_text())
     cfg = SimulationConfig.model_validate_json((month/'simulation.json').read_text())
-    if len(pop.personas) != protocol['n_per_month'] or cfg.n_steps != 1:
+    if len(pop.personas) != job_n(protocol, job) or cfg.n_steps != 1:
         raise ValueError('Single-month configured roster required')
     prompt_file = month/f"prompts_{job['arm']}.json"
     cfg.seed = job['seed']; cfg.decision_ref = REF
@@ -216,14 +220,24 @@ def worker(folder, index, scripted):
         dump(audit/'cost_ledger.json', cost)
 
 
-def dispatch(folder, scripted=True, workers=4):
+def dispatch(folder, scripted=True, workers=4, phase=None):
     folder = Path(folder).resolve(); manifest, protocol = verify(folder)
     if not 1 <= workers <= 4:
         raise ValueError('Workers must be 1..4')
     if not scripted:
         authorize(folder, manifest, protocol)
+        if 'roster_segments' in protocol:
+            if phase not in ('gate', 'main'):
+                raise ValueError('Staged real batch requires explicit gate or main phase')
+            if phase == 'main':
+                check = technical_gate(folder, manifest, protocol, ROOT)
+                if not check['passed']:
+                    raise ValueError('Technical gate failed; do not expand or repair replies')
+    if phase is not None and (scripted or 'roster_segments' not in protocol):
+        raise ValueError('Phase selection is reserved for staged live batches')
     reused = protocol.get('reused_completed_jobs', {})
-    pending = [i for i,j in enumerate(manifest['jobs']) if j['run_id'] not in reused]
+    pending = [i for i,j in enumerate(manifest['jobs']) if j['run_id'] not in reused
+               and (phase is None or j.get('phase') == phase)]
     for i in pending:
         job = manifest['jobs'][i]
         if (ROOT/'outputs/local_runs'/(job['run_id']+('-engineering' if scripted else ''))).exists():
@@ -253,8 +267,11 @@ def dispatch(folder, scripted=True, workers=4):
             done, _ = wait(active, return_when=FIRST_COMPLETED)
             for future in done:
                 active.pop(future); result = future.result(); results.append(result); failed |= bool(result['exit_code'])
-            dump(folder/('engineering_checks.json' if scripted else 'real_dispatch.json'), results)
+            name = 'engineering_checks.json' if scripted else f'real_dispatch_{phase}.json' if phase else 'real_dispatch.json'
+            dump(folder/name, results)
             while not failed and next_index < len(pending) and len(active) < workers:
                 index = pending[next_index]; active[pool.submit(one, index)] = index; next_index += 1
     if failed:
         raise RuntimeError('Batch stopped; preserve results, no automatic retry')
+    if not scripted and phase == 'gate':
+        dump(folder/'technical_gate.json', technical_gate(folder, manifest, protocol, ROOT))

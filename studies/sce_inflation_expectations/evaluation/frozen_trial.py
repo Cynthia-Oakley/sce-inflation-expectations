@@ -11,6 +11,7 @@ from . import cognition as shared
 from .metrics import quantile, wasserstein1
 from ..experiments.frozen_batch import ROOT, verify, read_json, dump, sha, effective_temperature
 from ..model import parse_sce_response
+from ..experiments.staged_rosters import job_directory, job_n
 
 TRUTH = ROOT/'outputs/sce_reference_validation_evaluation_20261017_v1/cases_private.json'
 
@@ -93,9 +94,9 @@ def evaluate(folder, out):
         expected_protocol = protocol.get('reused_completed_jobs', {}).get(job['run_id'], manifest['protocol_sha256'])
         if receipt['status'] != 'completed' or receipt['llm_kind'] != 'openai' or receipt['protocol_sha256'] != expected_protocol:
             raise ValueError('Complete real run required; engineering outputs are not experiments')
-        previews = read_json(folder/str(job['month'])/f"prompts_{job['arm']}.json")['rows']
+        previews = read_json(job_directory(folder, protocol, job)/f"prompts_{job['arm']}.json")['rows']
         calls = [json.loads(line) for line in (audit/'llm_calls.jsonl').read_text().splitlines() if line]
-        if len(calls) != protocol['n_per_month'] or len({c['agent_id'] for c in calls}) != len(calls):
+        if len(calls) != job_n(protocol, job) or len({c['agent_id'] for c in calls}) != len(calls):
             raise ValueError('One audited call per person required')
         calls = {c['agent_id']: c for c in calls}
         if set(calls) != set(previews): raise ValueError('Call/preview roster mismatch')
@@ -108,7 +109,7 @@ def evaluate(folder, out):
         db = duckdb.connect(str(audit/'study.duckdb'), read_only=True)
         try: rows = db.execute("SELECT agent_id, action_payload FROM panel WHERE step=1 AND action_kind='sce_answer'").fetchall()
         finally: db.close()
-        if len(rows) != protocol['n_per_month'] or len({aid for aid, _ in rows}) != len(rows): raise ValueError('Incomplete action roster')
+        if len(rows) != job_n(protocol, job) or len({aid for aid, _ in rows}) != len(rows): raise ValueError('Incomplete action roster')
         for aid, payload in rows:
             payload = json.loads(payload) if isinstance(payload, str) else payload
             call = calls[aid]; raw = call.get('raw_response_text') or ''
@@ -144,7 +145,10 @@ def evaluate(folder, out):
                 raise ValueError('Raw reply/action point differs')
             bins = [payload[f'q9_bin{i}'] for i in range(1, 11)]
             score = score_bins(tuple(bins)) if payload['validation_status'] == 'valid' else {'mean': None, 'iqr': None, 'zero_deflation': None}
-            actions[job['month'], job['repeat'], aid, job['arm']] = {**score, 'q9_bins': bins,
+            action_key = job['month'], job['repeat'], aid, job['arm']
+            if action_key in actions:
+                raise ValueError('Duplicate person across roster segments')
+            actions[action_key] = {**score, 'q9_bins': bins,
                 'point': (round(independent_q8,4) if independent_q8 is not None else None) if q8_only
                     else payload['point_pct'] if parsed is not None else None,
                 'validation_status': payload['validation_status']}
@@ -171,13 +175,17 @@ def evaluate(folder, out):
     valid = all(coverage[arm]['valid']/expected >= .99 for arm in arms)
     scorable = {arm: sum(shared.finite(r['arms'][arm].get('mean')) and shared.finite(r['arms'][arm].get('iqr')) for r in cases) for arm in arms}
     valid = valid and all(n/expected >= .99 for n in scorable.values())
+    primary_arms = protocol.get('primary_comparison', arms[:2])
+    extra_pairs = protocol.get('additional_comparisons',
+        ([['baseline', arms[2]], [arms[2], arms[1]]] if len(arms) == 3 else []))
     result = {'status': 'completed_frozen_block_evaluation', 'protocol': protocol,
         'new_api_calls': 0, 'estimated_actual_cost_usd': cost, 'coverage': {k: dict(v) for k, v in coverage.items()},
         'common_q9_person_months': len(support9), 'common_q8_person_months': len(support8), 'scorable_counts': scorable,
         'arms': summaries, 'primary_view': 'auxiliary_survey_weighted: its survey_weight is frozen design-survey weight here.',
-        'paired_intervals': paired_intervals(cases, arms[:2], months, repeats, support9) if valid else None,
+        'primary_comparison': primary_arms,
+        'paired_intervals': paired_intervals(cases, primary_arms, months, repeats, support9) if valid else None,
         'additional_paired_intervals': {f'{other}_minus_{base}': paired_intervals(cases, [base, other], months, repeats, support9)
-            for base, other in ([('baseline', arms[2]), (arms[2], arms[1])] if len(arms) == 3 else [])} if valid else None,
+            for base, other in extra_pairs} if valid else None,
         'accuracy_descriptive_only': not valid, 'automatic_upgrade': False,
         'evaluation_seconds': perf_counter()-started, 'scorer_cache_distinct_vectors': score_bins.cache_info().currsize,
         'notes': ['No correction of invalid replies. Human scores are reused from frozen evaluation; new model vectors use the same scorer.',

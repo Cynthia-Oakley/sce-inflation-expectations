@@ -1,0 +1,29 @@
+{
+  "mechanism": "procurement_price_qwen",
+  "source_preparation": "outputs/sce_procurement_price_views_20261020_v3",
+  "allocation_seed": 20261019,
+  "months": [202009, 202109, 202206, 202312, 202410, 202503],
+  "n_per_month": 96,
+  "arms": ["shared_price", "matched_role", "shuffled_role"],
+  "generation_repeats": [1, 2],
+  "transport": "openrouter_locked",
+  "destination": "https://openrouter.ai/api/v1",
+  "model": "qwen/qwen-2.5-72b-instruct",
+  "route": "deepinfra/fp8",
+  "provider_metadata": "data/raw/mcp_checks/2026-10-20_qwen_procurement_free_v2/qwen_endpoints.json",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "retry_max": 0,
+  "price_input_per_mtok": 0.36,
+  "price_output_per_mtok": 0.4,
+  "budget_cap_usd": 16,
+  "request_extra_body": {
+    "provider": {
+      "order": ["deepinfra/fp8"],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "max_price": {"prompt": 0.36, "completion": 0.4}
+    }
+  }
+}

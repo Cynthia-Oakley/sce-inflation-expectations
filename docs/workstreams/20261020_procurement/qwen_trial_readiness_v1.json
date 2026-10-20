@@ -1,0 +1,43 @@
+{
+  "checked_at_utc": "2026-10-20T05:17:27.511297+00:00",
+  "status": "prepared_offline_awaiting_explicit_batch_budget_and_scope",
+  "protocol_sha256": "dbf088b84accaa2450c63dffe239cea732b599ca4db39717b86ba86237718e30",
+  "model": "qwen/qwen-2.5-72b-instruct",
+  "destination": "https://openrouter.ai/api/v1",
+  "route": "deepinfra/fp8",
+  "months": [
+    202009,
+    202109,
+    202206,
+    202312,
+    202410,
+    202503
+  ],
+  "n_per_month": 96,
+  "person_months": 576,
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "allocation_seed": 20261019,
+  "planned_calls": 3456,
+  "gate_calls_included": 144,
+  "remaining_calls": 3312,
+  "offline_units": 48,
+  "scripted_decisions": 3456,
+  "actual_input_hashes_match": true,
+  "targeted_tests_passed": 23,
+  "new_model_calls": 0,
+  "new_model_cost_usd": 0,
+  "estimated_cost_usd": 3.32541846,
+  "conservative_reservation_usd": 14.332412000000005,
+  "gate_conservative_reservation_usd": 0.600822,
+  "budget_cap_usd": 16,
+  "authorization_approved": false,
+  "protected_files_unchanged": 15,
+  "automatic_retries": 0,
+  "automatic_provider_fallback": false,
+  "reference_default_upgraded": false,
+  "research_scope": "A-line conditional returner development; not independent validation",
+  "preparation": "outputs/sce_procurement_qwen_trial_20261020_v1"
+}

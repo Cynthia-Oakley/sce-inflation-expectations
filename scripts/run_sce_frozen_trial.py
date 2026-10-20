@@ -19,6 +19,7 @@ def main():
     parser.add_argument('--workers', type=int, default=4)
     parser.add_argument('--job-index', type=int)
     parser.add_argument('--scripted', action='store_true')
+    parser.add_argument('--phase', choices=['gate', 'main'])
     args = parser.parse_args()
     if args.action == 'prepare':
         if args.config is None: parser.error('prepare requires --config')
@@ -41,6 +42,8 @@ def main():
             from studies.sce_inflation_expectations.experiments.model_migration import prepare_completion as prepare
         elif config['mechanism'] == 'procurement_price_engineering':
             from studies.sce_inflation_expectations.experiments.procurement_prices import prepare
+        elif config['mechanism'] == 'procurement_price_qwen':
+            from studies.sce_inflation_expectations.experiments.procurement_qwen import prepare
         else:
             parser.error('Unknown mechanism adapter')
         prepare(args.folder, config); return
@@ -49,6 +52,6 @@ def main():
         from studies.sce_inflation_expectations.evaluation.frozen_trial import evaluate
         evaluate(args.folder, args.out); return
     if args.action == 'worker': return worker(args.folder, args.job_index, args.scripted)
-    dispatch(args.folder, args.action == 'dry-run', args.workers)
+    dispatch(args.folder, args.action == 'dry-run', args.workers, args.phase)
 
 if __name__ == '__main__': main()
