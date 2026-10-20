@@ -23,6 +23,7 @@ from studies.sce_inflation_expectations.model import validate_sce_bins
 from studies.sce_inflation_expectations.model_counterfactual import preflight, request_bound, billing, guarded_payload
 from studies.sce_inflation_expectations.news_label_trial import dotenv_values
 from studies.sce_inflation_expectations.platform_survey_pilot import write_new, sha, now
+from studies.sce_inflation_expectations.output_format_example import FORMAT_VERSION, append_format_example
 
 BASE = "https://openrouter.ai/api/v1"
 MODEL = "qwen/qwen-2.5-72b-instruct"
@@ -39,12 +40,17 @@ def prepare(folder):
                        "response_format": {"type": "json_object"},
                        "provider": {"order": [ROUTE], "allow_fallbacks": False, "require_parameters": True},
                        "messages": [{"role": "user", "content": text}]}}
+    row["payload"]["messages"] = append_format_example(
+        row["payload"]["messages"], include_point=False, include_reason=False)
     payload = guarded_payload(row)
     metadata = ROOT / "data/raw/mcp_checks/2026-10-20_openrouter_format_free_v1/qwen_endpoints.json"
     preflight(row, json.loads(metadata.read_text()))
     bound = request_bound(payload, .36, .4)
     old_receipt = ROOT / "docs/workstreams/20261019_advisor_followup/qwen_migration_results_v1/run_receipt.json"
     old_reservation = json.loads(old_receipt.read_text())["estimated_usage_cost_usd"]
+    completed_format = ROOT / "docs/workstreams/20261020_procurement/openrouter_q9_format_result_v1.json"
+    if completed_format.exists():
+        old_reservation += json.loads(completed_format.read_text())["api_reported_cost_usd"]
     if bound > .01 or old_reservation + bound > 1.0:
         raise ValueError("Existing cumulative budget or tiny-probe reservation exceeded")
     folder.mkdir(parents=True, exist_ok=False)
@@ -58,9 +64,11 @@ def prepare(folder):
         "original_approved_openrouter_cap_usd": 1.0, "request_reservation_usd": bound,
         "new_input": "public BLS context and Q9 question/ranges; no persona, no SCE records/history/answers",
         "candidate_sha256": sha(candidate_file), "provider_metadata_sha256": sha(metadata),
+        "output_format_version": FORMAT_VERSION, "format_example_contains_numeric_answers": False,
         "source_sha256": {str(p.relative_to(ROOT)): sha(p) for p in [
             ROOT / "studies/sce_inflation_expectations/model_counterfactual.py",
-            ROOT / "studies/sce_inflation_expectations/model.py"]},
+            ROOT / "studies/sce_inflation_expectations/model.py",
+            ROOT / "studies/sce_inflation_expectations/output_format_example.py"]},
         "limits": "Different model, model-facing prompt and JSON mode from MCP; no causal wrapper comparison or fit claim."})
     return {"status": "prepared_offline", "new_max_requests": 1, "request_reservation_usd": bound}
 

@@ -61,6 +61,8 @@
 
 运行包：`outputs/sce_openrouter_q9_format_20261020_v1/`。入口`scripts/check_sce_openrouter_q9_format.py`复用已有路由、费用上界和Q9校验；本批已执行，不再运行其run命令。旧Qwen研究轨迹和本次初始错误记录均未改写。公开结果：[openrouter_q9_format_result_v1.json](openrouter_q9_format_result_v1.json)。
 
+用户随后要求采用不含答案数值的结构示例，已落地[完整模板](output_structure_example_v1.md)。共用模块生成Q8/Q9或仅Q9版本，所有十个bin展开，尖括号占位符须由模型替换为未加引号的数字。新公开格式prepare已接入，包为`outputs/sce_openrouter_q9_structure_preparation_20261020_v1/`，3项离线检查通过、0新增API，不能称实际遵循率改善。旧执行脚本预先保存到`outputs/sce_openrouter_format_source_snapshot_20261020_before_template_v1/`；旧提示/回包/协议没有改写，正式采购角色输入待新批次对各组统一封存。
+
 ## 当前事实
 
 - 服务：user_pool_mcp 1.27.0；实际llm配置gpt-4o-mini；并未确认执行GPT-4o。

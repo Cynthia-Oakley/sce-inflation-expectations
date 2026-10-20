@@ -56,6 +56,8 @@
 
 用户再要求试OpenRouter Qwen/LLaMA，已执行独立公开格式检查1次：`outputs/sce_openrouter_q9_format_20261020_v1/`，Qwen2.5-72B/DeepInfra-fp8、温度0.5、JSON模式、max_tokens1024、无重试/供应商回退。收到十概率[15,25,30,15,8,4,2,0,0,1]、合计100，模型/供应商匹配，6.632s、API报告$0.00015372。题目写q9.bin1，模型用平铺键；原读取器预期嵌套报KeyError，原inspection保留；零API确定性字段嵌套后共用校验通过，未改概率或归一化。新读数`offline_key_readout.json`，公开`openrouter_q9_format_result_v1.json`。新入口`check_sce_openrouter_q9_format.py`复用原路由/预算/Q9检查；不重启旧批。沿用旧OpenRouter$1累计上限、此前估$0.200809，本次$0.01子上限；不与MCP$0.10混账。本次仅格式可行，不证明拟合更好、99%稳定或MCP限制原因。无任务运行，下一步可将本地官方引擎＋Qwen作为采购角色机制候选，另冻结新批次。
 
+用户要求的无答案数值结构示例已实现于`output_format_example.py`，完整Q8/Q9及仅Q9模板见[阅读版](workstreams/20261020_procurement/output_structure_example_v1.md)。十个bin全展开、不含概率答案；追加时不改变原消息，3项定向检查通过。新Qwen公开prepare已接入：`outputs/sce_openrouter_q9_structure_preparation_20261020_v1/`，未授权/执行、0新增API；只确认格式准备，不称实际遵循率提高。修改已执行探针脚本前保存旧源至`outputs/sce_openrouter_format_source_snapshot_20261020_before_template_v1/`，旧协议/答卷未改。当前原采购输入仍冻结不覆盖，下一批需三组统一追加同版模板并另封存，避免混淆机制效应。
+
 已有ATUS 2016/2022/2023文件和字典在`data/raw/behavior_references/2026-10-19_atus_roles_v2/`及同日supplement目录；不要重复下载。2022→2023采购角色预测支持不等于SCE预测收益；whole-residence人数、未知儿童/搬家/信息年龄按原规则保留。金融决策者不等于购物者，CE汽油支出不等于本人驾车。
 
 本地路由补查与BLS分类表解析已完成，不重复抓取。食品角色只说明采购分工，不识别本人价格；0/1/3/6/6可见条数是实验假设，不能按结果反选。六期仍是开发期，尚未登记独立验证月份。新闻随机分配保留独立验证候选，不按六期真值调篇数或挑分配种子。
