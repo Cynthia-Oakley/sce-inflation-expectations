@@ -47,7 +47,7 @@ def bin_labels():
     raise ValueError("Missing frozen Q9 labels")
 
 
-def check_request(request, schema):
+def check_request(request, schema, variant="legacy_empty"):
     """Bounded checks for this exact request, not a general JSON Schema engine."""
     properties = schema["properties"]
     if set(request) - set(properties) or set(schema["required"]) - set(request):
@@ -60,14 +60,17 @@ def check_request(request, schema):
             raise ValueError(f"Wrong type: {field}")
         if kind == "integer" and not spec.get("minimum", value) <= value <= spec.get("maximum", value):
             raise ValueError(f"Out of schema range: {field}")
-    if (request["distributions"] != {"GENDER": {"Female": 50, "Male": 50}} or
+    native = variant == "native_q9_options"
+    targets = {"GENDER": {"Female": 100}} if native else {"GENDER": {"Female": 50, "Male": 50}}
+    if (request["distributions"] != targets or
         request["seed"] != 20261020 or request["prompt_language"] != "en" or
-        request["sampling_mode"] != "preserve_joint" or request["max_workers"] != 2 or
+        request["sampling_mode"] != "preserve_joint" or request["max_workers"] != (1 if native else 2) or
         len(request["questionnaire"]) != 1):
         raise ValueError("Unexpected pilot sampling/questionnaire scope")
     question = request["questionnaire"][0]
-    if set(question) != {"question", "options"} or not isinstance(question["question"], str) or question["options"] != []:
-        raise ValueError("Unexpected open-text carrier")
+    expected_options = bin_labels() if native else []
+    if set(question) != {"question", "options"} or not isinstance(question["question"], str) or question["options"] != expected_options:
+        raise ValueError("Unexpected questionnaire/options carrier")
 
 
 def prepare(folder):
@@ -77,39 +80,22 @@ def prepare(folder):
     schema = next(t["inputSchema"] for t in cache["tools"] if t["name"] == TOOL)
     price_path = ROOT / "outputs/sce_procurement_price_views_20261020_v3/category_prices.json"
     price = json.loads(price_path.read_text())["202206"]["food_at_home"]
-    bins = "\n".join(f"bin{i}: {label}" for i, label in enumerate(bin_labels(), 1))
-    question = (
-        "Please answer as the household respondent described by your assigned profile. "
-        "The survey date is June 10, 2022. Consider only information available by that date.\n"
-        "Public background: the BLS release of June 10, 2022 reports that US food-at-home "
-        f"prices in May 2022 increased {price['yoy_nsa_percent']}% from May 2021 and "
-        f"{price['mom_nsa_percent']}% from April 2022 (both not seasonally adjusted). "
-        "This describes one price category, not the future overall inflation rate.\n\n"
-        "Q8: What do you expect the overall inflation or deflation rate to be over the "
-        "next 12 months? Give a signed percentage: positive for inflation, negative "
-        "for deflation.\n"
-        "Q9: What is the percent chance that the overall inflation or deflation rate "
-        "over the next 12 months falls in each of the following ten ranges?\n"
-        f"{bins}\n"
-        "Each probability must be between 0 and 100 and the ten probabilities must "
-        "sum to 100. Return a single JSON object, with no surrounding explanation: "
-        '{"point_pct": NUMBER, "q9": {"bin1": NUMBER, "bin2": NUMBER, '
-        '"bin3": NUMBER, "bin4": NUMBER, "bin5": NUMBER, "bin6": NUMBER, '
-        '"bin7": NUMBER, "bin8": NUMBER, "bin9": NUMBER, "bin10": NUMBER}}.'
-    )
-    request = {"platform_id": "nemotron_usa", "distributions": {"GENDER": {"Female": 50, "Male": 50}},
-               "user_count": 10, "questionnaire": [{"question": question, "options": []}],
-               "prompt_language": "en", "max_workers": 2, "seed": 20261020,
+    candidate_path = ROOT / "docs/workstreams/20261020_procurement/native_questionnaire_candidates_v1.json"
+    candidate = json.loads(candidate_path.read_text())["q9_candidate"]
+    request = {"platform_id": "nemotron_usa", "distributions": {"GENDER": {"Female": 100}},
+               "user_count": 1, "questionnaire": [candidate],
+               "prompt_language": "en", "max_workers": 1, "seed": 20261020,
                "allow_virtual_users": False, "sampling_mode": "preserve_joint"}
-    check_request(request, schema)
+    check_request(request, schema, "native_q9_options")
     folder.mkdir(parents=True, exist_ok=False)
     write_new(folder / "request.json", request)
     write_new(folder / "tool_schema.json", schema)
     protocol = {"created_at_utc": now(), "purpose": "technical compatibility only; no fit claim",
                 "tool": TOOL, "destination_host": HOST, "expected_server_model": "gpt-4o-mini",
                 "request_sha256": sha(folder / "request.json"), "request_count": 1,
-                "user_count": 10, "automatic_retries": 0, "unit_price_usd_email": "0.004",
-                "estimated_usd_email": "0.040", "budget_cap_usd": "0.10",
+                "probe_variant": "native_q9_options", "user_count": 1,
+                "automatic_retries": 0, "unit_price_usd_email": "0.004",
+                "estimated_usd_email": "0.004", "prior_reserved_usd_email": "0.040", "budget_cap_usd": "0.10",
                 "remote_budget_enforcement": False, "remote_internal_retries": "not exposed",
                 "price_note": "Organizer email rate, not a verified current invoice. No remote budget parameter.",
                 "billing_evidence": "docs/LOCAL_RUNTIME_ACCEPTANCE.md",
@@ -117,21 +103,22 @@ def prepare(folder):
                 "input_scope": "public BLS price fact and questionnaire only; no SCE person/history/answers",
                 "population": "platform Nemotron-Personas-USA synthetic pool; CC-BY-4.0; not SCE",
                 "pool_attribution": "NVIDIA, https://huggingface.co/datasets/nvidia/Nemotron-Personas-USA",
-                "sampling_note": "50/50 gender for compatibility only; not nationally representative",
-                "questionnaire_note": "Q8/Q9 in one open-text carrier, not the original survey UI; support unknown",
+                "sampling_note": "One female synthetic respondent for format compatibility only; no fit claim",
+                "questionnaire_note": "Q9 ten genuine range options with a probability-allocation request; response support unverified",
                 "time_boundary_note": "Historical role play, not a blind forecast; training knowledge not excluded",
                 "sources": {"capability_path": str(evidence.relative_to(ROOT)), "capability_sha256": sha(evidence),
                             "prices_path": str(price_path.relative_to(ROOT)), "prices_sha256": sha(price_path),
-                            "price_fact": price},
+                            "price_fact": price, "candidate_path": str(candidate_path.relative_to(ROOT)),
+                            "candidate_sha256": sha(candidate_path)},
                 "code_sha256": sha(Path(__file__))}
     write_new(folder / "protocol.json", protocol)
     write_new(folder / "readiness.json", {"protocol_sha256": sha(folder / "protocol.json"),
         "request_schema_valid": True, "supported_gender_labels_checked_free": True,
         "per_person_raw_answers_supported": "advertised, not yet demonstrated",
         "open_text_and_q9_supported": "not yet demonstrated", "paid_calls": 0,
-        "estimated_usd_email": "0.040", "budget_cap_usd": "0.10"})
-    return {"status": "prepared_no_paid_calls", "folder": str(folder), "people": 10,
-            "estimated_usd": "0.040", "cap_usd": "0.10", "protocol_sha256": sha(folder / "protocol.json")}
+        "estimated_usd_email": "0.004", "prior_reservation_plus_new_usd": "0.044", "budget_cap_usd": "0.10"})
+    return {"status": "prepared_no_paid_calls", "folder": str(folder), "people": 1,
+            "estimated_usd": "0.004", "cap_usd": "0.10", "protocol_sha256": sha(folder / "protocol.json")}
 
 
 def validate_approval(folder):
@@ -144,15 +131,30 @@ def validate_approval(folder):
         raise ValueError("Explicit approval for this exact protocol is required")
     cap = Decimal(protocol["budget_cap_usd"])
     reservation = Decimal(protocol["unit_price_usd_email"]) * request["user_count"]
+    reservation += Decimal(protocol.get("prior_reserved_usd_email", "0"))
+    expected_count = 1 if protocol.get("probe_variant") == "native_q9_options" else 10
     if (Decimal(authorization["cap_usd"]) < cap or cap > Decimal("0.10") or reservation > cap or
         protocol["automatic_retries"] != 0 or protocol["request_count"] != 1 or
         protocol["tool"] != TOOL or protocol["destination_host"] != HOST or
-        protocol["user_count"] != 10 or request["user_count"] != 10 or
+        protocol["user_count"] != expected_count or request["user_count"] != expected_count or
         request["platform_id"] != "nemotron_usa" or request["allow_virtual_users"] is not False or
         protocol["request_sha256"] != sha(folder / "request.json") or
         protocol["code_sha256"] != sha(Path(__file__))):
         raise ValueError("Pilot scope, hash, or budget mismatch")
     return protocol, request
+
+
+def classify_response(response):
+    if response.get("isError"):
+        return "tool_error_no_retry"
+    for content in response.get("content", []):
+        try:
+            value = json.loads(content.get("text", ""))
+        except (TypeError, ValueError):
+            continue
+        if isinstance(value, dict) and value.get("status") in {"error", "failed"}:
+            return "application_error_no_retry"
+    return "response_received_needs_answer_validation"
 
 
 def execute(folder):
@@ -177,15 +179,15 @@ def execute(folder):
     actual_model = capability.get("llm", {}).get("model")
     if actual_model != protocol["expected_server_model"] or capability.get("llm", {}).get("mock_enabled") is not False:
         raise ValueError("Server model/config changed; stop before paid call")
-    write_new(folder / "paid_attempt_started.json", {"at_utc": now(), "respondents_reserved": 10,
+    write_new(folder / "paid_attempt_started.json", {"at_utc": now(), "respondents_reserved": request["user_count"],
               "reservation_usd_email_rate": protocol["estimated_usd_email"], "automatic_retries": 0})
     try:
         # call_tool() truncates non-JSON text: rpc() retains ALL content blocks/JSONL.
         response = sanitize(client.rpc("tools/call", {"name": TOOL, "arguments": request}), key)
         write_new(folder / "raw_response.json", response)
-        status = "tool_error_no_retry" if response.get("isError") else "response_received_needs_answer_validation"
+        status = classify_response(response)
         result = {"status": status, "finished_at_utc": now(), "paid_tool_attempts": 1,
-                  "requested_respondents": 10, "server_configured_model": actual_model,
+                  "requested_respondents": request["user_count"], "server_configured_model": actual_model,
                   "raw_sha256": sha(folder / "raw_response.json"), "automatic_retries": 0,
                   "estimated_usd_email_rate_not_invoice": protocol["estimated_usd_email"],
                   "actual_charge_usd": None, "model_per_response_identity_verified": False}

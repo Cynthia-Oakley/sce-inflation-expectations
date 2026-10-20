@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare/run the explicitly approved ten-person official MCP format pilot."""
+"""Prepare/run an explicitly approved official MCP format pilot."""
 from pathlib import Path
 import sys
 

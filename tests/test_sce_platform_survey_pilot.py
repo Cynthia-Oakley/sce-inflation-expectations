@@ -70,3 +70,23 @@ def test_bin_order_reuses_reference():
     assert len(labels) == 10
     assert labels[0] == "12% or more"
     assert "deflation" in labels[-1]
+
+
+def test_application_error_is_not_success_when_outer_flag_false():
+    raw = {"isError": False, "content": [{"type": "text", "text": json.dumps({
+        "status": "error", "message": "questionnaire options invalid"})}]}
+    assert pilot.classify_response(raw) == "application_error_no_retry"
+
+
+def test_native_reserves_prior_attempt_against_same_cap(tmp_path):
+    folder = fixture_folder(tmp_path)
+    request = json.loads((folder / "request.json").read_text())
+    request["user_count"] = 1
+    (folder / "request.json").write_text(json.dumps(request))
+    p = json.loads((folder / "protocol.json").read_text())
+    p.update(probe_variant="native_q9_options", user_count=1,
+             request_sha256=pilot.sha(folder / "request.json"), prior_reserved_usd_email="0.099")
+    (folder / "protocol.json").write_text(json.dumps(p))
+    approve(folder)
+    with pytest.raises(ValueError, match="budget mismatch"):
+        pilot.validate_approval(folder)
