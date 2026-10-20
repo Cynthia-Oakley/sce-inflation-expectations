@@ -86,6 +86,50 @@ def prepare(parent, out):
     return {'existing_attempts':len(existing),'new_never_attempted':len(pending),'combined_reserved_usd':spent+reserve}
 
 
+def prepare_remaining(previous, out, limit=128):
+    """Fresh short chunk, excluding EVERY earlier attempt including failures."""
+    previous,out=Path(previous).resolve(),Path(out).resolve()
+    if out.exists() or not out.is_relative_to(ROOT/'outputs') or not 1<=limit<=256:
+        raise ValueError('Fresh bounded short chunk required')
+    old=read_json(previous/'manifest.json');p=read_json(previous/'protocol.json');receipt=read_json(previous/'run_receipt.json')
+    if sha(previous/'protocol.json')!=old['protocol_sha256'] or receipt['status'] not in ('completed','stopped_no_retry'):
+        raise ValueError('Finished previous transport process required')
+    for n,h in old['files_sha256'].items():
+        if sha(previous/n)!=h:raise ValueError('Previous slot data changed')
+    sources={n:h for n,h in old['source_sha256'].items() if not n.endswith('.py')}
+    for n,h in sources.items():
+        if sha(ROOT/n)!=h:raise ValueError('Previous raw evidence changed')
+    existing=read_json(previous/'existing_calls_private.json');slots=read_json(previous/'slots_private.json')
+    f=previous/'new_calls_private.jsonl';sources[str(f.relative_to(ROOT))]=sha(f)
+    for line in f.read_text().splitlines():
+        c=json.loads(line)
+        if c['slot_key'] in existing:raise ValueError('Previous ledger duplicated a slot')
+        existing[c['slot_key']]={'source_file':str(f.relative_to(ROOT)),'call':c}
+    pending=[r for r in slots if r['slot_key'] not in existing]
+    if not pending or len(existing)+len(pending)!=3456:raise ValueError('Nonempty remaining original scope required')
+    reserve=sum(((len(json.dumps(r['messages'],ensure_ascii=False).encode())+1024)*p['price_input_per_mtok']
+                  +p['max_tokens']*p['price_output_per_mtok'])/1e6 for r in pending)
+    spent=receipt['combined_spent_or_reserved_usd']
+    if spent+reserve>16:raise ValueError('Original combined budget exceeded')
+    out.mkdir();dump(out/'slots_private.json',slots);dump(out/'existing_calls_private.json',existing);dump(out/'pending_private.json',pending[:limit])
+    p={**p,'previous_call_ledger':str(previous.relative_to(ROOT)),'existing_attempted_calls':len(existing),
+       'new_planned_calls':len(pending[:limit]),'all_remaining_before_chunk':len(pending),
+       'remaining_after_chunk':max(0,len(pending)-limit),'already_spent_or_reserved_usd':spent,
+       'remaining_conservative_reservation_usd':reserve,'created_at_utc':datetime.now(timezone.utc).isoformat()}
+    dump(out/'protocol.json',p)
+    for n in ['protocol.json','manifest.json','run_receipt.json','authorization.json']:
+        sources[str((previous/n).relative_to(ROOT))]=sha(previous/n)
+    sources[str(Path(__file__).relative_to(ROOT))]=sha(Path(__file__))
+    for n in ['model.py','model_counterfactual.py','q9_normalization.py']:
+        q=ROOT/'studies/sce_inflation_expectations'/n;sources[str(q.relative_to(ROOT))]=sha(q)
+    dump(out/'manifest.json',{'protocol_sha256':sha(out/'protocol.json'),'source_sha256':sources,
+        'files_sha256':{n:sha(out/n) for n in ['slots_private.json','existing_calls_private.json','pending_private.json']},
+        'combined_reservation_usd':spent+reserve,'new_model_calls':0})
+    a=read_json(previous/'authorization.json');a.update(protocol_sha256=sha(out/'protocol.json'),new_planned_calls=len(pending[:limit]))
+    dump(out/'authorization.json',a)
+    return {'already_attempted':len(existing),'new_chunk':len(pending[:limit]),'remaining_after_chunk':p['remaining_after_chunk']}
+
+
 def run(folder, workers=12):
     folder=Path(folder).resolve();m=read_json(folder/'manifest.json');p=read_json(folder/'protocol.json');a=read_json(folder/'authorization.json')
     if not a.get('approved') or a['protocol_sha256']!=sha(folder/'protocol.json') or not 1<=workers<=16:
