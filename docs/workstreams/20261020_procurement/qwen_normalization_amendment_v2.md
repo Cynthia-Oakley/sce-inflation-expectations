@@ -24,7 +24,7 @@
 
 主要比较仍是角色匹配减同月打乱的设计权重W1，同时报告中心MAE/RMSE、分布、更新、人群差异及照抄上期。归一化处理后的可用率和原答合法率分开。六期都是开发月份，不能称独立验证或直接升级默认。
 
-新执行入口：
+原主执行入口（已执行并因网络错误停止，**禁止重新启动**）：
 
 ```text
 python scripts/run_sce_frozen_trial.py run --folder outputs/sce_procurement_qwen_trial_20261020_v2 --phase main --workers 16
@@ -32,3 +32,11 @@ python scripts/run_sce_frozen_trial.py evaluate --folder outputs/sce_procurement
 ```
 
 新[准备收据](qwen_normalization_readiness_v2.json)是调用前快照；实际运行及费用以后续收据为准。[原技术结果](qwen_format_gate_results_v1.md)作为历史保留，不再据其原门槛阻止用户已批准的新规则。
+
+### 网络中断后的执行记录
+
+v2主进程已尝试1,355请求，1,341回包、14次连接错误或超时。继之逐条账本尝试455请求，444回包、11次连接错误。所有25个失败槽均保留缺失、不重发；部分单元已收到的回答全部保留。后续短小包只继续原3,456槽中从未尝试的请求，没有额外扩样或改变输入。
+
+后续使用同一`SCEOpenAILLM`和固定消息/模型/供应商/参数，但请求调度移出官方Core循环，逐条即时保存；初始1,499次仍来自官方Core。此运输调度调整不称为完整官方引擎执行，也不将账本记录伪造为旧DuckDB动作。最新小包串联既有调用的哈希证据，合计尝试不超过3,456，合计预算仍为$16。
+
+最终评价入口改为`evaluate_sce_call_ledger.py --ledger <最后完成的小包> --out <新目录>`，随后`report_sce_procurement_normalized.py`和`plot_sce_procurement_normalized.py`只读取已计分结果。原始缺失不补零、不借真人目标填补；三组主比较使用相同完整支持，并另报原始合法回答的支持敏感性。

@@ -977,4 +977,20 @@ BLS release 2020-09-11T08:30:00-04:00; availability relative to your previous su
 <p>下一步候选是仅给四份错误回答提供问卷合计反馈，让模型自行纠正，并保留初答/纠正答；需要另冻结调用范围，尚未执行。当前没有运行进程，不绕过门槛扩样。</p>
 <p><a href="../20261020_procurement/qwen_format_gate_results_v1.md">完整结果与下一步</a> · <a href="../20261020_procurement/qwen_format_gate_result_v1.json">数值与费用收据</a> · <a href="../../current_todo.html">当前清单</a></p>
 </section>
+<section id="procurement-qwen-normalized-results-20261020" style="font-family:'Times New Roman','Kaiti SC','STKaiti',serif;max-width:1120px;margin:24px auto;padding:24px 28px 36px;border-bottom:1px solid #d7dfdc;line-height:1.75">
+<h1>食品采购角色实验：中心略有改善，匹配增量尚未体现</h1>
+<p>2026-10-20。六期各96人、三组各两遍的<strong>3,456次首次尝试已全部结束</strong>：收到3,430份回答，26次连接错误或超时，无重试。API回包报告$3.051，包含未知计费请求预留约$3.152／上限$16。当前没有模型任务运行。</p>
+<h2>比较的是什么？</h2><p>共同背景组看到相同的食品总体价格；匹配组根据年龄与家庭构成合成采购角色，再分配不同数量的食品细类价格；打乱组把同样的角色和信息包换给同月其他人。三组新闻、本人真实上期信念、问卷和Qwen2.5-72B均相同。固定DeepInfra、温度0.5；没有使用平台Chat。</p>
+<p>按你的要求，127份合计不为100%的回答在评价层等比例归一化，零值、比例和Q8不变，原答完整保留。所有3,430份回包均可用；26次无回包保留缺失。三组和两遍均完整的共同支持为<strong>552个人月、543名受访者</strong>，不能把重复回答当新增人口。</p>
+<h2>主要结果：加入信息与正确分配是两个问题</h2>
+<div class="table-scroll"><table><thead><tr><th>对象</th><th>中位数MAE↓</th><th>跨人W1↓</th><th>变化W1↓</th><th>跨人IQR</th></tr></thead><tbody><tr><td>共同食品价格背景</td><td>0.620</td><td>2.089</td><td>1.800</td><td>3.302</td></tr><tr><td>采购角色匹配</td><td>0.573</td><td>2.254</td><td>1.758</td><td>3.051</td></tr><tr><td>同月打乱</td><td>0.576</td><td>2.240</td><td>1.833</td><td>3.068</td></tr><tr><td>照抄本人上期</td><td>0.464</td><td>0.961</td><td>2.707</td><td>5.546</td></tr></tbody></table></div>
+<p>Q9先转为个人密度均值，再取跨人的设计加权中位数；误差逐月逐遍计算后平均，单位为百分点。真人跨人IQR为4.794。Q8另报，未与Q9混算。</p>
+<p><strong>匹配组中心MAE从0.620降至0.573，但打乱组也达到0.576。</strong>匹配比打乱仅低0.003pp，两遍排序还发生反转；跨人W1略差，人际宽度也未恢复。中位数RMSE为共同背景0.843、匹配0.778、打乱0.779。当前不能将局部中心收益归因于匹配正确，不升级默认。</p>
+<figure><img src="../20261020_procurement/qwen_results_v2/figures/fit_and_distribution.png" alt="三组采购角色实验与照抄基线的中心、分布、变化误差"><figcaption>角色匹配在变化分布上有局部信号，但跨人分布仍明显落后于照抄上期。</figcaption></figure>
+<h2>共同的月份偏差仍是主要问题</h2><p>2021-09和2025-03三组仍共同低估，匹配组中心误差分别1.554和0.889pp；2022-06匹配与打乱均约0.145pp。共同月份偏差比“匹配还是打乱”的差异大。加入采购角色后，IQR由共同背景3.302变为3.051，仍低于真人4.794。</p>
+<figure><img src="../20261020_procurement/qwen_results_v2/figures/monthly_and_iqr.png" alt="六个开发月中心走势与真实人际IQR"><figcaption>月份不连续；图中中心取两遍平均用于展示，MAE仍分别计算。六期都是开发期，不能当作独立验证。</figcaption></figure>
+<h2>缺失和支持变化需要怎样理解？</h2><p>共同背景组缺16份，其中2023-12缺11份；匹配缺6份、打乱缺4份。共同背景可用率98.61%，使原定三组均≥99%的质量条件未满足，因此按原规则仅作描述，不宣称正式通过或计算该规则下的配对区间。不是概率归一化后又被加总错误卡住。</p>
+<p>去掉对共同背景完整性的要求，仅比较匹配／打乱的564个人月，W1仍为2.206／2.193，未出现匹配优势。完整可评价真人名单的照抄MAE为0.370，主表同支持为0.464：算法未变，缺失筛选改变了中位数附近的人和权重，不能跨样本拼成绩。仅用原始合法回答的支持敏感性也见完整报告。</p>
+<h2>下一步</h2><p>先用现有回答分析2021-09／2025-03哪些先验水平和家庭组被共同拉低，判断细类价格是否主要移动共同中心；暂不继续调采购条数重跑。当前角色是外部合成、价格是全国代理，尚未恢复本人购物经历与价格记忆。保留机制与失败记录，独立验证另行冻结，不自动新增调用。</p>
+<p><a href="../20261020_procurement/qwen_results_v2.md">完整结果、配置、局限与复算</a> · <a href="../20261020_procurement/qwen_results_v2/summary.json">聚合结果</a> · <a href="../20261020_procurement/qwen_normalization_amendment_v2.md">归一化规则</a> · <a href="../../current_todo.html">当前清单</a></p></section>
 </body></html>

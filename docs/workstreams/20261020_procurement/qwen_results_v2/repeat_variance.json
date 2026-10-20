@@ -1,0 +1,404 @@
+{
+  "cells": [
+    {
+      "month": 202009,
+      "question": "Q9_density_mean",
+      "common_people": 93,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 14.748886305370059,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 0.4176349942379301,
+          "between_person_repeat_mean_variance_pp2": 5.733982018674288,
+          "noise_adjusted_between_variance_pp2": 5.525164521555323,
+          "pooled_population_variance_pp2": 5.881143795162347,
+          "between_means_population_variance_pp2": 5.672326298043381,
+          "within_person_population_variance_pp2": 0.20881749711896505
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 0.5145032605556632,
+          "between_person_repeat_mean_variance_pp2": 4.683238955526549,
+          "noise_adjusted_between_variance_pp2": 4.425987325248717,
+          "pooled_population_variance_pp2": 4.89013317768044,
+          "between_means_population_variance_pp2": 4.632881547402608,
+          "within_person_population_variance_pp2": 0.2572516302778316
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 0.6773799883409873,
+          "between_person_repeat_mean_variance_pp2": 4.969422468273431,
+          "noise_adjusted_between_variance_pp2": 4.630732474102937,
+          "pooled_population_variance_pp2": 5.254677812247437,
+          "between_means_population_variance_pp2": 4.915987818076943,
+          "within_person_population_variance_pp2": 0.33868999417049367
+        }
+      }
+    },
+    {
+      "month": 202109,
+      "question": "Q9_density_mean",
+      "common_people": 91,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 37.58103381807677,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 0.2629712226823622,
+          "between_person_repeat_mean_variance_pp2": 5.333309904859147,
+          "noise_adjusted_between_variance_pp2": 5.201824293517966,
+          "pooled_population_variance_pp2": 5.40618771504803,
+          "between_means_population_variance_pp2": 5.274702103706848,
+          "within_person_population_variance_pp2": 0.1314856113411811
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 0.20012902611223818,
+          "between_person_repeat_mean_variance_pp2": 5.097091331294355,
+          "noise_adjusted_between_variance_pp2": 4.997026818238236,
+          "pooled_population_variance_pp2": 5.141143851698889,
+          "between_means_population_variance_pp2": 5.04107933864277,
+          "within_person_population_variance_pp2": 0.10006451305611909
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 0.5903691750262261,
+          "between_person_repeat_mean_variance_pp2": 5.591033763709812,
+          "noise_adjusted_between_variance_pp2": 5.2958491761966995,
+          "pooled_population_variance_pp2": 5.824778419753588,
+          "between_means_population_variance_pp2": 5.529593832240473,
+          "within_person_population_variance_pp2": 0.29518458751311305
+        }
+      }
+    },
+    {
+      "month": 202206,
+      "question": "Q9_density_mean",
+      "common_people": 93,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 49.57033074758256,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 0.4798597117540957,
+          "between_person_repeat_mean_variance_pp2": 6.363316372065699,
+          "noise_adjusted_between_variance_pp2": 6.123386516188652,
+          "pooled_population_variance_pp2": 6.534823471253867,
+          "between_means_population_variance_pp2": 6.294893615376821,
+          "within_person_population_variance_pp2": 0.23992985587704785
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 0.4475626132582979,
+          "between_person_repeat_mean_variance_pp2": 5.881357428510935,
+          "noise_adjusted_between_variance_pp2": 5.657576121881786,
+          "pooled_population_variance_pp2": 6.041898332682975,
+          "between_means_population_variance_pp2": 5.8181170260538275,
+          "within_person_population_variance_pp2": 0.22378130662914894
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 0.5691313385645465,
+          "between_person_repeat_mean_variance_pp2": 7.34222286947423,
+          "noise_adjusted_between_variance_pp2": 7.057657200191957,
+          "pooled_population_variance_pp2": 7.547839905751403,
+          "between_means_population_variance_pp2": 7.2632742364691305,
+          "within_person_population_variance_pp2": 0.2845656692822732
+        }
+      }
+    },
+    {
+      "month": 202312,
+      "question": "Q9_density_mean",
+      "common_people": 85,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 37.290915908292995,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 0.6058120287128129,
+          "between_person_repeat_mean_variance_pp2": 19.940791586472567,
+          "noise_adjusted_between_variance_pp2": 19.63788557211616,
+          "pooled_population_variance_pp2": 20.009100052752828,
+          "between_means_population_variance_pp2": 19.706194038396422,
+          "within_person_population_variance_pp2": 0.30290601435640646
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 0.37378091341264236,
+          "between_person_repeat_mean_variance_pp2": 9.715129761458225,
+          "noise_adjusted_between_variance_pp2": 9.528239304751905,
+          "pooled_population_variance_pp2": 9.787724573912099,
+          "between_means_population_variance_pp2": 9.600834117205775,
+          "within_person_population_variance_pp2": 0.18689045670632118
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 2.0411268505702345,
+          "between_person_repeat_mean_variance_pp2": 9.991724125830729,
+          "noise_adjusted_between_variance_pp2": 8.971160700545612,
+          "pooled_population_variance_pp2": 10.894737855517835,
+          "between_means_population_variance_pp2": 9.87417443023272,
+          "within_person_population_variance_pp2": 1.0205634252851172
+        }
+      }
+    },
+    {
+      "month": 202410,
+      "question": "Q9_density_mean",
+      "common_people": 95,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 22.6622059868567,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 0.24988050789752367,
+          "between_person_repeat_mean_variance_pp2": 8.946334872972454,
+          "noise_adjusted_between_variance_pp2": 8.821394619023692,
+          "pooled_population_variance_pp2": 8.977103180889925,
+          "between_means_population_variance_pp2": 8.852162926941165,
+          "within_person_population_variance_pp2": 0.12494025394876183
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 0.8990864728845365,
+          "between_person_repeat_mean_variance_pp2": 9.078385999213209,
+          "noise_adjusted_between_variance_pp2": 8.62884276277094,
+          "pooled_population_variance_pp2": 9.43236727776902,
+          "between_means_population_variance_pp2": 8.982824041326754,
+          "within_person_population_variance_pp2": 0.44954323644226823
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 1.0785847666832262,
+          "between_person_repeat_mean_variance_pp2": 7.049472664365663,
+          "noise_adjusted_between_variance_pp2": 6.510180281024049,
+          "pooled_population_variance_pp2": 7.514560072292899,
+          "between_means_population_variance_pp2": 6.975267688951287,
+          "within_person_population_variance_pp2": 0.5392923833416131
+        }
+      }
+    },
+    {
+      "month": 202503,
+      "question": "Q9_density_mean",
+      "common_people": 95,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 61.40356061650316,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 2.8501681632142173,
+          "between_person_repeat_mean_variance_pp2": 17.208436715337086,
+          "noise_adjusted_between_variance_pp2": 15.783352633729978,
+          "pooled_population_variance_pp2": 18.452379357835387,
+          "between_means_population_variance_pp2": 17.027295276228273,
+          "within_person_population_variance_pp2": 1.4250840816071086
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 0.879110036426542,
+          "between_person_repeat_mean_variance_pp2": 15.161356399581907,
+          "noise_adjusted_between_variance_pp2": 14.721801381368635,
+          "pooled_population_variance_pp2": 15.441318192536423,
+          "between_means_population_variance_pp2": 15.00176317432315,
+          "within_person_population_variance_pp2": 0.439555018213271
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 4.5189669983828376,
+          "between_person_repeat_mean_variance_pp2": 15.384300489461246,
+          "noise_adjusted_between_variance_pp2": 13.124816990269828,
+          "pooled_population_variance_pp2": 17.48184398350044,
+          "between_means_population_variance_pp2": 15.222360484309023,
+          "within_person_population_variance_pp2": 2.2594834991914188
+        }
+      }
+    },
+    {
+      "month": 202009,
+      "question": "Q8_point",
+      "common_people": 93,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 173.03143057431868,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 1.6852150537634407,
+          "between_person_repeat_mean_variance_pp2": 6.285247779336139,
+          "noise_adjusted_between_variance_pp2": 5.442640252454418,
+          "pooled_population_variance_pp2": 7.060271996762631,
+          "between_means_population_variance_pp2": 6.217664469880911,
+          "within_person_population_variance_pp2": 0.8426075268817204
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 2.613978494623656,
+          "between_person_repeat_mean_variance_pp2": 5.4151227208976165,
+          "noise_adjusted_between_variance_pp2": 4.108133473585788,
+          "pooled_population_variance_pp2": 6.663884842178287,
+          "between_means_population_variance_pp2": 5.356895594866459,
+          "within_person_population_variance_pp2": 1.306989247311828
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 0.6100537634408603,
+          "between_person_repeat_mean_variance_pp2": 4.862118396446938,
+          "noise_adjusted_between_variance_pp2": 4.557091514726508,
+          "pooled_population_variance_pp2": 5.1148644351948205,
+          "between_means_population_variance_pp2": 4.80983755347439,
+          "within_person_population_variance_pp2": 0.30502688172043013
+        }
+      }
+    },
+    {
+      "month": 202109,
+      "question": "Q8_point",
+      "common_people": 93,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 94.32049789578015,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 0.6456989247311828,
+          "between_person_repeat_mean_variance_pp2": 5.608076788218793,
+          "noise_adjusted_between_variance_pp2": 5.285227325853201,
+          "pooled_population_variance_pp2": 5.8706243496357935,
+          "between_means_population_variance_pp2": 5.547774887270204,
+          "within_person_population_variance_pp2": 0.3228494623655914
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 0.21129032258064515,
+          "between_person_repeat_mean_variance_pp2": 5.479514375876578,
+          "noise_adjusted_between_variance_pp2": 5.373869214586255,
+          "pooled_population_variance_pp2": 5.526240027748873,
+          "between_means_population_variance_pp2": 5.420594866458551,
+          "within_person_population_variance_pp2": 0.10564516129032257
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 0.8099462365591397,
+          "between_person_repeat_mean_variance_pp2": 6.918683964469375,
+          "noise_adjusted_between_variance_pp2": 6.513710846189805,
+          "pooled_population_variance_pp2": 7.249262631518094,
+          "between_means_population_variance_pp2": 6.844289513238522,
+          "within_person_population_variance_pp2": 0.40497311827956983
+        }
+      }
+    },
+    {
+      "month": 202206,
+      "question": "Q8_point",
+      "common_people": 93,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 219.25070126227203,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 0.8168817204301075,
+          "between_person_repeat_mean_variance_pp2": 7.020517180925667,
+          "noise_adjusted_between_variance_pp2": 6.612076320710614,
+          "pooled_population_variance_pp2": 7.3534686090877575,
+          "between_means_population_variance_pp2": 6.945027748872703,
+          "within_person_population_variance_pp2": 0.40844086021505377
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 0.8488172043010752,
+          "between_person_repeat_mean_variance_pp2": 4.666546283309958,
+          "noise_adjusted_between_variance_pp2": 4.24213768115942,
+          "pooled_population_variance_pp2": 5.040776968435657,
+          "between_means_population_variance_pp2": 4.616368366285119,
+          "within_person_population_variance_pp2": 0.4244086021505376
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 0.7558602150537634,
+          "between_person_repeat_mean_variance_pp2": 4.560845605423095,
+          "noise_adjusted_between_variance_pp2": 4.1829154978962135,
+          "pooled_population_variance_pp2": 4.889734362354029,
+          "between_means_population_variance_pp2": 4.5118042548271475,
+          "within_person_population_variance_pp2": 0.3779301075268817
+        }
+      }
+    },
+    {
+      "month": 202312,
+      "question": "Q8_point",
+      "common_people": 85,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 96.68051820580699,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 0.5144117647058825,
+          "between_person_repeat_mean_variance_pp2": 16.483422969187675,
+          "noise_adjusted_between_variance_pp2": 16.226217086834733,
+          "pooled_population_variance_pp2": 16.5467062283737,
+          "between_means_population_variance_pp2": 16.289500346020763,
+          "within_person_population_variance_pp2": 0.25720588235294123
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 0.18423529411764705,
+          "between_person_repeat_mean_variance_pp2": 9.662449579831932,
+          "noise_adjusted_between_variance_pp2": 9.570331932773108,
+          "pooled_population_variance_pp2": 9.640891349480968,
+          "between_means_population_variance_pp2": 9.548773702422146,
+          "within_person_population_variance_pp2": 0.09211764705882353
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 1.3558823529411765,
+          "between_person_repeat_mean_variance_pp2": 9.95645868347339,
+          "noise_adjusted_between_variance_pp2": 9.278517507002801,
+          "pooled_population_variance_pp2": 10.517265051903115,
+          "between_means_population_variance_pp2": 9.839323875432525,
+          "within_person_population_variance_pp2": 0.6779411764705883
+        }
+      }
+    },
+    {
+      "month": 202410,
+      "question": "Q8_point",
+      "common_people": 95,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 117.92334546493123,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 0.3044210526315789,
+          "between_person_repeat_mean_variance_pp2": 9.805632698768196,
+          "noise_adjusted_between_variance_pp2": 9.653422172452407,
+          "pooled_population_variance_pp2": 9.854626038781163,
+          "between_means_population_variance_pp2": 9.702415512465373,
+          "within_person_population_variance_pp2": 0.15221052631578946
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 0.3557894736842105,
+          "between_person_repeat_mean_variance_pp2": 9.364777155655096,
+          "noise_adjusted_between_variance_pp2": 9.18688241881299,
+          "pooled_population_variance_pp2": 9.444095290858725,
+          "between_means_population_variance_pp2": 9.26620055401662,
+          "within_person_population_variance_pp2": 0.17789473684210524
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 0.5897894736842105,
+          "between_person_repeat_mean_variance_pp2": 12.118340985442329,
+          "noise_adjusted_between_variance_pp2": 11.823446248600224,
+          "pooled_population_variance_pp2": 12.285674238227145,
+          "between_means_population_variance_pp2": 11.990779501385042,
+          "within_person_population_variance_pp2": 0.29489473684210527
+        }
+      }
+    },
+    {
+      "month": 202503,
+      "question": "Q8_point",
+      "common_people": 95,
+      "repeats": 2,
+      "real_between_person_variance_pp2": 291.8602754714791,
+      "arms": {
+        "shared_price": {
+          "within_person_repeat_variance_pp2": 0.8085789473684208,
+          "between_person_repeat_mean_variance_pp2": 26.02727211646137,
+          "noise_adjusted_between_variance_pp2": 25.62298264277716,
+          "pooled_population_variance_pp2": 26.157590304709142,
+          "between_means_population_variance_pp2": 25.753300831024934,
+          "within_person_population_variance_pp2": 0.4042894736842104
+        },
+        "matched_role": {
+          "within_person_repeat_variance_pp2": 1.084684210526316,
+          "between_person_repeat_mean_variance_pp2": 21.43239249720045,
+          "noise_adjusted_between_variance_pp2": 20.89005039193729,
+          "pooled_population_variance_pp2": 21.749130470914128,
+          "between_means_population_variance_pp2": 21.20678836565097,
+          "within_person_population_variance_pp2": 0.542342105263158
+        },
+        "shuffled_role": {
+          "within_person_repeat_variance_pp2": 2.3848421052631577,
+          "between_person_repeat_mean_variance_pp2": 20.320885778275475,
+          "noise_adjusted_between_variance_pp2": 19.128464725643894,
+          "pooled_population_variance_pp2": 21.299402770083102,
+          "between_means_population_variance_pp2": 20.106981717451525,
+          "within_person_population_variance_pp2": 1.1924210526315788
+        }
+      }
+    }
+  ],
+  "weight": "equal_people; separate from survey-weighted accuracy",
+  "identity": "pooled population variance = variance of person repeat means + average within-person population variance",
+  "noise_adjustment": "sample variance of person repeat means minus mean within-person sample variance / R; negative estimates retained",
+  "limits": "Only two generations; equal-person noise decomposition, not measured human repeat variability or a proof of accurate identities."
+}

@@ -1,0 +1,54 @@
+{
+  "new_api_calls": 0,
+  "new_density_fits": 0,
+  "purpose": "Sensitivity to missing shared-price responses; does not replace registered all-arm common-support comparison.",
+  "pair_only_person_months": 564,
+  "pair_only_metrics": {
+    "matched_role": {
+      "center_mae_pp": 0.6009411982979018,
+      "center_bias_pp": -0.5910984387807723,
+      "predicted_center_pp": 3.6631533291837886,
+      "truth_center_pp": 4.254251767964561,
+      "personal_mae_pp": 3.242143903687152,
+      "w1_pp": 2.205600499619256,
+      "delta_w1_pp": 1.7488358045149222,
+      "across_person_iqr_pp": 3.0026403609736403,
+      "truth_across_person_iqr_pp": 4.69230530653507,
+      "wrong_move_given_true_stable": 0.5132204816470164,
+      "missed_move_given_true_moving": 0.419426179067726,
+      "opposite_direction_given_true_moving": 0.21494675351856163
+    },
+    "shuffled_role": {
+      "center_mae_pp": 0.6218452275817636,
+      "center_bias_pp": -0.6177261815703726,
+      "predicted_center_pp": 3.6365255863941885,
+      "truth_center_pp": 4.254251767964561,
+      "personal_mae_pp": 3.25314241525783,
+      "w1_pp": 2.1934307752889626,
+      "delta_w1_pp": 1.8178516361033508,
+      "across_person_iqr_pp": 3.0708825284945633,
+      "truth_across_person_iqr_pp": 4.69230530653507,
+      "wrong_move_given_true_stable": 0.48389349336891385,
+      "missed_move_given_true_moving": 0.4438512509135099,
+      "opposite_direction_given_true_moving": 0.18599848451085418
+    }
+  },
+  "full_valid_truth_roster_person_months": 573,
+  "full_roster_carry_metrics": {
+    "carry": {
+      "center_mae_pp": 0.369607371611307,
+      "center_bias_pp": -0.3045991950036771,
+      "predicted_center_pp": 3.949652572960884,
+      "truth_center_pp": 4.254251767964561,
+      "personal_mae_pp": 2.71704475110348,
+      "w1_pp": 0.9542507558002512,
+      "delta_w1_pp": 2.7170447511034794,
+      "across_person_iqr_pp": 5.58023603441134,
+      "truth_across_person_iqr_pp": 4.703123829491694,
+      "wrong_move_given_true_stable": 0.0,
+      "missed_move_given_true_moving": 1.0,
+      "opposite_direction_given_true_moving": 0.0
+    }
+  },
+  "note": "Full-roster baseline and main model estimates have different support; no direct performance comparison. Pair-only support is exploratory."
+}

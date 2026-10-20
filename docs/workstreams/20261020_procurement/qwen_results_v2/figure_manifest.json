@@ -1,0 +1,19 @@
+{
+  "source": "cached evaluation/report only",
+  "new_api_calls": 0,
+  "new_density_fits": 0,
+  "figures": [
+    "fit_and_distribution.png",
+    "monthly_and_iqr.png"
+  ],
+  "target_months": [
+    202009,
+    202109,
+    202206,
+    202312,
+    202410,
+    202503
+  ],
+  "support_person_months": 552,
+  "normalization_policy": "proportional_nonnegative_v1"
+}
