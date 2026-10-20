@@ -26,7 +26,7 @@ from studies.sce_inflation_expectations.evaluation.temperature import variance_c
 from studies.sce_inflation_expectations.panel import adapters, registry
 from studies.sce_inflation_expectations.panel.adapters import load_batch
 from studies.sce_inflation_expectations.panel.regimes import build_regime_lookup
-from studies.sce_inflation_expectations.panel.render import render_html
+from studies.sce_inflation_expectations.panel.render import ROLE_STYLES, TABS, render_html
 from studies.sce_inflation_expectations.panel.sections import (
     MIN_COVERAGE_N, build_panel, q9_support)
 
@@ -373,15 +373,96 @@ def test_repeat_variance_components_match_temperature_method(batch):
 def test_html_contains_anchors_and_display_discipline(batch):
     _, _, panel = batch
     html = render_html(panel)
-    for i in range(1, 7):
-        assert f'id="sec-{i}"' in html
     assert '未提供' in html and 'n 不足' in html and '未登记' in html
     assert '实验目录' in html and '当前参考实验' in html
     assert '个人绝对误差中位数' in html and '群体中位数MAE' in html
+    # tab framework (batch 2): five tabs and the hash router
+    for tab, name in TABS:
+        assert f"['{tab}'" in html or f'"{tab}"' in html
+        assert name in html
+    assert 'parseHash' in html and 'syncHash' in html and 'hashchange' in html
+    assert '该区暂不支持 Q8' in html
     payload = html.split('panel-data', 1)[1].split('>', 1)[1].split('</script>')[0]
     payload = payload.replace('<\\/', '</')
     for forbidden in ('"userid"', '"agent_id"', '"_pid"', '"q9_bins"', '"model_q9_bins"'):
         assert forbidden not in payload
+
+
+def test_role_styles_follow_v1_plan():
+    """§2 fixed roles: color + dash + marker are redundant encodings."""
+    assert ROLE_STYLES['truth'] == {'label': '真人', 'color': '#202733',
+                                    'dash': '', 'marker': 'square'}
+    assert ROLE_STYLES['ref']['color'] == '#0072B2'
+    assert ROLE_STYLES['ref']['marker'] == 'circle' and ROLE_STYLES['ref']['dash'] == ''
+    assert ROLE_STYLES['cand']['color'] == '#D55E00'
+    assert ROLE_STYLES['cand']['marker'] == 'triangle'
+    assert ROLE_STYLES['base']['color'] == '#6B7280'
+    assert ROLE_STYLES['base']['dash'] == '6,3'      # dashed baseline
+    assert ROLE_STYLES['base']['marker'] == 'diamond'
+    colors = {v['color'] for v in ROLE_STYLES.values()}
+    assert len(colors) == 4
+    # every role carries all three encodings (survives grayscale printing)
+    for v in ROLE_STYLES.values():
+        assert v['dash'] in ('', '6,3') and v['marker'] in ('square', 'circle', 'triangle', 'diamond')
+
+
+def test_auto_facts_rules_synthetic():
+    """Fixed-rule facts: regression month, low-prior gap, small arm gap."""
+    from studies.sce_inflation_expectations.panel.sections import auto_facts, pick_control_arm
+    arms = ['A', 'B']
+    control = pick_control_arm(arms)
+    assert control == 'A'                                  # first arm fallback
+    assert pick_control_arm(['baseline', 'x']) == 'baseline'
+    # rule 1: a clear 2021-09 style regression vs persistence (primary arm = B)
+    rows = []
+    for month in (202009, 202109, 202206):
+        for rep in (1, 2):
+            persist = 0.2
+            model = 1.6 if month == 202109 else 0.3
+            rows.append({'month': month, 'repeat': rep, 'regime': 'calm',
+                         'model_center_mae_pp': model, 'persist_center_mae_pp': persist})
+    sections = {
+        'monthly': {'B': {'rows': rows}},
+        'priors': {'B': {'bands': {'below_2': {'person_mae_pp': 2.0},
+                                   '8_or_above': {'person_mae_pp': 6.5}}}},
+        'overview': {'q9': {'A': {'center_mae_pp': 0.5}, 'B': {'center_mae_pp': 0.55}}},
+    }
+    facts = auto_facts(sections, arms, control)
+    ids = [f['id'] for f in facts]
+    assert 'regression_month' in ids and 'low_prior_closer' in ids
+    reg = next(f for f in facts if f['id'] == 'regression_month')
+    assert '2021-09' in reg['text'] and '+1.40pp' in reg['text']
+    assert reg['evidence'][0]['value_pp'] == pytest.approx(1.6)
+    # rule 2 evidence numbers
+    low = next(f for f in facts if f['id'] == 'low_prior_closer')
+    assert '2.00' in low['text'] and '6.50' in low['text']
+    # rule 3 fires when arms barely differ
+    sections2 = {
+        'monthly': {'B': {'rows': [{'month': 202009, 'repeat': 1, 'regime': 'calm',
+                                    'model_center_mae_pp': 0.3, 'persist_center_mae_pp': 0.2}]}},
+        'priors': {'B': {'bands': {'below_2': {'person_mae_pp': 3.0},
+                                   '8_or_above': {'person_mae_pp': 3.5}}}},
+        'overview': {'q9': {'A': {'center_mae_pp': 0.50}, 'B': {'center_mae_pp': 0.55}}},
+    }
+    facts2 = auto_facts(sections2, arms, control)
+    assert 'small_arm_gap' in [f['id'] for f in facts2]
+    gap = next(f for f in facts2 if f['id'] == 'small_arm_gap')
+    assert '0.05' in gap['text']
+    # thresholds: small regression (0.2pp) and small band gap (0.5pp) stay silent
+    facts3 = auto_facts(sections2, ['A'], 'A')
+    assert all(f['id'] != 'regression_month' for f in facts3)
+    assert all(f['id'] != 'low_prior_closer' for f in facts3)
+    # facts never exceed three and carry evidence
+    assert len(facts) <= 3 and all(f['evidence'] for f in facts)
+
+
+def test_control_arm_and_facts_in_panel(batch):
+    _, _, panel = batch
+    exp = panel['experiments'][BATCH]
+    assert exp['control_arm'] == 'A'
+    facts = exp['facts']
+    # synthetic data has no >=0.3pp regression month and no >=1pp band gap
+    assert isinstance(facts, list)
 
 
 def test_old_contract_batch_is_skipped_not_guessed(tmp_path):

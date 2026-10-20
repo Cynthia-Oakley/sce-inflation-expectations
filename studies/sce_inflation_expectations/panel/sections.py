@@ -280,6 +280,25 @@ def _overview(records):
                                 pred_key='prior_q9_mean')
             mcells = _arm_cells(records, identical, arm, months, repeats)
             prow = _support_stats(identical, _person_weights(records, identical, arms, repeats))
+            # update-distribution W1 per month x repeat cell on the identical
+            # (model + prior + truth) support, then equal-averaged
+            dw1 = {}
+            for month in months:
+                for rep in repeats:
+                    dm, dy, dw = [], [], []
+                    for r in records:
+                        if (r['arm'] == arm and r['month'] == month and r['repeat'] == rep
+                                and (month, r['_pid']) in identical
+                                and _finite(r.get('model_q9_mean'))
+                                and _finite(r.get('truth_q9_mean'))
+                                and _finite(r.get('prior_q9_mean'))
+                                and _finite(r.get('weight'))):
+                            dm.append(r['model_q9_mean'] - r['prior_q9_mean'])
+                            dy.append(r['truth_q9_mean'] - r['prior_q9_mean'])
+                            dw.append(r['weight'])
+                    if len(dm) >= 2:
+                        dw1[(month, rep)] = wasserstein1(np.asarray(dm), np.asarray(dw),
+                                                         np.asarray(dy), np.asarray(dw))
             row['persistence'] = {
                 'n_identical_support': prow['n_person_months'],
                 'ess': prow['ess'],
@@ -292,6 +311,8 @@ def _overview(records):
                 'model_center_mae_same_support_pp': _mean(mcells, 'center_abs_pp'),
                 'model_person_mae_same_support_pp': _mean(mcells, 'person_mae_pp'),
             }
+            if dw1:
+                row['delta_w1_pp'] = float(np.mean(list(dw1.values())))
         out[arm] = row
     # per-arm usable supports: sensitivity table (each arm alone, all repeats)
     by_pm = defaultdict(dict)
@@ -317,6 +338,7 @@ def _overview(records):
                 'center_bias_pp': _mean(cells, 'center_bias_pp'),
                 'person_mae_pp': _mean(cells, 'person_mae_pp'),
                 'person_abs_error_median_pp': _mean(cells, 'person_abs_error_median_pp'),
+                'w1_pp': _mean(cells, 'w1_pp'),
                 'pred_median_pp': _mean(cells, 'pred_median_pp'),
                 'truth_median_pp': _mean(cells, 'truth_median_pp'),
             })
@@ -787,6 +809,101 @@ def sanitize(obj):
 COMPARABILITY_NOTICE = ('比较资格提醒：不同月份集合 / 不同人数 / 不同模型或采样参数的批次，'
                         '不能按原始均值直接排榜；仅同模型单项机制变化可同列细读。')
 
+CONTROL_PREFERENCE = ('reference', 'baseline', 'shared_price', 'direct')
+
+
+def pick_control_arm(arms):
+    """The arm drawn in the 参考配置 role: a named control when present,
+    otherwise the first arm. Never inferred from outcomes."""
+    for pref in CONTROL_PREFERENCE:
+        if pref in arms:
+            return pref
+    for arm in arms:
+        if 'baseline' in arm:
+            return arm
+    return sorted(arms)[0]
+
+
+def _ym(month):
+    return '%s-%s' % (str(month)[:4], str(month)[4:])
+
+
+def auto_facts(sections, arms, control):
+    """Rule-based factual readouts for the overview tab (max three).
+
+    Fixed templates only: no LLM, no causal language, no post-hoc findings
+    turned into input rules. Each fact carries its evidence numbers so the
+    page can show them on expansion.
+    """
+    primary = next((a for a in sorted(arms) if a != control), control)
+    facts = []
+    # rule 1: the month where the model's center error regresses most versus
+    # the persistence baseline (threshold 0.3pp)
+    rows = sections.get('monthly', {}).get(primary, {}).get('rows', [])
+    per_month = defaultdict(list)
+    for r in rows:
+        if _finite(r.get('model_center_mae_pp')) and _finite(r.get('persist_center_mae_pp')):
+            per_month[r['month']].append((r['model_center_mae_pp'],
+                                          r['persist_center_mae_pp']))
+    diffs = []
+    for month in sorted(per_month):
+        model = float(np.mean([v[0] for v in per_month[month]]))
+        persist = float(np.mean([v[1] for v in per_month[month]]))
+        diffs.append((month, model, persist, model - persist))
+    if diffs:
+        month, model, persist, gap = max(diffs, key=lambda t: t[3])
+        if _finite(gap) and gap >= 0.3:
+            facts.append({
+                'id': 'regression_month',
+                'text': ('中心误差在 %s 退步最大：模型 %.2fpp vs 照抄上期 %.2fpp'
+                         '（模型−照抄 = %+.2fpp）' % (_ym(month), model, persist, gap)),
+                'evidence': [
+                    {'metric': '该月模型中心MAE（月×遍平均）', 'value_pp': model},
+                    {'metric': '该月照抄中心MAE（月×遍平均）', 'value_pp': persist},
+                    {'metric': '退步月模型−照抄（pp）', 'value_pp': gap},
+                ],
+            })
+    # rule 2: low-prior band markedly closer to truth than the high band
+    bands = sections.get('priors', {}).get(primary, {}).get('bands', {})
+    lo, hi = bands.get('below_2', {}), bands.get('8_or_above', {})
+    if _finite(lo.get('person_mae_pp')) and _finite(hi.get('person_mae_pp')):
+        gap = hi['person_mae_pp'] - lo['person_mae_pp']
+        if gap >= 1.0:
+            facts.append({
+                'id': 'low_prior_closer',
+                'text': ('低先验端（<2%%）个人MAE %.2fpp，低于≥8%%档的 %.2fpp：'
+                         '低端更接近真人，高端仍被压缩' % (lo['person_mae_pp'],
+                                                 hi['person_mae_pp'])),
+                'evidence': [
+                    {'metric': '先验<2% 档个人MAE（pp）', 'value_pp': lo['person_mae_pp']},
+                    {'metric': '先验≥8% 档个人MAE（pp）', 'value_pp': hi['person_mae_pp']},
+                    {'metric': '高端−低端差（pp）', 'value_pp': gap},
+                ],
+            })
+    # rule 3: two mechanism arms barely differ on the group-center statistic
+    overview = sections.get('overview', {}).get('q9', {})
+    pairs = []
+    for i, a in enumerate(sorted(arms)):
+        for b in sorted(arms)[i + 1:]:
+            va, vb = overview.get(a, {}).get('center_mae_pp'), overview.get(b, {}).get('center_mae_pp')
+            if _finite(va) and _finite(vb):
+                pairs.append((a, b, abs(va - vb)))
+    if pairs:
+        a, b, gap = min(pairs, key=lambda t: t[2])
+        if gap <= 0.1:
+            facts.append({
+                'id': 'small_arm_gap',
+                'text': ('臂 %s 与 %s 的群体中心差异仅 %.2fpp，'
+                         '不能据此认定机制有效或无效' % (a, b, gap)),
+                'evidence': [
+                    {'metric': '%s 群体中位数MAE（pp）' % a, 'value_pp': overview[a]['center_mae_pp']},
+                    {'metric': '%s 群体中位数MAE（pp）' % b, 'value_pp': overview[b]['center_mae_pp']},
+                    {'metric': '两臂差（pp）', 'value_pp': gap},
+                ],
+            })
+    return facts[:3]
+
+
 SECTION_GUIDES = {
     'overview': '总览：主读数为群体中位数MAE（每月×每遍的 |模型中位−真人中位| 等权平均），'
                 '同支持照抄上期为机械基线；个人MAE与个人绝对误差中位数另列，不与主统计量混称。',
@@ -827,6 +944,10 @@ def build_panel(records, metas, regime_lookup, only_sections=None):
             'months': sorted({r['month'] for r in recs}),
             'repeats': sorted({r['repeat'] for r in recs if r['repeat'] is not None}),
             'q8_available': bool(sections.get('overview', {}).get(exp, {}).get('q8')),
+            'control_arm': pick_control_arm(sorted({r['arm'] for r in recs})),
+            'facts': auto_facts({name: sections[name][exp] for name in names},
+                                sorted({r['arm'] for r in recs}),
+                                pick_control_arm(sorted({r['arm'] for r in recs}))),
             'sections': {name: sections[name][exp] for name in names},
         }
     order = sorted(experiments,

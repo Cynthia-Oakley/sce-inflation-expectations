@@ -28,7 +28,8 @@ REQUIRED_CASE_KEYS = ('month', 'userid', 'repeat', 'real', 'arms')
 
 PROTOCOL_KEYS = ('id', 'research_line', 'months', 'n_per_month', 'arms',
                  'generation_repeats', 'model', 'official_advertised_version',
-                 'temperature', 'status')
+                 'temperature', 'status', 'configuration', 'month_selection',
+                 'eligibility', 'weights')
 
 
 def finite(value):
