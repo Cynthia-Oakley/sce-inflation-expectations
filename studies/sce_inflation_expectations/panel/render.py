@@ -154,7 +154,8 @@ footer { padding:16px 34px; font-size:12px; color:var(--grey);
 <div class="tabbar" id="tabbar"></div>
 <div class="metabar" id="metabar"></div>
 <main id="main"></main>
-<footer>本页仅嵌聚合指标（n/ESS/分位数/W1/直方图桶），不含 userid、agent_id、逐人记录或原始十档向量；缺失与未提供一律显示“未提供”，不填零。图表以颜色＋线型＋标记三重区分，灰阶打印仍可辨认。</footer>
+<footer><div>本页仅嵌聚合指标（n/ESS/分位数/W1/直方图桶/CDF），不含 userid、agent_id、逐人记录或原始十档向量；缺失与未提供一律显示“未提供”，不填零。图表以颜色＋线型＋标记三重区分，灰阶打印仍可辨认。</div>
+<div style="margin-top:4px">更新流程（离线、零 API）：实验结束/停止且评价缓存产出后，运行 <code>scripts/build_sce_experiment_panel.py</code> 一条命令重建本面板与私有中间文件（留在 outputs/，不入库）；运行中只看技术进度与费用，不看真值调参。</div></footer>
 <script id="panel-data" type="application/json">__PANEL_JSON__</script>
 <script>
 const ROLES = __ROLE_JSON__;
@@ -281,6 +282,147 @@ function diffChart(el, months, diffs, rawA, rawB, names){
       g+=`<line x1="${bx}" y1="${P.t}" x2="${bx}" y2="${H-P.b}" stroke="#c9bfa4" stroke-dasharray="2,4"/>`; }
   }
   el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;background:#fff;border:1px solid var(--line);border-radius:6px">${g}</svg>`;
+}
+
+/* ---------- drill charts ---------- */
+var drillSel = {month:null, dim:null, label:null};
+function cdfChart(el, grid, series){
+  const W=880,H=280,P={l:56,r:110,t:16,b:40};
+  const all=series.flatMap(s=>s.values.filter(_f));
+  if(!all.length){ el.innerHTML='<div class="note">无可绘制数据</div>'; return; }
+  let yMin=0, yMax=1;
+  const xw=(W-P.l-P.r)/Math.max(1,grid.length-1);
+  const X=i=>P.l+i*xw, Y=v=>P.t+(1-(v-yMin)/(yMax-yMin))*(H-P.t-P.b);
+  let g='';
+  for(let k=0;k<=4;k++){const gy=P.t+k/4*(H-P.t-P.b); const val=yMax-k/4;
+    g+=`<line x1="${P.l}" y1="${gy}" x2="${W-P.r}" y2="${gy}" stroke="#e7e1d2"/>`;
+    g+=`<text x="${P.l-6}" y="${gy+4}" font-size="10.5" text-anchor="end" fill="#8a8f87">${val.toFixed(1)}</text>`;}
+  g+=`<text x="14" y="${P.t+10}" font-size="10.5" fill="#8a8f87">累积概率</text>`;
+  grid.forEach((gv,i)=>{ if(grid.length<=15||i%2===0) g+=`<text x="${X(i)}" y="${H-22}" font-size="10.5" text-anchor="middle" fill="#8a8f87">${gv}</text>`;});
+  g+=`<text x="${(W+P.l-P.r)/2}" y="${H-4}" font-size="10.5" text-anchor="middle" fill="#8a8f87">一年期通胀预期（pp）</text>`;
+  series.forEach(sr=>{
+    const st=ROLES[sr.role];
+    const pts=sr.values.map((v,i)=>_f(v)?`${X(i)},${Y(v)}`:null).filter(Boolean).join(' ');
+    if(pts) g+=`<polyline points="${pts}" fill="none" stroke="${st.color}" stroke-width="2.2"${st.dash?` stroke-dasharray="${st.dash}"`:''}/>`;
+    sr.values.forEach((v,i)=>{ if(_f(v)) g+=`<path d="${markerPath(st.marker,X(i),Y(v),4)}" fill="${st.color}"><title>${esc(sr.name)} @ ${grid[i]}pp: F=${v.toFixed(3)}</title></path>`;});
+    const li=sr.values.length-1;
+    if(_f(sr.values[li])) g+=`<text x="${X(li)+8}" y="${Y(sr.values[li])+4}" font-size="11" fill="${st.color}">${esc(sr.short||sr.name)}</text>`;
+  });
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;background:#fff;border:1px solid var(--line);border-radius:6px">${g}</svg>`;
+}
+function quantileChart(el, rows, unit){
+  // rows: [{name, role, q:{p10,p25,p50,p75,p90}, n}]
+  const W=880,H=60+rows.length*64,P={l:150,r:30,t:10,b:34};
+  const all=rows.flatMap(r=>[r.q.p10,r.q.p90].filter(_f));
+  if(!all.length){ el.innerHTML='<div class="note">无可绘制数据</div>'; return; }
+  let xMin=Math.min(...all), xMax=Math.max(...all);
+  if(xMin===xMax){xMin-=1;xMax+=1;}
+  const pad=(xMax-xMin)*0.15; xMin=Math.max(0,xMin-pad); xMax+=pad;
+  const X=v=>P.l+(v-xMin)/(xMax-xMin)*(W-P.l-P.r);
+  let g='';
+  for(let k=0;k<=6;k++){const gv=xMin+k/6*(xMax-xMin);
+    g+=`<line x1="${X(gv)}" y1="${P.t}" x2="${X(gv)}" y2="${H-P.b}" stroke="#efe9da"/>`;
+    g+=`<text x="${X(gv)}" y="${H-16}" font-size="10.5" text-anchor="middle" fill="#8a8f87">${gv.toFixed(1)}</text>`;}
+  g+=`<text x="${(W+P.l-P.r)/2}" y="${H-2}" font-size="10.5" text-anchor="middle" fill="#8a8f87">${esc(unit||'pp')}</text>`;
+  rows.forEach((r,i)=>{
+    const yc=P.t+34+i*64;
+    const st=ROLES[r.role];
+    g+=`<text x="${P.l-12}" y="${yc+4}" font-size="12" text-anchor="end" fill="${st.color}">${esc(r.name)}</text>`;
+    if(!_f(r.q.p10)) { g+=`<text x="${P.l+8}" y="${yc+4}" font-size="11" fill="#9aa39b">未提供</text>`; return; }
+    g+=`<line x1="${X(r.q.p10)}" y1="${yc}" x2="${X(r.q.p90)}" y2="${yc}" stroke="${st.color}" stroke-width="3"${st.dash?` stroke-dasharray="${st.dash}"`:''}/>`;
+    g+=`<line x1="${X(r.q.p25)}" y1="${yc-7}" x2="${X(r.q.p75)}" y2="${yc-7}" stroke="${st.color}" stroke-width="8"/>`;
+    g+=`<path d="${markerPath('diamond',X(r.q.p50),yc,6)}" fill="${st.color}"/>`;
+    g+=`<text x="${X(r.q.p50)}" y="${yc-14}" font-size="10" text-anchor="middle" fill="${st.color}">${r.q.p50.toFixed(2)}</text>`;
+    g+=`<text x="${X(r.q.p10)}" y="${yc+16}" font-size="9.5" text-anchor="middle" fill="#8a8f87">P10 ${r.q.p10.toFixed(1)}</text>`;
+    g+=`<text x="${X(r.q.p90)}" y="${yc+16}" font-size="9.5" text-anchor="middle" fill="#8a8f87">P90 ${r.q.p90.toFixed(1)}</text>`;
+  });
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;background:#fff;border:1px solid var(--line);border-radius:6px">${g}</svg>`;
+}
+function varianceChart(el, variance){
+  const months=Object.keys(variance).map(Number).sort((a,b)=>a-b);
+  const groups=months.map(m=>({label:yfmt(m).slice(2), values:[variance[m].between_cell_var_pp2, variance[m].within_cell_var_pp2]}));
+  groupedBars(el, groups, ['格间','格内'], ['#0072B2','#6B7280']);
+}
+
+/* ---------- export helpers ---------- */
+function downloadText(name, text, mime){
+  const blob=new Blob([text], {type:mime||'text/plain;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download=name;
+  document.body.appendChild(a); a.click();
+  setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();}, 0);
+}
+function exportContainerSVG(container, base){
+  const svg=container.querySelector('svg');
+  if(!svg) return;
+  const text='<?xml version="1.0" encoding="UTF-8"?>\\n'+svg.outerHTML;
+  downloadText(base+'.svg', text, 'image/svg+xml');
+}
+function exportContainerPNG(container, base){
+  const svg=container.querySelector('svg');
+  if(!svg) return;
+  const text='<?xml version="1.0" encoding="UTF-8"?>\\n'+svg.outerHTML;
+  const url=URL.createObjectURL(new Blob([text],{type:'image/svg+xml;charset=utf-8'}));
+  const img=new Image();
+  img.onload=()=>{
+    const scale=2;
+    const canvas=document.createElement('canvas');
+    canvas.width=svg.viewBox.baseVal.width*scale; canvas.height=svg.viewBox.baseVal.height*scale;
+    const ctx=canvas.getContext('2d');
+    ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    URL.revokeObjectURL(url);
+    const a=document.createElement('a');
+    a.href=canvas.toDataURL('image/png'); a.download=base+'.png';
+    document.body.appendChild(a); a.click(); a.remove();
+  };
+  img.src=url;
+}
+function exportButtonsHTML(id){
+  return `<div style="margin:4px 0"><button class="xbt" data-x="${id}" data-k="svg">导出 SVG</button> <button class="xbt" data-x="${id}" data-k="png">导出 PNG</button></div>`;
+}
+function wireExportButtons(scope){
+  (scope||document).querySelectorAll('button.xbt').forEach(b=>{
+    b.onclick=()=>{
+      const el=document.getElementById(b.getAttribute('data-x'));
+      if(!el) return;
+      const base=(exp().label||'panel').replace(/[\/:*?"<>|\s]+/g,'_')+'_'+b.getAttribute('data-x');
+      if(b.getAttribute('data-k')==='svg') exportContainerSVG(el, base); else exportContainerPNG(el, base);
+    };
+  });
+}
+function exportLongCSV(){
+  const e=exp();
+  const head=['experiment','experiment_label','question','month','group','arm','metric','value_pp','n','ess','source'];
+  const lines=[head.join(',')];
+  const q=(s)=>'"'+String(s).replace(/"/g,'""')+'"';
+  const push=(question,month,group,arm,metric,value,n,ess)=>{
+    if(!_f(value)) return;
+    lines.push([q(e.batch!==undefined?cur.exp:cur.exp),q(e.label),question,month,group,q(arm),metric,value.toFixed(6),
+      n===undefined||n===null?'':n, ess===undefined||ess===null?'':(Math.round(ess*10)/10),'panel_aggregate'].join(','));
+  };
+  const ov=sec('overview');
+  Object.entries(ov.q9).forEach(([arm,r])=>{
+    push('q9','all','all',arm,'center_mae_pp',r.center_mae_pp,r.n_person_months,r.ess);
+    push('q9','all','all',arm,'person_mae_pp',r.person_mae_pp,r.n_person_months,r.ess);
+    push('q9','all','all',arm,'w1_pp',r.w1_pp,r.n_person_months,r.ess);
+    push('q9','all','all',arm,'pred_iqr_pp',r.pred_iqr_pp,r.n_person_months,r.ess);
+    push('q9','all','all',arm,'truth_iqr_pp',r.truth_iqr_pp,r.n_person_months,r.ess);
+    if(r.persistence){
+      push('q9','all','all',arm,'persist_center_mae_pp',r.persistence.center_mae_pp,r.persistence.n_identical_support,r.persistence.ess);
+    }
+  });
+  const mb=sec('monthly');
+  Object.entries(mb).forEach(([arm,block])=>{
+    (block.rows||[]).forEach(r=>{
+      const mm=yfmt(r.month)+'_r'+r.repeat;
+      push('q9',mm,'all',arm,'model_center_mae_pp',r.model_center_mae_pp,r.n,r.ess);
+      push('q9',mm,'all',arm,'persist_center_mae_pp',r.persist_center_mae_pp,r.n,r.ess);
+      push('q9',mm,'all',arm,'model_median_pp',r.model_median_pp,r.n,r.ess);
+      push('q9',mm,'all',arm,'truth_median_pp',r.truth_median_pp,r.n,r.ess);
+    });
+  });
+  downloadText((e.label||'panel').replace(/\s+/g,'_')+'_aggregate_long.csv', '\\ufeff'+lines.join('\\n'), 'text/csv;charset=utf-8');
 }
 
 /* ---------- hash routing ---------- */
@@ -447,9 +589,16 @@ function renderOverviewTab(main){
     table(['arm','可用 n(人×月)','独立人数','ESS','覆盖月','最大权重份额'],sens)+
     `<div class="note">照抄上期只在模型与照抄完全相同的人×月支持上计算；「照抄−模型」为正表示模型优于照抄（指标：群体中位数MAE）。</div></div></details>`;
   html+='</section>';
+  html=html.replace('<div id="chart-center"></div>','<div id="chart-center"></div>'+exportButtonsHTML('chart-center'));
+  html=html.replace('<div id="chart-diff"></div>','<div id="chart-diff"></div>'+exportButtonsHTML('chart-diff'));
+  html=html.replace('</section>','<div class="card"><h3>导出</h3><button id="btnCSV">导出聚合长表 CSV（实验×题目×月×组×臂×指标×n/ESS）</button>'+
+    '<div class="note">· 只导出聚合指标，不含任何个人记录；换实验/臂后请重新导出。</div></div></section>');
   main.innerHTML=html;
   lineChart($('chart-center'), series, {labels:months.map(yfmt), months, unit:'pp'});
   diffChart($('chart-diff'), months, diffs, rawA, rawB, dn);
+  const b=document.getElementById('btnCSV');
+  if(b) b.onclick=exportLongCSV;
+  wireExportButtons(main);
 }
 
 /* ---------- tab: monthly + grid ---------- */
@@ -489,16 +638,77 @@ function renderMonthlyTab(main){
       td(c.person_mae_pp)+td(c.persist_person_mae_pp)+td(c.center_mae_pp)+td(c.bias_pp)+td(c.w1_pp)+
       `<td>${CLASS_CN[c.display_class]||''}${flag}</td></tr>`;
   };
+  // drill: month selector + clickable grid rows
+  const d=sec('drill');
+  const monthOpts=[...new Set([...(block.rows||[]).map(r=>r.month)])].sort((a,b)=>a-b);
+  html+=`<div class="card"><h3>下钻：月份 × 人群格（点击某行选择；再选月份看条件分布）</h3>
+    <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-bottom:6px">
+      <span>月份：<select id="drillMonth"><option value="">（先选择月份）</option>`+
+      monthOpts.map(m=>`<option value="${m}" ${String(drillSel.month)===String(m)?'selected':''}>${yfmt(m)}</option>`).join('')+
+      `</select></span>
+      <span id="drillPick" style="font-size:13px;color:#5c665f">${
+        drillSel.dim?('已选：'+esc(drillSel.dim)+' / '+esc(drillSel.label)+'（点击表格行可改选）'):'尚未选择人群格：点击下面任一表格行'}</span>
+    </div><div id="drillPanel"></div></div>`;
   for(const [dim,title] of [['six_cell','六格网格（学历×在职）'],['age_group','年龄切片'],['household_income_band','家庭收入切片'],['numeracy','数理切片'],['region','地区切片'],['housing_tenure','住房切片']]){
     const cells=g[dim]||{};
     const entries=Object.entries(cells);
     if(!entries.length){ html+=`<div class="card"><h3>${title}</h3><div class="note">未提供</div></div>`; continue; }
-    html+=`<div class="card"><h3>${title}</h3>`+
+    html+=`<div class="card"><h3>${title}（点击行下钻）</h3>`+
       table(['组','n(人×月)','独立人数','ESS','可报月/覆盖月','月内最小n','个人MAE','照抄个人MAE','群体中位数MAE','中心带符号偏差','跨人W1','展示等级'],
-        entries.map(([k,c])=>cellRow(c.label_cn||k,c)))+'</div>';
+        entries.map(([k,c])=>{
+          const row=cellRow(c.label_cn||k,c);
+          return row.replace('<tr', `<tr class="drillrow" data-dim="${esc(dim)}" data-label="${esc(k)}" style="cursor:pointer"`);
+        }))+'</div>';
   }
-  html+='<div class="note">· 各格为跨月混合分布（非月内异质性）：按月×遍计算后等权平均；覆盖与月内最小 n 随格显示，不用全年人数掩盖月内缺口。</div></section>';
+  html+='<div class="note">· 各格为跨月混合分布（非月内异质性）：按月×遍计算后等权平均；覆盖与月内最小 n 随格显示，不用全年人数掩盖月内缺口。</div>';
+  // variance decomposition card
+  if(d && Object.keys(d.variance||{}).length){
+    html+=`<div class="card"><h3>六格组内/组间方差分解（真人，次级诊断）</h3><div id="chart-variance"></div>${exportButtonsHTML('chart-variance')}`+
+      `<div class="note">· ${esc(d.note||'')}</div></div>`;
+  }
+  html+='</section>';
   main.innerHTML=html;
+  const monthSel=document.getElementById('drillMonth');
+  monthSel.onchange=()=>{ drillSel.month=monthSel.value?Number(monthSel.value):null; renderDrillPanel(); };
+  main.querySelectorAll('tr.drillrow').forEach(row=>{
+    row.onclick=()=>{ drillSel.dim=row.getAttribute('data-dim'); drillSel.label=row.getAttribute('data-label'); renderMonthlyTab(main); };
+    row.title='点击下钻该人群格';
+  });
+  if(document.getElementById('chart-variance')){ varianceChart(document.getElementById('chart-variance'), d.variance); }
+  renderDrillPanel();
+  wireExportButtons(main);
+}
+function renderDrillPanel(){
+  const panel=document.getElementById('drillPanel');
+  if(!panel) return;
+  const pick=document.getElementById('drillPick');
+  if(!drillSel.month || !drillSel.dim || !drillSel.label){
+    panel.innerHTML='<div class="note">选择月份并点击一个人群格后，这里显示真人/模型/持续性基线的加权 CDF 与分位区间。</div>';
+    return;
+  }
+  if(pick) pick.textContent=`已选：${drillSel.dim} / ${drillSel.label} @ ${yfmt(drillSel.month)}`;
+  const d=sec('drill');
+  const cell=((d.dims[drillSel.dim]||{}).cells[drillSel.label]||{}).months[String(drillSel.month)];
+  if(!cell){ panel.innerHTML='<div class="note">该月该格没有覆盖（未提供）。</div>'; return; }
+  if(cell.display_class==='coverage'){
+    panel.innerHTML=`<div class="note">该格该月 n=${cell.n}（<10），按稀疏纪律只显示覆盖，不渲染分布判断。</div>`;
+    return;
+  }
+  const arm=cur.arm;
+  const modelProf=(cell.arms||{})[arm];
+  const series=[];
+  if(cell.truth) series.push({role:'truth', name:'真人', short:'真人', values:cell.truth.cdf});
+  if(modelProf) series.push({role:'cand', name:`模型 ${arm}`, short:'模型', values:modelProf.cdf});
+  if(cell.prior) series.push({role:'base', name:'持续性基线（上期）', short:'上期', values:cell.prior.cdf});
+  panel.innerHTML=`<div class="card" style="border:none;padding:4px 0"><h3>加权经验 CDF（${yfmt(drillSel.month)} · ${esc(drillSel.label)} · n=${cell.n} · ESS=${fmt(cell.ess,1)} · ${esc(d.quantile_note)}）</h3><div id="chart-cdf"></div>${exportButtonsHTML('chart-cdf')}</div>
+    <div class="card" style="border:none;padding:4px 0"><h3>加权分位区间图（P10–P90 外段、P25–P75 内段、中位数标记；${esc(d.quantile_note)}，非 Tukey 箱线图）</h3><div id="chart-quant"></div>${exportButtonsHTML('chart-quant')}</div>`;
+  cdfChart(document.getElementById('chart-cdf'), d.grid, series);
+  quantileChart(document.getElementById('chart-quant'), [
+    {name:'真人', role:'truth', q:(cell.truth||{}).q||{}},
+    {name:`模型 ${arm}`, role:'cand', q:(modelProf||{}).q||{}},
+    {name:'持续性基线（上期）', role:'base', q:(cell.prior||{}).q||{}},
+  ].map(r=>({...r, n:cell.n})));
+  wireExportButtons(panel);
 }
 
 /* ---------- tab: priors + structure ---------- */
@@ -516,8 +726,12 @@ function renderPriorsTab(main){
       return `<tr>${head}${td(c.prior_mean_pp)}${td(c.truth_mean_pp)}${td(c.model_mean_pp)}`+
         td(c.center_mae_pp)+td(c.person_mae_pp)+td(c.persist_person_mae_pp)+td(c.bias_pp)+td(c.w1_pp)+td(c.delta_w1_pp)+'</tr>';
     });
+    html+='<div class="card"><h3>先验四档条件均值点线图（低端抬高/高端压缩一目了然）</h3><div id="chart-bands"></div>'+
+      `<div class="note">· 点为各档合并条件均值（跨月混合）；真人 ${ROLES.truth.label} / 模型 ${ROLES.cand.label} / 先验 ${ROLES.base.label}。</div>${exportButtonsHTML('chart-bands')}</div>`;
     html+='<div class="card"><h3>按上期真人预期四档（前置特征分组）</h3>'+
       table(['上期预期档','n','ESS','先验均值','真人均值','模型均值','群体中位数MAE','个人MAE','照抄个人MAE','中心带符号偏差','跨人W1','Δ分布W1'],rowsOf(block.bands))+'</div>';
+    html+='<div class="card"><h3>真人上调/稳定/下调：变化幅度对比（|Δ| 均值，跨月混合；事后真值分组）</h3><div id="chart-dirdelta"></div>'+
+      `<div class="note">· 此分组使用本期真值，仅用于评价，不能用于输入分配。</div>${exportButtonsHTML('chart-dirdelta')}</div>`;
     html+='<div class="card"><h3>按真人本期变化方向（事后真值分组，仅用于评价，不能用于输入分配）</h3>'+
       table(['真人本期','n','ESS','先验均值','真人均值','模型均值','群体中位数MAE','个人MAE','照抄个人MAE','中心带符号偏差','跨人W1','Δ分布W1'],rowsOf(block.directions))+'</div>';
   }
@@ -550,12 +764,58 @@ function renderPriorsTab(main){
   }
   html+='<div class="note">· 先验四档为开发期阈值的前置分组；变化方向分组使用本期真值，仅用于评价。</div></section>';
   main.innerHTML=html;
+  // band point-line chart from pooled band means
+  const bandDefs=[['below_2','<2%'],['2_to_below_4','2–4%'],['4_to_below_8','4–8%'],['8_or_above','≥8%']];
+  const bandPts=bandDefs.map(([k,lb])=>{
+    const b=(block.bands||{})[k]||{};
+    return {label:lb, truth:b.truth_mean_pp, model:b.model_mean_pp, prior:b.prior_mean_pp};
+  });
+  if(document.getElementById('chart-bands')) bandLineChart(document.getElementById('chart-bands'), bandPts);
+  const dirDefs=[['up','上调'],['stable','稳定'],['down','下调']];
+  const dirGroups=dirDefs.map(([k,lb])=>{
+    const rows=((block.direction_amplitude||{})[k])||[];
+    const tv=rows.map(r=>r.truth_abs).filter(_f), mv=rows.map(r=>r.model_abs).filter(_f);
+    return {label:lb, values:[tv.length?tv.reduce((a,b)=>a+b,0)/tv.length:null,
+                               mv.length?mv.reduce((a,b)=>a+b,0)/mv.length:null]};
+  });
+  if(document.getElementById('chart-dirdelta')) groupedBars(document.getElementById('chart-dirdelta'), dirGroups, ['真人|Δ|','模型|Δ|'], [ROLES.truth.color, ROLES.cand.color]);
   ['nz_bins','max_prob','mult5_share'].forEach(key=>{
     const el=$('hist-'+key); if(!el) return;
     const a=(sblock.model_shape||{})[key], b=(sblock.truth_shape||{})[key];
     if(!a) return;
     barHist(el, a, b);
   });
+  wireExportButtons(main);
+}
+function bandLineChart(el, pts){
+  const W=560,H=300,P={l:56,r:20,t:16,b:40};
+  const all=pts.flatMap(p=>[p.truth,p.model,p.prior].filter(_f));
+  if(!all.length){ el.innerHTML='<div class="note">无可绘制数据</div>'; return; }
+  let yMin=Math.min(...all), yMax=Math.max(...all);
+  if(yMin===yMax){yMin-=1;yMax+=1;}
+  const pad=(yMax-yMin)*0.15; yMin-=pad; yMax+=pad;
+  const xw=(W-P.l-P.r)/Math.max(1,pts.length-1);
+  const X=i=>P.l+i*xw, Y=v=>P.t+(1-(v-yMin)/(yMax-yMin))*(H-P.t-P.b);
+  let g='';
+  for(let k=0;k<=4;k++){const gy=P.t+k/4*(H-P.t-P.b);
+    g+=`<line x1="${P.l}" y1="${gy}" x2="${W-P.r}" y2="${gy}" stroke="#e7e1d2"/>`;
+    g+=`<text x="${P.l-6}" y="${gy+4}" font-size="10.5" text-anchor="end" fill="#8a8f87">${(yMax-k/4*(yMax-yMin)).toFixed(1)}</text>`;}
+  g+=`<text x="14" y="${P.t+10}" font-size="10.5" fill="#8a8f87">pp</text>`;
+  pts.forEach((p,i)=>{ g+=`<text x="${X(i)}" y="${H-20}" font-size="11.5" text-anchor="middle" fill="#4a554e">${esc(p.label)}</text>`;});
+  [['truth','truth','真人'],['model','cand','模型'],['prior','base','先验']].forEach(([key,role,name])=>{
+    const st=ROLES[role];
+    const pts2=pts.map((p,i)=>({x:X(i), y:_f(p[key])?Y(p[key]):null, v:p[key]})).filter(pt=>pt.y!==null);
+    if(pts2.length) g+=`<polyline points="${pts2.map(pt=>`${pt.x},${pt.y}`).join(' ')}" fill="none" stroke="${st.color}" stroke-width="2.2"${st.dash?` stroke-dasharray="${st.dash}"`:''}/>`;
+    pts2.forEach(pt=>{ g+=`<path d="${markerPath(st.marker,pt.x,pt.y,4.5)}" fill="${st.color}"><title>${esc(name)} ${pt.v.toFixed(2)}pp</title></path>`;
+      g+=`<text x="${pt.x}" y="${pt.y-10}" font-size="10" text-anchor="middle" fill="${st.color}">${pt.v.toFixed(1)}</text>`;});
+  });
+  const lg=document.createElement('div'); lg.className='legend';
+  [['truth','真人'],['cand','模型'],['base','先验']].forEach(([role,name])=>{
+    const st=ROLES[role];
+    lg.innerHTML+=`<span class="item"><span style="color:${st.color}">${st.dash?'╌':'─'}${st.marker==='square'?'■':st.marker==='triangle'?'▲':st.marker==='diamond'?'◆':'●'}</span> ${name}</span> `;
+  });
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;background:#fff;border:1px solid var(--line);border-radius:6px">${g}</svg>`;
+  el.appendChild(lg);
 }
 function barHist(el, histA, histB){
   const labels=histA.map(h=>h.label);
@@ -589,7 +849,45 @@ function groupedBars(el, groups, names, colors){
 /* ---------- tab: inputs ---------- */
 function renderInputsTab(main){
   const e=exp(), pr=e.protocol||{};
+  const inp=sec('inputs')||{};
   const meta=(k,v)=>`<tr><td class="l"><b>${esc(k)}</b></td><td class="l" style="white-space:normal">${(v===null||v===undefined)?'<span style="color:#9aa39b">未提供</span>':esc(Array.isArray(v)?v.join('、'):v)}</td></tr>`;
+  let trialHtml='';
+  if(!inp.trial_dir){
+    trialHtml=`<div class="card"><h3>输入差异清单（trial 元数据）</h3><div class="note">· ${esc(inp.note||'未接入')}</div></div>`;
+  } else {
+    const layerRows=[];
+    Object.entries(inp.months||{}).forEach(([m,mi])=>{
+      if(mi.layers && mi.layers.length){
+        mi.layers.forEach((L,i)=>{
+          layerRows.push(`<tr><td class="l">${i===0?yfmt(m):''}</td><td class="l">${esc(L.name||'未提供')}</td><td class="l">${esc(L.scope||'')}</td><td class="l">${esc(L.dynamics||'')}</td><td class="l" style="white-space:normal">${esc(L.description||'未提供')}</td><td class="l" style="white-space:normal">${esc(L.source||'未提供')}</td></tr>`);
+        });
+      } else {
+        layerRows.push(`<tr><td class="l">${yfmt(m)}</td><td class="l" colspan="5">${esc(mi.environment||'environment 未提供')}</td></tr>`);
+      }
+    });
+    const monthRows=Object.entries(inp.months||{}).map(([m,mi])=>
+      `<tr><td class="l">${yfmt(m)}</td><td>${mi.n_events===null||mi.n_events===undefined?'<span style="color:#9aa39b">未提供</span>':mi.n_events}</td>`+
+      `<td class="l">${mi.prompt_arms&&mi.prompt_arms.length?esc(mi.prompt_arms.join('、')):'<span style="color:#9aa39b">未提供</span>'}</td>`+
+      `<td class="l">${mi.layers?mi.layers.length:0} 层</td></tr>`);
+    trialHtml=`<div class="card"><h3>各臂输入差异清单（来自 trial 元数据，非理由文本）</h3>`+
+      table(['项','内容'],[
+        meta('来源 trial 目录', inp.trial_dir),
+        meta('臂间相同', (inp.arm_diff||{}).shared),
+        meta('本机制改变', (inp.arm_diff||{}).changed),
+        meta('未接入', ((inp.arm_diff||{}).not_integrated||[]).join('；')),
+        meta('机制标识', inp.mechanism),
+        meta('信息变化说明', inp.information_change),
+        meta('预设对照', inp.prespecified_contrasts),
+        meta('计划调用（trial protocol）', inp.planned_calls),
+        meta('计划任务（manifest）', inp.planned_jobs),
+        meta('预算上限合计（失败预留口径）', inp.budget_cap_usd!==undefined&&inp.budget_cap_usd!==null?inp.budget_cap_usd.toFixed(2)+' USD':'未提供'),
+      ])+'</div>'+
+      `<div class="card"><h3>按月提供的信息（environment layers / prompt 覆盖）</h3>`+
+      table(['月份','计划事件数','该月有 prompt 的臂','环境层数'], monthRows)+
+      `<details style="margin-top:6px"><summary>环境层明细（展开）</summary><div style="margin-top:6px">`+
+      table(['月份','层名','范围','动态','说明','来源'], layerRows)+'</div></details>'+
+      `<div class="note">· CPI/食品/能源逐月数值未结构化提供：本面板不从文本反推输入；如需要逐字段清单，请由输入准备层产出结构化快照后接入（插件式）。</div></div>`;
+  }
   main.innerHTML=`<section><h2>输入与配置</h2>
     <div class="guide">这轮实验各组究竟收到了哪些人口、历史、新闻、价格与政策信息；跨批比较先核对本页与质量页的支持口径。</div>
     <div class="card"><h3>协议信息（来自 summary.json，未逐字段核对哈希）</h3>`+
@@ -602,9 +900,9 @@ function renderInputsTab(main){
       meta('资格口径', pr.eligibility), meta('权重口径', pr.weights),
       meta('说明（登记表）', e.description),
     ])+'</div>'+
+    trialHtml+
     `<div class="card"><h3>比较资格</h3><div class="note">· ${esc(PANEL.comparability_notice)}</div>
      <div class="note">· 仅缺来源元数据时写“无法确认”，不自动归入同输入；同一温度不保证不同模型输出方差相同。</div></div>
-    <div class="banners">逐月输入暴露清单（CPI/食品/能源、新闻数量与主题、政策与本人历史的来源及发布时间）属第三批；当前只展示协议级配置，不从理由文本反推输入。</div>
   </section>`;
 }
 
@@ -617,6 +915,29 @@ function renderQualityTab(main){
   const cost = pr.estimated_cost_usd!==undefined&&pr.estimated_cost_usd!==null
       ? (typeof pr.estimated_cost_usd==='number'?pr.estimated_cost_usd.toFixed(2)+' USD':esc(pr.estimated_cost_usd))
       : '未接入';
+  // quality funnel per arm: stages read from cases fields; absent -> 未接入
+  const STAGES=[['planned','计划（protocol/manifest）'],['attempted','回包（评分缓存记录）'],
+    ['parsed','结构可解析'],['raw_valid','原始合法'],['normalized','归一化可用'],['scorable','可评分']];
+  const funnelRows=Object.entries(q.arms||{}).map(([arm,a])=>{
+    const f=a.funnel||{};
+    return `<tr><td class="l"><b>${esc(arm)}</b></td>`+STAGES.map(([k,lb])=>
+      `<td>${f[k]===undefined||f[k]===null?'<span style="color:#9aa39b">未接入</span>':f[k]}</td>`).join('')+`</tr>`;
+  });
+  const funnelNote='漏斗从 trial protocol/manifest 与评分缓存读取；读不到的环节标“未接入”，不填零。原始合法与归一化字段只在部分批次存档。';
+  // month x arm missing matrix
+  const ma=q.month_arm_missing||{};
+  const allMonths=[...new Set(Object.values(ma).flatMap(armObj=>Object.keys(armObj)))].sort();
+  const missRows=allMonths.map(m=>{
+    const cells=Object.keys(ma).map(arm=>{
+      const c=ma[arm][m];
+      if(!c) return '<td style="text-align:center;color:#9aa39b">—</td>';
+      const sh=c.missing_share;
+      if(sh===null||sh===undefined) return '<td style="text-align:center;color:#9aa39b">未提供</td>';
+      const alpha=Math.min(0.85, 0.08+sh*3);
+      return `<td style="background:rgba(213,94,0,${alpha.toFixed(2)})" title="assigned ${c.assigned} / scorable ${c.scorable}">${(sh*100).toFixed(0)}%</td>`;
+    }).join('');
+    return `<tr><td class="l">${yfmt(Number(m))}</td>${cells}</tr>`;
+  });
   const batches=PANEL.source_batches.map(b=>`<tr><td class="l">${esc(b.batch)}</td><td class="l">${esc(b.label)}${b.registered?'':'（未登记）'}</td><td>${esc(b.status==='ok'?'已接入':'未接入')}</td><td class="l">${esc(b.skip_reason||'—')}</td><td>${b.n_cases}</td></tr>`);
   main.innerHTML=`<section><h2>质量与复现</h2>
     <div class="guide">缺失、归一化、支持、费用、版本与复算入口。</div>
@@ -624,10 +945,18 @@ function renderQualityTab(main){
     `<span><b>Q9 共同支持</b>：${q.q9_common_person_months} 人×月</span>`+
     `<span><b>Q8 共同支持</b>：${q.q8_common_person_months} 人×月（独立取支持）</span>`+
     (q.support_note?`<span style="color:#a4453a">${esc(q.support_note)}</span>`:'')+'</div></div>'+
-    `<div class="card"><h3>每实验组数据质量</h3>`+
-    table(['arm','记录数','可评分','缺失率','scorer_status 计数','归一化比例','权重缺失','Q8真值覆盖','Q8模型覆盖','臂可用n(人×月)'],rows)+'</div>'+
+    `<div class="card"><h3>质量漏斗（计划→回包→可解析→原始合法→归一化→可评分）</h3>`+
+    table(['arm',...STAGES.map(([k,lb])=>lb)],funnelRows)+
+    `<div class="note">· ${esc(funnelNote)}</div></div>`+
+    `<div class="card"><h3>月 × 臂 缺失率热力表（悬停看 assigned/scorable）</h3>`+
+    table(['月份',...Object.keys(ma).map(esc)],missRows)+
+    `<div class="note">· 颜色越深得缺越多；共同支持=Q9 各臂×遍均可评的人×月，见支持口径卡。</div></div>`+
+    `<details class="card"><summary><b>每臂质量明细（scorer 计数、归一化比例、Q8 覆盖）——展开</b></summary><div style="margin-top:8px">`+
+    table(['arm','记录数','可评分','缺失率','scorer_status 计数','归一化比例','权重缺失','Q8真值覆盖','Q8模型覆盖','臂可用n(人×月)'],rows)+'</div></details>'+
     `<div class="card"><h3>运行与费用</h3><div style="font-size:13.5px;display:flex;flex-wrap:wrap;gap:8px 22px">`+
-    `<span><b>状态</b>：${esc(pr.batch_status||'未提供')}</span><span><b>费用</b>：${cost}</span>`+
+    `<span><b>状态</b>：${esc(pr.batch_status||'未提供')}</span><span><b>费用（${(q.cost||{}).basis==='actual_ledger'?'已报告':'估计'}）</b>：${esc((q.cost||{}).display||cost)}</span>`+
+    `<span><b>预算上限（manifest cap 合计，失败预留口径）</b>：${(q.cost||{}).budget_cap_usd!==undefined&&(q.cost||{}).budget_cap_usd!==null?(q.cost||{}).budget_cap_usd.toFixed(2)+' USD':'未接入'}</span>`+
+    `<span><b>计划任务</b>：${(q.cost||{}).planned_jobs!==undefined?(q.cost||{}).planned_jobs:'未接入'}</span>`+
     `<span><b>证据阶段</b>：${esc((exp().registry||{}).evidence_stage||'未登记')}</span>`+
     `<span><b>运行状态</b>：${esc((exp().registry||{}).run_status||'未登记')}</span>`+
     `<span><b>模型</b>：${esc(pr.model||'未提供')}${pr.temperature!==undefined?'（T='+esc(pr.temperature)+'）':''}</span></div></div>`+

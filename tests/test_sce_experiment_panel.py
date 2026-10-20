@@ -152,8 +152,8 @@ def test_panel_serializable_without_nan(batch):
     text = json.dumps(panel, ensure_ascii=False, allow_nan=False)
     assert 'NaN' not in text and 'Infinity' not in text
     exp = panel['experiments'][BATCH]
-    assert set(exp['sections']) == {'overview', 'monthly', 'grid',
-                                    'priors', 'structure', 'quality'}
+    assert set(exp['sections']) == {'overview', 'monthly', 'grid', 'priors', 'structure',
+                                    'quality', 'drill', 'inputs'}
     assert exp['q8_available'] is True
 
 
@@ -491,3 +491,150 @@ def test_registry_sections_and_catalog(batch):
     assert '待登记' in sections                      # synthetic batch lands there
     pending = next(g for g in cat['groups'] if g['section'] == '待登记')
     assert all(not e['registered'] for e in pending['entries'])
+
+
+def test_drill_cdf_and_quantiles_hand_computed(batch):
+    """Weighted CDF at the grid and the five quantiles are hand-checkable."""
+    from studies.sce_inflation_expectations.panel.sections import (
+        CDF_GRID_PP, _cdf_curve, _quantile_set)
+    # two people, weights 1 and 3, values 2 and 6
+    values = np.asarray([2.0, 6.0])
+    weights = np.asarray([1.0, 3.0])
+    cdf = _cdf_curve(values, weights, CDF_GRID_PP)
+    total = 4.0
+    for g, f in zip(CDF_GRID_PP, cdf):
+        expected = (1.0 if 2 <= g else 0.0) + (3.0 if 6 <= g else 0.0)
+        assert f == pytest.approx(expected / total)
+    q = _quantile_set(values, weights)
+    # left-CDF convention (metrics.quantile): first cumsum >= p*total
+    assert q['p25'] == pytest.approx(2.0)     # 1.0 >= 1.0 -> value 2
+    assert q['p50'] == pytest.approx(6.0)     # 4.0 >= 2.0 -> value 6
+    assert q['p90'] == pytest.approx(6.0)
+    # drill section: a well-populated synthetic cell exposes truth/model/prior
+    _, _, panel = batch
+    drill = panel['experiments'][BATCH]['sections']['drill']
+    cell = drill['dims']['high_school|attached'.replace('|attached', '|not_attached')] \
+        if False else None
+    cell = (drill['dims']['six_cell']['cells']['high_school|not_attached']
+            ['months']['202001'])
+    # month1: only uid4 (uid3 fell out of the support) -> coverage only
+    assert cell['n'] == 1 and cell['display_class'] == 'coverage'
+    assert 'truth' not in cell
+    cell2 = (drill['dims']['six_cell']['cells']['some_college|not_attached']
+             ['months']['202002'])
+    # month2: only uid6 (prior missing does not remove it from the support)
+    assert cell2['n'] == 1 and cell2['display_class'] == 'coverage'
+
+
+def test_drill_normal_cell_profiles_and_variance():
+    """A bigger synthetic batch: normal drill cell + variance decomposition."""
+    def case(uid, repeat, education, truth):
+        arms = {'A': {'mean': truth + 1.0, 'iqr': 1.0, 'q9_bins': [0.] * 10,
+                      'point': 1.0, 'scorer_status': 'ok', 'validation_status': 'valid',
+                      'validation_error': None, 'normalization_applied': False}}
+        return {
+            'month': 202001, 'userid': uid, 'agent_id': f'd_{uid}_{repeat}',
+            'profile': {'education_group': education, 'employment_status': 'employed'},
+            'stratum': 'syn', 'survey_weight': 1.0, 'inclusion_probability': 0.5,
+            'design_survey_weight': 2.0, 'repeat': repeat,
+            'real': {'q9_mean': truth, 'q9_iqr': 1.0, 'q9_zero_deflation': 0.0,
+                     'q9_bins': [0.] * 10, 'q8_point': 1.0, 'q8_outside_100': False,
+                     'weight': 1.0, 'previous_q9_mean': truth - 1.0,
+                     'previous_q9_bins': None},
+            'arms': arms}
+    cases = []
+    for uid in range(1, 41):
+        for repeat in (1, 2):
+            truth = 1.0 if uid <= 20 else 9.0
+            cases.append(case(uid, repeat, 'high_school' if uid <= 20 else 'college', truth))
+    with tempfile.TemporaryDirectory() as td:
+        out = write_batch(Path(td), 'drill_batch_evaluation_20261021_v1', cases)
+        records, meta = load_batch(out / 'cases_private.json')
+        panel = build_panel(records, [meta], build_regime_lookup({202001: 2.0}))
+    exp = panel['experiments']['drill_batch_evaluation_20261021_v1']
+    drill = exp['sections']['drill']
+    # per-label drill cells: high_school cluster at 1, college cluster at 9
+    cell_hs = drill['dims']['six_cell']['cells']['high_school|attached']['months']['202001']
+    assert cell_hs['n'] == 20 and cell_hs['display_class'] == 'normal'
+    assert cell_hs['truth']['q']['p50'] == pytest.approx(1.0)
+    assert cell_hs['truth']['q']['p10'] == pytest.approx(1.0)
+    cell_col = drill['dims']['six_cell']['cells']['college|attached']['months']['202001']
+    assert cell_col['truth']['q']['p50'] == pytest.approx(9.0)
+    # model = truth + 1, prior = truth - 1
+    assert cell_hs['arms']['A']['q']['p50'] == pytest.approx(2.0)
+    assert cell_hs['prior']['q']['p50'] == pytest.approx(0.0)
+    # weighted CDF at grid points: F(0)=0, F(1)=1.0 for the low cluster
+    grid = drill['grid']
+    cdf = cell_hs['truth']['cdf']
+    assert cdf[grid.index(0)] == pytest.approx(0.0)
+    assert cdf[grid.index(1)] == pytest.approx(1.0)
+    # two populated six-cell labels: between = var([1, 9], ddof=1) = 32, within ~0
+    var = drill['variance']['202001']
+    assert var['between_cell_var_pp2'] == pytest.approx(32.0)
+    assert var['within_cell_var_pp2'] == pytest.approx(0.0, abs=1e-9)
+
+
+def test_quality_funnel_and_month_matrix(batch):
+    _, _, panel = batch
+    q = panel['experiments'][BATCH]['sections']['quality']
+    fa = q['arms']['A']['funnel']
+    assert fa['attempted'] == 48          # 12 uids x 2 repeats x 1 month pair = 48 arm-A records
+    assert fa['scorable'] == 47           # one unscored arm-A record
+    # parsed/raw_valid/normalized are absent in the synthetic arm entries -> 未接入
+    assert fa['parsed'] is None and fa['raw_valid'] is None
+    assert fa['normalized'] is not None   # normalization_applied present (True/False)
+    matrix = q['month_arm_missing']
+    assert matrix['A']['202001']['assigned'] == 24
+    assert matrix['A']['202001']['scorable'] == 23
+    assert matrix['A']['202001']['missing_share'] == pytest.approx(1 / 24)
+    # the synthetic summary carries an estimate -> shown as 估计, not 未接入
+    assert q['cost']['display'] == '估计 0.01 USD'
+    assert q['cost']['basis'] == 'estimate'
+
+
+def test_inputs_plugin_with_fake_trial(tmp_path):
+    """Trial matched by protocol id: manifest jobs, environment layers."""
+    batch_dir = write_batch(tmp_path, 'inputs_batch_evaluation_20261021_v1', make_cases())
+    trial = tmp_path / 'inputs_batch_trial_20261021_v1'
+    (trial / '202001').mkdir(parents=True)
+    (trial / '202002').mkdir(parents=True)
+    (trial / 'protocol.json').write_text(json.dumps({
+        'id': 'syn', 'mechanism': 'synthetic_mechanism',
+        'information_change': 'none', 'planned_calls': 96,
+        'interactions': [], 'prespecified_contrasts': []}))
+    (trial / 'manifest.json').write_text(json.dumps({'jobs': [
+        {'month': 202001, 'arm': 'A', 'repeat': 1, 'cap_usd': 0.5},
+        {'month': 202001, 'arm': 'B', 'repeat': 1, 'cap_usd': 0.25}]}))
+    (trial / '202001' / 'environment.json').write_text(json.dumps({
+        'layers': [{'name': 'macro', 'scope': 'macro', 'dynamics': 'scheduled',
+                    'source': 'outputs/x.json', 'description': 'CPI 层'}],
+        'scheduled_events': [1, 2]}))
+    (trial / '202001' / 'prompts_A.json').write_text('{}')
+    records, meta = load_batch(batch_dir / 'cases_private.json')
+    # point the summary protocol id at the fake trial protocol id
+    meta['protocol']['id'] = 'syn'
+    meta['summary_path'] = str(batch_dir / 'summary.json')
+    from studies.sce_inflation_expectations.panel.sections import (
+        resolve_trials, section_inputs)
+    resolve_trials([meta])
+    assert meta['trial']['dir'] == trial.name
+    out = section_inputs({'inputs_batch_evaluation_20261021_v1': records},
+                         {}, {'inputs_batch_evaluation_20261021_v1': meta})
+    inp = out['inputs_batch_evaluation_20261021_v1']
+    assert inp['mechanism'] == 'synthetic_mechanism'
+    assert inp['planned_jobs'] == 2
+    assert inp['budget_cap_usd'] == pytest.approx(0.75)
+    m1 = inp['months']['202001']
+    assert m1['n_events'] == 2 and m1['prompt_arms'] == ['A']
+    assert m1['layers'][0]['name'] == 'macro'
+    # unmatched month dir: 202002 has no environment.json -> 未提供
+    assert inp['months']['202002']['environment'] == '未提供'
+
+
+def test_priors_band_series_present(batch):
+    _, _, panel = batch
+    priors = panel['experiments'][BATCH]['sections']['priors']['A']
+    series = priors['band_series']['below_2']
+    assert series and {'month', 'prior', 'truth', 'model', 'n'} <= set(series[0])
+    amp = priors['direction_amplitude']
+    assert set(amp) == {'up', 'stable', 'down'}

@@ -25,8 +25,10 @@ Statistical conventions (panel v1 batch 1, per experiment_panel_review_20261020)
 """
 from __future__ import annotations
 
+import json
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
+from pathlib import Path
 
 import numpy as np
 
@@ -594,9 +596,54 @@ def _priors(records):
             block['label_cn'] = {'up': '真人本期上调', 'stable': '真人本期稳定(±0.5pp)',
                                  'down': '真人本期下调'}[bucket]
             directions[bucket] = block
+        # drill series: per band, monthly conditional means (month x repeat
+        # averaged) for the point-line chart; direction-group amplitudes
+        band_series = {}
+        for band in band_order:
+            by_month = defaultdict(list)
+            for pm in prior_pms:
+                rec = next((r for r in records if r['arm'] == arm and (r['month'], r['_pid']) == pm
+                            and r['repeat'] == repeats[0]), None)
+                if rec is not None and _finite(rec.get('prior_q9_mean')) \
+                        and prior_band(rec['prior_q9_mean']) == band \
+                        and _finite(rec.get('model_q9_mean')) and _finite(rec.get('truth_q9_mean')):
+                    by_month[rec['month']].append(
+                        (rec['prior_q9_mean'], rec['truth_q9_mean'], rec['model_q9_mean']))
+            series = []
+            for month in months:
+                rows = by_month.get(month)
+                if not rows:
+                    continue
+                series.append({'month': month,
+                               'prior': float(np.mean([r[0] for r in rows])),
+                               'truth': float(np.mean([r[1] for r in rows])),
+                               'model': float(np.mean([r[2] for r in rows])),
+                               'n': len(rows)})
+            band_series[band] = series
+        direction_amp = {}
+        for bucket in ('up', 'stable', 'down'):
+            by_month = defaultdict(list)
+            for pm in prior_pms:
+                rec = next((r for r in records if r['arm'] == arm and (r['month'], r['_pid']) == pm
+                            and r['repeat'] == repeats[0]), None)
+                if rec is None or not (_finite(rec.get('truth_q9_mean'))
+                                       and _finite(rec.get('model_q9_mean'))
+                                       and _finite(rec.get('prior_q9_mean'))):
+                    continue
+                if direction(rec['truth_q9_mean'] - rec['prior_q9_mean'], UPDATE_THRESHOLD_PP) == bucket:
+                    by_month[rec['month']].append(
+                        (abs(rec['truth_q9_mean'] - rec['prior_q9_mean']),
+                         abs(rec['model_q9_mean'] - rec['prior_q9_mean'])))
+            direction_amp[bucket] = [
+                {'month': month,
+                 'truth_abs': float(np.mean([r[0] for r in rows])),
+                 'model_abs': float(np.mean([r[1] for r in rows])),
+                 'n': len(rows)}
+                for month, rows in sorted(by_month.items())]
         out[arm] = {'bands': bands, 'directions': directions,
+                    'band_series': band_series, 'direction_amplitude': direction_amp,
                     'notes': ['先验四档为前置特征分组（<2、2–4、4–8、≥8%，开发期阈值）。',
-                              '上调/稳定/下调分组使用本期真值，仅用于评价，不能用于分配输入。']}
+                              '上调/稳定/下调分组使用本期真值，仅用于评价，不能用于输入分配。']}
     return out
 
 
@@ -706,6 +753,232 @@ def section_structure(records_by_experiment, regime_lookup):
     return {exp: _structure(recs) for exp, recs in records_by_experiment.items()}
 
 
+CDF_GRID_PP = list(range(0, 13))     # 0..12pp，加权经验 CDF 的展示网格
+QUANTILE_LEVELS = (0.10, 0.25, 0.50, 0.75, 0.90)
+
+
+def _cdf_curve(values, weights, grid=CDF_GRID_PP):
+    """Weighted empirical CDF evaluated at the display grid (aggregate only)."""
+    total = float(np.sum(weights))
+    return [float(np.sum(weights[np.asarray(values) <= g]) / total) for g in grid]
+
+
+def _quantile_set(values, weights):
+    return {'p%d' % int(p * 100): float(_wquantile(np.asarray(values, float),
+                                                   np.asarray(weights, float), p))
+            for p in QUANTILE_LEVELS}
+
+
+def _series_profile(recs, value_key, weight_key='weight'):
+    vals, wts = [], []
+    for r in recs:
+        v, w = r.get(value_key), r.get(weight_key)
+        if _finite(v) and _finite(w) and w > 0:
+            vals.append(float(v))
+            wts.append(float(w))
+    if not vals:
+        return None
+    v = np.asarray(vals)
+    w = np.asarray(wts)
+    return {'cdf': _cdf_curve(v, w), 'q': _quantile_set(v, w)}
+
+
+def _drill(records):
+    """Month x group drill-down: weighted CDF curves and quantile intervals.
+
+    Everything is computed per month on the common support; sparse cells keep
+    the draft discipline (coverage only when n<10). Only aggregates (CDF
+    values at a fixed grid, five quantiles) leave this layer.
+    """
+    support, arms, repeats, _ = q9_support(records)
+    months = sorted({pm[0] for pm in support})
+    first = arms[0]
+    dims = {}
+    for dim, title in GRID_DIMENSIONS:
+        key = 'cell' if dim == 'six_cell' else dim
+        groups = defaultdict(list)
+        for r in records:
+            pm = (r['month'], r['_pid'])
+            if pm not in support or r['arm'] != first:
+                continue
+            label = r.get(key) if dim == 'six_cell' else (r.get(key) or 'missing')
+            groups[label].append(r)
+        order = (SIX_CELL_ORDER if dim == 'six_cell'
+                 else sorted(groups, key=lambda x: (x == 'missing', str(x))))
+        cells = {}
+        for label in order:
+            recs = groups.get(label)
+            if not recs:
+                continue
+            by_month = defaultdict(list)
+            for r in recs:
+                by_month[r['month']].append(r)
+            month_cells = {}
+            for month in months:
+                sub = by_month.get(month)
+                if not sub:
+                    continue
+                pms = {(r['month'], r['_pid']) for r in sub}
+                n_m = len(pms)
+                w_m = [r['weight'] for r in sub if _finite(r.get('weight'))]
+                ess_m = _kish_ess(w_m)
+                cell = {'n': n_m, 'ess': ess_m, 'display_class': _display_class(n_m, ess_m)}
+                if cell['display_class'] != 'coverage':
+                    cell['truth'] = _series_profile(sub, 'truth_q9_mean')
+                    cell['prior'] = _series_profile(sub, 'prior_q9_mean')
+                    if cell['truth'] is None:
+                        cell = {'n': n_m, 'ess': ess_m, 'display_class': 'coverage'}
+                    else:
+                        # model profiles need every arm's own values
+                        by_arm = defaultdict(list)
+                        for r in records:
+                            pm2 = (r['month'], r['_pid'])
+                            if pm2 in pms:
+                                by_arm[r['arm']].append(r)
+                        arms_prof = {}
+                        for arm in arms:
+                            prof = _series_profile(by_arm.get(arm, []), 'model_q9_mean')
+                            if prof is not None:
+                                arms_prof[arm] = prof
+                        cell['arms'] = arms_prof
+                month_cells[str(month)] = cell
+            cells[label] = {'label_cn': _cn(dim, label), 'months': month_cells}
+        dims[dim] = {'title': title, 'cells': cells}
+    # secondary diagnostic: six-cell variance decomposition per month x repeat
+    variance = {}
+    for month in months:
+        per_rep = []
+        for rep in repeats:
+            cell_means, cell_vars = [], []
+            for label in SIX_CELL_ORDER:
+                recs = [r for r in records if r['arm'] == first and r['month'] == month
+                        and r['repeat'] == rep and (month, r['_pid']) in support
+                        and r.get('cell') == label and _finite(r.get('truth_q9_mean'))]
+                vals = [r['truth_q9_mean'] for r in recs]
+                if len(vals) >= MIN_COVERAGE_N:
+                    cell_means.append(float(np.mean(vals)))
+                    cell_vars.append(float(np.var(vals, ddof=1)))
+            if len(cell_means) >= 2:
+                per_rep.append({'between': float(np.var(cell_means, ddof=1)),
+                                'within': float(np.mean(cell_vars)),
+                                'n_cells': len(cell_means)})
+        if per_rep:
+            variance[str(month)] = {
+                'between_cell_var_pp2': float(np.mean([p['between'] for p in per_rep])),
+                'within_cell_var_pp2': float(np.mean([p['within'] for p in per_rep])),
+                'n_cells': max(p['n_cells'] for p in per_rep),
+            }
+    return {'grid': CDF_GRID_PP, 'quantile_note': '加权分位图，非 Tukey 箱线图',
+            'dims': dims, 'variance': variance,
+            'note': '只分解方差，不把各格中位数MAE相加当作总体误差贡献；CDF 与分位数均为共同支持上的加权聚合。'}
+
+
+@section_plugin('drill')
+def section_drill(records_by_experiment, regime_lookup):
+    return {exp: _drill(recs) for exp, recs in records_by_experiment.items()}
+
+
+def resolve_trials(metas):
+    """Match each evaluation batch to its generation trial directory by
+    protocol id (read-only local scan of outputs/*_trial_*). Attached onto
+    each meta as meta['trial']; absent stays None and the UI shows 未接入.
+    """
+    by_proto = {}
+    for m in metas:
+        proto_id = (m.get('protocol') or {}).get('id')
+        if proto_id:
+            by_proto.setdefault(proto_id, m)
+    for m in metas:
+        m['trial'] = None
+    seen = set()
+    for proto_id, m in by_proto.items():
+        if proto_id in seen:
+            continue
+        root = Path(m['summary_path']).resolve().parent.parent
+        for trial in sorted(root.glob('*_trial_*')):
+            proto_path = trial / 'protocol.json'
+            if not proto_path.exists():
+                continue
+            try:
+                proto = json.loads(proto_path.read_text())
+            except (OSError, ValueError):
+                continue
+            if proto.get('id') == proto_id:
+                info = {'dir': trial.name, 'protocol': proto,
+                        'manifest_path': str(trial / 'manifest.json')}
+                for other in metas:
+                    if (other.get('protocol') or {}).get('id') == proto_id:
+                        other['trial'] = info
+                seen.add(proto_id)
+                break
+
+
+def _trial_inputs(meta):
+    """Input-exposure facts from the generation trial (manifest/protocol/
+    environment only; prompt-level diffs are not structured and are never
+    guessed from response text)."""
+    trial = meta.get('trial')
+    if not trial:
+        return {'trial_dir': None,
+                'note': '未接入：未找到与协议 id 匹配的 trial 目录；输入暴露不猜测。'}
+    proto = trial.get('protocol') or {}
+    out = {
+        'trial_dir': trial['dir'],
+        'mechanism': proto.get('mechanism'),
+        'information_change': proto.get('information_change'),
+        'interactions': proto.get('interactions'),
+        'prespecified_contrasts': proto.get('prespecified_contrasts'),
+        'planned_calls': proto.get('planned_calls'),
+        'months': {},
+        'arm_diff': {
+            'shared': '人口画像、本人历史/先验、问卷框架与公共环境层（environment.json layers，臂间共享）',
+            'changed': proto.get('mechanism') or '未提供',
+            'not_integrated': ['prompt 级逐字段差异未结构化接入（不从理由文本反推输入）'],
+        },
+        'source': 'trial 目录 manifest/protocol/environment.json（只读本地文件，零 API）',
+    }
+    manifest_path = trial.get('manifest_path')
+    if manifest_path and Path(manifest_path).exists():
+        try:
+            jobs = json.loads(Path(manifest_path).read_text()).get('jobs', [])
+            out['planned_jobs'] = len(jobs)
+            caps = [j.get('cap_usd') for j in jobs if _finite(j.get('cap_usd'))]
+            out['budget_cap_usd'] = float(np.sum(caps)) if caps else None
+        except (OSError, ValueError):
+            out['planned_jobs'] = None
+    trial_dir = Path(meta['summary_path']).resolve().parent.parent / trial['dir']
+    for month in (meta.get('protocol') or {}).get('months') or []:
+        month_dir = trial_dir / str(month)
+        env_path = month_dir / 'environment.json'
+        month_info = {'layers': [], 'n_events': None, 'prompt_arms': []}
+        if env_path.exists():
+            try:
+                env = json.loads(env_path.read_text())
+                for layer in env.get('layers', []):
+                    month_info['layers'].append({
+                        'name': layer.get('name'), 'scope': layer.get('scope'),
+                        'dynamics': layer.get('dynamics'), 'source': layer.get('source'),
+                        'description': layer.get('description')})
+                month_info['n_events'] = len(env.get('scheduled_events') or [])
+            except (OSError, ValueError):
+                month_info['layers_error'] = 'environment.json 解析失败'
+        else:
+            month_info['environment'] = '未提供'
+        if month_dir.exists():
+            for p in sorted(month_dir.glob('prompts_*.json')):
+                month_info['prompt_arms'].append(p.stem.replace('prompts_', ''))
+        else:
+            month_info['month_dir'] = '未提供'
+        out['months'][str(month)] = month_info
+    return out
+
+
+@section_plugin('inputs')
+def section_inputs(records_by_experiment, regime_lookup, metas_by_experiment):
+    return {exp: _trial_inputs(metas_by_experiment[exp])
+            for exp in records_by_experiment}
+
+
 def _quality(records, meta):
     support, arms, repeats, support_note = q9_support(records)
     q9_stats = _support_stats(support, _person_weights(records, support, arms, repeats))
@@ -727,6 +1000,20 @@ def _quality(records, meta):
         norm_known = [r['normalization_applied'] for r in recs
                       if r.get('normalization_applied') is not None]
         scorable = sum(1 for r in recs if _finite(r.get('model_q9_mean')))
+        parsed_known = [r.get('response_parsed') for r in recs
+                        if 'response_parsed' in r and r.get('response_parsed') is not None]
+        raw_valid_known = [r.get('raw_validation_status') for r in recs
+                           if r.get('raw_validation_status') is not None]
+        # quality funnel: a stage is None (未接入) when its field is absent
+        funnel = {
+            'planned': (meta.get('trial') or {}).get('protocol', {}).get('planned_calls'),
+            'attempted': len(recs),
+            'parsed': (sum(1 for v in parsed_known if v) if parsed_known else None),
+            'raw_valid': (sum(1 for v in raw_valid_known if v == 'valid')
+                          if raw_valid_known else None),
+            'normalized': (sum(1 for v in norm_known if v) if norm_known else None),
+            'scorable': scorable,
+        }
         arms_q[arm] = {
             'n_records': len(recs),
             'n_scorable': scorable,
@@ -738,11 +1025,44 @@ def _quality(records, meta):
             'q8_truth_coverage': float(np.mean([_finite(r.get('truth_q8_point')) for r in recs])),
             'q8_model_coverage': float(np.mean([_finite(r.get('model_q8_point')) for r in recs])),
             'q9_usable_person_months': usable.get(arm),
+            'funnel': funnel,
         }
+    # month x arm missing matrix (assigned records vs scorable)
+    month_arm = {}
+    for arm in arms:
+        per_month = {}
+        for r in by_arm[arm]:
+            cell = per_month.setdefault(r['month'], {'assigned': 0, 'scorable': 0})
+            cell['assigned'] += 1
+            cell['scorable'] += 1 if _finite(r.get('model_q9_mean')) else 0
+        month_arm[arm] = {str(m): {'assigned': c['assigned'], 'scorable': c['scorable'],
+                                   'missing_share': (1 - c['scorable'] / c['assigned']
+                                                     if c['assigned'] else None)}
+                          for m, c in sorted(per_month.items())}
+    # cost categories: reported ledger vs estimate vs budget cap vs missing
+    summary_cost = meta.get('protocol', {}).get('estimated_cost_usd')
+    cost = {'reported_or_estimated_usd': summary_cost,
+            'basis': meta.get('protocol', {}).get('estimated_cost_basis'),
+            'budget_cap_usd': None}
+    trial = meta.get('trial') or {}
+    manifest_path = trial.get('manifest_path')
+    if manifest_path and Path(manifest_path).exists():
+        try:
+            jobs = json.loads(Path(manifest_path).read_text()).get('jobs', [])
+            caps = [j.get('cap_usd') for j in jobs if _finite(j.get('cap_usd'))]
+            if caps:
+                cost['budget_cap_usd'] = float(np.sum(caps))
+                cost['planned_jobs'] = len(jobs)
+        except (OSError, ValueError):
+            pass
+    cost['display'] = '未接入' if summary_cost is None else (
+        '%s %.2f USD' % ('已报告' if cost['basis'] == 'actual_ledger' else '估计', summary_cost))
     return {'arms': arms_q, 'protocol': meta.get('protocol', {}),
             'weight_field': meta.get('weight_field'),
             'q9_common_person_months': q9_stats['n_person_months'],
             'q8_common_person_months': len(q8s),
+            'month_arm_missing': month_arm,
+            'cost': cost,
             'support_note': support_note}
 
 
@@ -924,11 +1244,13 @@ def build_panel(records, metas, regime_lookup, only_sections=None):
     for r in records:
         records_by_experiment[r['experiment']].append(r)
     metas_by_experiment = {m['batch']: m for m in metas}
+    resolve_trials(metas)      # attach meta['trial'] for inputs/quality plugins
     names = only_sections or [n for n in SECTION_PLUGINS if n != 'catalog']
+    META_PLUGINS = ('quality', 'inputs')
     sections = {}
     for name in names:
         plugin = SECTION_PLUGINS[name]
-        if name == 'quality':
+        if name in META_PLUGINS:
             sections[name] = plugin(records_by_experiment, regime_lookup, metas_by_experiment)
         else:
             sections[name] = plugin(records_by_experiment, regime_lookup)

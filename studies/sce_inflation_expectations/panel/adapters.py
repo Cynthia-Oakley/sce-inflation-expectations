@@ -68,7 +68,12 @@ def discover_case_files(outputs_dir):
 def _protocol_summary(summary):
     protocol = summary.get('protocol', {}) if isinstance(summary, dict) else {}
     out = {k: protocol.get(k) for k in PROTOCOL_KEYS if k in protocol}
-    out['estimated_cost_usd'] = summary.get('estimated_run_cost_usd_not_provider_bill')
+    if isinstance(summary, dict) and summary.get('estimated_actual_cost_usd') is not None:
+        out['estimated_cost_usd'] = summary.get('estimated_actual_cost_usd')
+        out['estimated_cost_basis'] = 'actual_ledger'
+    else:
+        out['estimated_cost_usd'] = summary.get('estimated_run_cost_usd_not_provider_bill')
+        out['estimated_cost_basis'] = ('estimate' if out['estimated_cost_usd'] is not None else None)
     out['batch_status'] = summary.get('status')
     return out
 
