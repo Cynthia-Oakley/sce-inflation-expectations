@@ -1,0 +1,33 @@
+{
+  "status": "draft_only_not_authorized_not_executed",
+  "prepared_at_utc": "2026-10-20T03:09:05.800601+00:00",
+  "source_of_options": "studies/sce_inflation_expectations/model.py:Q9_BIN_LABELS",
+  "first_candidate": "Q9 alone, one respondent, ten genuine inflation-range options; no dummy choices",
+  "q9_candidate": {
+    "question": "Survey date: June 10, 2022. The BLS release of June 10 reports that US food-at-home prices in May 2022 increased 11.9% from May 2021 and 1.3% from April 2022, both not seasonally adjusted. This is one price category. Please answer about overall prices over the next 12 months using information available by the survey date. What is the percent chance that overall inflation or deflation over the next 12 months falls in each of the ten listed ranges? Assign a percentage probability to every option, from 0 to 100, with all ten adding to 100. Report the ten values in option order as a JSON object with q9.bin1 through q9.bin10.",
+    "options": [
+      "12% or more",
+      "between 8% and 12%",
+      "between 4% and 8%",
+      "between 2% and 4%",
+      "between 0% and 2%",
+      "between -2% and 0%",
+      "between -4% and -2%",
+      "between -8% and -4%",
+      "between -12% and -8%",
+      "-12% or less (deflation of 12% or more)"
+    ]
+  },
+  "q8_candidate": {
+    "question": "Survey date: June 10, 2022. The BLS release of June 10 reports that US food-at-home prices in May 2022 increased 11.9% from May 2021 and 1.3% from April 2022, both not seasonally adjusted. This is one price category. Please answer about overall prices over the next 12 months using information available by the survey date. Do you expect overall prices to rise, fall, or stay about the same over the next 12 months? Give the direction and your expected percentage change. Report signed point_pct: positive for inflation, negative for deflation, and zero for unchanged prices.",
+    "options": [
+      "Overall prices will rise (inflation).",
+      "Overall prices will fall (deflation).",
+      "Overall prices will stay about the same."
+    ]
+  },
+  "support_note": "Options meet the observed minimum of two. Acceptance of a probability vector or numeric magnitude is NOT established by this check. Do not infer reply shape from model capability.",
+  "q8_note": "Direction choices are a technical adaptation; not claimed to reproduce the exact original survey interaction.",
+  "planned_paid_calls": 0,
+  "simulation_results": null
+}

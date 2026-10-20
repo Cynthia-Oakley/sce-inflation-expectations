@@ -1,6 +1,6 @@
 # 官方GPT接入：已知能力与最小确认项
 
-核查日2026-10-20。成功读取免费initialize、tools/list、get_user_pool_simulation_capabilities。未运行收费问卷、未发送个人资料、未消耗平台Chat额度。原始证据仅本地：`data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json`。
+核查日2026-10-20。初次核查免费initialize、tools/list、get_user_pool_simulation_capabilities，原始证据仅本地：`data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json`。随后用户批准的10人问卷已提交一次，因空选项校验被拒绝、0个人回答；未发送真实SCE个人资料，未使用平台Chat。下文进一步区分模型能力与问卷接口约束。
 
 用户随后提供官方文档库。本轮以浏览器取得六份在线正文，对照LLM接入、计费、FAQ、数据服务和Python provider参考。新证据：`data/raw/mcp_checks/2026-10-20_official_model_docs_v1/receipt.json`，保留取得时间、URL和哈希；没有再次调用MCP或访问账号。以下区分框架能力、平台界面与实际付费接口。
 
@@ -14,6 +14,22 @@
 6. **Population MCP是另一个服务。**公开说明的模拟入口仍是从平台池抽人再统一答卷，与本日实际schema一致；自带文件人口属于框架provider，不能据其存在就推定该收费MCP接受本地逐人输入。[数据服务](https://socioverse.fudan-disc.com/docs/guides/data-services/)
 
 **当前结论：本地同输入运行的工程基础已具备；平台额度如何支付它的GPT调用，公开文档仍未给出完整接入方式。**没有据此断言平台永远不支持。待确认应聚焦“计费通道或既有研究包导入”，不再反复询问框架是否能自带P/E。
+
+## 用户质疑后的规范补查：需要收窄上一轮结论
+
+**这次错误不构成GPT-4o-mini不能回答Q8/Q9的证据。**实际得到的是服务端`ValueError`及`questionnaire[0].options must contain at least two options.`，没有模型原始回答或逐次模型身份。合理解释是问卷参数校验拦截；服务端源码闭源，未取得内部调用日志，不将推测的完整执行顺序写成已验证事实。
+
+进一步查阅了[外部能力的使用流程](https://socioverse.fudan-disc.com/docs/zh/guides/capabilities/)、[数据服务](https://socioverse.fudan-disc.com/docs/guides/data-services/)、[研究自身的LLM调用方式](https://socioverse.fudan-disc.com/docs/zh/guides/llm-clients/)、[额度说明](https://socioverse.fudan-disc.com/docs/zh/hosted/quotas-and-billing/)，并对照本地官方`resources/capabilities.yaml`、`sv-build-population`规范。结果如下：
+
+- **问卷服务有一层产品接口。**Population MCP负责从平台池抽人、提交统一问卷、返回JSONL；这与自定义study中的逐人prompt、memory、Action分工不同。它不是文档已承诺的任意messages模型网关。
+- **公开规范没有讲清题目类型。**部署schema只写`question`与`options`，条目是通用object；未声明开放题开关、数值范围、Q9合计约束或模型选择参数。免费MCP元数据进一步查询得到`resources=[]`、`prompts=[]`，没有额外题型说明可读。查不到正式用法，不等于证明服务绝不支持。
+- **旧问卷示例不能覆盖当前接口。**旧官方仓库的[经济问卷](https://github.com/FudanDISC/SocioVerse/blob/main/questionnaire/quesionnaire_eco.json)17题均标`type: choice`，使用`content/choices`，而当前工具用`question/options`。可作为真实选项的示例，不能将旧字段直接当作新接口的数值题开关。
+- **Q9有自然的非空选项。**十个通胀区间本身就能放进`options`，问题正文要求给每档分配概率并合计100%。这是值得验证的候选写法，既不需要空选项，也不需要无意义的占位选项。上一轮没有测试这种写法，因此还不能断言该服务强制单选、不能返回概率。
+- **Q8还需检查数值幅度。**可将上涨/下跌/大致不变作为真实方向选项，在正文同时请求百分比幅度。但如果服务只保留方向标签，依然不满足Q8；不能把有选项或语法通过当作功能通过。
+
+已准备[平台格式候选](native_questionnaire_candidates_v1.json)：Q9十档真实选项＋概率要求；另附Q8方向与幅度候选。只做字段和档位检查，**没有新增付费调用、没有已验证的模型输出**。建议下一次先单独Q9、1人技术验证，观察回包是否保留十个概率，还是只剩一个选项或报错。若Q9可用再检查Q8，且逐人本地P/E与历史仍是另一个未解决条件。新增调用需另确认，不沿用已完成的一笔调用批准。
+
+核查元数据：[本次规范核查](questionnaire_norms_check_v1.json)。补查不改变旧试测原始请求、源码pin、错误或费用未知状态，也没有联系平台。此前“不能直接承接”的表述限定为**已提交的空选项开放题格式不被接受**，不扩大为“GPT能力不足”或“所有概率题都不支持”。
 
 ## 当前事实
 

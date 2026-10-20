@@ -1,0 +1,41 @@
+{
+  "checked_at_utc": "2026-10-20T03:09:05.802195+00:00",
+  "new_paid_calls": 0,
+  "public_docs": [
+    "https://socioverse.fudan-disc.com/docs/guides/data-services/",
+    "https://socioverse.fudan-disc.com/docs/zh/guides/capabilities/",
+    "https://socioverse.fudan-disc.com/docs/zh/guides/llm-clients/",
+    "https://socioverse.fudan-disc.com/docs/zh/hosted/quotas-and-billing/",
+    "https://github.com/FudanDISC/SocioVerse/blob/main/questionnaire/quesionnaire_eco.json"
+  ],
+  "free_metadata": {
+    "path": "data/raw/mcp_checks/2026-10-20_questionnaire_norms_free_v1/evidence.json",
+    "sha256": "7c05d1f36b265ddcc4d33bf9a6279a2f1aa096584c6c8fd47fd54c093d5765bc",
+    "server_info": {
+      "name": "user_pool_mcp",
+      "version": "1.27.0"
+    },
+    "resources": {
+      "resources": []
+    },
+    "prompts": {
+      "prompts": []
+    }
+  },
+  "older_official_economic_questionnaire": {
+    "sha256": "8b54f6a2915ccc78485708efc8126a7341a7109ec32e089a0035d73e5fd36c83",
+    "question_count": 17,
+    "choice_count": 17,
+    "applicability": "Historical template, not proof of current MCP response rules."
+  },
+  "candidate_sha256": "5b5786a08beba29fd1265aa4d43dfeaf5158321381fce4ba77404886884d8ad3",
+  "confirmed": "Submitted empty options rejected. Native Q9 ten ranges have not been tried.",
+  "unconfirmed": [
+    "Server prompt and parser behavior",
+    "Numeric/free-text support mode",
+    "Probability allocation over nonempty options",
+    "Same local respondent/history support",
+    "Model override and per-response model identity",
+    "Charge for prior validation failure"
+  ]
+}

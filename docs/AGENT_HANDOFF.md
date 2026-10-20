@@ -50,6 +50,8 @@
 
 用户随后批准[10人技术试测](workstreams/20261020_procurement/official_pool_pilot.md)及$0.10上限。v1免费能力查询连接中断、0模拟请求；免费恢复后原协议/输入/批准复制至`outputs/sce_platform_survey_pilot_20261020_v2/`，唯一一次模拟工具请求返回`status:error`、`ValueError: questionnaire[0].options must contain at least two options.`。外层`isError=false`不能视为成功。返回逐人回答0，不能评价GPT准确度；实际扣费未知，$0.04只是原计划估算。无付费重发、无扩样/换模型，当前任务已停止、没有运行进程。原始回包与`inspection.json`本地保存；公开技术摘要`official_pool_pilot_result_v1.json`。数值开放题/Q9概率分配及本地同输入仍须官方确认，不能靠添加无意义选项或以单选代替十档概率“跑通”。不发送真实SCE个人资料，不用平台Chat。已有批准为这一笔已执行尝试，不继续复用。
 
+用户质疑后已补查[使用规范及候选](workstreams/20261020_procurement/platform_gpt_requirements.md)：免费MCP资源/提示目录均为空，旧官方经济问卷17题均choice但字段属旧版，不能推定新接口只支持单选。原失败仅验证options为空被拒绝；Q9可以把真实十档放入options并在正文要求概率，候选`native_questionnaire_candidates_v1.json`已准备、未执行。建议下一次先1人Q9检查实际回包形态，再谈Q8数值幅度与逐人同输入；新增付费调用需另确认。不要将未测试的候选写成兼容成功或直接判死，也没有改变旧试测协议和结果。
+
 已有ATUS 2016/2022/2023文件和字典在`data/raw/behavior_references/2026-10-19_atus_roles_v2/`及同日supplement目录；不要重复下载。2022→2023采购角色预测支持不等于SCE预测收益；whole-residence人数、未知儿童/搬家/信息年龄按原规则保留。金融决策者不等于购物者，CE汽油支出不等于本人驾车。
 
 本地路由补查与BLS分类表解析已完成，不重复抓取。食品角色只说明采购分工，不识别本人价格；0/1/3/6/6可见条数是实验假设，不能按结果反选。六期仍是开发期，尚未登记独立验证月份。新闻随机分配保留独立验证候选，不按六期真值调篇数或挑分配种子。
