@@ -1,0 +1,53 @@
+{
+  "checked_at_utc": "2026-10-20T00:03:53.161131+00:00",
+  "paid_api_calls": 0,
+  "model_calls": 0,
+  "account_actions": false,
+  "documents": [
+    {
+      "url": "https://socioverse.fudan-disc.com/docs/zh/reference/",
+      "file": "01_document.json",
+      "sha256": "30af5c5ffd854c3f914e5cc3923e9cb1db6b5bdf28b3c1efeb519669019a8348",
+      "characters": 695
+    },
+    {
+      "url": "https://socioverse.fudan-disc.com/docs/zh/guides/llm-clients/",
+      "file": "02_document.json",
+      "sha256": "9908de36921b8fb49b73961bc9cd2642a4d6568478d43cac206f34f2ece37aa4",
+      "characters": 2395
+    },
+    {
+      "url": "https://socioverse.fudan-disc.com/docs/zh/hosted/quotas-and-billing/",
+      "file": "03_document.json",
+      "sha256": "5aed89ca1be7ec17bd486c42a7152e5609346d36b072f2ee67a764b565c82c6b",
+      "characters": 1882
+    },
+    {
+      "url": "https://socioverse.fudan-disc.com/docs/zh/hosted/faq/",
+      "file": "04_document.json",
+      "sha256": "10ea866e1ea212b42c0434b9a8d6552c03ec54a38517755b58ba2fd770cae8d9",
+      "characters": 2394
+    },
+    {
+      "url": "https://socioverse.fudan-disc.com/docs/guides/data-services/",
+      "file": "05_document.json",
+      "sha256": "1313c52ab761bc60fde160c9b137cfd8f46cb5d8e1e8297f029bc2744041f07c",
+      "characters": 24084
+    },
+    {
+      "url": "https://socioverse.fudan-disc.com/docs/reference/providers/",
+      "file": "06_document.json",
+      "sha256": "dbd2cc7fa9e51fb8e414e67682fd2bb8d69d50ce548aeb754e5abeb297ff7cdb",
+      "characters": 2140
+    }
+  ],
+  "receipt_sha256": "19b0994c2335b360b3d336d16828eeb43e742610626a01c3cc9c6f9b7006a178",
+  "conclusions": {
+    "own_population_and_individual_observations_supported_in_framework": true,
+    "hosted_sim_pays_simulation_and_mcp": true,
+    "hosted_ui_data_upload_available_per_faq": false,
+    "public_local_gpt_quota_gateway_confirmed": false,
+    "team_assisted_study_import_confirmed": false,
+    "added_70_dollar_balance_type_confirmed": false
+  }
+}

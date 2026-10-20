@@ -46,7 +46,7 @@
 
 后续[共用管线验收](workstreams/20261020_procurement/engineering_and_validation.md)已完成：`outputs/sce_procurement_engineering_20261020_v1/`，一个分配种子20261019、六期×三组18单元、1728脚本动作、0模型请求/费用。新增`procurement_price_engineering`准备适配和`engineering_only`模式，run与研究evaluate明确拒绝该包；没有真人真值输入。共用worker/评价器/CLI做小范围改动前206份Python源已保全在`outputs/sce_shared_runtime_snapshot_20261020_before_procurement_engineering_v1/`；旧manifest未改，旧结果须用冻结源。原5,184提示包与三种子加载事实不变，其他两种子未引擎验收。
 
-今日官方免费证据仍为`data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json`，user_pool_mcp1.27.0，实际gpt-4o-mini，别名不等同执行模型；逐人同输入/计价仍未明确。配置只发现本地DeepSeek通道，未找到官方通用网关。已向用户索取可能已有的接口说明，未发送平台消息、未重复免费请求或发收费问卷。要求及未发送草稿见[GPT接入](workstreams/20261020_procurement/platform_gpt_requirements.md)。无运行任务或待执行付费授权；下一步确认传输能力和价格，再冻结模型专用批次与预算。
+今日官方免费证据仍为`data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json`，user_pool_mcp1.27.0，实际gpt-4o-mini，别名不等同执行模型。用户提供参考文档库后，通过浏览器核六份在线正文并保全在`data/raw/mcp_checks/2026-10-20_official_model_docs_v1/`：框架确实支持文件P和逐人信息，LLM读自配凭据；平台Sim覆盖模拟/MCP，但未说明本地额度网关；在线FAQ明确界面暂无数据上传/研究包下载。外接GPT通道或团队导入study仍须确认。已收窄[待平台确认项与未发送草稿](workstreams/20261020_procurement/platform_gpt_requirements.md)，不再泛问框架能否自带P/E。无新付费、账号操作、平台消息或运行任务，不重复MCP目录请求。浏览器标签组“SocioVerse接口核查”只打开官方公开文档，未关闭（等用户要求）。
 
 已有ATUS 2016/2022/2023文件和字典在`data/raw/behavior_references/2026-10-19_atus_roles_v2/`及同日supplement目录；不要重复下载。2022→2023采购角色预测支持不等于SCE预测收益；whole-residence人数、未知儿童/搬家/信息年龄按原规则保留。金融决策者不等于购物者，CE汽油支出不等于本人驾车。
 
