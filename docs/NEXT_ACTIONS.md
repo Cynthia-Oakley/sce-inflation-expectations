@@ -62,6 +62,12 @@
 
 说明：[本轮具体设计和提示](workstreams/20261020_procurement/README.md)、[GPT接入缺口](workstreams/20261020_procurement/platform_gpt_requirements.md)、[ATUS匹配与缺口](workstreams/20261018_targeted_mechanisms/atus_sce_matching_results_20261019.md)。食品采购角色不自动迁移到清洁用品、衣服或驾驶；0/1/3/6/6细分是实验假设，暂无本人收据或真实角色，不称已重建个人体感。
 
+## 自动结构化评价面板（先设计，未实现）
+
+- [x] 结合现有数据和网格候选形成[框架草案](workstreams/20261020_procurement/structured_analysis_panel_design.md)：六页视图、两层分组、比较资格、稀疏规则和缓存复用；未新增模拟。
+- [ ] 第一版统一12期参考/六期新闻/六期Qwen缓存适配与固定统计，保留旧评分/manifest；分析门槛单独版本化。
+- [ ] 实现本地交互面板和自动事实摘要，再接新实验结束后的离线自动分析；不让运行器看真值调参，不自动追加付费请求。
+
 ## 4. 验证与机制收束
 
 - [x] 完成十二期主规模检验及逐月/人群/更新差距分析，保存失败与阴性结果。

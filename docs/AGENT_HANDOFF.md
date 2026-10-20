@@ -70,6 +70,8 @@
 
 最新零API条件诊断已完成：[结果](workstreams/20261020_procurement/qwen_conditional_gap_results.md)，完整`outputs/sce_procurement_conditional_gap_20261020_v2/`，v1是加稳定性标记前的分析快照不改。553共同个人月上新匹配四个月MAE较好；2021-09旧0.209/新1.554主导平均恶化。上期<2%组Qwen更接近、≥8%组仍明显压低；WLS控制后低数理额外下移约0.756pp，删月为负，但上期系数Qwen0.312反高于旧0.252（真人0.643），不能泛称Qwen更不保留先验。旧输入CPI5.3/汽油42.7，新食品3.0且删宏观表，是待检E组成解释。另65人月同提示样本不作高维人口系数解释。下一步离线准备同Qwen/同角色只加少量总体与能源背景，或严格同输入模型对照；没有新付费授权/调用。公共两图与小型汇总`qwen_conditional_gap_v1/`，入口`analyze_sce_procurement_gap.py`、`plot_sce_procurement_gap.py`。
 
+用户最新要求先构思自动结构化分析框架。已完成[设计草案](workstreams/20261020_procurement/structured_analysis_panel_design.md)，未实现自动入口/面板、未新增模拟。建议固定基础统计+机制专用分析，人口六格与先验/数理状态网格分开，统一同支持和比较资格、稀疏/缺失规则。首版只适配12期参考/六期新闻/六期Qwen缓存，复用现有metrics与诊断模块；旧输出和门槛不静默改写。后续实现分统计适配、交互展示、完成后自动编排三步；拟稳定入口docs/reports/experiment_panel/index.html尚未建。
+
 ## 4. 协作与保护
 
 - 开工看git status，保留用户及其他Agent改动。`docs/sources/sol_handoff_protected_files_20261010.json`记录15项保护文件；其中DECISIONS、提案、P/计分等仍有原未审改动。**不得改写、提交、还原或混入本次提交。**未提交A/B契约亦属保护范围。
