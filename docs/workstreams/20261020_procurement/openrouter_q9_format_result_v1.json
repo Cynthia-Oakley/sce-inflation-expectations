@@ -1,0 +1,72 @@
+{
+  "inspected_at_utc": "2026-10-20T03:29:57.735293+00:00",
+  "status": "ten_valid_probabilities_returned_flat_key_shape",
+  "strict_nested_schema_passed": false,
+  "q9_values_valid": true,
+  "probabilities_original_order": [
+    15,
+    25,
+    30,
+    15,
+    8,
+    4,
+    2,
+    0,
+    0,
+    1
+  ],
+  "probability_sum": 100,
+  "original_json_keys": [
+    "q9.bin1",
+    "q9.bin2",
+    "q9.bin3",
+    "q9.bin4",
+    "q9.bin5",
+    "q9.bin6",
+    "q9.bin7",
+    "q9.bin8",
+    "q9.bin9",
+    "q9.bin10"
+  ],
+  "canonical_representation": {
+    "q9": {
+      "bin1": 15,
+      "bin2": 25,
+      "bin3": 30,
+      "bin4": 15,
+      "bin5": 8,
+      "bin6": 4,
+      "bin7": 2,
+      "bin8": 0,
+      "bin9": 0,
+      "bin10": 1
+    }
+  },
+  "transformation": "Deterministic one-to-one field nesting only; zero value changes, no normalization, no stochastic generation.",
+  "initial_runner_status": "failed_or_unusable_no_retry",
+  "initial_runner_error": "KeyError",
+  "initial_parser_issue": "Request described keys as q9.bin1 through q9.bin10; model returned these literal flat names. Reader expected obj[q9][bin1].",
+  "provider": "DeepInfra",
+  "model": "qwen/qwen-2.5-72b-instruct",
+  "finish_reason": "stop",
+  "paid_attempts": 1,
+  "automatic_retries": 0,
+  "new_calls_for_this_readout": 0,
+  "api_reported_cost_usd": 0.00015372,
+  "cost_type": "api_reported_cost",
+  "input_tokens": 307,
+  "output_tokens": 108,
+  "elapsed_seconds": 6.632,
+  "request_reservation_usd": 0.0011224000000000002,
+  "prior_openrouter_reserved_usd": 0.20080900000000002,
+  "retained_combined_cap_usd": 1.0,
+  "raw_sha256": "a3897a6ff017f77c079b176c41da6a413f14a2e9896a06218ba7a33723b987cc",
+  "protocol_sha256": "e7cc3256a725da026329c75fa860c11a6ed327ad9fca3f508243052e4d82321f",
+  "limits": [
+    "One public format check, not a stable format-success rate or fitting result.",
+    "Different model, model-facing instructions and explicit JSON mode versus official MCP; cannot causally identify model versus wrapper.",
+    "Official MCP unprocessed model response remains unavailable; no evidence that all SocioVerse Simulation only supports choices.",
+    "Earlier stopped Qwen research batches and their invalid probability sums remain unchanged."
+  ],
+  "fit_metrics": null
+}

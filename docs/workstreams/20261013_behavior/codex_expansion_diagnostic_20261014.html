@@ -958,6 +958,10 @@ BLS release 2020-09-11T08:30:00-04:00; availability relative to your previous su
 <p>随后按用户授权执行了1人、一次Q9请求：十个真实区间放入options，题目要求各档概率合计100%。服务返回status=ok、llm_model=gpt-4o-mini、1行逐人结果，但答案只有<strong>A（12%或以上）＋理由</strong>，没有十个概率。服务报告耗时15.956秒，虚拟人口回退0。</p>
 <p>这证明本次格式可以被接口接受，并获得单选形式的答案；Q9概率分配需求仍未满足。没有未经解析的模型文本，尚不能判断服务内部提示、模型响应和解析层各自的影响，不用单个答案评价拟合能力。没有追加Q8、扩样、换模型或自动重试。</p>
 <p>新增按邮件费率估$0.004，与旧请求保守预留合计$0.044，低于原$0.10累计上限；回包未带账单，实际扣费未知。下一步确认概率/数值题型及原始模型文本，或可接本地messages的模型路径。<a href="../20261020_procurement/native_q9_pilot_result_v1.json">本次技术摘要</a>。</p>
+<h2>OpenRouter Qwen直接检查：十档概率已返回</h2>
+<p>按用户新指令，只新增1次公开格式请求：Qwen2.5-72B、固定DeepInfra-fp8、温度0.5、JSON模式。收到原顺序概率<strong>[15,25,30,15,8,4,2,0,0,1]，合计100%</strong>，共用数值合法性检查通过。无SCE人口或历史，无重试；API报告费用$0.00015372，用时6.632秒。</p>
+<p>原始键名写成q9.bin1等平铺形式，第一遍嵌套读取器报KeyError；该错误与原答保留，后续仅确定性调整字段层级、零API、零概率修改。严格嵌套格式与数值合法分开报告。单次成功不替代旧Qwen试验139/144合法的历史，也不能宣布更准确。</p>
+<p>现有本地官方引擎＋OpenRouter Qwen可保留为采购机制的可运行候选；平台Population问卷接口不能当作已确认的通用模型网关。此次换了模型/提示/JSON模式，仍无法单独定位官方MCP为何只给单选。<a href="../20261020_procurement/openrouter_q9_format_result_v1.json">公开原概率与技术收据</a> · <a href="../20261020_procurement/platform_gpt_requirements.md">完整说明</a>。</p>
 <p><a href="../20261020_procurement/official_pool_pilot.md">配置、原始错误与记录</a> · <a href="../20261020_procurement/official_pool_pilot_result_v1.json">技术摘要</a> · <a href="../20261020_procurement/platform_gpt_requirements.md">可转发给平台的确认问题</a> · <a href="../../current_todo.html">当前清单</a></p>
 </section>
 </body></html>

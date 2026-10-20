@@ -1,6 +1,6 @@
 # 官方GPT接入：已知能力与最小确认项
 
-核查日2026-10-20。初次免费证据仅本地：`data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json`。随后10人空选项问卷被拒绝、0回答；用户再授权另一候选后，1人Q9真实选项试测调用成功，但只返回一个选项和理由，没有十档概率。未发送真实SCE个人资料，未使用平台Chat。下文区分模型能力、问卷接口与实际返回。
+核查日2026-10-20。初次免费证据仅本地：`data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json`。官方MCP先拒绝空选项，随后1人真实选项试测只返回一个选项和理由。用户再要求试OpenRouter后，1次Qwen2.5直接API已返回十个合计100%的概率，存在可无损转换的平铺字段表示差异。均未发送真实SCE个人资料，未使用平台Chat。下文区分模型能力、问卷接口与实际返回。
 
 用户随后提供官方文档库。本轮以浏览器取得六份在线正文，对照LLM接入、计费、FAQ、数据服务和Python provider参考。新证据：`data/raw/mcp_checks/2026-10-20_official_model_docs_v1/receipt.json`，保留取得时间、URL和哈希；没有再次调用MCP或访问账号。以下区分框架能力、平台界面与实际付费接口。
 
@@ -44,6 +44,22 @@
 有效包：`outputs/sce_platform_native_q9_pilot_20261020_v1/`，含请求/协议/授权、能力、完整原始回包、`inspection.json`。公开技术摘要：[native_q9_pilot_result_v1.json](native_q9_pilot_result_v1.json)。旧空选项源码在改动前另保全到`outputs/sce_platform_survey_pilot_source_snapshot_20261020_v1/`，原始协议/请求/回包未改。共用入口已按本轮作小适配，8项离线检查通过；当前无运行中任务。
 
 **下一步的确认问题更具体了：**请平台提供支持逐人十档概率的题型参数/示例，以及未经解析的模型原始文本；如问卷服务只提供选项结果，需要能接本地messages或既有study的模型调用路径。未获得上述支持前不继续调整选项或追加Q8试探。原`native_questionnaire_candidates_v1.json`保留准备时状态与哈希，实际执行状态以本段及运行包为准。
+
+## OpenRouter Qwen直接调用：十档概率已返回
+
+按用户新指令，仅新增1次公开输入的Q9格式检查，选择此前已接通且较擅长JSON的Qwen2.5-72B，经OpenRouter锁定DeepInfra `deepinfra/fp8`，禁止供应商回退。温度0.5、JSON对象模式、最多1,024输出token，无自动重试、不调用LLaMA。使用同一公开BLS背景、Q9问题和十档区间，没有SCE人口、本人历史或真值，也不重启已停止的旧Qwen批次。
+
+**实际收到十个概率，原顺序为`[15,25,30,15,8,4,2,0,0,1]`，合计100%。**每项在0—100内，共用Q9合法性函数通过。回包模型与DeepInfra供应商均匹配，finish_reason为stop。调用约6.632秒，307输入token、108输出token，API报告本次费用$0.00015372。
+
+需保留的细节：题目文字称`q9.bin1`到`q9.bin10`，模型将其按字面返回为平铺JSON键；第一遍读取器预期嵌套对象，报KeyError，原`inspection.json`如实保留。后续**零API地按唯一键名嵌套**，没有改任何概率、归一化或重生成。严格嵌套schema未通过与概率数值合法分别报告，不能隐藏前一个格式差异。完整新读数在`offline_key_readout.json`，正式模型提示可沿用既有清楚的嵌套JSON示例。
+
+本次最多预留$0.001123、设置$0.01子上限，沿用此前明确批准的OpenRouter累计$1上限；此前旧批保守估$0.200809另保留。不把平台MCP的$0.10预算和OpenRouter预算混用；本次走自有OpenRouter余额，没有消耗平台Sim/Chat额度。原供应商价格目录本日免费复核为输入$0.36/百万token、输出$0.40/百万token，未提升请求最高价。
+
+这说明**本地直接调用路径能拿到完整Q9概率**，没有证据表明整个SocioVerse引擎都限制单选。它不独立识别官方MCP单选究竟源于内部提示、模型还是解析：本次同时换了模型、模型可见提示与JSON模式，不是同模型随机对照。1份成功也不能替代此前139/144合法率的完整记录，不能宣称稳定格式已达99%或拟合改善。
+
+因此采购角色实验可以保留“现有本地官方引擎＋OpenRouter Qwen”这条可运行候选，不再用Population问卷服务冒充通用模型接口。模型默认与新批次尚未升级/冻结；大样本仍须保留合法性、同输入和费用验收。官方额度路线继续等待概率题或自带messages的受支持说明。
+
+运行包：`outputs/sce_openrouter_q9_format_20261020_v1/`。入口`scripts/check_sce_openrouter_q9_format.py`复用已有路由、费用上界和Q9校验；本批已执行，不再运行其run命令。旧Qwen研究轨迹和本次初始错误记录均未改写。公开结果：[openrouter_q9_format_result_v1.json](openrouter_q9_format_result_v1.json)。
 
 ## 当前事实
 
