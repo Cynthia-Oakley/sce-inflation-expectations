@@ -1,0 +1,69 @@
+{
+  "common_person_months": 553,
+  "n_per_month": {
+    "202009": 93,
+    "202109": 92,
+    "202206": 93,
+    "202312": 85,
+    "202410": 95,
+    "202503": 95
+  },
+  "metrics": {
+    "old_deepseek_fixed8": {
+      "center_mae_pp": 0.44346660177088654,
+      "center_bias_pp": -0.1891741883610072,
+      "predicted_center_pp": 4.043701267502438,
+      "truth_center_pp": 4.232875455863445,
+      "personal_mae_pp": 3.3064646299965013,
+      "w1_pp": 2.569923291937632,
+      "delta_w1_pp": 1.5019839377984223,
+      "across_person_iqr_pp": 2.4143094080156646,
+      "truth_across_person_iqr_pp": 4.870715282934131,
+      "wrong_move_given_true_stable": 0.6408974286158596,
+      "missed_move_given_true_moving": 0.31914120215071956,
+      "opposite_direction_given_true_moving": 0.21872164292442497
+    },
+    "new_qwen_shared": {
+      "center_mae_pp": 0.6136583771621459,
+      "center_bias_pp": -0.6136583771621459,
+      "predicted_center_pp": 3.6192170787012987,
+      "truth_center_pp": 4.232875455863445,
+      "personal_mae_pp": 3.186693721854595,
+      "w1_pp": 2.1077754295823765,
+      "delta_w1_pp": 1.8202832805214146,
+      "across_person_iqr_pp": 3.309718330553468,
+      "truth_across_person_iqr_pp": 4.870715282934131,
+      "wrong_move_given_true_stable": 0.4567655773355421,
+      "missed_move_given_true_moving": 0.4640187625327838,
+      "opposite_direction_given_true_moving": 0.19252083313909663
+    },
+    "new_qwen_matched": {
+      "center_mae_pp": 0.5681532066692191,
+      "center_bias_pp": -0.5099912254649855,
+      "predicted_center_pp": 3.7228842303984595,
+      "truth_center_pp": 4.232875455863445,
+      "personal_mae_pp": 3.286937475096046,
+      "w1_pp": 2.271959591849492,
+      "delta_w1_pp": 1.7779173303968137,
+      "across_person_iqr_pp": 3.0545901516708494,
+      "truth_across_person_iqr_pp": 4.870715282934131,
+      "wrong_move_given_true_stable": 0.5155456559776624,
+      "missed_move_given_true_moving": 0.41748277598300526,
+      "opposite_direction_given_true_moving": 0.21784897481005774
+    }
+  },
+  "input_checks": {
+    "planned_roster_profiles_weights_truth_identical": true,
+    "news_identical": 576,
+    "prior_and_questionnaire_identical_before_new_format_appendix": 576,
+    "n_prompts_checked": 576,
+    "persona_prefix_identical": 576
+  },
+  "new_api_calls": 0,
+  "new_density_fits": 0,
+  "limits": "Same-support descriptive comparison of different model-plus-environment-plus-format packages; not a model-only treatment effect. Old probabilities retain original acceptance policy; common support excludes invalid replies.",
+  "source_sha256": {
+    "outputs/sce_news_breadth_evaluation_20261019_v1/cases_private.json": "c3bfcc67934b3718ed81f93fdfa82a881fe0a1f88d78c375f05bc76dc9c06b5b",
+    "outputs/sce_procurement_qwen_evaluation_20261020_v2/cases_private.json": "caebca741a1e1196ddfcdab44dbbc248f8d32aac508bfddfc1883ad8737a1e28"
+  }
+}
