@@ -48,6 +48,8 @@
 
 今日官方免费证据仍为`data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json`，user_pool_mcp1.27.0，实际gpt-4o-mini，别名不等同执行模型。用户提供参考文档库后，通过浏览器核六份在线正文并保全在`data/raw/mcp_checks/2026-10-20_official_model_docs_v1/`：框架确实支持文件P和逐人信息，LLM读自配凭据；平台Sim覆盖模拟/MCP，但未说明本地额度网关；在线FAQ明确界面暂无数据上传/研究包下载。外接GPT通道或团队导入study仍须确认。已收窄[待平台确认项与未发送草稿](workstreams/20261020_procurement/platform_gpt_requirements.md)，不再泛问框架能否自带P/E。无新付费、账号操作、平台消息或运行任务，不重复MCP目录请求。浏览器标签组“SocioVerse接口核查”只打开官方公开文档，未关闭（等用户要求）。
 
+用户随后要求先尝试官方人口问卷接口。[10人技术试测](workstreams/20261020_procurement/official_pool_pilot.md)已准备：`outputs/sce_platform_survey_pilot_20261020_v1/`，Nemotron美国合成人口、一次请求、当前GPT-4o-mini、公开食品价格背景和Q8/Q9；不发送真实SCE个人资料。免费性别标签复核及6项离线检查通过，预计$0.04/申请上限$0.10，预算卡已发、尚无确认，当前本批付费调用0。入口`run_sce_platform_survey_pilot.py`先prepare、获批后run；原始MCP内容不截断、不归一化，无自动重试或扩大范围。它是独立人口池兼容性试测，不能代替逐人同输入迁移或采购角色机制对照。勿将此前预算当作本批授权。
+
 已有ATUS 2016/2022/2023文件和字典在`data/raw/behavior_references/2026-10-19_atus_roles_v2/`及同日supplement目录；不要重复下载。2022→2023采购角色预测支持不等于SCE预测收益；whole-residence人数、未知儿童/搬家/信息年龄按原规则保留。金融决策者不等于购物者，CE汽油支出不等于本人驾车。
 
 本地路由补查与BLS分类表解析已完成，不重复抓取。食品角色只说明采购分工，不识别本人价格；0/1/3/6/6可见条数是实验假设，不能按结果反选。六期仍是开发期，尚未登记独立验证月份。新闻随机分配保留独立验证候选，不按六期真值调篇数或挑分配种子。
