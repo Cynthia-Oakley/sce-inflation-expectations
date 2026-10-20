@@ -70,14 +70,18 @@ def verify_segments(folder, protocol, jobs):
 def technical_gate(folder, manifest, protocol, root):
     """No targets or fitting scores: only complete original replies and format."""
     from ..model import validate_sce_bins
-    valid = total = 0
+    valid = total = raw_valid = changed = 0
+    policy = protocol.get('q9_postprocessing')
+    if policy:
+        from ..q9_normalization import POLICY, response_view
+        if policy != POLICY: raise ValueError('Unknown Q9 postprocessing policy')
     for job in manifest['jobs']:
         if job.get('phase') != 'gate':
             continue
         audit = Path(root)/'outputs/local_runs'/job['run_id']
         receipt = json.loads((audit/'run_manifest.json').read_text())
         if (receipt['status'] != 'completed' or receipt['llm_kind'] != 'openai'
-                or receipt['protocol_sha256'] != manifest['protocol_sha256']
+                or receipt['protocol_sha256'] != protocol.get('reused_completed_jobs', {}).get(job['run_id'], manifest['protocol_sha256'])
                 or receipt['cost']['call_count'] != job_n(protocol, job)):
             raise ValueError('Complete real gate runs required')
         calls = [json.loads(s) for s in (audit/'llm_calls.jsonl').read_text().splitlines() if s]
@@ -103,11 +107,24 @@ def technical_gate(folder, manifest, protocol, root):
                       and validate_sce_bins(bins)[0])
             except (ValueError, KeyError, TypeError):
                 ok = False
+            raw_valid += bool(ok)
+            if policy:
+                try:
+                    view = response_view(call['raw_response_text'])
+                    ok = call['finish_reason'] == 'stop'
+                    changed += bool(ok and view['applied'])
+                except (ValueError, TypeError):
+                    ok = False
             valid += bool(ok)
     expected = protocol['technical_gate']['planned_calls']
     if total != expected:
         raise ValueError('All gate requests must finish before expansion')
-    return {'scope': 'Technical format only; no truth or fit metrics read', 'calls': total,
+    result = {'scope': 'Technical format only; no truth or fit metrics read', 'calls': total,
             'valid': valid, 'fraction': valid/total,
             'passed': valid/total >= protocol['technical_gate']['minimum_valid_fraction'],
             'protocol_sha256': manifest['protocol_sha256'], 'new_api_calls': 0}
+    if policy:
+        result.update(raw_valid=raw_valid, raw_valid_fraction=raw_valid/total,
+                      normalized_count=changed, postprocessing=policy,
+                      note='Usability after proportional normalization, not raw-answer validity.')
+    return result

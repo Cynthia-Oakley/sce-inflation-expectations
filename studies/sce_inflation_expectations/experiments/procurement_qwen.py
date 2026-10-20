@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import math
+import shutil
 from pathlib import Path
 
 from .frozen_batch import ROOT, dump, read_json, sha
@@ -149,4 +150,88 @@ def prepare(out, config):
         'cap_usd': config['budget_cap_usd'], 'planned_calls': 3456,
         'destination': config['destination'], 'user_confirmation': None})
     print(f'Prepared 144-call gate +3312 remaining; estimate ${estimate:.3f}, reserve ${reserve:.3f}', flush=True)
+    return manifest
+
+
+def prepare_normalized(out, config):
+    """Reuse all 144 originals; freeze only the user-amended analysis policy."""
+    from ..q9_normalization import POLICY
+    parent = (ROOT/config['source_trial']).resolve(); out = Path(out).resolve()
+    if (out.exists() or not out.is_relative_to(ROOT/'outputs')
+            or not parent.is_relative_to(ROOT/'outputs') or config['q9_postprocessing'] != POLICY):
+        raise ValueError('Fresh local normalization continuation required')
+    original = read_json(parent/'manifest.json'); previous = read_json(parent/'protocol.json')
+    validate_transport(previous)
+    if (previous['mechanism'] != MECHANISM or previous.get('reused_completed_jobs')
+            or sha(parent/'protocol.json') != original['protocol_sha256']):
+        raise ValueError('Original procurement protocol required')
+    for name, digest in original['prepared_file_sha256'].items():
+        if sha(parent/name) != digest: raise ValueError('Original prepared input drift')
+    sources = {}
+    for name, digest in original['source_sha256'].items():
+        if name.endswith('.py'): continue  # Executed v1 source is preserved separately.
+        if sha(ROOT/name) != digest: raise ValueError('Original non-code source drift: '+name)
+        sources[name] = digest
+    for name in ['protocol.json', 'manifest.json', 'authorization.json', 'technical_gate.json']:
+        sources[str((parent/name).relative_to(ROOT))] = sha(parent/name)
+    metadata = (ROOT/config['provider_metadata']).resolve()
+    preflight({'route_candidate': previous['route'], 'input_price_per_million': previous['price_input_per_mtok'],
+               'output_price_per_million': previous['price_output_per_mtok']}, read_json(metadata))
+    sources[str(metadata.relative_to(ROOT))] = sha(metadata)
+    jobs = []; reused = {}; original_spent = remaining_reserve = estimate = 0.
+    for old in original['jobs']:
+        job = deepcopy(old); audit = ROOT/'outputs/local_runs'/old['run_id']
+        if old['phase'] == 'gate':
+            receipt = read_json(audit/'run_manifest.json')
+            if (receipt['status'] != 'completed' or receipt['llm_kind'] != 'openai'
+                    or receipt['cost']['call_count'] != 12 or receipt['protocol_sha256'] != original['protocol_sha256']):
+                raise ValueError('All 144 original replies, including invalid sums, must be reused')
+            reused[job['run_id']] = original['protocol_sha256']
+            original_spent += receipt['cost']['estimated_cost_usd']
+            for name in ['run_manifest.json', 'llm_calls.jsonl', 'study.duckdb']:
+                sources[str((audit/name).relative_to(ROOT))] = sha(audit/name)
+            engineering = audit.with_name(audit.name+'-engineering')/'run_manifest.json'
+            sources[str(engineering.relative_to(ROOT))] = sha(engineering)
+        else:
+            if audit.exists(): raise ValueError('No original main request may already exist')
+            job['run_id'] = old['run_id'].replace(parent.name, out.name, 1)
+            remaining_reserve += job['cap_usd']
+            path = parent/str(old['month'])/old['segment']/f'prompts_{old["arm"]}.json'
+            for r in read_json(path)['rows'].values():
+                n = len(json.dumps(r['messages'], ensure_ascii=False).encode())
+                estimate += (n/4*previous['price_input_per_mtok']+300*previous['price_output_per_mtok'])/1e6
+        jobs.append(job)
+    if len(reused) != 12 or original_spent+remaining_reserve > previous['budget_cap_usd']:
+        raise ValueError('Original $16 combined budget or 144-reply reuse mismatch')
+    out.mkdir(parents=True)
+    for name in original['prepared_file_sha256']:
+        if name == 'protocol.json': continue
+        target = out/name; target.parent.mkdir(parents=True, exist_ok=True); shutil.copy2(parent/name, target)
+    protocol = {**previous, 'registered_at_utc': datetime.now(timezone.utc).isoformat(),
+        'normalization_amendment_of': str(parent.relative_to(ROOT)), 'q9_postprocessing': POLICY,
+        'reused_completed_jobs': reused, 'new_planned_calls': 3312,
+        'provider_metadata': config['provider_metadata'], 'provider_metadata_mode': 'frozen_batch_catalog',
+        'max_workers': 16, 'combined_original_spent_plus_new_reserved_usd': original_spent+remaining_reserve,
+        'technical_gate': {**previous['technical_gate'], 'criterion':
+            'Same 144 original replies; >=99% usable after explicit proportional normalization; raw validity reported separately.'},
+        'scientific_rule': previous['scientific_rule'].replace('valid/scorable per arm', 'usable/scorable per arm after registered normalization'),
+        'normalization_rule': 'For all arms: ten finite nonnegative numbers, finite positive sum; q_i*=100*q_i/sum(q). '
+            'Keep raw replies/actions, zeros, ratios and Q8. Missing/negative/nonfinite/zero-sum outputs remain unusable. '
+            'Report raw-valid sensitivity and normalization frequency separately.',
+        'user_amendment': '我的想法是，如果概率加总不等于100%，则将其等比例归一化。不能因为这种问题卡住了进程',
+        'limits': [*previous['limits'], 'Postprocessing changed after format-only gate, before any target scoring; old raw failure unchanged.']}
+    dump(out/'protocol.json', protocol)
+    for p in (ROOT/'studies/sce_inflation_expectations').rglob('*.py'): sources[str(p.relative_to(ROOT))] = sha(p)
+    sources['scripts/run_sce_frozen_trial.py'] = sha(ROOT/'scripts/run_sce_frozen_trial.py')
+    manifest = {**original, 'jobs': jobs, 'new_planned_calls': 3312, 'new_api_calls': 0,
+        'protocol_sha256': sha(out/'protocol.json'), 'source_sha256': sources,
+        'prepared_file_sha256': {str(p.relative_to(out)): sha(p) for p in out.rglob('*.json')},
+        'estimated_new_cost_usd': estimate, 'conservative_new_reservation_usd': remaining_reserve,
+        'combined_original_spent_plus_new_reserved_usd': original_spent+remaining_reserve}
+    dump(out/'manifest.json', manifest)
+    dump(out/'authorization.json', {'approved': False, 'protocol_sha256': manifest['protocol_sha256'],
+        'cap_usd': protocol['budget_cap_usd'], 'planned_calls': 3456, 'new_planned_calls': 3312,
+        'destination': protocol['destination'], 'user_confirmation': None,
+        'note': 'Carry existing approved data/model/$16 scope with the explicit user normalization amendment; no new scope or repeats.'})
+    print(f'Reused 144 original replies; 3312 new calls; combined conservative ${original_spent+remaining_reserve:.4f}/$16', flush=True)
     return manifest

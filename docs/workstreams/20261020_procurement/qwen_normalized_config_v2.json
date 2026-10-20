@@ -1,0 +1,6 @@
+{
+  "mechanism": "procurement_price_qwen_normalization",
+  "source_trial": "outputs/sce_procurement_qwen_trial_20261020_v1",
+  "q9_postprocessing": "proportional_nonnegative_v1",
+  "provider_metadata": "data/raw/mcp_checks/2026-10-20_qwen_normalized_free_v1/qwen_endpoints.json"
+}

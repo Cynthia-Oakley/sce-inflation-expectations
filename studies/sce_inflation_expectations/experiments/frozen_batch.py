@@ -100,10 +100,10 @@ def verify(folder):
         if (manifest['source_sha256'].get(str(path.relative_to(ROOT))) != sha(path)
                 or receipt['protocol_sha256'] != reused[job['run_id']]
                 or receipt['status'] != 'completed' or receipt['llm_kind'] != 'openai'
-                or receipt['cost']['call_count'] != protocol['n_per_month']
+                or receipt['cost']['call_count'] != job_n(protocol, job)
                 or (receipt['month'], receipt['arm'], receipt['repeat']) != (job['month'], job['arm'], job['repeat'])):
             raise ValueError('Only pinned, complete, matching real jobs can be reused')
-    if reused and protocol.get('new_planned_calls') != (len(jobs)-len(reused))*protocol['n_per_month']:
+    if reused and protocol.get('new_planned_calls') != sum(job_n(protocol, j) for j in jobs if j['run_id'] not in reused):
         raise ValueError('Completion new-call scope mismatch')
     return manifest, protocol
 
@@ -222,8 +222,9 @@ def worker(folder, index, scripted):
 
 def dispatch(folder, scripted=True, workers=4, phase=None):
     folder = Path(folder).resolve(); manifest, protocol = verify(folder)
-    if not 1 <= workers <= 4:
-        raise ValueError('Workers must be 1..4')
+    maximum = protocol.get('max_workers', 4)
+    if type(maximum) is not int or not 1 <= maximum <= 16 or not 1 <= workers <= maximum:
+        raise ValueError('Workers exceed registered concurrency (default 4, maximum 16)')
     if not scripted:
         authorize(folder, manifest, protocol)
         if 'roster_segments' in protocol:

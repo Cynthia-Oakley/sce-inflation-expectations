@@ -81,6 +81,10 @@ def test_technical_gate_reads_no_truth_and_rejects_wrong_sum(tmp_path):
     obj['q9']['bin1'] = 11; call['raw_response_text'] = json.dumps(obj); save()
     assert not stages.technical_gate(tmp_path, m, p, tmp_path)['passed']
     assert obj['q9']['bin1'] == 11  # no repair
+    p['q9_postprocessing'] = 'proportional_nonnegative_v1'
+    amended = stages.technical_gate(tmp_path, m, p, tmp_path)
+    assert amended['passed'] and amended['raw_valid'] == 0 and amended['normalized_count'] == 1
+    assert json.loads(call['raw_response_text'])['q9']['bin1'] == 11
     call['returned_provider'] = 'unapproved'; save()
     with pytest.raises(ValueError, match='transport'):
         stages.technical_gate(tmp_path, m, p, tmp_path)

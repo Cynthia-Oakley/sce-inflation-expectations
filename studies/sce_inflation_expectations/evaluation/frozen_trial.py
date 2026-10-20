@@ -89,6 +89,12 @@ def evaluate(folder, out):
         truth = {(r['month'], r['agent_id'], r['repeat']): r['real'] for r in read_json(truth_file)}
     links = read_json(folder/'evaluation_links_private.json')
     actions = {}; cost = 0.; coverage = {a: Counter() for a in protocol['arms']}
+    normalization_counts = {a: Counter() for a in protocol['arms']}
+    normalization_rows = []; raw_coverage = {a: Counter() for a in protocol['arms']}
+    policy = protocol.get('q9_postprocessing')
+    if policy:
+        from ..q9_normalization import POLICY, response_view, response_point
+        if policy != POLICY: raise ValueError('Unknown Q9 normalization policy')
     for job in manifest['jobs']:
         audit = ROOT/'outputs/local_runs'/job['run_id']; receipt = read_json(audit/'run_manifest.json')
         expected_protocol = protocol.get('reused_completed_jobs', {}).get(job['run_id'], manifest['protocol_sha256'])
@@ -144,15 +150,39 @@ def evaluate(folder, out):
             if parsed is not None and abs(float(payload['point_pct'])-parsed['point_pct']) > 5e-5:
                 raise ValueError('Raw reply/action point differs')
             bins = [payload[f'q9_bin{i}'] for i in range(1, 11)]
-            score = score_bins(tuple(bins)) if payload['validation_status'] == 'valid' else {'mean': None, 'iqr': None, 'zero_deflation': None}
+            raw_bins = list(bins); status = payload['validation_status']; view = None
+            if policy:
+                raw_coverage[job['arm']][status] += 1
+                try:
+                    view = response_view(raw)
+                    if call['finish_reason'] != 'stop': raise ValueError('Incomplete output')
+                    bins = view['bins']; status = 'valid'
+                    normalization_counts[job['arm']]['usable_after_postprocessing'] += 1
+                    normalization_counts[job['arm']]['normalization_applied'] += view['applied']
+                    normalization_counts[job['arm']]['raw_sum_not_100'] += view['raw_sum'] != 100
+                except (ValueError, TypeError):
+                    status = 'invalid'
+                    normalization_counts[job['arm']]['unusable_after_postprocessing'] += 1
+                normalization_rows.append({'month': job['month'], 'repeat': job['repeat'], 'arm': job['arm'],
+                    'agent_id': aid, 'raw_response_sha256': call['raw_response_sha256'],
+                    'raw_bins': raw_bins if parsed is not None else None, 'derived_bins': bins if view is not None and status == 'valid' else None,
+                    'raw_sum': view['raw_sum'] if view else None, 'policy': policy,
+                    'applied': bool(view and status == 'valid' and view['applied'])})
+            score = score_bins(tuple(bins)) if status == 'valid' else {'mean': None, 'iqr': None, 'zero_deflation': None}
             action_key = job['month'], job['repeat'], aid, job['arm']
             if action_key in actions:
                 raise ValueError('Duplicate person across roster segments')
             actions[action_key] = {**score, 'q9_bins': bins,
                 'point': (round(independent_q8,4) if independent_q8 is not None else None) if q8_only
                     else payload['point_pct'] if parsed is not None else None,
-                'validation_status': payload['validation_status']}
-            coverage[job['arm']][payload['validation_status']] += 1
+                'validation_status': status}
+            if policy:
+                point = response_point(raw)
+                actions[action_key]['point'] = round(point, 4) if point is not None else None
+                actions[action_key].update(raw_q9_bins=raw_bins if parsed is not None else None, raw_validation_status=payload['validation_status'],
+                    normalization_applied=bool(view and status == 'valid' and view['applied']),
+                    analysis_q9_status=status)
+            coverage[job['arm']][status] += 1
         cost += receipt['cost']['estimated_cost_usd']
     cases = []
     for link in links:
@@ -208,5 +238,12 @@ def evaluate(folder, out):
     if protocol['mechanism'] == 'temperature_sensitivity':
         from .temperature import dispersion_readout
         result['temperature_dispersion'] = dispersion_readout(cases, protocol)
+    if policy:
+        result['q9_postprocessing'] = {'policy': policy, 'counts_by_arm': {a: dict(v) for a,v in normalization_counts.items()},
+            'raw_runtime_coverage': {a: dict(v) for a,v in raw_coverage.items()},
+            'coverage_semantics': 'Primary coverage/scores use derived normalized Q9. Original raw status is separately preserved.'}
+        result['notes'][0] = 'User-authorized proportional Q9 normalization in evaluation only; raw prompts, replies and actions unchanged. Human truth/scorer unchanged.'
+        result['notes'].append('Raw-valid complete-case sensitivity must be reported separately; it may change support across arms.')
     out.mkdir(parents=True); dump(out/'summary.json', result); dump(out/'cases_private.json', cases)
+    if policy: dump(out/'q9_normalization_private.json', normalization_rows)
     return result

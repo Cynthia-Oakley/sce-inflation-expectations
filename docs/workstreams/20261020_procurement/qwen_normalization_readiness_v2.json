@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-10-20T06:00:23.805701+00:00",
+  "status": "amended_normalization_authorized_ready_for_remaining_requests",
+  "protocol_sha256": "6ce889a7477fb51241a74ef6394c5b1cb13214c6229202a009e6cc1706385408",
+  "new_offline_units": 36,
+  "reused_offline_receipts": 12,
+  "targeted_tests_passed": 31,
+  "reused_model_responses": 144,
+  "new_planned_calls": 3312,
+  "total_planned_calls_including_reuse": 3456,
+  "normalization_policy": "proportional_nonnegative_v1",
+  "raw_gate_valid": 140,
+  "usable_gate_after_normalization": 144,
+  "normalized_gate_replies": 4,
+  "new_model_calls_so_far": 0,
+  "original_reported_cost_usd": 0.12921944,
+  "combined_conservative_budget_usd": 13.860810000000008,
+  "cap_usd": 16,
+  "max_workers": 16,
+  "protected_files_unchanged": 15
+}

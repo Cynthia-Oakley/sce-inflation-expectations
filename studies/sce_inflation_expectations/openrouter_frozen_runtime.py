@@ -2,6 +2,8 @@
 import math
 import os
 import httpx
+import json
+from pathlib import Path
 from socioverse.engine import register
 from .frozen_prompt_runtime import FrozenPromptDecision
 from .model import SCEOpenAILLM
@@ -18,8 +20,15 @@ def configure_live(protocol,dotenv):
     key=os.environ.get('OPENROUTER_API_KEY') or values.get('OPENROUTER_API_KEY')
     if not key:raise ValueError('OpenRouter credential missing')
     url='https://openrouter.ai/api/v1/models/'+MODEL+'/endpoints'
-    with httpx.Client(timeout=20,follow_redirects=False) as client:
-        reply=client.get(url);reply.raise_for_status();directory=reply.json()
+    if protocol.get('provider_metadata_mode') == 'frozen_batch_catalog':
+        root = Path(__file__).resolve().parents[2]
+        path = (root/protocol['provider_metadata']).resolve()
+        if not path.is_relative_to(root/'data/raw/mcp_checks'):
+            raise ValueError('Pinned local provider catalog required')
+        directory = json.loads(path.read_text())
+    else:
+        with httpx.Client(timeout=20,follow_redirects=False) as client:
+            reply=client.get(url);reply.raise_for_status();directory=reply.json()
     preflight({'route_candidate':ROUTE,'input_price_per_million':protocol['price_input_per_mtok'],
                'output_price_per_million':protocol['price_output_per_mtok']},directory)
     # Only the isolated worker changes its runtime environment; no .env edits.

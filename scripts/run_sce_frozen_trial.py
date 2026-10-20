@@ -44,6 +44,8 @@ def main():
             from studies.sce_inflation_expectations.experiments.procurement_prices import prepare
         elif config['mechanism'] == 'procurement_price_qwen':
             from studies.sce_inflation_expectations.experiments.procurement_qwen import prepare
+        elif config['mechanism'] == 'procurement_price_qwen_normalization':
+            from studies.sce_inflation_expectations.experiments.procurement_qwen import prepare_normalized as prepare
         else:
             parser.error('Unknown mechanism adapter')
         prepare(args.folder, config); return
