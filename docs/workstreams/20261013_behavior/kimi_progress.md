@@ -139,3 +139,25 @@
 - 关键数字：F1 惰性 |Δ|=0 占 13.8%/15.4%（unweighted/weighted），十档完全相同 13.7%——不动≈整份复投；F2 变动者 Δ q05/q95≈±8pp、超额峰度 +20~24（高斯不可用）；F3a CG 式回归斜率 **−0.483**（聚类 SE 0.0032，逐年 −0.46..−0.50）——与专业预测者文献正斜率相反，本样本呈过度反应（含测量误差/机械耦合成分，标为描述性）；F3b OLS −0.43 与 20261013 复算一致，t−2 IV 塌缩至 −0.05，建议校准取 |β|∈[0.05,0.43] 敏感性区间；F4 非零格 81.1% 为 5 的倍数、52.2% 为 10 的倍数；F5 between 方差占 52.5%、持续度 0.573、split-half 0.852；F6 k=4 类型表：主流型 60.3%(p=.92,m=1.8)、高频中幅偏高 19.8%、低频小幅 14.6%、通胀担忧型 5.4%(m=13.0,ℓ=14.4)。
 - 产出（全部新建）：`studies/sce_inflation_expectations/belief_dynamics/updating_facts.py`、`scripts/analyze_sce_updating_facts.py`（拒绝覆盖）、`outputs/sce_updating_facts_20261019_v1/`（summary+json 6 图+per-person 私有 parquet）、`tests/test_sce_updating_facts.py`（11/11 通过；全量 876 passed，唯一失败为既有 test_extract_cpi_components PDF 归档问题，与本次无关）。
 - 用途：F1/F2/F3/F6 直接给出两阶段"改不改→改多少"更新机制与类型分配表的校准参数；F4 支撑与 Codex 表达线汇合的报告层后处理；F5 支撑持久个人成分。待与 Codex 讨论采纳。
+
+## 2026-10-20 剧烈变化期观测指标（regime-conditional skill）——设计与真实数据可行性分析
+
+- 起因：用户转达学长建议——模型总误差虽不敌持续性基准，但可能在预期剧烈变化期战胜基准，需单独设观测指标。此想法与 10/14 讨论中搁置的猜想一致。
+- 零 API 分析（真实 SCE reference cache，2017-01..2025-10，77 个有效月；修复了 weighted median 未剔除 NaN 导致的假跳变）：
+  - 机制定义（ex-post 诊断口径）：|Δ 全国加权中位数（Q9_mean）| ≥ 0.2pp → 23/77 个月（30%）为剧烈变化月。
+  - 持续性基准（上月=本月）误差：平稳月均值 0.071pp vs 剧烈月 0.368pp（5.2 倍）；**剧烈月贡献了全部持续性误差的 76.8%**。
+  - 个体层面 |Δ Q9_mean| 中位数：平稳月 1.10pp vs 剧烈月 1.31pp（差异小）——机制效应主要体现在汇总中位数层面，个体噪声全年都大。
+  - 主窗口 2021-01..12 含 5 个剧烈月（05/06/08/10/11，|Δmed| 0.34–0.80pp），与 CPI 同比跳升同步——主窗口机制覆盖充足。
+  - ex-ante 替代口径：|Δ CPI 同比|（发布滞后下 t 期可得 t−2）与 ex-post 机制月在 2021 年高度重合，可作为 B 线无前视版本。
+- 指标设计（待与 Codex 对齐后写入评价层）：2×2 表（平稳/剧烈 × 模型/持续性基准）的逐人 MAE 与汇总 MAE + 剧烈月胜率 + 机制技能值 S = MAE_pers − MAE_model（剧烈月内）。诚实标注：剧烈月里任何"方向正确、不超调 2 倍"的模型都机械性优于持续性，故该指标度量的是**方向响应能力**，须与平稳月表现同报，不能单独宣称胜利。
+- 注意：现有模拟只覆盖 2021-05..08 约 4 个月 × 12 人，样本太薄；该指标在 12 个月主窗口正式运行后才有统计意义。模拟侧初步数值建议用 Codex 的接入规范导出后统一计算（避免两边各算各的）。
+
+## 2026-10-20 离线实验分析面板 v0（实现 Codex 设计草案）
+
+- 用户要求按 Codex 的 `docs/workstreams/20261020_procurement/structured_analysis_panel_design.md` 落地面板：模块化、每轮实验后一条命令更新、零 API/零 token。
+- 实现（commit c046f48，未 push）：`studies/sce_inflation_expectations/panel/`（adapters/regimes/sections/render 四模块 + 插件式 SECTION_PLUGINS）、`scripts/build_sce_experiment_panel.py`、`tests/test_sce_experiment_panel.py`（10 项全绿）。
+- 自动发现 `outputs/*_evaluation_*/cases_private.json`：19 批中 14 批同契约全部接入（REGISTRY 已配 3 批中文名，其余标"未登记"），5 批旧契约显式跳过并注明原因。新实验只要评价层产出同契约缓存，重跑一条命令即入面板。
+- 六固定节：总览（+同支持照抄基线）、逐月与剧烈变化期（2×2 + 技能值 S，机制标签来自 sha256 钉死的真值序列 |Δmed|≥0.2pp，页面标注事后口径与机械占优警示）、人群网格（学历×在职六格+独立切片，n<10 灰显）、先验四档与更新（真值分组明确标注）、回答结构（跨人 std、堆整、两遍噪声 vs 人际差异）、质量与元数据（费用/归一化/比较资格提示）。
+- 隐私：HTML 仅嵌聚合数据（已 grep 验证无 userid/逐人记录/原始十档）；瘦记录存 panel_data_private.json（27.5MB，本地私有，未提交）。
+- 数值抽查：reference 批逐人 MAE 3.4675 vs 其 summary.json 3.4685（−0.001pp，口径差异已说明）；照抄基线 3.0816 vs 3.0739；跨人 W1 2.4292 vs 2.4337。
+- 产物：docs/reports/experiment_panel/index.html（849KB，file:// 直接打开，未提交）。v0 未覆盖项见子代理完成报告（机制专用页、逐月信息环境列、自动摘要、导出等），可在插件框架内后续补。
