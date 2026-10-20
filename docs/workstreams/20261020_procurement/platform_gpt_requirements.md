@@ -63,6 +63,8 @@
 
 用户随后要求采用不含答案数值的结构示例，已落地[完整模板](output_structure_example_v1.md)。共用模块生成Q8/Q9或仅Q9版本，所有十个bin展开，尖括号占位符须由模型替换为未加引号的数字。新公开格式prepare已接入，包为`outputs/sce_openrouter_q9_structure_preparation_20261020_v1/`，3项离线检查通过、0新增API，不能称实际遵循率改善。旧执行脚本预先保存到`outputs/sce_openrouter_format_source_snapshot_20261020_before_template_v1/`；旧提示/回包/协议没有改写，正式采购角色输入待新批次对各组统一封存。
 
+用户再明确要求真实尝试后，该结构示例包已完成1次Qwen调用：原读取器直接接受嵌套q9和十个数字，总和100%；无字段转换、修补或重试。9.667秒、522输入/97输出token、API报告$0.00022672。相对前试非消息参数相同、原问题保留，仅追加结构说明；前后各一份且温度非零，不据此作稳定率或因果效果结论。[实际结果](output_structure_result_v1.json)。官方MCP概率输出仍未解决，直接API可行性与平台额度接入分别处理。
+
 ## 当前事实
 
 - 服务：user_pool_mcp 1.27.0；实际llm配置gpt-4o-mini；并未确认执行GPT-4o。

@@ -962,6 +962,9 @@ BLS release 2020-09-11T08:30:00-04:00; availability relative to your previous su
 <p>按用户新指令，只新增1次公开格式请求：Qwen2.5-72B、固定DeepInfra-fp8、温度0.5、JSON模式。收到原顺序概率<strong>[15,25,30,15,8,4,2,0,0,1]，合计100%</strong>，共用数值合法性检查通过。无SCE人口或历史，无重试；API报告费用$0.00015372，用时6.632秒。</p>
 <p>原始键名写成q9.bin1等平铺形式，第一遍嵌套读取器报KeyError；该错误与原答保留，后续仅确定性调整字段层级、零API、零概率修改。严格嵌套格式与数值合法分开报告。单次成功不替代旧Qwen试验139/144合法的历史，也不能宣布更准确。</p>
 <p>现有本地官方引擎＋OpenRouter Qwen可保留为采购机制的可运行候选；平台Population问卷接口不能当作已确认的通用模型网关。此次换了模型/提示/JSON模式，仍无法单独定位官方MCP为何只给单选。<a href="../20261020_procurement/openrouter_q9_format_result_v1.json">公开原概率与技术收据</a> · <a href="../20261020_procurement/platform_gpt_requirements.md">完整说明</a>。</p>
+<h2>加入无数值结构示例后：一次直接匹配嵌套格式</h2>
+<p>用户要求的完整结构模板随后进行了1次真实检查。Qwen2.5-72B、DeepInfra-fp8、温度0.5和JSON模式保持，原问题保留，只追加十档完整结构示例。直接收到q9对象内bin1至bin10的数字，概率为<strong>[10,20,30,20,10,5,2,1,1,1]，合计100%</strong>。原读取器一次通过，无字段转换、概率修补或重试。</p>
+<p>用时9.667秒，522输入/97输出token，API报告$0.00022672。仅验证这一次的结构和数值合法性，不能据单份回答声称稳定率或拟合改善。<a href="../20261020_procurement/output_structure_example_v1.md">完整模板和说明</a> · <a href="../20261020_procurement/output_structure_result_v1.json">真实检查收据</a>。</p>
 <p><a href="../20261020_procurement/official_pool_pilot.md">配置、原始错误与记录</a> · <a href="../20261020_procurement/official_pool_pilot_result_v1.json">技术摘要</a> · <a href="../20261020_procurement/platform_gpt_requirements.md">可转发给平台的确认问题</a> · <a href="../../current_todo.html">当前清单</a></p>
 </section>
 </body></html>

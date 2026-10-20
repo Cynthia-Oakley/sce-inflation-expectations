@@ -58,6 +58,8 @@
 
 用户要求的无答案数值结构示例已实现于`output_format_example.py`，完整Q8/Q9及仅Q9模板见[阅读版](workstreams/20261020_procurement/output_structure_example_v1.md)。十个bin全展开、不含概率答案；追加时不改变原消息，3项定向检查通过。新Qwen公开prepare已接入：`outputs/sce_openrouter_q9_structure_preparation_20261020_v1/`，未授权/执行、0新增API；只确认格式准备，不称实际遵循率提高。修改已执行探针脚本前保存旧源至`outputs/sce_openrouter_format_source_snapshot_20261020_before_template_v1/`，旧协议/答卷未改。当前原采购输入仍冻结不覆盖，下一批需三组统一追加同版模板并另封存，避免混淆机制效应。
 
+该新模板包随后按用户“用新的提示词再尝试”明确授权已执行一次：`outputs/sce_openrouter_q9_structure_preparation_20261020_v1/`，直接嵌套q9下bin1..10、概率[10,20,30,20,10,5,2,1,1,1]合计100，严格读取器通过，0字段转换/概率修补/归一化/重试。Qwen2.5-72B/DeepInfra-fp8、温度0.5、JSON模式及1024上限与前试相同；原问题完整保留，只追加855字节结构说明。9.667s、522/97 token、API报告$0.00022672；沿用OpenRouter累计$1及$0.01子上限，不扣平台额度。前述“未执行”是准备时状态，以本段和`format_readout.json`为准；公开`output_structure_result_v1.json`。只证明本次格式可行，不能估计稳定率或拟合效果。当前无任务运行，不再调用该已执行包。
+
 已有ATUS 2016/2022/2023文件和字典在`data/raw/behavior_references/2026-10-19_atus_roles_v2/`及同日supplement目录；不要重复下载。2022→2023采购角色预测支持不等于SCE预测收益；whole-residence人数、未知儿童/搬家/信息年龄按原规则保留。金融决策者不等于购物者，CE汽油支出不等于本人驾车。
 
 本地路由补查与BLS分类表解析已完成，不重复抓取。食品角色只说明采购分工，不识别本人价格；0/1/3/6/6可见条数是实验假设，不能按结果反选。六期仍是开发期，尚未登记独立验证月份。新闻随机分配保留独立验证候选，不按六期真值调篇数或挑分配种子。
