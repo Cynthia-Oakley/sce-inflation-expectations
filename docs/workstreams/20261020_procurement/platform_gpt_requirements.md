@@ -21,6 +21,7 @@
 - 别名目录包含GPT=gpt-4o-2024-08-06，但模拟调用schema无model字段。
 - 模拟顶层字段：platform_id、distributions、user_count、questionnaire、auth、prompt_language、max_workers、seed、allow_virtual_users、sampling_mode。
 - 没有已声明的逐人persona/messages/history输入。questionnaire的additionalProperties不是任意字段会被服务消费的保证。
+- 本日用户批准10人兼容性试测后，服务端明确拒绝`options=[]`：`questionnaire[0].options must contain at least two options.`。一次模拟工具调用、0逐人回答，无付费重发；实际扣费未知。[原始错误与技术结论](official_pool_pilot.md)。数值开放题和Q9十档概率的正式支持成为新增前置条件，不能用单选替代。
 - 官方文档说本地引擎可接OpenAI兼容服务，不等于参赛额度附带通用OpenAI兼容网关。[数据服务](https://socioverse.fudan-disc.com/docs/guides/data-services/) · [官方源码说明](https://github.com/sii-research/SocioVerse2)
 
 ## 平台若能提供以下能力，就可以继续做同输入适配
@@ -34,5 +35,9 @@
 可向平台转述（只是本地草稿，未发送）：
 
 > 我们已在本地官方引擎完成SCE逐人问卷管线，并阅读LLM接入、计费及在线FAQ。想确认两点：①参赛Sim额度是否提供支持本地自带逐人messages的GPT调用通道，如有请提供用户可用的接口说明、模型和计价；②若没有，团队能否协助导入现有study，在平台按原P/E与提示运行并导出原答？希望复用现有研究包，减少平台Chat重新构建的消耗。另请确认追加的$70计入哪条余额。
+
+本日实测后可补充（未发送）：
+
+> 我们已批准并尝试一次10人Population MCP问卷，仅含公开背景与Q8/Q9。服务返回`questionnaire[0].options must contain at least two options.`，没有逐人答案。请问是否支持数值开放题，以及同一人向十个区间分配合计100%的概率？若支持，请给可执行参数和原始回包示例；若不支持，我们需要上述自带messages或study导入路径。也请确认这次校验失败是否产生扣费。
 
 **不采用的推断**：不把别名当实际执行模型，不把问卷任意字段当已支持参数，不将另一次人口池模拟称同输入公平模型对照。当前无运行任务、无新增付费授权等待执行。

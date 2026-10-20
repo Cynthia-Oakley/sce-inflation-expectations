@@ -1,0 +1,31 @@
+{
+  "inspected_at_utc": "2026-10-20T02:35:17.720152+00:00",
+  "status": "rejected_at_questionnaire_validation",
+  "paid_tool_attempts": 1,
+  "free_preflight_failure_folders": [
+    "outputs/sce_platform_survey_pilot_20261020_v1"
+  ],
+  "free_preflight_attempts_not_simulation": true,
+  "requested_people": 10,
+  "returned_person_answers": 0,
+  "q8_q9_format_acceptance": "not tested; no answers generated",
+  "configured_model": "gpt-4o-mini",
+  "model_generation_demonstrated": false,
+  "provider_error": {
+    "status": "error",
+    "message": "questionnaire[0].options must contain at least two options.",
+    "error_type": "ValueError"
+  },
+  "mcp_isError": false,
+  "client_automatic_retries": 0,
+  "manual_paid_retries": 0,
+  "estimated_cost_if_10_people_generated_usd": "0.040",
+  "actual_charge_usd": null,
+  "cost_note": "No billing receipt in returned envelope. Validation failed; do not equate planned estimate with actual spending.",
+  "approved_cap_usd": "0.10",
+  "raw_sha256": "c59d7735948f9b41e54909feea2de76eeb3845e1dc9eef10625579968dbe5dde",
+  "protocol_sha256": "5d4e079824c9f6993b717f79f92d283af3e22bc5aea440b73621cf2620d8f57f",
+  "request_sha256": "b6d1c81090f27ae78abed8c6a31324fa635858dc32299940151028beb5e4a7ec",
+  "scope_note": "This rejects the submitted options=[] carrier. Other open-ended modes remain unconfirmed. It is not a test of GPT behavioral accuracy.",
+  "next_step": "Request official confirmation of numeric/free-text and probability-allocation input, or a supported arbitrary-prompt model route; no additional paid call."
+}

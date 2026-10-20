@@ -48,7 +48,7 @@
 
 今日官方免费证据仍为`data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json`，user_pool_mcp1.27.0，实际gpt-4o-mini，别名不等同执行模型。用户提供参考文档库后，通过浏览器核六份在线正文并保全在`data/raw/mcp_checks/2026-10-20_official_model_docs_v1/`：框架确实支持文件P和逐人信息，LLM读自配凭据；平台Sim覆盖模拟/MCP，但未说明本地额度网关；在线FAQ明确界面暂无数据上传/研究包下载。外接GPT通道或团队导入study仍须确认。已收窄[待平台确认项与未发送草稿](workstreams/20261020_procurement/platform_gpt_requirements.md)，不再泛问框架能否自带P/E。无新付费、账号操作、平台消息或运行任务，不重复MCP目录请求。浏览器标签组“SocioVerse接口核查”只打开官方公开文档，未关闭（等用户要求）。
 
-用户随后要求先尝试官方人口问卷接口。[10人技术试测](workstreams/20261020_procurement/official_pool_pilot.md)已准备：`outputs/sce_platform_survey_pilot_20261020_v1/`，Nemotron美国合成人口、一次请求、当前GPT-4o-mini、公开食品价格背景和Q8/Q9；不发送真实SCE个人资料。免费性别标签复核及6项离线检查通过，预计$0.04/申请上限$0.10，预算卡已发、尚无确认，当前本批付费调用0。入口`run_sce_platform_survey_pilot.py`先prepare、获批后run；原始MCP内容不截断、不归一化，无自动重试或扩大范围。它是独立人口池兼容性试测，不能代替逐人同输入迁移或采购角色机制对照。勿将此前预算当作本批授权。
+用户随后批准[10人技术试测](workstreams/20261020_procurement/official_pool_pilot.md)及$0.10上限。v1免费能力查询连接中断、0模拟请求；免费恢复后原协议/输入/批准复制至`outputs/sce_platform_survey_pilot_20261020_v2/`，唯一一次模拟工具请求返回`status:error`、`ValueError: questionnaire[0].options must contain at least two options.`。外层`isError=false`不能视为成功。返回逐人回答0，不能评价GPT准确度；实际扣费未知，$0.04只是原计划估算。无付费重发、无扩样/换模型，当前任务已停止、没有运行进程。原始回包与`inspection.json`本地保存；公开技术摘要`official_pool_pilot_result_v1.json`。数值开放题/Q9概率分配及本地同输入仍须官方确认，不能靠添加无意义选项或以单选代替十档概率“跑通”。不发送真实SCE个人资料，不用平台Chat。已有批准为这一笔已执行尝试，不继续复用。
 
 已有ATUS 2016/2022/2023文件和字典在`data/raw/behavior_references/2026-10-19_atus_roles_v2/`及同日supplement目录；不要重复下载。2022→2023采购角色预测支持不等于SCE预测收益；whole-residence人数、未知儿童/搬家/信息年龄按原规则保留。金融决策者不等于购物者，CE汽油支出不等于本人驾车。
 

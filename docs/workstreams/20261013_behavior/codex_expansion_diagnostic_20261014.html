@@ -937,9 +937,20 @@ BLS release 2020-09-11T08:30:00-04:00; availability relative to your previous su
 
 </pre></details>
 <h2>官方GPT接口还差什么</h2><p><strong>官方文档补核：</strong>按用户提供的文档库，六份在线正文已核。框架支持文件人口和逐人提示；平台Sim可支付模拟与MCP，在线FAQ则说明目前界面无法上传自有数据。公开文档仍未给出本地通用GPT扣参赛额度的接入方式；现将问题收窄为外接通道或由团队导入既有study。<a href="../20261020_procurement/platform_gpt_requirements.md">逐项来源与可转发问题</a>。</p>
-<p>今日免费回查实际模型仍为<strong>GPT-4o-mini</strong>；别名目录的GPT-4o不是已确认的运行模型。现工具抽平台人口池，未明确接受逐人本地P/E/历史，不能把另一套人口模拟称为同输入模型替换。已整理最小接入要求，没有发送付费问卷试探。</p>
+<p>今日免费回查实际模型仍为<strong>GPT-4o-mini</strong>；别名目录的GPT-4o不是已确认的运行模型。现工具抽平台人口池，未明确接受逐人本地P/E/历史，不能把另一套人口模拟称为同输入模型替换。原离线阶段未发收费问卷；随后用户批准的10人试测结果见下节。</p>
 <h2>下一步</h2>
 <p>共用管线与18单元引擎干跑已完成；确认官方GPT同输入及原答/费用接口后，再接真实传输路径、冻结模型专用批次并报预算。主要看匹配对打乱的分布W1、组内差异与更新；中心MAE继续披露，宏观加权另拟权验证。这六期已用过，正式独立验证需另登记。</p>
 <p><a href="../20261020_procurement/README.md">完整设计、理论与局限</a> · <a href="../20261020_procurement/platform_gpt_requirements.md">官方GPT接入要求</a> · <a href="../20261020_procurement/readiness.json">离线准备收据</a> · <a href="../../current_todo.html">当前清单</a></p>
+</section>
+<section id="official-pool-pilot-results-20261020">
+<h1>官方MCP试测：当前开放题格式被拒绝</h1>
+<p>2026-10-20。用户批准10人试测及$0.10上限后，已发送一次模拟工具请求，使用平台Nemotron美国合成人口、当前服务配置GPT-4o-mini、公开BLS价格背景和Q8/Q9。没有发送真实SCE人口或个人历史，没有使用平台Chat。</p>
+<h2>实际得到什么</h2>
+<p><strong>接口能够连接，但没有生成逐人答案。</strong>服务端返回：<code>questionnaire[0].options must contain at least two options.</code> 本次Q8/Q9需要数值和十档概率，提交的是不带备选答案的开放题；实际部署要求每题至少两个选项，拒绝了这一格式。</p>
+<p>因此返回回答数为0，不能计算合法率、拟合误差或判断GPT是否更像真人。外层MCP标记<code>isError=false</code>，正文却是<code>status=error</code>；收到回包不能当作模拟成功。目录schema未写出这项选项数限制，离线检查通过没有保证远端问卷可执行。</p>
+<h2>费用与下一步</h2>
+<p>已保留一次免费连接失败和一次模拟工具调用现场，没有付费重发、扩样或换模型。原预计$0.04不能记成实际消费；服务未返回账单，实际扣费仍待核对。</p>
+<p><strong>下一步先向官方确认数值开放题、十档概率分配或自带messages的正式入口。</strong>不以单选通胀区间代替Q9概率，不增加无意义选项绕过校验。其他开放题参数是否存在尚未知；现有采购角色机制准备不受影响，但不能据本次结果宣布已完成GPT迁移。</p>
+<p><a href="../20261020_procurement/official_pool_pilot.md">配置、原始错误与记录</a> · <a href="../20261020_procurement/official_pool_pilot_result_v1.json">技术摘要</a> · <a href="../20261020_procurement/platform_gpt_requirements.md">可转发给平台的确认问题</a> · <a href="../../current_todo.html">当前清单</a></p>
 </section>
 </body></html>
