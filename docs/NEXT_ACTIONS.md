@@ -62,9 +62,13 @@
 
 说明：[本轮具体设计和提示](workstreams/20261020_procurement/README.md)、[GPT接入缺口](workstreams/20261020_procurement/platform_gpt_requirements.md)、[ATUS匹配与缺口](workstreams/20261018_targeted_mechanisms/atus_sce_matching_results_20261019.md)。食品采购角色不自动迁移到清洁用品、衣服或驾驶；0/1/3/6/6细分是实验假设，暂无本人收据或真实角色，不称已重建个人体感。
 
-## 自动结构化评价面板（先设计，未实现）
+## 自动结构化评价面板（v0已实现，统计对齐待修）
 
 - [x] 结合现有数据和网格候选形成[框架草案](workstreams/20261020_procurement/structured_analysis_panel_design.md)：六页视图、两层分组、比较资格、稀疏规则和缓存复用；未新增模拟。
+- [x] 审阅Kimi面板v0的浏览器呈现、缓存适配和统计实现，现有10项测试通过；[审阅记录](workstreams/20261020_procurement/experiment_panel_review_20261020.md)明确结构可保留，尚不能替代冻结成绩。
+- [x] 整合用户的辨色、图数结合、重点和实验分区反馈，形成[v1改造方案](workstreams/20261020_procurement/experiment_panel_v1_plan.md)：实验目录＋五页签，先统计对齐，再重点呈现与条件下钻；页面尚未改造。
+- [x] 补充v1方案第9节后端评估：版本化适配、公共支持/统计、按批缓存、失败隔离与自动更新接口；当前为半自动原型，尚未实施这些改造。
+- [ ] 优先修正群体中心MAE/个人误差标签、按月按遍与共同支持、个人单位ESS及重复方差分解；用已有冻结结果验收，零新增API。
 - [ ] 第一版统一12期参考/六期新闻/六期Qwen缓存适配与固定统计，保留旧评分/manifest；分析门槛单独版本化。
 - [ ] 实现本地交互面板和自动事实摘要，再接新实验结束后的离线自动分析；不让运行器看真值调参，不自动追加付费请求。
 
