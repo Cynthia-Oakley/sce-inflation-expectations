@@ -36,7 +36,7 @@ def evaluate(ledger,out):
         row=json.loads(line)
         if row['slot_key'] in calls:raise ValueError('A model slot was retried')
         calls[row['slot_key']]=row
-    if len(calls)!=3456 or set(calls)!={s['slot_key'] for s in slots}:raise ValueError('Exact full call ledger required')
+    if len(calls)!=protocol['planned_calls'] or set(calls)!={s['slot_key'] for s in slots}:raise ValueError('Exact full call ledger required')
     arms=protocol['arms'];months=protocol['months'];repeats=protocol['generation_repeats']
     coverage={a:Counter() for a in arms};raw_coverage={a:Counter() for a in arms};normalization={a:Counter() for a in arms}
     actions={};normrows=[]

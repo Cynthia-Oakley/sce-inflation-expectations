@@ -1,0 +1,21 @@
+{
+  "status": "offline_ready_awaiting_batch_authorization",
+  "trial": "outputs/sce_price_background_trial_20261021_v4",
+  "protocol_sha256": "f408edbb1dfcf45fac2fd5816e7b853ea69572b24ec81116f8b8030c7c53700d",
+  "offline_engine_cells": 24,
+  "scripted_decisions": 2304,
+  "targeted_tests_passed": 40,
+  "control_messages_byte_identical": 576,
+  "treatment_single_block_reversible": 576,
+  "archived_initial_releases": 6,
+  "added_public_facts": 12,
+  "three_table_crosschecks": 12,
+  "estimated_cost_usd": 2.3049626400000003,
+  "conservative_reservation_usd": 9.907006,
+  "cap_usd": 11,
+  "source_code_snapshot": "outputs/sce_price_background_runtime_20261021_v1",
+  "source_code_files": 214,
+  "paid_calls": 0,
+  "current_target_answers_read_by_preparer": false,
+  "authorization_approved": false
+}

@@ -1,0 +1,32 @@
+{
+  "mechanism": "price_background_qwen",
+  "source_trial": "outputs/sce_procurement_qwen_trial_20261020_v2",
+  "source_price_catalog": "outputs/sce_procurement_price_views_20261020_v3/category_prices.json",
+  "months": [202009, 202109, 202206, 202312, 202410, 202503],
+  "n_per_month": 96,
+  "arms": ["food_background", "broader_background"],
+  "generation_repeats": [1, 2],
+  "allocation_seed": 20261019,
+  "transport": "openrouter_locked",
+  "destination": "https://openrouter.ai/api/v1",
+  "model": "qwen/qwen-2.5-72b-instruct",
+  "route": "deepinfra/fp8",
+  "provider_metadata": "data/raw/mcp_checks/2026-10-21_qwen_price_background_free_v1/qwen_endpoints.json",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "max_workers": 8,
+  "retry_max": 0,
+  "q9_postprocessing": "proportional_nonnegative_v1",
+  "price_input_per_mtok": 0.36,
+  "price_output_per_mtok": 0.4,
+  "budget_cap_usd": 11,
+  "request_extra_body": {
+    "provider": {
+      "order": ["deepinfra/fp8"],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "max_price": {"prompt": 0.36, "completion": 0.4}
+    }
+  }
+}

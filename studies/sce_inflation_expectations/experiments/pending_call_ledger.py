@@ -14,7 +14,7 @@ from pathlib import Path
 from threading import local
 from time import perf_counter
 
-from .frozen_batch import ROOT, OFFICIAL, verify, dump, read_json, sha
+from .frozen_batch import ROOT, OFFICIAL, verify, authorize, dump, read_json, sha
 from .staged_rosters import job_directory
 from ..model import SCEOpenAILLM
 from ..model_counterfactual import preflight
@@ -23,6 +23,70 @@ from ..news_label_trial import dotenv_values
 
 def key(month, arm, repeat, aid):
     return hashlib.sha256(f'{month}|{arm}|{repeat}|{aid}'.encode()).hexdigest()
+
+
+def prepare_fresh(parent, out):
+    """Use the existing per-slot transport from the START of an authorized batch.
+
+    All configured Core dry-runs and scope/budget checks remain mandatory. This
+    scheduler records isolated failures without retrying or losing a whole job.
+    """
+    parent, out = Path(parent).resolve(), Path(out).resolve()
+    if out.exists() or not out.is_relative_to(ROOT/'outputs'):
+        raise ValueError('Fresh ignored call ledger required')
+    manifest, protocol = verify(parent)
+    authorize(parent, manifest, protocol)
+    registration = parent/'call_ledger_registration.json'
+    if registration.exists():
+        raise ValueError('This batch already has a registered live ledger; never create a second fresh ledger')
+    if (protocol.get('mechanism') != 'price_background_qwen'
+            or protocol.get('q9_postprocessing') != 'proportional_nonnegative_v1'):
+        raise ValueError('Registered normalized price-background batch required')
+    slots = []
+    for job in manifest['jobs']:
+        audit = ROOT/'outputs/local_runs'/job['run_id']
+        if audit.exists():
+            raise ValueError('Fresh transport may not duplicate a previously started Core job')
+        bundle = read_json(job_directory(parent, protocol, job)/f'prompts_{job["arm"]}.json')
+        for aid, row in bundle['rows'].items():
+            slots.append(dict(slot_key=key(job['month'],job['arm'],job['repeat'],aid),
+                month=job['month'], arm=job['arm'], repeat=job['repeat'], agent_id=aid, **row))
+    if len(slots) != protocol['planned_calls'] or len({s['slot_key'] for s in slots}) != len(slots):
+        raise ValueError('Exact unique registered slots required')
+    # Fixed outcome-blind interleaving, so arms/months do not run in long blocks.
+    slots.sort(key=lambda s:hashlib.sha256(('20261021|'+s['slot_key']).encode()).hexdigest())
+    reserve = sum(((len(json.dumps(s['messages'],ensure_ascii=False).encode())+1024)*protocol['price_input_per_mtok']
+                   +protocol['max_tokens']*protocol['price_output_per_mtok'])/1e6 for s in slots)
+    if reserve > protocol['budget_cap_usd']:
+        raise ValueError('Full one-attempt reservation exceeds authorized cap')
+    out.mkdir(parents=True)
+    dump(out/'slots_private.json',slots); dump(out/'pending_private.json',slots)
+    dump(out/'existing_calls_private.json',{})
+    p = {**protocol, 'call_ledger_parent':str(parent.relative_to(ROOT)),
+        'existing_attempted_calls':0, 'new_planned_calls':len(slots),
+        'already_spent_or_reserved_usd':0., 'remaining_conservative_reservation_usd':reserve,
+        'scheduler':'Existing per-slot SCEOpenAILLM; Core dry-runs, but live calls outside Core loop.',
+        'dispatch_seed':20261021, 'error_policy':'One attempt per slot. Isolated connection/timeout failures remain missing; stop on fatal errors or three consecutive transient errors. Never resend a failed slot.',
+        'created_at_utc':datetime.now(timezone.utc).isoformat()}
+    dump(out/'protocol.json',p)
+    sources = {str((parent/n).relative_to(ROOT)):sha(parent/n)
+               for n in ('manifest.json','protocol.json','authorization.json','engineering_checks.json')}
+    sources.update(manifest['source_sha256'])
+    for check in read_json(parent/'engineering_checks.json'):
+        f=ROOT/'outputs/local_runs'/(check['run_id']+'-engineering')/'run_manifest.json'
+        sources[str(f.relative_to(ROOT))]=sha(f)
+    dump(out/'manifest.json',dict(protocol_sha256=sha(out/'protocol.json'),source_sha256=sources,
+        files_sha256={n:sha(out/n) for n in ('slots_private.json','existing_calls_private.json','pending_private.json')},
+        new_model_calls=0,combined_reservation_usd=reserve))
+    auth = read_json(parent/'authorization.json')
+    auth.update(protocol_sha256=sha(out/'protocol.json'),original_approved_total_calls=len(slots),new_planned_calls=len(slots))
+    dump(out/'authorization.json',auth)
+    # This is outside the frozen input manifest: it records the chosen live execution,
+    # without altering the registered protocol or original messages.
+    with registration.open('x') as handle:
+        json.dump(dict(ledger=str(out.relative_to(ROOT)), protocol_sha256=manifest['protocol_sha256']),handle)
+        handle.write('\n')
+    return dict(new_never_attempted=len(slots),conservative_reservation_usd=reserve)
 
 
 def prepare(parent, out):
@@ -106,11 +170,11 @@ def prepare_remaining(previous, out, limit=128):
         if c['slot_key'] in existing:raise ValueError('Previous ledger duplicated a slot')
         existing[c['slot_key']]={'source_file':str(f.relative_to(ROOT)),'call':c}
     pending=[r for r in slots if r['slot_key'] not in existing]
-    if not pending or len(existing)+len(pending)!=3456:raise ValueError('Nonempty remaining original scope required')
+    if not pending or len(existing)+len(pending)!=p['planned_calls']:raise ValueError('Nonempty remaining original scope required')
     reserve=sum(((len(json.dumps(r['messages'],ensure_ascii=False).encode())+1024)*p['price_input_per_mtok']
                   +p['max_tokens']*p['price_output_per_mtok'])/1e6 for r in pending)
     spent=receipt['combined_spent_or_reserved_usd']
-    if spent+reserve>16:raise ValueError('Original combined budget exceeded')
+    if spent+reserve>p['budget_cap_usd']:raise ValueError('Original combined budget exceeded')
     out.mkdir();dump(out/'slots_private.json',slots);dump(out/'existing_calls_private.json',existing);dump(out/'pending_private.json',pending[:limit])
     p={**p,'previous_call_ledger':str(previous.relative_to(ROOT)),'existing_attempted_calls':len(existing),
        'new_planned_calls':len(pending[:limit]),'all_remaining_before_chunk':len(pending),
@@ -132,7 +196,10 @@ def prepare_remaining(previous, out, limit=128):
 
 def run(folder, workers=12):
     folder=Path(folder).resolve();m=read_json(folder/'manifest.json');p=read_json(folder/'protocol.json');a=read_json(folder/'authorization.json')
-    if not a.get('approved') or a['protocol_sha256']!=sha(folder/'protocol.json') or not 1<=workers<=16:
+    if (not a.get('approved') or a['protocol_sha256']!=sha(folder/'protocol.json')
+            or m['protocol_sha256']!=sha(folder/'protocol.json')
+            or a['cap_usd']!=p['budget_cap_usd'] or a['destination']!=p['destination']
+            or not 1<=workers<=p.get('max_workers',16)):
         raise ValueError('Matching authorization and bounded workers required')
     for name,digest in m['source_sha256'].items():
         if sha(ROOT/name)!=digest:raise ValueError('Pinned source changed')
@@ -188,12 +255,12 @@ def run(folder, workers=12):
                 active.pop(future);row,fatal=future.result();log.write(json.dumps(row,ensure_ascii=False,allow_nan=False)+'\n');log.flush();count+=1
                 fee=row['api_reported_cost_usd'];charge=fee if fee is not None else row['request_reservation_usd']
                 accounted+=charge;reported+=fee or 0.;consecutive=consecutive+1 if row['error'] else 0
-                halt|=fatal or consecutive>=3 or accounted>16
+                halt|=fatal or consecutive>=3 or accounted>p['budget_cap_usd']
                 if count%100==0:print(f'{count}/{len(pending)} new slots, reported ${reported:.4f}',flush=True)
             while not halt and cursor<len(pending) and len(active)<workers:
                 r=pending[cursor];active[pool.submit(one,r)]=r;cursor+=1
     receipt={'status':'completed' if count==len(pending) else 'stopped_no_retry','new_calls':count,
         'original_attempts':p['existing_attempted_calls'],'api_reported_new_cost_usd':reported,
-        'combined_spent_or_reserved_usd':accounted,'cap_usd':16,'seconds':perf_counter()-started,'automatic_retries':0}
+        'combined_spent_or_reserved_usd':accounted,'cap_usd':p['budget_cap_usd'],'seconds':perf_counter()-started,'automatic_retries':0}
     dump(folder/'run_receipt.json',receipt);print(json.dumps(receipt,indent=2),flush=True)
     return receipt
