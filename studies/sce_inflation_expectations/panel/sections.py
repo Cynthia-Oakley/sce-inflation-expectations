@@ -416,9 +416,12 @@ def _monthly_and_regimes(records, regime_lookup):
             for rep in repeats:
                 cell = cells.get((month, rep), {})
                 pcell = pcells.get((month, rep), {})
-                regime = regime_lookup.get(month, {}).get('regime', 'unknown')
+                regime_info = regime_lookup.get(month, {})
+                regime = regime_info.get('regime', 'unknown')
                 rows.append({
                     'month': month, 'repeat': rep, 'regime': regime,
+                    'fullsample_abs_delta_median_pp': regime_info.get('abs_delta_pp'),
+                    'fullsample_median_pp': regime_info.get('median_pp'),
                     'n': cell.get('n', len(month_pms)),
                     'ess': _kish_ess(month_w),
                     'truth_median_pp': cell.get('truth_median_pp'),

@@ -346,6 +346,11 @@ def test_monthly_center_and_skill(batch):
     assert block['skill_s_center_pp'] == pytest.approx(
         block['regime_table']['drastic']['persist_center_mae_pp'] - 0.4)
     assert _f(block['skill_s_person_pp'])
+    # 全样本口径列：标签依据的值随行透传，与子样本照抄口径分开呈现
+    by_month = {r['month']: r for r in block['rows']}
+    assert by_month[202001]['fullsample_abs_delta_median_pp'] is None
+    assert by_month[202002]['fullsample_abs_delta_median_pp'] == pytest.approx(0.5)
+    assert by_month[202002]['fullsample_median_pp'] == pytest.approx(2.5)
 
 
 def _f(v):

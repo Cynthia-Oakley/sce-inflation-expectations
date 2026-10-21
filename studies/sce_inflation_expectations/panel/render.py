@@ -624,6 +624,7 @@ function renderMonthlyTab(main){
   const rows=block.rows.map(r=>{
     const cls = r.regime==='drastic' ? ' class="drastic"' : '';
     return `<tr${cls}><td class="l">${yfmt(r.month)}</td><td>${r.repeat}</td><td>${r.regime==='drastic'?'剧烈':(r.regime==='calm'?'平稳':'未知')}</td>`+
+      td(r.fullsample_abs_delta_median_pp)+
       `<td>${r.n}</td><td>${fmt(r.ess,1)}</td>`+
       td(r.truth_median_pp)+td(r.model_median_pp)+td(r.persist_median_pp)+
       td(r.model_center_mae_pp)+td(r.persist_center_mae_pp)+
@@ -633,12 +634,12 @@ function renderMonthlyTab(main){
   const regimeRows=[['平稳',t.calm],['剧烈',t.drastic]].map(([lb,g])=>
     `<tr><td class="l">${lb}</td><td>${g.n_cells}</td>${td(g.model_center_mae_pp)}${td(g.persist_center_mae_pp)}${td(g.model_person_mae_pp)}${td(g.persist_person_mae_pp)}</tr>`);
   let html=`<section><h2>月份与人群</h2>
-    <div class="guide">逐月逐遍先算再等权平均；剧烈月（|Δ真值中位|≥0.2pp，事后口径）方向正确即机械占优，必须与平稳月同报。</div>
+    <div class="guide">逐月逐遍先算再等权平均；剧烈月（|Δ真值中位|≥0.2pp，事后口径）方向正确即机械占优，必须与平稳月同报。机制标签与「全样本|Δ中位|」列来自全样本真值序列（约1100–1300人/月，连续日历月差分）；「照抄中位/照抄MAE」来自本批抽样子样本（n 见表），n≈95 时子样本中位标准误约 0.7pp，单月与全样本口径可不一致。</div>
     <div class="card"><h3>机制月 2×2（逐月×逐遍格等权平均）</h3>`+
     table(['机制月','格数','模型中心MAE(主)','照抄中心MAE','模型个人MAE','照抄个人MAE'],regimeRows)+
     `<div class="note">剧烈月技能值 S（中心口径，主）= 照抄−模型 = <b>${fmt(block.skill_s_center_pp)}</b> pp；S（个人MAE口径，并列参考）= <b>${fmt(block.skill_s_person_pp)}</b> pp。S>0 表示模型优于照抄。</div></div>
     <div class="card"><h3>逐月×逐遍明细表（黄色底纹=剧烈月）</h3>`+
-    table(['月份','遍','机制','n','ESS','真人中位','模型中位','照抄中位','模型中心MAE','照抄中心MAE','模型个人MAE','照抄个人MAE','跨人W1'],rows)+'</div>';
+    table(['月份','遍','机制','全样本|Δ中位|','n','ESS','真人中位','模型中位','照抄中位','模型中心MAE','照抄中心MAE','模型个人MAE','照抄个人MAE','跨人W1'],rows)+'</div>';
   html+=(block.notes||[]).map(n=>`<div class="note">· ${esc(n)}</div>`).join('');
   // grid (人群)
   const g=sec('grid')[arm]||{};
