@@ -67,6 +67,13 @@ MODEL = "deepseek/deepseek-v3.2"
 PROVIDER_ORDER = ["DeepInfra"]
 PRICE_IN = 0.26   # $ per 1M input tokens (DeepInfra, user-approved)
 PRICE_OUT = 0.38  # $ per 1M output tokens
+# DeepSeek official endpoint (original labeling model for the 7,157 legacy
+# labels). Prices are conservative bounds matching the legacy trial's
+# reservation arithmetic (0.28/1.10 per M); flash's actual list price is lower.
+FLASH_URL = "https://api.deepseek.com/v1/chat/completions"
+FLASH_MODEL = "deepseek-flash"
+FLASH_PRICE_IN = 0.28
+FLASH_PRICE_OUT = 1.10
 MAX_TOKENS = 1500
 BATCH = 8
 BUDGET_CAP = 0.30
@@ -150,6 +157,18 @@ VARIANTS = {
         "purpose": ("slim news-label v2.1 consistency re-test only (300 x 2022-03, "
                     "same seed/sample as v2); main-line review fixes for "
                     "over-exclusion of foreign macro policy and scope downgrade"),
+    },
+    "flash": {
+        "out": ROOT / "outputs/sce_news_labels_flash_pilot_20261022_v1",
+        "prompt": SYSTEM_PROMPT_V21,
+        "prompt_file": "system_prompt_v21.md",
+        "groups": ["consistency"], "budget_cap": 0.08,
+        "cons_dir": "consistency_flash",
+        "engine": "deepseek_official",
+        "purpose": ("slim news-label consistency test with the ORIGINAL labeling "
+                    "model (deepseek-flash, official DeepSeek endpoint) + slim "
+                    "4-field prompt v2.1; isolates model vs prompt as the source "
+                    "of the v3.2 drift; same 300-article seeded sample (2022-03)"),
     },
 }
 
@@ -288,8 +307,18 @@ def validate_batch(submitted_ids: list[str], labels: list[dict]) -> str | None:
     return None
 
 
+def engine_of(variant: str) -> str:
+    return VARIANTS[variant].get("engine", "openrouter")
+
+
+def prices_for(engine: str) -> tuple[float, float]:
+    return (FLASH_PRICE_IN, FLASH_PRICE_OUT) if engine == "deepseek_official" \
+        else (PRICE_IN, PRICE_OUT)
+
+
 def batch_cost_estimates(articles: list[dict],
-                         prompt: str = SYSTEM_PROMPT_V2) -> dict:
+                         prompt: str = SYSTEM_PROMPT_V2,
+                         engine: str = "openrouter") -> dict:
     """Realistic cost estimate (chars/3.5 tokens in, 60 out per article) plus
     the conservative byte envelope (request_bound with full max_tokens)."""
     payload_messages = [{
@@ -301,22 +330,21 @@ def batch_cost_estimates(articles: list[dict],
     in_bytes = len(json.dumps(payload_messages, ensure_ascii=False).encode())
     est_in_tokens = in_bytes / CHARS_PER_TOKEN
     est_out_tokens = len(articles) * OUT_TOKENS_PER_ARTICLE
-    realistic = (est_in_tokens * PRICE_IN + est_out_tokens * PRICE_OUT) / 1e6
-    envelope = ((in_bytes + 1024) * PRICE_IN + MAX_TOKENS * PRICE_OUT) / 1e6
+    price_in, price_out = prices_for(engine)
+    realistic = (est_in_tokens * price_in + est_out_tokens * price_out) / 1e6
+    envelope = ((in_bytes + 1024) * price_in + MAX_TOKENS * price_out) / 1e6
     return {"input_bytes": in_bytes, "realistic_usd": round(realistic, 6),
             "byte_envelope_usd": round(envelope, 6),
             "realistic_bound_usd": round(
                 min(realistic * 1.25, envelope), 6)}
 
 
-def make_payload(articles: list[dict], prompt: str = SYSTEM_PROMPT_V2) -> dict:
-    return {
-        "model": MODEL,
+def make_payload(articles: list[dict], prompt: str = SYSTEM_PROMPT_V2,
+                 engine: str = "openrouter") -> dict:
+    payload = {
         "temperature": 0,
         "max_tokens": MAX_TOKENS,
         "response_format": {"type": "json_object"},
-        "provider": {"order": PROVIDER_ORDER, "allow_fallbacks": False,
-                     "require_parameters": True},
         "messages": [
             {"role": "system", "content": prompt},
             {"role": "user", "content": json.dumps({"articles": [
@@ -325,6 +353,14 @@ def make_payload(articles: list[dict], prompt: str = SYSTEM_PROMPT_V2) -> dict:
                   "section_name", "news_desk")} for a in articles]},
                 ensure_ascii=False)}],
     }
+    if engine == "deepseek_official":
+        payload["model"] = FLASH_MODEL
+        payload["thinking"] = {"type": "disabled"}
+    else:
+        payload["model"] = MODEL
+        payload["provider"] = {"order": PROVIDER_ORDER, "allow_fallbacks": False,
+                               "require_parameters": True}
+    return payload
 
 
 def build_pools(groups: list[str] = GROUPS) -> dict:
@@ -351,6 +387,10 @@ def build_pools(groups: list[str] = GROUPS) -> dict:
 def prepare(out: Path, dry_run: bool = False, variant: str = "v2") -> dict:
     cfg = VARIANTS[variant]
     prompt = cfg["prompt"]
+    engine = engine_of(variant)
+    price_in, price_out = prices_for(engine)
+    model = FLASH_MODEL if engine == "deepseek_official" else MODEL
+    destination = FLASH_URL if engine == "deepseek_official" else BASE + "/chat/completions"
     pools = build_pools(cfg["groups"])
     summary = {}
     batches = []
@@ -360,7 +400,7 @@ def prepare(out: Path, dry_run: bool = False, variant: str = "v2") -> dict:
         rows = pools[group]["rows"]
         for i in range(0, len(rows), BATCH):
             chunk = rows[i:i + BATCH]
-            est = batch_cost_estimates(chunk, prompt)
+            est = batch_cost_estimates(chunk, prompt, engine)
             batch_id += 1
             batches.append({"batch_id": batch_id, "group": group,
                             "article_ids": [a["article_id"] for a in chunk],
@@ -385,8 +425,10 @@ def prepare(out: Path, dry_run: bool = False, variant: str = "v2") -> dict:
         "cost_byte_envelope_usd": round(total_envelope, 4),
         "budget_cap_usd": cfg["budget_cap"],
         "variant": variant,
-        "model": MODEL, "provider_order": PROVIDER_ORDER,
-        "price_in_per_million": PRICE_IN, "price_out_per_million": PRICE_OUT,
+        "engine": engine,
+        "model": model,
+        "provider_order": PROVIDER_ORDER if engine == "openrouter" else None,
+        "price_in_per_million": price_in, "price_out_per_million": price_out,
         "batch_size": BATCH, "max_tokens": MAX_TOKENS,
         "automatic_retries": 0,
     }
@@ -402,11 +444,14 @@ def prepare(out: Path, dry_run: bool = False, variant: str = "v2") -> dict:
     protocol = {
         "purpose": cfg["purpose"],
         "created_at_utc": now(),
-        "destination": BASE + "/chat/completions",
-        "model": MODEL,
-        "provider_order": PROVIDER_ORDER,
-        "provider_lock": {"allow_fallbacks": False, "require_parameters": True},
-        "price_in_per_million": PRICE_IN, "price_out_per_million": PRICE_OUT,
+        "destination": destination,
+        "engine": engine,
+        "model": model,
+        "provider_order": PROVIDER_ORDER if engine == "openrouter" else None,
+        "provider_lock": ({"allow_fallbacks": False, "require_parameters": True}
+                          if engine == "openrouter" else None),
+        "thinking": ({"type": "disabled"} if engine == "deepseek_official" else None),
+        "price_in_per_million": price_in, "price_out_per_million": price_out,
         "batch_size": BATCH, "max_tokens": MAX_TOKENS, "temperature": 0,
         "response_format": "json_object",
         "request_count": len(batches),
@@ -465,8 +510,16 @@ def execute(out: Path) -> dict:
         raise ValueError("Script changed after prepare")
     key = os.environ.get("OPENROUTER_API_KEY") or \
         dotenv_values(ROOT.parent / "socioverse2_repo/.env").get("OPENROUTER_API_KEY")
+    engine = p.get("engine", "openrouter")
+    if engine == "deepseek_official":
+        dotenv = dotenv_values(ROOT.parent / "socioverse2_repo/.env")
+        host = (os.environ.get("SV_LLM_BASE_URL") or dotenv.get("SV_LLM_BASE_URL") or "")
+        if host.rstrip("/") not in {"https://api.deepseek.com", "https://api.deepseek.com/v1"}:
+            raise ValueError("cannot establish credential as official DeepSeek")
+        key = os.environ.get("DEEPSEEK_API_KEY") or dotenv.get("DEEPSEEK_API_KEY") \
+            or os.environ.get("SV_LLM_API_KEY") or dotenv.get("SV_LLM_API_KEY")
     if not key:
-        raise ValueError("OPENROUTER_API_KEY missing")
+        raise ValueError("API credential missing")
 
     budget_cap = p.get("budget_cap_usd", BUDGET_CAP)
     cons_dir = p.get("consistency_dir", "consistency")
@@ -479,7 +532,7 @@ def execute(out: Path) -> dict:
 
     def payload_for(batch: dict) -> dict:
         articles = [by_id[batch["group"]][i] for i in batch["article_ids"]]
-        return make_payload(articles, prompt)
+        return make_payload(articles, prompt, engine)
 
     labels_fh = (out / "labels.jsonl").open("a")
     (out / cons_dir).mkdir(exist_ok=True)
@@ -504,8 +557,9 @@ def execute(out: Path) -> dict:
         record = {"batch_id": b["batch_id"], "group": b["group"], "at_utc": now()}
         reply = {}
         try:
+            url = p["destination"]
             with httpx.Client(timeout=120, follow_redirects=False) as client:
-                resp = client.post(BASE + "/chat/completions",
+                resp = client.post(url,
                                    headers={"Authorization": "Bearer " + key},
                                    json=payload)
             record["http_status"] = resp.status_code
@@ -514,15 +568,19 @@ def execute(out: Path) -> dict:
             reply = resp.json()
             record["model"] = reply.get("model")
             record["provider"] = reply.get("provider")
-            if reply.get("model") != MODEL or reply.get("provider") != PROVIDER_ORDER[0]:
+            if engine == "deepseek_official":
+                if reply.get("model") != FLASH_MODEL:
+                    raise ValueError("locked model mismatch")
+            elif reply.get("model") != MODEL or reply.get("provider") != PROVIDER_ORDER[0]:
                 raise ValueError("locked model/provider mismatch")
             content = reply["choices"][0]["message"]["content"]
             obj = json.loads(content)
             invalid = validate_batch(b["article_ids"], obj.get("labels"))
             if invalid:
                 raise ValueError(f"batch_validation_failed: {invalid}")
-            bill = billing(reply, {"input_price_per_million": PRICE_IN,
-                                   "output_price_per_million": PRICE_OUT},
+            pin, pout = prices_for(engine)
+            bill = billing(reply, {"input_price_per_million": pin,
+                                   "output_price_per_million": pout},
                            b["byte_envelope_usd"])
             spent += bill["charged_or_reserved_usd"]
             paid += 1
