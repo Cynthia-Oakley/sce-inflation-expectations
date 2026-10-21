@@ -1,0 +1,36 @@
+{
+  "status": "stopped_at_upstream_rate_limit",
+  "planned_unique_slots": 768,
+  "attempted_requests": 16,
+  "successful_responses": 4,
+  "http_429": 12,
+  "remaining_never_attempted": 752,
+  "technical_gate": {
+    "calls": 16,
+    "usable": 4,
+    "passed": false,
+    "normalized_q9_allowed": true,
+    "new_extra_calls": 0,
+    "truth_read": false
+  },
+  "provider": "AtlasCloud",
+  "route": "atlas-cloud/fp8",
+  "max_concurrent_requests": 16,
+  "response_format_usable": 4,
+  "successful_reasoning_tokens": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "api_reported_cost_usd": 0.00269434,
+  "spent_or_conservatively_reserved_usd": 0.04106602,
+  "failed_attempt_reservation_usd": 0.038371680000000005,
+  "failed_attempt_actual_charge": "unknown; reservation retained, not asserted billed",
+  "seconds": 9.098536749836057,
+  "automatic_retries": 0,
+  "source_ledger": "outputs/sce_v32_comparison_calls_20261021_v1",
+  "upstream_limit_source": "upstream_provider_shared_pool",
+  "scientific_comparison_available": false,
+  "next_step": "Manual one-time completion of 12 HTTP429 slots at max 2 concurrent requests requires new confirmation; four successes reused, 752 untouched slots only after all 16 are usable. Same $4 cap."
+}
