@@ -1,0 +1,28 @@
+{
+  "status": "prepared_not_authorized",
+  "new_api_calls": 0,
+  "planned_new_calls": 768,
+  "reused_qwen_responses": 768,
+  "months": [
+    202009,
+    202109,
+    202206,
+    202503
+  ],
+  "n_per_month": 96,
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "exact_message_checks": 768,
+  "core_offline_units": 8,
+  "targeted_tests_passed": 30,
+  "model": "deepseek/deepseek-v3.2",
+  "provider": "AtlasCloud",
+  "route": "atlas-cloud/fp8",
+  "thinking": "disabled",
+  "estimated_cost_usd": 0.5207984999999999,
+  "conservative_reservation_usd": 2.4344940000000004,
+  "requested_cap_usd": 4,
+  "protocol_sha256": "3bc2f5ca769b1f38b6dc646b7d417182729f8aa02343306399a2839f718ed2e0"
+}

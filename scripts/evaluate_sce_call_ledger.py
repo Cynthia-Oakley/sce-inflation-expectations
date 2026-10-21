@@ -49,7 +49,7 @@ def evaluate(ledger,out):
                 or not raw_hash_ok
                 or c['temperature']!=protocol['temperature'] or c['max_tokens']!=protocol['max_tokens']
                 or c['extra_body']!=protocol['request_extra_body']):raise ValueError('Original input/reply/parameter mismatch')
-        if not c.get('error') and (c.get('returned_model')!=protocol['model'] or c.get('returned_provider')!='DeepInfra'):
+        if not c.get('error') and (c.get('returned_model')!=protocol['model'] or c.get('returned_provider')!=protocol.get('expected_provider','DeepInfra')):
             raise ValueError('Model/provider mismatch')
         point=response_point(raw);view=None;usable=False;raw_bins=None;raw_ok=False
         try:
@@ -90,7 +90,8 @@ def evaluate(ledger,out):
         'new_api_calls':0,'estimated_actual_cost_usd':receipt['combined_spent_or_reserved_usd'],
         'coverage':{a:dict(v) for a,v in coverage.items()},'common_q9_person_months':len(support9),'common_q8_person_months':len(support8),
         'scorable_counts':scorable,'arms':summaries,'primary_comparison':protocol['primary_comparison'],
-        'paired_intervals':paired_intervals(cases,protocol['primary_comparison'],months,repeats,support9) if valid else None,
+        'paired_intervals':paired_intervals(cases,protocol['primary_comparison'],months,repeats,support9)
+            if valid and len(protocol['primary_comparison'])==2 else None,
         'additional_paired_intervals':{f'{other}_minus_{base}':paired_intervals(cases,[base,other],months,repeats,support9)
             for base,other in protocol['additional_comparisons']} if valid else None,
         'accuracy_descriptive_only':not valid,'automatic_upgrade':False,

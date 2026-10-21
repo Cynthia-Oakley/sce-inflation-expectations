@@ -19,7 +19,7 @@ def configure_live(protocol,dotenv):
     values=dotenv_values(dotenv)
     key=os.environ.get('OPENROUTER_API_KEY') or values.get('OPENROUTER_API_KEY')
     if not key:raise ValueError('OpenRouter credential missing')
-    url='https://openrouter.ai/api/v1/models/'+MODEL+'/endpoints'
+    url='https://openrouter.ai/api/v1/models/'+protocol['model']+'/endpoints'
     if protocol.get('provider_metadata_mode') == 'frozen_batch_catalog':
         root = Path(__file__).resolve().parents[2]
         path = (root/protocol['provider_metadata']).resolve()
@@ -29,7 +29,7 @@ def configure_live(protocol,dotenv):
     else:
         with httpx.Client(timeout=20,follow_redirects=False) as client:
             reply=client.get(url);reply.raise_for_status();directory=reply.json()
-    preflight({'route_candidate':ROUTE,'input_price_per_million':protocol['price_input_per_mtok'],
+    preflight({'route_candidate':protocol['route'],'input_price_per_million':protocol['price_input_per_mtok'],
                'output_price_per_million':protocol['price_output_per_mtok']},directory)
     # Only the isolated worker changes its runtime environment; no .env edits.
     os.environ['SV_LLM_BASE_URL']=protocol['destination'];os.environ['SV_LLM_API_KEY']=key
@@ -60,7 +60,9 @@ class OpenRouterFrozenDecision(FrozenPromptDecision):
             evidence=getattr(self.llm,'last_provider_evidence',{})
             row.update(evidence)
             fee=evidence.get('api_reported_cost_usd')
-            if row.get('returned_provider')!='DeepInfra' or row.get('returned_model')!=MODEL:
+            expected_model = self.model if self.model == 'deepseek/deepseek-v3.2' else MODEL
+            expected_provider = 'AtlasCloud' if expected_model == 'deepseek/deepseek-v3.2' else 'DeepInfra'
+            if row.get('returned_provider')!=expected_provider or row.get('returned_model')!=expected_model:
                 row['error']='Locked OpenRouter model/provider identity mismatch'
             if fee is not None:
                 if type(fee) not in (int,float) or not math.isfinite(fee) or fee<0:

@@ -39,7 +39,7 @@ def prepare_fresh(parent, out):
     registration = parent/'call_ledger_registration.json'
     if registration.exists():
         raise ValueError('This batch already has a registered live ledger; never create a second fresh ledger')
-    if (protocol.get('mechanism') != 'price_background_qwen'
+    if (protocol.get('mechanism') not in ('price_background_qwen', 'v32_same_input')
             or protocol.get('q9_postprocessing') != 'proportional_nonnegative_v1'):
         raise ValueError('Registered normalized price-background batch required')
     slots = []
@@ -55,6 +55,12 @@ def prepare_fresh(parent, out):
         raise ValueError('Exact unique registered slots required')
     # Fixed outcome-blind interleaving, so arms/months do not run in long blocks.
     slots.sort(key=lambda s:hashlib.sha256(('20261021|'+s['slot_key']).encode()).hexdigest())
+    if protocol.get('mechanism') == 'v32_same_input':
+        gate = protocol['queue_technical_gate']
+        selected = [s for month in protocol['months']
+                    for s in [r for r in slots if r['month'] == month][:gate['per_month']]]
+        ids = {s['slot_key'] for s in selected}
+        slots = selected + [s for s in slots if s['slot_key'] not in ids]
     reserve = sum(((len(json.dumps(s['messages'],ensure_ascii=False).encode())+1024)*protocol['price_input_per_mtok']
                    +protocol['max_tokens']*protocol['price_output_per_mtok'])/1e6 for s in slots)
     if reserve > protocol['budget_cap_usd']:
@@ -207,6 +213,9 @@ def run(folder, workers=12):
         if sha(folder/name)!=digest:raise ValueError('Frozen ledger changed')
     if (folder/'execution_started.json').exists():raise ValueError('No automatic ledger restart')
     pending=read_json(folder/'pending_private.json')
+    gate=p.get('queue_technical_gate')
+    if gate and (p.get('existing_attempted_calls') != 0 or gate['planned_calls'] >= len(pending)):
+        raise ValueError('Technical gate is only valid at the start of a fresh complete queue')
     directory=read_json(ROOT/p['provider_metadata']);preflight({'route_candidate':p['route'],
         'input_price_per_million':p['price_input_per_mtok'],'output_price_per_million':p['price_output_per_mtok']},directory)
     values=dotenv_values(OFFICIAL/'.env');secret=os.environ.get('OPENROUTER_API_KEY') or values.get('OPENROUTER_API_KEY')
@@ -217,7 +226,7 @@ def run(folder, workers=12):
     def one(slot):
         if not hasattr(state,'llm'):
             state.llm=SCEOpenAILLM(model=p['model'],temperature=p['temperature'],max_tokens=p['max_tokens'],
-                extra_body=p['request_extra_body'],response_format='json_object',timeout_s=60)
+                extra_body=p['request_extra_body'],response_format='json_object',timeout_s=p.get('timeout_s',60))
         size=len(json.dumps(slot['messages'],ensure_ascii=False).encode())
         bound=((size+1024)*p['price_input_per_mtok']+p['max_tokens']*p['price_output_per_mtok'])/1e6
         row={k:slot[k] for k in ['slot_key','month','arm','repeat','agent_id','prompt_sha256']}
@@ -225,7 +234,7 @@ def run(folder, workers=12):
             requested_model=p['model'],temperature=p['temperature'],max_tokens=p['max_tokens'],
             extra_body=p['request_extra_body'],response_format='json_object',timestamp_utc=datetime.now(timezone.utc).isoformat(),
             returned_model=None,returned_provider=None,finish_reason=None,usage=None,raw_response_text='',error=None,
-            api_reported_cost_usd=None,request_reservation_usd=bound)
+            api_reported_cost_usd=None,request_reservation_usd=bound,error_http_status=None)
         fatal=False
         try:
             reply,latency=state.llm.chat(slot['messages']);choice=reply.choices[0];usage=getattr(reply,'usage',None)
@@ -233,21 +242,23 @@ def run(folder, workers=12):
             row.update(returned_model=reply.model,returned_provider=getattr(reply,'provider',None),
                 finish_reason=choice.finish_reason,raw_response_text=text,latency_ms=latency,request_id=reply.id,
                 usage=usage.model_dump() if usage else None,api_reported_cost_usd=getattr(usage,'cost',None))
-            if row['returned_model']!=p['model'] or row['returned_provider']!='DeepInfra':
+            if row['returned_model']!=p['model'] or row['returned_provider']!=p.get('expected_provider','DeepInfra'):
                 row['error']='Locked model/provider mismatch';fatal=True
             fee=row['api_reported_cost_usd']
             if fee is not None and (type(fee) not in (int,float) or not math.isfinite(fee) or fee<0 or fee>bound+1e-9):
                 row['error']='Invalid/excess reported charge';fatal=True
         except Exception as exc:
             row['error']=type(exc).__name__+': '+str(exc).replace(secret,'<redacted>')[:500]
+            row['error_http_status']=getattr(exc,'status_code',None)
             fatal=type(exc).__name__ not in ('APIConnectionError','APITimeoutError')
         row['raw_response_sha256']=hashlib.sha256(row['raw_response_text'].encode()).hexdigest()
         row['finished_at_utc']=datetime.now(timezone.utc).isoformat()
         return row,fatal
-    cursor=0
+    cursor=0;gate_rows=[];gate_checked=False
+    phase_limit=gate['planned_calls'] if gate else len(pending)
     with (folder/'new_calls_private.jsonl').open('x') as log, ThreadPoolExecutor(max_workers=workers) as pool:
         active={}
-        while cursor<len(pending) and len(active)<workers:
+        while cursor<phase_limit and len(active)<workers:
             r=pending[cursor];active[pool.submit(one,r)]=r;cursor+=1
         while active:
             done,_=wait(active,return_when=FIRST_COMPLETED)
@@ -256,11 +267,30 @@ def run(folder, workers=12):
                 fee=row['api_reported_cost_usd'];charge=fee if fee is not None else row['request_reservation_usd']
                 accounted+=charge;reported+=fee or 0.;consecutive=consecutive+1 if row['error'] else 0
                 halt|=fatal or consecutive>=3 or accounted>p['budget_cap_usd']
+                if gate and not gate_checked:gate_rows.append(row)
                 if count%100==0:print(f'{count}/{len(pending)} new slots, reported ${reported:.4f}',flush=True)
-            while not halt and cursor<len(pending) and len(active)<workers:
+            if gate and not gate_checked and not active and cursor==phase_limit:
+                from ..q9_normalization import response_view,response_point
+                usable=0
+                for row in gate_rows:
+                    try:
+                        response_view(row['raw_response_text'])
+                        point=response_point(row['raw_response_text'])
+                        ok=(not row['error'] and row['finish_reason']=='stop' and point is not None)
+                    except (ValueError,TypeError):ok=False
+                    usable+=bool(ok)
+                gate_checked=True
+                passed=usable/len(gate_rows)>=gate['minimum_usable_fraction'] and not halt
+                dump(folder/'queue_technical_gate.json',dict(calls=len(gate_rows),usable=usable,
+                    passed=passed,normalized_q9_allowed=True,new_extra_calls=0,truth_read=False))
+                halt|=not passed
+                phase_limit=len(pending)
+                print(f'Technical gate {usable}/{len(gate_rows)}: '+('passed' if passed else 'stopped'),flush=True)
+            while not halt and cursor<phase_limit and len(active)<workers:
                 r=pending[cursor];active[pool.submit(one,r)]=r;cursor+=1
     receipt={'status':'completed' if count==len(pending) else 'stopped_no_retry','new_calls':count,
         'original_attempts':p['existing_attempted_calls'],'api_reported_new_cost_usd':reported,
         'combined_spent_or_reserved_usd':accounted,'cap_usd':p['budget_cap_usd'],'seconds':perf_counter()-started,'automatic_retries':0}
+    receipt.update(max_concurrent_requests=workers,technical_gate_completed=gate_checked if gate else None)
     dump(folder/'run_receipt.json',receipt);print(json.dumps(receipt,indent=2),flush=True)
     return receipt

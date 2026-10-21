@@ -1,0 +1,40 @@
+{
+  "mechanism": "v32_same_input",
+  "source_trial": "outputs/sce_price_background_trial_20261021_v4",
+  "source_call_ledger": "outputs/sce_price_background_calls_20261021_v1",
+  "source_evaluation": "outputs/sce_price_background_evaluation_20261021_v1",
+  "months": [202009, 202109, 202206, 202503],
+  "n_per_month": 96,
+  "arms": ["deepseek_v32"],
+  "generation_repeats": [1, 2],
+  "transport": "openrouter_locked",
+  "destination": "https://openrouter.ai/api/v1",
+  "model": "deepseek/deepseek-v3.2",
+  "route": "atlas-cloud/fp8",
+  "expected_provider": "AtlasCloud",
+  "provider_metadata": "data/raw/mcp_checks/2026-10-21_v32_fullperiod_free_v1/deepseek_v32_endpoints.json",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "max_workers": 16,
+  "timeout_s": 120,
+  "retry_max": 0,
+  "q9_postprocessing": "proportional_nonnegative_v1",
+  "price_input_per_mtok": 0.26,
+  "price_output_per_mtok": 0.38,
+  "budget_cap_usd": 4,
+  "queue_technical_gate": {
+    "planned_calls": 16,
+    "per_month": 4,
+    "minimum_usable_fraction": 0.99
+  },
+  "request_extra_body": {
+    "provider": {
+      "order": ["atlas-cloud/fp8"],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "max_price": {"prompt": 0.26, "completion": 0.38}
+    },
+    "reasoning": {"enabled": false}
+  }
+}
