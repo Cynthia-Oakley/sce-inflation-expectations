@@ -45,6 +45,16 @@
 
 **下一步的确认问题更具体了：**请平台提供支持逐人十档概率的题型参数/示例，以及未经解析的模型原始文本；如问卷服务只提供选项结果，需要能接本地messages或既有study的模型调用路径。未获得上述支持前不继续调整选项或追加Q8试探。原`native_questionnaire_candidates_v1.json`保留准备时状态与哈希，实际执行状态以本段及运行包为准。
 
+## reason通道探测：1人试测已完成（2026-10-21，未成功）
+
+用户提出新思路：options放真实区间仅用于通过校验，让模型把十档概率写进reason字段。按1人、一次新请求执行，种子20261021，其余条件与10-20试测相同；题干明确指令"In your reason, FIRST write the ten probabilities in option order as ten comma-separated numbers..."。共用入口新增`reason_channel_q9`变体，9项离线检查通过。用户于2026-10-21对话中明确批准本次调用（估$0.004，平台Sim额度，$0.10累计上限内）。
+
+**结果：reason没有携带十个概率。**服务`status=ok`、`llm_model=gpt-4o-mini`、12.562秒；回答仍为`answer="A"`，reason全文为"Given the significant increase in food-at-home prices and overall inflation trends, there is a high probability that inflation will remain above 12%."——除"12"外无任何数字，枚举指令未被遵循。
+
+与10-20试测的reason对比，两者几乎是同模板的选项A简短辩护（仅"economic conditions"与"inflation trends"之差）。**这提示reason的形态由服务端内部提示主导，题干中的格式指令无法穿透。**单次观察，不排除换措辞有效的可能，但证据方向不乐观；每次措辞试探约$0.004且结论价值有限，建议停止此方向，转入向平台正式询问。
+
+运行包：`outputs/sce_platform_reason_channel_q9_20261021_v1/`，含请求/协议/授权/原始回包/`inspection.json`（解析记录：reason仅含数字"12"）。本次后累计预留$0.048（估算非账单），无运行中任务。
+
 ## OpenRouter Qwen直接调用：十档概率已返回
 
 按用户新指令，仅新增1次公开输入的Q9格式检查，选择此前已接通且较擅长JSON的Qwen2.5-72B，经OpenRouter锁定DeepInfra `deepinfra/fp8`，禁止供应商回退。温度0.5、JSON对象模式、最多1,024输出token，无自动重试、不调用LLaMA。使用同一公开BLS背景、Q9问题和十档区间，没有SCE人口、本人历史或真值，也不重启已停止的旧Qwen批次。

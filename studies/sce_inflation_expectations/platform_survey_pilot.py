@@ -19,6 +19,25 @@ ROOT = Path(__file__).resolve().parents[2]
 TOOL = "run_user_pool_distribution_simulation"
 HOST = "mcp.socioverse.fudan-disc.com"
 
+REASON_CHANNEL_QUESTION = (
+    "Survey date: June 10, 2022. The BLS release of June 10 reports that US "
+    "food-at-home prices in May 2022 increased 11.9% from May 2021 and 1.3% from "
+    "April 2022, both not seasonally adjusted. This is one price category. Please "
+    "answer about overall prices over the next 12 months using information "
+    "available by the survey date. What is the percent chance that overall "
+    "inflation or deflation over the next 12 months falls in each of the ten "
+    "listed ranges? Assign a percentage probability to every option, from 0 to "
+    "100, with all ten adding to 100. In your reason, FIRST write the ten "
+    "probabilities in option order as ten comma-separated numbers (for example: "
+    "5,10,20,25,20,10,5,3,1,1), then briefly explain your reasoning."
+)
+
+# variant -> (seed, max_workers, expected_user_count)
+VARIANTS = {
+    "native_q9_options": (20261020, 1, 1),
+    "reason_channel_q9": (20261021, 1, 1),
+}
+
 
 def now():
     return datetime.now(timezone.utc).isoformat()
@@ -60,20 +79,35 @@ def check_request(request, schema, variant="legacy_empty"):
             raise ValueError(f"Wrong type: {field}")
         if kind == "integer" and not spec.get("minimum", value) <= value <= spec.get("maximum", value):
             raise ValueError(f"Out of schema range: {field}")
-    native = variant == "native_q9_options"
-    targets = {"GENDER": {"Female": 100}} if native else {"GENDER": {"Female": 50, "Male": 50}}
+    if variant in VARIANTS:
+        seed, workers, _ = VARIANTS[variant]
+        if (request["distributions"] != {"GENDER": {"Female": 100}} or
+            request["seed"] != seed or request["prompt_language"] != "en" or
+            request["sampling_mode"] != "preserve_joint" or request["max_workers"] != workers or
+            len(request["questionnaire"]) != 1):
+            raise ValueError("Unexpected pilot sampling/questionnaire scope")
+        question = request["questionnaire"][0]
+        expected_question = (REASON_CHANNEL_QUESTION if variant == "reason_channel_q9"
+                             else json.loads((ROOT / "docs/workstreams/20261020_procurement/native_questionnaire_candidates_v1.json").read_text())["q9_candidate"]["question"])
+        if (set(question) != {"question", "options"} or question["question"] != expected_question
+                or question["options"] != bin_labels()):
+            raise ValueError("Unexpected questionnaire/options carrier")
+        return
+    targets = {"GENDER": {"Female": 50, "Male": 50}}
     if (request["distributions"] != targets or
         request["seed"] != 20261020 or request["prompt_language"] != "en" or
-        request["sampling_mode"] != "preserve_joint" or request["max_workers"] != (1 if native else 2) or
+        request["sampling_mode"] != "preserve_joint" or request["max_workers"] != 2 or
         len(request["questionnaire"]) != 1):
         raise ValueError("Unexpected pilot sampling/questionnaire scope")
     question = request["questionnaire"][0]
-    expected_options = bin_labels() if native else []
-    if set(question) != {"question", "options"} or not isinstance(question["question"], str) or question["options"] != expected_options:
+    if set(question) != {"question", "options"} or not isinstance(question["question"], str) or question["options"] != []:
         raise ValueError("Unexpected questionnaire/options carrier")
 
 
-def prepare(folder):
+def prepare(folder, variant="native_q9_options"):
+    if variant not in VARIANTS:
+        raise ValueError(f"Unknown probe variant: {variant}")
+    seed, workers, user_count = VARIANTS[variant]
 
     evidence = ROOT / "data/raw/mcp_checks/2026-10-20_procurement_free_v1/evidence.json"
     cache = json.loads(evidence.read_text())
@@ -81,21 +115,28 @@ def prepare(folder):
     price_path = ROOT / "outputs/sce_procurement_price_views_20261020_v3/category_prices.json"
     price = json.loads(price_path.read_text())["202206"]["food_at_home"]
     candidate_path = ROOT / "docs/workstreams/20261020_procurement/native_questionnaire_candidates_v1.json"
-    candidate = json.loads(candidate_path.read_text())["q9_candidate"]
+    if variant == "reason_channel_q9":
+        candidate = {"question": REASON_CHANNEL_QUESTION, "options": bin_labels()}
+    else:
+        candidate = json.loads(candidate_path.read_text())["q9_candidate"]
     request = {"platform_id": "nemotron_usa", "distributions": {"GENDER": {"Female": 100}},
-               "user_count": 1, "questionnaire": [candidate],
-               "prompt_language": "en", "max_workers": 1, "seed": 20261020,
+               "user_count": user_count, "questionnaire": [candidate],
+               "prompt_language": "en", "max_workers": workers, "seed": seed,
                "allow_virtual_users": False, "sampling_mode": "preserve_joint"}
-    check_request(request, schema, "native_q9_options")
+    check_request(request, schema, variant)
     folder.mkdir(parents=True, exist_ok=False)
     write_new(folder / "request.json", request)
     write_new(folder / "tool_schema.json", schema)
+    prior_reserved = "0.044" if variant == "reason_channel_q9" else "0.040"
+    questionnaire_note = ("Q9 ten genuine range options; ten probabilities requested inside the reason field"
+                          if variant == "reason_channel_q9" else
+                          "Q9 ten genuine range options with a probability-allocation request; response support unverified")
     protocol = {"created_at_utc": now(), "purpose": "technical compatibility only; no fit claim",
                 "tool": TOOL, "destination_host": HOST, "expected_server_model": "gpt-4o-mini",
                 "request_sha256": sha(folder / "request.json"), "request_count": 1,
-                "probe_variant": "native_q9_options", "user_count": 1,
+                "probe_variant": variant, "user_count": user_count,
                 "automatic_retries": 0, "unit_price_usd_email": "0.004",
-                "estimated_usd_email": "0.004", "prior_reserved_usd_email": "0.040", "budget_cap_usd": "0.10",
+                "estimated_usd_email": "0.004", "prior_reserved_usd_email": prior_reserved, "budget_cap_usd": "0.10",
                 "remote_budget_enforcement": False, "remote_internal_retries": "not exposed",
                 "price_note": "Organizer email rate, not a verified current invoice. No remote budget parameter.",
                 "billing_evidence": "docs/LOCAL_RUNTIME_ACCEPTANCE.md",
@@ -104,7 +145,7 @@ def prepare(folder):
                 "population": "platform Nemotron-Personas-USA synthetic pool; CC-BY-4.0; not SCE",
                 "pool_attribution": "NVIDIA, https://huggingface.co/datasets/nvidia/Nemotron-Personas-USA",
                 "sampling_note": "One female synthetic respondent for format compatibility only; no fit claim",
-                "questionnaire_note": "Q9 ten genuine range options with a probability-allocation request; response support unverified",
+                "questionnaire_note": questionnaire_note,
                 "time_boundary_note": "Historical role play, not a blind forecast; training knowledge not excluded",
                 "sources": {"capability_path": str(evidence.relative_to(ROOT)), "capability_sha256": sha(evidence),
                             "prices_path": str(price_path.relative_to(ROOT)), "prices_sha256": sha(price_path),
@@ -116,8 +157,10 @@ def prepare(folder):
         "request_schema_valid": True, "supported_gender_labels_checked_free": True,
         "per_person_raw_answers_supported": "advertised, not yet demonstrated",
         "open_text_and_q9_supported": "not yet demonstrated", "paid_calls": 0,
-        "estimated_usd_email": "0.004", "prior_reservation_plus_new_usd": "0.044", "budget_cap_usd": "0.10"})
-    return {"status": "prepared_no_paid_calls", "folder": str(folder), "people": 1,
+        "estimated_usd_email": "0.004",
+        "prior_reservation_plus_new_usd": "0.048" if variant == "reason_channel_q9" else "0.044",
+        "budget_cap_usd": "0.10"})
+    return {"status": "prepared_no_paid_calls", "folder": str(folder), "people": user_count,
             "estimated_usd": "0.004", "cap_usd": "0.10", "protocol_sha256": sha(folder / "protocol.json")}
 
 
@@ -132,7 +175,7 @@ def validate_approval(folder):
     cap = Decimal(protocol["budget_cap_usd"])
     reservation = Decimal(protocol["unit_price_usd_email"]) * request["user_count"]
     reservation += Decimal(protocol.get("prior_reserved_usd_email", "0"))
-    expected_count = 1 if protocol.get("probe_variant") == "native_q9_options" else 10
+    expected_count = 1 if protocol.get("probe_variant") in VARIANTS else 10
     if (Decimal(authorization["cap_usd"]) < cap or cap > Decimal("0.10") or reservation > cap or
         protocol["automatic_retries"] != 0 or protocol["request_count"] != 1 or
         protocol["tool"] != TOOL or protocol["destination_host"] != HOST or
@@ -204,8 +247,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=["prepare", "run"])
     parser.add_argument("--folder", type=Path, required=True)
+    parser.add_argument("--variant", choices=sorted(VARIANTS), default="native_q9_options")
     args = parser.parse_args()
-    result = prepare(args.folder.resolve()) if args.mode == "prepare" else execute(args.folder.resolve())
+    result = (prepare(args.folder.resolve(), args.variant) if args.mode == "prepare"
+              else execute(args.folder.resolve()))
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

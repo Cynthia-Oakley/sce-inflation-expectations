@@ -90,3 +90,20 @@ def test_native_reserves_prior_attempt_against_same_cap(tmp_path):
     approve(folder)
     with pytest.raises(ValueError, match="budget mismatch"):
         pilot.validate_approval(folder)
+
+
+def test_reason_channel_request_shape():
+    schema = {"properties": {k: {"type": t} for k, t in {
+        "platform_id": "string", "distributions": "object", "user_count": "integer",
+        "questionnaire": "array", "prompt_language": "string", "max_workers": "integer",
+        "seed": "integer", "allow_virtual_users": "boolean", "sampling_mode": "string"}.items()},
+        "required": ["platform_id", "distributions", "user_count", "questionnaire"]}
+    request = {"platform_id": "nemotron_usa", "distributions": {"GENDER": {"Female": 100}},
+               "user_count": 1, "prompt_language": "en", "max_workers": 1, "seed": 20261021,
+               "allow_virtual_users": False, "sampling_mode": "preserve_joint",
+               "questionnaire": [{"question": pilot.REASON_CHANNEL_QUESTION, "options": pilot.bin_labels()}]}
+    pilot.check_request(request, schema, "reason_channel_q9")
+    assert "reason" in pilot.REASON_CHANNEL_QUESTION
+    with pytest.raises(ValueError, match="carrier"):
+        pilot.check_request({**request, "questionnaire": [{"question": "tampered",
+            "options": pilot.bin_labels()}]}, schema, "reason_channel_q9")
