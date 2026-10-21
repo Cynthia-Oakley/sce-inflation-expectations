@@ -35,7 +35,7 @@ def evaluate(ledger,out):
     ledger,out=ledger.resolve(),out.resolve()
     if out.exists() or not out.is_relative_to(ROOT/'outputs'):raise ValueError('Fresh evaluation required')
     parent=ROOT/read_json(ledger/'protocol.json')['call_ledger_parent'];m,p=verify(parent)
-    if p['mechanism']!='v32_same_input':raise ValueError('Registered V3.2 comparison required')
+    if p['mechanism'] not in ('v32_same_input','v32_same_input_siliconflow'):raise ValueError('Registered V3.2 comparison required')
     scored_dir=out.with_name(out.name+'_new_model_scores')
     score_calls(ledger,scored_dir)
     scored=read_json(scored_dir/'summary.json')

@@ -39,7 +39,7 @@ def prepare_fresh(parent, out):
     registration = parent/'call_ledger_registration.json'
     if registration.exists():
         raise ValueError('This batch already has a registered live ledger; never create a second fresh ledger')
-    if (protocol.get('mechanism') not in ('price_background_qwen', 'v32_same_input')
+    if (protocol.get('mechanism') not in ('price_background_qwen', 'v32_same_input', 'v32_same_input_siliconflow')
             or protocol.get('q9_postprocessing') != 'proportional_nonnegative_v1'):
         raise ValueError('Registered normalized price-background batch required')
     slots = []
@@ -55,7 +55,7 @@ def prepare_fresh(parent, out):
         raise ValueError('Exact unique registered slots required')
     # Fixed outcome-blind interleaving, so arms/months do not run in long blocks.
     slots.sort(key=lambda s:hashlib.sha256(('20261021|'+s['slot_key']).encode()).hexdigest())
-    if protocol.get('mechanism') == 'v32_same_input':
+    if protocol.get('mechanism') in ('v32_same_input','v32_same_input_siliconflow'):
         gate = protocol['queue_technical_gate']
         selected = [s for month in protocol['months']
                     for s in [r for r in slots if r['month'] == month][:gate['per_month']]]

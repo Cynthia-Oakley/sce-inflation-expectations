@@ -48,7 +48,7 @@ def main():
             from studies.sce_inflation_expectations.experiments.procurement_qwen import prepare_normalized as prepare
         elif config['mechanism'] == 'price_background_qwen':
             from studies.sce_inflation_expectations.experiments.price_background import prepare
-        elif config['mechanism'] == 'v32_same_input':
+        elif config['mechanism'] in ('v32_same_input','v32_same_input_siliconflow'):
             from studies.sce_inflation_expectations.experiments.model_comparison import prepare
         else:
             parser.error('Unknown mechanism adapter')

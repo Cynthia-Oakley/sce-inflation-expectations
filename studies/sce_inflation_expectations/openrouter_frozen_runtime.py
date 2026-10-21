@@ -50,6 +50,8 @@ class ProviderAuditLLM(SCEOpenAILLM):
 class OpenRouterFrozenDecision(FrozenPromptDecision):
     def __init__(self,**args):
         super().__init__(**args)
+        self.expected_provider=args.get('expected_provider',
+            'AtlasCloud' if self.model=='deepseek/deepseek-v3.2' else 'DeepInfra')
         self.api_reported_cost_total=0.;self.api_reported_cost_calls=0
         if self.llm_kind=='openai':
             self.llm=ProviderAuditLLM(model=self.model,temperature=self.temperature,max_tokens=self.max_tokens,
@@ -61,7 +63,7 @@ class OpenRouterFrozenDecision(FrozenPromptDecision):
             row.update(evidence)
             fee=evidence.get('api_reported_cost_usd')
             expected_model = self.model if self.model == 'deepseek/deepseek-v3.2' else MODEL
-            expected_provider = 'AtlasCloud' if expected_model == 'deepseek/deepseek-v3.2' else 'DeepInfra'
+            expected_provider = self.expected_provider
             if row.get('returned_provider')!=expected_provider or row.get('returned_model')!=expected_model:
                 row['error']='Locked OpenRouter model/provider identity mismatch'
             if fee is not None:

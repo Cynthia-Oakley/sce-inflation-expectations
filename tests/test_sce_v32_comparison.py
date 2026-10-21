@@ -32,6 +32,15 @@ def test_v32_cannot_fallback_or_enable_reasoning():
     with pytest.raises(ValueError):validate_transport(other)
 
 
+def test_new_provider_requires_its_own_explicit_registration():
+    p=config();p.update(mechanism='v32_same_input_siliconflow',route='siliconflow/fp8',
+        expected_provider='SiliconFlow',price_input_per_mtok=.259,price_output_per_mtok=.8)
+    p['request_extra_body']['provider'].update(order=['siliconflow/fp8'],max_price=dict(prompt=.259,completion=.8))
+    validate_transport(p)
+    old=deepcopy(p);old['mechanism']='v32_same_input'
+    with pytest.raises(ValueError):validate_transport(old)
+
+
 def test_cached_controls_cannot_change_person_truth_or_weight():
     rows=[dict(month=202009,repeat=rep,agent_id=str(i),real={'q9_mean':3},profile={'age_group':'mid'},
                design_survey_weight=2.,arms={'deepseek_v32':{'mean':4}}) for rep in (1,2) for i in range(96)]

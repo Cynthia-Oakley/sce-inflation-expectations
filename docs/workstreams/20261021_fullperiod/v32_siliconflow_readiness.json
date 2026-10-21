@@ -1,0 +1,32 @@
+{
+  "status": "prepared_not_authorized",
+  "new_SiliconFlow_api_calls": 0,
+  "planned_calls": 768,
+  "reused_Qwen_controls": 768,
+  "archived_AtlasCloud_successes_excluded": 5,
+  "exact_message_checks": 768,
+  "core_offline_units": 8,
+  "targeted_tests_passed": 31,
+  "model": "deepseek/deepseek-v3.2",
+  "provider": "SiliconFlow",
+  "route": "siliconflow/fp8",
+  "max_concurrent_requests": 4,
+  "months": [
+    202009,
+    202109,
+    202206,
+    202503
+  ],
+  "n_per_month": 96,
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "estimated_cost_usd": 0.5679129779999996,
+  "conservative_reservation_usd": 2.7565820000000008,
+  "batch_cap_usd": 3.95,
+  "prior_spent_or_reserved_usd": 0.044795140000000004,
+  "combined_campaign_cap_usd": 4,
+  "combined_conservative_reservation_usd": 2.801377140000001,
+  "protocol_sha256": "4aea2babb161c9a0b6eac5b07d1ff868b9d96e436bba14dcfe39ed1fdecb2065"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "AtlasCloud_stopped_again_on_429_after_manual_low_concurrency",
+  "attempted_requests": 18,
+  "unique_slots_attempted": 16,
+  "successful_unique_slots": 5,
+  "http_429": 13,
+  "manual_retry_attempts": 2,
+  "manual_retry_successes": 1,
+  "unresolved_original_429_slots": 11,
+  "original_429_slots_never_retried": 10,
+  "remaining_never_attempted": 752,
+  "api_reported_total_cost_usd": 0.0033591999999999997,
+  "total_spent_or_conservatively_reserved_usd": 0.044795140000000004,
+  "failed_attempt_actual_charge": "unknown; conservative reservation retained",
+  "automatic_retries": 0,
+  "max_concurrency_by_stage": [
+    16,
+    2
+  ],
+  "seconds_by_stage": [
+    9.098536749836057,
+    10.750672583002597
+  ],
+  "provider": "AtlasCloud",
+  "upstream_limit_source": "upstream_provider_shared_pool",
+  "numeric_TPM_or_concurrency_limit": "not established",
+  "scientific_comparison_available": false,
+  "next_step": "No more AtlasCloud calls. Proposed single-provider SiliconFlow FP8 batch needs explicit new-recipient authorization."
+}

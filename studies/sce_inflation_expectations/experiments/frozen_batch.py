@@ -183,6 +183,7 @@ def worker(folder, index, scripted):
         temperature=effective_temperature(protocol, job), max_tokens=protocol['max_tokens'],
         max_prompt_chars=protocol['max_prompt_chars'], retry_max=0, max_calls=len(pop.personas),
         extra_body=protocol.get('request_extra_body', {'thinking': {'type': protocol['thinking']}}),
+        expected_provider=protocol.get('expected_provider','DeepInfra'),
         price_input_per_mtok=protocol['price_input_per_mtok'],
         price_output_per_mtok=protocol['price_output_per_mtok'], cost_cap_usd=job['cap_usd'])
     env.provider_args.update(audit_dir=str(audit), run_id=run_id,

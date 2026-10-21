@@ -16,19 +16,22 @@ PROVIDER = 'AtlasCloud'
 MONTHS = [202009, 202109, 202206, 202503]
 MECHANISM = 'v32_same_input'
 ARM = 'deepseek_v32'
+ROUTES = {MECHANISM: (ROUTE, PROVIDER, .26, .38),
+          'v32_same_input_siliconflow': ('siliconflow/fp8','SiliconFlow',.259,.8)}
 
 
 def validate_v32_transport(protocol):
-    prices = dict(prompt=.26, completion=.38)
-    expected = dict(provider=dict(order=[ROUTE], allow_fallbacks=False,
+    route,provider,pin,pout = ROUTES.get(protocol.get('mechanism'),(None,None,None,None))
+    prices = dict(prompt=pin, completion=pout)
+    expected = dict(provider=dict(order=[route], allow_fallbacks=False,
         require_parameters=True, max_price=prices), reasoning=dict(enabled=False))
-    if (protocol.get('mechanism') != MECHANISM or protocol.get('transport') != 'openrouter_locked'
+    if (protocol.get('mechanism') not in ROUTES or protocol.get('transport') != 'openrouter_locked'
             or protocol.get('destination') != 'https://openrouter.ai/api/v1'
-            or protocol.get('model') != MODEL or protocol.get('route') != ROUTE
-            or protocol.get('expected_provider') != PROVIDER
+            or protocol.get('model') != MODEL or protocol.get('route') != route
+            or protocol.get('expected_provider') != provider
             or protocol.get('thinking') != 'disabled'
-            or protocol.get('price_input_per_mtok') != .26
-            or protocol.get('price_output_per_mtok') != .38
+            or protocol.get('price_input_per_mtok') != pin
+            or protocol.get('price_output_per_mtok') != pout
             or protocol.get('request_extra_body') != expected):
         raise ValueError('Registered V3.2 FP8 model/provider/reasoning/price lock required')
 
@@ -36,6 +39,13 @@ def validate_v32_transport(protocol):
 def prepare(out, config):
     """Read prompts and old model replies; target answers are only hashed here."""
     validate_v32_transport(config)
+    route,provider,pin,pout = ROUTES[config['mechanism']]
+    if config['mechanism']=='v32_same_input_siliconflow':
+        prior=config.get('previous_AtlasCloud_spent_or_reserved_usd')
+        if (type(prior) not in (int,float) or not math.isfinite(prior) or prior<0
+                or config.get('combined_campaign_cap_usd')!=4
+                or config['budget_cap_usd']+prior>4):
+            raise ValueError('New route and prior failed-route reservation must stay within $4 combined')
     out = Path(out).resolve()
     if out.exists() or not out.is_relative_to(ROOT/'outputs'):
         raise ValueError('Fresh ignored comparison directory required')
@@ -66,9 +76,9 @@ def prepare(out, config):
             or any(config[k] != old[k] for k in ('temperature','thinking','max_tokens','q9_postprocessing'))):
         raise ValueError('Archived Qwen sampling and normalization contract required')
     directory = pinned(ROOT/config['provider_metadata'])
-    endpoint = preflight(dict(route_candidate=ROUTE,input_price_per_million=.26,
-                              output_price_per_million=.38), directory)
-    if (directory['data']['id'] != MODEL or endpoint['provider_name'] != PROVIDER
+    endpoint = preflight(dict(route_candidate=route,input_price_per_million=pin,
+                              output_price_per_million=pout), directory)
+    if (directory['data']['id'] != MODEL or endpoint['provider_name'] != provider
             or endpoint['quantization'] != 'fp8' or 'reasoning' not in endpoint['supported_parameters']):
         raise ValueError('Model identity, FP8 and reasoning-control metadata required')
     receipt = pinned(ledger/'run_receipt.json')
@@ -117,11 +127,11 @@ def prepare(out, config):
                 c=controls[month,repeat,aid]
                 if c['prompt_sha256']!=row['prompt_sha256'] or c['prompt_text']!=json.dumps(row['messages'],ensure_ascii=False):
                     raise ValueError('Original control and new prompt must be byte-identical')
-                usage=c['usage'];estimate+=(usage['prompt_tokens']*.26+usage['completion_tokens']*.38)/1e6
+                usage=c['usage'];estimate+=(usage['prompt_tokens']*pin+usage['completion_tokens']*pout)/1e6
                 matched+=1
         dump(dest/f'prompts_{ARM}.json',migrated)
         sizes=[len(json.dumps(r['messages'],ensure_ascii=False).encode()) for r in migrated['rows'].values()]
-        cap=math.ceil(sum(((size+1024)*.26+1024*.38)/1e6 for size in sizes)*1e6)/1e6
+        cap=math.ceil(sum(((size+1024)*pin+1024*pout)/1e6 for size in sizes)*1e6)/1e6
         for repeat in (1,2):
             reserve+=cap
             jobs.append(dict(month=month,arm=ARM,repeat=repeat,seed=41+repeat,

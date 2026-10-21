@@ -1,0 +1,60 @@
+{
+  "mechanism": "v32_same_input_siliconflow",
+  "source_trial": "outputs/sce_price_background_trial_20261021_v4",
+  "source_call_ledger": "outputs/sce_price_background_calls_20261021_v1",
+  "source_evaluation": "outputs/sce_price_background_evaluation_20261021_v1",
+  "months": [
+    202009,
+    202109,
+    202206,
+    202503
+  ],
+  "n_per_month": 96,
+  "arms": [
+    "deepseek_v32"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "transport": "openrouter_locked",
+  "destination": "https://openrouter.ai/api/v1",
+  "model": "deepseek/deepseek-v3.2",
+  "route": "siliconflow/fp8",
+  "expected_provider": "SiliconFlow",
+  "provider_metadata": "data/raw/mcp_checks/2026-10-21_v32_fullperiod_free_v1/deepseek_v32_endpoints.json",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "max_workers": 4,
+  "timeout_s": 120,
+  "retry_max": 0,
+  "q9_postprocessing": "proportional_nonnegative_v1",
+  "price_input_per_mtok": 0.259,
+  "price_output_per_mtok": 0.8,
+  "budget_cap_usd": 3.95,
+  "queue_technical_gate": {
+    "planned_calls": 16,
+    "per_month": 4,
+    "minimum_usable_fraction": 0.99
+  },
+  "request_extra_body": {
+    "provider": {
+      "order": [
+        "siliconflow/fp8"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "max_price": {
+        "prompt": 0.259,
+        "completion": 0.8
+      }
+    },
+    "reasoning": {
+      "enabled": false
+    }
+  },
+  "previous_AtlasCloud_spent_or_reserved_usd": 0.044795140000000004,
+  "combined_campaign_cap_usd": 4,
+  "comparison_control_note": "All 768 Qwen replies reused. Five AtlasCloud replies stay in technical archive; excluded from new single-provider model comparison."
+}

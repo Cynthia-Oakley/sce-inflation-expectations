@@ -1,14 +1,18 @@
-# V3.2同输入比较：技术段遇上游限流，人工补齐待确认
+# V3.2同输入比较：AtlasCloud已按约停止
 
 2026-10-21。配置：[v32_comparison_config.json](v32_comparison_config.json)。本轮与Kimi的全时段P/E补齐并行，保持旧回访者人口，不混入新入组或近期合成人口改动。
 
 ## 当前执行结果
 
+**最新状态：**人工低并发补齐已获批准，但2次中1有效/1上游429，按约再次停止；未继续752份。累计18次/5有效/13次429，报告费用$0.003359、含未知失败保守记账$0.044795；没有拟合结果。原恢复路径终止，以下12份补齐设计仅作历史记录，不得据其继续运行。详[技术收据v2](v32_technical_result_v2.json)。
+
+已离线准备[SiliconFlow单一供应商新批次](v32_siliconflow_plan.md)，8Core/31测试通过，具体新接收方授权待确认；不把原AtlasCloud5份并入新批成绩。
+
 用户已明确授权原768次/$4。首次16并发技术段中4份有效、12次HTTP429，错误明确标记`upstream_provider_shared_pool`；队列9.10秒后停止，剩余752份未发送，无自动重试。4份回包模型/供应商一致、JSON/Q8/Q9可用，reasoning token均0；不能据此比较拟合优劣。成功回包报告$0.00269434；失败实际扣费未知，保留其保守预留$0.03837168，合计记账$0.04106602。见[公开技术收据](v32_technical_result_v1.json)。
 
 低并发恢复包`outputs/sce_v32_manual_429_20261021_v1/`已离线备好，4项测试通过。建议成功4份原样复用，只对12份429人工再发一次，最多2并发；合并16份全部可用后，继续原752份首次请求。总最多780次尝试，原$4上限不变，恢复及剩余调用的总保守预留$2.462657。再次429或致命错误停止。2并发能否解除上游共享池限流尚未实测，不能承诺。
 
-**由于原约定无自动重试，新人工补齐须另确认；确认卡已发送，目前恢复授权false。**原始12份失败留在原账本，恢复后也不能宣称全程零错误或只发生768次尝试。SDK中的`attempt_idx=0`表示各显式请求内部无自动重试；人工重发的12个逻辑槽另以`approved_manual_retry_slot_keys`及原账本来源保留。
+原人工补齐曾因“无自动重试”单独确认，现已获批并执行到再次429停止；不再运行此恢复路径。原始12份失败留在原账本，恢复后也不能宣称全程零错误或只发生768次尝试。SDK中的`attempt_idx=0`表示各显式请求内部无自动重试；人工重发的12个逻辑槽另以`approved_manual_retry_slot_keys`及原账本来源保留。
 
 ```bash
 # 下面准备已完成，不能重新创建同名包
@@ -71,4 +75,4 @@ python scripts/continue_sce_pending_calls.py run --folder outputs/<fresh_ledger>
 python scripts/evaluate_sce_model_comparison.py --ledger outputs/<finished_ledger> --out outputs/<fresh_evaluation>
 ```
 
-共享文件修改前已保全：`outputs/sce_shared_runtime_snapshot_20261021_before_v32_v1/`；旧协议/manifest未改，旧批复算使用原冻结源码。不要重建或重启已执行账本。原始调用包已获授权并停止；新的人工补齐包授权仍为false，不能自动重启或补发。
+共享文件修改前已保全：`outputs/sce_shared_runtime_snapshot_20261021_before_v32_v1/`；旧协议/manifest未改，旧批复算使用原冻结源码。不要重建或重启已执行账本。原始及人工补齐均已获授权并按约停止；不得重启或补发。SiliconFlow备用包是新接收方，授权仍为false。
