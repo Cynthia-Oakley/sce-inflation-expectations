@@ -205,3 +205,11 @@
 - 重建2019-06环境至11/11历史（新增table_a_pct解析器与handoff护栏，不可抽值不猜）。
 - 已知缺口：components_cpi覆盖2020-01..2021-11+2026-04..08（批量阶段需补抽）；EIA汽油2018-12才起步；微观published_at未验证；标签付费待批。
 - 记录：docs/workstreams/20261021_fullperiod/kimi_delivery_phase012_20261021.md；NEXT_ACTIONS已更新。批量物化待Codex对齐样例。
+
+## 2026-10-22 新闻标签口径冻结与管线选型（接 10-21 全时段交付）
+
+- 用户冻结精简口径：decision 4值 + topics 旧6值 + scope 旧7值，砍 claim_type/reason_zh/evidence_snippet（省输出token）。
+- 试点（$0.10，1868篇全齐）：V3.2 精简提示词与旧标签 decision 一致率仅 74%，人工抽查发现系统性过严（英国央行加息被 exclude）；v2.1 加两条澄清后复测 74.7%——澄清穿不透 V3.2。
+- 决定性对照（用户提议）：换回原打标模型 deepseek-flash（官方端点）+ 同一精简提示词，一致率 87.7%/86.8%/80.7% 全达标 → 漂移来自模型而非砍字段。打标模型与模拟模型解耦。
+- 用户决定：全量补标 43,512 篇暂缓。管线就绪（scripts/label_sce_news_pool.py，flash variant，$0.08 试点验证过），随时可启动，预估 ≤$4.5。
+- 提交：340b739（管线+测试）、ef631c6（flash 变体）、4e7b77c（一致性结论记录）。文档 docs/workstreams/20261021_fullperiod/news_label_slim_pilot_20261021.md。
