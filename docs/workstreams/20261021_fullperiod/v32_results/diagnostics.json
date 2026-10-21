@@ -1,0 +1,278 @@
+{
+  "new_api_calls": 0,
+  "scorer_calls": 0,
+  "raw_valid_support_person_months": 364,
+  "raw_valid_support_metrics": {
+    "carry": {
+      "center_mae_pp": 0.4988931866954964,
+      "center_bias_pp": -0.4988931866954964,
+      "predicted_center_pp": 4.517771719632888,
+      "truth_center_pp": 5.0166649063283835,
+      "personal_mae_pp": 2.8246490148626666,
+      "w1_pp": 1.0176493222882008,
+      "delta_w1_pp": 2.8246490148626666,
+      "across_person_iqr_pp": 5.631813569384169,
+      "truth_across_person_iqr_pp": 5.024652871900678,
+      "wrong_move_given_true_stable": 0.0,
+      "missed_move_given_true_moving": 1.0,
+      "opposite_direction_given_true_moving": 0.0,
+      "model_mean_pp": 5.3493622009302175,
+      "truth_mean_pp": 5.584067340268881,
+      "prior_mean_pp": 5.3493622009302175,
+      "personal_bias_pp": -0.23470513933866272,
+      "model_update_mean_pp": 0.0,
+      "truth_update_mean_pp": 0.23470513933866272,
+      "center_rmse_pp": 0.6950070563796815
+    },
+    "qwen_cached": {
+      "center_mae_pp": 0.8926205821366413,
+      "center_bias_pp": -0.8926205821366413,
+      "predicted_center_pp": 4.124044324191743,
+      "truth_center_pp": 5.0166649063283835,
+      "personal_mae_pp": 3.5824317212310124,
+      "w1_pp": 2.657882494265684,
+      "delta_w1_pp": 1.9573113848872692,
+      "across_person_iqr_pp": 3.2904885728961966,
+      "truth_across_person_iqr_pp": 5.024652871900678,
+      "wrong_move_given_true_stable": 0.5141888546544728,
+      "missed_move_given_true_moving": 0.40875733981710793,
+      "opposite_direction_given_true_moving": 0.20776283596258416,
+      "model_mean_pp": 4.338041529790484,
+      "truth_mean_pp": 5.584067340268881,
+      "prior_mean_pp": 5.3493622009302175,
+      "personal_bias_pp": -1.246025810478396,
+      "model_update_mean_pp": -1.0113206711397333,
+      "truth_update_mean_pp": 0.23470513933866272,
+      "center_rmse_pp": 1.0394376535755863
+    },
+    "deepseek_v32": {
+      "center_mae_pp": 0.41960792388429474,
+      "center_bias_pp": -0.41960792388429474,
+      "predicted_center_pp": 4.59705698244409,
+      "truth_center_pp": 5.0166649063283835,
+      "personal_mae_pp": 3.071316656901872,
+      "w1_pp": 1.4634529644360588,
+      "delta_w1_pp": 1.8313356707470745,
+      "across_person_iqr_pp": 4.532404675464948,
+      "truth_across_person_iqr_pp": 5.024652871900678,
+      "wrong_move_given_true_stable": 0.46272413935014517,
+      "missed_move_given_true_moving": 0.51857144842483,
+      "opposite_direction_given_true_moving": 0.18008650545577165,
+      "model_mean_pp": 5.36107076613893,
+      "truth_mean_pp": 5.584067340268881,
+      "prior_mean_pp": 5.3493622009302175,
+      "personal_bias_pp": -0.2229965741299505,
+      "model_update_mean_pp": 0.011708565208712135,
+      "truth_update_mean_pp": 0.23470513933866272,
+      "center_rmse_pp": 0.5230275736257435
+    }
+  },
+  "leave_one_month_out": {
+    "202009": {
+      "carry": {
+        "center_mae_pp": 0.4956013881553056,
+        "w1_pp": 1.1315193193479791,
+        "delta_w1_pp": 3.0144520997826567
+      },
+      "qwen_cached": {
+        "center_mae_pp": 0.9011099980094618,
+        "w1_pp": 3.0676574958275915,
+        "delta_w1_pp": 2.1724139214330354
+      },
+      "deepseek_v32": {
+        "center_mae_pp": 0.3371990161662186,
+        "w1_pp": 1.67061331117101,
+        "delta_w1_pp": 1.8959429391782967
+      }
+    },
+    "202109": {
+      "carry": {
+        "center_mae_pp": 0.4827940159795879,
+        "w1_pp": 0.9346999370319322,
+        "delta_w1_pp": 2.6672727907431515
+      },
+      "qwen_cached": {
+        "center_mae_pp": 0.5436229108310578,
+        "w1_pp": 2.410347703335534,
+        "delta_w1_pp": 1.7523008962931519
+      },
+      "deepseek_v32": {
+        "center_mae_pp": 0.26124524280722117,
+        "w1_pp": 1.278110461141463,
+        "delta_w1_pp": 1.6786384065561952
+      }
+    },
+    "202206": {
+      "carry": {
+        "center_mae_pp": 0.43865494502727004,
+        "w1_pp": 0.9858229360694571,
+        "delta_w1_pp": 2.747208928899316
+      },
+      "qwen_cached": {
+        "center_mae_pp": 0.9762697392895894,
+        "w1_pp": 2.395038762904521,
+        "delta_w1_pp": 2.0271404887118583
+      },
+      "deepseek_v32": {
+        "center_mae_pp": 0.43343506027494144,
+        "w1_pp": 1.298543997047714,
+        "delta_w1_pp": 1.7727908506073857
+      }
+    },
+    "202503": {
+      "carry": {
+        "center_mae_pp": 0.5905136277648134,
+        "w1_pp": 0.9317118332325472,
+        "delta_w1_pp": 2.712456392691209
+      },
+      "qwen_cached": {
+        "center_mae_pp": 0.7460181658211479,
+        "w1_pp": 2.2647673555355525,
+        "delta_w1_pp": 1.5591044389698645
+      },
+      "deepseek_v32": {
+        "center_mae_pp": 0.3633935773095807,
+        "w1_pp": 1.3207259741654889,
+        "delta_w1_pp": 1.7982834053095376
+      }
+    }
+  },
+  "generation": {
+    "1": {
+      "carry": {
+        "center_mae_pp": 0.5018909942317442,
+        "center_bias_pp": -0.5018909942317442,
+        "predicted_center_pp": 4.35656574646164,
+        "truth_center_pp": 4.858456740693384,
+        "personal_mae_pp": 2.7853475530290837,
+        "w1_pp": 0.9959385064204789,
+        "delta_w1_pp": 2.785347553029083,
+        "across_person_iqr_pp": 5.82096849447023,
+        "truth_across_person_iqr_pp": 4.845158922384763,
+        "wrong_move_given_true_stable": 0.0,
+        "missed_move_given_true_moving": 1.0,
+        "opposite_direction_given_true_moving": 0.0,
+        "model_mean_pp": 5.148544429712203,
+        "truth_mean_pp": 5.470412153581988,
+        "prior_mean_pp": 5.148544429712203,
+        "personal_bias_pp": -0.321867723869785,
+        "model_update_mean_pp": 0.0,
+        "truth_update_mean_pp": 0.321867723869785,
+        "center_rmse_pp": 0.5286519378831175
+      },
+      "qwen_cached": {
+        "center_mae_pp": 0.8313210590161608,
+        "center_bias_pp": -0.8313210590161608,
+        "predicted_center_pp": 4.027135681677223,
+        "truth_center_pp": 4.858456740693384,
+        "personal_mae_pp": 3.4794792534168884,
+        "w1_pp": 2.565776358753318,
+        "delta_w1_pp": 1.8664554770881268,
+        "across_person_iqr_pp": 3.1043138526593204,
+        "truth_across_person_iqr_pp": 4.845158922384763,
+        "wrong_move_given_true_stable": 0.5501322501438176,
+        "missed_move_given_true_moving": 0.3751877291470247,
+        "opposite_direction_given_true_moving": 0.20211278153306292,
+        "model_mean_pp": 4.293985648695498,
+        "truth_mean_pp": 5.470412153581988,
+        "prior_mean_pp": 5.148544429712203,
+        "personal_bias_pp": -1.1764265048864886,
+        "model_update_mean_pp": -0.8545587810167035,
+        "truth_update_mean_pp": 0.321867723869785,
+        "center_rmse_pp": 0.9764568414724447
+      },
+      "deepseek_v32": {
+        "center_mae_pp": 0.4116140845708569,
+        "center_bias_pp": -0.3566518544020576,
+        "predicted_center_pp": 4.5018048862913265,
+        "truth_center_pp": 4.858456740693384,
+        "personal_mae_pp": 3.076135900741665,
+        "w1_pp": 1.3803102781429344,
+        "delta_w1_pp": 1.8045549172243671,
+        "across_person_iqr_pp": 4.601762101481472,
+        "truth_across_person_iqr_pp": 4.845158922384763,
+        "wrong_move_given_true_stable": 0.47603536042683503,
+        "missed_move_given_true_moving": 0.5253640695589118,
+        "opposite_direction_given_true_moving": 0.173954235144504,
+        "model_mean_pp": 5.16748145712484,
+        "truth_mean_pp": 5.470412153581988,
+        "prior_mean_pp": 5.148544429712203,
+        "personal_bias_pp": -0.3029306964571472,
+        "model_update_mean_pp": 0.01893702741263776,
+        "truth_update_mean_pp": 0.321867723869785,
+        "center_rmse_pp": 0.4635661242419056
+      }
+    },
+    "2": {
+      "carry": {
+        "center_mae_pp": 0.5018909942317442,
+        "center_bias_pp": -0.5018909942317442,
+        "predicted_center_pp": 4.35656574646164,
+        "truth_center_pp": 4.858456740693384,
+        "personal_mae_pp": 2.7853475530290837,
+        "w1_pp": 0.9959385064204789,
+        "delta_w1_pp": 2.785347553029083,
+        "across_person_iqr_pp": 5.82096849447023,
+        "truth_across_person_iqr_pp": 4.845158922384763,
+        "wrong_move_given_true_stable": 0.0,
+        "missed_move_given_true_moving": 1.0,
+        "opposite_direction_given_true_moving": 0.0,
+        "model_mean_pp": 5.148544429712203,
+        "truth_mean_pp": 5.470412153581988,
+        "prior_mean_pp": 5.148544429712203,
+        "personal_bias_pp": -0.321867723869785,
+        "model_update_mean_pp": 0.0,
+        "truth_update_mean_pp": 0.321867723869785,
+        "center_rmse_pp": 0.5286519378831175
+      },
+      "qwen_cached": {
+        "center_mae_pp": 0.7521893479594677,
+        "center_bias_pp": -0.7521893479594677,
+        "predicted_center_pp": 4.106267392733916,
+        "truth_center_pp": 4.858456740693384,
+        "personal_mae_pp": 3.492117231402692,
+        "w1_pp": 2.503129300048281,
+        "delta_w1_pp": 1.8890243956158286,
+        "across_person_iqr_pp": 3.329154433245112,
+        "truth_across_person_iqr_pp": 4.845158922384763,
+        "wrong_move_given_true_stable": 0.5137228953127713,
+        "missed_move_given_true_moving": 0.40293779366258453,
+        "opposite_direction_given_true_moving": 0.1976769963195571,
+        "model_mean_pp": 4.257546327001355,
+        "truth_mean_pp": 5.470412153581988,
+        "prior_mean_pp": 5.148544429712203,
+        "personal_bias_pp": -1.2128658265806318,
+        "model_update_mean_pp": -0.890998102710847,
+        "truth_update_mean_pp": 0.321867723869785,
+        "center_rmse_pp": 0.8995449064515864
+      },
+      "deepseek_v32": {
+        "center_mae_pp": 0.28602236370812406,
+        "center_bias_pp": -0.28602236370812406,
+        "predicted_center_pp": 4.57243437698526,
+        "truth_center_pp": 4.858456740693384,
+        "personal_mae_pp": 2.9726123789056347,
+        "w1_pp": 1.4036865936199034,
+        "delta_w1_pp": 1.7682728836013402,
+        "across_person_iqr_pp": 4.504219236385758,
+        "truth_across_person_iqr_pp": 4.845158922384763,
+        "wrong_move_given_true_stable": 0.4664866291641663,
+        "missed_move_given_true_moving": 0.5046249209413052,
+        "opposite_direction_given_true_moving": 0.17921559437196688,
+        "model_mean_pp": 5.26343364050696,
+        "truth_mean_pp": 5.470412153581988,
+        "prior_mean_pp": 5.148544429712203,
+        "personal_bias_pp": -0.2069785130750264,
+        "model_update_mean_pp": 0.11488921079475858,
+        "truth_update_mean_pp": 0.321867723869785,
+        "center_rmse_pp": 0.33092065833776774
+      }
+    }
+  },
+  "source_sha256": {
+    "summary.json": "4cac69b425e18757e26af46c6f3bf40d6092ddff8038e40bd5c5efd5d3cf16b0",
+    "cases_private.json": "9d86655fde88b421f4144028031ec782ed6de52412da82949bdd8304403f75d6"
+  },
+  "implementation_sha256": "64bc52e9d73f1ccd9cbde6761f368222211335d2cae6436a3fa7f48ffde08378",
+  "note": "Cached normalized scores on originally valid response support; changing sample is not a causal normalization-effect estimate."
+}

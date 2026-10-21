@@ -1,0 +1,20 @@
+{
+  "protocol_sha256": "4aea2babb161c9a0b6eac5b07d1ff868b9d96e436bba14dcfe39ed1fdecb2065",
+  "new_model_calls_during_publication": 0,
+  "source_sha256": {
+    "scripts/report_sce_model_comparison.py": "1e4ee778f408247522faeac3322e2f3a0d32a4b708f260165eb23274d395be89",
+    "scripts/evaluate_sce_model_comparison.py": "319abfb774ea929ebf1f64ba0a6a5cfba5da6b75b9d2e00919b287aca4967f80",
+    "outputs/sce_v32_siliconflow_evaluation_20261021_v1/summary.json": "4cac69b425e18757e26af46c6f3bf40d6092ddff8038e40bd5c5efd5d3cf16b0",
+    "outputs/sce_v32_siliconflow_evaluation_20261021_v1/cases_private.json": "9d86655fde88b421f4144028031ec782ed6de52412da82949bdd8304403f75d6",
+    "outputs/sce_v32_siliconflow_calls_20261021_v1/run_receipt.json": "3bd9c1a6ab7eb77310528357b17e510a593cf86523e9fbc8a5b24ee7cc50049c"
+  },
+  "public_files_sha256": {
+    "summary.json": "401e43ae61f07a29e057d8b3ab79f45f17daafea8277b78758a96759f130e95c",
+    "index.html": "f8892558061cf0fd4563efd854c15dd590ec0a68c2de7dc02df6337bd9d492a1",
+    "diagnostics.json": "973e2a0f67f07cf08c031071ed1c963f37b307d3b52d38821fb0c0cd180f5f69",
+    "repeat_summary.json": "853ccf304d03c749880d256a410dbb0639aa5c5af1d49b34ccb3a5324c049497",
+    "cost_receipt.json": "de7b14e2c9d15a8c473af1759c5a32771b2e5676469de0e4d444b797424c563d",
+    "figures/monthly_models.png": "4b6525a3a3a1f7b460ce9a276a78d57b74d956b808b48897cad5be98e6f2b6c4",
+    "figures/conditional_models.png": "a4c752770c578ddf3c6e935513b2c0b0dc0d451c999eeb1ef6b9adab1593becb"
+  }
+}

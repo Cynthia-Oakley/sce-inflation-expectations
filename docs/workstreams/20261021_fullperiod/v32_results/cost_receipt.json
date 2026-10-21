@@ -1,0 +1,26 @@
+{
+  "new_requests": 768,
+  "new_response_errors": 0,
+  "original_q9_valid": 768,
+  "normalized_responses": 0,
+  "scorable_q9_by_arm": {
+    "qwen_cached": 768,
+    "deepseek_v32": 767
+  },
+  "returned_providers": {
+    "SiliconFlow": 768
+  },
+  "reasoning_token_counts": {
+    "0": 768
+  },
+  "api_reported_new_cost_usd": 0.46010514399999974,
+  "earlier_route_spent_or_reserved_usd": 0.044795140000000004,
+  "campaign_spent_or_reserved_usd": 0.5049002839999998,
+  "new_api_seconds": 3261.727079417091,
+  "automatic_retries": 0,
+  "model_control": "Archived Qwen; not contemporaneous controls",
+  "original_AtlasCloud_attempts": 18,
+  "original_AtlasCloud_responses_excluded": 5,
+  "new_provider": "SiliconFlow",
+  "max_concurrency": 4
+}

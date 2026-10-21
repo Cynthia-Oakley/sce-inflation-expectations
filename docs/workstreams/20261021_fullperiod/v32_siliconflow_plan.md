@@ -1,6 +1,6 @@
 # V3.2备用供应商：同输入、单一SiliconFlow批次
 
-2026-10-21。这是供应商更换方案，不是已开始的新模拟。[配置](v32_siliconflow_config.json) · [离线准备收据](v32_siliconflow_readiness.json)。新增供应商接收人口和真实上期回答，具体授权卡已发送；当前该包授权false、向SiliconFlow发送0次。
+2026-10-21。用户已明确授权该新供应商；768次真实请求已全部完成，结果见[图文](v32_results/index.html)与[复算说明](v32_results_20261021.md)。[配置](v32_siliconflow_config.json) · [离线准备收据](v32_siliconflow_readiness.json)。新增供应商接收人口和真实上期回答的具体授权已获确认；已完成的唯一账本`outputs/sce_v32_siliconflow_calls_20261021_v1/`，最多4并发、新批$3.95，旧失败预留另保留、总计不超$4。
 
 ## 为什么更换
 
@@ -38,4 +38,6 @@ python scripts/continue_sce_pending_calls.py run --folder outputs/<fresh_ledger>
 python scripts/evaluate_sce_model_comparison.py --ledger outputs/<finished_ledger> --out outputs/<fresh_evaluation>
 ```
 
-研究的月份、原始数据、拟合目标及评价不变；需要用户确认的是新增SiliconFlow接收方与这次全批调用。当前不追加AtlasCloud重试、不自动执行新供应商调用。
+研究的月份、原始数据、拟合目标及评价不变；新增SiliconFlow接收方与本批调用已经明确获批；按批准范围运行，不追加AtlasCloud重试，也不自动重试或回退供应商。
+
+执行完成：768请求全部返回、0接口错误/重试、格式全合法，1份冻结连续密度计分不可用；新增报告费$0.460105144、54.36分钟。两模型主比较381个人月，W1与中心均优于Qwen，仍不代表稳定胜过照抄或全国独立验证。所有账本已结束，当前无运行任务。

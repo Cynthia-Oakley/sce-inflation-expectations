@@ -1,0 +1,135 @@
+{
+  "status": "cached_two_generation_information_diagnostic",
+  "completed_at_utc": "2026-10-21T12:09:58.277290+00:00",
+  "new_api_calls": 0,
+  "source": "outputs/sce_v32_siliconflow_evaluation_20261021_v1/cases_private.json",
+  "source_sha256": "9d86655fde88b421f4144028031ec782ed6de52412da82949bdd8304403f75d6",
+  "implementation_sha256": "e9301ca1a7feddfb4c96aaa2451ae806850f212a02ad985d1db44b0e31c27db1",
+  "compared_repeats": [
+    1,
+    2
+  ],
+  "arms": {
+    "deepseek_v32": {
+      "monthly": [
+        {
+          "month": 202009,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 0.4157195117397982,
+          "person_pearson_equal_weight": 0.9053672321527886,
+          "raw_q9_same_share": 0.1784504036686042,
+          "monthly_median_repeat_gap_pp": 0.28253817917826307,
+          "within_person_generation_variance_pp2": 0.5933102142156452,
+          "noise_adjusted_between_variance_pp2": 9.356313357463295,
+          "generation_noise_fraction": 0.05963142323338446
+        },
+        {
+          "month": 202109,
+          "people": 94,
+          "mean_absolute_repeat_gap_pp": 0.7160767404462682,
+          "person_pearson_equal_weight": 0.8974200016510832,
+          "raw_q9_same_share": 0.22592114823913131,
+          "monthly_median_repeat_gap_pp": 0.1357000541012452,
+          "within_person_generation_variance_pp2": 1.890884172467093,
+          "noise_adjusted_between_variance_pp2": 18.960156631327674,
+          "generation_noise_fraction": 0.0906853614771577
+        },
+        {
+          "month": 202206,
+          "people": 95,
+          "mean_absolute_repeat_gap_pp": 0.5213364221134604,
+          "person_pearson_equal_weight": 0.9743213291151478,
+          "raw_q9_same_share": 0.1971773568295474,
+          "monthly_median_repeat_gap_pp": 0.18993543146627534,
+          "within_person_generation_variance_pp2": 0.47155879230854897,
+          "noise_adjusted_between_variance_pp2": 25.130352231271964,
+          "generation_noise_fraction": 0.01841889036620048
+        },
+        {
+          "month": 202503,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 0.8789517261463698,
+          "person_pearson_equal_weight": 0.9540460932722609,
+          "raw_q9_same_share": 0.20987039144075126,
+          "monthly_median_repeat_gap_pp": 0.05421516096250123,
+          "within_person_generation_variance_pp2": 2.082968670259452,
+          "noise_adjusted_between_variance_pp2": 57.6974583837069,
+          "generation_noise_fraction": 0.034843656576408644
+        }
+      ],
+      "equal_month_means": {
+        "mean_absolute_repeat_gap_pp": 0.6330211001114742,
+        "person_pearson_equal_weight": 0.9327886640478201,
+        "raw_q9_same_share": 0.20285482504450855,
+        "monthly_median_repeat_gap_pp": 0.1655972064270712,
+        "within_person_generation_variance_pp2": 1.259680462312685,
+        "noise_adjusted_between_variance_pp2": 27.786070150942457,
+        "generation_noise_fraction": 0.05089483291328782
+      }
+    },
+    "qwen_cached": {
+      "monthly": [
+        {
+          "month": 202009,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 0.36631095107529055,
+          "person_pearson_equal_weight": 0.9674155850361392,
+          "raw_q9_same_share": 0.31419575809429656,
+          "monthly_median_repeat_gap_pp": 0.2816628019869203,
+          "within_person_generation_variance_pp2": 0.21752951040385168,
+          "noise_adjusted_between_variance_pp2": 5.281414216784342,
+          "generation_noise_fraction": 0.03955841725172232
+        },
+        {
+          "month": 202109,
+          "people": 94,
+          "mean_absolute_repeat_gap_pp": 0.5576558511090337,
+          "person_pearson_equal_weight": 0.9199840918725589,
+          "raw_q9_same_share": 0.22996893578458955,
+          "monthly_median_repeat_gap_pp": 0.03895504183166487,
+          "within_person_generation_variance_pp2": 0.48574831098827886,
+          "noise_adjusted_between_variance_pp2": 4.447006413005765,
+          "generation_noise_fraction": 0.098474045065628
+        },
+        {
+          "month": 202206,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 0.8165029209197406,
+          "person_pearson_equal_weight": 0.904451077483956,
+          "raw_q9_same_share": 0.1890121336087626,
+          "monthly_median_repeat_gap_pp": 0.1475616781082021,
+          "within_person_generation_variance_pp2": 1.0192745976813375,
+          "noise_adjusted_between_variance_pp2": 8.252494344374654,
+          "generation_noise_fraction": 0.10993313185987526
+        },
+        {
+          "month": 202503,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 1.0165129404845707,
+          "person_pearson_equal_weight": 0.8271278792389629,
+          "raw_q9_same_share": 0.20853839897170937,
+          "monthly_median_repeat_gap_pp": 0.1434706785163895,
+          "within_person_generation_variance_pp2": 3.19448658414672,
+          "noise_adjusted_between_variance_pp2": 18.1529108083797,
+          "generation_noise_fraction": 0.1496429061308002
+        }
+      ],
+      "equal_month_means": {
+        "mean_absolute_repeat_gap_pp": 0.6892456658971589,
+        "person_pearson_equal_weight": 0.9047446584079043,
+        "raw_q9_same_share": 0.2354288066148395,
+        "monthly_median_repeat_gap_pp": 0.1529125501107942,
+        "within_person_generation_variance_pp2": 1.229259750805047,
+        "noise_adjusted_between_variance_pp2": 9.033456445636116,
+        "generation_noise_fraction": 0.09940212507700644
+      }
+    }
+  },
+  "limits": [
+    "Only cached generations1/2; conditional on these people, prompts and months.",
+    "Pearson uses equal people within month; gaps/variance use design weights, months equally weighted.",
+    "Variance subtraction is descriptive; two repeats do not establish a precise random-effects model.",
+    "LLM repeat noise is not stable human heterogeneity or additional real respondents.",
+    "Results for Qwen or DeepSeek do not establish the variance of an untested V3.2 route."
+  ]
+}
