@@ -1,8 +1,10 @@
 # SCE 项目当前交接
 
-更新：2026-10-20。先读[DESIGN](DESIGN.md)和[NEXT_ACTIONS](NEXT_ACTIONS.md)。本页只维护当前现场；旧运行中/待授权描述见[原文快照](reviews/20261019_repository_cleanup/README.md)，不能据其重启任务。
+更新：2026-10-21。先读[DESIGN](DESIGN.md)和[NEXT_ACTIONS](NEXT_ACTIONS.md)。本页只维护当前现场；旧运行中/待授权描述见[原文快照](reviews/20261019_repository_cleanup/README.md)，不能据其重启任务。
 
 ## 1. 当前状态
+
+- **最新价格背景对照已结束：**同Qwen/角色仅补总体CPI与能源同比，六期96人×两组×两遍2,304请求，0接口错误/重试、实际$2.155662/$11。573共同个人月的MAE0.634→0.877、W1 2.177→2.952，六期IQR均收窄；未过开发条件、不改默认。评价`outputs/sce_price_background_evaluation_20261021_v1/`可供Kimi面板读取；[图文结果](workstreams/20261020_procurement/price_background_results_v1/index.html)与[复算说明](workstreams/20261020_procurement/price_background_results_20261021.md)。全部槽已尝试，账本v1与输入v4禁止重启，当前无运行任务或剩余授权待执行。
 
 - 用户已提交开题提案，最终交付按10月31日组委会要求。时间安排只见ROADMAP；10月16—23用户繁忙的背景不改变已授权本地研究。
 - 本地官方SocioVerse2引擎、真实DeepSeek回答、冻结近似Q9计分和评价链已实际运行。当前是A线回访者条件重建，使用本人真实上期信念，不是严格B自主预测。

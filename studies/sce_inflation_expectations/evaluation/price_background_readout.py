@@ -104,3 +104,24 @@ def report(trial, evaluation, out):
         readout_source_sha256=sha(Path(__file__)),seconds=perf_counter()-started)
     out.mkdir(parents=True); dump(out/'summary.json',result)
     return result
+
+
+def support_sensitivity(evaluation, out):
+    """Selection sensitivity on cached normalized scores; never refit raw Q9."""
+    evaluation,out=Path(evaluation).resolve(),Path(out).resolve()
+    if out.exists() or not out.is_relative_to(ROOT/'outputs'):
+        raise ValueError('Fresh ignored sensitivity output required')
+    scored=read_json(evaluation/'summary.json');protocol=scored['protocol']
+    if protocol['mechanism']!='price_background_qwen':raise ValueError('Matching price-background evaluation required')
+    cases=read_json(evaluation/'cases_private.json');arms=protocol['arms']
+    months,repeats=protocol['months'],protocol['generation_repeats']
+    support=shared._common_person_months(cases,arms,repeats,'q9')
+    raw_support={(m,u) for m,u in support if all(
+        r['arms'][a]['raw_validation_status']=='valid'
+        for r in cases if (r['month'],r['userid'])==(m,u) for a in arms)}
+    result=dict(raw_valid_support=summarize(cases,arms,months,repeats,raw_support),
+        generation={str(rep):summarize(cases,arms,months,[rep],support) for rep in repeats},
+        all_usable_person_months=len(support),new_api_calls=0,scorer_calls=0,
+        interpretation='Raw-valid SUPPORT restriction using the same normalized scores. Different sample; not a causal normalization-effect estimate.',
+        source_sha256={str((evaluation/n).relative_to(ROOT)):sha(evaluation/n) for n in ('summary.json','cases_private.json')})
+    out.mkdir(parents=True);dump(out/'summary.json',result);return result
