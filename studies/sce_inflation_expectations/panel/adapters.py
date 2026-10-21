@@ -129,6 +129,7 @@ def load_batch(case_path):
             entry = entry or {}
             record = {
                 '_pid': pid,
+                '_uid': str(case['userid']),   # anonymised key for cross-month de-duplication
                 'experiment': batch,
                 'month': int(case['month']),
                 'arm': str(arm),

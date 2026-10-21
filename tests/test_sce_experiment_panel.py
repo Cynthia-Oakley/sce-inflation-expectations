@@ -207,12 +207,14 @@ def test_common_support_and_sensitivity(batch):
     exp = panel['experiments'][BATCH]
     row = exp['sections']['overview']['q9']['A']
     # uid3 month1 has an unscored arm-A repeat -> the whole person-month
-    # leaves the all-arm x all-repeat common support (23 = 12 - 1 + 12)
+    # leaves the all-arm x all-repeat common support (23 = 12 - 1 + 12);
+    # unique persons de-duplicate the same 12 userids across both months
     assert row['n_person_months'] == 23
-    assert row['unique_persons'] == 23
+    assert row['unique_persons'] == 12
     sens = exp['sections']['overview']['support_sensitivity']
     assert sens['A']['n_person_months'] == 23      # arm A alone: same hole
     assert sens['B']['n_person_months'] == 24      # arm B unscored nowhere
+    assert sens['A']['unique_persons'] == 12 and sens['B']['unique_persons'] == 12
     # Q8 takes its own support: the missing-model record also lacks a Q8
     # point, so Q8 support excludes uid3 month1 too; uid6 month2 stays in
     # (prior missing does not affect the Q8 support)
@@ -568,10 +570,14 @@ def test_drill_normal_cell_profiles_and_variance():
     cdf = cell_hs['truth']['cdf']
     assert cdf[grid.index(0)] == pytest.approx(0.0)
     assert cdf[grid.index(1)] == pytest.approx(1.0)
-    # two populated six-cell labels: between = var([1, 9], ddof=1) = 32, within ~0
+    # weighted decomposition: between = (20*(1-5)^2+20*(9-5)^2)/40 = 16,
+    # within = 0, and the identity total = between + within holds exactly
     var = drill['variance']['202001']
-    assert var['between_cell_var_pp2'] == pytest.approx(32.0)
+    assert var['between_cell_var_pp2'] == pytest.approx(16.0)
     assert var['within_cell_var_pp2'] == pytest.approx(0.0, abs=1e-9)
+    assert var['total_var_pp2'] == pytest.approx(16.0)
+    assert abs(var['between_cell_var_pp2'] + var['within_cell_var_pp2']
+               - var['total_var_pp2']) < 1e-9
 
 
 def test_quality_funnel_and_month_matrix(batch):
@@ -638,3 +644,189 @@ def test_priors_band_series_present(batch):
     assert series and {'month', 'prior', 'truth', 'model', 'n'} <= set(series[0])
     amp = priors['direction_amplitude']
     assert set(amp) == {'up', 'stable', 'down'}
+
+
+def test_diff_series_computed_in_python_with_signs():
+    """diffs_vs_control: diff = arm - control per month (positive = worse)."""
+    cases = []
+    for month in (202001, 202002):
+        for uid in UIDS:
+            for repeat in (1, 2):
+                # month1: B closer to truth than A (improvement, diff<0);
+                # month2: B farther (regression, diff>0)
+                base = truth_mean(uid, month)
+                a_model = base + 0.4
+                b_model = base + (0.1 if month == 202001 else 0.9)
+                arms = {
+                    'A': {'mean': a_model, 'iqr': 1.0, 'q9_bins': [0.] * 10,
+                          'point': 1.0, 'scorer_status': 'ok', 'validation_status': 'valid',
+                          'validation_error': None, 'normalization_applied': False},
+                    'B': {'mean': b_model, 'iqr': 1.0, 'q9_bins': [0.] * 10,
+                          'point': 1.0, 'scorer_status': 'ok', 'validation_status': 'valid',
+                          'validation_error': None, 'normalization_applied': False},
+                }
+                cases.append(make_case(month, uid, repeat, arms,
+                                       prior=prior_mean(uid, month)))
+    with tempfile.TemporaryDirectory() as td:
+        out = write_batch(Path(td), 'diff_batch_evaluation_20261021_v1', cases)
+        records, meta = load_batch(out / 'cases_private.json')
+        panel = build_panel(records, [meta], build_regime_lookup(
+            {202001: 2.0, 202002: 2.5}))
+    q9 = panel['experiments']['diff_batch_evaluation_20261021_v1']['sections']['overview']['q9']
+    row = q9['B']
+    d1 = next(d for d in row['diffs_vs_control'] if d['month'] == 202001)
+    d2 = next(d for d in row['diffs_vs_control'] if d['month'] == 202002)
+    # constant shifts -> center MAE equals the shift per month
+    assert d1['arm_mae'] == pytest.approx(0.1) and d1['other_mae'] == pytest.approx(0.4)
+    assert d1['diff'] == pytest.approx(-0.3)          # improvement is negative
+    assert d2['arm_mae'] == pytest.approx(0.9) and d2['other_mae'] == pytest.approx(0.4)
+    assert d2['diff'] == pytest.approx(+0.5)          # regression is positive
+    # the control arm's own vs_control series is empty by construction
+    for d in q9['A']['diffs_vs_control']:
+        assert d['diff'] is None and d['other_mae'] is None
+    # vs_persist: prior = truth - e(u); persistence error is positive, so the
+    # model (truth + 0.4 for arm A) beats persistence in both months -> diff<0
+    for d in q9['A']['diffs_vs_persist']:
+        assert d['arm_mae'] == pytest.approx(0.4)
+        assert _f(d['other_mae']) and d['diff'] == pytest.approx(
+            d['arm_mae'] - d['other_mae'])
+        assert d['diff'] < 0
+
+
+def test_no_common_support_no_fallback(tmp_path, monkeypatch):
+    """Disjoint arm supports: empty main table, note present, sensitivity kept."""
+    monkeypatch.setattr(sys.modules[__name__], 'MISSING_MODEL', (190001, 0, 1, 'X'))
+    bad = {'mean': None, 'iqr': None, 'q9_bins': None, 'point': None,
+           'scorer_status': 'error', 'validation_status': 'invalid',
+           'validation_error': 'x', 'normalization_applied': False}
+    cases = []
+    for uid in UIDS:
+        for repeat in (1, 2):
+            # arms A and B cover completely disjoint person sets -> no common support
+            if uid <= 6:
+                arms = {'A': arm_entry(uid, 202001, 'A', repeat), 'B': dict(bad)}
+            else:
+                arms = {'A': dict(bad), 'B': arm_entry(uid, 202001, 'B', repeat)}
+            cases.append(make_case(202001, uid, repeat, arms,
+                                   prior=prior_mean(uid, 202001)))
+    out = write_batch(tmp_path, 'disjoint_batch_evaluation_20261021_v1', cases)
+    records, meta = load_batch(out / 'cases_private.json')
+    panel = build_panel(records, [meta], build_regime_lookup({202001: 2.0}))
+    exp = panel['experiments']['disjoint_batch_evaluation_20261021_v1']
+    ov = exp['sections']['overview']
+    assert ov['support_note'] and '无法作主比较表' in ov['support_note']
+    for arm in ('A', 'B'):
+        row = ov['q9'][arm]
+        assert row['n_person_months'] == 0
+        assert row['center_mae_pp'] is None and row['person_mae_pp'] is None
+        assert row['w1_pp'] is None
+        assert all(d['diff'] is None for d in row['diffs_vs_control'])
+        # sensitivity keeps per-arm usable supports even without a common one
+        assert ov['support_sensitivity'][arm]['n_person_months'] == 6
+    # sections downstream must not blow up on the empty support
+    assert exp['sections']['monthly']['A']['rows'] == []
+    assert exp['sections']['quality']['q9_common_person_months'] == 0
+
+
+def test_q8_months_independent_of_q9_support(tmp_path, monkeypatch):
+    """A month with all-Q9-failed records still appears in the Q8 summary."""
+    monkeypatch.setattr(sys.modules[__name__], 'MISSING_MODEL', (190001, 0, 1, 'X'))
+    cases = []
+    for uid in UIDS:
+        for month in (202001, 202002):
+            for repeat in (1, 2):
+                arms = {arm: arm_entry(uid, month, arm, repeat) for arm in ('A', 'B')}
+                if month == 202002:      # Q9 fails for everyone in month2
+                    for arm in ('A', 'B'):
+                        arms[arm] = {'mean': None, 'iqr': None, 'q9_bins': None,
+                                     'point': round(model_mean(arm, uid, month)),
+                                     'scorer_status': 'error', 'validation_status': 'invalid',
+                                     'validation_error': 'x', 'normalization_applied': False}
+                cases.append(make_case(month, uid, repeat, arms,
+                                       prior=prior_mean(uid, month)))
+    out = write_batch(tmp_path, 'q8month_batch_evaluation_20261021_v1', cases)
+    records, meta = load_batch(out / 'cases_private.json')
+    panel = build_panel(records, [meta], build_regime_lookup(
+        {202001: 2.0, 202002: 2.5}))
+    exp = panel['experiments']['q8month_batch_evaluation_20261021_v1']
+    q8 = exp['sections']['overview']['q8']['A']
+    assert q8['n_person_months'] == 24          # 12 uids x 2 months on Q8 support
+    assert _f(q8['center_mae_pp'])              # month2 contributes to Q8
+    assert q8['months_covered'] == [202001, 202002]
+
+
+def test_drill_ess_merges_repeats_and_names_pooling():
+    """12 equal-weight persons x 2 repeats: n=12, ESS=12, repeat-pooled label."""
+    cases = []
+    for uid in range(1, 13):
+        for repeat in (1, 2):
+            truth = float(uid)
+            arms = {'A': {'mean': truth, 'iqr': 1.0, 'q9_bins': [0.] * 10,
+                          'point': truth, 'scorer_status': 'ok', 'validation_status': 'valid',
+                          'validation_error': None, 'normalization_applied': False}}
+            cases.append({
+                'month': 202001, 'userid': uid, 'agent_id': f'e_{uid}_{repeat}',
+                'profile': {'education_group': 'high_school', 'employment_status': 'employed'},
+                'stratum': 'syn', 'survey_weight': 1.0, 'inclusion_probability': 0.5,
+                'design_survey_weight': 2.0, 'repeat': repeat,
+                'real': {'q9_mean': truth, 'q9_iqr': 1.0, 'q9_zero_deflation': 0.0,
+                         'q9_bins': [0.] * 10, 'q8_point': truth, 'q8_outside_100': False,
+                         'weight': 1.0, 'previous_q9_mean': truth - 0.1,
+                         'previous_q9_bins': None},
+                'arms': arms})
+    with tempfile.TemporaryDirectory() as td:
+        out = write_batch(Path(td), 'ess_batch_evaluation_20261021_v1', cases)
+        records, meta = load_batch(out / 'cases_private.json')
+        panel = build_panel(records, [meta], build_regime_lookup({202001: 2.0}))
+    drill = panel['experiments']['ess_batch_evaluation_20261021_v1']['sections']['drill']
+    cell = drill['dims']['six_cell']['cells']['high_school|attached']['months']['202001']
+    assert cell['n'] == 12
+    assert cell['ess'] == pytest.approx(12.0, abs=1e-9)
+    assert cell['distribution_kind'] == 'repeat_pooled'
+
+
+def test_auto_facts_neutral_wording_and_arm_field(batch):
+    _, _, panel = batch
+    exp = panel['experiments'][BATCH]
+    for fact in exp['facts']:
+        assert fact.get('arm') in ('A', 'B')
+        assert '仍被压缩' not in fact['text']
+    low = next((f for f in exp['facts'] if f['id'] == 'low_prior_closer'), None)
+    if low is not None:
+        assert '不推断压缩方向' in low['text']
+        bias_rows = [e for e in low['evidence'] if '偏差' in e['metric']]
+        assert len(bias_rows) == 2
+
+
+def test_arm_labels_cover_known_arms_and_render(batch):
+    from studies.sce_inflation_expectations.panel.registry import ARM_LABELS, arm_label
+    expected = {'reference', 'baseline', 'shared_price', 'matched_role', 'shuffled_role',
+                'news_matched', 'news_randomized', 'temperature_10', 'direct'}
+    assert expected <= set(ARM_LABELS)
+    assert arm_label('matched_role') == '匹配角色'
+    assert arm_label('unknown_arm_xyz') == 'unknown_arm_xyz'
+    _, _, panel = batch
+    html = render_html(panel)
+    assert 'arm_labels' in html
+    assert '匹配角色' in html and '共享价格' in html
+
+
+def test_build_receipt_fields(tmp_path):
+    from scripts.build_sce_experiment_panel import (
+        STATS_VERSION, build_receipt, write_atomic)
+    target = tmp_path / 'out' / 'x.json'
+    write_atomic(target, '{"a":1}\n')
+    assert target.read_text() == '{"a":1}\n'
+    assert not (tmp_path / 'out' / 'x.json.tmp').exists()
+    fake_dir = tmp_path / 'fake_evaluation_20261021_v1'
+    fake_dir.mkdir()
+    (fake_dir / 'cases_private.json').write_text('[]')
+    metas = [{'batch': 'b1', 'summary_path': str(fake_dir / 'summary.json'),
+              'n_records': 3, 'status': 'ok'}]
+    panel = {'generated_at_utc': '2026-10-21T00:00:00+00:00'}
+    receipt = build_receipt(metas, panel)
+    assert receipt['stats_version'] == STATS_VERSION == 'panel-stats-v1.1'
+    assert receipt['python_version']
+    assert len(receipt['panel_modules_sha256']) == 6
+    assert receipt['source_batches'][0]['batch'] == 'b1'
+    assert len(receipt['source_batches'][0]['cases_sha256']) == 64

@@ -120,6 +120,41 @@ CATALOG = {
 # Pinned top entries for the catalog page.
 REFERENCE_BATCH = 'sce_reference_validation_evaluation_20261017_v1'
 
+# Chinese display names for arms actually present in the scanned evaluation
+# caches; unknown arms render verbatim and are never guessed.
+ARM_LABELS = {
+    'reference': '参考配置',
+    'baseline': '基线',
+    'news_3_complete': '新闻3篇·完整',
+    'news_20_complete': '新闻20篇·完整',
+    'news_3_reduced': '新闻3篇·精简',
+    'news_8_reduced': '新闻8篇·精简',
+    'news_20_reduced': '新闻20篇·精简',
+    'news_matched': '匹配新闻',
+    'news_randomized': '随机新闻',
+    'shared_price': '共享价格',
+    'matched_role': '匹配角色',
+    'shuffled_role': '打乱角色',
+    'label_only': '仅标签',
+    'question_answer': '问答式',
+    'faithful_paraphrase': '忠实转述',
+    'consumer_context': '消费者语境',
+    'financial_facts': '金融事实',
+    'financial_perspective': '金融视角',
+    'previous_financial_outlook': '上期财务展望',
+    'matched_psychology': '匹配心理',
+    'permuted_psychology': '打乱心理',
+    'direct': '直接作答',
+    'q8_delta': 'Q8差值',
+    'qwen': 'Qwen迁移',
+    'temperature_08': '温度0.8',
+    'temperature_10': '温度1.0',
+}
+
+
+def arm_label(arm):
+    return ARM_LABELS.get(arm, arm)
+
 
 def unregistered_entry(batch):
     return {'label': batch, 'section': '待登记', 'mechanism_group': '待登记',

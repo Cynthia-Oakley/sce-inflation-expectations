@@ -36,7 +36,8 @@ from studies.sce_inflation_expectations.evaluation.metrics import quantile, wass
 from studies.sce_inflation_expectations.evaluation.response_gap import direction, prior_band
 from studies.sce_inflation_expectations.evaluation.temperature import variance_components
 from studies.sce_inflation_expectations.panel.adapters import REGISTRY
-from studies.sce_inflation_expectations.panel.registry import REFERENCE_BATCH, SECTIONS, entry_for
+from studies.sce_inflation_expectations.panel.registry import (
+    ARM_LABELS, REFERENCE_BATCH, SECTIONS, entry_for)
 
 MIN_COVERAGE_N = 10
 EXPLORATORY_MAX_N = 19
@@ -133,12 +134,9 @@ def q9_support(records):
             if all((a, rep) in grid and _valid_q9(grid[(a, rep)])
                    for a in arms for rep in repeats)}
     note = None
-    if not full and arms:
-        first = arms[0]
-        full = {pm for pm, grid in by_pm.items()
-                if all((first, rep) in grid and _valid_q9(grid[(first, rep)])
-                       for rep in repeats)}
-        note = '设计不平衡或缺失过重：无全臂×遍共同支持，主表退回第一臂 %s 的可用支持。' % first
+    if not full:
+        note = ('无全臂×遍共同支持，无法作主比较表；'
+                '各臂可用支持见敏感性表，不以色充任何臂充当主成绩。')
     return full, arms, repeats, note
 
 
@@ -166,15 +164,25 @@ def _person_weights(records, support, arms, repeats):
     return weights
 
 
-def _support_stats(support, weights):
+def _uid_map(records):
+    """(month, _pid) -> anonymised person uid for cross-month de-duplication."""
+    return {(r['month'], r['_pid']): r.get('_uid') for r in records
+            if r.get('_uid') is not None}
+
+
+def _support_stats(support, weights, uids=None):
     w = [weights[pm] for pm in support if pm in weights]
     total = sum(w)
+    if uids is not None:
+        unique = len({uids[pm] for pm in support if pm in uids})
+    else:  # fallback: person key de-duplication (never counts person-months)
+        unique = len({pm[1].split('|')[-1] for pm in support})
     return {
         'n_person_months': len(support),
         'ess': _kish_ess(w),
         'max_weight_share': (max(w) / total) if w and total > 0 else None,
         'months_covered': sorted({pm[0] for pm in support}),
-        'unique_persons': len({pm[1] for pm in support}),
+        'unique_persons': unique,
     }
 
 
@@ -249,15 +257,22 @@ def _overview(records):
     """Section 1: per-experiment x arm overview on the common Q9 support."""
     support, arms, repeats, support_note = q9_support(records)
     months = sorted({pm[0] for pm in support})
+    uids = _uid_map(records)
     weights = _person_weights(records, support, arms, repeats)
-    stats = _support_stats(support, weights)
+    stats = _support_stats(support, weights, uids)
     prior_ok = _prior_finite_pm(records, support, arms)
     identical = support & prior_ok
     out, q8 = {}, {}
-    per_arm_cells = {}
+    per_arm_cells, per_arm_persist = {}, {}
+    control = pick_control_arm(arms)
     for arm in arms:
         cells = _arm_cells(records, support, arm, months, repeats)
         per_arm_cells[arm] = cells
+        pcells = {}
+        if identical:
+            pcells = _arm_cells(records, identical, arm, months, repeats,
+                                pred_key='prior_q9_mean')
+        per_arm_persist[arm] = pcells
         row = dict(stats)
         row.update({
             'n_cells': len(cells),
@@ -278,10 +293,9 @@ def _overview(records):
             'persistence': None,
         })
         if identical:
-            pcells = _arm_cells(records, identical, arm, months, repeats,
-                                pred_key='prior_q9_mean')
             mcells = _arm_cells(records, identical, arm, months, repeats)
-            prow = _support_stats(identical, _person_weights(records, identical, arms, repeats))
+            prow = _support_stats(identical,
+                                  _person_weights(records, identical, arms, repeats), uids)
             # update-distribution W1 per month x repeat cell on the identical
             # (model + prior + truth) support, then equal-averaged
             dw1 = {}
@@ -316,6 +330,32 @@ def _overview(records):
             if dw1:
                 row['delta_w1_pp'] = float(np.mean(list(dw1.values())))
         out[arm] = row
+    # monthly error-delta series, computed in Python (front end only renders):
+    # diffs_vs_control: this arm minus the control arm, per month (repeats
+    # equal-averaged first); diffs_vs_persist: this arm minus its persistence
+    # baseline. diff > 0 means this arm is worse.
+    def _monthly_mean(cells, key, month):
+        vals = [cells[(month, rep)].get(key) for rep in repeats
+                if cells.get((month, rep)) and _finite(cells[(month, rep)].get(key))]
+        return float(np.mean(vals)) if vals else None
+
+    for arm in arms:
+        diffs_ctrl, diffs_pers = [], []
+        for month in months:
+            arm_mae = _monthly_mean(per_arm_cells[arm], 'center_abs_pp', month)
+            ctrl_mae = (None if arm == control else
+                        _monthly_mean(per_arm_cells[control], 'center_abs_pp', month))
+            diffs_ctrl.append({'month': month, 'arm_mae': arm_mae,
+                               'other_mae': ctrl_mae,
+                               'diff': (arm_mae - ctrl_mae
+                                        if _finite(arm_mae) and _finite(ctrl_mae) else None)})
+            pers_mae = _monthly_mean(per_arm_persist.get(arm, {}), 'center_abs_pp', month)
+            diffs_pers.append({'month': month, 'arm_mae': arm_mae,
+                               'other_mae': pers_mae,
+                               'diff': (arm_mae - pers_mae
+                                        if _finite(arm_mae) and _finite(pers_mae) else None)})
+        out[arm]['diffs_vs_control'] = diffs_ctrl
+        out[arm]['diffs_vs_persist'] = diffs_pers
     # per-arm usable supports: sensitivity table (each arm alone, all repeats)
     by_pm = defaultdict(dict)
     for r in records:
@@ -325,14 +365,15 @@ def _overview(records):
         usable = {pm for pm, grid in by_pm.items()
                   if all((arm, rep) in grid and _valid_q9(grid[(arm, rep)]) for rep in repeats)}
         w = _person_weights(records, usable, arms, repeats)
-        sensitivity[arm] = _support_stats(usable, w)
-    # Q8 takes its own support, independent of Q9 failures
+        sensitivity[arm] = _support_stats(usable, w, uids)
+    # Q8 takes its own support and its own month list, independent of Q9
     q8s = q8_support(records, arms, repeats)
     if q8s:
+        q8_months = sorted({pm[0] for pm in q8s})
         q8w = _person_weights(records, q8s, arms, repeats)
-        q8stats = _support_stats(q8s, q8w)
+        q8stats = _support_stats(q8s, q8w, uids)
         for arm in arms:
-            cells = _arm_cells(records, q8s, arm, months, repeats,
+            cells = _arm_cells(records, q8s, arm, q8_months, repeats,
                                pred_key='model_q8_point', truth_key='truth_q8_point')
             q8[arm] = dict(q8stats)
             q8[arm].update({
@@ -348,7 +389,7 @@ def _overview(records):
             'support_note': support_note,
             'notes': ['主统计量=群体中位数MAE：每月×每遍的 |模型跨人加权中位−真人跨人加权中位|，对月×遍等权平均。',
                       '主表支持=全部所选臂×遍的可评共同支持（Q9）；各臂可用支持见敏感性表；Q8 独立取支持。',
-                      'ESS 为支持内合并本人重复后的人×月 Kish ESS；独立人数另列，人×月不当独立个体。',
+                      'ESS 为支持内合并本人重复后的人×月 Kish ESS；独立人数为跨月去重后的真人计数，与人×月分列。',
                       '汇总指标先逐月逐遍计算，再等权平均；缺失与未提供不填零。']}
 
 
@@ -435,6 +476,7 @@ def _display_class(n, ess):
 
 def _dimension_cells(records, support, weights, arms, repeats, months, dim, arm):
     key = 'cell' if dim == 'six_cell' else dim
+    uids = _uid_map(records)
     groups = defaultdict(list)
     for r in records:
         pm = (r['month'], r['_pid'])
@@ -486,7 +528,7 @@ def _dimension_cells(records, support, weights, arms, repeats, months, dim, arm)
             'months_covered': len(monthly),
             'months_reportable': len(reportable),
             'min_month_n': min((m['n'] for m in monthly), default=0),
-            'unique_persons': len({pm[1] for pm in pms_all}),
+            'unique_persons': len({uids[pm] for pm in pms_all if pm in uids}),
             'display_class': _display_class(pooled_n, pooled_ess),
             'distribution_kind': 'cross_month_mixed',
             'label_cn': _cn(dim, label),
@@ -820,8 +862,14 @@ def _drill(records):
                     continue
                 pms = {(r['month'], r['_pid']) for r in sub}
                 n_m = len(pms)
-                w_m = [r['weight'] for r in sub if _finite(r.get('weight'))]
-                ess_m = _kish_ess(w_m)
+                # merge each person's repeats back to the design weight before
+                # Kish ESS: repeats never multiply people or ESS
+                w_merged = {}
+                for r in sub:
+                    if _finite(r.get('weight')):
+                        pm = (r['month'], r['_pid'])
+                        w_merged[pm] = w_merged.get(pm, 0.0) + r['weight']
+                ess_m = _kish_ess(list(w_merged.values()))
                 cell = {'n': n_m, 'ess': ess_m, 'display_class': _display_class(n_m, ess_m)}
                 if cell['display_class'] != 'coverage':
                     cell['truth'] = _series_profile(sub, 'truth_q9_mean')
@@ -829,7 +877,9 @@ def _drill(records):
                     if cell['truth'] is None:
                         cell = {'n': n_m, 'ess': ess_m, 'display_class': 'coverage'}
                     else:
-                        # model profiles need every arm's own values
+                        # model profiles need every arm's own values; the model
+                        # curve pools that arm's repeats (repeat-pooled), which
+                        # is named as such and never read as a per-repeat view
                         by_arm = defaultdict(list)
                         for r in records:
                             pm2 = (r['month'], r['_pid'])
@@ -841,36 +891,58 @@ def _drill(records):
                             if prof is not None:
                                 arms_prof[arm] = prof
                         cell['arms'] = arms_prof
+                        cell['distribution_kind'] = 'repeat_pooled'
                 month_cells[str(month)] = cell
             cells[label] = {'label_cn': _cn(dim, label), 'months': month_cells}
         dims[dim] = {'title': title, 'cells': cells}
-    # secondary diagnostic: six-cell variance decomposition per month x repeat
+    # secondary diagnostic: weighted variance decomposition over the six cells
+    # (unknown included). Identity total = between + within holds exactly for
+    # the pooled weights; per month x repeat first, then repeat-averaged.
     variance = {}
     for month in months:
         per_rep = []
         for rep in repeats:
-            cell_means, cell_vars = [], []
-            for label in SIX_CELL_ORDER:
-                recs = [r for r in records if r['arm'] == first and r['month'] == month
-                        and r['repeat'] == rep and (month, r['_pid']) in support
-                        and r.get('cell') == label and _finite(r.get('truth_q9_mean'))]
-                vals = [r['truth_q9_mean'] for r in recs]
-                if len(vals) >= MIN_COVERAGE_N:
-                    cell_means.append(float(np.mean(vals)))
-                    cell_vars.append(float(np.var(vals, ddof=1)))
-            if len(cell_means) >= 2:
-                per_rep.append({'between': float(np.var(cell_means, ddof=1)),
-                                'within': float(np.mean(cell_vars)),
-                                'n_cells': len(cell_means)})
+            recs = [r for r in records if r['arm'] == first and r['month'] == month
+                    and r['repeat'] == rep and (month, r['_pid']) in support
+                    and _finite(r.get('truth_q9_mean')) and _finite(r.get('weight'))]
+            groups = defaultdict(list)
+            for r in recs:
+                groups[r.get('cell') or 'unknown'].append(r)
+            parts = []
+            for label, rows in groups.items():
+                if len({row['_pid'] for row in rows}) < MIN_COVERAGE_N:
+                    continue
+                vals = np.asarray([row['truth_q9_mean'] for row in rows], float)
+                w = np.asarray([row['weight'] for row in rows], float)
+                wsum = float(w.sum())
+                mu = float(w @ vals / wsum)
+                var = float(w @ (vals - mu) ** 2 / wsum)
+                parts.append({'label': label, 'w': wsum, 'mu': mu, 'var': var,
+                              'n': len(rows)})
+            if len(parts) < 2:
+                continue
+            W = sum(p['w'] for p in parts)
+            mu_all = sum(p['w'] * p['mu'] for p in parts) / W
+            between = sum(p['w'] * (p['mu'] - mu_all) ** 2 for p in parts) / W
+            within = sum(p['w'] * p['var'] for p in parts) / W
+            all_vals = np.asarray([r['truth_q9_mean'] for r in recs], float)
+            all_w = np.asarray([r['weight'] for r in recs], float)
+            mu_pool = float(all_w @ all_vals / all_w.sum())
+            total = float(all_w @ (all_vals - mu_pool) ** 2 / all_w.sum())
+            per_rep.append({'total': float(total), 'between': float(between),
+                            'within': float(within), 'n_cells': len(parts)})
         if per_rep:
             variance[str(month)] = {
+                'total_var_pp2': float(np.mean([p['total'] for p in per_rep])),
                 'between_cell_var_pp2': float(np.mean([p['between'] for p in per_rep])),
                 'within_cell_var_pp2': float(np.mean([p['within'] for p in per_rep])),
                 'n_cells': max(p['n_cells'] for p in per_rep),
             }
     return {'grid': CDF_GRID_PP, 'quantile_note': '加权分位图，非 Tukey 箱线图',
+            'repeats': len(repeats),
             'dims': dims, 'variance': variance,
-            'note': '只分解方差，不把各格中位数MAE相加当作总体误差贡献；CDF 与分位数均为共同支持上的加权聚合。'}
+            'note': ('只分解方差（组间+组内=总方差，恒等式精确成立），不把各格中位数MAE相加当作总体误差贡献；'
+                     'CDF 与分位数均为共同支持上的加权聚合；模型曲线为该臂多遍混合分布（repeat-pooled）。')}
 
 
 @section_plugin('drill')
@@ -981,7 +1053,8 @@ def section_inputs(records_by_experiment, regime_lookup, metas_by_experiment):
 
 def _quality(records, meta):
     support, arms, repeats, support_note = q9_support(records)
-    q9_stats = _support_stats(support, _person_weights(records, support, arms, repeats))
+    uids = _uid_map(records)
+    q9_stats = _support_stats(support, _person_weights(records, support, arms, repeats), uids)
     by_pm = defaultdict(dict)
     for r in records:
         by_pm[(r['month'], r['_pid'])][(r['arm'], r['repeat'])] = r
@@ -1174,7 +1247,7 @@ def auto_facts(sections, arms, control):
         month, model, persist, gap = max(diffs, key=lambda t: t[3])
         if _finite(gap) and gap >= 0.3:
             facts.append({
-                'id': 'regression_month',
+                'id': 'regression_month', 'arm': primary,
                 'text': ('中心误差在 %s 退步最大：模型 %.2fpp vs 照抄上期 %.2fpp'
                          '（模型−照抄 = %+.2fpp）' % (_ym(month), model, persist, gap)),
                 'evidence': [
@@ -1190,14 +1263,18 @@ def auto_facts(sections, arms, control):
         gap = hi['person_mae_pp'] - lo['person_mae_pp']
         if gap >= 1.0:
             facts.append({
-                'id': 'low_prior_closer',
-                'text': ('低先验端（<2%%）个人MAE %.2fpp，低于≥8%%档的 %.2fpp：'
-                         '低端更接近真人，高端仍被压缩' % (lo['person_mae_pp'],
-                                                 hi['person_mae_pp'])),
+                'id': 'low_prior_closer', 'arm': primary,
+                'text': ('低先验端（<2%%）个人MAE %.2fpp，低于≥8%%档的 %.2fpp'
+                         '（仅误差大小差异，不推断压缩方向）' % (lo['person_mae_pp'],
+                                                          hi['person_mae_pp'])),
                 'evidence': [
                     {'metric': '先验<2% 档个人MAE（pp）', 'value_pp': lo['person_mae_pp']},
                     {'metric': '先验≥8% 档个人MAE（pp）', 'value_pp': hi['person_mae_pp']},
                     {'metric': '高端−低端差（pp）', 'value_pp': gap},
+                    {'metric': '先验<2% 档中心带符号偏差（pp，自查方向）',
+                     'value_pp': lo.get('bias_pp')},
+                    {'metric': '先验≥8% 档中心带符号偏差（pp，自查方向）',
+                     'value_pp': hi.get('bias_pp')},
                 ],
             })
     # rule 3: two mechanism arms barely differ on the group-center statistic
@@ -1212,7 +1289,7 @@ def auto_facts(sections, arms, control):
         a, b, gap = min(pairs, key=lambda t: t[2])
         if gap <= 0.1:
             facts.append({
-                'id': 'small_arm_gap',
+                'id': 'small_arm_gap', 'arm': primary,
                 'text': ('臂 %s 与 %s 的群体中心差异仅 %.2fpp，'
                          '不能据此认定机制有效或无效' % (a, b, gap)),
                 'evidence': [
@@ -1283,6 +1360,8 @@ def build_panel(records, metas, regime_lookup, only_sections=None):
                                               'skip_reason', 'n_cases', 'n_records')}
                            for m in metas],
         'experiments': {k: experiments[k] for k in order},
+        'arm_labels': dict(ARM_LABELS),
+        'stats_version': 'panel-stats-v1.1',
         'catalog': catalog,
         'regime_lookup': {str(k): v for k, v in regime_lookup.items()},
         'notes': ['全部计算离线完成，零 API 调用。',

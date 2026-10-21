@@ -165,11 +165,14 @@ const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const fmt = (v, d=2) => (v === null || v === undefined || Number.isNaN(v)) ? '<span style="color:#9aa39b">未提供</span>' : (typeof v === 'number' ? v.toFixed(d) : esc(v));
 const _f = v => typeof v === 'number' && isFinite(v);
+const ARM_LABELS = PANEL.arm_labels || {};
+function armLabel(a){ const cn=ARM_LABELS[a]; return cn?cn+'（'+a+'）':a; }
+function armShort(a){ return ARM_LABELS[a] || a; }
 const yfmt = m => String(m).replace(/(\\d{4})(\\d{2})/, '$1-$2');
 
 let cur = {exp:null, arm:null, tab:'overview', q:'q9'};
 let hiddenSeries = {};
-let catalogScroll = 0;
+var catalogScroll = 0;
 
 function expKeys(){ return Object.keys(PANEL.experiments); }
 function exp(){ return PANEL.experiments[cur.exp]; }
@@ -340,8 +343,8 @@ function quantileChart(el, rows, unit){
 }
 function varianceChart(el, variance){
   const months=Object.keys(variance).map(Number).sort((a,b)=>a-b);
-  const groups=months.map(m=>({label:yfmt(m).slice(2), values:[variance[m].between_cell_var_pp2, variance[m].within_cell_var_pp2]}));
-  groupedBars(el, groups, ['格间','格内'], ['#0072B2','#6B7280']);
+  const groups=months.map(m=>({label:yfmt(m).slice(2), values:[variance[m].between_cell_var_pp2, variance[m].within_cell_var_pp2, variance[m].total_var_pp2]}));
+  groupedBars(el, groups, ['格间','格内','总方差'], ['#0072B2','#6B7280','#202733']);
 }
 
 /* ---------- export helpers ---------- */
@@ -467,12 +470,16 @@ function renderCatalog(){
     html += `<div class="catgroup"><h3>${esc(g.section)}</h3>`+table(['实验','机制组','父批次','模型','规模','状态','说明'], rows)+'</div>';
   }
   html += `<div class="note">· ${esc(cat.note)}</div>`;
-  $('catalog').innerHTML = `<h2>实验目录</h2>` + html;
+  $('catalog').innerHTML = `<h2>实验目录 <span style="font-size:12px;color:#8a8f87">（进入实验后自动折叠，☰ 实验目录 恢复）</span></h2><div id="catalogBody">` + html + '</div>';
   document.querySelectorAll('#catalog a[data-exp]').forEach(a=>{
-    a.addEventListener('click', ev=>{ ev.preventDefault(); catalogScroll=window.scrollY;
+    a.addEventListener('click', ev=>{ ev.preventDefault();
+      if($('catalogBody').style.display!=='none') catalogScroll=window.scrollY;
       selectExperiment(a.getAttribute('data-exp')); });
   });
 }
+function collapseCatalog(){ const b=$('catalogBody'); if(b) b.style.display='none'; }
+function expandCatalog(){ const b=$('catalogBody'); if(b) b.style.display='';
+  window.scrollTo({top:catalogScroll||0}); }
 
 /* ---------- metabar (fixed top strip of the single-experiment view) ---------- */
 function renderMetabar(){
@@ -489,7 +496,7 @@ function renderMetabar(){
     `<span>月份：<b>${e.months.length} 个</b>（${yfmt(e.months[0])}–${yfmt(e.months[e.months.length-1])}，非连续）</span>`+
     `<span>规模：${esc(pr.n_per_month||'?')} 人/月 × ${e.repeats.length} 遍</span>`+
     `<span>模型：<b>${esc(pr.model||'未提供')}</b>${pr.temperature!==undefined?'（T='+esc(pr.temperature)+'）':''}</span>`+
-    `<span>比较组：对照 <b>${esc(controlArm())}</b> vs 候选 <b>${esc(cur.arm)}</b></span>`+
+    `<span>比较组：对照 <b>${esc(armShort(controlArm()))}</b> vs 候选 <b>${esc(armShort(cur.arm))}</b></span>`+
     (armRow?`<span>支持口径：<b>${armRow.n_person_months} 人×月</b> 共同支持 · ESS ${fmt(armRow.ess,1)}</span>`:'')+
     (cfg.length?`<details><summary>截止规则与输入版本（展开）</summary><div style="margin-top:4px">${
       cfg.map(([k,v])=>`<div><b>${esc(k)}</b>：${esc(v)}</div>`).join('')}</div></details>`:'');
@@ -506,7 +513,7 @@ function renderOverviewTab(main){
   if(cur.q==='q8'){
     const rows=Object.entries(ov.q8).map(([arm,c])=>{
       if(!c) return `<tr><td class="l"><b>${esc(arm)}</b></td><td colspan="9" class="sup">未提供</td></tr>`;
-      return `<tr><td class="l"><b>${esc(arm)}</b></td><td>${c.n_person_months}</td><td>${c.unique_persons}</td>`+
+      return `<tr><td class="l"><b>${esc(armShort(arm))}</b></td><td>${c.n_person_months}</td><td>${c.unique_persons}</td>`+
         td(c.ess,1)+td(c.center_mae_pp)+td(c.center_bias_pp)+td(c.person_mae_pp)+td(c.person_abs_error_median_pp)+
         td(c.w1_pp)+td(c.pred_median_pp)+td(c.truth_median_pp)+'<td style="text-align:center;color:#9aa39b">未提供</td></tr>';
     });
@@ -535,6 +542,7 @@ function renderOverviewTab(main){
   ];
   let html=`<section><h2>结果概览</h2>
     <div class="guide">主读数四项：中心误差、分布距离、分歧宽度、更新保真；中心RMSE、个人误差与秩类指标收在下方「更多指标」。所有金额级结论先看共同支持与 ESS。</div>
+    ${ov.support_note?`<div class="banners">${esc(ov.support_note)}</div>`:''}
     <div class="bigrow">`+cards.map(c=>
       `<div class="stat"><div class="k">${esc(c.k)}</div><div class="v">${fmt(c.v)}<span style="font-size:13px">${esc(c.unit)}</span></div><div class="sub2">${c.sub}</div></div>`).join('')+`</div>`;
   // two main charts
@@ -547,22 +555,29 @@ function renderOverviewTab(main){
   const c2M = cand!==ctrl ? byMonth(cb,'model_median_pp') : null;
   const series=[
     {key:'truth', role:'truth', name:'真人', short:'真人', values:months.map(m=>({x:yfmt(m),y:avg(tM,m)}))},
-    {key:'ctrl', role:'ref', name:`对照 ${ctrl}`, short:'对照', values:months.map(m=>({x:yfmt(m),y:avg(c2M||cM,m)}))},
+    {key:'ctrl', role:'ref', name:`对照 ${armShort(ctrl)}`, short:'对照', values:months.map(m=>({x:yfmt(m),y:avg(c2M||cM,m)}))},
   ];
-  if(cand!==ctrl) series.push({key:'cand', role:'cand', name:`候选 ${cand}`, short:'候选', values:months.map(m=>({x:yfmt(m),y:avg(cM,m)}))});
+  if(cand!==ctrl) series.push({key:'cand', role:'cand', name:`候选 ${armShort(cand)}`, short:'候选', values:months.map(m=>({x:yfmt(m),y:avg(cM,m)}))});
   series.push({key:'base', role:'base', name:'持续性基线（照抄上期）', short:'照抄', values:months.map(m=>({x:yfmt(m),y:avg(pM,m)}))});
   html+=`<div class="card"><h3>逐月中心（单位 pp；∥ 表示月份非连续，中间无模拟）</h3><div id="chart-center"></div></div>`;
-  const maeM=byMonth(mb,'model_center_mae_pp'), pmaeM=byMonth(mb,'persist_center_mae_pp'), cmaeM=cand!==ctrl?byMonth(cb,'model_center_mae_pp'):null;
-  const diffs=months.map(m=>{ const a=avg(cmaeM||maeM,m), b=avg(cmaeM?maeM:pmaeM,m); return (_f(a)&&_f(b))? a-b : null; });
-  const rawA=months.map(m=>avg(cmaeM||maeM,m)), rawB=months.map(m=>avg(cmaeM?maeM:pmaeM,m));
-  const dn = cand!==ctrl ? [`候选 ${cand}`,`对照 ${ctrl}`] : [`模型 ${cand}`,'持续性基线'];
+  // error deltas are computed in Python (sections.overview) so the sign
+  // convention is fixed where the statistics live: diff = 候选 - 对照
+  // (positive = candidate worse), or 模型 - 持续性基线 for single-arm batches.
+  const deltaRows = (r.diffs_vs_control && cand!==ctrl) ? r.diffs_vs_control
+                  : (r.diffs_vs_persist || []);
+  const deltaByMonth = {};
+  deltaRows.forEach(d=>{ deltaByMonth[d.month]=d; });
+  const diffs=months.map(m=>{ const d=deltaByMonth[m]; return d&&_f(d.diff)? d.diff : null; });
+  const rawA=months.map(m=>{ const d=deltaByMonth[m]; return d&&_f(d.arm_mae)? d.arm_mae : null; });
+  const rawB=months.map(m=>{ const d=deltaByMonth[m]; return d&&_f(d.other_mae)? d.other_mae : null; });
+  const dn = cand!==ctrl ? [`候选 ${armShort(cand)}`,`对照 ${armShort(ctrl)}`] : [`模型 ${armShort(cand)}`,'持续性基线'];
   html+=`<div class="card"><h3>逐月误差差额（${esc(dn[0])} − ${esc(dn[1])}，单位 pp；正值=候选更差，悬停看原始误差）</h3><div id="chart-diff"></div></div>`;
   // auto facts
   html+=`<div class="card"><h3>自动事实（固定规则生成，最多三条，无因果解释）</h3>`;
   const facts=e.facts||[];
   if(!facts.length) html+='<div class="note">按现有固定规则没有触发的事实；这不表示实验无特点。</div>';
   facts.forEach(f=>{
-    html+=`<details class="fact"><summary>▸ ${esc(f.text)}</summary><div class="evidence">`+
+    html+=`<details class="fact"><summary>▸ ${esc(f.text)}${f.arm?` <span style="color:#8a8f87;font-size:12.5px">（基于臂 ${esc(armShort(f.arm))}）</span>`:''}</summary><div class="evidence">`+
       table(['证据指标','数值(pp)'], (f.evidence||[]).map(ev=>`<tr><td class="l">${esc(ev.metric)}</td>${td(ev.value_pp)}</tr>`))+
       `</div></details>`;
   });
@@ -571,7 +586,7 @@ function renderOverviewTab(main){
   const rows=Object.entries(ov.q9).map(([arm,row])=>{
     const pp=row.persistence;
     const dc=(pp&&_f(pp.center_mae_pp)&&_f(pp.model_center_mae_same_support_pp))?pp.center_mae_pp-pp.model_center_mae_same_support_pp:null;
-    return `<tr${arm===cand?' style="background:#f6f3e8"':''}><td class="l"><b>${esc(arm)}</b>${arm===ctrl?'（对照）':''}</td><td>${row.n_person_months}</td><td>${row.unique_persons}</td><td>${row.n_cells}</td>`+
+    return `<tr${arm===cand?' style="background:#f6f3e8"':''}><td class="l"><b>${esc(armShort(arm))}</b>${arm===ctrl?'（对照）':''}</td><td>${row.n_person_months}</td><td>${row.unique_persons}</td><td>${row.n_cells}</td>`+
       td(row.ess,1)+td(row.max_weight_share,4)+
       td(row.center_mae_pp)+td(row.center_rmse_pp)+td(row.center_bias_pp)+
       td(row.person_mae_pp)+td(row.person_abs_error_median_pp)+
@@ -663,7 +678,7 @@ function renderMonthlyTab(main){
   html+='<div class="note">· 各格为跨月混合分布（非月内异质性）：按月×遍计算后等权平均；覆盖与月内最小 n 随格显示，不用全年人数掩盖月内缺口。</div>';
   // variance decomposition card
   if(d && Object.keys(d.variance||{}).length){
-    html+=`<div class="card"><h3>六格组内/组间方差分解（真人，次级诊断）</h3><div id="chart-variance"></div>${exportButtonsHTML('chart-variance')}`+
+    html+=`<div class="card"><h3>六格方差分解（真人，加权，组间+组内=总方差；含未知格）</h3><div id="chart-variance"></div>${exportButtonsHTML('chart-variance')}`+
       `<div class="note">· ${esc(d.note||'')}</div></div>`;
   }
   html+='</section>';
@@ -700,7 +715,8 @@ function renderDrillPanel(){
   if(cell.truth) series.push({role:'truth', name:'真人', short:'真人', values:cell.truth.cdf});
   if(modelProf) series.push({role:'cand', name:`模型 ${arm}`, short:'模型', values:modelProf.cdf});
   if(cell.prior) series.push({role:'base', name:'持续性基线（上期）', short:'上期', values:cell.prior.cdf});
-  panel.innerHTML=`<div class="card" style="border:none;padding:4px 0"><h3>加权经验 CDF（${yfmt(drillSel.month)} · ${esc(drillSel.label)} · n=${cell.n} · ESS=${fmt(cell.ess,1)} · ${esc(d.quantile_note)}）</h3><div id="chart-cdf"></div>${exportButtonsHTML('chart-cdf')}</div>
+  const pooledNote = `模型为 ${d.repeats||2} 遍混合分布（repeat-pooled），非逐遍口径；真人与上期先验不受重复影响`;
+  panel.innerHTML=`<div class="card" style="border:none;padding:4px 0"><h3>加权经验 CDF（${yfmt(drillSel.month)} · ${esc(drillSel.label)} · n=${cell.n} · ESS=${fmt(cell.ess,1)} · ${esc(d.quantile_note)}）</h3><div id="chart-cdf"></div>${exportButtonsHTML('chart-cdf')}<div class="note">· ${pooledNote}</div></div>
     <div class="card" style="border:none;padding:4px 0"><h3>加权分位区间图（P10–P90 外段、P25–P75 内段、中位数标记；${esc(d.quantile_note)}，非 Tukey 箱线图）</h3><div id="chart-quant"></div>${exportButtonsHTML('chart-quant')}</div>`;
   cdfChart(document.getElementById('chart-cdf'), d.grid, series);
   quantileChart(document.getElementById('chart-quant'), [
@@ -910,7 +926,7 @@ function renderInputsTab(main){
 function renderQualityTab(main){
   const q=sec('quality');
   const arms=q.arms||{};
-  const rows=Object.entries(arms).map(([arm,a])=>`<tr><td class="l"><b>${esc(arm)}</b></td><td>${a.n_records}</td><td>${a.n_scorable}</td><td>${fmt(a.missing_share,4)}</td><td class="l">${esc(Object.entries(a.scorer_status).map(([k,v])=>k+':'+v).join('，')||'未提供')}</td><td>${fmt(a.normalization_applied_share,4)}</td><td>${a.weight_missing}</td><td>${fmt(a.q8_truth_coverage,3)}</td><td>${fmt(a.q8_model_coverage,3)}</td><td>${a.q9_usable_person_months!==undefined?a.q9_usable_person_months:'未提供'}</td></tr>`);
+  const rows=Object.entries(arms).map(([arm,a])=>`<tr><td class="l"><b>${esc(armShort(arm))}</b></td><td>${a.n_records}</td><td>${a.n_scorable}</td><td>${fmt(a.missing_share,4)}</td><td class="l">${esc(Object.entries(a.scorer_status).map(([k,v])=>k+':'+v).join('，')||'未提供')}</td><td>${fmt(a.normalization_applied_share,4)}</td><td>${a.weight_missing}</td><td>${fmt(a.q8_truth_coverage,3)}</td><td>${fmt(a.q8_model_coverage,3)}</td><td>${a.q9_usable_person_months!==undefined?a.q9_usable_person_months:'未提供'}</td></tr>`);
   const pr=q.protocol||{};
   const cost = pr.estimated_cost_usd!==undefined&&pr.estimated_cost_usd!==null
       ? (typeof pr.estimated_cost_usd==='number'?pr.estimated_cost_usd.toFixed(2)+' USD':esc(pr.estimated_cost_usd))
@@ -920,7 +936,7 @@ function renderQualityTab(main){
     ['parsed','结构可解析'],['raw_valid','原始合法'],['normalized','归一化可用'],['scorable','可评分']];
   const funnelRows=Object.entries(q.arms||{}).map(([arm,a])=>{
     const f=a.funnel||{};
-    return `<tr><td class="l"><b>${esc(arm)}</b></td>`+STAGES.map(([k,lb])=>
+    return `<tr><td class="l"><b>${esc(armShort(arm))}</b></td>`+STAGES.map(([k,lb])=>
       `<td>${f[k]===undefined||f[k]===null?'<span style="color:#9aa39b">未接入</span>':f[k]}</td>`).join('')+`</tr>`;
   });
   const funnelNote='漏斗从 trial protocol/manifest 与评分缓存读取；读不到的环节标“未接入”，不填零。原始合法与归一化字段只在部分批次存档。';
@@ -985,12 +1001,12 @@ function fillArms(){
   const e=exp(), sel=$('selArm');
   const ctrl=controlArm();
   sel.innerHTML='';
-  e.arms.forEach(a=>{const o=document.createElement('option');o.value=a;o.textContent=a+(a===ctrl?'（对照）':'');sel.appendChild(o);});
+  e.arms.forEach(a=>{const o=document.createElement('option');o.value=a;o.textContent=armShort(a)+(a===ctrl?'（对照）':'');sel.appendChild(o);});
   if(!e.arms.includes(cur.arm) || cur.arm===ctrl){
     cur.arm = e.arms.find(a=>a!==ctrl) || ctrl;
   }
   sel.value=cur.arm;
-  $('ctlName').textContent=ctrl;
+  $('ctlName').textContent=armShort(ctrl);
   const hasQ8=e.q8_available;
   $('btnQ8').disabled=!hasQ8;
   $('q8warn').style.display=hasQ8?'none':'block';
@@ -1001,6 +1017,7 @@ function selectExperiment(batch){
   cur.exp = batch;
   $('selExp').value = batch;
   fillArms();
+  collapseCatalog();
   renderTab();
   $('toolbar').scrollIntoView({behavior:'smooth'});
 }
@@ -1029,7 +1046,7 @@ function init(){
   $('btnQ8').onclick=()=>{ if(!exp().q8_available) return; cur.q='q8';$('btnQ8').classList.add('on');$('btnQ9').classList.remove('on');renderTab();};
   fillArms();
   $('selArm').onchange=()=>{cur.arm=$('selArm').value;renderTab();};
-  $('lnkCatalog').onclick=(ev)=>{ ev.preventDefault(); $('catalog').scrollIntoView({behavior:'smooth'}); };
+  $('lnkCatalog').onclick=(ev)=>{ ev.preventDefault(); expandCatalog(); };
   window.addEventListener('hashchange',()=>{
     const h=parseHash();
     if(h.exp && h.exp!==cur.exp && PANEL.experiments[h.exp]){ cur.exp=h.exp; $('selExp').value=h.exp; fillArms(); }
