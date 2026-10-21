@@ -196,3 +196,12 @@
 - 执行：platform_survey_pilot.py新增reason_channel_q9变体（题干指令模型在reason中列十个逗号分隔概率），9项离线测试通过；用户批准后1人×1次调用（估$0.004平台Sim额度，累计预留$0.048/$0.10）。
 - 结果：reason为模板式单句辩护，仅含数字"12"，枚举指令未遵循；与10-20试测reason几乎同构，提示reason形态由服务端内部提示主导。运行包outputs/sce_platform_reason_channel_q9_20261021_v1/含inspection.json。
 - 建议：停止reason方向措辞试探，转正式问询平台（草稿在platform_gpt_requirements.md）；主线继续走本地引擎+OpenRouter/DeepSeek。
+
+## 2026-10-21 全时段数据交付阶段0–2（kimi_data_contract_v2.md）
+
+- 阶段0：实证SCE微观截止2025-10（重下latest与9-28件同哈希）、headline至2026-09；补NYT 2018-12..2019-11缓存；确认BLS ref 2025-10因停摆永久取消（BLS/Reuters来源）；补抓ref 2018-06..2018-12共14份首发PDF（httpx+完整浏览器头过Akamai）；新脚本backfill_bls_release_manifests.py补齐22个月manifest（embargo行重验，2018-10 CPI自定义字体仅部分验证）。
+- 阶段1：scripts/build_sce_fullperiod_coverage.py → outputs/sce_fullperiod_data_20261021_v1/coverage.json（93月，82 ready+11 ready_no_micro，内置10项验收过）。实证：tenure恒+1零例外；新闻窗口=M-1全月+M月1日至as_of；标签id须用build_news_pool口径；新闻LLM标签总缺口43,512篇待付费审批。
+- 阶段2：三样例月（201906/202303/202606）8类文件全交付，tests/test_sce_fullperiod_data.py 15项全绿；供体池严格早于目标月（4978/11796人）；合成人口PPS整行保联合结构；userid零泄漏扫描通过。
+- 重建2019-06环境至11/11历史（新增table_a_pct解析器与handoff护栏，不可抽值不猜）。
+- 已知缺口：components_cpi覆盖2020-01..2021-11+2026-04..08（批量阶段需补抽）；EIA汽油2018-12才起步；微观published_at未验证；标签付费待批。
+- 记录：docs/workstreams/20261021_fullperiod/kimi_delivery_phase012_20261021.md；NEXT_ACTIONS已更新。批量物化待Codex对齐样例。
