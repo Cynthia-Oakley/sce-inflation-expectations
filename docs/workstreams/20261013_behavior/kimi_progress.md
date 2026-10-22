@@ -229,3 +229,12 @@
 - execute 并发化（--workers，默认 8）：worker 纯网络/校验，预算记账与文件写全部留主线程；在途批持预算预占，硬上限精确。实测约 8.6 批/秒（串行 0.64），13 倍。
 - v2 续跑 27,722 篇（自动排除 v1 已完成），12 并发。目录：v1 outputs/sce_news_labels_full_20261022_v1（归档），v2 ..._v2。
 - 测试 24 项全绿（新增 repair 幂等/不可修复 2 项）。
+
+## 2026-10-22 任务3交付：月份波动/环境标签
+
+- 新脚本 scripts/extract_cpi_headline.py（复用组件提取机制，换 headline PATTERNS）：BLS 首发 CPI 全体同比 97/98 月提取成功（仅 2018-10 进 handoff）；同步重跑组件提取覆盖全 98 月（444/490，46 进 handoff）。注意：首次运行误用默认参数覆盖了 components_cpi.jsonl，已用同脚本确定性重跑恢复并扩为 components_cpi_full.jsonl。
+- 新脚本 scripts/build_sce_month_regimes.py → outputs/sce_month_regimes_20261022_v1/（month_regimes.csv 93行×35列 + regime_definition.json）。
+- A 层（事后，仅评价用）：官方 chart.xlsx 两序列分开（sce_med1y_q9 / sce_med1y_q8p），阈值固定参考期 2013-06..2018-12（q9 中位 0.074/P80 0.176pp），不看模型表现调阈值。分布：large 44 / medium 22 / small 27。
+- B 层（当时可知）：最新首发 CPI 同比 + 3 期加速度、食品/能源组件、EIA 汽油前月均值、NYT 窗口新闻 keep 计数（全量标签已闭合，unlabeled=0）、异常标记（2025 停摆）。
+- 抽查正确：2022-06 CPI 8.6/q9 6.78 large-up；2020-04 CPI 0.3；2021-05 CPI 4.2 加速 +2.8。
+- 测试 tests/test_build_sce_month_regimes.py 5 项。
