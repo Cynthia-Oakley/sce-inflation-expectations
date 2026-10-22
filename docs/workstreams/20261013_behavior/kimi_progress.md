@@ -238,3 +238,11 @@
 - B 层（当时可知）：最新首发 CPI 同比 + 3 期加速度、食品/能源组件、EIA 汽油前月均值、NYT 窗口新闻 keep 计数（全量标签已闭合，unlabeled=0）、异常标记（2025 停摆）。
 - 抽查正确：2022-06 CPI 8.6/q9 6.78 large-up；2020-04 CPI 0.3；2021-05 CPI 4.2 加速 +2.8。
 - 测试 tests/test_build_sce_month_regimes.py 5 项。
+
+## 2026-10-22 任务1阶段交付：优先月人口物化
+
+- 新脚本 scripts/build_sce_fullperiod_batch_population.py：直接 import 冻结样例构建器的逐月函数（不改动它），保证结构与已验收样例（201906/202303/202606）一致；样例月永不覆写；coverage.json 不动（其 sha256 已冻结进标签协议），状态另写 materialization_status.json。
+- 7 个优先月完成：2020-09/2022-06/2024-10/2025-05/06/07/09，各含 population/population_state_private/belief_state_private/sampling_private/news_label_index/evaluation_truth 六件套。每月真值点中位数与官方逐位一致（如 2022-06: 8.4264877264 vs 8.4264869690）；新闻池标签缺失=0。
+- 入组结构示例：2020-09 returning 952/gap_return 56/entrant 158；2025-09 returning 855/gap_return 54/entrant 137。
+- 未做：其余 86 月（75 真实 + 11 合成）等 Codex 对优先月接口检查后再批量；environment.json 的 E 侧批量物化仍等 Codex 样例对齐结论。
+- 测试 tests/test_build_sce_fullperiod_batch_population.py 3 项。
