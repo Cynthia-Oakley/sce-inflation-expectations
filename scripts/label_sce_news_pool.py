@@ -21,9 +21,16 @@ Subcommands:
            calls.jsonl + cost bounds. Offline. --dry-run prints the same
            summary without writing anything.
   execute  requires authorization.json (approved=true, protocol sha256 match);
-           calls OpenRouter deepseek/deepseek-v3.2 locked to DeepInfra,
+           calls OpenRouter deepseek/deepseek-v3.2 locked to DeepInfra
+           (or the official DeepSeek endpoint for the flash variant),
            batch of 8, zero automatic retries, per-batch validation; resumes
-           by skipping completed batch_ids; hard budget stop at $0.30 actual.
+           by skipping completed batch_ids; hard budget stop at the variant's
+           budget cap measured against CUMULATIVE actual spend carried in
+           from calls_log.jsonl (a resumed run cannot reset the counter).
+           Failed batches are persisted in errors.jsonl and are NOT re-sent
+           on resume unless --retry-failed is passed explicitly; raw API
+           responses (credential-redacted) are saved under responses/ for
+           audit.
   report   consistency agreement (decision rate, topics Jaccard, scope rate,
            disagreement samples, red flag if decision agreement < 85%).
 
@@ -495,7 +502,47 @@ def completed_batch_ids(out: Path, cons_dir: str = "consistency") -> set[int]:
     return done
 
 
-def execute(out: Path) -> dict:
+def failed_batch_ids(out: Path) -> set[int]:
+    """Batches that were attempted and failed in previous execute() runs.
+    Persisted via errors.jsonl; such batches are NOT re-sent on resume unless
+    the caller passes --retry-failed (a deliberate, logged decision — the
+    zero-automatic-retry discipline covers resumption too)."""
+    failed = set()
+    p = out / "errors.jsonl"
+    if p.exists():
+        for line in p.read_text().splitlines():
+            if not line.strip():
+                continue
+            rec = json.loads(line)
+            if rec.get("type") == "budget_stop" or "batch_id" not in rec:
+                continue
+            failed.add(rec["batch_id"])
+    return failed
+
+
+def prior_spend(out: Path) -> tuple[float, int, int]:
+    """Cumulative actual cost and paid attempts from previous runs' call log,
+    so a resumed run cannot exceed the budget by restarting the counter.
+    Returns (spent_usd, paid_attempts, unknown_billing_count)."""
+    spent, paid, unknown = 0.0, 0, 0
+    p = out / "calls_log.jsonl"
+    if p.exists():
+        for line in p.read_text().splitlines():
+            if not line.strip():
+                continue
+            rec = json.loads(line)
+            if rec.get("cost_usd") is not None:
+                spent += rec["cost_usd"]
+                paid += 1
+            elif rec.get("http_status") == 200 and not rec.get("error"):
+                # 200 without a recorded cost: billing unknown — count the
+                # attempt and flag it instead of silently losing the spend.
+                paid += 1
+                unknown += 1
+    return spent, paid, unknown
+
+
+def execute(out: Path, retry_failed: bool = False) -> dict:
     p = json.loads((out / "protocol.json").read_text())
     a = json.loads((out / "authorization.json").read_text())
     if a.get("approved") is not True or a.get("protocol_sha256") != sha(out / "protocol.json") \
@@ -527,6 +574,7 @@ def execute(out: Path) -> dict:
     prompt = VARIANTS[p.get("variant", "v2")]["prompt"]
     batches = [json.loads(l) for l in (out / "calls.jsonl").read_text().splitlines()]
     done = completed_batch_ids(out, cons_dir)
+    failed_before = failed_batch_ids(out)
     pools = build_pools(groups)
     by_id = {g: {a["article_id"]: a for a in pools[g]["rows"]} for g in groups}
 
@@ -536,16 +584,26 @@ def execute(out: Path) -> dict:
 
     labels_fh = (out / "labels.jsonl").open("a")
     (out / cons_dir).mkdir(exist_ok=True)
+    (out / "responses").mkdir(exist_ok=True)
     cons_fh = (out / cons_dir / "labels_new.jsonl").open("a")
     errors_fh = (out / "errors.jsonl").open("a")
     calls_log_fh = (out / "calls_log.jsonl").open("a")
 
-    spent = 0.0
-    paid = 0
+    spent, paid, unknown_billing = prior_spend(out)
+    if unknown_billing:
+        errors_fh.write(json.dumps(
+            {"type": "unknown_billing_carried", "count": unknown_billing,
+             "note": "prior 200 responses without recorded cost; attempts "
+                     "counted, cost unknown (not zero)",
+             "at_utc": now()}, ensure_ascii=False) + "\n")
+    skipped_failed = []
     stopped = None
     import httpx
     for b in batches:
         if b["batch_id"] in done:
+            continue
+        if b["batch_id"] in failed_before and not retry_failed:
+            skipped_failed.append(b["batch_id"])
             continue
         if spent + b["realistic_bound_usd"] > budget_cap:
             stopped = {"batch_id": b["batch_id"], "spent_usd": round(spent, 6),
@@ -573,6 +631,11 @@ def execute(out: Path) -> dict:
                     raise ValueError("locked model mismatch")
             elif reply.get("model") != MODEL or reply.get("provider") != PROVIDER_ORDER[0]:
                 raise ValueError("locked model/provider mismatch")
+            # persist the raw response (credential-redacted) for audit before
+            # any downstream validation can discard information
+            raw = json.loads(json.dumps(reply, ensure_ascii=False).replace(key, "<redacted>"))
+            (out / "responses" / f"batch_{b['batch_id']:04d}.json").write_text(
+                json.dumps(raw, ensure_ascii=False, indent=1) + "\n")
             content = reply["choices"][0]["message"]["content"]
             obj = json.loads(content)
             invalid = validate_batch(b["article_ids"], obj.get("labels"))
@@ -611,6 +674,11 @@ def execute(out: Path) -> dict:
     labels_fh.close(); cons_fh.close(); errors_fh.close(); calls_log_fh.close()
     summary = {"paid_attempts": paid, "spent_usd": round(spent, 6),
                "budget_cap_usd": budget_cap, "stopped": stopped,
+               "skipped_failed_batches": skipped_failed,
+               "note": ("spent_usd/paid_attempts are cumulative across all runs "
+                        "of this output dir (prior spend carried in from "
+                        "calls_log.jsonl); skipped_failed_batches require "
+                        "--retry-failed to be re-sent"),
                "finished_at_utc": now()}
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return summary
@@ -735,12 +803,18 @@ def main() -> int:
         if name == "prepare":
             sp.add_argument("--dry-run", action="store_true",
                             help="print pool sizes and cost bounds without writing")
+        if name == "execute":
+            sp.add_argument("--retry-failed", action="store_true",
+                            help="re-send batches recorded as failed in "
+                                 "errors.jsonl; default resume skips them "
+                                 "(zero-automatic-retry discipline covers "
+                                 "resumption too)")
     args = ap.parse_args()
     out = args.out or VARIANTS[args.variant]["out"]
     if args.mode == "prepare":
         prepare(out, dry_run=args.dry_run, variant=args.variant)
     elif args.mode == "execute":
-        execute(out)
+        execute(out, retry_failed=args.retry_failed)
     elif args.mode == "report":
         report(out)
     else:

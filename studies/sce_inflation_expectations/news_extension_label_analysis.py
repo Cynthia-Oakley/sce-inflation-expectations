@@ -289,7 +289,7 @@ def append_reading_page(analysis, page, prior_page, out):
                  if row['snippet'] and row['snippet'] != row['abstract'] and row['snippet'] not in row['abstract'] else '')
         examples.append('<details><summary style="display:block;white-space:normal;width:100%">'
                         f'{row["target_month"]} · {esc(row["headline"])} — {names[label["decision"]]}</summary>'
-                        f'<p>{esc(row["abstract"])}</p>{extra}<p>分类理由：{esc(label["reason_zh"])}</p>'
+                        f'<p>{esc(row["abstract"])}</p>{extra}<p>分类理由：{esc(label.get("reason_zh") or "（精简标签不含分类理由字段）")}</p>'
                         f'<p><a href="{esc(row["web_url"],quote=True)}">原新闻</a></p></details>')
     section = ('<section id="multiperiod-news-results"><h2>四个新月份：新闻精筛已完成</h2>'
                f'<p class="important">{result["unique_articles"]}篇候选已取得标签，共{result["paid_requests"]}次请求；'

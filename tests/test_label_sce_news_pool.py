@@ -19,8 +19,8 @@ sys.path.insert(0, str(REPO_ROOT / "scripts"))
 from label_sce_news_pool import (  # noqa: E402
     BATCH, BUDGET_CAP, DECISIONS, MAX_TOKENS, MODEL, PRICE_IN, PRICE_OUT,
     PROVIDER_ORDER, SCOPES, SYSTEM_PROMPT_V2, SYSTEM_PROMPT_V21, TOPICS,
-    VARIANTS, batch_cost_estimates, completed_batch_ids, make_payload,
-    validate_batch, validate_label,
+    VARIANTS, batch_cost_estimates, completed_batch_ids, failed_batch_ids,
+    make_payload, prior_spend, validate_batch, validate_label,
 )
 
 ART = {
@@ -105,6 +105,46 @@ class TestResumeDedup(unittest.TestCase):
             empty = Path(td) / "sub"
             empty.mkdir()
             self.assertEqual(completed_batch_ids(empty), set())
+
+
+class TestResumeBudgetPersistence(unittest.TestCase):
+    """Codex review fix: resume must not reset the spend counter, and failed
+    batches must not be silently re-sent."""
+
+    def test_failed_batch_ids_skips_budget_stops(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            out = Path(td)
+            (out / "errors.jsonl").write_text(
+                json.dumps({"batch_id": 5, "type": "RuntimeError",
+                            "error": "non_200"}) + "\n"
+                + json.dumps({"batch_id": 6, "type": "budget_stop"}) + "\n"
+                + json.dumps({"batch_id": 7, "type": "ValueError",
+                              "error": "invalid label"}) + "\n")
+            self.assertEqual(failed_batch_ids(out), {5, 7})
+            empty = Path(td) / "sub"
+            empty.mkdir()
+            self.assertEqual(failed_batch_ids(empty), set())
+
+    def test_prior_spend_carries_cost_and_unknown_billing(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            out = Path(td)
+            (out / "calls_log.jsonl").write_text(
+                json.dumps({"batch_id": 1, "http_status": 200,
+                            "cost_usd": 0.004}) + "\n"
+                + json.dumps({"batch_id": 2, "http_status": 200,
+                            "cost_usd": 0.006}) + "\n"
+                + json.dumps({"batch_id": 3, "http_status": 200}) + "\n"
+                + json.dumps({"batch_id": 4, "http_status": 500,
+                              "error": "non_200"}) + "\n")
+            spent, paid, unknown = prior_spend(out)
+            self.assertAlmostEqual(spent, 0.010, places=6)
+            self.assertEqual(paid, 3)       # two priced + one unknown-billing 200
+            self.assertEqual(unknown, 1)    # the 200 without cost is flagged
+            empty = Path(td) / "sub"
+            empty.mkdir()
+            self.assertEqual(prior_spend(empty), (0.0, 0, 0))
 
 
 class TestCostBounds(unittest.TestCase):

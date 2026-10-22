@@ -42,8 +42,18 @@
 
 **结论（待用户批准执行）**：全量补标 43,512 篇缺口用 deepseek-flash 官方端点 + 精简 4 字段 prompt v2.1，temperature 0、thinking 关闭、8 篇/批；旧 7,157 篇保留不重标（一致性已验证）。预估费用按保守价 ≤$4.5（flash 实际价更低，约 $1.5–2），5,439 批约 1.5 小时。
 
+## Codex 复审落实（2026-10-22 下午）
+
+Codex 对管线提三点反馈，均已处理：
+
+1. **真实缺口重算**：43,512 是旧的逐月缺口累计（含跨窗口重复，且索引漏掉近期已完成标签）。合并全部正式标签（旧 7,157 + 试点 1,868 + 一致性 300 = 8,725 篇）、按 article_id 跨月去重后：93 窗口唯一候选 38,903 篇，**真实待标 30,274 篇**（跨窗口重复 15,583 次）。预估费用约 $2（保守上限 $3）。文章跨月复用，不为重复出现重复付费。
+2. **精简字段接入模拟验证**：生产链路（expanded_state_inputs / personal_information_views / reference/finance preparation / post2025_trial / news_exposure_demo）只读 `semantic_label['decision']=='keep'`，精简标签天然兼容；提示词渲染（render_news_input）只用原文 headline/abstract/snippet。硬读旧字段的仅是分析/报告/验收脚本，已做最小 .get() 修复：news_selection_analysis.py、news_extension_label_analysis.py、scripts/finalize_sce_news_parts.py（该文件为 Codex 未跟踪文件，修复留在工作区由 Codex 提交）。新增兼容层 studies/sce_inflation_expectations/news_label_compat.py（normalize_label 统一两 schema、缺失字段 None 不补造）与离线验证 scripts/verify_sce_news_label_compat.py：旧标签月 2022-03（653 标注/287 keep）与新标签月 2019-06（616 标注/185 keep）各组装一次新闻块，渲染输出与"仅原文重建"逐字节一致。测试 tests/test_news_label_compat.py 7 项。
+3. **预算/断点续跑修复**（label_sce_news_pool.py）：续跑从 calls_log.jsonl 累计历史费用（prior_spend），不再从零计费；失败批持久记录于 errors.jsonl，续跑默认跳过、须显式 `--retry-failed` 才重发；每个成功批的原始 API 回复（key 已脱敏）存 responses/batch_XXXX.json 供审计；summary 增加 skipped_failed_batches 与累计口径说明。新增测试 2 项（共 22 项通过）。
+
+⚠️ code_sha256 协议纪律：脚本已变更，旧输出目录（三个试点）不能再 execute（会报 "Script changed after prepare"）；新运行需重新 prepare。
+
 ## 待决
 
-- **推荐方案**：只标新增缺口 43,512 篇，用 deepseek-flash（与旧标签同模型，一致性已验证 87.7%），旧 7,157 篇保留不重标、字段差异在 README 明示。预估 ≤$4.5 保守价（实际约 $1.5–2）。
-- **用户 2026-10-22 决定：暂缓执行**。管线已就绪（`prepare --variant flash` 改 groups 即可扩展到全量；需先把 full-period 组加入脚本 VARIANTS 或新 variant），随时可启动。
+- **推荐方案**：只标新增缺口 **30,274 篇**（跨月去重后），用 deepseek-flash（与旧标签同模型，一致性已验证 87.7%），旧 7,157 篇保留不重标、字段差异由 news_label_compat 层吸收。预估约 $2（保守上限 $3）。
+- **用户 2026-10-22 决定：暂缓执行**。管线已就绪；全量执行前需新增一个按"去重待标清单"生成的 variant（prepare 支持读预生成清单，而非逐月重建批次）。
 - ~~是否全量重标 50,669 篇统一 vintage~~：flash 一致性验证通过后已无必要。

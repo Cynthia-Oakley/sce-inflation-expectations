@@ -213,3 +213,11 @@
 - 决定性对照（用户提议）：换回原打标模型 deepseek-flash（官方端点）+ 同一精简提示词，一致率 87.7%/86.8%/80.7% 全达标 → 漂移来自模型而非砍字段。打标模型与模拟模型解耦。
 - 用户决定：全量补标 43,512 篇暂缓。管线就绪（scripts/label_sce_news_pool.py，flash variant，$0.08 试点验证过），随时可启动，预估 ≤$4.5。
 - 提交：340b739（管线+测试）、ef631c6（flash 变体）、4e7b77c（一致性结论记录）。文档 docs/workstreams/20261021_fullperiod/news_label_slim_pilot_20261021.md。
+
+## 2026-10-22 下午 落实 Codex 对标签管线三点复审
+
+- 真实缺口重算：跨月去重后待标 30,274 篇（非 43,512；唯一候选 38,903，已有标签 8,725），预估约 $2。
+- 兼容层 studies/sce_inflation_expectations/news_label_compat.py + 离线验证 scripts/verify_sce_news_label_compat.py：2022-03（legacy7）与 2019-06（slim4）各组装新闻块，生产渲染器输出与仅原文重建逐字节一致；三处硬读旧字段的分析/报告脚本最小 .get() 修复（finalize_sce_news_parts.py 为 Codex 未跟踪文件，修复留工作区）。
+- label_sce_news_pool.py 预算/续跑修复：历史费用累计进预算、失败批持久化默认不重发（--retry-failed 显式放行）、原始回复脱敏存 responses/。
+- 测试：test_label_sce_news_pool.py 22 项 + test_news_label_compat.py 7 项全绿；flash dry-run 正常。
+- 注意：脚本 code_sha256 已变，旧试点目录不可再 execute，新运行须重新 prepare。

@@ -99,7 +99,8 @@ def main(argv=None):
                     if label['decision']=='keep':old_final_topics.update(label['topics'])
                 public={k:r[k] for k in ('article_id','event_id','headline','web_url','pub_date','stratum')}
                 public.update(target=target,decision=label['decision'],topics=label['topics'],scope=label['scope'],
-                              claim_type=label['claim_type'],reason_zh=label['reason_zh'],
+                              # slim4 labels lack the legacy fields; None = unknown, never fabricated
+                              claim_type=label.get('claim_type'),reason_zh=label.get('reason_zh'),
                               new_recalled=bool(r['new_hits']),old_final=r['old_final'])
                 all_public.append(public)
                 if label['decision']=='keep' and r['stratum']=='new_only':main_examples.append(public)
