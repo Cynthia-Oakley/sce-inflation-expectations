@@ -246,3 +246,11 @@
 - 入组结构示例：2020-09 returning 952/gap_return 56/entrant 158；2025-09 returning 855/gap_return 54/entrant 137。
 - 未做：其余 86 月（75 真实 + 11 合成）等 Codex 对优先月接口检查后再批量；environment.json 的 E 侧批量物化仍等 Codex 样例对齐结论。
 - 测试 tests/test_build_sce_fullperiod_batch_population.py 3 项。
+
+## 2026-10-22 任务2交付：人口网格覆盖与512人分配建议
+
+- 产出 outputs/sce_population_grid_20261022_v1/（grid_support + core_allocation_proposal + README）与 scripts/build_sce_population_grid.py（16 项测试绿）。
+- 关键读数：六主格在全部 82 个微观月 N≥10 且 ESS≥10（最小 high_school|not_attached ESS 33.2）；旧草案稀疏问题在全月框架下消失；unknown 池小且稀疏（逐月 N 0–16，学历缺失全时段仅 572 行，单列不并格）；未在职内部退休约 55%、失业/残障/家务各约 10–12%；新入组占比逐月 8.8–14.3%。
+- 名额规则：每主格保底 24（ESS/N≈0.94 ⇒ 期望 ESS≈22.6；最坏比例 SE 14.4pp→10.2pp；保底占比 28% 低于旧 12/192 的 37.5%；最小主格 N=36≥24 实践中无回退），余量按权重和最大余数分配，格内不放回 SRS，π=n/N，分析权重=调查权重/π。
+- 11 个无微观月标 synthetic_framework，名额待合成框架组装后按同规则补算。
+- 纪律：选择依据是覆盖支持而非模型误差；新抽样仅供最终全量配置，不改现有实验人口。
