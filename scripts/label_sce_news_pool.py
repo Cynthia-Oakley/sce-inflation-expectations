@@ -17,9 +17,14 @@ Three pilot groups (as_of per outputs/sce_fullperiod_data_20261021_v1/coverage.j
   new-label:   all candidates of 2019-06 (~616) and 2025-05 (~952).
 
 Subcommands:
+  build-manifest  build the cross-month deduplicated to-label manifest for
+                  the full-period run (all coverage windows, keep first
+                  window per article, subtract every article that already has
+                  a label). Offline; writes one jsonl row per article.
   prepare  build pools/batches, write protocol.json + system_prompt_v2.md +
            calls.jsonl + cost bounds. Offline. --dry-run prints the same
-           summary without writing anything.
+           summary without writing anything. The "full" variant reads the
+           pre-built manifest instead of rebuilding monthly pools.
   execute  requires authorization.json (approved=true, protocol sha256 match);
            calls OpenRouter deepseek/deepseek-v3.2 locked to DeepInfra
            (or the official DeepSeek endpoint for the flash variant),
@@ -30,7 +35,14 @@ Subcommands:
            Failed batches are persisted in errors.jsonl and are NOT re-sent
            on resume unless --retry-failed is passed explicitly; raw API
            responses (credential-redacted) are saved under responses/ for
-           audit.
+           audit. Execution is concurrent (--workers, default 8): workers do
+           pure network/validation while all budget accounting and file
+           appends stay in the main thread; in-flight batches hold budget
+           reservations so the hard cap remains exact.
+  repair   offline repair of batch_validation_failed batches whose only
+           defect is extra echoed input fields: projects the SAVED raw
+           response onto the frozen 4 fields, revalidates, appends to the
+           label store. No API calls; classification content never altered.
   report   consistency agreement (decision rate, topics Jaccard, scope rate,
            disagreement samples, red flag if decision agreement < 85%).
 
@@ -177,6 +189,21 @@ VARIANTS = {
                     "4-field prompt v2.1; isolates model vs prompt as the source "
                     "of the v3.2 drift; same 300-article seeded sample (2022-03)"),
     },
+    "full": {
+        "out": ROOT / "outputs/sce_news_labels_full_20261022_v2",
+        "prompt": SYSTEM_PROMPT_V21,
+        "prompt_file": "system_prompt_v21.md",
+        "groups": ["full"], "budget_cap": 3.00,
+        "cons_dir": "consistency",
+        "engine": "deepseek_official",
+        "manifest": ROOT / "outputs/sce_fullperiod_data_20261021_v1"
+                    / "news_tolabel_manifest_20261022.jsonl",
+        "purpose": ("full-period labeling of the cross-month deduplicated "
+                    "to-label manifest (build-manifest subcommand): deepseek-flash "
+                    "official endpoint + slim 4-field prompt v2.1; articles are "
+                    "labeled once and reused across windows; user approved the "
+                    "~$2 estimate ($3.00 hard cap) on 2026-10-22"),
+    },
 }
 
 
@@ -282,6 +309,67 @@ def load_old_labels() -> dict[str, dict]:
                         "topics": row.get("topics"),
                         "scope": row.get("scope")}
     return old
+
+
+def existing_label_ids() -> set[str]:
+    """Article ids that already carry a label in any label store."""
+    return set(load_old_labels())
+
+
+def filter_unlabeled(rows: list[dict], labeled_ids: set[str]) -> list[dict]:
+    """Pure subtraction used by the manifest builder (tested in isolation)."""
+    return [r for r in rows if r["article_id"] not in labeled_ids]
+
+
+def build_tolabel_manifest(out_path: Path) -> dict:
+    """Cross-month deduplicated to-label manifest for the full-period run.
+
+    Builds every coverage window's candidate pool, dedups by article_id
+    (keep first window, count cross-window reuse), subtracts every article
+    that already has a label, and writes one jsonl row per remaining article
+    with the payload fields plus provenance (first_window, n_windows).
+    Offline; no API calls.
+    """
+    rules = RecallRules(json.loads(RULE_FILE.read_text()))
+    cov = json.loads(COVERAGE.read_text())
+    months = [m["target_month"] for m in cov["months"]]
+    labeled = existing_label_ids()
+    seen: dict[str, dict] = {}
+    n_windows: Counter = Counter()
+    window_candidates = 0
+    for target in months:
+        rows, counts = build_pool_tolerant(ROOT, target, as_of_for(target), rules)
+        window_candidates += counts.get("candidates", 0)
+        for r in rows:
+            n_windows[r["article_id"]] += 1
+            if r["article_id"] not in seen:
+                seen[r["article_id"]] = r
+    unique = list(seen.values())
+    tolabel = filter_unlabeled(unique, labeled)
+    tolabel.sort(key=lambda r: (r["pub_date"], r["article_id"]))
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with out_path.open("w") as fh:
+        for r in tolabel:
+            row = {k: r[k] for k in ("article_id", "headline", "abstract",
+                                     "snippet", "pub_date", "section_name",
+                                     "news_desk", "web_url")}
+            row["first_window"] = r["source_month"]
+            row["n_windows"] = n_windows[r["article_id"]]
+            fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+    stats = {"windows": len(months),
+             "window_candidate_total": window_candidates,
+             "unique_candidates": len(unique),
+             "already_labeled": len(unique) - len(tolabel),
+             "to_label": len(tolabel),
+             "cross_window_reuse": window_candidates - len(unique),
+             "manifest": str(out_path.relative_to(ROOT)),
+             "created_at_utc": now()}
+    print(json.dumps(stats, ensure_ascii=False, indent=2))
+    return stats
+
+
+def load_manifest_rows(path: Path) -> list[dict]:
+    return [json.loads(l) for l in path.read_text().splitlines() if l.strip()]
 
 
 def validate_label(label: dict) -> str | None:
@@ -398,7 +486,14 @@ def prepare(out: Path, dry_run: bool = False, variant: str = "v2") -> dict:
     price_in, price_out = prices_for(engine)
     model = FLASH_MODEL if engine == "deepseek_official" else MODEL
     destination = FLASH_URL if engine == "deepseek_official" else BASE + "/chat/completions"
-    pools = build_pools(cfg["groups"])
+    manifest = cfg.get("manifest")
+    if manifest is not None:
+        manifest_rows = load_manifest_rows(manifest)
+        pools = {"full": {"target": "all coverage windows (see coverage.json)",
+                          "rows": manifest_rows,
+                          "counts": {"candidates": len(manifest_rows)}}}
+    else:
+        pools = build_pools(cfg["groups"])
     summary = {}
     batches = []
     total_realistic = total_envelope = 0.0
@@ -476,6 +571,8 @@ def prepare(out: Path, dry_run: bool = False, variant: str = "v2") -> dict:
         "coverage_sha256": sha(COVERAGE),
         "rule_file_sha256": sha(RULE_FILE),
         "label_source_globs": LABEL_GLOBS,
+        "manifest": (str(manifest.relative_to(ROOT)) if manifest else None),
+        "manifest_sha256": sha(manifest) if manifest else None,
         "new_label_groups": [g for g in cfg["groups"] if g != "consistency"],
         "consistency_group": "2022-03",
         "consistency_dir": cfg["cons_dir"],
@@ -508,16 +605,20 @@ def failed_batch_ids(out: Path) -> set[int]:
     the caller passes --retry-failed (a deliberate, logged decision — the
     zero-automatic-retry discipline covers resumption too)."""
     failed = set()
+    repaired = set()
     p = out / "errors.jsonl"
     if p.exists():
         for line in p.read_text().splitlines():
             if not line.strip():
                 continue
             rec = json.loads(line)
+            if rec.get("type") == "repaired_offline":
+                repaired.add(rec["batch_id"])
+                continue
             if rec.get("type") == "budget_stop" or "batch_id" not in rec:
                 continue
             failed.add(rec["batch_id"])
-    return failed
+    return failed - repaired
 
 
 def prior_spend(out: Path) -> tuple[float, int, int]:
@@ -542,7 +643,7 @@ def prior_spend(out: Path) -> tuple[float, int, int]:
     return spent, paid, unknown
 
 
-def execute(out: Path, retry_failed: bool = False) -> dict:
+def execute(out: Path, retry_failed: bool = False, workers: int = 1) -> dict:
     p = json.loads((out / "protocol.json").read_text())
     a = json.loads((out / "authorization.json").read_text())
     if a.get("approved") is not True or a.get("protocol_sha256") != sha(out / "protocol.json") \
@@ -570,12 +671,19 @@ def execute(out: Path, retry_failed: bool = False) -> dict:
 
     budget_cap = p.get("budget_cap_usd", BUDGET_CAP)
     cons_dir = p.get("consistency_dir", "consistency")
-    groups = ["consistency"] + list(p.get("new_label_groups", []))
     prompt = VARIANTS[p.get("variant", "v2")]["prompt"]
     batches = [json.loads(l) for l in (out / "calls.jsonl").read_text().splitlines()]
     done = completed_batch_ids(out, cons_dir)
     failed_before = failed_batch_ids(out)
-    pools = build_pools(groups)
+    if p.get("manifest_sha256"):
+        manifest_path = ROOT / p["manifest"]
+        if sha(manifest_path) != p["manifest_sha256"]:
+            raise ValueError("To-label manifest changed after prepare")
+        groups = ["full"]
+        pools = {"full": {"rows": load_manifest_rows(manifest_path)}}
+    else:
+        groups = ["consistency"] + list(p.get("new_label_groups", []))
+        pools = build_pools(groups)
     by_id = {g: {a["article_id"]: a for a in pools[g]["rows"]} for g in groups}
 
     def payload_for(batch: dict) -> dict:
@@ -596,30 +704,27 @@ def execute(out: Path, retry_failed: bool = False) -> dict:
              "note": "prior 200 responses without recorded cost; attempts "
                      "counted, cost unknown (not zero)",
              "at_utc": now()}, ensure_ascii=False) + "\n")
-    skipped_failed = []
+    todo = [b for b in batches
+            if b["batch_id"] not in done
+            and (retry_failed or b["batch_id"] not in failed_before)]
+    skipped_failed = [b["batch_id"] for b in batches
+                      if b["batch_id"] not in done
+                      and b["batch_id"] in failed_before and not retry_failed]
     stopped = None
     import httpx
-    for b in batches:
-        if b["batch_id"] in done:
-            continue
-        if b["batch_id"] in failed_before and not retry_failed:
-            skipped_failed.append(b["batch_id"])
-            continue
-        if spent + b["realistic_bound_usd"] > budget_cap:
-            stopped = {"batch_id": b["batch_id"], "spent_usd": round(spent, 6),
-                       "reason": "budget_cap"}
-            errors_fh.write(json.dumps({"type": "budget_stop", **stopped},
-                                       ensure_ascii=False) + "\n")
-            break
-        payload = payload_for(b)
+    from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
+
+    def attempt_batch(b: dict):
+        """Network + validation for one batch. Pure w.r.t. shared state: the
+        only side effect is this batch's own raw-response file. Returns
+        (call_record, label_rows, error_row); exactly one of the latter two
+        is not None."""
         record = {"batch_id": b["batch_id"], "group": b["group"], "at_utc": now()}
-        reply = {}
         try:
-            url = p["destination"]
             with httpx.Client(timeout=120, follow_redirects=False) as client:
-                resp = client.post(url,
+                resp = client.post(p["destination"],
                                    headers={"Authorization": "Bearer " + key},
-                                   json=payload)
+                                   json=payload_for(b))
             record["http_status"] = resp.status_code
             if resp.status_code != 200:
                 raise RuntimeError(f"non_200_no_retry status={resp.status_code}")
@@ -636,8 +741,7 @@ def execute(out: Path, retry_failed: bool = False) -> dict:
             raw = json.loads(json.dumps(reply, ensure_ascii=False).replace(key, "<redacted>"))
             (out / "responses" / f"batch_{b['batch_id']:04d}.json").write_text(
                 json.dumps(raw, ensure_ascii=False, indent=1) + "\n")
-            content = reply["choices"][0]["message"]["content"]
-            obj = json.loads(content)
+            obj = json.loads(reply["choices"][0]["message"]["content"])
             invalid = validate_batch(b["article_ids"], obj.get("labels"))
             if invalid:
                 raise ValueError(f"batch_validation_failed: {invalid}")
@@ -645,8 +749,6 @@ def execute(out: Path, retry_failed: bool = False) -> dict:
             bill = billing(reply, {"input_price_per_million": pin,
                                    "output_price_per_million": pout},
                            b["byte_envelope_usd"])
-            spent += bill["charged_or_reserved_usd"]
-            paid += 1
             record.update(cost_usd=bill["charged_or_reserved_usd"],
                           cost_kind=bill["kind"],
                           usage=bill.get("usage"))
@@ -654,32 +756,133 @@ def execute(out: Path, retry_failed: bool = False) -> dict:
                        "label": {k: l[k] for k in
                                  ("article_id", "decision", "topics", "scope")}}
                       for l in obj["labels"]]
-            fh = cons_fh if b["group"] == "consistency" else labels_fh
-            for row in labels:
-                fh.write(json.dumps(row, ensure_ascii=False) + "\n")
-            fh.flush()
+            return record, labels, None
         except Exception as exc:
             record["error_type"] = type(exc).__name__
             record["error"] = str(exc)[:300]
-            errors_fh.write(json.dumps({"batch_id": b["batch_id"],
-                                        "group": b["group"],
-                                        "type": type(exc).__name__,
-                                        "error": record["error"],
-                                        "at_utc": now()}, ensure_ascii=False) + "\n")
-        # redact any credential echo before persisting the call log
-        record = json.loads(json.dumps(record, ensure_ascii=False).replace(key, "<redacted>"))
-        calls_log_fh.write(json.dumps(record, ensure_ascii=False) + "\n")
-        calls_log_fh.flush()
-        errors_fh.flush()
+            return record, None, {"batch_id": b["batch_id"], "group": b["group"],
+                                  "type": type(exc).__name__,
+                                  "error": record["error"], "at_utc": now()}
+
+    # Concurrency design: workers do pure network/validation; ALL shared
+    # state (budget accounting, file appends) is touched only by the main
+    # thread when a future completes, so no locks are needed. Budget
+    # discipline under concurrency: each in-flight batch holds a reservation
+    # of its realistic bound; a new batch is submitted only while
+    # spent + reserved + its bound stays under the cap. Submission order
+    # stays batch order; only completion order varies (batch_id recorded).
+    in_flight = {}
+    reserved = 0.0
+    idx = 0
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        while True:
+            while stopped is None and idx < len(todo) and len(in_flight) < workers:
+                b = todo[idx]
+                if spent + reserved + b["realistic_bound_usd"] > budget_cap:
+                    stopped = {"batch_id": b["batch_id"],
+                               "spent_usd": round(spent, 6),
+                               "reason": "budget_cap"}
+                    break
+                reserved += b["realistic_bound_usd"]
+                in_flight[ex.submit(attempt_batch, b)] = b
+                idx += 1
+            if not in_flight:
+                break
+            finished, _ = wait(in_flight, return_when=FIRST_COMPLETED)
+            for fut in finished:
+                b = in_flight.pop(fut)
+                reserved -= b["realistic_bound_usd"]
+                record, labels, error = fut.result()
+                if error is not None:
+                    errors_fh.write(json.dumps(error, ensure_ascii=False) + "\n")
+                else:
+                    spent += record["cost_usd"]
+                    paid += 1
+                    fh = cons_fh if b["group"] == "consistency" else labels_fh
+                    for row in labels:
+                        fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+                    fh.flush()
+                # redact any credential echo before persisting the call log
+                record = json.loads(json.dumps(record, ensure_ascii=False).replace(key, "<redacted>"))
+                calls_log_fh.write(json.dumps(record, ensure_ascii=False) + "\n")
+            calls_log_fh.flush()
+            errors_fh.flush()
+    if stopped is not None:
+        errors_fh.write(json.dumps({"type": "budget_stop", **stopped},
+                                   ensure_ascii=False) + "\n")
     labels_fh.close(); cons_fh.close(); errors_fh.close(); calls_log_fh.close()
     summary = {"paid_attempts": paid, "spent_usd": round(spent, 6),
                "budget_cap_usd": budget_cap, "stopped": stopped,
+               "workers": workers,
                "skipped_failed_batches": skipped_failed,
                "note": ("spent_usd/paid_attempts are cumulative across all runs "
                         "of this output dir (prior spend carried in from "
                         "calls_log.jsonl); skipped_failed_batches require "
                         "--retry-failed to be re-sent"),
                "finished_at_utc": now()}
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    return summary
+
+
+def repair(out: Path) -> dict:
+    """Offline repair of batch_validation_failed batches whose only defect is
+    extra echoed input fields: project each returned label to the frozen four
+    fields from the SAVED raw response, revalidate, and append to the label
+    store. No API calls; classification content is never altered (format-only
+    repair discipline). Repaired batches are excluded from failed_batch_ids.
+    """
+    p = json.loads((out / "protocol.json").read_text())
+    cons_dir = p.get("consistency_dir", "consistency")
+    batches = {b["batch_id"]: b for b in
+               map(json.loads, (out / "calls.jsonl").read_text().splitlines())}
+    done = completed_batch_ids(out, cons_dir)
+    repaired: list[int] = []
+    unrepairable: list[dict] = []
+    errors_path = out / "errors.jsonl"
+    records = [json.loads(l) for l in errors_path.read_text().splitlines()
+               if l.strip()] if errors_path.exists() else []
+    with errors_path.open("a") as errors_fh:
+        for rec in records:
+            if "batch_validation_failed" not in str(rec.get("error", "")):
+                continue
+            bid = rec["batch_id"]
+            if bid in done or bid in repaired:
+                continue
+            rpath = out / "responses" / f"batch_{bid:04d}.json"
+            if not rpath.exists():
+                unrepairable.append({"batch_id": bid, "reason": "no saved response"})
+                continue
+            try:
+                reply = json.loads(rpath.read_text())
+                obj = json.loads(reply["choices"][0]["message"]["content"])
+                labels = [{k: l[k] for k in
+                           ("article_id", "decision", "topics", "scope")}
+                          for l in obj["labels"]]
+            except Exception as exc:
+                unrepairable.append({"batch_id": bid,
+                                     "reason": f"projection failed: {exc}"})
+                continue
+            invalid = validate_batch(batches[bid]["article_ids"], labels)
+            if invalid:
+                unrepairable.append({"batch_id": bid,
+                                     "reason": f"still invalid: {invalid}"})
+                continue
+            b = batches[bid]
+            store = (out / cons_dir / "labels_new.jsonl"
+                     if b["group"] == "consistency" else out / "labels.jsonl")
+            with store.open("a") as fh:
+                for l in labels:
+                    fh.write(json.dumps(
+                        {"batch_id": bid, "group": b["group"], "label": l,
+                         "repair": "offline_field_projection",
+                         "response_file": rpath.name}, ensure_ascii=False) + "\n")
+            errors_fh.write(json.dumps(
+                {"batch_id": bid, "type": "repaired_offline",
+                 "note": "extra echoed fields dropped from the saved response; "
+                         "decision/topics/scope unchanged",
+                 "at_utc": now()}, ensure_ascii=False) + "\n")
+            repaired.append(bid)
+    summary = {"repaired": repaired, "unrepairable": unrepairable}
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return summary
 
@@ -795,7 +998,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="mode", required=True)
-    for name in ("prepare", "execute", "report", "manifest"):
+    for name in ("prepare", "execute", "report", "manifest", "build-manifest",
+                 "repair"):
         sp = sub.add_parser(name)
         sp.add_argument("--out", type=Path, default=None)
         sp.add_argument("--variant", choices=sorted(VARIANTS), default="v2",
@@ -809,14 +1013,24 @@ def main() -> int:
                                  "errors.jsonl; default resume skips them "
                                  "(zero-automatic-retry discipline covers "
                                  "resumption too)")
+            sp.add_argument("--workers", type=int, default=8,
+                            help="concurrent in-flight batches (budget "
+                                 "reservations keep the hard cap exact; "
+                                 "1 = sequential)")
     args = ap.parse_args()
+    if args.mode == "build-manifest":
+        out_path = args.out or VARIANTS["full"]["manifest"]
+        build_tolabel_manifest(out_path)
+        return 0
     out = args.out or VARIANTS[args.variant]["out"]
     if args.mode == "prepare":
         prepare(out, dry_run=args.dry_run, variant=args.variant)
     elif args.mode == "execute":
-        execute(out, retry_failed=args.retry_failed)
+        execute(out, retry_failed=args.retry_failed, workers=args.workers)
     elif args.mode == "report":
         report(out)
+    elif args.mode == "repair":
+        repair(out)
     else:
         write_manifest(out)
     return 0

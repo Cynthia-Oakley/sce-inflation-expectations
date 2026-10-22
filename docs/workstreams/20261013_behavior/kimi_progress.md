@@ -221,3 +221,11 @@
 - label_sce_news_pool.py 预算/续跑修复：历史费用累计进预算、失败批持久化默认不重发（--retry-failed 显式放行）、原始回复脱敏存 responses/。
 - 测试：test_label_sce_news_pool.py 22 项 + test_news_label_compat.py 7 项全绿；flash dry-run 正常。
 - 注意：脚本 code_sha256 已变，旧试点目录不可再 execute，新运行须重新 prepare。
+
+## 2026-10-22 全量标签执行（用户批准 ~$2/$3 上限）+ 并发改造
+
+- 新增 full variant + build-manifest：93 窗口跨月去重清单 30,274 篇（候选总计 54,486、唯一 38,903、已标 8,629、跨窗复用 15,583），prepare 直接读清单。
+- v1 串行首发：319 批后按用户决定切并发；5 批"多字段回声"校验失败，新增 repair 子命令从已存原始回复离线投影修复（零 API、分类内容不动），2,552 篇全部入库。
+- execute 并发化（--workers，默认 8）：worker 纯网络/校验，预算记账与文件写全部留主线程；在途批持预算预占，硬上限精确。实测约 8.6 批/秒（串行 0.64），13 倍。
+- v2 续跑 27,722 篇（自动排除 v1 已完成），12 并发。目录：v1 outputs/sce_news_labels_full_20261022_v1（归档），v2 ..._v2。
+- 测试 24 项全绿（新增 repair 幂等/不可修复 2 项）。

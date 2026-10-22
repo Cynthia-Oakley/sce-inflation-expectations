@@ -20,7 +20,7 @@ from label_sce_news_pool import (  # noqa: E402
     BATCH, BUDGET_CAP, DECISIONS, MAX_TOKENS, MODEL, PRICE_IN, PRICE_OUT,
     PROVIDER_ORDER, SCOPES, SYSTEM_PROMPT_V2, SYSTEM_PROMPT_V21, TOPICS,
     VARIANTS, batch_cost_estimates, completed_batch_ids, failed_batch_ids,
-    make_payload, prior_spend, validate_batch, validate_label,
+    make_payload, prior_spend, repair, validate_batch, validate_label,
 )
 
 ART = {
@@ -145,6 +145,55 @@ class TestResumeBudgetPersistence(unittest.TestCase):
             empty = Path(td) / "sub"
             empty.mkdir()
             self.assertEqual(prior_spend(empty), (0.0, 0, 0))
+
+
+class TestRepair(unittest.TestCase):
+    """Offline repair: extra echoed fields are projected away from the saved
+    raw response; repaired batches leave the failed set; content is unchanged."""
+
+    def _make_out(self, td):
+        out = Path(td)
+        (out / "protocol.json").write_text(json.dumps({"consistency_dir": "consistency"}))
+        ids = [f"id{i}" for i in range(2)]
+        (out / "calls.jsonl").write_text(
+            json.dumps({"batch_id": 1, "group": "full", "article_ids": ids}) + "\n")
+        (out / "errors.jsonl").write_text(
+            json.dumps({"batch_id": 1, "type": "ValueError",
+                        "error": "batch_validation_failed: invalid label: fields [...]"}) + "\n")
+        (out / "responses").mkdir()
+        echoed = [{"article_id": i, "decision": "keep", "topics": [], "scope": "global",
+                   "headline": "echo", "abstract": "echo"} for i in ids]
+        (out / "responses" / "batch_0001.json").write_text(json.dumps(
+            {"choices": [{"message": {"content": json.dumps({"labels": echoed})}}]}))
+        return out
+
+    def test_repair_projects_and_revalidates(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            out = self._make_out(td)
+            self.assertEqual(failed_batch_ids(out), {1})
+            summary = repair(out)
+            self.assertEqual(summary["repaired"], [1])
+            rows = [json.loads(l) for l in (out / "labels.jsonl").read_text().splitlines()]
+            self.assertEqual(len(rows), 2)
+            self.assertEqual(set(rows[0]["label"]),
+                             {"article_id", "decision", "topics", "scope"})
+            self.assertEqual(rows[0]["repair"], "offline_field_projection")
+            # repaired batch leaves the failed set; repair is idempotent
+            self.assertEqual(failed_batch_ids(out), set())
+            self.assertEqual(repair(out)["repaired"], [])
+            rows2 = (out / "labels.jsonl").read_text().splitlines()
+            self.assertEqual(len(rows2), 2)
+
+    def test_unrepairable_without_response(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            out = self._make_out(td)
+            (out / "responses" / "batch_0001.json").unlink()
+            summary = repair(out)
+            self.assertEqual(summary["repaired"], [])
+            self.assertEqual(summary["unrepairable"][0]["batch_id"], 1)
+            self.assertEqual(failed_batch_ids(out), {1})
 
 
 class TestCostBounds(unittest.TestCase):
