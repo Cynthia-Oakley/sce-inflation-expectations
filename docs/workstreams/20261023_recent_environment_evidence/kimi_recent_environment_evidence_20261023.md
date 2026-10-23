@@ -51,7 +51,7 @@
 - 状态词汇：verified / inferred_publication / vintage_unverified / excluded / missing_permanent / unknown。
 - 逐月结论一致：**严格 B 可用来源 = bls_prices + eia_gasoline**；食品（同 CPI 归档 PDF 抽取，生产保守标 False）、政策/信心（当前文本快照，生产标 False）、新闻（vintage 未核）、SCE 锚（按设计 excluded）、微观人口（unknown）均不满足严格 B。
 - 停摆口径：2025-10 CPI 发布永久取消、2025-10 CPS 永久缺失，202512..202609 历史序列相应单元留缺，已在每月 `shutdown_permanent_missing` 标注；不补造。
-- 提醒：信心波次注册表最新为 gallup_2025_april，2026 年各月沿用该波次（陈旧 17 个月，非前视，属覆盖缺口，后续可补 Gallup 2026 年 4 月波次）。
+- 信心波次：注册表最新为 gallup_2025_april。**已查证（gallup_2026_wave_check.md）：Gallup 于 2026-02-11 宣布停测 national leadership ratings，2026 年 4 月 EPF topline 中已无 Fed chair 信心题，该题 2025-04 后未在任何 Gallup 调查中复现——系列实质终结，不是"2026 波次还没出"**。缺口期唯一观测是 2025-12 Governance 的 Powell 任职支持率（3 桶题面不同，只能作独立 stopgap）。维持 gallup_2025_april 反而是真实信息集（真实居民在 2026 年也看不到更新的该题读数）；但 2026-05 主席换人（Powell→Warsh）后，旧读数指涉对象已不在任，2026-06 起需注明此解释性限制。
 
 ## 对今晚全量运行的影响
 
@@ -72,6 +72,10 @@ $PY scripts/build_sce_monthly_readiness.py                                      
 
 完整清单（31 个输出文件，含 bytes/sha256、生成器与关键输入）：`outputs/sce_recent_environment_evidence_20261023_v1/manifest.json`。
 本轮新增代码：`studies/sce_inflation_expectations/experiments/recent_environment_evidence.py`（P0-a）、`scripts/audit_sce_news_pool_eligibility.py`（P0-c）、`scripts/build_sce_monthly_readiness.py`（P1）。
+
+## 补充任务：Gallup 2026 信心波次查证（subagent，2026-10-23）
+
+报告：`docs/workstreams/20261023_recent_environment_evidence/gallup_2026_wave_check.md`；证据 PDF（4 份，含 sha256，官网版与 Wayback 存档逐字节一致）：`outputs/sce_recent_environment_evidence_20261023_v1/sources/gallup_*.pdf`。
 
 ## 待决策（不在本任务范围）
 
