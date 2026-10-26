@@ -1,0 +1,227 @@
+{
+  "status": "partial_checkpoint_readout",
+  "primary": "last_scheduled_week_of_fully_sealed_month",
+  "provisional": true,
+  "metrics": {
+    "raw": {
+      "n_months": 8,
+      "mae_pp": 0.13650768407624103,
+      "rmse_pp": 0.1630549153369206,
+      "bias_pp": 0.09776545428179961,
+      "max_absolute_error_pp": 0.2722720979718547
+    },
+    "public_persistence": {
+      "n_months": 8,
+      "mae_pp": 0.1875,
+      "rmse_pp": 0.22079402165819614,
+      "bias_pp": -0.0625,
+      "max_absolute_error_pp": 0.3999999999999999
+    },
+    "same_cycle_prior": {
+      "n_months": 8,
+      "mae_pp": 0.18137777484203654,
+      "rmse_pp": 0.21870658923038508,
+      "bias_pp": -0.06978604800984578,
+      "max_absolute_error_pp": 0.43005327670263327
+    },
+    "fixed_blend": {
+      "n_months": 8,
+      "mae_pp": 0.16212622541153265,
+      "rmse_pp": 0.1875501183127871,
+      "bias_pp": -0.041028234284594345,
+      "max_absolute_error_pp": 0.3128121987708288
+    },
+    "macro_without_sim": {
+      "n_months": 8,
+      "mae_pp": 0.17685652484431635,
+      "rmse_pp": 0.20826919013997847,
+      "bias_pp": -0.016306682476186052,
+      "max_absolute_error_pp": 0.37093684200078814
+    },
+    "macro_plus_sim": {
+      "n_months": 8,
+      "mae_pp": 0.16107076682397758,
+      "rmse_pp": 0.18994320736984388,
+      "bias_pp": -0.0027525391290403878,
+      "max_absolute_error_pp": 0.3126527423461516
+    }
+  },
+  "horizons": {
+    "at_least_14_days_before_release": {
+      "raw": {
+        "n_months": 8,
+        "mae_pp": 0.14155688906068098,
+        "rmse_pp": 0.17966599536335456,
+        "bias_pp": 0.10564902021169287,
+        "max_absolute_error_pp": 0.38334082253415147
+      },
+      "baseline": {
+        "n_months": 8,
+        "mae_pp": 0.1875,
+        "rmse_pp": 0.22079402165819614,
+        "bias_pp": -0.0625,
+        "max_absolute_error_pp": 0.3999999999999999
+      },
+      "blend": {
+        "n_months": 8,
+        "mae_pp": 0.15949635785452243,
+        "rmse_pp": 0.18793475091043252,
+        "bias_pp": -0.03997202362829799,
+        "max_absolute_error_pp": 0.32355784934628273
+      },
+      "actual_lead_days": [
+        17,
+        20,
+        17,
+        17,
+        18,
+        20,
+        17,
+        18
+      ]
+    },
+    "at_least_21_days_before_release": {
+      "raw": {
+        "n_months": 8,
+        "mae_pp": 0.12623445234573372,
+        "rmse_pp": 0.16299574906317868,
+        "bias_pp": 0.08451340528567486,
+        "max_absolute_error_pp": 0.325234686548062
+      },
+      "baseline": {
+        "n_months": 8,
+        "mae_pp": 0.1875,
+        "rmse_pp": 0.22079402165819614,
+        "bias_pp": -0.0625,
+        "max_absolute_error_pp": 0.3999999999999999
+      },
+      "blend": {
+        "n_months": 8,
+        "mae_pp": 0.16440991659107956,
+        "rmse_pp": 0.19308972330595756,
+        "bias_pp": -0.04280369420868718,
+        "max_absolute_error_pp": 0.3316338439853652
+      },
+      "actual_lead_days": [
+        24,
+        27,
+        24,
+        24,
+        25,
+        27,
+        24,
+        25
+      ]
+    },
+    "at_least_7_days_before_release": {
+      "raw": {
+        "n_months": 8,
+        "mae_pp": 0.13650768407624103,
+        "rmse_pp": 0.1630549153369206,
+        "bias_pp": 0.09776545428179961,
+        "max_absolute_error_pp": 0.2722720979718547
+      },
+      "baseline": {
+        "n_months": 8,
+        "mae_pp": 0.1875,
+        "rmse_pp": 0.22079402165819614,
+        "bias_pp": -0.0625,
+        "max_absolute_error_pp": 0.3999999999999999
+      },
+      "blend": {
+        "n_months": 8,
+        "mae_pp": 0.16212622541153265,
+        "rmse_pp": 0.1875501183127871,
+        "bias_pp": -0.041028234284594345,
+        "max_absolute_error_pp": 0.3128121987708288
+      },
+      "actual_lead_days": [
+        10,
+        13,
+        10,
+        10,
+        11,
+        13,
+        10,
+        11
+      ]
+    },
+    "last_week_in_month": {
+      "raw": {
+        "n_months": 8,
+        "mae_pp": 0.13650768407624103,
+        "rmse_pp": 0.1630549153369206,
+        "bias_pp": 0.09776545428179961,
+        "max_absolute_error_pp": 0.2722720979718547
+      },
+      "baseline": {
+        "n_months": 8,
+        "mae_pp": 0.1875,
+        "rmse_pp": 0.22079402165819614,
+        "bias_pp": -0.0625,
+        "max_absolute_error_pp": 0.3999999999999999
+      },
+      "blend": {
+        "n_months": 8,
+        "mae_pp": 0.16212622541153265,
+        "rmse_pp": 0.1875501183127871,
+        "bias_pp": -0.041028234284594345,
+        "max_absolute_error_pp": 0.3128121987708288
+      },
+      "actual_lead_days": [
+        10,
+        13,
+        10,
+        10,
+        11,
+        13,
+        10,
+        11
+      ]
+    }
+  },
+  "operation": {
+    "status": "stopped_partial_not_final",
+    "sealed_weeks": 35,
+    "planned_weeks": 47,
+    "first_sealed": "w20251107",
+    "last_sealed": "w20260703",
+    "completed_target_months": 8,
+    "main_attempted": 10731,
+    "repair_attempted": 26,
+    "physical_attempts": 10757,
+    "never_dispatched_main": 3369,
+    "unresolved_dispatches": 0,
+    "errors": {
+      "APIConnectionError": 26,
+      "PermissionDeniedError": 1
+    },
+    "hard_errors": [
+      {
+        "week": "w20260710",
+        "stage": "main",
+        "error": "PermissionDeniedError",
+        "http_status": 403,
+        "at_utc": "2026-10-26T18:10:29.866344+00:00"
+      }
+    ],
+    "retained_fields_sealed_weeks": {
+      "q8": 2,
+      "q9": 2
+    },
+    "reported_cost_usd": 6.771161587999997,
+    "spent_or_reserved_usd": 6.858539958999998,
+    "unknown_fee_reservation_usd": 0.08737837100000068,
+    "remaining_budget_usd": 8.141460041000002,
+    "new_API_calls": 0,
+    "no_automatic_paid_resumption": true
+  },
+  "fixed_simulation_weight": 0.1339762571517809,
+  "new_API_calls": 0,
+  "limits": [
+    "Only completed months; July partial week is descriptive, not a month-end score.",
+    "No true weekly microdata; simulation IQR is descriptive; no W1 accuracy claim.",
+    "Targets now opened only in this separate offline analysis; continuing cannot change frozen settings.",
+    "These are retrospective weekly states, not historically sealed live forecasts."
+  ]
+}

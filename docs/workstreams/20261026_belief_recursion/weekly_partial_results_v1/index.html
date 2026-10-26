@@ -1,0 +1,23 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>周度模拟：中途停止与已完成部分分析</title>
+<style>body{max-width:1100px;margin:35px auto;padding:0 22px;color:#26313d;background:#fafbfd;font:18px/1.75 "Times New Roman","KaiTi SC",KaiTi,serif}h1{font-size:29px}h2{margin-top:32px;font-size:23px}p{text-indent:2em}.notice{padding:15px 20px;background:#fff0d8;border-left:4px solid #d36b12}img{width:100%;background:white}table{width:100%;border-collapse:collapse;margin:15px 0;background:white}th,td{text-align:right;padding:8px;border-bottom:1px solid #dce2e9}th:first-child,td:first-child{text-align:left}.caption{font-size:15px;color:#586673}a{color:#1769aa}code{font-size:14px}@media print{body{font-size:12pt}}</style>
+<h1>周度模拟：35周已完成，8个完整月份的阶段性结果</h1>
+<div class="notice">本批尚未完成：35/47周已封存，停止于2026-07-10。这里不把7月3日冒充7月月末点，也不报告完整11月成绩。分析新增API调用为0。</div>
+<h2>1. 停止情况与数据完整性</h2>
+<p>触发停止的是一次HTTP403（PermissionDeniedError）。原始日志没有保存错误正文，不能仅凭错误类区分权限、预算或内容拦截。之后的只读密钥检查确认该key累计额度上限$100、使用约$100.05、剩余0；这与停止相符。上限是整把key的累计限制，并不是这批$15的预算。先提高key限额，再显式处理已登记403与接续；本页没有自动续跑。</p>
+<p>主请求已尝试10,731次，补批26次，共10,757次物理尝试。还有3,369个主位置从未发送，没有未知在途请求。费用实报$6.7712，另有$0.0874未知费用预留；剩余批预算约$8.14。35个封存周通过原始账本哈希、300户固定身份、前驱状态与字段时间检查。Q8、Q9各有2个户周在一次补跑后仍沿用此前字段，未删除个体。</p>
+<h2>2. 主指标：每月最后一个预定周点，对比当月SCE</h2>
+<p>评价范围为2025-11至2026-06，共8个月。原始模拟MAE为0.1365pp，持续性为0.1875pp，下降27.2%；8个月中有5个月绝对误差更低。同周期先验保持不动的MAE为0.1814pp，这个对照有助于区分校准本身与校准后的模型更新。</p>
+<table><thead><tr><th>方法（相同8个月）</th><th>MAE / pp</th><th>RMSE / pp</th><th>平均偏差 / pp</th></tr></thead><tbody><tr><td>原始周度模拟</td><td>0.1365</td><td>0.1631</td><td>+0.0978</td></tr><tr><td>当时公开SCE持续性</td><td>0.1875</td><td>0.2208</td><td>-0.0625</td></tr><tr><td>同周期合成先验保持不动</td><td>0.1814</td><td>0.2187</td><td>-0.0698</td></tr><tr><td>固定A早48月MSE组合</td><td>0.1621</td><td>0.1876</td><td>-0.0410</td></tr><tr><td>冻结SCE+CPI</td><td>0.1769</td><td>0.2083</td><td>-0.0163</td></tr><tr><td>冻结SCE+CPI+模拟</td><td>0.1611</td><td>0.1899</td><td>-0.0028</td></tr></tbody></table>
+<p>固定组合沿用A早48个月冻结的模拟权重0.133976，没有在这8个月重新选权。其MAE高于原始模拟：这段样本中，较小的模拟权重会将有效的变化信号拉回上期值。该现象不能据此改变本批冻结参数，亦不能预断剩余三个月。</p>
+<img src="weekly_path.png" alt="已封存35周的模拟、公开锚、固定组合和月度真值"><div class="caption">来源：sce_weekly_terminal_20261027_v1的35份封存检查点。细竖线表示已公开SCE触发的校准周；黑点是月度调查真值，不存在真人周度真值。最后一个点是7月3日，仅描述。</div>
+<h2>3. 收益与偏差出现在哪里</h2>
+<p>2025年12月、2026年1—4月优于持续性；11月、5月、6月不如持续性。3月预测3.651%、真值3.4%，仍然高估，但比照抄3.0%的误差小；4月预测3.631%、真值3.6%，接近调查中心。6月预测3.972%、真值3.7%，为目前最大的绝对误差0.272pp。8个月有7个月偏高，平均偏差+0.098pp，因此不能只呈现平均收益。</p>
+<img src="errors_and_dispersion.png" alt="逐月误差与模拟横截面IQR"><div class="caption">相同8个完整月、月等权、单位pp。IQR是300户模拟Q9均值的横截面四分位距；由于没有真人周度微观资料，不作为微观准确性证据，不计算真人W1。</div>
+<table><thead><tr><th>月份</th><th>SCE / %</th><th>模拟 / %</th><th>原始误差 / pp</th><th>持续性误差 / pp</th><th>组合误差 / pp</th></tr></thead><tbody><tr><td>2025-11</td><td>3.200</td><td>3.244</td><td>0.044</td><td>0.000</td><td>0.006</td></tr><tr><td>2025-12</td><td>3.400</td><td>3.245</td><td>0.155</td><td>0.200</td><td>0.194</td></tr><tr><td>2026-01</td><td>3.100</td><td>3.258</td><td>0.158</td><td>0.300</td><td>0.281</td></tr><tr><td>2026-02</td><td>3.000</td><td>3.030</td><td>0.030</td><td>0.100</td><td>0.091</td></tr><tr><td>2026-03</td><td>3.400</td><td>3.651</td><td>0.251</td><td>0.400</td><td>0.313</td></tr><tr><td>2026-04</td><td>3.600</td><td>3.631</td><td>0.031</td><td>0.200</td><td>0.169</td></tr><tr><td>2026-05</td><td>3.500</td><td>3.651</td><td>0.151</td><td>0.100</td><td>0.107</td></tr><tr><td>2026-06</td><td>3.700</td><td>3.972</td><td>0.272</td><td>0.200</td><td>0.137</td></tr></tbody></table>
+<h2>4. 提前量与解释边界</h2>
+<p>主点距目标数据发布有10—13天；至少14天面板的原始MAE为0.1416pp，至少21天面板为0.1262pp。所有提前量都按全47周原计划先选日期，再检查已完成部分，未按误差选周。三个面板复用相同8个月，不是三批独立证据，不能因21天数值更好就更换主指标。</p>
+<p>这是一条固定300户、发布后校准先验、发布之间由本人模拟信念递推的轨迹。没有新旧受访者轮换，也没有Normal扩展。300户不是每月1200个独立受访者。人口和文本版本、模型知识边界沿原协议保留。本次8个月结果优于持续性，但只能称阶段性线索；不得与完整11月的月度方案直接比较成“周度方法优胜”。</p>
+<h2>5. 接续与评价工程</h2>
+<p>已封存35周不应重跑。两次字段保留已登记且已经影响后继状态，不能随意改写历史。需要接续的是7月10日尚未发送的69个位置及后续11周的3300个位置；已尝试的403不能当作普通网络错误悄悄自动重发，需要单独确认处理方式。</p>
+<p>另发现冻结最终评价器假设执行计划含target_reference_period与anchor_published_date，而实际紧凑计划省略了这两个可推导字段。新建兼容入口从纽约截止日与cycle_key补出元数据，原计划、研究输入和冻结评价器均保持不变。该问题影响离线评价启动，不影响已经生成的回答。</p>
+<p>错误码说明参考<a href="https://openrouter.ai/docs/api_reference/errors-and-debugging">OpenRouter官方文档</a>；本项目的key限额判断来自额外只读账户查询。完整数字：<a href="summary.json">汇总JSON</a>、<a href="monthly_complete.csv">8月CSV</a>、<a href="weekly_national.csv">35周CSV</a>、<a href="operation.json">运行对账</a>。未新增模型调用、未重新拟合任何参数、未覆盖旧归档。</p></html>

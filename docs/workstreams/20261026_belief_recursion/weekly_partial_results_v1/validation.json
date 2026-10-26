@@ -1,0 +1,20 @@
+{
+  "created_at_utc": "2026-10-26T23:56:30.124546+00:00",
+  "new_model_API_calls": 0,
+  "offline_MAE_RMSE_recomputed_independently": true,
+  "complete_month_count": 8,
+  "local_links_valid": 6,
+  "tests": "8 passed: weekly_partial_readout + weekly_evaluation",
+  "images_visually_inspected": true,
+  "source_output": "outputs/sce_weekly_partial_readout_20261027_v3",
+  "files_sha256": {
+    "index.html": "9b1ec858e526e2c4af53de9f9e22ce333c2c455a1f122fe09835215185c45b11",
+    "summary.json": "18e2b1a1c710e5d7b94cf8a189396abaa336ebec7db8ef520c6de74b9d558975",
+    "operation.json": "3c75b5b402b959f3572cf008b24f8539066e6aae68876e311e0e6c05c73ab0e6",
+    "weekly_national.csv": "c665a6c21a721c808259cbb658b7445e33c0a2501a049518ec5b62df774435fb",
+    "monthly_complete.csv": "95f4e0f63db67fafd0e63a811904610c7b4e81669f47eaf14f1e694d7392d074",
+    "weekly_path.png": "73cf9db7a65940d111365eb5d47ecca75b072533915680c0e15ba993835023bc",
+    "errors_and_dispersion.png": "16d1b21d4c9cf1c8b3d3ebfdd011d1287c4c30f68ba5b13ff895f3bb924f29b2"
+  },
+  "documentation_CSV_line_endings": "LF; rows and numerical values unchanged from source CSV"
+}

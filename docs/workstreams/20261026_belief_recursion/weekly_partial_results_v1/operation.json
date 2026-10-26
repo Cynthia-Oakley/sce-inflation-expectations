@@ -1,0 +1,36 @@
+{
+  "status": "stopped_partial_not_final",
+  "sealed_weeks": 35,
+  "planned_weeks": 47,
+  "first_sealed": "w20251107",
+  "last_sealed": "w20260703",
+  "completed_target_months": 8,
+  "main_attempted": 10731,
+  "repair_attempted": 26,
+  "physical_attempts": 10757,
+  "never_dispatched_main": 3369,
+  "unresolved_dispatches": 0,
+  "errors": {
+    "APIConnectionError": 26,
+    "PermissionDeniedError": 1
+  },
+  "hard_errors": [
+    {
+      "week": "w20260710",
+      "stage": "main",
+      "error": "PermissionDeniedError",
+      "http_status": 403,
+      "at_utc": "2026-10-26T18:10:29.866344+00:00"
+    }
+  ],
+  "retained_fields_sealed_weeks": {
+    "q8": 2,
+    "q9": 2
+  },
+  "reported_cost_usd": 6.771161587999997,
+  "spent_or_reserved_usd": 6.858539958999998,
+  "unknown_fee_reservation_usd": 0.08737837100000068,
+  "remaining_budget_usd": 8.141460041000002,
+  "new_API_calls": 0,
+  "no_automatic_paid_resumption": true
+}
