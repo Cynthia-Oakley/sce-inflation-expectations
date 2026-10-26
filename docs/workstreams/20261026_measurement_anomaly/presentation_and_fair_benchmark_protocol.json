@@ -1,0 +1,14 @@
+{
+  "request": "Present simple convex combination as main derived indicator, dynamic statistical calibration as auxiliary, with SCE+CPI time-series controls",
+  "new_api_calls": 0,
+  "new_density_fits": 0,
+  "current_model_identity": "Expanding-window ridge regression of y minus the latest public SCE anchor on anchor level, CPI-anchor gap, change in latest released CPI yoy, simulation-anchor gap, optional CPI>=4 dummy and simulation-gap interaction. ARX-like conditional-mean model, not an estimated MA/ARIMA error process.",
+  "differencing": "The response is an anchor-relative change, not a declared ARIMA d=1 transformation; latest public anchor may skip a survey month. CPI change is a first difference of successive published yoy rates, not the CPI price index.",
+  "primary": "Keep existing early48/later34 convex combination readout as primary presentation; MAE-fit weight zero also disclosed. No numeric primary result is replaced by this follow-up.",
+  "auxiliary": "Disclose 2021 full-year and halves; 0.146475 is H2 only. Demonstrate increment versus matched no-simulation controls, not just versus persistence.",
+  "additional_clock_check": "Full-month personal-date A simulations are already available. Add month-end New York cutoff macro controls using the latest previously published official SCE first release and existing eligible CPI first release. Keep the original shared-midmonth results separately; do not call them the same information scope.",
+  "model_families": ["macro_without_sim", "macro_plus_sim", "regime_without_sim", "regime_plus_sim"],
+  "regularization": "Same 2019-2020 first18/last6 alpha selection procedure and the unchanged grid [0,0.1,1,10,100]; refit at first2021 cutoff then optionally expand using only already-public labels. No new 2021-driven parameter selection.",
+  "evaluation": "Apply the same frozen rule to all months 2021-01 through 2025-10; report full2021, H1/H2,2022, later34 and all58 without choosing a winning period. The later years have already been viewed in the project, not a new blind test.",
+  "limits": "This remains retrospective A statistical postprocessing. Real contemporary P/individual historical answers and model knowledge limits do not become certified B forecasting merely by using a month-end macro cutoff. Auxiliary derived-indicator gains do not prove accurate individual behavior. No automatic promotion of a newly best-scoring specification."
+}

@@ -1,0 +1,372 @@
+{
+  "schema": "sce_monthly_recursion_readout/v1",
+  "status": "completed_offline_readout",
+  "source_run": "outputs/sce_recent_b_recursion_terminal_20261026_v2",
+  "n_households": 512,
+  "primary_months": [
+    "202512",
+    "202601",
+    "202602",
+    "202603",
+    "202604",
+    "202605",
+    "202606",
+    "202607",
+    "202608",
+    "202609"
+  ],
+  "post_root_10_months_primary": {
+    "recursive_pp": {
+      "n_months": 10,
+      "mae_pp": 0.30575060130371906,
+      "rmse_pp": 0.38610694339623264,
+      "bias_pp": 0.25196394975917114,
+      "max_absolute_error_pp": 0.7525965471739418
+    },
+    "anchor_pp": {
+      "n_months": 10,
+      "mae_pp": 0.19,
+      "rmse_pp": 0.2213594362117865,
+      "bias_pp": -0.06999999999999998,
+      "max_absolute_error_pp": 0.3999999999999999
+    },
+    "fixed_blend_pp": {
+      "n_months": 10,
+      "mae_pp": 0.18271782920312374,
+      "rmse_pp": 0.19812758080157672,
+      "bias_pp": -0.026864475073461947,
+      "max_absolute_error_pp": 0.3517444704611785
+    },
+    "independently_initialized_B_pp": {
+      "n_months": 10,
+      "mae_pp": 0.381984361029285,
+      "rmse_pp": 0.4539420362220039,
+      "bias_pp": 0.28326025493151763,
+      "max_absolute_error_pp": 0.8544204486382516
+    },
+    "independent_fixed_blend_pp": {
+      "n_months": 10,
+      "mae_pp": 0.15852071552728603,
+      "rmse_pp": 0.18249521088713275,
+      "bias_pp": -0.02267151324379104,
+      "max_absolute_error_pp": 0.30225681313126573
+    },
+    "root_retention_pp": {
+      "n_months": 10,
+      "mae_pp": 0.33174836528972296,
+      "rmse_pp": 0.36944229820372776,
+      "bias_pp": -0.2662472754828716,
+      "max_absolute_error_pp": 0.6862472754828715
+    }
+  },
+  "all_11_months_secondary": {
+    "recursive_pp": {
+      "n_months": 11,
+      "mae_pp": 0.2792053397776653,
+      "rmse_pp": 0.3681618782817565,
+      "bias_pp": 0.2303083838280763,
+      "max_absolute_error_pp": 0.7525965471739418
+    },
+    "anchor_pp": {
+      "n_months": 11,
+      "mae_pp": 0.17272727272727273,
+      "rmse_pp": 0.2110579412044345,
+      "bias_pp": -0.06363636363636362,
+      "max_absolute_error_pp": 0.3999999999999999
+    },
+    "fixed_blend_pp": {
+      "n_months": 11,
+      "mae_pp": 0.16627462096251655,
+      "rmse_pp": 0.18890805307710007,
+      "bias_pp": -0.024254746561652253,
+      "max_absolute_error_pp": 0.3517444704611785
+    },
+    "independently_initialized_B_pp": {
+      "n_months": 11,
+      "mae_pp": 0.34850875770999806,
+      "rmse_pp": 0.43283661203795376,
+      "bias_pp": 0.25875957034839137,
+      "max_absolute_error_pp": 0.8544204486382516
+    },
+    "independent_fixed_blend_pp": {
+      "n_months": 11,
+      "mae_pp": 0.1442772448935732,
+      "rmse_pp": 0.1740032431557011,
+      "bias_pp": -0.02044296308013325,
+      "max_absolute_error_pp": 0.30225681313126573
+    },
+    "root_retention_pp": {
+      "n_months": 11,
+      "mae_pp": 0.3028396706740325,
+      "rmse_pp": 0.3522738158220579,
+      "bias_pp": -0.24079273002832613,
+      "max_absolute_error_pp": 0.6862472754828715
+    }
+  },
+  "descriptive_equal_halves_not_preregistered": {
+    "first_five_202512_202604": {
+      "recursive_pp": {
+        "n_months": 5,
+        "mae_pp": 0.1110153040372774,
+        "rmse_pp": 0.13729121367648672,
+        "bias_pp": 0.0034420009481815226,
+        "max_absolute_error_pp": 0.22911296840201834
+      },
+      "anchor_pp": {
+        "n_months": 5,
+        "mae_pp": 0.23999999999999994,
+        "rmse_pp": 0.26076809620810587,
+        "bias_pp": -0.07999999999999999,
+        "max_absolute_error_pp": 0.3999999999999999
+      },
+      "fixed_blend_pp": {
+        "n_months": 5,
+        "mae_pp": 0.22193929493355516,
+        "rmse_pp": 0.23712033779681016,
+        "bias_pp": -0.06882075302370705,
+        "max_absolute_error_pp": 0.3517444704611785
+      },
+      "independently_initialized_B_pp": {
+        "n_months": 5,
+        "mae_pp": 0.41867168096044144,
+        "rmse_pp": 0.4796067207573548,
+        "bias_pp": 0.31184060085991927,
+        "max_absolute_error_pp": 0.8544204486382516
+      },
+      "independent_fixed_blend_pp": {
+        "n_months": 5,
+        "mae_pp": 0.19362727003123759,
+        "rmse_pp": 0.20694576733861292,
+        "bias_pp": -0.027502662896682926,
+        "max_absolute_error_pp": 0.30225681313126573
+      },
+      "root_retention_pp": {
+        "n_months": 5,
+        "mae_pp": 0.21724945509657428,
+        "rmse_pp": 0.235454013616711,
+        "bias_pp": -0.08624727548287155,
+        "max_absolute_error_pp": 0.38624727548287163
+      }
+    },
+    "last_five_202605_202609": {
+      "recursive_pp": {
+        "n_months": 5,
+        "mae_pp": 0.5004858985701607,
+        "rmse_pp": 0.5284962309466363,
+        "bias_pp": 0.5004858985701607,
+        "max_absolute_error_pp": 0.7525965471739418
+      },
+      "anchor_pp": {
+        "n_months": 5,
+        "mae_pp": 0.14000000000000004,
+        "rmse_pp": 0.17320508075688773,
+        "bias_pp": -0.05999999999999996,
+        "max_absolute_error_pp": 0.2999999999999998
+      },
+      "fixed_blend_pp": {
+        "n_months": 5,
+        "mae_pp": 0.14349636347269232,
+        "rmse_pp": 0.14927498769618858,
+        "bias_pp": 0.015091802876783156,
+        "max_absolute_error_pp": 0.21038428640712414
+      },
+      "independently_initialized_B_pp": {
+        "n_months": 5,
+        "mae_pp": 0.3452970410981286,
+        "rmse_pp": 0.4267366142049859,
+        "bias_pp": 0.25467990900311605,
+        "max_absolute_error_pp": 0.8227347345839418
+      },
+      "independent_fixed_blend_pp": {
+        "n_months": 5,
+        "mae_pp": 0.1234141610233345,
+        "rmse_pp": 0.15421560677866164,
+        "bias_pp": -0.017840363590899154,
+        "max_absolute_error_pp": 0.290158483334261
+      },
+      "root_retention_pp": {
+        "n_months": 5,
+        "mae_pp": 0.4462472754828716,
+        "rmse_pp": 0.4664082234222354,
+        "bias_pp": -0.4462472754828716,
+        "max_absolute_error_pp": 0.6862472754828715
+      }
+    }
+  },
+  "continuity_descriptive_including_shared_root": {
+    "recursive_pp": {
+      "n_levels": 11,
+      "n_transitions": 10,
+      "mean_absolute_monthly_change_pp": 0.13514820012018056,
+      "total_variation_pp": 1.3514820012018056,
+      "net_change_pp": 1.0551397755274898,
+      "level_correlation_with_truth": 0.84399372375906,
+      "monthly_change_correlation_with_truth": 0.22304720035180078,
+      "monthly_change_rmse_pp": 0.22703501791465092
+    },
+    "independently_initialized_B_pp": {
+      "n_levels": 11,
+      "n_transitions": 10,
+      "mean_absolute_monthly_change_pp": 0.39206558606540126,
+      "total_variation_pp": 3.9206558606540125,
+      "net_change_pp": 0.45970444524534004,
+      "level_correlation_with_truth": 0.601250343705709,
+      "monthly_change_correlation_with_truth": 0.4910461359164661,
+      "monthly_change_rmse_pp": 0.4381844272167848
+    },
+    "truth_pp": {
+      "n_levels": 11,
+      "n_transitions": 10,
+      "mean_absolute_monthly_change_pp": 0.19,
+      "total_variation_pp": 1.9,
+      "net_change_pp": 0.6999999999999997,
+      "level_correlation_with_truth": 1.0,
+      "monthly_change_correlation_with_truth": 1.0,
+      "monthly_change_rmse_pp": 0.0
+    },
+    "interpretation": "Eleven levels and ten transitions, including the shared root, describe smoothness and turning points; not additional independent validation observations. Level correlation can be driven by the common trend."
+  },
+  "combination_weight": 0.1339762571517809,
+  "new_api_calls": 0,
+  "new_q9_fits": 0,
+  "coefficient_refit": false,
+  "limits": [
+    "Fixed root population weights are not later real survey composition.",
+    "All outcomes already public: retrospective as-of diagnostic, with unresolved model/text-vintage limitations.",
+    "Existing independently initialized B uses changing monthly rosters; descriptive comparison only, not same-input causal control.",
+    "No monthly national-anchor refresh: pure autonomous belief-state chain, not a claim that people never see official statistics.",
+    "No recent micro truth: dispersion and conditional differences are descriptive only.",
+    "The shared root month is not a new independent validation month.",
+    "The auxiliary fixed blend adds an external public anchor after generation; autonomous raw drift is reported separately.",
+    "Independent-B comparison changes both initialization and roster; it is not a paired causal estimate.",
+    "Time horizon and calendar environment change together: worsening later error is not a causal estimate of recursion damage.",
+    "Equal early/late halves are a post-hoc descriptive view, not separately preregistered train/test samples.",
+    "News overlap measures repeated exposure only; it does not identify repeated counting by the model.",
+    "Cross-person spread, group paths and Q8 are simulation-only descriptions; no recent micro truth.",
+    "One generation chain is available, so differences cannot separate model stochasticity from state dependence."
+  ],
+  "monthly_national": [
+    {
+      "month": "202511",
+      "truth_pp": 3.2,
+      "recursive_pp": 3.2137527245171285,
+      "anchor_pp": 3.2,
+      "fixed_blend_pp": 3.201842538556445,
+      "independently_initialized_B_pp": 3.2137527245171285,
+      "independent_fixed_blend_pp": 3.201842538556445,
+      "recursive_error_pp": 0.013752724517128279,
+      "shared_reused_root": true
+    },
+    {
+      "month": "202512",
+      "truth_pp": 3.4,
+      "recursive_pp": 3.1708870315979816,
+      "anchor_pp": 3.2,
+      "fixed_blend_pp": 3.19609955345892,
+      "independently_initialized_B_pp": 3.1329222997486945,
+      "independent_fixed_blend_pp": 3.1910131807819817,
+      "recursive_error_pp": -0.22911296840201834,
+      "shared_reused_root": false
+    },
+    {
+      "month": "202601",
+      "truth_pp": 3.1,
+      "recursive_pp": 3.1965966043013125,
+      "anchor_pp": 3.4,
+      "fixed_blend_pp": 3.3727487743523272,
+      "independently_initialized_B_pp": 3.4168448737055623,
+      "independent_fixed_blend_pp": 3.402256813131266,
+      "recursive_error_pp": 0.09659660430131245,
+      "shared_reused_root": false
+    },
+    {
+      "month": "202602",
+      "truth_pp": 3.0,
+      "recursive_pp": 3.174995231512625,
+      "anchor_pp": 3.1,
+      "fixed_blend_pp": 3.110047580422293,
+      "independently_initialized_B_pp": 3.1974404344669165,
+      "independent_fixed_blend_pp": 3.113054704705121,
+      "recursive_error_pp": 0.17499523151262508,
+      "shared_reused_root": false
+    },
+    {
+      "month": "202603",
+      "truth_pp": 3.4,
+      "recursive_pp": 3.3601797106792786,
+      "anchor_pp": 3.0,
+      "fixed_blend_pp": 3.0482555295388214,
+      "independently_initialized_B_pp": 4.2544204486382515,
+      "independent_fixed_blend_pp": 3.168062556603211,
+      "recursive_error_pp": -0.03982028932072135,
+      "shared_reused_root": false
+    },
+    {
+      "month": "202604",
+      "truth_pp": 3.6,
+      "recursive_pp": 3.61455142664971,
+      "anchor_pp": 3.4,
+      "fixed_blend_pp": 3.428744797109103,
+      "independently_initialized_B_pp": 4.0575749477401715,
+      "independent_fixed_blend_pp": 3.488099430295006,
+      "recursive_error_pp": 0.014551426649709764,
+      "shared_reused_root": false
+    },
+    {
+      "month": "202605",
+      "truth_pp": 3.5,
+      "recursive_pp": 3.7861614966463364,
+      "anchor_pp": 3.6,
+      "fixed_blend_pp": 3.62494122054645,
+      "independently_initialized_B_pp": 3.6734571697624685,
+      "independent_fixed_blend_pp": 3.609841516665739,
+      "recursive_error_pp": 0.2861614966463364,
+      "shared_reused_root": false
+    },
+    {
+      "month": "202606",
+      "truth_pp": 3.7,
+      "recursive_pp": 4.167080024605411,
+      "anchor_pp": 3.5,
+      "fixed_blend_pp": 3.5893728849173514,
+      "independently_initialized_B_pp": 4.522734734583942,
+      "independent_fixed_blend_pp": 3.637022171798677,
+      "recursive_error_pp": 0.4670800246054112,
+      "shared_reused_root": false
+    },
+    {
+      "month": "202607",
+      "truth_pp": 3.6,
+      "recursive_pp": 4.227698924380496,
+      "anchor_pp": 3.7,
+      "fixed_blend_pp": 3.77069912679152,
+      "independently_initialized_B_pp": 3.9644295198706203,
+      "independent_fixed_blend_pp": 3.7354272773527084,
+      "recursive_error_pp": 0.6276989243804958,
+      "shared_reused_root": false
+    },
+    {
+      "month": "202608",
+      "truth_pp": 3.6,
+      "recursive_pp": 4.352596547173942,
+      "anchor_pp": 3.6,
+      "fixed_blend_pp": 3.7008300685357187,
+      "independently_initialized_B_pp": 3.739320951036081,
+      "independent_fixed_blend_pp": 3.618665699562641,
+      "recursive_error_pp": 0.7525965471739418,
+      "shared_reused_root": false
+    },
+    {
+      "month": "202609",
+      "truth_pp": 3.9,
+      "recursive_pp": 4.268892500044618,
+      "anchor_pp": 3.6,
+      "fixed_blend_pp": 3.6896157135928758,
+      "independently_initialized_B_pp": 3.6734571697624685,
+      "independent_fixed_blend_pp": 3.609841516665739,
+      "recursive_error_pp": 0.3688925000446184,
+      "shared_reused_root": false
+    }
+  ],
+  "privacy_scope": "National monthly aggregates only; no per-person records, weights, news text or raw model replies."
+}

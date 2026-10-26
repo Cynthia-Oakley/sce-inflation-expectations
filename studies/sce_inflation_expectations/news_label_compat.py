@@ -28,7 +28,8 @@ from pathlib import Path
 
 SLIM_FIELDS = ("article_id", "decision", "topics", "scope")
 LEGACY_EXTRA_FIELDS = ("claim_type", "reason_zh", "evidence_snippet")
-NORMALIZED_FIELDS = SLIM_FIELDS + LEGACY_EXTRA_FIELDS + ("label_schema",)
+MECHANISM_FIELDS = ("tone", "persistence")
+NORMALIZED_FIELDS = SLIM_FIELDS + LEGACY_EXTRA_FIELDS + MECHANISM_FIELDS + ("label_schema",)
 
 
 def label_schema(label: dict) -> str:
@@ -50,7 +51,7 @@ def normalize_label(raw: dict) -> dict:
     if missing:
         raise ValueError(f"label missing core fields: {missing}")
     out = {f: label[f] for f in SLIM_FIELDS}
-    for f in LEGACY_EXTRA_FIELDS:
+    for f in LEGACY_EXTRA_FIELDS + MECHANISM_FIELDS:
         out[f] = label.get(f)
     out["label_schema"] = label_schema(label)
     return out

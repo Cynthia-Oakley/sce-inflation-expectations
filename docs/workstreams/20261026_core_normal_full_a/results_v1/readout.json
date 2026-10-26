@@ -1,0 +1,89 @@
+{
+  "status": "completed_full_a_core_normal_evaluation",
+  "selected_tau": 8,
+  "selected_tau_source": "frozen_by_early_model_only_holdout",
+  "national_mae_before_pp": 0.29840671263598517,
+  "national_mae_expanded_pp": 0.3014219106420097,
+  "national_mae_change_pp": 0.003015198006024511,
+  "national_mae_anchor_pp": 0.22317073170731705,
+  "national_mae_2021_before_pp": 0.5774240096480767,
+  "national_mae_2021_expanded_pp": 0.5653153945607152,
+  "national_mae_2021_anchor_pp": 0.325,
+  "full_wave_q9_median_mae_before_pp": 0.2899759055196859,
+  "full_wave_q9_median_mae_expanded_pp": 0.29198371171305615,
+  "full_wave_q9_w1_before_pp": 2.1974655006447628,
+  "full_wave_q9_w1_expanded_pp": 2.1942652647395,
+  "full_wave_q9_iqr_error_before_pp": 3.013584067187827,
+  "full_wave_q9_iqr_error_expanded_pp": 3.0104677718276385,
+  "full_wave_q9_iqr_human_mean_pp": 5.258538385748961,
+  "full_wave_q9_iqr_before_mean_pp": 2.2449543185611343,
+  "full_wave_q9_iqr_expanded_mean_pp": 2.248070613921323,
+  "frame_person_months": 98382,
+  "core_person_months": 41970,
+  "normal_person_months": 56412,
+  "weighted_frame_person_months": 98352,
+  "missing_weight_person_months": 30,
+  "monthly_frame_min": 976,
+  "monthly_frame_max": 1372,
+  "month_count": 82,
+  "new_api_calls": 0,
+  "new_q9_density_fits": 0,
+  "q9_model_donors_total": 41956,
+  "q8_model_donors_total": 41970,
+  "q9_unfittable_model_output": 13,
+  "q9_not_model_output": 1,
+  "q9_parent_pool_share_equal_month": 0.20155968928425383,
+  "q9_unsupported_local_share_equal_month": 0.014747645059513497,
+  "excluded_personal_date_core_to_normal_total": 14,
+  "late_34_mae_before_pp": 0.2146131350524657,
+  "late_34_mae_expanded_pp": 0.21939323532383861,
+  "late_34_mae_anchor_pp": 0.1941176470588235,
+  "late_34_mse_blend_weight_selected": 0.13496430190139455,
+  "late_34_mse_blend_mae_selected": 0.18497957497437242,
+  "late_34_mse_blend_weight_before": 0.1339762571517809,
+  "late_34_mse_blend_mae_before": 0.1841250067081133,
+  "late_34_mae_blend_weight_selected": 0.0,
+  "limits": [
+    "Expanded Q9/Q8 rows are weighted statistical predictions; Normal expansion creates no independent LLM answers.",
+    "All before/after Q9 and Q8 W1/IQR comparisons use the same month-specific full-wave valid human distribution.",
+    "Selected tau is read from the sealed prediction package and is not selected or changed using human target answers.",
+    "National truth and persistence anchors are fixed from the original A82 T0 evaluation; 48/34 combinations are retrospective summaries.",
+    "Full-wave human distributions and national targets are evaluation-only and never used to build predictions.",
+    "Core-actual-only is an auxiliary sensitivity that excludes prior-retained or density-fit-fallback Core Q9 mass; it does not replace the frozen T0 before comparison.",
+    "This evaluation performs no API calls, Q9 density refits, or Normal-answer generation."
+  ],
+  "tau_selection_candidates": [
+    {
+      "tau": 0,
+      "validation_cells": 96,
+      "center_mae_pp": 0.17797908422967326,
+      "w1_pp": 0.5429338815157548,
+      "iqr_mae_pp": 0.27719140975603945
+    },
+    {
+      "tau": 8,
+      "validation_cells": 96,
+      "center_mae_pp": 0.17757282090778373,
+      "w1_pp": 0.5451039611918538,
+      "iqr_mae_pp": 0.27155411966511495
+    },
+    {
+      "tau": 24,
+      "validation_cells": 96,
+      "center_mae_pp": 0.18019396468295099,
+      "w1_pp": 0.5465549863378345,
+      "iqr_mae_pp": 0.2740708744211486
+    }
+  ],
+  "tau_selection_development": [
+    "201901",
+    "202212"
+  ],
+  "tau_selection_late_period_used": false,
+  "source_sha256": {
+    "manifest.json": "8bd3c124f1f8305eeb39d7682004b2470ded1e68b88c02887811164401aab365",
+    "summary.json": "fdf43758c9c1d2bb80010e6c60e7b761a25fe2b79df6fa038f14df6bca97ee6d",
+    "monthly_public.csv": "cfaae6aa7d54eccc4ddc08fe90168f20c5aac5cc07428c76ff0ba867b8b24eac",
+    "yearly.csv": "0fc5310a12f8f22ed30f04555fa0ffdc94a615bbf1938d2fd8090c252aa3f600"
+  }
+}

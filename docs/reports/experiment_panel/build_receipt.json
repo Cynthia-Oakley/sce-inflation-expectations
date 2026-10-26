@@ -1,0 +1,136 @@
+{
+  "generated_at_utc": "2026-10-21T02:42:07.571431+00:00",
+  "stats_version": "panel-stats-v1.1",
+  "python_version": "3.11.16",
+  "panel_modules_sha256": {
+    "studies/sce_inflation_expectations/panel/adapters.py": "7ecd46722ebe1ba8fa410a60e0ffa82f4ec92628f7207716797580199242059e",
+    "studies/sce_inflation_expectations/panel/registry.py": "98e6a0505890e1e7fe57c5a2e75e5c51b936f91069768f73024626fd53084fd6",
+    "studies/sce_inflation_expectations/panel/sections.py": "3cac6a6bcd175cb153bf1053d6aa9bfbf2654cc9386ea6f383953d4e22491bb1",
+    "studies/sce_inflation_expectations/panel/regimes.py": "749069f98e180ffd9989b1b5ad190ea3cf2c6c0de11362acf36e61b7757693ef",
+    "studies/sce_inflation_expectations/panel/render.py": "e676421853ad78503382150935da3cff5f01abe2f1775284fb863b7262da9ad1",
+    "studies/sce_inflation_expectations/panel/__init__.py": "f6ebbfef95b710863327712047e72f5101a9affffcb9c34138a15430db1a4bfe"
+  },
+  "build_entry_sha256": "1b432c844d848e0061b9c4f099a58568817a8dfd80e35e0ac5fbe179c9a82faa",
+  "source_batches": [
+    {
+      "batch": "sce_anchor_role_evaluation_20261014_v1",
+      "cases_sha256": "b8fe0b00c4fc6fd77900d6021eca3a2f9d2edaae7c092fc0669b3e2bc0881bc2",
+      "n_records": 0,
+      "status": "skipped_old_contract"
+    },
+    {
+      "batch": "sce_cognition_evaluation_20261016_v1",
+      "cases_sha256": "8fc358b976340023a95b77af1ef2e27e85a79fef023d624f859e743c5501ed1c",
+      "n_records": 576,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_consumer_context_evaluation_20261018_v1",
+      "cases_sha256": "2bb1a7bd726f8c8fd8652bc5b707879e62b676019e3d5bf19fd53dd8c91c2f7c",
+      "n_records": 288,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_expanded_state_evaluation_20261014_v1",
+      "cases_sha256": "83f6347a6dd126764c94f3b16b7e84237b62d84d3b53776e315498653d0cc7c3",
+      "n_records": 0,
+      "status": "skipped_old_contract"
+    },
+    {
+      "batch": "sce_finance_validation_evaluation_20261017_v1",
+      "cases_sha256": "4475302f65880bbe83699810ca634284c38eb7583017c5144373e51f3e73b11b",
+      "n_records": 768,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_financial_outlook_evaluation_20261017_v1",
+      "cases_sha256": "f7e6cab22d105ff7c6671b7976e1e2fdba79e179ad6b279fb07d92c317e2f1d7",
+      "n_records": 768,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_household_finance_evaluation_20261016_v1",
+      "cases_sha256": "e71dfcb2620e1090c36ae8533e0371ea59f72ed2991af3e211c1b47d9537f15d",
+      "n_records": 576,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_information_exposure_evaluation_20261019_v1",
+      "cases_sha256": "f4ef3ce891f8b664353f6313060cce44adebea7c0aaf34c92221ed8975d26def",
+      "n_records": 6912,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_information_update_evaluation_20261014_v1",
+      "cases_sha256": "c75b2add0e40435c0ac08615ce398369ee50c8038e78643d6cb3a25f2db6dd3f",
+      "n_records": 0,
+      "status": "skipped_old_contract"
+    },
+    {
+      "batch": "sce_news_breadth_evaluation_20261019_v1",
+      "cases_sha256": "c3bfcc67934b3718ed81f93fdfa82a881fe0a1f88d78c375f05bc76dc9c06b5b",
+      "n_records": 3456,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_price_background_evaluation_20261021_v1",
+      "cases_sha256": "c379e26df51182ce1a524d54d42a65c2eb7c40c152fb806da83a123c10139c29",
+      "n_records": 2304,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_procurement_qwen_evaluation_20261020_v2",
+      "cases_sha256": "caebca741a1e1196ddfcdab44dbbc248f8d32aac508bfddfc1883ad8737a1e28",
+      "n_records": 3456,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_psychological_state_evaluation_20261017_v1",
+      "cases_sha256": "1fea516e5048d67d593c59509bee9f6559d2623121245ad541b772d1509ddc96",
+      "n_records": 1152,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_psychological_wave_evaluation_20261018_v1",
+      "cases_sha256": "d83e32f38bebdb14321900134c0892bf9655250e2289a513b332936409fca407",
+      "n_records": 864,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_purchase_frequency_evaluation_20261015_v1",
+      "cases_sha256": "08382ba770fffbdc66f28cff686dd0b54887d7cd66e84c8283f27f0ab3da06a2",
+      "n_records": 0,
+      "status": "skipped_old_contract"
+    },
+    {
+      "batch": "sce_q8_only_evaluation_20261019_v1",
+      "cases_sha256": "99ee8108b390207125d2ed31a82d3e3b8fce918019cb4adb6cb1dad97164bcbe",
+      "n_records": 384,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_qwen_migration_evaluation_20261019_v1",
+      "cases_sha256": "005f9e388937dd03e4e9ba4e1b7a6ce61d280ba9e824233aea2a6e4108ab84f3",
+      "n_records": 288,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_reference_validation_evaluation_20261017_v1",
+      "cases_sha256": "8bf039c3e4a64e2f31da0ee5c30a3db33d7c1712c0ba45d6e9ccd3959ba64336",
+      "n_records": 4608,
+      "status": "ok"
+    },
+    {
+      "batch": "sce_revision_format_evaluation_20261015_v1",
+      "cases_sha256": "a6b3733aeb391353ac5c5d4b4b546e24651ee0c5f1caa80517dd1b868807f45d",
+      "n_records": 0,
+      "status": "skipped_old_contract"
+    },
+    {
+      "batch": "sce_temperature_evaluation_20261019_v1",
+      "cases_sha256": "772265797a042c0fb56df865317a9e6552832c11fa777d62554bb9faeb949df6",
+      "n_records": 1152,
+      "status": "ok"
+    }
+  ]
+}

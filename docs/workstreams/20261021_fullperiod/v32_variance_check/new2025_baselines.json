@@ -1,0 +1,291 @@
+{
+  "status": "new2025_truth_and_baselines_frozen_no_model_outputs",
+  "months": [
+    202504,
+    202506,
+    202508,
+    202510
+  ],
+  "monthly": [
+    {
+      "month": 202504,
+      "selected_n": 192,
+      "q9_valid_n": 191,
+      "q8_valid_n": 191,
+      "same_person_baselines": {
+        "carry": {
+          "person_months": 191,
+          "truth_center_pp": 3.632115687789108,
+          "predicted_center_pp": 3.4845903451182494,
+          "center_bias_pp": -0.1475253426708587,
+          "center_mae_pp": 0.1475253426708587,
+          "w1_pp": 0.6480736574038428,
+          "personal_mae_pp": 3.6498575330062164,
+          "across_person_iqr_pp": 5.154704637652984,
+          "human_iqr_pp": 5.964086902720918
+        },
+        "history_anchor_half": {
+          "person_months": 191,
+          "truth_center_pp": 3.632115687789108,
+          "predicted_center_pp": 3.6278677004783937,
+          "center_bias_pp": -0.004247987310714407,
+          "center_mae_pp": 0.004247987310714407,
+          "w1_pp": 0.938546435526054,
+          "personal_mae_pp": 3.5079037119957097,
+          "across_person_iqr_pp": 4.929610905540634,
+          "human_iqr_pp": 5.964086902720918
+        }
+      },
+      "nested96_baselines": {
+        "carry": {
+          "person_months": 95,
+          "truth_center_pp": 3.0,
+          "predicted_center_pp": 3.0,
+          "center_bias_pp": 0.0,
+          "center_mae_pp": 0.0,
+          "w1_pp": 0.8842076421116492,
+          "personal_mae_pp": 3.3235862034800436,
+          "across_person_iqr_pp": 5.111417147761216,
+          "human_iqr_pp": 5.881001369239076
+        },
+        "history_anchor_half": {
+          "person_months": 95,
+          "truth_center_pp": 3.0,
+          "predicted_center_pp": 3.0704460664582207,
+          "center_bias_pp": 0.07044606645822071,
+          "center_mae_pp": 0.07044606645822071,
+          "w1_pp": 1.0812448173958136,
+          "personal_mae_pp": 3.2563934432695616,
+          "across_person_iqr_pp": 4.214073274079941,
+          "human_iqr_pp": 5.881001369239076
+        }
+      },
+      "full_wave": {
+        "n_scorable": 1074,
+        "frozen_score_median_pp": 3.7278169585750165
+      },
+      "official_national": {
+        "q9_headline_pp": 3.634883165359497,
+        "q8_point_headline_pp": 4.788828372955322,
+        "copy_previous_headline_pp": 3.580265522003174,
+        "center_mae_pp": 0.05461764335632324
+      },
+      "truth_levels_note": "Same-person fitted density median, full-wave fitted density median and published national headline are distinct."
+    },
+    {
+      "month": 202506,
+      "selected_n": 192,
+      "q9_valid_n": 191,
+      "q8_valid_n": 192,
+      "same_person_baselines": {
+        "carry": {
+          "person_months": 191,
+          "truth_center_pp": 3.2716354220768524,
+          "predicted_center_pp": 3.200345389668989,
+          "center_bias_pp": -0.07129003240786336,
+          "center_mae_pp": 0.07129003240786336,
+          "w1_pp": 0.8073088564940203,
+          "personal_mae_pp": 2.318039533976933,
+          "across_person_iqr_pp": 5.573371520474764,
+          "human_iqr_pp": 4.843183913472489
+        },
+        "history_anchor_half": {
+          "person_months": 191,
+          "truth_center_pp": 3.2716354220768524,
+          "predicted_center_pp": 3.634883142108209,
+          "center_bias_pp": 0.36324772003135664,
+          "center_mae_pp": 0.36324772003135664,
+          "w1_pp": 0.9134584688739682,
+          "personal_mae_pp": 2.1569626123275536,
+          "across_person_iqr_pp": 5.51264889207878,
+          "human_iqr_pp": 4.843183913472489
+        }
+      },
+      "nested96_baselines": {
+        "carry": {
+          "person_months": 95,
+          "truth_center_pp": 3.2880071555262935,
+          "predicted_center_pp": 4.292602189973575,
+          "center_bias_pp": 1.0045950344472816,
+          "center_mae_pp": 1.0045950344472816,
+          "w1_pp": 1.2432954446756308,
+          "personal_mae_pp": 2.320364042785489,
+          "across_person_iqr_pp": 6.2141926857848615,
+          "human_iqr_pp": 4.966508800000771
+        },
+        "history_anchor_half": {
+          "person_months": 95,
+          "truth_center_pp": 3.2880071555262935,
+          "predicted_center_pp": 4.154529513007327,
+          "center_bias_pp": 0.8665223574810339,
+          "center_mae_pp": 0.8665223574810339,
+          "w1_pp": 1.4247472618034693,
+          "personal_mae_pp": 2.3623796084845576,
+          "across_person_iqr_pp": 5.733095382548294,
+          "human_iqr_pp": 4.966508800000771
+        }
+      },
+      "full_wave": {
+        "n_scorable": 1074,
+        "frozen_score_median_pp": 3.009872209049888
+      },
+      "official_national": {
+        "q9_headline_pp": 3.015459299087524,
+        "q8_point_headline_pp": 4.211289882659912,
+        "copy_previous_headline_pp": 3.196596622467041,
+        "center_mae_pp": 0.18113732337951705
+      },
+      "truth_levels_note": "Same-person fitted density median, full-wave fitted density median and published national headline are distinct."
+    },
+    {
+      "month": 202508,
+      "selected_n": 192,
+      "q9_valid_n": 192,
+      "q8_valid_n": 192,
+      "same_person_baselines": {
+        "carry": {
+          "person_months": 192,
+          "truth_center_pp": 2.9699467232973666,
+          "predicted_center_pp": 3.046669434635316,
+          "center_bias_pp": 0.07672271133794917,
+          "center_mae_pp": 0.07672271133794917,
+          "w1_pp": 0.8334086554383647,
+          "personal_mae_pp": 4.22383252560406,
+          "across_person_iqr_pp": 5.398066036640172,
+          "human_iqr_pp": 5.933678623213548
+        },
+        "history_anchor_half": {
+          "person_months": 192,
+          "truth_center_pp": 2.9699467232973666,
+          "predicted_center_pp": 3.3543097013242233,
+          "center_bias_pp": 0.3843629780268567,
+          "center_mae_pp": 0.3843629780268567,
+          "w1_pp": 1.1331520097296708,
+          "personal_mae_pp": 4.016515928510821,
+          "across_person_iqr_pp": 5.849036694482516,
+          "human_iqr_pp": 5.933678623213548
+        }
+      },
+      "nested96_baselines": {
+        "carry": {
+          "person_months": 96,
+          "truth_center_pp": 2.7959987106921895,
+          "predicted_center_pp": 2.502431755320052,
+          "center_bias_pp": -0.2935669553721376,
+          "center_mae_pp": 0.2935669553721376,
+          "w1_pp": 1.3847914422702088,
+          "personal_mae_pp": 4.443231139547747,
+          "across_person_iqr_pp": 5.68611185938134,
+          "human_iqr_pp": 6.104778540093243
+        },
+        "history_anchor_half": {
+          "person_months": 96,
+          "truth_center_pp": 2.7959987106921895,
+          "predicted_center_pp": 2.728381338573056,
+          "center_bias_pp": -0.06761737211913355,
+          "center_mae_pp": 0.06761737211913355,
+          "w1_pp": 1.5937559472018628,
+          "personal_mae_pp": 4.391480400198722,
+          "across_person_iqr_pp": 4.916884471273474,
+          "human_iqr_pp": 6.104778540093243
+        }
+      },
+      "full_wave": {
+        "n_scorable": 1022,
+        "frozen_score_median_pp": 3.1974404344669165
+      },
+      "official_national": {
+        "q9_headline_pp": 3.196596622467041,
+        "q8_point_headline_pp": 4.536882400512695,
+        "copy_previous_headline_pp": 3.090884447097778,
+        "center_mae_pp": 0.10571217536926314
+      },
+      "truth_levels_note": "Same-person fitted density median, full-wave fitted density median and published national headline are distinct."
+    },
+    {
+      "month": 202510,
+      "selected_n": 192,
+      "q9_valid_n": 189,
+      "q8_valid_n": 192,
+      "same_person_baselines": {
+        "carry": {
+          "person_months": 189,
+          "truth_center_pp": 3.3136927423620217,
+          "predicted_center_pp": 3.472280791061726,
+          "center_bias_pp": 0.15858804869970422,
+          "center_mae_pp": 0.15858804869970422,
+          "w1_pp": 0.5285669752229025,
+          "personal_mae_pp": 2.3296310182900983,
+          "across_person_iqr_pp": 5.057888708295393,
+          "human_iqr_pp": 5.666794241256597
+        },
+        "history_anchor_half": {
+          "person_months": 189,
+          "truth_center_pp": 3.3136927423620217,
+          "predicted_center_pp": 3.98273484234862,
+          "center_bias_pp": 0.6690420999865982,
+          "center_mae_pp": 0.6690420999865982,
+          "w1_pp": 0.7291200437228654,
+          "personal_mae_pp": 2.3774423044427064,
+          "across_person_iqr_pp": 5.076857373297772,
+          "human_iqr_pp": 5.666794241256597
+        }
+      },
+      "nested96_baselines": {
+        "carry": {
+          "person_months": 94,
+          "truth_center_pp": 4.0,
+          "predicted_center_pp": 4.0,
+          "center_bias_pp": 0.0,
+          "center_mae_pp": 0.0,
+          "w1_pp": 0.402649086278137,
+          "personal_mae_pp": 2.2143977281793266,
+          "across_person_iqr_pp": 5.4445599745044175,
+          "human_iqr_pp": 6.178373707781427
+        },
+        "history_anchor_half": {
+          "person_months": 94,
+          "truth_center_pp": 4.0,
+          "predicted_center_pp": 4.130404783364456,
+          "center_bias_pp": 0.13040478336445638,
+          "center_mae_pp": 0.13040478336445638,
+          "w1_pp": 0.6659376373961904,
+          "personal_mae_pp": 2.2237370973163046,
+          "across_person_iqr_pp": 5.957863972941658,
+          "human_iqr_pp": 6.178373707781427
+        }
+      },
+      "full_wave": {
+        "n_scorable": 1031,
+        "frozen_score_median_pp": 3.217237550629812
+      },
+      "official_national": {
+        "q9_headline_pp": 3.235308408737183,
+        "q8_point_headline_pp": 4.045269966125488,
+        "copy_previous_headline_pp": 3.37714695930481,
+        "center_mae_pp": 0.14183855056762695
+      },
+      "truth_levels_note": "Same-person fitted density median, full-wave fitted density median and published national headline are distinct."
+    }
+  ],
+  "national_copy_errors": {
+    "n_months": 4,
+    "mae_pp": 0.1208264231681826,
+    "rmse_pp": 0.12950584478636606,
+    "bias_pp": 0.040661513805389404,
+    "max_absolute_error_pp": 0.18113732337951705
+  },
+  "individual_copy_equal_month_metrics": {
+    "center_mae_pp": 0.11353153377909386,
+    "w1_pp": 0.7043395361397826,
+    "personal_mae_pp": 3.1303401527193264,
+    "across_person_iqr_pp": 5.296007725765829
+  },
+  "limits": [
+    "Truth is extracted from actual SCE data, never synthesized or tuned.",
+    "Frozen score is the existing project approximation; official published headline is evaluated separately.",
+    "Population selection precedes current outcome reads; invalid target answers stay in the selected roster.",
+    "This is a conditional returner reconstruction sample, not all national households.",
+    "No combination coefficients fitted on these new target answers."
+  ]
+}

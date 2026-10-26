@@ -1,0 +1,89 @@
+{
+  "status": "offline_input_draft_not_execution_ready",
+  "new_api_calls": 0,
+  "target_answers_read": false,
+  "parent": "outputs/sce_media_mechanism_v3_20261025_v1",
+  "completed_run": "outputs/sce_media_mechanism_terminal_20261025_v2",
+  "months": [
+    201905,
+    202009,
+    202106,
+    202109,
+    202112,
+    202206,
+    202312
+  ],
+  "n_per_month": 96,
+  "repeats": [
+    1,
+    2
+  ],
+  "new_arms": {
+    "X_CA": {
+      "four_tiers": true,
+      "alarming_boost": 2.0,
+      "cpi_boost": 1.5,
+      "fox_share": 0.0
+    },
+    "X_3C": {
+      "four_tiers": false,
+      "alarming_boost": 1.0,
+      "cpi_boost": 1.5,
+      "fox_share": 0.0
+    }
+  },
+  "logical_new_arm_positions": 2688,
+  "reconstructed_original_prompt_rows": 2688,
+  "existing_control_arms": [
+    "R0",
+    "Q0",
+    "Q1",
+    "Q3"
+  ],
+  "existing_control_attempts": 5376,
+  "exact_success_positions_reused": 1288,
+  "held_old_failure_positions": 4,
+  "unique_new_requests_if_approved": 1396,
+  "maximum_prompt_utf8_bytes": 16755,
+  "estimated_new_cost_usd": 1.3836157449999964,
+  "conservative_new_reservation_usd": 5.708147716,
+  "suggested_budget_cap_usd": 6,
+  "factorial_alarm": {
+    "quantity": "four_tiers",
+    "cells": [
+      [
+        "Q0",
+        "Q1"
+      ],
+      [
+        "Q3",
+        "X_CA"
+      ]
+    ],
+    "loss_interaction": "L(X_CA)-L(Q3)-L(Q1)+L(Q0)"
+  },
+  "factorial_quantity": {
+    "alarm_boost": 1.0,
+    "cells": [
+      [
+        "R0",
+        "X_3C"
+      ],
+      [
+        "Q0",
+        "Q3"
+      ]
+    ],
+    "loss_interaction": "[L(Q3)-L(Q0)]-[L(X_3C)-L(R0)]"
+  },
+  "pre_run_gaps": [
+    "Official Core offline checks for new messages; versioned live execution/evaluation adapter with exact response reuse.",
+    "Freeze cumulative budget, receiver/scope authorization and tolerance policy before any send."
+  ],
+  "limits": [
+    "Two linked 2x2 designs, not a complete 2x2x2 design; three-way interaction unidentified.",
+    "These seven inspected months are exploratory; no independent validation claim.",
+    "Joint boost multiplies unnormalized weighted-half scores by 3 for qualifying articles, not exposure probability by 3.",
+    "Old transport/output failures are held, not silently resent."
+  ]
+}

@@ -50,6 +50,10 @@ def main():
             from studies.sce_inflation_expectations.experiments.price_background import prepare
         elif config['mechanism'] in ('v32_same_input','v32_same_input_siliconflow'):
             from studies.sce_inflation_expectations.experiments.model_comparison import prepare
+        elif config['mechanism'] == 'v32_new2025_validation':
+            from studies.sce_inflation_expectations.experiments.post2025_trial import prepare
+        elif config['mechanism'] == 'v32_news_matching':
+            from studies.sce_inflation_expectations.experiments.news_matching import prepare
         else:
             parser.error('Unknown mechanism adapter')
         prepare(args.folder, config); return

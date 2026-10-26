@@ -1,0 +1,20 @@
+{
+  "status": "completed_offline_core_normal_comparison",
+  "new_API_calls": 0,
+  "new_Q9_fits": 0,
+  "source_evaluation": "outputs/sce_full_a_core_normal_evaluation_20261026_v3",
+  "evaluation_manifest_sha256": "8bd3c124f1f8305eeb39d7682004b2470ded1e68b88c02887811164401aab365",
+  "renderer_sha256": "ce89401c8520c65bf45bca769826a4372cc355fe1d0bb7d5fab61d1574005247",
+  "files_sha256": {
+    "index.html": "43cb7360dd42a14df9ec4e168b68d0a00145d78251c30798450e69f3ffd3fec4",
+    "readout.json": "8bd2133969c588497daf0d4af18a8fe0a3cdcb8a4bd6f9072f29fca8b30000b2",
+    "figures/q9_w1_iqr_full_wave.png": "59458b8cec9a14f59a9564cc109a45d11a4b65b10be970a84a2b9fd82822690e",
+    "figures/q9_levels_2021.png": "f933243d2008d4ca662cab8f9c1cb86f571f05ad6ff1bcee2ac73ed25d62f7dd",
+    "figures/tau_sensitivity.png": "43eee9a08495ae44ce4203771f9b7d68caccf0a3b54c7d539b7f3f5a5cb5f243",
+    "figures/q9_levels_all_82.png": "2ef69d5bb13bd386694640fc8c494558e4d2b57094466aef522a9e6b452dd203",
+    "figures/q9_yearly_mae.png": "267212ba360eaa6687edbb074d7d66834bd51bbdcac654073182e95aef3244c2"
+  },
+  "primary_target_months": 82,
+  "original_report_v05_preserved": true,
+  "original_package_v02_preserved": true
+}

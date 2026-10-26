@@ -1,0 +1,20 @@
+{
+  "status": "offline_followup_registered_before_this_search",
+  "request": "Broaden tau search and fit national Q9 median MAE on an earlier historical training segment; preserve original outputs",
+  "new_api_calls": 0,
+  "new_q9_fits": 0,
+  "scope": "Only tau changes; existing Core responses, 54-cell grid, entry pools, population weights and expansion algorithm stay fixed",
+  "training": ["201901", "202212"],
+  "later_check": ["202301", "202510"],
+  "training_target": "Frozen public national SCE Q9 median; no person-linked human targets",
+  "coarse_grid": "0..128 inclusive at 0.125 increments, plus 256 geometric increments from 128 to 1000000, plus the infinite-parent-strength limit",
+  "refinement": "Two training-only rounds: 201 values around the smallest best finite tau, initial radius 0.125 then radius divided by 100; clip below zero",
+  "selection": "Minimum training monthly equal-weight MAE; ties within 1e-12 prefer smaller tau; seal selection before later-target evaluation",
+  "not_global_optimum_certificate": "One-dimensional grid with local refinement; the weighted median is a step function and a narrow unsearched minimum may exist",
+  "limits": [
+    "This is supervised historical statistical calibration, unlike the original model-output-only holdout selection of tau8",
+    "Both periods have already been seen in the project; later check is not a new untouched blind test",
+    "No refitting to later outcomes or choosing tau to cross a display threshold",
+    "Original tau8 results remain unchanged and must be reported separately"
+  ]
+}

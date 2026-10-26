@@ -1,0 +1,267 @@
+{
+  "status": "draft_v05_full_A_T0_readout_B11_unchanged",
+  "date": "2026-10-26",
+  "pages": 8,
+  "new_api_calls": 0,
+  "new_q9_fits": 0,
+  "new_evaluation_q9_fits": 0,
+  "scientific_configuration_changes": 0,
+  "source_evaluation": {
+    "path": "outputs/sce_full_a_t0_analysis_20261026_v1/manifest.json",
+    "readout": "outputs/sce_full_a_t0_readout_20261026_v1/manifest.json",
+    "new_api_calls": 0,
+    "new_q9_density_fits": 9262,
+    "density_fit_fallbacks": 13,
+    "evaluation_method": "offline frozen evaluator; no model/API calls"
+  },
+  "layout_profile": {
+    "text_scale": 0.95,
+    "figure_scale": 0.92,
+    "paragraph_indent_em": 2
+  },
+  "manuscript_sha256": "d400fff4f3143c76b802d89ba34fb71b7fb8b94e89995847ae46ff6cb72ff839",
+  "renderer_sha256": "9417681921513bfc4b04ca1f7dc459204bec22de11486fa8c08332f47a024a8c",
+  "fonts": {
+    "Chinese": "/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_progress_report_20261015_v2/assets/kaiti_sc.ttf",
+    "Latin": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+    "font_files_redistributed": false
+  },
+  "layout": [
+    {
+      "page": 1,
+      "content_height_pt": 600.6,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 146.29
+    },
+    {
+      "page": 2,
+      "content_height_pt": 597.55,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 149.34
+    },
+    {
+      "page": 3,
+      "content_height_pt": 728.28,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 18.61
+    },
+    {
+      "page": 4,
+      "content_height_pt": 575.34,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 171.55
+    },
+    {
+      "page": 5,
+      "content_height_pt": 649.68,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 97.21
+    },
+    {
+      "page": 6,
+      "content_height_pt": 331.86,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 415.03
+    },
+    {
+      "page": 7,
+      "content_height_pt": 411.83,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 335.06
+    },
+    {
+      "page": 8,
+      "content_height_pt": 542.21,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 204.68
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/workstreams/20261024_fullperiod_analysis/analysis_sources.json",
+      "sha256": "8de1b49964357534df0c186defb6eaebf054c1f0c25a1d14734d02e7a732e1db"
+    },
+    {
+      "path": "outputs/sce_fullperiod_analysis_20261024_v1/summary.json",
+      "sha256": "16b9ddf84e8145eecea1799abd2e907017e183a42954bc6aff7ce14cc19a1b86"
+    },
+    {
+      "path": "outputs/sce_2021_environment_blend_diagnostic_20261024_v2/summary.json",
+      "sha256": "2f427f4a896b3fd3fdab7cc4f67345cf6bcf157a665acad56c551159d75f7fe5"
+    },
+    {
+      "path": "docs/workstreams/20261023_main_run/mechanism_guide_20261024.json",
+      "sha256": "a287f57182422da3aa5def2bb95fd79ea2aba1472242c73dfa48f9ed9891cb76"
+    },
+    {
+      "path": "docs/workstreams/20261023_main_run/README.md",
+      "sha256": "155523a48bc24635676a3a387fd920e7f20f613c6907d435653bd55c5f7cb9bc"
+    },
+    {
+      "path": "docs/EXPERIMENT_STATUS_20261018.md",
+      "sha256": "36d4ebecc1d12a54e4326450b64be222d7deec82be12b867ff560f0fd0b3e6f4"
+    },
+    {
+      "path": "docs/workstreams/20261021_fullperiod/news_matching_results_20261022.md",
+      "sha256": "c6da8aad71f13affcd188f4b5115af6548b91ad484f2ebe93a012f73dd609d2f"
+    },
+    {
+      "path": "docs/workstreams/20261019_advisor_followup/temperature_results_20261019.md",
+      "sha256": "46461a139919bcd09c628c32ba97e3b4566849b5ff44d2b413e53a401c729edb"
+    },
+    {
+      "path": "docs/workstreams/20261016_cognition/results.md",
+      "sha256": "e5a9426947a7259e73a67de332d6462a6ce46f6362e5a8925b63ae0f10ac5d76"
+    },
+    {
+      "path": "docs/workstreams/20261016_household_finance/results.md",
+      "sha256": "24c52e85950f311236c03700d2d43d107000be50f6a6db77a93bb056565b3167"
+    },
+    {
+      "path": "docs/workstreams/20261017_finance_validation/results.md",
+      "sha256": "6aef9fdb9a06326b8ab738dc6af3e78ec0b0b6989d5f0be6a80b4ad07cb48966"
+    },
+    {
+      "path": "docs/workstreams/20261018_psychological_waves/results.md",
+      "sha256": "c2ab52e4ba901bff7a8716d88c220bae0bf0994749fb00aa8c41b91008274883"
+    },
+    {
+      "path": "docs/sources/challenge_requirements_20261024.json",
+      "sha256": "940c49e5b564cfe86cfa870df65950ac5d6a0f982e85dc01abc25f51a2f78fef"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_analysis_20261026_v1/manifest.json",
+      "sha256": "07a67e4f1bde937022ac66bdc19de60d87c950c8a612f65e492ac0d0dcd3839d"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_analysis_20261026_v1/summary.json",
+      "sha256": "2ecf48bed8d265131a2502ebfcbe143f459b8329982c9fc412cf9d5e526ad84b"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_readout_20261026_v1/manifest.json",
+      "sha256": "bebb23335a30f39a9d287111f6778b3cc97178938f9486bddb2686293f967844"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_readout_20261026_v1/summary.json",
+      "sha256": "82525b446f609a558b64e50c59b9312bb3779f0fae189a020b1d57b12a7e960d"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_readout_20261026_v1/monthly_national.csv",
+      "sha256": "1a24f5137359b3690a5f6ab5b4414d925eacec147a05889266d2ed0cf4b5f12e"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_readout_20261026_v1/yearly.csv",
+      "sha256": "c5133ec49096f1e3d6fc0429413c699f6bee5bfe1ffaa4c086ac83630bba6e47"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_terminal_20261025_v1/protocol.json",
+      "sha256": "cc199b00b701790d4308fee52f63f33b0122a0b70353f685a9f3f0123f036e65"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_terminal_20261025_v1/generation_receipt.json",
+      "sha256": "b62043dc10d362e7c4dfcbeb4f20a6381070309358d0b5f58f29d245f7314a35"
+    },
+    {
+      "path": "outputs/sce_recent_b_readout_20261025_v2/summary.json",
+      "sha256": "0ed5efeae69b2f04ba21fe8de92e83523799dbf517559ea8561e5af813af4723"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_analysis_20261026_v1/manifest.json",
+      "sha256": "07a67e4f1bde937022ac66bdc19de60d87c950c8a612f65e492ac0d0dcd3839d"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_analysis_20261026_v1/summary.json",
+      "sha256": "2ecf48bed8d265131a2502ebfcbe143f459b8329982c9fc412cf9d5e526ad84b"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_readout_20261026_v1/manifest.json",
+      "sha256": "bebb23335a30f39a9d287111f6778b3cc97178938f9486bddb2686293f967844"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_readout_20261026_v1/summary.json",
+      "sha256": "82525b446f609a558b64e50c59b9312bb3779f0fae189a020b1d57b12a7e960d"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_readout_20261026_v1/monthly_national.csv",
+      "sha256": "1a24f5137359b3690a5f6ab5b4414d925eacec147a05889266d2ed0cf4b5f12e"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_readout_20261026_v1/yearly.csv",
+      "sha256": "c5133ec49096f1e3d6fc0429413c699f6bee5bfe1ffaa4c086ac83630bba6e47"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_readout_20261026_v1/figures/a2021_levels_errors.png",
+      "sha256": "e4bdcdca534ad328cce352823ae20ce4b03c9894339575758603fbbba656b37d"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_terminal_20261025_v1/protocol.json",
+      "sha256": "cc199b00b701790d4308fee52f63f33b0122a0b70353f685a9f3f0123f036e65"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_terminal_20261025_v1/generation_receipt.json",
+      "sha256": "b62043dc10d362e7c4dfcbeb4f20a6381070309358d0b5f58f29d245f7314a35"
+    },
+    {
+      "path": "outputs/sce_recent_b_readout_20261025_v2/summary.json",
+      "sha256": "0ed5efeae69b2f04ba21fe8de92e83523799dbf517559ea8561e5af813af4723"
+    },
+    {
+      "path": "outputs/sce_2021_environment_blend_diagnostic_20261024_v2/summary.json",
+      "sha256": "2f427f4a896b3fd3fdab7cc4f67345cf6bcf157a665acad56c551159d75f7fe5"
+    },
+    {
+      "path": "outputs/sce_recent_b_april_context_20261025_v1/summary.json",
+      "sha256": "10c6d8d8137a01e6c75a60d563213153e4a73017fac1e5a80222967f15f3a95b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft_v05/build_figures_v05.py",
+      "sha256": "2fc733869beeb6f0b41b6dd7cae3e1e19fcfdd4b5729a4f5e1442025c1ad6831"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft_v05/figure_data_v05.json",
+      "sha256": "13b40a2481f479fef8527c610e58d8a3985813a5f66ec0321832541d99c89256"
+    },
+    {
+      "path": "outputs/sce_fullperiod_analysis_20261024_v1/summary.json",
+      "sha256": "16b9ddf84e8145eecea1799abd2e907017e183a42954bc6aff7ce14cc19a1b86"
+    }
+  ],
+  "figures": [
+    {
+      "source": "outputs/sce_research_report_figures_20261024_v03/q9_observed_example.png",
+      "sha256": "37ed92288cdfb2db48c3b742797f3d754af7165162410bbc1c7bd4cf985de695",
+      "asset": "q9_observed_example.png"
+    },
+    {
+      "source": "outputs/sce_research_report_figures_20261024_v02/grid_evidence.png",
+      "sha256": "11e8e5a4594d7408e4447c450fef9d424478d4f6df300db284ecf4ddbb7949cb",
+      "asset": "grid_evidence.png"
+    },
+    {
+      "source": "outputs/sce_research_report_figures_20261024_v02/information_routes.png",
+      "sha256": "14fb4836e3830f30ba0418e40b48eef8d9086cdd21d8aa77d2db18b6fc4e8b90",
+      "asset": "information_routes.png"
+    },
+    {
+      "source": "outputs/sce_research_report_figures_20261024_v02/news_evidence.png",
+      "sha256": "8cd960eec9c59ad585e549a477f497531a9fd5fedafe2e9a879c5143d73cb144",
+      "asset": "news_evidence.png"
+    },
+    {
+      "source": "studies/sce_inflation_expectations/reports/final_report_draft_v05/figures/national_A82_T0_B11_legacy.png",
+      "sha256": "e46655a7c716eb5c204e1012545975e12b8f70cd20e0c7c7905e4561f4bbfc4c",
+      "asset": "national_A82_T0_B11_legacy.png"
+    },
+    {
+      "source": "studies/sce_inflation_expectations/reports/final_report_draft_v05/figures/microstructure_old_A_T0.png",
+      "sha256": "1246a9bb51247eba945dba4f64f4d38e8acb9553e067a760bc297c87089e1c2d",
+      "asset": "microstructure_old_A_T0.png"
+    },
+    {
+      "source": "outputs/sce_full_a_t0_readout_20261026_v1/figures/a2021_levels_errors.png",
+      "sha256": "e4bdcdca534ad328cce352823ae20ce4b03c9894339575758603fbbba656b37d",
+      "asset": "diagnostic_2021_T0.png"
+    }
+  ],
+  "pdf_sha256": "addae15c3e97d0ed2728561b184eacbed44bf19142d9815e39a647e955d099d6"
+}

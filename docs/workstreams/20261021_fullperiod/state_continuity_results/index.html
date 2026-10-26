@@ -1,0 +1,27 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>个人信念的三月接续验证</title><style>body{font-family:"Times New Roman","Kaiti SC","STKaiti","KaiTi",serif;background:#faf9f6;color:#25282c;margin:0;line-height:1.75}main{max-width:1150px;margin:auto;padding:28px 22px}h1{font-size:29px}h2{font-size:23px;margin-top:32px}h3{font-size:19px}a{color:#7437aa}img{width:100%;height:auto}.lead{border-left:4px solid #c76800;background:#f1ebe1;padding:15px 20px}.note,figcaption{color:#625f59;font-size:14px}.contrasts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.contrast{padding:10px 16px;background:white;border:1px solid #ddd9d0}.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th,td{padding:9px;border-bottom:1px solid #d9d6ce;text-align:right}th:first-child,td:first-child{text-align:left}pre{white-space:pre-wrap;font-size:12px}details{margin:15px 0}nav{display:flex;gap:18px;flex-wrap:wrap}@media(max-width:750px){main{padding:18px 12px}.contrasts{grid-template-columns:1fr}h1{font-size:25px}}@media print{figure,.contrast{break-inside:avoid}}</style><main>
+<nav><a href="../state_continuity_run_card_20261022.md">实验配置与边界</a><a href="../news_matching_results/index.html">此前新闻机制验证</a><a href="summary.json">完整聚合统计</a></nav>
+<h1>个人信念：每月补真人历史，还是连续使用自己的回答？</h1>
+<p class="lead"><strong>改用自身模拟历史后，人群中位数MAE变化 -0.017 pp，跨人W1变化 +0.461 pp。负值表示更接近真人。</strong><br>这是短链误差诊断，不是三个月就完成了未来预测验证。分月结果比单一平均值更能说明问题。</p>
+<h2>1. 本轮比较什么？</h2><p>2025年5、6、7月各96人，共288个人月、120人，71人连续三月入选。人口、食品价格、政策、采购角色和随机3/8/20篇新闻相同。两组各两遍：灰色组每月读取此前可用的真人历史，橙色组初始化后只接自己的模拟回答。共同起点共享请求；后续分开接续。</p>
+<p class="note">首次进入本次模拟与首次参加SCE不同。真实新入组者用严格更早匿名供体的合成起点，明确标注；再次进入Core不会被误当新人重置。两遍生成不是两批不同居民。</p>
+<h2>2. 总体误差与分布</h2><figure><img src="figures/overall.png" alt="三个月两组的中心误差、分布W1和跨人IQR"><figcaption>来源：本批完成的模型原答与独立真人评价，2025-05至07；设计权重，三月/两遍等权。IQR需接近真人，不能单看增大。</figcaption></figure>
+<div class="scroll"><table><tr><th>历史来源</th><th>中心MAE</th><th>中心RMSE</th><th>个人MAE</th><th>跨人W1</th><th>变化W1</th><th>跨人IQR</th></tr><tr><td>每月真人历史</td><td>0.421</td><td>0.515</td><td>3.188</td><td>1.600</td><td>1.399</td><td>3.219</td></tr><tr><td>自身模拟历史</td><td>0.404</td><td>0.509</td><td>3.423</td><td>2.061</td><td>1.485</td><td>2.556</td></tr></table></div>
+<p class="note">单位pp；Q9先由冻结方法从十档概率得到每个人的密度均值，再取跨人中位数。RMSE对各月/遍的中心误差平方后平均再开方。主口径包含明确标记的失败输入状态后备，Q9支持281个人月；实际输出共同支持275个人月，不能混用两种口径的最低值。</p>
+<h2>3. 是否存在误差累积？</h2><figure><img src="figures/monthly.png" alt="两组逐月中位数MAE及W1"><figcaption>各点平均两遍各自的月误差；每月人群存在正常轮换，连续71人的独立分组也一并报告。</figcaption></figure>
+<figure><img src="figures/levels_and_width.png" alt="同一基线支持下的真人、模型及旧信念中位数与人际IQR"><figcaption>这张图统一限制在可计算旧信念的280个人月。图中数值不与上方完整主口径混称；各月先算加权统计，再平均两遍。</figcaption></figure>
+<details><summary>在同一可用旧信念人群上比较基线</summary><div class="scroll"><table><tr><th>配置</th><th>中心MAE</th><th>跨人W1</th><th>变化W1</th></tr><tr><td>每月真人历史</td><td>0.421</td><td>1.603</td><td>1.399</td></tr><tr><td>自身模拟历史</td><td>0.409</td><td>2.070</td><td>1.485</td></tr><tr><td>保留可用旧信念</td><td>0.665</td><td>1.139</td><td>2.782</td></tr></table></div><p class="note">旧信念基线含明确的合成起点，不能全部称为“照抄本人上期”。只有真实相邻月记录的人，另有genuine_previous_only_support对照。变化W1只在有真实相邻上期Q9时计算。</p></details>
+<h2>4. 哪些人群出现差距？</h2><div class="scroll"><table><tr><th>分组</th><th>可评价个人月</th><th>真人历史组W1</th><th>模拟历史组W1</th></tr><tr><td>三个月均入选的71人</td><td>207</td><td>1.505</td><td>1.899</td></tr><tr><td>首次参加SCE</td><td>34</td><td>5.295</td><td>5.295</td></tr><tr><td>相邻月回访</td><td>236</td><td>1.152</td><td>1.655</td></tr><tr><td>间断回访</td><td>11</td><td>3.436</td><td>3.530</td></tr></table></div><p class="note">分组只作描述，不解释为因果。新入组者在首次初始化时两组起点相同，本来就不应凭这个对照宣称初始化机制更好。部分组只覆盖部分月份，完整月/遍覆盖与缺失见JSON。</p>
+<details><summary>Q8点预期独立结果</summary><div class="scroll"><table><tr><th>历史来源</th><th>人群中位数MAE</th><th>个人MAE</th><th>跨人W1</th></tr><tr><td>每月真人历史</td><td>0.800</td><td>8.391</td><td>6.773</td></tr><tr><td>自身模拟历史</td><td>0.717</td><td>8.430</td><td>7.266</td></tr></table></div><p>Q8支持288个人月；不因Q9无效删除有效Q8。</p></details>
+<details><summary>失败、归一化、每遍及其他分组</summary><p>原答、错误与来源保存在私有账本；本页只给聚合。比例归一化、字段保留和密度失败后备的逻辑位置计数：</p><pre>{
+  &quot;observed_history:normalized_q9&quot;: 2,
+  &quot;simulated_history:normalized_q9&quot;: 2,
+  &quot;observed_history:q9_retained_input&quot;: 3,
+  &quot;observed_history:q8_retained_input&quot;: 3,
+  &quot;observed_history:density_fit_fallback&quot;: 1,
+  &quot;simulated_history:density_fit_fallback&quot;: 1,
+  &quot;simulated_history:q9_retained_input&quot;: 3,
+  &quot;simulated_history:q8_retained_input&quot;: 2
+}</pre><p>两遍、首次进入Core/持续/间断分组，以及真实上期基线均见完整聚合JSON。首次共享请求的两个逻辑位置不能当作独立回答。</p></details>
+<h2>5. 实际执行与研究边界</h2><p>DeepSeek V3.2，OpenRouter→固定SiliconFlow FP8，温度0.5、JSON、关闭思考、最多1024输出token。本批912次请求，1152逻辑位置，峰值128在途；API报告$0.6087，含未知费用预留$0.6244，上限$5。调用约5.4分钟，自动重试0次。</p>
+<p>这是采用历史当期画像与月中信息截止的A线诊断；模型训练知识的时间风险仍在。三个月可以识别明显接线问题和短期漂移，不能证明长期误差稳定或全国预测成功。未按本轮成绩改提示、删人或重新选择供体。</p>
+<p class="note">本页读取完成缓存，0新增API、0额外密度拟合；源码与协议见冻结执行包。下一步把条件重建和自主递推的实际边界纳入最终运行方案，再完成宏观组合与连续月份工程。</p></main></html>

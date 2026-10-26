@@ -1,0 +1,26 @@
+{
+  "status": "cached_readout_numeric_and_figure_checks_passed",
+  "new_api_calls": 0,
+  "new_q9_fits": 0,
+  "aligned_support_checks": {
+    "A82": true,
+    "R0": true,
+    "Q0": true,
+    "Q1": true,
+    "Q2": true,
+    "Q3": true
+  },
+  "source_hashes_verified": 7,
+  "figures_visually_checked": [
+    "overall.png",
+    "monthly.png",
+    "prior_groups.png"
+  ],
+  "main_support_person_months": 641,
+  "baseline_support_person_months": 524,
+  "A82_original_generations": 1,
+  "normalizations": 9,
+  "failed_calls": 16,
+  "canvas_path": "/Users/wushuyue/.cursor/projects/Users-wushuyue-Documents/canvases/SCE-media-mechanism-results-20261025.canvas.tsx",
+  "typecheck": "Not independently TypeScript-checked; SDK imports and prop definitions inspected."
+}

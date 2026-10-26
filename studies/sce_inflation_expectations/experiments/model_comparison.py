@@ -17,7 +17,10 @@ MONTHS = [202009, 202109, 202206, 202503]
 MECHANISM = 'v32_same_input'
 ARM = 'deepseek_v32'
 ROUTES = {MECHANISM: (ROUTE, PROVIDER, .26, .38),
-          'v32_same_input_siliconflow': ('siliconflow/fp8','SiliconFlow',.259,.8)}
+          'v32_same_input_siliconflow': ('siliconflow/fp8','SiliconFlow',.259,.8),
+          'v32_new2025_validation': ('siliconflow/fp8','SiliconFlow',.259,.8),
+          'v32_news_matching': ('siliconflow/fp8','SiliconFlow',.259,.8),
+          'v32_news_mechanism_v3': ('siliconflow/fp8','SiliconFlow',.259,.8)}
 
 
 def validate_v32_transport(protocol):

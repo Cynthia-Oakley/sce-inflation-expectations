@@ -1,0 +1,28 @@
+{
+  "status": "report_only_A82_old_A_vs_T0_and_legacy_B11",
+  "new_api_calls": 0,
+  "new_q9_density_fits": 0,
+  "A_months": 82,
+  "B_months": 11,
+  "A_B_joint_error_metric_computed": false,
+  "A_B_continuous_line": false,
+  "B11_refreshed": false,
+  "strict_ex_ante_forecast": false,
+  "old_A_curve_basis": "old_same_roster_pp; recalculated on new T0 roster and weights",
+  "old_A_headline_table_basis": "original full roster; 82-month MAE 0.317092535",
+  "figures": [
+    "national_A82_T0_B11_legacy.png",
+    "microstructure_old_A_T0.png"
+  ],
+  "sources_sha256": {
+    "outputs/sce_full_a_t0_readout_20261026_v1/summary.json": "82525b446f609a558b64e50c59b9312bb3779f0fae189a020b1d57b12a7e960d",
+    "outputs/sce_full_a_t0_readout_20261026_v1/monthly_national.csv": "1a24f5137359b3690a5f6ab5b4414d925eacec147a05889266d2ed0cf4b5f12e",
+    "outputs/sce_full_a_t0_readout_20261026_v1/yearly.csv": "c5133ec49096f1e3d6fc0429413c699f6bee5bfe1ffaa4c086ac83630bba6e47",
+    "outputs/sce_full_a_t0_readout_20261026_v1/manifest.json": "bebb23335a30f39a9d287111f6778b3cc97178938f9486bddb2686293f967844",
+    "outputs/sce_full_a_t0_analysis_20261026_v1/summary.json": "2ecf48bed8d265131a2502ebfcbe143f459b8329982c9fc412cf9d5e526ad84b",
+    "outputs/sce_full_a_t0_analysis_20261026_v1/manifest.json": "07a67e4f1bde937022ac66bdc19de60d87c950c8a612f65e492ac0d0dcd3839d",
+    "outputs/sce_fullperiod_analysis_20261024_v1/summary.json": "16b9ddf84e8145eecea1799abd2e907017e183a42954bc6aff7ce14cc19a1b86",
+    "outputs/sce_recent_b_readout_20261025_v2/summary.json": "0ed5efeae69b2f04ba21fe8de92e83523799dbf517559ea8561e5af813af4723"
+  },
+  "scope_note": "A is a retrospective reconstruction; B is the unchanged v0.4 lagged-proxy backtest. Different input regimes are displayed in separate panels, with no combined score."
+}

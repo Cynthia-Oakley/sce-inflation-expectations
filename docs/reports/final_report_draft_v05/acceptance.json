@@ -1,0 +1,61 @@
+{
+  "status": "draft_v05_visual_and_numeric_checks_passed",
+  "pages": 8,
+  "figures": 7,
+  "visual_pages_checked": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "visual_review_resolution_dpi": 110,
+  "source_hashes_verified": 44,
+  "old_v04_pdf_unchanged": true,
+  "A82_T0_full_period_readout_included": true,
+  "B11_legacy_result_unchanged_and_labeled": true,
+  "A_B_joint_metric_computed": false,
+  "strict_ex_ante_forecast_claimed": false,
+  "figure_old_A_curve_uses_new_roster": true,
+  "headline_mae_pp": {
+    "old_A_full_roster": 0.317092535,
+    "old_A_new_roster": 0.317507943,
+    "new_T0": 0.298406713,
+    "public_reference": 0.223170732
+  },
+  "year_2021_mae_pp": {
+    "old_A": 0.822126362,
+    "new_T0": 0.57742401,
+    "public_reference": 0.325
+  },
+  "microstructure_same_roster": {
+    "n_q9_person_months": 41042,
+    "old_w1_pp": 2.121268532,
+    "new_w1_pp": 2.219217825,
+    "old_iqr_pp": 2.347834466,
+    "new_iqr_pp": 2.247711956,
+    "real_iqr_pp": 5.260960448
+  },
+  "q8_same_roster_mae_pp": {
+    "old_center": 0.818292684,
+    "new_center": 0.72195122,
+    "old_person": 8.172607493,
+    "new_person": 8.214558475
+  },
+  "early48_late34_combinations_present": true,
+  "report_render_new_api_calls": 0,
+  "report_render_new_q9_fits": 0,
+  "source_evaluation_new_api_calls": 0,
+  "source_evaluation_new_q9_density_fits": 9262,
+  "min_bottom_clearance_pt": 18.61,
+  "pdf_sha256": "addae15c3e97d0ed2728561b184eacbed44bf19142d9815e39a647e955d099d6",
+  "v04_pdf_sha256": "699a843c187740fa31f8e7d8816cb7fa3b17ab74d4a43eda3956367596e72301",
+  "reviewed_page_pngs": [
+    "/private/tmp/sce_v05_final_page-5.png",
+    "/private/tmp/sce_v05_final_page-6.png",
+    "/private/tmp/sce_v05_final_page-7.png"
+  ]
+}

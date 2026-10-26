@@ -12,7 +12,7 @@ BASELINE=ROOT/'outputs/sce_temperature_evaluation_20261019_v1'
 
 
 def validate_transport(protocol):
-    if protocol.get('mechanism') in ('v32_same_input','v32_same_input_siliconflow'):
+    if protocol.get('mechanism') in ('v32_same_input','v32_same_input_siliconflow','v32_new2025_validation','v32_news_matching','v32_news_mechanism_v3'):
         from .model_comparison import validate_v32_transport
         return validate_v32_transport(protocol)
     prices={'prompt':protocol['price_input_per_mtok'],'completion':protocol['price_output_per_mtok']}

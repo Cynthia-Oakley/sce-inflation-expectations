@@ -16,6 +16,10 @@ from ..experiments.staged_rosters import job_directory, job_n
 TRUTH = ROOT/'outputs/sce_reference_validation_evaluation_20261017_v1/cases_private.json'
 
 
+def expected_transport_provider(protocol):
+    return protocol.get('expected_provider', 'DeepInfra')
+
+
 @lru_cache(maxsize=None)
 def score_bins(bins):
     return shared._score_bins(list(bins))
@@ -120,7 +124,7 @@ def evaluate(folder, out):
             payload = json.loads(payload) if isinstance(payload, str) else payload
             call = calls[aid]; raw = call.get('raw_response_text') or ''
             if protocol.get('transport') == 'openrouter_locked' and (
-                    call.get('returned_model') != protocol['model'] or call.get('returned_provider') != 'DeepInfra'
+                    call.get('returned_model') != protocol['model'] or call.get('returned_provider') != expected_transport_provider(protocol)
                     or call['extra_body'] != protocol['request_extra_body'] or call['temperature'] != protocol['temperature']):
                 raise ValueError('Locked model/provider/request evidence mismatch')
             if protocol['mechanism'] == 'temperature_sensitivity' and (

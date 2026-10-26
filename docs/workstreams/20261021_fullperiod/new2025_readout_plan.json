@@ -1,0 +1,17 @@
+{
+  "recorded_before_new_scores_inspected": true,
+  "basis": "Existing design-weighted metric contract, same final support; no parameter fitting on new months",
+  "source_sha256": {
+    "scripts/read_sce_post2025_validation.py": "fca393082082125fd5ad15d73e7cd342512b76f8cc24e6d5fb8c69c0829c7db2",
+    "scripts/report_sce_post2025_validation.py": "17137416b5cd667e7e53aad499216153b78cf7d6c0dbe8cb631262febd70e4b9"
+  },
+  "canonical_readout_out": "outputs/sce_v32_new2025_readout_20261022_v1",
+  "report_out": "docs/workstreams/20261021_fullperiod/v32_new2025_results",
+  "new_api_calls": 0,
+  "correction": "Frozen generic evaluator stores weighted results under auxiliary_survey_weighted. Its v1 national extension mixed weighted real centers with equal-person bias. Isolate only those derived fields and reconstruct from cached weighted predicted centers; preserve original and live sources unchanged.",
+  "previous_source_sha256": {
+    "scripts/read_sce_post2025_validation.py": "097be9ed4a995a7ccf2e006921d4e5f1a063ad39177f90564748b4999c8f24b4",
+    "scripts/report_sce_post2025_validation.py": "fcdc117852b64e282cfba16f34fd599fb84e2792a8dd176d6f9cead928dedbe9"
+  },
+  "revision_note": "Before new score inspection: explicitly carry the frozen coverage/descriptive-only flag into the readout and public report; no statistical parameters changed."
+}

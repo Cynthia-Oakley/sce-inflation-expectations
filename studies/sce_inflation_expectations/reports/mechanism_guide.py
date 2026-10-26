@@ -1,0 +1,273 @@
+"""Reader-facing explanation of the frozen A82 candidate; no inference or refit."""
+from pathlib import Path
+from html import escape
+import json
+
+ROOT = Path(__file__).resolve().parents[3]
+PACKAGE = ROOT / 'outputs/sce_monthly_fine_full_execution_20261023_v3'
+
+
+def link(path, label):
+    return f'<a href="{escape(str(ROOT / path), quote=True)}">{escape(label)}</a>'
+
+
+def content():
+    sections = []
+    def add(key, title, lead, body):
+        sections.append(dict(id=key, title=title, lead=lead, body=body))
+
+    add('overview', '全流程：我们究竟要重建什么',
+        '给某个月的家庭画像、既有信念和限定的信息，模拟这个家庭会怎样回答通胀问卷，再比较总体与微观结构。', '''
+<p>研究对象是<strong>居民的通胀预期</strong>，不是未来实际CPI。纽约联储SCE按月调查约1,200—1,300名户主，单人通常最多参与12个月。我们同时研究全国指标、同类家庭分布，以及真正回访者的预期更新。</p>
+<div class="flow"><span>当月人口框架</span><b>→</b><span>54格抽512人</span><b>→</b><span>匹配信念与信息</span><b>→</b><span>LLM回答Q8／Q9</span><b>→</b><span>计分、加权、评测</span></div>
+<h3>本次候选，一眼看清</h3>
+<div class="facts"><div><strong>82个月</strong><small>2019-01至2025-10</small></div><div><strong>512人／月</strong><small>包含新人及回访者</small></div><div><strong>41,984次</strong><small>每人每月一次</small></div><div><strong>DeepSeek V3.2</strong><small>固定SiliconFlow FP8路由</small></div></div>
+<ul><li><strong>A线：</strong>利用已经获得的历史微观画像与严格更早的回答，做条件历史重建。本次运行属于这条线。</li><li><strong>B线：</strong>在一个真实信息截止点，只能使用那之前已经公开的版本，预测尚不可见的调查结果。2025-11至2026-09的11个月另行准备，不包含在本批。</li><li><strong>每月独立初始化：</strong>六月输入真实五月或近期合成的先验；七月重新从合法历史初始化。不会自动将六月模型的回答滚入七月。</li><li><strong>512人用权重代表全月：</strong>当前候选没有让Normal模型替其余人代答；若后续要统计扩展，属于另一项选择。</li></ul>
+<aside><b>两项“拟合”分开理解。</b>①将每人的Q9十档概率还原为连续主观分布；②将全国模拟指标与过去已公布的全国指标作凸组合。前者是问卷计分，后者是预测校准。</aside>
+<details><summary>本说明的依据与阅读方法</summary><p>配置以冻结execution_v3及实际提示模板为准。各章先给结论，公式与边界放在可展开处；教学图和虚构家庭不代表真实实验成绩。本说明不修改任何冻结输入，也不构成运行授权。</p></details>
+''')
+
+    add('questions', 'Q8与Q9：一个数，以及一个人的不确定性',
+        'Q8直接报未来12个月的通胀率；Q9给不同通胀区间分配概率。两者都问预期，不问已经发生的涨幅。', '''
+<div class="split"><div><h3>Q8：点预期</h3><p>简化表述：“你预计未来12个月的通胀率是多少？”</p><div class="equation">例如：4%（若预计通缩，可以是负数）</div><p>原问卷区分通胀／通缩及幅度；模拟接口合并为一个带正负号的数 <code>point_pct</code>。它不是概率，也不强制等于Q9的均值。</p></div><div><h3>Q9：概率分配</h3><p>简化表述：“未来12个月通胀率落入下面各区间的可能性各有多大？”</p><div class="equation">十档概率 ≥ 0，合计100%</div><p>模型返回嵌套对象 <code>q9.bin1…bin10</code>。每档数字是概率百分数，不是预测的通胀率。</p></div></div>
+<table><thead><tr><th>字段</th><th>未来通胀率区间</th><th>字段</th><th>未来通胀率区间</th></tr></thead><tbody>
+<tr><td>bin1</td><td>12%及以上</td><td>bin6</td><td>−2%至0%</td></tr><tr><td>bin2</td><td>8%至12%</td><td>bin7</td><td>−4%至−2%</td></tr><tr><td>bin3</td><td>4%至8%</td><td>bin8</td><td>−8%至−4%</td></tr><tr><td>bin4</td><td>2%至4%</td><td>bin9</td><td>−12%至−8%</td></tr><tr><td>bin5</td><td>0%至2%</td><td>bin10</td><td>−12%及以下</td></tr></tbody></table>
+<p class="caption">端点按问卷标签展示；拟合连续分布时单点概率为0，边界文字重叠不构成重复概率质量。</p>
+<h3>全国公布的“通胀预期中位数”来自哪一个？</h3>
+<div class="flow"><span>每人的Q9</span><b>→</b><span>拟合个人分布</span><b>→</b><span>取个人分布均值 μᵢ</span><b>→</b><span>跨人加权中位数</span></div>
+<aside>不是将Q8和Q9平均，也不是先混合所有人的概率、再取一个总分布的中位数。我们另行报告Q8的跨人中位数。</aside>
+<p>例如，一个人Q8填4%，但Q9全填在2%—4%：按单档均匀分布近似，其Q9均值是3%、个人分布中位数也是3%、个人IQR是1pp。两种回答可以不同；我们不强行把它们调成相同。</p>
+<p class="source">来源：<a href="https://www.newyorkfed.org/microeconomics/sce/sce-faq">纽约联储FAQ：点预期、密度均值与全国中位数</a>；本项目评分细节见第5章。</p>
+''')
+
+    add('matching', '匹配机制：五件不同的事情',
+        '网格抽样决定模拟谁；外部迁移补合成画像；先验匹配决定从哪里起步；新闻与采购角色决定看到什么。', '''
+<table><thead><tr><th>机制</th><th>使用哪些信息</th><th>具体动作</th></tr></thead><tbody>
+<tr><td><b>54格分层抽样</b></td><td>学历3×数理2×年龄3×收入3</td><td>每月选512人；小格优先保底，汇总时恢复真实人口比例</td></tr>
+<tr><td><b>CE支出篮子</b></td><td>住房、收入、年龄、地区、学历</td><td>从相似CE家庭按调查权重抽一位，整组迁移四类支出占比</td></tr>
+<tr><td><b>ATUS采购角色</b></td><td>年龄、过去家庭人数、是否有子女</td><td>估计五档采购责任概率，抽取角色，再控制可见食品类别数</td></tr>
+<tr><td><b>缺失信念供体</b></td><td>新／老受访身份、近期月份、年龄／学历／收入</td><td>优先本人近期回答；否则抽近期匿名相似供体的完整Q8／Q9</td></tr>
+<tr><td><b>新闻分配</b></td><td>数量随机；主题关联住房、就业与合成支出份额</td><td>3／8／20篇异质数量，主题用均匀与关联加权概率混合</td></tr></tbody></table>
+<h3>54格怎样切？为什么还要权重？</h3>
+<ul><li>学历：高中及以下／部分大学教育／大学毕业；数理：高／低；年龄：40岁以下／40—60岁／60岁以上；家庭收入：5万美元以下／5万—10万美元／10万美元以上。</li><li>任一维度未知的进入未知池，不假装知道其类别。每个非空格尽量保底8人，不足8人的格全取，剩余名额按人口权重质量分配。</li><li>格内固定种子无放回抽样，抽中概率为π<sub>g</sub>=n<sub>g</sub>/N<sub>g</sub>。小格被多抽，不代表真实世界中小格人口变多。</li></ul>
+<details><summary>设计权重与格内校准：一个人为什么可以代表0.5或2个人口单位？</summary><div class="equation">dᵢ=wᵢ/π<sub>g</sub>；aᵢ=dᵢ × W<sub>g</sub>/Σ<sub>j∈入选格g</sub>dⱼ</div><p>w是原SCE调查权重，W是完整格总权重；a用于评价。这样每格入选者的总权重与完整格一致。按a的累计比例求50%分位，不平均各格中位数，也不通过复制答卷增加独立样本量。</p><p>正权重框架98,352人月；30条无有效原权重的记录保留为缺失，不补成1。格内N和ESS不足时只作描述。54格并不保证所有单格都有足够精度。</p></details>
+<details><summary>CE：供体不足时如何放宽？</summary><p>当前固定来源为CE 2020年第四季度FMLI，最小池25户。从“住房＋收入＋年龄＋地区＋学历”开始，依次放松学历、地区、年龄、收入，尽量保留住房；必要时进入更大供体池。按CE权重抽取，四类占比联合迁移，以保留类别间预算关系。同一匿名身份保留稳定随机数，匹配池不变时不会无故重抽。</p><p>这是别的家庭的支出结构，不是该SCE家庭真实账单，不是CPI官方权重，也不提供实测购买频率。</p></details>
+<details><summary>ATUS：缺家庭结构、小格太少时如何处理？</summary><p>来源为ATUS 2022 Well-Being模块的采购责任题EUGROSHP2。使用过去SCE家庭结构；不存在时只按已知维度匹配。用“n/(n+20)×同类组概率＋20/(n+20)×总体概率”作收缩，避免小格概率过于极端，再以固定随机数抽角色。</p><p>五档角色从不采购到全部采购，分别展示0／1／3／6／6个额外食品细项。这个数量映射是我们的实验设计，不是ATUS直接测出的新闻量、购买次数或因果效应。没有据此认定谁开车或负责日用品采购。</p></details>
+''')
+
+    add('population', '人口与信念：来源、时点及新人处理',
+        '本次是历史A线：当月真实画像可以作为重建条件，本期通胀答案始终留在评价层。更早发生与当时已公开是两回事。', '''
+<table><thead><tr><th>输入</th><th>来源与时间规则</th><th>需要记住的限制</th></tr></thead><tbody>
+<tr><td>人口属性</td><td>SCE当月微观中的年龄组、学历、收入档、地区／州、就业、住房、数理标签</td><td>A线已知的重建条件；不能宣称在历史当时均已公开</td></tr>
+<tr><td>本人既有信念</td><td>严格早于目标月；Q8与Q9分别找最近合法回答，作为直接起点最长回溯3个月</td><td>跨月空档明确标明，不能把较早回答冒称上月实答</td></tr>
+<tr><td>个人常态</td><td>本人更早合法Q9密度均值的算术平均与可用次数；至少2次才展示</td><td>不包含当前目标答案；次数少或没有历史，不编造个人长期常态</td></tr>
+<tr><td>支出／采购角色</td><td>固定CE 2020Q4与ATUS 2022迁移；家庭结构只取严格更早SCE记录</td><td>固定年份的跨期合成代理；2019年使用后来的迁移样本不满足严格B</td></tr>
+<tr><td>央行信心</td><td>选择截止前最后可得的已登记Gallup波次，按全国分布抽五档标签</td><td>合成标签，不是SCE本人实测；没有按个人真实信任程度逐一匹配</td></tr></tbody></table>
+<h3>回访者与新人走哪条路？</h3>
+<div class="split"><div><h3>回访者：保留本人历史</h3><ol><li>分别检查Q8、Q9。</li><li>若近期本人字段合法，直接保留。</li><li>某一字段缺失时，只合成该字段。</li><li>如果有更早历史，可另给常态摘要。</li></ol></div><div><h3>新人／缺历史者：近期供体起步</h3><ol><li>新人匹配历史新人；回访缺失者匹配历史回访者。</li><li>先上月，再最近3个月。</li><li>年龄＋学历＋收入→年龄＋收入→年龄→该新／老池整体。</li><li>至少5个候选、ESS≥3；两字段都缺时联合抽整份Q8／Q9。</li></ol></div></div>
+<p>供体抽取按其调查权重给概率，但不会把供体权重拷给接收者。本人匿名身份只在本地连接历史，原始ID、调查权重和实际答题日期不进入提示。</p>
+<details><summary>为什么还约束合成起点的总体中位数？是否使用了本期答案？</summary><p>我们希望“本人保留＋合成起点”的总体历史信念不要明显偏离真实<strong>过去一月</strong>的分布。先在过去完整框架上按同一54格设计做250次离线抽样，确定历史中位数的设计波动容差；只对缺失者的供体抽取概率作有限调整，概率倍率最多4倍。</p><p>真实本人回答和评价权重不改，也不使用本期真值挑供体。最终本批75个月原已在历史容差内、7个月经有限调整进入。它约束的是“从哪里起步”，不是保证“本期预测正确”。B线还必须证明作为约束的过去资料在截止前已经公开。</p></details>
+<aside><b>A／B边界：</b>SCE核心微观通常滞后约9个月公开。A线能研究“给定真实历史画像与既往答卷时，LLM能否重建下一份答卷”；B线不能假设已经拿到上个月个人答卷。近期可证明的旧微观版本、旧信念向起点更新，以及来源的发布时间资格仍需单独处理。</aside>
+<p>2026年阶段按用户决定延用<code>gallup_2025_april</code>，不混入不同量表的新指标；它不影响本批止于2025-10的范围。来源年份和合成属性必须在报告中保留。</p>
+''')
+
+    add('environment', '环境：仓库里有什么，模型实际看到什么',
+        '资料准备与提示投喂是两层。当前候选直接提供食品价格、支出结构、新闻和政策；完整CPI／就业／汽油／趋势整表已从实际提示中移除。', '''
+<aside><b>启动前必须掌握：</b>当前代码的<code>transform_prompt</code>用采购价格视图替换完整宏观统计表。不能因为环境JSON保存了某个序列，就在报告中说模型读到了整条序列。总体CPI、能源、就业信息仍可能出现在被抽中的新闻或政策事实中。</aside>
+<table><thead><tr><th>资料</th><th>来源／日期</th><th>当前实际使用方式</th></tr></thead><tbody>
+<tr><td>食品价格</td><td>BLS CPI归档首发PDF；参考月通常是目标月的上月</td><td>所有人得到在家食品总体环比／同比；采购角色控制六类食品中展示多少细项</td></tr>
+<tr><td>其他宏观数表</td><td>BLS总CPI、就业、FRED／EIA汽油及历史趋势</td><td>仓库保留；本版不将全套数表直接展示给每位LLM</td></tr>
+<tr><td>新闻</td><td>NYT Archive标题、摘要／片段；通常从上月1日至本月统一截止日</td><td>3条共同新闻＋0／5／17条个人新闻，总数3／8／20</td></tr>
+<tr><td>政策简报</td><td>截止前最近一期美联储声明；官方原文留证</td><td>固定展示3条政策事实，不给已知未来结果</td></tr>
+<tr><td>信心波次</td><td>截止前最后可得Gallup波次</td><td>生成个人五档合成信心标签；不直接把全体统计比例贴给个人</td></tr></tbody></table>
+<h3>统一截止日怎样设？</h3>
+<p>一般沿目标月CPI首发日当天结束，采用纽约时区；例如<strong>模拟2022年6月，截止2022-06-10结束</strong>，食品数据参考2022年5月。新闻发布时间和政策发布日期不得晚于截止点。停摆与缺失有单独登记，不静默捏造。</p>
+<p>真人在整个月内不同日期作答，而模型同月用统一截止。因此它是月中参照条件下的重建，不是逐个复现实际作答时的信息集。提示中的“此前／后来／同日不确定”比较公开时间与过去作答参考日，不证明某人真正读过该条信息。</p>
+<details><summary>随机新闻量与主题匹配的精确规则</summary><p>在完整月框架上先分配新闻数量：50%为3篇，约29.17%为8篇，约20.83%为20篇，人数用最大余数取整，然后再取512人的子样本。因此入选512人的平均新闻量无需恰好8篇；这不是每位居民真实阅读次数的估计。</p><p>共同新闻从A1类候选中抽3条，同月共享。个人新闻从非共同且分类保留的候选池无放回抽取。每步抽取概率为“50%均匀概率＋50%关联加权概率”，有关联的新闻得分2、其他1。不是机械保证一半文章一定相关。</p><p>住房影响租房／自有住房主题；在职、失业或休假关注劳动收入；合成食品支出占比≥25%关联食品，汽油支出占比≥8%关联道路燃料。当前数量分配不由学历、数理或收入直接决定；人口相关数量方案保留为已比较的对照。</p></details>
+<details><summary>食品六类与采购责任的限制</summary><p>谷物烘焙；肉禽鱼蛋；乳制品；果蔬；非酒精饮料；其他在家食品。角色决定细项数，具体类别用稳定随机排序抽取。给出的都是全国CPI-U类别价格的环比与同比，不是本人的收据、品牌价格或地区实测涨幅。采购角色不等于购买频率，未注入“按某固定系数提高预期”的反应规则。</p></details>
+<details><summary>严格B的历史版本证据：现在有哪些限制？</summary><p>NYT当前API文字快照不自动证明历史当日文字未修订；汽油图表CSV加日期参数未通过有效历史版本验证，故数值vintage待核。近期11个月新闻、政策文本、人口公开时点仍待认证。已公布的历史全国SCE可以用于合法基线／组合，目标月SCE真值不能进入生成输入。</p><p>2025-11原截止10月24日与新候选11月13日尚未统一冻结；这两个版本都不在今晚82月范围。模型自身预训练知识还可能包含历史后续结果，提示日期不能消除这一风险；历史拟合好不等于证明没有记忆污染。</p></details>
+''')
+
+    add('density', '从十档概率到连续分布，再到全国指标',
+        '每人独立计分。我们用已冻结的SCE方法近似算法，真人与模型用同一个版本；不拿真人当期答案来修正模型密度。', '''
+<h3>第一步：处理模型的概率总和</h3>
+<p>十档有限、非负且总和为正时，按用户要求作比例归一化：<code>p′ⱼ=100×pⱼ/Σpⱼ</code>，原回答与修正标记保留。负概率、缺档、非数字、全0等不靠强制修正掩盖。真人Q9则按原始合法性规则计分，不替其自动补答。</p>
+<h3>第二步：依正概率档数选择分布</h3>
+<div class="flow"><span>1档：均匀分布</span><span>2个相邻档：对称三角分布</span><span>≥3档：广义Beta分布</span></div>
+<p>单档100%落在2%—4%，就近似为该区间内均匀分布。两档时利用边界和两档概率确定三角分布。两档不相邻、支持越界等情况明确标为计分异常，不冒充精确密度。</p>
+<details><summary>广义Beta怎样拟合？数学细节</summary><p>令X=L+(U−L)Z，Z服从Beta(a,b)。在若干区间边界x处，用拟合累计概率Fθ(x)与问卷累计概率之差作最小二乘：</p><div class="equation">θ̂=argmin Σ<sub>k∈K</sub>[Fθ(xₖ)−Σ<sub>区间≤xₖ</sub>p′ⱼ/100]²</div><p>当前冻结变体是<code>relaxed_tail_skip_zero</code>：跳过部分内部0概率档对应的CDF约束；形状参数a、b界限1.001—200，采用三组形状初值(1.1,1.1)、(2,2)、(5,5)并选损失最低的解。开放尾端参与估计，外侧支持限制在−38%至38%，±20%只是尾端初值，不是把预测裁剪到20%。闭合支持及开放端放松规则以冻结代码为准。</p><p>计算μ=L+(U−L)a/(a+b)，再用CDF反演求25%、50%、75%分位。算法近似单峰分布，不能保证完美保留原答卷的多峰、空档或开放尾形状。已知有数值识别与尾部近似限制。</p></details>
+<h3>第三步：从个人密度取一个中心数</h3><div class="equation">μᵢ=个人拟合分布的均值；uᵢ=个人P75−P25</div><p>μ表示此人的预期水平，u表示此人的主观不确定性。Q9中另有“个人分布中位数”，但本项目全国汇总主要使用μ，而非它。</p>
+<h3>第四步：跨人求加权中位数</h3><div class="equation">Mₜ=inf{x: Σᵢaᵢ·1(μᵢ≤x)/Σᵢaᵢ ≥ 0.5}</div><p>把512人的μ从低到高排，累计评价权重，到达50%时对应的μ就是本项目月度中位数。这是左逆经验CDF口径。</p>
+<aside><b>与纽约联储官方口径的差别必须披露：</b>官方使用个人密度均值形成全国中位数，且对相关离散报告采用插值中位数；本项目冻结的是研究近似密度＋左逆加权分位。即使输入全部真人问卷，也可能与官方headline略有差距。我们同时报告“同算法真人真值”和“官方全国值”。</aside>
+<details><summary>这个计分器什么时候定下来的？</summary><p>项目在2026-10-03对2020-04、2021-10、2022-12的封存样本检验后冻结选定的Beta变体；生产迁移对3,741行作过等价核对。它用于问卷测量层，不是训练DeepSeek的参数。上述月份后来进入完整历史窗口时，不能再说它们是从未看过的独立测试月。</p></details>
+''')
+
+    add('metrics', '评测指标：中心、分布、身份、更新',
+        '一个中位数很接近，仍可能人人答得一样；一个分布很接近，仍可能把高预期和低预期的人认反。指标需要成组看。', '''
+<h3>先看四项，再看原因</h3>
+<table><thead><tr><th>指标</th><th>它回答什么</th><th>解释</th></tr></thead><tbody>
+<tr><td><b>月度中位数MAE</b></td><td>全国／群体中心平均偏离多少？</td><td>各月|预测−真值|的平均，单位pp，越低越好；各月等权</td></tr>
+<tr><td><b>跨人W1距离</b></td><td>整个人群的预期分布相差多远？</td><td>把一个分布搬成另一个的最小平均移动距离，单位pp，越低越好</td></tr>
+<tr><td><b>跨人IQR</b></td><td>不同人之间有多大分歧？</td><td>个人密度均值μ的P75−P25；要接近真人，不是越大越好</td></tr>
+<tr><td><b>个人密度IQR</b></td><td>同一个人有多不确定？</td><td>此人拟合密度的P75−P25；另报告它与真人的差</td></tr></tbody></table>
+<aside><b>IQR有两层。</b>“每人都确信3%，彼此也一致”与“每个人都很不确定，但中心都是3%”的跨人IQR都可能很小；个人密度IQR却不同。只增加温度或把回答拉宽，不能直接认定复现了人际异质性。</aside>
+<div id="metric-demo"></div>
+<details><summary>MAE、RMSE、MSE、有符号偏差</summary><div class="equation">MAE=平均|eₜ|；MSE=平均eₜ²；RMSE=√MSE；Bias=平均eₜ</div><p>e是预测减真值。MAE／RMSE／Bias用通胀百分点pp；MSE用pp²。RMSE更惩罚大错，Bias区分系统偏高／偏低。4%与3%的差是1pp，不是1%的相对误差。极端月不能因不好看而删除。</p></details>
+<details><summary>W1精确定义、局部W1、更新W1</summary><div class="equation">W1(F,G)=∫|F(x)−G(x)|dx</div><p>本次主W1比较的是不同人的μ分布，不是逐人的十档Q9距离。样本数可以不同，双方按各自权重归一化。</p><ul><li>总体W1：当前有效真人与模型的横截面，含新人；它说明全体分布能否重建，但不证明新人先验正确。</li><li>局部W1：限制在确有相邻上月实答的回访者，专门查看可比较的这一群人。</li><li>更新W1：比较模型与真人各自相对同一真实上期μ的变化量分布。没有真实相邻上期的人不进入这项，不能用合成上期冒充实测更新。</li></ul></details>
+<details><summary>个人误差、秩相关、概率填法</summary><ul><li>个人MAE：模型μ与同一真人μ的绝对差，按评价权重汇总；它要求身份对应。</li><li>Spearman秩相关：高预期的人是否也被模拟为高预期。现有实现为普通未加权Spearman，和加权中心指标分别解释；常数回答无法形成有效秩相关。</li><li>十档概率TV：0.5×Σ|模型概率−真人概率|，范围0—100，单位是<strong>概率百分点</strong>，不是通胀pp。</li><li>零通缩占比：有多少人的负通胀五档全部填0。这是原始概率表达习惯，与连续拟合密度在0以下的面积不是同一个量。</li></ul><p>W1不看身份：将一组人的预测值互相调换，分布W1仍可为0，但个人MAE和秩相关会变差。因此不能只报总体分布。</p></details>
+<details><summary>三层评价对象与不确定区间</summary><ol><li>同512位入选真人：诊断模型对这些家庭的拟合，尽量隔开人口组成差异。</li><li>完整当月微观：将512人的抽样组成误差也计入总体重建。</li><li>官方全国headline：最终发布指标对比，包含统计口径近似差。</li></ol><p>最终固定512人名单的真人抽样中位数相对完整波次，平均绝对偏移约0.107pp、最大0.676pp；这是抽样精度参照，不是模拟MAE或固定可相加的误差。</p><p>模型相对基线的MAE差使用按月份的块bootstrap（当前6月块，2,000次）给回顾性区间。差值负为改善；区间包含0表示现有样本不足以分清改善与随机波动，不等于已证明没有效应。它不涵盖全部模型、供体或新闻随机性。</p></details>
+<p class="caption">分组按54格、新／老、先验来源、学历、数理、年龄、收入、地区查看；每格同时报有效N和ESS。N&lt;20或ESS&lt;10标为支持较弱，不按小格成绩精细排名。</p>
+''')
+
+    add('splits', '拟权、检验与独立测试：当前实际划分',
+        '我们没有对LLM做训练，也没有一套从未接触的完整三段数据。当前冻结的是早期估计组合权重、后期固定权重评价。', '''
+<div class="timeline"><div class="fit"><b>2019-01—2022-12 · 48个月</b><span>用于估计全国组合权重</span></div><div class="check"><b>2023-01—2025-10 · 34个月</b><span>固定早期权重后的时间检查</span></div></div>
+<h3>四种“训练／验证”不要混为一谈</h3>
+<table><thead><tr><th>层面</th><th>当前情况</th><th>可作什么结论</th></tr></thead><tbody>
+<tr><td>LLM预训练／微调</td><td>使用现成V3.2，没有用SCE训练模型权重</td><td>提示和匹配改变输入，不等于SFT或RFT</td></tr>
+<tr><td>问卷计分器选择</td><td>2020-04／2021-10／2022-12曾用于封存核验</td><td>支撑固定测量算法，不是模拟机制独立验证</td></tr>
+<tr><td>机制和模型开发</td><td>看过多个2019—2025时期的结果；人口维度也用过全窗统计</td><td>可做回顾性比较，不能宣称所有后段都未参与设计</td></tr>
+<tr><td>全国组合拟权／时间检查</td><td>48月拟权，后34月不重估该权重</td><td>检验组合系数跨期适用性；不是整个项目完全盲测</td></tr></tbody></table>
+<aside><b>关于你问的训练集、验证集、测试集：</b>目前没有额外独立的验证段，也没有保留下来的全机制盲测段。不能将2023—2024改名“验证”、2025改名“测试”就消除已经看过这些月份的事实。</aside>
+<h3>全国加权指标怎样估？</h3>
+<div class="equation">组合值 Cₜ=(1−λ)Aₜ+λMₜ，0≤λ≤1</div><p>M是当月模拟中位数；A是<strong>模型环境截止前最后已经公布</strong>的全国SCE，不保证恰好是上个月。λ在程序里命名为alpha。只在2019—2022最小化MAE估计λ，没有截距；另按MSE估一组作为敏感性。将同一个早期λ应用于后34个月。</p>
+<ul><li>λ=0：组合退回过去公开指标；λ=1：纯模拟；中间值：两者混合。</li><li>必须同时报告纯模拟、纯历史基线和组合，不能只报最佳组合。</li><li>组合MAE下降说明聚合预测有用，不自动说明个人概率分布更像真人。相反，λ很小提示LLM增量有限。</li><li>公开SCE只有日粒度、与截止同日却无时刻证据时，历史锚保守取更早一期。</li></ul>
+<details><summary>真正独立的测试接下来怎样保留？</summary><p>完整A线结果应诚实称为“机制开发后的全窗历史重建检验”。若要更强的泛化论证，应在配置确定后预先封存后续目标、信息截止和评价规则，在目标结果公布前保存预测；近期11个月已公布结果的历史回测不能倒签成真实事前预测。</p><p>如果你要求全项目必须有严格三段结构，需要在启动前另定研究协议，并说明已看月份及预训练知识限制；本说明没有擅自重划数据或重拟合参数。</p></details>
+''')
+
+    add('example', '用两位虚构家庭走一遍',
+        '下面只演示流程与信息边界，不是实际受访者，也不是模型模拟结果。', '''
+<p><strong>共同场景：</strong>2022年6月，信息截止6月10日。两位都是40—60岁、大学毕业、数理高、收入5万—10万美元、租房且在职。它们属于同一个54格，但仍会有不同的历史、采购角色、新闻量与具体新闻。</p>
+<div class="split"><div><h3>家庭甲：真实回访者</h3><ol><li>本地匿名身份找到五月自己的Q8／Q9。</li><li>假设Q8为4%，Q9完整十档概率直接保留为过去状态。</li><li>有至少两次历史时，再给可用密度均值的常态摘要。</li><li>CE迁移一组支出占比；ATUS抽得“负责较多采购”，看6个食品细项。</li><li>随机分配8篇：3共同＋5个人，主题抽取有住房／劳动等关联。</li></ol></div><div><h3>家庭乙：首次受访者</h3><ol><li>没有本人五月答卷，不编造一个“上月本人回答”。</li><li>在五月同类历史新人中寻找联合合法供体；不足则按规则放宽。</li><li>抽得一份完整Q8／Q9，标为“合成起始信念”。</li><li>没有本人历史，就不生成个人答题次数或长期常态。</li><li>采购角色与新闻仍按相同机制分配，假设分到20篇：3共同＋17个人。</li></ol></div></div>
+<p>两人都由同一个V3.2作答，得到本期Q8与Q9。它们的性格／认知差异不会仅因同一网格而自动消失，但我们也没有声称已经复刻全部生活经历。LLM如何吸收先验和显著信息，是此前实验观察到仍有偏差的部分。</p>
+<h3>假设某人的本期Q9全押在2%—4%</h3><div class="flow"><span>bin4=100，其余=0</span><b>→</b><span>均匀分布[2,4]</span><b>→</b><span>μ=3%，个人IQR=1pp</span><b>→</b><span>携带此人的aᵢ进入人群汇总</span></div>
+<p>如果真人本期答案不同，我们只在评价阶段比较；不会把真人答案传回生成程序、换供体、重抽新闻，或重试到“看起来更准”为止。</p>
+''')
+
+    add('execution', '运行逻辑：一键、存档、失败与恢复',
+        '运行是独立本地程序，不需要Codex逐批操作。大批次仍保持“暂不启动”，看完并确认后再决定。', '''
+<div class="flow"><span>冻结包＋明确授权</span><b>→</b><span>32次技术检查</span><b>→</b><span>64并发逐月调用</span><b>→</b><span>独立进程微观评价</span><b>→</b><span>全国组合读数</span></div>
+<ul><li><b>模型：</b>OpenRouter→固定SiliconFlow FP8→DeepSeek V3.2；温度0.5，关闭思考，JSON模式，每份最多1,024输出token，不允许换供应商。</li><li><b>规模：</b>82×512×1=41,984次。不是41,984个不同人，也不是41,984个独立月份；本地跨期不同身份10,743人。只有一遍主生成，不能据它单独识别纯生成随机方差。</li><li><b>技术门槛：</b>首32次最多8并发，至少31份可用后自动升64；只看格式与接口，不根据小样本拟合成绩改配置。</li><li><b>资源：</b>从macOS原生Terminal后台启动；每10秒保存本地进度，无需Codex持续调用。电脑接电、开盖、登录、联网；防空闲睡眠不等于防断电。</li><li><b>预算：</b>约30.75美元是估计，不是最低消费；40美元硬上限尚未批准。按已计费用、未知费预留及在途上界守预算，到限停止，不保证40美元一定跑完。</li></ul>
+<details><summary>每次请求存什么？</summary><p>发送前存意图、提示哈希与费用预留；结束后存原始回答、请求标识、返回模型／供应商、Token、费用、耗时、错误和归一化标记；保存匿名人口位置与回答对应。来源、提示、计分源码哈希随包保留。原始去标识答卷留在本地忽略目录，不直接公开上传。</p><p>进度文件只存计数和费用。管线能自动完成生成、微观指标及宏观组合读数；最终文字报告和演示材料仍需整理。</p></details>
+<details><summary>失败时怎样评价，为什么不直接删除失败者？</summary><p>传输失败、未正常结束或字段不合法时，主口径按字段保留初始化状态，并报告失败率及实际模型有效输出敏感性。Q9格式合法却无法拟合密度时，评价层也显式记起点标量回退。不能只删掉失败的人后宣布完整人口拟合很好。原始回答不覆盖，Q8与Q9各自判断。</p><p>无自动重试或供应商回退。HTTP致命错误／限流、供应商偏离、预算异常或连续连接失败会停止新发送，收齐在途请求。恢复要区分“成功”“已发无本地回包”“明确失败”“从未发送”；只有经过明确授权的未发送位置另建清单续跑，不能重启旧包。</p></details>
+<details><summary>Q8／Q9的合法性与极端值口径</summary><p>Q8要求有限数值且绝对值不超过100%；超限记无效，不裁剪成100。真人原始Q9要求恰好十档、各0—100、总和与100的差不超过1e−6；模型合法非负十档允许等比例归一化后计分。官方不简单删除或封顶所有异常值，本项目上述有效支持规则是研究约定，需另报覆盖率及与官方指标的差别。</p></details>
+<details><summary>为什么样本和重复次数仍会限制结论？</summary><p>512人的加权样本有组成误差，54格小格支持有限；同一个人跨月出现使人月并非相互独立。一次生成保留自然回答分布，但不足以分解“稳定个体差异”和“模型抽样噪音”。月度区间、分组误差和旧多遍实验提供不同层面的证据，不能互相替代。</p></details>
+''')
+
+    add('boundaries', '启动前需要共同掌握的边界',
+        '这些说明让研究结论有明确含义。它们不要求一次解决所有问题，但必须与最终结果同时呈现。', '''
+<ol class="boundary-list"><li><b>目标是预期而非CPI。</b>拟合真实居民回答，与预测实际通胀是不同任务。</li><li><b>本次是条件历史重建。</b>给了真实历史画像和过去个人回答，不能将其成绩直接当成只靠公开资料的未来预测能力。</li><li><b>实际提示不是完整宏观数表。</b>当前为食品视图＋异质新闻＋政策＋信心＋既有信念；仓库存档与投喂范围分开。</li><li><b>合成不等于实测。</b>CE支出、ATUS采购责任、Gallup个人信心、新人先验都带迁移假设；缺失先验无法与个人真实旧信念逐一验证。</li><li><b>密度是冻结近似。</b>同一计分器处理真人和模型，仍与官方拟合／插值中位数可能不同；原始概率结构另看TV与零通缩。</li><li><b>后期不是整套机制的盲测。</b>组合系数只在早期拟合，但多个月份及全窗统计参与过开发。</li><li><b>宏观组合不替代微观证据。</b>基线权重大、组合成绩好，也要看模型的新增信息、跨人W1、个人误差、IQR与更新。</li><li><b>启动由你确认。</b>这次只制作说明，没有新增模拟请求、没有更改冻结配置，也没有重新申请已被暂缓的付费启动。</li></ol>
+<h3>建议讨论时先确认的四件事</h3><ul><li>是否接受“A82条件重建先跑，严格B另做”的交付边界？</li><li>是否理解并保留当前食品为主的直接数值视图？若要换成全宏观表，需要另版配置，不能暗改。</li><li>是否接受512人设计加权、当前不使用Normal代答？</li><li>是否接受现有拟权／时间检查的解释，并如实披露缺少全机制盲测？</li></ul>
+<p>这些不是新增审批清单，而是帮助你判断方案是否符合原意的四个核心问题。可按章节指出需要进一步解释或调整的部分，确认后再谈启动。</p>
+''')
+
+    sources = [
+        ('冻结执行协议', 'outputs/sce_monthly_fine_full_execution_20261023_v3/protocol.json'),
+        ('当前全量前说明', 'docs/workstreams/20261023_main_run/README.md'),
+        ('实际提示组装', 'studies/sce_inflation_expectations/experiments/state_continuity_prompts.py'),
+        ('食品视图替换完整宏观表', 'studies/sce_inflation_expectations/procurement_price_views.py'),
+        ('近期供体算法', 'studies/sce_inflation_expectations/population/entry_initialization.py'),
+        ('54格与分层抽样', 'studies/sce_inflation_expectations/population/monthly_fine_grid.py'),
+        ('CE篮子匹配', 'studies/sce_inflation_expectations/price_experience.py'),
+        ('ATUS角色条件分布', 'studies/sce_inflation_expectations/personal_information_preparation.py'),
+        ('冻结Q9计分器', 'studies/sce_inflation_expectations/scoring/sce_q9_frozen.py'),
+        ('广义Beta数值核', 'studies/sce_inflation_expectations/scoring/beta_fit_kernel.py'),
+        ('计分器核验与已知近似', 'docs/SCORER_HOLDOUT_REVIEW_20261003.md'),
+        ('W1、分位数与月份误差', 'studies/sce_inflation_expectations/evaluation/metrics.py'),
+        ('微观评价与分组', 'studies/sce_inflation_expectations/evaluation/monthly_reconstruction.py'),
+        ('全国组合与时间切分', 'studies/sce_inflation_expectations/evaluation/monthly_main_readout.py'),
+        ('环境证据复核', 'docs/workstreams/20261023_main_run/environment_handoff_review_20261024.md'),
+        ('后台运行与故障边界', 'docs/workstreams/20261023_main_run/overnight_runbook.md'),
+    ]
+    protocol = json.loads((PACKAGE / 'protocol.json').read_text())
+    return dict(title='SCE项目机制与运行说明', checked_on='2026-10-24',
+                subtitle='运行前逐项理解 · 以当前冻结A82候选为准 · 大批次未启动',
+                sections=sections, source_links=[dict(title=t, path=str(ROOT / p)) for t,p in sources],
+                actual=dict(months=len(protocol['months']), calls=protocol['planned_calls'],
+                            n_per_month=protocol['n_per_month'], combination=protocol['macro_combination']),
+                protocol_sha256=__import__('hashlib').sha256((PACKAGE/'protocol.json').read_bytes()).hexdigest())
+
+
+CSS = '''
+*{box-sizing:border-box}body{margin:0}.guide{font-family:"Times New Roman","Kaiti SC","STKaiti","KaiTi",serif;color:var(--text);line-height:1.85;font-size:17px}a{color:var(--accent)}h1{font-size:24px;line-height:1.5;margin:0 0 10px}h2{font-size:23px;line-height:1.5;margin:0 0 12px}h3{font-size:19px;line-height:1.5;margin:24px 0 8px}p{margin:12px 0}strong,b{font-weight:700}.lead{font-size:19px;color:var(--text)}.muted,.caption,.source,small{color:var(--muted);font-size:14px}.flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0}.flow span{padding:10px 13px;background:var(--surface);border:1px solid var(--border);font-size:16px}.flow b{color:var(--accent)}.facts{display:grid;grid-template-columns:repeat(4,1fr);margin:18px 0 24px;border-top:2px solid var(--accent);border-bottom:1px solid var(--border)}.facts div{padding:17px 8px}.facts strong{display:block;font-size:21px}.facts small{display:block}aside{padding:14px 18px;border-left:4px solid var(--accent);background:var(--surface);margin:22px 0}.split{display:grid;grid-template-columns:1fr 1fr;gap:26px}.equation{font-family:"Times New Roman","Kaiti SC",serif;padding:14px 18px;background:var(--surface);overflow:auto;font-size:19px;line-height:1.65}table{border-collapse:collapse;width:100%;font-size:16px;line-height:1.7;margin:20px 0}th,td{padding:11px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}th{background:var(--surface);font-weight:700}td:first-child{min-width:110px}details{margin:17px 0;border-top:1px solid var(--border);padding:12px 0}summary{cursor:pointer;font-weight:700;color:var(--accent);font-size:17px}details p,details li{font-size:16px}code{font-size:14px;overflow-wrap:anywhere;background:var(--surface);padding:1px 4px}li{padding:3px 0}ul,ol{padding-left:25px}.timeline{display:flex;gap:2px;margin:24px 0}.timeline div{padding:16px;border:1px solid var(--border)}.timeline b,.timeline span{display:block}.fit{flex:48;border-top:4px solid var(--accent)!important}.check{flex:34;border-top:4px dashed var(--second)!important}.timeline span{font-size:15px}.boundary-list li{margin-bottom:12px}.demo{border:1px solid var(--border);padding:16px 20px;margin:24px 0}.demo button{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:7px 11px;margin:0 7px 8px 0;font:inherit;cursor:pointer}.demo button.active{border:2px solid var(--accent);color:var(--accent)}.demo .metric-strip{display:flex;gap:22px;flex-wrap:wrap;font-size:16px}.demo svg{width:100%;max-height:280px;display:block}.source-list{font-size:15px}.source-list a{overflow-wrap:anywhere}
+@media(max-width:760px){.split{grid-template-columns:1fr;gap:4px}.facts{grid-template-columns:1fr 1fr}.timeline{display:block}.guide{font-size:16px}table{display:block;overflow:auto;white-space:normal}h2{font-size:22px}}
+'''
+
+
+DEMO_JS = '''
+function drawDemo(mode){
+const real=[1,2,3,5,9],w=[1,1,2,1,1];
+const sim=mode==='shift'?real.map(x=>x+1):mode==='collapse'?real.map(()=>3):real.slice();
+function quant(x,p){let v=x.map((a,i)=>[a,w[i]]).sort((a,b)=>a[0]-b[0]),c=0;for(let a of v){c+=a[1];if(c>=6*p)return a[0]}return v[v.length-1][0]}
+const med=quant(sim,.5),iqr=quant(sim,.75)-quant(sim,.25);
+const support=[...new Set([...real,...sim])].sort((a,b)=>a-b);let area=0;
+for(let i=0;i<support.length-1;i++){const cdf=x=>x.reduce((s,v,j)=>s+(v<=support[i]?w[j]:0),0)/6;area+=Math.abs(cdf(real)-cdf(sim))*(support[i+1]-support[i])}
+const ex=document.getElementById('demo-explain');if(ex)ex.textContent=mode==='collapse'?'所有模拟人都答3%：中心完全正确，但人际分歧消失。':mode==='shift'?'所有模拟值整体高1pp：分布宽度完全正确，但中心系统偏高。':'模拟值与真人一致：中心、宽度与分布都一致。';
+document.querySelectorAll('[data-demo]').forEach(b=>b.classList.toggle('active',b.dataset.demo===mode));
+document.getElementById('demo-values').innerHTML='<span>模拟中心 <b>'+med.toFixed(1)+'%</b></span><span>中心误差 <b>'+Math.abs(med-3).toFixed(1)+'pp</b></span><span>跨人IQR <b>'+iqr.toFixed(1)+'pp</b></span><span>W1 <b>'+area.toFixed(2)+'pp</b></span>';
+function path(x){let s='M 55 220',v=[...new Set(x)].sort((a,b)=>a-b),c=0;for(let a of v){let px=55+a*48;let old=220-c/6*170;s+=' L '+px+' '+old;c+=x.reduce((z,y,j)=>z+(y===a?w[j]:0),0);s+=' L '+px+' '+(220-c/6*170)}return s+' L 540 '+(220-c/6*170)}
+document.getElementById('demo-real').setAttribute('d',path(real));document.getElementById('demo-sim').setAttribute('d',path(sim));
+}
+'''
+
+
+def demo_html():
+    return '''<div class="demo"><h3>教学演示：中位数相同，不代表微观结构相同</h3><p class="caption">5位虚构居民，密度均值1／2／3／5／9%，权重1／1／2／1／1；真人中位数3%、跨人IQR 3pp。以下不是实测成绩。</p><div><button data-demo="same">完全一致</button><button data-demo="shift">整体偏高1pp</button><button data-demo="collapse">所有人挤到3%</button></div><p id="demo-explain"></p><div id="demo-values" class="metric-strip"></div><svg viewBox="0 0 580 270" role="img" aria-label="虚构居民密度均值的加权累计分布；横轴通胀预期百分比，纵轴累计人口百分比"><path d="M55 40V220H540" fill="none" stroke="var(--muted)"/><g fill="var(--muted)" font-size="13"><text x="10" y="49">100%</text><text x="24" y="223">0%</text><text x="265" y="264">个人Q9密度均值（%）</text><text x="3" y="23">累计人口比例</text>''' + ''.join(f'<text x="{55+x*48-4}" y="240">{x}</text>' for x in (0,2,4,6,8,10)) + '''</g><path id="demo-real" fill="none" stroke="var(--accent)" stroke-width="3"/><path id="demo-sim" fill="none" stroke="var(--second)" stroke-width="3" stroke-dasharray="8 5"/><g font-size="14"><text x="325" y="27" fill="var(--accent)">实线：虚构真人</text><text x="435" y="27" fill="var(--second)">虚线：模拟</text></g></svg></div>'''
+
+
+def render():
+    data = content()
+    out = ROOT / 'docs/workstreams/20261023_main_run/mechanism_guide_20261024.json'
+    out.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+    sections = data['sections']
+    labels = ['全流程','Q8与Q9','匹配机制','人口与信念','环境与时间','概率计分与汇总','评测指标','时间划分与组合','两个家庭的例子','运行与存档','假设与边界']
+    nav = ''.join(f'<button data-section="{r["id"]}"><small>{i:02}</small>{labels[i]}</button>' for i,r in enumerate(sections))
+    bodies = []
+    for i, row in enumerate(sections):
+        body = row['body'].replace('<div id="metric-demo"></div>', demo_html())
+        bodies.append(f'<section id="{row["id"]}" class="chapter"><div class="chapter-no">{i:02} / {len(sections)-1:02}</div><h2>{row["title"]}</h2><p class="lead">{row["lead"]}</p>{body}</section>')
+    sources = ''.join('<li>'+link(str(Path(r['path']).relative_to(ROOT)),r['title'])+'</li>' for r in data['source_links'])
+    shell = '''html{scroll-behavior:smooth}body{background:#f7f6f1;--text:#25232e;--muted:#666374;--accent:#6845a3;--second:#cb6218;--surface:#efedf4;--border:#d9d5df}header{padding:24px 30px;border-bottom:1px solid var(--border);background:#fff}.brand{font-size:14px;color:var(--accent);letter-spacing:1px}.layout{display:grid;grid-template-columns:245px minmax(0,1fr);max-width:1360px;margin:auto}nav{position:sticky;top:0;height:100vh;overflow:auto;padding:24px 14px;border-right:1px solid var(--border)}nav button{display:block;border:0;background:none;text-align:left;font:inherit;font-size:16px;color:var(--muted);width:100%;padding:10px;cursor:pointer}nav button small{padding-right:11px}nav button.active{background:var(--surface);color:var(--accent);font-weight:700}main{max-width:1030px;padding:32px 46px 60px;min-width:0}.chapter{display:none}.chapter.active{display:block}.chapter-no{color:var(--accent);font-size:14px;margin-bottom:12px}.controls{display:flex;gap:14px;justify-content:space-between;margin-top:35px;border-top:1px solid var(--border);padding-top:18px}.controls button,.utility button{font:inherit;padding:8px 15px;background:#fff;color:var(--accent);border:1px solid var(--border);cursor:pointer}.utility{display:flex;gap:10px;margin-top:12px}.all .chapter{display:block;margin-bottom:60px}.all .controls{display:none}footer{font-size:14px;color:var(--muted);margin-top:35px}footer details{font-size:14px}@media(max-width:850px){.layout{display:block}nav{height:auto;position:static;border-right:0;border-bottom:1px solid var(--border);display:flex;gap:5px;overflow:auto;padding:10px}nav button{width:auto;white-space:nowrap}header{padding:20px}main{padding:26px 20px}}@media print{body{background:white;color:black}nav,.controls,.utility{display:none}.layout{display:block}main{max-width:none;padding:0}.chapter{display:block;break-before:page}header{padding:0}.chapter:first-child{break-before:auto}details>*{display:block!important}summary{list-style:none}.demo button{display:none}a{color:inherit}h2,h3{break-after:avoid}tr{break-inside:avoid}}'''
+    html = '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+data['title']+'</title><style>'+CSS+shell+'</style></head><body class="guide"><header><div class="brand">SOCIOVERSE · SCE · 2026-10-24 · 运行前说明</div><h1>'+data['title']+'</h1><div class="muted">'+data['subtitle']+'</div><div class="utility"><button id="show-all">展开全部章节</button><button id="print">打印／保存PDF</button></div></header><div class="layout"><nav aria-label="章节导航">'+nav+'</nav><main>'+''.join(bodies)+'<div class="controls"><button id="previous">上一节</button><button id="next">下一节</button></div><footer><details><summary>代码、协议与依据</summary><ul class="source-list">'+sources+'</ul><p>官方参考：<a href="https://www.newyorkfed.org/microeconomics/sce/sce-faq">SCE FAQ</a>；<a href="https://www.newyorkfed.org/medialibrary/media/research/epr/2017/epr_2017_survey-consumer-expectations_armantier.pdf">2017 SCE方法综述</a>。协议SHA256：'+data['protocol_sha256']+'</p></details><p>说明日期为静态快照；不显示实时运行进度。大批次保持未启动，阅读确认不会触发API。</p></footer></main></div><script>'+DEMO_JS+'''
+const ids=[...document.querySelectorAll('.chapter')].map(x=>x.id);let index=0;
+function show(id){index=Math.max(0,ids.indexOf(id));document.querySelectorAll('.chapter').forEach(x=>x.classList.toggle('active',x.id===ids[index]));document.querySelectorAll('[data-section]').forEach(x=>x.classList.toggle('active',x.dataset.section===ids[index]));document.getElementById('previous').disabled=index===0;document.getElementById('next').disabled=index===ids.length-1;history.replaceState(null,'','#'+ids[index]);window.scrollTo(0,0)}
+document.querySelectorAll('[data-section]').forEach(x=>x.onclick=()=>show(x.dataset.section));
+document.getElementById('previous').onclick=()=>show(ids[Math.max(0,index-1)]);document.getElementById('next').onclick=()=>show(ids[Math.min(ids.length-1,index+1)]);
+document.getElementById('show-all').onclick=function(){let all=document.body.classList.toggle('all');this.textContent=all?'恢复分章节阅读':'展开全部章节'};
+document.getElementById('print').onclick=()=>{document.querySelectorAll('details').forEach(d=>d.open=true);window.print()};
+document.querySelectorAll('[data-demo]').forEach(b=>b.onclick=()=>drawDemo(b.dataset.demo));drawDemo('collapse');show(ids.includes(location.hash.slice(1))?location.hash.slice(1):'overview');
+'''+'</script></body></html>'
+    target = ROOT / 'docs/project_guide.html'
+    target.write_text(html)
+    canvas = canvas_source(data)
+    local_canvas = ROOT / 'docs/workstreams/20261023_main_run/SCE-project-guide-20261024.canvas.tsx'
+    local_canvas.write_text(canvas)
+    return dict(html=str(target), canvas_source=str(local_canvas), data=str(out), sections=len(sections),
+                new_api_calls=0, main_run_started=False)
+
+
+def canvas_source(data):
+    data = json.loads(json.dumps(data))
+    # Canvas uses a native React version of the teaching demonstration.
+    for sec in data['sections']:
+        sec['body'] = sec['body'].replace('<div id="metric-demo"></div>', '')
+    return '''import {H1,H2,Text,Stack,Select,Button,useState,useHostTheme,type CSSProperties} from "cursor/canvas";
+const DATA=''' + json.dumps(data,ensure_ascii=False) + ''';
+const CSS=''' + json.dumps(CSS,ensure_ascii=False) + ''';
+export default function ProjectGuide(){
+const t=useHostTheme();const [chapter,setChapter]=useState("overview");
+const current=DATA.sections.find(s=>s.id===chapter)||DATA.sections[0];
+const index=DATA.sections.indexOf(current);
+const [mode,setMode]=useState("collapse");
+const stats=mode==="collapse"?{median:3,iqr:0,w1:11/6}:mode==="shift"?{median:4,iqr:3,w1:1}:{median:3,iqr:3,w1:0};
+const style={padding:24,maxWidth:1100,margin:"0 auto",background:t.bg.editor,color:t.text.primary,
+"--text":t.text.primary,"--muted":t.text.secondary,"--accent":t.accent.primary,
+"--second":t.text.secondary,"--surface":t.fill.quaternary,"--border":t.stroke.secondary} as CSSProperties;
+return <Stack gap={16} style={style}><style>{CSS}</style><div className="guide"><Text>2026-10-24 · 当前冻结候选 · 大批次未启动</Text><H1>{DATA.title}</H1><Text>{DATA.subtitle}</Text>
+<Select value={chapter} onChange={setChapter} options={DATA.sections.map((s,i)=>({value:s.id,label:String(i).padStart(2,"0")+" "+s.title}))}/>
+<div style={{marginTop:24}}><H2>{current.title}</H2><p className="lead">{current.lead}</p><div dangerouslySetInnerHTML={{__html:current.body}}/></div>
+{chapter==="metrics"&&<div className="demo"><H2>教学演示：中心正确仍可能过度集中</H2><Text>虚构五人μ=1/2/3/5/9%，权重1/1/2/1/1；真人中位数3%、跨人IQR 3pp。不是实验成绩。</Text><Select value={mode} onChange={setMode} options={[{value:"same",label:"完全一致"},{value:"shift",label:"整体偏高1pp"},{value:"collapse",label:"所有人挤到3%"}]}/><p>模拟中心 {stats.median}% · 中心误差 {Math.abs(stats.median-3)}pp · 跨人IQR {stats.iqr}pp · W1 {stats.w1.toFixed(2)}pp</p><Text>所有人答3%时，中位数正确，分布却收缩为一个点。W1与跨人IQR能发现这个问题。</Text></div>}
+<div style={{display:"flex",gap:12,borderTop:`1px solid ${t.stroke.secondary}`,paddingTop:20}}><Button onClick={()=>setChapter(DATA.sections[Math.max(0,index-1)].id)}>上一节</Button><Button onClick={()=>setChapter(DATA.sections[Math.min(DATA.sections.length-1,index+1)].id)}>下一节</Button></div>
+<details><summary>代码、协议与依据</summary><ul>{DATA.source_links.map(s=><li key={s.path}><a href={s.path}>{s.title}</a></li>)}</ul></details>
+<p className="caption">主协议SHA256：{DATA.protocol_sha256}。本说明无网络请求、无付费调用、不会启动模拟。</p></div></Stack>}
+'''

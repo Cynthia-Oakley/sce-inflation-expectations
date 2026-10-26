@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-26",
+  "official_method": "https://www.newyorkfed.org/medialibrary/media/research/epr/2017/epr_2017_survey-consumer-expectations_armantier.pdf",
+  "official_faq": "https://www.newyorkfed.org/microeconomics/sce/sce-faq",
+  "sections_checked": ["5.1 Quantile Interpolation", "5.2 Density Estimation", "Appendix B Quartile Interpolation", "Appendix C Density Estimation, including footnotes 27-29"],
+  "documented": ["Uniform / isosceles triangular / generalized-beta families by number of occupied bins", "Adjacent and unequal-width triangular anchoring rules", "Open beta support bounds within -38 and 38", "Minimum-distance fitting", "Cox mid-distribution interpolation for grouped/rounded responses"],
+  "not_fully_specified_in_checked_material": ["Complete production density-fitting code", "All optimizer constraints and starting values", "Numerical tie/multiple-solution choice", "Every convergence and invalid-case handling rule"],
+  "search_limit": "Official source code not located in the official method/data/FAQ and targeted searches checked this turn; not a claim that no such code exists anywhere",
+  "current_project_scorer": "sce_q9_frozen; holdout-selected relaxed_tail_skip_zero kernel, unchanged this turn, not the original 2026-09-30 base scorer",
+  "candidate_applied_offline": "Cox grouped weighted mid-CDF interpolation implemented separately; not substituted into the frozen Q9 metric",
+  "empirical_aggregation_check": "Official individual Q9_mean plus original weights and the current empirical-CDF median reproduces the archived high-precision chart for all82 months to floating-point precision; interpolation is therefore not promoted for this Q9 series",
+  "independent_replication_reference": "Previously reviewed forecasthistogram R code is an independent implementation, not FRBNY production code",
+  "communication": "No messages or requests sent to authors or institutions"
+}

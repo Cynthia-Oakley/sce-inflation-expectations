@@ -1,0 +1,20 @@
+{
+  "scope": "Offline measurement decomposition and pre-2021 statistical calibration diagnostics; preserve all frozen scorers, responses and prior results",
+  "new_api_calls": 0,
+  "new_density_fits": 0,
+  "measurement": "Compare original Q9 vectors' frozen scores with official per-person Q9_mean on identical rows and positive original weights; distinguish common-support density gap, support changes, aggregate/chart-vintage gap, and chart/initial-headline gap. Only evaluation reads official derived means.",
+  "aggregation_candidate": "Implement Cox (2009) weighted mid-distribution interpolation from official 2017 Appendix B as a separate sensitivity, not an assertion that it is the correct replacement for continuous Q9 density-mean aggregation. Group equal values before interpolation; do not change the frozen empirical-CDF estimator.",
+  "error_decomposition": "For model S, reconstructed human H and official O, e=S-O=(S-H)+(H-O). Report exact MSE terms and MAE target-change sensitivity; do not call MAE(H,O)/MAE(S,O) the fraction of model error caused by scoring.",
+  "anomaly_year": "All twelve months of 2021, chosen by the user before this comparison",
+  "fixed_training": "2019-01 through 2020-12 only; assert every training SCE outcome was public by the first 2021 reference cutoff",
+  "inner_selection": "First18 pre-2021 months fit; next6 pre-2021 months validate alpha on MAE; larger alpha wins ties; refit all24. No 2021 outcome selects alpha or feature family.",
+  "rolling_training": "Same pre-2021 chosen feature sets and alphas; refit each 2021 month only on earlier rows whose actual SCE first publication date is no later than that month's original shared reference cutoff; label availability checked row by row",
+  "model_families": "Reuse the previously declared convex MAE/MSE and AR/ridge CPI/simulation/dummy-interaction families; no new threshold search; dummy CPI>=4 fixed",
+  "sources": "Frozen Core and tau8 expansion; published SCE anchors; BLS first-release CPI features from prior macro calibration",
+  "limits": [
+    "A simulations and mechanisms have already used these historical periods; statistical-coefficient temporal separation does not create an untouched end-to-end forecast test",
+    "A personal-date simulation and shared macro reference cutoff remain different information scopes; not certified B forecasting",
+    "A high-inflation dummy absent in pre-2021 data has an unestimated effect, not a learned zero response; report support counts",
+    "No automatic scorer or production-configuration promotion based on these results"
+  ]
+}

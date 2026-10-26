@@ -1,0 +1,230 @@
+{
+  "protocol": {
+    "status": "offline_followup_registered_before_this_search",
+    "request": "Broaden tau search and fit national Q9 median MAE on an earlier historical training segment; preserve original outputs",
+    "new_api_calls": 0,
+    "new_q9_fits": 0,
+    "scope": "Only tau changes; existing Core responses, 54-cell grid, entry pools, population weights and expansion algorithm stay fixed",
+    "training": [
+      "201901",
+      "202212"
+    ],
+    "later_check": [
+      "202301",
+      "202510"
+    ],
+    "training_target": "Frozen public national SCE Q9 median; no person-linked human targets",
+    "coarse_grid": "0..128 inclusive at 0.125 increments, plus 256 geometric increments from 128 to 1000000, plus the infinite-parent-strength limit",
+    "refinement": "Two training-only rounds: 201 values around the smallest best finite tau, initial radius 0.125 then radius divided by 100; clip below zero",
+    "selection": "Minimum training monthly equal-weight MAE; ties within 1e-12 prefer smaller tau; seal selection before later-target evaluation",
+    "not_global_optimum_certificate": "One-dimensional grid with local refinement; the weighted median is a step function and a narrow unsearched minimum may exist",
+    "limits": [
+      "This is supervised historical statistical calibration, unlike the original model-output-only holdout selection of tau8",
+      "Both periods have already been seen in the project; later check is not a new untouched blind test",
+      "No refitting to later outcomes or choosing tau to cross a display threshold",
+      "Original tau8 results remain unchanged and must be reported separately"
+    ]
+  },
+  "selection": {
+    "selected_tau": "201.659602234",
+    "training_mae_pp": 0.35600981282554295,
+    "training_months": [
+      "201901",
+      "201902",
+      "201903",
+      "201904",
+      "201905",
+      "201906",
+      "201907",
+      "201908",
+      "201909",
+      "201910",
+      "201911",
+      "201912",
+      "202001",
+      "202002",
+      "202003",
+      "202004",
+      "202005",
+      "202006",
+      "202007",
+      "202008",
+      "202009",
+      "202010",
+      "202011",
+      "202012",
+      "202101",
+      "202102",
+      "202103",
+      "202104",
+      "202105",
+      "202106",
+      "202107",
+      "202108",
+      "202109",
+      "202110",
+      "202111",
+      "202112",
+      "202201",
+      "202202",
+      "202203",
+      "202204",
+      "202205",
+      "202206",
+      "202207",
+      "202208",
+      "202209",
+      "202210",
+      "202211",
+      "202212"
+    ],
+    "training_only_selection": true,
+    "unique_training_tau_values": 1681,
+    "original_tau8_not_replaced": true,
+    "new_api_calls": 0,
+    "new_q9_fits": 0
+  },
+  "results": {
+    "original_Core": {
+      "training48": {
+        "n": 48,
+        "mae_pp": 0.3577604967576448,
+        "rmse_pp": 0.48746173511920277
+      },
+      "later34": {
+        "n": 34,
+        "mae_pp": 0.2146131350524657,
+        "rmse_pp": 0.28310042862497986
+      },
+      "all82_descriptive": {
+        "n": 82,
+        "mae_pp": 0.29840671263598517,
+        "rmse_pp": 0.41512073273547
+      },
+      "year2021": {
+        "n": 12,
+        "mae_pp": 0.5774240096480767,
+        "rmse_pp": 0.7374778531339565
+      }
+    },
+    "tau0": {
+      "training48": {
+        "n": 48,
+        "mae_pp": 0.35922472343117257,
+        "rmse_pp": 0.4888097445909187
+      },
+      "later34": {
+        "n": 34,
+        "mae_pp": 0.21754972056954924,
+        "rmse_pp": 0.28519978287810094
+      },
+      "all82_descriptive": {
+        "n": 82,
+        "mae_pp": 0.300481429561719,
+        "rmse_pp": 0.4166416477543575
+      },
+      "year2021": {
+        "n": 12,
+        "mae_pp": 0.5711054355382129,
+        "rmse_pp": 0.7334063595500986
+      }
+    },
+    "tau8": {
+      "training48": {
+        "n": 48,
+        "mae_pp": 0.3595255556590476,
+        "rmse_pp": 0.48511395299696863
+      },
+      "later34": {
+        "n": 34,
+        "mae_pp": 0.21939323532383861,
+        "rmse_pp": 0.2856573354014067
+      },
+      "all82_descriptive": {
+        "n": 82,
+        "mae_pp": 0.3014219106420097,
+        "rmse_pp": 0.4142361487147457
+      },
+      "year2021": {
+        "n": 12,
+        "mae_pp": 0.5653153945607152,
+        "rmse_pp": 0.7222614983059403
+      }
+    },
+    "tau24": {
+      "training48": {
+        "n": 48,
+        "mae_pp": 0.35936091173368173,
+        "rmse_pp": 0.48305382540278924
+      },
+      "later34": {
+        "n": 34,
+        "mae_pp": 0.22274269429132726,
+        "rmse_pp": 0.2891751433495437
+      },
+      "all82_descriptive": {
+        "n": 82,
+        "mae_pp": 0.30271433376977863,
+        "rmse_pp": 0.41383873487207595
+      },
+      "year2021": {
+        "n": 12,
+        "mae_pp": 0.557221739441618,
+        "rmse_pp": 0.7139470684372564
+      }
+    },
+    "trained_tau": {
+      "training48": {
+        "n": 48,
+        "mae_pp": 0.3560098128255429,
+        "rmse_pp": 0.4781432791399741
+      },
+      "later34": {
+        "n": 34,
+        "mae_pp": 0.22058994918187916,
+        "rmse_pp": 0.2878776741623482
+      },
+      "all82_descriptive": {
+        "n": 82,
+        "mae_pp": 0.299860113265975,
+        "rmse_pp": 0.410108680689749
+      },
+      "year2021": {
+        "n": 12,
+        "mae_pp": 0.5391271550529815,
+        "rmse_pp": 0.6969024165658988
+      }
+    },
+    "parent_limit": {
+      "training48": {
+        "n": 48,
+        "mae_pp": 0.3562538083547994,
+        "rmse_pp": 0.4783428986698537
+      },
+      "later34": {
+        "n": 34,
+        "mae_pp": 0.22084428114478855,
+        "rmse_pp": 0.2885483271395286
+      },
+      "all82_descriptive": {
+        "n": 82,
+        "mae_pp": 0.3001083946335754,
+        "rmse_pp": 0.4104402341925194
+      },
+      "year2021": {
+        "n": 12,
+        "mae_pp": 0.5391271550529815,
+        "rmse_pp": 0.6969024165658988
+      }
+    }
+  },
+  "later_selection_used": false,
+  "original_sources_modified": false,
+  "limits": [
+    "This is supervised historical statistical calibration, unlike the original model-output-only holdout selection of tau8",
+    "Both periods have already been seen in the project; later check is not a new untouched blind test",
+    "No refitting to later outcomes or choosing tau to cross a display threshold",
+    "Original tau8 results remain unchanged and must be reported separately"
+  ],
+  "no_global_optimum_certificate": true
+}

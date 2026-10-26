@@ -101,9 +101,11 @@ def load_frame(data_path: Path) -> pd.DataFrame:
     df = pd.read_excel(data_path, skiprows=1, usecols=READ_COLS)
     df["employment"] = df.apply(employment_code, axis=1)
     df["housing_tenure"] = df["Q43"].map(HOUSING_CODE_MAP)
-    # 16 rows in the source file carry a NaN weight; they would poison every
-    # weighted statistic with NaN, so they are excluded from all aggregations.
-    df = df[df["weight"].notna()].reset_index(drop=True)
+    # 16 rows in the source file carry a NaN weight (review CORE_NORMAL_REVIEW_
+    # 20261003 sec. 3). They are real respondents, so they stay in the frame and
+    # in UNWEIGHTED statistics; for weighted math their weight is set to 0 so
+    # they are excluded without deleting rows. Both counts go into the meta.
+    df["weight"] = df["weight"].fillna(0.0)
     return df
 
 
@@ -214,15 +216,20 @@ def rotation_stats(df: pd.DataFrame) -> dict:
     for i, m in enumerate(months):
         sub = by_month[m]
         uids = set(sub["userid"])
+        prev_uids = set(by_month[months[i - 1]]["userid"]) if i > 0 else set()
         new = int(sum(1 for u in uids if first_seen[u] == m))
-        exited = int(sum(1 for u in by_month[months[i - 1]]["userid"]
+        # re-entrants: seen before in the file but absent last month. Distinct
+        # from first-time entrants (review CORE_NORMAL_REVIEW_20261003 sec. 3).
+        reentrant = int(sum(1 for u in uids
+                            if first_seen[u] < m and u not in prev_uids)) if i > 0 else None
+        exited = int(sum(1 for u in prev_uids
                          if last_seen[u] == months[i - 1])) if i > 0 else None
-        overlap = (len(uids & set(by_month[months[i - 1]]["userid"]))
-                   / len(uids)) if i > 0 else None
+        overlap = (len(uids & prev_uids) / len(uids)) if i > 0 else None
         t = sub["tenure"].dropna()
         out[int(m)] = {
             "n_respondents": int(len(sub)),
             "n_new_entrants": new,
+            "n_reentrants": reentrant,
             "new_entrant_share": new / len(sub),
             "n_exit_prev_month": exited,
             "overlap_with_prev_month": overlap,
@@ -343,7 +350,11 @@ def build_report(res: dict, main_months: list) -> str:
       "`Q8v2=2`=预期下降（part2 全部 <0，中位数 −4）；本文件无\"持平\"码。"
       f"`Q8v2part2` 超出 ±{POINT_ESTIMATE_CLIP:.0f} 的录入异常值（如 10000）"
       "在分位数统计中剔除并计数。\n")
-    a("- 住房 `Q43` 为旋转模块（每月约 10–13% 被问），所有住房数字均标注当月被问样本量 n。\n")
+    a("- 住房 `Q43` 只问新入组者（官方问卷 p.27：Q32–Q47 仅对新受访者；Q43 在 p.32）。"
+      "当月约 12% 的覆盖是入组流量、不是随机轮换抽问；经核实每个 userid 只有一条"
+      "Q43 记录（8,536 人，从未改答），沿同一人的入组回答前向沿用后 2021 年人月"
+      "覆盖达 99.64%。本节住房构成仍以当月被问样本（新入组者）计算并标注 n，"
+      "不得把新入组者的住房占比当作全体住房构成。\n")
 
     # ---- 2a profiles
     a("## 2a. 逐期画像分布与漂移\n")
@@ -363,7 +374,8 @@ def build_report(res: dict, main_months: list) -> str:
               + (f" | {n}" if dim == "housing" else "") + " |\n")
         a("")
     a("### 逐月漂移（TVD，未加权 / 加权）\n")
-    a("TVD = 0.5·Σ|p−q|，基线为 2021-01，另给对主窗口均值分布的 TVD。"
+    a("TVD = 0.5·Σ|p−q|，基线为 2021-01，另给对 --months 主窗口"
+      "（默认 202011..202112 共 14 个月）均值分布的 TVD。"
       "表为全 2020–2024 每维度的摘要；逐月序列见 JSON。\n")
     a("| dimension | TVD vs 2021-01 max (u/w) | mean (u/w) | TVD vs window mean max (u/w) | mean (u/w) | TVD M vs M−12 mean (u/w) | max |\n")
     a("|---|---|---|---|---|---|---|\n")
@@ -394,7 +406,7 @@ def build_report(res: dict, main_months: list) -> str:
     b0 = res["answer_stats"][str(main_months[0])]["q9_bins_mean_probability_unweighted"]
     bm = res["answer_stats"][str(main_months[len(main_months) // 2])]["q9_bins_mean_probability_unweighted"]
     b1 = res["answer_stats"][str(main_months[-1])]["q9_bins_mean_probability_unweighted"]
-    a("| bin | ≥+12 | +8..12 | +6..8 | +4..6 | +2..4 | +0..2 | −0..2 | −2..4 | −4..6 | ≤−6 (近似档界) |\n")
+    a("| bin | ≥+12 | +8..12 | +4..8 | +2..4 | +0..2 | −2..0 | −4..−2 | −8..−4 | −12..−8 | ≤−12 |\n")
     a("|---|---|---|---|---|---|---|---|---|---|---|\n")
     for name, b in [("首月 " + month_label(main_months[0]), b0),
                     ("中月 " + month_label(main_months[len(main_months) // 2]), bm),
@@ -405,16 +417,22 @@ def build_report(res: dict, main_months: list) -> str:
 
     # ---- 2c rotation
     a("## 2c. 轮换结构\n")
-    a("| month | n | 新进 n (占比) | 上月退出 n | 与上月重叠率 | tenure 中位 [p25,p75] (max) |\n")
-    a("|---|---|---|---|---|---|\n")
+    a("口径限定（复审更正）：\"新进\"= 在本文件内首次出现（2020-01 存在左截断，"
+      "该月的\"新进\"含此前已在册者）；\"退出\"= 以全文件 last_seen 事后识别，"
+      "不能直接当作 B 线的在线退出规则；\"重返\"= 此前出现过但上月缺席，"
+      "与首次入组分开计数。\n")
+    a("| month | n | 新进 n (占比) | 重返 n | 上月退出 n | 与上月重叠率 | tenure 中位 [p25,p75] (max) |\n")
+    a("|---|---|---|---|---|---|---|\n")
     for m in main_months:
         r = res["rotation"][m]
         t = r["tenure_months"]
         a(f"| {month_label(m)} | {r['n_respondents']} | {r['n_new_entrants']} "
-          f"({r['new_entrant_share'] * 100:.1f}%) | {r['n_exit_prev_month']} "
+          f"({r['new_entrant_share'] * 100:.1f}%) | {r.get('n_reentrants')} "
+          f"| {r['n_exit_prev_month']} "
           f"| {fmt(r['overlap_with_prev_month'], 3)} | {t['median']:.0f} "
           f"[{t['p25']:.0f},{t['p75']:.0f}] ({t['max']}) |\n")
-    a("\n回答缺失模式（主窗口各字段每月缺失率均值，全序列见 JSON）：\n")
+    a("\n回答缺失模式（主窗口各字段每月缺失率均值，全序列见 JSON；"
+      "Q43 的\"缺失\"实为未被问——该题只问新入组者，不应读作随机缺失）：\n")
     a("| field | 主窗口月均缺失率 | 全期最高月 |\n|---|---|---|\n")
     for f_, s_ in res["missingness_summary"].items():
         a(f"| {f_} | {s_['mean_main_window'] * 100:.2f}% | {s_['max'] * 100:.1f}% ({month_label(int(s_['max_month']))}) |\n")
@@ -423,7 +441,7 @@ def build_report(res: dict, main_months: list) -> str:
     # ---- 2d stationarity
     a("## 2d. 跨期平稳性\n")
     a("画像分布逐月 TVD 序列：见 JSON `profile_drift`（全 60 个月，vs 2021-01 基线"
-      "与 vs 窗口均值）。下图文字版为主窗口内 employment 与 income 的"
+      "与 vs 14 个月主窗口均值）。下图文字版为主窗口内 employment 与 income 的"
       "未加权 TVD（vs 2021-01）：\n")
     for dim in ("employment", "income"):
         seq = [(m, res["profile_drift"][dim][str(m)]["tvd_vs_baseline_unweighted"])
@@ -526,6 +544,9 @@ def main(argv=None) -> int:
             "data_path": str(args.data.relative_to(REPO_ROOT)),
             "data_sha256": _sha256(args.data),
             "n_rows": int(len(df)),
+            "n_rows_zero_weight": int((df["weight"] == 0).sum()),
+            "zero_weight_note": ("rows with missing source weight kept in frame and "
+                                 "unweighted stats; weight set to 0 for weighted stats"),
             "n_months": len(all_months),
             "n_unique_userids": int(df["userid"].nunique()),
             "date_min": int(df["date"].min()),
@@ -552,7 +573,7 @@ def main(argv=None) -> int:
                           "by_month": {str(m): {"n_subsample": int(by_month[m][col].notna().sum()),
                                                 "shares": shares[m]} for m in all_months}}
         prof_drift[dim] = {str(m): r for m, r in
-                           dimension_drift(shares, 202101, all_months).items()}
+                           dimension_drift(shares, 202101, main_months).items()}
         prof_lag12[dim] = {str(m): r for m, r in lag12_tvd(shares).items()}
     # employment (mapped from Q10)
     shares = {m: profile_shares(by_month[m], "employment") for m in all_months}
@@ -562,20 +583,20 @@ def main(argv=None) -> int:
         "by_month": {str(m): {"n_subsample": int(by_month[m]["employment"].notna().sum()),
                               "shares": shares[m]} for m in all_months}}
     prof_drift["employment"] = {str(m): r for m, r in
-                                dimension_drift(shares, 202101, all_months).items()}
+                                dimension_drift(shares, 202101, main_months).items()}
     prof_lag12["employment"] = {str(m): r for m, r in lag12_tvd(shares).items()}
-    # housing Q43 (rotating module; mapped to owner/renter/other labels)
+    # housing Q43 (asked of new entrants only; mapped to owner/renter/other labels)
     shares = {}
     for m in all_months:
         asked = by_month[m][by_month[m]["housing_tenure"].notna()]
         shares[m] = profile_shares(asked, "housing_tenure") if len(asked) else {}
     prof_dist["housing"] = {
-        "source_column": "Q43 (rotating module; shares computed among respondents ASKED that month; 1=owner 2=renter 3=other)",
+        "source_column": "Q43 (asked of new entrants only; shares computed among respondents ASKED that month = the entrant flow, not the whole sample; 1=owner 2=renter 3=other)",
         "categories": ["owner", "renter", "other"],
         "by_month": {str(m): {"n_subsample": int(by_month[m]["Q43"].notna().sum()),
                               "shares": shares[m]} for m in all_months}}
     prof_drift["housing"] = {str(m): r for m, r in
-                             dimension_drift(shares, 202101, all_months).items()}
+                             dimension_drift(shares, 202101, main_months).items()}
     prof_lag12["housing"] = {str(m): r for m, r in lag12_tvd(shares).items()}
     res["profile_distributions"] = prof_dist
     res["profile_drift"] = prof_drift
@@ -671,20 +692,25 @@ def _conclusions(res: dict, main_months: list) -> str:
                                    key=lambda kv: -kv[1]['median_gap_full'])) + "。\n")
     a("两个口径共同指向：**education / employment / age** 是最有效的分层维度，"
       "**income 次之**，region 与 numeracy 最弱。需要注意两点："
-      "(i) 任何单一维度的组间方差占比都不超过 1.2%——Q9_mean 的变异绝大部分是"
-      "个体内的（std≈6pp），分层只能捕捉尾部结构，core 层的价值在**覆盖组间差**"
-      "而非降低总方差；(ii) 收入组中位数的排序并不固定，组间极差仅 0.2–1.3pp，"
-      "不宜把\"低收入预期更高\"当作稳定先验写进设计。"
+      f"(i) 任何单一维度的组间方差占比都很小（全期均值最高约 "
+      f"{max(v['between_share_full'] for v in hs.values()) * 100:.1f}%，"
+      f"主窗口均值最高约 {max(v['between_share_main'] for v in hs.values()) * 100:.1f}%）"
+      "——Q9_mean 的变异绝大部分是**组内个体间差异**（std≈6pp），分层只能捕捉尾部结构，"
+      "core 层的价值在**覆盖组间差**而非降低总方差；(ii) 收入组中位数的排序并不固定，"
+      "组间极差仅 0.2–1.3pp，不宜把\"低收入预期更高\"当作稳定先验写进设计；"
+      "employment 的最大组间差还包含 on_leave、other 等每月仅个位数人的稀小组，"
+      "不能凭极差直接判它为最有效维度。"
       "建议 core 层按 **education × employment × age**（income 作为第三优先）"
       "分层抽样，region/state 只做配额校验。\n")
 
     # ---- Q2 stationarity for Bayesian extrapolation
     a("**② normal 层贝叶斯外推的平稳性依据是否成立？**\n\n")
-    a("成立，依据有三：")
-    a(f"(i) **within-person 预期持续性很强**——Q9_mean 相邻月自相关（全体相邻月对合并，"
-      f"加权）**{ac['corr_weighted']:.3f}**（未加权 {ac['corr_unweighted']:.3f}，"
-      f"n={ac['n_pairs']:,} 对），主窗口各月对均在 0.45–0.70；"
-      "提示词引入\"上月回答\"变量有明确实证支持；")
+    a("以下为描述性支持，不能据此断言外推成立：")
+    a(f"(i) **相邻月回答相关**——Q9_mean 相邻月自相关（相邻月对合并的描述性相关，"
+      f"未控制个体固定效应与月份冲击）加权 **{ac['corr_weighted']:.3f}**（未加权 "
+      f"{ac['corr_unweighted']:.3f}，n={ac['n_pairs']:,} 对），主窗口各月对均在 "
+      "0.45–0.70；它是\"考虑引入上月回答\"的描述性线索，不等于记忆机制系数，"
+      "也不证明提示词引入该变量能复现此行为；")
     a("(ii) **回答-画像关系跨月稳定**——分组中位数向量相邻月 Spearman 秩相关均值：")
     a("；".join(f"{d} ρ={fmt(v['mean_consecutive_spearman'], 2)}"
                 for d, v in stab.items()) + "；")
@@ -700,16 +726,19 @@ def _conclusions(res: dict, main_months: list) -> str:
         d = dr[dim]["lag12"]
         a(f"- {dim}: lag-12 TVD 均值 {fmt(d['mean_unweighted'])}(u)/{fmt(d['mean_weighted'])}(w)，"
           f"最大 {fmt(d['max_unweighted'])}(u)/{fmt(d['max_weighted'])}(w)；")
-    a("\n对照经验阈值（TVD<0.02 可忽略、0.02–0.05 轻微、>0.05 需校准）："
+    a("\n对照参考分级（TVD<0.02 可忽略、0.02–0.05 轻微、>0.05 需校准——项目拟议的"
+      "告警参考，不是已验证的通用阈值，不作自动合格判据）："
       "**核心画像维度（income/employment/age）的 12 个月漂移处于'轻微'区间上沿**，"
-      "region/education/numeracy 接近可忽略；housing 的表观 TVD（均值≈0.055）主要由"
-      "每月仅约 150 人的小样本噪声驱动，不视为真实结构漂移。"
-      "因此 **B 线（≤M−12 旧人口直接外推）可用但不应裸用**："
-      "建议 (a) 画像分布在每 12 个月窗口内允许直接复用，"
-      "(b) 对 income/employment 两维按年校准一次（它们的加权 lag-12 TVD 约 0.03–0.04，"
-      "且加权漂移普遍不小于未加权——抽样权重并未完全纠正面板轮换带来的结构漂移），"
-      "(c) housing 继续沿用'借用邻近月个人回答'的策略（与 build_sce_population.py 一致），"
-      "不进入 B 线校准项。\n")
+      "region/education/numeracy 接近可忽略；housing 的表观 TVD 先受\"只问新入组者\""
+      "的选择机制驱动（当月被问者=入组流量），不能全归为小样本噪声，也不应直接读作"
+      "全体住房结构漂移。"
+      "因此 **B 线旧人口外推可用但不应裸用**："
+      "(a) 画像分布在每 12 个月窗口内允许直接复用是拟议规则，"
+      "(b) income/employment 两维的校准频率（如按年一次）须以开发期重抽样精度与 ESS "
+      "规则验证后才能冻结——年均 TVD 本身推不出\"每年校准一次足够\"，"
+      "(c) housing 采用\"入组回答前向沿用\"（与 build_sce_population.py 一致；"
+      "B 线另须满足源记录可得日 ≤ as_of），不进入 B 线校准项。"
+      "按 D048，B 线预测输入须按预测时点登记可得性。\n")
 
     a("**与预期不符的发现**：\n\n")
     a("- `Q8v2` 在本文件中只有 1(up)/2(down) 两码、无'持平'码"

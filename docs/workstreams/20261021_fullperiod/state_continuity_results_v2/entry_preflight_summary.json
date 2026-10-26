@@ -1,0 +1,2924 @@
+{
+  "schema_version": 1,
+  "completed_at": "2026-10-22T10:28:38.422443+00:00",
+  "new_api_calls": 0,
+  "new_model_answers": 0,
+  "status": "offline_A_initialization_preflight_not_final_run_freeze",
+  "config": {
+    "windows": [
+      1,
+      3
+    ],
+    "min_candidates": 5,
+    "min_donor_ess": 3.0,
+    "max_own_age_months": 3,
+    "max_probability_ratio": 4.0,
+    "seed": 20261022
+  },
+  "source_sha256": {
+    "outputs/sce_prior_preparation_20261013_v4/labeled_reference_private.parquet": "03809a5c8ac8c391da7b09e0962043c5fd559bac8b92f7ed9c3fd645770af0e5",
+    "studies/sce_inflation_expectations/evaluation/entry_initialization.py": "42112d1a61d2613371b3a5eab0fdf2ed6fff6f5090119e9c5c64d74283af3876",
+    "studies/sce_inflation_expectations/population/entry_initialization.py": "e18216051cfd7dec655aed58e5bb248acf92e607c62d6c4d5e2ac9d33040c649",
+    "scripts/prepare_sce_entry_initialization.py": "2043d017405b905c31437d595272e8c6dd4eb8f39959c358072daed26f0ace02",
+    "outputs/sce_fullperiod_data_20261021_v1/202505/population.json": "ed5cd96cb733a51be2682d6c21afcedbe0702f1638cb137a3563dc5d8315109b",
+    "outputs/sce_fullperiod_data_20261021_v1/202505/sampling_private.json": "62d7c15a9f33643a7e22cf237cbb223774d67a86fb38caa6d231d04f7c957716",
+    "outputs/sce_fullperiod_data_20261021_v1/202505/population_state_private.json": "97ff9a22f7f574092585928336b96a8927e1f0307fce75608d5353107e4fe9bf",
+    "outputs/sce_state_continuity_history_20261022_v1/202505_resolved_private.json": "eb1ce1491457cd892a1765c1da6cc32d64d912cbb3a89b0897e5bd3b44f7d66d",
+    "outputs/sce_fullperiod_data_20261021_v1/202506/population.json": "768f748fe5b15e66ac5423c76470560d4148bf29362637e06a99387f76d2d681",
+    "outputs/sce_fullperiod_data_20261021_v1/202506/sampling_private.json": "93a50ec7c0c1f137f433c8090fede5f4ad372e376a36fb9d7ba99b93c82e8713",
+    "outputs/sce_fullperiod_data_20261021_v1/202506/population_state_private.json": "07d48d87fff121e05c77c7fb6ff33ae289fad6ddc0f7d870fcb77da770743639",
+    "outputs/sce_state_continuity_history_20261022_v1/202506_resolved_private.json": "3ed65ca8a6bba95d2a806c6debb9e748f5226d97f26d4aa1a6ebff7ca6c2cb08",
+    "outputs/sce_fullperiod_data_20261021_v1/202507/population.json": "ffd4e80d30d85977a843e6a8e7e09aa74df8294bdb78abdafad3f722debb932e",
+    "outputs/sce_fullperiod_data_20261021_v1/202507/sampling_private.json": "9955e0736a22f06e755706415668b97d358ec3859cc03271fdfd58e277a24715",
+    "outputs/sce_fullperiod_data_20261021_v1/202507/population_state_private.json": "f7c2f35e7de3ef26d9674625863bc7f70763ca6ef29fd452042f21288e1c8987",
+    "outputs/sce_state_continuity_history_20261022_v1/202507_resolved_private.json": "5c3f510c08030f29468cdd412dee0aed9b1c0d34f8dfcc70639f69fbc4676445"
+  },
+  "scorer": {
+    "scorer": "sce_q9_frozen",
+    "variant": "relaxed_tail_skip_zero",
+    "tail_start": 20.0,
+    "holdout_run_id": "20261003T023026Z_77ebb305",
+    "pinned_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_sha256": {
+      "studies/sce_inflation_expectations/scoring/sce_q9.py": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09",
+      "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    "live_matches_pinned": true,
+    "kernel_migration": {
+      "migrated_at": "2026-10-03",
+      "old_source": "scripts/diagnose_sce_beta.py",
+      "old_source_sha256": "b45a29345f432288fe3b0b18e8c39066998bf19a803a0e7c661dc2a193987e57",
+      "new_source": "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+      "algorithm_unchanged": true,
+      "equivalence_check": "3,741 sealed holdout rows recomputed; zero per-field difference"
+    },
+    "approximation_notice": "Research approximation of the Armantier et al. (2017) Appendix C generalized-beta fit, selected on a preregistered holdout; not the official FRBNY implementation. The same algorithm scores real and simulated questionnaires; differences from official headline values are reported separately."
+  },
+  "missing_raw_weight_person_months": 1,
+  "units": [
+    {
+      "month": "202505",
+      "probe_n": 96,
+      "survey_entrants": 16,
+      "raw_weight_valid_n": 96,
+      "raw_weight_missing_n": 0,
+      "synthetic_people": 16,
+      "synthetic_q8_n": 16,
+      "synthetic_q9_n": 16,
+      "distinct_donors_in_assignment": 15,
+      "max_donor_reuse_in_assignment": 2,
+      "retained_older_memory_n": 0,
+      "matching_levels": {
+        "_AGE_CAT+_EDU_CAT+_HH_INC_CAT": 10,
+        "_AGE_CAT+_HH_INC_CAT": 6
+      },
+      "window_counts": {
+        "1": 16
+      },
+      "min_candidate_n": 6,
+      "min_candidate_ess": 4.633884372413388,
+      "max_new_donor_age_months": 1,
+      "old_synthetic_field_age_months": {
+        "n_fields": 32,
+        "min": 8,
+        "median": 46.0,
+        "max": 93
+      },
+      "references": {
+        "q8": {
+          "past_reference": {
+            "n_valid": 1091,
+            "n_excluded": 0,
+            "weight_sum": 1092.2498641312122,
+            "ess": 730.2156126540269,
+            "median_pp": 5.0,
+            "mean_pp": 8.66774992435776,
+            "q25_pp": 2.0,
+            "q75_pp": 10.0,
+            "iqr_pp": 8.0,
+            "std_pp": 20.513379538964664,
+            "share_below_zero": 0.20346010139410878,
+            "share_above_eight": 0.32554653163922787
+          },
+          "median_band_pp": [
+            3.5,
+            6.0
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 96,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        },
+        "q9": {
+          "past_reference": {
+            "n_valid": 1074,
+            "n_excluded": 0,
+            "weight_sum": 1065.814003586769,
+            "ess": 718.5733964147267,
+            "median_pp": 3.7278169585750165,
+            "mean_pp": 4.889363712916474,
+            "q25_pp": 0.7424657057698338,
+            "q75_pp": 7.348970640937018,
+            "iqr_pp": 6.606504935167184,
+            "std_pp": 7.616687640827612,
+            "share_below_zero": 0.22044793714774513,
+            "share_above_eight": 0.22291836683284602
+          },
+          "median_band_pp": [
+            2.6352003961525416,
+            5.308674425684176
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 96,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        }
+      },
+      "recent_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 952.1729327986639,
+          "median_pp": 4.5,
+          "mean_pp": 6.72204446667517,
+          "q25_pp": -2.0,
+          "q75_pp": 10.0,
+          "iqr_pp": 12.0,
+          "std_pp": 18.676212299176303,
+          "share_below_zero": 0.27274751433501526,
+          "share_above_eight": 0.2674822351253236,
+          "mixture_support_points": 273,
+          "recipient_n": 96,
+          "recipient_weight_ess": 73.72019033041947,
+          "w1_to_past_reference_pp": 2.347243254117182
+        },
+        "q9": {
+          "n_excluded": 0,
+          "weight_sum": 952.1729327986637,
+          "median_pp": 3.261532119021116,
+          "mean_pp": 4.692280492794808,
+          "q25_pp": -0.09214475588260207,
+          "q75_pp": 6.326363595545726,
+          "iqr_pp": 6.418508351428328,
+          "std_pp": 7.875733274552655,
+          "share_below_zero": 0.2559093841775688,
+          "share_above_eight": 0.19196468216087176,
+          "mixture_support_points": 273,
+          "recipient_n": 96,
+          "recipient_weight_ess": 73.72019033041947,
+          "w1_to_past_reference_pp": 1.0454206066242167
+        }
+      },
+      "calibrated_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 952.1729327986639,
+          "median_pp": 4.5,
+          "mean_pp": 6.72204446667517,
+          "q25_pp": -2.0,
+          "q75_pp": 10.0,
+          "iqr_pp": 12.0,
+          "std_pp": 18.676212299176303,
+          "share_below_zero": 0.27274751433501526,
+          "share_above_eight": 0.2674822351253236,
+          "mixture_support_points": 273,
+          "recipient_n": 96,
+          "recipient_weight_ess": 73.72019033041947,
+          "w1_to_past_reference_pp": 2.347243254117182
+        },
+        "q9": {
+          "n_excluded": 0,
+          "weight_sum": 952.1729327986637,
+          "median_pp": 3.261532119021116,
+          "mean_pp": 4.692280492794808,
+          "q25_pp": -0.09214475588260207,
+          "q75_pp": 6.326363595545726,
+          "iqr_pp": 6.418508351428328,
+          "std_pp": 7.875733274552655,
+          "share_below_zero": 0.2559093841775688,
+          "share_above_eight": 0.19196468216087176,
+          "mixture_support_points": 273,
+          "recipient_n": 96,
+          "recipient_weight_ess": 73.72019033041947,
+          "w1_to_past_reference_pp": 1.0454206066242167
+        }
+      },
+      "calibration": {
+        "status": "already_in_band",
+        "optimizer_success": true,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cdf_before": [
+          0.4051546547096253,
+          0.698359922872205,
+          0.39383703229015843,
+          0.6639905665587374
+        ],
+        "cdf_after": [
+          0.4051546547096253,
+          0.698359922872205,
+          0.39383703229015843,
+          0.6639905665587374
+        ],
+        "max_cdf_violation_before": 0.0,
+        "max_cdf_violation_after": 0.0,
+        "min_probability_ratio": 0.9999999999999997,
+        "max_probability_ratio": 1.0000000000000004,
+        "band_definition": "F(L-) <= 0.5 <= F(U), separately Q8 and frozen Q9 center",
+        "no_current_targets": true
+      },
+      "assignment_sensitivity": {
+        "recent_only": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 4.5,
+            "central_95_assignment_range_pp": [
+              4.0,
+              5.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 3.261532119021116,
+            "central_95_assignment_range_pp": [
+              3.0,
+              4.0
+            ],
+            "share_in_past_band": 1.0
+          }
+        },
+        "soft_calibrated": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 4.5,
+            "central_95_assignment_range_pp": [
+              4.0,
+              5.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 3.261532119021116,
+            "central_95_assignment_range_pp": [
+              3.0,
+              4.0
+            ],
+            "share_in_past_band": 1.0
+          }
+        }
+      }
+    },
+    {
+      "month": "202505",
+      "probe_n": 512,
+      "survey_entrants": 70,
+      "raw_weight_valid_n": 512,
+      "raw_weight_missing_n": 0,
+      "synthetic_people": 73,
+      "synthetic_q8_n": 70,
+      "synthetic_q9_n": 73,
+      "distinct_donors_in_assignment": 59,
+      "max_donor_reuse_in_assignment": 3,
+      "retained_older_memory_n": 1,
+      "matching_levels": {
+        "_AGE_CAT+_EDU_CAT+_HH_INC_CAT": 48,
+        "_AGE_CAT+_HH_INC_CAT": 25
+      },
+      "window_counts": {
+        "1": 73
+      },
+      "min_candidate_n": 5,
+      "min_candidate_ess": 4.633884372413388,
+      "max_new_donor_age_months": 1,
+      "old_synthetic_field_age_months": {
+        "n_fields": 0,
+        "min": null,
+        "median": null,
+        "max": null
+      },
+      "references": {
+        "q8": {
+          "past_reference": {
+            "n_valid": 1091,
+            "n_excluded": 0,
+            "weight_sum": 1092.2498641312122,
+            "ess": 730.2156126540269,
+            "median_pp": 5.0,
+            "mean_pp": 8.66774992435776,
+            "q25_pp": 2.0,
+            "q75_pp": 10.0,
+            "iqr_pp": 8.0,
+            "std_pp": 20.513379538964664,
+            "share_below_zero": 0.20346010139410878,
+            "share_above_eight": 0.32554653163922787
+          },
+          "median_band_pp": [
+            4.0,
+            5.0
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 512,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        },
+        "q9": {
+          "past_reference": {
+            "n_valid": 1074,
+            "n_excluded": 0,
+            "weight_sum": 1065.814003586769,
+            "ess": 718.5733964147267,
+            "median_pp": 3.7278169585750165,
+            "mean_pp": 4.889363712916474,
+            "q25_pp": 0.7424657057698338,
+            "q75_pp": 7.348970640937018,
+            "iqr_pp": 6.606504935167184,
+            "std_pp": 7.616687640827612,
+            "share_below_zero": 0.22044793714774513,
+            "share_above_eight": 0.22291836683284602
+          },
+          "median_band_pp": [
+            3.1649676290568802,
+            4.348161154975934
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 512,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        }
+      },
+      "recent_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 1098.3543743146583,
+          "median_pp": 5.0,
+          "mean_pp": 10.353473818814733,
+          "q25_pp": 2.0,
+          "q75_pp": 12.0,
+          "iqr_pp": 10.0,
+          "std_pp": 22.191283498930208,
+          "share_below_zero": 0.20237571645895144,
+          "share_above_eight": 0.3293927009106477,
+          "mixture_support_points": 1378,
+          "recipient_n": 512,
+          "recipient_weight_ess": 351.14146797493873,
+          "w1_to_past_reference_pp": 1.9290246896852423
+        },
+        "q9": {
+          "n_excluded": 3,
+          "weight_sum": 1089.5585114266723,
+          "median_pp": 3.634883142108209,
+          "mean_pp": 4.923976719178107,
+          "q25_pp": 0.7649759018529103,
+          "q75_pp": 7.348970640937018,
+          "iqr_pp": 6.583994739084107,
+          "std_pp": 8.108827498762718,
+          "share_below_zero": 0.21889278962694295,
+          "share_above_eight": 0.22701642142377068,
+          "mixture_support_points": 1375,
+          "recipient_n": 509,
+          "recipient_weight_ess": 348.6855866644756,
+          "w1_to_past_reference_pp": 0.344050457226607
+        }
+      },
+      "calibrated_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 1098.3543743146583,
+          "median_pp": 5.0,
+          "mean_pp": 10.353473818814733,
+          "q25_pp": 2.0,
+          "q75_pp": 12.0,
+          "iqr_pp": 10.0,
+          "std_pp": 22.191283498930208,
+          "share_below_zero": 0.20237571645895144,
+          "share_above_eight": 0.3293927009106477,
+          "mixture_support_points": 1378,
+          "recipient_n": 512,
+          "recipient_weight_ess": 351.14146797493873,
+          "w1_to_past_reference_pp": 1.9290246896852423
+        },
+        "q9": {
+          "n_excluded": 3,
+          "weight_sum": 1089.5585114266723,
+          "median_pp": 3.634883142108209,
+          "mean_pp": 4.923976719178107,
+          "q25_pp": 0.7649759018529103,
+          "q75_pp": 7.348970640937018,
+          "iqr_pp": 6.583994739084107,
+          "std_pp": 8.108827498762718,
+          "share_below_zero": 0.21889278962694295,
+          "share_above_eight": 0.22701642142377068,
+          "mixture_support_points": 1375,
+          "recipient_n": 509,
+          "recipient_weight_ess": 348.6855866644756,
+          "w1_to_past_reference_pp": 0.344050457226607
+        }
+      },
+      "calibration": {
+        "status": "already_in_band",
+        "optimizer_success": true,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cdf_before": [
+          0.3749070805772153,
+          0.5894875336343413,
+          0.4616296867273435,
+          0.5603670297688431
+        ],
+        "cdf_after": [
+          0.3749070805772153,
+          0.5894875336343413,
+          0.4616296867273435,
+          0.5603670297688431
+        ],
+        "max_cdf_violation_before": 0.0,
+        "max_cdf_violation_after": 0.0,
+        "min_probability_ratio": 0.9999999999999997,
+        "max_probability_ratio": 1.0000000000000004,
+        "band_definition": "F(L-) <= 0.5 <= F(U), separately Q8 and frozen Q9 center",
+        "no_current_targets": true
+      },
+      "assignment_sensitivity": {
+        "recent_only": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 5.0,
+            "central_95_assignment_range_pp": [
+              5.0,
+              5.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 3.6734571697624685,
+            "central_95_assignment_range_pp": [
+              3.3225044301550297,
+              3.867419897920925
+            ],
+            "share_in_past_band": 1.0
+          }
+        },
+        "soft_calibrated": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 5.0,
+            "central_95_assignment_range_pp": [
+              5.0,
+              5.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 3.6734571697624685,
+            "central_95_assignment_range_pp": [
+              3.3225044301550297,
+              3.867419897920925
+            ],
+            "share_in_past_band": 1.0
+          }
+        }
+      }
+    },
+    {
+      "month": "202506",
+      "probe_n": 96,
+      "survey_entrants": 13,
+      "raw_weight_valid_n": 96,
+      "raw_weight_missing_n": 0,
+      "synthetic_people": 14,
+      "synthetic_q8_n": 13,
+      "synthetic_q9_n": 14,
+      "distinct_donors_in_assignment": 12,
+      "max_donor_reuse_in_assignment": 3,
+      "retained_older_memory_n": 1,
+      "matching_levels": {
+        "_AGE_CAT+_HH_INC_CAT": 3,
+        "_AGE_CAT+_EDU_CAT+_HH_INC_CAT": 11
+      },
+      "window_counts": {
+        "1": 14
+      },
+      "min_candidate_n": 6,
+      "min_candidate_ess": 5.5458213225740876,
+      "max_new_donor_age_months": 1,
+      "old_synthetic_field_age_months": {
+        "n_fields": 26,
+        "min": 12,
+        "median": 42.0,
+        "max": 93
+      },
+      "references": {
+        "q8": {
+          "past_reference": {
+            "n_valid": 1089,
+            "n_excluded": 0,
+            "weight_sum": 1090.000293403864,
+            "ess": 742.8069628422138,
+            "median_pp": 4.0,
+            "mean_pp": 7.5824673527009185,
+            "q25_pp": 2.0,
+            "q75_pp": 10.0,
+            "iqr_pp": 8.0,
+            "std_pp": 19.03351289442307,
+            "share_below_zero": 0.21281858572722093,
+            "share_above_eight": 0.3071022951432845
+          },
+          "median_band_pp": [
+            3.0,
+            5.0
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 96,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        },
+        "q9": {
+          "past_reference": {
+            "n_valid": 1078,
+            "n_excluded": 0,
+            "weight_sum": 1075.2852419614792,
+            "ess": 736.4322930793468,
+            "median_pp": 3.200345389668989,
+            "mean_pp": 4.63941962673347,
+            "q25_pp": 0.5460522078345562,
+            "q75_pp": 6.761943762978838,
+            "iqr_pp": 6.215891555144282,
+            "std_pp": 7.382002970305909,
+            "share_below_zero": 0.2163383182647403,
+            "share_above_eight": 0.20485754432794775
+          },
+          "median_band_pp": [
+            2.3304577616368896,
+            4.902527249952433
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 96,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        }
+      },
+      "recent_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 948.6190206821387,
+          "median_pp": 4.0,
+          "mean_pp": 4.664233056651421,
+          "q25_pp": -3.0,
+          "q75_pp": 8.0,
+          "iqr_pp": 11.0,
+          "std_pp": 22.378143076544344,
+          "share_below_zero": 0.33563106866662956,
+          "share_above_eight": 0.24110290174744717,
+          "mixture_support_points": 255,
+          "recipient_n": 96,
+          "recipient_weight_ess": 73.65345699290313,
+          "w1_to_past_reference_pp": 3.5986252371753333
+        },
+        "q9": {
+          "n_excluded": 1,
+          "weight_sum": 933.2754303940262,
+          "median_pp": 4.223148656574497,
+          "mean_pp": 4.891818566578195,
+          "q25_pp": 0.6442303220145362,
+          "q75_pp": 6.486080520651769,
+          "iqr_pp": 5.841850198637233,
+          "std_pp": 6.447149433722557,
+          "share_below_zero": 0.21436969920897223,
+          "share_above_eight": 0.220546578934084,
+          "mixture_support_points": 254,
+          "recipient_n": 95,
+          "recipient_weight_ess": 72.69077936837246,
+          "w1_to_past_reference_pp": 0.7858566680010155
+        }
+      },
+      "calibrated_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 948.6190206821387,
+          "median_pp": 4.0,
+          "mean_pp": 4.664233056651421,
+          "q25_pp": -3.0,
+          "q75_pp": 8.0,
+          "iqr_pp": 11.0,
+          "std_pp": 22.378143076544344,
+          "share_below_zero": 0.33563106866662956,
+          "share_above_eight": 0.24110290174744717,
+          "mixture_support_points": 255,
+          "recipient_n": 96,
+          "recipient_weight_ess": 73.65345699290313,
+          "w1_to_past_reference_pp": 3.5986252371753342
+        },
+        "q9": {
+          "n_excluded": 1,
+          "weight_sum": 933.2754303940262,
+          "median_pp": 4.223148656574497,
+          "mean_pp": 4.891818566578195,
+          "q25_pp": 0.6442303220145362,
+          "q75_pp": 6.486080520651769,
+          "iqr_pp": 5.841850198637233,
+          "std_pp": 6.447149433722557,
+          "share_below_zero": 0.21436969920897223,
+          "share_above_eight": 0.22054657893408397,
+          "mixture_support_points": 254,
+          "recipient_n": 95,
+          "recipient_weight_ess": 72.69077936837246,
+          "w1_to_past_reference_pp": 0.7858566680010155
+        }
+      },
+      "calibration": {
+        "status": "already_in_band",
+        "optimizer_success": true,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cdf_before": [
+          0.38652223666430785,
+          0.6918107498506904,
+          0.32924551183932105,
+          0.5698416688861426
+        ],
+        "cdf_after": [
+          0.38652223666430785,
+          0.6918107498506904,
+          0.32924551183932105,
+          0.5698416688861426
+        ],
+        "max_cdf_violation_before": 0.0,
+        "max_cdf_violation_after": 0.0,
+        "min_probability_ratio": 0.9999999999999998,
+        "max_probability_ratio": 1.0000000000000002,
+        "band_definition": "F(L-) <= 0.5 <= F(U), separately Q8 and frozen Q9 center",
+        "no_current_targets": true
+      },
+      "assignment_sensitivity": {
+        "recent_only": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 4.0,
+            "central_95_assignment_range_pp": [
+              4.0,
+              4.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 4.223148656574497,
+            "central_95_assignment_range_pp": [
+              3.902376321322912,
+              4.638218397173308
+            ],
+            "share_in_past_band": 1.0
+          }
+        },
+        "soft_calibrated": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 4.0,
+            "central_95_assignment_range_pp": [
+              4.0,
+              4.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 4.223148656574497,
+            "central_95_assignment_range_pp": [
+              3.902376321322912,
+              4.638218397173308
+            ],
+            "share_in_past_band": 1.0
+          }
+        }
+      }
+    },
+    {
+      "month": "202506",
+      "probe_n": 512,
+      "survey_entrants": 60,
+      "raw_weight_valid_n": 512,
+      "raw_weight_missing_n": 0,
+      "synthetic_people": 64,
+      "synthetic_q8_n": 60,
+      "synthetic_q9_n": 64,
+      "distinct_donors_in_assignment": 51,
+      "max_donor_reuse_in_assignment": 3,
+      "retained_older_memory_n": 4,
+      "matching_levels": {
+        "_AGE_CAT+_HH_INC_CAT": 20,
+        "_AGE_CAT+_EDU_CAT+_HH_INC_CAT": 44
+      },
+      "window_counts": {
+        "1": 64
+      },
+      "min_candidate_n": 5,
+      "min_candidate_ess": 4.843143744407667,
+      "max_new_donor_age_months": 1,
+      "old_synthetic_field_age_months": {
+        "n_fields": 0,
+        "min": null,
+        "median": null,
+        "max": null
+      },
+      "references": {
+        "q8": {
+          "past_reference": {
+            "n_valid": 1089,
+            "n_excluded": 0,
+            "weight_sum": 1090.000293403864,
+            "ess": 742.8069628422138,
+            "median_pp": 4.0,
+            "mean_pp": 7.5824673527009185,
+            "q25_pp": 2.0,
+            "q75_pp": 10.0,
+            "iqr_pp": 8.0,
+            "std_pp": 19.03351289442307,
+            "share_below_zero": 0.21281858572722093,
+            "share_above_eight": 0.3071022951432845
+          },
+          "median_band_pp": [
+            4.0,
+            5.0
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 512,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        },
+        "q9": {
+          "past_reference": {
+            "n_valid": 1078,
+            "n_excluded": 0,
+            "weight_sum": 1075.2852419614792,
+            "ess": 736.4322930793468,
+            "median_pp": 3.200345389668989,
+            "mean_pp": 4.63941962673347,
+            "q25_pp": 0.5460522078345562,
+            "q75_pp": 6.761943762978838,
+            "iqr_pp": 6.215891555144282,
+            "std_pp": 7.382002970305909,
+            "share_below_zero": 0.2163383182647403,
+            "share_above_eight": 0.20485754432794775
+          },
+          "median_band_pp": [
+            2.9808420977518626,
+            3.8890910860365913
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 512,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        }
+      },
+      "recent_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 1077.09244810784,
+          "median_pp": 4.0,
+          "mean_pp": 8.452799965252272,
+          "q25_pp": 1.0,
+          "q75_pp": 10.0,
+          "iqr_pp": 9.0,
+          "std_pp": 20.09579434289821,
+          "share_below_zero": 0.2236995285370615,
+          "share_above_eight": 0.31047907129001273,
+          "mixture_support_points": 1304,
+          "recipient_n": 512,
+          "recipient_weight_ess": 353.13456946753126,
+          "w1_to_past_reference_pp": 1.151460249471178
+        },
+        "q9": {
+          "n_excluded": 2,
+          "weight_sum": 1073.342969273799,
+          "median_pp": 3.634883142108209,
+          "mean_pp": 5.042417806075849,
+          "q25_pp": 0.8656973311382412,
+          "q75_pp": 7.807198333422365,
+          "iqr_pp": 6.941501002284124,
+          "std_pp": 7.450384027168362,
+          "share_below_zero": 0.18863851873363432,
+          "share_above_eight": 0.24380834285695685,
+          "mixture_support_points": 1302,
+          "recipient_n": 510,
+          "recipient_weight_ess": 351.64766996868923,
+          "w1_to_past_reference_pp": 0.49614506436999567
+        }
+      },
+      "calibrated_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 1077.09244810784,
+          "median_pp": 4.0,
+          "mean_pp": 8.452799965252272,
+          "q25_pp": 1.0,
+          "q75_pp": 10.0,
+          "iqr_pp": 9.0,
+          "std_pp": 20.09579434289821,
+          "share_below_zero": 0.2236995285370615,
+          "share_above_eight": 0.31047907129001273,
+          "mixture_support_points": 1304,
+          "recipient_n": 512,
+          "recipient_weight_ess": 353.13456946753126,
+          "w1_to_past_reference_pp": 1.151460249471178
+        },
+        "q9": {
+          "n_excluded": 2,
+          "weight_sum": 1073.342969273799,
+          "median_pp": 3.634883142108209,
+          "mean_pp": 5.042417806075849,
+          "q25_pp": 0.8656973311382412,
+          "q75_pp": 7.807198333422365,
+          "iqr_pp": 6.941501002284124,
+          "std_pp": 7.450384027168362,
+          "share_below_zero": 0.18863851873363432,
+          "share_above_eight": 0.24380834285695685,
+          "mixture_support_points": 1302,
+          "recipient_n": 510,
+          "recipient_weight_ess": 351.64766996868923,
+          "w1_to_past_reference_pp": 0.49614506436999567
+        }
+      },
+      "calibration": {
+        "status": "already_in_band",
+        "optimizer_success": true,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cdf_before": [
+          0.4191575093950772,
+          0.635036879578246,
+          0.3986528689534707,
+          0.5141136951885875
+        ],
+        "cdf_after": [
+          0.4191575093950772,
+          0.635036879578246,
+          0.3986528689534707,
+          0.5141136951885875
+        ],
+        "max_cdf_violation_before": 0.0,
+        "max_cdf_violation_after": 0.0,
+        "min_probability_ratio": 0.9999999999999994,
+        "max_probability_ratio": 1.0000000000000004,
+        "band_definition": "F(L-) <= 0.5 <= F(U), separately Q8 and frozen Q9 center",
+        "no_current_targets": true
+      },
+      "assignment_sensitivity": {
+        "recent_only": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 4.0,
+            "central_95_assignment_range_pp": [
+              4.0,
+              4.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 3.6623298025359827,
+            "central_95_assignment_range_pp": [
+              3.5087453617464996,
+              3.902376321322912
+            ],
+            "share_in_past_band": 0.96
+          }
+        },
+        "soft_calibrated": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 4.0,
+            "central_95_assignment_range_pp": [
+              4.0,
+              4.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 3.6623298025359827,
+            "central_95_assignment_range_pp": [
+              3.5087453617464996,
+              3.902376321322912
+            ],
+            "share_in_past_band": 0.96
+          }
+        }
+      }
+    },
+    {
+      "month": "202507",
+      "probe_n": 96,
+      "survey_entrants": 5,
+      "raw_weight_valid_n": 96,
+      "raw_weight_missing_n": 0,
+      "synthetic_people": 6,
+      "synthetic_q8_n": 5,
+      "synthetic_q9_n": 6,
+      "distinct_donors_in_assignment": 6,
+      "max_donor_reuse_in_assignment": 1,
+      "retained_older_memory_n": 1,
+      "matching_levels": {
+        "_AGE_CAT+_EDU_CAT+_HH_INC_CAT": 4,
+        "_AGE_CAT+_HH_INC_CAT": 2
+      },
+      "window_counts": {
+        "1": 6
+      },
+      "min_candidate_n": 8,
+      "min_candidate_ess": 7.763157570769405,
+      "max_new_donor_age_months": 1,
+      "old_synthetic_field_age_months": {
+        "n_fields": 10,
+        "min": 2,
+        "median": 27.0,
+        "max": 94
+      },
+      "references": {
+        "q8": {
+          "past_reference": {
+            "n_valid": 1092,
+            "n_excluded": 0,
+            "weight_sum": 1090.647572427988,
+            "ess": 736.7528489960473,
+            "median_pp": 4.0,
+            "mean_pp": 8.159991604412337,
+            "q25_pp": 2.0,
+            "q75_pp": 10.0,
+            "iqr_pp": 8.0,
+            "std_pp": 17.425946501774572,
+            "share_below_zero": 0.2005144144233098,
+            "share_above_eight": 0.2887813523453717
+          },
+          "median_band_pp": [
+            3.0,
+            5.0
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 96,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        },
+        "q9": {
+          "past_reference": {
+            "n_valid": 1074,
+            "n_excluded": 0,
+            "weight_sum": 1065.1925666630268,
+            "ess": 725.4952499362452,
+            "median_pp": 3.009872209049888,
+            "mean_pp": 3.9824769089637475,
+            "q25_pp": 0.4809925538755735,
+            "q75_pp": 6.0,
+            "iqr_pp": 5.5190074461244265,
+            "std_pp": 6.881083157734072,
+            "share_below_zero": 0.223048080234915,
+            "share_above_eight": 0.16277207012931735
+          },
+          "median_band_pp": [
+            2.1067629490147417,
+            4.58907622199269
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 96,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        }
+      },
+      "recent_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 918.1480324584991,
+          "median_pp": 4.0,
+          "mean_pp": 7.740166894972834,
+          "q25_pp": -1.0,
+          "q75_pp": 10.0,
+          "iqr_pp": 11.0,
+          "std_pp": 14.265985691002685,
+          "share_below_zero": 0.2657932053196518,
+          "share_above_eight": 0.2809053659396099,
+          "mixture_support_points": 168,
+          "recipient_n": 96,
+          "recipient_weight_ess": 72.38527464714033,
+          "w1_to_past_reference_pp": 1.935997218871679
+        },
+        "q9": {
+          "n_excluded": 1,
+          "weight_sum": 906.7831550582002,
+          "median_pp": 3.6466456916964023,
+          "mean_pp": 4.207143297208322,
+          "q25_pp": 0.33227969790886114,
+          "q75_pp": 6.924950591148528,
+          "iqr_pp": 6.592670893239667,
+          "std_pp": 5.141466304138341,
+          "share_below_zero": 0.23281133241188653,
+          "share_above_eight": 0.21311006460344573,
+          "mixture_support_points": 167,
+          "recipient_n": 95,
+          "recipient_weight_ess": 71.39621443733532,
+          "w1_to_past_reference_pp": 1.131987415713349
+        }
+      },
+      "calibrated_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 918.1480324584991,
+          "median_pp": 4.0,
+          "mean_pp": 7.740166894972834,
+          "q25_pp": -1.0,
+          "q75_pp": 10.0,
+          "iqr_pp": 11.0,
+          "std_pp": 14.265985691002685,
+          "share_below_zero": 0.2657932053196518,
+          "share_above_eight": 0.2809053659396099,
+          "mixture_support_points": 168,
+          "recipient_n": 96,
+          "recipient_weight_ess": 72.38527464714033,
+          "w1_to_past_reference_pp": 1.935997218871679
+        },
+        "q9": {
+          "n_excluded": 1,
+          "weight_sum": 906.7831550582002,
+          "median_pp": 3.6466456916964023,
+          "mean_pp": 4.207143297208322,
+          "q25_pp": 0.33227969790886114,
+          "q75_pp": 6.924950591148528,
+          "iqr_pp": 6.592670893239667,
+          "std_pp": 5.141466304138341,
+          "share_below_zero": 0.23281133241188653,
+          "share_above_eight": 0.21311006460344573,
+          "mixture_support_points": 167,
+          "recipient_n": 95,
+          "recipient_weight_ess": 71.39621443733532,
+          "w1_to_past_reference_pp": 1.131987415713349
+        }
+      },
+      "calibration": {
+        "status": "already_in_band",
+        "optimizer_success": true,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cdf_before": [
+          0.3511494140777278,
+          0.6299047407256434,
+          0.33369311470830104,
+          0.6068970660702113
+        ],
+        "cdf_after": [
+          0.3511494140777278,
+          0.6299047407256434,
+          0.33369311470830104,
+          0.6068970660702113
+        ],
+        "max_cdf_violation_before": 0.0,
+        "max_cdf_violation_after": 0.0,
+        "min_probability_ratio": 0.9999999999999998,
+        "max_probability_ratio": 1.0000000000000004,
+        "band_definition": "F(L-) <= 0.5 <= F(U), separately Q8 and frozen Q9 center",
+        "no_current_targets": true
+      },
+      "assignment_sensitivity": {
+        "recent_only": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 4.0,
+            "central_95_assignment_range_pp": [
+              4.0,
+              4.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 3.6466456916964023,
+            "central_95_assignment_range_pp": [
+              3.3043933609749434,
+              3.9946428640365044
+            ],
+            "share_in_past_band": 1.0
+          }
+        },
+        "soft_calibrated": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 4.0,
+            "central_95_assignment_range_pp": [
+              4.0,
+              4.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 3.6466456916964023,
+            "central_95_assignment_range_pp": [
+              3.3043933609749434,
+              3.9946428640365044
+            ],
+            "share_in_past_band": 1.0
+          }
+        }
+      }
+    },
+    {
+      "month": "202507",
+      "probe_n": 512,
+      "survey_entrants": 46,
+      "raw_weight_valid_n": 511,
+      "raw_weight_missing_n": 1,
+      "synthetic_people": 51,
+      "synthetic_q8_n": 46,
+      "synthetic_q9_n": 51,
+      "distinct_donors_in_assignment": 44,
+      "max_donor_reuse_in_assignment": 5,
+      "retained_older_memory_n": 4,
+      "matching_levels": {
+        "_AGE_CAT+_EDU_CAT+_HH_INC_CAT": 32,
+        "_AGE_CAT+_HH_INC_CAT": 18,
+        "_EDU_CAT+_HH_INC_CAT": 1
+      },
+      "window_counts": {
+        "1": 51
+      },
+      "min_candidate_n": 5,
+      "min_candidate_ess": 4.9277238964337275,
+      "max_new_donor_age_months": 1,
+      "old_synthetic_field_age_months": {
+        "n_fields": 0,
+        "min": null,
+        "median": null,
+        "max": null
+      },
+      "references": {
+        "q8": {
+          "past_reference": {
+            "n_valid": 1092,
+            "n_excluded": 0,
+            "weight_sum": 1090.647572427988,
+            "ess": 736.7528489960473,
+            "median_pp": 4.0,
+            "mean_pp": 8.159991604412337,
+            "q25_pp": 2.0,
+            "q75_pp": 10.0,
+            "iqr_pp": 8.0,
+            "std_pp": 17.425946501774572,
+            "share_below_zero": 0.2005144144233098,
+            "share_above_eight": 0.2887813523453717
+          },
+          "median_band_pp": [
+            4.0,
+            5.0
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 512,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        },
+        "q9": {
+          "past_reference": {
+            "n_valid": 1074,
+            "n_excluded": 0,
+            "weight_sum": 1065.1925666630268,
+            "ess": 725.4952499362452,
+            "median_pp": 3.009872209049888,
+            "mean_pp": 3.9824769089637475,
+            "q25_pp": 0.4809925538755735,
+            "q75_pp": 6.0,
+            "iqr_pp": 5.5190074461244265,
+            "std_pp": 6.881083157734072,
+            "share_below_zero": 0.223048080234915,
+            "share_above_eight": 0.16277207012931735
+          },
+          "median_band_pp": [
+            2.9573583486569515,
+            3.4168448737055623
+          ],
+          "resampling_draws": 250,
+          "case_sample_size": 512,
+          "interpretation": "past finite-wave sampling tolerance, not a population confidence interval"
+        }
+      },
+      "recent_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 1035.7133498757612,
+          "median_pp": 5.0,
+          "mean_pp": 9.046697853400808,
+          "q25_pp": 2.0,
+          "q75_pp": 10.0,
+          "iqr_pp": 8.0,
+          "std_pp": 18.11352354664297,
+          "share_below_zero": 0.1925682561320406,
+          "share_above_eight": 0.31035939389314576,
+          "mixture_support_points": 1153,
+          "recipient_n": 511,
+          "recipient_weight_ess": 347.0336386128279,
+          "w1_to_past_reference_pp": 0.9976931282423851
+        },
+        "q9": {
+          "n_excluded": 1,
+          "weight_sum": 1033.5824353632051,
+          "median_pp": 3.261406799522084,
+          "mean_pp": 4.466267660346517,
+          "q25_pp": 1.0,
+          "q75_pp": 6.61839272517821,
+          "iqr_pp": 5.61839272517821,
+          "std_pp": 7.293452446903436,
+          "share_below_zero": 0.19935728779726178,
+          "share_above_eight": 0.19216909331674314,
+          "mixture_support_points": 1152,
+          "recipient_n": 510,
+          "recipient_weight_ess": 346.11555512286225,
+          "w1_to_past_reference_pp": 0.5623150667849623
+        }
+      },
+      "calibrated_mixture": {
+        "q8": {
+          "n_excluded": 0,
+          "weight_sum": 1035.7133498757612,
+          "median_pp": 5.0,
+          "mean_pp": 9.046697853400808,
+          "q25_pp": 2.0,
+          "q75_pp": 10.0,
+          "iqr_pp": 8.0,
+          "std_pp": 18.11352354664297,
+          "share_below_zero": 0.1925682561320406,
+          "share_above_eight": 0.31035939389314576,
+          "mixture_support_points": 1153,
+          "recipient_n": 511,
+          "recipient_weight_ess": 347.0336386128279,
+          "w1_to_past_reference_pp": 0.9976931282423851
+        },
+        "q9": {
+          "n_excluded": 1,
+          "weight_sum": 1033.5824353632051,
+          "median_pp": 3.261406799522084,
+          "mean_pp": 4.466267660346517,
+          "q25_pp": 1.0,
+          "q75_pp": 6.61839272517821,
+          "iqr_pp": 5.61839272517821,
+          "std_pp": 7.293452446903435,
+          "share_below_zero": 0.19935728779726178,
+          "share_above_eight": 0.19216909331674314,
+          "mixture_support_points": 1152,
+          "recipient_n": 510,
+          "recipient_weight_ess": 346.11555512286225,
+          "w1_to_past_reference_pp": 0.5623150667849623
+        }
+      },
+      "calibration": {
+        "status": "already_in_band",
+        "optimizer_success": true,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cdf_before": [
+          0.41211651296353935,
+          0.6167615326599273,
+          0.4139525204639435,
+          0.5296720387533059
+        ],
+        "cdf_after": [
+          0.41211651296353935,
+          0.6167615326599273,
+          0.4139525204639435,
+          0.5296720387533059
+        ],
+        "max_cdf_violation_before": 0.0,
+        "max_cdf_violation_after": 0.0,
+        "min_probability_ratio": 0.9999999999999994,
+        "max_probability_ratio": 1.0000000000000004,
+        "band_definition": "F(L-) <= 0.5 <= F(U), separately Q8 and frozen Q9 center",
+        "no_current_targets": true
+      },
+      "assignment_sensitivity": {
+        "recent_only": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 5.0,
+            "central_95_assignment_range_pp": [
+              5.0,
+              5.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 3.248451649186616,
+            "central_95_assignment_range_pp": [
+              3.090884534886859,
+              3.2821111096393736
+            ],
+            "share_in_past_band": 1.0
+          }
+        },
+        "soft_calibrated": {
+          "q8": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 5.0,
+            "central_95_assignment_range_pp": [
+              5.0,
+              5.0
+            ],
+            "share_in_past_band": 1.0
+          },
+          "q9": {
+            "assignment_seed_draws": 100,
+            "median_across_assignments_pp": 3.248451649186616,
+            "central_95_assignment_range_pp": [
+              3.090884534886859,
+              3.2821111096393736
+            ],
+            "share_in_past_band": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "historical_support": [
+    {
+      "month": 201901,
+      "entrant_n": 185,
+      "past_joint_legal_entrant_n": 164,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 5,
+          "fewer_than_five": 31
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        }
+      }
+    },
+    {
+      "month": 201902,
+      "entrant_n": 170,
+      "past_joint_legal_entrant_n": 172,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 11,
+          "fewer_than_five": 35
+        },
+        "age_income": {
+          "no_candidate": 5,
+          "fewer_than_five": 5
+        },
+        "age": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        }
+      }
+    },
+    {
+      "month": 201903,
+      "entrant_n": 179,
+      "past_joint_legal_entrant_n": 158,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 41
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 201904,
+      "entrant_n": 171,
+      "past_joint_legal_entrant_n": 169,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 55
+        },
+        "age_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 4
+        },
+        "age": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        }
+      }
+    },
+    {
+      "month": 201905,
+      "entrant_n": 162,
+      "past_joint_legal_entrant_n": 156,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 38
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 3
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 201906,
+      "entrant_n": 161,
+      "past_joint_legal_entrant_n": 149,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 29
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        }
+      }
+    },
+    {
+      "month": 201907,
+      "entrant_n": 152,
+      "past_joint_legal_entrant_n": 152,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 6,
+          "fewer_than_five": 34
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 7
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 201908,
+      "entrant_n": 170,
+      "past_joint_legal_entrant_n": 142,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 44
+        },
+        "age_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 201909,
+      "entrant_n": 160,
+      "past_joint_legal_entrant_n": 163,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 9,
+          "fewer_than_five": 29
+        },
+        "age_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 3
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 201910,
+      "entrant_n": 160,
+      "past_joint_legal_entrant_n": 153,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 6,
+          "fewer_than_five": 30
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 4
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 201911,
+      "entrant_n": 155,
+      "past_joint_legal_entrant_n": 151,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 27
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 201912,
+      "entrant_n": 159,
+      "past_joint_legal_entrant_n": 142,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 6,
+          "fewer_than_five": 42
+        },
+        "age_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 3
+        },
+        "age": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        }
+      }
+    },
+    {
+      "month": 202001,
+      "entrant_n": 179,
+      "past_joint_legal_entrant_n": 152,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 50
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 16
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202002,
+      "entrant_n": 167,
+      "past_joint_legal_entrant_n": 169,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 6,
+          "fewer_than_five": 29
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202003,
+      "entrant_n": 170,
+      "past_joint_legal_entrant_n": 155,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 53
+        },
+        "age_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 3
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202004,
+      "entrant_n": 153,
+      "past_joint_legal_entrant_n": 147,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 47
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202005,
+      "entrant_n": 150,
+      "past_joint_legal_entrant_n": 147,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 7,
+          "fewer_than_five": 53
+        },
+        "age_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 3
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202006,
+      "entrant_n": 150,
+      "past_joint_legal_entrant_n": 145,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 67
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 16
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202007,
+      "entrant_n": 164,
+      "past_joint_legal_entrant_n": 144,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 9,
+          "fewer_than_five": 31
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202008,
+      "entrant_n": 171,
+      "past_joint_legal_entrant_n": 154,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 40
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        }
+      }
+    },
+    {
+      "month": 202009,
+      "entrant_n": 158,
+      "past_joint_legal_entrant_n": 159,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 6,
+          "fewer_than_five": 38
+        },
+        "age_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 3
+        },
+        "age": {
+          "no_candidate": 2,
+          "fewer_than_five": 2
+        }
+      }
+    },
+    {
+      "month": 202010,
+      "entrant_n": 151,
+      "past_joint_legal_entrant_n": 146,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 44
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202011,
+      "entrant_n": 171,
+      "past_joint_legal_entrant_n": 145,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 14,
+          "fewer_than_five": 62
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202012,
+      "entrant_n": 156,
+      "past_joint_legal_entrant_n": 166,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 41
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202101,
+      "entrant_n": 156,
+      "past_joint_legal_entrant_n": 152,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 7,
+          "fewer_than_five": 36
+        },
+        "age_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202102,
+      "entrant_n": 163,
+      "past_joint_legal_entrant_n": 150,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 5,
+          "fewer_than_five": 56
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202103,
+      "entrant_n": 152,
+      "past_joint_legal_entrant_n": 162,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 23
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 3
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202104,
+      "entrant_n": 146,
+      "past_joint_legal_entrant_n": 146,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 11,
+          "fewer_than_five": 39
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 3
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202105,
+      "entrant_n": 153,
+      "past_joint_legal_entrant_n": 142,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 5,
+          "fewer_than_five": 56
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202106,
+      "entrant_n": 163,
+      "past_joint_legal_entrant_n": 148,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 9,
+          "fewer_than_five": 50
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202107,
+      "entrant_n": 123,
+      "past_joint_legal_entrant_n": 154,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 37
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202108,
+      "entrant_n": 145,
+      "past_joint_legal_entrant_n": 121,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 43
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202109,
+      "entrant_n": 152,
+      "past_joint_legal_entrant_n": 144,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 7,
+          "fewer_than_five": 39
+        },
+        "age_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202110,
+      "entrant_n": 170,
+      "past_joint_legal_entrant_n": 148,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 8,
+          "fewer_than_five": 52
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202111,
+      "entrant_n": 155,
+      "past_joint_legal_entrant_n": 166,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 32
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202112,
+      "entrant_n": 151,
+      "past_joint_legal_entrant_n": 151,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 5,
+          "fewer_than_five": 33
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202201,
+      "entrant_n": 129,
+      "past_joint_legal_entrant_n": 146,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 28
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202202,
+      "entrant_n": 139,
+      "past_joint_legal_entrant_n": 126,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 5,
+          "fewer_than_five": 53
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202203,
+      "entrant_n": 153,
+      "past_joint_legal_entrant_n": 136,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 5,
+          "fewer_than_five": 59
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202204,
+      "entrant_n": 149,
+      "past_joint_legal_entrant_n": 147,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 35
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202205,
+      "entrant_n": 121,
+      "past_joint_legal_entrant_n": 146,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 30
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202206,
+      "entrant_n": 134,
+      "past_joint_legal_entrant_n": 117,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 46
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 6
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202207,
+      "entrant_n": 134,
+      "past_joint_legal_entrant_n": 130,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 5,
+          "fewer_than_five": 51
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202208,
+      "entrant_n": 136,
+      "past_joint_legal_entrant_n": 132,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 31
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202209,
+      "entrant_n": 134,
+      "past_joint_legal_entrant_n": 132,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 38
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 5
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202210,
+      "entrant_n": 134,
+      "past_joint_legal_entrant_n": 129,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 64
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 5
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202211,
+      "entrant_n": 141,
+      "past_joint_legal_entrant_n": 132,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 6,
+          "fewer_than_five": 42
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 13
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202212,
+      "entrant_n": 122,
+      "past_joint_legal_entrant_n": 136,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 6,
+          "fewer_than_five": 29
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202301,
+      "entrant_n": 140,
+      "past_joint_legal_entrant_n": 118,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 63
+        },
+        "age_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202302,
+      "entrant_n": 166,
+      "past_joint_legal_entrant_n": 137,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 60
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 6
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202303,
+      "entrant_n": 172,
+      "past_joint_legal_entrant_n": 163,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 14,
+          "fewer_than_five": 46
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202304,
+      "entrant_n": 137,
+      "past_joint_legal_entrant_n": 166,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 44
+        },
+        "age_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202305,
+      "entrant_n": 115,
+      "past_joint_legal_entrant_n": 134,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 34
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202306,
+      "entrant_n": 146,
+      "past_joint_legal_entrant_n": 111,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 81
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202307,
+      "entrant_n": 121,
+      "past_joint_legal_entrant_n": 145,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 5,
+          "fewer_than_five": 51
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202308,
+      "entrant_n": 124,
+      "past_joint_legal_entrant_n": 117,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 50
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202309,
+      "entrant_n": 140,
+      "past_joint_legal_entrant_n": 122,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 66
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202310,
+      "entrant_n": 127,
+      "past_joint_legal_entrant_n": 136,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 6,
+          "fewer_than_five": 47
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202311,
+      "entrant_n": 113,
+      "past_joint_legal_entrant_n": 121,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 6,
+          "fewer_than_five": 47
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202312,
+      "entrant_n": 142,
+      "past_joint_legal_entrant_n": 110,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 53
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 11
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202401,
+      "entrant_n": 142,
+      "past_joint_legal_entrant_n": 137,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 71
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202402,
+      "entrant_n": 146,
+      "past_joint_legal_entrant_n": 137,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 49
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202403,
+      "entrant_n": 130,
+      "past_joint_legal_entrant_n": 141,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 5,
+          "fewer_than_five": 50
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202404,
+      "entrant_n": 126,
+      "past_joint_legal_entrant_n": 128,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 37
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202405,
+      "entrant_n": 140,
+      "past_joint_legal_entrant_n": 123,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 10,
+          "fewer_than_five": 63
+        },
+        "age_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202406,
+      "entrant_n": 138,
+      "past_joint_legal_entrant_n": 137,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 51
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 7
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202407,
+      "entrant_n": 126,
+      "past_joint_legal_entrant_n": 136,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 28
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202408,
+      "entrant_n": 139,
+      "past_joint_legal_entrant_n": 125,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 69
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202409,
+      "entrant_n": 119,
+      "past_joint_legal_entrant_n": 137,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 48
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        }
+      }
+    },
+    {
+      "month": 202410,
+      "entrant_n": 99,
+      "past_joint_legal_entrant_n": 112,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 6,
+          "fewer_than_five": 35
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202411,
+      "entrant_n": 105,
+      "past_joint_legal_entrant_n": 98,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 13,
+          "fewer_than_five": 57
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 17
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202412,
+      "entrant_n": 91,
+      "past_joint_legal_entrant_n": 104,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 44
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 8
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202501,
+      "entrant_n": 118,
+      "past_joint_legal_entrant_n": 84,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 5,
+          "fewer_than_five": 51
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202502,
+      "entrant_n": 126,
+      "past_joint_legal_entrant_n": 113,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 11,
+          "fewer_than_five": 58
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 7
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202503,
+      "entrant_n": 127,
+      "past_joint_legal_entrant_n": 122,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 7,
+          "fewer_than_five": 51
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202504,
+      "entrant_n": 146,
+      "past_joint_legal_entrant_n": 125,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 6,
+          "fewer_than_five": 64
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202505,
+      "entrant_n": 124,
+      "past_joint_legal_entrant_n": 144,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 45
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202506,
+      "entrant_n": 120,
+      "past_joint_legal_entrant_n": 122,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 4,
+          "fewer_than_five": 43
+        },
+        "age_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 2
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202507,
+      "entrant_n": 95,
+      "past_joint_legal_entrant_n": 116,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 3,
+          "fewer_than_five": 41
+        },
+        "age_income": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        },
+        "age": {
+          "no_candidate": 1,
+          "fewer_than_five": 1
+        }
+      }
+    },
+    {
+      "month": 202508,
+      "entrant_n": 109,
+      "past_joint_legal_entrant_n": 93,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 15,
+          "fewer_than_five": 53
+        },
+        "age_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 24
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202509,
+      "entrant_n": 137,
+      "past_joint_legal_entrant_n": 107,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 2,
+          "fewer_than_five": 52
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    },
+    {
+      "month": 202510,
+      "entrant_n": 121,
+      "past_joint_legal_entrant_n": 130,
+      "matching_support": {
+        "age_education_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 50
+        },
+        "age_income": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        },
+        "age": {
+          "no_candidate": 0,
+          "fewer_than_five": 0
+        }
+      }
+    }
+  ],
+  "cautions": [
+    "No current inflation outcomes loaded for recipients or calibration.",
+    "512 is a stable-priority SRS support probe, not the final six-cell allocation.",
+    "Expected mixture calibration does not guarantee every finite assignment is in band.",
+    "Bootstrap bands measure conditional past-wave sampling variation, not national design uncertainty.",
+    "Missing raw-weight people are initialized and retained, but omitted from weighted calibration/statistics; no default weight one.",
+    "Recent raw microdata are A-only until release eligibility is established for B.",
+    "Population projection and strict-B lagged-micro updating remain separate tasks.",
+    "This tests initialization fidelity, not improvement in simulated answers."
+  ]
+}

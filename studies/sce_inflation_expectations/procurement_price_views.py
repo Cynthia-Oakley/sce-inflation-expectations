@@ -118,6 +118,10 @@ def rate(value, period):
 
 def fact_line(fact):
     # Both changes are unadjusted. Never relabel a one-month change as annualized.
+    if fact['mom_nsa_percent'] is None:
+        return (f"- {fact['label']}: month-to-month change was not published; "
+            f"{rate(fact['yoy_nsa_percent'], 'from the same month a year earlier')}. "
+            f"Reference month {fact['reference_period']} (not seasonally adjusted).")
     return (f"- {fact['label']}: {rate(fact['mom_nsa_percent'], 'from the previous month')}; "
         f"{rate(fact['yoy_nsa_percent'], 'from the same month a year earlier')}. "
         f"Reference month {fact['reference_period']} (not seasonally adjusted).")

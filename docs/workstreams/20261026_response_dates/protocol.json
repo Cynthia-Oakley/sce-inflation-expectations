@@ -1,0 +1,16 @@
+{
+  "scope": "Offline survey-completion date distribution and B input-engineering audit; no SCE answer or model outcome analysis",
+  "projected_columns": ["date", "survey_date", "weight"],
+  "description_period": ["201901", "202510"],
+  "historical_sources": ["201701", "202510"],
+  "exclusions": "Missing completion dates and dates outside their declared survey month are counted separately, never moved. Invalid weights excluded only in weighted sensitivity.",
+  "candidates": ["uniform", "previous_year_same_month", "last6_available_months", "same_month_last3_years"],
+  "availability": "For historical date forecasts at the fifteenth of each target month, source survey month-end plus nine calendar months must be strictly earlier than cutoff. This reproduces the declared B lag assumption, not certified historical bytes.",
+  "mapping": "Rebin source day probability cells by fractional month overlap onto target day cells, preserving probability mass. Mix historical source months equally; no fitted calendar or weekday effects.",
+  "metrics": ["TVD of daily probabilities", "maximum CDF gap", "W1 of completion dates measured in days", "share completing strictly after archived CPI release day"],
+  "weighting": "Unweighted completion counts primary; original survey-weighted date distribution sensitivity. Across months equal weight.",
+  "sampling_reference": "512 independent draws from each empirical monthly count PMF,500 replications,seed20261026; conditional Monte Carlo scale only, not population confidence intervals or panel-independence inference",
+  "decision": "Assess effect sizes, historical prediction and information-exposure differences; no optimization on SCE MAE and no production cutoff change",
+  "B_inventory": "Read-only full-month archived NYT/basic-topic-label coverage check. No tagging, dispatch, new authorization or response regeneration.",
+  "new_api_calls": 0
+}

@@ -1,0 +1,3700 @@
+{
+  "status": "completed_cached_media_mechanism_readout",
+  "new_api_calls": 0,
+  "new_q9_fits": 0,
+  "months": [
+    201905,
+    202009,
+    202106,
+    202109,
+    202112,
+    202206,
+    202312
+  ],
+  "arms": [
+    "R0",
+    "Q0",
+    "Q1",
+    "Q2",
+    "Q3"
+  ],
+  "labels": {
+    "A82": "A82原配置",
+    "R0": "修正新闻路由",
+    "Q0": "四档新闻量",
+    "Q1": "警示新闻×2",
+    "Q2": "混入Fox",
+    "Q3": "CPI相关度×1.5",
+    "copy_previous": "照抄本人上期"
+  },
+  "people_per_month": 96,
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "support": {
+    "selected_person_months": 672,
+    "main_q9_person_months": 641,
+    "main_q8_person_months": 652,
+    "baseline_q9_person_months": 524,
+    "baseline_q8_person_months": 540,
+    "human_q9_missing_person_months": 15,
+    "main_support_excludes_any_arm_any_repeat_invalid_fields": true
+  },
+  "main": {
+    "A82": {
+      "metrics": {
+        "q9_center_mae_pp": 0.5955161418000048,
+        "q9_center_bias_pp": -0.2925805091280704,
+        "cross_section_w1_pp": 2.6188523181053265,
+        "cross_person_iqr_pp": 2.4816437673532556,
+        "real_cross_person_iqr_pp": 5.359397661073671,
+        "individual_density_mean_mae_pp": 3.898957431315677,
+        "individual_density_iqr_mean_pp": 4.02296158224958,
+        "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+        "probability_tv_pct": 44.53321912888254,
+        "q8_person_mae_pp": 8.441057235613458,
+        "q8_person_bias_pp": -3.236251826293869,
+        "q8_center_mae_pp": 1.1428571428571428,
+        "q8_center_bias_pp": -1.1428571428571428,
+        "q8_cross_section_w1_pp": 6.331550105672862,
+        "q8_person_spearman": 0.41879968355337555,
+        "center_rmse_pp": 0.8117377337062627
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 90,
+          "truth_center_pp": 1.9566197871715287,
+          "q9_center_mae_pp": 0.23056593103281875,
+          "q9_center_bias_pp": 0.23056593103281875,
+          "cross_section_w1_pp": 2.548405686064322,
+          "cross_person_iqr_pp": 1.5928948300661228,
+          "real_cross_person_iqr_pp": 4.281581445117834,
+          "individual_density_mean_mae_pp": 3.4537653012550487,
+          "individual_density_iqr_mean_pp": 2.7576340197091658,
+          "real_individual_density_iqr_mean_pp": 4.549544008463439,
+          "probability_tv_pct": 44.98495606727842,
+          "model_center_pp": 2.1871857182043475,
+          "repeat_center_mae_pp": {
+            "1": 0.23056593103281875
+          }
+        },
+        {
+          "month": 202009,
+          "n": 89,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.4008840886546814,
+          "q9_center_bias_pp": -0.4008840886546814,
+          "cross_section_w1_pp": 2.6365739082477533,
+          "cross_person_iqr_pp": 2.0710136474379,
+          "real_cross_person_iqr_pp": 4.874003639527718,
+          "individual_density_mean_mae_pp": 3.672331721950643,
+          "individual_density_iqr_mean_pp": 3.3409076537366653,
+          "real_individual_density_iqr_mean_pp": 5.641888200555529,
+          "probability_tv_pct": 49.7075483307431,
+          "model_center_pp": 2.5991159113453186,
+          "repeat_center_mae_pp": {
+            "1": 0.4008840886546814
+          }
+        },
+        {
+          "month": 202106,
+          "n": 93,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 1.7520870343655117,
+          "q9_center_bias_pp": -1.7520870343655117,
+          "cross_section_w1_pp": 2.249118809439171,
+          "cross_person_iqr_pp": 2.8801666437093747,
+          "real_cross_person_iqr_pp": 5.087921635915889,
+          "individual_density_mean_mae_pp": 3.30930541960278,
+          "individual_density_iqr_mean_pp": 3.665631580331236,
+          "real_individual_density_iqr_mean_pp": 5.529595174439526,
+          "probability_tv_pct": 42.50976337702659,
+          "model_center_pp": 3.347782897811018,
+          "repeat_center_mae_pp": {
+            "1": 1.7520870343655117
+          }
+        },
+        {
+          "month": 202109,
+          "n": 91,
+          "truth_center_pp": 4.189208704306144,
+          "q9_center_mae_pp": 0.05592827059017669,
+          "q9_center_bias_pp": -0.05592827059017669,
+          "cross_section_w1_pp": 2.750226888446534,
+          "cross_person_iqr_pp": 2.480697880748049,
+          "real_cross_person_iqr_pp": 4.974384730368608,
+          "individual_density_mean_mae_pp": 4.272803043806862,
+          "individual_density_iqr_mean_pp": 4.577638283501837,
+          "real_individual_density_iqr_mean_pp": 6.016371151942218,
+          "probability_tv_pct": 43.73185988828741,
+          "model_center_pp": 4.133280433715967,
+          "repeat_center_mae_pp": {
+            "1": 0.05592827059017669
+          }
+        },
+        {
+          "month": 202112,
+          "n": 92,
+          "truth_center_pp": 5.9012145739194395,
+          "q9_center_mae_pp": 0.8994388846378936,
+          "q9_center_bias_pp": -0.8994388846378936,
+          "cross_section_w1_pp": 3.3121455400176085,
+          "cross_person_iqr_pp": 2.228676216802812,
+          "real_cross_person_iqr_pp": 6.634760021413131,
+          "individual_density_mean_mae_pp": 4.351978351579831,
+          "individual_density_iqr_mean_pp": 4.3557064699323345,
+          "real_individual_density_iqr_mean_pp": 6.582963305060197,
+          "probability_tv_pct": 45.13646634511203,
+          "model_center_pp": 5.001775689281546,
+          "repeat_center_mae_pp": {
+            "1": 0.8994388846378936
+          }
+        },
+        {
+          "month": 202206,
+          "n": 92,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 0.7084721278136668,
+          "q9_center_bias_pp": 0.7084721278136668,
+          "cross_section_w1_pp": 2.6823836878104403,
+          "cross_person_iqr_pp": 2.996420723387149,
+          "real_cross_person_iqr_pp": 6.370741109599609,
+          "individual_density_mean_mae_pp": 4.188059641739336,
+          "individual_density_iqr_mean_pp": 5.509641470318525,
+          "real_individual_density_iqr_mean_pp": 7.14632194514831,
+          "probability_tv_pct": 39.100500790527654,
+          "model_center_pp": 7.2212995012051975,
+          "repeat_center_mae_pp": {
+            "1": 0.7084721278136668
+          }
+        },
+        {
+          "month": 202312,
+          "n": 94,
+          "truth_center_pp": 3.2389430551739933,
+          "q9_center_mae_pp": 0.12123665550528528,
+          "q9_center_bias_pp": 0.12123665550528528,
+          "cross_section_w1_pp": 2.153111706711457,
+          "cross_person_iqr_pp": 3.121636429321385,
+          "real_cross_person_iqr_pp": 5.2923910455729075,
+          "individual_density_mean_mae_pp": 4.04445853927524,
+          "individual_density_iqr_mean_pp": 3.9535715982172994,
+          "real_individual_density_iqr_mean_pp": 6.245269282421079,
+          "probability_tv_pct": 46.56143910320263,
+          "model_center_pp": 3.3601797106792786,
+          "repeat_center_mae_pp": {
+            "1": 0.12123665550528528
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.5955161418000048,
+          "q9_center_bias_pp": -0.2925805091280704,
+          "cross_section_w1_pp": 2.6188523181053265,
+          "cross_person_iqr_pp": 2.4816437673532556,
+          "real_cross_person_iqr_pp": 5.359397661073671,
+          "individual_density_mean_mae_pp": 3.898957431315677,
+          "individual_density_iqr_mean_pp": 4.02296158224958,
+          "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+          "probability_tv_pct": 44.53321912888254
+        }
+      },
+      "generation_count": 1
+    },
+    "R0": {
+      "metrics": {
+        "q9_center_mae_pp": 0.5176430125642356,
+        "q9_center_bias_pp": -0.00722685464762158,
+        "cross_section_w1_pp": 2.6032443539118293,
+        "cross_person_iqr_pp": 2.4116487823579003,
+        "real_cross_person_iqr_pp": 5.359397661073671,
+        "individual_density_mean_mae_pp": 3.9665564646215077,
+        "individual_density_iqr_mean_pp": 4.108003410526587,
+        "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+        "probability_tv_pct": 44.611495914292696,
+        "q8_person_mae_pp": 8.288096962316827,
+        "q8_person_bias_pp": -2.4903035481994644,
+        "q8_center_mae_pp": 0.8785714285714287,
+        "q8_center_bias_pp": -0.8785714285714287,
+        "q8_cross_section_w1_pp": 5.966220751755244,
+        "q8_person_spearman": 0.4579748529918484,
+        "center_rmse_pp": 0.6659811162823385
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 90,
+          "truth_center_pp": 1.9566197871715287,
+          "q9_center_mae_pp": 0.3879783338442442,
+          "q9_center_bias_pp": 0.3879783338442442,
+          "cross_section_w1_pp": 2.524587169237028,
+          "cross_person_iqr_pp": 1.5117393341150298,
+          "real_cross_person_iqr_pp": 4.281581445117834,
+          "individual_density_mean_mae_pp": 3.599433972966147,
+          "individual_density_iqr_mean_pp": 2.811321858785561,
+          "real_individual_density_iqr_mean_pp": 4.549544008463439,
+          "probability_tv_pct": 45.17442905509898,
+          "model_center_pp": 2.344598121015773,
+          "repeat_center_mae_pp": {
+            "1": 0.3879783338442442,
+            "2": 0.3879783338442442
+          }
+        },
+        {
+          "month": 202009,
+          "n": 89,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.19509646146999216,
+          "q9_center_bias_pp": -0.19509646146999216,
+          "cross_section_w1_pp": 2.7211061921359594,
+          "cross_person_iqr_pp": 1.7505345968881312,
+          "real_cross_person_iqr_pp": 4.874003639527718,
+          "individual_density_mean_mae_pp": 3.757304914086408,
+          "individual_density_iqr_mean_pp": 3.340739762535499,
+          "real_individual_density_iqr_mean_pp": 5.641888200555529,
+          "probability_tv_pct": 50.867861685079404,
+          "model_center_pp": 2.8049035385300076,
+          "repeat_center_mae_pp": {
+            "1": 0.24240675847017457,
+            "2": 0.14778616446980974
+          }
+        },
+        {
+          "month": 202106,
+          "n": 93,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 0.9654105282139591,
+          "q9_center_bias_pp": -0.9654105282139591,
+          "cross_section_w1_pp": 1.9656070745078003,
+          "cross_person_iqr_pp": 2.550274608601735,
+          "real_cross_person_iqr_pp": 5.087921635915889,
+          "individual_density_mean_mae_pp": 3.2844508700285804,
+          "individual_density_iqr_mean_pp": 4.2229102500286935,
+          "real_individual_density_iqr_mean_pp": 5.529595174439526,
+          "probability_tv_pct": 41.763741806582175,
+          "model_center_pp": 4.134459403962571,
+          "repeat_center_mae_pp": {
+            "1": 0.9107480429743262,
+            "2": 1.020073013453592
+          }
+        },
+        {
+          "month": 202109,
+          "n": 91,
+          "truth_center_pp": 4.189208704306144,
+          "q9_center_mae_pp": 0.3662113752887617,
+          "q9_center_bias_pp": -0.3662113752887617,
+          "cross_section_w1_pp": 2.8897524945056885,
+          "cross_person_iqr_pp": 2.3253870031381845,
+          "real_cross_person_iqr_pp": 4.974384730368608,
+          "individual_density_mean_mae_pp": 4.40832153654657,
+          "individual_density_iqr_mean_pp": 4.326545502258954,
+          "real_individual_density_iqr_mean_pp": 6.016371151942218,
+          "probability_tv_pct": 44.546276278640406,
+          "model_center_pp": 3.822997329017382,
+          "repeat_center_mae_pp": {
+            "1": 0.4498877532700627,
+            "2": 0.2825349973074607
+          }
+        },
+        {
+          "month": 202112,
+          "n": 92,
+          "truth_center_pp": 5.9012145739194395,
+          "q9_center_mae_pp": 0.30270089856853666,
+          "q9_center_bias_pp": -0.30270089856853666,
+          "cross_section_w1_pp": 2.8068466868103896,
+          "cross_person_iqr_pp": 2.6637425894745657,
+          "real_cross_person_iqr_pp": 6.634760021413131,
+          "individual_density_mean_mae_pp": 4.080970002429064,
+          "individual_density_iqr_mean_pp": 4.868871528897259,
+          "real_individual_density_iqr_mean_pp": 6.582963305060197,
+          "probability_tv_pct": 42.337409452612874,
+          "model_center_pp": 5.598513675350903,
+          "repeat_center_mae_pp": {
+            "1": 0.3077979734421348,
+            "2": 0.29760382369493854
+          }
+        },
+        {
+          "month": 202206,
+          "n": 92,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 1.3162096813267912,
+          "q9_center_bias_pp": 1.3162096813267912,
+          "cross_section_w1_pp": 3.175581487693372,
+          "cross_person_iqr_pp": 3.1000497846423847,
+          "real_cross_person_iqr_pp": 6.370741109599609,
+          "individual_density_mean_mae_pp": 4.4545568756164435,
+          "individual_density_iqr_mean_pp": 5.3962770924122445,
+          "real_individual_density_iqr_mean_pp": 7.14632194514831,
+          "probability_tv_pct": 40.780548439929504,
+          "model_center_pp": 7.829037054718322,
+          "repeat_center_mae_pp": {
+            "1": 1.3236671164793083,
+            "2": 1.308752246174274
+          }
+        },
+        {
+          "month": 202312,
+          "n": 94,
+          "truth_center_pp": 3.2389430551739933,
+          "q9_center_mae_pp": 0.08989380923736379,
+          "q9_center_bias_pp": 0.0746432658368632,
+          "cross_section_w1_pp": 2.1392293724925655,
+          "cross_person_iqr_pp": 2.979813559645268,
+          "real_cross_person_iqr_pp": 5.2923910455729075,
+          "individual_density_mean_mae_pp": 4.180857080677338,
+          "individual_density_iqr_mean_pp": 3.789357878767899,
+          "real_individual_density_iqr_mean_pp": 6.245269282421079,
+          "probability_tv_pct": 46.81020468210552,
+          "model_center_pp": 3.3135863210108565,
+          "repeat_center_mae_pp": {
+            "1": 0.164537075074227,
+            "2": 0.015250543400500582
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.5410032933649254,
+          "q9_center_bias_pp": -0.004951143251274104,
+          "cross_section_w1_pp": 2.6621774074771594,
+          "cross_person_iqr_pp": 2.3627897354152885,
+          "real_cross_person_iqr_pp": 5.359397661073671,
+          "individual_density_mean_mae_pp": 3.9938769080613494,
+          "individual_density_iqr_mean_pp": 4.004889713433796,
+          "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+          "probability_tv_pct": 44.91027905157866
+        },
+        "2": {
+          "q9_center_mae_pp": 0.4942827317635457,
+          "q9_center_bias_pp": -0.009502566043969056,
+          "cross_section_w1_pp": 2.5443113003464988,
+          "cross_person_iqr_pp": 2.460507829300511,
+          "real_cross_person_iqr_pp": 5.359397661073671,
+          "individual_density_mean_mae_pp": 3.939236021181666,
+          "individual_density_iqr_mean_pp": 4.211117107619378,
+          "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+          "probability_tv_pct": 44.31271277700673
+        }
+      },
+      "generation_count": 2
+    },
+    "Q0": {
+      "metrics": {
+        "q9_center_mae_pp": 0.4848315867196113,
+        "q9_center_bias_pp": -0.030361780418648454,
+        "cross_section_w1_pp": 2.7416132973535885,
+        "cross_person_iqr_pp": 2.314860953059978,
+        "real_cross_person_iqr_pp": 5.359397661073671,
+        "individual_density_mean_mae_pp": 3.940815032263544,
+        "individual_density_iqr_mean_pp": 4.0683350796671585,
+        "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+        "probability_tv_pct": 44.67555417117744,
+        "q8_person_mae_pp": 8.179840329691611,
+        "q8_person_bias_pp": -2.647853800869819,
+        "q8_center_mae_pp": 0.8642857142857142,
+        "q8_center_bias_pp": -0.8642857142857142,
+        "q8_cross_section_w1_pp": 6.4124149038790055,
+        "q8_person_spearman": 0.43484497249410536,
+        "center_rmse_pp": 0.6791483066465981
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 90,
+          "truth_center_pp": 1.9566197871715287,
+          "q9_center_mae_pp": 0.2839807347572991,
+          "q9_center_bias_pp": 0.2839807347572991,
+          "cross_section_w1_pp": 2.9462987881345457,
+          "cross_person_iqr_pp": 1.3800650731580435,
+          "real_cross_person_iqr_pp": 4.281581445117834,
+          "individual_density_mean_mae_pp": 3.5744744263495924,
+          "individual_density_iqr_mean_pp": 2.6270420401866232,
+          "real_individual_density_iqr_mean_pp": 4.549544008463439,
+          "probability_tv_pct": 45.937796960909665,
+          "model_center_pp": 2.240600521928828,
+          "repeat_center_mae_pp": {
+            "1": 0.278910328393839,
+            "2": 0.28905114112075925
+          }
+        },
+        {
+          "month": 202009,
+          "n": 89,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.1349085486737236,
+          "q9_center_bias_pp": -0.1349085486737236,
+          "cross_section_w1_pp": 2.747719335607841,
+          "cross_person_iqr_pp": 1.7144848764027976,
+          "real_cross_person_iqr_pp": 4.874003639527718,
+          "individual_density_mean_mae_pp": 3.721406024452576,
+          "individual_density_iqr_mean_pp": 3.356777299839637,
+          "real_individual_density_iqr_mean_pp": 5.641888200555529,
+          "probability_tv_pct": 50.05283732484398,
+          "model_center_pp": 2.8650914513262764,
+          "repeat_center_mae_pp": {
+            "1": 0.2523981968484481,
+            "2": 0.01741890049899908
+          }
+        },
+        {
+          "month": 202106,
+          "n": 93,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 1.1129434479280698,
+          "q9_center_bias_pp": -1.1129434479280698,
+          "cross_section_w1_pp": 2.045943787748269,
+          "cross_person_iqr_pp": 2.2799012712350044,
+          "real_cross_person_iqr_pp": 5.087921635915889,
+          "individual_density_mean_mae_pp": 3.331773276776808,
+          "individual_density_iqr_mean_pp": 4.3038171838793335,
+          "real_individual_density_iqr_mean_pp": 5.529595174439526,
+          "probability_tv_pct": 41.48969900799899,
+          "model_center_pp": 3.98692648424846,
+          "repeat_center_mae_pp": {
+            "1": 1.1275978342046749,
+            "2": 1.0982890616514647
+          }
+        },
+        {
+          "month": 202109,
+          "n": 91,
+          "truth_center_pp": 4.189208704306144,
+          "q9_center_mae_pp": 0.24050508403948134,
+          "q9_center_bias_pp": -0.24050508403948134,
+          "cross_section_w1_pp": 3.158117873263327,
+          "cross_person_iqr_pp": 2.239472482525761,
+          "real_cross_person_iqr_pp": 4.974384730368608,
+          "individual_density_mean_mae_pp": 4.363302763362158,
+          "individual_density_iqr_mean_pp": 4.267074305983657,
+          "real_individual_density_iqr_mean_pp": 6.016371151942218,
+          "probability_tv_pct": 45.41755007440614,
+          "model_center_pp": 3.9487036202666626,
+          "repeat_center_mae_pp": {
+            "1": 0.047926634444365845,
+            "2": 0.43308353363459684
+          }
+        },
+        {
+          "month": 202112,
+          "n": 92,
+          "truth_center_pp": 5.9012145739194395,
+          "q9_center_mae_pp": 0.23490771494984797,
+          "q9_center_bias_pp": -0.23490771494984797,
+          "cross_section_w1_pp": 2.9828415786316573,
+          "cross_person_iqr_pp": 2.4225481473039396,
+          "real_cross_person_iqr_pp": 6.634760021413131,
+          "individual_density_mean_mae_pp": 4.137503981440277,
+          "individual_density_iqr_mean_pp": 4.683710336528446,
+          "real_individual_density_iqr_mean_pp": 6.582963305060197,
+          "probability_tv_pct": 42.135506374231454,
+          "model_center_pp": 5.666306858969591,
+          "repeat_center_mae_pp": {
+            "1": 0.13940317942324576,
+            "2": 0.3304122504764502
+          }
+        },
+        {
+          "month": 202206,
+          "n": 92,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 1.3066635872960708,
+          "q9_center_bias_pp": 1.3066635872960708,
+          "cross_section_w1_pp": 3.151638433924078,
+          "cross_person_iqr_pp": 3.097846198037442,
+          "real_cross_person_iqr_pp": 6.370741109599609,
+          "individual_density_mean_mae_pp": 4.408773142849653,
+          "individual_density_iqr_mean_pp": 5.415827864943978,
+          "real_individual_density_iqr_mean_pp": 7.14632194514831,
+          "probability_tv_pct": 40.92815477093909,
+          "model_center_pp": 7.8194909606876015,
+          "repeat_center_mae_pp": {
+            "1": 1.2722807156168727,
+            "2": 1.3410464589752689
+          }
+        },
+        {
+          "month": 202312,
+          "n": 94,
+          "truth_center_pp": 3.2389430551739933,
+          "q9_center_mae_pp": 0.07991198939278643,
+          "q9_center_bias_pp": -0.07991198939278643,
+          "cross_section_w1_pp": 2.158733284165401,
+          "cross_person_iqr_pp": 3.069708622756858,
+          "real_cross_person_iqr_pp": 5.2923910455729075,
+          "individual_density_mean_mae_pp": 4.048471610613751,
+          "individual_density_iqr_mean_pp": 3.824096526308435,
+          "real_individual_density_iqr_mean_pp": 6.245269282421079,
+          "probability_tv_pct": 46.76733468491276,
+          "model_center_pp": 3.159031065781207,
+          "repeat_center_mae_pp": {
+            "1": 0.13463349458503782,
+            "2": 0.025190484200535046
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.46473576907378344,
+          "q9_center_bias_pp": -0.021538327927865808,
+          "cross_section_w1_pp": 2.7743297612499154,
+          "cross_person_iqr_pp": 2.293050465379206,
+          "real_cross_person_iqr_pp": 5.359397661073671,
+          "individual_density_mean_mae_pp": 3.963954114203355,
+          "individual_density_iqr_mean_pp": 4.062340146019704,
+          "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+          "probability_tv_pct": 45.03378188787461
+        },
+        "2": {
+          "q9_center_mae_pp": 0.5049274043654391,
+          "q9_center_bias_pp": -0.0391852329094311,
+          "cross_section_w1_pp": 2.7088968334572625,
+          "cross_person_iqr_pp": 2.33667144074075,
+          "real_cross_person_iqr_pp": 5.359397661073671,
+          "individual_density_mean_mae_pp": 3.917675950323736,
+          "individual_density_iqr_mean_pp": 4.074330013314614,
+          "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+          "probability_tv_pct": 44.317326454480266
+        }
+      },
+      "generation_count": 2
+    },
+    "Q1": {
+      "metrics": {
+        "q9_center_mae_pp": 0.48801143069427705,
+        "q9_center_bias_pp": -0.02810075624769664,
+        "cross_section_w1_pp": 2.725008222143233,
+        "cross_person_iqr_pp": 2.3164396324845273,
+        "real_cross_person_iqr_pp": 5.359397661073671,
+        "individual_density_mean_mae_pp": 3.9339954747950556,
+        "individual_density_iqr_mean_pp": 4.0656814325575805,
+        "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+        "probability_tv_pct": 44.59385145665372,
+        "q8_person_mae_pp": 8.303458746176133,
+        "q8_person_bias_pp": -2.6259103759810167,
+        "q8_center_mae_pp": 0.9357142857142857,
+        "q8_center_bias_pp": -0.9357142857142857,
+        "q8_cross_section_w1_pp": 6.070721957550096,
+        "q8_person_spearman": 0.43561588983930966,
+        "center_rmse_pp": 0.6123027494339573
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 90,
+          "truth_center_pp": 1.9566197871715287,
+          "q9_center_mae_pp": 0.3223097963535002,
+          "q9_center_bias_pp": 0.3223097963535002,
+          "cross_section_w1_pp": 2.715145673292877,
+          "cross_person_iqr_pp": 1.4627045268265522,
+          "real_cross_person_iqr_pp": 4.281581445117834,
+          "individual_density_mean_mae_pp": 3.499626232807562,
+          "individual_density_iqr_mean_pp": 2.6623020706904703,
+          "real_individual_density_iqr_mean_pp": 4.549544008463439,
+          "probability_tv_pct": 44.874916881091664,
+          "model_center_pp": 2.278929583525029,
+          "repeat_center_mae_pp": {
+            "1": 0.3911029951214653,
+            "2": 0.25351659758553513
+          }
+        },
+        {
+          "month": 202009,
+          "n": 89,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.38174198744365384,
+          "q9_center_bias_pp": -0.38174198744365384,
+          "cross_section_w1_pp": 2.8645357495421533,
+          "cross_person_iqr_pp": 1.6158801553960433,
+          "real_cross_person_iqr_pp": 4.874003639527718,
+          "individual_density_mean_mae_pp": 3.7300275679257737,
+          "individual_density_iqr_mean_pp": 3.298548645592522,
+          "real_individual_density_iqr_mean_pp": 5.641888200555529,
+          "probability_tv_pct": 50.595803528957134,
+          "model_center_pp": 2.618258012556346,
+          "repeat_center_mae_pp": {
+            "1": 0.4266543877632003,
+            "2": 0.3368295871241074
+          }
+        },
+        {
+          "month": 202106,
+          "n": 93,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 0.7922195327565986,
+          "q9_center_bias_pp": -0.7922195327565986,
+          "cross_section_w1_pp": 1.8376263861220155,
+          "cross_person_iqr_pp": 2.3585271423962983,
+          "real_cross_person_iqr_pp": 5.087921635915889,
+          "individual_density_mean_mae_pp": 3.288893681023973,
+          "individual_density_iqr_mean_pp": 4.204785528685534,
+          "real_individual_density_iqr_mean_pp": 5.529595174439526,
+          "probability_tv_pct": 40.85104563343649,
+          "model_center_pp": 4.307650399419931,
+          "repeat_center_mae_pp": {
+            "1": 0.7292973254391812,
+            "2": 0.855141740074016
+          }
+        },
+        {
+          "month": 202109,
+          "n": 91,
+          "truth_center_pp": 4.189208704306144,
+          "q9_center_mae_pp": 0.30489661364801757,
+          "q9_center_bias_pp": -0.30489661364801757,
+          "cross_section_w1_pp": 3.1332036619275705,
+          "cross_person_iqr_pp": 2.47055112158677,
+          "real_cross_person_iqr_pp": 4.974384730368608,
+          "individual_density_mean_mae_pp": 4.385205752393224,
+          "individual_density_iqr_mean_pp": 4.528866247678977,
+          "real_individual_density_iqr_mean_pp": 6.016371151942218,
+          "probability_tv_pct": 43.96177307652921,
+          "model_center_pp": 3.8843120906581263,
+          "repeat_center_mae_pp": {
+            "1": 0.3928566209617461,
+            "2": 0.21693660633428902
+          }
+        },
+        {
+          "month": 202112,
+          "n": 92,
+          "truth_center_pp": 5.9012145739194395,
+          "q9_center_mae_pp": 0.31493935512020554,
+          "q9_center_bias_pp": -0.31493935512020554,
+          "cross_section_w1_pp": 3.1207891183653107,
+          "cross_person_iqr_pp": 2.57336028458333,
+          "real_cross_person_iqr_pp": 6.634760021413131,
+          "individual_density_mean_mae_pp": 4.145178219046938,
+          "individual_density_iqr_mean_pp": 4.56480830914257,
+          "real_individual_density_iqr_mean_pp": 6.582963305060197,
+          "probability_tv_pct": 43.4303922062006,
+          "model_center_pp": 5.5862752187992335,
+          "repeat_center_mae_pp": {
+            "1": 0.29760382369493854,
+            "2": 0.33227488654547255
+          }
+        },
+        {
+          "month": 202206,
+          "n": 92,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 1.2367630145219124,
+          "q9_center_bias_pp": 1.2367630145219124,
+          "cross_section_w1_pp": 3.2642512093200007,
+          "cross_person_iqr_pp": 2.7986660990693917,
+          "real_cross_person_iqr_pp": 6.370741109599609,
+          "individual_density_mean_mae_pp": 4.374314474814151,
+          "individual_density_iqr_mean_pp": 5.38409407847871,
+          "real_individual_density_iqr_mean_pp": 7.14632194514831,
+          "probability_tv_pct": 40.81249661531059,
+          "model_center_pp": 7.749590387913443,
+          "repeat_center_mae_pp": {
+            "1": 1.2722807156168727,
+            "2": 1.201245313426952
+          }
+        },
+        {
+          "month": 202312,
+          "n": 94,
+          "truth_center_pp": 3.2389430551739933,
+          "q9_center_mae_pp": 0.06320971501605133,
+          "q9_center_bias_pp": 0.0380193843591865,
+          "cross_section_w1_pp": 2.1395057564327025,
+          "cross_person_iqr_pp": 2.9353880975333055,
+          "real_cross_person_iqr_pp": 5.2923910455729075,
+          "individual_density_mean_mae_pp": 4.114722395553764,
+          "individual_density_iqr_mean_pp": 3.8163651476342837,
+          "real_individual_density_iqr_mean_pp": 6.245269282421079,
+          "probability_tv_pct": 47.630532255050326,
+          "model_center_pp": 3.27696243953318,
+          "repeat_center_mae_pp": {
+            "1": 0.025190330656864823,
+            "2": 0.10122909937523783
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.5049980284648956,
+          "q9_center_bias_pp": -0.029745539682513287,
+          "cross_section_w1_pp": 2.6752134881722904,
+          "cross_person_iqr_pp": 2.421792465175038,
+          "real_cross_person_iqr_pp": 5.359397661073671,
+          "individual_density_mean_mae_pp": 3.888661811881011,
+          "individual_density_iqr_mean_pp": 4.063510692550574,
+          "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+          "probability_tv_pct": 44.03141953711334
+        },
+        "2": {
+          "q9_center_mae_pp": 0.47102483292365854,
+          "q9_center_bias_pp": -0.026455972812879987,
+          "cross_section_w1_pp": 2.7748029561141756,
+          "cross_person_iqr_pp": 2.2110867997940167,
+          "real_cross_person_iqr_pp": 5.359397661073671,
+          "individual_density_mean_mae_pp": 3.9793291377091,
+          "individual_density_iqr_mean_pp": 4.067852172564588,
+          "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+          "probability_tv_pct": 45.15628337619408
+        }
+      },
+      "generation_count": 2
+    },
+    "Q2": {
+      "metrics": {
+        "q9_center_mae_pp": 0.4819406711152136,
+        "q9_center_bias_pp": 0.05323940862351976,
+        "cross_section_w1_pp": 2.746501048666567,
+        "cross_person_iqr_pp": 2.3828969530457966,
+        "real_cross_person_iqr_pp": 5.359397661073671,
+        "individual_density_mean_mae_pp": 3.940552139540744,
+        "individual_density_iqr_mean_pp": 4.059535346199897,
+        "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+        "probability_tv_pct": 44.540696570695,
+        "q8_person_mae_pp": 8.233576126534695,
+        "q8_person_bias_pp": -2.583012019026628,
+        "q8_center_mae_pp": 0.9142857142857144,
+        "q8_center_bias_pp": -0.9142857142857144,
+        "q8_cross_section_w1_pp": 6.303799654443635,
+        "q8_person_spearman": 0.4498283279857578,
+        "center_rmse_pp": 0.6216085398268857
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 90,
+          "truth_center_pp": 1.9566197871715287,
+          "q9_center_mae_pp": 0.20972769249078205,
+          "q9_center_bias_pp": 0.20972769249078205,
+          "cross_section_w1_pp": 2.7939850384988025,
+          "cross_person_iqr_pp": 1.356800354276355,
+          "real_cross_person_iqr_pp": 4.281581445117834,
+          "individual_density_mean_mae_pp": 3.483836440910659,
+          "individual_density_iqr_mean_pp": 2.6704798899161166,
+          "real_individual_density_iqr_mean_pp": 4.549544008463439,
+          "probability_tv_pct": 45.31658986916531,
+          "model_center_pp": 2.166347479662311,
+          "repeat_center_mae_pp": {
+            "1": 0.21449668746626394,
+            "2": 0.20495869751530016
+          }
+        },
+        {
+          "month": 202009,
+          "n": 89,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.31114613119647583,
+          "q9_center_bias_pp": -0.31114613119647583,
+          "cross_section_w1_pp": 2.937499321467885,
+          "cross_person_iqr_pp": 1.6068058255380162,
+          "real_cross_person_iqr_pp": 4.874003639527718,
+          "individual_density_mean_mae_pp": 3.829150829605836,
+          "individual_density_iqr_mean_pp": 3.2258721430840183,
+          "real_individual_density_iqr_mean_pp": 5.641888200555529,
+          "probability_tv_pct": 50.797156488595164,
+          "model_center_pp": 2.688853868803524,
+          "repeat_center_mae_pp": {
+            "1": 0.3368295871241074,
+            "2": 0.2854626752688443
+          }
+        },
+        {
+          "month": 202106,
+          "n": 93,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 0.5706468196221657,
+          "q9_center_bias_pp": -0.5706468196221657,
+          "cross_section_w1_pp": 1.8788898013268795,
+          "cross_person_iqr_pp": 2.6894115112838968,
+          "real_cross_person_iqr_pp": 5.087921635915889,
+          "individual_density_mean_mae_pp": 3.0153400290640255,
+          "individual_density_iqr_mean_pp": 4.260962492921029,
+          "real_individual_density_iqr_mean_pp": 5.529595174439526,
+          "probability_tv_pct": 40.10294885382051,
+          "model_center_pp": 4.529223112554364,
+          "repeat_center_mae_pp": {
+            "1": 0.6489328022061853,
+            "2": 0.49236083703814604
+          }
+        },
+        {
+          "month": 202109,
+          "n": 91,
+          "truth_center_pp": 4.189208704306144,
+          "q9_center_mae_pp": 0.3505636542349402,
+          "q9_center_bias_pp": -0.3505636542349402,
+          "cross_section_w1_pp": 3.1866196000252662,
+          "cross_person_iqr_pp": 2.259769145196994,
+          "real_cross_person_iqr_pp": 4.974384730368608,
+          "individual_density_mean_mae_pp": 4.655093820912039,
+          "individual_density_iqr_mean_pp": 4.5494342815285,
+          "real_individual_density_iqr_mean_pp": 6.016371151942218,
+          "probability_tv_pct": 45.62584018490565,
+          "model_center_pp": 3.8386450500712037,
+          "repeat_center_mae_pp": {
+            "1": 0.1892087043061439,
+            "2": 0.5119186041637365
+          }
+        },
+        {
+          "month": 202112,
+          "n": 92,
+          "truth_center_pp": 5.9012145739194395,
+          "q9_center_mae_pp": 0.26809781366734686,
+          "q9_center_bias_pp": -0.26809781366734686,
+          "cross_section_w1_pp": 3.15164265119933,
+          "cross_person_iqr_pp": 2.741978364091211,
+          "real_cross_person_iqr_pp": 6.634760021413131,
+          "individual_density_mean_mae_pp": 4.316772302916627,
+          "individual_density_iqr_mean_pp": 4.5560273060231165,
+          "real_individual_density_iqr_mean_pp": 6.582963305060197,
+          "probability_tv_pct": 43.47860167899573,
+          "model_center_pp": 5.633116760252093,
+          "repeat_center_mae_pp": {
+            "1": 0.23859180363975518,
+            "2": 0.29760382369493854
+          }
+        },
+        {
+          "month": 202206,
+          "n": 92,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 1.3797266711126706,
+          "q9_center_bias_pp": 1.3797266711126706,
+          "cross_section_w1_pp": 3.242312954372206,
+          "cross_person_iqr_pp": 2.9302941451337983,
+          "real_cross_person_iqr_pp": 6.370741109599609,
+          "individual_density_mean_mae_pp": 4.276265408332615,
+          "individual_density_iqr_mean_pp": 5.325869312352384,
+          "real_individual_density_iqr_mean_pp": 7.14632194514831,
+          "probability_tv_pct": 39.73368012204075,
+          "model_center_pp": 7.892554044504202,
+          "repeat_center_mae_pp": {
+            "1": 1.4871726266084684,
+            "2": 1.2722807156168727
+          }
+        },
+        {
+          "month": 202312,
+          "n": 94,
+          "truth_center_pp": 3.2389430551739933,
+          "q9_center_mae_pp": 0.28367591548211424,
+          "q9_center_bias_pp": 0.28367591548211424,
+          "cross_section_w1_pp": 2.034557973775601,
+          "cross_person_iqr_pp": 3.0952193258003042,
+          "real_cross_person_iqr_pp": 5.2923910455729075,
+          "individual_density_mean_mae_pp": 4.007406145043405,
+          "individual_density_iqr_mean_pp": 3.828101997574117,
+          "real_individual_density_iqr_mean_pp": 6.245269282421079,
+          "probability_tv_pct": 46.73005879734189,
+          "model_center_pp": 3.5226189706561075,
+          "repeat_center_mae_pp": {
+            "1": 0.4028147558900015,
+            "2": 0.164537075074227
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.502578138177275,
+          "q9_center_bias_pp": 0.09870302466979172,
+          "cross_section_w1_pp": 2.8006452846944727,
+          "cross_person_iqr_pp": 2.374636607929505,
+          "real_cross_person_iqr_pp": 5.359397661073671,
+          "individual_density_mean_mae_pp": 3.9925518705092102,
+          "individual_density_iqr_mean_pp": 4.048894121010669,
+          "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+          "probability_tv_pct": 44.726601588896116
+        },
+        "2": {
+          "q9_center_mae_pp": 0.46130320405315217,
+          "q9_center_bias_pp": 0.007775792577247793,
+          "cross_section_w1_pp": 2.692356812638661,
+          "cross_person_iqr_pp": 2.391157298162088,
+          "real_cross_person_iqr_pp": 5.359397661073671,
+          "individual_density_mean_mae_pp": 3.888552408572277,
+          "individual_density_iqr_mean_pp": 4.070176571389125,
+          "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+          "probability_tv_pct": 44.35479155249387
+        }
+      },
+      "generation_count": 2
+    },
+    "Q3": {
+      "metrics": {
+        "q9_center_mae_pp": 0.4387998300057875,
+        "q9_center_bias_pp": 0.039768572474018944,
+        "cross_section_w1_pp": 2.668064309980978,
+        "cross_person_iqr_pp": 2.3377943595550015,
+        "real_cross_person_iqr_pp": 5.359397661073671,
+        "individual_density_mean_mae_pp": 3.9099835659563706,
+        "individual_density_iqr_mean_pp": 4.1340925516197755,
+        "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+        "probability_tv_pct": 44.46494436904156,
+        "q8_person_mae_pp": 8.24270857776247,
+        "q8_person_bias_pp": -2.516417983396284,
+        "q8_center_mae_pp": 0.9071428571428571,
+        "q8_center_bias_pp": -0.9071428571428571,
+        "q8_cross_section_w1_pp": 6.072799212269565,
+        "q8_person_spearman": 0.4519078893497007,
+        "center_rmse_pp": 0.6090024108172031
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 90,
+          "truth_center_pp": 1.9566197871715287,
+          "q9_center_mae_pp": 0.34364776520621243,
+          "q9_center_bias_pp": 0.34364776520621243,
+          "cross_section_w1_pp": 2.570805750721518,
+          "cross_person_iqr_pp": 1.4865828620897874,
+          "real_cross_person_iqr_pp": 4.281581445117834,
+          "individual_density_mean_mae_pp": 3.416720637287983,
+          "individual_density_iqr_mean_pp": 2.8171645017840974,
+          "real_individual_density_iqr_mean_pp": 4.549544008463439,
+          "probability_tv_pct": 44.76555699288575,
+          "model_center_pp": 2.300267552377741,
+          "repeat_center_mae_pp": {
+            "1": 0.33050714600134157,
+            "2": 0.3567883844110833
+          }
+        },
+        {
+          "month": 202009,
+          "n": 89,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.23980267315205372,
+          "q9_center_bias_pp": -0.23980267315205372,
+          "cross_section_w1_pp": 2.8185391396670685,
+          "cross_person_iqr_pp": 1.663442526792638,
+          "real_cross_person_iqr_pp": 4.874003639527718,
+          "individual_density_mean_mae_pp": 3.8709782962909633,
+          "individual_density_iqr_mean_pp": 3.2706768276182645,
+          "real_individual_density_iqr_mean_pp": 5.641888200555529,
+          "probability_tv_pct": 50.479185630828766,
+          "model_center_pp": 2.7601973268479463,
+          "repeat_center_mae_pp": {
+            "1": 0.23156135321937388,
+            "2": 0.24804399308473357
+          }
+        },
+        {
+          "month": 202106,
+          "n": 93,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 0.7247447575931631,
+          "q9_center_bias_pp": -0.7247447575931631,
+          "cross_section_w1_pp": 1.9244581358733468,
+          "cross_person_iqr_pp": 2.5194054942229918,
+          "real_cross_person_iqr_pp": 5.087921635915889,
+          "individual_density_mean_mae_pp": 3.0631237528091244,
+          "individual_density_iqr_mean_pp": 4.273024946031654,
+          "real_individual_density_iqr_mean_pp": 5.529595174439526,
+          "probability_tv_pct": 40.901668686606115,
+          "model_center_pp": 4.375125174583367,
+          "repeat_center_mae_pp": {
+            "1": 0.5771351975925878,
+            "2": 0.8723543175937385
+          }
+        },
+        {
+          "month": 202109,
+          "n": 91,
+          "truth_center_pp": 4.189208704306144,
+          "q9_center_mae_pp": 0.15757314984545223,
+          "q9_center_bias_pp": -0.15757314984545223,
+          "cross_section_w1_pp": 2.809632549834159,
+          "cross_person_iqr_pp": 2.770798450296813,
+          "real_cross_person_iqr_pp": 4.974384730368608,
+          "individual_density_mean_mae_pp": 4.195428575037268,
+          "individual_density_iqr_mean_pp": 4.680996282281752,
+          "real_individual_density_iqr_mean_pp": 6.016371151942218,
+          "probability_tv_pct": 43.71836282406878,
+          "model_center_pp": 4.031635554460692,
+          "repeat_center_mae_pp": {
+            "1": 0.2672196652465386,
+            "2": 0.047926634444365845
+          }
+        },
+        {
+          "month": 202112,
+          "n": 92,
+          "truth_center_pp": 5.9012145739194395,
+          "q9_center_mae_pp": 0.23859180363975518,
+          "q9_center_bias_pp": -0.23859180363975518,
+          "cross_section_w1_pp": 3.1646150696942215,
+          "cross_person_iqr_pp": 2.297215278895452,
+          "real_cross_person_iqr_pp": 6.634760021413131,
+          "individual_density_mean_mae_pp": 4.35110455086868,
+          "individual_density_iqr_mean_pp": 4.698848429300707,
+          "real_individual_density_iqr_mean_pp": 6.582963305060197,
+          "probability_tv_pct": 44.38822353261533,
+          "model_center_pp": 5.662622770279684,
+          "repeat_center_mae_pp": {
+            "1": 0.23859180363975518,
+            "2": 0.23859180363975518
+          }
+        },
+        {
+          "month": 202206,
+          "n": 92,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 1.33134164347311,
+          "q9_center_bias_pp": 1.33134164347311,
+          "cross_section_w1_pp": 3.209839548988288,
+          "cross_person_iqr_pp": 2.8495719526910177,
+          "real_cross_person_iqr_pp": 6.370741109599609,
+          "individual_density_mean_mae_pp": 4.391105645529351,
+          "individual_density_iqr_mean_pp": 5.462268509633477,
+          "real_individual_density_iqr_mean_pp": 7.14632194514831,
+          "probability_tv_pct": 39.87638014060461,
+          "model_center_pp": 7.84416901686464,
+          "repeat_center_mae_pp": {
+            "1": 1.2561565404227162,
+            "2": 1.4065267465235038
+          }
+        },
+        {
+          "month": 202312,
+          "n": 94,
+          "truth_center_pp": 3.2389430551739933,
+          "q9_center_mae_pp": 0.03589701713076554,
+          "q9_center_bias_pp": -0.03589701713076554,
+          "cross_section_w1_pp": 2.178559975088241,
+          "cross_person_iqr_pp": 2.777543951896311,
+          "real_cross_person_iqr_pp": 5.2923910455729075,
+          "individual_density_mean_mae_pp": 4.081423503871226,
+          "individual_density_iqr_mean_pp": 3.7356683646884745,
+          "real_individual_density_iqr_mean_pp": 6.245269282421079,
+          "probability_tv_pct": 47.12523277568155,
+          "model_center_pp": 3.2030460380432277,
+          "repeat_center_mae_pp": {
+            "1": 0.04660370360466626,
+            "2": 0.025190330656864823
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.4211107728181399,
+          "q9_center_bias_pp": 0.032221709017305145,
+          "cross_section_w1_pp": 2.6050203843837956,
+          "cross_person_iqr_pp": 2.3868210470363738,
+          "real_cross_person_iqr_pp": 5.359397661073671,
+          "individual_density_mean_mae_pp": 3.873043203345387,
+          "individual_density_iqr_mean_pp": 4.213681959499363,
+          "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+          "probability_tv_pct": 43.77131481008016
+        },
+        "2": {
+          "q9_center_mae_pp": 0.456488887193435,
+          "q9_center_bias_pp": 0.047315435930732744,
+          "cross_section_w1_pp": 2.7311082355781595,
+          "cross_person_iqr_pp": 2.288767672073629,
+          "real_cross_person_iqr_pp": 5.359397661073671,
+          "individual_density_mean_mae_pp": 3.9469239285673545,
+          "individual_density_iqr_mean_pp": 4.054503143740187,
+          "real_individual_density_iqr_mean_pp": 5.9588504382900425,
+          "probability_tv_pct": 45.15857392800295
+        }
+      },
+      "generation_count": 2
+    }
+  },
+  "with_previous_truth": {
+    "A82": {
+      "metrics": {
+        "q9_center_mae_pp": 0.606193529672637,
+        "q9_center_bias_pp": -0.29691618036812256,
+        "cross_section_w1_pp": 2.3496860021034216,
+        "cross_person_iqr_pp": 2.417986647936355,
+        "real_cross_person_iqr_pp": 4.9283840971191895,
+        "individual_density_mean_mae_pp": 3.529639526720685,
+        "individual_density_iqr_mean_pp": 3.998641290570622,
+        "real_individual_density_iqr_mean_pp": 5.571154974712676,
+        "probability_tv_pct": 42.017329771134314,
+        "q8_person_mae_pp": 6.954176031973797,
+        "q8_person_bias_pp": -2.4213895574139443,
+        "q8_center_mae_pp": 1.0714285714285714,
+        "q8_center_bias_pp": -1.0714285714285714,
+        "q8_cross_section_w1_pp": 5.0965219868403375,
+        "q8_person_spearman": 0.4810194097290688,
+        "center_rmse_pp": 0.8019940998431861
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 66,
+          "truth_center_pp": 2.0,
+          "q9_center_mae_pp": 0.1615784846868289,
+          "q9_center_bias_pp": 0.1615784846868289,
+          "cross_section_w1_pp": 2.4839559037148926,
+          "cross_person_iqr_pp": 1.335658076298997,
+          "real_cross_person_iqr_pp": 4.080901109332809,
+          "individual_density_mean_mae_pp": 3.201590055230867,
+          "individual_density_iqr_mean_pp": 2.7473039322335544,
+          "real_individual_density_iqr_mean_pp": 4.527414386214071,
+          "probability_tv_pct": 39.94341829607765,
+          "model_center_pp": 2.161578484686829,
+          "repeat_center_mae_pp": {
+            "1": 0.1615784846868289
+          }
+        },
+        {
+          "month": 202009,
+          "n": 69,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.4008840886546814,
+          "q9_center_bias_pp": -0.4008840886546814,
+          "cross_section_w1_pp": 2.695374713995372,
+          "cross_person_iqr_pp": 1.9322225668991555,
+          "real_cross_person_iqr_pp": 4.754566916686324,
+          "individual_density_mean_mae_pp": 3.505281137359637,
+          "individual_density_iqr_mean_pp": 3.171340295710851,
+          "real_individual_density_iqr_mean_pp": 4.732633048231825,
+          "probability_tv_pct": 47.92269363721241,
+          "model_center_pp": 2.5991159113453186,
+          "repeat_center_mae_pp": {
+            "1": 0.4008840886546814
+          }
+        },
+        {
+          "month": 202106,
+          "n": 81,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 1.6619488190433147,
+          "q9_center_bias_pp": -1.6619488190433147,
+          "cross_section_w1_pp": 2.2747343479368736,
+          "cross_person_iqr_pp": 2.7828231269208974,
+          "real_cross_person_iqr_pp": 4.644810569807394,
+          "individual_density_mean_mae_pp": 3.355668587429251,
+          "individual_density_iqr_mean_pp": 3.804676430268261,
+          "real_individual_density_iqr_mean_pp": 5.596197139849529,
+          "probability_tv_pct": 40.506461619396376,
+          "model_center_pp": 3.437921113133215,
+          "repeat_center_mae_pp": {
+            "1": 1.6619488190433147
+          }
+        },
+        {
+          "month": 202109,
+          "n": 68,
+          "truth_center_pp": 4.015095504517486,
+          "q9_center_mae_pp": 0.21242011006530515,
+          "q9_center_bias_pp": 0.21242011006530515,
+          "cross_section_w1_pp": 1.9562883052043403,
+          "cross_person_iqr_pp": 2.7998874541026986,
+          "real_cross_person_iqr_pp": 4.483906685759132,
+          "individual_density_mean_mae_pp": 3.3753564364334103,
+          "individual_density_iqr_mean_pp": 4.440147140085876,
+          "real_individual_density_iqr_mean_pp": 5.680054196157627,
+          "probability_tv_pct": 40.07384608711655,
+          "model_center_pp": 4.227515614582791,
+          "repeat_center_mae_pp": {
+            "1": 0.21242011006530515
+          }
+        },
+        {
+          "month": 202112,
+          "n": 78,
+          "truth_center_pp": 6.0,
+          "q9_center_mae_pp": 0.9982243107184541,
+          "q9_center_bias_pp": -0.9982243107184541,
+          "cross_section_w1_pp": 3.0147283605650457,
+          "cross_person_iqr_pp": 2.119587798203371,
+          "real_cross_person_iqr_pp": 6.423985688947413,
+          "individual_density_mean_mae_pp": 3.9686456958693226,
+          "individual_density_iqr_mean_pp": 4.297881701436571,
+          "real_individual_density_iqr_mean_pp": 6.0270406118634225,
+          "probability_tv_pct": 44.277865679025474,
+          "model_center_pp": 5.001775689281546,
+          "repeat_center_mae_pp": {
+            "1": 0.9982243107184541
+          }
+        },
+        {
+          "month": 202206,
+          "n": 77,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 0.7084721278136668,
+          "q9_center_bias_pp": 0.7084721278136668,
+          "cross_section_w1_pp": 2.6954522585623852,
+          "cross_person_iqr_pp": 3.249672451256947,
+          "real_cross_person_iqr_pp": 5.909806216486284,
+          "individual_density_mean_mae_pp": 4.126227639581551,
+          "individual_density_iqr_mean_pp": 5.6028855963131114,
+          "real_individual_density_iqr_mean_pp": 7.1057117064774715,
+          "probability_tv_pct": 38.156424798339316,
+          "model_center_pp": 7.2212995012051975,
+          "repeat_center_mae_pp": {
+            "1": 0.7084721278136668
+          }
+        },
+        {
+          "month": 202312,
+          "n": 85,
+          "truth_center_pp": 3.185130652650368,
+          "q9_center_mae_pp": 0.0998267667262085,
+          "q9_center_bias_pp": -0.0998267667262085,
+          "cross_section_w1_pp": 1.3272681247450413,
+          "cross_person_iqr_pp": 2.70605506187242,
+          "real_cross_person_iqr_pp": 4.200711492814974,
+          "individual_density_mean_mae_pp": 3.1747071351407543,
+          "individual_density_iqr_mean_pp": 3.92625393794613,
+          "real_individual_density_iqr_mean_pp": 5.329033734194783,
+          "probability_tv_pct": 43.24059828077242,
+          "model_center_pp": 3.0853038859241595,
+          "repeat_center_mae_pp": {
+            "1": 0.0998267667262085
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.606193529672637,
+          "q9_center_bias_pp": -0.29691618036812256,
+          "cross_section_w1_pp": 2.3496860021034216,
+          "cross_person_iqr_pp": 2.417986647936355,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.529639526720685,
+          "individual_density_iqr_mean_pp": 3.998641290570622,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 42.017329771134314
+        }
+      },
+      "generation_count": 1
+    },
+    "R0": {
+      "metrics": {
+        "q9_center_mae_pp": 0.43924863478901355,
+        "q9_center_bias_pp": 0.005606832248944205,
+        "cross_section_w1_pp": 2.3501923489492813,
+        "cross_person_iqr_pp": 2.3509541357060733,
+        "real_cross_person_iqr_pp": 4.9283840971191895,
+        "individual_density_mean_mae_pp": 3.645882932208712,
+        "individual_density_iqr_mean_pp": 4.116869821036285,
+        "real_individual_density_iqr_mean_pp": 5.571154974712675,
+        "probability_tv_pct": 42.28392646632691,
+        "q8_person_mae_pp": 6.822929206267652,
+        "q8_person_bias_pp": -1.4804673554441472,
+        "q8_center_mae_pp": 0.7714285714285715,
+        "q8_center_bias_pp": -0.7714285714285715,
+        "q8_cross_section_w1_pp": 4.640353154775211,
+        "q8_person_spearman": 0.5155801773020661,
+        "center_rmse_pp": 0.5934743553714392
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 66,
+          "truth_center_pp": 2.0,
+          "q9_center_mae_pp": 0.2508089438835328,
+          "q9_center_bias_pp": 0.2508089438835328,
+          "cross_section_w1_pp": 2.418439531165638,
+          "cross_person_iqr_pp": 1.5301259749236054,
+          "real_cross_person_iqr_pp": 4.080901109332809,
+          "individual_density_mean_mae_pp": 3.44759627859274,
+          "individual_density_iqr_mean_pp": 2.8290214223017545,
+          "real_individual_density_iqr_mean_pp": 4.527414386214071,
+          "probability_tv_pct": 41.33872439153723,
+          "model_center_pp": 2.250808943883533,
+          "repeat_center_mae_pp": {
+            "1": 0.21449095459419532,
+            "2": 0.2871269331728703
+          }
+        },
+        {
+          "month": 202009,
+          "n": 69,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.17930779875916736,
+          "q9_center_bias_pp": -0.17930779875916736,
+          "cross_section_w1_pp": 2.7065171177196206,
+          "cross_person_iqr_pp": 1.8228784758143863,
+          "real_cross_person_iqr_pp": 4.754566916686324,
+          "individual_density_mean_mae_pp": 3.7551574210367855,
+          "individual_density_iqr_mean_pp": 3.343100611066486,
+          "real_individual_density_iqr_mean_pp": 4.732633048231825,
+          "probability_tv_pct": 48.878403743003574,
+          "model_center_pp": 2.8206922012408326,
+          "repeat_center_mae_pp": {
+            "1": 0.23156135321937388,
+            "2": 0.12705424429896084
+          }
+        },
+        {
+          "month": 202106,
+          "n": 81,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 0.6373249313563893,
+          "q9_center_bias_pp": -0.6373249313563893,
+          "cross_section_w1_pp": 2.015218423992673,
+          "cross_person_iqr_pp": 2.426012173447951,
+          "real_cross_person_iqr_pp": 4.644810569807394,
+          "individual_density_mean_mae_pp": 3.2811438754503293,
+          "individual_density_iqr_mean_pp": 4.369008189873714,
+          "real_individual_density_iqr_mean_pp": 5.596197139849529,
+          "probability_tv_pct": 39.94284619882659,
+          "model_center_pp": 4.462545000820141,
+          "repeat_center_mae_pp": {
+            "1": 0.8723543175937385,
+            "2": 0.4022955451190402
+          }
+        },
+        {
+          "month": 202109,
+          "n": 68,
+          "truth_center_pp": 4.015095504517486,
+          "q9_center_mae_pp": 0.19438416358129684,
+          "q9_center_bias_pp": -0.19438416358129684,
+          "cross_section_w1_pp": 2.2492607189983946,
+          "cross_person_iqr_pp": 2.408190947955395,
+          "real_cross_person_iqr_pp": 4.483906685759132,
+          "individual_density_mean_mae_pp": 3.5423109386941043,
+          "individual_density_iqr_mean_pp": 4.292419845716491,
+          "real_individual_density_iqr_mean_pp": 5.680054196157627,
+          "probability_tv_pct": 40.63583067796462,
+          "model_center_pp": 3.8207113409361892,
+          "repeat_center_mae_pp": {
+            "1": 0.23681951164974002,
+            "2": 0.15194881551285366
+          }
+        },
+        {
+          "month": 202112,
+          "n": 78,
+          "truth_center_pp": 6.0,
+          "q9_center_mae_pp": 0.3719803146215055,
+          "q9_center_bias_pp": -0.3719803146215055,
+          "cross_section_w1_pp": 2.413417765213266,
+          "cross_person_iqr_pp": 2.413926416734316,
+          "real_cross_person_iqr_pp": 6.423985688947413,
+          "individual_density_mean_mae_pp": 3.566784325290581,
+          "individual_density_iqr_mean_pp": 4.861742567441423,
+          "real_individual_density_iqr_mean_pp": 6.0270406118634225,
+          "probability_tv_pct": 40.68070067093,
+          "model_center_pp": 5.6280196853784945,
+          "repeat_center_mae_pp": {
+            "1": 0.4065833995226953,
+            "2": 0.3373772297203157
+          }
+        },
+        {
+          "month": 202206,
+          "n": 77,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 1.3061851907493196,
+          "q9_center_bias_pp": 1.3061851907493196,
+          "cross_section_w1_pp": 3.265122555404591,
+          "cross_person_iqr_pp": 3.0491464311133742,
+          "real_cross_person_iqr_pp": 5.909806216486284,
+          "individual_density_mean_mae_pp": 4.5352962497856915,
+          "individual_density_iqr_mean_pp": 5.442467200618466,
+          "real_individual_density_iqr_mean_pp": 7.1057117064774715,
+          "probability_tv_pct": 40.894282221010506,
+          "model_center_pp": 7.81901256414085,
+          "repeat_center_mae_pp": {
+            "1": 1.3236671164793083,
+            "2": 1.2887032650193309
+          }
+        },
+        {
+          "month": 202312,
+          "n": 85,
+          "truth_center_pp": 3.185130652650368,
+          "q9_center_mae_pp": 0.13474910057188394,
+          "q9_center_bias_pp": -0.13474910057188394,
+          "cross_section_w1_pp": 1.3833703301507856,
+          "cross_person_iqr_pp": 2.806398529953485,
+          "real_cross_person_iqr_pp": 4.200711492814974,
+          "individual_density_mean_mae_pp": 3.3928914366107543,
+          "individual_density_iqr_mean_pp": 3.680328910235665,
+          "real_individual_density_iqr_mean_pp": 5.329033734194783,
+          "probability_tv_pct": 43.6166973610159,
+          "model_center_pp": 3.050381552078484,
+          "repeat_center_mae_pp": {
+            "1": 0.0998267667262085,
+            "2": 0.16967143441755939
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.4836147742550371,
+          "q9_center_bias_pp": -0.044141039662607504,
+          "cross_section_w1_pp": 2.4022475620595265,
+          "cross_person_iqr_pp": 2.319224665137139,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.6649529233578924,
+          "individual_density_iqr_mean_pp": 4.021304914392638,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 42.496926787913665
+        },
+        "2": {
+          "q9_center_mae_pp": 0.39488249532299013,
+          "q9_center_bias_pp": 0.05535470416049591,
+          "cross_section_w1_pp": 2.298137135839036,
+          "cross_person_iqr_pp": 2.382683606275008,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.6268129410595322,
+          "individual_density_iqr_mean_pp": 4.212434727679932,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 42.07092614474016
+        }
+      },
+      "generation_count": 2
+    },
+    "Q0": {
+      "metrics": {
+        "q9_center_mae_pp": 0.46946707253426734,
+        "q9_center_bias_pp": -0.03075346890091416,
+        "cross_section_w1_pp": 2.466532934187785,
+        "cross_person_iqr_pp": 2.2613384120858893,
+        "real_cross_person_iqr_pp": 4.9283840971191895,
+        "individual_density_mean_mae_pp": 3.5956145065478813,
+        "individual_density_iqr_mean_pp": 4.039671074431165,
+        "real_individual_density_iqr_mean_pp": 5.571154974712675,
+        "probability_tv_pct": 42.421052622927824,
+        "q8_person_mae_pp": 6.7422295130851095,
+        "q8_person_bias_pp": -1.655513109255026,
+        "q8_center_mae_pp": 0.8357142857142856,
+        "q8_center_bias_pp": -0.8357142857142856,
+        "q8_cross_section_w1_pp": 5.132664021307085,
+        "q8_person_spearman": 0.4861837540147161,
+        "center_rmse_pp": 0.6452938199245885
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 66,
+          "truth_center_pp": 2.0,
+          "q9_center_mae_pp": 0.2371563256886089,
+          "q9_center_bias_pp": 0.2371563256886089,
+          "cross_section_w1_pp": 2.8607736181683725,
+          "cross_person_iqr_pp": 1.3697188142276495,
+          "real_cross_person_iqr_pp": 4.080901109332809,
+          "individual_density_mean_mae_pp": 3.3871517362507513,
+          "individual_density_iqr_mean_pp": 2.5953361404750384,
+          "real_individual_density_iqr_mean_pp": 4.527414386214071,
+          "probability_tv_pct": 42.21396850043938,
+          "model_center_pp": 2.237156325688609,
+          "repeat_center_mae_pp": {
+            "1": 0.18718571820434748,
+            "2": 0.2871269331728703
+          }
+        },
+        {
+          "month": 202009,
+          "n": 69,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.05129104312625299,
+          "q9_center_bias_pp": -0.05129104312625299,
+          "cross_section_w1_pp": 2.7863130023217693,
+          "cross_person_iqr_pp": 1.6340574436321484,
+          "real_cross_person_iqr_pp": 4.754566916686324,
+          "individual_density_mean_mae_pp": 3.6293713850733216,
+          "individual_density_iqr_mean_pp": 3.271076746180001,
+          "real_individual_density_iqr_mean_pp": 4.732633048231825,
+          "probability_tv_pct": 48.376291147108056,
+          "model_center_pp": 2.9487089568737472,
+          "repeat_center_mae_pp": {
+            "1": 0.09830249278411562,
+            "2": 0.0042795934683903525
+          }
+        },
+        {
+          "month": 202106,
+          "n": 81,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 0.9999760758992067,
+          "q9_center_bias_pp": -0.9999760758992067,
+          "cross_section_w1_pp": 2.081620063690251,
+          "cross_person_iqr_pp": 2.3184082936298807,
+          "real_cross_person_iqr_pp": 4.644810569807394,
+          "individual_density_mean_mae_pp": 3.3540599001939255,
+          "individual_density_iqr_mean_pp": 4.412926601744035,
+          "real_individual_density_iqr_mean_pp": 5.596197139849529,
+          "probability_tv_pct": 39.85986433084396,
+          "model_center_pp": 4.099893856277323,
+          "repeat_center_mae_pp": {
+            "1": 1.1275978342046749,
+            "2": 0.8723543175937385
+          }
+        },
+        {
+          "month": 202109,
+          "n": 68,
+          "truth_center_pp": 4.015095504517486,
+          "q9_center_mae_pp": 0.10632843461606845,
+          "q9_center_bias_pp": -0.03808311659940289,
+          "cross_section_w1_pp": 2.243640719122301,
+          "cross_person_iqr_pp": 2.203487707790614,
+          "real_cross_person_iqr_pp": 4.483906685759132,
+          "individual_density_mean_mae_pp": 3.4015602393164013,
+          "individual_density_iqr_mean_pp": 4.21400028910937,
+          "real_individual_density_iqr_mean_pp": 5.680054196157627,
+          "probability_tv_pct": 41.06796630773333,
+          "model_center_pp": 3.977012387918083,
+          "repeat_center_mae_pp": {
+            "1": 0.06824531801666556,
+            "2": 0.14441155121547133
+          }
+        },
+        {
+          "month": 202112,
+          "n": 78,
+          "truth_center_pp": 6.0,
+          "q9_center_mae_pp": 0.4301289945915219,
+          "q9_center_bias_pp": -0.4301289945915219,
+          "cross_section_w1_pp": 2.637113571738235,
+          "cross_person_iqr_pp": 2.3561084555804896,
+          "real_cross_person_iqr_pp": 6.423985688947413,
+          "individual_density_mean_mae_pp": 3.725055881448116,
+          "individual_density_iqr_mean_pp": 4.618689170168038,
+          "real_individual_density_iqr_mean_pp": 6.0270406118634225,
+          "probability_tv_pct": 40.96025254893128,
+          "model_center_pp": 5.569871005408478,
+          "repeat_center_mae_pp": {
+            "1": 0.43106031262603306,
+            "2": 0.4291976765570107
+          }
+        },
+        {
+          "month": 202206,
+          "n": 77,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 1.2642186280197945,
+          "q9_center_bias_pp": 1.2642186280197945,
+          "cross_section_w1_pp": 3.2744061334752574,
+          "cross_person_iqr_pp": 3.1406864905020564,
+          "real_cross_person_iqr_pp": 5.909806216486284,
+          "individual_density_mean_mae_pp": 4.408011452477263,
+          "individual_density_iqr_mean_pp": 5.421146992418446,
+          "real_individual_density_iqr_mean_pp": 7.1057117064774715,
+          "probability_tv_pct": 40.74971145210381,
+          "model_center_pp": 7.777046001411325,
+          "repeat_center_mae_pp": {
+            "1": 1.2722807156168727,
+            "2": 1.2561565404227162
+          }
+        },
+        {
+          "month": 202312,
+          "n": 85,
+          "truth_center_pp": 3.185130652650368,
+          "q9_center_mae_pp": 0.19717000579841804,
+          "q9_center_bias_pp": -0.19717000579841804,
+          "cross_section_w1_pp": 1.3818634307983084,
+          "cross_person_iqr_pp": 2.806901679238387,
+          "real_cross_person_iqr_pp": 4.200711492814974,
+          "individual_density_mean_mae_pp": 3.264090951075386,
+          "individual_density_iqr_mean_pp": 3.7445215809232275,
+          "real_individual_density_iqr_mean_pp": 5.329033734194783,
+          "probability_tv_pct": 43.71931407333492,
+          "model_center_pp": 2.98796064685195,
+          "repeat_center_mae_pp": {
+            "1": 0.2042885548985054,
+            "2": 0.19005145669833068
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.48413727805017354,
+          "q9_center_bias_pp": -0.04764820609649188,
+          "cross_section_w1_pp": 2.5286733128440555,
+          "cross_person_iqr_pp": 2.1913819132866585,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.6189419364602537,
+          "individual_density_iqr_mean_pp": 4.004757433269148,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 42.85082810253679
+        },
+        "2": {
+          "q9_center_mae_pp": 0.45479686701836114,
+          "q9_center_bias_pp": -0.013858731705336438,
+          "cross_section_w1_pp": 2.404392555531514,
+          "cross_person_iqr_pp": 2.3312949108851204,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.572287076635507,
+          "individual_density_iqr_mean_pp": 4.074584715593182,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 41.99127714331886
+        }
+      },
+      "generation_count": 2
+    },
+    "Q1": {
+      "metrics": {
+        "q9_center_mae_pp": 0.4445593019925726,
+        "q9_center_bias_pp": -0.0032295112169581203,
+        "cross_section_w1_pp": 2.4437280527234337,
+        "cross_person_iqr_pp": 2.301039512035135,
+        "real_cross_person_iqr_pp": 4.9283840971191895,
+        "individual_density_mean_mae_pp": 3.620508599620835,
+        "individual_density_iqr_mean_pp": 4.0583239261821635,
+        "real_individual_density_iqr_mean_pp": 5.571154974712675,
+        "probability_tv_pct": 42.37942187094631,
+        "q8_person_mae_pp": 6.858531453940813,
+        "q8_person_bias_pp": -1.6580484725692919,
+        "q8_center_mae_pp": 0.85,
+        "q8_center_bias_pp": -0.85,
+        "q8_cross_section_w1_pp": 4.741417594509209,
+        "q8_person_spearman": 0.4968188520387397,
+        "center_rmse_pp": 0.5808559475436086
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 66,
+          "truth_center_pp": 2.0,
+          "q9_center_mae_pp": 0.27892958352502895,
+          "q9_center_bias_pp": 0.27892958352502895,
+          "cross_section_w1_pp": 2.580357877880397,
+          "cross_person_iqr_pp": 1.4688939751335304,
+          "real_cross_person_iqr_pp": 4.080901109332809,
+          "individual_density_mean_mae_pp": 3.3703671183910107,
+          "individual_density_iqr_mean_pp": 2.6687080063685915,
+          "real_individual_density_iqr_mean_pp": 4.527414386214071,
+          "probability_tv_pct": 41.027250653343884,
+          "model_center_pp": 2.278929583525029,
+          "repeat_center_mae_pp": {
+            "1": 0.347722782292994,
+            "2": 0.21013638475706387
+          }
+        },
+        {
+          "month": 202009,
+          "n": 69,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.3344262489297227,
+          "q9_center_bias_pp": -0.3344262489297227,
+          "cross_section_w1_pp": 2.8666110136562852,
+          "cross_person_iqr_pp": 1.6398479048409165,
+          "real_cross_person_iqr_pp": 4.754566916686324,
+          "individual_density_mean_mae_pp": 3.699072924377993,
+          "individual_density_iqr_mean_pp": 3.226259518882636,
+          "real_individual_density_iqr_mean_pp": 4.732633048231825,
+          "probability_tv_pct": 49.11396804615269,
+          "model_center_pp": 2.6655737510702773,
+          "repeat_center_mae_pp": {
+            "1": 0.40940087275609116,
+            "2": 0.2594516251033543
+          }
+        },
+        {
+          "month": 202106,
+          "n": 81,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 0.6257236029479216,
+          "q9_center_bias_pp": -0.6257236029479216,
+          "cross_section_w1_pp": 1.867325131567246,
+          "cross_person_iqr_pp": 2.325861791830673,
+          "real_cross_person_iqr_pp": 4.644810569807394,
+          "individual_density_mean_mae_pp": 3.303805364510815,
+          "individual_density_iqr_mean_pp": 4.285930302557682,
+          "real_individual_density_iqr_mean_pp": 5.596197139849529,
+          "probability_tv_pct": 39.214577706469676,
+          "model_center_pp": 4.474146329228608,
+          "repeat_center_mae_pp": {
+            "1": 0.5771351975925878,
+            "2": 0.6743120083032554
+          }
+        },
+        {
+          "month": 202109,
+          "n": 68,
+          "truth_center_pp": 4.015095504517486,
+          "q9_center_mae_pp": 0.13982145909768562,
+          "q9_center_bias_pp": -0.13982145909768562,
+          "cross_section_w1_pp": 2.344386259738698,
+          "cross_person_iqr_pp": 2.590268567347608,
+          "real_cross_person_iqr_pp": 4.483906685759132,
+          "individual_density_mean_mae_pp": 3.5437563955895177,
+          "individual_density_iqr_mean_pp": 4.560817310299608,
+          "real_individual_density_iqr_mean_pp": 5.680054196157627,
+          "probability_tv_pct": 40.09086521598901,
+          "model_center_pp": 3.8752740454198005,
+          "repeat_center_mae_pp": {
+            "1": 0.23681951164974002,
+            "2": 0.042823406545631215
+          }
+        },
+        {
+          "month": 202112,
+          "n": 78,
+          "truth_center_pp": 6.0,
+          "q9_center_mae_pp": 0.38229742874224115,
+          "q9_center_bias_pp": -0.38229742874224115,
+          "cross_section_w1_pp": 2.76187660894722,
+          "cross_person_iqr_pp": 2.4274056899091296,
+          "real_cross_person_iqr_pp": 6.423985688947413,
+          "individual_density_mean_mae_pp": 3.723013384716195,
+          "individual_density_iqr_mean_pp": 4.5233467006650585,
+          "real_individual_density_iqr_mean_pp": 6.0270406118634225,
+          "probability_tv_pct": 42.08245440627462,
+          "model_center_pp": 5.617702571257759,
+          "repeat_center_mae_pp": {
+            "1": 0.39638924977549905,
+            "2": 0.36820560770898325
+          }
+        },
+        {
+          "month": 202206,
+          "n": 77,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 1.2561565404227162,
+          "q9_center_bias_pp": 1.2561565404227162,
+          "cross_section_w1_pp": 3.3464229278318585,
+          "cross_person_iqr_pp": 2.900005879126285,
+          "real_cross_person_iqr_pp": 5.909806216486284,
+          "individual_density_mean_mae_pp": 4.415457048983092,
+          "individual_density_iqr_mean_pp": 5.393846464464822,
+          "real_individual_density_iqr_mean_pp": 7.1057117064774715,
+          "probability_tv_pct": 40.847732595172296,
+          "model_center_pp": 7.768983913814247,
+          "repeat_center_mae_pp": {
+            "1": 1.2561565404227162,
+            "2": 1.2561565404227162
+          }
+        },
+        {
+          "month": 202312,
+          "n": 85,
+          "truth_center_pp": 3.185130652650368,
+          "q9_center_mae_pp": 0.09456025028269188,
+          "q9_center_bias_pp": -0.07542396274888086,
+          "cross_section_w1_pp": 1.339116549442328,
+          "cross_person_iqr_pp": 2.754992776057804,
+          "real_cross_person_iqr_pp": 4.200711492814974,
+          "individual_density_mean_mae_pp": 3.2880879607772204,
+          "individual_density_iqr_mean_pp": 3.7493591800367443,
+          "real_individual_density_iqr_mean_pp": 5.329033734194783,
+          "probability_tv_pct": 44.27910447322196,
+          "model_center_pp": 3.109706689901487,
+          "repeat_center_mae_pp": {
+            "1": 0.16998421303157274,
+            "2": 0.019136287533811025
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.4848011953601716,
+          "q9_center_bias_pp": -0.026549960298540082,
+          "cross_section_w1_pp": 2.3810085706796857,
+          "cross_person_iqr_pp": 2.373336423476459,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.589524944629767,
+          "individual_density_iqr_mean_pp": 4.055173371651448,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 41.9021328762633
+        },
+        "2": {
+          "q9_center_mae_pp": 0.4043174086249736,
+          "q9_center_bias_pp": 0.02009093786462384,
+          "cross_section_w1_pp": 2.506447534767181,
+          "cross_person_iqr_pp": 2.228742600593812,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.651492254611902,
+          "individual_density_iqr_mean_pp": 4.061474480712878,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 42.8567108656293
+        }
+      },
+      "generation_count": 2
+    },
+    "Q2": {
+      "metrics": {
+        "q9_center_mae_pp": 0.4495833588961112,
+        "q9_center_bias_pp": 0.075880464316804,
+        "cross_section_w1_pp": 2.4643077146234047,
+        "cross_person_iqr_pp": 2.404442154543673,
+        "real_cross_person_iqr_pp": 4.9283840971191895,
+        "individual_density_mean_mae_pp": 3.6132368819109737,
+        "individual_density_iqr_mean_pp": 4.040074226779978,
+        "real_individual_density_iqr_mean_pp": 5.571154974712675,
+        "probability_tv_pct": 42.19999536544099,
+        "q8_person_mae_pp": 6.816433770412581,
+        "q8_person_bias_pp": -1.5795273926155613,
+        "q8_center_mae_pp": 0.7785714285714286,
+        "q8_center_bias_pp": -0.7785714285714286,
+        "q8_cross_section_w1_pp": 5.005503781719445,
+        "q8_person_spearman": 0.5062384409285265,
+        "center_rmse_pp": 0.6638837233053088
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 66,
+          "truth_center_pp": 2.0,
+          "q9_center_mae_pp": 0.1267398879471089,
+          "q9_center_bias_pp": 0.1267398879471089,
+          "cross_section_w1_pp": 2.672795767219024,
+          "cross_person_iqr_pp": 1.3848202294075747,
+          "real_cross_person_iqr_pp": 4.080901109332809,
+          "individual_density_mean_mae_pp": 3.2928125732002513,
+          "individual_density_iqr_mean_pp": 2.6275600777436816,
+          "real_individual_density_iqr_mean_pp": 4.527414386214071,
+          "probability_tv_pct": 41.1788492543604,
+          "model_center_pp": 2.126739887947109,
+          "repeat_center_mae_pp": {
+            "1": 0.17111647463779267,
+            "2": 0.0823633012564251
+          }
+        },
+        {
+          "month": 202009,
+          "n": 69,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.2639347168695094,
+          "q9_center_bias_pp": -0.2639347168695094,
+          "cross_section_w1_pp": 2.985178583426411,
+          "cross_person_iqr_pp": 1.5073353045481868,
+          "real_cross_person_iqr_pp": 4.754566916686324,
+          "individual_density_mean_mae_pp": 3.801242167339214,
+          "individual_density_iqr_mean_pp": 3.1462596495920234,
+          "real_individual_density_iqr_mean_pp": 4.732633048231825,
+          "probability_tv_pct": 49.06758744526482,
+          "model_center_pp": 2.7360652831304906,
+          "repeat_center_mae_pp": {
+            "1": 0.24240675847017457,
+            "2": 0.2854626752688443
+          }
+        },
+        {
+          "month": 202106,
+          "n": 81,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 0.4349552557854932,
+          "q9_center_bias_pp": -0.4349552557854932,
+          "cross_section_w1_pp": 1.9113869190864565,
+          "cross_person_iqr_pp": 2.738561334337277,
+          "real_cross_person_iqr_pp": 4.644810569807394,
+          "individual_density_mean_mae_pp": 3.0194631513293246,
+          "individual_density_iqr_mean_pp": 4.391379487414115,
+          "real_individual_density_iqr_mean_pp": 5.596197139849529,
+          "probability_tv_pct": 38.47869839963107,
+          "model_center_pp": 4.664914676391037,
+          "repeat_center_mae_pp": {
+            "1": 0.5454339545508509,
+            "2": 0.32447655702013556
+          }
+        },
+        {
+          "month": 202109,
+          "n": 68,
+          "truth_center_pp": 4.015095504517486,
+          "q9_center_mae_pp": 0.29848359029421356,
+          "q9_center_bias_pp": -0.08606348022890842,
+          "cross_section_w1_pp": 2.3365648484568795,
+          "cross_person_iqr_pp": 2.455571394086705,
+          "real_cross_person_iqr_pp": 4.483906685759132,
+          "individual_density_mean_mae_pp": 3.757229822528083,
+          "individual_density_iqr_mean_pp": 4.518505537110899,
+          "real_individual_density_iqr_mean_pp": 5.680054196157627,
+          "probability_tv_pct": 41.14958649552962,
+          "model_center_pp": 3.9290320242885777,
+          "repeat_center_mae_pp": {
+            "1": 0.21242011006530515,
+            "2": 0.384547070523122
+          }
+        },
+        {
+          "month": 202112,
+          "n": 78,
+          "truth_center_pp": 6.0,
+          "q9_center_mae_pp": 0.3668832397479074,
+          "q9_center_bias_pp": -0.3668832397479074,
+          "cross_section_w1_pp": 2.776272971551248,
+          "cross_person_iqr_pp": 2.805911312746988,
+          "real_cross_person_iqr_pp": 6.423985688947413,
+          "individual_density_mean_mae_pp": 3.885599855973269,
+          "individual_density_iqr_mean_pp": 4.52211471146355,
+          "real_individual_density_iqr_mean_pp": 6.0270406118634225,
+          "probability_tv_pct": 42.213841639794474,
+          "model_center_pp": 5.633116760252093,
+          "repeat_center_mae_pp": {
+            "1": 0.3373772297203157,
+            "2": 0.39638924977549905
+          }
+        },
+        {
+          "month": 202206,
+          "n": 77,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 1.5679727050800678,
+          "q9_center_bias_pp": 1.5679727050800678,
+          "cross_section_w1_pp": 3.3640571510745643,
+          "cross_person_iqr_pp": 3.009769750995031,
+          "real_cross_person_iqr_pp": 5.909806216486284,
+          "individual_density_mean_mae_pp": 4.323215066397106,
+          "individual_density_iqr_mean_pp": 5.342320182801347,
+          "real_individual_density_iqr_mean_pp": 7.1057117064774715,
+          "probability_tv_pct": 39.63105935045479,
+          "model_center_pp": 8.080800078471599,
+          "repeat_center_mae_pp": {
+            "1": 1.8797888697374194,
+            "2": 1.2561565404227162
+          }
+        },
+        {
+          "month": 202312,
+          "n": 85,
+          "truth_center_pp": 3.185130652650368,
+          "q9_center_mae_pp": 0.08811411654847823,
+          "q9_center_bias_pp": -0.011712650177730266,
+          "cross_section_w1_pp": 1.203897761549245,
+          "cross_person_iqr_pp": 2.9291257556839487,
+          "real_cross_person_iqr_pp": 4.200711492814974,
+          "individual_density_mean_mae_pp": 3.2130955366095644,
+          "individual_density_iqr_mean_pp": 3.7323799413342265,
+          "real_individual_density_iqr_mean_pp": 5.329033734194783,
+          "probability_tv_pct": 43.68034497305179,
+          "model_center_pp": 3.173418002472638,
+          "repeat_center_mae_pp": {
+            "1": 0.07640146637074796,
+            "2": 0.0998267667262085
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.49499212336465803,
+          "q9_center_bias_pp": 0.17350128258141773,
+          "cross_section_w1_pp": 2.5309821852171903,
+          "cross_person_iqr_pp": 2.408001275719587,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.665277520011535,
+          "individual_density_iqr_mean_pp": 4.023214728314259,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 42.38143264769
+        },
+        "2": {
+          "q9_center_mae_pp": 0.40417459442756437,
+          "q9_center_bias_pp": -0.021740353947809727,
+          "cross_section_w1_pp": 2.3976332440296177,
+          "cross_person_iqr_pp": 2.400883033367759,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.5611962438104117,
+          "individual_density_iqr_mean_pp": 4.056933725245696,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 42.01855808319199
+        }
+      },
+      "generation_count": 2
+    },
+    "Q3": {
+      "metrics": {
+        "q9_center_mae_pp": 0.43300768848036825,
+        "q9_center_bias_pp": 0.020050690426286648,
+        "cross_section_w1_pp": 2.375085227485087,
+        "cross_person_iqr_pp": 2.338294093125912,
+        "real_cross_person_iqr_pp": 4.9283840971191895,
+        "individual_density_mean_mae_pp": 3.5654080772835433,
+        "individual_density_iqr_mean_pp": 4.13090354063674,
+        "real_individual_density_iqr_mean_pp": 5.571154974712675,
+        "probability_tv_pct": 42.05546917107288,
+        "q8_person_mae_pp": 6.841114536837716,
+        "q8_person_bias_pp": -1.436550209441957,
+        "q8_center_mae_pp": 0.7214285714285714,
+        "q8_center_bias_pp": -0.7214285714285714,
+        "q8_cross_section_w1_pp": 4.713102995180596,
+        "q8_person_spearman": 0.5006321867150758,
+        "center_rmse_pp": 0.5713937014137372
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 66,
+          "truth_center_pp": 2.0,
+          "q9_center_mae_pp": 0.2638305795279434,
+          "q9_center_bias_pp": 0.2638305795279434,
+          "cross_section_w1_pp": 2.461403248420897,
+          "cross_person_iqr_pp": 1.2845261867834672,
+          "real_cross_person_iqr_pp": 4.080901109332809,
+          "individual_density_mean_mae_pp": 3.2119942103324703,
+          "individual_density_iqr_mean_pp": 2.7596826480296937,
+          "real_individual_density_iqr_mean_pp": 4.527414386214071,
+          "probability_tv_pct": 40.44504735790972,
+          "model_center_pp": 2.2638305795279434,
+          "repeat_center_mae_pp": {
+            "1": 0.21425298747327481,
+            "2": 0.313408171582612
+          }
+        },
+        {
+          "month": 202009,
+          "n": 69,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.2164252162405842,
+          "q9_center_bias_pp": -0.2164252162405842,
+          "cross_section_w1_pp": 2.8637802020029746,
+          "cross_person_iqr_pp": 1.6370061362014758,
+          "real_cross_person_iqr_pp": 4.754566916686324,
+          "individual_density_mean_mae_pp": 3.8578744173358723,
+          "individual_density_iqr_mean_pp": 3.1858907079746714,
+          "real_individual_density_iqr_mean_pp": 4.732633048231825,
+          "probability_tv_pct": 48.775172600984185,
+          "model_center_pp": 2.783574783759416,
+          "repeat_center_mae_pp": {
+            "1": 0.23156135321937388,
+            "2": 0.2012890792617945
+          }
+        },
+        {
+          "month": 202106,
+          "n": 81,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 0.5568902498783053,
+          "q9_center_bias_pp": -0.5568902498783053,
+          "cross_section_w1_pp": 1.9288830844508347,
+          "cross_person_iqr_pp": 2.6020998455848128,
+          "real_cross_person_iqr_pp": 4.644810569807394,
+          "individual_density_mean_mae_pp": 3.0743915065472662,
+          "individual_density_iqr_mean_pp": 4.388177387640862,
+          "real_individual_density_iqr_mean_pp": 5.596197139849529,
+          "probability_tv_pct": 39.30636412608352,
+          "model_center_pp": 4.542979682298224,
+          "repeat_center_mae_pp": {
+            "1": 0.5218950562990603,
+            "2": 0.5918854434575502
+          }
+        },
+        {
+          "month": 202109,
+          "n": 68,
+          "truth_center_pp": 4.015095504517486,
+          "q9_center_mae_pp": 0.13529905827988165,
+          "q9_center_bias_pp": -0.009112492935589689,
+          "cross_section_w1_pp": 1.8732157928482587,
+          "cross_person_iqr_pp": 3.2105358067239127,
+          "real_cross_person_iqr_pp": 4.483906685759132,
+          "individual_density_mean_mae_pp": 3.171678026018313,
+          "individual_density_iqr_mean_pp": 4.780298043903276,
+          "real_individual_density_iqr_mean_pp": 5.680054196157627,
+          "probability_tv_pct": 39.123266395200034,
+          "model_center_pp": 4.005983011581897,
+          "repeat_center_mae_pp": {
+            "1": 0.14441155121547133,
+            "2": 0.12618656534429196
+          }
+        },
+        {
+          "month": 202112,
+          "n": 78,
+          "truth_center_pp": 6.0,
+          "q9_center_mae_pp": 0.4649227615837699,
+          "q9_center_bias_pp": -0.4649227615837699,
+          "cross_section_w1_pp": 2.8316230413106536,
+          "cross_person_iqr_pp": 2.2094039683705,
+          "real_cross_person_iqr_pp": 6.423985688947413,
+          "individual_density_mean_mae_pp": 3.9216716166017997,
+          "individual_density_iqr_mean_pp": 4.654973896731949,
+          "real_individual_density_iqr_mean_pp": 6.0270406118634225,
+          "probability_tv_pct": 43.20281040129674,
+          "model_center_pp": 5.53507723841623,
+          "repeat_center_mae_pp": {
+            "1": 0.5924682934472241,
+            "2": 0.3373772297203157
+          }
+        },
+        {
+          "month": 202206,
+          "n": 77,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 1.2587804639732028,
+          "q9_center_bias_pp": 1.2587804639732028,
+          "cross_section_w1_pp": 3.251460307862418,
+          "cross_person_iqr_pp": 3.008574794201001,
+          "real_cross_person_iqr_pp": 5.909806216486284,
+          "individual_density_mean_mae_pp": 4.458428702929693,
+          "individual_density_iqr_mean_pp": 5.514444462573312,
+          "real_individual_density_iqr_mean_pp": 7.1057117064774715,
+          "probability_tv_pct": 39.69484628485854,
+          "model_center_pp": 7.7716078373647335,
+          "repeat_center_mae_pp": {
+            "1": 1.2452802123295328,
+            "2": 1.2722807156168727
+          }
+        },
+        {
+          "month": 202312,
+          "n": 85,
+          "truth_center_pp": 3.185130652650368,
+          "q9_center_mae_pp": 0.13490548987889062,
+          "q9_center_bias_pp": -0.13490548987889062,
+          "cross_section_w1_pp": 1.4152309154995704,
+          "cross_person_iqr_pp": 2.415911914016215,
+          "real_cross_person_iqr_pp": 4.200711492814974,
+          "individual_density_mean_mae_pp": 3.2618180612193886,
+          "individual_density_iqr_mean_pp": 3.6328576376034136,
+          "real_individual_density_iqr_mean_pp": 5.329033734194783,
+          "probability_tv_pct": 43.84077703117741,
+          "model_center_pp": 3.0502251627714774,
+          "repeat_center_mae_pp": {
+            "1": 0.16998421303157274,
+            "2": 0.0998267667262085
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.4456933810022157,
+          "q9_center_bias_pp": -0.028683895344270675,
+          "cross_section_w1_pp": 2.317956745242451,
+          "cross_person_iqr_pp": 2.3586945573091262,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.5282677641069284,
+          "individual_density_iqr_mean_pp": 4.213699421054769,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 41.390119149474494
+        },
+        "2": {
+          "q9_center_mae_pp": 0.4203219959585208,
+          "q9_center_bias_pp": 0.06878527619684396,
+          "cross_section_w1_pp": 2.4322137097277228,
+          "cross_person_iqr_pp": 2.317893628942698,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.602548390460158,
+          "individual_density_iqr_mean_pp": 4.048107660218711,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 42.72081919267128
+        }
+      },
+      "generation_count": 2
+    },
+    "copy_previous": {
+      "metrics": {
+        "q9_center_mae_pp": 0.3323507293299396,
+        "q9_center_bias_pp": 0.2081947602054551,
+        "cross_section_w1_pp": 1.0032676439691566,
+        "cross_person_iqr_pp": 5.797335447739299,
+        "real_cross_person_iqr_pp": 4.9283840971191895,
+        "individual_density_mean_mae_pp": 3.0794599610830997,
+        "individual_density_iqr_mean_pp": 6.087870074087397,
+        "real_individual_density_iqr_mean_pp": 5.571154974712675,
+        "probability_tv_pct": 35.823723883120245,
+        "q8_person_mae_pp": 6.659256360307054,
+        "q8_person_bias_pp": 1.3313832276892033,
+        "q8_center_mae_pp": 0.42857142857142855,
+        "q8_center_bias_pp": 0.0,
+        "q8_cross_section_w1_pp": 3.2015012276889485,
+        "q8_person_spearman": 0.6610970721926288,
+        "center_rmse_pp": 0.47961324083464707
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "n": 66,
+          "truth_center_pp": 2.0,
+          "q9_center_mae_pp": 0.1615784846868289,
+          "q9_center_bias_pp": 0.1615784846868289,
+          "cross_section_w1_pp": 1.5616762895390537,
+          "cross_person_iqr_pp": 2.1965966043013125,
+          "real_cross_person_iqr_pp": 4.080901109332809,
+          "individual_density_mean_mae_pp": 3.082312611104262,
+          "individual_density_iqr_mean_pp": 4.533959881294208,
+          "real_individual_density_iqr_mean_pp": 4.527414386214071,
+          "probability_tv_pct": 35.48701895999273,
+          "model_center_pp": 2.161578484686829,
+          "repeat_center_mae_pp": {
+            "1": 0.1615784846868289,
+            "2": 0.1615784846868289
+          }
+        },
+        {
+          "month": 202009,
+          "n": 69,
+          "truth_center_pp": 3.0,
+          "q9_center_mae_pp": 0.0,
+          "q9_center_bias_pp": 0.0,
+          "cross_section_w1_pp": 1.0267099300560911,
+          "cross_person_iqr_pp": 6.701620594979937,
+          "real_cross_person_iqr_pp": 4.754566916686324,
+          "individual_density_mean_mae_pp": 3.220421302850054,
+          "individual_density_iqr_mean_pp": 5.74489880708401,
+          "real_individual_density_iqr_mean_pp": 4.732633048231825,
+          "probability_tv_pct": 44.93924544223907,
+          "model_center_pp": 3.0,
+          "repeat_center_mae_pp": {
+            "1": 0.0,
+            "2": 0.0
+          }
+        },
+        {
+          "month": 202106,
+          "n": 81,
+          "truth_center_pp": 5.09986993217653,
+          "q9_center_mae_pp": 0.19370625353258397,
+          "q9_center_bias_pp": -0.19370625353258397,
+          "cross_section_w1_pp": 0.8301370628205298,
+          "cross_person_iqr_pp": 6.320005113183706,
+          "real_cross_person_iqr_pp": 4.644810569807394,
+          "individual_density_mean_mae_pp": 3.4284533333708644,
+          "individual_density_iqr_mean_pp": 5.699736239002826,
+          "real_individual_density_iqr_mean_pp": 5.596197139849529,
+          "probability_tv_pct": 37.40569374835487,
+          "model_center_pp": 4.906163678643946,
+          "repeat_center_mae_pp": {
+            "1": 0.19370625353258397,
+            "2": 0.19370625353258397
+          }
+        },
+        {
+          "month": 202109,
+          "n": 68,
+          "truth_center_pp": 4.015095504517486,
+          "q9_center_mae_pp": 0.7871485675867138,
+          "q9_center_bias_pp": 0.7871485675867138,
+          "cross_section_w1_pp": 1.1445768135168441,
+          "cross_person_iqr_pp": 5.607707939109398,
+          "real_cross_person_iqr_pp": 4.483906685759132,
+          "individual_density_mean_mae_pp": 2.452396758831701,
+          "individual_density_iqr_mean_pp": 7.504381956252767,
+          "real_individual_density_iqr_mean_pp": 5.680054196157627,
+          "probability_tv_pct": 30.821398134104744,
+          "model_center_pp": 4.8022440721042,
+          "repeat_center_mae_pp": {
+            "1": 0.7871485675867138,
+            "2": 0.7871485675867138
+          }
+        },
+        {
+          "month": 202112,
+          "n": 78,
+          "truth_center_pp": 6.0,
+          "q9_center_mae_pp": 0.05570898575274352,
+          "q9_center_bias_pp": -0.05570898575274352,
+          "cross_section_w1_pp": 0.5487797587344088,
+          "cross_person_iqr_pp": 6.783927614871885,
+          "real_cross_person_iqr_pp": 6.423985688947413,
+          "individual_density_mean_mae_pp": 2.3358194031393777,
+          "individual_density_iqr_mean_pp": 6.137022715883574,
+          "real_individual_density_iqr_mean_pp": 6.0270406118634225,
+          "probability_tv_pct": 29.112204396039854,
+          "model_center_pp": 5.9442910142472565,
+          "repeat_center_mae_pp": {
+            "1": 0.05570898575274352,
+            "2": 0.05570898575274352
+          }
+        },
+        {
+          "month": 202206,
+          "n": 77,
+          "truth_center_pp": 6.512827373391531,
+          "q9_center_mae_pp": 0.9431821611003386,
+          "q9_center_bias_pp": 0.9431821611003386,
+          "cross_section_w1_pp": 0.900256107201844,
+          "cross_person_iqr_pp": 6.9714902676856845,
+          "real_cross_person_iqr_pp": 5.909806216486284,
+          "individual_density_mean_mae_pp": 3.6710125910098523,
+          "individual_density_iqr_mean_pp": 7.408897646074418,
+          "real_individual_density_iqr_mean_pp": 7.1057117064774715,
+          "probability_tv_pct": 34.222408781420874,
+          "model_center_pp": 7.456009534491869,
+          "repeat_center_mae_pp": {
+            "1": 0.9431821611003386,
+            "2": 0.9431821611003386
+          }
+        },
+        {
+          "month": 202312,
+          "n": 85,
+          "truth_center_pp": 3.185130652650368,
+          "q9_center_mae_pp": 0.185130652650368,
+          "q9_center_bias_pp": -0.185130652650368,
+          "cross_section_w1_pp": 1.0107375459153238,
+          "cross_person_iqr_pp": 6.000000000043173,
+          "real_cross_person_iqr_pp": 4.200711492814974,
+          "individual_density_mean_mae_pp": 3.3658037272755825,
+          "individual_density_iqr_mean_pp": 5.586193273019966,
+          "real_individual_density_iqr_mean_pp": 5.329033734194783,
+          "probability_tv_pct": 38.77809771968956,
+          "model_center_pp": 3.0,
+          "repeat_center_mae_pp": {
+            "1": 0.185130652650368,
+            "2": 0.185130652650368
+          }
+        }
+      ],
+      "repeat_metrics": {
+        "1": {
+          "q9_center_mae_pp": 0.33235072932993953,
+          "q9_center_bias_pp": 0.2081947602054551,
+          "cross_section_w1_pp": 1.0032676439691566,
+          "cross_person_iqr_pp": 5.797335447739299,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.0794599610830993,
+          "individual_density_iqr_mean_pp": 6.0878700740873954,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 35.823723883120245
+        },
+        "2": {
+          "q9_center_mae_pp": 0.33235072932993953,
+          "q9_center_bias_pp": 0.2081947602054551,
+          "cross_section_w1_pp": 1.0032676439691566,
+          "cross_person_iqr_pp": 5.797335447739299,
+          "real_cross_person_iqr_pp": 4.9283840971191895,
+          "individual_density_mean_mae_pp": 3.0794599610830993,
+          "individual_density_iqr_mean_pp": 6.0878700740873954,
+          "real_individual_density_iqr_mean_pp": 5.571154974712676,
+          "probability_tv_pct": 35.823723883120245
+        }
+      },
+      "generation_count": 2
+    }
+  },
+  "effects": [
+    {
+      "base": "A82",
+      "candidate": "R0",
+      "delta": {
+        "q9_center_mae_pp": -0.07787312923576917,
+        "q9_center_bias_pp": 0.2853536544804488,
+        "cross_section_w1_pp": -0.015607964193497192,
+        "cross_person_iqr_pp": -0.06999498499535539,
+        "real_cross_person_iqr_pp": 0.0,
+        "individual_density_mean_mae_pp": 0.0675990333058305,
+        "individual_density_iqr_mean_pp": 0.08504182827700735,
+        "real_individual_density_iqr_mean_pp": 0.0,
+        "probability_tv_pct": 0.0782767854101536
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "q9_center_mae_pp": 0.15741240281142543,
+          "q9_center_bias_pp": 0.15741240281142543,
+          "cross_section_w1_pp": -0.02381851682729419,
+          "cross_person_iqr_pp": -0.08115549595109295,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.14566867171109843,
+          "individual_density_iqr_mean_pp": 0.05368783907639507,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.1894729878205652
+        },
+        {
+          "month": 202009,
+          "q9_center_mae_pp": -0.20578762718468924,
+          "q9_center_bias_pp": 0.20578762718468924,
+          "cross_section_w1_pp": 0.0845322838882061,
+          "cross_person_iqr_pp": -0.3204790505497688,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.08497319213576482,
+          "individual_density_iqr_mean_pp": -0.00016789120116644796,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 1.160313354336303
+        },
+        {
+          "month": 202106,
+          "q9_center_mae_pp": -0.7866765061515526,
+          "q9_center_bias_pp": 0.7866765061515526,
+          "cross_section_w1_pp": -0.2835117349313707,
+          "cross_person_iqr_pp": -0.32989203510763954,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.024854549574199414,
+          "individual_density_iqr_mean_pp": 0.5572786696974577,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -0.7460215704444124
+        },
+        {
+          "month": 202109,
+          "q9_center_mae_pp": 0.310283104698585,
+          "q9_center_bias_pp": -0.310283104698585,
+          "cross_section_w1_pp": 0.13952560605915432,
+          "cross_person_iqr_pp": -0.1553108776098644,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.13551849273970795,
+          "individual_density_iqr_mean_pp": -0.2510927812428836,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.8144163903529957
+        },
+        {
+          "month": 202112,
+          "q9_center_mae_pp": -0.5967379860693569,
+          "q9_center_bias_pp": 0.5967379860693569,
+          "cross_section_w1_pp": -0.5052988532072189,
+          "cross_person_iqr_pp": 0.43506637267175385,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.2710083491507671,
+          "individual_density_iqr_mean_pp": 0.5131650589649244,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -2.799056892499152
+        },
+        {
+          "month": 202206,
+          "q9_center_mae_pp": 0.6077375535131244,
+          "q9_center_bias_pp": 0.6077375535131244,
+          "cross_section_w1_pp": 0.4931977998829318,
+          "cross_person_iqr_pp": 0.10362906125523574,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.2664972338771072,
+          "individual_density_iqr_mean_pp": -0.11336437790628029,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 1.6800476494018497
+        },
+        {
+          "month": 202312,
+          "q9_center_mae_pp": -0.0313428462679215,
+          "q9_center_bias_pp": -0.04659338966842208,
+          "cross_section_w1_pp": -0.013882334218891401,
+          "cross_person_iqr_pp": -0.14182286967611724,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.13639854140209806,
+          "individual_density_iqr_mean_pp": -0.16421371944940022,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.24876557890289064
+        }
+      ],
+      "center_mae_improvement_fraction": 0.13076577403996162,
+      "center_win_months": 4,
+      "w1_win_months": 4,
+      "per_repeat_delta": null,
+      "leave_one_month_out_mae_delta": {
+        "201905": -0.11708738457696848,
+        "202009": -0.056554046244282695,
+        "202106": 0.0402607669168612,
+        "202109": -0.14256583489149507,
+        "202112": 0.008604346903161919,
+        "202206": -0.19214157636058496,
+        "202312": -0.08562817639707732
+      },
+      "y2021_mae_base": 0.9024847298645273,
+      "y2021_mae_candidate": 0.5447742673570858
+    },
+    {
+      "base": "R0",
+      "candidate": "Q0",
+      "delta": {
+        "q9_center_mae_pp": -0.03281142584462432,
+        "q9_center_bias_pp": -0.023134925771026875,
+        "cross_section_w1_pp": 0.1383689434417592,
+        "cross_person_iqr_pp": -0.09678782929792229,
+        "real_cross_person_iqr_pp": 0.0,
+        "individual_density_mean_mae_pp": -0.025741432357963667,
+        "individual_density_iqr_mean_pp": -0.03966833085942856,
+        "real_individual_density_iqr_mean_pp": 0.0,
+        "probability_tv_pct": 0.06405825688474209
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "q9_center_mae_pp": -0.10399759908694506,
+          "q9_center_bias_pp": -0.10399759908694506,
+          "cross_section_w1_pp": 0.42171161889751785,
+          "cross_person_iqr_pp": -0.1316742609569863,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.02495954661655464,
+          "individual_density_iqr_mean_pp": -0.1842798185989376,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.7633679058106821
+        },
+        {
+          "month": 202009,
+          "q9_center_mae_pp": -0.06018791279626856,
+          "q9_center_bias_pp": 0.06018791279626856,
+          "cross_section_w1_pp": 0.026613143471881706,
+          "cross_person_iqr_pp": -0.036049720485333614,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.03589888963383192,
+          "individual_density_iqr_mean_pp": 0.016037537304137928,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -0.8150243602354266
+        },
+        {
+          "month": 202106,
+          "q9_center_mae_pp": 0.14753291971411064,
+          "q9_center_bias_pp": -0.14753291971411064,
+          "cross_section_w1_pp": 0.08033671324046887,
+          "cross_person_iqr_pp": -0.27037333736673075,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.04732240674822741,
+          "individual_density_iqr_mean_pp": 0.08090693385064007,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -0.2740427985831815
+        },
+        {
+          "month": 202109,
+          "q9_center_mae_pp": -0.12570629124928034,
+          "q9_center_bias_pp": 0.12570629124928034,
+          "cross_section_w1_pp": 0.26836537875763833,
+          "cross_person_iqr_pp": -0.08591452061242366,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.04501877318441139,
+          "individual_density_iqr_mean_pp": -0.059471196275296734,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.871273795765731
+        },
+        {
+          "month": 202112,
+          "q9_center_mae_pp": -0.06779318361868869,
+          "q9_center_bias_pp": 0.06779318361868869,
+          "cross_section_w1_pp": 0.1759948918212677,
+          "cross_person_iqr_pp": -0.24119444217062602,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.056533979011213376,
+          "individual_density_iqr_mean_pp": -0.18516119236881323,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -0.2019030783814202
+        },
+        {
+          "month": 202206,
+          "q9_center_mae_pp": -0.009546094030720376,
+          "q9_center_bias_pp": -0.009546094030720376,
+          "cross_section_w1_pp": -0.023943053769293954,
+          "cross_person_iqr_pp": -0.0022035866049425756,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.045783732766790486,
+          "individual_density_iqr_mean_pp": 0.01955077253173343,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.14760633100958387
+        },
+        {
+          "month": 202312,
+          "q9_center_mae_pp": -0.009981819844577355,
+          "q9_center_bias_pp": -0.15455525522964964,
+          "cross_section_w1_pp": 0.019503911672835272,
+          "cross_person_iqr_pp": 0.08989506311159001,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.13238547006358736,
+          "individual_density_iqr_mean_pp": 0.034738647540535794,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -0.04286999719275997
+        }
+      ],
+      "center_mae_improvement_fraction": 0.06338620448499277,
+      "center_win_months": 6,
+      "w1_win_months": 1,
+      "per_repeat_delta": {
+        "1": {
+          "q9_center_mae_pp": -0.07626752429114192,
+          "q9_center_bias_pp": -0.016587184676591704,
+          "cross_section_w1_pp": 0.11215235377275601,
+          "cross_person_iqr_pp": -0.0697392700360826,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.029922793857994456,
+          "individual_density_iqr_mean_pp": 0.05745043258590776,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.12350283629594827
+        },
+        "2": {
+          "q9_center_mae_pp": 0.010644672601893446,
+          "q9_center_bias_pp": -0.029682666865462046,
+          "cross_section_w1_pp": 0.16458553311076374,
+          "cross_person_iqr_pp": -0.12383638855976109,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.02156007085792977,
+          "individual_density_iqr_mean_pp": -0.136787094304764,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.004613677473535915
+        }
+      },
+      "leave_one_month_out_mae_delta": {
+        "201905": -0.02094706363757078,
+        "202009": -0.028248678019350198,
+        "202106": -0.06286881677108007,
+        "202109": -0.017328948277181566,
+        "202112": -0.026981132882280174,
+        "202206": -0.03668898114694156,
+        "202312": -0.0366163601779654
+      },
+      "y2021_mae_base": 0.5447742673570858,
+      "y2021_mae_candidate": 0.5294520823057997
+    },
+    {
+      "base": "Q0",
+      "candidate": "Q1",
+      "delta": {
+        "q9_center_mae_pp": 0.0031798439746657525,
+        "q9_center_bias_pp": 0.0022610241709518156,
+        "cross_section_w1_pp": -0.01660507521035548,
+        "cross_person_iqr_pp": 0.0015786794245493674,
+        "real_cross_person_iqr_pp": 0.0,
+        "individual_density_mean_mae_pp": -0.006819557468488391,
+        "individual_density_iqr_mean_pp": -0.002653647109577939,
+        "real_individual_density_iqr_mean_pp": 0.0,
+        "probability_tv_pct": -0.08170271452372191
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "q9_center_mae_pp": 0.038329061596201086,
+          "q9_center_bias_pp": 0.038329061596201086,
+          "cross_section_w1_pp": -0.23115311484166856,
+          "cross_person_iqr_pp": 0.08263945366850867,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.07484819354203065,
+          "individual_density_iqr_mean_pp": 0.03526003050384707,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -1.062880079818001
+        },
+        {
+          "month": 202009,
+          "q9_center_mae_pp": 0.24683343876993025,
+          "q9_center_bias_pp": -0.24683343876993025,
+          "cross_section_w1_pp": 0.11681641393431219,
+          "cross_person_iqr_pp": -0.09860472100675421,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.008621543473197768,
+          "individual_density_iqr_mean_pp": -0.058228654247114875,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.5429662041131564
+        },
+        {
+          "month": 202106,
+          "q9_center_mae_pp": -0.32072391517147114,
+          "q9_center_bias_pp": 0.32072391517147114,
+          "cross_section_w1_pp": -0.20831740162625367,
+          "cross_person_iqr_pp": 0.07862587116129394,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.04287959575283473,
+          "individual_density_iqr_mean_pp": -0.09903165519379975,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -0.6386533745625016
+        },
+        {
+          "month": 202109,
+          "q9_center_mae_pp": 0.06439152960853622,
+          "q9_center_bias_pp": -0.06439152960853622,
+          "cross_section_w1_pp": -0.02491421133575633,
+          "cross_person_iqr_pp": 0.23107863906100912,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.0219029890310658,
+          "individual_density_iqr_mean_pp": 0.2617919416953196,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -1.4557769978769244
+        },
+        {
+          "month": 202112,
+          "q9_center_mae_pp": 0.08003164017035758,
+          "q9_center_bias_pp": -0.08003164017035758,
+          "cross_section_w1_pp": 0.13794753973365337,
+          "cross_person_iqr_pp": 0.15081213727939025,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.007674237606661194,
+          "individual_density_iqr_mean_pp": -0.11890202738587519,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 1.2948858319691467
+        },
+        {
+          "month": 202206,
+          "q9_center_mae_pp": -0.0699005727741584,
+          "q9_center_bias_pp": -0.0699005727741584,
+          "cross_section_w1_pp": 0.11261277539592252,
+          "cross_person_iqr_pp": -0.2991800989680504,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.03445866803550235,
+          "individual_density_iqr_mean_pp": -0.03173378646526803,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -0.1156581556284948
+        },
+        {
+          "month": 202312,
+          "q9_center_mae_pp": -0.016702274376735105,
+          "q9_center_bias_pp": 0.11793137375197293,
+          "cross_section_w1_pp": -0.019227527732698313,
+          "cross_person_iqr_pp": -0.13432052522355242,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.06625078494001357,
+          "individual_density_iqr_mean_pp": -0.007731378674151301,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.8631975701375652
+        }
+      ],
+      "center_mae_improvement_fraction": -0.0065586567826174365,
+      "center_win_months": 3,
+      "w1_win_months": 4,
+      "per_repeat_delta": {
+        "1": {
+          "q9_center_mae_pp": 0.040262259391112165,
+          "q9_center_bias_pp": -0.008207211754647479,
+          "cross_section_w1_pp": -0.09911627307762494,
+          "cross_person_iqr_pp": 0.12874199979583212,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.07529230232234418,
+          "individual_density_iqr_mean_pp": 0.0011705465308704532,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -1.002362350761274
+        },
+        "2": {
+          "q9_center_mae_pp": -0.033902571441780605,
+          "q9_center_bias_pp": 0.012729260096551114,
+          "cross_section_w1_pp": 0.06590612265691309,
+          "cross_person_iqr_pp": -0.12558464094673338,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.06165318738536385,
+          "individual_density_iqr_mean_pp": -0.006477840750026331,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.838956921713816
+        }
+      },
+      "leave_one_month_out_mae_delta": {
+        "201905": -0.002678358962256766,
+        "202009": -0.037429088491211626,
+        "202106": 0.057163803832355274,
+        "202109": -0.007022103630979289,
+        "202112": -0.00962878872461618,
+        "202206": 0.015359913432803149,
+        "202312": 0.006493530366565932
+      },
+      "y2021_mae_base": 0.5294520823057997,
+      "y2021_mae_candidate": 0.4706851671749406
+    },
+    {
+      "base": "Q0",
+      "candidate": "Q2",
+      "delta": {
+        "q9_center_mae_pp": -0.0028909156043976925,
+        "q9_center_bias_pp": 0.0836011890421682,
+        "cross_section_w1_pp": 0.004887751312978583,
+        "cross_person_iqr_pp": 0.06803599998581866,
+        "real_cross_person_iqr_pp": 0.0,
+        "individual_density_mean_mae_pp": -0.00026289272279989007,
+        "individual_density_iqr_mean_pp": -0.008799733467261817,
+        "real_individual_density_iqr_mean_pp": 0.0,
+        "probability_tv_pct": -0.1348576004824409
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "q9_center_mae_pp": -0.07425304226651708,
+          "q9_center_bias_pp": -0.07425304226651708,
+          "cross_section_w1_pp": -0.15231374963574318,
+          "cross_person_iqr_pp": -0.023264718881688573,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.09063798543893364,
+          "individual_density_iqr_mean_pp": 0.04343784972949338,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -0.6212070917443526
+        },
+        {
+          "month": 202009,
+          "q9_center_mae_pp": 0.17623758252275223,
+          "q9_center_bias_pp": -0.17623758252275223,
+          "cross_section_w1_pp": 0.18977998586004396,
+          "cross_person_iqr_pp": -0.10767905086478136,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.1077448051532599,
+          "individual_density_iqr_mean_pp": -0.13090515675561853,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.7443191637511859
+        },
+        {
+          "month": 202106,
+          "q9_center_mae_pp": -0.5422966283059041,
+          "q9_center_bias_pp": 0.5422966283059041,
+          "cross_section_w1_pp": -0.16705398642138958,
+          "cross_person_iqr_pp": 0.40951024004889236,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.31643324771278225,
+          "individual_density_iqr_mean_pp": -0.042854690958304964,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -1.3867501541784861
+        },
+        {
+          "month": 202109,
+          "q9_center_mae_pp": 0.11005857019545884,
+          "q9_center_bias_pp": -0.11005857019545884,
+          "cross_section_w1_pp": 0.028501726761939405,
+          "cross_person_iqr_pp": 0.02029666267123309,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.29179105754988033,
+          "individual_density_iqr_mean_pp": 0.2823599755448427,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.20829011049951163
+        },
+        {
+          "month": 202112,
+          "q9_center_mae_pp": 0.033190098717498895,
+          "q9_center_bias_pp": -0.033190098717498895,
+          "cross_section_w1_pp": 0.16880107256767252,
+          "cross_person_iqr_pp": 0.31943021678727135,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.17926832147634997,
+          "individual_density_iqr_mean_pp": -0.12768303050532914,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 1.343095304764276
+        },
+        {
+          "month": 202206,
+          "q9_center_mae_pp": 0.07306308381659976,
+          "q9_center_bias_pp": 0.07306308381659976,
+          "cross_section_w1_pp": 0.09067452044812763,
+          "cross_person_iqr_pp": -0.16755205290364383,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.1325077345170378,
+          "individual_density_iqr_mean_pp": -0.08995855259159402,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -1.1944746488983355
+        },
+        {
+          "month": 202312,
+          "q9_center_mae_pp": 0.2037639260893278,
+          "q9_center_bias_pp": 0.36358790487490067,
+          "cross_section_w1_pp": -0.12417531038979979,
+          "cross_person_iqr_pp": 0.02551070304344627,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.041065465570345516,
+          "individual_density_iqr_mean_pp": 0.004005471265681848,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -0.03727588757087119
+        }
+      ],
+      "center_mae_improvement_fraction": 0.005962721249161458,
+      "center_win_months": 2,
+      "w1_win_months": 3,
+      "per_repeat_delta": {
+        "1": {
+          "q9_center_mae_pp": 0.03784236910349159,
+          "q9_center_bias_pp": 0.12024135259765753,
+          "cross_section_w1_pp": 0.026315523444557343,
+          "cross_person_iqr_pp": 0.08158614255029928,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.02859775630585526,
+          "individual_density_iqr_mean_pp": -0.013446025009034912,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -0.3071802989784942
+        },
+        "2": {
+          "q9_center_mae_pp": -0.043624200312286976,
+          "q9_center_bias_pp": 0.046961025486678895,
+          "cross_section_w1_pp": -0.01654002081860151,
+          "cross_person_iqr_pp": 0.054485857421338046,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.029123541751459037,
+          "individual_density_iqr_mean_pp": -0.004153441925488721,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.037465098013605314
+        }
+      },
+      "leave_one_month_out_mae_delta": {
+        "201905": 0.009002772172622242,
+        "202009": -0.03274566529225598,
+        "202106": 0.08701003651252008,
+        "202109": -0.021715829904373745,
+        "202112": -0.00890441799138042,
+        "202206": -0.01554991550789723,
+        "202312": -0.037333389220018574
+      },
+      "y2021_mae_base": 0.5294520823057997,
+      "y2021_mae_candidate": 0.39643609584148426
+    },
+    {
+      "base": "Q0",
+      "candidate": "Q3",
+      "delta": {
+        "q9_center_mae_pp": -0.04603175671382381,
+        "q9_center_bias_pp": 0.07013035289266739,
+        "cross_section_w1_pp": -0.07354898737261051,
+        "cross_person_iqr_pp": 0.02293340649502351,
+        "real_cross_person_iqr_pp": 0.0,
+        "individual_density_mean_mae_pp": -0.030831466307173372,
+        "individual_density_iqr_mean_pp": 0.06575747195261705,
+        "real_individual_density_iqr_mean_pp": 0.0,
+        "probability_tv_pct": -0.21060980213587754
+      },
+      "monthly": [
+        {
+          "month": 201905,
+          "q9_center_mae_pp": 0.059667030448913305,
+          "q9_center_bias_pp": 0.059667030448913305,
+          "cross_section_w1_pp": -0.37549303741302786,
+          "cross_person_iqr_pp": 0.1065177889317439,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.15775378906160942,
+          "individual_density_iqr_mean_pp": 0.19012246159747415,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -1.1722399680239164
+        },
+        {
+          "month": 202009,
+          "q9_center_mae_pp": 0.10489412447833013,
+          "q9_center_bias_pp": -0.10489412447833013,
+          "cross_section_w1_pp": 0.07081980405922739,
+          "cross_person_iqr_pp": -0.05104234961015952,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.1495722718383874,
+          "individual_density_iqr_mean_pp": -0.08610047222137229,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.42634830598478857
+        },
+        {
+          "month": 202106,
+          "q9_center_mae_pp": -0.3881986903349066,
+          "q9_center_bias_pp": 0.3881986903349066,
+          "cross_section_w1_pp": -0.12148565187492233,
+          "cross_person_iqr_pp": 0.23950422298798735,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.2686495239676834,
+          "individual_density_iqr_mean_pp": -0.03079223784767926,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -0.5880303213928784
+        },
+        {
+          "month": 202109,
+          "q9_center_mae_pp": -0.08293193419402911,
+          "q9_center_bias_pp": 0.08293193419402911,
+          "cross_section_w1_pp": -0.3484853234291676,
+          "cross_person_iqr_pp": 0.531325967771052,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.1678741883248902,
+          "individual_density_iqr_mean_pp": 0.413921976298095,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -1.69918725033736
+        },
+        {
+          "month": 202112,
+          "q9_center_mae_pp": 0.0036840886899072167,
+          "q9_center_bias_pp": -0.0036840886899072167,
+          "cross_section_w1_pp": 0.18177349106256413,
+          "cross_person_iqr_pp": -0.12533286840848756,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.21360056942840266,
+          "individual_density_iqr_mean_pp": 0.015138092772261302,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 2.2527171583838737
+        },
+        {
+          "month": 202206,
+          "q9_center_mae_pp": 0.02467805617703922,
+          "q9_center_bias_pp": 0.02467805617703922,
+          "cross_section_w1_pp": 0.05820111506420966,
+          "cross_person_iqr_pp": -0.2482742453464244,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.017667497320301706,
+          "individual_density_iqr_mean_pp": 0.04644064468949871,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -1.051774630334478
+        },
+        {
+          "month": 202312,
+          "q9_center_mae_pp": -0.04401497226202089,
+          "q9_center_bias_pp": 0.04401497226202089,
+          "cross_section_w1_pp": 0.019826690922840395,
+          "cross_person_iqr_pp": -0.29216467086054676,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.03295189325747483,
+          "individual_density_iqr_mean_pp": -0.08842816161996048,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.3578980907687921
+        }
+      ],
+      "center_mae_improvement_fraction": 0.09494380724093578,
+      "center_win_months": 3,
+      "w1_win_months": 3,
+      "per_repeat_delta": {
+        "1": {
+          "q9_center_mae_pp": -0.04362499625564353,
+          "q9_center_bias_pp": 0.05376003694517095,
+          "cross_section_w1_pp": -0.1693093768661198,
+          "cross_person_iqr_pp": 0.0937705816571679,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": -0.09091091085796776,
+          "individual_density_iqr_mean_pp": 0.15134181347965914,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": -1.2624670777944473
+        },
+        "2": {
+          "q9_center_mae_pp": -0.04843851717200415,
+          "q9_center_bias_pp": 0.08650066884016384,
+          "cross_section_w1_pp": 0.022211402120897006,
+          "cross_person_iqr_pp": -0.04790376866712087,
+          "real_cross_person_iqr_pp": 0.0,
+          "individual_density_mean_mae_pp": 0.029247978243618356,
+          "individual_density_iqr_mean_pp": -0.01982686957442681,
+          "real_individual_density_iqr_mean_pp": 0.0,
+          "probability_tv_pct": 0.8412474735226851
+        }
+      },
+      "leave_one_month_out_mae_delta": {
+        "201905": -0.06364822124094667,
+        "202009": -0.07118607024584948,
+        "202106": 0.010996065556356646,
+        "202109": -0.0398817271337896,
+        "202112": -0.054317730947778996,
+        "202206": -0.05781672552896766,
+        "202312": -0.04636788745579098
+      },
+      "y2021_mae_base": 0.5294520823057997,
+      "y2021_mae_candidate": 0.37363657035945685
+    }
+  ],
+  "groups": [
+    {
+      "dimension": "prior",
+      "label": "low",
+      "arm": "R0",
+      "min_n_per_month_repeat": 23,
+      "mean_n_per_month_repeat": 25.714285714285715,
+      "metrics": {
+        "q9_center_mae_pp": 1.2268192481050815,
+        "q9_center_bias_pp": 1.2268192481050815,
+        "cross_section_w1_pp": 2.140732259042704,
+        "cross_person_iqr_pp": 1.5942145698141024,
+        "real_cross_person_iqr_pp": 3.4851699627017516,
+        "individual_density_mean_mae_pp": 3.0845471579260084,
+        "individual_density_iqr_mean_pp": 4.126919492027498,
+        "real_individual_density_iqr_mean_pp": 5.982033756806161,
+        "probability_tv_pct": 41.004262348634725
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "low",
+      "arm": "Q0",
+      "min_n_per_month_repeat": 23,
+      "mean_n_per_month_repeat": 25.714285714285715,
+      "metrics": {
+        "q9_center_mae_pp": 1.2115894876818527,
+        "q9_center_bias_pp": 1.2115894876818527,
+        "cross_section_w1_pp": 2.2058120587141135,
+        "cross_person_iqr_pp": 1.5357779578173942,
+        "real_cross_person_iqr_pp": 3.4851699627017516,
+        "individual_density_mean_mae_pp": 2.9805920795342713,
+        "individual_density_iqr_mean_pp": 4.015429120039868,
+        "real_individual_density_iqr_mean_pp": 5.982033756806161,
+        "probability_tv_pct": 42.06992016257687
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "low",
+      "arm": "Q1",
+      "min_n_per_month_repeat": 23,
+      "mean_n_per_month_repeat": 25.714285714285715,
+      "metrics": {
+        "q9_center_mae_pp": 1.2434431307500398,
+        "q9_center_bias_pp": 1.2434431307500398,
+        "cross_section_w1_pp": 2.238732239075325,
+        "cross_person_iqr_pp": 1.4534976543476896,
+        "real_cross_person_iqr_pp": 3.4851699627017516,
+        "individual_density_mean_mae_pp": 3.1069619135541586,
+        "individual_density_iqr_mean_pp": 4.169393983545952,
+        "real_individual_density_iqr_mean_pp": 5.982033756806161,
+        "probability_tv_pct": 41.986279639485545
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "low",
+      "arm": "Q2",
+      "min_n_per_month_repeat": 23,
+      "mean_n_per_month_repeat": 25.714285714285715,
+      "metrics": {
+        "q9_center_mae_pp": 1.2277665737800028,
+        "q9_center_bias_pp": 1.2277665737800028,
+        "cross_section_w1_pp": 2.176437371397621,
+        "cross_person_iqr_pp": 1.4290276117536018,
+        "real_cross_person_iqr_pp": 3.4851699627017516,
+        "individual_density_mean_mae_pp": 3.0980451456798925,
+        "individual_density_iqr_mean_pp": 4.133697873024232,
+        "real_individual_density_iqr_mean_pp": 5.982033756806161,
+        "probability_tv_pct": 40.61045810732191
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "low",
+      "arm": "Q3",
+      "min_n_per_month_repeat": 23,
+      "mean_n_per_month_repeat": 25.714285714285715,
+      "metrics": {
+        "q9_center_mae_pp": 1.2544454417482835,
+        "q9_center_bias_pp": 1.2544454417482835,
+        "cross_section_w1_pp": 2.1587514170826534,
+        "cross_person_iqr_pp": 1.442106393341462,
+        "real_cross_person_iqr_pp": 3.4851699627017516,
+        "individual_density_mean_mae_pp": 3.006792421730871,
+        "individual_density_iqr_mean_pp": 4.228549665355136,
+        "real_individual_density_iqr_mean_pp": 5.982033756806161,
+        "probability_tv_pct": 40.465725666015594
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "middle",
+      "arm": "R0",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 24.714285714285715,
+      "metrics": {
+        "q9_center_mae_pp": 0.49645922200370685,
+        "q9_center_bias_pp": 0.292081483870588,
+        "cross_section_w1_pp": 1.4508917074416388,
+        "cross_person_iqr_pp": 1.1153064105371304,
+        "real_cross_person_iqr_pp": 2.631845744915174,
+        "individual_density_mean_mae_pp": 1.9540152411268175,
+        "individual_density_iqr_mean_pp": 3.387818198774504,
+        "real_individual_density_iqr_mean_pp": 3.7909631094489145,
+        "probability_tv_pct": 36.328954512721374
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "middle",
+      "arm": "Q0",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 24.714285714285715,
+      "metrics": {
+        "q9_center_mae_pp": 0.46700880005782114,
+        "q9_center_bias_pp": 0.3090750092149114,
+        "cross_section_w1_pp": 1.44908821889092,
+        "cross_person_iqr_pp": 1.0252377976612659,
+        "real_cross_person_iqr_pp": 2.631845744915174,
+        "individual_density_mean_mae_pp": 1.9902464652301222,
+        "individual_density_iqr_mean_pp": 3.4030405049529615,
+        "real_individual_density_iqr_mean_pp": 3.7909631094489145,
+        "probability_tv_pct": 36.52011554308174
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "middle",
+      "arm": "Q1",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 24.714285714285715,
+      "metrics": {
+        "q9_center_mae_pp": 0.4460642212444285,
+        "q9_center_bias_pp": 0.2958629574019482,
+        "cross_section_w1_pp": 1.4355894290775544,
+        "cross_person_iqr_pp": 1.0139296512161144,
+        "real_cross_person_iqr_pp": 2.631845744915174,
+        "individual_density_mean_mae_pp": 1.8821027446080023,
+        "individual_density_iqr_mean_pp": 3.417505855271383,
+        "real_individual_density_iqr_mean_pp": 3.7909631094489145,
+        "probability_tv_pct": 35.75866660908239
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "middle",
+      "arm": "Q2",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 24.714285714285715,
+      "metrics": {
+        "q9_center_mae_pp": 0.5152363176005604,
+        "q9_center_bias_pp": 0.3036642336779721,
+        "cross_section_w1_pp": 1.4439907568060506,
+        "cross_person_iqr_pp": 1.165252168298636,
+        "real_cross_person_iqr_pp": 2.631845744915174,
+        "individual_density_mean_mae_pp": 1.9427548561476216,
+        "individual_density_iqr_mean_pp": 3.370232937162642,
+        "real_individual_density_iqr_mean_pp": 3.7909631094489145,
+        "probability_tv_pct": 36.45281228902087
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "middle",
+      "arm": "Q3",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 24.714285714285715,
+      "metrics": {
+        "q9_center_mae_pp": 0.433942702936446,
+        "q9_center_bias_pp": 0.24913458067313457,
+        "cross_section_w1_pp": 1.4177650021515418,
+        "cross_person_iqr_pp": 1.2227776433613164,
+        "real_cross_person_iqr_pp": 2.631845744915174,
+        "individual_density_mean_mae_pp": 1.9677802080336455,
+        "individual_density_iqr_mean_pp": 3.4568277191328654,
+        "real_individual_density_iqr_mean_pp": 3.7909631094489145,
+        "probability_tv_pct": 36.64403925422115
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "high",
+      "arm": "R0",
+      "min_n_per_month_repeat": 20,
+      "mean_n_per_month_repeat": 24.428571428571427,
+      "metrics": {
+        "q9_center_mae_pp": 1.7382676605781977,
+        "q9_center_bias_pp": -1.6786285199872617,
+        "cross_section_w1_pp": 3.9890867780254466,
+        "cross_person_iqr_pp": 3.073694520418448,
+        "real_cross_person_iqr_pp": 6.378633866799335,
+        "individual_density_mean_mae_pp": 5.909482464748577,
+        "individual_density_iqr_mean_pp": 4.759243992069635,
+        "real_individual_density_iqr_mean_pp": 6.82577380678719,
+        "probability_tv_pct": 49.47377678955397
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "high",
+      "arm": "Q0",
+      "min_n_per_month_repeat": 20,
+      "mean_n_per_month_repeat": 24.428571428571427,
+      "metrics": {
+        "q9_center_mae_pp": 1.943684178160132,
+        "q9_center_bias_pp": -1.8580002079557463,
+        "cross_section_w1_pp": 4.233247785750581,
+        "cross_person_iqr_pp": 2.9070932869023016,
+        "real_cross_person_iqr_pp": 6.378633866799335,
+        "individual_density_mean_mae_pp": 5.820945209912539,
+        "individual_density_iqr_mean_pp": 4.626973511683333,
+        "real_individual_density_iqr_mean_pp": 6.82577380678719,
+        "probability_tv_pct": 48.67248991702557
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "high",
+      "arm": "Q1",
+      "min_n_per_month_repeat": 20,
+      "mean_n_per_month_repeat": 24.428571428571427,
+      "metrics": {
+        "q9_center_mae_pp": 1.8413766840810166,
+        "q9_center_bias_pp": -1.7406940222958707,
+        "cross_section_w1_pp": 4.163049070898425,
+        "cross_person_iqr_pp": 3.35560484174698,
+        "real_cross_person_iqr_pp": 6.378633866799335,
+        "individual_density_mean_mae_pp": 5.862609585640446,
+        "individual_density_iqr_mean_pp": 4.529576585707994,
+        "real_individual_density_iqr_mean_pp": 6.82577380678719,
+        "probability_tv_pct": 49.16692672833056
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "high",
+      "arm": "Q2",
+      "min_n_per_month_repeat": 20,
+      "mean_n_per_month_repeat": 24.428571428571427,
+      "metrics": {
+        "q9_center_mae_pp": 1.8955467618021415,
+        "q9_center_bias_pp": -1.6504282957867153,
+        "cross_section_w1_pp": 4.334158279945048,
+        "cross_person_iqr_pp": 3.0234914769376795,
+        "real_cross_person_iqr_pp": 6.378633866799335,
+        "individual_density_mean_mae_pp": 5.815667768226585,
+        "individual_density_iqr_mean_pp": 4.545015292893492,
+        "real_individual_density_iqr_mean_pp": 6.82577380678719,
+        "probability_tv_pct": 49.46951840167646
+      }
+    },
+    {
+      "dimension": "prior",
+      "label": "high",
+      "arm": "Q3",
+      "min_n_per_month_repeat": 20,
+      "mean_n_per_month_repeat": 24.428571428571427,
+      "metrics": {
+        "q9_center_mae_pp": 1.7309808795776684,
+        "q9_center_bias_pp": -1.7309808795776684,
+        "cross_section_w1_pp": 3.9875286896591637,
+        "cross_person_iqr_pp": 2.870468552091586,
+        "real_cross_person_iqr_pp": 6.378633866799335,
+        "individual_density_mean_mae_pp": 5.7358158179015435,
+        "individual_density_iqr_mean_pp": 4.648024750185536,
+        "real_individual_density_iqr_mean_pp": 6.82577380678719,
+        "probability_tv_pct": 49.026996697111294
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "4",
+      "arm": "R0",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 23.285714285714285,
+      "metrics": {
+        "q9_center_mae_pp": 0.7432464625243907,
+        "q9_center_bias_pp": -0.0007485714370229094,
+        "cross_section_w1_pp": 3.3692991500990486,
+        "cross_person_iqr_pp": 2.72519562856897,
+        "real_cross_person_iqr_pp": 6.1089384172498455,
+        "individual_density_mean_mae_pp": 4.529310104060345,
+        "individual_density_iqr_mean_pp": 4.410915726295248,
+        "real_individual_density_iqr_mean_pp": 6.708748323770147,
+        "probability_tv_pct": 46.28086584813694
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "4",
+      "arm": "Q0",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 23.285714285714285,
+      "metrics": {
+        "q9_center_mae_pp": 0.8062624762545249,
+        "q9_center_bias_pp": -0.07498879959957863,
+        "cross_section_w1_pp": 3.456502859024536,
+        "cross_person_iqr_pp": 2.8431773581695596,
+        "real_cross_person_iqr_pp": 6.1089384172498455,
+        "individual_density_mean_mae_pp": 4.51700521237367,
+        "individual_density_iqr_mean_pp": 4.43427665816832,
+        "real_individual_density_iqr_mean_pp": 6.708748323770147,
+        "probability_tv_pct": 45.69416090115294
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "4",
+      "arm": "Q1",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 23.285714285714285,
+      "metrics": {
+        "q9_center_mae_pp": 0.7303124515981473,
+        "q9_center_bias_pp": -0.045723654908042324,
+        "cross_section_w1_pp": 3.561365682009092,
+        "cross_person_iqr_pp": 2.575875243375841,
+        "real_cross_person_iqr_pp": 6.1089384172498455,
+        "individual_density_mean_mae_pp": 4.594164792173771,
+        "individual_density_iqr_mean_pp": 4.326761154875281,
+        "real_individual_density_iqr_mean_pp": 6.708748323770147,
+        "probability_tv_pct": 45.895857037496704
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "4",
+      "arm": "Q2",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 23.285714285714285,
+      "metrics": {
+        "q9_center_mae_pp": 0.7520409529398213,
+        "q9_center_bias_pp": -0.07691320716897512,
+        "cross_section_w1_pp": 3.5342005225776343,
+        "cross_person_iqr_pp": 2.595110569834482,
+        "real_cross_person_iqr_pp": 6.1089384172498455,
+        "individual_density_mean_mae_pp": 4.626793897936339,
+        "individual_density_iqr_mean_pp": 4.465726101630657,
+        "real_individual_density_iqr_mean_pp": 6.708748323770147,
+        "probability_tv_pct": 46.8297957028343
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "4",
+      "arm": "Q3",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 23.285714285714285,
+      "metrics": {
+        "q9_center_mae_pp": 0.8860883564400466,
+        "q9_center_bias_pp": 0.028164945068953427,
+        "cross_section_w1_pp": 3.434894602540157,
+        "cross_person_iqr_pp": 2.558931997402127,
+        "real_cross_person_iqr_pp": 6.1089384172498455,
+        "individual_density_mean_mae_pp": 4.645821389742573,
+        "individual_density_iqr_mean_pp": 4.483130311633094,
+        "real_individual_density_iqr_mean_pp": 6.708748323770147,
+        "probability_tv_pct": 46.33328408105835
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "8",
+      "arm": "R0",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 22.571428571428573,
+      "metrics": {
+        "q9_center_mae_pp": 0.630856799985521,
+        "q9_center_bias_pp": -0.5740568059245464,
+        "cross_section_w1_pp": 2.338805560713276,
+        "cross_person_iqr_pp": 2.3173802556393865,
+        "real_cross_person_iqr_pp": 5.052699219782328,
+        "individual_density_mean_mae_pp": 3.1493347264295,
+        "individual_density_iqr_mean_pp": 3.7650651509906,
+        "real_individual_density_iqr_mean_pp": 5.4365257429645135,
+        "probability_tv_pct": 40.99563044544625
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "8",
+      "arm": "Q0",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 22.571428571428573,
+      "metrics": {
+        "q9_center_mae_pp": 0.642360823425521,
+        "q9_center_bias_pp": -0.5769339140002726,
+        "cross_section_w1_pp": 2.338413778633289,
+        "cross_person_iqr_pp": 2.418840902100317,
+        "real_cross_person_iqr_pp": 5.052699219782328,
+        "individual_density_mean_mae_pp": 3.1130528167347067,
+        "individual_density_iqr_mean_pp": 3.8881265017582267,
+        "real_individual_density_iqr_mean_pp": 5.4365257429645135,
+        "probability_tv_pct": 41.046078044809875
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "8",
+      "arm": "Q1",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 22.571428571428573,
+      "metrics": {
+        "q9_center_mae_pp": 0.5036663057822686,
+        "q9_center_bias_pp": -0.4191536588723583,
+        "cross_section_w1_pp": 2.320124691841163,
+        "cross_person_iqr_pp": 2.4026930053856654,
+        "real_cross_person_iqr_pp": 5.052699219782328,
+        "individual_density_mean_mae_pp": 3.126906997560482,
+        "individual_density_iqr_mean_pp": 3.74906882048483,
+        "real_individual_density_iqr_mean_pp": 5.4365257429645135,
+        "probability_tv_pct": 41.40395965530048
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "8",
+      "arm": "Q2",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 22.571428571428573,
+      "metrics": {
+        "q9_center_mae_pp": 0.5972987156958044,
+        "q9_center_bias_pp": -0.3692227986721225,
+        "cross_section_w1_pp": 2.338931412606796,
+        "cross_person_iqr_pp": 2.4611608482967497,
+        "real_cross_person_iqr_pp": 5.052699219782328,
+        "individual_density_mean_mae_pp": 3.1199116963557336,
+        "individual_density_iqr_mean_pp": 3.8415790524036177,
+        "real_individual_density_iqr_mean_pp": 5.4365257429645135,
+        "probability_tv_pct": 41.132769962103836
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "8",
+      "arm": "Q3",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 22.571428571428573,
+      "metrics": {
+        "q9_center_mae_pp": 0.47315656459382854,
+        "q9_center_bias_pp": -0.42443196075257905,
+        "cross_section_w1_pp": 2.3018314424507658,
+        "cross_person_iqr_pp": 2.3635070304784493,
+        "real_cross_person_iqr_pp": 5.052699219782328,
+        "individual_density_mean_mae_pp": 3.0602709877135603,
+        "individual_density_iqr_mean_pp": 3.8845190452197538,
+        "real_individual_density_iqr_mean_pp": 5.4365257429645135,
+        "probability_tv_pct": 40.90848255050069
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "16",
+      "arm": "R0",
+      "min_n_per_month_repeat": 20,
+      "mean_n_per_month_repeat": 22.428571428571427,
+      "metrics": {
+        "q9_center_mae_pp": 0.7532420197075113,
+        "q9_center_bias_pp": -0.21930115838419928,
+        "cross_section_w1_pp": 2.97844262855091,
+        "cross_person_iqr_pp": 2.386071675870784,
+        "real_cross_person_iqr_pp": 5.35840050358195,
+        "individual_density_mean_mae_pp": 4.3031461550647965,
+        "individual_density_iqr_mean_pp": 4.064781823712705,
+        "real_individual_density_iqr_mean_pp": 5.4631177191893325,
+        "probability_tv_pct": 48.14044839616356
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "16",
+      "arm": "Q0",
+      "min_n_per_month_repeat": 20,
+      "mean_n_per_month_repeat": 22.428571428571427,
+      "metrics": {
+        "q9_center_mae_pp": 0.6934005994168574,
+        "q9_center_bias_pp": -0.18619176451821,
+        "cross_section_w1_pp": 3.1716974874421155,
+        "cross_person_iqr_pp": 1.9992751875862875,
+        "real_cross_person_iqr_pp": 5.35840050358195,
+        "individual_density_mean_mae_pp": 4.378734373050893,
+        "individual_density_iqr_mean_pp": 3.9461064900619074,
+        "real_individual_density_iqr_mean_pp": 5.4631177191893325,
+        "probability_tv_pct": 48.847319218412835
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "16",
+      "arm": "Q1",
+      "min_n_per_month_repeat": 20,
+      "mean_n_per_month_repeat": 22.428571428571427,
+      "metrics": {
+        "q9_center_mae_pp": 0.616927007461148,
+        "q9_center_bias_pp": -0.2959014442942438,
+        "cross_section_w1_pp": 3.156232506277876,
+        "cross_person_iqr_pp": 2.285378253021468,
+        "real_cross_person_iqr_pp": 5.35840050358195,
+        "individual_density_mean_mae_pp": 4.316613169281205,
+        "individual_density_iqr_mean_pp": 3.9499247972115974,
+        "real_individual_density_iqr_mean_pp": 5.4631177191893325,
+        "probability_tv_pct": 48.639875591685886
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "16",
+      "arm": "Q2",
+      "min_n_per_month_repeat": 20,
+      "mean_n_per_month_repeat": 22.428571428571427,
+      "metrics": {
+        "q9_center_mae_pp": 0.7559452898786455,
+        "q9_center_bias_pp": -0.23590239826418483,
+        "cross_section_w1_pp": 3.186793016822469,
+        "cross_person_iqr_pp": 1.9338471664114036,
+        "real_cross_person_iqr_pp": 5.35840050358195,
+        "individual_density_mean_mae_pp": 4.241543602167991,
+        "individual_density_iqr_mean_pp": 3.988023652934699,
+        "real_individual_density_iqr_mean_pp": 5.4631177191893325,
+        "probability_tv_pct": 47.47741536754074
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "16",
+      "arm": "Q3",
+      "min_n_per_month_repeat": 20,
+      "mean_n_per_month_repeat": 22.428571428571427,
+      "metrics": {
+        "q9_center_mae_pp": 0.6950124277521221,
+        "q9_center_bias_pp": -0.19687553057921628,
+        "cross_section_w1_pp": 2.9819798390747336,
+        "cross_person_iqr_pp": 2.3593292133894725,
+        "real_cross_person_iqr_pp": 5.35840050358195,
+        "individual_density_mean_mae_pp": 4.334029394272265,
+        "individual_density_iqr_mean_pp": 4.008886016353137,
+        "real_individual_density_iqr_mean_pp": 5.4631177191893325,
+        "probability_tv_pct": 48.28912626476946
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "32",
+      "arm": "R0",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 23.285714285714285,
+      "metrics": {
+        "q9_center_mae_pp": 0.8985364402730767,
+        "q9_center_bias_pp": 0.12029086412339447,
+        "cross_section_w1_pp": 2.564897955571311,
+        "cross_person_iqr_pp": 2.813968524515093,
+        "real_cross_person_iqr_pp": 5.667656924208974,
+        "individual_density_mean_mae_pp": 3.859650615901544,
+        "individual_density_iqr_mean_pp": 4.270480336892519,
+        "real_individual_density_iqr_mean_pp": 6.173525276355368,
+        "probability_tv_pct": 43.13018582396956
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "32",
+      "arm": "Q0",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 23.285714285714285,
+      "metrics": {
+        "q9_center_mae_pp": 0.9442797372397426,
+        "q9_center_bias_pp": 0.10808899863096515,
+        "cross_section_w1_pp": 2.6839675222835386,
+        "cross_person_iqr_pp": 2.387637505584018,
+        "real_cross_person_iqr_pp": 5.667656924208974,
+        "individual_density_mean_mae_pp": 3.7103715930531505,
+        "individual_density_iqr_mean_pp": 4.07924123426108,
+        "real_individual_density_iqr_mean_pp": 6.173525276355368,
+        "probability_tv_pct": 43.113063531298295
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "32",
+      "arm": "Q1",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 23.285714285714285,
+      "metrics": {
+        "q9_center_mae_pp": 0.8868214432862095,
+        "q9_center_bias_pp": 0.036442496991837166,
+        "cross_section_w1_pp": 2.6006205224171914,
+        "cross_person_iqr_pp": 2.732289428523056,
+        "real_cross_person_iqr_pp": 5.667656924208974,
+        "individual_density_mean_mae_pp": 3.662896581262888,
+        "individual_density_iqr_mean_pp": 4.293372650209115,
+        "real_individual_density_iqr_mean_pp": 6.173525276355368,
+        "probability_tv_pct": 42.49847855491
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "32",
+      "arm": "Q2",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 23.285714285714285,
+      "metrics": {
+        "q9_center_mae_pp": 0.880492405594671,
+        "q9_center_bias_pp": 0.22486915733613433,
+        "cross_section_w1_pp": 2.7371828593906673,
+        "cross_person_iqr_pp": 2.4543580224023542,
+        "real_cross_person_iqr_pp": 5.667656924208974,
+        "individual_density_mean_mae_pp": 3.7572502930848004,
+        "individual_density_iqr_mean_pp": 3.9780868819959774,
+        "real_individual_density_iqr_mean_pp": 6.173525276355368,
+        "probability_tv_pct": 42.90344118263048
+      }
+    },
+    {
+      "dimension": "news_count",
+      "label": "32",
+      "arm": "Q3",
+      "min_n_per_month_repeat": 22,
+      "mean_n_per_month_repeat": 23.285714285714285,
+      "metrics": {
+        "q9_center_mae_pp": 0.9208540790358831,
+        "q9_center_bias_pp": 0.15472616469884834,
+        "cross_section_w1_pp": 2.653662830999096,
+        "cross_person_iqr_pp": 2.4077120151535096,
+        "real_cross_person_iqr_pp": 5.667656924208974,
+        "individual_density_mean_mae_pp": 3.560900162352216,
+        "individual_density_iqr_mean_pp": 4.2041679094874835,
+        "real_individual_density_iqr_mean_pp": 6.173525276355368,
+        "probability_tv_pct": 42.37485650377532
+      }
+    }
+  ],
+  "technical": {
+    "attempts": 6720,
+    "completed": 6720,
+    "usable": 6704,
+    "unresolved": 0,
+    "reported_cost_usd": 4.499549192000012,
+    "spent_or_reserved_usd": 4.557081125000009,
+    "unknown_fee_reservation_usd": 0.05753193299999637,
+    "errors_by_reason": {
+      "APIConnectionError": 15,
+      "output_shape_error": 1
+    },
+    "usable_fraction": 0.9976190476190476,
+    "normalization_applied": 9,
+    "elapsed_generation_minutes": 64.41875983333334,
+    "provider_counts": {
+      "SiliconFlow": 6705
+    },
+    "model_counts": {
+      "deepseek/deepseek-v3.2": 6705
+    },
+    "automatic_retries": 0,
+    "provider_fallbacks": 0
+  },
+  "source_sha256": {
+    "outputs/sce_media_mechanism_terminal_20261025_v2/round_0001/evaluation/summary.json": "2a2c04c02aae71180b76473a91695b096131dba561b24a4ace7624e4ff7e111e",
+    "outputs/sce_media_mechanism_terminal_20261025_v2/round_0001/evaluation/cases_private.json": "763978c29f8cdc6cedc2808638d2631c111d5416ceb906f22ecd58d3ee7fad72",
+    "outputs/sce_media_mechanism_terminal_20261025_v2/round_0001/evaluation/comparison/summary.json": "98cc0053b12e7169e3b36cc6e5aaa2907d19e9b80272eaf242840eda15c1828a",
+    "outputs/sce_media_mechanism_v3_20261025_v1/protocol.json": "07bbf4859b0280b9875c0c7a3453650c67a2c54872956a8ee08ed41a4d05758f",
+    "outputs/sce_media_mechanism_v3_20261025_v1/manifest.json": "3d6ebb1a292f0fb6376044bf7b0bb662507e71716223118e0b550888dd681053",
+    "outputs/sce_media_mechanism_v3_20261025_v1/a82_reference_private.json": "80f61a95148e72e34023c5f809a5af078529f7fdd03842e0166247a579914bc9",
+    "outputs/sce_media_mechanism_terminal_20261025_v2/latest_receipt.json": "19249f0f699494050fd9485818a36e430991f630cb6c73e7b8ce65dd4601a915"
+  },
+  "limits": [
+    "Same 96 people per month, not nationally calibrated 96-person sample; center metrics are same-support, not official headline errors.",
+    "All seven months were already inspected in A82; exploratory mechanism results.",
+    "A82 is one archived generation, other arms have two; A82 contrasts include generation/hosting variability.",
+    "Fixed allocation and two response generations do not test different news allocation seeds.",
+    "Main 641-person-month and real-previous 524-person-month views must not be mixed.",
+    "Q2 changes outlet and content jointly; R0 to Q0 changes tier counts and content, not pure article count.",
+    "Group centers are descriptive; some group-months have fewer than 20 people."
+  ]
+}

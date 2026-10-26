@@ -1,0 +1,63 @@
+{
+  "transport": "openrouter_locked",
+  "destination": "https://openrouter.ai/api/v1",
+  "model": "deepseek/deepseek-v3.2",
+  "route": "siliconflow/fp8",
+  "expected_provider": "SiliconFlow",
+  "provider_metadata": "data/raw/mcp_checks/2026-10-21_v32_fullperiod_free_v1/deepseek_v32_endpoints.json",
+  "temperature": 0.5,
+  "thinking": "disabled",
+  "max_tokens": 1024,
+  "timeout_s": 120,
+  "retry_max": 0,
+  "q9_postprocessing": "proportional_nonnegative_v1",
+  "price_input_per_mtok": 0.259,
+  "price_output_per_mtok": 0.8,
+  "request_extra_body": {
+    "provider": {
+      "order": [
+        "siliconflow/fp8"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "max_price": {
+        "prompt": 0.259,
+        "completion": 0.8
+      }
+    },
+    "reasoning": {
+      "enabled": false
+    }
+  },
+  "queue_technical_gate": {
+    "planned_calls": 16,
+    "per_month": 4,
+    "minimum_usable_fraction": 0.99
+  },
+  "mechanism": "v32_new2025_validation",
+  "months": [
+    202504,
+    202506,
+    202508,
+    202510
+  ],
+  "n_per_month": 192,
+  "arms": [
+    "deepseek_v32"
+  ],
+  "generation_repeats": [
+    1,
+    2
+  ],
+  "max_workers": 16,
+  "technical_max_workers": 8,
+  "allocation_seed": 20261019,
+  "budget_cap_usd": 6,
+  "source_population": "outputs/sce_v32_new2025_population_20261021_v1",
+  "source_environments": "outputs/sce_v32_new2025_environment_preparation_20261021_v2",
+  "source_household_profiles": "outputs/sce_v32_new2025_household_profiles_20261022_v1",
+  "news_acceptance": "outputs/sce_v32_new2025_news_acceptance_20261021_v1",
+  "source_price_catalog": "outputs/sce_v32_new2025_food_catalog_20261021_v1/catalog.json",
+  "source_policy": "docs/workstreams/20261021_fullperiod/new2025_policy_sources.json",
+  "evaluation_truth": "outputs/sce_v32_new2025_evaluation_truth_20261021_v2/truth_private.json"
+}

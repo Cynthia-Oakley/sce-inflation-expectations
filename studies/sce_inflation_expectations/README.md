@@ -1,5 +1,7 @@
 # SCE 一年期通胀预期 study
 
+**2026-10-26研究包整理说明：**本目录的`study.yaml`及默认P/E/simulation仍是早期20人两步的合成工程示例，不代表后来每月512人的A82/B11或正在运行的个人截止T0。主研究配置以`docs/CURRENT_SIMULATION_CONFIGURATION.md`及各冻结协议为准；新的可移交研究包由`scripts/build_sce_research_package.py`按白名单生成，说明见`submission/package_templates/README.md`。包内一键入口分别完成官方Core干跑、真实月度聚合重算和受控工作区的付费生成；三者不能混称为同一种复现。以下2026-10-03的本地开发记录保留供追溯，不是当前最终提交说明。
+
 队伍：水上挽月。赛道：A。状态：**本地可运行（scripted 已验收；openai 真实 LLM 待用户 API key 与预算确认）**。
 
 目标是模拟家庭对未来一年通胀的点预测与十区间主观概率，再按 SCE 口径聚合；总体主指标拟为个人密度均值的加权中位数。P 用历史可得画像，E 用带发布时间和版本的信息。当前主研究不模拟家庭行为决定实际宏观价格。

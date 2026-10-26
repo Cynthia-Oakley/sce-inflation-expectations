@@ -1,0 +1,4435 @@
+{
+  "measurement": {
+    "status": "completed_measurement_bridge",
+    "new_api_calls": 0,
+    "new_density_fits": 0,
+    "original_scorer_changed": false,
+    "common_person_weighted_mae_pp": 0.03104177573795232,
+    "common_person_n": 96655,
+    "branches": {
+      "beta_closed": {
+        "n": 28319,
+        "weighted_mae_pp": 0.0003804932586740118
+      },
+      "beta_open": {
+        "n": 42335,
+        "weighted_mae_pp": 0.06619529188834293
+      },
+      "two_bin": {
+        "n": 13533,
+        "weighted_mae_pp": 5.083417008665057e-07
+      },
+      "uniform": {
+        "n": 12468,
+        "weighted_mae_pp": 0.0
+      }
+    },
+    "periods": {
+      "all82": {
+        "n_months": 82,
+        "components_mean_absolute_pp": {
+          "our_only_support_effect_pp": 0.0003200076932533682,
+          "density_common_effect_pp": 0.013272463758805406,
+          "official_only_support_effect_pp": 0.0034208530332983994,
+          "aggregation_vintage_effect_pp": 1.5164021799758237e-16,
+          "chart_initial_precision_vintage_effect_pp": 0.023147211423734267
+        },
+        "core": {
+          "total": {
+            "mae_pp": 0.29840671263598517,
+            "mse_pp_squared": 0.17232522274683354,
+            "rmse_pp": 0.41512073273547,
+            "bias_pp": -0.013810829002062078
+          },
+          "common_score_target": {
+            "mae_pp": 0.2899759055196859,
+            "mse_pp_squared": 0.166642515082294,
+            "rmse_pp": 0.4082187098631002,
+            "bias_pp": -0.022894608838782374
+          },
+          "human_measurement_bridge": {
+            "mae_pp": 0.02692818757000942,
+            "mse_pp_squared": 0.0015213862465113853,
+            "rmse_pp": 0.03900495156401794,
+            "bias_pp": 0.009083779836720296
+          },
+          "mse_identity": {
+            "total": 0.17232522274683354,
+            "model_vs_common_human": 0.166642515082294,
+            "measurement_square": 0.0015213862465113853,
+            "cross_term": 0.004161321418028189,
+            "identity_residual": -3.122502256758253e-17
+          },
+          "net_mae_change_when_using_official_target_pp": 0.008430807116299288,
+          "interpretation": "MAE difference is target-definition sensitivity, not a uniquely identified causal share of scoring error",
+          "cox_sensitivity_against_initial": {
+            "mae_pp": 0.2982947008981954,
+            "mse_pp_squared": 0.17230469949463734,
+            "rmse_pp": 0.41509601238103616,
+            "bias_pp": -0.011962097223297349
+          },
+          "ordered_target_replacement_mae_effects_pp": {
+            "our_human_full_pp_to_our_human_common_pp": -0.00032000769325335465,
+            "our_human_common_pp_to_official_human_common_pp": 4.212255281288435e-05,
+            "official_human_common_pp_to_official_human_full_pp": 0.0022103437563267825,
+            "official_human_full_pp_to_official_chart_pp": 5.551115123125783e-17,
+            "official_chart_pp_to_official_initial_pp": 0.0064983485004129204
+          }
+        },
+        "normal": {
+          "total": {
+            "mae_pp": 0.3014219106420097,
+            "mse_pp_squared": 0.1715915869020249,
+            "rmse_pp": 0.4142361487147457,
+            "bias_pp": -0.009208348526508052
+          },
+          "common_score_target": {
+            "mae_pp": 0.2919837117130561,
+            "mse_pp_squared": 0.16567290680174102,
+            "rmse_pp": 0.407029368475717,
+            "bias_pp": -0.018292128363228348
+          },
+          "human_measurement_bridge": {
+            "mae_pp": 0.02692818757000942,
+            "mse_pp_squared": 0.0015213862465113853,
+            "rmse_pp": 0.03900495156401794,
+            "bias_pp": 0.009083779836720296
+          },
+          "mse_identity": {
+            "total": 0.1715915869020249,
+            "model_vs_common_human": 0.16567290680174102,
+            "measurement_square": 0.0015213862465113853,
+            "cross_term": 0.004397293853772536,
+            "identity_residual": -4.7704895589362195e-17
+          },
+          "net_mae_change_when_using_official_target_pp": 0.00943819892895359,
+          "interpretation": "MAE difference is target-definition sensitivity, not a uniquely identified causal share of scoring error",
+          "cox_sensitivity_against_initial": {
+            "mae_pp": 0.3018357625961422,
+            "mse_pp_squared": 0.17224457739713714,
+            "rmse_pp": 0.41502358655519467,
+            "bias_pp": -0.00961296151283198
+          },
+          "ordered_target_replacement_mae_effects_pp": {
+            "our_human_full_pp_to_our_human_common_pp": -0.00032000769325335465,
+            "our_human_common_pp_to_official_human_common_pp": 4.212255281288435e-05,
+            "official_human_common_pp_to_official_human_full_pp": 0.0022103437563267825,
+            "official_human_full_pp_to_official_chart_pp": 1.1102230246251565e-16,
+            "official_chart_pp_to_official_initial_pp": 0.007505740313067166
+          }
+        },
+        "official_fields_empirical_vs_chart": {
+          "mae_pp": 1.5164021799758237e-16,
+          "mse_pp_squared": 7.696203953375725e-32,
+          "rmse_pp": 2.7742033006569157e-16,
+          "bias_pp": -1.0831444142684454e-17
+        },
+        "official_fields_cox_vs_chart": {
+          "mae_pp": 0.0030675452951748313,
+          "mse_pp_squared": 2.8426960927344665e-05,
+          "rmse_pp": 0.005331694001660698,
+          "bias_pp": 0.00027150302002879246
+        }
+      },
+      "year2021": {
+        "n_months": 12,
+        "components_mean_absolute_pp": {
+          "our_only_support_effect_pp": 0.0021867192372313493,
+          "density_common_effect_pp": 0.023812607629492888,
+          "official_only_support_effect_pp": 0.010705331961313883,
+          "aggregation_vintage_effect_pp": 2.590520390792032e-16,
+          "chart_initial_precision_vintage_effect_pp": 0.022554838657379023
+        },
+        "core": {
+          "total": {
+            "mae_pp": 0.5774240096480767,
+            "mse_pp_squared": 0.5438735838630696,
+            "rmse_pp": 0.7374778531339565,
+            "bias_pp": -0.5774240096480767
+          },
+          "common_score_target": {
+            "mae_pp": 0.5866428158389867,
+            "mse_pp_squared": 0.5461244904116793,
+            "rmse_pp": 0.7390023615738175,
+            "bias_pp": -0.5866428158389867
+          },
+          "human_measurement_bridge": {
+            "mae_pp": 0.04320023967911624,
+            "mse_pp_squared": 0.0035775335669829787,
+            "rmse_pp": 0.05981248671458978,
+            "bias_pp": 0.009218806190909978
+          },
+          "mse_identity": {
+            "total": 0.5438735838630696,
+            "model_vs_common_human": 0.5461244904116793,
+            "measurement_square": 0.0035775335669829787,
+            "cross_term": -0.005828440115592536,
+            "identity_residual": -1.5265566588595902e-16
+          },
+          "net_mae_change_when_using_official_target_pp": -0.009218806190909978,
+          "interpretation": "MAE difference is target-definition sensitivity, not a uniquely identified causal share of scoring error",
+          "cox_sensitivity_against_initial": {
+            "mae_pp": 0.574432787902033,
+            "mse_pp_squared": 0.539927087698617,
+            "rmse_pp": 0.7347973106228799,
+            "bias_pp": -0.574432787902033
+          },
+          "ordered_target_replacement_mae_effects_pp": {
+            "our_human_full_pp_to_our_human_common_pp": -0.0021867192372313493,
+            "our_human_common_pp_to_official_human_common_pp": -0.01607725074406352,
+            "official_human_common_pp_to_official_human_full_pp": 0.010705331961313846,
+            "official_human_full_pp_to_official_chart_pp": -1.1102230246251565e-16,
+            "official_chart_pp_to_official_initial_pp": -0.001660168170928844
+          }
+        },
+        "normal": {
+          "total": {
+            "mae_pp": 0.5653153945607152,
+            "mse_pp_squared": 0.5216616719351418,
+            "rmse_pp": 0.7222614983059403,
+            "bias_pp": -0.5653153945607152
+          },
+          "common_score_target": {
+            "mae_pp": 0.5745342007516252,
+            "mse_pp_squared": 0.5243295870488777,
+            "rmse_pp": 0.7241060606353724,
+            "bias_pp": -0.5745342007516252
+          },
+          "human_measurement_bridge": {
+            "mae_pp": 0.04320023967911624,
+            "mse_pp_squared": 0.0035775335669829787,
+            "rmse_pp": 0.05981248671458978,
+            "bias_pp": 0.009218806190909978
+          },
+          "mse_identity": {
+            "total": 0.5216616719351418,
+            "model_vs_common_human": 0.5243295870488777,
+            "measurement_square": 0.0035775335669829787,
+            "cross_term": -0.006245448680718871,
+            "identity_residual": 1.734723475976807e-17
+          },
+          "net_mae_change_when_using_official_target_pp": -0.009218806190909978,
+          "interpretation": "MAE difference is target-definition sensitivity, not a uniquely identified causal share of scoring error",
+          "cox_sensitivity_against_initial": {
+            "mae_pp": 0.5677963237143216,
+            "mse_pp_squared": 0.5265071098272497,
+            "rmse_pp": 0.7256080965833069,
+            "bias_pp": -0.5677963237143216
+          },
+          "ordered_target_replacement_mae_effects_pp": {
+            "our_human_full_pp_to_our_human_common_pp": -0.0021867192372313493,
+            "our_human_common_pp_to_official_human_common_pp": -0.01607725074406352,
+            "official_human_common_pp_to_official_human_full_pp": 0.010705331961313846,
+            "official_human_full_pp_to_official_chart_pp": 0.0,
+            "official_chart_pp_to_official_initial_pp": -0.001660168170928955
+          }
+        },
+        "official_fields_empirical_vs_chart": {
+          "mae_pp": 2.590520390792032e-16,
+          "mse_pp_squared": 1.8078062411314853e-31,
+          "rmse_pp": 4.2518304777254294e-16,
+          "bias_pp": 3.700743415417188e-17
+        },
+        "official_fields_cox_vs_chart": {
+          "mae_pp": 0.002063369856428928,
+          "mse_pp_squared": 1.1086259081160582e-05,
+          "rmse_pp": 0.003329603442027381,
+          "bias_pp": 0.0009509823577987057
+        }
+      }
+    }
+  },
+  "anomaly": {
+    "status": "completed_pre2021_and_rolling_diagnostic",
+    "protocol": {
+      "scope": "Offline measurement decomposition and pre-2021 statistical calibration diagnostics; preserve all frozen scorers, responses and prior results",
+      "new_api_calls": 0,
+      "new_density_fits": 0,
+      "measurement": "Compare original Q9 vectors' frozen scores with official per-person Q9_mean on identical rows and positive original weights; distinguish common-support density gap, support changes, aggregate/chart-vintage gap, and chart/initial-headline gap. Only evaluation reads official derived means.",
+      "aggregation_candidate": "Implement Cox (2009) weighted mid-distribution interpolation from official 2017 Appendix B as a separate sensitivity, not an assertion that it is the correct replacement for continuous Q9 density-mean aggregation. Group equal values before interpolation; do not change the frozen empirical-CDF estimator.",
+      "error_decomposition": "For model S, reconstructed human H and official O, e=S-O=(S-H)+(H-O). Report exact MSE terms and MAE target-change sensitivity; do not call MAE(H,O)/MAE(S,O) the fraction of model error caused by scoring.",
+      "anomaly_year": "All twelve months of 2021, chosen by the user before this comparison",
+      "fixed_training": "2019-01 through 2020-12 only; assert every training SCE outcome was public by the first 2021 reference cutoff",
+      "inner_selection": "First18 pre-2021 months fit; next6 pre-2021 months validate alpha on MAE; larger alpha wins ties; refit all24. No 2021 outcome selects alpha or feature family.",
+      "rolling_training": "Same pre-2021 chosen feature sets and alphas; refit each 2021 month only on earlier rows whose actual SCE first publication date is no later than that month's original shared reference cutoff; label availability checked row by row",
+      "model_families": "Reuse the previously declared convex MAE/MSE and AR/ridge CPI/simulation/dummy-interaction families; no new threshold search; dummy CPI>=4 fixed",
+      "sources": "Frozen Core and tau8 expansion; published SCE anchors; BLS first-release CPI features from prior macro calibration",
+      "limits": [
+        "A simulations and mechanisms have already used these historical periods; statistical-coefficient temporal separation does not create an untouched end-to-end forecast test",
+        "A personal-date simulation and shared macro reference cutoff remain different information scopes; not certified B forecasting",
+        "A high-inflation dummy absent in pre-2021 data has an unestimated effect, not a learned zero response; report support counts",
+        "No automatic scorer or production-configuration promotion based on these results"
+      ]
+    },
+    "new_api_calls": 0,
+    "new_density_fits": 0,
+    "results": {
+      "persistence": {
+        "year2021": {
+          "mae_pp": 0.325,
+          "mse_pp_squared": 0.24083333333333332,
+          "rmse_pp": 0.4907477288111819,
+          "bias_pp": -0.325
+        },
+        "first_half": {
+          "mae_pp": 0.39999999999999997,
+          "mse_pp_squared": 0.39666666666666667,
+          "rmse_pp": 0.6298147875897061,
+          "bias_pp": -0.39999999999999997
+        },
+        "second_half": {
+          "mae_pp": 0.25,
+          "mse_pp_squared": 0.08500000000000006,
+          "rmse_pp": 0.2915475947422651,
+          "bias_pp": -0.25
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.0,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_pure": {
+        "year2021": {
+          "mae_pp": 0.5774240096480767,
+          "mse_pp_squared": 0.5438735838630696,
+          "rmse_pp": 0.7374778531339565,
+          "bias_pp": -0.5774240096480767
+        },
+        "first_half": {
+          "mae_pp": 0.3785406560738953,
+          "mse_pp_squared": 0.26410270631106453,
+          "rmse_pp": 0.5139092393711797,
+          "bias_pp": -0.3785406560738953
+        },
+        "second_half": {
+          "mae_pp": 0.7763073632222581,
+          "mse_pp_squared": 0.8236444614150749,
+          "rmse_pp": 0.9075486000292629,
+          "bias_pp": -0.7763073632222581
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.2524240096480767,
+          "interval_95": [
+            -0.0012203572316202838,
+            0.6190327306186909
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_blend_mae_fixed": {
+        "year2021": {
+          "mae_pp": 0.325,
+          "mse_pp_squared": 0.24083333333333332,
+          "rmse_pp": 0.4907477288111819,
+          "bias_pp": -0.325
+        },
+        "first_half": {
+          "mae_pp": 0.39999999999999997,
+          "mse_pp_squared": 0.39666666666666667,
+          "rmse_pp": 0.6298147875897061,
+          "bias_pp": -0.39999999999999997
+        },
+        "second_half": {
+          "mae_pp": 0.25,
+          "mse_pp_squared": 0.08500000000000006,
+          "rmse_pp": 0.2915475947422651,
+          "bias_pp": -0.25
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.0,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_blend_mae_rolling": {
+        "year2021": {
+          "mae_pp": 0.325,
+          "mse_pp_squared": 0.24083333333333332,
+          "rmse_pp": 0.4907477288111819,
+          "bias_pp": -0.325
+        },
+        "first_half": {
+          "mae_pp": 0.39999999999999997,
+          "mse_pp_squared": 0.39666666666666667,
+          "rmse_pp": 0.6298147875897061,
+          "bias_pp": -0.39999999999999997
+        },
+        "second_half": {
+          "mae_pp": 0.25,
+          "mse_pp_squared": 0.08500000000000006,
+          "rmse_pp": 0.2915475947422651,
+          "bias_pp": -0.25
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.0,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_blend_mse_fixed": {
+        "year2021": {
+          "mae_pp": 0.3576260855644884,
+          "mse_pp_squared": 0.24968063789066627,
+          "rmse_pp": 0.49968053583331246,
+          "bias_pp": -0.3576260855644884
+        },
+        "first_half": {
+          "mae_pp": 0.39722635579687143,
+          "mse_pp_squared": 0.376953597629119,
+          "rmse_pp": 0.6139654694110402,
+          "bias_pp": -0.39722635579687143
+        },
+        "second_half": {
+          "mae_pp": 0.3180258153321052,
+          "mse_pp_squared": 0.12240767815221344,
+          "rmse_pp": 0.3498680867873111,
+          "bias_pp": -0.3180258153321052
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.03262608556448835,
+          "interval_95": [
+            -0.00015773253706559873,
+            0.08001067277451897
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_blend_mse_rolling": {
+        "year2021": {
+          "mae_pp": 0.3822095061543662,
+          "mse_pp_squared": 0.2676850097799291,
+          "rmse_pp": 0.5173828464299228,
+          "bias_pp": -0.3822095061543662
+        },
+        "first_half": {
+          "mae_pp": 0.398100766247158,
+          "mse_pp_squared": 0.37936036769992415,
+          "rmse_pp": 0.615922371488424,
+          "bias_pp": -0.398100766247158
+        },
+        "second_half": {
+          "mae_pp": 0.36631824606157454,
+          "mse_pp_squared": 0.1560096518599341,
+          "rmse_pp": 0.3949805714967941,
+          "bias_pp": -0.36631824606157454
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.05720950615436626,
+          "interval_95": [
+            0.0017695387912068984,
+            0.13341726830789755
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_AR_public_level_fixed": {
+        "year2021": {
+          "mae_pp": 0.4022074636306135,
+          "mse_pp_squared": 0.2966987577318577,
+          "rmse_pp": 0.5447006129350854,
+          "bias_pp": -0.4022074636306135
+        },
+        "first_half": {
+          "mae_pp": 0.4195604048070842,
+          "mse_pp_squared": 0.420409204066234,
+          "rmse_pp": 0.6483897007712522,
+          "bias_pp": -0.4195604048070842
+        },
+        "second_half": {
+          "mae_pp": 0.38485452245414287,
+          "mse_pp_squared": 0.17298831139748141,
+          "rmse_pp": 0.4159186355496486,
+          "bias_pp": -0.38485452245414287
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.07720746363061352,
+          "interval_95": [
+            0.029323213156230283,
+            0.12648640101201766
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_AR_public_level_rolling": {
+        "year2021": {
+          "mae_pp": 0.29375481840297435,
+          "mse_pp_squared": 0.21697819670179616,
+          "rmse_pp": 0.4658091848619949,
+          "bias_pp": -0.2353552015048396
+        },
+        "first_half": {
+          "mae_pp": 0.40284035356022746,
+          "mse_pp_squared": 0.39367833973257493,
+          "rmse_pp": 0.6274379170344864,
+          "bias_pp": -0.40284035356022746
+        },
+        "second_half": {
+          "mae_pp": 0.1846692832457212,
+          "mse_pp_squared": 0.04027805367101731,
+          "rmse_pp": 0.2006939303292885,
+          "bias_pp": -0.06787004944945174
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": -0.031245181597025645,
+          "interval_95": [
+            -0.10243932670048433,
+            0.03584819704439336
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_macro_without_sim_fixed": {
+        "year2021": {
+          "mae_pp": 0.42538117921892754,
+          "mse_pp_squared": 0.32334108615910306,
+          "rmse_pp": 0.5686308874472992,
+          "bias_pp": -0.42538117921892754
+        },
+        "first_half": {
+          "mae_pp": 0.44208004657214395,
+          "mse_pp_squared": 0.4542955671756073,
+          "rmse_pp": 0.674014515552601,
+          "bias_pp": -0.44208004657214395
+        },
+        "second_half": {
+          "mae_pp": 0.4086823118657111,
+          "mse_pp_squared": 0.19238660514259887,
+          "rmse_pp": 0.4386189749003101,
+          "bias_pp": -0.4086823118657111
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.10038117921892753,
+          "interval_95": [
+            0.05122135469546112,
+            0.14976060448751055
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_macro_without_sim_rolling": {
+        "year2021": {
+          "mae_pp": 0.2904599529905261,
+          "mse_pp_squared": 0.22492329322624324,
+          "rmse_pp": 0.47426078609373057,
+          "bias_pp": -0.22047128012252057
+        },
+        "first_half": {
+          "mae_pp": 0.41767175646296456,
+          "mse_pp_squared": 0.41193479087971,
+          "rmse_pp": 0.6418214633990593,
+          "bias_pp": -0.41767175646296456
+        },
+        "second_half": {
+          "mae_pp": 0.16324814951808767,
+          "mse_pp_squared": 0.03791179557277647,
+          "rmse_pp": 0.1947095158762829,
+          "bias_pp": -0.023270803782076577
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": -0.034540047009473884,
+          "interval_95": [
+            -0.13483222754237548,
+            0.05586734216352052
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_macro_plus_sim_fixed": {
+        "year2021": {
+          "mae_pp": 0.42811028381514915,
+          "mse_pp_squared": 0.31787935734548617,
+          "rmse_pp": 0.5638079081970083,
+          "bias_pp": -0.42811028381514915
+        },
+        "first_half": {
+          "mae_pp": 0.4253975358636197,
+          "mse_pp_squared": 0.4284832089321864,
+          "rmse_pp": 0.654586288377771,
+          "bias_pp": -0.4253975358636197
+        },
+        "second_half": {
+          "mae_pp": 0.43082303176667863,
+          "mse_pp_squared": 0.20727550575878584,
+          "rmse_pp": 0.45527519782960485,
+          "bias_pp": -0.43082303176667863
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.1031102838151492,
+          "interval_95": [
+            0.03834918224634035,
+            0.16938642314792524
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_macro_plus_sim_rolling": {
+        "year2021": {
+          "mae_pp": 0.27736171983825014,
+          "mse_pp_squared": 0.2127730705018023,
+          "rmse_pp": 0.46127331431788066,
+          "bias_pp": -0.2409279592357665
+        },
+        "first_half": {
+          "mae_pp": 0.40063506292560547,
+          "mse_pp_squared": 0.3852642681985088,
+          "rmse_pp": 0.6206965991517183,
+          "bias_pp": -0.40063506292560547
+        },
+        "second_half": {
+          "mae_pp": 0.15408837675089485,
+          "mse_pp_squared": 0.040281872805095896,
+          "rmse_pp": 0.20070344492583056,
+          "bias_pp": -0.0812208555459275
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": -0.047638280161749834,
+          "interval_95": [
+            -0.14855356134870001,
+            0.03387102222356024
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_regime_without_sim_fixed": {
+        "year2021": {
+          "mae_pp": 0.42538117921892754,
+          "mse_pp_squared": 0.32334108615910306,
+          "rmse_pp": 0.5686308874472992,
+          "bias_pp": -0.42538117921892754
+        },
+        "first_half": {
+          "mae_pp": 0.44208004657214395,
+          "mse_pp_squared": 0.4542955671756073,
+          "rmse_pp": 0.674014515552601,
+          "bias_pp": -0.44208004657214395
+        },
+        "second_half": {
+          "mae_pp": 0.4086823118657111,
+          "mse_pp_squared": 0.19238660514259887,
+          "rmse_pp": 0.4386189749003101,
+          "bias_pp": -0.4086823118657111
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.10038117921892753,
+          "interval_95": [
+            0.05122135469546112,
+            0.14976060448751055
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_regime_without_sim_rolling": {
+        "year2021": {
+          "mae_pp": 0.28846765234875077,
+          "mse_pp_squared": 0.22973655401026605,
+          "rmse_pp": 0.4793084122047787,
+          "bias_pp": -0.1864122675864717
+        },
+        "first_half": {
+          "mae_pp": 0.41767175646296456,
+          "mse_pp_squared": 0.41193479087971,
+          "rmse_pp": 0.6418214633990593,
+          "bias_pp": -0.41767175646296456
+        },
+        "second_half": {
+          "mae_pp": 0.15926354823453703,
+          "mse_pp_squared": 0.04753831714082197,
+          "rmse_pp": 0.21803283500615675,
+          "bias_pp": 0.04484722129002113
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": -0.03653234765124921,
+          "interval_95": [
+            -0.1578863855628029,
+            0.07268920715455829
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_regime_plus_sim_fixed": {
+        "year2021": {
+          "mae_pp": 0.4281102838151493,
+          "mse_pp_squared": 0.31787935734548617,
+          "rmse_pp": 0.5638079081970083,
+          "bias_pp": -0.4281102838151493
+        },
+        "first_half": {
+          "mae_pp": 0.4253975358636197,
+          "mse_pp_squared": 0.4284832089321864,
+          "rmse_pp": 0.654586288377771,
+          "bias_pp": -0.4253975358636197
+        },
+        "second_half": {
+          "mae_pp": 0.4308230317666788,
+          "mse_pp_squared": 0.20727550575878587,
+          "rmse_pp": 0.4552751978296049,
+          "bias_pp": -0.4308230317666788
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.10311028381514926,
+          "interval_95": [
+            0.03834918224634035,
+            0.16938642314792554
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "Core_regime_plus_sim_rolling": {
+        "year2021": {
+          "mae_pp": 0.2751483118685151,
+          "mse_pp_squared": 0.21372201518042014,
+          "rmse_pp": 0.4623007843173318,
+          "bias_pp": -0.2621605122328075
+        },
+        "first_half": {
+          "mae_pp": 0.40063506292560547,
+          "mse_pp_squared": 0.3852642681985088,
+          "rmse_pp": 0.6206965991517183,
+          "bias_pp": -0.40063506292560547
+        },
+        "second_half": {
+          "mae_pp": 0.14966156081142476,
+          "mse_pp_squared": 0.042179762162331595,
+          "rmse_pp": 0.20537712180847115,
+          "bias_pp": -0.12368596154000959
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": -0.049851688131484884,
+          "interval_95": [
+            -0.14295336688813773,
+            0.021501873051863254
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "CoreNormal_tau8_pure": {
+        "year2021": {
+          "mae_pp": 0.5653153945607152,
+          "mse_pp_squared": 0.5216616719351418,
+          "rmse_pp": 0.7222614983059403,
+          "bias_pp": -0.5653153945607152
+        },
+        "first_half": {
+          "mae_pp": 0.3701894330516737,
+          "mse_pp_squared": 0.2594174108005431,
+          "rmse_pp": 0.509330355271059,
+          "bias_pp": -0.3701894330516737
+        },
+        "second_half": {
+          "mae_pp": 0.7604413560697568,
+          "mse_pp_squared": 0.7839059330697403,
+          "rmse_pp": 0.8853846243693981,
+          "bias_pp": -0.7604413560697568
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.24031539456071524,
+          "interval_95": [
+            -0.009993716146696587,
+            0.5961364983396127
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "CoreNormal_tau8_blend_mae_fixed": {
+        "year2021": {
+          "mae_pp": 0.325,
+          "mse_pp_squared": 0.24083333333333332,
+          "rmse_pp": 0.4907477288111819,
+          "bias_pp": -0.325
+        },
+        "first_half": {
+          "mae_pp": 0.39999999999999997,
+          "mse_pp_squared": 0.39666666666666667,
+          "rmse_pp": 0.6298147875897061,
+          "bias_pp": -0.39999999999999997
+        },
+        "second_half": {
+          "mae_pp": 0.25,
+          "mse_pp_squared": 0.08500000000000006,
+          "rmse_pp": 0.2915475947422651,
+          "bias_pp": -0.25
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.0,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "CoreNormal_tau8_blend_mae_rolling": {
+        "year2021": {
+          "mae_pp": 0.325,
+          "mse_pp_squared": 0.24083333333333332,
+          "rmse_pp": 0.4907477288111819,
+          "bias_pp": -0.325
+        },
+        "first_half": {
+          "mae_pp": 0.39999999999999997,
+          "mse_pp_squared": 0.39666666666666667,
+          "rmse_pp": 0.6298147875897061,
+          "bias_pp": -0.39999999999999997
+        },
+        "second_half": {
+          "mae_pp": 0.25,
+          "mse_pp_squared": 0.08500000000000006,
+          "rmse_pp": 0.2915475947422651,
+          "bias_pp": -0.25
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.0,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "CoreNormal_tau8_blend_mse_fixed": {
+        "year2021": {
+          "mae_pp": 0.35115470683779476,
+          "mse_pp_squared": 0.24688462391598961,
+          "rmse_pp": 0.49687485739971754,
+          "bias_pp": -0.35115470683779476
+        },
+        "first_half": {
+          "mae_pp": 0.39675556931911427,
+          "mse_pp_squared": 0.3796013572072073,
+          "rmse_pp": 0.6161179734492472,
+          "bias_pp": -0.39675556931911427
+        },
+        "second_half": {
+          "mae_pp": 0.3055538443564753,
+          "mse_pp_squared": 0.11416789062477184,
+          "rmse_pp": 0.3378873934090644,
+          "bias_pp": -0.3055538443564753
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.026154706837794788,
+          "interval_95": [
+            -0.001087665301320991,
+            0.06488046834404054
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "CoreNormal_tau8_blend_mse_rolling": {
+        "year2021": {
+          "mae_pp": 0.3791443187967618,
+          "mse_pp_squared": 0.26604922608497655,
+          "rmse_pp": 0.515799598763877,
+          "bias_pp": -0.3791443187967618
+        },
+        "first_half": {
+          "mae_pp": 0.3973342204638946,
+          "mse_pp_squared": 0.3811910534319103,
+          "rmse_pp": 0.6174067163806288,
+          "bias_pp": -0.3973342204638946
+        },
+        "second_half": {
+          "mae_pp": 0.36095441712962906,
+          "mse_pp_squared": 0.15090739873804282,
+          "rmse_pp": 0.3884680150772298,
+          "bias_pp": -0.36095441712962906
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.05414431879676185,
+          "interval_95": [
+            0.0007309471110496736,
+            0.1265291713681811
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "CoreNormal_tau8_macro_plus_sim_fixed": {
+        "year2021": {
+          "mae_pp": 0.42753650853232045,
+          "mse_pp_squared": 0.3181732311735307,
+          "rmse_pp": 0.5640684631970934,
+          "bias_pp": -0.42753650853232045
+        },
+        "first_half": {
+          "mae_pp": 0.4264106529621394,
+          "mse_pp_squared": 0.430703114923642,
+          "rmse_pp": 0.6562797535530424,
+          "bias_pp": -0.4264106529621394
+        },
+        "second_half": {
+          "mae_pp": 0.4286623641025014,
+          "mse_pp_squared": 0.20564334742341928,
+          "rmse_pp": 0.4534791587531,
+          "bias_pp": -0.4286623641025014
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.10253650853232044,
+          "interval_95": [
+            0.03900235955557759,
+            0.16675127967498363
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "CoreNormal_tau8_macro_plus_sim_rolling": {
+        "year2021": {
+          "mae_pp": 0.27672150019360425,
+          "mse_pp_squared": 0.2132902483121837,
+          "rmse_pp": 0.4618335720930038,
+          "bias_pp": -0.24007105254148234
+        },
+        "first_half": {
+          "mae_pp": 0.401571970547362,
+          "mse_pp_squared": 0.3872812548722871,
+          "rmse_pp": 0.6223192547818901,
+          "bias_pp": -0.401571970547362
+        },
+        "second_half": {
+          "mae_pp": 0.15187102983984646,
+          "mse_pp_squared": 0.039299241752080216,
+          "rmse_pp": 0.1982403635793685,
+          "bias_pp": -0.07857013453560269
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": -0.04827849980639576,
+          "interval_95": [
+            -0.14854976586960125,
+            0.032738909440967925
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "CoreNormal_tau8_regime_plus_sim_fixed": {
+        "year2021": {
+          "mae_pp": 0.42753650853232045,
+          "mse_pp_squared": 0.3181732311735307,
+          "rmse_pp": 0.5640684631970934,
+          "bias_pp": -0.42753650853232045
+        },
+        "first_half": {
+          "mae_pp": 0.4264106529621394,
+          "mse_pp_squared": 0.430703114923642,
+          "rmse_pp": 0.6562797535530424,
+          "bias_pp": -0.4264106529621394
+        },
+        "second_half": {
+          "mae_pp": 0.4286623641025014,
+          "mse_pp_squared": 0.20564334742341928,
+          "rmse_pp": 0.4534791587531,
+          "bias_pp": -0.4286623641025014
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": 0.10253650853232044,
+          "interval_95": [
+            0.03900235955557759,
+            0.16675127967498363
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      },
+      "CoreNormal_tau8_regime_plus_sim_rolling": {
+        "year2021": {
+          "mae_pp": 0.27402370982384433,
+          "mse_pp_squared": 0.21362411939041584,
+          "rmse_pp": 0.4621948932976389,
+          "bias_pp": -0.26076285242507385
+        },
+        "first_half": {
+          "mae_pp": 0.401571970547362,
+          "mse_pp_squared": 0.3872812548722871,
+          "rmse_pp": 0.6223192547818901,
+          "bias_pp": -0.401571970547362
+        },
+        "second_half": {
+          "mae_pp": 0.1464754491003267,
+          "mse_pp_squared": 0.039966983908544536,
+          "rmse_pp": 0.19991744273210513,
+          "bias_pp": -0.11995373430278573
+        },
+        "paired_mae_interval": {
+          "mae_difference_pp": -0.050976290176155646,
+          "interval_95": [
+            -0.14235991541991547,
+            0.019939481210001404
+          ],
+          "block_length": 3,
+          "draws": 2000,
+          "seed": 20261026,
+          "interpretation": "conditional retrospective uncertainty; not proof of future performance"
+        }
+      }
+    },
+    "fits": {
+      "Core_blend_mae": {
+        "weight": -0.0,
+        "training_months": [
+          "201901",
+          "201902",
+          "201903",
+          "201904",
+          "201905",
+          "201906",
+          "201907",
+          "201908",
+          "201909",
+          "201910",
+          "201911",
+          "201912",
+          "202001",
+          "202002",
+          "202003",
+          "202004",
+          "202005",
+          "202006",
+          "202007",
+          "202008",
+          "202009",
+          "202010",
+          "202011",
+          "202012"
+        ],
+        "rolling_weights": [
+          {
+            "month": "202101",
+            "weight": -0.0
+          },
+          {
+            "month": "202102",
+            "weight": -0.0
+          },
+          {
+            "month": "202103",
+            "weight": 0.0
+          },
+          {
+            "month": "202104",
+            "weight": 0.0
+          },
+          {
+            "month": "202105",
+            "weight": 0.0
+          },
+          {
+            "month": "202106",
+            "weight": 0.0
+          },
+          {
+            "month": "202107",
+            "weight": 0.0
+          },
+          {
+            "month": "202108",
+            "weight": 0.0
+          },
+          {
+            "month": "202109",
+            "weight": 0.0
+          },
+          {
+            "month": "202110",
+            "weight": 0.0
+          },
+          {
+            "month": "202111",
+            "weight": 0.0
+          },
+          {
+            "month": "202112",
+            "weight": 0.0
+          }
+        ]
+      },
+      "Core_blend_mse": {
+        "weight": 0.1292511184256001,
+        "training_months": [
+          "201901",
+          "201902",
+          "201903",
+          "201904",
+          "201905",
+          "201906",
+          "201907",
+          "201908",
+          "201909",
+          "201910",
+          "201911",
+          "201912",
+          "202001",
+          "202002",
+          "202003",
+          "202004",
+          "202005",
+          "202006",
+          "202007",
+          "202008",
+          "202009",
+          "202010",
+          "202011",
+          "202012"
+        ],
+        "rolling_weights": [
+          {
+            "month": "202101",
+            "weight": 0.1292511184256001
+          },
+          {
+            "month": "202102",
+            "weight": 0.1281529252446288
+          },
+          {
+            "month": "202103",
+            "weight": 0.12752166414891677
+          },
+          {
+            "month": "202104",
+            "weight": 0.12654794665652638
+          },
+          {
+            "month": "202105",
+            "weight": 0.11387702756631234
+          },
+          {
+            "month": "202106",
+            "weight": 0.11387702756631234
+          },
+          {
+            "month": "202107",
+            "weight": 0.399258075367987
+          },
+          {
+            "month": "202108",
+            "weight": 0.3334842326484397
+          },
+          {
+            "month": "202109",
+            "weight": 0.13217373188679346
+          },
+          {
+            "month": "202110",
+            "weight": 0.0512065646673818
+          },
+          {
+            "month": "202111",
+            "weight": 0.0
+          },
+          {
+            "month": "202112",
+            "weight": 0.0
+          }
+        ]
+      },
+      "Core_AR_public_level": {
+        "alpha": 100.0,
+        "mean": [
+          2.683333333333333
+        ],
+        "scale": [
+          0.2173067468400883
+        ],
+        "standardised_coefficients": [
+          -0.012122994985006822
+        ],
+        "coefficients": [
+          -0.055787476280834906
+        ],
+        "intercept": 0.15802972802024035,
+        "validation": [
+          {
+            "alpha": 0,
+            "mae_pp": 0.22491888384166112
+          },
+          {
+            "alpha": 0.1,
+            "mae_pp": 0.22467889819326234
+          },
+          {
+            "alpha": 1,
+            "mae_pp": 0.22263270477007277
+          },
+          {
+            "alpha": 10,
+            "mae_pp": 0.2094055258558827
+          },
+          {
+            "alpha": 100,
+            "mae_pp": 0.18810752590930555
+          }
+        ],
+        "features": [
+          "anchor_level"
+        ],
+        "unidentified_constant_pre2021_columns": [],
+        "n_high_CPI_training": 0,
+        "rolling_fits": [
+          {
+            "month": "202101",
+            "n_training": 24,
+            "alpha": 100.0,
+            "mean": [
+              2.683333333333333
+            ],
+            "scale": [
+              0.2173067468400883
+            ],
+            "standardised_coefficients": [
+              -0.012122994985006822
+            ],
+            "coefficients": [
+              -0.055787476280834906
+            ],
+            "intercept": 0.15802972802024035
+          },
+          {
+            "month": "202102",
+            "n_training": 25,
+            "alpha": 100.0,
+            "mean": [
+              2.6959999999999997
+            ],
+            "scale": [
+              0.22177466041006577
+            ],
+            "standardised_coefficients": [
+              -0.011875116819615105
+            ],
+            "coefficients": [
+              -0.0535458685751464
+            ],
+            "intercept": 0.15235966167859472
+          },
+          {
+            "month": "202103",
+            "n_training": 26,
+            "alpha": 100.0,
+            "mean": [
+              2.7076923076923074
+            ],
+            "scale": [
+              0.22518894105083764
+            ],
+            "standardised_coefficients": [
+              -0.010654463705328012
+            ],
+            "coefficients": [
+              -0.047313441129077066
+            ],
+            "intercept": 0.13964870213411637
+          },
+          {
+            "month": "202104",
+            "n_training": 27,
+            "alpha": 100.0,
+            "mean": [
+              2.722222222222222
+            ],
+            "scale": [
+              0.23306863292670033
+            ],
+            "standardised_coefficients": [
+              -0.0090841711258832
+            ],
+            "coefficients": [
+              -0.0389763779527559
+            ],
+            "intercept": 0.12091717701953923
+          },
+          {
+            "month": "202105",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.739285714285714
+            ],
+            "scale": [
+              0.24544316437573796
+            ],
+            "standardised_coefficients": [
+              -0.005843111538110743
+            ],
+            "coefficients": [
+              -0.023806373067965278
+            ],
+            "intercept": 0.0866410290826049
+          },
+          {
+            "month": "202106",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.739285714285714
+            ],
+            "scale": [
+              0.24544316437573796
+            ],
+            "standardised_coefficients": [
+              -0.005843111538110743
+            ],
+            "coefficients": [
+              -0.023806373067965278
+            ],
+            "intercept": 0.0866410290826049
+          },
+          {
+            "month": "202107",
+            "n_training": 30,
+            "alpha": 100.0,
+            "mean": [
+              2.783333333333333
+            ],
+            "scale": [
+              0.288771343607514
+            ],
+            "standardised_coefficients": [
+              0.02725961230590071
+            ],
+            "coefficients": [
+              0.09439860605750008
+            ],
+            "intercept": -0.1760761201933752
+          },
+          {
+            "month": "202108",
+            "n_training": 31,
+            "alpha": 100.0,
+            "mean": [
+              2.8483870967741933
+            ],
+            "scale": [
+              0.4556958293267175
+            ],
+            "standardised_coefficients": [
+              0.014309021541196577
+            ],
+            "coefficients": [
+              0.031400378542717634
+            ],
+            "intercept": -0.00556946533296665
+          },
+          {
+            "month": "202109",
+            "n_training": 32,
+            "alpha": 100.0,
+            "mean": [
+              2.909375
+            ],
+            "scale": [
+              0.5625607606072431
+            ],
+            "standardised_coefficients": [
+              0.019551760095087974
+            ],
+            "coefficients": [
+              0.03475493042561888
+            ],
+            "intercept": -0.007365125707034889
+          },
+          {
+            "month": "202110",
+            "n_training": 33,
+            "alpha": 100.0,
+            "mean": [
+              2.9787878787878785
+            ],
+            "scale": [
+              0.6790178181968672
+            ],
+            "standardised_coefficients": [
+              0.016230404205854518
+            ],
+            "coefficients": [
+              0.023902766276376042
+            ],
+            "intercept": 0.022738123485825337
+          },
+          {
+            "month": "202111",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.0470588235294116
+            ],
+            "scale": [
+              0.7754449554241317
+            ],
+            "standardised_coefficients": [
+              0.020742006698922084
+            ],
+            "coefficients": [
+              0.026748522321068148
+            ],
+            "intercept": 0.02143685551580414
+          },
+          {
+            "month": "202112",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.0470588235294116
+            ],
+            "scale": [
+              0.7754449554241317
+            ],
+            "standardised_coefficients": [
+              0.020742006698922084
+            ],
+            "coefficients": [
+              0.026748522321068148
+            ],
+            "intercept": 0.02143685551580414
+          }
+        ]
+      },
+      "Core_macro_without_sim": {
+        "alpha": 100.0,
+        "mean": [
+          2.6833333333333336,
+          -1.1375,
+          -0.04166666666666668
+        ],
+        "scale": [
+          0.2173067468400883,
+          0.7058166074366155,
+          0.3729574000100041
+        ],
+        "standardised_coefficients": [
+          -0.012568322098777483,
+          -0.004180563406227236,
+          -0.009681219323435415
+        ],
+        "coefficients": [
+          -0.05783677810991419,
+          -0.005923016492074626,
+          -0.02595797622778293
+        ],
+        "intercept": 0.1557096743257106,
+        "validation": [
+          {
+            "alpha": 0,
+            "mae_pp": 0.34534422584113916
+          },
+          {
+            "alpha": 0.1,
+            "mae_pp": 0.3436272636665092
+          },
+          {
+            "alpha": 1,
+            "mae_pp": 0.32966178739744395
+          },
+          {
+            "alpha": 10,
+            "mae_pp": 0.260534836938868
+          },
+          {
+            "alpha": 100,
+            "mae_pp": 0.19897233044798746
+          }
+        ],
+        "features": [
+          "anchor_level",
+          "cpi_gap",
+          "cpi_change"
+        ],
+        "unidentified_constant_pre2021_columns": [],
+        "n_high_CPI_training": 0,
+        "rolling_fits": [
+          {
+            "month": "202101",
+            "n_training": 24,
+            "alpha": 100.0,
+            "mean": [
+              2.6833333333333336,
+              -1.1375,
+              -0.04166666666666668
+            ],
+            "scale": [
+              0.2173067468400883,
+              0.7058166074366155,
+              0.3729574000100041
+            ],
+            "standardised_coefficients": [
+              -0.012568322098777483,
+              -0.004180563406227236,
+              -0.009681219323435415
+            ],
+            "coefficients": [
+              -0.05783677810991419,
+              -0.005923016492074626,
+              -0.02595797622778293
+            ],
+            "intercept": 0.1557096743257106
+          },
+          {
+            "month": "202102",
+            "n_training": 25,
+            "alpha": 100.0,
+            "mean": [
+              2.696,
+              -1.1560000000000001,
+              -0.03200000000000001
+            ],
+            "scale": [
+              0.2217746604100658,
+              0.6974697126040672,
+              0.36847795049364895
+            ],
+            "standardised_coefficients": [
+              -0.012276497827116484,
+              -0.004201031571985339,
+              -0.009690119607713783
+            ],
+            "coefficients": [
+              -0.05535572821717771,
+              -0.006023245878735583,
+              -0.02629769188287102
+            ],
+            "intercept": 0.14943464489744093
+          },
+          {
+            "month": "202103",
+            "n_training": 26,
+            "alpha": 100.0,
+            "mean": [
+              2.707692307692308,
+              -1.1730769230769231,
+              -0.030769230769230778
+            ],
+            "scale": [
+              0.22518894105083767,
+              0.6892346325441178,
+              0.36137475835527216
+            ],
+            "standardised_coefficients": [
+              -0.011118077346211988,
+              -0.004560408437647307,
+              -0.00973636395920433
+            ],
+            "coefficients": [
+              -0.049372217367024344,
+              -0.006616626939963577,
+              -0.026942567885807858
+            ],
+            "intercept": 0.13663242025619152
+          },
+          {
+            "month": "202104",
+            "n_training": 27,
+            "alpha": 100.0,
+            "mean": [
+              2.7222222222222223,
+              -1.1814814814814816,
+              -0.018518518518518528
+            ],
+            "scale": [
+              0.2330686329267003,
+              0.6777069382126089,
+              0.36007924748849285
+            ],
+            "standardised_coefficients": [
+              -0.009475834993074724,
+              -0.004643307767381815,
+              -0.009004821509365737
+            ],
+            "coefficients": [
+              -0.04065684375492458,
+              -0.006851498052577302,
+              -0.02500788804734854
+            ],
+            "intercept": 0.11693375126244694
+          },
+          {
+            "month": "202105",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676
+            ],
+            "standardised_coefficients": [
+              -0.005907086052908368,
+              -0.0029261725108073715,
+              -0.004845988180417401
+            ],
+            "coefficients": [
+              -0.02406702206570917,
+              -0.00434029827174154,
+              -0.012345449711605882
+            ],
+            "intercept": 0.08249353851760487
+          },
+          {
+            "month": "202106",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676
+            ],
+            "standardised_coefficients": [
+              -0.005907086052908368,
+              -0.0029261725108073715,
+              -0.004845988180417401
+            ],
+            "coefficients": [
+              -0.02406702206570917,
+              -0.00434029827174154,
+              -0.012345449711605882
+            ],
+            "intercept": 0.08249353851760487
+          },
+          {
+            "month": "202107",
+            "n_training": 30,
+            "alpha": 100.0,
+            "mean": [
+              2.7833333333333337,
+              -1.0033333333333332,
+              0.09333333333333332
+            ],
+            "scale": [
+              0.28877134360751394,
+              0.8841128635844836,
+              0.4918897798852458
+            ],
+            "standardised_coefficients": [
+              0.024767840711381894,
+              0.03609363761114455,
+              0.01747592916311503
+            ],
+            "coefficients": [
+              0.08576973186454857,
+              0.04082469455857604,
+              0.03552814040412068
+            ],
+            "intercept": -0.11441426992027352
+          },
+          {
+            "month": "202108",
+            "n_training": 31,
+            "alpha": 100.0,
+            "mean": [
+              2.8483870967741938,
+              -0.9516129032258064,
+              0.1032258064516129
+            ],
+            "scale": [
+              0.4556958293267174,
+              0.9147081211677751,
+              0.48691515520292145
+            ],
+            "standardised_coefficients": [
+              0.010349477841152364,
+              0.032719747448662025,
+              0.01932669991017719
+            ],
+            "coefficients": [
+              0.022711372751520537,
+              0.03577069744050145,
+              0.03969213055634468
+            ],
+            "intercept": 0.049122791701781514
+          },
+          {
+            "month": "202109",
+            "n_training": 32,
+            "alpha": 100.0,
+            "mean": [
+              2.9093750000000003,
+              -0.9031249999999998,
+              0.1
+            ],
+            "scale": [
+              0.5625607606072431,
+              0.9399083648819178,
+              0.4795831523312719
+            ],
+            "standardised_coefficients": [
+              0.014968588254056414,
+              0.03476451513865214,
+              0.018838098185530474
+            ],
+            "coefficients": [
+              0.026607949402476846,
+              0.036987132403082365,
+              0.039280150051055306
+            ],
+            "intercept": 0.04581348615359716
+          },
+          {
+            "month": "202110",
+            "n_training": 33,
+            "alpha": 100.0,
+            "mean": [
+              2.978787878787879,
+              -0.8727272727272727,
+              0.09393939393939393
+            ],
+            "scale": [
+              0.6790178181968672,
+              0.9413957166446024,
+              0.4735036359908996
+            ],
+            "standardised_coefficients": [
+              0.011714316125264985,
+              0.03462306442710152,
+              0.019560526185830644
+            ],
+            "coefficients": [
+              0.017251853797257292,
+              0.036778438455730186,
+              0.041310192148570075
+            ],
+            "intercept": 0.07076667283618396
+          },
+          {
+            "month": "202111",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138
+            ],
+            "standardised_coefficients": [
+              0.015872791139701706,
+              0.036035866985419523,
+              0.01945592351107785
+            ],
+            "coefficients": [
+              0.020469268680740903,
+              0.03825879065662562,
+              0.04170709816799125
+            ],
+            "intercept": 0.06893965712890665
+          },
+          {
+            "month": "202112",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138
+            ],
+            "standardised_coefficients": [
+              0.015872791139701706,
+              0.036035866985419523,
+              0.01945592351107785
+            ],
+            "coefficients": [
+              0.020469268680740903,
+              0.03825879065662562,
+              0.04170709816799125
+            ],
+            "intercept": 0.06893965712890665
+          }
+        ]
+      },
+      "Core_macro_plus_sim": {
+        "alpha": 100.0,
+        "mean": [
+          2.6833333333333336,
+          -1.1375,
+          -0.04166666666666668,
+          -0.1968166681264555
+        ],
+        "scale": [
+          0.2173067468400883,
+          0.7058166074366155,
+          0.3729574000100041,
+          0.15738904853265712
+        ],
+        "standardised_coefficients": [
+          -0.01213516278963344,
+          -0.0038366231886238027,
+          -0.011016226932467033,
+          0.012816855275129916
+        ],
+        "coefficients": [
+          -0.055843469961673414,
+          -0.005435722464164806,
+          -0.029537493912633283,
+          0.08143422553615927
+        ],
+        "intercept": 0.1667937274559617,
+        "validation": [
+          {
+            "alpha": 0,
+            "mae_pp": 0.30078554544413444
+          },
+          {
+            "alpha": 0.1,
+            "mae_pp": 0.30028886019749473
+          },
+          {
+            "alpha": 1,
+            "mae_pp": 0.2942085616574446
+          },
+          {
+            "alpha": 10,
+            "mae_pp": 0.24624550159759898
+          },
+          {
+            "alpha": 100,
+            "mae_pp": 0.1953583023431308
+          }
+        ],
+        "features": [
+          "anchor_level",
+          "cpi_gap",
+          "cpi_change",
+          "sim_gap"
+        ],
+        "unidentified_constant_pre2021_columns": [],
+        "n_high_CPI_training": 0,
+        "rolling_fits": [
+          {
+            "month": "202101",
+            "n_training": 24,
+            "alpha": 100.0,
+            "mean": [
+              2.6833333333333336,
+              -1.1375,
+              -0.04166666666666668,
+              -0.1968166681264555
+            ],
+            "scale": [
+              0.2173067468400883,
+              0.7058166074366155,
+              0.3729574000100041,
+              0.15738904853265712
+            ],
+            "standardised_coefficients": [
+              -0.01213516278963344,
+              -0.0038366231886238027,
+              -0.011016226932467033,
+              0.012816855275129916
+            ],
+            "coefficients": [
+              -0.055843469961673414,
+              -0.005435722464164806,
+              -0.029537493912633283,
+              0.08143422553615927
+            ],
+            "intercept": 0.1667937274559617
+          },
+          {
+            "month": "202102",
+            "n_training": 25,
+            "alpha": 100.0,
+            "mean": [
+              2.696,
+              -1.1560000000000001,
+              -0.03200000000000001,
+              -0.19351546564840905
+            ],
+            "scale": [
+              0.2217746604100658,
+              0.6974697126040672,
+              0.36847795049364895,
+              0.15505486319790146
+            ],
+            "standardised_coefficients": [
+              -0.011901518112652188,
+              -0.003819831932226799,
+              -0.011106832728074183,
+              0.012997360128220486
+            ],
+            "coefficients": [
+              -0.05366491415496271,
+              -0.005476699365145342,
+              -0.03014246229169042,
+              0.08382426619945188
+            ],
+            "intercept": 0.16160627720856052
+          },
+          {
+            "month": "202103",
+            "n_training": 26,
+            "alpha": 100.0,
+            "mean": [
+              2.707692307692308,
+              -1.1730769230769231,
+              -0.030769230769230778,
+              -0.18644128991821157
+            ],
+            "scale": [
+              0.22518894105083767,
+              0.6892346325441178,
+              0.36137475835527216,
+              0.1561038658791877
+            ],
+            "standardised_coefficients": [
+              -0.010884729620163552,
+              -0.004095335922413417,
+              -0.011260187689877842,
+              0.013812038584457002
+            ],
+            "coefficients": [
+              -0.048335986524783485,
+              -0.00594186033179532,
+              -0.031159308804871774,
+              0.08847979841284936
+            ],
+            "intercept": 0.1509847209855297
+          },
+          {
+            "month": "202104",
+            "n_training": 27,
+            "alpha": 100.0,
+            "mean": [
+              2.7222222222222223,
+              -1.1814814814814816,
+              -0.018518518518518528,
+              -0.18008035747960527
+            ],
+            "scale": [
+              0.2330686329267003,
+              0.6777069382126089,
+              0.36007924748849285,
+              0.156581866703326
+            ],
+            "standardised_coefficients": [
+              -0.009416929450301688,
+              -0.004135041008016652,
+              -0.010708002438382814,
+              0.014559452009003134
+            ],
+            "coefficients": [
+              -0.04040410471392474,
+              -0.006101517890494749,
+              -0.029737904955838956,
+              0.09298300189886466
+            ],
+            "intercept": 0.13378864641735463
+          },
+          {
+            "month": "202105",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282,
+              -0.17695377822797695
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676,
+              0.15461623722918033
+            ],
+            "standardised_coefficients": [
+              -0.005929076499607161,
+              -0.002441551673001606,
+              -0.006620674480919073,
+              0.015040241796286272
+            ],
+            "coefficients": [
+              -0.02415661692875913,
+              -0.0036214756537961807,
+              -0.016866571031144913,
+              0.09727465928428225
+            ],
+            "intercept": 0.10085101806118961
+          },
+          {
+            "month": "202106",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282,
+              -0.17695377822797695
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676,
+              0.15461623722918033
+            ],
+            "standardised_coefficients": [
+              -0.005929076499607161,
+              -0.002441551673001606,
+              -0.006620674480919073,
+              0.015040241796286272
+            ],
+            "coefficients": [
+              -0.02415661692875913,
+              -0.0036214756537961807,
+              -0.016866571031144913,
+              0.09727465928428225
+            ],
+            "intercept": 0.10085101806118961
+          },
+          {
+            "month": "202107",
+            "n_training": 30,
+            "alpha": 100.0,
+            "mean": [
+              2.7833333333333337,
+              -1.0033333333333332,
+              0.09333333333333332,
+              -0.1531614657159435
+            ],
+            "scale": [
+              0.28877134360751394,
+              0.8841128635844836,
+              0.4918897798852458,
+              0.17869289951301104
+            ],
+            "standardised_coefficients": [
+              0.022395870379458692,
+              0.03407397433772171,
+              0.012499687595883944,
+              0.04008074888512617
+            ],
+            "coefficients": [
+              0.07755572315339652,
+              0.03854029925497819,
+              0.025411561912914774,
+              0.22429961679707258
+            ],
+            "intercept": -0.05854568356816685
+          },
+          {
+            "month": "202108",
+            "n_training": 31,
+            "alpha": 100.0,
+            "mean": [
+              2.8483870967741938,
+              -0.9516129032258064,
+              0.1032258064516129,
+              -0.1666880115127585
+            ],
+            "scale": [
+              0.4556958293267174,
+              0.9147081211677751,
+              0.48691515520292145,
+              0.190761994118394
+            ],
+            "standardised_coefficients": [
+              0.012040604080597614,
+              0.031951066636625954,
+              0.014333759604845127,
+              0.04155174521593662
+            ],
+            "coefficients": [
+              0.026422458371820945,
+              0.034930341053313455,
+              0.02943789991270973,
+              0.21781983045400571
+            ],
+            "intercept": 0.07511894495869173
+          },
+          {
+            "month": "202109",
+            "n_training": 32,
+            "alpha": 100.0,
+            "mean": [
+              2.9093750000000003,
+              -0.9031249999999998,
+              0.1,
+              -0.1862692323096824
+            ],
+            "scale": [
+              0.5625607606072431,
+              0.9399083648819178,
+              0.4795831523312719,
+              0.21711540023650971
+            ],
+            "standardised_coefficients": [
+              0.01818184727082069,
+              0.0351994034085566,
+              0.01505622446509316,
+              0.031939598026631204
+            ],
+            "coefficients": [
+              0.03231979288991774,
+              0.03744982460388972,
+              0.03139439822250695,
+              0.1471088554374242
+            ],
+            "intercept": 0.057803889152317864
+          },
+          {
+            "month": "202110",
+            "n_training": 33,
+            "alpha": 100.0,
+            "mean": [
+              2.978787878787879,
+              -0.8727272727272727,
+              0.09393939393939393,
+              -0.2194302033548546
+            ],
+            "scale": [
+              0.6790178181968672,
+              0.9413957166446024,
+              0.4735036359908996,
+              0.2844282678558682
+            ],
+            "standardised_coefficients": [
+              0.015725047421400507,
+              0.03548065044901262,
+              0.016783066799218864,
+              0.02584818764315852
+            ],
+            "coefficients": [
+              0.02315851955572888,
+              0.03768941139383508,
+              0.03544443067284371,
+              0.09087770297239543
+            ],
+            "intercept": 0.07445933832027561
+          },
+          {
+            "month": "202111",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353,
+              -0.23338536323017653
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138,
+              0.29145613452157243
+            ],
+            "standardised_coefficients": [
+              0.019641648641036763,
+              0.036984793101188865,
+              0.01703314196608312,
+              0.022798477190370536
+            ],
+            "coefficients": [
+              0.02532952017244565,
+              0.03926625262851362,
+              0.036513451735368394,
+              0.07822267054970182
+            ],
+            "intercept": 0.07372544152671756
+          },
+          {
+            "month": "202112",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353,
+              -0.23338536323017653
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138,
+              0.29145613452157243
+            ],
+            "standardised_coefficients": [
+              0.019641648641036763,
+              0.036984793101188865,
+              0.01703314196608312,
+              0.022798477190370536
+            ],
+            "coefficients": [
+              0.02532952017244565,
+              0.03926625262851362,
+              0.036513451735368394,
+              0.07822267054970182
+            ],
+            "intercept": 0.07372544152671756
+          }
+        ]
+      },
+      "Core_regime_without_sim": {
+        "alpha": 100.0,
+        "mean": [
+          2.6833333333333336,
+          -1.1375,
+          -0.04166666666666668,
+          0.0
+        ],
+        "scale": [
+          0.2173067468400883,
+          0.7058166074366155,
+          0.3729574000100041,
+          1.0
+        ],
+        "standardised_coefficients": [
+          -0.012568322098777483,
+          -0.004180563406227236,
+          -0.009681219323435413,
+          0.0
+        ],
+        "coefficients": [
+          -0.05783677810991419,
+          -0.005923016492074626,
+          -0.025957976227782925,
+          0.0
+        ],
+        "intercept": 0.1557096743257106,
+        "validation": [
+          {
+            "alpha": 0,
+            "mae_pp": 0.34534422584113916
+          },
+          {
+            "alpha": 0.1,
+            "mae_pp": 0.34362726366650936
+          },
+          {
+            "alpha": 1,
+            "mae_pp": 0.32966178739744373
+          },
+          {
+            "alpha": 10,
+            "mae_pp": 0.26053483693886803
+          },
+          {
+            "alpha": 100,
+            "mae_pp": 0.19897233044798746
+          }
+        ],
+        "features": [
+          "anchor_level",
+          "cpi_gap",
+          "cpi_change",
+          "high_cpi"
+        ],
+        "unidentified_constant_pre2021_columns": [
+          "high_cpi"
+        ],
+        "n_high_CPI_training": 0,
+        "rolling_fits": [
+          {
+            "month": "202101",
+            "n_training": 24,
+            "alpha": 100.0,
+            "mean": [
+              2.6833333333333336,
+              -1.1375,
+              -0.04166666666666668,
+              0.0
+            ],
+            "scale": [
+              0.2173067468400883,
+              0.7058166074366155,
+              0.3729574000100041,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.012568322098777483,
+              -0.004180563406227236,
+              -0.009681219323435413,
+              0.0
+            ],
+            "coefficients": [
+              -0.05783677810991419,
+              -0.005923016492074626,
+              -0.025957976227782925,
+              0.0
+            ],
+            "intercept": 0.1557096743257106
+          },
+          {
+            "month": "202102",
+            "n_training": 25,
+            "alpha": 100.0,
+            "mean": [
+              2.696,
+              -1.1560000000000001,
+              -0.03200000000000001,
+              0.0
+            ],
+            "scale": [
+              0.2217746604100658,
+              0.6974697126040672,
+              0.36847795049364895,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.012276497827116484,
+              -0.004201031571985339,
+              -0.009690119607713783,
+              0.0
+            ],
+            "coefficients": [
+              -0.05535572821717771,
+              -0.006023245878735583,
+              -0.02629769188287102,
+              0.0
+            ],
+            "intercept": 0.14943464489744093
+          },
+          {
+            "month": "202103",
+            "n_training": 26,
+            "alpha": 100.0,
+            "mean": [
+              2.707692307692308,
+              -1.1730769230769231,
+              -0.030769230769230778,
+              0.0
+            ],
+            "scale": [
+              0.22518894105083767,
+              0.6892346325441178,
+              0.36137475835527216,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.011118077346211988,
+              -0.004560408437647307,
+              -0.009736363959204332,
+              0.0
+            ],
+            "coefficients": [
+              -0.049372217367024344,
+              -0.006616626939963577,
+              -0.02694256788580786,
+              0.0
+            ],
+            "intercept": 0.13663242025619152
+          },
+          {
+            "month": "202104",
+            "n_training": 27,
+            "alpha": 100.0,
+            "mean": [
+              2.7222222222222223,
+              -1.1814814814814816,
+              -0.018518518518518528,
+              0.0
+            ],
+            "scale": [
+              0.2330686329267003,
+              0.6777069382126089,
+              0.36007924748849285,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.009475834993074724,
+              -0.004643307767381815,
+              -0.009004821509365737,
+              0.0
+            ],
+            "coefficients": [
+              -0.04065684375492458,
+              -0.006851498052577302,
+              -0.02500788804734854,
+              0.0
+            ],
+            "intercept": 0.11693375126244694
+          },
+          {
+            "month": "202105",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282,
+              0.0
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.005907086052908368,
+              -0.0029261725108073715,
+              -0.0048459881804174005,
+              0.0
+            ],
+            "coefficients": [
+              -0.02406702206570917,
+              -0.00434029827174154,
+              -0.01234544971160588,
+              0.0
+            ],
+            "intercept": 0.08249353851760487
+          },
+          {
+            "month": "202106",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282,
+              0.0
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.005907086052908368,
+              -0.0029261725108073715,
+              -0.0048459881804174005,
+              0.0
+            ],
+            "coefficients": [
+              -0.02406702206570917,
+              -0.00434029827174154,
+              -0.01234544971160588,
+              0.0
+            ],
+            "intercept": 0.08249353851760487
+          },
+          {
+            "month": "202107",
+            "n_training": 30,
+            "alpha": 100.0,
+            "mean": [
+              2.7833333333333337,
+              -1.0033333333333332,
+              0.09333333333333332,
+              0.06666666666666667
+            ],
+            "scale": [
+              0.28877134360751394,
+              0.8841128635844836,
+              0.4918897798852458,
+              0.24944382578492943
+            ],
+            "standardised_coefficients": [
+              0.019191387671148218,
+              0.02945614252167132,
+              0.012319072722712916,
+              0.04756586942928178
+            ],
+            "coefficients": [
+              0.066458767796684,
+              0.033317174463729046,
+              0.02504437625353156,
+              0.19068770004471103
+            ],
+            "intercept": -0.07993199377547268
+          },
+          {
+            "month": "202108",
+            "n_training": 31,
+            "alpha": 100.0,
+            "mean": [
+              2.8483870967741938,
+              -0.9516129032258064,
+              0.1032258064516129,
+              0.0967741935483871
+            ],
+            "scale": [
+              0.4556958293267174,
+              0.9147081211677751,
+              0.48691515520292145,
+              0.2956500448358606
+            ],
+            "standardised_coefficients": [
+              0.0045176287809493,
+              0.02731117753237019,
+              0.015557136250186478,
+              0.03779284841865723
+            ],
+            "coefficients": [
+              0.009913693499508252,
+              0.029857805894959132,
+              0.031950404673075035,
+              0.12782967254288466
+            ],
+            "intercept": 0.06837728468749105
+          },
+          {
+            "month": "202109",
+            "n_training": 32,
+            "alpha": 100.0,
+            "mean": [
+              2.9093750000000003,
+              -0.9031249999999998,
+              0.1,
+              0.125
+            ],
+            "scale": [
+              0.5625607606072431,
+              0.9399083648819178,
+              0.4795831523312719,
+              0.33071891388307384
+            ],
+            "standardised_coefficients": [
+              0.008384310200597942,
+              0.02909454774154105,
+              0.01564378047720449,
+              0.0378530985210836
+            ],
+            "coefficients": [
+              0.014903830461882362,
+              0.030954664123237424,
+              0.032619537198418,
+              0.11445701147430178
+            ],
+            "intercept": 0.0607760191321303
+          },
+          {
+            "month": "202110",
+            "n_training": 33,
+            "alpha": 100.0,
+            "mean": [
+              2.978787878787879,
+              -0.8727272727272727,
+              0.09393939393939393,
+              0.15151515151515152
+            ],
+            "scale": [
+              0.6790178181968672,
+              0.9413957166446024,
+              0.4735036359908996,
+              0.3585502898848252
+            ],
+            "standardised_coefficients": [
+              0.005223818064720266,
+              0.029367616356153002,
+              0.017077804302432588,
+              0.034531708482936234
+            ],
+            "coefficients": [
+              0.0076931973281527755,
+              0.031195825344125634,
+              0.03606689158087228,
+              0.09630924714641462
+            ],
+            "intercept": 0.08026802645214012
+          },
+          {
+            "month": "202111",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353,
+              0.17647058823529413
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138,
+              0.38122004108281526
+            ],
+            "standardised_coefficients": [
+              0.008861023797102012,
+              0.030545654476592268,
+              0.017070426044591802,
+              0.03552225085044439
+            ],
+            "coefficients": [
+              0.011427018430025701,
+              0.0324299065861911,
+              0.036593376531617684,
+              0.09318043917509475
+            ],
+            "intercept": 0.07560934616827286
+          },
+          {
+            "month": "202112",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353,
+              0.17647058823529413
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138,
+              0.38122004108281526
+            ],
+            "standardised_coefficients": [
+              0.008861023797102012,
+              0.030545654476592268,
+              0.017070426044591802,
+              0.03552225085044439
+            ],
+            "coefficients": [
+              0.011427018430025701,
+              0.0324299065861911,
+              0.036593376531617684,
+              0.09318043917509475
+            ],
+            "intercept": 0.07560934616827286
+          }
+        ]
+      },
+      "Core_regime_plus_sim": {
+        "alpha": 100.0,
+        "mean": [
+          2.6833333333333336,
+          -1.1375,
+          -0.04166666666666668,
+          0.0,
+          -0.1968166681264555,
+          0.0
+        ],
+        "scale": [
+          0.2173067468400883,
+          0.7058166074366155,
+          0.3729574000100041,
+          1.0,
+          0.15738904853265712,
+          1.0
+        ],
+        "standardised_coefficients": [
+          -0.01213516278963344,
+          -0.0038366231886238027,
+          -0.011016226932467035,
+          0.0,
+          0.012816855275129916,
+          0.0
+        ],
+        "coefficients": [
+          -0.055843469961673414,
+          -0.005435722464164806,
+          -0.02953749391263329,
+          0.0,
+          0.08143422553615927,
+          0.0
+        ],
+        "intercept": 0.1667937274559617,
+        "validation": [
+          {
+            "alpha": 0,
+            "mae_pp": 0.30078554544413455
+          },
+          {
+            "alpha": 0.1,
+            "mae_pp": 0.30028886019749473
+          },
+          {
+            "alpha": 1,
+            "mae_pp": 0.2942085616574445
+          },
+          {
+            "alpha": 10,
+            "mae_pp": 0.24624550159759892
+          },
+          {
+            "alpha": 100,
+            "mae_pp": 0.19535830234313087
+          }
+        ],
+        "features": [
+          "anchor_level",
+          "cpi_gap",
+          "cpi_change",
+          "high_cpi",
+          "sim_gap",
+          "high_cpi_sim_gap"
+        ],
+        "unidentified_constant_pre2021_columns": [
+          "high_cpi",
+          "high_cpi_sim_gap"
+        ],
+        "n_high_CPI_training": 0,
+        "rolling_fits": [
+          {
+            "month": "202101",
+            "n_training": 24,
+            "alpha": 100.0,
+            "mean": [
+              2.6833333333333336,
+              -1.1375,
+              -0.04166666666666668,
+              0.0,
+              -0.1968166681264555,
+              0.0
+            ],
+            "scale": [
+              0.2173067468400883,
+              0.7058166074366155,
+              0.3729574000100041,
+              1.0,
+              0.15738904853265712,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.01213516278963344,
+              -0.0038366231886238027,
+              -0.011016226932467035,
+              0.0,
+              0.012816855275129916,
+              0.0
+            ],
+            "coefficients": [
+              -0.055843469961673414,
+              -0.005435722464164806,
+              -0.02953749391263329,
+              0.0,
+              0.08143422553615927,
+              0.0
+            ],
+            "intercept": 0.1667937274559617
+          },
+          {
+            "month": "202102",
+            "n_training": 25,
+            "alpha": 100.0,
+            "mean": [
+              2.696,
+              -1.1560000000000001,
+              -0.03200000000000001,
+              0.0,
+              -0.19351546564840905,
+              0.0
+            ],
+            "scale": [
+              0.2217746604100658,
+              0.6974697126040672,
+              0.36847795049364895,
+              1.0,
+              0.15505486319790146,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.011901518112652188,
+              -0.003819831932226799,
+              -0.011106832728074183,
+              0.0,
+              0.012997360128220486,
+              0.0
+            ],
+            "coefficients": [
+              -0.05366491415496271,
+              -0.005476699365145342,
+              -0.03014246229169042,
+              0.0,
+              0.08382426619945188,
+              0.0
+            ],
+            "intercept": 0.16160627720856052
+          },
+          {
+            "month": "202103",
+            "n_training": 26,
+            "alpha": 100.0,
+            "mean": [
+              2.707692307692308,
+              -1.1730769230769231,
+              -0.030769230769230778,
+              0.0,
+              -0.18644128991821157,
+              0.0
+            ],
+            "scale": [
+              0.22518894105083767,
+              0.6892346325441178,
+              0.36137475835527216,
+              1.0,
+              0.1561038658791877,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.010884729620163552,
+              -0.004095335922413418,
+              -0.01126018768987784,
+              0.0,
+              0.013812038584457002,
+              0.0
+            ],
+            "coefficients": [
+              -0.048335986524783485,
+              -0.005941860331795321,
+              -0.03115930880487177,
+              0.0,
+              0.08847979841284936,
+              0.0
+            ],
+            "intercept": 0.1509847209855297
+          },
+          {
+            "month": "202104",
+            "n_training": 27,
+            "alpha": 100.0,
+            "mean": [
+              2.7222222222222223,
+              -1.1814814814814816,
+              -0.018518518518518528,
+              0.0,
+              -0.18008035747960527,
+              0.0
+            ],
+            "scale": [
+              0.2330686329267003,
+              0.6777069382126089,
+              0.36007924748849285,
+              1.0,
+              0.156581866703326,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.009416929450301688,
+              -0.004135041008016652,
+              -0.010708002438382816,
+              0.0,
+              0.014559452009003137,
+              0.0
+            ],
+            "coefficients": [
+              -0.04040410471392474,
+              -0.006101517890494749,
+              -0.029737904955838963,
+              0.0,
+              0.09298300189886469,
+              0.0
+            ],
+            "intercept": 0.13378864641735463
+          },
+          {
+            "month": "202105",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282,
+              0.0,
+              -0.17695377822797695,
+              0.0
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676,
+              1.0,
+              0.15461623722918033,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.005929076499607161,
+              -0.002441551673001606,
+              -0.006620674480919073,
+              0.0,
+              0.015040241796286272,
+              0.0
+            ],
+            "coefficients": [
+              -0.02415661692875913,
+              -0.0036214756537961807,
+              -0.016866571031144913,
+              0.0,
+              0.09727465928428225,
+              0.0
+            ],
+            "intercept": 0.10085101806118961
+          },
+          {
+            "month": "202106",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282,
+              0.0,
+              -0.17695377822797695,
+              0.0
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676,
+              1.0,
+              0.15461623722918033,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.005929076499607161,
+              -0.002441551673001606,
+              -0.006620674480919073,
+              0.0,
+              0.015040241796286272,
+              0.0
+            ],
+            "coefficients": [
+              -0.02415661692875913,
+              -0.0036214756537961807,
+              -0.016866571031144913,
+              0.0,
+              0.09727465928428225,
+              0.0
+            ],
+            "intercept": 0.10085101806118961
+          },
+          {
+            "month": "202107",
+            "n_training": 30,
+            "alpha": 100.0,
+            "mean": [
+              2.7833333333333337,
+              -1.0033333333333332,
+              0.09333333333333332,
+              0.06666666666666667,
+              -0.1531614657159435,
+              0.011995393963501666
+            ],
+            "scale": [
+              0.28877134360751394,
+              0.8841128635844836,
+              0.4918897798852458,
+              0.24944382578492943,
+              0.17869289951301104,
+              0.06089443071815701
+            ],
+            "standardised_coefficients": [
+              0.014487493118435477,
+              0.023766428645318107,
+              0.007374963514148446,
+              0.03885620403510479,
+              0.03250907092503911,
+              0.04205023640630409
+            ],
+            "coefficients": [
+              0.05016942795447971,
+              0.026881668194444326,
+              0.014993122068665403,
+              0.15577136019636992,
+              0.18192704362420425,
+              0.6905432222682047
+            ],
+            "intercept": -0.01820354146945767
+          },
+          {
+            "month": "202108",
+            "n_training": 31,
+            "alpha": 100.0,
+            "mean": [
+              2.8483870967741938,
+              -0.9516129032258064,
+              0.1032258064516129,
+              0.0967741935483871,
+              -0.1666880115127585,
+              -0.0068587924681341485
+            ],
+            "scale": [
+              0.4556958293267174,
+              0.9147081211677751,
+              0.48691515520292145,
+              0.2956500448358606,
+              0.190761994118394,
+              0.11938561438081319
+            ],
+            "standardised_coefficients": [
+              0.010004214933050303,
+              0.02648774782854833,
+              0.010457232161286746,
+              0.03747594837214665,
+              0.03656315411787936,
+              0.029992363384606785
+            ],
+            "coefficients": [
+              0.02195371186045603,
+              0.028957595560354675,
+              0.021476497598290414,
+              0.12675779701962364,
+              0.19166896575418949,
+              0.2512225910982701
+            ],
+            "intercept": 0.06808290975298074
+          },
+          {
+            "month": "202109",
+            "n_training": 32,
+            "alpha": 100.0,
+            "mean": [
+              2.9093750000000003,
+              -0.9031249999999998,
+              0.1,
+              0.125,
+              -0.1862692323096824,
+              -0.03143467636020256
+            ],
+            "scale": [
+              0.5625607606072431,
+              0.9399083648819178,
+              0.4795831523312719,
+              0.33071891388307384,
+              0.21711540023650971,
+              0.18036273772226236
+            ],
+            "standardised_coefficients": [
+              0.01367292887786495,
+              0.029807616372951515,
+              0.01141271835951111,
+              0.03960805050262186,
+              0.030538223335891814,
+              0.014138358151177931
+            ],
+            "coefficients": [
+              0.024304803739077046,
+              0.03171332173077989,
+              0.02379716281531879,
+              0.11976348748117062,
+              0.14065434005430152,
+              0.07838846498853526
+            ],
+            "intercept": 0.06299284506328255
+          },
+          {
+            "month": "202110",
+            "n_training": 33,
+            "alpha": 100.0,
+            "mean": [
+              2.978787878787879,
+              -0.8727272727272727,
+              0.09393939393939393,
+              0.15151515151515152,
+              -0.2194302033548546,
+              -0.0692876036462681
+            ],
+            "scale": [
+              0.6790178181968672,
+              0.9413957166446024,
+              0.4735036359908996,
+              0.3585502898848252,
+              0.2844282678558682,
+              0.27820127458874877
+            ],
+            "standardised_coefficients": [
+              0.010967897945540683,
+              0.030372256050180867,
+              0.013616920099202793,
+              0.03739905500601068,
+              0.02622195942715322,
+              0.010915712045143867
+            ],
+            "coefficients": [
+              0.016152592246645236,
+              0.0322630064203352,
+              0.028757794162882627,
+              0.104306302521814,
+              0.09219181913536452,
+              0.039236743473875256
+            ],
+            "intercept": 0.07842386811272795
+          },
+          {
+            "month": "202111",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353,
+              0.17647058823529413,
+              -0.23338536323017653,
+              -0.08765872233654844
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138,
+              0.38122004108281526,
+              0.29145613452157243,
+              0.29369547459914913
+            ],
+            "standardised_coefficients": [
+              0.013996771019827804,
+              0.031604770650081826,
+              0.013990184144249145,
+              0.038386614243375486,
+              0.024214652863704677,
+              0.008056410760536563
+            ],
+            "coefficients": [
+              0.018049986555360633,
+              0.033554355846118114,
+              0.02999035143000255,
+              0.10069411391474163,
+              0.08308163732238205,
+              0.027431170914473134
+            ],
+            "intercept": 0.07746807825126398
+          },
+          {
+            "month": "202112",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353,
+              0.17647058823529413,
+              -0.23338536323017653,
+              -0.08765872233654844
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138,
+              0.38122004108281526,
+              0.29145613452157243,
+              0.29369547459914913
+            ],
+            "standardised_coefficients": [
+              0.013996771019827804,
+              0.031604770650081826,
+              0.013990184144249145,
+              0.038386614243375486,
+              0.024214652863704677,
+              0.008056410760536563
+            ],
+            "coefficients": [
+              0.018049986555360633,
+              0.033554355846118114,
+              0.02999035143000255,
+              0.10069411391474163,
+              0.08308163732238205,
+              0.027431170914473134
+            ],
+            "intercept": 0.07746807825126398
+          }
+        ]
+      },
+      "CoreNormal_tau8_blend_mae": {
+        "weight": -0.0,
+        "training_months": [
+          "201901",
+          "201902",
+          "201903",
+          "201904",
+          "201905",
+          "201906",
+          "201907",
+          "201908",
+          "201909",
+          "201910",
+          "201911",
+          "201912",
+          "202001",
+          "202002",
+          "202003",
+          "202004",
+          "202005",
+          "202006",
+          "202007",
+          "202008",
+          "202009",
+          "202010",
+          "202011",
+          "202012"
+        ],
+        "rolling_weights": [
+          {
+            "month": "202101",
+            "weight": -0.0
+          },
+          {
+            "month": "202102",
+            "weight": -0.0
+          },
+          {
+            "month": "202103",
+            "weight": 0.0
+          },
+          {
+            "month": "202104",
+            "weight": 0.0
+          },
+          {
+            "month": "202105",
+            "weight": 0.0
+          },
+          {
+            "month": "202106",
+            "weight": 0.0
+          },
+          {
+            "month": "202107",
+            "weight": 0.0
+          },
+          {
+            "month": "202108",
+            "weight": 0.0
+          },
+          {
+            "month": "202109",
+            "weight": 0.0
+          },
+          {
+            "month": "202110",
+            "weight": 0.0
+          },
+          {
+            "month": "202111",
+            "weight": 0.0
+          },
+          {
+            "month": "202112",
+            "weight": 0.0
+          }
+        ]
+      },
+      "CoreNormal_tau8_blend_mse": {
+        "weight": 0.10883492039952063,
+        "training_months": [
+          "201901",
+          "201902",
+          "201903",
+          "201904",
+          "201905",
+          "201906",
+          "201907",
+          "201908",
+          "201909",
+          "201910",
+          "201911",
+          "201912",
+          "202001",
+          "202002",
+          "202003",
+          "202004",
+          "202005",
+          "202006",
+          "202007",
+          "202008",
+          "202009",
+          "202010",
+          "202011",
+          "202012"
+        ],
+        "rolling_weights": [
+          {
+            "month": "202101",
+            "weight": 0.10883492039952063
+          },
+          {
+            "month": "202102",
+            "weight": 0.10810585360371235
+          },
+          {
+            "month": "202103",
+            "weight": 0.10748004452729247
+          },
+          {
+            "month": "202104",
+            "weight": 0.10651569581429444
+          },
+          {
+            "month": "202105",
+            "weight": 0.09882256600727414
+          },
+          {
+            "month": "202106",
+            "weight": 0.09882256600727414
+          },
+          {
+            "month": "202107",
+            "weight": 0.3863938598036734
+          },
+          {
+            "month": "202108",
+            "weight": 0.3229713527113173
+          },
+          {
+            "month": "202109",
+            "weight": 0.13199170220364237
+          },
+          {
+            "month": "202110",
+            "weight": 0.05322199256512066
+          },
+          {
+            "month": "202111",
+            "weight": 0.0
+          },
+          {
+            "month": "202112",
+            "weight": 0.0
+          }
+        ]
+      },
+      "CoreNormal_tau8_macro_plus_sim": {
+        "alpha": 100.0,
+        "mean": [
+          2.6833333333333336,
+          -1.1375,
+          -0.04166666666666668,
+          -0.19933133672564296
+        ],
+        "scale": [
+          0.2173067468400883,
+          0.7058166074366155,
+          0.3729574000100041,
+          0.1559575115289895
+        ],
+        "standardised_coefficients": [
+          -0.012267853347271684,
+          -0.0038915809422981605,
+          -0.010937040612064065,
+          0.011554294512267962
+        ],
+        "coefficients": [
+          -0.05645408403402842,
+          -0.005513586534087945,
+          -0.02932517389860261,
+          0.07408616871987111
+        ],
+        "intercept": 0.16709256694015626,
+        "validation": [
+          {
+            "alpha": 0,
+            "mae_pp": 0.30588918361009676
+          },
+          {
+            "alpha": 0.1,
+            "mae_pp": 0.3053427712780979
+          },
+          {
+            "alpha": 1,
+            "mae_pp": 0.299182376511757
+          },
+          {
+            "alpha": 10,
+            "mae_pp": 0.2515123447102917
+          },
+          {
+            "alpha": 100,
+            "mae_pp": 0.19721601073955716
+          }
+        ],
+        "features": [
+          "anchor_level",
+          "cpi_gap",
+          "cpi_change",
+          "sim_gap"
+        ],
+        "unidentified_constant_pre2021_columns": [],
+        "n_high_CPI_training": 0,
+        "rolling_fits": [
+          {
+            "month": "202101",
+            "n_training": 24,
+            "alpha": 100.0,
+            "mean": [
+              2.6833333333333336,
+              -1.1375,
+              -0.04166666666666668,
+              -0.19933133672564296
+            ],
+            "scale": [
+              0.2173067468400883,
+              0.7058166074366155,
+              0.3729574000100041,
+              0.1559575115289895
+            ],
+            "standardised_coefficients": [
+              -0.012267853347271684,
+              -0.0038915809422981605,
+              -0.010937040612064065,
+              0.011554294512267962
+            ],
+            "coefficients": [
+              -0.05645408403402842,
+              -0.005513586534087945,
+              -0.02932517389860261,
+              0.07408616871987111
+            ],
+            "intercept": 0.16709256694015626
+          },
+          {
+            "month": "202102",
+            "n_training": 25,
+            "alpha": 100.0,
+            "mean": [
+              2.696,
+              -1.1560000000000001,
+              -0.03200000000000001,
+              -0.19543098234252199
+            ],
+            "scale": [
+              0.2217746604100658,
+              0.6974697126040672,
+              0.36847795049364895,
+              0.15399656466868555
+            ],
+            "standardised_coefficients": [
+              -0.01204154008152021,
+              -0.003875715946762735,
+              -0.011022632848610063,
+              0.011706986028960083
+            ],
+            "coefficients": [
+              -0.05429628461274684,
+              -0.005556823295297503,
+              -0.029913955051701385,
+              0.07602108562711751
+            ],
+            "intercept": 0.16185872446779972
+          },
+          {
+            "month": "202103",
+            "n_training": 26,
+            "alpha": 100.0,
+            "mean": [
+              2.707692307692308,
+              -1.1730769230769231,
+              -0.030769230769230778,
+              -0.18828313289332016
+            ],
+            "scale": [
+              0.22518894105083767,
+              0.6892346325441178,
+              0.36137475835527216,
+              0.15517771287244675
+            ],
+            "standardised_coefficients": [
+              -0.01101578678610613,
+              -0.004157028395836105,
+              -0.011179322610444924,
+              0.01253900684001411
+            ],
+            "coefficients": [
+              -0.04891797410077635,
+              -0.0060313689991049815,
+              -0.030935538113745036,
+              0.0808041735369624
+            ],
+            "intercept": 0.15118022416481622
+          },
+          {
+            "month": "202104",
+            "n_training": 27,
+            "alpha": 100.0,
+            "mean": [
+              2.7222222222222223,
+              -1.1814814814814816,
+              -0.018518518518518528,
+              -0.1818539840482283
+            ],
+            "scale": [
+              0.2330686329267003,
+              0.6777069382126089,
+              0.36007924748849285,
+              0.15576568623235665
+            ],
+            "standardised_coefficients": [
+              -0.009535380048232903,
+              -0.004198914456186288,
+              -0.01062140989609033,
+              0.0132887999487903
+            ],
+            "coefficients": [
+              -0.04091232667603008,
+              -0.006195767254885346,
+              -0.029497423053878608,
+              0.08531275578221582
+            ],
+            "intercept": 0.13383529133396022
+          },
+          {
+            "month": "202105",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282,
+              -0.17742667978413448
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676,
+              0.15467916064092002
+            ],
+            "standardised_coefficients": [
+              -0.006087441848759787,
+              -0.0025183910646228787,
+              -0.006602946529580781,
+              0.014025807766516855
+            ],
+            "coefficients": [
+              -0.024801839009216793,
+              -0.0037354490704090866,
+              -0.01682140799657106,
+              0.09067677706809561
+            ],
+            "intercept": 0.10136089093219199
+          },
+          {
+            "month": "202106",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282,
+              -0.17742667978413448
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676,
+              0.15467916064092002
+            ],
+            "standardised_coefficients": [
+              -0.006087441848759787,
+              -0.0025183910646228787,
+              -0.006602946529580781,
+              0.014025807766516855
+            ],
+            "coefficients": [
+              -0.024801839009216793,
+              -0.0037354490704090866,
+              -0.01682140799657106,
+              0.09067677706809561
+            ],
+            "intercept": 0.10136089093219199
+          },
+          {
+            "month": "202107",
+            "n_training": 30,
+            "alpha": 100.0,
+            "mean": [
+              2.7833333333333337,
+              -1.0033333333333332,
+              0.09333333333333332,
+              -0.1535029559908491
+            ],
+            "scale": [
+              0.28877134360751394,
+              0.8841128635844836,
+              0.4918897798852458,
+              0.1790784565477868
+            ],
+            "standardised_coefficients": [
+              0.022154914211993934,
+              0.03408837999452792,
+              0.012469923636395765,
+              0.03892828390781888
+            ],
+            "coefficients": [
+              0.07672130459768188,
+              0.03855659316653583,
+              0.025351052504699132,
+              0.21738116721723544
+            ],
+            "intercept": -0.05718662914230886
+          },
+          {
+            "month": "202108",
+            "n_training": 31,
+            "alpha": 100.0,
+            "mean": [
+              2.8483870967741938,
+              -0.9516129032258064,
+              0.1032258064516129,
+              -0.16701848597234456
+            ],
+            "scale": [
+              0.4556958293267174,
+              0.9147081211677751,
+              0.48691515520292145,
+              0.19108818181575488
+            ],
+            "standardised_coefficients": [
+              0.011810583146770883,
+              0.0319373092840439,
+              0.014258733739156135,
+              0.04058297173926633
+            ],
+            "coefficients": [
+              0.02591768979808486,
+              0.03491530089759198,
+              0.029283815849218783,
+              0.21237824000228328
+            ],
+            "intercept": 0.07572145198867099
+          },
+          {
+            "month": "202109",
+            "n_training": 32,
+            "alpha": 100.0,
+            "mean": [
+              2.9093750000000003,
+              -0.9031249999999998,
+              0.1,
+              -0.1856059402051817
+            ],
+            "scale": [
+              0.5625607606072431,
+              0.9399083648819178,
+              0.4795831523312719,
+              0.2146716240373112
+            ],
+            "standardised_coefficients": [
+              0.017972859911788753,
+              0.035132439472857165,
+              0.014918209399081409,
+              0.03169860487572769
+            ],
+            "coefficients": [
+              0.03194829993543874,
+              0.03737857942914564,
+              0.031106616916302055,
+              0.14766089844374722
+            ],
+            "intercept": 0.05885402261784342
+          },
+          {
+            "month": "202110",
+            "n_training": 33,
+            "alpha": 100.0,
+            "mean": [
+              2.978787878787879,
+              -0.8727272727272727,
+              0.09393939393939393,
+              -0.21718539359375635
+            ],
+            "scale": [
+              0.6790178181968672,
+              0.9413957166446024,
+              0.4735036359908996,
+              0.2767666963419528
+            ],
+            "standardised_coefficients": [
+              0.01562881806809023,
+              0.035437365019815655,
+              0.01662817553122162,
+              0.02601582284587997
+            ],
+            "coefficients": [
+              0.02301680110485551,
+              0.03764343133631873,
+              0.03511731329459358,
+              0.0939991089597598
+            ],
+            "intercept": 0.07534600931523458
+          },
+          {
+            "month": "202111",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353,
+              -0.23092807736384952
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138,
+              0.283864921351742
+            ],
+            "standardised_coefficients": [
+              0.019573757928283173,
+              0.036948620095358584,
+              0.016904707243031426,
+              0.02289603237975317
+            ],
+            "coefficients": [
+              0.025241969518748436,
+              0.03922784823940757,
+              0.03623812994972066,
+              0.08065819570352017
+            ],
+            "intercept": 0.07435592401302613
+          },
+          {
+            "month": "202112",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353,
+              -0.23092807736384952
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138,
+              0.283864921351742
+            ],
+            "standardised_coefficients": [
+              0.019573757928283173,
+              0.036948620095358584,
+              0.016904707243031426,
+              0.02289603237975317
+            ],
+            "coefficients": [
+              0.025241969518748436,
+              0.03922784823940757,
+              0.03623812994972066,
+              0.08065819570352017
+            ],
+            "intercept": 0.07435592401302613
+          }
+        ]
+      },
+      "CoreNormal_tau8_regime_plus_sim": {
+        "alpha": 100.0,
+        "mean": [
+          2.6833333333333336,
+          -1.1375,
+          -0.04166666666666668,
+          0.0,
+          -0.19933133672564296,
+          0.0
+        ],
+        "scale": [
+          0.2173067468400883,
+          0.7058166074366155,
+          0.3729574000100041,
+          1.0,
+          0.1559575115289895,
+          1.0
+        ],
+        "standardised_coefficients": [
+          -0.012267853347271684,
+          -0.0038915809422981605,
+          -0.010937040612064065,
+          0.0,
+          0.011554294512267962,
+          0.0
+        ],
+        "coefficients": [
+          -0.05645408403402842,
+          -0.005513586534087945,
+          -0.02932517389860261,
+          0.0,
+          0.07408616871987111,
+          0.0
+        ],
+        "intercept": 0.16709256694015626,
+        "validation": [
+          {
+            "alpha": 0,
+            "mae_pp": 0.3058891836100968
+          },
+          {
+            "alpha": 0.1,
+            "mae_pp": 0.30534277127809784
+          },
+          {
+            "alpha": 1,
+            "mae_pp": 0.29918237651175705
+          },
+          {
+            "alpha": 10,
+            "mae_pp": 0.2515123447102917
+          },
+          {
+            "alpha": 100,
+            "mae_pp": 0.19721601073955716
+          }
+        ],
+        "features": [
+          "anchor_level",
+          "cpi_gap",
+          "cpi_change",
+          "high_cpi",
+          "sim_gap",
+          "high_cpi_sim_gap"
+        ],
+        "unidentified_constant_pre2021_columns": [
+          "high_cpi",
+          "high_cpi_sim_gap"
+        ],
+        "n_high_CPI_training": 0,
+        "rolling_fits": [
+          {
+            "month": "202101",
+            "n_training": 24,
+            "alpha": 100.0,
+            "mean": [
+              2.6833333333333336,
+              -1.1375,
+              -0.04166666666666668,
+              0.0,
+              -0.19933133672564296,
+              0.0
+            ],
+            "scale": [
+              0.2173067468400883,
+              0.7058166074366155,
+              0.3729574000100041,
+              1.0,
+              0.1559575115289895,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.012267853347271684,
+              -0.0038915809422981605,
+              -0.010937040612064065,
+              0.0,
+              0.011554294512267962,
+              0.0
+            ],
+            "coefficients": [
+              -0.05645408403402842,
+              -0.005513586534087945,
+              -0.02932517389860261,
+              0.0,
+              0.07408616871987111,
+              0.0
+            ],
+            "intercept": 0.16709256694015626
+          },
+          {
+            "month": "202102",
+            "n_training": 25,
+            "alpha": 100.0,
+            "mean": [
+              2.696,
+              -1.1560000000000001,
+              -0.03200000000000001,
+              0.0,
+              -0.19543098234252199,
+              0.0
+            ],
+            "scale": [
+              0.2217746604100658,
+              0.6974697126040672,
+              0.36847795049364895,
+              1.0,
+              0.15399656466868555,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.01204154008152021,
+              -0.003875715946762735,
+              -0.011022632848610063,
+              0.0,
+              0.011706986028960083,
+              0.0
+            ],
+            "coefficients": [
+              -0.05429628461274684,
+              -0.005556823295297503,
+              -0.029913955051701385,
+              0.0,
+              0.07602108562711751,
+              0.0
+            ],
+            "intercept": 0.16185872446779972
+          },
+          {
+            "month": "202103",
+            "n_training": 26,
+            "alpha": 100.0,
+            "mean": [
+              2.707692307692308,
+              -1.1730769230769231,
+              -0.030769230769230778,
+              0.0,
+              -0.18828313289332016,
+              0.0
+            ],
+            "scale": [
+              0.22518894105083767,
+              0.6892346325441178,
+              0.36137475835527216,
+              1.0,
+              0.15517771287244675,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.01101578678610613,
+              -0.0041570283958361045,
+              -0.011179322610444922,
+              0.0,
+              0.01253900684001411,
+              0.0
+            ],
+            "coefficients": [
+              -0.04891797410077635,
+              -0.006031368999104981,
+              -0.03093553811374503,
+              0.0,
+              0.0808041735369624,
+              0.0
+            ],
+            "intercept": 0.15118022416481622
+          },
+          {
+            "month": "202104",
+            "n_training": 27,
+            "alpha": 100.0,
+            "mean": [
+              2.7222222222222223,
+              -1.1814814814814816,
+              -0.018518518518518528,
+              0.0,
+              -0.1818539840482283,
+              0.0
+            ],
+            "scale": [
+              0.2330686329267003,
+              0.6777069382126089,
+              0.36007924748849285,
+              1.0,
+              0.15576568623235665,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.009535380048232903,
+              -0.004198914456186288,
+              -0.01062140989609033,
+              0.0,
+              0.0132887999487903,
+              0.0
+            ],
+            "coefficients": [
+              -0.04091232667603008,
+              -0.006195767254885346,
+              -0.029497423053878608,
+              0.0,
+              0.08531275578221582,
+              0.0
+            ],
+            "intercept": 0.13383529133396022
+          },
+          {
+            "month": "202105",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282,
+              0.0,
+              -0.17742667978413448,
+              0.0
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676,
+              1.0,
+              0.15467916064092002,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.006087441848759787,
+              -0.0025183910646228787,
+              -0.006602946529580781,
+              0.0,
+              0.014025807766516858,
+              0.0
+            ],
+            "coefficients": [
+              -0.024801839009216793,
+              -0.0037354490704090866,
+              -0.01682140799657106,
+              0.0,
+              0.09067677706809564,
+              0.0
+            ],
+            "intercept": 0.101360890932192
+          },
+          {
+            "month": "202106",
+            "n_training": 28,
+            "alpha": 100.0,
+            "mean": [
+              2.7392857142857143,
+              -1.1607142857142858,
+              0.014285714285714282,
+              0.0,
+              -0.17742667978413448,
+              0.0
+            ],
+            "scale": [
+              0.24544316437573796,
+              0.6741869631077791,
+              0.39253233325811676,
+              1.0,
+              0.15467916064092002,
+              1.0
+            ],
+            "standardised_coefficients": [
+              -0.006087441848759787,
+              -0.0025183910646228787,
+              -0.006602946529580781,
+              0.0,
+              0.014025807766516858,
+              0.0
+            ],
+            "coefficients": [
+              -0.024801839009216793,
+              -0.0037354490704090866,
+              -0.01682140799657106,
+              0.0,
+              0.09067677706809564,
+              0.0
+            ],
+            "intercept": 0.101360890932192
+          },
+          {
+            "month": "202107",
+            "n_training": 30,
+            "alpha": 100.0,
+            "mean": [
+              2.7833333333333337,
+              -1.0033333333333332,
+              0.09333333333333332,
+              0.06666666666666667,
+              -0.1535029559908491,
+              0.012095278474343107
+            ],
+            "scale": [
+              0.28877134360751394,
+              0.8841128635844836,
+              0.4918897798852458,
+              0.24944382578492943,
+              0.1790784565477868,
+              0.0614313480996982
+            ],
+            "standardised_coefficients": [
+              0.014279816959808359,
+              0.023756223995737433,
+              0.007356411492864078,
+              0.03898730851013019,
+              0.03140139135257442,
+              0.042162518195287484
+            ],
+            "coefficients": [
+              0.04945025632189077,
+              0.026870125946841118,
+              0.014955406259061275,
+              0.15629694736860342,
+              0.17534991063648692,
+              0.6863355517912625
+            ],
+            "intercept": -0.017210511481676613
+          },
+          {
+            "month": "202108",
+            "n_training": 31,
+            "alpha": 100.0,
+            "mean": [
+              2.8483870967741938,
+              -0.9516129032258064,
+              0.1032258064516129,
+              0.0967741935483871,
+              -0.16701848597234456,
+              -0.006762130038287593
+            ],
+            "scale": [
+              0.4556958293267174,
+              0.9147081211677751,
+              0.48691515520292145,
+              0.2956500448358606,
+              0.19108818181575488,
+              0.11966674717809495
+            ],
+            "standardised_coefficients": [
+              0.009803350422921542,
+              0.026453664620882174,
+              0.010392413867486157,
+              0.03753556397748853,
+              0.035574631525209906,
+              0.030223576383136715
+            ],
+            "coefficients": [
+              0.021512925491123804,
+              0.028920334266967836,
+              0.0213433772936378,
+              0.12695943948977778,
+              0.1861686640543295,
+              0.25256453522678485
+            ],
+            "intercept": 0.0684266895457999
+          },
+          {
+            "month": "202109",
+            "n_training": 32,
+            "alpha": 100.0,
+            "mean": [
+              2.9093750000000003,
+              -0.9031249999999998,
+              0.1,
+              0.125,
+              -0.1856059402051817,
+              -0.03035759539406402
+            ],
+            "scale": [
+              0.5625607606072431,
+              0.9399083648819178,
+              0.4795831523312719,
+              0.33071891388307384,
+              0.2146716240373112,
+              0.17644192203620515
+            ],
+            "standardised_coefficients": [
+              0.013597748112087438,
+              0.02975437295890782,
+              0.011271713504687593,
+              0.03961686522561352,
+              0.03014352038410582,
+              0.014978339194045235
+            ],
+            "coefficients": [
+              0.024171163480029543,
+              0.03165667427871643,
+              0.023503147368491503,
+              0.11979014069821275,
+              0.14041688331787483,
+              0.084891045286685
+            ],
+            "intercept": 0.06333216853841689
+          },
+          {
+            "month": "202110",
+            "n_training": 33,
+            "alpha": 100.0,
+            "mean": [
+              2.978787878787879,
+              -0.8727272727272727,
+              0.09393939393939393,
+              0.15151515151515152,
+              -0.21718539359375635,
+              -0.06664154407994527
+            ],
+            "scale": [
+              0.6790178181968672,
+              0.9413957166446024,
+              0.4735036359908996,
+              0.3585502898848252,
+              0.2767666963419528,
+              0.26891850673344725
+            ],
+            "standardised_coefficients": [
+              0.010972250955115871,
+              0.030345350524500093,
+              0.01344961112014293,
+              0.03741820163021318,
+              0.026234390236089762,
+              0.011555824940872934
+            ],
+            "coefficients": [
+              0.016159002990897498,
+              0.03223442595708785,
+              0.028404451619462163,
+              0.10435970262981181,
+              0.09478882605035853,
+              0.04297147519239759
+            ],
+            "intercept": 0.07890707517617634
+          },
+          {
+            "month": "202111",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353,
+              0.17647058823529413,
+              -0.23092807736384952,
+              -0.08481198812985641
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138,
+              0.38122004108281526,
+              0.283864921351742,
+              0.28475539344089384
+            ],
+            "standardised_coefficients": [
+              0.014009441520847864,
+              0.03158332740779412,
+              0.013846881636689656,
+              0.038410665002792575,
+              0.02418343070738553,
+              0.008569043961998422
+            ],
+            "coefficients": [
+              0.018066326207751733,
+              0.03353158984695354,
+              0.029683158006513815,
+              0.10075720283144385,
+              0.08519344550297364,
+              0.0300926484954431
+            ],
+            "intercept": 0.0778480085937886
+          },
+          {
+            "month": "202112",
+            "n_training": 34,
+            "alpha": 100.0,
+            "mean": [
+              3.047058823529412,
+              -0.8441176470588234,
+              0.09411764705882353,
+              0.17647058823529413,
+              -0.23092807736384952,
+              -0.08481198812985641
+            ],
+            "scale": [
+              0.7754449554241317,
+              0.9418977015986485,
+              0.4664895033625138,
+              0.38122004108281526,
+              0.283864921351742,
+              0.28475539344089384
+            ],
+            "standardised_coefficients": [
+              0.014009441520847864,
+              0.03158332740779412,
+              0.013846881636689656,
+              0.038410665002792575,
+              0.02418343070738553,
+              0.008569043961998422
+            ],
+            "coefficients": [
+              0.018066326207751733,
+              0.03353158984695354,
+              0.029683158006513815,
+              0.10075720283144385,
+              0.08519344550297364,
+              0.0300926484954431
+            ],
+            "intercept": 0.0778480085937886
+          }
+        ]
+      }
+    },
+    "rolling_publication_audit": [
+      {
+        "month": "202101",
+        "as_of": "2021-01-13T23:59:59-05:00",
+        "n_training": 24,
+        "last_training_month": "202012",
+        "last_training_label_published_at": "2021-01-11",
+        "high_CPI_training_n": 0
+      },
+      {
+        "month": "202102",
+        "as_of": "2021-02-10T23:59:59-05:00",
+        "n_training": 25,
+        "last_training_month": "202101",
+        "last_training_label_published_at": "2021-02-08",
+        "high_CPI_training_n": 0
+      },
+      {
+        "month": "202103",
+        "as_of": "2021-03-10T23:59:59-05:00",
+        "n_training": 26,
+        "last_training_month": "202102",
+        "last_training_label_published_at": "2021-03-08",
+        "high_CPI_training_n": 0
+      },
+      {
+        "month": "202104",
+        "as_of": "2021-04-13T23:59:59-04:00",
+        "n_training": 27,
+        "last_training_month": "202103",
+        "last_training_label_published_at": "2021-04-12",
+        "high_CPI_training_n": 0
+      },
+      {
+        "month": "202105",
+        "as_of": "2021-05-12T23:59:59-04:00",
+        "n_training": 28,
+        "last_training_month": "202104",
+        "last_training_label_published_at": "2021-05-10",
+        "high_CPI_training_n": 0
+      },
+      {
+        "month": "202106",
+        "as_of": "2021-06-10T23:59:59-04:00",
+        "n_training": 28,
+        "last_training_month": "202104",
+        "last_training_label_published_at": "2021-05-10",
+        "high_CPI_training_n": 0
+      },
+      {
+        "month": "202107",
+        "as_of": "2021-07-13T23:59:59-04:00",
+        "n_training": 30,
+        "last_training_month": "202106",
+        "last_training_label_published_at": "2021-07-12",
+        "high_CPI_training_n": 2
+      },
+      {
+        "month": "202108",
+        "as_of": "2021-08-11T23:59:59-04:00",
+        "n_training": 31,
+        "last_training_month": "202107",
+        "last_training_label_published_at": "2021-08-09",
+        "high_CPI_training_n": 3
+      },
+      {
+        "month": "202109",
+        "as_of": "2021-09-14T23:59:59-04:00",
+        "n_training": 32,
+        "last_training_month": "202108",
+        "last_training_label_published_at": "2021-09-13",
+        "high_CPI_training_n": 4
+      },
+      {
+        "month": "202110",
+        "as_of": "2021-10-13T23:59:59-04:00",
+        "n_training": 33,
+        "last_training_month": "202109",
+        "last_training_label_published_at": "2021-10-12",
+        "high_CPI_training_n": 5
+      },
+      {
+        "month": "202111",
+        "as_of": "2021-11-10T23:59:59-05:00",
+        "n_training": 34,
+        "last_training_month": "202110",
+        "last_training_label_published_at": "2021-11-08",
+        "high_CPI_training_n": 6
+      },
+      {
+        "month": "202112",
+        "as_of": "2021-12-10T23:59:59-05:00",
+        "n_training": 34,
+        "last_training_month": "202110",
+        "last_training_label_published_at": "2021-11-08",
+        "high_CPI_training_n": 6
+      }
+    ],
+    "fixed_training_months": [
+      "201901",
+      "201902",
+      "201903",
+      "201904",
+      "201905",
+      "201906",
+      "201907",
+      "201908",
+      "201909",
+      "201910",
+      "201911",
+      "201912",
+      "202001",
+      "202002",
+      "202003",
+      "202004",
+      "202005",
+      "202006",
+      "202007",
+      "202008",
+      "202009",
+      "202010",
+      "202011",
+      "202012"
+    ],
+    "warning": "Statistical coefficients exclude future labels; A simulation/configuration and historical periods are not untouched and not certified common-cutoff forecasts"
+  }
+}

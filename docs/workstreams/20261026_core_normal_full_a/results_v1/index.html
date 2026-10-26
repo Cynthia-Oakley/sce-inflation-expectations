@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Core＋Normal扩展是否改善A82</title>
+<style>
+:root{--ink:#222;--muted:#555;--blue:#1764AB;--orange:#B75308;--gray:#777;--paper:#faf9f5;--rule:#d8dce0}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.72 "Times New Roman","Kaiti SC","STKaiti","KaiTi",serif}
+main{max-width:1120px;margin:0 auto;padding:34px 26px 60px}header{border-bottom:2px solid var(--ink);padding-bottom:20px}
+.eyebrow{font-size:14px;letter-spacing:.04em;color:var(--muted)}h1{font-size:31px;line-height:1.3;margin:8px 0 12px}h2{font-size:24px;margin:36px 0 10px;line-height:1.4}h3{font-size:19px;margin:22px 0 6px}
+p{margin:10px 0}.lead{font-size:20px;max-width:940px}.decision{margin:22px 0;padding:16px 20px;border-left:5px solid var(--orange);background:#f2ece3}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0}
+.metric{padding:14px 16px;background:#fff;border-top:3px solid var(--blue)}.metric:nth-child(2){border-color:var(--orange)}.metric:nth-child(3){border-color:var(--gray)}
+.metric .label{font-size:15px;color:var(--muted)}.metric strong{display:block;font:600 24px/1.35 "Times New Roman","Kaiti SC",serif;margin-top:3px}
+.delta{font-size:15px;color:var(--muted)}figure{margin:18px 0 26px}figure img{display:block;width:100%;height:auto;background:#fff}figcaption{font-size:14px;color:var(--muted);margin-top:7px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}.split figure{margin:12px 0}
+.callout{padding:13px 16px;background:#eef2f5;border-left:4px solid var(--blue);margin:15px 0}
+.note{font-size:15px;color:var(--muted)}.nums{font-variant-numeric:tabular-nums}.key{color:var(--orange);font-weight:bold}
+ul{padding-left:1.4em}li{margin:7px 0}details{margin-top:24px;border-top:1px solid var(--rule);padding-top:12px}summary{cursor:pointer;font-weight:bold}
+code{font-size:.9em;overflow-wrap:anywhere}@media(max-width:720px){main{padding:22px 16px}h1{font-size:26px}.metrics,.split{grid-template-columns:1fr}body{font-size:17px}}
+</style></head><body><main>
+<header><div class="eyebrow">SCE · A82回顾性重建 · 2019-01—2025-10 · 离线统计扩展</div>
+<h1>Core＋Normal后全期Q9 MAE上升 0.003 pp：0.298 → 0.301 pp</h1>
+<p class="lead">主指标先看公开SCE全国Q9中位数 MAE；辅助看同一全波次真人分布上的Q9 W1与跨人IQR。当前结论只描述这82个月，不把统计扩展当作新增LLM证据。</p></header>
+<div class="metrics">
+<div class="metric"><span class="label">全期公开SCE目标 MAE（pp）</span><strong>0.298 → 0.301</strong><span class="delta">选定 τ=8；变化 +0.003 · 历史基线 0.223</span></div>
+<div class="metric"><span class="label">2021年公开SCE目标 MAE（pp）</span><strong>0.577 → 0.565</strong><span class="delta">历史基线 0.325 · 扩展后变化 -0.012</span></div>
+<div class="metric"><span class="label">同全波次Q9 W1（pp）</span><strong>2.197 → 2.194</strong><span class="delta">越低越好；月均绝对IQR差 3.014 → 3.010 pp</span></div>
+</div>
+<div class="decision"><strong>一句话判断：</strong>全期主MAE上升 0.003 pp；同全波次支持下 W1 仅变化 -0.003 pp，月均绝对IQR差仅变化 -0.003 pp。这些分布指标变化很小，不据此称为显著或实质改善。2021年MAE降低 0.012 pp，但不能替代全期结果。</div>
+<h2>1．82个月水平与2021年细节</h2>
+<p>全期曲线同时显示公开SCE全国真值、原A82 T0 Core估计、选定 τ=8 的Core＋Normal估计，以及冻结的公开历史基线。原T0以每月约512份已有Core回答和原设计权重汇总形成；扩展保留Core原始调查权重，只对Normal与明确允许的缺失字段作统计预测。</p>
+<figure><img src="figures/q9_levels_all_82.png" alt="82个月Q9全国中位数，实际SCE、原T0、Core加Normal及基线"><figcaption>完整82月序列；浅橙区标出2021年。目标为纽约联储SCE公开全国Q9指标，单位百分比。</figcaption></figure>
+<figure><img src="figures/q9_levels_2021.png" alt="2021年Q9全国中位数逐月曲线"><figcaption>2021年12个月放大；同样展示真人目标、原Core估计、选定τ扩展与公开历史基线。</figcaption></figure>
+<h2>2．逐年主指标：全国Q9中位数 MAE</h2>
+<p>全期 MAE：原T0 0.298 pp，扩展后 0.301 pp，公开历史基线 0.223 pp。逐年原T0→扩展：2019年 0.204→0.208 pp；2020年 0.231→0.239 pp；2021年 0.577→0.565 pp；2022年 0.418→0.426 pp；2023年 0.278→0.285 pp；2024年 0.100→0.111 pp；2025年 0.276→0.270 pp。2025年只含1—10月。</p>
+<figure><img src="figures/q9_yearly_mae.png" alt="逐年Q9全国中位数MAE比较"><figcaption>逐年平均绝对误差，按每月全国中位数等月计；数值越低越好。主结果来自冻结SCE官方月目标。</figcaption></figure>
+<h2>3．分布辅助指标：同一全波次真人支持</h2>
+<p>扩展前后均与同月同一份全波次、有效且正权重的真人Q9均值分布比较；W1由经验CDF差的绝对值精确积分。右图把真人月均IQR作为参照，并直接显示原T0与扩展的平均IQR；月均绝对IQR差为 3.014 → 3.010 pp。先前的同名单 W1 2.219 pp 来自另一支持口径，与本次全波次支持不同，不能直接比较。</p>
+<figure><img src="figures/q9_w1_iqr_full_wave.png" alt="同一全波次真人分布支持上的Q9 W1与IQR"><figcaption>2019-01—2025-10，82个月等权。真人IQR是每月完整波次真人Q9分布IQR的等月平均；IQR越接近该线，宽度越接近。</figcaption></figure>
+<h2>4．τ敏感性与选择边界</h2>
+<p>τ候选为0、8、24。最终取值 τ=8 来自封存预测包：在201901—202212的LLM回答遮蔽留出比较中，先最小化月/种子Q9中位数绝对误差，再以W1打破平局；偏好更小τ。对应中心MAE为 τ0 0.177979 / τ8 0.177573 / τ24 0.180194 pp；τ=8相对τ=0仅差 0.000406 pp。选择在读取真人全波次真值之前完成，差异很小，不把τ=8称为已确认优越参数。</p>
+<figure><img src="figures/tau_sensitivity.png" alt="三个tau候选的全国Q9 MAE和全波次W1敏感性"><figcaption>空心圆标出早期LLM留出所选值。真人目标上的三条曲线仅作固定参数敏感性展示，不用于改选τ；前48月及后34月均是已被查看的历史数据，不称未触碰盲测。</figcaption></figure>
+<div class="callout"><strong>数据规模与执行：</strong>82个月实际框架合计 98,382 人月（单月 976—1,372）；既有Core 41,970 人月、Normal 56,412 人月。正权重框架 98,352，权重缺失 30 仍保持 null、不参与加权。可用Q9模型供体 41,956 个，Q8供体 41,970 个。原512计划名单里的14个跨月完成者未进入本批Core，在完整P框架中计为统计Normal；另有本批Core内14条Q9字段不可用作供体（1份沿用输入、13份密度拟合失败），两组人数不同，不互相替代。按月等权平均，选定τ下Q9父池供体覆盖人口质量 20.16%，无本地Core目标格质量 1.47%。本次评价与报告生成均为0新增API、0次Q9密度重拟合；统计扩展不增加独立LLM回答。</div>
+<p>后34个月 MAE：原T0 0.215 pp，扩展 0.219 pp，公开历史基线 0.194 pp。组合敏感性：早48月MSE拟权选定τ模拟权重 0.134964，后34月 MAE 0.184980 pp；原T0的MSE拟权组合权重 0.133976，后34月 MAE 0.184125 pp。MAE拟权的选定τ模拟权重为 0.000。这些是回顾性组合摘要，不是未观察过的未来测试。</p>
+<h2>解释边界</h2><ul><li>Normal统计预测记录已生成；本次没有新增LLM调用或真人答卷，也未重拟Q9密度。</li><li>MAE使用固定公开SCE月指标；扩展前后W1/IQR使用相同的逐月全波次真人分布。</li><li>τ只按预先封存的LLM回答遮蔽留出规则确定，未使用当前真人答案选参。</li><li>全国真值与历史基线沿用原A82 T0评价；48/34月组合是回顾性汇总。</li><li>全波次真人分布仅用于评价，不参与Core＋Normal预测构造。</li><li>Core实际回答-only敏感性分析不替代冻结的原T0对照。</li></ul>
+<details><summary>来源文件与复现信息</summary><p>本页从冻结评价目录生成；报告程序先核验 evaluation manifest 中 summary.json、monthly_public.csv、yearly.csv 的哈希。来源清单：</p>
+<ul><li><code>manifest.json</code> · SHA256 <code>8bd3c124f1f8305eeb39d7682004b2470ded1e68b88c02887811164401aab365</code></li><li><code>summary.json</code> · SHA256 <code>fdf43758c9c1d2bb80010e6c60e7b761a25fe2b79df6fa038f14df6bca97ee6d</code></li><li><code>monthly_public.csv</code> · SHA256 <code>cfaae6aa7d54eccc4ddc08fe90168f20c5aac5cc07428c76ff0ba867b8b24eac</code></li><li><code>yearly.csv</code> · SHA256 <code>0fc5310a12f8f22ed30f04555fa0ffdc94a615bbf1938d2fd8090c252aa3f600</code></li></ul>
+<p>本页数值见同目录 <code>readout.json</code>；逐月公开聚合仍以原评价目录中的 <code>monthly_public.csv</code> 为准。原始个体答卷、提示与回复未复制进报告。</p></details>
+</main></body></html>

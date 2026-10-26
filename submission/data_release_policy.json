@@ -1,0 +1,142 @@
+{
+  "policy_version": "2026-10-26",
+  "reviewed_on": "2026-10-26",
+  "timezone": "Asia/Shanghai",
+  "scope": "Candidate SocioVerse Challenge study package; source and local evidence audit only.",
+  "release_decision": "No raw or record-level source data are cleared for redistribution by this review. Synthetic fixtures and national/monthly aggregates are candidates for a separate file-level release review; none are blanket-cleared here.",
+  "principles": [
+    "Publicly downloadable or locally accessible data are not thereby authorized for model transfer or redistribution.",
+    "Research use, model-provider processing, public display, and package redistribution are separate permissions and must be recorded separately.",
+    "Keep contemporaneous survey truth in the evaluation layer; disclose its acquisition date, source vintage, and isolation without bundling person-level answers.",
+    "Previous API budgets or per-run transfer approvals do not authorize a new call, new recipient, or public release."
+  ],
+  "items": [
+    {
+      "data_id": "sce_microdata_and_derived_person_records",
+      "roles": ["P/persona source", "historical belief state where explicitly permitted", "evaluation truth kept separate"],
+      "acquisition": {
+        "url": "https://www.newyorkfed.org/microeconomics/sce",
+        "local_evidence": ["docs/sce_source_manifest.json", "docs/peb_source_manifest.json", "docs/SCE_DATA_AUDIT.md"],
+        "local_custody": ["data/raw/sce_*", "data/evaluation/**", "outputs/**"]
+      },
+      "license_evidence": "SCE_DATA_AUDIT.md records the FRBNY notice: © 2013-2026 FRBNY; data are available without charge subject to license terms posted at the source. This audit did not establish that those terms permit redistribution of microdata or derived person-level records.",
+      "release_status": "exclude_pending_source_terms_and_privacy_review",
+      "model_transfer_status": "not_generally_authorized_by_this_review",
+      "handling": "Do not include raw microdata, answer rows, person-level weights, IDs, matching keys, or person-level derived tables. Rebuild locally from the official source when permitted. Publish only separately reviewed aggregate statistics and their acquisition/vintage record."
+    },
+    {
+      "data_id": "nyt_archive_text_and_metadata",
+      "roles": ["Environment/news input", "source for per-person news assignments and labels"],
+      "acquisition": {
+        "url_template": "https://api.nytimes.com/svc/archive/v1/{year}/{month}.json",
+        "local_evidence": ["docs/SCE_ENVIRONMENT_LATEST_2026_20261007.md", "data/raw/nyt_archive/*.meta.json"],
+        "local_custody": ["data/raw/nyt_archive/**", "data/interim/**", "outputs/**"]
+      },
+      "license_evidence": "Project notes record archive retrieval using an existing account; no examined record establishes rights to redistribute article text, headlines, summaries, or derived item-level data.",
+      "release_status": "exclude_pending_rights_review",
+      "model_transfer_status": "not_generally_authorized_by_this_review",
+      "handling": "Do not bundle article bodies, copied headlines, summaries, per-article labels, or prompt excerpts. Provide the public archive/API acquisition route and instruct users to obtain data under their own applicable access and terms. A publication list of source IDs/URLs also needs a separate rights and privacy review."
+    },
+    {
+      "data_id": "consumer_expenditure_survey_microdata",
+      "roles": ["Synthetic spending-profile donor source", "household experience mechanism"],
+      "acquisition": {
+        "url": "https://www.bls.gov/cex/pumd/",
+        "local_evidence": ["docs/CE_CONSUMPTION_DATA_INDEX.md", "data/raw/ce_experience/20261006/official_download_manifest.json", "data/raw/ce_experience/20261006/download_manifest.json"],
+        "local_custody": ["data/raw/ce_experience/**", "data/interim/ce_experience/**", "outputs/**"]
+      },
+      "license_evidence": "Project documentation records the BLS source and a 2021-09-09 release as evidence that the referenced 2020 files were available by that date. The reviewed records do not establish package redistribution permission; some documented download URLs returned HTTP 403.",
+      "release_status": "exclude_pending_source_terms_and_privacy_review",
+      "model_transfer_status": "not_generally_authorized_by_this_review",
+      "handling": "Do not include Interview/Diary microdata, donor rows, household-level allocations, or record-level crosswalks. Include the official acquisition route, local rebuild instructions, release/vintage limits, and only separately reviewed aggregate outputs."
+    },
+    {
+      "data_id": "american_time_use_survey_microdata",
+      "roles": ["Synthetic shopping/household responsibility role source"],
+      "acquisition": {
+        "url": "https://www.bls.gov/tus/",
+        "local_evidence": ["data/raw/behavior_references/2026-10-19_atus_roles_v2/download_manifest.json", "data/raw/behavior_references/2026-10-19_atus_roles_supplement_v1/download_manifest.json"],
+        "local_custody": ["data/raw/behavior_references/**", "outputs/**"]
+      },
+      "license_evidence": "The local manifest identifies official public BLS ATUS/EH files, but the reviewed project records do not establish redistribution rights or complete historical-version evidence.",
+      "release_status": "exclude_pending_source_terms_and_privacy_review",
+      "model_transfer_status": "not_generally_authorized_by_this_review",
+      "handling": "Do not bundle microdata, respondent-level role labels, or donor links. Provide the BLS acquisition route and locally rebuild the documented aggregate role distribution if permitted. Do not describe the proxy as an SCE respondent's observed behavior."
+    },
+    {
+      "data_id": "general_social_survey_microdata",
+      "roles": ["Optional psychological-profile source; not a required public demo input"],
+      "acquisition": {
+        "url": "https://gss.norc.org/get-the-data/stata.html",
+        "local_evidence": ["data/raw/psychological/gss/2018/20261006T131656Z/manifest.json", "docs/literature/sce/psychological_attributes/sources/data_sources.json"],
+        "local_custody": ["data/raw/psychological/gss/**", "outputs/**"]
+      },
+      "license_evidence": "The manifest records the NORC download route and local file hashes; this review did not confirm redistribution permission or the terms applicable to each derived release.",
+      "release_status": "exclude_pending_source_terms_and_privacy_review",
+      "model_transfer_status": "not_generally_authorized_by_this_review",
+      "handling": "Do not include respondent rows, person-level derived traits, donor mappings, or psychology labels. Treat as optional research input rather than a dependency for the minimum submission package."
+    },
+    {
+      "data_id": "news_labels_and_item_level_annotations",
+      "roles": ["News mechanism annotations; may be derived from article text or headlines"],
+      "acquisition": {
+        "local_evidence": ["docs/workstreams/20261024_media_mechanism/", "data/raw/nyt_archive/**", "outputs/**"],
+        "public_route": "Obtain the underlying articles from their original publishers under the publisher's terms; record source-specific URLs and dates in the run manifest."
+      },
+      "license_evidence": "No source-by-source evidence reviewed here clears redistribution of the annotation records or underlying copyrighted text. Derived labels can remain identifying or reconstructable at article level.",
+      "release_status": "exclude_pending_item_level_rights_and_reidentification_review",
+      "model_transfer_status": "not_generally_authorized_by_this_review",
+      "handling": "Do not package per-article labels, rationales, summaries, or annotation prompts. Consider aggregate label counts only after checking source terms, small-cell disclosure, and whether the result reproduces article text."
+    },
+    {
+      "data_id": "model_personal_trajectories_prompts_and_responses",
+      "roles": ["Simulation output and audit record"],
+      "acquisition": {
+        "local_evidence": ["docs/workstreams/20261023_main_run/", "docs/EXPERIMENT_PIPELINE.md"],
+        "local_custody": ["outputs/**", "trajectory/**", "data/evaluation/**"]
+      },
+      "license_evidence": "These files can contain person-linked survey characteristics, past beliefs, prompt text, and model responses. De-identification alone is not evidence of public-release authorization; no general trajectory-release authorization is recorded here.",
+      "release_status": "exclude",
+      "model_transfer_status": "per_run_scope_only; no new transfers authorized",
+      "handling": "Do not include individual trajectories, raw prompts/responses, IDs, position maps, request logs containing prompt content, or weights. Preserve privately under the project's existing local custody and retention rules. Release aggregate results only after disclosure review."
+    },
+    {
+      "data_id": "public_national_sce_headlines_and_monthly_simulation_aggregates",
+      "roles": ["Evaluation baselines and paper-level aggregate results"],
+      "acquisition": {
+        "local_evidence": ["docs/sources/sce_baseline_aggregate_sources_latest_20261007.json", "docs/reports/20261024_fullperiod_v2/", "docs/workstreams/20261024_fullperiod_analysis/"]
+      },
+      "license_evidence": "The sources are recorded as published national headline values and project-produced monthly aggregates. This review does not claim all source terms or disclosure risks have been cleared.",
+      "release_status": "candidate_for_aggregate_only_review",
+      "model_transfer_status": "not_applicable_to_public_headline_source; generated outputs still require scope review",
+      "handling": "May be considered for a compact, cited monthly table/figure after verifying each source's reuse terms, publication status, target-month truth timing, aggregation threshold, and consistency with the frozen report. Do not bundle underlying microdata or imply all source licenses were checked."
+    },
+    {
+      "data_id": "project_synthetic_fixtures",
+      "roles": ["Zero-API development demo and schema smoke test"],
+      "acquisition": {
+        "local_evidence": ["data/README.md", "data/fixtures/README.md"],
+        "local_custody": ["data/fixtures/sce_20_synthetic_personas.csv", "data/fixtures/sce_2_month_synthetic_environment.json"]
+      },
+      "license_evidence": "Project documentation describes these fixtures as small, synthetic, and without personal information. A final file-level scan and removal of any third-party text remain necessary; synthetic status does not grant rights to copied source text or code.",
+      "release_status": "candidate_for_file_level_review",
+      "model_transfer_status": "no_external_transfer_needed_for_scripted_demo",
+      "handling": "Preferred demo fixture if content scan confirms only generated profiles and appropriately attributed public facts. Label clearly as synthetic smoke data, never as SCE estimates or A82 input."
+    }
+  ],
+  "never_package": [
+    ".env files, API keys, or credentials",
+    "Raw SCE/CE/ATUS/GSS respondent records, person-level weights, identifiers, or linkage keys",
+    "NYT article bodies, copied headlines/summaries, and item-level news annotations before source-specific rights review",
+    "Individual model trajectories, prompts, responses, and evaluation truth rows",
+    "Ignored outputs or trajectory databases merely because they are needed on the original workstation"
+  ],
+  "required_before_release": [
+    "Record per-source terms and permissions separately for research use, model-provider processing, and package redistribution.",
+    "Record truth download/acquisition timestamp, source version/vintage, covered months, and evaluation-only path.",
+    "Create a file-level package manifest with source URL, acquisition date, hash, purpose, and release decision.",
+    "Run privacy/content review on every proposed aggregate and synthetic fixture; inspect small cells and reconstructable text.",
+    "Document local re-download/application steps for excluded sources so reviewers can reproduce without receiving restricted data.",
+    "Keep real-LLM run authorization separate from redistribution permission and default all package dry-runs to zero network/API calls."
+  ]
+}

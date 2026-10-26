@@ -1,0 +1,16 @@
+{
+  "source": "The New York Times Developer Portal FAQ",
+  "url": "https://developer.nytimes.com/faq",
+  "checked_on": "2026-10-26",
+  "question": "11. Is there an API call limit?",
+  "official_answer": "Yes, there are two rate limits per API: 500 requests per day and 5 requests per minute. You should sleep 12 seconds between calls to avoid hitting the per minute rate limit. If you need a higher rate limit, please contact us at code@nytimes.com.",
+  "article_search_application": {
+    "requests_per_day": 500,
+    "requests_per_minute": 5,
+    "recommended_sleep_seconds_between_calls": 12,
+    "implemented_sleep_seconds_before": 13,
+    "implemented_sleep_seconds_after": 12,
+    "parallelism_used_to_bypass_limit": false
+  },
+  "note": "The previous 13-second interval was only slightly more conservative than the official recommendation. Higher request rates require NYT approval; pagination remains 10 articles per page."
+}

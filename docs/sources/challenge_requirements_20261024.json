@@ -1,0 +1,56 @@
+{
+  "checked_on": "2026-10-24",
+  "timezone": "Asia/Shanghai",
+  "page_url": "https://socioverse.fudan-disc.com/challenge/",
+  "dynamic_content_url": "https://socioverse.fudan-disc.com/challenge/challenge.js?v=20261013a",
+  "dynamic_content_sha256": "dce3d93a9ceab1377cf27a5d93d6b5f3fdebaaa70ee6154606339c2fc09bee53",
+  "method": "读取公开页面所引用的当前正文脚本，定向核查DATA.zh的submission/layout/naming/reviewSteps/weights/faq以及截止字段；未登录或提交。",
+  "verified_requirements": {
+    "report": {
+      "format": "PDF",
+      "languages": [
+        "中文",
+        "英文"
+      ],
+      "pages_min": 4,
+      "pages_max": 8,
+      "figures_in_page_limit": true
+    },
+    "video": {
+      "format": "MP4",
+      "max_minutes": 5,
+      "show_actual_study_workflow": true,
+      "online_replay_alternative": true
+    },
+    "study_package": {
+      "required_directory": "studies/<your_study>/",
+      "readme_reproduction_instructions": true,
+      "declare_seeds_models_calls_costs": true,
+      "distinguish_dry_run_and_real_llm": true
+    },
+    "data": {
+      "authorized_or_shareable": true,
+      "deidentify_individuals": true,
+      "declare_truth_acquisition_time_and_isolation": true
+    },
+    "reproduction_gate": true,
+    "rubric_points": {
+      "社会科学价值与问题创新": 25,
+      "方法与实验设计严谨性": 25,
+      "结果与理论贡献": 20,
+      "可复现性与工程质量": 20,
+      "呈现与拓展潜力": 10
+    },
+    "deadline": "2026-10-31T23:59:00+08:00",
+    "submission_location": "研究目录页参赛入口",
+    "additional_full_platform_repository": "仅赛道C且修改平台代码时另有要求，不作为本项目赛道A的新增要求"
+  },
+  "project_followup": "submission/README.md",
+  "organizer_specific_feedback": "docs/sources/organizer_feedback_20261015.json",
+  "not_verified": [
+    "实际提交表单中的子赛道枚举",
+    "账户余额",
+    "最终作品已提交"
+  ],
+  "new_paid_calls": 0
+}

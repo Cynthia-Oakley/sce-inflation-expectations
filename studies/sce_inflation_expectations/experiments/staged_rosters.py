@@ -6,6 +6,13 @@ from pathlib import Path
 
 
 def job_n(protocol, job):
+    if 'n_by_month' in protocol:
+        counts = protocol['n_by_month']
+        if (protocol.get('mechanism') != 'v32_news_matching' or 'roster_segments' in protocol
+                or set(counts) != {str(m) for m in protocol['months']}
+                or any(type(n) is not int or n <= 0 for n in counts.values())):
+            raise ValueError('Registered positive news-trial monthly rosters required')
+        return counts[str(job['month'])]
     if 'roster_segments' not in protocol:
         return protocol['n_per_month']
     segment = next(s for s in protocol['roster_segments'][str(job['month'])]

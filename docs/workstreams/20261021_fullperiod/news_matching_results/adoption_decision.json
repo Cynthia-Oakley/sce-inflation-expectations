@@ -1,0 +1,43 @@
+{
+  "decision_date": "2026-10-22",
+  "status": "working_default_not_confirmed_distribution_improvement",
+  "scope": "Future preparation only; no new API authorization and no changes to past trials",
+  "summary": "后续工作配置采用随机3/8/20篇新闻，保留50/50主题抽取。中心与个人误差有小幅收益，W1近乎不变；原预登记的分布改善筛选仍记为未通过。",
+  "news_quantity": {
+    "arm": "random_quantity",
+    "per_96_quota": {
+      "3": 48,
+      "8": 28,
+      "20": 20
+    },
+    "mean_articles": 8,
+    "common_articles": 3,
+    "personal_articles_by_total": {
+      "3": 0,
+      "8": 5,
+      "20": 17
+    },
+    "assignment": "Existing input-balanced random allocation; no demographic quantity weighting or target-based selection",
+    "future_sizes": "Scale proportions with a deterministic remainder rule; freeze the rule and allocation seed before the next run"
+  },
+  "personal_topic_draw": {
+    "uniform_share": 0.5,
+    "relevance_share": 0.5
+  },
+  "evidence": {
+    "cached_readout": "outputs/sce_v32_news_matching_readout_20261022_v1/summary.json",
+    "primary_fixed_roster_person_months": 1145,
+    "direct_pair_actual_person_months": 1116,
+    "direct_pair_center_mae_fixed": 0.27292557919447935,
+    "direct_pair_center_mae_random": 0.25950435035065844,
+    "prespecified_distribution_screen": "failed_unchanged"
+  },
+  "limits": [
+    "Working adoption is not statistical confirmation or evidence of Pareto improvement",
+    "Center benefit differs across generations and periods; later four 2025 months do not improve on average",
+    "Only one allocation seed; no claim of measured individual news exposure",
+    "All-four complete-case reversal remains a missingness sensitivity check, not the direct two-arm estimate",
+    "Keep fixed_8 as a benchmark and evaluate the adopted configuration in the final frozen validation"
+  ],
+  "new_api_calls": 0
+}

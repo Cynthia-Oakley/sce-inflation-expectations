@@ -17,9 +17,15 @@ employment/housing questionnaire columns):
 - persona attributes come ONLY from: ``_AGE_CAT``, ``_EDU_CAT``, ``_HH_INC_CAT``,
   ``_REGION_CAT``, ``_NUM_CAT`` (numeracy High/Low — NOT household size),
   ``_STATE``, employment (Q10 dummies, questionnaire p.11-12) and housing tenure
-  (Q43, questionnaire p.32; rotating module, so a respondent's own answer from
-  the nearest month within ``--housing-window`` is borrowed when absent in the
-  target months; coverage and borrow lags are recorded in the metadata).
+  (Q43, questionnaire p.32). Q43 is asked of NEW ENTRANTS ONLY (questionnaire
+  p.27: Q32-Q47 are asked of new respondents); each userid has exactly one Q43
+  answer on record (verified 2026-10-03: 8,536 userids, one answer each, never
+  changed). The persona therefore carries the respondent's own entry answer
+  forward — never borrowed from a FUTURE month. Source month, information age
+  and D3 moves since the answer are recorded in the sampling metadata
+  (carry-forward at or before the current month covers 99.64% of 2021
+  person-months; B-line populations must additionally require the source
+  record's availability date <= as_of).
 - ``tenure`` in the micro file is the respondent's SCE PANEL tenure in months
   (methodology paper: "During their twelve-month tenure ... each group ..."),
   not a housing variable. It is recorded in the sampling metadata only and is
@@ -56,7 +62,7 @@ STUDY_ID = "sce_inflation_expectations"
 
 PROFILE_COLS = ["_AGE_CAT", "_EDU_CAT", "_HH_INC_CAT", "_REGION_CAT", "_NUM_CAT", "_STATE"]
 Q10_COLS = [f"Q10_{i}" for i in range(1, 11)]
-READ_COLS = ["date", "userid", "tenure", "Q43"] + PROFILE_COLS + Q10_COLS
+READ_COLS = ["date", "userid", "tenure", "Q43", "D3"] + PROFILE_COLS + Q10_COLS
 
 # Q10 "What is your current employment situation?" (questionnaire.pdf p.11-12).
 # Multi-select dummies Q10_1..Q10_10; first matching code in this priority order wins.
@@ -101,20 +107,30 @@ def _employment_code(row) -> str | None:
     return None
 
 
-def _housing_for_userid(q43_by_user: dict, userid, target_months: list[int],
-                        window: int) -> tuple[str | None, int | None]:
-    """Return (housing_code, source_month). Nearest own Q43 answer: target month
-    first, else within +/- `window` months of any target month."""
-    months = q43_by_user.get(userid, {})
-    for m in target_months:
-        if m in months:
-            return HOUSING_CODE_MAP.get(int(months[m])), m
-    candidates = [d for d in months
-                  if min(abs(d - m) for m in target_months) <= window]
-    if not candidates:
-        return None, None
-    best = min(candidates, key=lambda d: (min(abs(d - m) for m in target_months), d))
-    return HOUSING_CODE_MAP.get(int(months[best])), best
+def _month_index(yyyymm: int) -> int:
+    return (int(yyyymm) // 100) * 12 + int(yyyymm) % 100
+
+
+def _housing_carry_forward(q43_by_user: dict, d3_by_user: dict, userid,
+                           ref_month: int) -> tuple[str | None, int | None, int | None, bool | None]:
+    """Return (housing_code, source_month, info_age_months, moved_since_answer).
+
+    Q43 is asked of new entrants only, so the respondent's own entry answer is
+    carried forward: the most recent own answer at or before ``ref_month``.
+    Future answers are never used. ``moved_since_answer`` flags any D3==1
+    (moved) record strictly between the answer month and ``ref_month``.
+    """
+    hist = q43_by_user.get(userid)
+    if not hist:
+        return None, None, None, None
+    past = [m for m in hist if m <= ref_month]
+    if not past:
+        return None, None, None, None
+    src = max(past)
+    moved = any(v == 1 for m, v in d3_by_user.get(userid, {}).items()
+                if src < m <= ref_month)
+    return (HOUSING_CODE_MAP.get(int(hist[src])), src,
+            _month_index(ref_month) - _month_index(src), moved)
 
 
 def _load_frame(data_path: Path):
@@ -128,7 +144,6 @@ def _load_frame(data_path: Path):
 
 
 def build_from_frame(df, months: list[int], n: int, seed: int,
-                     housing_window: int,
                      data_path: Path | None = None) -> tuple[dict, list[dict], dict]:
 
     months_by_user = df[df["date"].isin(months)].groupby("userid")["date"].nunique()
@@ -141,12 +156,16 @@ def build_from_frame(df, months: list[int], n: int, seed: int,
 
     q43 = df[df["Q43"].notna()][["userid", "date", "Q43"]]
     q43_by_user = {int(u): dict(zip(g["date"], g["Q43"])) for u, g in q43.groupby("userid")}
+    d3 = df[df["D3"].notna()][["userid", "date", "D3"]]
+    d3_by_user = {int(u): dict(zip(g["date"], g["D3"])) for u, g in d3.groupby("userid")}
+    ref_month = months[0]  # personas are static; per-month re-anchoring is D046 future work
 
     drawn = random.Random(seed).sample(pool, n)
     base = df[df["date"] == months[0]].set_index("userid")
 
     personas, roster = [], []
     borrow_counts: Counter[str] = Counter()
+    housing_prov: list[dict] = []
     dist: dict[str, Counter] = {k: Counter() for k in
                                 ["age_group", "education_group", "household_income_band",
                                  "region", "state", "numeracy", "employment_status",
@@ -182,11 +201,15 @@ def build_from_frame(df, months: list[int], n: int, seed: int,
         if emp is not None:
             attrs["employment_status"] = emp
             dist["employment_status"][emp] += 1
-        housing, src_month = _housing_for_userid(q43_by_user, uid, months, housing_window)
+        housing, src_month, info_age, moved = _housing_carry_forward(
+            q43_by_user, d3_by_user, uid, ref_month)
         if housing is not None:
             attrs["housing_tenure"] = housing
             dist["housing_tenure"][housing] += 1
-            borrow_counts["target_month" if src_month in months else f"borrowed_lag_le_{housing_window}m"] += 1
+            borrow_counts["own_answer_le_base_month"] += 1
+            housing_prov.append({"userid": uid, "source_month": int(src_month),
+                                 "info_age_months": int(info_age),
+                                 "moved_since_answer": bool(moved)})
         else:
             borrow_counts["missing"] += 1
 
@@ -232,11 +255,16 @@ def build_from_frame(df, months: list[int], n: int, seed: int,
                                   "questionnaire": "Q10, questionnaire.pdf p.11-12",
                                   "code_map": {str(k): v for k, v in EMPLOYMENT_CODE_MAP.items()},
                                   "multi_select_priority": EMPLOYMENT_PRIORITY},
-            "housing_tenure": {"source": "Q43 (rotating module, ~12% of respondents/month)",
+            "housing_tenure": {"source": "Q43, asked of new entrants only "
+                               "(questionnaire p.27/p.32); own entry answer "
+                               "carried forward, never from future months",
                                "questionnaire": "Q43, questionnaire.pdf p.32",
                                "code_map": {str(k): v for k, v in HOUSING_CODE_MAP.items()},
-                               "borrow_window_months": housing_window,
-                               "coverage": dict(borrow_counts)},
+                               "ref_month": ref_month,
+                               "coverage": dict(borrow_counts),
+                               "provenance": housing_prov,
+                               "b_line_note": ("B-line builds must additionally require the "
+                                               "source record's availability date <= as_of")},
             "numeracy": {"source": "_NUM_CAT (derived numeracy category; NOT household size)"},
             "tenure_column": ("micro-data 'tenure' = SCE panel tenure in months "
                               "(methodology.pdf); recorded here, not a persona attribute"),
@@ -272,9 +300,6 @@ def main(argv: list[str] | None = None) -> int:
                     help="comma-separated YYYYMM target months (default 202105,202106)")
     ap.add_argument("--n", type=int, default=100, help="panel size to draw (default 100)")
     ap.add_argument("--seed", type=int, default=42)
-    ap.add_argument("--housing-window", type=int, default=6,
-                    help="months around target months to borrow a respondent's own "
-                         "Q43 housing answer when absent in the target months (default 6)")
     ap.add_argument("--data", type=Path, default=DEFAULT_DATA, help="micro xlsx path")
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT, help="population JSON output")
     args = ap.parse_args(argv)
@@ -284,7 +309,7 @@ def main(argv: list[str] | None = None) -> int:
         sys.exit("--months must list at least one YYYYMM")
     df = _load_frame(args.data)
     bundle, roster, meta = build_from_frame(df, months, args.n, args.seed,
-                                            args.housing_window, data_path=args.data)
+                                            data_path=args.data)
 
     from socioverse.schemas import PopulationBundle
     PopulationBundle.model_validate(bundle)  # hard gate before writing

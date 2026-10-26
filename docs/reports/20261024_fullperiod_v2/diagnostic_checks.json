@@ -1,0 +1,104 @@
+{
+  "remaining_response_median_bounds": [
+    {
+      "month": 202306,
+      "field": "q9",
+      "missing_n": 1,
+      "weight_share": 0.0037135300298257483,
+      "possible_median_low_pp": 4.136180788052356,
+      "possible_median_high_pp": 4.204182112192273,
+      "possible_range_pp": 0.06800132413991644
+    },
+    {
+      "month": 202411,
+      "field": "q8",
+      "missing_n": 1,
+      "weight_share": 0.0033989643819219936,
+      "possible_median_low_pp": 2.8,
+      "possible_median_high_pp": 2.8,
+      "possible_range_pp": 0.0
+    },
+    {
+      "month": 202411,
+      "field": "q9",
+      "missing_n": 1,
+      "weight_share": 0.0035137930832261615,
+      "possible_median_low_pp": 2.796176268128746,
+      "possible_median_high_pp": 2.813727146314275,
+      "possible_range_pp": 0.01755087818552914
+    }
+  ],
+  "maximum_core_q9_mae_change_bound_pp": 0.0010433195405542145,
+  "true_change_conditioned_bands": [
+    {
+      "band": "不变",
+      "person_months": 5555,
+      "months": 82,
+      "human_abs_delta_pp": 2.003914541418787e-11,
+      "model_abs_delta_pp": 3.781103657655299
+    },
+    {
+      "band": "0—1pp",
+      "person_months": 9660,
+      "months": 82,
+      "human_abs_delta_pp": 0.4608223612241843,
+      "model_abs_delta_pp": 0.9706921837617124
+    },
+    {
+      "band": "1—2pp",
+      "person_months": 5693,
+      "months": 82,
+      "human_abs_delta_pp": 1.5045166539117902,
+      "model_abs_delta_pp": 1.197144253422732
+    },
+    {
+      "band": "2—5pp",
+      "person_months": 7415,
+      "months": 82,
+      "human_abs_delta_pp": 3.243743418108993,
+      "model_abs_delta_pp": 1.7795231780975465
+    },
+    {
+      "band": "超过5pp",
+      "person_months": 5403,
+      "months": 82,
+      "human_abs_delta_pp": 11.520441870695485,
+      "model_abs_delta_pp": 5.39026528267754
+    }
+  ],
+  "true_change_band_limit": "Groups use current human outcomes: descriptive diagnosis only, never an input or deployment switching rule.",
+  "combination_recheck": {
+    "mae": {
+      "simulation_weight": -0.0,
+      "fit_period_pure_model": {
+        "mae_pp": 0.4167764959891871,
+        "mse_pp_squared": 0.3317799910952259,
+        "rmse_pp": 0.5760034644819646,
+        "bias_pp": -0.23161915648837914
+      },
+      "fit_period_persistence": {
+        "mae_pp": 0.24375000000000002,
+        "mse_pp_squared": 0.12020833333333332,
+        "rmse_pp": 0.34671073437857863,
+        "bias_pp": -0.08125
+      }
+    },
+    "mse": {
+      "simulation_weight": 0.0,
+      "fit_period_pure_model": {
+        "mae_pp": 0.4167764959891871,
+        "mse_pp_squared": 0.3317799910952259,
+        "rmse_pp": 0.5760034644819646,
+        "bias_pp": -0.23161915648837914
+      },
+      "fit_period_persistence": {
+        "mae_pp": 0.24375000000000002,
+        "mse_pp_squared": 0.12020833333333332,
+        "rmse_pp": 0.34671073437857863,
+        "bias_pp": -0.08125
+      }
+    }
+  },
+  "new_api_calls": 0,
+  "new_q9_fits": 0
+}

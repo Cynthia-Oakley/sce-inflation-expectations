@@ -1,0 +1,179 @@
+{
+  "status": "cached_two_generation_information_diagnostic",
+  "completed_at_utc": "2026-10-21T08:38:44.021785+00:00",
+  "new_api_calls": 0,
+  "source": "/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_price_background_evaluation_20261021_v1/cases_private.json",
+  "source_sha256": "c379e26df51182ce1a524d54d42a65c2eb7c40c152fb806da83a123c10139c29",
+  "implementation_sha256": "e9301ca1a7feddfb4c96aaa2451ae806850f212a02ad985d1db44b0e31c27db1",
+  "compared_repeats": [
+    1,
+    2
+  ],
+  "arms": {
+    "broader_background": {
+      "monthly": [
+        {
+          "month": 202009,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 0.5393760340791249,
+          "person_pearson_equal_weight": 0.8385179081208396,
+          "raw_q9_same_share": 0.18619812470255276,
+          "monthly_median_repeat_gap_pp": 0.29793503521442233,
+          "within_person_generation_variance_pp2": 0.3955936747456137,
+          "noise_adjusted_between_variance_pp2": 1.8491927351334776,
+          "generation_noise_fraction": 0.17622775735127566
+        },
+        {
+          "month": 202109,
+          "people": 94,
+          "mean_absolute_repeat_gap_pp": 0.5161775532546928,
+          "person_pearson_equal_weight": 0.8700765211891605,
+          "raw_q9_same_share": 0.23392357924136806,
+          "monthly_median_repeat_gap_pp": 0.0,
+          "within_person_generation_variance_pp2": 0.35405170532333313,
+          "noise_adjusted_between_variance_pp2": 2.3248115828627265,
+          "generation_noise_fraction": 0.13216490251097224
+        },
+        {
+          "month": 202206,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 0.715749572818329,
+          "person_pearson_equal_weight": 0.8533536167928557,
+          "raw_q9_same_share": 0.14390980180887367,
+          "monthly_median_repeat_gap_pp": 0.3656754383216487,
+          "within_person_generation_variance_pp2": 0.6060938818109287,
+          "noise_adjusted_between_variance_pp2": 3.2270084002911,
+          "generation_noise_fraction": 0.15812097804980926
+        },
+        {
+          "month": 202312,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 0.853726345589838,
+          "person_pearson_equal_weight": 0.7626743161074545,
+          "raw_q9_same_share": 0.19191815614263813,
+          "monthly_median_repeat_gap_pp": 0.13022521042737267,
+          "within_person_generation_variance_pp2": 1.997272131444341,
+          "noise_adjusted_between_variance_pp2": 3.615426561150618,
+          "generation_noise_fraction": 0.35584880657844964
+        },
+        {
+          "month": 202410,
+          "people": 95,
+          "mean_absolute_repeat_gap_pp": 0.6344742760299932,
+          "person_pearson_equal_weight": 0.8432548318467725,
+          "raw_q9_same_share": 0.20515909819158606,
+          "monthly_median_repeat_gap_pp": 0.17689287969548229,
+          "within_person_generation_variance_pp2": 0.5952512239018144,
+          "noise_adjusted_between_variance_pp2": 2.226441917412243,
+          "generation_noise_fraction": 0.21095533571187938
+        },
+        {
+          "month": 202503,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 0.6326884345655734,
+          "person_pearson_equal_weight": 0.9042725099358351,
+          "raw_q9_same_share": 0.22831108203546008,
+          "monthly_median_repeat_gap_pp": 0.062053450886991435,
+          "within_person_generation_variance_pp2": 0.5388766787610024,
+          "noise_adjusted_between_variance_pp2": 5.070145241413922,
+          "generation_noise_fraction": 0.09607319893379859
+        }
+      ],
+      "equal_month_means": {
+        "mean_absolute_repeat_gap_pp": 0.6486987027229252,
+        "person_pearson_equal_weight": 0.8453582839988197,
+        "raw_q9_same_share": 0.19823664035374647,
+        "monthly_median_repeat_gap_pp": 0.1721303357576529,
+        "within_person_generation_variance_pp2": 0.7478565493311722,
+        "noise_adjusted_between_variance_pp2": 3.052171073044015,
+        "generation_noise_fraction": 0.1882318298560308
+      }
+    },
+    "food_background": {
+      "monthly": [
+        {
+          "month": 202009,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 0.36631095107529055,
+          "person_pearson_equal_weight": 0.9674155850361392,
+          "raw_q9_same_share": 0.31419575809429656,
+          "monthly_median_repeat_gap_pp": 0.2816628019869203,
+          "within_person_generation_variance_pp2": 0.21752951040385168,
+          "noise_adjusted_between_variance_pp2": 5.281414216784342,
+          "generation_noise_fraction": 0.03955841725172232
+        },
+        {
+          "month": 202109,
+          "people": 94,
+          "mean_absolute_repeat_gap_pp": 0.5576558511090337,
+          "person_pearson_equal_weight": 0.9199840918725589,
+          "raw_q9_same_share": 0.22996893578458955,
+          "monthly_median_repeat_gap_pp": 0.03895504183166487,
+          "within_person_generation_variance_pp2": 0.48574831098827886,
+          "noise_adjusted_between_variance_pp2": 4.447006413005765,
+          "generation_noise_fraction": 0.098474045065628
+        },
+        {
+          "month": 202206,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 0.8165029209197406,
+          "person_pearson_equal_weight": 0.904451077483956,
+          "raw_q9_same_share": 0.1890121336087626,
+          "monthly_median_repeat_gap_pp": 0.1475616781082021,
+          "within_person_generation_variance_pp2": 1.0192745976813375,
+          "noise_adjusted_between_variance_pp2": 8.252494344374654,
+          "generation_noise_fraction": 0.10993313185987526
+        },
+        {
+          "month": 202312,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 0.4985787954984115,
+          "person_pearson_equal_weight": 0.9746847143507189,
+          "raw_q9_same_share": 0.1923549685212435,
+          "monthly_median_repeat_gap_pp": 0.01883950532240153,
+          "within_person_generation_variance_pp2": 0.2905047146725105,
+          "noise_adjusted_between_variance_pp2": 11.376867842800397,
+          "generation_noise_fraction": 0.024898897608823106
+        },
+        {
+          "month": 202410,
+          "people": 95,
+          "mean_absolute_repeat_gap_pp": 0.5822538675240313,
+          "person_pearson_equal_weight": 0.9221992588449404,
+          "raw_q9_same_share": 0.22398477571492503,
+          "monthly_median_repeat_gap_pp": 0.21240345097123647,
+          "within_person_generation_variance_pp2": 0.6686072066253336,
+          "noise_adjusted_between_variance_pp2": 6.188241811824774,
+          "generation_noise_fraction": 0.09750939605440848
+        },
+        {
+          "month": 202503,
+          "people": 96,
+          "mean_absolute_repeat_gap_pp": 1.0165129404845707,
+          "person_pearson_equal_weight": 0.8271278792389629,
+          "raw_q9_same_share": 0.20853839897170937,
+          "monthly_median_repeat_gap_pp": 0.1434706785163895,
+          "within_person_generation_variance_pp2": 3.19448658414672,
+          "noise_adjusted_between_variance_pp2": 18.1529108083797,
+          "generation_noise_fraction": 0.1496429061308002
+        }
+      ],
+      "equal_month_means": {
+        "mean_absolute_repeat_gap_pp": 0.6396358877685131,
+        "person_pearson_equal_weight": 0.9193104344712127,
+        "raw_q9_same_share": 0.2263424951159211,
+        "monthly_median_repeat_gap_pp": 0.14048219278946913,
+        "within_person_generation_variance_pp2": 0.979358487419672,
+        "noise_adjusted_between_variance_pp2": 8.949822572861606,
+        "generation_noise_fraction": 0.08666946566187622
+      }
+    }
+  },
+  "limits": [
+    "Only cached generations1/2; conditional on these people, prompts and months.",
+    "Pearson uses equal people within month; gaps/variance use design weights, months equally weighted.",
+    "Variance subtraction is descriptive; two repeats do not establish a precise random-effects model.",
+    "LLM repeat noise is not stable human heterogeneity or additional real respondents.",
+    "Results for Qwen or DeepSeek do not establish the variance of an untested V3.2 route."
+  ]
+}

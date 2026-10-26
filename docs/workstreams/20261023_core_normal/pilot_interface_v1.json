@@ -1,0 +1,193 @@
+{
+  "spec_version": "1.1",
+  "status": "offline_interface_spec_not_executable_run_bundle",
+  "scope": "three_month_historical_A_pilot_only",
+  "production_default_changed": false,
+  "new_api_calls": 0,
+  "paid_authorization": null,
+  "grid_version": "education_numeracy_age_income_54_v1",
+  "profile_fields": [
+    "education",
+    "numeracy",
+    "age",
+    "income"
+  ],
+  "unknown_sampling_cell": "unknown",
+  "unknown_counts_in_core_budget": true,
+  "entry_pools": [
+    "newcomer",
+    "returner",
+    "unknown"
+  ],
+  "entry_is_distribution_pool_not_additional_sampling_floor": true,
+  "manifest_requirement": {
+    "schema_version": 2,
+    "kind": "core_normal_monthly_pilot",
+    "allocation_schema": "Existing plan_core output; cells[*].selected_n, not legacy allocated_n"
+  },
+  "sampling": {
+    "core_seed": 20261023,
+    "audit_seed": 20261024,
+    "ranking": "SHA256(seed:YYYYMM:local_userid), then userid; use existing rosters without resampling",
+    "core_n": 256,
+    "core_floor": 4,
+    "audit_n": 64,
+    "audit_floor": 1,
+    "generations": 1,
+    "maximum_logical_llm_positions_before_exact_reuse": 960
+  },
+  "months": [
+    {
+      "month": "202109",
+      "frame_n": 1261,
+      "core_n": 256,
+      "normal_n": 1005,
+      "audit_llm_n": 64,
+      "files": {
+        "population": {
+          "path": "outputs/sce_core_normal_pilot_preparation_20261023_v1/202109/population_private.json",
+          "sha256": "9209afee76919a3d5834b1939181f2cc34c05aa923cfc4aed43842b7fa8730b9"
+        },
+        "core_roster": {
+          "path": "outputs/sce_core_normal_pilot_preparation_20261023_v1/202109/core_roster_private.json",
+          "sha256": "fd6cf2e5f0b8bf09861200e571cc59d10d4928781821a4bdc79e5875bad98ec2"
+        },
+        "audit_roster": {
+          "path": "outputs/sce_core_normal_pilot_preparation_20261023_v1/202109/audit_roster_private.json",
+          "sha256": "e509a77217ae1bf933b76802eae119ca4694f08c0cfc321fc67587c534bf8087"
+        }
+      }
+    },
+    {
+      "month": "202206",
+      "frame_n": 1217,
+      "core_n": 256,
+      "normal_n": 961,
+      "audit_llm_n": 64,
+      "files": {
+        "population": {
+          "path": "outputs/sce_core_normal_pilot_preparation_20261023_v1/202206/population_private.json",
+          "sha256": "a39665736a937cd9ac9e84a5b37bdc73b7e17e9ecc67d274a6698c106ecf5325"
+        },
+        "core_roster": {
+          "path": "outputs/sce_core_normal_pilot_preparation_20261023_v1/202206/core_roster_private.json",
+          "sha256": "00c1d38e1da4237b4513d68a5a5fa497f9d7d83807623b89e91274add0f8f2ae"
+        },
+        "audit_roster": {
+          "path": "outputs/sce_core_normal_pilot_preparation_20261023_v1/202206/audit_roster_private.json",
+          "sha256": "d900cf40d7e5d81e74157a9fb5f1193ab416359d2a2303f1778294bf108ad369"
+        }
+      }
+    },
+    {
+      "month": "202506",
+      "frame_n": 1097,
+      "core_n": 256,
+      "normal_n": 841,
+      "audit_llm_n": 64,
+      "files": {
+        "population": {
+          "path": "outputs/sce_core_normal_pilot_preparation_20261023_v1/202506/population_private.json",
+          "sha256": "65c1e3591b612e1a933b426a9bc0e47f8b00cd5c501ddd5c157c81ed022c978a"
+        },
+        "core_roster": {
+          "path": "outputs/sce_core_normal_pilot_preparation_20261023_v1/202506/core_roster_private.json",
+          "sha256": "e9c9662ed71953f3c80ba10b9fd5c087797d82b692c61099648f1cd771a5a394"
+        },
+        "audit_roster": {
+          "path": "outputs/sce_core_normal_pilot_preparation_20261023_v1/202506/audit_roster_private.json",
+          "sha256": "b50c566a69457836967d06a1d5c6313bac49ec07e9372ddf7cc3688a9e7a3b68"
+        }
+      }
+    }
+  ],
+  "weight_roles": {
+    "core_distribution_fit_and_core_only_main": "poststratified_weight",
+    "core_only_sensitivity": "design_weight",
+    "finite_population_retained_core_and_normal_mass": "weight",
+    "normal_audit_distribution": "weight / conditional audit inclusion_probability"
+  },
+  "prediction": {
+    "primary_tau": 24,
+    "offline_sensitivity_tau": [
+      0,
+      8
+    ],
+    "aggregation": "Observed Core retain raw population mass; Normal and invalid Core fields use predictive law once",
+    "q8_and_q9_validity": "independent",
+    "audit_answers_in_fit": false,
+    "primary_normal_sampling": false
+  },
+  "existing_outputs": [
+    "summary.json",
+    "joint_atoms_private.json"
+  ],
+  "pending_outputs": [
+    "schema2 run manifest and recipe",
+    "role-independent full-frame initial beliefs and prior-grid calibration receipt",
+    "conditional_distributions_private.json from existing JointExpansion",
+    "Core/audit case-role metadata and separate Normal panel view"
+  ],
+  "prior_design": {
+    "needed_reference_months": [
+      "202108",
+      "202205",
+      "202505"
+    ],
+    "grid": "same 54 plus unknown; positive original weights",
+    "core_n": 256,
+    "minimum": 4,
+    "outside_catalogue_201812": "not required for pilot; pending for future all-period package"
+  },
+  "technical_gate_requirement_not_active": {
+    "first_requests_in_total": 32,
+    "max_concurrency": 8,
+    "minimum_normalized_usable_paired_answers": 31,
+    "subsequent_max_concurrency": 64,
+    "fit_score_used_for_gate": false,
+    "automatic_retry": false,
+    "provider_fallback": false,
+    "exact_fatal_stop_rules": "must be carried from frozen executor into later authorized run card"
+  },
+  "model_requirement": {
+    "model": "deepseek/deepseek-v3.2",
+    "route": "OpenRouter -> fixed SiliconFlow FP8",
+    "temperature": 0.5,
+    "json_mode": true,
+    "reasoning": false,
+    "max_output_tokens": 1024
+  },
+  "availability_boundary": {
+    "file_months": 93,
+    "historical_micro_months": 82,
+    "synthetic_extension_months": 11,
+    "strict_B_sce_input_eligibility": "not certified; micro publication dates and last-public national SCE value missing",
+    "latest_micro_check": "Kimi inventory cites official refresh on 2026-10-21; not redownloaded this turn"
+  },
+  "next_required": [
+    "Implement input adapter and export; preserve existing frozen outputs",
+    "Exact prompt/route/parameter cache check and official Core zero-API dry run",
+    "Evaluation-support freeze, concrete token/cost estimate and explicit authorization"
+  ],
+  "basis_sha256": {
+    "docs/workstreams/20261021_fullperiod/kimi_availability_inventory_20261023.md": "8e24dba99b93fc30b48aca49a98fda4beabd9c421fb6cc81ad43e17fa0e492bb",
+    "docs/workstreams/20261021_fullperiod/kimi_interface_map_20261023.md": "ce9fcfb2ed59f11c41301f0b2e85ca1e818cc8f82c48738abb97b80d49079794",
+    "outputs/sce_availability_inventory_20261023_v1/summary.json": "5b52a3a3c02e94f2715d689d7d06670d339a8e81d906edfec89981a2193147ea",
+    "outputs/sce_core_normal_pilot_preparation_20261023_v1/summary.json": "89721e2d4adb72c669bbd30f559ea06584084d68cb093f39ae77c10ecdf34062",
+    "studies/sce_inflation_expectations/population/grid_sampling.py": "9bb8d40eaf80ede0509ef41163e86fb8db27c9cb0a7c030020adb1a09ec1585a",
+    "studies/sce_inflation_expectations/experiments/core_normal_expansion.py": "b71f23d2250a29f3e3eac2ccb7e837796b1c5305c10f8ec34d2af750a0f56d54",
+    "studies/sce_inflation_expectations/evaluation/core_normal_protocol_20261023.json": "dee75f592d5463b90722fbcc2b47053ef50f572db54d7c2943f79e1bd2eab933",
+    "outputs/sce_core_normal_pilot_preparation_20261023_v1/202109/population_private.json": "9209afee76919a3d5834b1939181f2cc34c05aa923cfc4aed43842b7fa8730b9",
+    "outputs/sce_core_normal_pilot_preparation_20261023_v1/202109/core_roster_private.json": "fd6cf2e5f0b8bf09861200e571cc59d10d4928781821a4bdc79e5875bad98ec2",
+    "outputs/sce_core_normal_pilot_preparation_20261023_v1/202109/audit_roster_private.json": "e509a77217ae1bf933b76802eae119ca4694f08c0cfc321fc67587c534bf8087",
+    "outputs/sce_fullperiod_materialized_20261022_v2/202109/news_label_index.json": "46c141478982327b74dc8facae8e6e927436acdd787cdfa3611988fd859c3004",
+    "outputs/sce_core_normal_pilot_preparation_20261023_v1/202206/population_private.json": "a39665736a937cd9ac9e84a5b37bdc73b7e17e9ecc67d274a6698c106ecf5325",
+    "outputs/sce_core_normal_pilot_preparation_20261023_v1/202206/core_roster_private.json": "00c1d38e1da4237b4513d68a5a5fa497f9d7d83807623b89e91274add0f8f2ae",
+    "outputs/sce_core_normal_pilot_preparation_20261023_v1/202206/audit_roster_private.json": "d900cf40d7e5d81e74157a9fb5f1193ab416359d2a2303f1778294bf108ad369",
+    "outputs/sce_fullperiod_materialized_20261022_v2/202206/news_label_index.json": "1c132bb19d28e5c83e6cea33a7564dc805feb6f518eddf10bf89f29df8fef1ea",
+    "outputs/sce_core_normal_pilot_preparation_20261023_v1/202506/population_private.json": "65c1e3591b612e1a933b426a9bc0e47f8b00cd5c501ddd5c157c81ed022c978a",
+    "outputs/sce_core_normal_pilot_preparation_20261023_v1/202506/core_roster_private.json": "e9c9662ed71953f3c80ba10b9fd5c087797d82b692c61099648f1cd771a5a394",
+    "outputs/sce_core_normal_pilot_preparation_20261023_v1/202506/audit_roster_private.json": "b50c566a69457836967d06a1d5c6313bac49ec07e9372ddf7cc3688a9e7a3b68",
+    "outputs/sce_fullperiod_materialized_20261022_v2/202506/news_label_index.json": "58d597fdcd544baea3c08f16482650f28861e3a4d6e064fd09df79f289a48417"
+  }
+}

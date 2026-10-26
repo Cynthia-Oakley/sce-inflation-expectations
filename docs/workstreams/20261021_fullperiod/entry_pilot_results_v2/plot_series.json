@@ -1,0 +1,144 @@
+{
+  "entrant": {
+    "monthly_reconstruction": [
+      {
+        "month": 202109,
+        "n": 21,
+        "center_pct": 4.097770825564438,
+        "repeat_min_pct": 4.065540810492848,
+        "repeat_max_pct": 4.130000840636027
+      },
+      {
+        "month": 202206,
+        "n": 23,
+        "center_pct": 7.689850083199339,
+        "repeat_min_pct": 7.61071625258443,
+        "repeat_max_pct": 7.768983913814247
+      },
+      {
+        "month": 202506,
+        "n": 21,
+        "center_pct": 2.6001897077146316,
+        "repeat_min_pct": 2.431940768648637,
+        "repeat_max_pct": 2.768438646780626
+      }
+    ],
+    "monthly_past_reference": [
+      {
+        "month": 202109,
+        "n": 21,
+        "center_pct": 4.0,
+        "repeat_min_pct": 4.0,
+        "repeat_max_pct": 4.0
+      },
+      {
+        "month": 202206,
+        "n": 23,
+        "center_pct": 8.310102728541509,
+        "repeat_min_pct": 8.310102728541509,
+        "repeat_max_pct": 8.310102728541509
+      },
+      {
+        "month": 202506,
+        "n": 21,
+        "center_pct": 3.046669434635316,
+        "repeat_min_pct": 3.046669434635316,
+        "repeat_max_pct": 3.046669434635316
+      }
+    ],
+    "human": [
+      {
+        "month": 202109,
+        "n": 21,
+        "center_pct": 5.656725234858108,
+        "repeat_min_pct": 5.656725234858108,
+        "repeat_max_pct": 5.656725234858108
+      },
+      {
+        "month": 202206,
+        "n": 23,
+        "center_pct": 7.132542612040602,
+        "repeat_min_pct": 7.132542612040602,
+        "repeat_max_pct": 7.132542612040602
+      },
+      {
+        "month": 202506,
+        "n": 21,
+        "center_pct": 4.735768624421784,
+        "repeat_min_pct": 4.735768624421784,
+        "repeat_max_pct": 4.735768624421784
+      }
+    ]
+  },
+  "returning": {
+    "monthly_reconstruction": [
+      {
+        "month": 202109,
+        "n": 23,
+        "center_pct": 4.189657891927574,
+        "repeat_min_pct": 3.9283786538848036,
+        "repeat_max_pct": 4.450937129970344
+      },
+      {
+        "month": 202206,
+        "n": 22,
+        "center_pct": 7.543564214750395,
+        "repeat_min_pct": 7.318144515686543,
+        "repeat_max_pct": 7.768983913814247
+      },
+      {
+        "month": 202506,
+        "n": 24,
+        "center_pct": 4.172039422393988,
+        "repeat_min_pct": 4.001271912507702,
+        "repeat_max_pct": 4.342806932280274
+      }
+    ],
+    "monthly_past_reference": [
+      {
+        "month": 202109,
+        "n": 23,
+        "center_pct": 5.916045855500521,
+        "repeat_min_pct": 5.916045855500521,
+        "repeat_max_pct": 5.916045855500521
+      },
+      {
+        "month": 202206,
+        "n": 22,
+        "center_pct": 7.999999999999999,
+        "repeat_min_pct": 7.999999999999999,
+        "repeat_max_pct": 7.999999999999999
+      },
+      {
+        "month": 202506,
+        "n": 24,
+        "center_pct": 2.8319061214089505,
+        "repeat_min_pct": 2.8319061214089505,
+        "repeat_max_pct": 2.8319061214089505
+      }
+    ],
+    "human": [
+      {
+        "month": 202109,
+        "n": 23,
+        "center_pct": 5.36145818917186,
+        "repeat_min_pct": 5.36145818917186,
+        "repeat_max_pct": 5.36145818917186
+      },
+      {
+        "month": 202206,
+        "n": 22,
+        "center_pct": 6.0,
+        "repeat_min_pct": 6.0,
+        "repeat_max_pct": 6.0
+      },
+      {
+        "month": 202506,
+        "n": 24,
+        "center_pct": 4.0,
+        "repeat_min_pct": 4.0,
+        "repeat_max_pct": 4.0
+      }
+    ]
+  }
+}

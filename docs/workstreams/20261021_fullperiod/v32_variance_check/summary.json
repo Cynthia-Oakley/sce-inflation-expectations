@@ -1,0 +1,401 @@
+{
+  "months": [
+    202009,
+    202109,
+    202206,
+    202503
+  ],
+  "common_person_months": 381,
+  "monthly": [
+    {
+      "month": 202009,
+      "person_months": 96,
+      "weight_ess": 56.52938802853241,
+      "human_center_pp": 3.0,
+      "metrics": {
+        "human": {
+          "mean_pp": 3.3625357507131888,
+          "variance_pp2": 13.043261107656168,
+          "std_pp": 3.6115455289468756,
+          "median_pp": 3.0,
+          "iqr_pp": 3.233447470318097,
+          "p05_pp": -4.317257662478369e-11,
+          "p95_pp": 10.422028044327675,
+          "share_within_half_pp_of_human_center": 0.27308880529250157,
+          "share_within_one_pp_of_human_center": 0.3614469550258713
+        },
+        "carry": {
+          "mean_pp": 3.132558142647011,
+          "variance_pp2": 14.985881932628796,
+          "std_pp": 3.8711602824771796,
+          "median_pp": 2.47924018753894,
+          "iqr_pp": 3.616097818855444,
+          "p05_pp": -0.839174113933467,
+          "p95_pp": 11.264231375578216,
+          "share_within_half_pp_of_human_center": 0.1971551620166036,
+          "share_within_one_pp_of_human_center": 0.2999701312912812
+        },
+        "deepseek_v32": {
+          "mean_pp": 3.138955221466908,
+          "variance_pp2": 9.9491626294515,
+          "std_pp": 3.1524902692739207,
+          "median_pp": 2.616324151940694,
+          "iqr_pp": 2.4576529820666253,
+          "p05_pp": -1.0567381249111722,
+          "p95_pp": 10.571887130535407,
+          "share_within_half_pp_of_human_center": 0.20709614594569858,
+          "share_within_one_pp_of_human_center": 0.4041147845840065
+        },
+        "qwen_cached": {
+          "mean_pp": 2.7435044374080815,
+          "variance_pp2": 5.497522379766043,
+          "std_pp": 2.3417138694115973,
+          "median_pp": 2.5363091800771285,
+          "iqr_pp": 1.9300317156981566,
+          "p05_pp": -0.3608604843994483,
+          "p95_pp": 7.017927069973774,
+          "share_within_half_pp_of_human_center": 0.22859558714036907,
+          "share_within_one_pp_of_human_center": 0.44231876205942255
+        }
+      },
+      "repeat_diagnostics": {
+        "deepseek_v32": {
+          "mean_absolute_repeat_gap_pp": 0.4157195117397982,
+          "within_person_generation_variance_pp2": 0.5933102142156452,
+          "variance_of_person_repeat_means_pp2": 9.652968464571117,
+          "noise_adjusted_between_variance_pp2": 9.356313357463295,
+          "generation_noise_fraction": 0.05963142323338446
+        },
+        "qwen_cached": {
+          "mean_absolute_repeat_gap_pp": 0.36631095107529055,
+          "within_person_generation_variance_pp2": 0.21752951040385168,
+          "variance_of_person_repeat_means_pp2": 5.390178971986268,
+          "noise_adjusted_between_variance_pp2": 5.281414216784342,
+          "generation_noise_fraction": 0.03955841725172232
+        }
+      },
+      "official_national_center_pp": 2.980843782424927,
+      "share_within_half_pp_of_official_center": {
+        "deepseek_v32": 0.20455790397316131,
+        "qwen_cached": 0.22859558714036907,
+        "human": 0.27308880529250157,
+        "carry": 0.20438760342843326
+      }
+    },
+    {
+      "month": 202109,
+      "person_months": 94,
+      "weight_ess": 59.06377138817582,
+      "human_center_pp": 5.294950553409997,
+      "metrics": {
+        "human": {
+          "mean_pp": 6.301052505329921,
+          "variance_pp2": 40.0955713761005,
+          "std_pp": 6.33210639330235,
+          "median_pp": 5.294950553409997,
+          "iqr_pp": 4.517782863886323,
+          "p05_pp": -4.317257662478369e-11,
+          "p95_pp": 21.91329570455073,
+          "share_within_half_pp_of_human_center": 0.09790815762973665,
+          "share_within_one_pp_of_human_center": 0.26366100629987443
+        },
+        "carry": {
+          "mean_pp": 5.49909865606926,
+          "variance_pp2": 36.71533752679028,
+          "std_pp": 6.059318239438351,
+          "median_pp": 4.735768624421784,
+          "iqr_pp": 5.207537454024012,
+          "p05_pp": -4.317257662478369e-11,
+          "p95_pp": 12.887454865755679,
+          "share_within_half_pp_of_human_center": 0.05129906506968603,
+          "share_within_one_pp_of_human_center": 0.19347336646348778
+        },
+        "deepseek_v32": {
+          "mean_pp": 5.311132193583573,
+          "variance_pp2": 20.843055615489597,
+          "std_pp": 4.556221584504867,
+          "median_pp": 4.683413385273699,
+          "iqr_pp": 4.144575072743766,
+          "p05_pp": 1.4073056742828438,
+          "p95_pp": 10.90318156107871,
+          "share_within_half_pp_of_human_center": 0.10259628159774618,
+          "share_within_one_pp_of_human_center": 0.2080601606289209
+        },
+        "qwen_cached": {
+          "mean_pp": 4.061027799025253,
+          "variance_pp2": 4.929840926650083,
+          "std_pp": 2.220200179772699,
+          "median_pp": 3.7587984719519136,
+          "iqr_pp": 3.0919588588299125,
+          "p05_pp": 1.2672944437061466,
+          "p95_pp": 7.992449078621462,
+          "share_within_half_pp_of_human_center": 0.11755335384199876,
+          "share_within_one_pp_of_human_center": 0.2114937865932859
+        }
+      },
+      "repeat_diagnostics": {
+        "deepseek_v32": {
+          "mean_absolute_repeat_gap_pp": 0.7160767404462682,
+          "within_person_generation_variance_pp2": 1.890884172467093,
+          "variance_of_person_repeat_means_pp2": 19.905598717561222,
+          "noise_adjusted_between_variance_pp2": 18.960156631327674,
+          "generation_noise_fraction": 0.0906853614771577
+        },
+        "qwen_cached": {
+          "mean_absolute_repeat_gap_pp": 0.5576558511090337,
+          "within_person_generation_variance_pp2": 0.48574831098827886,
+          "variance_of_person_repeat_means_pp2": 4.6898805684999045,
+          "noise_adjusted_between_variance_pp2": 4.447006413005765,
+          "generation_noise_fraction": 0.098474045065628
+        }
+      },
+      "official_national_center_pp": 5.310168743133545,
+      "share_within_half_pp_of_official_center": {
+        "deepseek_v32": 0.11000264497867682,
+        "qwen_cached": 0.11755335384199876,
+        "human": 0.09790815762973665,
+        "carry": 0.05129906506968603
+      }
+    },
+    {
+      "month": 202206,
+      "person_months": 95,
+      "weight_ess": 64.34328680686893,
+      "human_center_pp": 7.093836321356054,
+      "metrics": {
+        "human": {
+          "mean_pp": 7.337469537363397,
+          "variance_pp2": 51.91943576077341,
+          "std_pp": 7.205514260673794,
+          "median_pp": 7.093836321356054,
+          "iqr_pp": 5.694386972517011,
+          "p05_pp": -2.7165704254427467,
+          "p95_pp": 25.0,
+          "share_within_half_pp_of_human_center": 0.053152165164840406,
+          "share_within_one_pp_of_human_center": 0.15230952914423718
+        },
+        "carry": {
+          "mean_pp": 7.743990052899161,
+          "variance_pp2": 41.94996178534704,
+          "std_pp": 6.47687901580283,
+          "median_pp": 6.402237179510887,
+          "iqr_pp": 6.327905367677721,
+          "p05_pp": -4.317257662478369e-11,
+          "p95_pp": 25.0,
+          "share_within_half_pp_of_human_center": 0.05091628675459317,
+          "share_within_one_pp_of_human_center": 0.2024295322463476
+        },
+        "deepseek_v32": {
+          "mean_pp": 7.908588526696089,
+          "variance_pp2": 25.600620136896723,
+          "std_pp": 5.057612347035958,
+          "median_pp": 7.108793065960516,
+          "iqr_pp": 4.838358254395823,
+          "p05_pp": 1.8521268433334197,
+          "p95_pp": 19.724928575684224,
+          "share_within_half_pp_of_human_center": 0.14405144684429777,
+          "share_within_one_pp_of_human_center": 0.26630868944111713
+        },
+        "qwen_cached": {
+          "mean_pp": 7.145916593637283,
+          "variance_pp2": 7.041368599832222,
+          "std_pp": 2.6445973034606878,
+          "median_pp": 6.855624725273565,
+          "iqr_pp": 3.795618010552218,
+          "p05_pp": 3.2137527245171285,
+          "p95_pp": 12.24175743065826,
+          "share_within_half_pp_of_human_center": 0.17777788949040713,
+          "share_within_one_pp_of_human_center": 0.3279209852938715
+        }
+      },
+      "repeat_diagnostics": {
+        "deepseek_v32": {
+          "mean_absolute_repeat_gap_pp": 0.5213364221134604,
+          "within_person_generation_variance_pp2": 0.47155879230854897,
+          "variance_of_person_repeat_means_pp2": 25.36613162742624,
+          "noise_adjusted_between_variance_pp2": 25.130352231271964,
+          "generation_noise_fraction": 0.01841889036620048
+        },
+        "qwen_cached": {
+          "mean_absolute_repeat_gap_pp": 0.7610207784757659,
+          "within_person_generation_variance_pp2": 0.8904974379217275,
+          "variance_of_person_repeat_means_pp2": 6.598984167857196,
+          "noise_adjusted_between_variance_pp2": 6.153735448896333,
+          "generation_noise_fraction": 0.12641510470048822
+        }
+      },
+      "official_national_center_pp": 6.775854587554932,
+      "share_within_half_pp_of_official_center": {
+        "deepseek_v32": 0.13165798650207405,
+        "qwen_cached": 0.21969970225353758,
+        "human": 0.07275761063345108,
+        "carry": 0.11787248821062832
+      }
+    },
+    {
+      "month": 202503,
+      "person_months": 96,
+      "weight_ess": 61.07498027133634,
+      "human_center_pp": 4.045040088007484,
+      "metrics": {
+        "human": {
+          "mean_pp": 4.880590820921441,
+          "variance_pp2": 96.97265854567449,
+          "std_pp": 9.8474696519296,
+          "median_pp": 4.045040088007484,
+          "iqr_pp": 5.9350183828176215,
+          "p05_pp": -6.053040361887042,
+          "p95_pp": 25.0,
+          "share_within_half_pp_of_human_center": 0.10486362163589637,
+          "share_within_one_pp_of_human_center": 0.17730232984359828
+        },
+        "carry": {
+          "mean_pp": 4.218530867233379,
+          "variance_pp2": 111.56050387918802,
+          "std_pp": 10.562220594135876,
+          "median_pp": 3.8090169943749475,
+          "iqr_pp": 8.132333337323743,
+          "p05_pp": -25.0,
+          "p95_pp": 25.0,
+          "share_within_half_pp_of_human_center": 0.04888896975374977,
+          "share_within_one_pp_of_human_center": 0.14738459343605137
+        },
+        "deepseek_v32": {
+          "mean_pp": 4.503154253517031,
+          "variance_pp2": 59.766737157192566,
+          "std_pp": 7.728944278842732,
+          "median_pp": 3.7399479233782644,
+          "iqr_pp": 6.771376366528248,
+          "p05_pp": -7.259973881889002,
+          "p95_pp": 19.0666894714205,
+          "share_within_half_pp_of_human_center": 0.07361920925280767,
+          "share_within_one_pp_of_human_center": 0.17921581117129545
+        },
+        "qwen_cached": {
+          "mean_pp": 3.1526151213230893,
+          "variance_pp2": 21.33527123412572,
+          "std_pp": 4.618976368583109,
+          "median_pp": 3.116073771519671,
+          "iqr_pp": 4.049327986728578,
+          "p05_pp": -5.403605329441889,
+          "p95_pp": 9.440533281001278,
+          "share_within_half_pp_of_human_center": 0.07492680866809424,
+          "share_within_one_pp_of_human_center": 0.1915788235334852
+        }
+      },
+      "repeat_diagnostics": {
+        "deepseek_v32": {
+          "mean_absolute_repeat_gap_pp": 0.8789517261463698,
+          "within_person_generation_variance_pp2": 2.082968670259452,
+          "variance_of_person_repeat_means_pp2": 58.738942718836626,
+          "noise_adjusted_between_variance_pp2": 57.6974583837069,
+          "generation_noise_fraction": 0.034843656576408644
+        },
+        "qwen_cached": {
+          "mean_absolute_repeat_gap_pp": 1.0165129404845707,
+          "within_person_generation_variance_pp2": 3.19448658414672,
+          "variance_of_person_repeat_means_pp2": 19.750154100453063,
+          "noise_adjusted_between_variance_pp2": 18.1529108083797,
+          "generation_noise_fraction": 0.1496429061308002
+        }
+      },
+      "official_national_center_pp": 3.580265522003174,
+      "share_within_half_pp_of_official_center": {
+        "deepseek_v32": 0.12704609794061808,
+        "qwen_cached": 0.12206584655447003,
+        "human": 0.1313253083486456,
+        "carry": 0.11826063691870117
+      }
+    }
+  ],
+  "equal_month_metrics": {
+    "human": {
+      "mean_pp": 5.470412153581987,
+      "variance_pp2": 50.507731697551144,
+      "std_pp": 6.749158958713155,
+      "median_pp": 4.858456740693384,
+      "iqr_pp": 4.845158922384763,
+      "p05_pp": -2.1924026968540336,
+      "p95_pp": 20.583830937219602,
+      "share_within_half_pp_of_human_center": 0.13225318743074374,
+      "share_within_one_pp_of_human_center": 0.2386799550783953
+    },
+    "carry": {
+      "mean_pp": 5.148544429712203,
+      "variance_pp2": 51.302921280988535,
+      "std_pp": 6.7423945329635595,
+      "median_pp": 4.35656574646164,
+      "iqr_pp": 5.82096849447023,
+      "p05_pp": -6.459793528504953,
+      "p95_pp": 18.537921560333473,
+      "share_within_half_pp_of_human_center": 0.08706487089865815,
+      "share_within_one_pp_of_human_center": 0.21081440585929198
+    },
+    "deepseek_v32": {
+      "mean_pp": 5.2154575488159,
+      "variance_pp2": 29.039893884757596,
+      "std_pp": 5.123817119914369,
+      "median_pp": 4.537119631638293,
+      "iqr_pp": 4.5529906689336155,
+      "p05_pp": -1.2643198722959776,
+      "p95_pp": 15.066671684679712,
+      "share_within_half_pp_of_human_center": 0.13184077091013754,
+      "share_within_one_pp_of_human_center": 0.264424861456335
+    },
+    "qwen_cached": {
+      "mean_pp": 4.275765987848427,
+      "variance_pp2": 9.701000785093516,
+      "std_pp": 2.9563719303070233,
+      "median_pp": 4.066701537205569,
+      "iqr_pp": 3.216734142952216,
+      "p05_pp": -0.3208546614045156,
+      "p95_pp": 9.173166715063694,
+      "share_within_half_pp_of_human_center": 0.14971340978521727,
+      "share_within_one_pp_of_human_center": 0.2933280893700163
+    }
+  },
+  "repeat_equal_month_means": {
+    "deepseek_v32": {
+      "mean_absolute_repeat_gap_pp": 0.6330211001114742,
+      "within_person_generation_variance_pp2": 1.259680462312685,
+      "variance_of_person_repeat_means_pp2": 28.4159103820988,
+      "noise_adjusted_between_variance_pp2": 27.786070150942457,
+      "generation_noise_fraction": 0.05089483291328782
+    },
+    "qwen_cached": {
+      "mean_absolute_repeat_gap_pp": 0.6753751302861652,
+      "within_person_generation_variance_pp2": 1.1970654608651445,
+      "variance_of_person_repeat_means_pp2": 9.107299452199108,
+      "noise_adjusted_between_variance_pp2": 8.508766721766536,
+      "generation_noise_fraction": 0.1035226182871597
+    }
+  },
+  "official_center_concentration_equal_month_means": {
+    "human": 0.14376997047608372,
+    "carry": 0.12295494840686219,
+    "deepseek_v32": 0.14331615834863257,
+    "qwen_cached": 0.17197862244759385
+  },
+  "units": {
+    "variance": "percentage points squared",
+    "std": "percentage points",
+    "shares": "fraction"
+  },
+  "center": "Same-person current human Q9 density-mean median, not the official national headline",
+  "aggregation": "Design-weighted within month; average statistics over two repeats, then equal months",
+  "memorization_test": false,
+  "limits": [
+    "A larger variance cannot rule out memorized headlines, distributions or related macro facts.",
+    "A small variance or central clustering cannot establish memorization; shared information can also cause it.",
+    "Between-person spread, within-person generation noise and subjective Q9 uncertainty are distinct.",
+    "Only two repeats; variance subtraction is descriptive and may be negative.",
+    "Same inputs change both served model and provider; this is not a parameter-count-only experiment."
+  ],
+  "status": "cached_common_support_model_dispersion",
+  "new_api_calls": 0,
+  "scorer_calls": 0,
+  "completed_at_utc": "2026-10-21T15:03:47.392199+00:00",
+  "source_sha256": "9d86655fde88b421f4144028031ec782ed6de52412da82949bdd8304403f75d6",
+  "implementation_sha256": "44effecd0a40a4dbb21247f9cc4a69701c568963c14b09795fcf0822aa5ae78c",
+  "official_chart_sha256": "6512ecdeea161d2d96cc61e7d01bcbc5912495a245800d22f80187249b270280"
+}

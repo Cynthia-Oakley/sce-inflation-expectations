@@ -1,0 +1,19 @@
+{
+  "scope": "Offline follow-up using frozen Core and tau8 Core+Normal aggregates; tau202 is not adopted",
+  "new_api_calls": 0,
+  "new_q9_fits": 0,
+  "training_months": ["201901", "202212"],
+  "inner_training": ["201901", "202112"],
+  "inner_validation": ["202201", "202212"],
+  "later_check": ["202301", "202510"],
+  "target": "Frozen national SCE initial-release headline; full-wave common-score human reconstruction is a separate measurement bridge",
+  "features": "Last eligible public SCE level; latest eligible BLS first-release CPI-U yoy minus SCE anchor; that CPI release minus the preceding CPI yoy release; simulated SCE minus anchor",
+  "regime": "CPI yoy >=4 percent, fixed illustrative threshold, not optimized; dummy and dummy times simulated-minus-anchor",
+  "linear_families": ["AR_public_level", "macro_without_sim", "macro_plus_sim", "regime_without_sim", "regime_plus_sim"],
+  "response": "Current national SCE minus public SCE anchor",
+  "ridge_alphas": [0, 0.1, 1, 10, 100],
+  "selection": "Fit early36, minimize next12 MAE; ties prefer larger alpha. Refit selected alpha on early48, seal coefficients, then evaluate later34. All transforms fit only on the corresponding training rows.",
+  "convex_blend": "Fit MAE/MSE weights only on early48 using the existing fit_weight implementation; retain both objectives",
+  "information_boundary": "Macro CPI/anchor follow each original monthly shared reference cutoff. Full-month A simulations have personal dates, so these combined predictors remain retrospective A diagnostics, not certified common-cutoff B forecasts.",
+  "limits": ["Only 82 monthly observations, not 98382 independent macro observations", "Later historical months have been viewed previously; this is not a new blind test", "CPI and regime terms require matched no-simulation controls to identify simulation's incremental predictive contribution", "No model selected or promoted by later34 results", "Density fitting, valid-sample, weights, quantile interpolation and publication precision can all contribute to the official/common-score bridge"]
+}

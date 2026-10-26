@@ -1,0 +1,160 @@
+{
+  "checked_on": "2026-10-26",
+  "timezone": "Asia/Shanghai",
+  "source": {
+    "url": "https://socioverse.fudan-disc.com/challenge/",
+    "language_checked": "English",
+    "section": "Reproducibility statement",
+    "method": "Checked the current English dynamic page content on 2026-10-26. The challenge page uses dynamic content; no raw response hash is asserted in this record.",
+    "content_hash": null
+  },
+  "official_hard_requirements": [
+    {
+      "id": "report",
+      "deliverable": "Research report",
+      "requirements": {
+        "format": "PDF",
+        "language": ["Chinese", "English"],
+        "pages_min": 4,
+        "pages_max": 8,
+        "figures_count_toward_page_limit": true
+      }
+    },
+    {
+      "id": "video",
+      "deliverable": "Demonstration video",
+      "requirements": {
+        "format": "MP4",
+        "max_minutes": 5,
+        "show_actual_study_workflow": true,
+        "online_replay_is_alternative": true
+      }
+    },
+    {
+      "id": "study_package",
+      "deliverable": "Reproducible study package",
+      "requirements": {
+        "directory": "studies/<your_study>/",
+        "readme_reproduction_instructions": true,
+        "one_command_execution_script": true,
+        "fix_random_seeds": true,
+        "declare_model_and_version": true,
+        "declare_call_count": true,
+        "declare_cost": true,
+        "distinguish_dry_run_from_real_llm_run": true,
+        "state_which_results_are_reproduced": true
+      }
+    },
+    {
+      "id": "data_and_truth",
+      "deliverable": "Data use and evaluation disclosure",
+      "requirements": {
+        "data_authorized_or_shareable": true,
+        "deidentify_individuals": true,
+        "declare_truth_acquisition_time": true,
+        "declare_truth_isolation_from_generation": true
+      }
+    },
+    {
+      "id": "reproducibility_gate",
+      "deliverable": "Evaluation threshold",
+      "requirements": {
+        "reproducibility_and_engineering_quality_are_gate_items": true
+      }
+    }
+  ],
+  "applicability_to_track_a": {
+    "track": "A",
+    "study": "US Survey of Consumer Expectations (SCE) one-year inflation expectations",
+    "submission_scope": "The A82 historical reconstruction and its disclosed offline result reproduction. Describe any B-line result separately; do not call retrospective or previously observed months a strictly prospective blind forecast.",
+    "one_command_script_scope": "The one-command script must execute the explicitly declared result-reproduction scope; the reproducibility statement must identify which results it reproduces and any required permitted inputs/cache. Real API generation is a separately disclosed mode and must not be triggered implicitly by a dry-run or cached-recomputation command.",
+    "current_gap": "The current study.yaml and study README describe a two-month, 20-synthetic-person smoke demo with seed 42; they are not the A82 configuration or its complete run ledger. No submission one-command script has yet been accepted as A82 reproduction."
+  },
+  "directory_structure": {
+    "competition_requirement": {
+      "required_root": "studies/<your_study>/",
+      "readme": "Provide instructions that state how the submitted study and claimed results are reproduced."
+    },
+    "platform_study_convention": {
+      "source_urls": [
+        "https://socioverse.fudan-disc.com/docs/zh/guides/build-a-study/",
+        "https://socioverse.fudan-disc.com/docs/zh/concepts/study-anatomy/",
+        "https://socioverse.fudan-disc.com/docs/zh/guides/wrap-legacy-model/"
+      ],
+      "checked_on": "2026-10-26",
+      "typical_contents": [
+        "study.yaml",
+        "grounding/grounding.json",
+        "model.py or an adapter for a wrapped simulator",
+        "environment/environment.json (E)",
+        "population/population.json (P)",
+        "simulation/simulation.json",
+        "reports/ (rendered results)",
+        "trajectory/ (generated run output; normally local/gitignored)"
+      ],
+      "interpretation": "These are SocioVerse2 platform conventions and examples; do not claim that every runtime artifact must be redistributed. Keep generated personal trajectories out of the ZIP unless separately cleared."
+    }
+  },
+  "organizer_feedback": {
+    "source": "docs/sources/organizer_feedback_20261015.json",
+    "provenance": "Recorded 2026-10-15 from an email supplied by the user; the original email send time was not provided and was not independently verified.",
+    "classification": "Organizer-specific review feedback, not additional verbatim website requirements.",
+    "items": [
+      {
+        "id": "G1",
+        "focus": "Months and information cutoffs; calibration versus evaluation; truth acquisition time; model-knowledge boundaries and forecast sealing."
+      },
+      {
+        "id": "G2",
+        "focus": "Core size, sampling and weights, SCE-CE matching, expansion, entry handling, and cross-month identity."
+      },
+      {
+        "id": "G3",
+        "focus": "Q8/Q9 cleaning and scoring, metrics, macro baselines, and predeclared subgroup handling."
+      },
+      {
+        "id": "G4",
+        "focus": "Actual scale, seed definitions, model, calls, cost, runtime, failures/repairs, and independent reproduction."
+      },
+      {
+        "id": "G5",
+        "focus": "Source-by-source research/model-processing/redistribution terms, de-identification, release scope, and historical news/gasoline vintages."
+      }
+    ]
+  },
+  "engineering_choices_not_extra_official_requirements": [
+    {
+      "choice": "The one-command script may be named run.py, scripts/run_submission.py, or another clear name.",
+      "reason": "The requirement is to provide a one-command execution script; the checked wording does not prescribe a filename."
+    },
+    {
+      "choice": "Provide distinct safe modes for deterministic dry-run, authorized-cache aggregate recomputation, and real LLM generation.",
+      "reason": "This is the project's implementation of the official distinction between dry-run and real LLM; keep the default reproduction path at zero API calls."
+    },
+    {
+      "choice": "Use SocioVerse2 Path C adapter to wrap an existing implementation without changing frozen source, with deterministic parity evidence.",
+      "reason": "Official platform capability; optional architecture, not a contest mandate."
+    },
+    {
+      "choice": "Pin a clean SocioVerse2 release/commit and lock the package dependencies.",
+      "reason": "Engineering needed for a portable handoff; the contest requirement is reproducibility, not a specific lock-file format."
+    }
+  ],
+  "prior_requirement_snapshot": {
+    "checked_on": "2026-10-24",
+    "record": "docs/sources/challenge_requirements_20261024.json",
+    "note": "Prior Chinese-page check recorded the 4-8 page PDF, MP4, study layout, README, model/call/cost disclosure, data and truth requirements. This 2026-10-26 record adds the currently fetched English Reproducibility statement, including the explicit one-command script requirement."
+  },
+  "not_verified": [
+    "Current submission form sub-track enumeration",
+    "Account balance",
+    "Final author/advisor field values",
+    "Final PDF, code ZIP, and MP4 upload or receipt"
+  ],
+  "submission": {
+    "deadline": "2026-10-31T23:59:00+08:00",
+    "location": "Research directory page submission entry",
+    "submitted": false
+  },
+  "new_simulation_calls": 0
+}

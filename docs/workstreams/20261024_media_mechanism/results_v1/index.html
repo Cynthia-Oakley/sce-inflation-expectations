@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>新闻机制V3：七期结果</title>
+<style>body{margin:0;background:#f5f4f0;color:#202631;font:18px/1.75 "Times New Roman","Kaiti SC","STKaiti",serif}main{max-width:1180px;margin:auto;padding:30px}h1{font-size:32px;line-height:1.3}h2{font-size:25px;border-top:1px solid #c8ced3;padding-top:22px;margin-top:36px}h3{font-size:21px}p{margin:.7em 0}img{width:100%;height:auto;background:white}.lead{font-size:21px}.note{font-size:16px;color:#536071}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.stats b{display:block;font-size:28px;color:#006da8}.focus{background:white;border-left:5px solid #d65f00;padding:18px 22px}table{border-collapse:collapse;width:100%;font-size:17px;background:white}td,th{padding:9px 12px;border-bottom:1px solid #d9dce0;text-align:right}td:first-child,th:first-child{text-align:left}th{background:#edf1f4}details{margin:18px 0}a{color:#006da8}.scroll{overflow:auto}@media(max-width:750px){main{padding:18px}.stats{grid-template-columns:1fr}body{font-size:17px}}</style><main>
+<p class="note">水上挽月 · SCE · 2026-10-25 · 研究中的探索性机制结果</p>
+<h1>新闻机制V3：相关价格信息有收益，微观差距仍在</h1>
+<p class="lead">运行与评价均成功。提高CPI直接相关新闻的抽取权重，带来本轮最清晰的中心误差信号；增加警示新闻和混入Fox的整体收益较弱，尚未突破照抄上期基线。</p>
+<div class="stats"><div><b>99.76%</b>技术可用率：6,704 / 6,720</div><div><b>$4.500</b>API已报告费用；未知费预留另计</div><div><b>−9.5%</b>Q3相对Q0的中心MAE</div></div>
+<h2>1. 这轮究竟比较了什么</h2>
+<p>2019-05、2020-09、2021-06/09/12、2022-06、2023-12，每期96人，五组各两遍。人口、个人历史信念、价格、采购角色、政策、模型及温度保持不变，主要替换新闻分配。模型为DeepSeek V3.2，经OpenRouter固定SiliconFlow FP8，温度0.5。</p>
+<p><b>R0：</b>沿原3/8/20篇，只修正重要CPI新闻路由；<b>Q0：</b>改4/8/16/32篇；<b>Q1：</b>Q0加警示文章抽取权重2倍；<b>Q2：</b>Q0部分个人新闻来自Fox；<b>Q3：</b>Q0加CPI直接相关权重1.5倍。Q1/Q2/Q3分别对Q0，不是逐项叠加。A82为这些人的原一遍归档回答。</p>
+<h2>2. 五组及原配置：统一支持后看收益与代价</h2>
+<p>以下统一使用641个人月：真人与各组两遍均可计分的人，权重相同，七个月及模型两遍等权；A82仍只有原一遍。中心指个人Q9拟合密度均值的跨人加权中位数，不是Q8，也不是完整全国headline。</p>
+<img src="overall.png" alt="同支持配置的中心MAE、W1与IQR"><div class="scroll"><table><tr><th>配置</th><th>Q9中心MAE(pp)</th><th>Q9中心RMSE(pp)</th><th>W1(pp)</th><th>跨人IQR(pp)</th><th>Q8中心MAE(pp)</th></tr><tr><td>A82原配置</td><td>0.596</td><td>0.812</td><td>2.619</td><td>2.482</td><td>1.143</td></tr><tr><td>修正新闻路由</td><td>0.518</td><td>0.666</td><td>2.603</td><td>2.412</td><td>0.879</td></tr><tr><td>四档新闻量</td><td>0.485</td><td>0.679</td><td>2.742</td><td>2.315</td><td>0.864</td></tr><tr><td>警示新闻×2</td><td>0.488</td><td>0.612</td><td>2.725</td><td>2.316</td><td>0.936</td></tr><tr><td>混入Fox</td><td>0.482</td><td>0.622</td><td>2.747</td><td>2.383</td><td>0.914</td></tr><tr><td>CPI相关度×1.5</td><td>0.439</td><td>0.609</td><td>2.668</td><td>2.338</td><td>0.907</td></tr></table></div>
+<div class="focus"><b>主要信号：Q3相对Q0。</b>中心MAE从0.485降至0.439pp（−9.5%），W1从2.742降至2.668pp，个人预期均值MAE从3.941降至3.910pp；跨人IQR从2.315增至2.338pp，真人为5.359pp。中心有所改善，宽度的缺口没有被补齐。Q8中心MAE则从0.864增至0.907pp。</div>
+<p>相对A82原回答，Q3中心MAE为0.596→0.439pp；但W1为2.619→2.668pp，IQR为2.482→2.338pp。因此不能把整套新设计称为全面改善，也不能把单一历史生成对照当成纯粹路由因果效应。</p>
+<h2>3. 哪些月份改善？2021年有所缓解，2022年仍高估</h2>
+<img src="monthly.png" alt="各月中心偏差与CPI权重的增量收益">
+<p>2021年三个样本月的中心MAE：A82为0.902、R0为0.545、Q0为0.529、Q1为0.471、Q2为0.396、Q3为0.374pp。Q3相对Q0主要改善6月：1.113→0.725pp；9月为0.241→0.158pp，12月基本不变。2022-06仍明显高估，Q0为+1.307、Q3为+1.331pp。</p>
+<p><b>稳健性：</b>Q3两遍中心MAE差分别为−0.044、−0.048pp；但只有3/7月中心误差改善，删除2021-06后平均差变为+0.011pp。W1两遍差为−0.169、+0.022pp。收益值得记录，尚不能称跨月份稳定的分布改善。</p>
+<p>Q1警示权重的主MAE为0.485→0.488pp，Q2混入Fox为0.485→0.482pp，均接近持平；两遍改善方向反转。它们能在2021年6月帮助上调，但同时在其他时期付出代价，不能据本轮证明“更负面／多媒体就更接近居民”。</p>
+<details><summary>展开逐月中心MAE（两遍等权；pp）</summary><div class="scroll"><table><tr><th>月份</th><th>A82</th><th>R0</th><th>Q0</th><th>Q1</th><th>Q2</th><th>Q3</th></tr><tr><td>2019-05</td><td>0.231</td><td>0.388</td><td>0.284</td><td>0.322</td><td>0.210</td><td>0.344</td></tr><tr><td>2020-09</td><td>0.401</td><td>0.195</td><td>0.135</td><td>0.382</td><td>0.311</td><td>0.240</td></tr><tr><td>2021-06</td><td>1.752</td><td>0.965</td><td>1.113</td><td>0.792</td><td>0.571</td><td>0.725</td></tr><tr><td>2021-09</td><td>0.056</td><td>0.366</td><td>0.241</td><td>0.305</td><td>0.351</td><td>0.158</td></tr><tr><td>2021-12</td><td>0.899</td><td>0.303</td><td>0.235</td><td>0.315</td><td>0.268</td><td>0.239</td></tr><tr><td>2022-06</td><td>0.708</td><td>1.316</td><td>1.307</td><td>1.237</td><td>1.380</td><td>1.331</td></tr><tr><td>2023-12</td><td>0.121</td><td>0.090</td><td>0.080</td><td>0.063</td><td>0.284</td><td>0.036</td></tr></table></div></details>
+<h2>4. 与照抄本人上期比较：单独使用524个人月</h2>
+<p>新人和缺历史者没有真实上期回答，不能替他们虚构“照抄本人上期”。下表进一步限定为具有真人上期记录的共同524个人月。它与上面的641个人月是不同支持，不能交叉取数比较。</p>
+<div class="scroll"><table><tr><th>配置</th><th>中心MAE(pp)</th><th>W1(pp)</th><th>跨人IQR(pp)</th></tr><tr><td>A82原配置</td><td>0.606</td><td>2.350</td><td>2.418</td></tr><tr><td>修正新闻路由</td><td>0.439</td><td>2.350</td><td>2.351</td></tr><tr><td>四档新闻量</td><td>0.469</td><td>2.467</td><td>2.261</td></tr><tr><td>警示新闻×2</td><td>0.445</td><td>2.444</td><td>2.301</td></tr><tr><td>混入Fox</td><td>0.450</td><td>2.464</td><td>2.404</td></tr><tr><td>CPI相关度×1.5</td><td>0.433</td><td>2.375</td><td>2.338</td></tr><tr><td>照抄本人上期</td><td>0.332</td><td>1.003</td><td>5.797</td></tr></table></div>
+<p>在这一支持上，Q3中心MAE为0.433pp，持续性基线为0.332pp；W1为2.375对1.003pp。新闻机制的局部改进确实存在，但仍未超过这个简单基线。</p>
+<h2>5. 分组告诉我们：均值压缩仍是核心缺口</h2>
+<img src="prior_groups.png" alt="上期高低预期组的中心偏差和分布距离">
+<p>按本人上期真实预期排序分三组，Q0低预期组中心偏差为+1.212pp，高预期组为−1.858pp；Q3分别为+1.254和−1.731pp。CPI相关信息减轻了高预期组的低估，但低预期组没有同步受益。高预期组W1为4.233→3.988pp，仍远大于中间组。</p>
+<p>这与“模型把不同居民的预期往共同中心拉”的既有诊断一致。提高内容相关性可能帮助更新方向；仅增加情绪强度或媒体标签，尚不足以恢复个人信念持续性和组内差异。这是数据支持的机制线索，不是已识别的因果结论。每个组月约20—32人，不能据此继续精细调参。</p>
+<h2>6. 运行、费用与下一步</h2>
+<p>6,720次全部尝试、全部回包入档，0未知在途。15次连接失败；另1份回答重复bin5、缺bin8，保留合法Q8，Q9不猜测修复。没有观察到拒答。9份合法十档进行了登记的等比例归一化。生成约64.4分钟，API报告费用$4.49955，未知费用预留$0.05753，合计$4.55708；预留不等于确认扣费。</p>
+<p><b>建议：</b>记录CPI相关度权重为有希望的局部候选，不把警示2倍、Fox或整套四档量一并升级。当前不因这批结果重跑A82/B11；先把机制证据、收益和代价加入报告及研究包。如保留最后一次验证，应使用未参与调整的时期和额外新闻分配种子，同时保护2022年及近期高估时期。</p>
+<p class="note">七个月均已在A82中出现，仅为探索性机制诊断；固定新闻分配下的两遍是模型随机性，不是独立分配种子。新分析0 API、0 Q9重拟合。原运行、原评价及原报告不覆盖。<a href="summary.json">聚合数据</a></p></main></html>

@@ -36,6 +36,9 @@ def evaluate(ledger,out):
         row=json.loads(line)
         if row['slot_key'] in calls:raise ValueError('A model slot was retried')
         calls[row['slot_key']]=row
+    if protocol.get('mechanism') == 'v32_news_matching':
+        from studies.sce_inflation_expectations.experiments.news_matching_ledger import expand_aliases
+        calls=expand_aliases(calls,read_json(ledger/lp['alias_file']))
     if len(calls)!=protocol['planned_calls'] or set(calls)!={s['slot_key'] for s in slots}:raise ValueError('Exact full call ledger required')
     arms=protocol['arms'];months=protocol['months'];repeats=protocol['generation_repeats']
     coverage={a:Counter() for a in arms};raw_coverage={a:Counter() for a in arms};normalization={a:Counter() for a in arms}
@@ -83,9 +86,11 @@ def evaluate(ledger,out):
                 'real':truth[m,aid,repeat],'arms':{a:actions[m,repeat,aid,a] for a in arms}})
     support9=shared._common_person_months(cases,arms,repeats,'q9');support8=shared._common_person_months(cases,arms,repeats,'q8')
     summaries={a:shared._summarize_arm(cases,a,months,repeats,support9,support8) for a in arms}
-    expected=len(months)*protocol['n_per_month']*len(repeats)
+    expected=(sum(protocol['n_by_month'].values()) if protocol.get('mechanism')=='v32_news_matching'
+              else len(months)*protocol['n_per_month'])*len(repeats)
     scorable={a:sum(shared.finite(r['arms'][a]['mean']) and shared.finite(r['arms'][a]['iqr']) for r in cases) for a in arms}
-    valid=all(coverage[a]['valid']/expected>=.99 and scorable[a]/expected>=.99 for a in arms)
+    minimum=(protocol['minimum_available_fraction'] if protocol.get('mechanism')=='v32_news_matching' else .99)
+    valid=all(coverage[a]['valid']/expected>=minimum and scorable[a]/expected>=minimum for a in arms)
     result={'status':'completed_call_ledger_evaluation','protocol':protocol,'call_ledger_source':str(ledger.relative_to(ROOT)),
         'new_api_calls':0,'estimated_actual_cost_usd':receipt['combined_spent_or_reserved_usd'],
         'coverage':{a:dict(v) for a,v in coverage.items()},'common_q9_person_months':len(support9),'common_q8_person_months':len(support8),

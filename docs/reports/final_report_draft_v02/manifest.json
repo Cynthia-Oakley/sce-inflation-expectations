@@ -1,0 +1,190 @@
+{
+  "status": "draft_pending_recent_evaluation_and_research_package",
+  "date": "2026-10-24",
+  "pages": 8,
+  "new_api_calls": 0,
+  "new_q9_fits": 0,
+  "scientific_configuration_changes": 0,
+  "manuscript_sha256": "ec2b499fdca0c11393b7a63536233292e28b8feab80190628bda99fdaddeebb9",
+  "renderer_sha256": "354cc698fb729ee8d6e0a10f1ece47c4ce8107f3c0641b46ad444b654b2183cb",
+  "fonts": {
+    "Chinese": "/Users/wushuyue/Documents/科研/DISC/socioverse_challenge/outputs/sce_progress_report_20261015_v2/assets/kaiti_sc.ttf",
+    "Latin": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+    "font_files_redistributed": false
+  },
+  "layout": [
+    {
+      "page": 1,
+      "content_height_pt": 624.3,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 122.59
+    },
+    {
+      "page": 2,
+      "content_height_pt": 615.0,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 131.89
+    },
+    {
+      "page": 3,
+      "content_height_pt": 639.2,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 107.69
+    },
+    {
+      "page": 4,
+      "content_height_pt": 632.01,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 114.88
+    },
+    {
+      "page": 5,
+      "content_height_pt": 708.08,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 38.81
+    },
+    {
+      "page": 6,
+      "content_height_pt": 683.11,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 63.78
+    },
+    {
+      "page": 7,
+      "content_height_pt": 642.6,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 104.29
+    },
+    {
+      "page": 8,
+      "content_height_pt": 604.5,
+      "available_height_pt": 746.89,
+      "bottom_clearance_pt": 142.39
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/workstreams/20261024_fullperiod_analysis/analysis_sources.json",
+      "sha256": "8de1b49964357534df0c186defb6eaebf054c1f0c25a1d14734d02e7a732e1db"
+    },
+    {
+      "path": "outputs/sce_fullperiod_analysis_20261024_v1/summary.json",
+      "sha256": "16b9ddf84e8145eecea1799abd2e907017e183a42954bc6aff7ce14cc19a1b86"
+    },
+    {
+      "path": "outputs/sce_2021_environment_blend_diagnostic_20261024_v2/summary.json",
+      "sha256": "2f427f4a896b3fd3fdab7cc4f67345cf6bcf157a665acad56c551159d75f7fe5"
+    },
+    {
+      "path": "docs/workstreams/20261023_main_run/mechanism_guide_20261024.json",
+      "sha256": "a287f57182422da3aa5def2bb95fd79ea2aba1472242c73dfa48f9ed9891cb76"
+    },
+    {
+      "path": "docs/workstreams/20261023_main_run/README.md",
+      "sha256": "155523a48bc24635676a3a387fd920e7f20f613c6907d435653bd55c5f7cb9bc"
+    },
+    {
+      "path": "docs/EXPERIMENT_STATUS_20261018.md",
+      "sha256": "f3d62912600489277efb3c82de1a4c8e1d95ded2a98862b553cb2f3bbe358655"
+    },
+    {
+      "path": "docs/workstreams/20261021_fullperiod/news_matching_results_20261022.md",
+      "sha256": "c6da8aad71f13affcd188f4b5115af6548b91ad484f2ebe93a012f73dd609d2f"
+    },
+    {
+      "path": "docs/workstreams/20261019_advisor_followup/temperature_results_20261019.md",
+      "sha256": "46461a139919bcd09c628c32ba97e3b4566849b5ff44d2b413e53a401c729edb"
+    },
+    {
+      "path": "docs/workstreams/20261016_cognition/results.md",
+      "sha256": "e5a9426947a7259e73a67de332d6462a6ce46f6362e5a8925b63ae0f10ac5d76"
+    },
+    {
+      "path": "docs/workstreams/20261016_household_finance/results.md",
+      "sha256": "24c52e85950f311236c03700d2d43d107000be50f6a6db77a93bb056565b3167"
+    },
+    {
+      "path": "docs/workstreams/20261017_finance_validation/results.md",
+      "sha256": "6aef9fdb9a06326b8ab738dc6af3e78ec0b0b6989d5f0be6a80b4ad07cb48966"
+    },
+    {
+      "path": "docs/workstreams/20261018_psychological_waves/results.md",
+      "sha256": "c2ab52e4ba901bff7a8716d88c220bae0bf0994749fb00aa8c41b91008274883"
+    },
+    {
+      "path": "docs/sources/challenge_requirements_20261024.json",
+      "sha256": "940c49e5b564cfe86cfa870df65950ac5d6a0f982e85dc01abc25f51a2f78fef"
+    },
+    {
+      "path": "outputs/sce_grid_dimensions_20261023_v1/summary.json",
+      "sha256": "941521c2f50f17d296d735e443569da2d227fd70241dca1199ae2441c926c376"
+    },
+    {
+      "path": "outputs/sce_grid_oversampling_20261023_v2/summary.json",
+      "sha256": "cfe0d362ae1daa724e8b2171ea4bb0e9b4538a7e1dc91d5cce1f777eaa6639a1"
+    },
+    {
+      "path": "docs/workstreams/20261021_fullperiod/grid_dimension_selection_20261023.md",
+      "sha256": "c7cb778d369d94dee3062449c9dff8a20d19f1d640b16ef93e757ac261f7d9f7"
+    },
+    {
+      "path": "docs/literature/sce/information_exposure/news_attention_demographics_20261019.md",
+      "sha256": "fcbbb0b91c82d38972d5e0810e9c3d71bc1ffb14ce24f657af96cebe803121ca"
+    },
+    {
+      "path": "docs/workstreams/20261018_targeted_mechanisms/atus_sce_matching_results_20261019.md",
+      "sha256": "59c942283fcc68574cb58ad2dfe9f6b4a2e38c84d838f38b10cbf8a0d30cfcd1"
+    },
+    {
+      "path": "docs/workstreams/20261021_fullperiod/news_matching_results/summary.json",
+      "sha256": "0c6e0dfef25ef40e621d6b239d12bd50eda1f86727dc7bd2da3d168b330bb328"
+    },
+    {
+      "path": "outputs/sce_research_report_figures_20261024_v02/figure_data.json",
+      "sha256": "74252d96e67ba434df7f1d761dd537160038b2141e121f717c2ae5452f580b37"
+    }
+  ],
+  "figures": [
+    {
+      "source": "outputs/sce_research_report_figures_20261024_v02/q9_explanation.png",
+      "sha256": "9afd28d2b9a866fc3a2487923129ea8e882b47b28e257918999cf2e186fa2973",
+      "asset": "q9_explanation.png"
+    },
+    {
+      "source": "outputs/sce_research_report_figures_20261024_v02/grid_evidence.png",
+      "sha256": "11e8e5a4594d7408e4447c450fef9d424478d4f6df300db284ecf4ddbb7949cb",
+      "asset": "grid_evidence.png"
+    },
+    {
+      "source": "outputs/sce_research_report_figures_20261024_v02/information_routes.png",
+      "sha256": "14fb4836e3830f30ba0418e40b48eef8d9086cdd21d8aa77d2db18b6fc4e8b90",
+      "asset": "information_routes.png"
+    },
+    {
+      "source": "outputs/sce_research_report_figures_20261024_v02/news_evidence.png",
+      "sha256": "8cd960eec9c59ad585e549a477f497531a9fd5fedafe2e9a879c5143d73cb144",
+      "asset": "news_evidence.png"
+    },
+    {
+      "source": "docs/reports/20261024_fullperiod_v2/01_national_timeline.png",
+      "sha256": "ea2df97a90824a3f3ee3bdb719ce369c8c6f5fec13276c941421d014d2b88d9d",
+      "asset": "national_timeline.png"
+    },
+    {
+      "source": "docs/reports/20261024_fullperiod_v2/03_microstructure.png",
+      "sha256": "9ba330812352bd0b1090b0405b3f76a3558b7d93eb7f5cab5d8d9fcfc1f97e22",
+      "asset": "microstructure.png"
+    },
+    {
+      "source": "docs/reports/20261024_fullperiod_v2/05_updates.png",
+      "sha256": "979761b31ab6a39a6c1febfd5d35bf85c06675acf0f66fa83aa947bb6bd5a399",
+      "asset": "updates.png"
+    },
+    {
+      "source": "outputs/sce_2021_environment_blend_diagnostic_20261024_v2/2021_diagnostic.png",
+      "sha256": "f1575d519e86267d5c0dce39280eac732d6bcb76a2c3ab82551d332dc47ef416",
+      "asset": "diagnostic_2021.png"
+    }
+  ],
+  "pdf_sha256": "fad38bb5baaa6bbb823aec83bfcdd7605131d18b46ed0f97dddbf63d7063e47d"
+}

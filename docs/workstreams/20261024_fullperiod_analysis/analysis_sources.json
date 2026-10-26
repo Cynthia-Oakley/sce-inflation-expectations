@@ -1,0 +1,21 @@
+{
+  "status": "final_analysis_source_no_more_technical_retries",
+  "human_decision": "User explicitly stopped further retries after the six-position follow-up.",
+  "analysis_run": "outputs/sce_monthly_main_six_repair_20261024_v1",
+  "original_run": "outputs/sce_monthly_main_resilient_20261024_v1",
+  "first_repair": "outputs/sce_monthly_main_technical_repair_20261024_v1",
+  "logical_person_months": 41984,
+  "physical_api_attempts": 42351,
+  "technical_complete_positions": 41982,
+  "remaining_q8": 1,
+  "remaining_q9": 2,
+  "reported_cost_usd": 29.134039674999833,
+  "accounted_including_unknown_reservations_usd": 30.35876588699986,
+  "further_paid_retries": false,
+  "source_sha256": {
+    "outputs/sce_monthly_main_six_repair_20261024_v1/combined/manifest.json": "980758c296089b2695d921cf0e7fc48dc22e9c67935fedfd07228bf0ff62149a",
+    "outputs/sce_monthly_main_six_repair_20261024_v1/combined/receipt.json": "1205484f0c657d91674abafcfab8021f8ba81b327075aec5dab2218941f0e924",
+    "outputs/sce_monthly_main_six_repair_20261024_v1/evaluation/summary.json": "19cc4f9f4c9a5414f01681f2749582b05087882e81712d1aff72501e1399934d",
+    "outputs/sce_monthly_main_six_repair_20261024_v1/readout/summary.json": "1e6aa55de2e64e0c720bf8fde1a1b2ec6b3ace1446ae1cc723fd9794c9903a6b"
+  }
+}

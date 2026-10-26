@@ -40,7 +40,7 @@ class TestBuildSCEPopulation(unittest.TestCase):
         cls.tmp = tempfile.TemporaryDirectory()
         cls.out = Path(cls.tmp.name) / "population_real12.json"
         cls.bundle, cls.roster, cls.meta = build_from_frame(
-            cls.df, MONTHS, N_SMALL, SEED, housing_window=6, data_path=DEFAULT_DATA)
+            cls.df, MONTHS, N_SMALL, SEED, data_path=DEFAULT_DATA)
         PopulationBundle.model_validate(cls.bundle)  # gate as the script does
         cls.by_id = {p["agent_id"]: p for p in cls.bundle["personas"]}
 
@@ -94,7 +94,7 @@ class TestBuildSCEPopulation(unittest.TestCase):
         months_by_user = self.df[self.df["date"].isin(MONTHS)].groupby("userid")["date"].nunique()
         pool_size = int((months_by_user == len(MONTHS)).sum())
         with self.assertRaises(SystemExit):
-            build_from_frame(self.df, MONTHS, pool_size + 1, SEED, housing_window=6)
+            build_from_frame(self.df, MONTHS, pool_size + 1, SEED)
 
     def test_metadata_complete(self):
         m = self.meta

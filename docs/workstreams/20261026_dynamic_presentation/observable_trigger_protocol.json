@@ -1,0 +1,26 @@
+{
+  "request": "Use observable trigger and interaction/difference specifications to repair simulated underreaction during rapid inflation increases",
+  "scope": "Offline statistical postprocessing only; unchanged LLM answers, scorer and production configuration",
+  "new_api_calls": 0,
+  "new_density_fits": 0,
+  "clock": "Use the previously prepared month-end macro sensitivity consistently, with SCE+CPI no-simulation controls; original shared-cutoff results remain separate",
+  "target": "True first difference of public SCE initial-release headline; assert current month-end anchor equals the immediately preceding survey month's first-release value",
+  "data": "2019-02 through2025-10 complete differences; January2019 only supplies lags and is excluded from all model fitting, including level controls",
+  "initial_training": "23 survey months2019-02 through2020-12, all labels available at first2021 cutoff; first17 train, last6 validate regularization, refit23",
+  "trigger": "D=1 if change in latest released CPI-U yoy exceeds max(0, pre-training 75th percentile), with1e-12 comparison tolerance. Inner validation threshold uses inner training only; final threshold uses only23 pre2021 predictor observations and stays fixed thereafter",
+  "interpretation": "An observable positive price-pressure signal, not an identified structural inflation shock; yoy changes also reflect base effects",
+  "families": {
+    "level_macro": ["anchor_level", "cpi_gap", "cpi_change"],
+    "level_sim": ["anchor_level", "cpi_gap", "cpi_change", "sim_gap"],
+    "difference_macro": ["lag_y_change", "cpi_change"],
+    "difference_sim": ["lag_y_change", "cpi_change", "sim_change"],
+    "trigger_macro": ["lag_y_change", "cpi_change", "trigger", "trigger_pos_cpi"],
+    "trigger_sim": ["lag_y_change", "cpi_change", "trigger", "trigger_pos_cpi", "sim_change", "trigger_sim_change"],
+    "bounded_macro": ["lag_y_change", "cpi_change", "pos_cpi"],
+    "bounded_sim": ["lag_y_change", "cpi_change", "pos_cpi", "sim_change", "underreaction"]
+  },
+  "underreaction": "D * max(CPI_yoy_change - simulated_SCE_change,0); coefficient constrained nonnegative, as is positive-CPI-change coefficient. Other coefficients/intercept remain free; this does not force the entire prediction above the baseline",
+  "estimation": "Standardized ridge; alpha grid0,0.1,1,10,100 selected only by pre2021 last6 validation MAE, prefer larger alpha on ties; bounded groups use an equivalent augmented least-squares objective with sign bounds, constant training columns fixed to zero and marked unlearned",
+  "evaluation": "Report fixed initial coefficients first for2021/H1/H2, then publication-gated expanding fits. Also report2022,later34,all58 and trigger/nontrigger samples. All8 families retained; no winner chosen or parameter revised using2021 results",
+  "limits": ["Proposed after historical2021 weakness was observed; chronological coefficient separation is not a new untouched test", "No calendar-year dummy, no current SCE truth trigger, no post2021 threshold tuning", "Only23 initial macro observations; trigger support and extrapolation are explicitly reported", "First-difference regression is not automatically an ARIMA model or proof of stationarity", "A information/knowledge limits remain; no certified B forecast claim"]
+}

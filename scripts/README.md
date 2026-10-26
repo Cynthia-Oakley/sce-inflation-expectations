@@ -1,16 +1,93 @@
 # 脚本入口索引
 
+- `evaluate_sce_recent_b_core_normal.py --prediction outputs/<sealed_B_expansion> --out outputs/<fresh>`：在封存1300代理/τ8预测之后，仅计算全国MAE/RMSE/bias及同权组合/固定宏观模型迁移敏感性；不重新拟参、API或Q9拟合，不评价缺失的近期真人微观W1/IQR。
+
+- `expand_sce_recent_b_core_normal.py --target-n 1300 --out outputs/<fresh>`：仅离线消费新版B实际Core，按固定A τ8扩至声明的1300代理（也支持1200）；Core保留旧源原始质量，Normal只积分余量，统一缩放不改变CDF。0API/0新Q9拟合、不读近期真人目标、不做准确性评价。产物含精确原子分布及检查用Normal人口行，见[方法](../docs/workstreams/20261026_b_core_normal/README.md)。
+
+- `run_sce_recent_b_sampled.py prepare/review/run/watch`：消费已通过完整11期Core的冻结个人日期B提示；复用full-A容错队列、独立后台、一次技术补跑及隔离全国/固定组合评价。主补总帽$8，实际启动须有新包明确授权；`--resume`只续从未尝试位置，已生成完成不再调用。见[运行说明](../docs/workstreams/20261026_response_dates/B_TERMINAL_RUNBOOK_20261026.md)。
+
 更新：2026-10-19。按用途导航，**不表示所有入口都适用于当前配置**。以下根据现有文件名及原docstring整理；日期和实验参数以对应workstream/冻结运行包为准，不能凭脚本名直接启动付费调用。
 
 ## 优先使用的入口
 
+- `analyze_sce_dynamic_fair_benchmark.py --out outputs/<新目录>`：在旧结果外另加月末可得SCE/CPI宏观对照，固定早24月选参规则并更新到2025-10，检查匹配模拟增量；不改正式as_of或原预测。`report_sce_dynamic_model_presentation.py --source <分析目录> --out docs/workstreams/<新目录>`说明ARX/MA/差分边界与主辅呈现，另列48/34简单组合的时点敏感性。
+- `analyze_sce_observable_inflation_trigger.py --out outputs/<新目录>`：同一月末对照下验证相邻锚、形成真正差分，用23期初始历史确定价格触发器，完整比较8家族的固定/按公布日更新预测；不按2021调阈值。`report_sce_observable_inflation_trigger.py --source <分析目录> --out docs/workstreams/<新目录>`生成信号、预测与配对增量三图；详见[本轮说明](../docs/workstreams/20261026_observable_trigger/README.md)。
+- `prepare_sce_recent_b_review.py --out outputs/<新目录>`：只读核验B新版新闻候选，输出逐月人口/历史锚/先验/已发布CPI清单和A数据固定的组合、宏观配对参数，不解析B目标值、不创建授权或发送器。`report_sce_recent_b_review.py --source <材料目录> --out docs/workstreams/<新目录>`生成运行前配置审阅页；它们都不是付费运行入口。
+- `analyze_sce_response_date_distribution.py --out outputs/<新目录>`：只用日期/权重元数据比较均匀、前一年同月、可得6月和最多3年同月；按B滞后规则限定历史来源，另查11期新闻档的每日范围与基础标签缺口。`report_sce_response_date_distribution.py --source <分析目录> --out docs/workstreams/<新目录>`生成日期分布、日期误差与CPI可见比例图；0API，不改B的D或提示。
+- `prepare_sce_recent_b_sampled_dates.py dates --lag-months 12 --out outputs/<新目录>`：用户已确认的前一年同月日期映射，固定种子并封顶原全局D；`assemble --date-plan <日期目录> --repair-manifest <修复manifest> --out outputs/<新目录>`按个人日期重建E和冻结消息，原文覆盖缺口先阻断。可用`--months`做明确标记的工程子集；无paid run子命令。
+- `inventory_sce_recent_b_news_repairs.py --out outputs/<新目录> [--repair-manifest <新修复清单>]`：只读查Jan/Feb/Sep三个窗口并导出公开去重待分类JSONL；输出原文覆盖与主题标签缺口，不下载/分类/模拟。修复overlay结构见[接口schema](../docs/workstreams/20261026_response_dates/news_repair_manifest.schema.json)。
+- `repair_sce_recent_b_news.py fetch-january`：重新核查后按日分页补抓2026-01 NYT官方原文，逐页保存并支持续跑；另存转换合并快照，不覆盖canonical月档。`run_sce_recent_b_news_labels.py prepare/execute`只处理明确导出的增量公开候选，沿用slim4与DeepSeek Flash；execute需显式确认，不是Simulation入口。`finalize_sce_recent_b_news_repair.py source-audit/write-manifest/accept`分别做来源对账、绑定overlay和最终库存验收。详[修复说明](../docs/workstreams/20261026_response_dates/NEWS_REPAIR_IMPLEMENTATION_20261026.md)。
+
+- `analyze_sce_scoring_measurement_bridge.py --out outputs/<新目录>`：同人同权重分离官方个人密度、本地冻结评分、支持样本、chart/首发，另验Cox聚合候选；0API/0新拟合。`analyze_sce_anomaly_year_calibration.py --out outputs/<新目录>`：2020年底前18/6选参、全年固定与按实际公布标签逐月更新的2021对照。`report_sce_measurement_anomaly.py --measurement <对账目录> --anomaly <2021目录> --out docs/workstreams/<新报告目录>`生成三图。
+
+- `analyze_sce_full_a_macro_calibration.py --out outputs/<新目录>`：核官方全国目标/共同计分桥接，复算Core和τ8扩展凸组合，按36/12/34时间安排探索CPI/状态/交叉项岭回归，保留不含模拟对照；0API，不改原预测。`report_sce_full_a_macro_calibration.py --source <分析目录> --out docs/workstreams/<新目录>`生成解释与图表。
+
+- `analyze_sce_full_a_core_normal_tau.py --out outputs/<新目录>`：只读已有T0人口/模型缓存，扩大τ搜索并按早48月全国Q9 MAE监督校准，封存选择后检查后34月；0API/0密度重拟，不替换原τ8结果。`report_sce_full_a_core_normal_tau.py --source <分析目录> --out docs/workstreams/<新报告目录>`生成训练曲线与时期对照。
+
+- `readout_sce_recent_b.py --run-dir <已完成B运行> --catalog <评价专用首发目录> --score-cache <精确向量缓存> --out outputs/<新目录>`：先查目标月份与账本哈希，再离线评价全国及描述性分组；不创建发送器、不读密钥、不调用模型。`report_sce_recent_b.py --source <分析目录> --out docs/reports/<新目录>`生成图文、CSV与Canvas，私有答卷不进入阅读页。详[近期B结果与复算](../docs/workstreams/20261025_recent_b/results.md)。
+
+- `analyze_sce_2021_environment_blend.py --out outputs/<新目录>`：核对2021年实际请求与原模板、食品原始来源与登记日期，分析真实相邻回访者，并重算全期/后期事后凸组合、核对冻结48/34月评价；0API、0密度拟合，不改变主配置。详[2021专项](../docs/workstreams/20261024_fullperiod_analysis/2021_environment_and_blend.md)。
+
+- `analyze_sce_fullperiod_run.py --out outputs/<新目录>`：按冻结A82来源重用已计分回答，核对逐月指标、统计时期/分组/更新/54格方差、描述性历史/模拟增量回归；0API、0密度重拟合。`report_sce_fullperiod_run.py --source <分析目录> --out docs/reports/<新目录>`生成六图与HTML，并复核组合与剩余缺失中位数包络；不调整配置。详[结果与复算](../docs/workstreams/20261024_fullperiod_analysis/results.md)。
+
+- `run_sce_monthly_repair_followup.py prepare/run/watch`：首轮补齐后残余6份的一次后续补跑，复用既有监督/队列/评价，保留成功字段和三轮raw来源；6新调用上限$0.04计入原$40，用户Terminal确认启动，旧源码/结果不改。详[命令](../docs/workstreams/20261023_main_run/technical_repair_20261024.md#六份残余的一次后续补跑)。
+
+- `run_sce_monthly_repair.py prepare/run/watch`：完整主运行后的361份技术失败一次人工补齐；精确复用提示，保留成功字段，原/新raw账本分开，逐字段覆盖后独立评价。`run --confirm-one-time-repair`由用户Terminal启动，额外费用计入原总上限；不是重跑整批或重复加权人口。详[补跑说明](../docs/workstreams/20261023_main_run/technical_repair_20261024.md)。
+
+- `render_sce_mechanism_guide.py`：从现有冻结候选与说明内容生成`docs/project_guide.html`、分章节JSON和Canvas源；仅说明机制，不重拟合Q9或调用模型，用户审阅后再决定运行。
+
+- `prepare_sce_monthly_fine_inputs.py`、`prepare_sce_monthly_fine_pipeline.py`：54格512人、近期初始化、既有完整提示与官方Core离线验线；支持复用完整提示，不调用API。
+- `run_sce_monthly_main_pipeline.py`：默认预览；精确授权后才`--execute`，一命令逐月生成→独立进程微观评价→完整波次/全国组合；停止不自动重启。
+- `manage_sce_monthly_main.py prepare/start/status`：原生Terminal后台管理上述管线，10秒本地进度、独立会话及Mac防空闲睡眠；prepare/status零API、start需已有精确授权；不自动续跑或重发，详[夜间说明](../docs/workstreams/20261023_main_run/overnight_runbook.md)。
+- `evaluate_sce_monthly_reconstruction.py prepare-truth --score-cache <旧兼容真值目录>`：隔离投影当前真值，只补缺少的冻结Q9向量；`readout_sce_monthly_main.py`复用共同指标/凸组合算法，后期真值不拟合早期权重。当前配置见[全量前说明](../docs/workstreams/20261023_main_run/README.md)。
+- 以下Core＋Normal入口保留为未来扩展工具，按10月23日晚用户共识不用于本次缺失先验或新人代答。
+- `expand_sce_core_normal.py --population <P> --core <名册> --answers <已计分Core> --tau <强度> --out outputs/<新目录>`：有限人口Core保留＋Normal联合答卷经验收缩与概率积分；无API/真值读取/Q9新拟合，不等于已接入全量主运行。
+- `validate_sce_core_normal.py`、`validate_sce_core_normal_cached.py`：82月真人Core统计参照与旧V3.2小框架留出，均零API；两种分数不可混称LLM最终拟合成绩。
+- `prepare_sce_core_normal_pilot.py`、`report_sce_core_normal.py`：准备三期256Core＋64审计名册、生成冻结聚合图文；尚需完整历史/P/E提示、预算和新授权。
+- `prepare_sce_core_normal_scale_pilot.py`、`report_sce_core_normal_scale.py`：准备三期256/384/512共用Core＋共同留出审计名册，读取既有82月结果生成成本—精度图文；不调用API，不将理想真人Core误差当LLM拟合成绩。最终规模未定。
+- `analyze_sce_grid_dimensions.py`：八类人口特征的关联/GVIF/MCA、三/四维126候选和受访者/时间检查，评价层零API，不改模拟配置。
+- `analyze_sce_grid_joint_holdout.py`、`analyze_sce_grid_sensitivity.py`：同一真人Core的联合格留出、覆盖门槛及Q8保护敏感性；不是新的LLM实验或生产Bayes扩展。
+- `analyze_sce_grid_oversampling.py --out outputs/<新目录>`：仅从人口/权重比较12/36/54细格的保底过采样、实际抽中概率和比例校准；不读取问卷答案、不新增API，尚未接生产Normal。
+- `report_sce_grid_dimensions.py --source <选择目录> --joint <联合目录> --sensitivity <敏感性目录> --out <新报告目录>`：读取聚合生成图文；不重拟合问卷或调用API。
+- `materialize_sce_fullperiod.py --out outputs/<新目录> --stage all`：复用现有缓存补全93月P/E，可用`--months`限定；无LLM调用，近期合成不自动取得严格B资格。
+- `complete_sce_policy_sources.py --delivery outputs/<物化目录>`：补公开美联储/Gallup材料并记录原文、日期和哈希，无付费API。
+- `prepare_sce_monthly_reconstruction.py` → `assemble_sce_monthly_reconstruction.py` → `run_sce_monthly_reconstruction.py prepare`：正常月度六格/近期信念/完整提示/官方Core干跑/执行封存；付费运行必须另有明确授权。
+
 - [run_sce_frozen_trial.py](run_sce_frozen_trial.py)：共用prepare / dry-run / run / worker / evaluate。已接Q8单改、温度三组及单一Qwen/OpenRouter迁移适配（固定供应商、复用旧对照），另支持采购角色的仅工程验收包（禁付费/研究计分）；旧协议仍用原标量温度。新增机制须有适配器及冻结配置，真实调用另需有效授权。
 - [prepare_sce_news_breadth_trial.py](prepare_sce_news_breadth_trial.py)：最新已完成新闻量三组试验的准备入口；不要重启旧包。
+- [prepare_sce_state_continuity_inputs.py](prepare_sce_state_continuity_inputs.py)：复用现有构建器组装本地E、过去信念及家庭字段，零API，新目录保存。
+- [prepare_sce_state_continuity_prompts.py](prepare_sce_state_continuity_prompts.py)：组装动态状态模板并作确定性接续回放，不生成模型结果。
+- [check_sce_state_continuity_core.py](check_sce_state_continuity_core.py)：复用frozen_batch.worker执行官方Core零API验收，独立记录检查与源码副本。
+- [prepare_sce_state_continuity.py](prepare_sce_state_continuity.py)：从物化P和历史信念准备三月固定名单/状态依赖，不读取本期真值，不调用API；产物明确尚未prompt-ready。
+- [run_sce_state_continuity.py](run_sce_state_continuity.py)：冻结/授权/单次启动三月动态状态队列，复用SCEOpenAILLM，按月接续、逐槽日志及在途费用预占；不会自动重试或重启。
+- [evaluate_sce_state_continuity.py](evaluate_sce_state_continuity.py)：独立真值投影与缓存评价，复用冻结Q9/分位数/W1，Q8/Q9独立、基线覆盖单列。
+- [continue_sce_state_continuity.py](continue_sce_state_continuity.py)：仅在人工确认后续跑从未发送的状态位置，保留全部旧尝试及失败；源差异和不可改写的两段账本单独登记，原总预算不变。
+- [report_sce_state_continuity.py](report_sce_state_continuity.py)：读取完成缓存生成既有风格的三月接续图文，不调用API或重拟合密度。
+- [prepare_sce_news_matching.py](prepare_sce_news_matching.py)：V3.2八期数量/主题四组离线准备与精确旧答复用；逐人提示相同则引用同一次调用，不重复发送。配置、预算和授权须按新批冻结。
+- [prepare_sce_news_matching_truth.py](prepare_sce_news_matching_truth.py)、[evaluate_sce_news_matching.py](evaluate_sce_news_matching.py)：独立真值投影、共享计分及固定人群上期后备评价；不是新模拟器。自动流程登记`news_matching`，旧批默认不变。
+- [finalize_sce_news_matching_evaluation.py](finalize_sce_news_matching_evaluation.py)：本轮缓存导出恢复，过去Q8缺失时另作合法上期的Q8照抄对照；保留原Q9计分和所有有效模型Q8，0API/0密度重拟合。
+- [read_sce_news_matching.py](read_sce_news_matching.py)、[report_sce_news_matching.py](report_sce_news_matching.py)：从八期四组完成缓存生成加权/分组/时期/每遍读数和既有风格HTML；链式汇总断网前后唯一调用与费用，禁止重启旧付费包。
+- [prepare_sce_media_mechanism_v3.py](prepare_sce_media_mechanism_v3.py)、[run_sce_media_mechanism_v3.py](run_sce_media_mechanism_v3.py)、[evaluate_sce_media_mechanism_v3.py](evaluate_sce_media_mechanism_v3.py)、[audit_sce_media_mechanism_v3.py](audit_sce_media_mechanism_v3.py)：七个月新闻路由/四档容量/警示/Fox/CPI五组对照的准备、官方Core干跑、授权运行、只续未启动任务、哈希验收及A82评价；真实模拟必须另行批准，不沿用补标授权。
+- [prepare_sce_fox_news.py](prepare_sce_fox_news.py)、[prepare_sce_fox_mechanism_labels.py](prepare_sce_fox_mechanism_labels.py)、[refresh_sce_fox_english.py](refresh_sce_fox_english.py)：Fox公开sitemap/Wayback与旧样本英文原文准备、六字段补标包；不生成理由或证据摘录，补标和模拟分别授权。
+- [prepare_sce_news_mechanism_labels.py](prepare_sce_news_mechanism_labels.py)、[run_sce_news_mechanism_labels.py](run_sce_news_mechanism_labels.py)：公开新闻tone/persistence或slim4+机制字段补标与累计预算账本；失败不自动重试，resume只续从未请求的批次。
 - [report_sce_news_breadth.py](report_sce_news_breadth.py)、[plot_sce_news_breadth.py](plot_sce_news_breadth.py)：基于已有评价缓存汇总/作图，不再发API。
 - [prepare_sce_personal_information.py](prepare_sce_personal_information.py)、[prepare_sce_personal_information_views.py](prepare_sce_personal_information_views.py)：ATUS/SCE角色与菜单的离线准备，不等于真实模拟入口已接通。
 - [prepare_sce_procurement_views.py](prepare_sce_procurement_views.py)：六期食品采购角色—价格视图离线准备，复用首发PDF、匹配/打乱及完整提示；不发API，不是付费运行入口。
 - [evaluate_sce_outputs.py](evaluate_sce_outputs.py)：统一规范包评价，旧批次须遵守其计分版本和支持定义。
+- [run_sce_automatic_pipeline.py](run_sce_automatic_pipeline.py)：一次运行已经明确授权的冻结队列，完成后自动评价；不创建授权、不重试或重启。已注册新四期2025的同支持基线/方差评价配置，真实状态以唯一账本为准。
+- [read_sce_post2025_validation.py](read_sce_post2025_validation.py)、[analyze_sce_post2025_support.py](analyze_sce_post2025_support.py)、[report_sce_post2025_validation.py](report_sce_post2025_validation.py)：从新四期既有计分缓存读取设计加权指标、检查缺失支持敏感性并生成图文，不调用API或重新拟合Q9。正式本批读数见readout v2，不将通用评价器等权字段与加权基线混比。
+- [prepare_sce_post2025_validation.py](prepare_sce_post2025_validation.py)、[evaluate_sce_post2025_validation.py](evaluate_sce_post2025_validation.py)：新增2025月P/新闻离线准备与实际回答评价；完整提示仍走共用`run_sce_frozen_trial.py prepare`的明确协议适配。
 - [render_current_todo.py](render_current_todo.py)：从当前任务板生成固定路径`docs/current_todo.html`。
+- [prepare_sce_entry_initialization.py](prepare_sce_entry_initialization.py)：近期供体、联合Q8/Q9、上期中位数软约束的零API预检；82期数量覆盖与三月96/512支持检查，不是模型重跑。输出必须为新目录。
+- [prepare_sce_entry_pilot.py](prepare_sce_entry_pilot.py)：从已封存全期输入准备三期24新人＋24真实回访者、两遍288请求的小试；逐字复用提示并完成官方Core离线检查，真实调用需单独授权。
+- [evaluate_sce_entry_pilot.py](evaluate_sce_entry_pilot.py)：隔离抽取已有真值/计分缓存，分别评价新人和回访者的中心、分布及两遍敏感性；不把两组差额解释为初始化因果效果。
+- [prepare_sce_entry_pilot_continuation.py](prepare_sce_entry_pilot_continuation.py)：仅针对15有效回包＋1连接失败的明确人工例外，封存272个未发送位置；复用既有续跑队列，失败和成功均不重发。
+- [report_sce_entry_pilot.py](report_sce_entry_pilot.py)：从已完成评价缓存生成既有风格的新人/回访者图文，Q8、共同支持、失败和成本分开说明，不产生API调用。
+- [analyze_sce_entry_share.py](analyze_sce_entry_share.py)：复用82月人口权重及新人小试缓存，计算实际新人占比和仅评价用理想替换敏感性；不拟合新模型、不改P/E，不把混合小样本误差称全国成绩。
+- [prepare_sce_monthly_reconstruction.py](prepare_sce_monthly_reconstruction.py)：沿已登记512/24六格抽样，准备独立月份的近期初始化、实际权重与基线；不读本期通胀答案，不递推模型历史。
+- [assemble_sce_monthly_reconstruction.py](assemble_sce_monthly_reconstruction.py)：复用既有P/E提示和官方worker，一次完成提示、离线回放、Core检查及机器可读评价配置；无live模式、无调用授权。
+- [report_sce_entry_initialization.py](report_sce_entry_initialization.py)：读取上述聚合缓存，在既有三月阅读页增加初始化图文，不修改原模拟统计与图。
+- [render_sce_progress_report_20261019.py](render_sce_progress_report_20261019.py)：从已有聚合证据更新20页阶段汇报，PDF和单文件HTML保存至`docs/reports/20261019/`；不发API、不重拟合Q9。
 
 共享算法优先从`studies/sce_inflation_expectations/evaluation/`、`experiments/`导入，基础分位数/W1/权重先查[metrics.py](../studies/sce_inflation_expectations/evaluation/metrics.py)。不同按人/按月重抽样设计不能自动互换。旧冻结脚本不在本轮重构或移动；部分report脚本仍被模块导入。
 
@@ -257,7 +334,7 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 - [probe_sce_event_sources.py](probe_sce_event_sources.py) — Read the free Event MCP catalog without fetching metered source data.
 
 
-### 作图与阅读页（36）
+### 作图与阅读页（37）
 
 - [plot_sce_anchor_role_results.py](plot_sce_anchor_role_results.py) — Plot aggregate prior-role experiment results; no API or private rows read.
 - [plot_sce_baselines.py](plot_sce_baselines.py) — Render a standalone scientific figure from a completed baseline run (offline).
@@ -294,6 +371,7 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 - [render_sce_population_guide.py](render_sce_population_guide.py) — Render the requested fixed reading handout, not simulation code or inputs.
 - [render_sce_prior_report.py](render_sce_prior_report.py) — Render aggregate scientific figures and append results to the existing reading page.
 - [render_sce_progress_report.py](render_sce_progress_report.py) — Render the agreed progress briefing as PDF and a matching local HTML reader.
+- [render_sce_progress_report_20261019.py](render_sce_progress_report_20261019.py) — Refresh the existing 16:9 PDF/HTML briefing from frozen aggregate evidence.
 - [render_sce_response_gap.py](render_sce_response_gap.py) — Render the existing reading-page supplement from cached aggregate results.
 
 
@@ -322,3 +400,67 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 - [sce_llm_probe.py](sce_llm_probe.py) — SCE LLM probe — explicit, counted, tiny paid interactions with the configured endpoint.
 - [sce_release_available.py](sce_release_available.py) — Parse available first-release CPI fields without inventing missing months.
 - [split_sce_basket_population.py](split_sce_basket_population.py) — Split one already-built full basket population into Core/Normal, offline.
+# 2026-10-24主运行续跑入口
+
+`run_sce_resilient_main.py`：最新有界容错控制台。原单次队列临时停止后自动冷却、降并发、仅继续未发送位置；不重发失败、不改科学输入/累计预算。prepare/run/watch/status，用户Terminal明确确认后启动。策略与命令见[续跑说明第7节](../docs/workstreams/20261023_main_run/resume_runbook_20261024.md)。
+
+`run_sce_monthly_main_console.py`：用户本地Terminal的run/watch控制台；手动`--confirm-continuation`后才发送准备包中的未发送请求，每10秒显示聚合进度/费用/阶段，watch零API。最新手动包与复制命令见[续跑说明第6节](../docs/workstreams/20261023_main_run/resume_runbook_20261024.md)。
+
+`continue_sce_monthly_main.py`：按不可改写旧账本，仅续从未发送位置；prepare/authorize/start/status，停止不自动重启。旧成功/失败均保留，费用从原累计额接算，完成后独立评价。具体已执行命令见[续跑说明](../docs/workstreams/20261023_main_run/resume_runbook_20261024.md)。算法位于`studies/sce_inflation_expectations/experiments/monthly_main_continuation.py`；不要直接重启旧主包。
+
+
+- [render_sce_research_report.py](render_sce_research_report.py)：从单一正文源排版8页参赛报告PDF、HTML和文字稿，读取既有汇总与图；不需API密钥，不调用模拟或计分。
+
+
+### 2026-10-25近期B离线准备
+
+- `prepare_sce_recent_b.py`：核实公开旧快照、54格代理P与截止前全国锚；禁止新目录覆盖，无API发送器。
+- `prepare_sce_recent_b_rolling.py`：按明确九个月发布滞后假设逐月选择微观源波次，构造54格代理P/同源就业收入/家庭结构，登记历史版本限制；不调用API。
+- `prepare_sce_recent_b_priors.py`：同一合法旧库的联合供体起点、已公开历史Q9约束与有限样本分配，保留原Q8/Q9，不称本人实际上月答卷。
+- 运行命令、边界及仍未完成项见 `docs/workstreams/20261025_recent_b/README.md`；两入口仅离线候选，不启动近期11月真实模型。
+
+- `prepare_sce_recent_b_run.py`：从公开旧P/联合先验和现有E机制生成B提示，执行官方Core离线检查。
+- `prepare_sce_recent_b_news_refresh.py`：从完成的B11版本复制P/先验/购物/政策，离线准备四档新闻＋CPI1.5候选与11个Core单元；保持B共同截止，无发送器。当前候选sce_recent_b_news_refresh_20261025_v3。
+- `check_sce_recent_b_news_refresh.py`：只读核查候选的源/产物哈希、非新闻字节不变、5632提示再现及分档CPI暴露；输出独立readiness，不写授权或调用API。
+- `prepare_sce_recent_b_continuity_pe.py`：只准备连续递推的固定首月512人、权重/角色/新闻档和逐月公开E；唯一首月合成种子＋同人上月依赖图，无最终提示/发送器。当前底包sce_recent_b_continuity_pe_20261026_v2。
+- `check_sce_recent_b_continuity_pe.py`：独立核查固定身份与权重、唯一种子、各月新闻/价格/政策截止和依赖图；输出readiness，不调用LLM或评分。
+- `build_sce_submission_experiment_logs.py`：按显式canonical收据来源生成公开/私有实验JSON/CSV；去重累计账本，分开API实报、token估费、未知预留和运行快照，不读取模型回答。
+- `build_sce_research_package.py`：按代码/合成工程样例/月级聚合白名单构建研究包ZIP；不移动原日志、不改冻结源。包内`study/run.py`区分官方Core干跑、宏观缓存重算及显式确认的受控付费生成。
+- `run_sce_recent_b.py`：freeze仅离线，review只读核查且不读取密钥；run明确确认后独立后台执行，网络有界等待、一次技术失败自动补跑、独立全国评价；watch只读。当前夜间包为sce_recent_b_overnight_20261025_v3，不运行旧A或旧B包。
+# 新闻机制 V3：本地逐请求启动补充（2026-10-25）
+
+`run_sce_media_mechanism_terminal.py`：`prepare/review/watch`无API；`run --confirm-scope-and-budget`由用户本人终端启动独立后台，`resume`只继续未发送位置，`evaluate`离线复算。复用Kimi冻结提示、70个官方Core验收及共享指标，额外提供持久意图、费用/在途预留、有界冷却和进程锁；输出同支持照抄上期基线。研究算法不改，具体命令和预算见[执行附录](../docs/workstreams/20261024_media_mechanism/TERMINAL_EXECUTION_ADDENDUM_20261025.md)。当前未真实启动；不要与旧 `run_sce_media_mechanism_v3.py run` 混用。
+
+### A个人日期×警示（2026-10-25）
+
+- `prepare_sce_media_timing.py`：只投影完成日期元数据、建立个人截止与实际可见E提示，输出补标缺口；不读取本期答案，不发送API。
+- `assemble_sce_media_timing.py`：594篇新标签齐备后生成四组提示、精确复用映射和56个官方Core离线单元；只准备，不启动Simulation。
+- 科学包、复用语义、预算与授权状态见[本轮说明](../docs/workstreams/20261024_media_mechanism/TIMING_FACTORIAL_RUN_PLAN_20261025.md)。
+
+- `analyze_sce_media_timing.py`：只读已完成Terminal评价缓存，按各自共同支持输出七期/2021/分月/两遍/删月/早晚日期分组，0API、0Q9新拟合。
+- `analyze_sce_media_timing_conditions.py`：在同四臂支持上复算20个人口/真实上期水平条件组，记录最小单元N/ESS；不把稀疏组当因果证据。
+- `report_sce_media_timing.py`：从上述聚合生成七期日期×警示图文/折线/Canvas，不重新调用模型或Q9拟合。
+
+### 新全A个人截止T0（2026-10-25晚）
+
+- `prepare_sce_full_a_personal_inputs.py`：82月原名单的个人日期、同步E与权重适配；按月检查点，0API、不读当期答案。
+- `run_sce_full_a_personal.py`：prepare/review/watch均离线；用户确认后run/resume，单组单遍、182个精确历史回包导入、逐请求容错和一次技术补跑；主补共用$50帽。
+- `analyze_sce_full_a_personal.py`：仅生成完成后在隔离进程评价，复用旧真值/缓存、统一Q8/Q9与权重口径，分同名单/完整波次/全国及48/34组合。
+- 完整命令、审批和状态见[正式运行说明](../docs/workstreams/20261024_media_mechanism/FULL_A_T0_TERMINAL_RUNBOOK_20261025.md)。用户已批准，本人Terminal启动；Codex未启动Simulation，B未更改。
+
+- `report_sce_full_a_refresh.py`：完成新版A隔离评价后，只读比较新旧全国/逐年（重点2021）、同名单微观及48/34组合；生成聚合CSV与图文，不调用API、不重拟Q9。
+
+### 已有A82 Core＋Normal离线接入（2026-10-26）
+
+- `export_sce_full_a_model_scores.py`：评价侧将旧混合评分缓存投影为模型专用向量表，校验原始main/repair字段，不新增拟合或API。
+- `run_sce_full_a_core_normal.py`：prepare/predict，仅人口权重白名单和封存模型答卷；早48模型遮蔽选参，按原人口质量扩展98,382行，旧结果不改。
+- `evaluate_sce_full_a_core_normal.py`：预测封存后打开冻结真人真值；统一全波次比较MAE/W1/IQR，另报全国headline和48/34组合。
+- `report_sce_full_a_core_normal.py`：读取正式评价v3生成独立图文，不改报告v05。入口和版本见`docs/workstreams/20261026_core_normal_full_a/README.md`。
+- `run_sce_recent_b_recursion.py prepare/review/replay/authorize/run/watch`：固定首月512家庭，精确复用根月，后10月只读取本人上一模拟checkpoint。复用容错队列、月屏障、每位置最多一次技术补跑、共享预算及独立后台；需本批明确授权，不能沿用旧B批准。完成后单独进程评价全国误差及模拟漂移，不按近期真值拟参。见[月度递推说明](../docs/workstreams/20261026_belief_recursion/MONTHLY_RUNBOOK_20261026.md)。
+
+- `inspect_sce_weekly_readiness.py --out outputs/<fresh>`：零API清点候选周五日历、旧月度选稿截断数量、价格/政策/信心最后可得快照与月度先验可得日；不是周度执行包，不修改冻结月度运行。默认核202601/04/09，细节见周度设计工作流。
+
+- `prepare_sce_weekly_release_plan.py --out outputs/<fresh>`：零API生成周度公开SCE校准时钟与每月/7、14、21日提前期评分时钟。不是LLM执行包，方向/异常阈值尚未冻结；周度个人状态执行器仍待接。
+# 已完成月度递推的离线漂移分析
+
+`analyze_sce_recent_b_recursion.py --run <completed_run> --out <fresh_outputs> --report <fresh_workstream_report>`：验证冻结来源、同人前驱及实际提示，复用Q9评分缓存，生成全国误差／组合／分歧／条件轨迹。仅离线、0 API、不拟权、不改原结果。当前交付：`docs/workstreams/20261026_belief_recursion/monthly_results_v1/index.html`；计算实现位于`studies/sce_inflation_expectations/reports/monthly_b_recursion.py`。

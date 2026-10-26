@@ -255,7 +255,7 @@ def build_shadow_ledger(months: list[str]) -> Path:
     return out_path
 
 
-def build_environment_gap_tolerant(target: str) -> dict:
+def build_environment_gap_tolerant(target: str, *, employment_reference: str | None = None) -> dict:
     """Modified copy of env2.build_window_v2 for ONE target, tolerant of
     missing history refs (recorded in data_gaps) and patched loaders.
     Record layout and guards are identical to the stock builder."""
@@ -323,16 +323,17 @@ def build_environment_gap_tolerant(target: str) -> dict:
 
     # ---- latest-release headline signals (ref must exist) ----
     cpi_info = v1.ensure_release("cpi", ref, raw_root / ref, False, v1.DEFAULT_PROXY)
-    emp_info = v1.ensure_release("empsit", ref, raw_root / ref, False,
+    emp_ref = employment_reference or ref
+    emp_info = v1.ensure_release("empsit", emp_ref, raw_root / emp_ref, False,
                                  v1.DEFAULT_PROXY)
     cpi = v1.transcribe_cpi(v1._first_pages_text(cpi_info["path"]), ref)
-    emp = v1.transcribe_empsit(v1._first_pages_text(emp_info["path"]), ref)
+    emp = v1.transcribe_empsit(v1._first_pages_text(emp_info["path"]), emp_ref)
     pub_cpi = v1.published_at_for(cpi_info["release_date"])
     pub_emp = v1.published_at_for(emp_info["release_date"])
     rd = cpi_info["release_date"]
     as_of = datetime(rd.year, rd.month, rd.day, 23, 59, 59, tzinfo=v1.RELEASE_TZ)
     if not datetime.fromisoformat(pub_emp) < as_of:
-        raise ValueError(f"employment release for {ref} not before as_of {as_of}")
+        raise ValueError(f"employment release for {emp_ref} not before as_of {as_of}")
     url_cpi = v1.ARCHIVE_URL["cpi"].format(mmddyyyy=rd.strftime("%m%d%Y"))
     url_emp = v1.ARCHIVE_URL["empsit"].format(
         mmddyyyy=emp_info["release_date"].strftime("%m%d%Y"))
@@ -340,6 +341,19 @@ def build_environment_gap_tolerant(target: str) -> dict:
                for r in v1._signals_for_ref(ref, cpi, emp, url_cpi, url_emp,
                                             pub_cpi, pub_emp)]
     broadcasts = [v1._broadcast(0, target, ref, cpi, emp)]
+    if emp_ref != ref:
+        # Explicit caller-selected archived jobs report, still subject to the
+        # publication guard above. Never relabel an older report as CPI's month.
+        for record in records:
+            if record['signal_id'].startswith(('bls_unemployment_', 'bls_nonfarm_')):
+                record['signal_id'] = record['signal_id'].replace(ref.replace('-', '_'), emp_ref.replace('-', '_'))
+                record['reference_period'] = emp_ref
+        label = lambda value: f"{v1.MONTH_ABBR[int(value[5:7])-1]} {value[:4]}"
+        for prefix in ('unemployment', 'nonfarm payrolls'):
+            broadcasts[0]['content'] = broadcasts[0]['content'].replace(f'{prefix} {label(ref)}:', f'{prefix} {label(emp_ref)}:')
+        data_gaps.append({'reference_period': ref, 'family': 'latest_employment_release_delayed',
+                          'substitute_reference_period': emp_ref,
+                          'reason': 'Caller-selected earlier archived jobs release available by the CPI cutoff; original period and publication retained'})
 
     # ---- components (latest ref; per-signal gaps recorded) ----
     ref_components = components.get(ref, {})

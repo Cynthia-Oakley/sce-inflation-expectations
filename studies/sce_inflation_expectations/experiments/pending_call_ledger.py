@@ -25,6 +25,14 @@ def key(month, arm, repeat, aid):
     return hashlib.sha256(f'{month}|{arm}|{repeat}|{aid}'.encode()).hexdigest()
 
 
+def queue_worker_limit(protocol, workers, gate_pending):
+    """Registered ramp only; never a retry or automatic provider fallback."""
+    initial = protocol.get('technical_max_workers', workers)
+    if type(initial) is not int or not 1 <= initial <= protocol.get('max_workers', 16):
+        raise ValueError('Registered positive technical concurrency required')
+    return min(workers, initial) if gate_pending else workers
+
+
 def prepare_fresh(parent, out):
     """Use the existing per-slot transport from the START of an authorized batch.
 
@@ -39,7 +47,7 @@ def prepare_fresh(parent, out):
     registration = parent/'call_ledger_registration.json'
     if registration.exists():
         raise ValueError('This batch already has a registered live ledger; never create a second fresh ledger')
-    if (protocol.get('mechanism') not in ('price_background_qwen', 'v32_same_input', 'v32_same_input_siliconflow')
+    if (protocol.get('mechanism') not in ('price_background_qwen', 'v32_same_input', 'v32_same_input_siliconflow', 'v32_new2025_validation')
             or protocol.get('q9_postprocessing') != 'proportional_nonnegative_v1'):
         raise ValueError('Registered normalized price-background batch required')
     slots = []
@@ -55,7 +63,7 @@ def prepare_fresh(parent, out):
         raise ValueError('Exact unique registered slots required')
     # Fixed outcome-blind interleaving, so arms/months do not run in long blocks.
     slots.sort(key=lambda s:hashlib.sha256(('20261021|'+s['slot_key']).encode()).hexdigest())
-    if protocol.get('mechanism') in ('v32_same_input','v32_same_input_siliconflow'):
+    if protocol.get('mechanism') in ('v32_same_input','v32_same_input_siliconflow','v32_new2025_validation'):
         gate = protocol['queue_technical_gate']
         selected = [s for month in protocol['months']
                     for s in [r for r in slots if r['month'] == month][:gate['per_month']]]
@@ -214,7 +222,8 @@ def run(folder, workers=12):
     if (folder/'execution_started.json').exists():raise ValueError('No automatic ledger restart')
     pending=read_json(folder/'pending_private.json')
     gate=p.get('queue_technical_gate')
-    if gate and (p.get('existing_attempted_calls') != 0 or gate['planned_calls'] >= len(pending)):
+    if gate and ((p.get('existing_attempted_calls') != 0 and p.get('mechanism') != 'v32_news_matching')
+                 or gate['planned_calls'] >= len(pending)):
         raise ValueError('Technical gate is only valid at the start of a fresh complete queue')
     directory=read_json(ROOT/p['provider_metadata']);preflight({'route_candidate':p['route'],
         'input_price_per_million':p['price_input_per_mtok'],'output_price_per_million':p['price_output_per_mtok']},directory)
@@ -256,9 +265,10 @@ def run(folder, workers=12):
         return row,fatal
     cursor=0;gate_rows=[];gate_checked=False
     phase_limit=gate['planned_calls'] if gate else len(pending)
+    phase_workers=queue_worker_limit(p,workers,bool(gate))
     with (folder/'new_calls_private.jsonl').open('x') as log, ThreadPoolExecutor(max_workers=workers) as pool:
         active={}
-        while cursor<phase_limit and len(active)<workers:
+        while cursor<phase_limit and len(active)<phase_workers:
             r=pending[cursor];active[pool.submit(one,r)]=r;cursor+=1
         while active:
             done,_=wait(active,return_when=FIRST_COMPLETED)
@@ -285,8 +295,9 @@ def run(folder, workers=12):
                     passed=passed,normalized_q9_allowed=True,new_extra_calls=0,truth_read=False))
                 halt|=not passed
                 phase_limit=len(pending)
+                phase_workers=queue_worker_limit(p,workers,False)
                 print(f'Technical gate {usable}/{len(gate_rows)}: '+('passed' if passed else 'stopped'),flush=True)
-            while not halt and cursor<phase_limit and len(active)<workers:
+            while not halt and cursor<phase_limit and len(active)<phase_workers:
                 r=pending[cursor];active[pool.submit(one,r)]=r;cursor+=1
     receipt={'status':'completed' if count==len(pending) else 'stopped_no_retry','new_calls':count,
         'original_attempts':p['existing_attempted_calls'],'api_reported_new_cost_usd':reported,

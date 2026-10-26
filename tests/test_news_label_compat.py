@@ -74,6 +74,16 @@ class TestNormalizeLabel(unittest.TestCase):
         self.assertEqual({frozenset(r) for r in rows},
                          {frozenset(NORMALIZED_FIELDS)})
 
+    def test_mechanism_fields_survive_without_changing_base_schema(self):
+        supplemented = {**SLIM, "tone": "alarming", "persistence": "uncertain"}
+        out = normalize_label(supplemented)
+        self.assertEqual(out["label_schema"], "slim4")
+        self.assertEqual(out["tone"], "alarming")
+        self.assertEqual(out["persistence"], "uncertain")
+        plain = normalize_label(SLIM)
+        self.assertIsNone(plain["tone"])
+        self.assertIsNone(plain["persistence"])
+
 
 class TestRendererSchemaEquivalence(unittest.TestCase):
     """The production news renderer must produce byte-identical output for a
