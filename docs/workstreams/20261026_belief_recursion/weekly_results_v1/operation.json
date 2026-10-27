@@ -1,0 +1,49 @@
+{
+  "status": "complete_no_generation_rerun_required",
+  "sealed_weeks": 47,
+  "fixed_households": 300,
+  "logical_household_weeks": 14100,
+  "main": {
+    "attempts": 14100,
+    "completed": 14100,
+    "usable": 14072,
+    "unresolved": 0,
+    "normal_response_invalid_fields": 2
+  },
+  "repair": {
+    "attempts": 28,
+    "completed": 28,
+    "usable": 26,
+    "unresolved": 0
+  },
+  "errors": {
+    "main": {
+      "APIConnectionError": 25,
+      "PermissionDeniedError": 1
+    },
+    "repair": {
+      "APIConnectionError": 2
+    }
+  },
+  "physical_attempts": 14128,
+  "unknown_inflight": 0,
+  "never_dispatched_main": 0,
+  "retained_fields": {
+    "q8": 2,
+    "q9": 2
+  },
+  "retained_household_weight_sums": {
+    "q8": 6.411736247405386,
+    "q9": 6.411736247405386
+  },
+  "original_budget_403_repaired": true,
+  "reported_cost_usd": 8.918646266999994,
+  "spent_or_reserved_usd": 9.009065539999995,
+  "unknown_fee_reservation_usd": 0.09041927300000019,
+  "budget_cap_usd": 15,
+  "state_identity_predecessor_time_hash_audit": "passed",
+  "new_API_calls": 0,
+  "truth_in_generation": false,
+  "Normal": false,
+  "entry_exit": false
+}
