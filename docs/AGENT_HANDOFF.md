@@ -1,5 +1,7 @@
 # SCE 项目当前交接
 
+**视频预制作（2026-10-27）：**用户告知Kimi正在基于素材写论文，Codex负责说明视频做法。已细化submission/package_templates/LOCAL_DEMO_PLAN.md：4分40秒七段、6—7页讲解画面＋真实零API操作＋旁白，区分官方硬要求与制作建议；现阶段未做PPT/录音/视频。先准备稳定流程，结果段等论文主表/图确定后统一Core/Normal与原始/组合。未改Kimi的v06目录、素材册或已验收ZIP，0API。
+
 **当前先审素材、暂不写正文（2026-10-27用户明确）：**交付docs/workstreams/20261027_final_delivery/materials_v1/index.html及README.md，12主题纳入最新A/B、两线Normal、月度/周度/下游，9组重绘＋3组既有匿名/机制/开发图；numbers.csv/materials.json/sources.json提供数字、参数谱系和哈希，252项冻结指标/组合核对通过。旧A2021原名单0.822126与同新版名单/权重0.825607明确区分。作者理解并讨论后再整合论文v06；本轮不改论文v05、研究包v05或模拟配置，0API/0新参数拟合。可用scripts/build_sce_paper_materials.py在该workstream全新目录离线复建。
 
 **2026-10-27当前目录/交付状态：**唯一候选入口deliverables/README.md，研究包v05实际按职责重排，study根3个Python入口，159份主源码/831原始源码归档；62包内测试、157独立导入、5schema、144科研主体AST校验通过，v04科学复算/12CSV完全一致。固定指针submission/latest_package.json已切至v05；不得再按下文旧outputs或v04记录发包。旧源码/运行/ZIP保留，0新增API；许可微观闭环、论文和视频仍待收尾。详docs/workstreams/20261027_clean_release/。 当前转入论文：旧v05正文未改，要求/逐页盘点与新稿/视频分工已更新在docs/workstreams/20261027_final_delivery/，先冻结证据后整合v06；不要把规划称为已交最终论文。
