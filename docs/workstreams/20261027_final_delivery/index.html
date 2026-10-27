@@ -1,6 +1,6 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE最终交付框架 · 讨论稿</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f6f3;color:#24272d;font:18px/1.85 "Times New Roman","Kaiti SC","KaiTi",serif}a{color:#245a93;text-decoration:none}a:hover{text-decoration:underline}.layout{display:grid;grid-template-columns:240px minmax(0,850px);gap:38px;max-width:1190px;margin:0 auto;padding:38px 28px}aside{position:sticky;top:24px;height:calc(100vh - 48px);overflow:auto;font-size:14px;line-height:1.5}aside a{display:block;padding:7px 0;border-bottom:1px solid #e0e1e4}.label{font-size:13px;letter-spacing:1px;color:#626870;margin-bottom:18px}main{background:#fff;padding:30px 42px;border:1px solid #e1e2e4}h1{font-size:29px;line-height:1.45;margin:0 0 22px}h2{font-size:23px;line-height:1.5;margin:48px 0 16px;border-top:1px solid #cdd2d8;padding-top:20px;scroll-margin-top:20px}h3{font-size:19px;line-height:1.6;margin:27px 0 10px}p{margin:12px 0;text-indent:2em}h1+p{text-indent:0;color:#626870;font-size:15px}li p{text-indent:0}li{margin:9px 0}ul,ol{padding-left:27px}strong{font-weight:700}blockquote{border-left:3px solid #9ba9ba;padding-left:16px;margin:20px 0;color:#4e5661}code{font:13px/1.5 monospace;overflow-wrap:anywhere}.intro{font:15px/1.7 "Times New Roman","Kaiti SC","KaiTi",serif;background:#f1f4f7;padding:14px 18px;margin-bottom:26px}.intro p{text-indent:0;margin:0}.intro a{margin-right:12px}footer{border-top:1px solid #ccd1d8;margin-top:38px;padding-top:15px;font-size:13px;color:#636973}@media(max-width:900px){.layout{display:block;padding:15px}aside{position:static;height:auto;font-size:15px;margin-bottom:20px}aside a{display:inline-block;margin-right:15px}main{padding:25px 22px}}@media print{body{background:white;font-size:11pt}.layout{display:block;padding:0}aside,.intro{display:none}main{border:0;padding:0}h2,h3{break-after:avoid}h2{margin-top:24px}a{color:inherit}p,li{orphans:3;widows:3}}</style></head><body><div class="layout"><aside><div class="label">最终交付框架 · 2026-10-27<br>供讨论 · 非最终论文</div><a href="#section-2">先看这一页：建议怎样讲这个项目</a><a href="#section-3">1. 从赛事标准确定内容优先级</a><a href="#section-4">2. 贡献应如何分层</a><a href="#section-8">3. 三项交付承担不同职责</a><a href="#section-9">4. 八页报告的具体安排</a><a href="#section-18">5. 怎样把一个月的实验展示成研究判断</a><a href="#section-25">6. 主结果的证据账本与易误读处</a><a href="#section-28">7. 定稿前需要解决的三项口径核对</a><a href="#section-29">8. 研究包：以“可查证结论”为组织单位</a><a href="#section-33">9. 视频框架：目标4分40秒，保留20秒余量</a><a href="#section-40">10. 图形与语言的统一规则</a><a href="#section-41">11. 从现有v05到最终稿：具体删并替换</a><a href="#section-42">12. 收尾顺序与讨论后执行范围</a><a href="#section-43">资料入口</a><a href="framework.md">阅读 Markdown 源稿</a><a href="official_requirements_check.json">赛事要求核查</a></aside><main><div class="intro"><p>建议先看中心叙事与八页安排，再讨论参数口径和交付顺序。此稿只规划呈现，不改实验与运行程序。</p></div><h1 id="section-1">SCE项目最终交付框架（讨论稿）</h1>
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE最终交付框架 · 讨论稿</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f6f3;color:#24272d;font:18px/1.85 "Times New Roman","Kaiti SC","KaiTi",serif}a{color:#245a93;text-decoration:none}a:hover{text-decoration:underline}.layout{display:grid;grid-template-columns:240px minmax(0,850px);gap:38px;max-width:1190px;margin:0 auto;padding:38px 28px}aside{position:sticky;top:24px;height:calc(100vh - 48px);overflow:auto;font-size:14px;line-height:1.5}aside a{display:block;padding:7px 0;border-bottom:1px solid #e0e1e4}.label{font-size:13px;letter-spacing:1px;color:#626870;margin-bottom:18px}main{background:#fff;padding:30px 42px;border:1px solid #e1e2e4}h1{font-size:29px;line-height:1.45;margin:0 0 22px}h2{font-size:23px;line-height:1.5;margin:48px 0 16px;border-top:1px solid #cdd2d8;padding-top:20px;scroll-margin-top:20px}h3{font-size:19px;line-height:1.6;margin:27px 0 10px}p{margin:12px 0;text-indent:2em}h1+p{text-indent:0;color:#626870;font-size:15px}li p{text-indent:0}li{margin:9px 0}ul,ol{padding-left:27px}strong{font-weight:700}blockquote{border-left:3px solid #9ba9ba;padding-left:16px;margin:20px 0;color:#4e5661}code{font:13px/1.5 monospace;overflow-wrap:anywhere}.intro{font:15px/1.7 "Times New Roman","Kaiti SC","KaiTi",serif;background:#f1f4f7;padding:14px 18px;margin-bottom:26px}.intro p{text-indent:0;margin:0}.intro a{margin-right:12px}footer{border-top:1px solid #ccd1d8;margin-top:38px;padding-top:15px;font-size:13px;color:#636973}@media(max-width:900px){.layout{display:block;padding:15px}aside{position:static;height:auto;font-size:15px;margin-bottom:20px}aside a{display:inline-block;margin-right:15px}main{padding:25px 22px}}@media print{body{background:white;font-size:11pt}.layout{display:block;padding:0}aside,.intro{display:none}main{border:0;padding:0}h2,h3{break-after:avoid}h2{margin-top:24px}a{color:inherit}p,li{orphans:3;widows:3}}</style></head><body><div class="layout"><aside><div class="label">最终交付框架 · 2026-10-27<br>供讨论 · 非最终论文</div><a href="#section-2">先看这一页：建议怎样讲这个项目</a><a href="#section-3">1. 从赛事标准确定内容优先级</a><a href="#section-4">2. 贡献应如何分层</a><a href="#section-8">3. 三项交付承担不同职责</a><a href="#section-9">4. 八页报告的具体安排</a><a href="#section-18">5. 怎样把一个月的实验展示成研究判断</a><a href="#section-25">6. 主结果的证据账本与易误读处</a><a href="#section-28">7. 定稿前需要解决的三项口径核对</a><a href="#section-29">8. 研究包：以“可查证结论”为组织单位</a><a href="#section-33">9. 视频框架：目标4分40秒，保留20秒余量</a><a href="#section-40">10. 图形与语言的统一规则</a><a href="#section-41">11. 从现有v05到最终稿：具体删并替换</a><a href="#section-42">12. 收尾顺序与讨论后执行范围</a><a href="#section-43">资料入口</a><a href="framework.md">阅读 Markdown 源稿</a><a href="official_requirements_check.json">赛事要求核查</a></aside><main><h1 id="section-1">SCE项目最终交付框架（讨论稿）</h1>
 <p>2026-10-27 · 面向“水上挽月”最终报告、研究包与演示视频
-本稿安排论证与材料，不是最终论文正文，不改变冻结配置或已有结果。周度结果留待封存后填入。未新增API调用，未修改正在运行的程序。</p>
+本稿安排论证与材料，不是最终论文正文，不改变冻结配置或已有结果。周度已完成47周，现补入完整11个月证据；按用户意见突出可用的正向发现，其余结果正文简述、研究包完整披露。未新增API调用，未修改冻结程序。</p>
 <h2 id="section-2">先看这一页：建议怎样讲这个项目</h2>
 <p><strong>建议把作品定位为：以真实家庭调查为约束、以经济学机制为依据，对居民通胀预期开展总体—微观—动态验证的生成式社会模拟研究。</strong></p>
 <p>推荐题目：<strong>《居民通胀预期的生成式社会模拟：信息接触、信念更新与跨时期验证》</strong>。如需强调学科问题，副标题可用“基于纽约联储SCE的经验研究”。不使用“精准预测”“全面超越”“还原人类认知”等超出证据的标题。</p>
@@ -107,10 +107,10 @@
 <ul>
 <li>约半页：月度自主递推与发布后校准的周度递推。画“首次初始化→自主传递”和“周更新→新SCE公开→校准”两条时间线，区别清楚。</li>
 <li>月度链固定512户，主评排除共用起点，只评后10个月；MAE0.305751、持续性0.190。描述前五个月0.111、后五个月0.500的变化及2026年5—8月向上偏离，但这个分段是事后描述，不能因而认定第六步是普适失稳阈值。</li>
-<li>周度固定300户、47个周五，发布间隔内自身状态递推，遇新公开SCE才校准。每月只取预定观察点对月度SCE评价；47点不是47份独立月度真值，先验校准自身不算预测成绩。结果未封存时仅保留方法位置。</li>
-<li>约半页：四个下游指标×三个预测期的完整12格改善/退步图。以循环信贷为较积极例子，同时显式标注最终组合只有3/12为正，简单基线仍强；比较对象必须写到“同结构加入官方SCE的回归”，不能简称战胜所有基线。</li>
+<li>周度固定300户、47个周五，发布间隔内自身状态递推，遇新公开SCE才校准。完整11个月原始MAE0.151581、持续性0.172727，下降12.24%；冻结输出组合0.156409。正文突出未经输出层组合的模拟已提供总体正向信息，同时保留9月漏报。原始值仍使用已公开SCE校准先验；设计权重汇总与输出层线性组合是两件事。47点不是47份独立真值。</li>
+<li>约半页：主图突出原始月度模拟预测循环信贷未来1/2/3个月累计对数增长的RMSE改善3.55%/8.17%/1.69%。这是相同控制结构下以模拟SCE替代官方SCE的回顾性比较；Kimi使用的是原月度A/B Core＋Normal序列，不是新周度序列。正文一两句话说明其他指标未见一致改善、最终组合仅3/12项为正且简单基线仍强；12格全对照移入研究包，不占据正文主视觉。</li>
 </ul>
-<p>**拥挤时的取舍：**正文保留三项扩展各一段及一幅双面板；全套曲线与192行模型指标、408行对照移入研究包。周度若不支持改善，如实用一句话和原有图位展示，不通过换观察周或删月份制造亮点。</p>
+<p>**拥挤时的取舍：**正文重点展示周度原始增量与循环信贷局部用途；月度自主链的漂移诊断简述。全套曲线与192行模型指标、408行对照移入研究包。对负向结果压缩篇幅，但保留适用范围和强基线，不通过换观察周或删月份制造亮点。</p>
 <h3 id="section-17">第8页：讨论、可复现性和参考文献</h3>
 <p><strong>读完应知道：哪些结论可信，怎样复查，未来应该解决什么。</strong></p>
 <ul>
@@ -144,6 +144,7 @@
 <li>**测量差异：**个人密度算法替换的月中位数差0.013272pp，全流程首发桥接0.026928pp，不足以解释2021失败。来源：<a href="../20261026_measurement_anomaly/README.md">计分核对</a>。</li>
 <li>**组合的有限增量：**A原共享截止下后34月扩展组合MAE0.184980，参照0.194118；B最新扩展组合0.143964，参照0.172727。MAE目标选择λ＝0、不同截止敏感性与区间跨零一并交代。来源：<a href="../20261026_core_normal_full_a/README.md">组合</a>、<a href="../20261026_dynamic_presentation/README.md">公平宏观对照</a>。</li>
 <li>**月度自主链：**后10月MAE0.305751、参照0.190；2026年5—8月偏高加剧，9月有所回落，并非单调爆炸。来源：<a href="../20261026_belief_recursion/monthly_aggregate_readout.json">封存聚合</a>、<a href="../20261026_belief_recursion/monthly_results_v2/index.html">阅读页</a>。</li>
+<li>**周度原始增量：**完整11个月主MAE0.151581/持续性0.172727、RMSE0.188942/0.211058，冻结组合MAE0.156409；仅5/11月误差更低，9月低估0.402459pp。未经输出组合，但有公开历史值先验校准；无Normal。来源：<a href="../20261026_belief_recursion/WEEKLY_FINAL_RESULTS_20261027.md">完整周度结果</a>。</li>
 <li>**下游用途：**原始模拟替代官方SCE的信贷1/2/3月RMSE改善3.55%/8.17%/1.69%；最终组合仅3/12项改善，信贷三个期的最强简单参照仍为历史均值。来源：<a href="../20261026_downstream/README.md">Kimi下游记录</a>。</li>
 </ul>
 <h3 id="section-27">6.2 不能作为标题数字使用的结果</h3>
@@ -193,7 +194,7 @@
 <h3 id="section-37">2:00—3:00：主结果与一个重要诊断</h3>
 <p>显示A/B分别的主要曲线、原始/组合与基线。讲清2021改善仍不足、微观分歧偏窄。这里只报两三组关键数值，图上的完整表支撑追问。</p>
 <h3 id="section-38">3:00—3:50：动态与用途</h3>
-<p>月度自主递推和周度发布校准各用十多秒说明；周度结果若完成则展示预定指标。下游用完整12格正负图强调信贷的局部线索，同时保留简单基线仍强的结论。</p>
+<p>月度自主链用十秒交代漂移；重点展示周度未经输出组合的0.1516/0.1727主口径及一个反例。下游以循环信贷三档预测期展示局部用途，用一句话说明其他领域未见一致改善、完整对照在研究包且简单基线仍强；不在短视频逐项铺开12格。</p>
 <h3 id="section-39">3:50—4:40：贡献、边界与复查入口</h3>
 <p>回到三项贡献；展示证据索引、实际成本/种子/版本和研究包入口。结束在“可以复查什么、下一步应检验什么”，不以累积调用次数或最好一项误差作为结尾。</p>
 <p>正文与视频都不承担逐次运行日志说明；研究包承接细节。视频最终必须≤5分钟，并确认声音、字幕、脱敏和链接可用。</p>
@@ -215,7 +216,7 @@
 <li>保留理论—机制—对照结构，把探索按六家族压成一张决策表；不保留所有小实验具体数字。</li>
 <li>将原2021独立页与微观诊断合并；原2026-04旧B高估案例只在新版仍支持相同解释且配置标清时使用，否则留历史附件。</li>
 <li>替换旧B0.241及“尚未扩展/尚未递推”的过时状态，纳入最新B与两种扩展机制；旧数值保留在版本比较中。</li>
-<li>增加第7页拓展；周度占位不预填好结果，下游保留完整正负图。</li>
+<li>增加第7页拓展；周度填入完整11个月实际结果，下游正文突出信贷、完整正负图放研究包。</li>
 <li>第8页合并重复边界，给参考文献、实际运行/复现声明留出固定空间。</li>
 </ol>
 <p>**不建议新增封面、独立目录页或大幅平台截图。**8页是论证空间；封面信息放第1页页首，平台和运行流程在视频中展现。</p>
