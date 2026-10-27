@@ -4,6 +4,8 @@
 
 ## 查看与编辑
 
+**最新文字修订：**[保留作者修改并微调两处的PPT](SCE_framework_editable_v2_reviewed.pptx)。仅将“上期SCE校准”改为“最新已公布SCE校准”，将“通胀高相关文章”改为“通胀相关度高的新闻”；作者其余文字、字体和布局保留。原PPT不覆盖。此文件尚未同步为PDF/PNG，下面的矢量图及页面预览仍为前一稿；视觉重设计待后续进行。
+
 - [预览与下载](index.html)
 - [原生可编辑PPT](SCE_framework_editable_v2.pptx)：每个方法框自带完整段落文本，可点进方框修改内容。标题、正文与冒号前的标签在同一方框内分层排版。
 - [论文矢量PDF](sce_framework_paper_v2.pdf)：180×101.25 mm，嵌入字体。
