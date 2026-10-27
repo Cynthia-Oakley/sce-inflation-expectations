@@ -4,6 +4,9 @@
 
 ## 文件
 
+**作者手调版（2026-10-27晚）：**当前PPT已由作者上移设计依据、调整P/E位置、将供应商并入B框，并微调真值、周度及下游文字。语义复核可保留。当前PDF/PNG、scene及原manifest仍对应手调前导出，不作为此次PPT的哈希或版式验收；后续以作者PPT为基底同步，勿从旧scene重建覆盖。在线查看器有字体回退，B框新增行后的最终换行须以本机导出PDF确认。
+
+
 - [预览与下载](index.html)
 - [可编辑PowerPoint](SCE_framework_editable_v3.pptx)：原生形状、连接线、曲线及文字；各文字区域拥有自身的富文本，不覆盖独立小标签。
 - [论文矢量PDF](sce_framework_paper_v3.pdf)：180×101.25 mm，嵌入楷体与Times New Roman。

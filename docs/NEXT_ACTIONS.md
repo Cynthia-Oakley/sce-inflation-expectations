@@ -17,6 +17,7 @@
 - [x] **框架图作者措辞复核：**保留作者修改，另存[两处微调PPT](workstreams/20261027_final_delivery/overview_figure_v2/SCE_framework_editable_v2_reviewed.pptx)：采用“最新已公布SCE校准”和“通胀相关度高的新闻”。原作者PPT保留；PDF/PNG仍为前稿，视觉重设计尚未执行，0API。
 - [x] **v09内容与事实审阅：**[逐条审阅意见](workstreams/20261027_final_delivery/report_v09_content_review.md)已完成；冻结聚合独立复算主要MAE/组合/下游数字一致，发现最终环境输入、性别字段、知识截止、15个月非相邻锚、新闻开发期与提交包范围需澄清。补理论—对照—取舍、B日期/先验和不确定性说明；原DOCX/MD不改、0API，不声称Word逐页验收，待作者/Kimi择取修改。
 - [x] **方法图v3与论文指标对齐：**[新预览](workstreams/20261027_final_delivery/overview_figure_v3/index.html)已完成，四阶段主线、真实Q9计分小图、原生可编辑PPT与矢量PDF；主模拟MAE/W1/IQR，下游RMSE，月度/周度从个人状态分支。旧版和论文未覆盖，0API。
+- [x] **作者手调v3复核：**已读最新PPT，设计依据上移、供应商并入B、“当期真实SCE”及周度/信贷文字语义可保留。未改PPT；当前PDF/PNG/scene仍为手调前，下一次同步应以作者PPT为基底。在线字体回退下B框换行需本机最终导出确认。
 - [ ] **评审微观复现数据补齐：**官网要求完整实验数据信息；v05仅聚合复算尚不足以核验全部微观结论。按[补齐方案](workstreams/20261027_final_delivery/submission_data_reproduction_plan_20261027.md)核查许可/脱敏，导出逐条模拟答卷与合法配对评价层，增加无API微观重算，再另建下一包profile；目前未导出/上传。
 - [ ] **内容定稿：**汇总A/B/Normal/递推/周度/下游最终数字；明确主辅指标、对应基线和参数谱系；冻结核心图与贡献/局限措辞。
 - [ ] **论文：**依次完成数字/证据清单、六部分正文整合、必要离线重绘与引用核查，再输出v06 PDF并做数字/页数/可读性复核；现有v05保留。
