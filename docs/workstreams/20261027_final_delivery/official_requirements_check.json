@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-27T01:08:01.703512+08:00",
+  "checked_at": "2026-10-27",
   "source_url": "https://socioverse.fudan-disc.com/challenge/",
   "body_url": "https://socioverse.fudan-disc.com/challenge/challenge.js?v=20261013a",
   "body_sha256": "dce3d93a9ceab1377cf27a5d93d6b5f3fdebaaa70ee6154606339c2fc09bee53",
@@ -41,5 +41,18 @@
   "reproducibility_is_gate": true,
   "deadline": "2026-10-31T23:59:00+08:00",
   "distinction": "Eight-page layout, figure budget, evidence index and video timeline are this project editorial recommendations, not additional contest requirements.",
-  "new_api_calls": 0
+  "new_api_calls": 0,
+  "rechecked_for_paper_planning": true,
+  "live_public_body_retrieved": true,
+  "official_suggested_paper_order": [
+    "research_question",
+    "P/E/B",
+    "experiment_design",
+    "results",
+    "conclusion_and_limitations"
+  ],
+  "local_and_online_same_requirements": true,
+  "local_video_flexible_form_source": "User-forwarded organizer clarification; not presented as a verbatim webpage requirement",
+  "no_verified_mandatory_specific_font_or_column_template": true,
+  "inference_boundary": "Academic narrative, figure budget and section/page allocation are editorial recommendations inferred from rubric and official repository examples, not additional contest rules."
 }

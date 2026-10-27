@@ -1,0 +1,79 @@
+{
+  "checked_on": "2026-10-27",
+  "source_report_pdf": "output/pdf/sce_research_report_draft_v05.pdf",
+  "source_report_pdf_sha256": "addae15c3e97d0ed2728561b184eacbed44bf19142d9815e39a647e955d099d6",
+  "pdf_pages": 8,
+  "html_figures": 7,
+  "html_tables": 4,
+  "method": "Complete page text read plus rendered eight-page contact-sheet inspection; no PDF authoring or simulation.",
+  "page_character_counts": [
+    1335,
+    990,
+    1587,
+    1065,
+    1029,
+    624,
+    696,
+    2392
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "starts_with": "SCE研究报告 · 初稿 v0.5\n从研究问题到机制假设\n居民通胀预期的智能体重建\n机制依据、设计选择与跨时期评估\n水上挽月 · SocioVerse Challenge 2026 · 赛道A：历史重建与未来预测\n版本 v0.5 · 2026-10-26\n 居"
+    },
+    {
+      "page": 2,
+      "starts_with": "SCE研究报告 · 初稿 v0.5\nSCE问卷与指标构建\n2 SCE问卷与指标构建\n 两道题都面向未来12个月，却记录不同层面的判断。Q8询问预计通胀或通缩的幅度，是一个点预期；Q9要求为十\n个可能区间分配概率，表达未来涨幅的不确定性。图1展示2025年6月一"
+    },
+    {
+      "page": 3,
+      "starts_with": "SCE研究报告 · 初稿 v0.5\n人口网格的统计依据与代表性\n3 人口分层的统计依据\n 若只按少数粗特征抽样，可能遗漏重要群体；若把所有人口字段交叉，小格又会缺乏支持。我们因此把“对回答有\n多少独立信息”和“能否获得可靠支持”分开判断。使用98,382个历史"
+    },
+    {
+      "page": 4,
+      "starts_with": "SCE研究报告 · 初稿 v0.5\n理论路径如何变成信息与机制对照\n4 信息接触机制与实验设计\n 有限注意力意味着“公开可得”与“本人接触”之间还有选择过程。SCE专项研究发现，学历、收入及年龄与宏观关注\n有关，但关系依主题而变，通胀关注回归的伪R²仅0.02"
+    },
+    {
+      "page": 5,
+      "starts_with": "SCE研究报告 · 初稿 v0.5\n新版A T0：全82月对旧A与基线\n5 A T0全国中心：略优于旧A，仍落后公开基线\n图5 上：82个月旧A（按新版T0名单/权重重算，MAE 0.318）、新版T0、官方SCE与公开历史基线；下：B11沿用v0.4旧结果，"
+    },
+    {
+      "page": 6,
+      "starts_with": "SCE研究报告 · 初稿 v0.5\n微观结构：W1、IQR与Q8的不同代价\n6 全国中心的小幅变化没有消除微观收缩\n图6 同支持Q9微观比较。W1衡量模型分布与真人分布距离；跨人IQR展示真人间判断宽度。样本为41,042个Q9人月。\n 同支持Q9中心MAE由"
+    },
+    {
+      "page": 7,
+      "starts_with": "SCE研究报告 · 初稿 v0.5\n2021年：偏差缓解，但低估仍在\n7 2021全年：九个月改善，仍落后基线\n图7 2021逐月SCE全国值、旧A、新版T0与公开历史基线；右图为相对真实值误差。新版T0全年仍呈负偏差。\n 2021年Q9中心MAE从旧A的0."
+    },
+    {
+      "page": 8,
+      "starts_with": "SCE研究报告 · 初稿 v0.5\n研究边界、可复现性与待补部分\n新版T0相较旧A在全期与2021全国中心有所改善，但仍未胜过公开持续性基线；Q9微观W1/IQR、真\n实上期基线和Q8个体误差也未全面改善。A使用历史人口与本人更早回答、按完成日前一日筛选环\n境"
+    }
+  ],
+  "keep": [
+    "SCE background and real Q9 illustration",
+    "theory-to-design rationale",
+    "grid selection evidence",
+    "same-support A and 2021 diagnosis"
+  ],
+  "replace": [
+    "legacy B 0.241 as current result",
+    "statements that Normal/recursion/weekly are unimplemented",
+    "outdated reproduction paths"
+  ],
+  "integrate": [
+    "latest B and frozen combinations",
+    "Core+Normal actual scale and effect",
+    "official scoring bridge",
+    "fair macro comparisons",
+    "monthly recursion and weekly calibration",
+    "downstream limited credit results"
+  ],
+  "layout_findings": [
+    "one-topic-per-fixed-page creates uneven density",
+    "pages6-7 leave substantial space",
+    "references and limitations concentrated on page8"
+  ],
+  "report_body_changed": false,
+  "new_API_calls": 0
+}
