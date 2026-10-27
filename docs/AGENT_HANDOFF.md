@@ -1,5 +1,7 @@
 # SCE 项目当前交接
 
+**方法图v3与评审数据补齐范围（2026-10-27）：**最新图件`docs/workstreams/20261027_final_delivery/overview_figure_v3/index.html`，可编辑PPT/矢量PDF/SVG/PNG；四阶段主线，MAE/W1/IQR为主，RMSE只列下游用途，使用已封存Q9参数、不新拟合。旧图、v09及研究包v05保持原文件。官网动态正文哈希仍与既有核查一致，并明确要求完整实验数据信息用于复现；此前排除逐人回复是保守打包选择，不是赛事禁令。应按`submission_data_reproduction_plan_20261027.md`补脱敏模拟答卷、合法配对评价层和微观重算；本轮仅列方案，尚未导出数据或升级包，0新增模型调用。
+
 **框架图v2按评委视角修订（2026-10-27）：**最新入口`docs/workstreams/20261027_final_delivery/overview_figure_v2/index.html`。用户改稿未找到，按其补述采用中文Kaiti SC、英文数字Times New Roman和“网格化／历史重建／模拟预测／模拟效果评估”结构；六个方法框的段落均在自身文本区内，非叠加小文本框。右侧接入月度、周度与下游；补参数、支出/采购责任/美联储主席信心。核对代码与三期冻结提示后，将购买频率标为开发期已测未采用，完整总体CPI/就业/汽油数表不冒称实际输入。PPT字体标记/文字归属及PDF已核；在线预览有楷体回退，PNG由嵌入字体PDF渲染，编辑器实机验收未完成。v1和论文、封存研究包均不改，0API；图件仍待作者反馈。
 
 **论文/视频共用框架图初版（2026-10-27）：**作者确认文字主线后，已完成`docs/workstreams/20261027_final_delivery/overview_figure_v1/index.html`及原生可编辑PPT、SVG、180mm矢量PDF、1920×1080 PNG。P/E并行进入B，Q9个人均值与全国中位数分开，Normal/冻结组合为统计支路，动态与用途独立；目标期真值只进评价。51文本和15原生连接线检查、PDF/原生幻灯片视觉检查、页面桌面/手机无溢出通过，0API。尚未插入Kimi论文、未制作完整视频/PPT讲解稿，图件供作者反馈迭代；研究包v05不变。源码在study的`reports/final_delivery_figures/`，不要改Kimi v06/v07目录。

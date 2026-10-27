@@ -1,0 +1,39 @@
+{
+  "schema": "sce_overview_validation/v3",
+  "text_owner_count": 27,
+  "all_scene_text_exact": true,
+  "raster_images": 0,
+  "fonts": [
+    "Kaiti SC",
+    "Times New Roman"
+  ],
+  "pdf_pages": 1,
+  "pdf_mm": [
+    180,
+    101.25
+  ],
+  "all_27_text_regions_fit": true,
+  "all_preview_links_exist": true,
+  "final_ppt_first_party_finalizer": "outputs/sce_overview_v3_validation_20261027/validation.json",
+  "frozen_Q9_parameters_reused": true,
+  "new_density_fits": 0,
+  "new_model_calls": 0,
+  "metrics": {
+    "main_simulation": [
+      "MAE",
+      "W1",
+      "IQR"
+    ],
+    "downstream": [
+      "RMSE"
+    ],
+    "dynamic": "MAE and trajectory/drift diagnostics"
+  },
+  "ppt_native_render_reviewed": true,
+  "native_chinese_font_substitution_observed": true,
+  "pdf_png_embedded_kaiti_reviewed": true,
+  "desktop_powerpoint_verification_completed": false,
+  "old_reviewed_v2_unchanged": true,
+  "old_v05_zip_unchanged": true,
+  "v09_docx_unchanged": true
+}

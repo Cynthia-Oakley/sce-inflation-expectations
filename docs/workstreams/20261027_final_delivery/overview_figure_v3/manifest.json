@@ -1,0 +1,67 @@
+{
+  "schema": "sce_overview_manifest/v3",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "3ce639e470086531564752ad7b61dfc1af0d446de8e392d5c6f11d61d3f71a6a"
+    },
+    {
+      "path": "SCE_framework_editable_v3.pptx",
+      "sha256": "30828104e2ca9204f770f19e6dfb950f8451db7e346ac6f8aa29028221bdd6ea"
+    },
+    {
+      "path": "index.html",
+      "sha256": "0e59b214c8af6dcd1f877d3ac69963a37be01273df137073a96e9bb16fb8f393"
+    },
+    {
+      "path": "sce_framework_paper_v3.pdf",
+      "sha256": "570047247248069150f95147c56109c379042ed22d6b40208efa2d94e7d70108"
+    },
+    {
+      "path": "sce_framework_paper_v3.svg",
+      "sha256": "fff960a5971a11c9df21013e3acb3762dc0577306fb7580c5533ba64dbb28e45"
+    },
+    {
+      "path": "sce_framework_video_v3.png",
+      "sha256": "e68d11ac8a54f61a61d8a4ba168c91e27301c8d66d065c707366ac0f0c97a48b"
+    },
+    {
+      "path": "scene.json",
+      "sha256": "d2c26a726c7aae06d8c306bfab4402185dee7083ad2c1b1b4878c3eb59344e4e"
+    },
+    {
+      "path": "text_fit.json",
+      "sha256": "5a04941604bd3a6bb2c293cf612c3ddd65e1cddec144e54d0904c6b757f022a1"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "96015bb1ac9cb4c5b6bb2aa6158f9d7d21e20fad7177f0101741de6c8e46d511"
+    }
+  ],
+  "sources": [
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_delivery_figures/build_overview_v3.py",
+      "sha256": "28772d3b900d3ade25bd6c45a3fa5b2e5bbf286339e419cfec6b48abec5fe030"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_delivery_figures/apply_overview_scene_v3.mjs",
+      "sha256": "e898e155e0728173b2d56dd9b2f3ee4895f08eff55b32062f90f72f0e670ba7e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_delivery_figures/build_overview_v2.py",
+      "sha256": "ef37aa4d52413c8585695a3f1871931af29ca8ef2c87bd55ad4f1b2762a31383"
+    },
+    {
+      "path": "outputs/sce_research_report_figures_20261024_v03/figure_data.json",
+      "sha256": "49c2b204b624ec2f679548f307ae1c0e00b3bf72e0a52891f2ea1d78c9bd7d7e"
+    },
+    {
+      "path": "docs/reports/final_report_draft_v09/manuscript.md",
+      "sha256": "74ea42fdd9652e0e531109b107cd883fd482f73108f9d5c9c1c9ff3a79b1b840"
+    },
+    {
+      "path": "docs/workstreams/20261027_final_delivery/overview_figure_v2/SCE_framework_editable_v2_reviewed.pptx",
+      "sha256": "0d0965bc99bf701e0e6976482e8ccc980058bb599b785b628960bef5886269bb"
+    }
+  ]
+}

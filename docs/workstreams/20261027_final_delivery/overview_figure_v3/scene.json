@@ -1,0 +1,2467 @@
+{
+  "schema": "sce_overview_native/v3",
+  "width": 1920,
+  "height": 1080,
+  "chinese_font": "Kaiti SC",
+  "latin_font": "Times New Roman",
+  "title": "居民通胀预期模拟的方法框架",
+  "boxes": [
+    {
+      "name": "title",
+      "x": 38.4,
+      "y": 17.28,
+      "w": 1843.1999999999998,
+      "h": 58.559999999999995,
+      "paragraphs": [
+        {
+          "text": "居民通胀预期模拟的方法框架",
+          "size": 44.16,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "居民通胀预期模拟的方法框架",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "subject",
+      "x": 38.4,
+      "y": 87.36,
+      "w": 1843.1999999999998,
+      "h": 44.16,
+      "paragraphs": [
+        {
+          "text": "SCE一年期问卷：家庭画像与既有信念 × 可见环境 → 个体答卷 → 全国指标",
+          "size": 28.799999999999997,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "SCE",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "一年期问卷：家庭画像与既有信念",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": " × ",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "可见环境",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": " → ",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "个体答卷",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": " → ",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "全国指标",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "stage-input",
+      "x": 38.4,
+      "y": 157.44,
+      "w": 480.0,
+      "h": 46.08,
+      "paragraphs": [
+        {
+          "text": "01  人群与信息",
+          "size": 31.68,
+          "color": "#285580",
+          "runs": [
+            {
+              "text": "01  ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "人群与信息",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "stage-agent",
+      "x": 609.6,
+      "y": 157.44,
+      "w": 307.2,
+      "h": 46.08,
+      "paragraphs": [
+        {
+          "text": "02  问卷行为",
+          "size": 31.68,
+          "color": "#77558F",
+          "runs": [
+            {
+              "text": "02  ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "问卷行为",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "stage-index",
+      "x": 988.8,
+      "y": 157.44,
+      "w": 441.59999999999997,
+      "h": 46.08,
+      "paragraphs": [
+        {
+          "text": "03  指标形成",
+          "size": 31.68,
+          "color": "#285580",
+          "runs": [
+            {
+              "text": "03  ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "指标形成",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "stage-evaluation",
+      "x": 1507.2,
+      "y": 157.44,
+      "w": 374.4,
+      "h": 46.08,
+      "paragraphs": [
+        {
+          "text": "04  效果检验",
+          "size": 31.68,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "04  ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "效果检验",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "population",
+      "x": 38.4,
+      "y": 225.6,
+      "w": 480.0,
+      "h": 316.8,
+      "paragraphs": [
+        {
+          "text": "P  家庭画像与原有信念",
+          "size": 32.64,
+          "color": "#285580",
+          "runs": [
+            {
+              "text": "P  ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "家庭画像与原有信念",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 12.48
+        },
+        {
+          "text": "来源：SCE公开微观资料",
+          "size": 27.84,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "来源：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "SCE",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "公开微观资料",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "网格：学历×数理×年龄×收入",
+          "size": 27.84,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "网格：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "学历",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "×",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "数理",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "×",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "年龄",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "×",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "收入",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "抽样：小格过采样，人口权重校准",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "抽样：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "小格过采样，人口权重校准",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "重建：本人或相似家庭的历史答卷",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "重建：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "本人或相似家庭的历史答卷",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "近期：联合抽样＋最新已公布SCE校准",
+          "size": 25.919999999999998,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "近期：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "联合抽样＋最新已公布",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "SCE",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "校准",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "合成：支出、采购责任、联储信心",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "合成：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "支出、采购责任、联储信心",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "#F1F6FA",
+      "stroke": "#D5DEE5",
+      "inset": 18.24
+    },
+    {
+      "name": "environment",
+      "x": 38.4,
+      "y": 566.4,
+      "w": 480.0,
+      "h": 316.8,
+      "paragraphs": [
+        {
+          "text": "E  因人、因时组织信息",
+          "size": 32.64,
+          "color": "#AC5725",
+          "runs": [
+            {
+              "text": "E  ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "因人、因时组织信息",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 12.48
+        },
+        {
+          "text": "价格：食品CPI总项与采购细项",
+          "size": 27.84,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "价格：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "食品",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "CPI",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "总项与采购细项",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "新闻：随机4/8/16/32篇",
+          "size": 27.84,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "新闻：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "随机",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "4/8/16/32",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "篇",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "主题：人口兴趣与价格相关性",
+          "size": 27.84,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "主题：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "人口兴趣与价格相关性",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "通胀相关度高的新闻，抽样权重×1.5",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "通胀相关度高的新闻，抽样权重",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "×1.5",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "政策：截止前公开的美联储动态",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "政策：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "截止前公开的美联储动态",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "时点：实际或合成作答日前一日¹",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "时点：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "实际或合成作答日前一日",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "¹",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "#FCF4EC",
+      "stroke": "#D5DEE5",
+      "inset": 18.24
+    },
+    {
+      "name": "theory-note",
+      "x": 38.4,
+      "y": 897.6,
+      "w": 480.0,
+      "h": 81.6,
+      "paragraphs": [
+        {
+          "text": "设计依据",
+          "size": 27.84,
+          "color": "#526170",
+          "runs": [
+            {
+              "text": "设计依据",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 3.84
+        },
+        {
+          "text": "信念持续性 · 有限注意 · 价格体验",
+          "size": 26.88,
+          "color": "#526170",
+          "runs": [
+            {
+              "text": "信念持续性",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": " · ",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "有限注意",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": " · ",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "价格体验",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "behavior",
+      "x": 609.6,
+      "y": 336.0,
+      "w": 307.2,
+      "h": 336.0,
+      "paragraphs": [
+        {
+          "text": "B  模拟问卷回答",
+          "size": 32.64,
+          "color": "#77558F",
+          "runs": [
+            {
+              "text": "B  ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "模拟问卷回答",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 12.48
+        },
+        {
+          "text": "DeepSeek V3.2",
+          "size": 29.759999999999998,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "DeepSeek V3.2",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "温度0.5；关闭思考",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "温度",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "0.5",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "；关闭思考",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "Q8：未来12个月点预期",
+          "size": 25.919999999999998,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "Q8",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "未来",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "12",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "个月点预期",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "Q9：十档概率",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "Q9",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "十档概率",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "输出：JSON答卷",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "输出：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "JSON",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "答卷",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "#F5F0F8",
+      "stroke": "#D5DEE5",
+      "inset": 18.24
+    },
+    {
+      "name": "model-details",
+      "x": 609.6,
+      "y": 691.1999999999999,
+      "w": 316.8,
+      "h": 86.39999999999999,
+      "paragraphs": [
+        {
+          "text": "SiliconFlow FP8 固定供应商",
+          "size": 24.96,
+          "color": "#526170",
+          "runs": [
+            {
+              "text": "SiliconFlow FP8 ",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "固定供应商",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 2.88
+        },
+        {
+          "text": "最多1,024输出token",
+          "size": 24.96,
+          "color": "#526170",
+          "runs": [
+            {
+              "text": "最多",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "1,024",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "输出",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "token",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "q9-scoring",
+      "x": 988.8,
+      "y": 226.56,
+      "w": 441.59999999999997,
+      "h": 49.92,
+      "paragraphs": [
+        {
+          "text": "Q9：概率答卷 → 个人密度均值",
+          "size": 28.799999999999997,
+          "color": "#285580",
+          "runs": [
+            {
+              "text": "Q9",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "：概率答卷",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": " → ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "个人密度均值",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "bins-label",
+      "x": 988.8,
+      "y": 399.36,
+      "w": 192.0,
+      "h": 43.199999999999996,
+      "paragraphs": [
+        {
+          "text": "十档概率",
+          "size": 26.88,
+          "color": "#526170",
+          "runs": [
+            {
+              "text": "十档概率",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "density-label",
+      "x": 1224.0,
+      "y": 399.36,
+      "w": 201.6,
+      "h": 43.199999999999996,
+      "paragraphs": [
+        {
+          "text": "连续密度",
+          "size": 26.88,
+          "color": "#526170",
+          "runs": [
+            {
+              "text": "连续密度",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "weighted-center",
+      "x": 988.8,
+      "y": 460.79999999999995,
+      "w": 441.59999999999997,
+      "h": 86.39999999999999,
+      "paragraphs": [
+        {
+          "text": "个人均值 → 人口加权中位数",
+          "size": 27.84,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "个人均值",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": " → ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "人口加权中位数",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 3.84
+        },
+        {
+          "text": "Q8点预期独立汇总",
+          "size": 26.88,
+          "color": "#526170",
+          "runs": [
+            {
+              "text": "Q8",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "点预期独立汇总",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "national-index",
+      "x": 988.8,
+      "y": 585.6,
+      "w": 441.59999999999997,
+      "h": 81.6,
+      "paragraphs": [
+        {
+          "text": "全国模拟指标",
+          "size": 33.6,
+          "color": "#285580",
+          "runs": [
+            {
+              "text": "全国模拟指标",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "#F1F6FA",
+      "stroke": "#D5DEE5",
+      "inset": 15.36
+    },
+    {
+      "name": "postprocessing",
+      "x": 988.8,
+      "y": 677.76,
+      "w": 441.59999999999997,
+      "h": 119.03999999999999,
+      "paragraphs": [
+        {
+          "text": "规模：经验贝叶斯扩展（τ=8）",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "规模：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "经验贝叶斯扩展（",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "τ=8",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "）",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "组合：已公布SCE＋模拟指标",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "组合：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "已公布",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "SCE",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "＋模拟指标",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "原始、扩展与组合分别报告",
+          "size": 25.919999999999998,
+          "color": "#526170",
+          "runs": [
+            {
+              "text": "原始、扩展与组合分别报告",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "metric-mae",
+      "x": 1507.2,
+      "y": 227.51999999999998,
+      "w": 374.4,
+      "h": 115.19999999999999,
+      "paragraphs": [
+        {
+          "text": "MAE",
+          "size": 37.44,
+          "color": "#285580",
+          "runs": [
+            {
+              "text": "MAE",
+              "font": "Times New Roman",
+              "bold": true
+            }
+          ],
+          "after": 4.8
+        },
+        {
+          "text": "全国中心的拟合误差",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "全国中心的拟合误差",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "#F5F7F9",
+      "stroke": "none",
+      "inset": 13.44
+    },
+    {
+      "name": "metric-w1",
+      "x": 1507.2,
+      "y": 348.47999999999996,
+      "w": 374.4,
+      "h": 115.19999999999999,
+      "paragraphs": [
+        {
+          "text": "W1",
+          "size": 37.44,
+          "color": "#285580",
+          "runs": [
+            {
+              "text": "W1",
+              "font": "Times New Roman",
+              "bold": true
+            }
+          ],
+          "after": 4.8
+        },
+        {
+          "text": "模型与真人的分布距离",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "模型与真人的分布距离",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "#F5F7F9",
+      "stroke": "none",
+      "inset": 13.44
+    },
+    {
+      "name": "metric-iqr",
+      "x": 1507.2,
+      "y": 469.44,
+      "w": 374.4,
+      "h": 115.19999999999999,
+      "paragraphs": [
+        {
+          "text": "IQR",
+          "size": 37.44,
+          "color": "#285580",
+          "runs": [
+            {
+              "text": "IQR",
+              "font": "Times New Roman",
+              "bold": true
+            }
+          ],
+          "after": 4.8
+        },
+        {
+          "text": "不同家庭之间的分歧",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "不同家庭之间的分歧",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "#F5F7F9",
+      "stroke": "none",
+      "inset": 13.44
+    },
+    {
+      "name": "evaluation-scope",
+      "x": 1507.2,
+      "y": 597.12,
+      "w": 374.4,
+      "h": 154.56,
+      "paragraphs": [
+        {
+          "text": "基线：已公开SCE持续性",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "基线：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "已公开",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "SCE",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "持续性",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "　　　同结构SCE＋CPI模型",
+          "size": 25.919999999999998,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "　　　同结构",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "SCE",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "＋",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "CPI",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "模型",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "微观：用于历史重建",
+          "size": 25.919999999999998,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "微观：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "用于历史重建",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        },
+        {
+          "text": "近期：仅评价全国误差",
+          "size": 25.919999999999998,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "近期：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "仅评价全国误差",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "truth-only",
+      "x": 1507.2,
+      "y": 774.72,
+      "w": 374.4,
+      "h": 49.92,
+      "paragraphs": [
+        {
+          "text": "真实SCE：仅用于事后评价",
+          "size": 26.88,
+          "color": "#526170",
+          "runs": [
+            {
+              "text": "真实",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "SCE",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "：仅用于事后评价",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "extension-monthly",
+      "x": 609.6,
+      "y": 851.52,
+      "w": 379.2,
+      "h": 115.19999999999999,
+      "paragraphs": [
+        {
+          "text": "月度递推",
+          "size": 29.759999999999998,
+          "color": "#77558F",
+          "runs": [
+            {
+              "text": "月度递推",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 7.68
+        },
+        {
+          "text": "固定家庭 → 检查信念漂移",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "固定家庭",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": " → ",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "检查信念漂移",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "#F5F0F8",
+      "stroke": "none",
+      "inset": 14.399999999999999
+    },
+    {
+      "name": "extension-weekly",
+      "x": 1014.7199999999999,
+      "y": 851.52,
+      "w": 398.4,
+      "h": 115.19999999999999,
+      "paragraphs": [
+        {
+          "text": "周度更新",
+          "size": 29.759999999999998,
+          "color": "#77558F",
+          "runs": [
+            {
+              "text": "周度更新",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 7.68
+        },
+        {
+          "text": "发布后校准 → 月末MAE",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "发布后校准",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": " → ",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "月末",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "MAE",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "#F5F0F8",
+      "stroke": "none",
+      "inset": 14.399999999999999
+    },
+    {
+      "name": "extension-downstream",
+      "x": 1444.8,
+      "y": 851.52,
+      "w": 436.8,
+      "h": 115.19999999999999,
+      "paragraphs": [
+        {
+          "text": "下游经济用途",
+          "size": 29.759999999999998,
+          "color": "#77558F",
+          "runs": [
+            {
+              "text": "下游经济用途",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "after": 7.68
+        },
+        {
+          "text": "月度指标 → 信贷等RMSE",
+          "size": 26.88,
+          "color": "#203447",
+          "runs": [
+            {
+              "text": "月度指标",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": " → ",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "信贷等",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "RMSE",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "#F5F0F8",
+      "stroke": "none",
+      "inset": 14.399999999999999
+    },
+    {
+      "name": "timing-note",
+      "x": 38.4,
+      "y": 983.04,
+      "w": 1843.1999999999998,
+      "h": 35.519999999999996,
+      "paragraphs": [
+        {
+          "text": "¹ 历史重建用实际完成日；近期用合成日期，环境另受月度全局截止限制。P与先验按月准备。",
+          "size": 24.0,
+          "color": "#526170",
+          "runs": [
+            {
+              "text": "¹ ",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "历史重建用实际完成日；近期用合成日期，环境另受月度全局截止限制。",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "P",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "与先验按月准备。",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    },
+    {
+      "name": "graphic-note",
+      "x": 38.4,
+      "y": 1022.4,
+      "w": 1843.1999999999998,
+      "h": 36.48,
+      "paragraphs": [
+        {
+          "text": "Q9小图取自已封存的2025-06匿名真实答卷，仅说明计分；图中箭头表示数据与分析依赖。",
+          "size": 24.0,
+          "color": "#526170",
+          "runs": [
+            {
+              "text": "Q9",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "小图取自已封存的",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "2025-06",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "匿名真实答卷，仅说明计分；图中箭头表示数据与分析依赖。",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "after": 5.76
+        }
+      ],
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0.0
+    }
+  ],
+  "arrows": [
+    {
+      "name": "bins-to-density",
+      "points": [
+        [
+          1180.8,
+          341.76
+        ],
+        [
+          1209.6,
+          341.76
+        ]
+      ],
+      "color": "#285580",
+      "width": 2.4
+    },
+    {
+      "name": "scores-to-national",
+      "points": [
+        [
+          1209.6,
+          550.0799999999999
+        ],
+        [
+          1209.6,
+          580.8
+        ]
+      ],
+      "color": "#285580",
+      "width": 2.6879999999999997
+    },
+    {
+      "name": "truth-to-evaluation",
+      "points": [
+        [
+          1862.3999999999999,
+          774.72
+        ],
+        [
+          1862.3999999999999,
+          755.52
+        ]
+      ],
+      "color": "#526170",
+      "width": 1.92
+    },
+    {
+      "name": "P-to-B",
+      "points": [
+        [
+          518.4,
+          366.71999999999997
+        ],
+        [
+          561.6,
+          366.71999999999997
+        ],
+        [
+          561.6,
+          446.4
+        ],
+        [
+          609.6,
+          446.4
+        ]
+      ],
+      "color": "#285580",
+      "width": 2.88
+    },
+    {
+      "name": "E-to-B",
+      "points": [
+        [
+          518.4,
+          703.68
+        ],
+        [
+          561.6,
+          703.68
+        ],
+        [
+          561.6,
+          571.1999999999999
+        ],
+        [
+          609.6,
+          571.1999999999999
+        ]
+      ],
+      "color": "#AC5725",
+      "width": 2.88
+    },
+    {
+      "name": "B-to-statistics",
+      "points": [
+        [
+          916.8,
+          497.28
+        ],
+        [
+          972.48,
+          497.28
+        ]
+      ],
+      "color": "#77558F",
+      "width": 2.88
+    },
+    {
+      "name": "index-to-evaluation",
+      "points": [
+        [
+          1430.3999999999999,
+          620.16
+        ],
+        [
+          1483.2,
+          620.16
+        ]
+      ],
+      "color": "#285580",
+      "width": 2.88
+    },
+    {
+      "name": "state-to-monthly",
+      "points": [
+        [
+          916.8,
+          652.8
+        ],
+        [
+          936.0,
+          652.8
+        ],
+        [
+          936.0,
+          815.04
+        ],
+        [
+          763.1999999999999,
+          815.04
+        ],
+        [
+          763.1999999999999,
+          851.52
+        ]
+      ],
+      "color": "#77558F",
+      "width": 2.304
+    },
+    {
+      "name": "state-to-weekly",
+      "points": [
+        [
+          936.0,
+          815.04
+        ],
+        [
+          1214.3999999999999,
+          815.04
+        ],
+        [
+          1214.3999999999999,
+          851.52
+        ]
+      ],
+      "color": "#77558F",
+      "width": 2.304
+    },
+    {
+      "name": "monthly-index-to-economy",
+      "points": [
+        [
+          1430.3999999999999,
+          717.12
+        ],
+        [
+          1464.0,
+          717.12
+        ],
+        [
+          1464.0,
+          815.04
+        ],
+        [
+          1684.8,
+          815.04
+        ],
+        [
+          1684.8,
+          851.52
+        ]
+      ],
+      "color": "#285580",
+      "width": 2.304
+    }
+  ],
+  "graphics": [
+    {
+      "kind": "path",
+      "name": "stage-input-rule",
+      "points": [
+        [
+          38.4,
+          204.48
+        ],
+        [
+          518.4,
+          204.48
+        ]
+      ],
+      "color": "#D5DEE5",
+      "width": 1.44,
+      "dashed": false
+    },
+    {
+      "kind": "path",
+      "name": "stage-agent-rule",
+      "points": [
+        [
+          609.6,
+          204.48
+        ],
+        [
+          916.8,
+          204.48
+        ]
+      ],
+      "color": "#D5DEE5",
+      "width": 1.44,
+      "dashed": false
+    },
+    {
+      "kind": "path",
+      "name": "stage-index-rule",
+      "points": [
+        [
+          988.8,
+          204.48
+        ],
+        [
+          1430.3999999999999,
+          204.48
+        ]
+      ],
+      "color": "#D5DEE5",
+      "width": 1.44,
+      "dashed": false
+    },
+    {
+      "kind": "path",
+      "name": "stage-evaluation-rule",
+      "points": [
+        [
+          1507.2,
+          204.48
+        ],
+        [
+          1881.6,
+          204.48
+        ]
+      ],
+      "color": "#D5DEE5",
+      "width": 1.44,
+      "dashed": false
+    },
+    {
+      "kind": "path",
+      "name": "bin-baseline",
+      "points": [
+        [
+          1008.0,
+          384.0
+        ],
+        [
+          1161.6,
+          384.0
+        ]
+      ],
+      "color": "#D5DEE5",
+      "width": 1.632,
+      "dashed": false
+    },
+    {
+      "kind": "path",
+      "name": "bin-tick-1",
+      "points": [
+        [
+          1015.68,
+          384.0
+        ],
+        [
+          1015.68,
+          387.84
+        ]
+      ],
+      "color": "#526170",
+      "width": 0.96,
+      "dashed": false
+    },
+    {
+      "kind": "path",
+      "name": "bin-tick-2",
+      "points": [
+        [
+          1031.04,
+          384.0
+        ],
+        [
+          1031.04,
+          387.84
+        ]
+      ],
+      "color": "#526170",
+      "width": 0.96,
+      "dashed": false
+    },
+    {
+      "kind": "path",
+      "name": "bin-tick-3",
+      "points": [
+        [
+          1046.3999999999999,
+          384.0
+        ],
+        [
+          1046.3999999999999,
+          387.84
+        ]
+      ],
+      "color": "#526170",
+      "width": 0.96,
+      "dashed": false
+    },
+    {
+      "kind": "rect",
+      "name": "observed-q9-bin-4",
+      "x": 1056.0,
+      "y": 379.776,
+      "w": 11.52,
+      "h": 4.224,
+      "fill": "#AC5725",
+      "stroke": "none"
+    },
+    {
+      "kind": "path",
+      "name": "bin-tick-4",
+      "points": [
+        [
+          1061.76,
+          384.0
+        ],
+        [
+          1061.76,
+          387.84
+        ]
+      ],
+      "color": "#526170",
+      "width": 0.96,
+      "dashed": false
+    },
+    {
+      "kind": "rect",
+      "name": "observed-q9-bin-5",
+      "x": 1071.36,
+      "y": 377.664,
+      "w": 11.52,
+      "h": 6.335999999999999,
+      "fill": "#AC5725",
+      "stroke": "none"
+    },
+    {
+      "kind": "path",
+      "name": "bin-tick-5",
+      "points": [
+        [
+          1077.12,
+          384.0
+        ],
+        [
+          1077.12,
+          387.84
+        ]
+      ],
+      "color": "#526170",
+      "width": 0.96,
+      "dashed": false
+    },
+    {
+      "kind": "rect",
+      "name": "observed-q9-bin-6",
+      "x": 1086.72,
+      "y": 331.2,
+      "w": 11.52,
+      "h": 52.8,
+      "fill": "#AC5725",
+      "stroke": "none"
+    },
+    {
+      "kind": "path",
+      "name": "bin-tick-6",
+      "points": [
+        [
+          1092.48,
+          384.0
+        ],
+        [
+          1092.48,
+          387.84
+        ]
+      ],
+      "color": "#526170",
+      "width": 0.96,
+      "dashed": false
+    },
+    {
+      "kind": "rect",
+      "name": "observed-q9-bin-7",
+      "x": 1102.08,
+      "y": 299.52,
+      "w": 11.52,
+      "h": 84.47999999999999,
+      "fill": "#AC5725",
+      "stroke": "none"
+    },
+    {
+      "kind": "path",
+      "name": "bin-tick-7",
+      "points": [
+        [
+          1107.84,
+          384.0
+        ],
+        [
+          1107.84,
+          387.84
+        ]
+      ],
+      "color": "#526170",
+      "width": 0.96,
+      "dashed": false
+    },
+    {
+      "kind": "rect",
+      "name": "observed-q9-bin-8",
+      "x": 1117.44,
+      "y": 326.976,
+      "w": 11.52,
+      "h": 57.023999999999994,
+      "fill": "#AC5725",
+      "stroke": "none"
+    },
+    {
+      "kind": "path",
+      "name": "bin-tick-8",
+      "points": [
+        [
+          1123.2,
+          384.0
+        ],
+        [
+          1123.2,
+          387.84
+        ]
+      ],
+      "color": "#526170",
+      "width": 0.96,
+      "dashed": false
+    },
+    {
+      "kind": "rect",
+      "name": "observed-q9-bin-9",
+      "x": 1132.8,
+      "y": 377.664,
+      "w": 11.52,
+      "h": 6.335999999999999,
+      "fill": "#AC5725",
+      "stroke": "none"
+    },
+    {
+      "kind": "path",
+      "name": "bin-tick-9",
+      "points": [
+        [
+          1138.56,
+          384.0
+        ],
+        [
+          1138.56,
+          387.84
+        ]
+      ],
+      "color": "#526170",
+      "width": 0.96,
+      "dashed": false
+    },
+    {
+      "kind": "path",
+      "name": "bin-tick-10",
+      "points": [
+        [
+          1153.9199999999998,
+          384.0
+        ],
+        [
+          1153.9199999999998,
+          387.84
+        ]
+      ],
+      "color": "#526170",
+      "width": 0.96,
+      "dashed": false
+    },
+    {
+      "kind": "path",
+      "name": "frozen-example-density",
+      "points": [
+        [
+          1228.8,
+          384.0
+        ],
+        [
+          1230.8999999999999,
+          383.99999906871847
+        ],
+        [
+          1233.0,
+          383.99992373994695
+        ],
+        [
+          1235.1,
+          383.99904254291204
+        ],
+        [
+          1237.2,
+          383.99442642947366
+        ],
+        [
+          1239.3,
+          383.9787216276424
+        ],
+        [
+          1241.3999999999999,
+          383.93782657186455
+        ],
+        [
+          1243.5,
+          383.84902621928865
+        ],
+        [
+          1245.6,
+          383.67998427571956
+        ],
+        [
+          1247.7,
+          383.38881422714906
+        ],
+        [
+          1249.8,
+          382.92528124481277
+        ],
+        [
+          1251.8999999999999,
+          382.2330465429401
+        ],
+        [
+          1254.0,
+          381.2527606454608
+        ],
+        [
+          1256.1,
+          379.92574328436575
+        ],
+        [
+          1258.2,
+          378.19795283714757
+        ],
+        [
+          1260.3,
+          376.02394288175236
+        ],
+        [
+          1262.3999999999999,
+          373.37052220075145
+        ],
+        [
+          1264.5,
+          370.2198716809791
+        ],
+        [
+          1266.6,
+          366.5719214287908
+        ],
+        [
+          1268.7,
+          362.44584885727403
+        ],
+        [
+          1270.8,
+          357.88061888692516
+        ],
+        [
+          1272.8999999999999,
+          352.93454680762943
+        ],
+        [
+          1275.0,
+          347.6839195797475
+        ],
+        [
+          1277.1,
+          342.2207599419012
+        ],
+        [
+          1279.2,
+          336.64985788537604
+        ],
+        [
+          1281.3,
+          331.0852247504857
+        ],
+        [
+          1283.3999999999999,
+          325.64614589327977
+        ],
+        [
+          1285.5,
+          320.4530185767464
+        ],
+        [
+          1287.6,
+          315.6231629158461
+        ],
+        [
+          1289.7,
+          311.2667861676297
+        ],
+        [
+          1291.8,
+          307.48326550380983
+        ],
+        [
+          1293.8999999999999,
+          304.35789293324297
+        ],
+        [
+          1296.0,
+          301.95919968476056
+        ],
+        [
+          1298.1,
+          300.33694760671534
+        ],
+        [
+          1300.2,
+          299.520843478726
+        ],
+        [
+          1302.3,
+          299.52
+        ],
+        [
+          1304.3999999999999,
+          300.323135953902
+        ],
+        [
+          1306.5,
+          301.89947884892183
+        ],
+        [
+          1308.6,
+          304.20030723242155
+        ],
+        [
+          1310.7,
+          307.16104770586406
+        ],
+        [
+          1312.8,
+          310.70382407417713
+        ],
+        [
+          1314.8999999999999,
+          314.740343461095
+        ],
+        [
+          1317.0,
+          319.1749968283386
+        ],
+        [
+          1319.1,
+          323.9080491549213
+        ],
+        [
+          1321.2,
+          328.8387973754224
+        ],
+        [
+          1323.3,
+          333.8685816775875
+        ],
+        [
+          1325.3999999999999,
+          338.90354739959224
+        ],
+        [
+          1327.5,
+          343.85706989500306
+        ],
+        [
+          1329.6,
+          348.6517725959886
+        ],
+        [
+          1331.7,
+          353.2210882775826
+        ],
+        [
+          1333.8,
+          357.51033434183455
+        ],
+        [
+          1335.8999999999999,
+          361.4772939254178
+        ],
+        [
+          1338.0,
+          365.09231493472527
+        ],
+        [
+          1340.1,
+          368.3379579279177
+        ],
+        [
+          1342.2,
+          371.20824037335683
+        ],
+        [
+          1344.3,
+          373.7075386035795
+        ],
+        [
+          1346.3999999999999,
+          375.8492192662308
+        ],
+        [
+          1348.5,
+          377.65407890632866
+        ],
+        [
+          1350.6,
+          379.1486733144976
+        ],
+        [
+          1352.7,
+          380.36361742632204
+        ],
+        [
+          1354.8,
+          381.3319320101736
+        ],
+        [
+          1356.8999999999999,
+          382.0875054508727
+        ],
+        [
+          1359.0,
+          382.66372809497744
+        ],
+        [
+          1361.1,
+          383.09234347898416
+        ],
+        [
+          1363.2,
+          383.40254603797797
+        ],
+        [
+          1365.3,
+          383.620339398915
+        ],
+        [
+          1367.3999999999999,
+          383.7681539603197
+        ],
+        [
+          1369.5,
+          383.8647080199093
+        ],
+        [
+          1371.6,
+          383.9250840704904
+        ],
+        [
+          1373.7,
+          383.96098179695764
+        ],
+        [
+          1375.8,
+          383.98110239524476
+        ],
+        [
+          1377.8999999999999,
+          383.9916155364672
+        ],
+        [
+          1380.0,
+          383.99666082378275
+        ],
+        [
+          1382.1,
+          383.99883986880656
+        ],
+        [
+          1384.2,
+          383.99966277325365
+        ],
+        [
+          1386.3,
+          383.99992313538183
+        ],
+        [
+          1388.3999999999999,
+          383.9999876763851
+        ],
+        [
+          1390.5,
+          383.9999988663119
+        ],
+        [
+          1392.6,
+          383.9999999621233
+        ],
+        [
+          1394.7,
+          383.9999999998932
+        ],
+        [
+          1396.8,
+          384.0
+        ]
+      ],
+      "color": "#285580",
+      "width": 2.88,
+      "dashed": false
+    },
+    {
+      "kind": "path",
+      "name": "density-baseline",
+      "points": [
+        [
+          1228.8,
+          384.0
+        ],
+        [
+          1396.8,
+          384.0
+        ]
+      ],
+      "color": "#D5DEE5",
+      "width": 1.632,
+      "dashed": false
+    },
+    {
+      "kind": "path",
+      "name": "density-mean",
+      "points": [
+        [
+          1302.6014478620943,
+          295.68
+        ],
+        [
+          1302.6014478620943,
+          384.0
+        ]
+      ],
+      "color": "#AC5725",
+      "width": 1.728,
+      "dashed": true
+    }
+  ],
+  "example": {
+    "month": 202506,
+    "probabilities": [
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      3.0,
+      25.0,
+      40.0,
+      27.0,
+      3.0,
+      0.0
+    ],
+    "parameters": [
+      7.513437742762285,
+      9.589987425030081,
+      -4.0,
+      12.0
+    ],
+    "existing_mean": 3.0287093201994804,
+    "new_density_fits": 0
+  },
+  "notes": "主模拟评价与v09对齐：全国MAE、跨人W1与IQR；RMSE仅列下游经济用途。偏差与漂移为路径诊断，不增加并列主指标。中文楷体，英文/数字Times New Roman。原始、扩展和组合分报，近期不评真人微观准确率。方法图无目标期真值输入。微观真实答卷示例来自已封存figure_data.json，未重拟合。"
+}
