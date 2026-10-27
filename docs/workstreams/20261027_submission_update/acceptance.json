@@ -1,0 +1,47 @@
+{
+  "status": "passed_independent_zip_offline_execution",
+  "checked_at_utc": "2026-10-27T02:26:22.488542+00:00",
+  "archive_sha256": "c21628c678986767d032f7daece33c97e03487b6931ef2a65f360534a81b6cb4",
+  "verified_package_files": 882,
+  "study_modules_all_from_extracted_package": 31,
+  "dry_run": {
+    "status": "passed_official_Core_scripted_engineering_only",
+    "seed": 42,
+    "agents": 20,
+    "steps": 2,
+    "panel_rows": 60,
+    "scripted_decisions": 40,
+    "actual_LLM_calls": 0,
+    "empirical_accuracy_result": false
+  },
+  "base_replay_cases": 3,
+  "extension_replay_cases": 4,
+  "downstream_groups_verified": 192,
+  "downstream_contrasts_verified": 408,
+  "target_tests_exit_code": 0,
+  "new_API_calls": 0,
+  "new_dependency_environment_installed": true,
+  "dependency_versions": {
+    "SocioVerse2": "0.2.0",
+    "pydantic": "2.13.5",
+    "duckdb": "1.5.5",
+    "pyarrow": "25.0.1",
+    "pandas": "3.0.6",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "openai": "3.24.0",
+    "httpx": "0.28.1",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1"
+  },
+  "full_individual_reproduction": false,
+  "results_html": "outputs/sce_research_package_20261027_v7/clean_environment_acceptance/verified_results/index.html",
+  "archive": "outputs/sce_research_package_20261027_v7/SCE_research_package_draft_v03.zip",
+  "packaged_target_test_count": 17,
+  "additional_downstream_target_tests": 9,
+  "privacy_scan": {
+    "personal_record_columns_in_replay_caches": false,
+    "new_raw_data_or_secrets_in_push": false,
+    "tracked_personal_data_modifications_excluded": 3
+  }
+}

@@ -149,7 +149,7 @@ def _demo_artifacts(package):
 
 
 def _dependency_lock(package):
-    names = ["SocioVerse2", "pydantic", "duckdb", "pyarrow", "pandas", "PyYAML", "numpy", "scipy", "openai", "httpx", "openpyxl", "matplotlib"]
+    names = ["SocioVerse2", "pydantic", "duckdb", "pyarrow", "pandas", "PyYAML", "numpy", "scipy", "openai", "httpx", "openpyxl", "matplotlib", "pypdf", "requests"]
     versions = {name: importlib.metadata.version(name) for name in names}
     (package / "requirements.lock.txt").write_text("# Versions validated in the project's Python environment; Python >=3.11\n" +
         "\n".join(f"{name}=={version}" for name, version in versions.items()) + "\n")
