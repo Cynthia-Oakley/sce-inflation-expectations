@@ -1,0 +1,286 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180mm" height="101.25mm" viewBox="0 0 1920 1080">
+<title>调查约束下的家庭通胀预期模拟</title>
+<rect width="1920" height="1080" fill="white"/>
+<polyline points="620,420 655,420 655,448 690,448" fill="none" stroke="#1D5B91" stroke-width="2.8"/>
+<polygon points="690,448 678.0,443.0 678.0,453.0" fill="#1D5B91"/>
+<polyline points="620,800 655,800 655,642 690,642" fill="none" stroke="#AE541D" stroke-width="2.8"/>
+<polygon points="690,642 678.0,637.0 678.0,647.0" fill="#AE541D"/>
+<polyline points="1010,535 1080,535" fill="none" stroke="#172A3A" stroke-width="2.8"/>
+<polygon points="1080,535 1068.0,530.0 1068.0,540.0" fill="#172A3A"/>
+<polyline points="1440,535 1510,535" fill="none" stroke="#172A3A" stroke-width="2.8"/>
+<polygon points="1510,535 1498.0,530.0 1498.0,540.0" fill="#172A3A"/>
+<polyline points="1260,730 1260,795" fill="none" stroke="#172A3A" stroke-width="2.8"/>
+<polygon points="1260,795 1265.0,783.0 1255.0,783.0" fill="#172A3A"/>
+<polyline points="1690,795 1690,730" fill="none" stroke="#526170" stroke-width="2.8"/>
+<polygon points="1690,730 1685.0,742.0 1695.0,742.0" fill="#526170"/>
+<text id="title-text">
+<tspan x="50" y="66.02000000000001" font-size="46" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">调查约束下的家庭通胀预期模拟</tspan>
+</tspan>
+</text>
+<text id="subject-text">
+<tspan x="50" y="119.23" font-size="29" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="400">研究对象：纽约联储消费者预期调查（</tspan>
+<tspan font-family="Times New Roman" font-weight="400">SCE</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">）中，居民对未来</tspan>
+<tspan font-family="Times New Roman" font-weight="400">12</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">个月的通胀判断</tspan>
+</tspan>
+</text>
+<rect id="theory-frame" x="50" y="154" width="1820" height="52" fill="#F3F5F7" stroke="none" stroke-width="1.4"/>
+<text id="theory-text">
+<tspan x="50" y="180.1" font-size="30" fill="#526170">
+<tspan font-family="Kaiti SC" font-weight="700">设计依据：信念持续性　｜　有限注意　｜　生活价格体验</tspan>
+</tspan>
+</text>
+<rect id="population-frame" x="50" y="228" width="570" height="400" fill="#EFF5FA" stroke="#C8D2DB" stroke-width="1.4"/>
+<text id="population-text">
+<tspan x="70" y="275.84" font-size="32" fill="#1D5B91">
+<tspan font-family="Times New Roman" font-weight="700">01 </tspan>
+<tspan font-family="Kaiti SC" font-weight="700">人群画像与原有信念</tspan>
+<tspan font-family="Times New Roman" font-weight="700"> P</tspan>
+</tspan>
+<tspan x="70" y="321.25" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">网格化：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">学历</tspan>
+<tspan font-family="Times New Roman" font-weight="400">×</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">数理</tspan>
+<tspan font-family="Times New Roman" font-weight="400">×</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">年龄</tspan>
+<tspan font-family="Times New Roman" font-weight="400">×</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">收入</tspan>
+</tspan>
+<tspan x="70" y="357.11" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">抽样：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">小群体多抽，按人口比例加权</tspan>
+</tspan>
+<tspan x="70" y="392.97" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">历史重建：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">本人过往回答；缺失时</tspan>
+</tspan>
+<tspan x="70" y="428.83000000000004" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="400">　匹配近期相似家庭的过去回答</tspan>
+</tspan>
+<tspan x="70" y="464.69000000000005" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">模拟预测：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">历史画像＋公开预期校准</tspan>
+</tspan>
+<tspan x="70" y="500.55000000000007" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">合成属性：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">支出结构、采购责任、</tspan>
+</tspan>
+<tspan x="70" y="536.4100000000001" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="400">　对美联储主席的信心</tspan>
+</tspan>
+<tspan x="70" y="571.4000000000001" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">购买频率：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">开发期已检验，主配置未采用</tspan>
+</tspan>
+</text>
+<rect id="environment-frame" x="50" y="635" width="570" height="345" fill="#FCF3EB" stroke="#C8D2DB" stroke-width="1.4"/>
+<text id="environment-text">
+<tspan x="70" y="682.84" font-size="32" fill="#AE541D">
+<tspan font-family="Times New Roman" font-weight="700">02 </tspan>
+<tspan font-family="Kaiti SC" font-weight="700">个人可见环境</tspan>
+<tspan font-family="Times New Roman" font-weight="700"> E</tspan>
+</tspan>
+<tspan x="70" y="728.25" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">价格：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">官方食品</tspan>
+<tspan font-family="Times New Roman" font-weight="400">CPI</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">总项与分项</tspan>
+</tspan>
+<tspan x="70" y="764.11" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">新闻：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">纽约时报；随机</tspan>
+<tspan font-family="Times New Roman" font-weight="400">4/8/16/32</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">篇</tspan>
+</tspan>
+<tspan x="70" y="799.97" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">路由：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">通胀相关文章抽样权重</tspan>
+<tspan font-family="Times New Roman" font-weight="400">×1.5</tspan>
+</tspan>
+<tspan x="70" y="835.83" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">匹配：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">采购责任决定价格信息广度</tspan>
+</tspan>
+<tspan x="70" y="871.69" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">政策：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">公开政策消息与美联储动态</tspan>
+</tspan>
+<tspan x="70" y="907.5500000000001" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">时间：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">仅保留个人截止前公开的信息</tspan>
+</tspan>
+</text>
+<rect id="behavior-frame" x="690" y="358" width="320" height="390" fill="#FFFFFF" stroke="#C8D2DB" stroke-width="1.4"/>
+<text id="behavior-text">
+<tspan x="710" y="405.84" font-size="32" fill="#1D5B91">
+<tspan font-family="Times New Roman" font-weight="700">03 </tspan>
+<tspan font-family="Kaiti SC" font-weight="700">问卷行为</tspan>
+<tspan font-family="Times New Roman" font-weight="700"> B</tspan>
+</tspan>
+<tspan x="710" y="451.25" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">模型：</tspan>
+<tspan font-family="Times New Roman" font-weight="400">DeepSeek V3.2</tspan>
+</tspan>
+<tspan x="710" y="486.24" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">服务：</tspan>
+<tspan font-family="Times New Roman" font-weight="400">SiliconFlow FP8</tspan>
+</tspan>
+<tspan x="710" y="521.79" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">温度：</tspan>
+<tspan font-family="Times New Roman" font-weight="400">0.5</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">；关闭思考</tspan>
+</tspan>
+<tspan x="710" y="557.65" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">格式：</tspan>
+<tspan font-family="Times New Roman" font-weight="400">JSON</tspan>
+</tspan>
+<tspan x="710" y="592.64" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">上限：</tspan>
+<tspan font-family="Times New Roman" font-weight="400">1024</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">输出</tspan>
+<tspan font-family="Times New Roman" font-weight="400">token</tspan>
+</tspan>
+<tspan x="710" y="628.1899999999999" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">期限：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">未来</tspan>
+<tspan font-family="Times New Roman" font-weight="400">12</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">个月</tspan>
+</tspan>
+<tspan x="710" y="664.92" font-size="28" fill="#172A3A">
+<tspan font-family="Times New Roman" font-weight="700">Q8</tspan>
+<tspan font-family="Kaiti SC" font-weight="700">：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">点预期</tspan>
+</tspan>
+<tspan x="710" y="701.9599999999999" font-size="28" fill="#172A3A">
+<tspan font-family="Times New Roman" font-weight="700">Q9</tspan>
+<tspan font-family="Kaiti SC" font-weight="700">：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">十档概率</tspan>
+</tspan>
+</text>
+<rect id="aggregation-frame" x="1080" y="228" width="360" height="502" fill="#FFFFFF" stroke="#C8D2DB" stroke-width="1.4"/>
+<text id="aggregation-text">
+<tspan x="1100" y="275.84" font-size="32" fill="#1D5B91">
+<tspan font-family="Times New Roman" font-weight="700">04 </tspan>
+<tspan font-family="Kaiti SC" font-weight="700">指标计算</tspan>
+</tspan>
+<tspan x="1100" y="321.25" font-size="27" fill="#172A3A">
+<tspan font-family="Times New Roman" font-weight="700">Q9</tspan>
+<tspan font-family="Kaiti SC" font-weight="700">计分：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">十档</tspan>
+<tspan font-family="Times New Roman" font-weight="400">→</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">连续密度</tspan>
+</tspan>
+<tspan x="1100" y="357.11" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="400">　</tspan>
+<tspan font-family="Times New Roman" font-weight="400">→</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">个人密度均值</tspan>
+</tspan>
+<tspan x="1100" y="392.97" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">汇总：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">人口加权中位数</tspan>
+</tspan>
+<tspan x="1100" y="428.83000000000004" font-size="27" fill="#172A3A">
+<tspan font-family="Times New Roman" font-weight="700">Q8</tspan>
+<tspan font-family="Kaiti SC" font-weight="700">：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">点预期独立汇总</tspan>
+</tspan>
+<tspan x="1100" y="464.69000000000005" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">扩展：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">经验贝叶斯（</tspan>
+<tspan font-family="Times New Roman" font-weight="400">τ=8</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">）</tspan>
+</tspan>
+<tspan x="1100" y="499.68000000000006" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="400">　按相似家庭答卷补足人数</tspan>
+</tspan>
+<tspan x="1100" y="534.36" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">组合：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">已公布预期＋本期模</tspan>
+</tspan>
+<tspan x="1100" y="565.0400000000001" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="400">拟</tspan>
+</tspan>
+<tspan x="1100" y="599.72" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="400">　原始与组合指标分别报告</tspan>
+</tspan>
+</text>
+<rect id="evaluation-frame" x="1510" y="228" width="360" height="502" fill="#F3F5F7" stroke="#C8D2DB" stroke-width="1.4"/>
+<text id="evaluation-text">
+<tspan x="1530" y="275.84" font-size="32" fill="#526170">
+<tspan font-family="Times New Roman" font-weight="700">05 </tspan>
+<tspan font-family="Kaiti SC" font-weight="700">模拟效果评估</tspan>
+</tspan>
+<tspan x="1530" y="321.25" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">总体：</tspan>
+<tspan font-family="Times New Roman" font-weight="400">MAE / RMSE / </tspan>
+<tspan font-family="Kaiti SC" font-weight="400">偏差</tspan>
+</tspan>
+<tspan x="1530" y="357.11" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">微观：</tspan>
+<tspan font-family="Times New Roman" font-weight="400">W1 / IQR</tspan>
+</tspan>
+<tspan x="1530" y="392.1" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="400">　用于历史重建中的比较</tspan>
+</tspan>
+<tspan x="1530" y="427.65000000000003" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">基线：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">照抄上期预期</tspan>
+</tspan>
+<tspan x="1530" y="462.64000000000004" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="400">　同结构</tspan>
+<tspan font-family="Times New Roman" font-weight="400">SCE</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">＋</tspan>
+<tspan font-family="Times New Roman" font-weight="400">CPI</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">模型</tspan>
+</tspan>
+<tspan x="1530" y="497.32000000000005" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">原则：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">同人群、同计分方法</tspan>
+</tspan>
+<tspan x="1530" y="532.0" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">近期：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">只评价全国误差</tspan>
+</tspan>
+<tspan x="1530" y="566.6800000000001" font-size="26" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">真值：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">仅进入事后评价</tspan>
+</tspan>
+</text>
+<rect id="extensions-frame" x="1080" y="795" width="790" height="200" fill="#F3F5F7" stroke="#C8D2DB" stroke-width="1.4"/>
+<text id="extensions-text">
+<tspan x="1100" y="842.84" font-size="32" fill="#526170">
+<tspan font-family="Times New Roman" font-weight="700">06 </tspan>
+<tspan font-family="Kaiti SC" font-weight="700">动态更新与经济用途</tspan>
+</tspan>
+<tspan x="1100" y="888.25" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">月度：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">个人模拟信念逐月传递，检查误差累积</tspan>
+</tspan>
+<tspan x="1100" y="924.11" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">周度：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">周期内传递，新</tspan>
+<tspan font-family="Times New Roman" font-weight="400">SCE</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">公布后校准先验</tspan>
+</tspan>
+<tspan x="1100" y="959.97" font-size="27" fill="#172A3A">
+<tspan font-family="Kaiti SC" font-weight="700">应用：</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">月度模拟指标用于信贷等经济变量预测</tspan>
+</tspan>
+</text>
+<text id="scope-note-text">
+<tspan x="50" y="1021.75" font-size="25" fill="#526170">
+<tspan font-family="Kaiti SC" font-weight="400">资料范围：总体</tspan>
+<tspan font-family="Times New Roman" font-weight="400">CPI</tspan>
+<tspan font-family="Kaiti SC" font-weight="400">、就业、汽油等序列用于数据准备或统计对照，并非全部输入模型。</tspan>
+</tspan>
+</text>
+<text id="time-note-text">
+<tspan x="50" y="1059.75" font-size="25" fill="#526170">
+<tspan font-family="Kaiti SC" font-weight="400">时间边界：历史重建与近期回测分别报告；近期人口及先验按月准备，个人日期进一步限制环境。</tspan>
+</tspan>
+</text>
+</svg>

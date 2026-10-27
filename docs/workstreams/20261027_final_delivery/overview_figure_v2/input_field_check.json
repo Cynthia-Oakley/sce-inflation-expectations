@@ -1,0 +1,46 @@
+{
+  "schema": "sce_overview_input_field_check/v1",
+  "scope": "Three representative frozen A prompt files plus implementation review; not an all-month microdata audit.",
+  "counts": [
+    {
+      "month": "201901",
+      "n": 512,
+      "field_block_counts": {
+        "shopping_frequency_block": 0,
+        "food_price_block": 512,
+        "synthetic_spending": 512,
+        "grocery_role": 512,
+        "confidence_block": 399,
+        "full_macro_table": 0
+      },
+      "source_sha256": "50d8dec08250e39e5ae640082a5294077f5ec3576f2956e0b9299e24d83c21be"
+    },
+    {
+      "month": "202106",
+      "n": 512,
+      "field_block_counts": {
+        "shopping_frequency_block": 0,
+        "food_price_block": 512,
+        "synthetic_spending": 512,
+        "grocery_role": 512,
+        "confidence_block": 447,
+        "full_macro_table": 0
+      },
+      "source_sha256": "596edb3fabd29beaaac161fc10c3c279aeba947a296ba5ead8db9ac6d81f2339"
+    },
+    {
+      "month": "202510",
+      "n": 512,
+      "field_block_counts": {
+        "shopping_frequency_block": 0,
+        "food_price_block": 512,
+        "synthetic_spending": 512,
+        "grocery_role": 512,
+        "confidence_block": 445,
+        "full_macro_table": 0
+      },
+      "source_sha256": "a986ed46be2e7ff3e5b505dff98355213f5c95418dbd6fef68ec0c4ed647ceab"
+    }
+  ],
+  "no_person_level_records_exported": true
+}

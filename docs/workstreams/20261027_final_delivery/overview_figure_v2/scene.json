@@ -1,0 +1,1343 @@
+{
+  "schema": "sce_overview_native_boxes/v2",
+  "width": 1920,
+  "height": 1080,
+  "chinese_font": "Kaiti SC",
+  "latin_font": "Times New Roman",
+  "boxes": [
+    {
+      "name": "title",
+      "x": 50,
+      "y": 26,
+      "w": 1820,
+      "h": 64,
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0,
+      "paragraphs": [
+        {
+          "text": "调查约束下的家庭通胀预期模拟",
+          "size": 46,
+          "runs": [
+            {
+              "text": "调查约束下的家庭通胀预期模拟",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "color": "#172A3A",
+          "after": 0
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "x": 50,
+      "y": 94,
+      "w": 1820,
+      "h": 44,
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0,
+      "paragraphs": [
+        {
+          "text": "研究对象：纽约联储消费者预期调查（SCE）中，居民对未来12个月的通胀判断",
+          "size": 29,
+          "runs": [
+            {
+              "text": "研究对象：纽约联储消费者预期调查（",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "SCE",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "）中，居民对未来",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "12",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "个月的通胀判断",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 0
+        }
+      ]
+    },
+    {
+      "name": "theory",
+      "x": 50,
+      "y": 154,
+      "w": 1820,
+      "h": 52,
+      "fill": "#F3F5F7",
+      "stroke": "none",
+      "inset": 0,
+      "paragraphs": [
+        {
+          "text": "设计依据：信念持续性　｜　有限注意　｜　生活价格体验",
+          "size": 30,
+          "runs": [
+            {
+              "text": "设计依据：信念持续性　｜　有限注意　｜　生活价格体验",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "color": "#526170",
+          "after": 0
+        }
+      ]
+    },
+    {
+      "name": "population",
+      "x": 50,
+      "y": 228,
+      "w": 570,
+      "h": 400,
+      "fill": "#EFF5FA",
+      "stroke": "#C8D2DB",
+      "accent": "#1D5B91",
+      "inset": 20,
+      "paragraphs": [
+        {
+          "text": "01 人群画像与原有信念 P",
+          "size": 32,
+          "runs": [
+            {
+              "text": "01 ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "人群画像与原有信念",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": " P",
+              "font": "Times New Roman",
+              "bold": true
+            }
+          ],
+          "color": "#1D5B91",
+          "after": 12
+        },
+        {
+          "text": "网格化：学历×数理×年龄×收入",
+          "size": 27,
+          "runs": [
+            {
+              "text": "网格化：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "学历",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "×",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "数理",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "×",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "年龄",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "×",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "收入",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "抽样：小群体多抽，按人口比例加权",
+          "size": 27,
+          "runs": [
+            {
+              "text": "抽样：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "小群体多抽，按人口比例加权",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "历史重建：本人过往回答；缺失时",
+          "size": 27,
+          "runs": [
+            {
+              "text": "历史重建：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "本人过往回答；缺失时",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "　匹配近期相似家庭的过去回答",
+          "size": 27,
+          "runs": [
+            {
+              "text": "　匹配近期相似家庭的过去回答",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "模拟预测：历史画像＋公开预期校准",
+          "size": 27,
+          "runs": [
+            {
+              "text": "模拟预测：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "历史画像＋公开预期校准",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "合成属性：支出结构、采购责任、",
+          "size": 27,
+          "runs": [
+            {
+              "text": "合成属性：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "支出结构、采购责任、",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "　对美联储主席的信心",
+          "size": 27,
+          "runs": [
+            {
+              "text": "　对美联储主席的信心",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "购买频率：开发期已检验，主配置未采用",
+          "size": 26,
+          "runs": [
+            {
+              "text": "购买频率：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "开发期已检验，主配置未采用",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        }
+      ]
+    },
+    {
+      "name": "environment",
+      "x": 50,
+      "y": 635,
+      "w": 570,
+      "h": 345,
+      "fill": "#FCF3EB",
+      "stroke": "#C8D2DB",
+      "accent": "#AE541D",
+      "inset": 20,
+      "paragraphs": [
+        {
+          "text": "02 个人可见环境 E",
+          "size": 32,
+          "runs": [
+            {
+              "text": "02 ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "个人可见环境",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": " E",
+              "font": "Times New Roman",
+              "bold": true
+            }
+          ],
+          "color": "#AE541D",
+          "after": 12
+        },
+        {
+          "text": "价格：官方食品CPI总项与分项",
+          "size": 27,
+          "runs": [
+            {
+              "text": "价格：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "官方食品",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "CPI",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "总项与分项",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "新闻：纽约时报；随机4/8/16/32篇",
+          "size": 27,
+          "runs": [
+            {
+              "text": "新闻：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "纽约时报；随机",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "4/8/16/32",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "篇",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "路由：通胀相关文章抽样权重×1.5",
+          "size": 27,
+          "runs": [
+            {
+              "text": "路由：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "通胀相关文章抽样权重",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "×1.5",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "匹配：采购责任决定价格信息广度",
+          "size": 27,
+          "runs": [
+            {
+              "text": "匹配：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "采购责任决定价格信息广度",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "政策：公开政策消息与美联储动态",
+          "size": 27,
+          "runs": [
+            {
+              "text": "政策：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "公开政策消息与美联储动态",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "时间：仅保留个人截止前公开的信息",
+          "size": 27,
+          "runs": [
+            {
+              "text": "时间：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "仅保留个人截止前公开的信息",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        }
+      ]
+    },
+    {
+      "name": "behavior",
+      "x": 690,
+      "y": 358,
+      "w": 320,
+      "h": 390,
+      "fill": "#FFFFFF",
+      "stroke": "#C8D2DB",
+      "accent": "#1D5B91",
+      "inset": 20,
+      "paragraphs": [
+        {
+          "text": "03 问卷行为 B",
+          "size": 32,
+          "runs": [
+            {
+              "text": "03 ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "问卷行为",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": " B",
+              "font": "Times New Roman",
+              "bold": true
+            }
+          ],
+          "color": "#1D5B91",
+          "after": 12
+        },
+        {
+          "text": "模型：DeepSeek V3.2",
+          "size": 27,
+          "runs": [
+            {
+              "text": "模型：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "DeepSeek V3.2",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "服务：SiliconFlow FP8",
+          "size": 26,
+          "runs": [
+            {
+              "text": "服务：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "SiliconFlow FP8",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "温度：0.5；关闭思考",
+          "size": 27,
+          "runs": [
+            {
+              "text": "温度：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "0.5",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "；关闭思考",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "格式：JSON",
+          "size": 27,
+          "runs": [
+            {
+              "text": "格式：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "JSON",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "上限：1024输出token",
+          "size": 26,
+          "runs": [
+            {
+              "text": "上限：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "1024",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "输出",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "token",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "期限：未来12个月",
+          "size": 27,
+          "runs": [
+            {
+              "text": "期限：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "未来",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "12",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "个月",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "Q8：点预期",
+          "size": 28,
+          "runs": [
+            {
+              "text": "Q8",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "点预期",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "Q9：十档概率",
+          "size": 28,
+          "runs": [
+            {
+              "text": "Q9",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "十档概率",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        }
+      ]
+    },
+    {
+      "name": "aggregation",
+      "x": 1080,
+      "y": 228,
+      "w": 360,
+      "h": 502,
+      "fill": "#FFFFFF",
+      "stroke": "#C8D2DB",
+      "accent": "#1D5B91",
+      "inset": 20,
+      "paragraphs": [
+        {
+          "text": "04 指标计算",
+          "size": 32,
+          "runs": [
+            {
+              "text": "04 ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "指标计算",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "color": "#1D5B91",
+          "after": 12
+        },
+        {
+          "text": "Q9计分：十档→连续密度",
+          "size": 27,
+          "runs": [
+            {
+              "text": "Q9",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "计分：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "十档",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "→",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "连续密度",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "　→个人密度均值",
+          "size": 27,
+          "runs": [
+            {
+              "text": "　",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "→",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "个人密度均值",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "汇总：人口加权中位数",
+          "size": 27,
+          "runs": [
+            {
+              "text": "汇总：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "人口加权中位数",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "Q8：点预期独立汇总",
+          "size": 27,
+          "runs": [
+            {
+              "text": "Q8",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "点预期独立汇总",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "扩展：经验贝叶斯（τ=8）",
+          "size": 27,
+          "runs": [
+            {
+              "text": "扩展：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "经验贝叶斯（",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "τ=8",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "）",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "　按相似家庭答卷补足人数",
+          "size": 26,
+          "runs": [
+            {
+              "text": "　按相似家庭答卷补足人数",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "组合：已公布预期＋本期模拟",
+          "size": 26,
+          "runs": [
+            {
+              "text": "组合：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "已公布预期＋本期模拟",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "　原始与组合指标分别报告",
+          "size": 26,
+          "runs": [
+            {
+              "text": "　原始与组合指标分别报告",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        }
+      ]
+    },
+    {
+      "name": "evaluation",
+      "x": 1510,
+      "y": 228,
+      "w": 360,
+      "h": 502,
+      "fill": "#F3F5F7",
+      "stroke": "#C8D2DB",
+      "accent": "#526170",
+      "inset": 20,
+      "paragraphs": [
+        {
+          "text": "05 模拟效果评估",
+          "size": 32,
+          "runs": [
+            {
+              "text": "05 ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "模拟效果评估",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "color": "#526170",
+          "after": 12
+        },
+        {
+          "text": "总体：MAE / RMSE / 偏差",
+          "size": 27,
+          "runs": [
+            {
+              "text": "总体：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "MAE / RMSE / ",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "偏差",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "微观：W1 / IQR",
+          "size": 27,
+          "runs": [
+            {
+              "text": "微观：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "W1 / IQR",
+              "font": "Times New Roman",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "　用于历史重建中的比较",
+          "size": 26,
+          "runs": [
+            {
+              "text": "　用于历史重建中的比较",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "基线：照抄上期预期",
+          "size": 27,
+          "runs": [
+            {
+              "text": "基线：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "照抄上期预期",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "　同结构SCE＋CPI模型",
+          "size": 26,
+          "runs": [
+            {
+              "text": "　同结构",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "SCE",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "＋",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "CPI",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "模型",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "原则：同人群、同计分方法",
+          "size": 26,
+          "runs": [
+            {
+              "text": "原则：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "同人群、同计分方法",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "近期：只评价全国误差",
+          "size": 26,
+          "runs": [
+            {
+              "text": "近期：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "只评价全国误差",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "真值：仅进入事后评价",
+          "size": 26,
+          "runs": [
+            {
+              "text": "真值：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "仅进入事后评价",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        }
+      ]
+    },
+    {
+      "name": "extensions",
+      "x": 1080,
+      "y": 795,
+      "w": 790,
+      "h": 200,
+      "fill": "#F3F5F7",
+      "stroke": "#C8D2DB",
+      "accent": "#526170",
+      "inset": 20,
+      "paragraphs": [
+        {
+          "text": "06 动态更新与经济用途",
+          "size": 32,
+          "runs": [
+            {
+              "text": "06 ",
+              "font": "Times New Roman",
+              "bold": true
+            },
+            {
+              "text": "动态更新与经济用途",
+              "font": "Kaiti SC",
+              "bold": true
+            }
+          ],
+          "color": "#526170",
+          "after": 12
+        },
+        {
+          "text": "月度：个人模拟信念逐月传递，检查误差累积",
+          "size": 27,
+          "runs": [
+            {
+              "text": "月度：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "个人模拟信念逐月传递，检查误差累积",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "周度：周期内传递，新SCE公布后校准先验",
+          "size": 27,
+          "runs": [
+            {
+              "text": "周度：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "周期内传递，新",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "SCE",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "公布后校准先验",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        },
+        {
+          "text": "应用：月度模拟指标用于信贷等经济变量预测",
+          "size": 27,
+          "runs": [
+            {
+              "text": "应用：",
+              "font": "Kaiti SC",
+              "bold": true
+            },
+            {
+              "text": "月度模拟指标用于信贷等经济变量预测",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#172A3A",
+          "after": 4
+        }
+      ]
+    },
+    {
+      "name": "scope-note",
+      "x": 50,
+      "y": 1000,
+      "w": 1820,
+      "h": 32,
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0,
+      "paragraphs": [
+        {
+          "text": "资料范围：总体CPI、就业、汽油等序列用于数据准备或统计对照，并非全部输入模型。",
+          "size": 25,
+          "runs": [
+            {
+              "text": "资料范围：总体",
+              "font": "Kaiti SC",
+              "bold": false
+            },
+            {
+              "text": "CPI",
+              "font": "Times New Roman",
+              "bold": false
+            },
+            {
+              "text": "、就业、汽油等序列用于数据准备或统计对照，并非全部输入模型。",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#526170",
+          "after": 0
+        }
+      ]
+    },
+    {
+      "name": "time-note",
+      "x": 50,
+      "y": 1038,
+      "w": 1820,
+      "h": 32,
+      "fill": "none",
+      "stroke": "none",
+      "inset": 0,
+      "paragraphs": [
+        {
+          "text": "时间边界：历史重建与近期回测分别报告；近期人口及先验按月准备，个人日期进一步限制环境。",
+          "size": 25,
+          "runs": [
+            {
+              "text": "时间边界：历史重建与近期回测分别报告；近期人口及先验按月准备，个人日期进一步限制环境。",
+              "font": "Kaiti SC",
+              "bold": false
+            }
+          ],
+          "color": "#526170",
+          "after": 0
+        }
+      ]
+    }
+  ],
+  "arrows": [
+    {
+      "name": "P-to-B",
+      "points": [
+        [
+          620,
+          420
+        ],
+        [
+          655,
+          420
+        ],
+        [
+          655,
+          448
+        ],
+        [
+          690,
+          448
+        ]
+      ],
+      "color": "#1D5B91",
+      "width": 2.8
+    },
+    {
+      "name": "E-to-B",
+      "points": [
+        [
+          620,
+          800
+        ],
+        [
+          655,
+          800
+        ],
+        [
+          655,
+          642
+        ],
+        [
+          690,
+          642
+        ]
+      ],
+      "color": "#AE541D",
+      "width": 2.8
+    },
+    {
+      "name": "B-to-index",
+      "points": [
+        [
+          1010,
+          535
+        ],
+        [
+          1080,
+          535
+        ]
+      ],
+      "color": "#172A3A",
+      "width": 2.8
+    },
+    {
+      "name": "index-to-evaluation",
+      "points": [
+        [
+          1440,
+          535
+        ],
+        [
+          1510,
+          535
+        ]
+      ],
+      "color": "#172A3A",
+      "width": 2.8
+    },
+    {
+      "name": "index-to-extension",
+      "points": [
+        [
+          1260,
+          730
+        ],
+        [
+          1260,
+          795
+        ]
+      ],
+      "color": "#172A3A",
+      "width": 2.8
+    },
+    {
+      "name": "extension-to-evaluation",
+      "points": [
+        [
+          1690,
+          795
+        ],
+        [
+          1690,
+          730
+        ]
+      ],
+      "color": "#526170",
+      "width": 2.8
+    }
+  ],
+  "title": "调查约束下的家庭通胀预期模拟",
+  "notes": "用户指定中文楷体、英文和数字Times New Roman。七个方法框的正文均为方框自身文本，非覆盖小文本框。最终主提示含合成CE支出、采购责任、联储主席信心、食品CPI、新闻和政策；购买频率为已试验未采用字段，其他宏观表不冒充实际输入。目标期真值只进评价。近期为回顾性模拟。"
+}

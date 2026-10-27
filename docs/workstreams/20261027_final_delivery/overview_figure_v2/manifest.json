@@ -1,0 +1,73 @@
+{
+  "schema": "sce_overview_figure_manifest/v2",
+  "created": "2026-10-27",
+  "new_api_calls": 0,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "4ee867ada2ecadecb793c3bc26bd5d4acccc862c54a4a0fadb7c1d5b28f08451"
+    },
+    {
+      "path": "SCE_framework_editable_v2.pptx",
+      "sha256": "c74d0f8617570f315cc2635a34590850bc124e3e095759877362c189bcf63680"
+    },
+    {
+      "path": "index.html",
+      "sha256": "b3fe04b8ac6caae44de664aaaa81d01c83fb19230ed06cca6797ebb7363c7f23"
+    },
+    {
+      "path": "input_field_check.json",
+      "sha256": "8f286eb6a55d7544e55b1ca1bb8ac0f8f62880e19a268983d7d3e8c9d92638d9"
+    },
+    {
+      "path": "sce_framework_paper_v2.pdf",
+      "sha256": "803be3690a53851b96436d1b116ca762f75975d341a930570eaa5ad7a0f58e25"
+    },
+    {
+      "path": "sce_framework_paper_v2.svg",
+      "sha256": "0627075a463bd3baf4838f0692c5f5d19ba3d7e72988846f19844a4f5506a605"
+    },
+    {
+      "path": "sce_framework_video_v2.png",
+      "sha256": "a05ef887f6ca2a5e31cfbf530f55e10d5f2533eb67d993a517ecb13d6569ae1c"
+    },
+    {
+      "path": "scene.json",
+      "sha256": "a883289ae4812306edfac554ba15f2c9ed96b1eac61ab02b271b7e86e481455b"
+    },
+    {
+      "path": "text_fit.json",
+      "sha256": "4f07f82eeb71dcbc97f58e66a4ef81a0090872dc4472a70d94c916a79a21dcd8"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "c81cd83eda379bd9a9563941ae9dbe0d70c8a472142f2fbd919106a6a53ba427"
+    }
+  ],
+  "sources": [
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_delivery_figures/build_overview_v2.py",
+      "sha256": "b82fda97fa47d5101cd54e0360c76ca308d7d276d042aa39ae592ddb1e8f1abd"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_delivery_figures/apply_overview_scene_v2.mjs",
+      "sha256": "4aac316c8de4f706cf1b76803a89d6eab7831cf80c71cb3823a6aee8ae2dfe1c"
+    },
+    {
+      "path": "docs/CURRENT_SIMULATION_CONFIGURATION.md",
+      "sha256": "5729f6b847d5754c23cc5e542242f2eb4c6e8f621f581a7178bbc02970298534"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/procurement_price_views.py",
+      "sha256": "e2052901a44ca4faa856bd0cdd9207d1391a8bb6bf437bbeebdb76a99468ed81"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/behavior_prompt_blocks.py",
+      "sha256": "b64e6e9da24bf5f9d79d532de6e796a9b0e6d972d37862a6cbd4ca7a3936bf07"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/full_a_personal_inputs.py",
+      "sha256": "0b73ab34d1e39e08716b37e5228df587b70ea4b1ff2d5a0b0a5ad440c0da2471"
+    }
+  ]
+}

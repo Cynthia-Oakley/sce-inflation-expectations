@@ -1,0 +1,41 @@
+{
+  "status": "passed_structure_and_vector_checks",
+  "text_owning_shapes": 11,
+  "native_method_text_boxes": 6,
+  "overlay_text_boxes_inside_method_boxes": 0,
+  "mixed_script_fonts": [
+    "Kaiti SC",
+    "Times New Roman"
+  ],
+  "pdf_fonts": [
+    "/Helvetica",
+    "/AAAAAA+STKaitiSC-Regular",
+    "/AAAAAB+STKaitiSC-Regular",
+    "/AAAAAA+TimesNewRomanPSMT"
+  ],
+  "local_links_checked": 13,
+  "new_api_calls": 0,
+  "new_metric_fits": 0,
+  "PowerPoint_editing_interface_open_verified": false,
+  "online_presentation_preview_font_fallback_observed": true,
+  "png_render_source": "Embedded-font PDF via Poppler",
+  "method_content_checked_against_frozen_prompts": true,
+  "browser_checks": [
+    {
+      "name": "desktop",
+      "overflow": false,
+      "images": 1,
+      "errors": []
+    },
+    {
+      "name": "mobile",
+      "overflow": false,
+      "images": 1,
+      "errors": []
+    }
+  ],
+  "visual_review": "Embedded-font PDF/PNG reviewed; Artifact Session render shows fallback Chinese font and is not the authoritative font preview.",
+  "v1_artifact_files_unchanged": 9,
+  "existing_material_source_hashes_unchanged": 50,
+  "research_package_v05_unchanged": true
+}
