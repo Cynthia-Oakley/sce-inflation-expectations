@@ -1,5 +1,7 @@
 # SCE 项目当前交接
 
+**当前先审素材、暂不写正文（2026-10-27用户明确）：**交付docs/workstreams/20261027_final_delivery/materials_v1/index.html及README.md，12主题纳入最新A/B、两线Normal、月度/周度/下游，9组重绘＋3组既有匿名/机制/开发图；numbers.csv/materials.json/sources.json提供数字、参数谱系和哈希，252项冻结指标/组合核对通过。旧A2021原名单0.822126与同新版名单/权重0.825607明确区分。作者理解并讨论后再整合论文v06；本轮不改论文v05、研究包v05或模拟配置，0API/0新参数拟合。可用scripts/build_sce_paper_materials.py在该workstream全新目录离线复建。
+
 **2026-10-27当前目录/交付状态：**唯一候选入口deliverables/README.md，研究包v05实际按职责重排，study根3个Python入口，159份主源码/831原始源码归档；62包内测试、157独立导入、5schema、144科研主体AST校验通过，v04科学复算/12CSV完全一致。固定指针submission/latest_package.json已切至v05；不得再按下文旧outputs或v04记录发包。旧源码/运行/ZIP保留，0新增API；许可微观闭环、论文和视频仍待收尾。详docs/workstreams/20261027_clean_release/。 当前转入论文：旧v05正文未改，要求/逐页盘点与新稿/视频分工已更新在docs/workstreams/20261027_final_delivery/，先冻结证据后整合v06；不要把规划称为已交最终论文。
 
 **入口状态已同步（2026-10-27）：**Kimi指出的四项过时/缺参问题已修正。DESIGN与CURRENT_SIMULATION_CONFIGURATION现在集中列A82 T0、B11回顾性边界、A/B离线Normal和已完成月度/47周；旧全文原字节归档于docs/archive/2026-10/current_overviews_before_20261027/。deliverables给完整v05重建/验收命令，scripts索引同一版本。CLI/构建器目前仅支持到v05，v06需新增配置/模板再构建，不只改目录名。既有包、源码、输入、结果不动，0API。下文“周度待准备/未启动”等均为历史交接，不是现行任务。

@@ -479,6 +479,8 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 
 ## 2026-10-27 研究包更新
 
+- `build_sce_paper_materials.py --out docs/workstreams/20261027_final_delivery/<全新目录>`：从当前已验收研究包聚合与冻结A/网格证据构建作者审阅材料册（HTML/Markdown、数字CSV、图表、来源哈希），核对指标和固定组合；不拟参、不重跑API、不重写论文。当前入口见[材料册](../docs/workstreams/20261027_final_delivery/materials_v1/index.html)。
+
 - `build_sce_research_package.py --draft-version v05 --out <全新目录> --public-log-registry <公开索引.json> --a-refresh-readout <新版A读数目录>`：当前v05白名单导出，含A/Normal、B/Normal、递推/周度与下游聚合；源码按职责实际归位，0API。前两项路径参数必填；当前项目保留`--a-refresh-readout`以包含新版A T0。可直接执行的完整命令见[统一交付入口](../deliverables/README.md#生成规则)。构建器目前不支持v06，不能只改输出目录名冒充版本升级。
 - `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、study来源审计、Core干跑和聚合复算及包内定向测试；仅在新装无系统site-packages环境中使用`--fresh-environment`。当前v05已通过独立验收，完整受控微观重现仍另列。
 

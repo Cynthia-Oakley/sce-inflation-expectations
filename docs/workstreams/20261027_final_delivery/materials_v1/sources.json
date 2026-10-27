@@ -1,0 +1,241 @@
+{
+  "schema": "sce_materials_sources/v1",
+  "files": [
+    {
+      "path": "deliverables/README.md",
+      "sha256": "40bc7a009868a01d441a47e67160e0269a727a6bac3b1cf4d92291188a02ca23"
+    },
+    {
+      "path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/A82_Core_Normal_tau8.csv",
+      "sha256": "da81070d5a18d9c6fcd4cd8bc245749ccfaf8e032e0a9c0a2ef75bb1030b699e"
+    },
+    {
+      "path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/A82_comparison_summary.json",
+      "sha256": "e6c689838cb80d5a44e00e12a26052dfe91536308383dad7ddc9142dfccc14ec"
+    },
+    {
+      "path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/A82_micro_monthly_summaries.csv",
+      "sha256": "264b5cc5f01dbba58473d9f2a365d07c734e6b39c93bf5a9d35e926ab199c92a"
+    },
+    {
+      "path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/B11_latest_Core_and_Normal.csv",
+      "sha256": "1bccaaf38943c77e0270a29f2c2808fd1df09836df8a0bce66f53bb82824a3b9"
+    },
+    {
+      "path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/aggregate_cases.json",
+      "sha256": "1511fe6a918fc995c4e16856b92b4dd857f4458780708aea78b51cd1aa4d20c0"
+    },
+    {
+      "path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/downstream_contrasts.csv",
+      "sha256": "0d5263f7c8757e3cbdb55a60223c782b77b6c92cb34ab9b72d8cc745fbbed2dc"
+    },
+    {
+      "path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/downstream_model_metrics.csv",
+      "sha256": "c88de356ad927138168620383c8cfa4e3a42473f8972baa635365554e74f66f8"
+    },
+    {
+      "path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/extension_cases.json",
+      "sha256": "ee028e2de226e7185958154df75ee30da6304c0f8d76075aff955fb068d663b5"
+    },
+    {
+      "path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/monthly_autonomous_recursion.csv",
+      "sha256": "f1c9f840516fc222de1bf5b668bc7c4220913c899b64ff682704e079075040d2"
+    },
+    {
+      "path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/weekly47_monthly11_primary.csv",
+      "sha256": "1c0632c41d78277905ee31f2b17e9c621395a7f7125a179a54bf707af94d4f8d"
+    },
+    {
+      "path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/weekly47_path.csv",
+      "sha256": "7fe68e42841a65c6f6537228b228367abef4596fd6f0c72ff8db48b936a19827"
+    },
+    {
+      "path": "docs/CURRENT_SIMULATION_CONFIGURATION.md",
+      "sha256": "5729f6b847d5754c23cc5e542242f2eb4c6e8f621f581a7178bbc02970298534"
+    },
+    {
+      "path": "docs/EXPERIMENT_STATUS_20261018.md",
+      "sha256": "1b6618bd85eb884f5ec4636929d225bbf13d8bb1950dcd2a738c8838ff798237"
+    },
+    {
+      "path": "docs/SCE_EVALUATION_CONTRACT_V1.md",
+      "sha256": "ed2c902cf8718b28284d263575d71f9c4f4d9924997bf103f963b04da8aee445"
+    },
+    {
+      "path": "docs/literature/sce/information_exposure/news_attention_demographics_20261019.md",
+      "sha256": "fcbbb0b91c82d38972d5e0810e9c3d71bc1ffb14ce24f657af96cebe803121ca"
+    },
+    {
+      "path": "docs/literature/sce/themes/expectation_formation.md",
+      "sha256": "ccab70b9880117eb3f9da405863534c0e9f8042a9b26006747c6b87826a88db7"
+    },
+    {
+      "path": "docs/literature/sce/themes/household_price_experience.md",
+      "sha256": "f30a972b21865bb2da492985e4f652c5cf105c37e5626d2eeba6437b8457820f"
+    },
+    {
+      "path": "docs/reports/final_report_draft_v05/assets/information_routes.png",
+      "sha256": "14fb4836e3830f30ba0418e40b48eef8d9086cdd21d8aa77d2db18b6fc4e8b90"
+    },
+    {
+      "path": "docs/reports/final_report_draft_v05/assets/news_evidence.png",
+      "sha256": "8cd960eec9c59ad585e549a477f497531a9fd5fedafe2e9a879c5143d73cb144"
+    },
+    {
+      "path": "docs/reports/final_report_draft_v05/assets/q9_observed_example.png",
+      "sha256": "37ed92288cdfb2db48c3b742797f3d754af7165162410bbc1c7bd4cf985de695"
+    },
+    {
+      "path": "docs/reports/final_report_draft_v05/source_index.md",
+      "sha256": "b57bd6adc82a311d37ba682075a29e2fdedd5ba0e3b6c96a198bd9f631aa3fa1"
+    },
+    {
+      "path": "docs/workstreams/20261021_fullperiod/grid_dimension_selection_20261023.md",
+      "sha256": "c7cb778d369d94dee3062449c9dff8a20d19f1d640b16ef93e757ac261f7d9f7"
+    },
+    {
+      "path": "docs/workstreams/20261021_fullperiod/news_matching_adoption_20261022.json",
+      "sha256": "0a15cc2e5e308c79a56591ea2a7840750775addbdeeb3a849a0cef9dd6cdce31"
+    },
+    {
+      "path": "docs/workstreams/20261024_media_mechanism/RESULTS_20261025.md",
+      "sha256": "697b34041374598152d3aae3e1996086988bae9a409dc9a0caf4881b83e75152"
+    },
+    {
+      "path": "docs/workstreams/20261024_media_mechanism/timing_results_v1/index.html",
+      "sha256": "9eb61a183a0d01001360d63497d163a1eae0f913294e9ad14a7c094c36889cee"
+    },
+    {
+      "path": "docs/workstreams/20261026_b_core_normal/README.md",
+      "sha256": "1684a44a2279b4760330adda49fc9e3fdcb20fe60d603f4ffcf0e06832ad768e"
+    },
+    {
+      "path": "docs/workstreams/20261026_belief_recursion/WEEKLY_FINAL_RESULTS_20261027.md",
+      "sha256": "2e7aa15f0ceb33d8c6bb7d6171bac5ca9da8d7a152281f92e0bbb705f17ce742"
+    },
+    {
+      "path": "docs/workstreams/20261026_belief_recursion/monthly_results_v2/index.html",
+      "sha256": "af4cc56cf0082716e3163e46c37307233df6f21d45fd3842afb55464c76b5f57"
+    },
+    {
+      "path": "docs/workstreams/20261026_belief_recursion/weekly_results_v1/index.html",
+      "sha256": "b8bc3f04553d113a9d2685214d31907afb7da39321401835fdcade43c303178d"
+    },
+    {
+      "path": "docs/workstreams/20261026_core_normal_full_a/README.md",
+      "sha256": "264f382e5ad32589b10cf6645b367feb13bf637fd40158c0283c38808c03ab9d"
+    },
+    {
+      "path": "docs/workstreams/20261026_downstream/README.md",
+      "sha256": "9308967e778b9cd48dbbfa5639d45d8c28fb4cadf65b034a0f76a5bd25ab5633"
+    },
+    {
+      "path": "docs/workstreams/20261026_downstream/regression_protocol.json",
+      "sha256": "59c9ede3e298cb91a873e305ed4b23bbb0ebaaf7a4bde719c1eef2daef08eaa4"
+    },
+    {
+      "path": "docs/workstreams/20261026_full_a_refresh/README.md",
+      "sha256": "987acb6b2e40740ba394811f328ab887ed5a98268baa814f44cf63d6b848969c"
+    },
+    {
+      "path": "docs/workstreams/20261026_measurement_anomaly/README.md",
+      "sha256": "d3a6fb0b422d406f59c1b4aa09dcec00092e30da80a65ea8dfb8735024df8690"
+    },
+    {
+      "path": "docs/workstreams/20261026_response_dates/B_TERMINAL_RUNBOOK_20261026.md",
+      "sha256": "bd71e97993c99eadcbb73f8c1c7d901260063830236eae2932daf2921c83bcfa"
+    },
+    {
+      "path": "docs/workstreams/20261027_clean_release/acceptance.json",
+      "sha256": "2ad4891bf23498e1bbddeb8f7690ac8b78e9b3cc5554624d67552af999f88a95"
+    },
+    {
+      "path": "docs/workstreams/20261027_final_delivery/framework.md",
+      "sha256": "5ad5786e397a6ace93d45593e284f8774a239a1082968326738e83697e7f573f"
+    },
+    {
+      "path": "docs/workstreams/20261027_final_delivery/report_inventory.json",
+      "sha256": "abc7671bff4d9dc9dbcae53342481c84b269f2486729ee6b31bfbf8199a13e56"
+    },
+    {
+      "path": "outputs/sce_downstream_regression_20261027_v1/manifest.json",
+      "sha256": "71e2c93fc48b4acdeac97895a09fa055b617ec497368407c046813c1830afaba"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_readout_20261026_v1/monthly_national.csv",
+      "sha256": "1a24f5137359b3690a5f6ab5b4414d925eacec147a05889266d2ed0cf4b5f12e"
+    },
+    {
+      "path": "outputs/sce_full_a_t0_readout_20261026_v1/summary.json",
+      "sha256": "82525b446f609a558b64e50c59b9312bb3779f0fae189a020b1d57b12a7e960d"
+    },
+    {
+      "path": "outputs/sce_grid_dimensions_20261023_v1/summary.json",
+      "sha256": "941521c2f50f17d296d735e443569da2d227fd70241dca1199ae2441c926c376"
+    },
+    {
+      "path": "outputs/sce_grid_oversampling_20261023_v2/summary.json",
+      "sha256": "cfe0d362ae1daa724e8b2171ea4bb0e9b4538a7e1dc91d5cce1f777eaa6639a1"
+    },
+    {
+      "path": "outputs/sce_recent_b_core_normal_evaluation_20261026_v1/summary.json",
+      "sha256": "4c176e1725ac067cf31dbb2a7a31eb1b4fe2d2b6968762d5a76f23a643310231"
+    },
+    {
+      "path": "outputs/sce_recent_b_recursion_analysis_20261026_v2/summary.json",
+      "sha256": "b15b4726afaf8c19e6c42eebca00dc5f8656e4eccacaead17a4a20ee2b4e763c"
+    },
+    {
+      "path": "outputs/sce_weekly_final_readout_20261027_v2/summary.json",
+      "sha256": "f70c7c4485d9b6e10f5c802dfdd1a488105ecb6002802d027e0f9ec3f8edc074"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_delivery_materials/build.py",
+      "sha256": "a9711c4267d7f8d250c512e6e9fa66b032ad7304b12bd4325273d78f8fca1fef"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_delivery_materials/editorial_materials.json",
+      "sha256": "a9c33ff190fd47a35ec195bad909e7735a0b3ead0a345fc7642a8a608120fb98"
+    },
+    {
+      "path": "submission/latest_package.json",
+      "sha256": "310edf1b90f2981afc5befe99a1c4548a78a48fc7b2781e69d03eb154269eb46"
+    }
+  ],
+  "figure_source_aliases": {
+    "grid_dimensions": "outputs/sce_grid_dimensions_20261023_v1/summary.json",
+    "A_T0_readout": "outputs/sce_full_a_t0_readout_20261026_v1/monthly_national.csv",
+    "A_comparison_summary": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/A82_comparison_summary.json",
+    "A_Normal": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/A82_Core_Normal_tau8.csv",
+    "A_micro_monthly": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/A82_micro_monthly_summaries.csv",
+    "B_latest": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/B11_latest_Core_and_Normal.csv",
+    "monthly_recursion": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/monthly_autonomous_recursion.csv",
+    "weekly_path": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/weekly47_path.csv",
+    "weekly_primary": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/weekly47_monthly11_primary.csv",
+    "downstream_metrics": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/downstream_model_metrics.csv",
+    "downstream_contrasts": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/downstream_contrasts.csv"
+  },
+  "primary_web_checks": [
+    {
+      "url": "https://www.econ2.jhu.edu/people/ccarroll/epidemiologyqje.pdf",
+      "checked_on": "2026-10-27",
+      "scope": "作者公开稿，摘要与引言；只用于信息传播/有限吸收动机，不移植估计系数"
+    },
+    {
+      "url": "https://www.newyorkfed.org/research/staff_reports/sr543",
+      "checked_on": "2026-10-27",
+      "scope": "NYFed摘要，随机信息更新与分布收敛/异质性；非本项目LLM因果机制证明"
+    },
+    {
+      "url": "https://www.ifo.de/en/cesifo/publications/2019/working-paper/exposure-daily-price-changes-and-inflation-expectations",
+      "checked_on": "2026-10-27",
+      "scope": "机构工作论文摘要；价格变化频率/幅度，不代表CE份额就是注意力"
+    },
+    {
+      "url": "https://www.nber.org/papers/w26237",
+      "checked_on": "2026-10-27",
+      "scope": "直接打开403；搜索索引可核摘要，不声称本轮重新阅读全文"
+    }
+  ],
+  "source_scope": "Frozen public aggregates and already published anonymized figures only; no raw micro records or news text."
+}

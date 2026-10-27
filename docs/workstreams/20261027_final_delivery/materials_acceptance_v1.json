@@ -1,0 +1,85 @@
+{
+  "status": "passed_author_materials_review",
+  "new_API_calls": 0,
+  "new_fits": 0,
+  "materials": "materials_v1/index.html",
+  "source_hash_checks": 50,
+  "frozen_metric_and_blend_checks": 252,
+  "local_references_checked": 75,
+  "new_plot_groups": 9,
+  "existing_figures": 3,
+  "browser": {
+    "errors": [],
+    "details": 9,
+    "afterExpand": 9,
+    "afterCollapse": 0,
+    "desktopOverflow": false,
+    "mobileOverflow": false,
+    "images": [
+      {
+        "src": "figures/00_real_Q9.png",
+        "complete": true,
+        "width": 1695
+      },
+      {
+        "src": "figures/00_information_routes.png",
+        "complete": true,
+        "width": 1506
+      },
+      {
+        "src": "figures/01_grid_basis.png",
+        "complete": true,
+        "width": 2365
+      },
+      {
+        "src": "figures/02_A_path.png",
+        "complete": true,
+        "width": 2365
+      },
+      {
+        "src": "figures/03_A_years.png",
+        "complete": true,
+        "width": 2365
+      },
+      {
+        "src": "figures/04_A_micro.png",
+        "complete": true,
+        "width": 2365
+      },
+      {
+        "src": "figures/05_Normal.png",
+        "complete": true,
+        "width": 2365
+      },
+      {
+        "src": "figures/06_B_path.png",
+        "complete": true,
+        "width": 2365
+      },
+      {
+        "src": "figures/07_monthly_recursion.png",
+        "complete": true,
+        "width": 2365
+      },
+      {
+        "src": "figures/08_weekly.png",
+        "complete": true,
+        "width": 2365
+      },
+      {
+        "src": "figures/09_downstream.png",
+        "complete": true,
+        "width": 2364
+      },
+      {
+        "src": "figures/10_news_development.png",
+        "complete": true,
+        "width": 1895
+      }
+    ]
+  },
+  "visual_review": "All 12 figures reviewed via contact sheet and updated individual plots; desktop reading layout reviewed; monthly annotation overlap and Markdown emphasis corrected. Desktop/mobile checks passed with 12 images and working details toggle; final CSV/SVG whitespace normalization preserves displayed values.",
+  "original_pdf_sha256_unchanged": "addae15c3e97d0ed2728561b184eacbed44bf19142d9815e39a647e955d099d6",
+  "v05_package_sha256_unchanged": "28f0866dea240c834f5d50a66b569536e2d5dfb4972bcd82fce597fd9d41804f",
+  "next_step": "Author reviews evidence and discusses contribution/space priorities before v06 drafting."
+}
