@@ -42,6 +42,8 @@ studies/*/grounding/data/
 studies/*/reports/generated/
 proposal/build/
 submission/build/
+# Generated reviewer bundles live outside outputs; rebuild from tracked sources.
+deliverables/research_package/
 
 # Local news review page contains cached full abstracts; curated labels are tracked.
 docs/literature/sce/news_selection/news_review_20261011.html

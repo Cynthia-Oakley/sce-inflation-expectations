@@ -18,7 +18,7 @@
 
 近期B的11月回顾性时点模拟，最新Core原始/冻结组合MAE为 **0.3485/0.1443pp**，持续性 **0.1727pp**。周度固定300户、47周对应11份月真值，原始模拟MAE **0.1516pp**，同月持续性 **0.1727pp**；有局部增量，仍漏报9月上升。下游月度模拟在循环信贷上提供局部用途线索，其他结局混合；不主张普遍预测优势。
 
-**本地交付入口：**[研究包与验收](docs/workstreams/20261027_submission_update/README.md)、[研究/论文/视频框架](docs/workstreams/20261027_final_delivery/index.html)、[固定研究包指针](submission/latest_package.json)。默认零API：官方Core规则示例＋封存聚合误差重算；完整个体重现仍需受控资料，不能以聚合缓存代替。
+**唯一交付入口：**[deliverables](deliverables/README.md)，当前研究包v05已实际按用途重排源码并独立验收；不再从outputs挑选最终包。[整理与验收](docs/workstreams/20261027_clean_release/README.md)、[研究/论文/视频框架](docs/workstreams/20261027_final_delivery/index.html)、[固定研究包指针](submission/latest_package.json)。默认零API：官方Core规则示例＋封存聚合误差重算；完整个体重现仍需受控资料，不能以聚合缓存代替。
 
 A以明确历史重建条件运行；B/周度并非事前封存的真实未来预测。模型知识、旧人口与文本版本边界均保留。源码在study内维护，真实大批量生成使用本地冻结消息调度，官方Core承担接口与离线验收；不将本地适配器生成冒称全部由官方Core在线执行。
 

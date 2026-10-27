@@ -1,15 +1,64 @@
 #!/usr/bin/env python3
 """Independently extract a study ZIP and run its offline entry from /tmp."""
 import argparse
+import ast
 from datetime import datetime, timezone
 import hashlib
 import importlib.metadata
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import sys
 import zipfile
+
+
+def verify_relocated_sources(package, source_index):
+    """Independently compare original archive bodies with relocated code."""
+    records = source_index.get("source_relocations")
+    if not records:
+        return None
+    mapping = {r["original"]: r["exported"] for r in records}
+    def module(path):
+        return path[:-3].replace("/", ".").removesuffix(".__init__")
+    reverse = {b: a for a, b in mapping.items() if a != b}
+    reverse.update({module(b): module(a) for a, b in mapping.items() if a != b})
+    pattern = re.compile(r'(?<![\w/])(?:' + '|'.join(re.escape(x) for x in sorted(reverse, key=len, reverse=True)) + r')(?![\w])')
+    class StripImports(ast.NodeTransformer):
+        def visit_Import(self, node): return None
+        def visit_ImportFrom(self, node): return None
+    adapter = "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+    checked = 0
+    with zipfile.ZipFile(package / source_index["archived_source_supplement"]["archive"]) as z:
+        for row in records:
+            original = z.read(row["original"])
+            exported = (package / row["exported"]).read_bytes()
+            if hashlib.sha256(original).hexdigest() != row["original_sha256"] or hashlib.sha256(exported).hexdigest() != row["exported_sha256"]:
+                raise ValueError("Source relocation provenance mismatch")
+            if row["original"] == adapter:
+                # Explicit adapter: separate fixture locations and local output
+                # directory; empirical replay bodies still independently run.
+                continue
+            restored = pattern.sub(lambda m: reverse[m[0]], exported.decode())
+            delta = len(Path(row["exported"]).parts) - len(Path(row["original"]).parts)
+            if delta:
+                restored = re.sub(r'(Path\(__file__\)(?:\.resolve\(\))?\.parents\[)(\d+)(\])',
+                    lambda m: m[1] + str(int(m[2]) - delta) + m[3], restored)
+            old_ast = ast.dump(StripImports().visit(ast.parse(original.decode())))
+            new_ast = ast.dump(StripImports().visit(ast.parse(restored)))
+            if old_ast != new_ast:
+                raise ValueError("Research body changed beyond import/location adapter: " + row["original"])
+            checked += 1
+    study = package / "studies/sce_inflation_expectations"
+    if {p.name for p in study.glob("*.py")} != {"__init__.py", "model.py", "run.py"}:
+        raise ValueError("Loose study-root Python modules reintroduced")
+    for name in ("grounding/grounding.json", "population/roster.jsonl", "reports/report.md"):
+        if not (study / name).is_file():
+            raise ValueError("Standard study artifact absent: " + name)
+    return {"research_bodies_identical_after_import_location_normalization": checked,
+            "explicit_packaging_runner_adapters": 1, "root_python_files": 3,
+            "standard_reading_artifacts_present": True}
 
 
 def verify(archive, out, *, fresh_environment=False):
@@ -36,6 +85,27 @@ from pathlib import Path
 entry, out, origins = map(Path, sys.argv[1:])
 sys.argv = [str(entry), '--mode', 'all', '--out', str(out)]
 runpy.run_path(str(entry), run_name='__main__')
+source_index = json.loads((entry.parents[2] / 'SOURCE_INDEX.json').read_text())
+if source_index.get('source_relocations'):
+    import importlib
+    from socioverse.schemas import StudySpec, EnvironmentBundle, PopulationBundle, SimulationConfig
+    from socioverse.schemas.resources import ResourceManifest
+    from studies.sce_inflation_expectations.submission_tools.reproduce import no_network
+    study = entry.parent
+    with no_network():
+        for path in source_index['source_files_sha256']:
+            if not path.endswith('.py') or path.endswith('/run.py'):
+                continue
+            name = path[:-3].replace('/', '.').removesuffix('.__init__')
+            importlib.import_module(name)
+        for filename, schema in [('study.yaml', StudySpec), ('population/population.json', PopulationBundle),
+                                 ('environment/environment.json', EnvironmentBundle), ('simulation/simulation.json', SimulationConfig),
+                                 ('resources.json', ResourceManifest)]:
+            schema.model_validate(json.loads((study / filename).read_text()))
+        pop = json.loads((study / 'population/population.json').read_text())
+        roster = [json.loads(line) for line in (study / 'population/roster.jsonl').read_text().splitlines()]
+        if roster != pop['personas']:
+            raise ValueError('Standard roster differs from synthetic fixture')
 mods = {name: str(Path(m.__file__).resolve()) for name, m in sys.modules.items()
         if name.startswith('studies.sce_inflation_expectations') and getattr(m, '__file__', None)}
 origins.write_text(json.dumps(mods, indent=2))
@@ -53,6 +123,7 @@ origins.write_text(json.dumps(mods, indent=2))
     if not imported or any(not Path(p).is_relative_to(package) for p in imported.values()):
         raise ValueError("Study module unexpectedly imported from original workspace")
     source_index = json.loads((package / "SOURCE_INDEX.json").read_text())
+    layout_acceptance = verify_relocated_sources(package, source_index)
     supplement = source_index.get("archived_source_supplement")
     archived_sources_verified = 0
     if supplement:
@@ -90,6 +161,7 @@ origins.write_text(json.dumps(mods, indent=2))
         "dependency_versions": {name: importlib.metadata.version(name) for name in (
             "SocioVerse2", "pydantic", "duckdb", "pyarrow", "pandas", "numpy", "scipy", "openai", "httpx", "matplotlib", "pytest")},
         "full_individual_reproduction": False,
+        "organised_source_acceptance": layout_acceptance,
         "results_html": str(result / "index.html")}
     (out / "acceptance.json").write_text(json.dumps(acceptance, ensure_ascii=False, indent=2) + "\n")
     return acceptance

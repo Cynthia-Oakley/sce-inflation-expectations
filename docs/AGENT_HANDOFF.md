@@ -1,6 +1,6 @@
 # SCE 项目当前交接
 
-**2026-10-27当前目录/交付状态：**主模拟、最新B/Normal、月度与完整周度均已完成；不要按下文旧阶段记录重启。当前研究包v04主入口/静态依赖178份源码，652份补充源码封存，20包内测试及新环境独立验收通过，与v03复算完全一致。开发源码不搬动；目录见study/FILE_GUIDE.md，包路径见submission/latest_package.json，整理证据见docs/workstreams/20261027_study_layout/。下方历史状态以最新指针和任务板为准。
+**2026-10-27当前目录/交付状态：**唯一候选入口deliverables/README.md，研究包v05实际按职责重排，study根3个Python入口，159份主源码/831原始源码归档；62包内测试、157独立导入、5schema、144科研主体AST校验通过，v04科学复算/12CSV完全一致。固定指针submission/latest_package.json已切至v05；不得再按下文旧outputs或v04记录发包。旧源码/运行/ZIP保留，0新增API；许可微观闭环、论文和视频仍待收尾。详docs/workstreams/20261027_clean_release/。
 
 **最新B扩展：**用户停止新配置搜索，已用实际B11离线扩至每月1300＝512 Core＋788 Normal，共14,300行。输出sce_recent_b_core_normal_20261026_v1；τ8取A原选择、不用B目标调参。Core原始源质量＋Normal剩余质量只计一次，统一缩放目标1300，精确原子CDF与抽样展示人口行分开。25相关tests、逐行独立验收通过，原283绑定不变，0API/0新Q9拟合/无微观准确性评价；不能将原512 MAE标成扩展版。方法workstreams/20261026_b_core_normal/README.md。月度递推优先、周度可选：旧递推P/E需接新January修复，正式链/预算未冻；周度需要时间戳状态适配，不能直接改日期就跑。后续范围见workstreams/20261026_belief_recursion/NEXT_MONTHLY_AND_WEEKLY_20261026.md。
 

@@ -8,8 +8,8 @@
 
 1. [文件导读](FILE_GUIDE.md)：按研究问题找到当前主线、评价、公共函数及历史代码。
 2. [项目设计](../../docs/DESIGN.md)：研究对象与P/E/B全貌；细节以已完成批次的冻结协议为准。
-3. [当前交付入口](../../docs/workstreams/20261027_submission_update/README.md)：最新证据、研究包与验收。
-4. [目录整理记录](../../docs/workstreams/20261027_study_layout/README.md)：文件分类、源码取舍与归档证据。
+3. [当前交付入口](../../deliverables/README.md)：最新证据、研究包与验收。
+4. [目录整理记录](../../docs/workstreams/20261027_clean_release/README.md)：文件分类、源码取舍与归档证据。
 
 ## 本目录各部分负责什么
 

@@ -4,9 +4,9 @@
 
 ## 开发目录与提交包分开阅读
 
-`studies/sce_inflation_expectations/`是长期开发源码，不应直接整目录压缩提交。先读其[README](../studies/sce_inflation_expectations/README.md)和[文件导读](../studies/sce_inflation_expectations/FILE_GUIDE.md)。当前v04提交包按明确入口加静态依赖保留178份源码，其余652份专题/历史/辅助源码进入包内补充ZIP；标准study骨架、0API入口和全部已有聚合复算保留。
+`studies/sce_inflation_expectations/`是长期开发源码，不应直接整目录压缩提交。先读其[README](../studies/sce_inflation_expectations/README.md)和[文件导读](../studies/sce_inflation_expectations/FILE_GUIDE.md)。**正式审阅从[deliverables](../deliverables/README.md)进入**：当前v05在导出时实际按components/population、environment、behavior及runtime等重排，study根只有3个Python入口。159份主包源码、831份原始源码归档，标准工件和0API聚合复算保留。
 
-主包可见文件从v03的883降至239，不是删除研究证据。开发仓库源码及冻结输入/旧ZIP保留原路径；3份过期README已另存原文。详[整理记录与逐文件目录](workstreams/20261027_study_layout/README.md)。
+v04只做导读与依赖筛选，仍有大量平铺模块，现已由v05替代。开发仓库源码及冻结输入/旧ZIP保留原路径；导出有逐文件迁移及SHA映射，不维护第二套科研算法。[本轮实际整理与验收](workstreams/20261027_clean_release/README.md)，旧[逐文件目录](workstreams/20261027_study_layout/README.md)仅作历史审计。
 
 ## 唯一维护地与官方引擎
 
