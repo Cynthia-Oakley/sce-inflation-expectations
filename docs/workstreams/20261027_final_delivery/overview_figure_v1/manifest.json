@@ -1,0 +1,61 @@
+{
+  "schema": "sce_overview_figure_manifest/v1",
+  "created": "2026-10-27",
+  "new_api_calls": 0,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "45287c8447e7decdfd4fb72314b10862898d4ec0b1494f29184bbcb69d5bdb04"
+    },
+    {
+      "path": "SCE_framework_editable_v1.pptx",
+      "sha256": "a9ad9fa70a27c93d53624bff8921a294277edd02888bb11d9bc6b72cca05ff30"
+    },
+    {
+      "path": "index.html",
+      "sha256": "5a92b4911d48b8872637831c7f103b35fda62e01f53bbf29ae719407dc4ad3b7"
+    },
+    {
+      "path": "sce_framework_paper_v1.pdf",
+      "sha256": "5823c3b09140f18f0af481e7f94ae2b14ebcb7b8377cff853ea9ea7abe419da7"
+    },
+    {
+      "path": "sce_framework_paper_v1.svg",
+      "sha256": "28aade2ab245c9d4e82b97d3c0f992d252978cd5fed2283426cd5648287925e5"
+    },
+    {
+      "path": "sce_framework_video_v1.png",
+      "sha256": "12821505a5025676daa26d49bcd2a5bf4a953188388575428c028547b36767b0"
+    },
+    {
+      "path": "scene.json",
+      "sha256": "8d300824f9283b18226a73164cd1d32c6193b7c74e47646b1b17e75d01b5d2c0"
+    },
+    {
+      "path": "text_fit.json",
+      "sha256": "9f3290d41aad6b7e6cf263cc5d737427e1e7e9f0cccbee0d54743b7e1260f210"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "954093b2fedc9f78720c6be59564818c26c5d20fa72001a305755ee1b48406a9"
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/workstreams/20261027_final_delivery/overview_figure_brief.md",
+      "sha256": "dab5207dc0c68db3dd7922e8ec0e65514388abdf733677ed854f2f038241090d"
+    },
+    {
+      "path": "docs/CURRENT_SIMULATION_CONFIGURATION.md",
+      "sha256": "5729f6b847d5754c23cc5e542242f2eb4c6e8f621f581a7178bbc02970298534"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_delivery_figures/build_overview_v1.py",
+      "sha256": "c8f688a7097bc40981875336bc2ed51ebd13e08104f49e0cd79722e3af89934a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_delivery_figures/apply_overview_scene.mjs",
+      "sha256": "6cd52d32820893dd30d23a8add6870ba3128680cad5de37aed145124595941e5"
+    }
+  ]
+}

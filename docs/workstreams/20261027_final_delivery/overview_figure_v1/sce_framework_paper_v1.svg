@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180mm" height="101.25mm" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+<title id="title">调查约束下的家庭通胀预期模拟</title>
+<desc id="desc">P家庭与既有信念、E个人信息包共同进入B家庭代理；Q8/Q9经过计分与加权，接受全国、微观、动态验证。Normal与冻结组合单列支路。</desc>
+<rect width="1920" height="1080" fill="white"/>
+<text id="title" x="56" y="76.16" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="46" font-weight="700" fill="#172A3A" text-anchor="start">调查约束下的家庭通胀预期模拟</text>
+<text id="research-question" x="56" y="130.84" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="29" font-weight="400" fill="#172A3A" text-anchor="start">SCE一年期预期：全国中心、家庭分歧与动态更新能否同时重建？</text>
+<rect id="theory-band" x="56" y="162" width="1808" height="66" fill="#F3F5F7" stroke="none" stroke-width="1.4"/>
+<text id="theory-label" x="80" y="206.88" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="700" fill="#172A3A" text-anchor="start">设计依据</text>
+<text id="theory-1" x="320" y="207.84" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="29" font-weight="400" fill="#1D5B91" text-anchor="start">信念持续性</text>
+<text id="theory-2" x="750" y="207.84" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="29" font-weight="400" fill="#B75A1D" text-anchor="start">有限注意</text>
+<text id="theory-3" x="1130" y="207.84" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="29" font-weight="400" fill="#B75A1D" text-anchor="start">生活价格体验</text>
+<text id="theory-constraint" x="1535" y="205.96" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="26" font-weight="400" fill="#526170" text-anchor="start">理论动机＋经验检验</text>
+<polyline id="P-to-B" points="536,390 578,390 578,448 620,448" fill="none" stroke="#1D5B91" stroke-width="3"/>
+<polygon points="620.000,448.000 607.000,442.000 607.000,454.000" fill="#1D5B91"/>
+<polyline id="E-to-B" points="536,690 578,690 578,624 620,624" fill="none" stroke="#B75A1D" stroke-width="3"/>
+<polygon points="620.000,624.000 607.000,618.000 607.000,630.000" fill="#B75A1D"/>
+<polyline id="B-to-score" points="920,535 1000,535" fill="none" stroke="#172A3A" stroke-width="3"/>
+<polygon points="1000.000,535.000 987.000,529.000 987.000,541.000" fill="#172A3A"/>
+<polyline id="score-to-evaluation" points="1390,535 1470,535" fill="none" stroke="#172A3A" stroke-width="3"/>
+<polygon points="1470.000,535.000 1457.000,529.000 1457.000,541.000" fill="#172A3A"/>
+<polyline id="score-to-Normal" points="1195,770 1195,834" fill="none" stroke="#1D5B91" stroke-width="2.4" stroke-dasharray="9 7"/>
+<polygon points="1195.000,834.000 1201.000,821.000 1189.000,821.000" fill="#1D5B91"/>
+<polyline id="score-to-blend" points="1342,770 1342,797 1430,797 1430,884 1470,884" fill="none" stroke="#526170" stroke-width="2.4" stroke-dasharray="9 7"/>
+<polygon points="1470.000,884.000 1457.000,878.000 1457.000,890.000" fill="#526170"/>
+<rect id="P" x="56" y="260" width="480" height="280" fill="#EFF5FA" stroke="#CED6DE" stroke-width="1.4"/>
+<rect id="P-accent" x="56" y="260" width="5" height="280" fill="#1D5B91" stroke="none" stroke-width="1.4"/>
+<text id="P-label" x="80" y="303.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="700" fill="#1D5B91" text-anchor="start">01  人群 P</text>
+<text id="P-title" x="80" y="354.64" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="34" font-weight="700" fill="#172A3A" text-anchor="start">家庭画像与原有信念</text>
+<text id="P-grid" x="80" y="400.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#172A3A" text-anchor="start">学历3 × 数理2 × 年龄3 × 收入3</text>
+<text id="P-sampling" x="80" y="441.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#172A3A" text-anchor="start">54格＋未知池 · 过采样与校准</text>
+<text id="P-A" x="80" y="483.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#172A3A" text-anchor="start">A：本人历史／近期联合供体</text>
+<text id="P-B" x="80" y="516.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#172A3A" text-anchor="start">B：旧框架＋公开历史校准</text>
+<rect id="E" x="56" y="554" width="480" height="278" fill="#FCF3EB" stroke="#CED6DE" stroke-width="1.4"/>
+<rect id="E-accent" x="56" y="554" width="5" height="278" fill="#B75A1D" stroke="none" stroke-width="1.4"/>
+<text id="E-label" x="80" y="597.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="700" fill="#B75A1D" text-anchor="start">02  环境 E</text>
+<text id="E-title" x="80" y="647.64" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="34" font-weight="700" fill="#172A3A" text-anchor="start">作答时的个人信息包</text>
+<text id="E-channels" x="80" y="695.88" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="400" fill="#172A3A" text-anchor="start">新闻与政策   /   生活价格</text>
+<text id="E-time" x="80" y="738.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#172A3A" text-anchor="start">先按时间筛选，再分配信息</text>
+<text id="E-news" x="80" y="778.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#172A3A" text-anchor="start">随机4 / 8 / 16 / 32篇新闻</text>
+<text id="E-price" x="80" y="818.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#172A3A" text-anchor="start">CPI相关度×1.5 · 采购角色匹配</text>
+<rect id="B" x="620" y="360" width="300" height="350" fill="#FFFFFF" stroke="#CED6DE" stroke-width="1.4"/>
+<rect id="B-accent" x="620" y="360" width="5" height="350" fill="#1D5B91" stroke="none" stroke-width="1.4"/>
+<text id="B-label" x="646" y="407.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="700" fill="#1D5B91" text-anchor="start">03  行为 B</text>
+<text id="B-title" x="770.0" y="470.64" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="34" font-weight="700" fill="#172A3A" text-anchor="middle">家庭代理作答</text>
+<rect id="model" x="644" y="495" width="252" height="58" fill="#1D5B91" stroke="none" stroke-width="1.4"/>
+<text id="model-name" x="770.0" y="536.84" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="29" font-weight="700" fill="#FFFFFF" text-anchor="middle">DeepSeek V3.2</text>
+<text id="Q8-output" x="770.0" y="611.76" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="31" font-weight="400" fill="#172A3A" text-anchor="middle">Q8  点预期</text>
+<text id="Q9-output" x="770.0" y="662.76" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="31" font-weight="400" fill="#172A3A" text-anchor="middle">Q9  十档概率</text>
+<text id="model-format" x="770.0" y="754.96" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="26" font-weight="400" fill="#526170" text-anchor="middle">Core直接模拟 · JSON</text>
+<rect id="score" x="1000" y="300" width="390" height="470" fill="#FFFFFF" stroke="#CED6DE" stroke-width="1.4"/>
+<rect id="score-accent" x="1000" y="300" width="5" height="470" fill="#1D5B91" stroke="none" stroke-width="1.4"/>
+<text id="score-label" x="1024" y="346.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="700" fill="#1D5B91" text-anchor="start">04  计分与汇总</text>
+<text id="score-title" x="1024" y="397.72" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="32" font-weight="700" fill="#172A3A" text-anchor="start">答卷回到调查尺度</text>
+<text id="score-Q9" x="1024" y="463.8" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="30" font-weight="400" fill="#172A3A" text-anchor="start">Q9 十档概率</text>
+<text id="score-density" x="1024" y="510.84" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="29" font-weight="400" fill="#172A3A" text-anchor="start">连续密度 → 个人均值</text>
+<text id="score-national" x="1024" y="558.88" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="400" fill="#172A3A" text-anchor="start">人口加权 → 全国中位数</text>
+<polyline id="score-separator" points="1024,591 1366,591" fill="none" stroke="#CED6DE" stroke-width="1.2"/>
+<text id="score-Q8" x="1024" y="643.84" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="29" font-weight="400" fill="#172A3A" text-anchor="start">Q8 独立汇总</text>
+<text id="score-distribution" x="1024" y="691.84" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="29" font-weight="400" fill="#172A3A" text-anchor="start">保留跨人分布</text>
+<text id="score-weight" x="1024" y="743.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#526170" text-anchor="start">权重只用于统计与评价</text>
+<rect id="evaluation" x="1470" y="260" width="394" height="556" fill="#F3F5F7" stroke="#CED6DE" stroke-width="1.4"/>
+<rect id="evaluation-accent" x="1470" y="260" width="5" height="556" fill="#526170" stroke="none" stroke-width="1.4"/>
+<text id="eval-label" x="1494" y="306.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="700" fill="#526170" text-anchor="start">05  跨层验证</text>
+<text id="eval-title" x="1494" y="356.72" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="32" font-weight="700" fill="#172A3A" text-anchor="start">模拟接近在哪一层</text>
+<text id="eval-national" x="1494" y="423.8" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="30" font-weight="700" fill="#172A3A" text-anchor="start">全国中心</text>
+<text id="eval-national-metrics" x="1494" y="465.88" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="400" fill="#172A3A" text-anchor="start">MAE / RMSE · 强基线</text>
+<text id="eval-micro" x="1494" y="539.8" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="30" font-weight="700" fill="#172A3A" text-anchor="start">家庭分歧（A）</text>
+<text id="eval-micro-metrics" x="1494" y="581.88" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="400" fill="#172A3A" text-anchor="start">W1 / IQR · 同支持比较</text>
+<text id="eval-dynamic" x="1494" y="653.8" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="30" font-weight="700" fill="#172A3A" text-anchor="start">动态与经济用途</text>
+<text id="eval-dynamic-metrics" x="1494" y="695.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#172A3A" text-anchor="start">漂移／周度信号／下游预测</text>
+<rect id="target-truth" x="1490" y="737" width="354" height="56" fill="#FFFFFF" stroke="#CED6DE" stroke-width="1.2"/>
+<text id="target-truth-label" x="1667.0" y="776.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#172A3A" text-anchor="middle">目标期真值只进入评价</text>
+<rect id="Normal" x="1000" y="834" width="390" height="105" fill="#EFF5FA" stroke="#1D5B91" stroke-width="1.6" stroke-dasharray="9 7"/>
+<text id="Normal-title" x="1024" y="872.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="700" fill="#1D5B91" text-anchor="start">Normal人口扩展（τ=8）</text>
+<text id="Normal-method" x="1024" y="913.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#172A3A" text-anchor="start">同格经验＋邻格收缩</text>
+<rect id="blend" x="1470" y="834" width="394" height="105" fill="#FFFFFF" stroke="#526170" stroke-width="1.6" stroke-dasharray="9 7"/>
+<text id="blend-title" x="1494" y="872.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="700" fill="#172A3A" text-anchor="start">公开历史值＋模拟指标</text>
+<text id="blend-method" x="1494" y="913.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#172A3A" text-anchor="start">冻结组合 · 原始结果另报</text>
+<text id="extensions-label" x="56" y="909.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="700" fill="#172A3A" text-anchor="start">独立拓展</text>
+<text id="extensions-recursion" x="240" y="900.88" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="400" fill="#172A3A" text-anchor="start">月度自主递推／周度发布后校准</text>
+<text id="extensions-use" x="240" y="944.88" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="400" fill="#172A3A" text-anchor="start">月度指标 → 同结构经济预测</text>
+<polyline id="footer-rule" points="56,982 1864,982" fill="none" stroke="#CED6DE" stroke-width="1.2"/>
+<text id="legend" x="56" y="1024.92" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="27" font-weight="400" fill="#526170" text-anchor="start">实线：主数据路径   虚线：可选统计支路；Normal不增加独立LLM判断</text>
+<text id="boundary" x="56" y="1061.96" font-family="Arial Unicode MS, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="26" font-weight="400" fill="#526170" text-anchor="start">A为历史重建，B为近期回顾性模拟；时间资格、配置、回包与复算入口分别留档</text>
+</svg>

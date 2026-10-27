@@ -1,6 +1,8 @@
 # SCE 项目当前交接
 
-**视频预制作（2026-10-27）：**用户告知Kimi正在基于素材写论文，Codex负责说明视频做法。已细化submission/package_templates/LOCAL_DEMO_PLAN.md：4分40秒七段、6—7页讲解画面＋真实零API操作＋旁白，区分官方硬要求与制作建议；现阶段未做PPT/录音/视频。先准备稳定流程，结果段等论文主表/图确定后统一Core/Normal与原始/组合。未改Kimi的v06目录、素材册或已验收ZIP，0API。
+**论文/视频共用框架图初版（2026-10-27）：**作者确认文字主线后，已完成`docs/workstreams/20261027_final_delivery/overview_figure_v1/index.html`及原生可编辑PPT、SVG、180mm矢量PDF、1920×1080 PNG。P/E并行进入B，Q9个人均值与全国中位数分开，Normal/冻结组合为统计支路，动态与用途独立；目标期真值只进评价。51文本和15原生连接线检查、PDF/原生幻灯片视觉检查、页面桌面/手机无溢出通过，0API。尚未插入Kimi论文、未制作完整视频/PPT讲解稿，图件供作者反馈迭代；研究包v05不变。源码在study的`reports/final_delivery_figures/`，不要改Kimi v06/v07目录。
+
+**视频分镜前期准备（2026-10-27）：**用户告知Kimi正在基于素材写论文，Codex负责说明视频做法。已细化submission/package_templates/LOCAL_DEMO_PLAN.md：4分40秒七段、6—7页讲解画面＋真实零API操作＋旁白，区分官方硬要求与制作建议；该阶段未做PPT/录音/视频，后续框架图进展见顶部。先准备稳定流程，结果段等论文主表/图确定后统一Core/Normal与原始/组合。未改Kimi的v06目录、素材册或已验收ZIP，0API。
 
 **当前先审素材、暂不写正文（2026-10-27用户明确）：**交付docs/workstreams/20261027_final_delivery/materials_v1/index.html及README.md，12主题纳入最新A/B、两线Normal、月度/周度/下游，9组重绘＋3组既有匿名/机制/开发图；numbers.csv/materials.json/sources.json提供数字、参数谱系和哈希，252项冻结指标/组合核对通过。旧A2021原名单0.822126与同新版名单/权重0.825607明确区分。作者理解并讨论后再整合论文v06；本轮不改论文v05、研究包v05或模拟配置，0API/0新参数拟合。可用scripts/build_sce_paper_materials.py在该workstream全新目录离线复建。
 

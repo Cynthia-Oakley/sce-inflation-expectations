@@ -1,0 +1,308 @@
+[
+  {
+    "name": "title",
+    "width": 644.0,
+    "box_width": 1808,
+    "fits": true
+  },
+  {
+    "name": "research-question",
+    "width": 842.63,
+    "box_width": 1808,
+    "fits": true
+  },
+  {
+    "name": "theory-label",
+    "width": 112.0,
+    "box_width": 170,
+    "fits": true
+  },
+  {
+    "name": "theory-1",
+    "width": 145.0,
+    "box_width": 260,
+    "fits": true
+  },
+  {
+    "name": "theory-2",
+    "width": 116.0,
+    "box_width": 250,
+    "fits": true
+  },
+  {
+    "name": "theory-3",
+    "width": 174.0,
+    "box_width": 310,
+    "fits": true
+  },
+  {
+    "name": "theory-constraint",
+    "width": 234.0,
+    "box_width": 305,
+    "fits": true
+  },
+  {
+    "name": "P-label",
+    "width": 124.55,
+    "box_width": 425,
+    "fits": true
+  },
+  {
+    "name": "P-title",
+    "width": 306.0,
+    "box_width": 432,
+    "fits": true
+  },
+  {
+    "name": "P-grid",
+    "width": 368.38,
+    "box_width": 432,
+    "fits": true
+  },
+  {
+    "name": "P-sampling",
+    "width": 349.54,
+    "box_width": 432,
+    "fits": true
+  },
+  {
+    "name": "P-A",
+    "width": 342.01,
+    "box_width": 432,
+    "fits": true
+  },
+  {
+    "name": "P-B",
+    "width": 315.01,
+    "box_width": 432,
+    "fits": true
+  },
+  {
+    "name": "E-label",
+    "width": 124.55,
+    "box_width": 425,
+    "fits": true
+  },
+  {
+    "name": "E-title",
+    "width": 306.0,
+    "box_width": 432,
+    "fits": true
+  },
+  {
+    "name": "E-channels",
+    "width": 306.46,
+    "box_width": 432,
+    "fits": true
+  },
+  {
+    "name": "E-time",
+    "width": 324.0,
+    "box_width": 432,
+    "fits": true
+  },
+  {
+    "name": "E-news",
+    "width": 292.61,
+    "box_width": 432,
+    "fits": true
+  },
+  {
+    "name": "E-price",
+    "width": 363.81,
+    "box_width": 432,
+    "fits": true
+  },
+  {
+    "name": "B-label",
+    "width": 124.55,
+    "box_width": 248,
+    "fits": true
+  },
+  {
+    "name": "B-title",
+    "width": 204.0,
+    "box_width": 256,
+    "fits": true
+  },
+  {
+    "name": "model-name",
+    "width": 203.14,
+    "box_width": 240,
+    "fits": true
+  },
+  {
+    "name": "Q8-output",
+    "width": 151.58,
+    "box_width": 248,
+    "fits": true
+  },
+  {
+    "name": "Q9-output",
+    "width": 182.58,
+    "box_width": 256,
+    "fits": true
+  },
+  {
+    "name": "model-format",
+    "width": 251.37,
+    "box_width": 268,
+    "fits": true
+  },
+  {
+    "name": "score-label",
+    "width": 180.04,
+    "box_width": 342,
+    "fits": true
+  },
+  {
+    "name": "score-title",
+    "width": 256.0,
+    "box_width": 342,
+    "fits": true
+  },
+  {
+    "name": "score-Q9",
+    "width": 168.35,
+    "box_width": 342,
+    "fits": true
+  },
+  {
+    "name": "score-density",
+    "width": 268.79,
+    "box_width": 342,
+    "fits": true
+  },
+  {
+    "name": "score-national",
+    "width": 287.52,
+    "box_width": 342,
+    "fits": true
+  },
+  {
+    "name": "score-Q8",
+    "width": 162.74,
+    "box_width": 342,
+    "fits": true
+  },
+  {
+    "name": "score-distribution",
+    "width": 174.0,
+    "box_width": 342,
+    "fits": true
+  },
+  {
+    "name": "score-weight",
+    "width": 270.0,
+    "box_width": 342,
+    "fits": true
+  },
+  {
+    "name": "eval-label",
+    "width": 153.04,
+    "box_width": 346,
+    "fits": true
+  },
+  {
+    "name": "eval-title",
+    "width": 256.0,
+    "box_width": 346,
+    "fits": true
+  },
+  {
+    "name": "eval-national",
+    "width": 120.0,
+    "box_width": 346,
+    "fits": true
+  },
+  {
+    "name": "eval-national-metrics",
+    "width": 272.25,
+    "box_width": 346,
+    "fits": true
+  },
+  {
+    "name": "eval-micro",
+    "width": 200.01,
+    "box_width": 346,
+    "fits": true
+  },
+  {
+    "name": "eval-micro-metrics",
+    "width": 278.46,
+    "box_width": 346,
+    "fits": true
+  },
+  {
+    "name": "eval-dynamic",
+    "width": 210.0,
+    "box_width": 346,
+    "fits": true
+  },
+  {
+    "name": "eval-dynamic-metrics",
+    "width": 324.0,
+    "box_width": 346,
+    "fits": true
+  },
+  {
+    "name": "target-truth-label",
+    "width": 270.0,
+    "box_width": 334,
+    "fits": true
+  },
+  {
+    "name": "Normal-title",
+    "width": 290.1,
+    "box_width": 342,
+    "fits": true
+  },
+  {
+    "name": "Normal-method",
+    "width": 243.0,
+    "box_width": 342,
+    "fits": true
+  },
+  {
+    "name": "blend-title",
+    "width": 270.0,
+    "box_width": 346,
+    "fits": true
+  },
+  {
+    "name": "blend-method",
+    "width": 292.5,
+    "box_width": 346,
+    "fits": true
+  },
+  {
+    "name": "extensions-label",
+    "width": 108.0,
+    "box_width": 150,
+    "fits": true
+  },
+  {
+    "name": "extensions-recursion",
+    "width": 392.0,
+    "box_width": 700,
+    "fits": true
+  },
+  {
+    "name": "extensions-use",
+    "width": 343.52,
+    "box_width": 700,
+    "fits": true
+  },
+  {
+    "name": "legend",
+    "width": 837.04,
+    "box_width": 1808,
+    "fits": true
+  },
+  {
+    "name": "boundary",
+    "width": 918.68,
+    "box_width": 1808,
+    "fits": true
+  }
+]

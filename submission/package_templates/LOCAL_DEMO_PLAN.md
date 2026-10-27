@@ -107,7 +107,7 @@ python studies/sce_inflation_expectations/run.py --mode all
 
 ## 5. 需要准备的五类素材
 
-共用框架图先依据[一图流文字设计稿](../../docs/workstreams/20261027_final_delivery/overview_figure_brief.md)确认逻辑；随后制作可编辑矢量母版，论文展示总览、视频逐步展开。目前文字稿已完成，图件未制作。
+共用框架图的[文字设计稿](../../docs/workstreams/20261027_final_delivery/overview_figure_brief.md)及[初版图件](../../docs/workstreams/20261027_final_delivery/overview_figure_v1/index.html)已完成，提供原生可编辑PPT、SVG、论文矢量PDF与16:9 PNG。论文展示总览、视频逐步展开；待作者反馈后迭代，尚未插入论文或制作动画。
 
 1. **讲解画面：**约6—7页，真实Q9、P/E/B、A/B结果、周度、信贷、贡献/边界；每页一个重点，避免整篇论文截图。
 2. **旁白和字幕：**约900—1100中文字作起点，包含停顿和读图；以试读计时为准。字幕与旁白从同一稿生成，关键数字/术语逐项校对。

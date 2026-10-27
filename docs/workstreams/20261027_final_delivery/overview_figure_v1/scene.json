@@ -1,0 +1,1076 @@
+{
+  "schema": "sce_overview_figure_scene/v1",
+  "width": 1920,
+  "height": 1080,
+  "font": "Arial Unicode MS",
+  "title": "调查约束下的家庭通胀预期模拟",
+  "items": [
+    {
+      "kind": "text",
+      "name": "title",
+      "text": "调查约束下的家庭通胀预期模拟",
+      "x": 56,
+      "y": 32,
+      "w": 1808,
+      "h": 62.1,
+      "size": 46,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "research-question",
+      "text": "SCE一年期预期：全国中心、家庭分歧与动态更新能否同时重建？",
+      "x": 56,
+      "y": 103,
+      "w": 1808,
+      "h": 39.150000000000006,
+      "size": 29,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "rect",
+      "name": "theory-band",
+      "x": 56,
+      "y": 162,
+      "w": 1808,
+      "h": 66,
+      "fill": "#F3F5F7",
+      "stroke": "none",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "text",
+      "name": "theory-label",
+      "text": "设计依据",
+      "x": 80,
+      "y": 180,
+      "w": 170,
+      "h": 37.800000000000004,
+      "size": 28,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "theory-1",
+      "text": "信念持续性",
+      "x": 320,
+      "y": 180,
+      "w": 260,
+      "h": 39.150000000000006,
+      "size": 29,
+      "fill": "#1D5B91",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "theory-2",
+      "text": "有限注意",
+      "x": 750,
+      "y": 180,
+      "w": 250,
+      "h": 39.150000000000006,
+      "size": 29,
+      "fill": "#B75A1D",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "theory-3",
+      "text": "生活价格体验",
+      "x": 1130,
+      "y": 180,
+      "w": 310,
+      "h": 39.150000000000006,
+      "size": 29,
+      "fill": "#B75A1D",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "theory-constraint",
+      "text": "理论动机＋经验检验",
+      "x": 1535,
+      "y": 181,
+      "w": 305,
+      "h": 35.1,
+      "size": 26,
+      "fill": "#526170",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "line",
+      "name": "P-to-B",
+      "points": [
+        [
+          536,
+          390
+        ],
+        [
+          578,
+          390
+        ],
+        [
+          578,
+          448
+        ],
+        [
+          620,
+          448
+        ]
+      ],
+      "stroke": "#1D5B91",
+      "width": 3,
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "kind": "line",
+      "name": "E-to-B",
+      "points": [
+        [
+          536,
+          690
+        ],
+        [
+          578,
+          690
+        ],
+        [
+          578,
+          624
+        ],
+        [
+          620,
+          624
+        ]
+      ],
+      "stroke": "#B75A1D",
+      "width": 3,
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "kind": "line",
+      "name": "B-to-score",
+      "points": [
+        [
+          920,
+          535
+        ],
+        [
+          1000,
+          535
+        ]
+      ],
+      "stroke": "#172A3A",
+      "width": 3,
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "kind": "line",
+      "name": "score-to-evaluation",
+      "points": [
+        [
+          1390,
+          535
+        ],
+        [
+          1470,
+          535
+        ]
+      ],
+      "stroke": "#172A3A",
+      "width": 3,
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "kind": "line",
+      "name": "score-to-Normal",
+      "points": [
+        [
+          1195,
+          770
+        ],
+        [
+          1195,
+          834
+        ]
+      ],
+      "stroke": "#1D5B91",
+      "width": 2.4,
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "kind": "line",
+      "name": "score-to-blend",
+      "points": [
+        [
+          1342,
+          770
+        ],
+        [
+          1342,
+          797
+        ],
+        [
+          1430,
+          797
+        ],
+        [
+          1430,
+          884
+        ],
+        [
+          1470,
+          884
+        ]
+      ],
+      "stroke": "#526170",
+      "width": 2.4,
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "kind": "rect",
+      "name": "P",
+      "x": 56,
+      "y": 260,
+      "w": 480,
+      "h": 280,
+      "fill": "#EFF5FA",
+      "stroke": "#CED6DE",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "rect",
+      "name": "P-accent",
+      "x": 56,
+      "y": 260,
+      "w": 5,
+      "h": 280,
+      "fill": "#1D5B91",
+      "stroke": "none",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "text",
+      "name": "P-label",
+      "text": "01  人群 P",
+      "x": 80,
+      "y": 278,
+      "w": 425,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#1D5B91",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "P-title",
+      "text": "家庭画像与原有信念",
+      "x": 80,
+      "y": 322,
+      "w": 432,
+      "h": 45.900000000000006,
+      "size": 34,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "P-grid",
+      "text": "学历3 × 数理2 × 年龄3 × 收入3",
+      "x": 80,
+      "y": 375,
+      "w": 432,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "P-sampling",
+      "text": "54格＋未知池 · 过采样与校准",
+      "x": 80,
+      "y": 416,
+      "w": 432,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "P-A",
+      "text": "A：本人历史／近期联合供体",
+      "x": 80,
+      "y": 458,
+      "w": 432,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "P-B",
+      "text": "B：旧框架＋公开历史校准",
+      "x": 80,
+      "y": 491,
+      "w": 432,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "rect",
+      "name": "E",
+      "x": 56,
+      "y": 554,
+      "w": 480,
+      "h": 278,
+      "fill": "#FCF3EB",
+      "stroke": "#CED6DE",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "rect",
+      "name": "E-accent",
+      "x": 56,
+      "y": 554,
+      "w": 5,
+      "h": 278,
+      "fill": "#B75A1D",
+      "stroke": "none",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "text",
+      "name": "E-label",
+      "text": "02  环境 E",
+      "x": 80,
+      "y": 572,
+      "w": 425,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#B75A1D",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "E-title",
+      "text": "作答时的个人信息包",
+      "x": 80,
+      "y": 615,
+      "w": 432,
+      "h": 45.900000000000006,
+      "size": 34,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "E-channels",
+      "text": "新闻与政策   /   生活价格",
+      "x": 80,
+      "y": 669,
+      "w": 432,
+      "h": 37.800000000000004,
+      "size": 28,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "E-time",
+      "text": "先按时间筛选，再分配信息",
+      "x": 80,
+      "y": 713,
+      "w": 432,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "E-news",
+      "text": "随机4 / 8 / 16 / 32篇新闻",
+      "x": 80,
+      "y": 753,
+      "w": 432,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "E-price",
+      "text": "CPI相关度×1.5 · 采购角色匹配",
+      "x": 80,
+      "y": 793,
+      "w": 432,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "rect",
+      "name": "B",
+      "x": 620,
+      "y": 360,
+      "w": 300,
+      "h": 350,
+      "fill": "#FFFFFF",
+      "stroke": "#CED6DE",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "rect",
+      "name": "B-accent",
+      "x": 620,
+      "y": 360,
+      "w": 5,
+      "h": 350,
+      "fill": "#1D5B91",
+      "stroke": "none",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "text",
+      "name": "B-label",
+      "text": "03  行为 B",
+      "x": 646,
+      "y": 382,
+      "w": 248,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#1D5B91",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "B-title",
+      "text": "家庭代理作答",
+      "x": 642,
+      "y": 438,
+      "w": 256,
+      "h": 45.900000000000006,
+      "size": 34,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "center",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "rect",
+      "name": "model",
+      "x": 644,
+      "y": 495,
+      "w": 252,
+      "h": 58,
+      "fill": "#1D5B91",
+      "stroke": "none",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "text",
+      "name": "model-name",
+      "text": "DeepSeek V3.2",
+      "x": 650,
+      "y": 509,
+      "w": 240,
+      "h": 39.150000000000006,
+      "size": 29,
+      "fill": "#FFFFFF",
+      "bold": true,
+      "align": "center",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "Q8-output",
+      "text": "Q8  点预期",
+      "x": 646,
+      "y": 582,
+      "w": 248,
+      "h": 41.85,
+      "size": 31,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "center",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "Q9-output",
+      "text": "Q9  十档概率",
+      "x": 642,
+      "y": 633,
+      "w": 256,
+      "h": 41.85,
+      "size": 31,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "center",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "model-format",
+      "text": "Core直接模拟 · JSON",
+      "x": 636,
+      "y": 730,
+      "w": 268,
+      "h": 35.1,
+      "size": 26,
+      "fill": "#526170",
+      "bold": false,
+      "align": "center",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "rect",
+      "name": "score",
+      "x": 1000,
+      "y": 300,
+      "w": 390,
+      "h": 470,
+      "fill": "#FFFFFF",
+      "stroke": "#CED6DE",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "rect",
+      "name": "score-accent",
+      "x": 1000,
+      "y": 300,
+      "w": 5,
+      "h": 470,
+      "fill": "#1D5B91",
+      "stroke": "none",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "text",
+      "name": "score-label",
+      "text": "04  计分与汇总",
+      "x": 1024,
+      "y": 321,
+      "w": 342,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#1D5B91",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "score-title",
+      "text": "答卷回到调查尺度",
+      "x": 1024,
+      "y": 367,
+      "w": 342,
+      "h": 43.2,
+      "size": 32,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "score-Q9",
+      "text": "Q9 十档概率",
+      "x": 1024,
+      "y": 435,
+      "w": 342,
+      "h": 40.5,
+      "size": 30,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "score-density",
+      "text": "连续密度 → 个人均值",
+      "x": 1024,
+      "y": 483,
+      "w": 342,
+      "h": 39.150000000000006,
+      "size": 29,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "score-national",
+      "text": "人口加权 → 全国中位数",
+      "x": 1024,
+      "y": 532,
+      "w": 342,
+      "h": 37.800000000000004,
+      "size": 28,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "line",
+      "name": "score-separator",
+      "points": [
+        [
+          1024,
+          591
+        ],
+        [
+          1366,
+          591
+        ]
+      ],
+      "stroke": "#CED6DE",
+      "width": 1.2,
+      "dash": false,
+      "arrow": false
+    },
+    {
+      "kind": "text",
+      "name": "score-Q8",
+      "text": "Q8 独立汇总",
+      "x": 1024,
+      "y": 616,
+      "w": 342,
+      "h": 39.150000000000006,
+      "size": 29,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "score-distribution",
+      "text": "保留跨人分布",
+      "x": 1024,
+      "y": 664,
+      "w": 342,
+      "h": 39.150000000000006,
+      "size": 29,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "score-weight",
+      "text": "权重只用于统计与评价",
+      "x": 1024,
+      "y": 718,
+      "w": 342,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#526170",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "rect",
+      "name": "evaluation",
+      "x": 1470,
+      "y": 260,
+      "w": 394,
+      "h": 556,
+      "fill": "#F3F5F7",
+      "stroke": "#CED6DE",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "rect",
+      "name": "evaluation-accent",
+      "x": 1470,
+      "y": 260,
+      "w": 5,
+      "h": 556,
+      "fill": "#526170",
+      "stroke": "none",
+      "width": 1.4,
+      "dash": false
+    },
+    {
+      "kind": "text",
+      "name": "eval-label",
+      "text": "05  跨层验证",
+      "x": 1494,
+      "y": 281,
+      "w": 346,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#526170",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "eval-title",
+      "text": "模拟接近在哪一层",
+      "x": 1494,
+      "y": 326,
+      "w": 346,
+      "h": 43.2,
+      "size": 32,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "eval-national",
+      "text": "全国中心",
+      "x": 1494,
+      "y": 395,
+      "w": 346,
+      "h": 40.5,
+      "size": 30,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "eval-national-metrics",
+      "text": "MAE / RMSE · 强基线",
+      "x": 1494,
+      "y": 439,
+      "w": 346,
+      "h": 37.800000000000004,
+      "size": 28,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "eval-micro",
+      "text": "家庭分歧（A）",
+      "x": 1494,
+      "y": 511,
+      "w": 346,
+      "h": 40.5,
+      "size": 30,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "eval-micro-metrics",
+      "text": "W1 / IQR · 同支持比较",
+      "x": 1494,
+      "y": 555,
+      "w": 346,
+      "h": 37.800000000000004,
+      "size": 28,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "eval-dynamic",
+      "text": "动态与经济用途",
+      "x": 1494,
+      "y": 625,
+      "w": 346,
+      "h": 40.5,
+      "size": 30,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "eval-dynamic-metrics",
+      "text": "漂移／周度信号／下游预测",
+      "x": 1494,
+      "y": 670,
+      "w": 346,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "rect",
+      "name": "target-truth",
+      "x": 1490,
+      "y": 737,
+      "w": 354,
+      "h": 56,
+      "fill": "#FFFFFF",
+      "stroke": "#CED6DE",
+      "width": 1.2,
+      "dash": false
+    },
+    {
+      "kind": "text",
+      "name": "target-truth-label",
+      "text": "目标期真值只进入评价",
+      "x": 1500,
+      "y": 751,
+      "w": 334,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "center",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "rect",
+      "name": "Normal",
+      "x": 1000,
+      "y": 834,
+      "w": 390,
+      "h": 105,
+      "fill": "#EFF5FA",
+      "stroke": "#1D5B91",
+      "width": 1.6,
+      "dash": true
+    },
+    {
+      "kind": "text",
+      "name": "Normal-title",
+      "text": "Normal人口扩展（τ=8）",
+      "x": 1024,
+      "y": 847,
+      "w": 342,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#1D5B91",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "Normal-method",
+      "text": "同格经验＋邻格收缩",
+      "x": 1024,
+      "y": 888,
+      "w": 342,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "rect",
+      "name": "blend",
+      "x": 1470,
+      "y": 834,
+      "w": 394,
+      "h": 105,
+      "fill": "#FFFFFF",
+      "stroke": "#526170",
+      "width": 1.6,
+      "dash": true
+    },
+    {
+      "kind": "text",
+      "name": "blend-title",
+      "text": "公开历史值＋模拟指标",
+      "x": 1494,
+      "y": 847,
+      "w": 346,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "blend-method",
+      "text": "冻结组合 · 原始结果另报",
+      "x": 1494,
+      "y": 888,
+      "w": 346,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "extensions-label",
+      "text": "独立拓展",
+      "x": 56,
+      "y": 884,
+      "w": 150,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#172A3A",
+      "bold": true,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "extensions-recursion",
+      "text": "月度自主递推／周度发布后校准",
+      "x": 240,
+      "y": 874,
+      "w": 700,
+      "h": 37.800000000000004,
+      "size": 28,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "extensions-use",
+      "text": "月度指标 → 同结构经济预测",
+      "x": 240,
+      "y": 918,
+      "w": 700,
+      "h": 37.800000000000004,
+      "size": 28,
+      "fill": "#172A3A",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "line",
+      "name": "footer-rule",
+      "points": [
+        [
+          56,
+          982
+        ],
+        [
+          1864,
+          982
+        ]
+      ],
+      "stroke": "#CED6DE",
+      "width": 1.2,
+      "dash": false,
+      "arrow": false
+    },
+    {
+      "kind": "text",
+      "name": "legend",
+      "text": "实线：主数据路径   虚线：可选统计支路；Normal不增加独立LLM判断",
+      "x": 56,
+      "y": 999,
+      "w": 1808,
+      "h": 36.45,
+      "size": 27,
+      "fill": "#526170",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    },
+    {
+      "kind": "text",
+      "name": "boundary",
+      "text": "A为历史重建，B为近期回顾性模拟；时间资格、配置、回包与复算入口分别留档",
+      "x": 56,
+      "y": 1037,
+      "w": 1808,
+      "h": 35.1,
+      "size": 26,
+      "fill": "#526170",
+      "bold": false,
+      "align": "left",
+      "font": "Arial Unicode MS"
+    }
+  ],
+  "notes": "来源：overview_figure_brief.md；CURRENT_SIMULATION_CONFIGURATION.md；A T0、Normal及周度冻结结果说明。P/E并行进入B。Normal是同批答卷统计支路；组合只用已公开历史值。图为研究方法示意，不呈现效果数值或因果估计。"
+}

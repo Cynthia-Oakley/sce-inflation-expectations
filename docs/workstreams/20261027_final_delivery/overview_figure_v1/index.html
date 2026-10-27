@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCE全流程框架图 · 初版</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f5f7;color:#172a3a;font:16px/1.7 system-ui,"PingFang SC",sans-serif}main{max-width:1500px;margin:auto;padding:28px 24px 60px}h1{font-size:27px;margin:0 0 7px}p{margin:8px 0 16px}.intro{color:#526170}nav{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 22px}a{color:#1d5b91;text-underline-offset:4px}nav a{background:white;border:1px solid #ced6de;padding:6px 14px;text-decoration:none}figure{margin:0;background:white;border:1px solid #ced6de}figure img{display:block;width:100%;height:auto}figcaption{padding:15px 20px;border-top:1px solid #ced6de;color:#526170;font-size:14px}section{max-width:1040px;margin-top:30px}h2{font-size:20px}li{margin:8px 0}.paper{background:white;padding:24px;overflow:auto}.paper img{display:block;width:180mm;max-width:none;height:auto}.note{font-size:14px;color:#526170}details{margin-top:24px}summary{cursor:pointer;color:#1d5b91;font-weight:600}@media(max-width:700px){main{padding:20px 12px}h1{font-size:23px}nav{gap:7px}nav a{padding:5px 9px}.paper{padding:12px}}
+</style></head><body><main>
+<h1>SCE全流程框架图 · 初版</h1>
+<p class="intro">论文与视频共用母版：P/E共同进入家庭代理，计分与验证向右展开，统计处理和独立拓展单列。当前为图形初稿，尚未插入论文。</p>
+<nav><a href="SCE_framework_editable_v1.pptx">下载可编辑PPT</a><a href="sce_framework_paper_v1.pdf">论文矢量PDF</a><a href="sce_framework_paper_v1.svg">可编辑SVG</a><a href="sce_framework_video_v1.png">高清PNG</a><a href="../overview_figure_brief.md">文字设计</a></nav>
+<figure><a href="sce_framework_video_v1.png"><img src="sce_framework_video_v1.png" alt="SCE框架图：家庭画像与先验P和按时间筛选的个人信息E共同进入LLM，输出Q8/Q9，经计分和人口加权后接受分层评价；Normal和冻结组合单列支路。"></a>
+<figcaption>图中实线表示主数据依赖，虚线表示另报的统计支路。目标期真值只进入评价；B初始化可使用的是已经公开的历史值。箭头不表示现实机制的因果估计。</figcaption></figure>
+<section><h2>本轮主要看三件事</h2><ol><li>阅读顺序是否自然：先理解一个家庭怎样形成答卷，再看如何汇总和检验。</li><li>主干与分支是否明确：Normal、冻结组合和动态/下游拓展不混成同一条必经流程。</li><li>放进论文后是否需要删字：当前按正文全宽、约半页高度准备；视频可以分区域放大讲解。</li></ol>
+<p class="note">A为历史重建，B为近期回顾性模拟。个人日期不等于所有输入逐人严格实时认证；B及周度无近期真人微观真值。采购角色是操作化匹配，独立收益仍有边界。</p></section>
+<details><summary>查看180 mm论文宽度预览</summary><p class="note">以下按CSS物理单位显示，屏幕实际毫米随缩放和设备变化；最终排版请以PDF为准。手机可横向滑动。</p><div class="paper"><img src="sce_framework_video_v1.png" alt="论文全宽尺寸预览"></div></details>
+<section><p><a href="README.md">图注、源文件与重建说明</a> · <a href="../materials_v1/index.html">返回证据材料册</a></p></section>
+</main></body></html>
