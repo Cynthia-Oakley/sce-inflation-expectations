@@ -2,6 +2,8 @@
 
 **2026-10-27当前目录/交付状态：**唯一候选入口deliverables/README.md，研究包v05实际按职责重排，study根3个Python入口，159份主源码/831原始源码归档；62包内测试、157独立导入、5schema、144科研主体AST校验通过，v04科学复算/12CSV完全一致。固定指针submission/latest_package.json已切至v05；不得再按下文旧outputs或v04记录发包。旧源码/运行/ZIP保留，0新增API；许可微观闭环、论文和视频仍待收尾。详docs/workstreams/20261027_clean_release/。 当前转入论文：旧v05正文未改，要求/逐页盘点与新稿/视频分工已更新在docs/workstreams/20261027_final_delivery/，先冻结证据后整合v06；不要把规划称为已交最终论文。
 
+**入口状态已同步（2026-10-27）：**Kimi指出的四项过时/缺参问题已修正。DESIGN与CURRENT_SIMULATION_CONFIGURATION现在集中列A82 T0、B11回顾性边界、A/B离线Normal和已完成月度/47周；旧全文原字节归档于docs/archive/2026-10/current_overviews_before_20261027/。deliverables给完整v05重建/验收命令，scripts索引同一版本。CLI/构建器目前仅支持到v05，v06需新增配置/模板再构建，不只改目录名。既有包、源码、输入、结果不动，0API。下文“周度待准备/未启动”等均为历史交接，不是现行任务。
+
 **最新B扩展：**用户停止新配置搜索，已用实际B11离线扩至每月1300＝512 Core＋788 Normal，共14,300行。输出sce_recent_b_core_normal_20261026_v1；τ8取A原选择、不用B目标调参。Core原始源质量＋Normal剩余质量只计一次，统一缩放目标1300，精确原子CDF与抽样展示人口行分开。25相关tests、逐行独立验收通过，原283绑定不变，0API/0新Q9拟合/无微观准确性评价；不能将原512 MAE标成扩展版。方法workstreams/20261026_b_core_normal/README.md。月度递推优先、周度可选：旧递推P/E需接新January修复，正式链/预算未冻；周度需要时间戳状态适配，不能直接改日期就跑。后续范围见workstreams/20261026_belief_recursion/NEXT_MONTHLY_AND_WEEKLY_20261026.md。
 
 **B新包已完成：**2026-10-26 19:36正常结束，5632主＋16补、5632全部技术完整，实报$4.68201、未知预留$0.06013。原始MAE .348509/持续性.172727；A早48固定MSE λ.133976组合 .144277，MAE训练λ0仍退回基线。公平宏观无模拟.160025/加模拟.142174；不称原始模拟胜出或已稳定改善。283源与产物哈希/逐月MAE独立复核通过；后台已退出无须重启，progress最终快照已修正，原末次在途快照另存。evaluation/index.html和fixed_model_comparison.json已输出；报告/研究包尚待纳入。以下保留启动记录：

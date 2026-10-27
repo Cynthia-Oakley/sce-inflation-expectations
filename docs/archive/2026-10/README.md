@@ -4,6 +4,8 @@
 
 当前从[DESIGN](../../DESIGN.md)进入，任务见[NEXT_ACTIONS](../../NEXT_ACTIONS.md)，最新执行状态见[AGENT_HANDOFF](../../AGENT_HANDOFF.md)。
 
+2026-10-27补充：[总纲/配置页更新前快照](current_overviews_before_20261027/README.md)。两份原文按原字节及SHA256保留；其中旧“当前/待启动”仅用于机制发展追溯。
+
 ## 归档文件
 
 - [CE_DATA_BUILD_PLAN_20261006.md](CE_DATA_BUILD_PLAN_20261006.md)：CE 消费背景数据落地计划

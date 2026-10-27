@@ -479,7 +479,7 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 
 ## 2026-10-27 研究包更新
 
-- `build_sce_research_package.py --draft-version v03`：最新A/Normal、B/Normal、递推/周度、下游聚合白名单导出，0API。
-- `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、study来源审计、Core干跑和聚合复算及包内定向测试。完整微观重现、全新依赖安装另列。
+- `build_sce_research_package.py --draft-version v05 --out <全新目录> --public-log-registry <公开索引.json> --a-refresh-readout <新版A读数目录>`：当前v05白名单导出，含A/Normal、B/Normal、递推/周度与下游聚合；源码按职责实际归位，0API。前两项路径参数必填；当前项目保留`--a-refresh-readout`以包含新版A T0。可直接执行的完整命令见[统一交付入口](../deliverables/README.md#生成规则)。构建器目前不支持v06，不能只改输出目录名冒充版本升级。
+- `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、study来源审计、Core干跑和聚合复算及包内定向测试；仅在新装无系统site-packages环境中使用`--fresh-environment`。当前v05已通过独立验收，完整受控微观重现仍另列。
 
-- `catalog_sce_study.py --out <新目录>`：分类开发study文件，按当前入口计算静态依赖与补充归档，不执行实验。最新提交版使用build_sce_research_package的v04 profile，读法见study/FILE_GUIDE.md。
+- `catalog_sce_study.py --out <新目录>`：分类开发study文件，按当前入口计算静态依赖与补充归档，不执行实验。v04为此前的依赖筛选布局；当前交付使用构建器v05和`submission_tools/release_layout.py`，按组件/运行/评价实际归位源码。以[统一交付入口](../deliverables/README.md)和`submission/latest_package.json`选包，包内`DIRECTORY_GUIDE.md`及study的`FILE_GUIDE.md`解释读法。
