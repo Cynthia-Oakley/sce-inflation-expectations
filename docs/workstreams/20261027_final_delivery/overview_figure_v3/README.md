@@ -4,13 +4,14 @@
 
 ## 文件
 
-**作者手调版（2026-10-27晚）：**当前PPT已由作者上移设计依据、调整P/E位置、将供应商并入B框，并微调真值、周度及下游文字。语义复核可保留。当前PDF/PNG、scene及原manifest仍对应手调前导出，不作为此次PPT的哈希或版式验收；后续以作者PPT为基底同步，勿从旧scene重建覆盖。在线查看器有字体回退，B框新增行后的最终换行须以本机导出PDF确认。
+**作者手调版已同步（2026-10-27晚）：**以当前PPT为源，经本机WPS导出PDF，再由同一PDF生成3840×2160 PNG。保留设计依据上移、P/E位置调整、供应商并入B框以及真值、周度和下游措辞；未改动原PPT。已检查字体嵌入、全文和最终图版，新增B框行没有溢出。此次来源与输出哈希见[同步收据](author_export_receipt.json)。
 
 
 - [预览与下载](index.html)
 - [可编辑PowerPoint](SCE_framework_editable_v3.pptx)：原生形状、连接线、曲线及文字；各文字区域拥有自身的富文本，不覆盖独立小标签。
-- [论文矢量PDF](sce_framework_paper_v3.pdf)：180×101.25 mm，嵌入楷体与Times New Roman。
-- [矢量SVG](sce_framework_paper_v3.svg) · [高清PNG](sce_framework_video_v3.png)
+- [当前作者版PDF](sce_framework_paper_v3_author.pdf)：原生16:9页面，保留矢量文字，嵌入楷体与Times New Roman。
+- [当前作者版高清PNG](sce_framework_author_v3.png)：3840×2160，与上方PDF一致，便于插入论文或视频。
+- 手调前快照：[旧PDF](sce_framework_paper_v3.pdf) · [旧SVG](sce_framework_paper_v3.svg) · [旧PNG](sce_framework_video_v3.png)。旧scene、manifest与text_fit仅记录手调前状态，不能据此重建覆盖当前PPT。
 
 ## 口径与图注
 
@@ -24,10 +25,10 @@ Q9小图使用已封存2025-06匿名真实答卷的十档概率和既有Beta参�
 
 ## 字体与编辑
 
-中文楷体（Kaiti SC），英文/数字Times New Roman。在线PPT渲染器可能回退中文字体，权威外观见嵌入字体的PDF/PNG；PPT已经指定相应中西文字体。图片与字体已检查，不宣称已在桌面PowerPoint完成编辑验收。
+中文楷体（Kaiti SC），英文/数字Times New Roman。已在本机PowerPoint和WPS查看作者版；最终PDF来自WPS，字体均已嵌入，PNG直接从该PDF渲染。在线PPT渲染器可能回退中文字体，外观以当前作者版PDF/PNG为准。
 
 方法图仍为作者审阅稿，插入后须重新检查Word/PDF图号和8页限制。未更改任何实验配置、模拟输出或统计结果，0新增模型调用。
 
 ## 源码
 
-`studies/sce_inflation_expectations/reports/final_delivery_figures/build_overview_v3.py`生成scene、PDF/SVG；`apply_overview_scene_v3.mjs`用于Artifact Session生成原生PPT。`scene.json`是文字/坐标/曲线的共同数据源；`text_fit.json`及manifest记录交付检查。
+`studies/sce_inflation_expectations/reports/final_delivery_figures/build_overview_v3.py`生成手调前scene、PDF/SVG；`apply_overview_scene_v3.mjs`用于Artifact Session生成原生PPT。作者后续手调不回写旧scene，因此当前源文件是`SCE_framework_editable_v3.pptx`；重新同步应从该PPT导出。

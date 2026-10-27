@@ -1,0 +1,54 @@
+{
+  "schema": "sce_framework_author_export/v1",
+  "exported_at": "2026-10-27T15:24:49.160387+00:00",
+  "source": {
+    "file": "SCE_framework_editable_v3.pptx",
+    "sha256": "b444b657d303f21170fb5ecd5e66937da81405058f7f7b609384f6ccd30efc94",
+    "unchanged": true
+  },
+  "method": "Native WPS Presentation PDF export; PNG rendered from that PDF using pdftoppm",
+  "outputs": [
+    {
+      "file": "sce_framework_paper_v3_author.pdf",
+      "sha256": "e532cb1e227421eb92e1c7f047856c16decdae952e07d79abaa2aeffb9b497c6",
+      "bytes": 488916
+    },
+    {
+      "file": "sce_framework_author_v3.png",
+      "sha256": "7170d0c83cdaab52766b8e8aaaafb116c195b5be59b6d083daa1442bdfcfdd81",
+      "bytes": 1127326
+    }
+  ],
+  "pdf": {
+    "pages": 1,
+    "page_points": [
+      1440,
+      810
+    ],
+    "fonts": [
+      {
+        "name": "/YPULQV+TimesNewRomanPSMT",
+        "embedded": true
+      },
+      {
+        "name": "/WNPYQS+STKaitiSC-Regular",
+        "embedded": true
+      },
+      {
+        "name": "/TUTFAU+TimesNewRomanPS-BoldMT",
+        "embedded": true
+      },
+      {
+        "name": "/DDOPPO+STKaitiSC-Bold",
+        "embedded": true
+      }
+    ]
+  },
+  "png": {
+    "width": 3840,
+    "height": 2160
+  },
+  "visual_review": "Final PNG inspected; native user layout, text, font, arrows and margins retained; no clipping observed.",
+  "old_scene_and_manifest": "Preserved as pre-author-edit snapshots; not current source.",
+  "api_calls": 0
+}
