@@ -1,5 +1,10 @@
 # 主线收尾与最终交付清单
 
+**2026-10-27当前入口：**[研究包v03、独立验收与余项](../docs/workstreams/20261027_submission_update/README.md)。已纳入最新A/B、Core＋Normal、月度递推、完整周度与下游误差复算；[论文与本地视频规划](../docs/workstreams/20261027_final_delivery/index.html)继续有效。标准study布局不等于所有微观数据许可与重现已闭环，按新入口区分已验收和待完成。原研究包v01/v02、原始运行与日志保留。
+
+以下为此前逐步收尾的历史清单，涉及旧B0.241、Normal未采用或周度待跑的条目以当前入口为准，不视作最新配置。
+
+
 **2026-10-26新版A及研究包v02已交付：**[说明与路径](../docs/workstreams/20261026_submission_package/README.md)；ZIP为`outputs/sce_research_package_20261026_v2/SCE_research_package_draft_v02.zip`，固定索引`submission/latest_package.json`。13测试＋独立解压官方Core干跑、新旧A82/旧B11聚合重算、2021逐年及48/34组合均匹配；日志v3准确纳入完成A，不双算复用费。报告v05和[新版A比较](../docs/workstreams/20261026_full_a_refresh/README.md)同步。仍为可执行整理稿，完整微观访问/许可、全项目费用覆盖及全新依赖安装未最终验收，不能直接声称全部提交门槛通过。
 
 更新：2026-10-25，北京时间。**A82与近期B11已运行、评价，8页报告v0.4纳入两段结果及4月诊断；研究包、完整许可/成本总账、视频及最终提交仍待验收。**打钩表示工作完成，不代表拟合目标达成。

@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-27",
+  "status": "approved_before_downstream_result_inspection",
+  "purpose": "ConsumerSim-style downstream predictive validation with explicit non-simulation baselines.",
+  "source_method": "ConsumerSim Appendix B, equations B1-B6; adapted to SCE and the four phase-1 outcomes.",
+  "outcomes": {
+    "PCEDGC96": "log(A[t+h]) - log(A[t])",
+    "REVOLSL": "log(A[t+h]) - log(A[t])",
+    "wage_growth_overall": "A[t+h] - A[t], percentage points",
+    "MICH": "A[t+h] - A[t], percentage points"
+  },
+  "horizons_months": [1, 2, 3],
+  "models": [
+    "persistence",
+    "expanding_mean",
+    "ar1",
+    "domain_arx",
+    "official_sce",
+    "simulated_sce",
+    "blended_sce",
+    "official_plus_simulated"
+  ],
+  "simulation_series": {
+    "A": "CoreNormal_tau8_pure from monthly_predictions_public.csv",
+    "B": "expanded_pp from monthly_national.csv",
+    "final_combination_A": "CoreNormal_tau8_blend_mse",
+    "final_combination_B": "expanded_blend_pp",
+    "frozen_simulation_weight": 0.1339762571517809
+  },
+  "common_controls": [
+    "current outcome level or log level",
+    "current outcome change or log change",
+    "UNRATE",
+    "CPIAUCSL year-over-year inflation",
+    "UMCSENT",
+    "FEDFUNDS"
+  ],
+  "domain_controls": {
+    "wage_growth_overall": ["JTSJOL"],
+    "PCEDGC96": ["DSPIC96 monthly growth"],
+    "REVOLSL": ["DSPIC96 monthly growth"],
+    "MICH": ["CPILFESL year-over-year inflation"]
+  },
+  "sce_features": "Current level and one-month change; official_plus_simulated includes both official and simulated pairs.",
+  "estimator": "OLS on training-standardized features; intercept unpenalized; no hyperparameter search.",
+  "ar1": "Direct autoregression of the h-month-ahead transformed outcome level on its current transformed level, converted back to growth.",
+  "evaluation": {
+    "A": "Expanding-origin backtest; at origin t only training targets with target_date <= t; minimum 36 complete training rows.",
+    "B": "One frozen model per outcome/horizon fitted only on A targets available by the first B origin; no B outcome refitting or updating.",
+    "in_sample": "A complete-case fit, reporting R2 and pairwise delta R2.",
+    "out_of_sample": "MAE, RMSE, bias and paired proportional RMSE/MAE improvement."
+  },
+  "missing_policy": "For each outcome and horizon, complete-case deletion over the union of features needed by all models; the same origin rows are used by every model. No interpolation, forward filling, or quarterly-to-monthly interest-rate imputation.",
+  "vintage_policy": "Current public vintage retrieved in phase 1; same-month macro controls follow the ConsumerSim-style retrospective design, not certified real-time release vintages.",
+  "reporting_policy": "Retain and export every model, outcome, horizon, contrast and monthly prediction. Any later selective narrative must link to this complete result set and disclose the number of comparisons.",
+  "new_simulation_or_llm_calls": 0
+}

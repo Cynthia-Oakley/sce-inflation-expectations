@@ -1,5 +1,9 @@
 # 脚本入口索引
 
+- `analyze_sce_downstream_regression.py --panel <月度面板> --a <A全国序列> --b <B全国序列> --protocol <冻结协议> --out outputs/<新目录>`：按 ConsumerSim Appendix B 的适配方案，对工资、耐用品、循环信贷和 MICH 做未来 1—3 个月回归；包含持续性、历史均值、AR(1)、领域 ARX、官方/模拟/组合 SCE 对照，导出全部逐月预测、样本内外指标、配对对照、图和 HTML。A 仅用当时已形成标签扩展训练，B 冻结 A 系数；0 Simulation/LLM，不插值、不覆盖输出。结果与复算见[下游工作目录](../docs/workstreams/20261026_downstream/README.md)。
+
+- `prepare_sce_downstream_data.py --raw-root outputs/sce_downstream_data_20261026_v1 --out outputs/sce_downstream_data_20261026_v1/derived_replay`：只读核验下游第一阶段公开原始文件哈希并合并月度面板；不联网、不插补、不调用 LLM，拒绝覆盖非空输出目录。范围与证据见[下游工作目录](../docs/workstreams/20261026_downstream/README.md)。
+
 - `evaluate_sce_recent_b_core_normal.py --prediction outputs/<sealed_B_expansion> --out outputs/<fresh>`：在封存1300代理/τ8预测之后，仅计算全国MAE/RMSE/bias及同权组合/固定宏观模型迁移敏感性；不重新拟参、API或Q9拟合，不评价缺失的近期真人微观W1/IQR。
 
 - `expand_sce_recent_b_core_normal.py --target-n 1300 --out outputs/<fresh>`：仅离线消费新版B实际Core，按固定A τ8扩至声明的1300代理（也支持1200）；Core保留旧源原始质量，Normal只积分余量，统一缩放不改变CDF。0API/0新Q9拟合、不读近期真人目标、不做准确性评价。产物含精确原子分布及检查用Normal人口行，见[方法](../docs/workstreams/20261026_b_core_normal/README.md)。
@@ -461,6 +465,19 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 - `inspect_sce_weekly_readiness.py --out outputs/<fresh>`：零API清点候选周五日历、旧月度选稿截断数量、价格/政策/信心最后可得快照与月度先验可得日；不是周度执行包，不修改冻结月度运行。默认核202601/04/09，细节见周度设计工作流。
 
 - `prepare_sce_weekly_release_plan.py --out outputs/<fresh>`：零API生成周度公开SCE校准时钟与每月/7、14、21日提前期评分时钟。不是LLM执行包，方向/异常阈值尚未冻结；周度个人状态执行器仍待接。
+- `prepare_sce_weekly_preflight.py --out outputs/<fresh>`：零API按54格从512户根框架抽固定300户并恢复格质量，核对全47周候选新闻/基础标签、价格/信心快照与政策缺口；输出候选名单和逐周清单，不读取模型回答，不生成付费请求或最终执行授权。
 # 已完成月度递推的离线漂移分析
 
 `analyze_sce_recent_b_recursion.py --run <completed_run> --out <fresh_outputs> --report <fresh_workstream_report>`：验证冻结来源、同人前驱及实际提示，复用Q9评分缓存，生成全国误差／组合／分歧／条件轨迹。仅离线、0 API、不拟权、不改原结果。当前交付：`docs/workstreams/20261026_belief_recursion/monthly_results_v1/index.html`；计算实现位于`studies/sce_inflation_expectations/reports/monthly_b_recursion.py`。
+
+- `prepare_sce_weekly_inputs.py --out outputs/<fresh>`：固定300户、按公开发布周期联合先验校准、47周有限阅读/完整日期E及官方Core离线验收；0付费调用。
+- `run_sce_weekly.py prepare/authorize/run/watch/replay/evaluate`：独立周屏障、同人状态、主补共享预算、一次技术补跑和独立评价；实际运行必须匹配本批授权，已完成任务拒绝重新生成。见周度运行说明。
+- `analyze_sce_weekly_partial.py --run-dir <run> --out-dir <fresh>`：禁网读取已封存周点；主指标只取完整月份最后预定周，保留部分月曲线，不将停机日改为月末。另输出费用/错误对账、同周期先验对照和图文读数。
+- `evaluate_sce_weekly_compat.py --run-dir <run>`：完整47周后离线评价实际紧凑执行schema；只补可推导日期元数据，不改冻结输入、运行器或评分函数；不启动/续跑API。
+- `resume_sce_weekly_key_limit.py inspect/prepare/run --run-dir <run>`：用户提高key限额后接续原周度批，只有附录绑定的旧403可补一次；其余新403仍停，旧35周与账本不改，最终自动接离线评价兼容入口。`run`须显式`--key-limit-raised --confirm-live`。
+- `analyze_sce_weekly_final.py --run-dir <complete> --out-dir <fresh>`：完整47周后禁网核查账本/同人前驱/费用/加权统计，输出11个月主误差、提前期、转折、模拟分组和月度方案描述性对照；0API、0拟参。
+
+## 2026-10-27 研究包更新
+
+- `build_sce_research_package.py --draft-version v03`：最新A/Normal、B/Normal、递推/周度、下游聚合白名单导出，0API。
+- `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、study来源审计、Core干跑和聚合复算及包内定向测试。完整微观重现、全新依赖安装另列。

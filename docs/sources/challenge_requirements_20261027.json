@@ -1,0 +1,59 @@
+{
+  "checked_at": "2026-10-27",
+  "source_url": "https://socioverse.fudan-disc.com/challenge/",
+  "body_url": "https://socioverse.fudan-disc.com/challenge/challenge.js?v=20261013a",
+  "body_sha256": "dce3d93a9ceab1377cf27a5d93d6b5f3fdebaaa70ee6154606339c2fc09bee53",
+  "matches_20261024_body": true,
+  "method": "Read current public page script reference, retrieve referenced dynamic text, inspect Chinese/English submission, track A and rubric. No account or submission actions.",
+  "report": {
+    "format": "PDF",
+    "pages": [
+      4,
+      8
+    ],
+    "figures_included": true,
+    "language": [
+      "zh",
+      "en"
+    ],
+    "reference_page_exemption_verified": false
+  },
+  "video": {
+    "format": "MP4",
+    "max_minutes": 5,
+    "actual_study_workflow_required": true
+  },
+  "package": {
+    "study_directory_required": true,
+    "readme": true,
+    "one_command": true,
+    "seed_model_call_cost_disclosure": true,
+    "dry_run_and_real_distinguished": true,
+    "truth_acquisition_and_isolation_disclosure": true
+  },
+  "rubric": {
+    "social_science_value": 25,
+    "methods_and_design": 25,
+    "findings_and_theory": 20,
+    "reproducibility_and_engineering": 20,
+    "presentation_and_extension": 10
+  },
+  "reproducibility_is_gate": true,
+  "deadline": "2026-10-31T23:59:00+08:00",
+  "distinction": "Eight-page layout, figure budget, evidence index and video timeline are this project editorial recommendations, not additional contest requirements.",
+  "new_api_calls": 0,
+  "body_refetched_on": "2026-10-27",
+  "body_sha256_verified_again": true,
+  "local_development": {
+    "same_requirements_as_online": true,
+    "study_layout_required": true,
+    "own_framework_can_be_wrapped": true,
+    "Path_C_documentation": "https://socioverse.fudan-disc.com/docs/zh/guides/wrap-legacy-model/",
+    "platform_core_modified_by_this_submission": false,
+    "full_repository_extra_requirement": "Track C only if modifying the platform core outside studies; our research is Track A with local study code."
+  },
+  "local_video_organizer_clarification": {
+    "provenance": "User supplied organizer clarification in conversation 2026-10-27; not claimed to be verbatim on website.",
+    "summary": "Follow online-workbench research steps to show research process, components, and results; screen recording, animation demo, or PPT are acceptable."
+  }
+}

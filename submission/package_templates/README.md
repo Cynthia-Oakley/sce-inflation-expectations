@@ -1,12 +1,12 @@
-# SCE一年期通胀预期：研究包整理稿
+# 水上挽月｜SCE生成式社会模拟研究包 v03
 
-队伍：水上挽月；参赛赛道A。此包遵循SocioVerse的`studies/<id>/`布局，供本地复现和最终提交前审阅。**当前不是最终提交版**：新版A个人截止T0已完成，完整微观重算所需资料的分发/取得安排和部分历史实验总账仍待收束。
+SocioVerse Challenge 2026，赛道A“历史重建与未来预测”，本地开发。本包遵循 `studies/sce_inflation_expectations/` 标准布局。它是已独立验收的**提交候选研究包**；论文、视频、数据逐源放行及最后文件命名仍待收束，不表示已向赛事提交。
 
-研究对象是纽约联储的消费者预期调查SCE：每月约1,300名受访者，以轮换面板连续回访。我们模拟未来12个月通胀的点预期Q8和概率回答Q9，目标是重建居民如何回答调查，并检验总体中心、个体分歧与更新行为；实际CPI是经济背景，不是同一个预测目标。调查来源：https://www.newyorkfed.org/microeconomics/sce。
+研究对象是纽约联储消费者预期调查（SCE）：Q8为未来12个月通胀点预期，Q9为同期限十档概率。我们研究居民如何回答问卷，而非把未来实际CPI当作同一真值。真实LLM生成使用本地冻结消息执行器；官方Core用于接口装配与离线验收，不能把整个付费生成说成官方引擎在线运行。平台核心未随本项目修改或打包。
 
-## 安装与一键运行
+## 评审先运行这一条
 
-使用Python 3.11及以上。先建立自己的虚拟环境并安装锁定依赖；安装步骤需要网络，离线运行本身不连接模型服务。
+Python 3.11+；新环境先安装依赖（安装需要网络，后续默认运行不联网）：
 
 ```bash
 python3 -m venv .venv
@@ -15,51 +15,50 @@ python -m pip install -r requirements.lock.txt
 python studies/sce_inflation_expectations/run.py --mode all
 ```
 
-最后一条命令是默认复现入口。它运行官方Core的无密钥工程示例，再用真实已归档的月级聚合结果分别重算旧A82、新版T0 A82与旧B11误差及A的48/34月组合。新版A另按年份核对，重点含2021年。输出写入全新的`outputs/reproduction_<time>/`，包括`receipt.json`、`index.html`和工程轨迹库；不覆盖输入，不读取API key，不启动主批。纳入版本以`aggregate_cases.json`为准。
+输出写入一个全新 `outputs/reproduction_<UTC时间>/`，打印目录路径。打开该目录 `index.html` 阅读核对结果。`receipt.json` 同时记录来源清单校验、规则干跑和真实聚合缓存重算。默认没有模型密钥也能执行；Python网络连接被阻断，**不会意外产生API费用**。
 
-依赖版本和本地使用的官方仓库commit见`DEPENDENCIES.json`。本版需在现有锁定依赖环境中独立解压验收；不同操作系统的全新安装尚需另验，不能仅凭生成依赖文件声称已完成。
+默认运行包括：
 
-## 三种运行的含义
+1. 官方Core装配20个手工合成家庭、两步、种子42；产生40次规则决策和60条DuckDB面板记录。此项只验证工程流程。
+2. 新旧A82与旧B11的真实聚合重算；A逐年、早48月拟权/后34月评价均校验。
+3. 最新A Core＋Normal、最新B Core及Normal、月度自主递推、47周对应11月的主评测；校验原始值与冻结组合值的精确关系。
+4. 重算A的82份已保存W1/IQR月摘要的均值；不是从个人答卷重算W1。
+5. 由4,896条已保存的宏观预测核对192组误差和408组配对对照，含循环信贷正向线索及其他负向结果；此项不重新拟合下游回归，样本内R²也不重新计算。
 
-1. `--mode dry-run`：20个手工合成家庭、两步、种子42，通过官方SocioVerse2的P/E/B/collector与DuckDB存储。它检验工程链路，**不产生实证拟合成绩，也不等同于验证512人新版配置的效果**。
-2. `--mode replay`：从包内真实月级缓存重算新旧A82、旧B11的全国MAE/RMSE/偏差，以及A早48月拟权、后34月评价。它不重新询问LLM、不重新拟合个人Q9，也不声称重算真人W1/IQR。A与B分别评价，不汇成93个月同口径总误差。
-3. `--mode generate`：真实API再生成。需要合法、完整、经哈希冻结的输入和执行包、相应模型密钥与预算。该入口只委托现有冻结执行器，不能用聚合缓存冒充重新生成，也不能默认收费。
+只想核查文件：`python studies/sce_inflation_expectations/run.py --mode verify`。
+只跑工程示例或缓存：分别使用 `--mode dry-run`、`--mode replay`。可用 `--out outputs/<全新目录>` 指定输出，禁止覆盖。
 
-真实生成示例仅用于已恢复完整资料的受控工作区，不应在审阅时直接运行：
+## 从哪里读研究
 
-```bash
-python studies/sce_inflation_expectations/run.py --mode generate \
-  --source-workspace /path/to/data_complete_workspace \
-  --prepared-run outputs/your_new_frozen_run \
-  --confirm-paid
-```
+- [study README](studies/sce_inflation_expectations/README.md)：P/E/B装配、各研究任务及接口。
+- [评审导读](studies/sce_inflation_expectations/reports/REVIEW_GUIDE.md)：理论—机制—对照—结果—边界，以及指标/时间/先验/权重说明。
+- [本地视频演示计划](studies/sce_inflation_expectations/reports/LOCAL_DEMO_PLAN.md)：按工作台研究步骤组织约4分40秒展示。
+- [论文整合计划](studies/sce_inflation_expectations/reports/PAPER_INTEGRATION_PLAN.md)：8页布局与图表预算，本轮不重写论文。
+- [公开仓库准备清单](studies/sce_inflation_expectations/reports/PUBLIC_RELEASE_CHECKLIST.md)：赛事后公开前的资料、版权、历史提交与复现检查。
+- `experiment_logs/registry_public.{json,csv}`：选定实验收据索引；实报费、未知预留、token估费分列，非全项目发票总额。
 
-冻结输入缺失或哈希不符时必须失败，不能静默改成规则输出。原机器的冻结包含本地路径，迁移后须依据已披露算法/输入重新prepare新包并明确预算；不能把复制旧路径当作完成可迁移再生成。本整理稿尚不把完整微观再生成列为已通过验收。
+## 最值得先核对的结果
 
-## 包内有什么
+A个人截止T0，2019-01—2025-10共82个月，原始Core全国MAE0.298407pp；统计扩展后0.301422。2021仍是主要难点，改进不等于打败持续性。早48月MSE拟合的Core组合在后34月MAE0.184125，原参考0.194118；信息时点更严格匹配时优势减弱，后期历史也参与过开发。
 
-- `studies/sce_inflation_expectations/study.yaml`、P/E/simulation目录、`trajectory/`、`reports/`与`run.py`：官方study布局；默认元数据指向工程示例，主研究配置见study README。
-- study和`scripts/`中的Python源码：按代码根和`.py`后缀白名单收录，记录原源码哈希；未复制整个官方仓库，也不修改冻结源码。
-- `reproduction_data/`：仅月级公开全国指标与模拟聚合，不含真人问卷或个体模型回答；`A82_comparison_summary.json`披露同名单微观摘要，这些微观摘要没有在月级replay中重新计算。
-- `experiment_logs/registry_public.json`：所纳入实验的聚合记录；原始JSONL/修复账本不移动、不合并改写。覆盖范围、未决费用和运行中快照分别注明。
-- `SOURCE_INDEX.json`、`PACKAGE_MANIFEST.json`、`DATA_RELEASE_POLICY.json`：文件哈希、适配层、排除项及资料放行状态。
+最新B，2025-11—2026-09，512户Core原始MAE0.348509、公开历史持续性0.172727；冻结组合0.144277。Normal扩到1300后为0.346169/0.143964。A扩展组合权重0.134964，B和周度沿用原Core权重0.133976，两者谱系不同。
 
-`python studies/sce_inflation_expectations/run.py --mode verify`只校验清单，不运行模拟或重算。
+月度自主递推排除共用起点后10月MAE0.305751/持续性0.190000，后期发生向上漂移。周度47个周五，固定300户、公开SCE发布后才重置先验，11份月真值主评原始MAE0.151581/持续性0.172727，原始值未做输出层组合，仍使用已公开历史校准先验。9月漏报上升，不能概括为可靠预警；47点不是47份独立真值。
 
-## 研究与评价边界
+循环信贷未来1/2/3月RMSE，原始月度模拟相对同结构官方SCE模型改善3.55%/8.17%/1.69%。这是月度A/B Core＋Normal下游用途，与新周度结果分开。其他结局不稳定，历史均值等简单基线仍强，不能概括为普遍优越。
 
-Q8是一年期通胀点预期；Q9是同期限十个区间的概率。主研究从Q9拟合连续分布，取个人密度均值，再取跨家庭的设计加权中位数。Q8单独报告。W1衡量跨人分布差异，IQR描述跨人或个人概率分布宽度，二者不能与全国中心误差互换。
+## 真实生成、受控复现与数据边界
 
-A线使用历史人口与严格更早本人答卷/近期供体，属于明确重建条件下的模拟。B线用截止前可得性假设下的旧人口和经已公开历史全国值校准的合成起点；现有B11是结果公布后进行的时点回测，不是事前封存预测。文本版本、微观发布的精确历史版本和LLM知识边界不足均保留，不能把发布时间筛选合格写成没有泄漏风险。
+`--mode generate` 默认不执行，必须显式指定完整合法工作区、已prepare且经授权的冻结运行包与 `--confirm-paid`。它委托已存在的A/B执行器，不恢复缺失数据、不绕过哈希/预算保护，不假装用缓存完成真实生成。详评审导读的恢复步骤。
 
-模型历史包括Flash、Qwen2.5-72B与DeepSeek V3.2。主模型固定为OpenRouter→SiliconFlow FP8的V3.2；主实验采用温度0.5、JSON、关闭思考，具体名单、生成遍数、预算和技术补跑以各批冻结协议为准。真实LLM抽样不能承诺逐字重现；已有回答的重算与真实重新生成分别说明。种子控制抽样/信息分配和工程示例，不保证供应商推理的随机数流。
+本包不含真实人口、问卷行、个人权重/轨迹、逐篇新闻、NYT标题/摘要、GSS/ATUS/CE供体或密钥。完整个体评分、W1/条件分布、匹配和生成的重现，需要按原来源许可恢复受控资料。**包内宏观缓存可独立复算，完整微观复现尚未闭环。**`PRIVATE_INPUTS_REQUIRED.json` 为恢复证据目录，不能把原机器的绝对路径复制过去就说完成迁移。
 
-## 数据、日志与最终补齐项
+`DATA_RELEASE_POLICY.json`、`TRUTH_ISOLATION_EVIDENCE.json`记录来源、取得时间、版本和隔离；未知历史版本仍填未知。B/周度使用已公布结果做回顾性时点回测，模型知识、人口可得性假设和新闻字节版本限制保留，不称事前封存的盲预测。
 
-原始SCE微观、CE/ATUS/GSS供体、NYT文本、新闻逐篇标签和个人模型轨迹默认不随此整理稿分发。公开可下载不自动等于可再分发；见`DATA_RELEASE_POLICY.json`中的待核项。完整微观复算需按许可恢复输入或另设合规访问，不能用月级重算替代这一未决事项。
+## 版本、测试和交付状态
 
-原始日志留在原版本目录，本包只收聚合白名单。API实报、token估费、未知费用预留、历史复用和当前运行快照分开；登记实验的小计不是全项目供应商账单。研究包准备、检查与离线运行本身没有新增模型调用。
+`DEPENDENCIES.json` 锁定实际运行版本和官方参考commit；`SOURCE_INDEX.json`说明源码、适配层和排除项；`PACKAGE_MANIFEST.json`绑定包内所有文件。选定源码原样导出，不替换旧冻结输入或日志。完整原始账本保留在本地，包内只投影聚合字段。
 
-新版A全国MAE为0.298pp（旧版0.317），2021年为0.577pp（旧版0.822），仍高于相应历史基线。按早48月MSE拟得模拟权重0.133976，后34月组合MAE为0.184pp、基线0.194pp；MAE拟权则为0。多个机制同时变化，历史结果也曾用于开发，不称独立盲测或因果识别。2020、2025年变差和微观W1恶化一并保留，不能只展示改进年份。
+包内针对性测试：先 `python -m pip install pytest`，再 `python -m pytest -q`。包内测试与主仓库全套不同：主仓库仍存在已记录的旧Core+Normal导入、CPI组件提取及环境fixture测试问题，不能宣称全部测试通过。干净依赖安装与受控微观复现另列验收，当前已有独立解压执行不替代所有操作系统上的全新安装。
 
-提交前还需按实际进度更新B候选（当前仍旧B11）、补齐完整微观访问/复现安排、核对总账覆盖及数据许可，并再次独立解压执行。PDF为4—8页、演示为不超过5分钟MP4，均独立提交；本README不替代论文和视频。官网要求来源见`OFFICIAL_REQUIREMENTS.json`及https://socioverse.fudan-disc.com/challenge/。
+官方要求：PDF中英文均可、4–8页含图表；MP4不超过5分钟；study格式和README是复现载体。来源：https://socioverse.fudan-disc.com/challenge/ 。本地视频按用户转交的组委会说明，可用录屏、动画或PPT展示研究过程、关键组件和结果；无需录制整夜API过程。论文/视频不混入本包假称已完成，也不会自动提交或公开仓库。

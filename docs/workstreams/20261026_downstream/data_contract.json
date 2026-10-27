@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-26",
+  "phase": "phase_1_public_current_vintage",
+  "start": "2017-01-01",
+  "end": null,
+  "vintage_policy": "current_public_at_fetch_no_alfred_or_initial_release",
+  "new_simulation_calls": 0,
+  "outcomes": {
+    "wage_growth": {"source": "Atlanta Fed Wage Growth Tracker", "series": "overall", "frequency": "monthly"},
+    "real_durable_consumption": {"source": "FRED", "series": "PCEDGC96", "frequency": "monthly"},
+    "revolving_credit": {"source": "FRED", "series": "REVOLSL", "frequency": "monthly"},
+    "michigan_inflation_expectations_1y": {"source": "FRED", "series": "MICH", "frequency": "monthly"}
+  },
+  "common_controls": ["UNRATE", "JTSJOL", "DSPIC96", "CPIAUCSL", "CPILFESL", "UMCSENT", "FEDFUNDS"],
+  "credit_rate_candidates": ["TERMCBCCINTNS", "TERMCBCCALLNS"],
+  "raw_root": "outputs/sce_downstream_data_20261026_v1",
+  "not_in_scope": ["BIE", "ALTSALES", "delinquency", "T10YIEM", "SPF", "ALFRED", "initial_release_vintages"]
+}

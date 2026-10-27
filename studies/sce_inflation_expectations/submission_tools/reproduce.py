@@ -186,6 +186,9 @@ def replay(out, *, study=STUDY):
               "limits": ["Each included completed A/B version is evaluated separately as listed in aggregate_cases.json.",
                          "Recomputes macro errors and early/late weights from archived real aggregate predictions.",
                          "Does not regenerate individuals, recompute empirical W1/IQR, or prove forecast generalization."]}
+    if (evidence / "extension_cases.json").exists():
+        from .release_evidence import replay_extensions
+        result["extensions"] = replay_extensions(evidence)
     write(out / "summary.json", result)
     return result
 
@@ -226,6 +229,9 @@ def make_report(out, result):
                         f"<td>{case[key]['rmse_pp']:.6f}</td><td>{case[key]['bias_pp']:.6f}</td></tr>"
                         for key, name in (("model", "原始模拟"), ("persistence", "已公开历史基线"))) + "</table>")
         sections.append("<p>完整微观Q9评分、W1和人群分布复算需要受控数据与逐人缓存，本包此模式不声称已复算这些结果。</p>")
+        if "extensions" in result["replay"]:
+            from .release_evidence import extension_report
+            sections.append(extension_report(result["replay"]["extensions"]))
     (out / "index.html").write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8">'
         '<title>SCE研究包离线复现</title><style>body{max-width:1000px;margin:30px auto;padding:20px;'
         'font:17px/1.8 "Times New Roman","Kaiti SC",serif;color:#242424}table{border-collapse:collapse;'

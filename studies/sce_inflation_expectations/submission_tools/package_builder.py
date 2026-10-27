@@ -193,7 +193,7 @@ def _production_references(package, a_refresh=None):
 
 def build(out, *, public_log_registry, a_refresh=None, draft_version="v01"):
     out = Path(out).resolve(); registry = Path(public_log_registry).resolve()
-    if draft_version not in {"v01", "v02"}:
+    if draft_version not in {"v01", "v02", "v03"}:
         raise ValueError("Unknown review-bundle version")
     if out.exists() or not out.is_relative_to(ROOT / "outputs") or not registry.is_file():
         raise ValueError("Fresh project outputs/ directory and public log registry required")
@@ -216,6 +216,9 @@ def build(out, *, public_log_registry, a_refresh=None, draft_version="v01"):
     (target / "reports/README.md").write_text("Run the study entry to generate the offline receipt, metrics and index.html.\nFinal research PDF is submitted separately; aggregate_cases.json explicitly lists the completed A/B versions included in replay.\n")
     _demo_artifacts(package)
     _aggregate_evidence(package, a_refresh)
+    if draft_version == "v03":
+        from .release_evidence import export_v03
+        export_v03(package)
     _dependency_lock(package)
     _production_references(package, a_refresh)
     shutil.copyfile(ROOT / "submission/data_release_policy.json", package / "DATA_RELEASE_POLICY.json")
@@ -226,12 +229,21 @@ def build(out, *, public_log_registry, a_refresh=None, draft_version="v01"):
         shutil.copyfile(public_csv, package / "experiment_logs/registry_public.csv")
     # The internal receipt-to-source map is intentionally not public. A complete
     # log rebuild requires the original authorized metadata workspace.
-    evidence = ROOT / "docs/sources/challenge_requirements_20261026.json"
+    evidence = ROOT / ("docs/sources/challenge_requirements_20261027.json" if draft_version == "v03"
+                       else "docs/sources/challenge_requirements_20261026.json")
     if evidence.exists():
         shutil.copyfile(evidence, package / "OFFICIAL_REQUIREMENTS.json")
     truth_evidence = ROOT / "submission/truth_isolation_evidence.json"
     if truth_evidence.exists():
         shutil.copyfile(truth_evidence, package / "TRUTH_ISOLATION_EVIDENCE.json")
+    if draft_version == "v03":
+        # Acceptance tests are code, not copies of private caches/fixtures.
+        for name in ("test_sce_submission_reproduce.py", "test_sce_submission_experiment_logs.py",
+                     "test_sce_submission_release_evidence.py"):
+            dest = package / "tests" / name
+            dest.parent.mkdir(exist_ok=True)
+            shutil.copyfile(ROOT / "tests" / name, dest)
+        (package / "pytest.ini").write_text("[pytest]\npythonpath = .\ntestpaths = tests\n")
     source_index = {"source_files_sha256": copied, "source_file_count": len(copied),
         "packaging_adapters": ["studies/sce_inflation_expectations/run.py", "studies/sce_inflation_expectations/README.md", "README.md",
             "studies/sce_inflation_expectations/study.yaml", "studies/sce_inflation_expectations/resources.json"],
@@ -245,6 +257,7 @@ def build(out, *, public_log_registry, a_refresh=None, draft_version="v01"):
         "generated_at_utc": datetime.now(timezone.utc).isoformat(), "new_API_calls": 0,
         "fully_runnable_offline_modes": ["official_Core_scripted_demo", "real_archived_national_aggregate_recompute"],
         "latest_A_T0_results_included": a_refresh is not None,
+        "latest_extensions_included": draft_version == "v03",
         "not_claimed": ["full private micro trajectory reproduction", "all project invoices reconciled", "data redistribution clearance for raw inputs"]})
     archive = out / f"SCE_research_package_draft_{draft_version}.zip"
     with zipfile.ZipFile(archive, "x", compression=zipfile.ZIP_DEFLATED) as z:
