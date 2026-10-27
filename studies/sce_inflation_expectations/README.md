@@ -1,30 +1,35 @@
-# SCE 一年期通胀预期 study
+# SCE研究实现：先区分开发目录和提交包
 
-**2026-10-26研究包整理说明：**本目录的`study.yaml`及默认P/E/simulation仍是早期20人两步的合成工程示例，不代表后来每月512人的A82/B11或正在运行的个人截止T0。主研究配置以`docs/CURRENT_SIMULATION_CONFIGURATION.md`及各冻结协议为准；新的可移交研究包由`scripts/build_sce_research_package.py`按白名单生成，说明见`submission/package_templates/README.md`。包内一键入口分别完成官方Core干跑、真实月度聚合重算和受控工作区的付费生成；三者不能混称为同一种复现。以下2026-10-03的本地开发记录保留供追溯，不是当前最终提交说明。
+更新：2026-10-27。本目录是项目唯一维护的**开发源码目录**，并不是可以直接压缩提交的成品包。这里保留了一个月以来的主线、历史实验和兼容依赖；目录中出现某个机制，不表示最终采用它。
 
-队伍：水上挽月。赛道：A。状态：**本地可运行（scripted 已验收；openai 真实 LLM 待用户 API key 与预算确认）**。
+**评委应阅读单独导出的研究包。**其固定位置由项目根 `submission/latest_package.json` 指定。提交包保留官方study布局，默认入口是 `python studies/sce_inflation_expectations/run.py --mode all`；这条命令在解压包根执行。开发目录不提供同名的默认run.py，实际工作通过项目根scripts的各实验入口执行，不能混用。
 
-目标是模拟家庭对未来一年通胀的点预测与十区间主观概率，再按 SCE 口径聚合；总体主指标拟为个人密度均值的加权中位数。P 用历史可得画像，E 用带发布时间和版本的信息。当前主研究不模拟家庭行为决定实际宏观价格。
+## 先读什么
 
-`model.py` 实现四个 abc 并提供双模 B：`llm_kind="scripted"` 为确定性流程校验规则（与云端 v3 归档逐字段一致，非估计量）；`llm_kind="openai"` 走任意 OpenAI 兼容端点，逐次调用全量审计（提示词/原始响应/usage/requested/returned model/request_id/重试/错误），Q9 校验不归一化、失败不回退规则。P/E/B 输入白名单见 [RESEARCH_PROTOCOL](../../docs/RESEARCH_PROTOCOL.md)。
+1. [文件导读](FILE_GUIDE.md)：按研究问题找到当前主线、评价、公共函数及历史代码。
+2. [项目设计](../../docs/DESIGN.md)：研究对象与P/E/B全貌；细节以已完成批次的冻结协议为准。
+3. [当前交付入口](../../docs/workstreams/20261027_submission_update/README.md)：最新证据、研究包与验收。
+4. [目录整理记录](../../docs/workstreams/20261027_study_layout/README.md)：文件分类、源码取舍与归档证据。
 
-## 运行入口（已验收，2026-10-03）
+## 本目录各部分负责什么
 
-```bash
-PY=/Users/wushuyue/anaconda3/envs/socioverse/bin/python
-# 1. scripted 离线运行（零费用；自动先做单向导出）
-$PY scripts/run_sce_local.py --llm scripted
-# 2. 与云端 v3 归档的 40/40 复算审计
-$PY scripts/audit_local_scripted_replay.py <run_id>
-# 3. 真实 LLM（需用户先在官方仓 .env 放 SV_LLM_API_KEY；两条命令均计次数）
-$PY scripts/sce_llm_probe.py --list-models                     # 免费目录读取
-$PY scripts/sce_llm_probe.py --sample 2 --model <model> --confirm-spend
-$PY scripts/run_sce_local.py --llm openai --model <model> --max-calls 100 \
-     --extra-body '{"thinking": {"type": "disabled"}}' --confirm-spend
-```
+- `study.yaml`、`population/`、`environment/`、`simulation/`：官方装配元信息和版本化配置；默认小示例不是512人正式主批。真实资料不能据目录名自动分发。
+- `model.py`、`__init__.py`：官方四接口实现及注册；一部分早期模块仍被初始化导入，不能因为名字旧就删除。
+- `experiments/`：当前与历史实验的输入准备、执行和递推。当前入口见FILE_GUIDE；不逐个猜测哪个版本最新。
+- `evaluation/`、`scoring/`：统计评价、基线和冻结Q9近似计分。
+- `submission_tools/`：研究包导出、主线依赖选择、聚合复算与日志索引。
+- `reports/`：图文生成源码和旧稿，不是最终报告的唯一阅读入口。
+- `belief_dynamics/`、`reporting_behavior/`、`environment_authoring/`等：专题机制与公共支撑。
+- 根目录的其他`.py`：早期平铺实现中既有当前依赖，也有历史实验；逐文件分类不靠名称猜，见整理目录中的 `file_catalog.json`。
 
-运行产物：轨迹库在官方仓运行副本 `trajectory/<run_id>.duckdb`，审计 sidecar 在本仓库 `outputs/local_runs/<run_id>/`（observations.jsonl / llm_calls.jsonl / metrics_history.json / cost_ledger.json / run_manifest.json）。两个位置均被 gitignore，按 run_id 保留、禁止覆盖。
+## 当前研究与运行边界
 
-各子目录的 README 定义职责；结构见 [项目结构](../../docs/PROJECT_STRUCTURE.md)，研究定义见 [SCE 方案](../../docs/SCE_PROJECT_PLAN.md)，当前任务见 [任务板](../../docs/NEXT_ACTIONS.md)。
+主线A为2019-01—2025-10历史重建；近期B为2025-11—2026-09回顾性时点模拟；Core＋Normal、月度自主链、周度校准链、下游用途各自评价，不拼一个同质总分。主模型DeepSeek V3.2，经OpenRouter固定SiliconFlow FP8，生产答卷与早期model.py的严格示例校验分版本保留。
 
-未来必须保存：可得输入快照、P 抽样版本、问卷/prompt、模型、配置与种子、回答验证、失败与费用、计分方法、基线和留出评测。模拟与评价分阶段运行，真值不进入 B。
+原始数据、个人答卷、真实模型轨迹和逐篇新闻留在受控data/outputs中，不属于默认提交材料。主研究付费生成使用本地冻结消息适配器；官方Core用于装配与离线验收。没有新授权不要重新运行付费入口，也不要对已完成目录再次run/resume。
+
+## 为什么没有直接移动几百个文件
+
+冻结运行、源码哈希、Python相对导入和旧脚本仍依赖原路径。为整理而移动算法，可能使旧实验无法复查。本轮采用：**开发目录补分类导读，主包只保留当前研究入口与依赖，其他专题/历史源码在提交包内压成可查阅补充档。**这不是宣布未选入源码都失效；每份源码在本仓库仍只有一个维护位置。
+
+原README及早期无结果说明已存入 `docs/archive/2026-10/study_readmes_before_20261027/`，有逐文件原路径和哈希。旧运行、旧ZIP与冻结研究配置不改。

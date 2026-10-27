@@ -1,41 +1,21 @@
-# 统一评价与离线基线
+# 评价实现：主线与公共统计
 
-2026-10-07：v1已实现并完成2020–2024、60月运算。见 [评价契约](../../../docs/SCE_EVALUATION_CONTRACT_V1.md)、[结果与来源](../../../docs/SCE_BASELINE_RESULTS_20261007.md)。旧版“待实现”仅为历史状态。
+更新：2026-10-27。全国中心、同支持微观分布、动态更新、宏观基线和下游用途分别评价，不能将不同任务的MAE/W1混成一个总分。
 
-`metrics.py`提供加权经验分位数、W1/居中W1、全国MAE/RMSE/偏差及配对月份块bootstrap。`baselines.py/benchmark.py`实现持续性、12期均值、AR(1)、SCE+CPI的ARX、简单信息更新Agent，以及A人口条件/已知中位数重建。没有真实LLM或MCP调用。
+## 从哪些文件开始
 
-## 一键复算全国基线
+- `metrics.py`：共享加权统计、误差和分布度量；旧冻结评价器保持自己的已登记实现。
+- `full_a_personal.py`：当前A个人截止主运行评价。
+- `full_a_core_normal.py`：A的Core＋Normal全国和分布评价。
+- `aggregate_blend.py`：凸组合权重拟合及早/晚窗口评价。
+- `full_a_macro_calibration.py`：同结构宏观无模拟/加模拟及状态交叉对照。
+- `downstream_regression.py`：工资、消费、信贷、MICH用途分析。
+- 周度、近期B、月度链的部分评价器位于experiments，见[文件导读](../FILE_GUIDE.md)。
 
-在项目根目录，使用已有Python数值环境（numpy）：
+本目录其余大量文件属于历史对照、条件诊断或公共依赖，不全是当前入口。是否执行以对应批协议为准。旧基线说明原文已归档，历史CLI不会因新README改变算法或输入。
 
-```sh
-python scripts/run_sce_baselines.py --headlines-only \
-  --aggregate-file docs/sources/sce_baseline_aggregate_sources_20261007.json
-```
+## 阅读与复算边界
 
-不需要联网、密钥、微观数据或SocioVerse引擎。依赖来自项目锁定环境；程序保存新run，不覆盖旧结果。公共聚合台账使Git干净副本能复算全国结果；复核原网页另用台账URL/原始哈希。
+提交包默认重算已有全国聚合、已保存微观月摘要均值及下游预测误差；不重新读取真人个体答卷、拟合个人密度或运行新的LLM。完整W1/条件分布重现仍需受控数据。
 
-## 全部重建基线
-
-本地已有官方两份微观xlsx、原始新闻稿/CPI归档及日历时：
-
-```sh
-python scripts/build_sce_baseline_inputs.py --micro
-python scripts/run_sce_baselines.py \
-  --aggregate-file docs/sources/sce_baseline_aggregate_sources_20261007.json
-```
-
-需pandas/openpyxl/pyarrow；原始文件路径由预处理脚本明确列出，缺文件会失败，不虚构成功。下载SCE新闻稿可用`python scripts/prepare_sce_baseline_sources.py --fetch`；CPI web工具归档及日历下载过程记录在结果报告，当前该脚本不自动下载它们。A统计重建使用官方派生字段，仅模拟均值/不确定性分布，不生成完整原始Q9。
-
-## 新模拟的统一评价
-
-按契约转换规范化JSON包，再运行：
-
-```sh
-python scripts/evaluate_sce_outputs.py \
-  --simulated <simulated_bundle.json> --observed <truth_bundle.json> \
-  --output <new_result.json>
-python -m pytest tests/test_sce_unified_evaluation.py -q
-```
-
-匹配真值系列/月份，population双方计分版本必须一致。群体标签/稀疏支持、明确真人对应的个人辅助与已知宏观约束分别处理。既有轨迹暂需转换包；旧评价入口和历史结论未改写。研究线、信息截止和样本设计仍需运行卡证明，统计计算本身不能替代P/E审计。
+Q8和Q9分开；官方headline、同算法真人重算、照抄本人上期及最后公开全国值各有用途。权重/支持/月份/信息截止一致后才比较。近期B和周度缺真人微观，不宣称有对应W1准确率。

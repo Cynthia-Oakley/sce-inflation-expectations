@@ -1,0 +1,1287 @@
+{
+  "studies/sce_inflation_expectations/submission_tools/reproduce.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/aggregate_blend.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/submission_tools/__init__.py",
+    "studies/sce_inflation_expectations/submission_tools/release_evidence.py"
+  ],
+  "studies/sce_inflation_expectations/submission_tools/package_builder.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/submission_tools/__init__.py",
+    "studies/sce_inflation_expectations/submission_tools/release_evidence.py",
+    "studies/sce_inflation_expectations/submission_tools/source_layout.py"
+  ],
+  "studies/sce_inflation_expectations/submission_tools/release_evidence.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/full_a_personal_inputs.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_news_refresh.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_sampled_dates.py",
+    "studies/sce_inflation_expectations/experiments/weekly_priors.py",
+    "studies/sce_inflation_expectations/submission_tools/__init__.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/submission_tools/source_layout.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/submission_tools/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/submission_tools/experiment_logs.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/submission_tools/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/full_a_personal_inputs.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_trial_preparation.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_trial.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_v3.py",
+    "studies/sce_inflation_expectations/experiments/media_timing_inputs.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_label_compat.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/procurement_price_views.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/full_a_personal_terminal.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/frozen_message_queue.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_background.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_resilient.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py",
+    "studies/sce_inflation_expectations/news_label_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/q9_normalization.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/full_a_personal.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/aggregate_blend.py",
+    "studies/sce_inflation_expectations/evaluation/cognition.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/evaluation/monthly_main_readout.py",
+    "studies/sce_inflation_expectations/evaluation/monthly_reconstruction.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/frozen_message_queue.py",
+    "studies/sce_inflation_expectations/experiments/full_a_personal_terminal.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/q9_normalization.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_sampled_dates.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_trial_preparation.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/evaluation/response_date_distribution.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/full_a_core_normal.py",
+    "studies/sce_inflation_expectations/experiments/full_a_personal_inputs.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_v3.py",
+    "studies/sce_inflation_expectations/experiments/media_timing_inputs.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_news_refresh.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_label_compat.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/state_continuity_runtime.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_sampled_terminal.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/frozen_message_queue.py",
+    "studies/sce_inflation_expectations/experiments/full_a_personal_terminal.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_background.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_sampled_dates.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_sampled_evaluation.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py",
+    "studies/sce_inflation_expectations/news_label_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/q9_normalization.py"
+  ],
+  "studies/sce_inflation_expectations/core_normal_joint.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/full_a_core_normal.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/core_normal_joint.py",
+    "studies/sce_inflation_expectations/evaluation/full_a_personal.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/full_a_personal_terminal.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py",
+    "studies/sce_inflation_expectations/population/monthly_fine_grid.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/full_a_core_normal.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/evaluation/monthly_main_readout.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_core_normal.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/core_normal_joint.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/frozen_message_queue.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_sampled_terminal.py",
+    "studies/sce_inflation_expectations/population/monthly_fine_grid.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_recursion.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_trial_preparation.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/frozen_message_queue.py",
+    "studies/sce_inflation_expectations/experiments/full_a_personal_inputs.py",
+    "studies/sce_inflation_expectations/experiments/full_a_personal_terminal.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_v3.py",
+    "studies/sce_inflation_expectations/experiments/media_timing_inputs.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_background.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_continuity_pe.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_news_refresh.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_recursive_evaluation.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_sampled_dates.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_sampled_terminal.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_label_trial.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/q9_normalization.py",
+    "studies/sce_inflation_expectations/state_continuity_runtime.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/reports/monthly_b_recursion.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_recursion.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/state_continuity_runtime.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_inputs.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_trial_preparation.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/full_a_personal_inputs.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_trial.py",
+    "studies/sce_inflation_expectations/experiments/media_timing_inputs.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_news_refresh.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_sampled_dates.py",
+    "studies/sce_inflation_expectations/experiments/weekly_news.py",
+    "studies/sce_inflation_expectations/experiments/weekly_preflight.py",
+    "studies/sce_inflation_expectations/experiments/weekly_priors.py",
+    "studies/sce_inflation_expectations/experiments/weekly_release_protocol.py",
+    "studies/sce_inflation_expectations/experiments/weekly_state.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_terminal.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/frozen_message_queue.py",
+    "studies/sce_inflation_expectations/experiments/full_a_personal_terminal.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_background.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py",
+    "studies/sce_inflation_expectations/experiments/weekly_evaluation.py",
+    "studies/sce_inflation_expectations/experiments/weekly_inputs.py",
+    "studies/sce_inflation_expectations/experiments/weekly_release_protocol.py",
+    "studies/sce_inflation_expectations/experiments/weekly_state.py",
+    "studies/sce_inflation_expectations/news_label_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/q9_normalization.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_evaluation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_review_materials.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py",
+    "studies/sce_inflation_expectations/experiments/weekly_release_protocol.py",
+    "studies/sce_inflation_expectations/experiments/weekly_terminal.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_final_readout.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/frozen_message_queue.py",
+    "studies/sce_inflation_expectations/experiments/weekly_evaluation.py",
+    "studies/sce_inflation_expectations/experiments/weekly_key_limit_resume.py",
+    "studies/sce_inflation_expectations/experiments/weekly_partial_readout.py",
+    "studies/sce_inflation_expectations/experiments/weekly_terminal.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/aggregate_blend.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/full_a_macro_calibration.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/aggregate_blend.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/full_a_core_normal.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/downstream_regression.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "scripts/build_sce_research_package.py": [
+    "studies/sce_inflation_expectations/submission_tools/package_builder.py"
+  ],
+  "scripts/verify_sce_research_package.py": [],
+  "scripts/catalog_sce_study.py": [
+    "studies/sce_inflation_expectations/submission_tools/source_layout.py"
+  ],
+  "scripts/build_sce_submission_experiment_logs.py": [],
+  "scripts/prepare_sce_full_a_personal_inputs.py": [
+    "studies/sce_inflation_expectations/experiments/full_a_personal_inputs.py"
+  ],
+  "scripts/run_sce_full_a_personal.py": [
+    "studies/sce_inflation_expectations/experiments/full_a_personal_terminal.py"
+  ],
+  "scripts/analyze_sce_full_a_personal.py": [
+    "studies/sce_inflation_expectations/evaluation/full_a_personal.py"
+  ],
+  "scripts/run_sce_recent_b_sampled.py": [
+    "studies/sce_inflation_expectations/experiments/recent_b_sampled_terminal.py"
+  ],
+  "scripts/prepare_sce_recent_b_sampled_dates.py": [
+    "studies/sce_inflation_expectations/experiments/recent_b_sampled_dates.py"
+  ],
+  "scripts/run_sce_full_a_core_normal.py": [
+    "studies/sce_inflation_expectations/experiments/full_a_core_normal.py"
+  ],
+  "scripts/evaluate_sce_full_a_core_normal.py": [
+    "studies/sce_inflation_expectations/evaluation/full_a_core_normal.py"
+  ],
+  "scripts/expand_sce_recent_b_core_normal.py": [
+    "studies/sce_inflation_expectations/experiments/recent_b_core_normal.py"
+  ],
+  "scripts/evaluate_sce_recent_b_core_normal.py": [
+    "studies/sce_inflation_expectations/evaluation/recent_b_core_normal.py"
+  ],
+  "scripts/run_sce_recent_b_recursion.py": [
+    "studies/sce_inflation_expectations/experiments/recent_b_recursion.py"
+  ],
+  "scripts/analyze_sce_recent_b_recursion.py": [
+    "studies/sce_inflation_expectations/reports/monthly_b_recursion.py"
+  ],
+  "scripts/prepare_sce_weekly_release_plan.py": [
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/weekly_design.py",
+    "studies/sce_inflation_expectations/experiments/weekly_release_protocol.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "scripts/prepare_sce_weekly_inputs.py": [
+    "studies/sce_inflation_expectations/experiments/weekly_inputs.py"
+  ],
+  "scripts/run_sce_weekly.py": [
+    "studies/sce_inflation_expectations/experiments/weekly_terminal.py"
+  ],
+  "scripts/evaluate_sce_weekly_compat.py": [
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/weekly_evaluation.py",
+    "studies/sce_inflation_expectations/experiments/weekly_partial_readout.py",
+    "studies/sce_inflation_expectations/experiments/weekly_terminal.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "scripts/analyze_sce_weekly_final.py": [
+    "studies/sce_inflation_expectations/experiments/weekly_final_readout.py"
+  ],
+  "scripts/analyze_sce_full_a_macro_calibration.py": [
+    "studies/sce_inflation_expectations/evaluation/full_a_macro_calibration.py"
+  ],
+  "scripts/analyze_sce_downstream_regression.py": [
+    "studies/sce_inflation_expectations/evaluation/downstream_regression.py"
+  ],
+  "scripts/prepare_sce_downstream_data.py": [],
+  "studies/sce_inflation_expectations/__init__.py": [
+    "studies/sce_inflation_expectations/confidence_experiment.py",
+    "studies/sce_inflation_expectations/lifetime_experiment.py",
+    "studies/sce_inflation_expectations/lifetime_text_experiment.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/native_spending.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/price_contact.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/u1_state_experiment.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/metrics.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/model.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/dated_prompt.py",
+    "studies/sce_inflation_expectations/experience_mechanism.py",
+    "studies/sce_inflation_expectations/household_state_mechanism.py",
+    "studies/sce_inflation_expectations/information_exposure.py"
+  ],
+  "studies/sce_inflation_expectations/submission_tools/__init__.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_news_refresh.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_trial.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_v3.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_prompts.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_core.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_label_compat.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/state_continuity_runtime.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_priors.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_priors.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_rolling_preflight.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py",
+    "studies/sce_inflation_expectations/experiments/weekly_release_protocol.py",
+    "studies/sce_inflation_expectations/population/entry_initialization.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/belief_trial_preparation.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/coverage_preparation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_trial_preparation.py",
+    "studies/sce_inflation_expectations/evaluation/shared_environment.py",
+    "studies/sce_inflation_expectations/monthly_population.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_exposure_trial.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/price_experience.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/__init__.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/frozen_batch.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/model_migration.py",
+    "studies/sce_inflation_expectations/experiments/staged_rosters.py",
+    "studies/sce_inflation_expectations/frozen_prompt_runtime.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/news_label_trial.py",
+    "studies/sce_inflation_expectations/openrouter_frozen_runtime.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/q8_delta_runtime.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py": [
+    "scripts/build_sce_fullperiod_coverage.py",
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/procurement_price_views.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/media_mechanism_trial.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/information_exposure.py",
+    "studies/sce_inflation_expectations/information_update_runtime.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_label_compat.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/media_mechanism_v3.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_trial.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/media_timing_inputs.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_trial_preparation.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_trial.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_v3.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_v3_preparation.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_label_compat.py",
+    "studies/sce_inflation_expectations/news_mechanism_label_preparation.py",
+    "studies/sce_inflation_expectations/news_mechanism_labels.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/procurement_price_views.py"
+  ],
+  "studies/sce_inflation_expectations/news_exposure.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experience_mechanism.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/price_experience.py"
+  ],
+  "studies/sce_inflation_expectations/news_exposure_demo.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/news_label_compat.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/news_selection_trial.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/prior_belief_experiment.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/confidence_experiment.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/procurement_price_views.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/frozen_message_queue.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_background.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_resilient.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/q9_normalization.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/monthly_main_background.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_pipeline.py",
+    "studies/sce_inflation_expectations/news_label_trial.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/monthly_main_resilient.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_background.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_console.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_continuation.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py",
+    "studies/sce_inflation_expectations/news_label_trial.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/state_continuity_execution.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_dry_run.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/model_counterfactual.py",
+    "studies/sce_inflation_expectations/news_label_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/state_continuity_runtime.py"
+  ],
+  "studies/sce_inflation_expectations/news_label_trial.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/q9_normalization.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/cognition.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/cognition_runtime.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/revision_format_runtime.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/monthly_main_readout.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/aggregate_blend.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/monthly_reconstruction.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/cognition.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/evaluation/state_continuity.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py",
+    "studies/sce_inflation_expectations/population/entry_initialization.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py"
+  ],
+  "studies/sce_inflation_expectations/prior_belief_preparation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/age_reporting_audit.py"
+  ],
+  "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/response_date_distribution.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/full_a_core_normal.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/media_timing_inputs.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_news_refresh.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_rolling_preflight.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/state_continuity_runtime.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py",
+    "studies/sce_inflation_expectations/information_update_runtime.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/q9_normalization.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_sampled_evaluation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/evaluation/recent_b_readout.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_evaluation.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_review_materials.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity.py",
+    "studies/sce_inflation_expectations/personal_information_preparation.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/procurement_price_views.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py"
+  ],
+  "studies/sce_inflation_expectations/population/monthly_fine_grid.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/population/grid_sampling.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_continuity_pe.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_v3.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_news_refresh.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/procurement_price_views.py",
+    "studies/sce_inflation_expectations/state_continuity_runtime.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_recursive_evaluation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/cognition.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/evaluation/recent_b_readout.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_recursion.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_news.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_trial.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_v3.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_preflight.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/full_a_personal_inputs.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_trial.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_news_refresh.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_sampled_dates.py",
+    "studies/sce_inflation_expectations/experiments/weekly_design.py",
+    "studies/sce_inflation_expectations/experiments/weekly_release_protocol.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/population/grid_sampling.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_release_protocol.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_state.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py",
+    "studies/sce_inflation_expectations/q9_normalization.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_review_materials.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/aggregate_blend.py",
+    "studies/sce_inflation_expectations/evaluation/full_a_macro_calibration.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/full_a_core_normal.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_key_limit_resume.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/frozen_message_queue.py",
+    "studies/sce_inflation_expectations/experiments/weekly_terminal.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_partial_readout.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/frozen_message_queue.py",
+    "studies/sce_inflation_expectations/experiments/weekly_evaluation.py",
+    "studies/sce_inflation_expectations/experiments/weekly_terminal.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/recent_b_core_normal.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/evaluation/recent_b_readout.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_review_materials.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/weekly_design.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/full_a_personal_inputs.py",
+    "studies/sce_inflation_expectations/submission_tools/reproduce.py"
+  ],
+  "studies/sce_inflation_expectations/confidence_experiment.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_trial_preparation.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/price_experience.py"
+  ],
+  "studies/sce_inflation_expectations/lifetime_experiment.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/confidence_experiment.py",
+    "studies/sce_inflation_expectations/lifetime_episodes.py",
+    "studies/sce_inflation_expectations/lifetime_experience.py",
+    "studies/sce_inflation_expectations/model.py"
+  ],
+  "studies/sce_inflation_expectations/lifetime_text_experiment.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/confidence_experiment.py",
+    "studies/sce_inflation_expectations/lifetime_episodes.py",
+    "studies/sce_inflation_expectations/lifetime_experience.py",
+    "studies/sce_inflation_expectations/lifetime_experiment.py",
+    "studies/sce_inflation_expectations/model.py"
+  ],
+  "studies/sce_inflation_expectations/native_spending.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/price_experience.py",
+    "studies/sce_inflation_expectations/spending_audit.py"
+  ],
+  "studies/sce_inflation_expectations/price_contact.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/price_experience.py"
+  ],
+  "studies/sce_inflation_expectations/u1_state_experiment.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_state_preparation.py",
+    "studies/sce_inflation_expectations/confidence_experiment.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/dated_prompt.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/environment_authoring/vintages.py"
+  ],
+  "studies/sce_inflation_expectations/experience_mechanism.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/price_experience.py"
+  ],
+  "studies/sce_inflation_expectations/household_state_mechanism.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/price_experience.py"
+  ],
+  "studies/sce_inflation_expectations/information_exposure.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experience_mechanism.py",
+    "studies/sce_inflation_expectations/price_experience.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_prompts.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/behavior_prompt_blocks.py",
+    "studies/sce_inflation_expectations/confidence_experiment.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/news_matching.py",
+    "studies/sce_inflation_expectations/experiments/post2025_trial.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_preflight.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_core.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_dry_run.py",
+    "studies/sce_inflation_expectations/information_update_runtime.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_label_compat.py",
+    "studies/sce_inflation_expectations/news_quantity.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/output_format_example.py",
+    "studies/sce_inflation_expectations/personal_information_preparation.py",
+    "studies/sce_inflation_expectations/price_experience.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/procurement_price_views.py",
+    "studies/sce_inflation_expectations/reference_validation_runtime.py",
+    "studies/sce_inflation_expectations/state_continuity_runtime.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/state_continuity_core.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_dry_run.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_priors.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/monthly_reconstruction_inputs.py",
+    "studies/sce_inflation_expectations/population/entry_initialization.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_rolling_preflight.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_preflight.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_priors.py",
+    "studies/sce_inflation_expectations/personal_information_preparation.py",
+    "studies/sce_inflation_expectations/population/monthly_fine_grid.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/population/entry_initialization.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/shared_environment.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/monthly_population.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/news_exposure_trial.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/price_experience.py"
+  ],
+  "studies/sce_inflation_expectations/price_experience.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/model_migration.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/model_comparison.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/staged_rosters.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/q9_normalization.py"
+  ],
+  "studies/sce_inflation_expectations/frozen_prompt_runtime.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py"
+  ],
+  "studies/sce_inflation_expectations/openrouter_frozen_runtime.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/model_migration.py",
+    "studies/sce_inflation_expectations/frozen_prompt_runtime.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/model_counterfactual.py",
+    "studies/sce_inflation_expectations/news_label_trial.py"
+  ],
+  "studies/sce_inflation_expectations/q8_delta_runtime.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/frozen_prompt_runtime.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/q8_delta_contract.py",
+    "studies/sce_inflation_expectations/revision_format_runtime.py"
+  ],
+  "scripts/build_sce_fullperiod_coverage.py": [
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/information_exposure.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/attention_support.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/information_update_runtime.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/reference_population_preparation.py",
+    "studies/sce_inflation_expectations/reference_validation_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/information_update_runtime.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/anchor_role_runtime.py",
+    "studies/sce_inflation_expectations/behavior_prompt_blocks.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/media_mechanism_v3_preparation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_trial.py",
+    "studies/sce_inflation_expectations/experiments/media_mechanism_v3.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_label_compat.py",
+    "studies/sce_inflation_expectations/news_mechanism_labels.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py"
+  ],
+  "studies/sce_inflation_expectations/news_mechanism_label_preparation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+    "studies/sce_inflation_expectations/news_label_compat.py",
+    "studies/sce_inflation_expectations/news_mechanism_labels.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py"
+  ],
+  "studies/sce_inflation_expectations/news_mechanism_labels.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/monthly_main_pipeline.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/monthly_main_console.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_background.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_continuation.py",
+    "studies/sce_inflation_expectations/news_label_trial.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/monthly_main_continuation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_background.py",
+    "studies/sce_inflation_expectations/experiments/monthly_main_pipeline.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py",
+    "studies/sce_inflation_expectations/news_label_trial.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/state_continuity_dry_run.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/state_continuity_runtime.py"
+  ],
+  "studies/sce_inflation_expectations/model_counterfactual.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/cognition_runtime.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/cognition_input.py",
+    "studies/sce_inflation_expectations/information_update_runtime.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/revision_format_runtime.py"
+  ],
+  "studies/sce_inflation_expectations/revision_format_runtime.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_revision.py",
+    "studies/sce_inflation_expectations/information_update_runtime.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/state_continuity.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/cognition.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py"
+  ],
+  "studies/sce_inflation_expectations/age_reporting_audit.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/monthly_analysis.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py"
+  ],
+  "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/scoring/sce_q9.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/state_continuity.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/recent_b_readout.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/recent_b_evaluation.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_evaluation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/cognition.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_execution.py"
+  ],
+  "studies/sce_inflation_expectations/personal_information_preparation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/attention_support.py",
+    "studies/sce_inflation_expectations/evaluation/atus_roles.py",
+    "studies/sce_inflation_expectations/evaluation/heterogeneous_news.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py"
+  ],
+  "studies/sce_inflation_expectations/population/grid_sampling.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/population_stratification.py"
+  ],
+  "studies/sce_inflation_expectations/lifetime_episodes.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/lifetime_experience.py",
+    "studies/sce_inflation_expectations/lifetime_sources.py"
+  ],
+  "studies/sce_inflation_expectations/lifetime_experience.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/lifetime_sources.py"
+  ],
+  "studies/sce_inflation_expectations/spending_audit.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/household_state_audit.py"
+  ],
+  "studies/sce_inflation_expectations/belief_state_preparation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py"
+  ],
+  "studies/sce_inflation_expectations/environment_authoring/vintages.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/environment_authoring/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/behavior_prompt_blocks.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/news_matching.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/evaluation/attention_support.py",
+    "studies/sce_inflation_expectations/evaluation/heterogeneous_news.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/information_exposure.py",
+    "studies/sce_inflation_expectations/experiments/model_comparison.py",
+    "studies/sce_inflation_expectations/experiments/news_breadth.py",
+    "studies/sce_inflation_expectations/experiments/post2025_trial.py",
+    "studies/sce_inflation_expectations/information_update_runtime.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/post2025_trial.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/behavior_prompt_blocks.py",
+    "studies/sce_inflation_expectations/belief_state_preparation.py",
+    "studies/sce_inflation_expectations/confidence_experiment.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/expanded_state_inputs.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/model_comparison.py",
+    "studies/sce_inflation_expectations/experiments/post2025_validation.py",
+    "studies/sce_inflation_expectations/information_update_runtime.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/output_format_example.py",
+    "studies/sce_inflation_expectations/personal_information_preparation.py",
+    "studies/sce_inflation_expectations/price_experience.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/procurement_price_views.py",
+    "studies/sce_inflation_expectations/q9_normalization.py",
+    "studies/sce_inflation_expectations/reference_validation_preparation.py",
+    "studies/sce_inflation_expectations/reference_validation_runtime.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/recent_b_preflight.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/population/grid_sampling.py",
+    "studies/sce_inflation_expectations/population/monthly_fine_grid.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/news_quantity.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/heterogeneous_news.py"
+  ],
+  "studies/sce_inflation_expectations/output_format_example.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/reference_validation_runtime.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/information_update_runtime.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/revision_format_runtime.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/monthly_reconstruction_inputs.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/entry_initialization.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py",
+    "studies/sce_inflation_expectations/population/entry_initialization.py",
+    "studies/sce_inflation_expectations/population_stratification.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/model_comparison.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/model_counterfactual.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/q9_normalization.py"
+  ],
+  "studies/sce_inflation_expectations/q8_delta_contract.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/attention_support.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/reference_population_preparation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_state_preparation.py",
+    "studies/sce_inflation_expectations/evaluation/behavior_comparison.py",
+    "studies/sce_inflation_expectations/expanded_state_inputs.py",
+    "studies/sce_inflation_expectations/monthly_population.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/reference_validation_preparation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/behavior_prompt_blocks.py",
+    "studies/sce_inflation_expectations/belief_state_preparation.py",
+    "studies/sce_inflation_expectations/confidence_experiment.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/expanded_state_inputs.py",
+    "studies/sce_inflation_expectations/information_update_runtime.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/price_experience.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/reference_population_preparation.py",
+    "studies/sce_inflation_expectations/reference_validation_runtime.py",
+    "studies/sce_inflation_expectations/revision_format_runtime.py"
+  ],
+  "studies/sce_inflation_expectations/anchor_role_runtime.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/behavior_prompt_blocks.py",
+    "studies/sce_inflation_expectations/expanded_state_runtime.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py"
+  ],
+  "studies/sce_inflation_expectations/cognition_input.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/belief_revision.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/monthly_analysis.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/atus_roles.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/attention_support.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/heterogeneous_news.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/attention_support.py",
+    "studies/sce_inflation_expectations/evaluation/cognition.py"
+  ],
+  "studies/sce_inflation_expectations/population_stratification.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/lifetime_sources.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/household_state_audit.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/environment_authoring/__init__.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/news_breadth.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/experiments/information_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py"
+  ],
+  "studies/sce_inflation_expectations/expanded_state_inputs.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/age_reporting_audit.py",
+    "studies/sce_inflation_expectations/belief_state_preparation.py",
+    "studies/sce_inflation_expectations/confidence_experiment.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/evaluation/behavior_comparison.py",
+    "studies/sce_inflation_expectations/expanded_state_runtime.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/monthly_population.py",
+    "studies/sce_inflation_expectations/news_exposure.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/price_experience.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/experiments/post2025_validation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_state_preparation.py",
+    "studies/sce_inflation_expectations/coverage_preparation.py",
+    "studies/sce_inflation_expectations/evaluation/behavior_comparison.py",
+    "studies/sce_inflation_expectations/expanded_state_inputs.py",
+    "studies/sce_inflation_expectations/experiments/__init__.py",
+    "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+    "studies/sce_inflation_expectations/monthly_population.py",
+    "studies/sce_inflation_expectations/news_extension_label_preparation.py",
+    "studies/sce_inflation_expectations/news_pool_preparation.py",
+    "studies/sce_inflation_expectations/news_selection_trial.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/reference_population_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/entry_initialization.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity.py",
+    "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py",
+    "studies/sce_inflation_expectations/population/entry_initialization.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py"
+  ],
+  "studies/sce_inflation_expectations/evaluation/behavior_comparison.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/reporting_behavior/mapping.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py"
+  ],
+  "studies/sce_inflation_expectations/expanded_state_runtime.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/belief_state_preparation.py",
+    "studies/sce_inflation_expectations/confidence_experiment.py",
+    "studies/sce_inflation_expectations/model.py",
+    "studies/sce_inflation_expectations/prior_belief_experiment.py",
+    "studies/sce_inflation_expectations/prior_belief_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/news_extension_label_preparation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_label_trial.py",
+    "studies/sce_inflation_expectations/news_pool_preparation.py"
+  ],
+  "studies/sce_inflation_expectations/news_pool_preparation.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/news_exposure_demo.py",
+    "studies/sce_inflation_expectations/news_label_trial.py"
+  ],
+  "studies/sce_inflation_expectations/reporting_behavior/mapping.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/reporting_behavior/__init__.py",
+    "studies/sce_inflation_expectations/reporting_behavior/analysis.py",
+    "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py"
+  ],
+  "studies/sce_inflation_expectations/reporting_behavior/__init__.py": [
+    "studies/sce_inflation_expectations/__init__.py"
+  ],
+  "studies/sce_inflation_expectations/reporting_behavior/analysis.py": [
+    "studies/sce_inflation_expectations/__init__.py",
+    "studies/sce_inflation_expectations/evaluation/metrics.py",
+    "studies/sce_inflation_expectations/reporting_behavior/__init__.py"
+  ]
+}

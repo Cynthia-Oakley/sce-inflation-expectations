@@ -481,3 +481,5 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 
 - `build_sce_research_package.py --draft-version v03`：最新A/Normal、B/Normal、递推/周度、下游聚合白名单导出，0API。
 - `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、study来源审计、Core干跑和聚合复算及包内定向测试。完整微观重现、全新依赖安装另列。
+
+- `catalog_sce_study.py --out <新目录>`：分类开发study文件，按当前入口计算静态依赖与补充归档，不执行实验。最新提交版使用build_sce_research_package的v04 profile，读法见study/FILE_GUIDE.md。

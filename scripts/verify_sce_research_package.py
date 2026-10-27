@@ -52,6 +52,23 @@ origins.write_text(json.dumps(mods, indent=2))
     imported = json.loads(origin.read_text())
     if not imported or any(not Path(p).is_relative_to(package) for p in imported.values()):
         raise ValueError("Study module unexpectedly imported from original workspace")
+    source_index = json.loads((package / "SOURCE_INDEX.json").read_text())
+    supplement = source_index.get("archived_source_supplement")
+    archived_sources_verified = 0
+    if supplement:
+        archive_path = (package / supplement["archive"]).resolve()
+        if not archive_path.is_relative_to(package):
+            raise ValueError("Source archive escaped package")
+        if hashlib.sha256(archive_path.read_bytes()).hexdigest() != supplement["archive_sha256"]:
+            raise ValueError("Source archive hash mismatch")
+        expected = json.loads((package / "archive/SOURCE_INDEX.json").read_text())["files_sha256"]
+        with zipfile.ZipFile(archive_path) as z:
+            if len(z.namelist()) != len(expected) or set(z.namelist()) != set(expected):
+                raise ValueError("Source archive member list differs")
+            for name, digest in expected.items():
+                if hashlib.sha256(z.read(name)).hexdigest() != digest:
+                    raise ValueError("Archived source bytes changed")
+        archived_sources_verified = len(expected)
     tests = subprocess.run([sys.executable, "-m", "pytest", "-q", "tests"], cwd=package,
                            env=env, text=True, capture_output=True)
     (out / "tests.log").write_text(tests.stdout + tests.stderr)
@@ -62,6 +79,8 @@ origins.write_text(json.dumps(mods, indent=2))
         "archive_sha256": hashlib.sha256(archive.read_bytes()).hexdigest(),
         "verified_package_files": receipt["verification"]["files_verified"],
         "study_modules_all_from_extracted_package": len(imported),
+        "main_source_files": source_index["source_file_count"],
+        "archived_source_files_verified": archived_sources_verified,
         "dry_run": receipt["dry_run"], "base_replay_cases": len(receipt["replay"]["cases"]),
         "extension_replay_cases": len(ext.get("cases", [])),
         "downstream_groups_verified": ext.get("downstream", {}).get("model_metrics_verified"),

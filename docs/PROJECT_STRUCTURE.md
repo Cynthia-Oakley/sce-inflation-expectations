@@ -1,6 +1,12 @@
 # 项目结构与目录职责
 
-更新：2026-10-19。本页维护目录职责，当前研究全貌见[DESIGN](DESIGN.md)，任务与日程分别见[NEXT_ACTIONS](NEXT_ACTIONS.md)、[ROADMAP](ROADMAP.md)。旧云端阶段说明已转入[历史文档](archive/2026-10/README.md)。
+更新：2026-10-27。本页维护目录职责，当前研究全貌见[DESIGN](DESIGN.md)，任务与日程分别见[NEXT_ACTIONS](NEXT_ACTIONS.md)、[ROADMAP](ROADMAP.md)。旧云端阶段说明已转入[历史文档](archive/2026-10/README.md)。
+
+## 开发目录与提交包分开阅读
+
+`studies/sce_inflation_expectations/`是长期开发源码，不应直接整目录压缩提交。先读其[README](../studies/sce_inflation_expectations/README.md)和[文件导读](../studies/sce_inflation_expectations/FILE_GUIDE.md)。当前v04提交包按明确入口加静态依赖保留178份源码，其余652份专题/历史/辅助源码进入包内补充ZIP；标准study骨架、0API入口和全部已有聚合复算保留。
+
+主包可见文件从v03的883降至239，不是删除研究证据。开发仓库源码及冻结输入/旧ZIP保留原路径；3份过期README已另存原文。详[整理记录与逐文件目录](workstreams/20261027_study_layout/README.md)。
 
 ## 唯一维护地与官方引擎
 

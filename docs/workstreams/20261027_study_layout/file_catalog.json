@@ -1,0 +1,2894 @@
+{
+  "schema": "sce_source_layout_inventory/v1",
+  "study_files": 468,
+  "status_counts": {
+    "local_ephemeral_not_packaged": 1,
+    "documentation_or_aggregate_figure": 19,
+    "transitive_runtime_or_compatibility_dependency": 131,
+    "supporting_or_historical_source_supplement": 234,
+    "current_research_entry": 23,
+    "versioned_configuration_or_evidence_review_required": 35,
+    "local_population_or_fixture_not_auto_distributed": 8,
+    "historical_report_preserved_in_place": 17
+  },
+  "all_python_sources": 830,
+  "main_python_sources": 178,
+  "reference_archive_python_sources": 652,
+  "classification_basis": "Curated research roots plus static imports; not proof that every historical file was individually rerun or obsolete.",
+  "original_source_files_moved_or_deleted": 0,
+  "new_API_calls": 0,
+  "entry_groups": {
+    "offline_review_and_packaging": [
+      "studies/sce_inflation_expectations/submission_tools/reproduce.py",
+      "studies/sce_inflation_expectations/submission_tools/package_builder.py",
+      "studies/sce_inflation_expectations/submission_tools/release_evidence.py",
+      "studies/sce_inflation_expectations/submission_tools/source_layout.py",
+      "studies/sce_inflation_expectations/submission_tools/experiment_logs.py"
+    ],
+    "A_personal_reconstruction": [
+      "studies/sce_inflation_expectations/experiments/full_a_personal_inputs.py",
+      "studies/sce_inflation_expectations/experiments/full_a_personal_terminal.py",
+      "studies/sce_inflation_expectations/evaluation/full_a_personal.py"
+    ],
+    "B_latest_independent_months": [
+      "studies/sce_inflation_expectations/experiments/recent_b_sampled_dates.py",
+      "studies/sce_inflation_expectations/experiments/recent_b_sampled_terminal.py"
+    ],
+    "Core_Normal": [
+      "studies/sce_inflation_expectations/core_normal_joint.py",
+      "studies/sce_inflation_expectations/experiments/full_a_core_normal.py",
+      "studies/sce_inflation_expectations/evaluation/full_a_core_normal.py",
+      "studies/sce_inflation_expectations/experiments/recent_b_core_normal.py"
+    ],
+    "monthly_recursion": [
+      "studies/sce_inflation_expectations/experiments/recent_b_recursion.py",
+      "studies/sce_inflation_expectations/reports/monthly_b_recursion.py"
+    ],
+    "weekly_recursion": [
+      "studies/sce_inflation_expectations/experiments/weekly_inputs.py",
+      "studies/sce_inflation_expectations/experiments/weekly_terminal.py",
+      "studies/sce_inflation_expectations/experiments/weekly_evaluation.py",
+      "studies/sce_inflation_expectations/experiments/weekly_final_readout.py"
+    ],
+    "macro_and_downstream": [
+      "studies/sce_inflation_expectations/evaluation/aggregate_blend.py",
+      "studies/sce_inflation_expectations/evaluation/full_a_macro_calibration.py",
+      "studies/sce_inflation_expectations/evaluation/downstream_regression.py"
+    ],
+    "CLI_wrappers": [
+      "scripts/build_sce_research_package.py",
+      "scripts/verify_sce_research_package.py",
+      "scripts/catalog_sce_study.py",
+      "scripts/build_sce_submission_experiment_logs.py",
+      "scripts/prepare_sce_full_a_personal_inputs.py",
+      "scripts/run_sce_full_a_personal.py",
+      "scripts/analyze_sce_full_a_personal.py",
+      "scripts/run_sce_recent_b_sampled.py",
+      "scripts/prepare_sce_recent_b_sampled_dates.py",
+      "scripts/run_sce_full_a_core_normal.py",
+      "scripts/evaluate_sce_full_a_core_normal.py",
+      "scripts/expand_sce_recent_b_core_normal.py",
+      "scripts/evaluate_sce_recent_b_core_normal.py",
+      "scripts/run_sce_recent_b_recursion.py",
+      "scripts/analyze_sce_recent_b_recursion.py",
+      "scripts/prepare_sce_weekly_release_plan.py",
+      "scripts/prepare_sce_weekly_inputs.py",
+      "scripts/run_sce_weekly.py",
+      "scripts/evaluate_sce_weekly_compat.py",
+      "scripts/analyze_sce_weekly_final.py",
+      "scripts/analyze_sce_full_a_macro_calibration.py",
+      "scripts/analyze_sce_downstream_regression.py",
+      "scripts/prepare_sce_downstream_data.py"
+    ]
+  },
+  "files": [
+    {
+      "path": "studies/sce_inflation_expectations/.DS_Store",
+      "status": "local_ephemeral_not_packaged",
+      "bytes": 24580,
+      "sha256": "aada4962c8762c630bd0bbb0f53c6526ad5f84691e2e4a6213ab99eae0489f59"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/FILE_GUIDE.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 5439,
+      "sha256": "950b76c878be500d9afc66933157d195d15d5e790729e4ce9f16ef67095c536e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/README.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 3566,
+      "sha256": "614f46ef3ea4ad2a30b469fca1387aef5bd87192eb88498ba028cfbbce6f11fd"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/__init__.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 855,
+      "sha256": "084a62d36282139d74082c70e92dec94ac8a90771966f0c603671859164aec97"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/age_reporting_audit.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 27314,
+      "sha256": "25e2b14ad6b13506296fe5640dadba92ec7eaa73b7896e040692d45e7c1bd23f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/age_source_followup.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4674,
+      "sha256": "12cdeb27b08574edf147d13887d86b54faea89c2bd4c9e53ef9288216f6909f1"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/anchor_role_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9829,
+      "sha256": "254b718eecc6c409ed073233e71c5ab846be61c5eaf36a406a70cebc24a7fe64"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/anchor_role_runtime.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 1654,
+      "sha256": "0bd501b7d97ab6ae6d286991e6e6706413e575cd394eb48984f15e66c15e9603"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/annual_model_comparison.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5178,
+      "sha256": "b8ff136c03f0fb95d9bbe7e3523204868a95bd7948f406c5032e00ff435f678d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/behavior_prompt_blocks.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3159,
+      "sha256": "b64e6e9da24bf5f9d79d532de6e796a9b0e6d972d37862a6cbd4ca7a3936bf07"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_dynamics/__init__.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 630,
+      "sha256": "c5a3cc56633d22f42c1d50830a31e93146b790622339ef42df40a782bd352356"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_dynamics/anchor.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8796,
+      "sha256": "ea04165f7a34a8171b2caadff8cf1012ee5bb703c7152df7fe2291ed91ef86c7"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_dynamics/baselines.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10193,
+      "sha256": "2062e06fbbd1600a98cc1d83c43a503bb770693aa30cb4fee125ab43068ec7a5"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_dynamics/data.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4494,
+      "sha256": "17c7b622bba2edd552a9de8b78d2abe0d4f149e531b5a893601b2f76d7867104"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_dynamics/dynamics.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 17130,
+      "sha256": "67fb72bf57caa636d252dd5bf152d7e55381636717aedf3a22f5a9fbb2edcb90"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_dynamics/llm_compare.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11973,
+      "sha256": "81431a744f7ea81fb2f51dbe59c07c9f2c0ca7d73be7c3da783c8aa1bfa0d06e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_dynamics/metrics.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3512,
+      "sha256": "f0177cdb3b86b2d7a371f9a146418c3ad52134105f269fdcc7b17b4706d530fe"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_dynamics/updating_facts.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 33825,
+      "sha256": "ab2d33173712b5b405646eb66eb520b6b1b6a73ce468e59b6735d275b81b4ba2"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_proxy_audit.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 6147,
+      "sha256": "ca476c2a9eb42c82cd3820a6a636b2ef3464f3cf7c8e7f57af7b10d6b31e60e4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_revision.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 4060,
+      "sha256": "71a9122e1a811fbc5235f0725a8469967668b7bd9dd0417560f39dbdd8d81990"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_state_preparation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 15030,
+      "sha256": "b1723ff74efc93ed4d2d762b2194853fa7b6fa7e612bf2253c492d75c5aed102"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/belief_trial_preparation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 18155,
+      "sha256": "51d83a5cce7061aaa2fee9499271e26b78f88ef784cfc91174379a69c5b884a6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/category_frequency.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7415,
+      "sha256": "72abc4a065708c660bfcac37f033fa78595dd33a7ce51b3d2f28bc3853be198d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/cognition_input.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 18353,
+      "sha256": "b0e35c5a96839bbd0c93614c3c7dfd42db688736ee9b937bed5359f59cbdd1fb"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/cognition_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 15675,
+      "sha256": "18fc1635782f9bd673982fc72c04eb1382d99e0234095447961ddbe38f97e72f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/cognition_runtime.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 5820,
+      "sha256": "6801afe407ca2d31b0e398c322e3aeb3254e8acc3cdd15fd9c949a75cbda1693"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/confidence_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 15614,
+      "sha256": "0b89bf060a54261d92d695a52477143af8861ebedf0e347c81b69b08f2b4d088"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/confidence_analysis_export.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 1965,
+      "sha256": "28560a263629040cd96179014db647a0bf932dbd0b70f40c92a415cc7011c87c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/confidence_experiment.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3848,
+      "sha256": "e0f8a4ac46d07821a5890652320e81195fbf28a2b2b20edf8b2499231c701eb6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/confidence_reporting.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8600,
+      "sha256": "be7e56793b4f9cd9993e7a5d61aa0ecb31157cddff9b92f7033b7a6fbf67339c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/confidence_response_diagnostic.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 12798,
+      "sha256": "8ceb2c333478a75364513388d7b8baa42f7e61ebb995b67f2e1e8edf73266420"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/confidence_trial.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 19967,
+      "sha256": "fc3039da5abe0b603c2b6beecb469368775b67cb7a3f89b92ec2b97ce2f1912e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/core_normal.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8612,
+      "sha256": "f55274b960fdf52601d378e4e8fe5ba66de5fa93b787c7914a67d4e50ffa6e31"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/core_normal_joint.py",
+      "status": "current_research_entry",
+      "bytes": 12441,
+      "sha256": "e9826e77f60776057fed0ec82f0f28a3b93947a7d40c81e0d6a96cd83d65f99b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/coverage_preparation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 17279,
+      "sha256": "f6f587090e5e5e721c92ea917b6bc35d0fc00d15cca5fd12ccdf745316e2af85"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/dated_prompt.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3217,
+      "sha256": "ad26ea416e807fd691dec94b0b8a2e6b7c939d3c8988e8f2e42b65e24fde9322"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/diary_experience.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 42041,
+      "sha256": "7da6194df98add1fe2ab9b26f651f77a531b8af3bd917d527ae719106e86fbdc"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment/README.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 281,
+      "sha256": "321c823afeb357a7c9fc978e61eee45e54a16f393ff9fa74d4bc98af345a3c38"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment/environment.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 10719,
+      "sha256": "13cef2185210c5a3175cfe0976a236dfa63355b55f2217303eec7c119acbb8f6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment/environment_dev2021_05_06_v2.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 136742,
+      "sha256": "1fbb3c938a9c6d631d002a6f8b2b366078b40fcbd1fef4f618bda2d1e8472e7d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment/environment_forward2026.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 14153,
+      "sha256": "fa27a995b994d55a300ac41778785a0fd55925170a86d11f6e0bf5191a8f1f25"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment/environment_main2021.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 31900,
+      "sha256": "d9876baaa5af6b24fd04aad0198ad3db25ef81ef2c17684f66670130c02c52ce"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment/environment_main2021_v2.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 749552,
+      "sha256": "242202232f04c33cef52b64a565534da75566a4018497db08220043b77e20252"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment/external_events.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 3420,
+      "sha256": "0ba33a4734133301d658ec0fe178b5d1610b530067d6b3a81a3887050b04378b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment/external_events_environment_dev2021_05_06_v2.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 127008,
+      "sha256": "1102e2fc733cbabb06cd7605892daa0572a5f132b9830c9d8fa9ba584f8a9029"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment/external_events_environment_forward2026.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 10210,
+      "sha256": "6510fcf7a82bb49792a122e59a928e23f583d44d6b8ddb0181530ae8d3ce0358"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment/external_events_environment_main2021.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 23860,
+      "sha256": "802e6db82c327bbb36707149e695450f80f68c85c57138dba4cf9c846bbdbe40"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment/external_events_environment_main2021_v2.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 708915,
+      "sha256": "6ee9866eceb480f6783c5bc973955abc119b7bc80ce4608c4ad11cc9860b06eb"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment_authoring/__init__.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 77,
+      "sha256": "86885bae7c0171858ed5a48dcd670bb78c323d3247e33e70dfce3850b92ad70f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment_authoring/availability.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 2365,
+      "sha256": "eb987c533ca689b6a7a32e3a3bffa1de3c0c0617bcc195d98af87ba710e18bb5"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/environment_authoring/vintages.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 2028,
+      "sha256": "7b3903e3d3efe720d4a6ddb186c406daabf9d59ba1dbc6147eca38fba2602c85"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/episode_sources.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3477,
+      "sha256": "a54903bbba3f5b8eef1476340125991b98e7677e2d8b6f6897563fdee3884d35"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/README.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 1544,
+      "sha256": "7d81d8abbbde975d328c5666e8fc0984f62966f3c119fc5bc24f3dc34bb9581c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/advisor_diagnostics.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 16941,
+      "sha256": "886dd8b050831fc0bd6addef0c87cd1a25f451c820a565ef21bdc51bde054217"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/aggregate_blend.py",
+      "status": "current_research_entry",
+      "bytes": 9759,
+      "sha256": "fb639e50032851c2bdfd9f79e81370943ae3d941e40b46b8d102c1ca7767f830"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/anchor_direction.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10551,
+      "sha256": "438160f8b09127899be452c776f403e2d43e938329d2dd9837868a592aba8ed8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/anchor_role.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9465,
+      "sha256": "d409071e8379e86ae61468279ee25dc6bb6e2de03ba496bc860cc49c5d8f0772"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/anomaly_year_calibration.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 6784,
+      "sha256": "15a8665bce62c115667e580bf39c6dc039cb032bd9444ea9ee27aaaba28c7298"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/attention_support.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 11409,
+      "sha256": "e03e91941e48714f48aa500c356343c565c678a42da8aea3f50c4a3600b15016"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/atus_roles.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 14887,
+      "sha256": "38908920a528dd659e0e56dbd406568bf4315a3b2a460fd0b2d4331cbc801f4f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/baseline_protocol_latest_20261007.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 4537,
+      "sha256": "d40db7d3517a64fdf48fb6898f97ac7746f7736597f159eca7e9feb80c9c9b62"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/baseline_protocol_v1.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 3932,
+      "sha256": "7def598624f2d288eca4111d5e85016acd50a2213efe095e522e6337da6e8f14"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/baselines.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3845,
+      "sha256": "fe9cb6e5ad151465253c16fac41982cb1ba4249a491fef8c15c0690600a3f180"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/behavior_comparison.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 21884,
+      "sha256": "a0b5773eca4abfa764d4bde7f2e00e364e0f200eed6442a8819039403ef7c520"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/benchmark.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 13311,
+      "sha256": "647201f585296cebd38fa8cfd0474bb415cb7b233c3e12285ca1d846eedd270a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/center_shift_diagnostic.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4654,
+      "sha256": "419301aa9aa9381659da67b124218ee2ecf8d09e602940eb5f6a1f10a31806ff"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/cognition.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 59355,
+      "sha256": "9faccae815b60cd624aeb37f651deff10fdb0a9bc9863b93b58138d0991b2aca"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/core_normal_cached.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5697,
+      "sha256": "7eb3cd8a799cb5912aa13043584bebed3dcb8550d7bea657bfcc70578746c99f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/core_normal_protocol_20261023.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 3884,
+      "sha256": "dee75f592d5463b90722fbcc2b47053ef50f572db54d7c2943f79e1bd2eab933"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/core_normal_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 17223,
+      "sha256": "5891a68381cabf5fe1da1d1e5ffd84d6093e123fa1ea08b80afcfca719f8ebef"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/core_normal_scale_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14096,
+      "sha256": "45b71b960202d684163a2cdf05c4f829555cf8d89cdbe89fcfd31ffb693a87d1"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/core_normal_validation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11220,
+      "sha256": "b121fdd70b68126bb57c167a2be3b903629cb03a4eca73eb0b1bde1d0fdb6c40"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/coverage_age_audit.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11249,
+      "sha256": "0c18b045fcb72003347dba10e68bffe60d17a0bf19a22fb37df7d15b4c317e9e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/downstream_regression.py",
+      "status": "current_research_entry",
+      "bytes": 12308,
+      "sha256": "717db4424f559b1bfebf6ba041af7c787bff3f3550f1f5a69dfdc2bcb3ee6466"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/dynamic_fair_benchmark.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7736,
+      "sha256": "c2a3909350b4ce888681eecfaf0c7f69b47ae9b15472e1deb8b3ad3df87a751e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/entry_initialization.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 15119,
+      "sha256": "42112d1a61d2613371b3a5eab0fdf2ed6fff6f5090119e9c5c64d74283af3876"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/entry_initialization_pilot.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7457,
+      "sha256": "d0f3f157be780a4567053f053a5475e0c824c4e2f07df02c49891a634995cb62"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/entry_initialization_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9970,
+      "sha256": "dbe0b838f6eef72dcbe2a78252e61751fce4728c5032b45f4aeb7a0692c6afb6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/entry_pilot_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 16382,
+      "sha256": "6dac8b86ac1f4706a6b941181418e5ddc9d1aa96d14689a7095069af8786a743"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/entry_share_sensitivity.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7818,
+      "sha256": "1f831d920a5e486a0c3308f48b2bce06143833aa1600cd70804038b252c72daa"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/event_probe_audit.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3849,
+      "sha256": "2e606d5eac72a0f07057ed808f53f86414ff76b31d6267ae9ec98423afbc00e8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/expanded_state.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14352,
+      "sha256": "a881763dc44afbc9c33da20460d3ea66d7b6678686a1411bf3599d427a5ada2c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/expansion_diagnostic.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10724,
+      "sha256": "92b9f5a929bd3699a4b8dff9107682acdc3d1c14abace82af0db961e79bdb62d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/expansion_preflight.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8867,
+      "sha256": "293243e881be3c9cd1bcfcca15f83c8b51b296513975ea7a52f6bd655d588866"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/finance_validation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 33027,
+      "sha256": "a16c0271fc36d836a84fae3d51ba5e8382d9ee7c9218b915044bd254cfc941c3"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/frequency_controls.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 15032,
+      "sha256": "c54f5a4297ea13752a5998adf66018a02063adb4933efd1f8ea44a2caccbf721"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/frequency_matching_candidate.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11415,
+      "sha256": "33ccb3d01914712ff6443d44dd29a1ac69cd5e295a0f7ad1f12f3de253fa619e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/frequency_quarter_audit.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14630,
+      "sha256": "6f6008383c5928d7f6484316096c8779538c2514beeebae48e9eecd0400cbf36"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/frozen_trial.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 17977,
+      "sha256": "3cb5a0ae1e3e837e1a333aa7113599b8a78707873a6bbffeea9f1e39f5435e32"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/frozen_trial_reporting.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7019,
+      "sha256": "36763c9f31e8bd3b80969bd43faa2dcc977cececa3f5c7758bdbd75e16e3eeb9"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/full_a_core_normal.py",
+      "status": "current_research_entry",
+      "bytes": 40910,
+      "sha256": "3b577eac6d88e1301352e85fc38002fc922b210c0fbee38196de7a40b1d22274"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/full_a_core_normal_tau.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8511,
+      "sha256": "3274d3cc27298f8e331624bb37ee7ce2def77fbff0e5c2d2daa2dab3f8c11b3c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/full_a_macro_calibration.py",
+      "status": "current_research_entry",
+      "bytes": 9238,
+      "sha256": "3d3c3956ab9d95f34ecbf5d966285717eca60784236ff415bdcbdd0f53659de6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/full_a_model_scores.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3045,
+      "sha256": "a6dda5df2b7c218109abc8859bde7642251e7f9c6329c38cd37072f865afd6b0"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/full_a_personal.py",
+      "status": "current_research_entry",
+      "bytes": 21342,
+      "sha256": "36990ddd1a5f926057756215db641e5d5c9e6e5790818cd264aaba4c802c030e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/fullperiod_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 18083,
+      "sha256": "127da6217abef7f1efafdadf0849e21a76e7221bc26a8137f3a09b16b689c23d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/fullperiod_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 30698,
+      "sha256": "b1f8dd2478cc8fa70588b57dd64f34193442370845a21e8a0d5f99c6ea39d3e7"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/grid_dimension_protocol_20261023.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 3782,
+      "sha256": "dc867f365bd8db9b91fdabc98e3e042e37d7ae6d95f249cfa7c1664d501fb6b0"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/grid_dimension_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 20154,
+      "sha256": "78df10283ce87432f72c80a8b28a3dbfb1600485618d00470d0d5d70e9cb32e3"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/grid_dimension_selection.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 22675,
+      "sha256": "f16ccb95bf63d97016aa28b00984cca4e408e396bcb7480136bd2acf93b7b3cd"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/grid_dimension_sensitivity.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5039,
+      "sha256": "19602db9922c4abdc61a59fa62ee0434b7008ddc8812f8ded1d26a6cf7023830"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/grid_joint_holdout.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8307,
+      "sha256": "cf49aa3aacc39f14f51f970e797573b84d1505c59179e81af66450ea27f09812"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/grid_oversampling.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7873,
+      "sha256": "ae40e5a984be3ee42f39893cc427e4adbd1baad136f62b31985f5d7b45589f3a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/heterogeneous_news.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 12972,
+      "sha256": "7e022f8fb7e59eabc1f58273c6de65ad4c990c036b6bc4ab683a6b0b33e77ba9"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/history_forward.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10726,
+      "sha256": "b799270f7f8bc47074a1a0be7744348d99dc949974aff4b3a24e48fd0ce8c39b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/history_mechanism.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 19071,
+      "sha256": "abee55af63c45bebedee93dfe0dc30cef2fc5d33f0d596cdd4940a3fbb7b0c58"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/household_finance.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 39205,
+      "sha256": "a33fd12e9fac608d68dfbcf235a7b69e30fba1ca6c1ea1c3611bda48185a3540"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/household_finance_associations.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14152,
+      "sha256": "53aaa0bd52c9d5f31a8d53ffbc574c3b0ff4d5ea41b850dc059461e8b841dbd5"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/inertia_calibration_diagnostic.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11525,
+      "sha256": "c218fa8cd7fee628acce62a4664cad21eb5705efb9254961eca39f892d37d9c3"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/information_update.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7346,
+      "sha256": "949b92b0c9c2c90a57232526bc53213ee34ba99d7f4bcddd023587b14cc5e974"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/matching_field_inventory.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4494,
+      "sha256": "f3af79a68a0df639fb1abe48fb8a152883ff53467f2dbf90a1deecfd0ed34cef"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/mechanism_audit.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 15803,
+      "sha256": "0ab9f2ecc3092fa784ba8120817e3bca3dab650757268800389686aa48acd39b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/media_mechanism_readout.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10407,
+      "sha256": "c3997d6cd83a6487c716249b6eb929b230491798c023b97fdeb836753601918f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/media_mechanism_terminal.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7384,
+      "sha256": "59093fb9253aec28ea8206c7550efa09f3559d859b48462564838c1e0a34b12d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/media_mechanism_v3.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8600,
+      "sha256": "784cbb2739154bc14ecaa94df290f6ab118595e5f152cc93f9f35cf822dee16d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/media_timing.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 23313,
+      "sha256": "9bbeb94d461b7b2067b4ba48dd6787bbfbb487f6c798c73a52927745d5425c60"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/media_timing_readout.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9344,
+      "sha256": "152a43cc21bde0aa6838b2891626bccd0609488703d9bcff8d28e901134dfa07"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/metrics.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 4974,
+      "sha256": "362ff2262a0d09b2248b0ae112b92697c5c6855fbdeff953188bb60826d13876"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/model_dispersion.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7501,
+      "sha256": "44effecd0a40a4dbb21247f9cc4a69701c568963c14b09795fcf0822aa5ae78c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/monthly_main_readout.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 7374,
+      "sha256": "e92dd7c8b8a80224c419c92208133035fac8c0d370412072edd546590adff2e4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/monthly_reconstruction.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 16630,
+      "sha256": "0d99574ee8992ad45e18af84803af8a57fc5265142cb2c42c37305663e424544"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/monthly_release_registry.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3725,
+      "sha256": "c6fdcfbb7e2ee793532ac9943e4c0c3fe1f2ce02e21701140e5d17b1939f1c5d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/news_breadth_readout.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8472,
+      "sha256": "03873a8226e969694ca3d1d67d8407267532a2518d347a3977b0e16154d247c4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/news_matching_export.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3658,
+      "sha256": "c36d0c6019c0cb8ab5343e9a33e9325e46d6ae295fe29b7430959375e1fd05cd"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/news_matching_readout.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 12040,
+      "sha256": "e97822eadfaf2dfccd07da7312ad887bd6dadcaa2d1eca4ef7e9cfb9978bd4bc"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/observable_inflation_trigger.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9450,
+      "sha256": "4b5c7095317f98c74d6e3674e27356021011f6d26832738e96283b21ce1b1dd4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/outlook_forward.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5650,
+      "sha256": "624bbec512900b9e655e801c425816f1998e2d0b8030daada672766bd4ca9fe6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/population_association_protocol_20261015.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 2220,
+      "sha256": "1cd3b94b0a71bec63c675c1e21fb185fb3ad6230ed1764546e9a7065ec7c12a6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/population_associations.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 18716,
+      "sha256": "958d650cbeb367fb19d563d08f0681252c3d4fa26b1c7aeefb6b5937e0d0926d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/population_factor_priority.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4648,
+      "sha256": "bfd635fb4b84ecce9159bec9f77c082513b6f0db0c18c14668b86f9e5153494e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/population_field_inventory.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8180,
+      "sha256": "115dba563f62200e161d3f4a7ea36c314ef4e0b26ee9f3fe5567f768c58872c6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/post2025_baselines.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7791,
+      "sha256": "960d15f4dc47122d20c1b4dadd943c9be4a848f025799f0e112ff8da271c82d9"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/price_background_readout.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8702,
+      "sha256": "71e9d0cc89c87fa69544574940014d412f15bfd010c128433ae6226614053ab6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/procurement_gap.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10363,
+      "sha256": "933ca7bc53907b7a3135104019c3a57ef5fa6afbf9ab3fa94b9a3cc67b5c51f5"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/purchase_frequency.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8096,
+      "sha256": "7829104ee2b3cc3e1d972228b0f43ed4fe8f21fac7d064a5eb7df69b27dc883b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/q8_delta.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 6145,
+      "sha256": "827b8ba0c753bf8d0e79ae5f549a38dcace9df8990ab434a0fc8d272cbe3bc53"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/recent_b_core_normal.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 6458,
+      "sha256": "598066a4c492752bf5501c6d76477d1e831bebc60cba5471b49d2b7f4106bf5d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/recent_b_readout.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 25173,
+      "sha256": "e16ad41827ee3de3d0e6e3a717e632cd92344d749d746498395e8f35ba5203c4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/reference_validation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 39564,
+      "sha256": "befed8733d5d171a75fe336bb8a0be5481adb1d629e5ac7c727877f78bb5979e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/repeat_value.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4599,
+      "sha256": "e9301ca1a7feddfb4c96aaa2451ae806850f212a02ad985d1db44b0e31c27db1"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/response_date_distribution.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 12083,
+      "sha256": "e047e2e1215903957ce4984fef0d4dcfdc99a5bcf13b702344b6b498c8ddca71"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/response_gap.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 38711,
+      "sha256": "6f56f24e53c1dd5ec4af50eab1be81f4d55395ea5fea2c9cf94097b009831b7c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/response_gap_controls.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 16901,
+      "sha256": "ec09c7c8122ce74a61d5a9f86d56a8912e89dd14f222809106c2d51605f8f876"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/response_gap_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 24133,
+      "sha256": "ab8d541c37883497e525006ff3ec5480bcfca9a6529de751fd45d009b15d1ad6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/response_timing_readiness.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11536,
+      "sha256": "acefa99ff683c85704e4fef5b5142f72c8c1976b774cb6850d6fa72909900c8b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/retention_predictability.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 16328,
+      "sha256": "a30fa1e04c7d9d9b5d2f8a06e198201939299fe94387bebab1d2bb24d5874908"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/revision_format.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10354,
+      "sha256": "22e5f057cb888bd3ae995d7e919082ffcb1131d122a878b2730e6b2cebeda30b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/sampling_scale.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8877,
+      "sha256": "f10003c2ab8ed6629a0b41d773c3091dff4fb55ac026396b30a546b91f57ba14"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/scoring_measurement_bridge.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9365,
+      "sha256": "de109a90b9195a6d17d6c0915b2c8086366907bd9bbb60cda4f2d85281f7b715"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/shared_environment.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 4152,
+      "sha256": "fb13c63ab4f8de6f2f0fe5a15dd053df22bf34448c9332dde9cf6af551d2ce3e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/state_continuity.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 14151,
+      "sha256": "4ff4e68c492532ea9a4d798cd09bec6237d35b2a10ff36128e9d72d2f493d44c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/state_continuity_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 27030,
+      "sha256": "6b4c96110aa529909f47d959f3b4d4d7ca96a927231bddeab8bdfdc3973a68a7"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/stratification_support.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4076,
+      "sha256": "db7f679165ad738fb58eab81b96b11e20b6d91e2059e36420c4981f3667d250f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/temperature.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 2643,
+      "sha256": "fdb5e2b6b5acad252885a44424ec1035b88586a1f8bd1599e32f8f7dedf48675"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/u1_execution_audit.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11599,
+      "sha256": "5a1e5af3ab9d350adc9971bde4969ff592654c10c3963f2399254815e5d4c0df"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/u1_preparation_audit.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 12023,
+      "sha256": "f47027f2aa6a7ee2ef5379654643cdf895c3e7e48a80423c786b5e55d8a8291e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/update_direction.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 12283,
+      "sha256": "1a5e7c0c8e053823d24523563ce4fb2c31cea3c42f13b0049cd57346d79903d7"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/update_mismatch_profiles.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 38304,
+      "sha256": "ebdea76978550e0190abd268c401df56442f9ebaea36783bf652dcf6b368cb08"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/evaluation/year2021_diagnostic.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 13629,
+      "sha256": "bd4d5a906800ffa7a64056fc4045e5e9a7e72bc73a99694d789d017177447af0"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/expanded_news_quote_adapter.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 2361,
+      "sha256": "6e092b866c17fd4d3a0ede8d66d4cbbe17c99c249a76c3d29a350d32c00b7012"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/expanded_state_inputs.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 17503,
+      "sha256": "4ff6bd548697a7ddb938688b2cf3c86fb15e92811fdd8dde5069b26e9d52d851"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/expanded_state_runtime.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 1972,
+      "sha256": "3c311eff2acbd79fcfb3c97c5113271b5be2f53e643a76e949704edfff93bbc8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experience_mechanism.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 11210,
+      "sha256": "8ccd2fe96d12ea9d4ecb50c83cf30f26b67e5ec78f40864416869ab6c65e977d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/__init__.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 82,
+      "sha256": "6a1e24880f89306c5ba682a485b17c77e62214da0b8d7e60841305fe17b71d14"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/automatic_pipeline.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7032,
+      "sha256": "a0a8972b64e742b699b7b72c2e12968896d444bae8f5ffc291a96e5b05e8c26c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/block_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8686,
+      "sha256": "9c020dd7a3ab417bd34aeeb9c352ce9ff1d31715012702f0c145c242115dc314"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/core_normal_expansion.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4622,
+      "sha256": "b71f23d2250a29f3e3eac2ccb7e837796b1c5305c10f8ec34d2af750a0f56d54"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/core_normal_pilot.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3781,
+      "sha256": "bc707bedc39af6f1af46c0b41edb16ddfb5e922c994a66d1d5ec7a3d2c8a7acc"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/core_normal_scale_pilot.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 6003,
+      "sha256": "ac55cf871df33abfe30a93e36c98f059f678d19fbe81fc1100660035ca0ee293"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/entry_initialization_pilot.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 12394,
+      "sha256": "4f6026f92496bc1dd22aa18c630a91625de3a016574faf4229cefdc65aee8dc0"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/entry_pilot_continuation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4870,
+      "sha256": "b4949864d73c8f89086da06bc5310ca1c3cb1d663c975687bd6f3478e2eecef1"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/financial_outlook.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9727,
+      "sha256": "35a3be1d06c5145d59231e17aa139c4d8b13fc6273438a0a098ac85116525b33"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/fox_mechanism_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10548,
+      "sha256": "1d3d06c97584c42b664bd5501b88af081e78269a0721971f3cef9a4cc3721174"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/frozen_batch.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 17479,
+      "sha256": "a7ed1503287dd82446892e0ac068d1556f4538b2e33db1c6cb55b013191df2bf"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/frozen_message_queue.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 12590,
+      "sha256": "563f3a0af6afdfcc39527e556fec95cb53780528b72f758c249e3b4c709ee55b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/full_a_core_normal.py",
+      "status": "current_research_entry",
+      "bytes": 25520,
+      "sha256": "9fecd20e7474b048df2574d0deaf435b732c3673e2d5f58c056b0733227f9350"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/full_a_personal_inputs.py",
+      "status": "current_research_entry",
+      "bytes": 45586,
+      "sha256": "0b73ab34d1e39e08716b37e5228df587b70ea4b1ff2d5a0b0a5ad440c0da2471"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/full_a_personal_terminal.py",
+      "status": "current_research_entry",
+      "bytes": 120744,
+      "sha256": "fb0283be278cd16e1b3ff2f70c416114d9ce4df14fe94708b350ac95d7c5dc7a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/fullperiod_materialization.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 27872,
+      "sha256": "9657de6ad97e0adc3bc948c31f711aef73928fd8ec873a03ba670dc2eacff86d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/fullperiod_policy_sources.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 6919,
+      "sha256": "841476b29c37036b7208c52c6935e932da5b8acc8657fa19a428fc3c0a1e5ebf"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/information_exposure.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 13814,
+      "sha256": "8eede1753b3dc8cdc6019d31cbce8704fe7f867857369f64307e65fd030014cf"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/media_mechanism_crossed.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8046,
+      "sha256": "058bf5529380c3cd5840de6f0fa576bd3c8accdd366a2a98c456c76a8c55aea8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/media_mechanism_terminal.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 17491,
+      "sha256": "ff615b3c602c83bc09b40806f2f992a029d867e201c0a187cce69f694aa9ef53"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/media_mechanism_trial.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 17404,
+      "sha256": "e4f90749cf6763b0c4cefa16ed72a9385f1c9d8234296b055badbd77f40aa878"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/media_mechanism_v3.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3823,
+      "sha256": "83b9308586e5cea95e7d6da16c76a7a65d26e4b6a946268acc8dcc3e4d1d0385"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/media_mechanism_v3_execution.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3310,
+      "sha256": "d14ead8b86fc95dc9f8a987d8590c3f20b29f8bfbaede367e39dfb7f44e6a14a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/media_mechanism_v3_preparation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 19287,
+      "sha256": "b8c4e840721573c8c49f8d04816bd40e5ae239f4aacf3ed2d7ba8c9ad6785e2a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/media_timing_inputs.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 19636,
+      "sha256": "32555fff3f80faadffa886732c220787f4a71c32ee3cab77f6001fa51de763ef"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/media_timing_package.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 17669,
+      "sha256": "5f0d5bb7eac7670b28c10ec81751ac9b3aacad6cf54e5c1b5c66ea941954769b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/media_timing_terminal.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 66745,
+      "sha256": "04daf44b5d9cd015fb626b2e605323ffc41a1130a22fd9647b134b70b7d19308"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/model_comparison.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 11874,
+      "sha256": "f91a2a6aad994eab3a6ed6a193ecdf30a01254b47e94e0d20d848590a955d0cb"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/model_migration.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 11263,
+      "sha256": "409d040054a5898681dbd677c0791dff3857292ed0ea4759cf7f00a6edd6559a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_fine_inputs.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10132,
+      "sha256": "8a1e970e4e21c878afecae294a8ac280bd2d216902e50a07675d8181badb2a5f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_fine_pipeline.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5361,
+      "sha256": "07770fcec007d8969477275f242b096f39609b67fdb13d2c34f04d9a48cc5cf4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_main_background.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 11591,
+      "sha256": "8839f9dae9d94c08ac71ee358c7b25483b2d0b08ded7dd9d11fcbc063751d65a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_main_console.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 5214,
+      "sha256": "211a5c8ebfee8ab63ded25a5557f9ec8c0074b9fba3e85a17398360201b9694e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_main_continuation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 17337,
+      "sha256": "998aedff988c9503baee4af71a271a3543259225ba0b2e523e3618696ebee71c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_main_pipeline.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 4497,
+      "sha256": "ede3899c888dc4fb43759936b5665585e1192f6bc8f6c5e7238f6268315f0fd7"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_main_repair.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 21523,
+      "sha256": "3d87f4bc33e8534e3a858be17e9c85a98348363abe4b2a94e578be1f8923feec"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_main_repair_followup.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10696,
+      "sha256": "a5c34b0d0adebce187c5e96836ad947e03323f66ab3e9a2c33e7c4faad077b82"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_main_resilient.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 19584,
+      "sha256": "5aee4c4953952ebe347ef7a1d2966e759da6ab664e51bb67c8c76bed48d5eea7"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_reconstruction_execution.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 6149,
+      "sha256": "932eb5b06c6ceec9b58931acabbdff5671b5c9b8be58bfcccf3cf2d58cc9a6de"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_reconstruction_inputs.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 20404,
+      "sha256": "724ddfdf0c3f4928538bd4a7e07f6e4ea9dd5b46086d24a63f6000f0e24bdbbe"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/monthly_reconstruction_pipeline.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9257,
+      "sha256": "a7355611d51bb0ff647146cac1939a8fac0cd57b395ca8056d4c5ced80ba2e21"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/news_breadth.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 15770,
+      "sha256": "7dfcf21664b82e546e117ef3f5ea89ca8551009bb5630cf3154c4d142a7554db"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/news_matching.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 18991,
+      "sha256": "9db7d035cbc00ee973f4037d6b463696f9d1ec44c8a626220de1d1e48fd8c277"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/news_matching_continuation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4860,
+      "sha256": "db1afce83c2d0f22ed87ee2d244b38a7db9a144fd811b15f1378d0323e868921"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/news_matching_ledger.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8049,
+      "sha256": "bb22898b2128526711885422607f958f546ce8c0db1568be55c2a5c04ae55701"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/pending_call_ledger.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 22188,
+      "sha256": "0acdac7f4e3da01b3eebd526eca763514683ff7933c47b5cd4967825f50824a0"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/post2025_trial.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 19520,
+      "sha256": "5b5a27091ec45054c26e80d2a8fb480e4a674b5bac5b399930e5b20c538c65bf"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/post2025_validation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 11534,
+      "sha256": "88a2f978656c996cadfd2ec578a4cb4ef01d47bd879eb878ecae7f3df94fd2ff"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/price_background.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 13724,
+      "sha256": "b24a02dc04fbfb5423db79f296a790d1e3828cf4ac79910d1b7c4a81dd7a8ba2"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/procurement_prices.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 6072,
+      "sha256": "a530eed754b80768a59f9c01e55a2106b1988c124926ef6e8be3e0aa8e70c3e5"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/procurement_qwen.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 16428,
+      "sha256": "c24f28aa25c9fa7356cde0bcfe82803e77267ea30077667db71fff85755ebb53"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/psychological_state.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5861,
+      "sha256": "c9f0b06a534d334cdab0840b108fd750d356c81de5c348a44061014a34e50c53"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/psychological_wave_state.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5376,
+      "sha256": "bc7bfbbfd75ef7c623123d9568bfb06ecf2d93edef4e5c8a2d26d9cf197add8d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/public_consumer_context.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9188,
+      "sha256": "5e7dcbf85ee08e92d3af0fedff2341c1db1a1746854d56bdcc5b69c098883417"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/q8_delta.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8340,
+      "sha256": "2e5d95bacfb1dcb6c57f087450c8947347bb147b33dc6c832fda3f329e8cb9cc"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_continuity_pe.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 19232,
+      "sha256": "1607d5b6d62f68a70950957e272b62b071349b011aa7f8365ce4569f57c623ea"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_core_normal.py",
+      "status": "current_research_entry",
+      "bytes": 13411,
+      "sha256": "0ffdf12f8d24aefb319e0732b5df864795a35ab4ca5db29a3d8c84940b826b63"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_evaluation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 8166,
+      "sha256": "29082bd306e3273fc47c6d86aaf6765260533bd15f3569d7086cd9e66c546584"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_news_refresh.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 16393,
+      "sha256": "64b848b2f953d695f039743f2ff5986fef53c4ea71e3383d467908997f10d752"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_news_repair.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14213,
+      "sha256": "f19dadfe17ea8ffcdd6501acc3aced2e6b38f4374aad2458f19284daf1cac869"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_news_repair_audit.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5328,
+      "sha256": "418d501263af9dd713fd166f83c5cb3b9a1727d91c580011d50c239719c3310f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_news_repair_inventory.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4172,
+      "sha256": "47f72895e3f54a614a7db4ab10566327b4d91c41e7a1581e4f92e3219e308abb"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_night.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 25057,
+      "sha256": "221904ac2b0ca36d8059e0731fc8d61de527dcf773f86f5a7d98cb99b06f3ed2"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_preflight.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 12443,
+      "sha256": "1a6856877d1a53af337ca630e730d2a3b8ce2f1f8913f48de091680bf318ceec"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_priors.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 14425,
+      "sha256": "e7f3d793916c1fb76825d48ad14734753844a49d73c378ac3f9795d2ddf10c16"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_prompts.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 18607,
+      "sha256": "acce31e2029ca1c8cc4b902c2d2a64dab79105f97b3e205aee0155c127d7114a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_recursion.py",
+      "status": "current_research_entry",
+      "bytes": 37990,
+      "sha256": "620c37a369f3a2163db0fac7d03748e97a361c2e404963daa6db09170a652820"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_recursive_evaluation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 9846,
+      "sha256": "9cccee9cc1eddf5d90d160ed1fcd78673319e0d2a7d49426ed9d317c5310aed3"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_review_materials.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 12294,
+      "sha256": "c6244092c33ac9d276edc2d49453890cf3bab39a578411b604b247602404fef6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_rolling_preflight.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 12072,
+      "sha256": "9b94313d81e02ae678a9a40cf4baff6ffbb44dacd89453cfa17610d9b90377f8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_sampled_dates.py",
+      "status": "current_research_entry",
+      "bytes": 25440,
+      "sha256": "708d984e4bc85e0196c782cdf5e92ca26f78d92bc00c047dd1d341b9052eeb9c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_sampled_evaluation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 5582,
+      "sha256": "5b2015b331da06f38c199f44629bc0136fa3f74bbe5a6e01ec6900106bb732b4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_b_sampled_terminal.py",
+      "status": "current_research_entry",
+      "bytes": 20842,
+      "sha256": "8ed27363810aab315b45705c9dcbad7d38c4b64616bb9bd2c0b35c6c03997379"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/recent_environment_evidence.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 27404,
+      "sha256": "1aab46a81d1682fbced09ccd4deff8dc0e5144e3732ac7cb4506648e9f55e7c6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/staged_rosters.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 7564,
+      "sha256": "a9f99ad76574b3ec157b7c6fc072f9bb2c2112edae1005a87dd6dd1b0fac72d6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/state_continuity.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 9143,
+      "sha256": "6e003f02c9f38d1a032f51f1769d77266d366502baf62eccff14605f1e4da7c1"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/state_continuity_continuation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7032,
+      "sha256": "0c614ea2dc93970c9c8b64a0289ee319e966a6f345affa47cbb361d7f8076aa1"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/state_continuity_core.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 4168,
+      "sha256": "7ef9b6f4e4f8ea20fe67d267345b767783ea6d3e326ccc5deacc09447821626a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/state_continuity_dry_run.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3068,
+      "sha256": "46defdbeefb5f66c237d37b34e33e8b1595d340acb701de11b3c9c3bdae73f13"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/state_continuity_execution.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 22991,
+      "sha256": "94a0b7b562281546b0c9ae1c6b2f661487f258e4d5f6a9839588ac5b85ff547e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/state_continuity_inputs.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 14523,
+      "sha256": "dc1a4a29d6d24a7f1e97500d3ea274100f8df1a25933b3aea64e8efa6c9ffc51"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/state_continuity_prompts.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 19327,
+      "sha256": "cf920a085d116ec26f11467177566bcbfafea93b2ee50e9807ebee6ed785d5c5"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/temperature.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 6075,
+      "sha256": "953a3790839d4d83e834dda589d46925abcc1e70c4ff332916bcddbd58edc20e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/v32_rate_recovery.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7764,
+      "sha256": "be0edd9d2b6243e0af7c7ea664c0f85b9d038bc9838c38450f5f0d7c533b62e8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_design.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 5767,
+      "sha256": "f84b664f048db1c21850ab74f83942f141ff34c7cbeec22c930aa5dfa61150a1"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_evaluation.py",
+      "status": "current_research_entry",
+      "bytes": 40334,
+      "sha256": "6eb4c0a6f2db893900432a842f49858456da490ddf52b4163e0b4e924ca048a4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_final_readout.py",
+      "status": "current_research_entry",
+      "bytes": 31968,
+      "sha256": "a1264ba1874d2739017bf6a37fd2d4f0d2ccd607a93f7757fa3522d713ddcfec"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_inputs.py",
+      "status": "current_research_entry",
+      "bytes": 16553,
+      "sha256": "164f31e6d59c4616dd9816fb1fe6ba7217ec7196a4f229df3182d460da310202"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_key_limit_resume.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 9072,
+      "sha256": "2417b12ca400be7d8ac2353b6ce3327e6751a8f5bdc738e916f30837dc9bf9a3"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_news.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 14182,
+      "sha256": "4d10ec01acdaf6d40916df24facdf18b06e1872b578c450e788eca33d9b0d8c4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_partial_readout.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 23426,
+      "sha256": "704f3d37c95a2a80ad55cdb374092ff57ba174aedb0436f012b4c642dd354516"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_preflight.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 11893,
+      "sha256": "6ed808930a9ae87af27cafb853440928ac0ca71b43a1ee987647309b20c621fa"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_priors.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 23865,
+      "sha256": "3fdbc0edaa7a0cbac3b3d434cdaf29456541f3a9fe7060af15f0d2d6e7614290"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_release_protocol.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 8610,
+      "sha256": "f23fd5d8c3d93c2f8a2b3dfaafe8297b69369452a8326597c029057d1ce1ce65"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_state.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 15577,
+      "sha256": "6018ee73c2b9ba3298a9b1aec754864426c393f838f1633d3c7b0a4c88b78cce"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/experiments/weekly_terminal.py",
+      "status": "current_research_entry",
+      "bytes": 25387,
+      "sha256": "6b6b348be59c150f39c49cf25e51e1ddfd30878c5a1e3b89e3217ae30760cff7"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/factual_mechanism_audit.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10345,
+      "sha256": "f28d782c8aade23ffd0c708271f652ec7dbbff23d630dc4f456c67caed6ff352"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/finance_validation_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 20323,
+      "sha256": "cb11020a960c1184f01127739f7a6cf46992f6a3651e95dd7e29bf6bdb66b18b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/fox_news_archive.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 28433,
+      "sha256": "4dc04b75c89af678438957da9329fb5f867c379ba6893521148ace4d5d2119ef"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/frequency_price_inputs.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5546,
+      "sha256": "3ca0fb07605dba86b7706cdfc03df5f7bbf8ae65d7e311f3a663c9e792038fbe"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/frozen_prompt_runtime.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3264,
+      "sha256": "e27e9dc09d1234a308bd48e8ad07ea657a815ea946dda67d18d6e54ffab4c586"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/grounding/README.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 297,
+      "sha256": "22f0a56a756701dd9988a30c20f81bf0aebe366c912dac5e284ba5399e849b49"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/grounding/grounding.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 4196,
+      "sha256": "d9925619de0b954d24bfcebf8d1993a18de31d4c76aa89ad2c1c49b6f7d32ba5"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/household_finance_input.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3971,
+      "sha256": "0fb90349d05156ae0f2027abbb69fd15fe5db97b4df84d56c72e6ca202e196ac"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/household_finance_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14542,
+      "sha256": "76eedd986c551f6eb921ca9ec2c2314793a5bda57d7d7b0565e0e6076924fb15"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/household_finance_runtime.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5763,
+      "sha256": "77017cc21e7e7eb93600e6e9f98ec7552c3eb38c0cb9461ccf0655a1e1520689"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/household_state_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3297,
+      "sha256": "3752e2c4e684c9384f12de7b570e7bc474f16b01ae327aab9709b3514cf1ee42"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/household_state_audit.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 7412,
+      "sha256": "8fea53f67c5e0c40a2b7c2fd532816dc8b025d9ff59318cdca2cd25c567b256b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/household_state_mechanism.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3575,
+      "sha256": "4b5c39b3776e7e4225e26d44b706f4955c184fb486f585f7b714de661e029ab8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/information_exposure.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 8583,
+      "sha256": "ec40d018428ed240645331d0bc0ff4c583e726f1a268f5e55ce097b636e5eb3b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/information_exposure_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 2496,
+      "sha256": "8c613aaa0548f077cd2adef1a99307f716ff5b12fe53016837380b3778785627"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/information_update_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11137,
+      "sha256": "13f9eaa0c66a08630c048ddb273d847f8be44c1f8f97b6674e9617880006165d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/information_update_runtime.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 7316,
+      "sha256": "6c8f348d3d1cef89d846194f41002b46c18aac2fdc22b8cc5d0a05fdd275a143"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/lifetime_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 13596,
+      "sha256": "4f8d4bbb5b227257c6a7815698cf88703d679614ffc92601e3b05a77827104f9"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/lifetime_episodes.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 18045,
+      "sha256": "31643a56daea46612528ed477ff13b7306cdefa2a59bec5b387449a44e118f22"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/lifetime_experience.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 17642,
+      "sha256": "74fa8b37867891c6934c612666fe7b8238ad38111fd5e587668d978393a1ed9e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/lifetime_experiment.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 4459,
+      "sha256": "1c5a696bfba701e117abd71f2f7e7e50aec869b465b594a2370457a9183cffc4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/lifetime_mechanism_diagnostic.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9379,
+      "sha256": "cd813d52b020bb84bf15dcc5922273fecd439f704eda8500df6243126c7d74b7"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/lifetime_sources.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 6628,
+      "sha256": "13f8051f2636dd8d337dab7a4ff21bf953b0580bdfdf4ad0e765f470d851a053"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/lifetime_text_experiment.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 4650,
+      "sha256": "4fda54a699f4949ae517b81c1f0ea459044d9d04c0eae409c907d5fce3018ece"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/lifetime_text_trial.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8854,
+      "sha256": "d2da2250be9dc0364f76882f7f9a096fe4763825db493e73fc9b2cd47c8740a0"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/lifetime_trial.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 17594,
+      "sha256": "a6ea63a4fd75031c30d3926ad0a2fe58b03c0506429d1a1ee425ff6ea617eccb"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/lifetime_trial_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 13513,
+      "sha256": "4069c90f7681b5a6ab6560325760c523630337799989b7d31cf792051db02cf7"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/macro_population.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3219,
+      "sha256": "960561912ea039be0bdad7306418d109fd87fe8096a14bb50403f75ba0a68b66"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/macro_profile_extension.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9224,
+      "sha256": "7f667b1e76ade1859ebd35c4af7b483516aa56a748ea77f97b2e43c4aa8fdc6e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/macro_profile_sources.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11443,
+      "sha256": "07c38deb4ace1b6af908474129d1a5b6a7e6aa52ce8c543867321233c26ac5f0"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/mechanism/README.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 698,
+      "sha256": "f1b61ec4d25f290397d5c269979d9fff8dbe762413f563aded27d5ff23ab575f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/mechanism/basket_focus.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 186,
+      "sha256": "886f0717343c795941c0b0296d05d288106ff4047f3d5a750213de6728a5ad66"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/mechanism/basket_shared.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 178,
+      "sha256": "56c4458652c908c39143368f2de28ea6c1071b29e0ff51c2828a2e52b796f388"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/mechanism/ce_field_map.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 1603,
+      "sha256": "0f8c2fc2c636dd7e423ffe97c40c3683d46f0a18688bc20744d07b5f25712a00"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/mechanism/expression_shared.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 183,
+      "sha256": "00da2c1916f08be2bb1065ecd4b3235146cdab424d55bc2d6e75766154eea5f7"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/mechanism/focus_only.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 185,
+      "sha256": "15c19b1c09ae0a02b0d286172e0768bcfec17e6da09e62c5ef5257fd27ec4bbf"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/midus_group_summary.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 6289,
+      "sha256": "2ad162d6e1c5210ba797ca98b76bc9e59828082e7fc02c96752a19012a789b03"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/model.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 50918,
+      "sha256": "29cddd98394b0d56ea1f857e8f3849652a739bd9315947995210db743792650a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/model_comparison_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 1814,
+      "sha256": "5aa4e0ba4fb91322c182e79127f2b86001ea93c9f96a52d5c760f2d28603baa2"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/model_counterfactual.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3663,
+      "sha256": "0a64c281bb2e6b15bb55ab1a304a57738432af5a67333ab6e48b78e0ad003f9a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/model_followup.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4877,
+      "sha256": "57f774a3334fa389f8b21b4cc2bc8c95a735a17a60e12eb22b79c473f25091ed"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/monthly_analysis.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 2904,
+      "sha256": "9115516d5fa4a0f7c26495d2cbcc96b2150140463487238f6e0893a3310d09cc"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/monthly_population.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 7798,
+      "sha256": "fbc24d2b9fb943c4e0cf9eca3db3c15483a080ce4ed034cbb772edb52a434878"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/native_spending.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 5610,
+      "sha256": "baa4061b7c38a5965cb0044613ef859164a2a09b0307b22ae77a23b1b7751455"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/native_spending_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 6806,
+      "sha256": "9b0be60d92a3175fce40396a191c44af47ba03a80ac957169fc6fe9e6f88c1eb"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/native_spending_trial.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14312,
+      "sha256": "565ed14d2a85cb7f2176d9644853079f67d2b953b5fa78a47fd349c17eacfd59"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_evidence_suffix_adapter.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4368,
+      "sha256": "3084bbb0422e585b1c95fa76d0a632b2182f0a89f12c048c3f328b4858ffa9a4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_exposure.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 7551,
+      "sha256": "6020bf72c5f02ed663650ef0d193ccf5c0de720d14c3f3cee15c43c35bcbf179"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_exposure_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 13460,
+      "sha256": "51190a2fdbf07ea1a757d431cae8a1e7a414dd7d29adade0afdd50dcb4416227"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_exposure_demo.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 21442,
+      "sha256": "23030cc5554971673ded56486d89424b19ed7dda4600b3721ed8b85c233b6bea"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_exposure_demo_config_v1.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 988,
+      "sha256": "3ecc0bc78c6ecea4ec78fca9a317558cd61c4fde821516c84a4d1416ce16e972"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_exposure_demo_config_v2.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 988,
+      "sha256": "f0bb2dcc3e537af565ea80600c7ec64cb7a38450a7bc6d6ba825a733d5c5a5d6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_exposure_reporting.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7959,
+      "sha256": "880238d72593db7a54a772638047509d947e91fe963e595cb77997efb8141acb"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_exposure_trial.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 20745,
+      "sha256": "cd9f883ba859a05e006eca4434efac547f32c2dc96d344f369bbe2e039a178ff"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_extension_label_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 23610,
+      "sha256": "7910e43c5fc2471a4e4c4af1f0b9d043cac936bb97c41521391d404476105836"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_extension_label_preparation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 7506,
+      "sha256": "8d4872ba1ebbcc121a7b8379590448814dcae611125a1c0973131e28db58da98"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_keyword_rules_v1_2.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 3149,
+      "sha256": "c837da27db730f163339c4cad765b4e83b7a1027f31b521e068749a25d153c79"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_label_compat.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 2795,
+      "sha256": "18153c7c956ffee0899e2a80917dc4e4e6491b9a700a55a62e8f3da39799ff00"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_label_completion_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5070,
+      "sha256": "9f6be7edbc41d2a2e0e1c67580f905076a184dedde6ee83900bb4f2910f355cc"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_label_id_repair.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 1979,
+      "sha256": "64c4c927cd9c458b285c7591404481f208a28cb67cda261aa2e5c32572cfb159"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_label_quote_adapter.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3030,
+      "sha256": "35240544ce72e93beee10de9daa3d878e3ea4ca29bf2ef931371ef04367aa4dc"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_label_trial.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 22399,
+      "sha256": "fe006c25e8ea0b221f6ff03faf8f45ff0f6181983e1b7d2f51cd58374619bfc9"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_mechanism_label_preparation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 7507,
+      "sha256": "2f4c55a7e2b7bd496a3d28bb7f8f56127ff5988bd63736394abe87fe18012e30"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_mechanism_label_runner.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 13594,
+      "sha256": "ba702e492a37a3e5fa26d65fdad8d6ee236b0528fb0933b98ebde897f1937666"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_mechanism_labels.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 7997,
+      "sha256": "a5749f8929d2d033bfd26fb1074165a28662eefd9e2ab56605d4dea1491ab726"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_pool_preparation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 7867,
+      "sha256": "535766d47c0cdf317fd1eba3d3d721d97e978b90a5c34b46cdb169124b2dc8cf"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_quantity.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 1215,
+      "sha256": "fd0f0d0aff77c3c936842fbb6c7d5486feea287a8a540d333a05a7482d9bb147"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_response_diagnostic.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11615,
+      "sha256": "5baf1bae1f398207b1e3c537b2fa3150b0a01f0a547927255f4657af62ee692c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_response_reporting.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5337,
+      "sha256": "84d6b4c9e1c63d05fcb895771f24d4c3183d3e39b6084d4fedeba2b90e76d763"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_selection_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9873,
+      "sha256": "840ac9cfe953f5c73cee10bc314081b4f0d3f2df4f04e40842a449f2a9db1ee2"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/news_selection_trial.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 13411,
+      "sha256": "0871177d6ac1030f2b02cd8aabe4e41950663ec01d6b18dd1d769061ca8fba0f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/numeracy_audit.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 13999,
+      "sha256": "f4a53576bbf8cd001e630c76700d975c52d91e7b57938f7d58f3f9d37b4100ce"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/nyt_inventory_audit.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 12969,
+      "sha256": "1efdbf778ceca58b4deaad680458cc61903f0c1ae79ab13c8d1e37a9da502aaa"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/openrouter_frozen_runtime.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 4013,
+      "sha256": "7d760c39ac195bc1df36a47ef38719050390d8c844e932a55c36fc96969036ee"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/output_format_example.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 2019,
+      "sha256": "79847e35280686d87d3d6beff4479d3ede968201ec1392c47d91ea015079a61d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/panel/__init__.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 502,
+      "sha256": "f6ebbfef95b710863327712047e72f5101a9affffcb9c34138a15430db1a4bfe"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/panel/adapters.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7643,
+      "sha256": "7ecd46722ebe1ba8fa410a60e0ffa82f4ec92628f7207716797580199242059e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/panel/regimes.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 2622,
+      "sha256": "749069f98e180ffd9989b1b5ad190ea3cf2c6c0de11362acf36e61b7757693ef"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/panel/registry.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9406,
+      "sha256": "98e6a0505890e1e7fe57c5a2e75e5c51b936f91069768f73024626fd53084fd6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/panel/render.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 73116,
+      "sha256": "e676421853ad78503382150935da3cff5f01abe2f1775284fb863b7262da9ad1"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/panel/sections.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 67387,
+      "sha256": "3cac6a6bcd175cb153bf1053d6aa9bfbf2654cc9386ea6f383953d4e22491bb1"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/pe_diagnostic.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 17527,
+      "sha256": "3e442aca1908f671bea7a7390d9cc6879da90b89586e815f4989e1d9cc710fd3"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/pe_diagnostic_view.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 16477,
+      "sha256": "a9c9f196b5b1e15d8b54c459b9a8bbf9f68736336eb7fe4ac5f67ecb8e566149"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/persistence_probe_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7572,
+      "sha256": "5c3101b15903290f01d124858057b9336a1b04b46a7f04c2a4fda4a090eedcdf"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/personal_information_preparation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 18224,
+      "sha256": "57efc461567cb6b19e3183f339c774b6b062833be1f66c5e9830e76fd0ec8e5f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/personal_information_views.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9858,
+      "sha256": "42daae00a84ce372f5cfacd4f3b0b0dea32a7d94d07860bda018e33101a32132"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/platform_survey_pilot.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14500,
+      "sha256": "6517bd1b8ad3333f285f92f3d1f493f9c799339392c00769ac6a4b4802e59cad"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/README.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 309,
+      "sha256": "f2667a83f1e7142b98b370b84d42c852aacca721a36913819731fa781cbcfe6e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/entry_initialization.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 13314,
+      "sha256": "e18216051cfd7dec655aed58e5bb248acf92e607c62d6c4d5e2ac9d33040c649"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/grid_sampling.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 4229,
+      "sha256": "9bb8d40eaf80ede0509ef41163e86fb8db27c9cb0a7c030020adb1a09ec1585a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/monthly_fine_grid.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 4629,
+      "sha256": "12d3dc4595235a96884e569c6a05af92ca99b0e1b1037ee9e3bdbe0aae605733"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/population.json",
+      "status": "local_population_or_fixture_not_auto_distributed",
+      "bytes": 10091,
+      "sha256": "2da09e309702ce354fcc6297dd997dd11656e2bef6e189486ea7d149c509a539"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/population_main2021_a73.json",
+      "status": "local_population_or_fixture_not_auto_distributed",
+      "bytes": 40214,
+      "sha256": "02a9bd8d41f68719674c490b403591b534e7dbda81f56efd438c331f7e7f24fe"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/population_main2021_a73.sampling_meta.json",
+      "status": "local_population_or_fixture_not_auto_distributed",
+      "bytes": 16168,
+      "sha256": "97d2a000906d88b01149a987fc4e8339f76fa16bddd9b90c6f1f0c1434d381db"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/population_real100.json",
+      "status": "local_population_or_fixture_not_auto_distributed",
+      "bytes": 54138,
+      "sha256": "55b81aec6415f410f169821d4a4933cd0147ee5ef370ca234f864091cc22c170"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/population_real100.sampling_meta.json",
+      "status": "local_population_or_fixture_not_auto_distributed",
+      "bytes": 20524,
+      "sha256": "876d66d9b50d5da14a8189d88bb6b955e7fcb04b2f9ce1d6fa88a37aff02961b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/roster.jsonl",
+      "status": "local_population_or_fixture_not_auto_distributed",
+      "bytes": 8700,
+      "sha256": "abd7d82f94e0f2d9242a8d4ccc5a3b7391af03254b9407a0fcd6dceb37c5f70f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/roster_main2021_a73.jsonl",
+      "status": "local_population_or_fixture_not_auto_distributed",
+      "bytes": 32047,
+      "sha256": "320c601f2d6be8151e4fa13fb9c86b1ace333793aeba655135e347342915f01c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population/roster_real100.jsonl",
+      "status": "local_population_or_fixture_not_auto_distributed",
+      "bytes": 43900,
+      "sha256": "a60dc7057dd70b22d6ea62dbdaf1faa5b3564c53a33d7ba365289f296066bcab"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population_forecast.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5968,
+      "sha256": "5843fd19c1b1dc5f93979d0fb1613496265c048bad818d20b283c3c80f52345d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/population_stratification.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 2408,
+      "sha256": "14df6def8f465d305a52c9ecfd716a9fe26021356a8ab0e2a7e019655a7494f3"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/price_contact.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 7220,
+      "sha256": "39ce15891f3f06dc1b9e889161d2be397504e5a517d42909640471016eaf4319"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/price_contact_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11767,
+      "sha256": "c39de18d9b9642951d153bbc05cb977c8b4d3742f3abb97fa421e9a29664fab3"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/price_contact_trial.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 17827,
+      "sha256": "f7e35abadcf87881e27beadab7b9d80c78c1d31d3e15f5ee4ca6522fa24eb01d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/price_experience.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 8438,
+      "sha256": "7595e5d409e409fb944650544278f5e843e6dfa9e1df274f42338194c93c6dda"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/prior_belief_analysis.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 13897,
+      "sha256": "5314a4f996fa36f279a22e83bbf5a1ced1aa7c5f4326f3a8b1733e3f3137aae4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/prior_belief_experiment.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3847,
+      "sha256": "fd0991aa443ccee451efbff11ee7a1c6ae060c40ab4cdbdd14872e1bb3d8333e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/prior_belief_preparation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 13116,
+      "sha256": "dad877f02ae5148f6ecd12d1726cf9d33a8f2a984e09e012e8a7015df2707ca4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/prior_belief_trial.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 13665,
+      "sha256": "fcfcbd518f6d08a7694a2517c08a3797a546c53de11d89113d525e98898ba809"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/prior_belief_trial_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 16858,
+      "sha256": "7e866936e7e58d736511fb55c79e3a7d97e51b9287bad4ecd44e64cb48ce4c77"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/prior_belief_verification.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 8128,
+      "sha256": "b77fb6cd46976e2debb67e2fad94552d2c4e51d17be0e246a03c74929e6039d9"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/procurement_price_views.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 10849,
+      "sha256": "e2052901a44ca4faa856bd0cdd9207d1391a8bb6bf437bbeebdb76a99468ed81"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/psychological_profiles.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 3853,
+      "sha256": "e36e96037da21cf8c30c0e9d6544195adbd57010c1d815b8761dc017026123be"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/psychological_waves.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 6062,
+      "sha256": "3f06b0e7875c231a49d1339dc6f363c9ca4abdb7df5c3c2d90c2b40f5b0ca3f0"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/purchase_frequency_matching.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14640,
+      "sha256": "ade6f9d76cc7b8ad1ad6912f0fc52af86f54daf596a4ca7b159dfcbf81464ae7"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/purchase_frequency_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11744,
+      "sha256": "667d8e1b25bbcc8327b7eda7171e3011c78f95a74abaa1b2b22d1bbe8e879f72"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/purchase_frequency_runtime.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 2726,
+      "sha256": "71191c9ed1efa8e67ec22732f2a67d11b2d6f44e7f4b37627861f994dd62e321"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/q8_delta_contract.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3652,
+      "sha256": "3cbb78194ddc98c6398e6d3a5a616a2a346ccc7f3718ac028c5c015befd3fd0a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/q8_delta_runtime.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 2741,
+      "sha256": "d96125efd3d5b5bdf262505bf167ef4fda0057db4b52a30d3917ea6a3aacc3f8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/q9_normalization.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 1876,
+      "sha256": "018059af925ba5d13c7446abd00f7d6c971a3afca2a5ab34ed8e528bb6870d42"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reference_news_completion_adapter.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 1791,
+      "sha256": "9e354b95cf8c2e5f4fbda4e9b5bc35bf58ab85b3ccfc01aa96ee862dc3ca1a68"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reference_population_preparation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 9595,
+      "sha256": "292c646c714aedddb104e6bdbd0601263b26312386afb995c84cd9667cf29f94"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reference_validation_preparation.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 23738,
+      "sha256": "ef3a8f5968fb7467e4730725cedfbf6bb153fbcf48c957711dcfb7acab79c8ca"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reference_validation_runtime.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3950,
+      "sha256": "58bdf04f1905ab9f67bb701bf13b3bc5a139ba04a7cf140db13d9ff0a7bc533b"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reporting_behavior/__init__.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 72,
+      "sha256": "073552e2af4807b0a2aa3497ff00cc0eff589ea80a58ac7ed9f68353f2733fe9"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reporting_behavior/analysis.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 19221,
+      "sha256": "84bd95b1a59abc6720d56d036dc837f859981686c66cf107219695844ba840d9"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reporting_behavior/controls.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4784,
+      "sha256": "b050acf98efd710745b5d8b2221d458e7731338f8da4050e30e961372a0f991a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reporting_behavior/mapping.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 22611,
+      "sha256": "515f43898cd992bdb08ccb72c4ede64d93c8ae23242bf9cc96d8637e931dfb47"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reporting_behavior/mapping_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 17811,
+      "sha256": "2dc7f7d2c51bbc08d57dc202da3acef4bb42fc4e43172603d110355605f7f478"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reporting_behavior/report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 18530,
+      "sha256": "3c11149e63428588a92282d099e3dc1b53055b8f5455caba75eb33cc2dbc13c0"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/BELIEF_PROXY_DATA_AUDIT_20261010.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 6689,
+      "sha256": "6ec15e5a67592087a94e98778fa0bb6908e8a2296715aaecd46b57a9ce4d39d4"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/ENVIRONMENT_AUTHORING_REPORT.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 9552,
+      "sha256": "b48de7cdbb7feb9b561277b7e1fa1b8c276191440de0fecfa14037eef1f37ddc"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/HISTORICAL_INDEX.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 1258,
+      "sha256": "7aecf7b5219031c45052e748b2391c4f80c4e42fc2f60c651dbbffdb85565fa8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/POPULATION_SAMPLING_REPORT.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 11313,
+      "sha256": "b689f8e8c8ce631c1c237406b72dcbdd65ce07a80f40d403347871e8ddb90f19"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/POPULATION_WAVE_STATS.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 676764,
+      "sha256": "27371ed5a996cb401e12aecea54fe9810e31e57c318b8dbccc6a32ae25db3408"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/POPULATION_WAVE_STATS.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 19832,
+      "sha256": "c5a2e1b4f596fa0eb9b7220e34c8da191a2e2e76d7c7e55bf7373b4a6cae7063"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/PROMPT_IO_REVIEW_20261003.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 7176,
+      "sha256": "6072df260c4a6ed8adf048f1738e7a925e07b94ae0b35928152d5440a370cf41"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/PROMPT_V2_ABSTRACT_SAMPLE_20261005.txt",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 9623,
+      "sha256": "006087e1169cee86f0c5372e8fa382a0e4e7b94b4cac48eb05a0cfaf2314156f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/PROMPT_V2_SAMPLE_20261005.txt",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 4964,
+      "sha256": "e6a19f712986a5071929dbba52c2a6210070fca42d9671056e68649e05218315"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/README.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 1137,
+      "sha256": "31010c29983b0fa44d4c721bd2d76b37ee3a9fc463bd35ee8166d5f8ae3b5218"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/dynamic_model_presentation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 12002,
+      "sha256": "cd50bf09f9ab5bd80ab48779c0c346d5f05af99848d66abe4cf51c244637cd40"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft/__init__.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 82,
+      "sha256": "8ed1bc9bfa1306e6df483d7263c4cf812a68f9ee644bc88671677c0f6d57aea2"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft/figures_v02.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7928,
+      "sha256": "38f8f90544ff0341af11631582825d6c9436b4f22dd1a02b7a9274c714b0f114"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft/figures_v03.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 5819,
+      "sha256": "fae5a6a35b0ca455009f7cd8187f46c42ac15fa8f2144289a2599c4ed34f7598"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft/figures_v04.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 4313,
+      "sha256": "308c8cf90a298955f0355a52eee8dc2d4b16ce5777406a9c5edf2b44c0b0c583"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft/manuscript.json",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 32946,
+      "sha256": "4e26b46667252eb38eab13a886210e718d40ac2c8908186dbad1a25d09674f39"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft/manuscript_v02.json",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 33770,
+      "sha256": "ec2b499fdca0c11393b7a63536233292e28b8feab80190628bda99fdaddeebb9"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft/manuscript_v03.json",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 34988,
+      "sha256": "c8784c861c85d0f8936ec795227dd6e1e4ef4f0ec8d7446339b317506998714e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft/manuscript_v04.json",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 39177,
+      "sha256": "c75109cda9a2a71fa5db1aab2b4738fd9174378736194767f34966e2787fa1cd"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft/render.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 20241,
+      "sha256": "7e4e635ec039df7aaaee06c76abca6ce08bc7bd6948bfb5a3d9e13e8c39f3541"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft_v05/build_figures_v05.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7371,
+      "sha256": "2fc733869beeb6f0b41b6dd7cae3e1e19fcfdd4b5729a4f5e1442025c1ad6831"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft_v05/figure_data_v05.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 1809,
+      "sha256": "13b40a2481f479fef8527c610e58d8a3985813a5f66ec0321832541d99c89256"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft_v05/figures/microstructure_old_A_T0.png",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 102725,
+      "sha256": "1246a9bb51247eba945dba4f64f4d38e8acb9553e067a760bc297c87089e1c2d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft_v05/figures/national_A82_T0_B11_legacy.png",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 409104,
+      "sha256": "e46655a7c716eb5c204e1012545975e12b8f70cd20e0c7c7905e4561f4bbfc4c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft_v05/manuscript_v05.json",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 35875,
+      "sha256": "d400fff4f3143c76b802d89ba34fb71b7fb8b94e89995847ae46ff6cb72ff839"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/final_report_draft_v05/render_v05.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 20938,
+      "sha256": "9417681921513bfc4b04ca1f7dc459204bec22de11486fa8c08332f47a024a8c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/full_a_core_normal.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 34701,
+      "sha256": "ce89401c8520c65bf45bca769826a4372cc355fe1d0bb7d5fab61d1574005247"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/full_a_core_normal_tau.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 7859,
+      "sha256": "c6c25dc0e7d743fb83762d2934e79bc6876f73bb565d3b864658daaf48c86ca8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/full_a_macro_calibration.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 11821,
+      "sha256": "86980eadf3e209814d88cd26c406cc3568bf1861a6ad4278d5b34d9c28037f20"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/full_a_refresh.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 17265,
+      "sha256": "47d153a72b5f557c7378415a3d1c9eca3f4e1d11ff3a71f4a4977b83eb48a03d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/measurement_anomaly.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14828,
+      "sha256": "bb1c82307ea76424a2f27a980b44b1d199fbe85b44270422639b926a71356765"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/mechanism_guide.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 53063,
+      "sha256": "3b7495d098af42a229aefc5fc1b7a902ad914b68e898cc34f5208d08d6720a20"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/media_mechanism_mae_review.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 20558,
+      "sha256": "5665be0a3fba47fe007d0f7f387029c7b0449aa8bec347418747c15678f2634c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/media_mechanism_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 20712,
+      "sha256": "d31ff24b4d0379860e36cf613eb3a971420c533d2bacd065d346911f79b5f7d8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/media_mechanism_trends.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 18066,
+      "sha256": "653fcbfee116733f7f576bcf570dda461c6157506a54fe2f13422c9279dc7880"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/media_timing_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 50488,
+      "sha256": "5194563a4f42ea4b4ff1d86c0378ac758801add4bc5fffd0bf7b7858b69ffa52"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/monthly_b_recursion.py",
+      "status": "current_research_entry",
+      "bytes": 29485,
+      "sha256": "b6672fb74d4db5f0cc37dc1e70cfe0b609723bac848d0935ed0b0e167704dbca"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/observable_inflation_trigger.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14614,
+      "sha256": "6caba7db5aeb0fbe47a2ae47fcd4ce0a4806167d5cf07373c4fff41bd1ba4acf"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015/README.md",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 3676,
+      "sha256": "537f19324de0345136a379bab6c5ad57f64ffcc365609bb87a68356d05114b4d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015/aggregate_data.json",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 12437,
+      "sha256": "3a9e26a7bfc8716a68432ca373c2bbb1fccad051877157c77cdcbdfba7b51516"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015/content.md",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 19670,
+      "sha256": "03380596344fc6bfa74c823d1a91893d09f1e994ebe535d6a4582c840b9ae256"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015/delivery.json",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 1232,
+      "sha256": "63630ea685f0fd36a36c839a31ec15f43a6fdf5755ef623de2e6edfe6bc2f957"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015/outline.md",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 10621,
+      "sha256": "a5109ff5ee3287bfc8307d31b8c472f649d608fea319ef5d1a44871944a734e6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015/source_index.md",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 5309,
+      "sha256": "b9569acd47930d584fd5517a5c2f61b900b061d23a56a03aec8713fcaea3d223"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015_v2/README.md",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 3782,
+      "sha256": "b14e37b585a63e1d91b7e3d90f69bd899fe62e278449882a463d8b643bb74111"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015_v2/aggregate_data.json",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 19519,
+      "sha256": "9d21fe678a8558b6a9f19db7025951c987e4fdb097ea77f3f2271ba6f4b2d840"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015_v2/background_source_receipt.json",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 1653,
+      "sha256": "65b55d1cc48104524b36e669e517c99be22729a0039553ecc8388443f27f4e72"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015_v2/content.md",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 21216,
+      "sha256": "f50388faa260e0a5fbd83a06b0136e6f3e7557f85bdd26d4186b23611be65ab2"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015_v2/delivery.json",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 1486,
+      "sha256": "91ea5761b52ffd254a824227cf8436ec693167e44c783afe4cf0be987d05b09d"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/progress_20261015_v2/source_index.md",
+      "status": "historical_report_preserved_in_place",
+      "bytes": 4903,
+      "sha256": "41dc1b53a1775b9f05c3bcf2f7bdc9c8c467f703200d62a1485e7ecf66ad133a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/recent_b_report.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10779,
+      "sha256": "5ed4b0643cd1ba3631fe549fd5b14ad0039ad15bcd2d06272084090729bf554f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/recent_b_review.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 9688,
+      "sha256": "2f335031ae492a00f9f9e5b489d51c1d7d747905219d81e2c56ab63c8858cd87"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/reports/response_date_distribution.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 14215,
+      "sha256": "e968cd6921c5135ee06aa99f0b9c0c7015f6792f1ad365d89fb28cce21bb2e52"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/resources.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 4126,
+      "sha256": "241b189d61d14b8531d3d219e3cc507a71f90c8d7f50f8965fa5c7d95ab38bc2"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/revision_format_preparation.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 10554,
+      "sha256": "9fe99928adb12c5b6517ab61f294141db999f132a5140c5622d38d2c91820fad"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/revision_format_runtime.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 8637,
+      "sha256": "216932319a3a861a99507ff5fde0479a37577dfa3a67063faed7d8fdd840e1a8"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/scoring/README.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 605,
+      "sha256": "dc6d4c186d313d03b652b441913f0e683d720b06ff883a45f3e47cdc81a3e80c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/scoring/beta_fit_kernel.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 3699,
+      "sha256": "1db41474fa927b6a207b7bc8d0dd0fdfe5d3b2bc359620fced0c54b9d66b05bb"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/scoring/sce_q9.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 8843,
+      "sha256": "24bccc6581201003840b1c2c7d21cf4f0749ec937c47075e24b398fb03489c09"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/scoring/sce_q9_frozen.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 5657,
+      "sha256": "5d7f616f56a820ad29be871b4892e5b3f67f528792e1eb8b90862b8c794ba7e3"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/simulation/README.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 277,
+      "sha256": "ac8a6b5c521756326c80a250fc85aff64908be5ae580aa59b1c265241ce78e98"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/simulation/simulation.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 524,
+      "sha256": "989cbda7c2940f595b4e29ef5124d3330fd68d6ffbf1971f073774d0c2dbd8ce"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/simulation/simulation_dev2021_05_06_v2.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 525,
+      "sha256": "f6af3d149271c8e75e1c3d346ba0379333905aa586418b8c882d1e724a1cbc2c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/simulation/simulation_forward2026.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 525,
+      "sha256": "9310719ab53decdd7d5d45c87a2d48d39c83e425bfe95fa28c4a53cfa8ca6954"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/simulation/simulation_main2021.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 526,
+      "sha256": "d203df6091fe3c1b58bc7e1be5bd44aabc9a553344d50c97827097cbcc640278"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/simulation/simulation_main2021_v2.json",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 526,
+      "sha256": "d203df6091fe3c1b58bc7e1be5bd44aabc9a553344d50c97827097cbcc640278"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/spending_audit.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 13781,
+      "sha256": "c962d15bb7c5eee9fed33cfc5d872fee5f9914cc247214450f624636c5dc5e85"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/spending_figures.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 2768,
+      "sha256": "63df12b77cbb59c4a70dad4a19b2343cd857f3fdce5d9eed49c15c2f3e8a0a3a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/state_continuity_runtime.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 6830,
+      "sha256": "54cf160703f2495106964b5e5372ca5d8f5732cc34c5057e61acbdc807a0388a"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/study.yaml",
+      "status": "versioned_configuration_or_evidence_review_required",
+      "bytes": 2595,
+      "sha256": "62e227178f19850c95cec714fa75165c6bfc30fab6fafb72f396f65f2238369f"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/submission_tools/__init__.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 73,
+      "sha256": "940a824001b4c0ea69f214c19f92404a6edbf8d8abbbbdd8beae9d3e3258a123"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/submission_tools/experiment_logs.py",
+      "status": "current_research_entry",
+      "bytes": 27741,
+      "sha256": "37f5ed2a2e46c0044c6d58b4faf0ee6eb35d0dcd120ae8ecf9bd07c7ba07339e"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/submission_tools/package_builder.py",
+      "status": "current_research_entry",
+      "bytes": 19559,
+      "sha256": "45a56ac741a2cb1318faa1fcfa89ae61936c2047e92abd4e7984a9d714e83aa1"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/submission_tools/release_evidence.py",
+      "status": "current_research_entry",
+      "bytes": 21930,
+      "sha256": "4e87078a51ad90870538bf0d14405634922a218699e297b8d309ab97973bb51c"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/submission_tools/reproduce.py",
+      "status": "current_research_entry",
+      "bytes": 14926,
+      "sha256": "f4af6c7cf4376ccfd07338e470f31b31a64ee975ce7a345fece2ca068d251173"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/submission_tools/source_layout.py",
+      "status": "current_research_entry",
+      "bytes": 10248,
+      "sha256": "8f0f4418aeaeb9bbb3023f95d666d0ab9080e12a00319e5ef32ebf684ae815f6"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/trajectory/README.md",
+      "status": "documentation_or_aggregate_figure",
+      "bytes": 306,
+      "sha256": "76d95bd063c5a09126daf156f49270a5d0450d0b57e2cd9bada14ff7a7700547"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/u1_state_experiment.py",
+      "status": "transitive_runtime_or_compatibility_dependency",
+      "bytes": 5184,
+      "sha256": "80af3a7cbcecbcdb664adc5106f4138b2f587a2013988c6ae024c831a98d8240"
+    },
+    {
+      "path": "studies/sce_inflation_expectations/u1_state_trial.py",
+      "status": "supporting_or_historical_source_supplement",
+      "bytes": 18854,
+      "sha256": "9fabf44b1f24de61f8bfa7189699f19a013b646c6c7bab1b3557cb391eac5dce"
+    }
+  ]
+}

@@ -7,7 +7,8 @@
 1. [项目设计总纲](docs/DESIGN.md)：研究问题、P/E/B、信息边界、评价及主要结果。
 2. [当前任务板](docs/NEXT_ACTIONS.md)：近期工作与最终交付；[可视待办](docs/current_todo.html)由其生成。
 3. [Agent交接](docs/AGENT_HANDOFF.md)：运行现场、保护文件、入口及下一步。
-4. [文档分类索引](docs/README.md)与[脚本索引](scripts/README.md)：按问题找资料与运行入口。
+4. [study文件导读](studies/sce_inflation_expectations/FILE_GUIDE.md)与[开发/提交目录区别](docs/workstreams/20261027_study_layout/README.md)：主线、依赖与归档的阅读入口。
+5. [文档分类索引](docs/README.md)与[脚本索引](scripts/README.md)：按问题找资料与运行入口。
 
 协作先读[AGENTS.md](AGENTS.md)与[开发规范](CONTRIBUTING.md)。日程只在[ROADMAP](docs/ROADMAP.md)维护。
 
