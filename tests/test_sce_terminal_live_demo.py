@@ -76,7 +76,7 @@ def test_existing_attempt_refuses_before_client(tmp_path,monkeypatch):
     monkeypatch.setattr(demo,'show_input',lambda *a:None)
     monkeypatch.setattr(demo,'stage',lambda *a:None)
     monkeypatch.setattr('builtins.input',lambda _:'RUN')
-    with pytest.raises(FileExistsError):demo.run(tmp_path,protocol(),{},False)
+    with pytest.raises(FileExistsError):demo.run_once(tmp_path,protocol(),{},False)
 
 
 def test_terminal_controls_filtered():
@@ -91,3 +91,83 @@ def test_no_future_environment(late):
     if late=='news':d['news'][0]['published_at']='2021-06-13T01:00:00-04:00'
     else:d['food_published']='2021-06-13T01:00:00-04:00'
     with pytest.raises(ValueError):demo.validate_visibility(d)
+
+
+def archive(tmp_path,dirname='execution'):
+    folder=tmp_path/dirname
+    result=demo.consume(stream(),protocol(),folder,emit=lambda _:None)
+    result['seconds']=23.4
+    demo.dump(folder/'receipt.json',result)
+    return folder
+
+
+def test_same_entry_defaults_to_free_replay(tmp_path,monkeypatch):
+    folder=archive(tmp_path);seen=[]
+    monkeypatch.setattr('builtins.input',lambda _:'')
+    monkeypatch.setattr(demo,'playback',lambda *a:seen.append(a[-1]) or {'status':'archived_playback_complete','new_api_calls':0})
+    monkeypatch.setattr(demo,'run_once',lambda *a:pytest.fail('Default recording must never call model'))
+    assert demo.run(tmp_path,protocol(),{},False)['new_api_calls']==0
+    assert demo.run(tmp_path,protocol(),{},False)['new_api_calls']==0
+    assert seen==[folder,folder]
+
+
+def test_manual_new_take_preserves_old_bytes(tmp_path,monkeypatch):
+    folder=archive(tmp_path)
+    before={x.name:x.read_bytes() for x in folder.iterdir()}
+    monkeypatch.setattr('builtins.input',lambda _:'2')
+    seen=[]
+    def fake_run(bundle,p,d,pause,new_folder):
+        seen.append(new_folder)
+        assert new_folder.parent==tmp_path/'executions' and not new_folder.exists()
+        return {'status':'offline_test_only'}
+    monkeypatch.setattr(demo,'run_once',fake_run)
+    demo.run(tmp_path,protocol(),{},False)
+    demo.run(tmp_path,protocol(),{},False)
+    assert seen[0]!=seen[1]
+    assert before=={x.name:x.read_bytes() for x in folder.iterdir()}
+
+
+def test_playback_discloses_mode_and_does_not_change_archive(tmp_path,monkeypatch,capsys):
+    folder=archive(tmp_path);before={x.name:x.read_bytes() for x in folder.iterdir()}
+    monkeypatch.setattr(demo,'show_input',lambda *a:None)
+    r=demo.playback(tmp_path,protocol(),{},False,delay=0)
+    shown=capsys.readouterr().out
+    assert '本次API调用0' in shown and '不是再次现场调用' in shown
+    assert r['new_api_calls']==0 and json.dumps(answer()) in shown
+    assert before=={x.name:x.read_bytes() for x in folder.iterdir()}
+
+
+def test_replay_prefers_latest_complete_and_ignores_incomplete(tmp_path):
+    first=archive(tmp_path)
+    second=archive(tmp_path,'executions/take_001')
+    (tmp_path/'executions/take_002').mkdir()
+    assert demo.completed_takes(tmp_path)==[first,second]
+
+
+def test_corrupt_archived_content_not_replayed(tmp_path):
+    folder=archive(tmp_path)
+    changed=answer();changed['point_pct']=7
+    (folder/'response_raw.txt').write_text(json.dumps(changed))
+    with pytest.raises(ValueError):demo.completed_takes(tmp_path)
+
+
+def test_parallel_live_run_is_locked(tmp_path):
+    with demo.live_lock(tmp_path):
+        with pytest.raises(RuntimeError):
+            with demo.live_lock(tmp_path):pytest.fail('Two paid dispatches must not overlap')
+
+
+def test_exit_menu_does_not_dispatch(tmp_path,monkeypatch):
+    archive(tmp_path)
+    monkeypatch.setattr('builtins.input',lambda _:'q')
+    monkeypatch.setattr(demo,'run_once',lambda *a:pytest.fail('Exit must not call model'))
+    assert demo.run(tmp_path,protocol(),{},False) is None
+
+
+def test_new_call_still_requires_run_confirmation(tmp_path,monkeypatch):
+    monkeypatch.setattr(demo,'show_input',lambda *a:None)
+    monkeypatch.setattr(demo,'stage',lambda *a:None)
+    monkeypatch.setattr('builtins.input',lambda _:'')
+    folder=tmp_path/'executions/take_new'
+    assert demo.run_once(tmp_path,protocol(),{},False,folder) is None
+    assert not folder.exists()

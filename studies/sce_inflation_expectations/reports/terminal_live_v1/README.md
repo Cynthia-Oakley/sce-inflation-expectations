@@ -4,6 +4,10 @@
 
 准备入口：`python studies/sce_inflation_expectations/reports/terminal_live_v1/demo.py prepare`。默认生成私人忽略目录 `deliverables/video/terminal_live_v01/`。`preview.command`只显示输入，0API；`record_live.command`逐阶段展示后，要求人类输入RUN，明确允许这1个OpenRouter→SiliconFlow FP8 DeepSeek V3.2请求与$0.01上限，之后才读取凭据和发出请求。
 
+2026-10-29重录改进：同一个record_live.command可以重复打开。有旧记录时默认回车或选1，逐阶段回放最近完整调用，0API并明确标注回放；选择2后才进入一次新调用，仍需另输入RUN确认本次范围/$0.01。最初execution/保留原字节，新调用分别写入executions/take_UTC时间/，每次一次尝试，不覆盖、不自动补发。互斥锁阻止同时发送两个新调用。回放按真实归档分块显示，但播放节奏不声称等于原接口时序。
+
+既有manifest、协议、输入和已完成执行不改写。重录展示/执行策略另记repeat_recording_policy.json，绑定父manifest/协议与新展示执行器哈希；旧执行器原字节另存于本地升级归档。此改进不把原单次授权解释成无限次付费授权，每次新调用都需人类确认。
+
 沿用温度0.5、JSON模式、关闭思考、最多1024输出token和已有价格上限。输入及执行器哈希冻结；新调用不自动重试、不切供应商。先持久化请求意图，再调用API；重复运行、未知在途或中途失败不再自动发送。回复按API实际流式分块打印，原始事件、部分文本、完整文本、Q9比例归一化视图和计费收据分别保存。默认不对原始回复做键名修补。
 
 准备阶段读取已物化的SCE人口、既有信念及匹配环境，不现场下载新闻或重新抽样。运行前核对所有入选新闻、食品价格的公开时间和实际Prompt。终端显示中文字段和提问摘要，完整原英文Prompt进入API并私下归档。单户不计算全国MAE，也不并入正式研究结果。

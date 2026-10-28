@@ -8,6 +8,7 @@ import math
 import os
 import sys
 import time
+from contextlib import contextmanager
 
 ROOT=Path(__file__).resolve().parents[4]
 sys.path.insert(0,str(ROOT))
@@ -77,11 +78,11 @@ def prepare(out):
 
 先运行preview.command，完全离线，只展示已准备的人口、新闻和问卷；不会显示旧答卷冒充新生成。
 
-record_live.command会先展示同样准备过程，再要求明确输入RUN确认本次1个请求、$0.01上限。只有确认后才读取本机OpenRouter密钥并流式请求DeepSeek V3.2（固定SiliconFlow FP8、温度0.5、关闭思考）。不自动重试、不换供应商、不修改原研究。当前尚未启动。
+record_live.command可重复运行。已有调用时，回车或选1会整段回放最近一次完整真实答卷（0API）；选2则在展示准备过程后，再要求输入RUN确认本次1个新请求、$0.01上限。只有确认后才读取本机OpenRouter密钥并流式请求DeepSeek V3.2（固定SiliconFlow FP8、温度0.5、关闭思考）。不自动重试、不换供应商、不修改原研究。
 
-准备阶段读取已封存的资料，现场不重新抓取新闻或重新抽样。模型阶段是真实API分块返回，不是打字动画。完整Prompt、流式事件、回答、格式检查及费用保留在execution/。此目录只允许一次尝试；中断和未知在途也不能自动再发。不要为重录直接删除执行记录。
+准备阶段读取已封存的资料，现场不重新抓取新闻或重新抽样。模型阶段是真实API分块返回，不是打字动画。完整Prompt、流式事件、回答、格式检查及费用分别保留：最初调用在execution/，后续手动新调用在executions/take_时间/。每次只尝试一次，失败和未知在途不自动重发；重录无需删除旧记录。
 
-执行结束可用同一Python脚本的replay子命令重放这一次新回答，画面会标明“已存档真实调用回放”，不冒充现场新调用。不得将单户演示并入论文正式统计。用户录制的mp4仍放recordings/clips/page_07.mp4。
+replay子命令也能整段重放最近一次完整调用，画面标明“存档回放、0API”，播放节奏不代表接口原始耗时。不得将单户演示并入论文正式统计。用户录制的mp4仍放recordings/clips/page_07.mp4。
 ''')
     dump(out/'manifest.json',{'protocol_sha256':sha(out/'protocol.json'),
         'input_sha256':sha(out/'input_private.json'),'runner_sha256':sha(source)})
@@ -106,8 +107,16 @@ def validate_visibility(d):
 def load(bundle):
     manifest=read(bundle/'manifest.json')
     if (sha(bundle/'protocol.json')!=manifest['protocol_sha256']
-        or sha(bundle/'input_private.json')!=manifest['input_sha256']
-        or sha(Path(__file__))!=manifest['runner_sha256']):raise ValueError('Prepared input or runner changed')
+        or sha(bundle/'input_private.json')!=manifest['input_sha256']):raise ValueError('Prepared input changed')
+    if sha(Path(__file__))!=manifest['runner_sha256']:
+        # A reviewed display/execution addendum, preserving the original manifest.
+        upgrade=read(bundle/'repeat_recording_policy.json')
+        if (upgrade['parent_manifest_sha256']!=sha(bundle/'manifest.json')
+            or upgrade['parent_protocol_sha256']!=sha(bundle/'protocol.json')
+            or upgrade['runner_sha256']!=sha(Path(__file__))
+            or upgrade['live_calls_per_manual_take']!=1
+            or upgrade['budget_per_manual_take_usd']!=.01
+            or upgrade['automatic_retries']!=0):raise ValueError('Unreviewed recording addendum')
     p=read(bundle/'protocol.json')
     if p['model']!=MODEL or p['destination']!=URL or p['planned_calls']!=1 or p['budget_cap_usd']!=.01:
         raise ValueError('Frozen scope changed')
@@ -196,8 +205,8 @@ def consume(chunks,p,folder,emit=say):
     return result
 
 
-def run(bundle,p,d,pause):
-    folder=bundle/'execution'
+def run_once(bundle,p,d,pause,folder=None):
+    folder=folder or bundle/'execution'
     if folder.exists():
         raise FileExistsError('This recording already has an execution directory. Preserve it; do not resend automatically.')
     show_input(p,d,pause)
@@ -210,7 +219,7 @@ def run(bundle,p,d,pause):
     from studies.sce_inflation_expectations.news_label_trial import dotenv_values
     key=os.environ.get('OPENROUTER_API_KEY') or dotenv_values(ROOT.parent/'socioverse2_repo/.env').get('OPENROUTER_API_KEY')
     if not key:raise ValueError('OpenRouter key unavailable; nothing sent')
-    folder.mkdir(exist_ok=False)
+    folder.mkdir(parents=True,exist_ok=False)
     from studies.sce_inflation_expectations.model import SCEOpenAILLM
     os.environ['SV_LLM_BASE_URL']=p['destination'];os.environ['SV_LLM_API_KEY']=key
     llm=SCEOpenAILLM(model=p['model'],temperature=p['temperature'],max_tokens=p['max_tokens'],
@@ -219,7 +228,9 @@ def run(bundle,p,d,pause):
     # Exclusive intent is durable before dispatch, including unknown-outcome failures.
     with (folder/'intent.json').open('x') as f:
         json.dump(dict(at_utc=datetime.now(timezone.utc).isoformat(),protocol_sha256=sha(bundle/'protocol.json'),
-            prompt_sha256=d['prompt_hash'],reserved_usd=p['reserved_usd'],user_confirmation='RUN'),f)
+            prompt_sha256=d['prompt_hash'],reserved_usd=p['reserved_usd'],user_confirmation='RUN',
+            recording_policy_sha256=sha(bundle/'repeat_recording_policy.json') if (bundle/'repeat_recording_policy.json').exists() else None,
+            runner_sha256=sha(Path(__file__))),f)
         f.flush();os.fsync(f.fileno())
     started=time.monotonic();say('请求已开始，等待模型返回。下方内容均为本次API实际输出：')
     try:
@@ -244,6 +255,85 @@ def run(bundle,p,d,pause):
     return result
 
 
+def completed_takes(bundle):
+    """Read-only discovery. Old execution/ and all new takes retain their bytes."""
+    folders=[bundle/'execution']+sorted((bundle/'executions').glob('take_*'))
+    found=[]
+    for folder in folders:
+        if not (folder/'receipt.json').exists():continue
+        r=read(folder/'receipt.json')
+        if r.get('status') not in ('completed','completed_metadata_incomplete'):continue
+        if r.get('actual_LLM_calls')!=1 or not (folder/'response_raw.txt').exists():continue
+        raw=(folder/'response_raw.txt').read_text()
+        response_view(raw)
+        # A replay cannot silently differ from the content archived in the stream.
+        if (folder/'stream_private.jsonl').exists():
+            chunks=[json.loads(line) for line in (folder/'stream_private.jsonl').read_text().splitlines() if line]
+            content=''.join((c.get('delta') or {}).get('content') or '' for row in chunks for c in row.get('choices',[]))
+            if content!=raw:raise ValueError('Archived stream/text mismatch')
+        found.append(folder)
+    return found
+
+
+def playback(bundle,p,d,pause,folder=None,*,delay=.035):
+    candidates=completed_takes(bundle)
+    folder=folder or (candidates[-1] if candidates else None)
+    if folder not in candidates:raise ValueError('No complete archived model answer available')
+    say('【真实调用存档回放｜本次API调用0｜不产生费用】')
+    say('本段重放已保存的输入与回复，不是再次现场调用。')
+    show_input(p,d,pause)
+    stage('4 / 4　真实答卷存档回放（0 API）',pause)
+    say('按归档分块播放；阅读节奏不代表原始接口耗时。')
+    stream=folder/'stream_private.jsonl'
+    if stream.exists():
+        for line in stream.open():
+            row=json.loads(line)
+            for choice in row.get('choices',[]):
+                content=(choice.get('delta') or {}).get('content') or ''
+                if content:
+                    print(safe(content),end='',flush=True)
+                    if delay:time.sleep(delay)
+    else:say((folder/'response_raw.txt').read_text())
+    r=read(folder/'receipt.json');q=response_view((folder/'response_raw.txt').read_text())
+    say('\n\n原答卷格式检查：Q8 '+str(q['point'])+'%；Q9十档齐备。')
+    say(f'原调用耗时：{r.get("seconds",0):.1f}秒；原调用费用：'+
+        (f'${r["reported_cost_usd"]:.6f}' if r.get('reported_cost_usd') is not None else '未完整返回'))
+    say('回答存档：'+str(folder))
+    say('【回放结束｜本次新增API调用0】')
+    return dict(status='archived_playback_complete',new_api_calls=0,source=str(folder))
+
+
+@contextmanager
+def live_lock(bundle):
+    """Prevent simultaneous paid dispatches while keeping all old attempts."""
+    import fcntl
+    with (bundle/'.live_recording.lock').open('a') as lock:
+        try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        except BlockingIOError:raise RuntimeError('Another live recording request is running')
+        try:yield
+        finally:fcntl.flock(lock,fcntl.LOCK_UN)
+
+
+def run(bundle,p,d,pause):
+    existing=(bundle/'execution').exists() or any((bundle/'executions').glob('take_*'))
+    if existing:
+        takes=completed_takes(bundle)
+        say('SCE 录制入口｜可以重复运行，旧记录全部保留')
+        say('1／直接回车：回放最近一次完整真实调用（0 API、0费用）')
+        say('2：重新调用一次模型（新答卷，单次预算$0.01）')
+        say('Q：退出')
+        choice=input('请选择：').strip().lower() or '1'
+        if choice=='1':
+            if not takes:
+                say('现有调用尚无完整答卷可回放；可重新打开菜单选择2，另行确认一次新调用。');return
+            return playback(bundle,p,d,pause,takes[-1])
+        if choice!='2':say('已退出；本次API调用0。');return
+    # Every new take still requires RUN and its own one-request budget confirmation.
+    stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S_%fZ')
+    folder=bundle/'executions'/('take_'+stamp)
+    with live_lock(bundle):return run_once(bundle,p,d,pause,folder)
+
+
 def main():
     a=argparse.ArgumentParser(description=__doc__);a.add_argument('mode',choices=['prepare','preview','run','replay'])
     a.add_argument('--bundle',type=Path,default=DEFAULT);a.add_argument('--no-pause',action='store_true');args=a.parse_args()
@@ -252,8 +342,7 @@ def main():
     if args.mode=='preview':
         show_input(p,d,not args.no_pause);say('\n【离线预览结束】本次没有调用模型，也没有播放旧答案。')
     elif args.mode=='replay':
-        say('【已存档真实调用回放】不是本次新调用。')
-        say((args.bundle/'execution/response_raw.txt').read_text())
+        playback(args.bundle,p,d,not args.no_pause)
     else:
         result=run(args.bundle,p,d,not args.no_pause)
         if result and result['status']=='stopped_data_preserved':raise SystemExit(1)
