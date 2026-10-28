@@ -1,0 +1,30 @@
+{
+  "policy_version": "2026-10-29_v06",
+  "scope": "Local preparation of a pseudonymous research review ZIP; no upload or public repository release in this task",
+  "supersedes_for_this_profile": "2026-10-26 aggregate-only packaging choice; original policy and v05 remain unchanged",
+  "user_authorization": "User requested answer-level reproduction including completed batch questionnaires and model outputs, 2026-10-29",
+  "official_terms_checked": "2026-10-29",
+  "official_terms_url": "https://www.newyorkfed.org/privacy/termsofuse",
+  "sce_source_url": "https://www.newyorkfed.org/microeconomics/sce",
+  "license_basis": "New York Fed Terms, Permissible Use and Conditions plus SCE Questions/Data attribution; no general third-party copyright clearance is inferred",
+  "release_projection": "Pseudonymous generated responses, minimal public-SCE-derived evaluation fields/weights, population coarse cells and synthetic Normal states; modified/derived data explicitly labeled",
+  "attribution_file": "studies/sce_inflation_expectations/reproduction_data/micro/SCE_DATA_NOTICE.md",
+  "excluded": [
+    "Original survey identifiers",
+    "Actual completion dates",
+    "Private lookup map",
+    "Provider request IDs",
+    "API credentials",
+    "Full prompts",
+    "NYT or other original article full text",
+    "GSS/ATUS/CE original individual donor records"
+  ],
+  "not_claimed": [
+    "Historical text vintages reproduced",
+    "New independent LLM responses regenerated",
+    "Strict ex-ante B certification",
+    "All exploratory API replies included",
+    "All project invoice reconciliation"
+  ],
+  "public_GitHub_release": "Not performed; requires separate final publication review"
+}

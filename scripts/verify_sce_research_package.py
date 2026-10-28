@@ -146,6 +146,10 @@ origins.write_text(json.dumps(mods, indent=2))
     if tests.returncode:
         raise RuntimeError("Packaged target tests failed; inspect tests.log")
     ext = receipt["replay"].get("extensions", {})
+    micro = receipt.get("micro")
+    if (package/"studies/sce_inflation_expectations/reproduction_data/micro/manifest.json").exists():
+        if not micro or micro.get("status")!="passed_answer_level_reproduction" or micro.get("actual_LLM_calls")!=0:
+            raise ValueError("v06 must actually execute its answer-level reproduction")
     acceptance = {"status": "passed_independent_zip_offline_execution", "checked_at_utc": datetime.now(timezone.utc).isoformat(),
         "archive_sha256": hashlib.sha256(archive.read_bytes()).hexdigest(),
         "verified_package_files": receipt["verification"]["files_verified"],
@@ -160,7 +164,11 @@ origins.write_text(json.dumps(mods, indent=2))
         "new_dependency_environment_installed": fresh_environment,
         "dependency_versions": {name: importlib.metadata.version(name) for name in (
             "SocioVerse2", "pydantic", "duckdb", "pyarrow", "pandas", "numpy", "scipy", "openai", "httpx", "matplotlib", "pytest")},
-        "full_individual_reproduction": False,
+        "full_individual_reproduction": bool(micro),
+        "individual_reproduction_scope": ("Four final tasks: raw-to-effective answer verification, exact-vector density scoring, A paired/full-wave metrics, Normal posterior reconstruction; no LLM regeneration" if micro else None),
+        "answer_level_metrics": micro.get("national") if micro else None,
+        "answer_level_counts": micro.get("verification") if micro else None,
+        "numerical_density_refit": micro.get("scoring_mode") if micro else None,
         "organised_source_acceptance": layout_acceptance,
         "results_html": str(result / "index.html")}
     (out / "acceptance.json").write_text(json.dumps(acceptance, ensure_ascii=False, indent=2) + "\n")

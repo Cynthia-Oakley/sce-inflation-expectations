@@ -1,20 +1,19 @@
 # 最终交付与收尾
 
-更新：2026-10-27。**唯一研究包入口是[deliverables](../deliverables/README.md)**，当前v05；机器指针为[latest_package.json](latest_package.json)。不要从outputs或开发study目录挑一个旧包提交。
+更新：2026-10-29。唯一研究包入口为[deliverables](../deliverables/README.md)，当前 **v06**，机器指针[latest_package.json](latest_package.json)。不要从outputs、开发study或_build_history选旧包。
 
 ## 当前可审查内容
 
-- [v05解压包README](../deliverables/research_package/v05/package/README.md)与[对应ZIP](../deliverables/research_package/v05/SCE_research_package_draft_v05.zip)。
-- [实际目录整理与独立验收](../docs/workstreams/20261027_clean_release/README.md)：3个根Python入口，按用途归类，示例/正式配置分开，62项测试通过，科学复算与v04一致。
-- [研究、论文和视频框架](../docs/workstreams/20261027_final_delivery/index.html)。研究包v05和论文草稿v05是不同版本体系；最终PDF仍需合并最新结果。
+- [v06解压包README](../deliverables/research_package/v06/package/README.md)和[ZIP](../deliverables/research_package/v06/SCE_research_package_draft_v06.zip)。
+- [微观复现说明与验收](../docs/workstreams/20261029_micro_reproduction/README.md)：四个最终任务的模型原文、有效答卷、A配对/全波次W1/IQR及A/B Normal后验重建；0API。旧v05原字节保留。
+- [最新Word](../docs/reports/final_report_draft_v10/SCE研究报告_作者审阅稿_v10.docx)和[作者确认的视频](../deliverables/video/recordings/exports/assembled_v01/SCE_demo_v01.mp4)。论文与包版本独立。
 
-## 还未完成
+## 尚需完成
 
-1. 固定论文主结论/图表，更新为4—8页含图表的PDF并逐页核查。
-2. 完善合法资料获取、受控微观复现和费用覆盖说明；当前默认是工程例+聚合复算，不是完整个人数据重算。
-3. 按本地开发流程录制不超过5分钟的MP4，演示配置、真实离线运行及结果。
-4. 核对作者/导师、子赛道和文件名；最终锁定PDF/ZIP/MP4与SHA，用户审阅提交并保留回执。
+1. 从当前Word导出4—8页清洁PDF，隐藏批注并逐页检查。
+2. 核对论文、视频和包的Core/Normal、原始/组合、时期与边界；整理费用覆盖及署名。
+3. 将PDF/ZIP/MP4集中命名并记哈希；用户审阅上传，保存回执。
 
-v05已有独立环境验收不等于全部赛事门槛已通过。当前不需要新增大批模拟，也不因收尾重新选择效果最好的月份。
+默认区分工程例、聚合、逐答卷重算与需授权的付费再生成。全波次参考只含冻结标量，不是所有真人原始十档；近期B/月度/周度不评价缺失的真人微观准确率。完整历史新闻与生成输入仍需合法取得，严格事前资格未因此升级。
 
-历史清单原文已归档到[2026-10旧submission README](../docs/archive/2026-10/submission_readme_before_v05/README_original.md)，旧包和真实运行没有改写。来源要求见[2026-10-27官方核查](../docs/sources/challenge_requirements_20261027.json)。
+本轮没有新增模拟、外发资料或公开仓库。赛事后GitHub公开另行处理。官方要求见[既有核查](../docs/sources/challenge_requirements_20261027.json)；官网动态正文10月29日再核与该版本哈希一致。

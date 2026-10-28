@@ -1,43 +1,47 @@
 # 当前交付入口
 
-这里集中放供作者审查、最终提交的导出物；`outputs/`继续保存实验历史，不再作为交付入口。
+当前研究包为 **v06**。导出物集中在这里；outputs保存开发和实验原件，不作为选包入口。论文、视频与研究包分别编号，不凭相同版本号混选文件。
 
-## 研究包 v05
+## 研究包 v06
 
-- [未压缩完整包](research_package/v05/package/README.md)：从这里阅读和运行。
-- [对应ZIP](research_package/v05/SCE_research_package_draft_v05.zip)：约4.18MB，与未压缩包逐文件一致。
-- [目录导航](research_package/v05/package/DIRECTORY_GUIDE.md)：标准study、组件、例子和归档的职责。
-- [独立验收](research_package/v05/verification/acceptance.json)与[实际复算结果](research_package/v05/verification/results/index.html)。
-- [SHA256](research_package/v05/CHECKSUMS.sha256)：防止误选、错传或传输后文件变化。
+- [完整解压包](research_package/v06/package/README.md)
+- [对应ZIP](research_package/v06/SCE_research_package_draft_v06.zip)，约39MB。
+- [目录导航](research_package/v06/package/DIRECTORY_GUIDE.md)
+- [模型原文、答卷与微观资料导读](research_package/v06/package/studies/sce_inflation_expectations/reproduction_data/micro/MICRO_DATA_GUIDE.md)
+- [独立ZIP验收](research_package/v06/verification/acceptance.json)、[实际复算](research_package/v06/verification/verified_results/index.html)、[密度重拟合验收](research_package/v06/density_refit_acceptance.json)
+- [SHA256](research_package/v06/CHECKSUMS.sha256)
 
-唯一机器指针是[submission/latest_package.json](../submission/latest_package.json)。旧v04及此前打包、实验原件保留在历史目录，**不作为本轮提交候选**。包版本与论文草稿版本各自编号，不能只凭“v05”混选文件。
+v06补入四个最终任务的模型输出、有效答卷、A最小配对/全波次评价层，以及A/B Normal后验重算。不是只从全国月度表重新求MAE，也不重新调用LLM。范围和边界见[本轮说明](../docs/workstreams/20261029_micro_reproduction/README.md)。
 
-本版已完成源码按职责归位、标准工件补齐、示例/正式配置分离和新环境0API验收。完整受控微观复现、最终4—8页PDF、视频及提交回执仍待收尾；这不是宣称全部赛事门槛已通过。
+唯一机器指针是[submission/latest_package.json](../submission/latest_package.json)。旧[v05](research_package/v05/package/README.md)保留为历史，不作为最新候选。_build_history是构建审查快照，不是提交目录。
 
-## 生成规则
+## 评委从ZIP运行
 
-此处研究包是白名单构建产物，不在Git中重复维护源码。在主项目根目录执行以下完整命令，可按**现有v05配置**生成一个新目录；不覆盖当前候选，也不会自动切换latest指针：
+在解压包根安装requirements.lock.txt，然后执行：
 
-```bash
+```sh
+python studies/sce_inflation_expectations/run.py --mode all
+```
+
+默认0API，分别运行20人两步工程例、聚合复算、正式答卷微观复算。只重算微观用--mode micro；加--refit-density重跑冻结数值拟合器，仍不调用LLM。输出到新目录，打开其中的index.html。
+
+## 从本地开发工作区重建
+
+在主项目根执行完整命令；必须使用新的输出目录：
+
+```sh
 SCE_PYTHON='/Users/wushuyue/anaconda3/envs/socioverse/bin/python'
-SCE_PACKAGE_OUT="deliverables/research_package/v05_rebuild_$(date +%Y%m%dT%H%M%S)"
-"$SCE_PYTHON" scripts/build_sce_research_package.py \
-  --draft-version v05 \
-  --out "$SCE_PACKAGE_OUT" \
-  --public-log-registry outputs/sce_submission_experiment_logs_20261027_v4/experiment_registry_public.json \
-  --a-refresh-readout outputs/sce_full_a_t0_readout_20261026_v1
+SCE_PACKAGE_OUT="deliverables/research_package/v06_rebuild_$(date +%Y%m%dT%H%M%S)"
+"$SCE_PYTHON" scripts/build_sce_research_package.py --draft-version v06 --out "$SCE_PACKAGE_OUT" --public-log-registry outputs/sce_submission_experiment_logs_20261027_v4/experiment_registry_public.json --a-refresh-readout outputs/sce_full_a_t0_readout_20261026_v1 --micro-data outputs/sce_micro_reproduction_20261029_v3/data
+"$SCE_PYTHON" scripts/verify_sce_research_package.py --archive "$SCE_PACKAGE_OUT/SCE_research_package_draft_v06.zip" --out "$SCE_PACKAGE_OUT/verification"
 ```
 
-`--out`和`--public-log-registry`是必填参数；`--a-refresh-readout`在程序中可选，但本项目当前交付应保留它，才能纳入新版A T0的独立聚合复算输入。上述本地来源必须存在；命令不会下载原始数据或调用API。它构建的是工作区当时的内容，并非保证逐字节重现旧ZIP。
+微观投影尚不存在时，先运行scripts/export_sce_micro_reproduction.py --out <新的outputs目录>，再把对应data子目录传给--micro-data。它依赖原始账本与合法来源，不是从有限ZIP恢复全部生成输入；会产生本地数值拟合工作，但不调用模型。
 
-重建后先独立解压验收，再决定是否更新指针。例如同一终端继续执行：
+v06是新增的构建配置、模板和验证入口，不是改名旧ZIP。默认复算独立于开发路径；付费新生成仍需恢复合法输入并明确授权。
 
-```bash
-"$SCE_PYTHON" scripts/verify_sce_research_package.py \
-  --archive "$SCE_PACKAGE_OUT/SCE_research_package_draft_v05.zip" \
-  --out "$SCE_PACKAGE_OUT/verification"
-```
+## 论文、视频与剩余交付
 
-这条命令执行隔离解压检查；最终交付还须在新装、无系统site-packages的独立环境中加`--fresh-environment`验收。不得覆盖旧版或手动修改封包后沿用原验收。
-
-**下一正式版本不能只改目录名。**当前CLI及构建器仅支持v01—v05，包内v05模板也带版本声明。新v06必须先新增相应构建配置、模板和验证支持，完成检查后再封包；论文v06与研究包v06仍是独立版本。
+- 当前Word：[v10作者审阅稿](../docs/reports/final_report_draft_v10/SCE研究报告_作者审阅稿_v10.docx)，最终4—8页清洁PDF待导出。
+- 作者确认的视频：[完整MP4](video/recordings/exports/assembled_v01/SCE_demo_v01.mp4)，4分27.9秒。
+- 最后需统一PDF/ZIP/MP4、费用和署名/文件名，用户审阅上传并保存回执。没有代上传或公开GitHub。

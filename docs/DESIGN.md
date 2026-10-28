@@ -45,9 +45,9 @@ SCE是纽约联储的消费者预期调查，每月约1,300名受访者，采用
 
 本仓库`studies/sce_inflation_expectations/`是唯一维护源码；`../socioverse2_repo/`为官方引擎宿主/参考，运行副本单向导出并记哈希。`scripts/`提供入口。确定性干跑、封存轨迹重算与真实API再生成分别说明，旧输入、源码、账本和结果不覆盖。
 
-当前研究包入口为[deliverables/README.md](../deliverables/README.md)，机器指针为[latest_package.json](../submission/latest_package.json)。v05已完成源码归类和独立零API验收；示例为20人脚本化工程例，实际研究配置另列，不冒称512人实证生成。论文仍是v05工作稿，新v06处于整合规划，包版本与论文版本独立。
+当前研究包入口为[deliverables/README.md](../deliverables/README.md)，机器指针为[latest_package.json](../submission/latest_package.json)。v06在既有归类结构上新增四个最终任务的模型原文、有效答卷、A微观与Normal重算，并通过独立ZIP/72测试和32,500向量数值重拟合核查；20人示例仍明确只作工程检查。论文为作者审阅v10 Word，视频已确认，最终PDF待导出；包与论文版本独立。
 
-输入时间资格、历史文本版本和模型知识边界分别记录。当前B不称严格事前预测已认证；未经核验的资料不能自动升级资格。原始微观/完整提示回复/新闻正文和密钥不进公开Git或研究包。完整受控微观复现、来源许可/费用覆盖、最终4—8页PDF、≤5分钟MP4及提交回执仍待完成；任务见[NEXT_ACTIONS](NEXT_ACTIONS.md)，日程只见[ROADMAP](ROADMAP.md)。
+输入时间资格、历史文本版本和模型知识边界分别记录。当前B不称严格事前预测已认证；未经核验的资料不能自动升级资格。v06按已核对的SCE条款提供重新编号的最小评价字段、权重与模型回复，附来源/衍生/非背书声明；原编号、真实作答日、私人键表、完整提示、新闻正文和密钥不随包，不自动上传公开Git。四个最终任务的逐答卷评分复现已完成，完整历史生成输入仍有边界；费用覆盖、最终4—8页PDF、材料封版及提交回执待完成，≤5分钟视频已获作者确认；任务见[NEXT_ACTIONS](NEXT_ACTIONS.md)，日程只见[ROADMAP](ROADMAP.md)。
 
 ## 6. 机制发展历史
 

@@ -1,0 +1,49 @@
+{
+  "status": "passed_frozen_density_refit",
+  "new_API_calls": 0,
+  "numerical_vector_fits": 32500,
+  "refit_tolerance_pp": 1e-06,
+  "final_package_numeric_inputs_byte_identical_to_refit_inputs": [
+    "A_full_wave_targets.jsonl.gz",
+    "expected.json",
+    "normal_mechanism.jsonl.gz",
+    "effective_answers.jsonl.gz",
+    "A_paired_cases.jsonl.gz",
+    "density_cache.jsonl.gz",
+    "normal_population_rows.jsonl.gz"
+  ],
+  "metadata_only_difference": "Raw model-output records additionally label historical imports and unknown-fee reservations; original response text and selected responses unchanged",
+  "input_manifest_sha256": "6c1929a0abd9862fc3633145062b1dd40129cfb0e2c7efa09f654cff968c8208",
+  "final_manifest_sha256": "8ccc83729340612d30d62b7328ec0bd762407d85af37c08cdbd3be276b878b12",
+  "national": {
+    "A": {
+      "n_months": 82,
+      "mae_pp": 0.29840671263598517,
+      "rmse_pp": 0.41512073273547,
+      "bias_pp": -0.013810829002062078,
+      "max_absolute_error_pp": 1.3805812768003651
+    },
+    "B": {
+      "n_months": 11,
+      "mae_pp": 0.34850875770999806,
+      "rmse_pp": 0.43283661203795376,
+      "bias_pp": 0.25875957034839137,
+      "max_absolute_error_pp": 0.8544204486382516
+    },
+    "monthly": {
+      "n_months": 10,
+      "mae_pp": 0.30575060130371906,
+      "rmse_pp": 0.38610694339623264,
+      "bias_pp": 0.25196394975917114,
+      "max_absolute_error_pp": 0.7525965471739418
+    },
+    "weekly": {
+      "n_months": 11,
+      "mae_pp": 0.15158064091501336,
+      "rmse_pp": 0.18894221449740906,
+      "bias_pp": 0.041650686736822505,
+      "max_absolute_error_pp": 0.4024593920537911
+    }
+  },
+  "archived_refit_result_sha256": "4b7cbc44f4658c93924145dbc2d0584ecb416e2703be0cb91d824fa94992f9ac"
+}

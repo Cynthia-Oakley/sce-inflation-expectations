@@ -228,10 +228,21 @@ def make_report(out, result):
                 "".join(f"<tr><td>{name}</td><td>{case[key]['mae_pp']:.6f}</td>"
                         f"<td>{case[key]['rmse_pp']:.6f}</td><td>{case[key]['bias_pp']:.6f}</td></tr>"
                         for key, name in (("model", "原始模拟"), ("persistence", "已公开历史基线"))) + "</table>")
-        sections.append("<p>完整微观Q9评分、W1和人群分布复算需要受控数据与逐人缓存，本包此模式不声称已复算这些结果。</p>")
+        if "micro" not in result:
+            sections.append("<p>当前仅执行聚合复算；不据此声称重新核算了个人分布或W1。</p>")
         if "extensions" in result["replay"]:
             from .release_evidence import extension_report
             sections.append(extension_report(result["replay"]["extensions"]))
+    if "micro" in result:
+        r=result["micro"]
+        sections.append("<h2>真实逐答卷复算</h2><p>模型原文→字段校验/比例归一化→有效答卷→个人密度→加权全国与微观指标。"
+                        "Normal使用冻结τ=8重新计算后验原子质量，与抽样展示人口分开。没有调用模型。</p>"
+                        "<table><tr><th>任务</th><th>全国原始MAE（pp）</th></tr>"+
+                        "".join(f"<tr><td>{escape(k)}</td><td>{v['mae_pp']:.6f}</td></tr>" for k,v in r["national"].items())+"</table>"
+                        f"<p>原始输出记录{r['raw_model_output_records']:,}份，有效答卷{r['verification']['effective_answers']:,}份。"
+                        f"计分方式：{escape(r['scoring_mode'])}。数值密度重新拟合{r['new_numerical_density_fits']:,}种向量，LLM调用0。</p>"
+                        '<p><a href="micro/summary.json">完整微观复算</a> · <a href="micro/conditional_metrics.json">分组与逐月指标</a></p>'
+                        '<p>B、月度和周度没有近期真人微观真值；其人群分歧仅描述模拟结果，不称微观准确率。</p>')
     (out / "index.html").write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8">'
         '<title>SCE研究包离线复现</title><style>body{max-width:1000px;margin:30px auto;padding:20px;'
         'font:17px/1.8 "Times New Roman","Kaiti SC",serif;color:#242424}table{border-collapse:collapse;'
@@ -241,7 +252,8 @@ def make_report(out, result):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--mode", choices=("all", "dry-run", "replay", "verify", "generate"), default="all")
+    parser.add_argument("--mode", choices=("all", "dry-run", "replay", "micro", "verify", "generate"), default="all")
+    parser.add_argument("--refit-density", action="store_true",help="Numerically refit frozen densities, without new LLM calls")
     parser.add_argument("--out", type=Path)
     parser.add_argument("--source-workspace", type=Path)
     parser.add_argument("--prepared-run")
@@ -262,9 +274,18 @@ def main(argv=None):
                 result["dry_run"] = dry_run(out / "dry_run")
             if args.mode in ("all", "replay"):
                 result["replay"] = replay(out / "replay")
+            micro_data=STUDY/"reproduction_data/micro"
+            if args.mode=="micro" and not (micro_data/"manifest.json").exists():
+                raise ValueError("This package version does not contain answer-level review data")
+            if args.mode in ("all","micro") and (micro_data/"manifest.json").exists():
+                from .micro_replay import replay as replay_micro
+                result["micro"]=replay_micro(micro_data,out/"micro",refit_density=args.refit_density)
         result["completed_at_utc"] = datetime.now(timezone.utc).isoformat()
         write(out / "receipt.json", result)
         make_report(out, result)
         print("Results: " + str(out))
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    printable=dict(result)
+    if "micro" in printable:
+        printable["micro"]={k:result["micro"][k] for k in ("status","verification","national","scoring_mode","new_numerical_density_fits")}
+    print(json.dumps(printable, ensure_ascii=False, indent=2))
     return result

@@ -429,7 +429,7 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 - `prepare_sce_recent_b_continuity_pe.py`：只准备连续递推的固定首月512人、权重/角色/新闻档和逐月公开E；唯一首月合成种子＋同人上月依赖图，无最终提示/发送器。当前底包sce_recent_b_continuity_pe_20261026_v2。
 - `check_sce_recent_b_continuity_pe.py`：独立核查固定身份与权重、唯一种子、各月新闻/价格/政策截止和依赖图；输出readiness，不调用LLM或评分。
 - `build_sce_submission_experiment_logs.py`：按显式canonical收据来源生成公开/私有实验JSON/CSV；去重累计账本，分开API实报、token估费、未知预留和运行快照，不读取模型回答。
-- `build_sce_research_package.py`：按代码/合成工程样例/月级聚合白名单构建研究包ZIP；不移动原日志、不改冻结源。包内`study/run.py`区分官方Core干跑、宏观缓存重算及显式确认的受控付费生成。
+- `build_sce_research_package.py`：按版本白名单构建研究包ZIP；v06补真实模型输出、有效答卷和微观复算，不移动原日志或改冻结源。run.py区分工程例、聚合、微观复算和显式授权的付费生成。
 - `run_sce_recent_b.py`：freeze仅离线，review只读核查且不读取密钥；run明确确认后独立后台执行，网络有界等待、一次技术失败自动补跑、独立全国评价；watch只读。当前夜间包为sce_recent_b_overnight_20261025_v3，不运行旧A或旧B包。
 # 新闻机制 V3：本地逐请求启动补充（2026-10-25）
 
@@ -481,7 +481,13 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 
 - `build_sce_paper_materials.py --out docs/workstreams/20261027_final_delivery/<全新目录>`：从当前已验收研究包聚合与冻结A/网格证据构建作者审阅材料册（HTML/Markdown、数字CSV、图表、来源哈希），核对指标和固定组合；不拟参、不重跑API、不重写论文。当前入口见[材料册](../docs/workstreams/20261027_final_delivery/materials_v1/index.html)。
 
-- `build_sce_research_package.py --draft-version v05 --out <全新目录> --public-log-registry <公开索引.json> --a-refresh-readout <新版A读数目录>`：当前v05白名单导出，含A/Normal、B/Normal、递推/周度与下游聚合；源码按职责实际归位，0API。前两项路径参数必填；当前项目保留`--a-refresh-readout`以包含新版A T0。可直接执行的完整命令见[统一交付入口](../deliverables/README.md#生成规则)。构建器目前不支持v06，不能只改输出目录名冒充版本升级。
-- `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、study来源审计、Core干跑和聚合复算及包内定向测试；仅在新装无系统site-packages环境中使用`--fresh-environment`。当前v05已通过独立验收，完整受控微观重现仍另列。
+- `build_sce_research_package.py --draft-version v06 --out <新目录> --public-log-registry <公开索引.json> --a-refresh-readout <新版A目录> --micro-data <冻结微观投影data目录>`：当前v06按职责导出，新增四个最终任务原文/答卷、A微观及A/B Normal重算。完整命令见[统一交付入口](../deliverables/README.md)。旧v05保留，不能只改ZIP名称升级。
+- `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、源码导入审计、工程/聚合/微观复算及包内测试。v06通过独立无system-site-packages环境验收；原文/答卷范围见micro导读。
 
-- `catalog_sce_study.py --out <新目录>`：分类开发study文件，按当前入口计算静态依赖与补充归档，不执行实验。v04为此前的依赖筛选布局；当前交付使用构建器v05和`submission_tools/release_layout.py`，按组件/运行/评价实际归位源码。以[统一交付入口](../deliverables/README.md)和`submission/latest_package.json`选包，包内`DIRECTORY_GUIDE.md`及study的`FILE_GUIDE.md`解释读法。
+- `catalog_sce_study.py --out <新目录>`：分类开发study文件，按当前入口计算静态依赖与补充归档，不执行实验。v04为此前的依赖筛选布局；当前交付使用构建器v06和`submission_tools/release_layout.py`，按组件/运行/评价实际归位源码。以[统一交付入口](../deliverables/README.md)和`submission/latest_package.json`选包，包内`DIRECTORY_GUIDE.md`及study的`FILE_GUIDE.md`解释读法。
+
+## 正式逐答卷与模型原文（2026-10-29）
+
+- `export_sce_micro_reproduction.py --out <新outputs目录>`：只读正式账本，投影A/B/月度/周度答卷、原文、评价字段及Normal；私人键表不进data，不调用模型。
+- `replay_sce_micro_reproduction.py --data <data目录> --out <新目录> [--refit-density]`：禁网络，检验主补字段/归一化，重算全国、A微观及Normal后验。默认精确向量缓存，选项重做数值拟合，不重新询问LLM。
+- 数据范围与验收：[v06微观复现](../docs/workstreams/20261029_micro_reproduction/README.md)。
