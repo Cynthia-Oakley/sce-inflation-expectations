@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-27",
+  "application": "Microsoft Word for macOS",
+  "document": "SCE研究报告_作者审阅稿_v09.docx",
+  "opened_successfully": true,
+  "rendered_page_count": 8,
+  "page_count_method": "Word AppleScript compute statistics active document statistic statistic pages",
+  "page_limit": 8,
+  "spot_checks": [
+    "图4原始PNG已检查：真实SCE、模型直接输出、固定比例组合、SCE+CPI宏观基线、上月公开值五条线可区分",
+    "全期与2021年两个面板均包含固定比例组合和宏观基线",
+    "Word分页统计为8页"
+  ],
+  "structural_checks": [
+    "4张表、6幅图、3条原生可编辑公式",
+    "正文与表格段落均为1.5倍行距",
+    "显式分页符为0",
+    "四张表列宽与作者调整后的v08一致",
+    "原图5已撤下，W1、IQR、Q8与个人持续性指标改为文字呈现"
+  ],
+  "scope": "实际Word打开与分页统计、图4图片检查及程序结构复核；未声称逐页完整视觉审阅",
+  "pdf_delivered": false
+}

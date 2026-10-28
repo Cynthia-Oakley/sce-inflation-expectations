@@ -4,7 +4,14 @@
 
 更新：2026-10-27。当前进入论文整合阶段；主模拟不重启。
 
-当前：Kimi正基于[证据材料册](workstreams/20261027_final_delivery/materials_v1/index.html)撰写论文v06，Codex同步准备[本地视频方案](../submission/package_templates/LOCAL_DEMO_PLAN.md)。视频先做分镜和稳定操作段，结果口播等主表/图冻结；当前已验收研究包仍为v05。
+当前：Kimi已完成[论文v10作者审阅稿](reports/final_report_draft_v10/SCE研究报告_作者审阅稿_v10.docx)（v0.10.1）及[对应Markdown](reports/final_report_draft_v10/manuscript.md)，按Codex[v09内容审阅意见](workstreams/20261027_final_delivery/report_v09_content_review.md)修订：环境表区分资料库与最终提示实际输入（性别不进入外发画像、宏观数表不进入主提示）；“上月全国值”统一改名“截止前最新已公布全国值”（82个月中15个月锚为前两个月）；下游信贷数字标注“历史A段”；新增理论—对照—取舍机制对照表（新闻量/CPI路由/日期×警示三家族的小样本数字）；补写近期B初始化三步（前一年同月日期抽样、联合Q8/Q9供体、±0.05pp先验约束）与后34月组合不确定性区间。随后经作者确认做全篇语言润色：结论先行、限制集中表述、术语首现加白话、主语为“我/本研究/本项目”混用。行距1.25、正文10pt，作者实测Word分页7页；结构/数字见[验收记录](reports/final_report_draft_v10/acceptance.json)（docx SHA `0d07bdd3…6998a4`，5表6图3公式断言通过，0API、0新模拟、0新拟合）。v09及作者手动排版保留未动。（v0.10.2起Codex方法概览图v3已作为图1入稿，原图1—图6顺延，Word实测仍7页。作者随后在v0.10.2 docx上手动删减大段空白，磁盘SHA已变为`c3b0a829…1b267b`；该排版未回写manuscript/build.py，重跑构建会覆盖，下次改稿前须先把作者排版固化进脚本。）尚未逐页完整视觉审阅，不称最终提交件。
+
+当前（v09存档）：Kimi已完成[论文v09可编辑Word作者审阅稿](reports/final_report_draft_v09/SCE研究报告_作者审阅稿_v09.docx)及[对应Markdown](reports/final_report_draft_v09/manuscript.md)，沿用作者调整的1.5倍行距与四张表列宽，Word分页统计为8页。图4新增固定比例组合和SCE+CPI宏观基线，正文补充其训练口径及全期、2021年、近期MAE；原图5撤下，微观分布、Q8与个人持续性指标改为文字。人称改为“本项目/本研究/无主语”混合，加粗句突出主要方法或结果，限制条件保留为普通正文。方法概览图拟放在第2节P/E/B定义之后、Q9计分细节之前，当前仅有一行占位，待Codex供图后替换。结构/数字见[验收记录](reports/final_report_draft_v09/acceptance.json)，Word分页与图4检查见[视觉验收](reports/final_report_draft_v09/word_visual_acceptance.json)；尚未逐页完整视觉审阅。v08及作者手动排版保留，未生成新版PDF，0API、0新模拟、0新拟合。尚需作者与Codex独立审阅措辞和数字，不称最终提交件。Codex同步准备[本地视频方案](../submission/package_templates/LOCAL_DEMO_PLAN.md)；视频结果段待论文主表经作者确认后冻结。
+
+- [x] **论文v10 Word修订：**完成上述v0.10.1作者审阅稿；重复生成命令为`uv run --no-project --with python-docx --python "$(conda run -n socioverse which python)" studies/sce_inflation_expectations/reports/final_report_draft_v10/build.py --skip-figures`（图代码变更时去掉`--skip-figures`）。源稿与脚本在`studies/sce_inflation_expectations/reports/final_report_draft_v10/`，只读冻结聚合。
+- [x] **方法概览图入稿：**Codex方法概览图v3已作为新图1插入第2节（3840×2160 PNG→`assets/method_overview.png`，宽15.6cm），原图1—图6顺延为图2—图7；重跑构建验收通过（docx SHA `d14a71aa…`，7图5表3公式），Word实测仍为7页，版本号升至v0.10.2。
+- [x] **论文v09 Word修订：**完成上述作者审阅稿；重复生成命令为`uv run --no-project --with python-docx --python "$(conda run -n socioverse which python)" studies/sce_inflation_expectations/reports/final_report_draft_v09/build.py`。源稿与脚本在`studies/sce_inflation_expectations/reports/final_report_draft_v09/`，只读冻结聚合。
+- [ ] **理论到机制的文献链补写：**另列经济学与Agent文献如何支持差异化新闻接触、CPI相关度1.5倍路由、个人历史与更新规则；逐项区分文献启示、开发期对照和工程取舍。不能倒果为因，也不能把小样本参数包装成文献常数；补写后交Codex独立复核，再决定是否进入最终报告。
 
 ## 当前剩余交付任务（2026-10-27拆分）
 
@@ -20,10 +27,10 @@
 - [x] **作者手调v3复核：**已读最新PPT，设计依据上移、供应商并入B、“当期真实SCE”及周度/信贷文字语义可保留。未改PPT；当前PDF/PNG/scene仍为手调前，下一次同步应以作者PPT为基底。在线字体回退下B框换行需本机最终导出确认。
 - [x] **作者手调v3导出同步：**从当前PPT经本机WPS导出[作者版PDF](workstreams/20261027_final_delivery/overview_figure_v3/sce_framework_paper_v3_author.pdf)及[3840×2160 PNG](workstreams/20261027_final_delivery/overview_figure_v3/sce_framework_author_v3.png)，原PPT哈希不变。楷体/Times New Roman嵌入及文字/最终图版检查通过；预览已更新，旧PDF/PNG/scene保留为手调前快照。0API，未改论文或模拟结果。
 - [ ] **评审微观复现数据补齐：**官网要求完整实验数据信息；v05仅聚合复算尚不足以核验全部微观结论。按[补齐方案](workstreams/20261027_final_delivery/submission_data_reproduction_plan_20261027.md)核查许可/脱敏，导出逐条模拟答卷与合法配对评价层，增加无API微观重算，再另建下一包profile；目前未导出/上传。
-- [ ] **内容定稿：**汇总A/B/Normal/递推/周度/下游最终数字；明确主辅指标、对应基线和参数谱系；冻结核心图与贡献/局限措辞。
-- [ ] **论文：**依次完成数字/证据清单、六部分正文整合、必要离线重绘与引用核查，再输出v06 PDF并做数字/页数/可读性复核；现有v05保留。
+- [x] **v06内容与核心图：**汇总A/B/Normal/递推/周度/下游数字，区分直接模拟与统计扩展、原始与组合、主辅指标及参数谱系；8图沿用冻结证据材料，贡献和局限已进入作者审阅稿。作者确认后才作为视频和提交冻结版本。
+- [x] **论文v06作者审阅稿：**完成全文重写与8页PDF；39组数字、12条引用、8图、字体及逐页可读性已核查，HTML本地链接有效。0API、0新计分、0新回归；保留v05。下一步由作者和Codex独立复核，署名和最终提交另定。
 - [ ] **研究包收尾：**v05已完成实际源码归位、标准工件和独立验收，唯一入口deliverables/README.md，勿再选outputs旧包。剩余为合法数据获取/受控微观复现、来源与真值取得时间/费用覆盖；最终变更后再验收，旧测试按是否影响提交入口处理或披露。
-- [ ] **视频录制与导出：**[录制材料v01](../deliverables/video/v01/index.html)已就绪：8页可编辑PPT、约1100字分镜/逐页备注、详细录屏操作单及本机0API演示命令；计划4分45秒。沿用v10和方法图，7个原生可编辑数据图、逐页重导入渲染检查，独立解压示例/聚合复算实测通过。论文、研究包和原方法图264份保护文件哈希不变。待作者手动录屏/配音、拼接字幕并导出≤5分钟MP4；尚未制作视频成片，不再调用全量模拟。
+- [ ] **视频录制与导出：**作者要求把v01概述式演示调整为真实样本逐层展开；最新为[逐页文字设计v02](../deliverables/video/design_v02/VIDEO_DESIGN.md)（2026-10-28）：9页、4分45秒、约1020字口播，每页含上屏内容、布局、人工操作和材料来源。主样本贯穿Prompt/回答、画像、信息匹配与Q9计分；第2/4页HTML抽样与对照尚未开发，新PPT/录音/成片未制作，待作者审阅设计后执行。[v01材料](../deliverables/video/v01/index.html)保留，其0API演示入口可复用；论文、研究包和作者方法图不改，不重跑正式模型。最终由作者录屏/配音、剪辑字幕并导出≤5分钟MP4。
 - [ ] **提交：**确认作者/导师、平台子赛道字段与文件名；锁定一致版本的PDF/ZIP/MP4及哈希；由用户审阅上传并保存回执。
 
 依赖顺序：先冻结主结论和核心图，论文/包可并行；视频用已冻结素材，最后统一验收。新增模拟不作为前提；Git历史清理与公开发布在赛事后单独处理，当前保持私有。

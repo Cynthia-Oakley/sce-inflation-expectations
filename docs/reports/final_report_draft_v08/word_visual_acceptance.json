@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-27",
+  "application": "Microsoft Word for macOS",
+  "document": "SCE研究报告_作者审阅稿_v08.docx",
+  "opened_successfully": true,
+  "rendered_page_count": 6,
+  "page_limit": 8,
+  "spot_checks": [
+    "首页标题、摘要、关键词与第1节连续显示，无强制章节分页造成的大块空白",
+    "章节标题之前保留一行空行",
+    "Word状态栏显示6页"
+  ],
+  "structural_checks": [
+    "4张表、7幅图、3条原生可编辑公式",
+    "显式分页符为0",
+    "原手动训练时间表列宽2041/2721/5443 twips保持不变",
+    "原手动全国结果表列宽3061/2041/2041/2041 twips保持不变",
+    "图4不含调整前方案，图5仅比较最终模型与真实受访者"
+  ],
+  "scope": "实际Word打开与首页/页数检查，表格宽度和图件经程序复核；未声称逐页完整视觉审阅",
+  "pdf_delivered": false
+}

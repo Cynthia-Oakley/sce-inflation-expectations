@@ -1,6 +1,6 @@
 {
   "study_id": "sce_inflation_expectations",
-  "built_at_utc": "2026-10-03T02:20:38.624893+00:00",
+  "built_at_utc": "2026-10-03T09:00:51.950053+00:00",
   "seed": 42,
   "target_months": [
     202105,
@@ -155,19 +155,620 @@
       ]
     },
     "housing_tenure": {
-      "source": "Q43 (rotating module, ~12% of respondents/month)",
+      "source": "Q43, asked of new entrants only (questionnaire p.27/p.32); own entry answer carried forward, never from future months",
       "questionnaire": "Q43, questionnaire.pdf p.32",
       "code_map": {
         "1": "owner",
         "2": "renter",
         "3": "other"
       },
-      "borrow_window_months": 6,
+      "ref_month": 202105,
       "coverage": {
-        "missing": 58,
-        "borrowed_lag_le_6m": 35,
-        "target_month": 7
-      }
+        "own_answer_le_base_month": 100
+      },
+      "provenance": [
+        {
+          "userid": 70118889,
+          "source_month": 202009,
+          "info_age_months": 8,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70117487,
+          "source_month": 202007,
+          "info_age_months": 10,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70121573,
+          "source_month": 202101,
+          "info_age_months": 4,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70121137,
+          "source_month": 202101,
+          "info_age_months": 4,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120752,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119502,
+          "source_month": 202010,
+          "info_age_months": 7,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118821,
+          "source_month": 202010,
+          "info_age_months": 7,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118557,
+          "source_month": 202008,
+          "info_age_months": 9,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70124214,
+          "source_month": 202105,
+          "info_age_months": 0,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70117578,
+          "source_month": 202007,
+          "info_age_months": 10,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70117533,
+          "source_month": 202007,
+          "info_age_months": 10,
+          "moved_since_answer": true
+        },
+        {
+          "userid": 70118672,
+          "source_month": 202008,
+          "info_age_months": 9,
+          "moved_since_answer": true
+        },
+        {
+          "userid": 70120700,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120965,
+          "source_month": 202012,
+          "info_age_months": 5,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70125706,
+          "source_month": 202105,
+          "info_age_months": 0,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70117503,
+          "source_month": 202007,
+          "info_age_months": 10,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120412,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70124172,
+          "source_month": 202104,
+          "info_age_months": 1,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120722,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70124553,
+          "source_month": 202105,
+          "info_age_months": 0,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70121602,
+          "source_month": 202101,
+          "info_age_months": 4,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70117194,
+          "source_month": 202007,
+          "info_age_months": 10,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119772,
+          "source_month": 202010,
+          "info_age_months": 7,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70124218,
+          "source_month": 202105,
+          "info_age_months": 0,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70122516,
+          "source_month": 202102,
+          "info_age_months": 3,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119703,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120657,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70122482,
+          "source_month": 202102,
+          "info_age_months": 3,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118630,
+          "source_month": 202008,
+          "info_age_months": 9,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70123157,
+          "source_month": 202103,
+          "info_age_months": 2,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118761,
+          "source_month": 202010,
+          "info_age_months": 7,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70122734,
+          "source_month": 202102,
+          "info_age_months": 3,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70122574,
+          "source_month": 202102,
+          "info_age_months": 3,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70121371,
+          "source_month": 202012,
+          "info_age_months": 5,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70117738,
+          "source_month": 202007,
+          "info_age_months": 10,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70124684,
+          "source_month": 202104,
+          "info_age_months": 1,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119105,
+          "source_month": 202009,
+          "info_age_months": 8,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70123144,
+          "source_month": 202104,
+          "info_age_months": 1,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118451,
+          "source_month": 202008,
+          "info_age_months": 9,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70121818,
+          "source_month": 202102,
+          "info_age_months": 3,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70122781,
+          "source_month": 202102,
+          "info_age_months": 3,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120308,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118327,
+          "source_month": 202008,
+          "info_age_months": 9,
+          "moved_since_answer": true
+        },
+        {
+          "userid": 70117793,
+          "source_month": 202008,
+          "info_age_months": 9,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120899,
+          "source_month": 202012,
+          "info_age_months": 5,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70121778,
+          "source_month": 202101,
+          "info_age_months": 4,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118460,
+          "source_month": 202008,
+          "info_age_months": 9,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118808,
+          "source_month": 202010,
+          "info_age_months": 7,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70124613,
+          "source_month": 202104,
+          "info_age_months": 1,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70122892,
+          "source_month": 202102,
+          "info_age_months": 3,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119816,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70123034,
+          "source_month": 202103,
+          "info_age_months": 2,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70122699,
+          "source_month": 202102,
+          "info_age_months": 3,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120588,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": true
+        },
+        {
+          "userid": 70121434,
+          "source_month": 202012,
+          "info_age_months": 5,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118366,
+          "source_month": 202008,
+          "info_age_months": 9,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119953,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119833,
+          "source_month": 202010,
+          "info_age_months": 7,
+          "moved_since_answer": true
+        },
+        {
+          "userid": 70124698,
+          "source_month": 202104,
+          "info_age_months": 1,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70123148,
+          "source_month": 202104,
+          "info_age_months": 1,
+          "moved_since_answer": true
+        },
+        {
+          "userid": 70121494,
+          "source_month": 202101,
+          "info_age_months": 4,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120716,
+          "source_month": 202012,
+          "info_age_months": 5,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70122333,
+          "source_month": 202102,
+          "info_age_months": 3,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118029,
+          "source_month": 202007,
+          "info_age_months": 10,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120946,
+          "source_month": 202012,
+          "info_age_months": 5,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70122110,
+          "source_month": 202101,
+          "info_age_months": 4,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70123442,
+          "source_month": 202103,
+          "info_age_months": 2,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70121458,
+          "source_month": 202012,
+          "info_age_months": 5,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118249,
+          "source_month": 202008,
+          "info_age_months": 9,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120607,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70122094,
+          "source_month": 202101,
+          "info_age_months": 4,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70120622,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70125636,
+          "source_month": 202105,
+          "info_age_months": 0,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70123386,
+          "source_month": 202103,
+          "info_age_months": 2,
+          "moved_since_answer": true
+        },
+        {
+          "userid": 70124682,
+          "source_month": 202104,
+          "info_age_months": 1,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119565,
+          "source_month": 202011,
+          "info_age_months": 6,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70121374,
+          "source_month": 202012,
+          "info_age_months": 5,
+          "moved_since_answer": true
+        },
+        {
+          "userid": 70121165,
+          "source_month": 202012,
+          "info_age_months": 5,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70121340,
+          "source_month": 202012,
+          "info_age_months": 5,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70124265,
+          "source_month": 202104,
+          "info_age_months": 1,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70123412,
+          "source_month": 202103,
+          "info_age_months": 2,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70122782,
+          "source_month": 202102,
+          "info_age_months": 3,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119467,
+          "source_month": 202010,
+          "info_age_months": 7,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70125748,
+          "source_month": 202105,
+          "info_age_months": 0,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70125579,
+          "source_month": 202105,
+          "info_age_months": 0,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118593,
+          "source_month": 202008,
+          "info_age_months": 9,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70117818,
+          "source_month": 202007,
+          "info_age_months": 10,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118867,
+          "source_month": 202009,
+          "info_age_months": 8,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119686,
+          "source_month": 202010,
+          "info_age_months": 7,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119773,
+          "source_month": 202010,
+          "info_age_months": 7,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118179,
+          "source_month": 202008,
+          "info_age_months": 9,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70123222,
+          "source_month": 202103,
+          "info_age_months": 2,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70123182,
+          "source_month": 202104,
+          "info_age_months": 1,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70124900,
+          "source_month": 202104,
+          "info_age_months": 1,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70121197,
+          "source_month": 202012,
+          "info_age_months": 5,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70117253,
+          "source_month": 202007,
+          "info_age_months": 10,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70118945,
+          "source_month": 202009,
+          "info_age_months": 8,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70121828,
+          "source_month": 202101,
+          "info_age_months": 4,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70124367,
+          "source_month": 202104,
+          "info_age_months": 1,
+          "moved_since_answer": false
+        },
+        {
+          "userid": 70119723,
+          "source_month": 202010,
+          "info_age_months": 7,
+          "moved_since_answer": false
+        }
+      ],
+      "b_line_note": "B-line builds must additionally require the source record's availability date <= as_of"
     },
     "numeracy": {
       "source": "_NUM_CAT (derived numeracy category; NOT household size)"
@@ -243,9 +844,9 @@
       "unemployed": 7
     },
     "housing_tenure": {
-      "other": 1,
-      "owner": 32,
-      "renter": 9
+      "other": 2,
+      "owner": 74,
+      "renter": 24
     }
   },
   "panel_tenure_months_distribution": {

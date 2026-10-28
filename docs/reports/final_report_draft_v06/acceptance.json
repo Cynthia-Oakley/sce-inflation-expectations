@@ -1,0 +1,69 @@
+{
+  "status": "passed_author_review_draft_checks",
+  "date": "2026-10-27",
+  "scope": "SCE final report draft v06: manuscript, figures, citations, PDF layout and offline aggregate consistency",
+  "new_api_calls": 0,
+  "new_simulation_runs": 0,
+  "new_q9_density_fits": 0,
+  "new_regressions_or_parameter_fits": 0,
+  "scientific_configuration_changes": 0,
+  "manuscript": {
+    "path": "studies/sce_inflation_expectations/reports/final_report_draft_v06/manuscript_v06.json",
+    "json_valid": true,
+    "pages": 8,
+    "figures": 8,
+    "figure_captions_consecutive": true,
+    "references": 12,
+    "all_references_cited_in_body": true
+  },
+  "numeric_checks": {
+    "status": "passed",
+    "check_groups": 39,
+    "primary_metrics_source": "docs/workstreams/20261027_final_delivery/materials_v1/numbers.csv",
+    "micro_metrics_source": "deliverables/research_package/v05/package/studies/sce_inflation_expectations/reproduction_data/A82_comparison_summary.json",
+    "genuine_previous_source": "outputs/sce_full_a_t0_analysis_20261026_v1/summary.json:genuine_previous_only.arms.*.auxiliary_survey_weighted.q9.aggregate_equal_month_repeat_cells",
+    "genuine_previous_person_months": 33715,
+    "genuine_previous_values": {
+      "model_q9_center_mae_pp": 0.3094205821630436,
+      "model_cross_section_w1_pp": 2.0641996479877154,
+      "persistence_q9_center_mae_pp": 0.2111978856171513,
+      "persistence_cross_section_w1_pp": 0.5117131549212518
+    },
+    "aggregation_note": "The genuine-previous figures use the survey-weighted arm, not the parallel equal-repeat-cell or full-roster aggregator. These are consistency checks against frozen aggregates, not controlled micro regeneration."
+  },
+  "pdf": {
+    "path": "docs/reports/final_report_draft_v06/SCE研究报告_重写稿_v06.pdf",
+    "canonical_copy": "output/pdf/sce_research_report_draft_v06.pdf",
+    "canonical_copy_byte_identical": true,
+    "sha256": "de440c75203dab8c20fbf161d65d654cb56dbcd9bfee9de339d5f21c9be6c2bd",
+    "pages": 8,
+    "embedded_fonts_verified": [
+      "STKaitiSC-Regular",
+      "TimesNewRomanPSMT"
+    ],
+    "body_font_size_pt": 10.5,
+    "visual_review": "All eight pages rendered at 1.5x and visually inspected: text, equations, tables, figures, captions, headers and footers are present; no clipping or overlap observed.",
+    "page_images": "docs/reports/final_report_draft_v06/page_checks/page_01.png through page_08.png",
+    "minimum_bottom_clearance_pt": 47.27,
+    "overflow_detected": false
+  },
+  "html": {
+    "path": "docs/reports/final_report_draft_v06/index.html",
+    "local_links_checked": 11,
+    "all_local_links_exist": true
+  },
+  "commands": {
+    "render": "PYTHONDONTWRITEBYTECODE=1 /Users/wushuyue/.local/bin/uv run --with reportlab python studies/sce_inflation_expectations/reports/final_report_draft_v06/render_v06.py",
+    "page_rendering": "/Users/wushuyue/.local/bin/uv run --with pymupdf --with pillow python <inline PyMuPDF rasterization>",
+    "pdf_inspection": "/Users/wushuyue/anaconda3/envs/socioverse/bin/python <inline pypdf page/font/hash inspection>",
+    "whitespace": "git diff --check"
+  },
+  "git_diff_check": "passed",
+  "not_claimed": [
+    "Not a final signed submission or strict real-time forecast validation.",
+    "No complete repository test run was performed in this report-only task.",
+    "No full controlled micro replay or regeneration was performed.",
+    "Historical v05 package test results are cited from its acceptance record, not rerun here.",
+    "Author affiliations, final submission status, data licensing and complete project cost coverage remain separate checks."
+  ]
+}

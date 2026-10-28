@@ -1,0 +1,29 @@
+{
+  "status": "docx_structural_and_numeric_acceptance_passed",
+  "date": "2026-10-27",
+  "docx": "SCE研究报告_作者审阅稿_v07.docx",
+  "docx_sha256": "769b73d2cf92aed4b9e51a2e5e7cc65ada2db2896a3b0c77d711224fed282025",
+  "figures": 7,
+  "native_editable_equations": 3,
+  "explicit_page_breaks": 4,
+  "calculations": {
+    "A82_direct_mae": 0.29840671263598517,
+    "A82_descriptive_combined_mae": 0.22233122281584375,
+    "2021_descriptive_combined_mae": 0.3651985114201037,
+    "A82_baseline_mae": 0.22317073170731705,
+    "2021_baseline_mae": 0.325
+  },
+  "figure_sha256": {
+    "downstream_credit.png": "2fd52dc377bf7dc03b9bb59d44ef8a77f2f0a8adad50b0a29d2e1b405afe58bb",
+    "information_routes.png": "14fb4836e3830f30ba0418e40b48eef8d9086cdd21d8aa77d2db18b6fc4e8b90",
+    "a82_micro.png": "c1ded2445ccceb24148b4a17a94d98335af0cf9d68e1bfc9a3c18d9136fce6c1",
+    "real_q9.png": "37ed92288cdfb2db48c3b742797f3d754af7165162410bbc1c7bd4cf985de695",
+    "a82_path.png": "3f25cc206977923875513695262730f873f2eb20a552a9f847b7b9d6bbd23857",
+    "weekly47.png": "6d71e750705f7d2d0d4f6e98c8e912d297311f60af8f6d4c1ded2ba72013a824",
+    "grid_basis.png": "c6fd444cf31017e9983041f1d1aef18712d3c09c88bd24920c8ad16ccd39d93a"
+  },
+  "new_model_calls": 0,
+  "new_parameter_estimation": false,
+  "visual_acceptance": "pending_word_rendering",
+  "notes": "Word为交付物，未生成新版PDF。页数需在Word排版引擎中核验；不得用隐式分页数声称恰好8页。"
+}
