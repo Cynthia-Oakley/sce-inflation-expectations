@@ -314,10 +314,43 @@ def replay(data, out, *, refit_density=False):
         targets=({str(r["month"]).replace('-',''):r["truth_pp"] for r in a_nat}
                  if run=="A_Normal" else {r["month"]:r["truth_pp"] for r in expected["B_Normal"]["monthly"]})
         national[run]=headline_errors([r["fields"]["q9"]["median_pp"] for r in rs],[targets[r["period"]] for r in rs])
+    # The paper uses the old/current common support (41,042), whereas the
+    # retained-start comparison above requires valid starting-state scores.
+    # Rebuild both supports rather than silently replacing one by the other.
+    paper_check = None
+    paper_path = data.parent / "paper_metric_crosswalk.json"
+    if paper_path.exists():
+        reference = read(paper_path)
+        common = summarize(cases, months, ["monthly_reconstruction", "old_A82"],
+                           weight_definition=expected["A"]["weight_definition"])
+        weighted = common["arms"]["monthly_reconstruction"]["auxiliary_survey_weighted"]
+        paper_check = dict(q9_person_months=common["q9_person_months"],
+            q8_person_months=common["q8_person_months"],
+            q9=weighted["q9"]["aggregate_equal_month_repeat_cells"],
+            q8=weighted["q8"]["aggregate_equal_month_repeat_cells"])
+        close(paper_check, reference["paper_paired_micro"], label="paper common-support metrics")
+        comparison = []
+        for row in csv.DictReader((data.parent / "paper_A82_comparison.csv").open()):
+            month = row["month"].replace("-", "")
+            close(a_sim[month], float(row["raw_pp"]), label="paper national center")
+            raw_center, anchor = a_sim[month], float(row["anchor_pp"])
+            for name, weight in reference["combination_weights"].items():
+                value = (1-weight)*anchor + weight*raw_center
+                close(value, float(row[name+"_pp"]), label="paper combination")
+            comparison.append({k:(v if k=="month" else float(v)) for k,v in row.items()})
+        for window, ref in reference["paper_national"].items():
+            subset = [r for r in comparison if ref["first_month"] <= r["month"] <= ref["last_month"]]
+            if len(subset) != ref["months"]:
+                raise ValueError("Paper national comparison window changed")
+            for name, metrics in ref["methods"].items():
+                actual = headline_errors([r[name+"_pp"] for r in subset], [r["truth_pp"] for r in subset])
+                close(actual, metrics, label="paper national "+window+" "+name)
+        paper_check["national_windows_verified"] = list(reference["paper_national"])
     result=dict(status="passed_answer_level_reproduction",actual_LLM_calls=0,
         verification=verification,raw_model_output_records=len(raw),national=national,
         A_full_wave_monthly=results,paired=paired,descriptive_only=descriptive,
         normal=normal_results,normal_population_counts=dict(population_counts),
+        paper_metric_verification=paper_check,
         scoring_mode="fresh_frozen_density_refit" if refit_density else "exact_vector_frozen_density_cache",
         new_numerical_density_fits=new_fits,parameter_refit=False,
         limits=["No recent human microdata: B/monthly/weekly dispersion is descriptive, not micro accuracy.",

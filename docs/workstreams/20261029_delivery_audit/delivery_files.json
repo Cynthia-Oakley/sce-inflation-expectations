@@ -1,0 +1,29 @@
+{
+  "status": "paper_edits_and_PDF_pending_not_submitted",
+  "new_API_calls": 0,
+  "research_package": {
+    "path": "deliverables/research_package/v07/SCE_research_package_draft_v07.zip",
+    "sha256": "046fb2e95fe656b3276aecf8e58bde75f239c4891f7a98ae77fca77165551af2",
+    "bytes": 39110005
+  },
+  "paper_source": {
+    "path": "docs/reports/final_report_draft_v10/SCE研究报告_作者审阅稿_v10.docx",
+    "sha256": "180b2ea3891c5813efbfe9fb1a35b682cb489561f0d81d76c2fb30c5556dcc33",
+    "changed_by_audit": false
+  },
+  "paper_submission_PDF": null,
+  "video": {
+    "path": "deliverables/video/recordings/exports/assembled_v01/SCE_demo_v01.mp4",
+    "sha256": "9917baed9ad4ca88a363ab1bb28b1bee3db880044854a08542f8b24220b2e486",
+    "bytes": 19968199,
+    "duration_seconds": 267.891,
+    "author_accepted": true
+  },
+  "official_requirements": {
+    "refetched_on_beijing": "2026-10-29",
+    "body_sha256": "dce3d93a9ceab1377cf27a5d93d6b5f3fdebaaa70ee6154606339c2fc09bee53",
+    "unchanged_from_prior": true
+  },
+  "prior_v06_archive_sha256": "88fc72ddf7aa326a3c1022470094fbf4ac13871acab0f33d4f0bc9fc60d5a8a3",
+  "eight_micro_data_files_and_twelve_existing_CSVs_unchanged": true
+}

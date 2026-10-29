@@ -149,7 +149,7 @@ origins.write_text(json.dumps(mods, indent=2))
     micro = receipt.get("micro")
     if (package/"studies/sce_inflation_expectations/reproduction_data/micro/manifest.json").exists():
         if not micro or micro.get("status")!="passed_answer_level_reproduction" or micro.get("actual_LLM_calls")!=0:
-            raise ValueError("v06 must actually execute its answer-level reproduction")
+            raise ValueError("Answer-level packages must actually execute its answer-level reproduction")
     acceptance = {"status": "passed_independent_zip_offline_execution", "checked_at_utc": datetime.now(timezone.utc).isoformat(),
         "archive_sha256": hashlib.sha256(archive.read_bytes()).hexdigest(),
         "verified_package_files": receipt["verification"]["files_verified"],
@@ -161,7 +161,8 @@ origins.write_text(json.dumps(mods, indent=2))
         "downstream_groups_verified": ext.get("downstream", {}).get("model_metrics_verified"),
         "downstream_contrasts_verified": ext.get("downstream", {}).get("paired_contrasts_verified"),
         "target_tests_exit_code": tests.returncode, "new_API_calls": 0,
-        "new_dependency_environment_installed": fresh_environment,
+        "no_system_site_venv_verified": fresh_environment,
+        "dependency_installation_performed_by_verifier": False,
         "dependency_versions": {name: importlib.metadata.version(name) for name in (
             "SocioVerse2", "pydantic", "duckdb", "pyarrow", "pandas", "numpy", "scipy", "openai", "httpx", "matplotlib", "pytest")},
         "full_individual_reproduction": bool(micro),
@@ -180,6 +181,6 @@ if __name__ == "__main__":
     p.add_argument("--archive", type=Path, required=True)
     p.add_argument("--out", type=Path, required=True)
     p.add_argument("--fresh-environment", action="store_true",
-                   help="Assert this invocation uses a newly installed no-system-site venv")
+                   help="Assert this invocation uses an isolated no-system-site venv (the verifier does not install dependencies)")
     a = p.parse_args()
     print(json.dumps(verify(a.archive, a.out, fresh_environment=a.fresh_environment), ensure_ascii=False, indent=2))

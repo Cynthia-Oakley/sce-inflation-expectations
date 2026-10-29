@@ -481,13 +481,17 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 
 - `build_sce_paper_materials.py --out docs/workstreams/20261027_final_delivery/<全新目录>`：从当前已验收研究包聚合与冻结A/网格证据构建作者审阅材料册（HTML/Markdown、数字CSV、图表、来源哈希），核对指标和固定组合；不拟参、不重跑API、不重写论文。当前入口见[材料册](../docs/workstreams/20261027_final_delivery/materials_v1/index.html)。
 
-- `build_sce_research_package.py --draft-version v06 --out <新目录> --public-log-registry <公开索引.json> --a-refresh-readout <新版A目录> --micro-data <冻结微观投影data目录>`：当前v06按职责导出，新增四个最终任务原文/答卷、A微观及A/B Normal重算。完整命令见[统一交付入口](../deliverables/README.md)。旧v05保留，不能只改ZIP名称升级。
-- `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、源码导入审计、工程/聚合/微观复算及包内测试。v06通过独立无system-site-packages环境验收；原文/答卷范围见micro导读。
+- `build_sce_research_package.py --draft-version v07 --out <新目录> --public-log-registry <公开索引.json> --a-refresh-readout <新版A目录> --micro-data <冻结微观投影data目录>`：当前v07按职责导出，保留四任务微观资料并补论文数字/共同支持对照。完整命令见[统一交付入口](../deliverables/README.md)。旧v06保留，不能只改ZIP名称升级。
+- `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、源码导入审计、工程/聚合/微观复算及包内测试。v07通过独立无system-site-packages环境验收；原文/答卷范围见micro导读。
 
-- `catalog_sce_study.py --out <新目录>`：分类开发study文件，按当前入口计算静态依赖与补充归档，不执行实验。v04为此前的依赖筛选布局；当前交付使用构建器v06和`submission_tools/release_layout.py`，按组件/运行/评价实际归位源码。以[统一交付入口](../deliverables/README.md)和`submission/latest_package.json`选包，包内`DIRECTORY_GUIDE.md`及study的`FILE_GUIDE.md`解释读法。
+- `catalog_sce_study.py --out <新目录>`：分类开发study文件，按当前入口计算静态依赖与补充归档，不执行实验。v04为此前的依赖筛选布局；当前交付使用构建器v07和`submission_tools/release_layout.py`，按组件/运行/评价实际归位源码。以[统一交付入口](../deliverables/README.md)和`submission/latest_package.json`选包，包内`DIRECTORY_GUIDE.md`及study的`FILE_GUIDE.md`解释读法。
 
 ## 正式逐答卷与模型原文（2026-10-29）
 
 - `export_sce_micro_reproduction.py --out <新outputs目录>`：只读正式账本，投影A/B/月度/周度答卷、原文、评价字段及Normal；私人键表不进data，不调用模型。
 - `replay_sce_micro_reproduction.py --data <data目录> --out <新目录> [--refit-density]`：禁网络，检验主补字段/归一化，重算全国、A微观及Normal后验。默认精确向量缓存，选项重做数值拟合，不重新询问LLM。
 - 数据范围与验收：[v06微观复现](../docs/workstreams/20261029_micro_reproduction/README.md)。
+
+## 交付前一致性检查（2026-10-29）
+
+- `audit_sce_delivery_consistency.py --package-root <解压包根> --out <新审查目录>`：只读当前Word和冻结资料，计算两种组合、微观支持及四任务实报费用，生成精确对照和待修正文；不修改Word、不调用模型。当前[检查清单](../docs/workstreams/20261029_delivery_audit/README.md)，研究包[唯一入口](../deliverables/README.md)。

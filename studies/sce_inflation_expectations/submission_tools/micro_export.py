@@ -356,7 +356,7 @@ def export(out):
     return manifest
 
 
-def install(package, data):
+def install(package, data, *, package_version="v06"):
     """Copy only the frozen release projection; never copy its private key map."""
     package, data = Path(package), Path(data).resolve()
     m=read(data/"manifest.json")
@@ -389,7 +389,7 @@ def install(package, data):
     # Prior guides are historical packaging text, not current scope declarations.
     for name in ("REVIEW_GUIDE.md","PUBLIC_RELEASE_CHECKLIST.md"):
         p=study/"reports"/name
-        p.write_text("# v06复现范围更新\n\n当前逐答卷范围、原始输出与来源声明以 `../reproduction_data/micro/MICRO_DATA_GUIDE.md` 为准。"
+        p.write_text(f"# {package_version}复现范围更新\n\n当前逐答卷范围、原始输出与来源声明以 `../reproduction_data/micro/MICRO_DATA_GUIDE.md` 为准。"
                      "本包可重算四个最终任务的个人输出、A微观W1/IQR、Normal后验质量与全国误差；不声称重建了历史新闻或重新生成LLM。\n\n"
                      "全文提示、原始受访者编号、新闻全文与密钥不含在内。赛事后公开GitHub另作发布检查。\n")
     planning=package/"archive/planning_20261027"
@@ -399,7 +399,7 @@ def install(package, data):
     (planning/"README.md").write_text("# 2026-10-27写作/视频规划存档\n\n这些文件记录当时尚未完成的论文与录制计划，不是当前进展或执行入口。最终论文/视频另外提交，研究复现从包根README进入。\n")
     p=study/"reports/index.html"
     html=p.read_text().replace('href="LOCAL_DEMO_PLAN.md"','href="../../../archive/planning_20261027/LOCAL_DEMO_PLAN.md"').replace('href="PAPER_INTEGRATION_PLAN.md"','href="../../../archive/planning_20261027/PAPER_INTEGRATION_PLAN.md"')
-    html=html.replace('完整微观重现仍需受控资料。','v06的逐答卷复算、原始模型回复与数据边界见 <a href="../reproduction_data/micro/MICRO_DATA_GUIDE.md">微观资料导读</a>。历史写作/视频规划已归档。')
+    html=html.replace('完整微观重现仍需受控资料。',f'{package_version}的逐答卷复算、原始模型回复与数据边界见 <a href="../reproduction_data/micro/MICRO_DATA_GUIDE.md">微观资料导读</a>。历史写作/视频规划已归档。')
     p.write_text(html)
     frozen=data.parent/"exporter_source_at_freeze.py"
     if sha(Path(__file__))!=m["export_code_sha256"]:

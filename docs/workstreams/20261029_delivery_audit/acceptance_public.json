@@ -1,0 +1,100 @@
+{
+  "status": "passed_independent_zip_offline_execution",
+  "checked_at_utc": "2026-10-29T00:04:14.727030+00:00",
+  "archive_sha256": "046fb2e95fe656b3276aecf8e58bde75f239c4891f7a98ae77fca77165551af2",
+  "verified_package_files": 248,
+  "study_modules_all_from_extracted_package": 159,
+  "main_source_files": 161,
+  "archived_source_files_verified": 872,
+  "dry_run": {
+    "status": "passed_official_Core_scripted_engineering_only",
+    "seed": 42,
+    "agents": 20,
+    "steps": 2,
+    "panel_rows": 60,
+    "scripted_decisions": 40,
+    "actual_LLM_calls": 0,
+    "empirical_accuracy_result": false
+  },
+  "base_replay_cases": 3,
+  "extension_replay_cases": 4,
+  "downstream_groups_verified": 192,
+  "downstream_contrasts_verified": 408,
+  "target_tests_exit_code": 0,
+  "new_API_calls": 0,
+  "no_system_site_venv_verified": true,
+  "dependency_installation_performed_by_verifier": false,
+  "dependency_versions": {
+    "SocioVerse2": "0.2.0",
+    "pydantic": "2.13.5",
+    "duckdb": "1.5.5",
+    "pyarrow": "25.0.1",
+    "pandas": "3.0.6",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "openai": "3.24.0",
+    "httpx": "0.28.1",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1"
+  },
+  "full_individual_reproduction": true,
+  "individual_reproduction_scope": "Four final tasks: raw-to-effective answer verification, exact-vector density scoring, A paired/full-wave metrics, Normal posterior reconstruction; no LLM regeneration",
+  "answer_level_metrics": {
+    "A": {
+      "n_months": 82,
+      "mae_pp": 0.29840671263598517,
+      "rmse_pp": 0.41512073273547,
+      "bias_pp": -0.013810829002062078,
+      "max_absolute_error_pp": 1.3805812768003651
+    },
+    "B": {
+      "n_months": 11,
+      "mae_pp": 0.34850875770999806,
+      "rmse_pp": 0.43283661203795376,
+      "bias_pp": 0.25875957034839137,
+      "max_absolute_error_pp": 0.8544204486382516
+    },
+    "monthly": {
+      "n_months": 10,
+      "mae_pp": 0.30575060130371906,
+      "rmse_pp": 0.38610694339623264,
+      "bias_pp": 0.25196394975917114,
+      "max_absolute_error_pp": 0.7525965471739418
+    },
+    "weekly": {
+      "n_months": 11,
+      "mae_pp": 0.15158064091501336,
+      "rmse_pp": 0.18894221449740906,
+      "bias_pp": 0.041650686736822505,
+      "max_absolute_error_pp": 0.4024593920537911
+    },
+    "A_Normal": {
+      "n_months": 82,
+      "mae_pp": 0.3014219106420097,
+      "rmse_pp": 0.4142361487147457,
+      "bias_pp": -0.009208348526508052,
+      "max_absolute_error_pp": 1.327727902028145
+    },
+    "B_Normal": {
+      "n_months": 11,
+      "mae_pp": 0.34616861601817855,
+      "rmse_pp": 0.4314491398495139,
+      "bias_pp": 0.2610997120402108,
+      "max_absolute_error_pp": 0.8544204486382516
+    }
+  },
+  "answer_level_counts": {
+    "effective_answers": 67334,
+    "raw_fields_verified": 134661,
+    "proportional_normalizations": 208,
+    "retained_fields": 7
+  },
+  "numerical_density_refit": "exact_vector_frozen_density_cache",
+  "organised_source_acceptance": {
+    "research_bodies_identical_after_import_location_normalization": 146,
+    "explicit_packaging_runner_adapters": 1,
+    "root_python_files": 3,
+    "standard_reading_artifacts_present": true
+  },
+  "results_html": "deliverables/research_package/v07/verification/verified_results/index.html"
+}
