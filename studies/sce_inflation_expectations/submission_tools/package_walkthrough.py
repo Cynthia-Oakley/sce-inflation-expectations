@@ -58,6 +58,7 @@ def build(preview, python=None):
                  f"{STUDY}/simulation/research_runs.json", f"{STUDY}/reports/PAPER_METRIC_GUIDE.md",
                  f"{STUDY}/reproduction_data/micro/MICRO_DATA_GUIDE.md"]
     inputs_manifest = package / STUDY / "reproduction_data/inputs/manifest.json"
+    input_metadata = _read(inputs_manifest) if inputs_manifest.exists() else {}
     if inputs_manifest.exists():
         important.extend([f"{STUDY}/reproduction_data/inputs/README.md", f"{STUDY}/reproduction_data/inputs/NEWS_REVIEW_NOTICE.md"])
     docs = {name: (package / name).read_text() for name in important}
@@ -162,7 +163,7 @@ select{max-width:100%;padding:10px;font:14px sans-serif;border:1px solid var(--l
                     "ZIP_MEMBERS": str(len(paths)), "VERIFIED_FILES": str(proof["verified_package_files"]),
                     "IMPORTED_MODULES": str(proof["study_modules_all_from_extracted_package"]),
                     "ARCHIVED_SOURCES": str(proof["archived_source_files_verified"]), "TEST_COUNT": test_match[1],
-                    "INPUT_LIMITS": ("本版另附66,822份实际输入与选中新闻摘录，24,852份完整输入可用自己的Key单次再生成；A真实日期仍遮蔽，身份键和Key不提供。含新闻的ZIP只供赛事保密评审，不进入公开GitHub。" if inputs_manifest.exists() else "不包含原始身份键、真实完成日期、密钥、完整历史提示与新闻全文；完整付费再生成仍有输入恢复条件。") }
+                    "INPUT_LIMITS": ((f"本版另附66,822份实际输入与选中新闻摘录，{input_metadata['full_prompt_rows']:,}份完整输入可用自己的Key单次再生成；" + ("A公开调查派生日期也完整保留，无需回填；" if input_metadata.get("public_survey_derived_dates_retained") else "A真实日期仍遮蔽；") + "原始身份键和Key不提供。含新闻的ZIP只供赛事保密评审，不进入公开GitHub。") if inputs_manifest.exists() else "不包含原始身份键、真实完成日期、密钥、完整历史提示与新闻全文；完整付费再生成仍有输入恢复条件。") }
     # Single-pass replacement prevents a token in source text being reinterpreted.
     import re
     page = re.sub("|".join(re.escape(k) for k in sorted(replacements, key=len, reverse=True)),

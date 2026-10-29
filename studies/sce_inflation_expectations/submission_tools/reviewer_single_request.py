@@ -27,6 +27,27 @@ def write(path, obj):
     Path(path).write_text(json.dumps(obj, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
 
 
+def list_inputs(candidate, *, run=None, period=None, limit=10):
+    """List anonymous complete samples without credentials or a model client."""
+    if not 1 <= limit <= 1000:
+        raise ValueError("List limit must be between 1 and 1000")
+    candidate = Path(candidate).resolve()
+    manifest = read(candidate / ("manifest.json" if (candidate / "manifest.json").exists() else "candidate_manifest.json"))
+    name = manifest.get("complete_prompt_file", "complete_news_free_prompts.jsonl.gz")
+    path = candidate / name
+    if path.name != name or path.is_symlink() or hashlib.sha256(path.read_bytes()).hexdigest() != manifest["files"][name]["sha256"]:
+        raise ValueError("Complete prompt collection changed")
+    selected = []
+    with gzip.open(path, "rt", encoding="utf-8") as stream:
+        for line in stream:
+            row = json.loads(line)
+            if (run is None or row["run"] == run) and (period is None or row["period"] == period):
+                selected.append({k: row[k] for k in ("run", "period", "household", "original_prompt_sha256")})
+                if len(selected) == limit:
+                    break
+    return dict(status="offline_complete_input_listing", samples=selected, new_API_calls=0, credentials_read=False)
+
+
 def load(candidate, *, run=None, period=None, household=None):
     candidate = Path(candidate).resolve()
     manifest = read(candidate / ("manifest.json" if (candidate / "manifest.json").exists() else "candidate_manifest.json"))
@@ -51,7 +72,7 @@ def load(candidate, *, run=None, period=None, household=None):
                         raise ValueError("Duplicate complete input")
                     sample = row
         if sample is None:
-            raise ValueError("No complete input for this selection; private-date A templates cannot be sent")
+            raise ValueError("No complete input for this selection; only exact complete messages can be sent")
     settings = read(candidate / "generation_settings.json")
     messages = sample["messages"]
     if (sample.get("ready_for_exact_single_request") is not True or sample.get("withheld")
@@ -153,9 +174,16 @@ if __name__ == "__main__":
     parser.add_argument("--run", choices=("A", "B", "monthly", "weekly"))
     parser.add_argument("--period")
     parser.add_argument("--household")
+    parser.add_argument("--list", action="store_true", help="List complete sample keys without reading an API key")
+    parser.add_argument("--limit", type=int, default=10)
     args = parser.parse_args()
-    result = run(args.candidate_dir, confirm_paid=args.confirm_paid, out=args.out,
-                 selection=dict(run=args.run, period=args.period, household=args.household))
+    if args.list:
+        if args.confirm_paid or args.household or args.out:
+            parser.error("Listing is offline; omit paid, household and output options")
+        result = list_inputs(args.candidate_dir, run=args.run, period=args.period, limit=args.limit)
+    else:
+        result = run(args.candidate_dir, confirm_paid=args.confirm_paid, out=args.out,
+                     selection=dict(run=args.run, period=args.period, household=args.household))
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    if result["status"] not in ("offline_input_preview", "model_reply_saved"):
+    if result["status"] not in ("offline_input_preview", "offline_complete_input_listing", "model_reply_saved"):
         raise SystemExit(1)

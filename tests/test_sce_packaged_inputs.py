@@ -40,7 +40,7 @@ def test_complete_sample_can_be_selected_without_model_call():
 def test_input_manifest_and_news_distribution_scope():
     m = json.loads((DATA / "manifest.json").read_text())
     assert m["publisher_news_text_included"] is True
-    assert m["real_person_linked_date_values_written"] is False
+    assert m["real_person_linked_date_values_written"] is m.get("public_survey_derived_dates_retained", False)
     assert m["identity_map_included"] is False
     assert m["distribution_scope"] == "confidential_competition_review_only_not_for_public_GitHub"
     for name, info in m["files"].items():
@@ -57,9 +57,33 @@ def test_complete_collection_is_exact_and_all_inputs_join_archived_replies():
     with gzip.open(DATA / "complete_prompts.jsonl.gz", "rt") as stream:
         for line in stream:
             r = json.loads(line)
-            assert r["run"] in ("B", "monthly", "weekly")
+            assert r["run"] in (("A", "B", "monthly", "weekly") if m.get("public_survey_derived_dates_retained") else ("B", "monthly", "weekly"))
             assert r["withheld"] == []
             assert r["original_prompt_sha256"] == r["delivered_prompt_sha256"]
             assert hashlib.sha256(json.dumps(r["messages"], ensure_ascii=False).encode()).hexdigest() == r["original_prompt_sha256"]
             count += 1
-    assert count == 24852
+    assert count == (66822 if m.get("public_survey_derived_dates_retained") else 24852)
+
+
+def test_public_date_A_input_is_directly_selectable_without_missing_fields():
+    m = json.loads((DATA / "manifest.json").read_text())
+    if not m.get("public_survey_derived_dates_retained"):
+        pytest.skip("Earlier profile intentionally masks public survey-derived dates")
+    with gzip.open(DATA / "complete_prompts.jsonl.gz", "rt") as stream:
+        a = next(json.loads(line) for line in stream if json.loads(line)["run"] == "A")
+    module = entry_module()
+    with patch("os.environ.get", side_effect=AssertionError("No key needed for A preview")):
+        result = module.run(DATA, selection={k: a[k] for k in ("run", "period", "household")})
+    assert result["messages"] == a["messages"]
+    assert result["original_prompt_sha256"] == a["original_prompt_sha256"]
+    assert a["withheld"] == []
+    assert "[[WITHHELD_" not in json.dumps(a["messages"])
+
+
+def test_reviewer_can_list_A_sample_keys_without_API_credentials():
+    module = entry_module()
+    with patch("os.environ.get", side_effect=AssertionError("No key needed for listing")):
+        listing = module.list_inputs(DATA, run="A", period="201901", limit=2)
+    assert listing["new_API_calls"] == 0 and listing["credentials_read"] is False
+    assert len(listing["samples"]) == 2
+    assert all(x["run"] == "A" and x["period"] == "201901" for x in listing["samples"])

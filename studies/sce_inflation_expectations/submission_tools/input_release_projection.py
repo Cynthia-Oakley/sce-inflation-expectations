@@ -16,8 +16,10 @@ import shutil
 from .input_release_audit import ROOT, NEWS, POLICY, PATTERNS, digest, input_files, read
 
 
-def project(messages, run, cutoff=None, survey_date=None, *, include_news=False):
+def project(messages, run, cutoff=None, survey_date=None, *, include_news=False, retain_public_dates=False):
     """Return explicit slot templates, and private in-memory restore values."""
+    if retain_public_dates and not include_news:
+        raise ValueError("Exact public dates are enabled only for the restricted full-input review layer")
     projected, values, metadata = deepcopy(messages), {}, []
     news_count = 0
     for number, message in enumerate(projected):
@@ -39,7 +41,7 @@ def project(messages, run, cutoff=None, survey_date=None, *, include_news=False)
             # Restore consumes the exact token plus its explicit placeholder gap.
             values[token + "\n\n"] = values.pop(token)
             metadata[-1]["token"] = token + "\n\n"
-        if run == "A":
+        if run == "A" and not retain_public_dates:
             if not cutoff:
                 raise ValueError("Actual per-person cutoff must be available for privacy masking")
             d = datetime.fromisoformat(str(cutoff).replace("Z", "+00:00"))
@@ -71,7 +73,7 @@ def project(messages, run, cutoff=None, survey_date=None, *, include_news=False)
         for pattern in PATTERNS.values():
             if pattern.search(message["content"]):
                 raise ValueError("Unexpected identifier/credential-like text in candidate")
-    if run == "A" and not any(x["kind"] == "real_person_linked_date" for x in metadata):
+    if run == "A" and not retain_public_dates and not any(x["kind"] == "real_person_linked_date" for x in metadata):
         raise ValueError("No expected real-person date was masked; inspect date rendering")
     restored = restore(projected, values)
     if restored != messages:
@@ -123,7 +125,7 @@ class Writer:
         self.raw.close()
 
 
-def prepare(out, root=ROOT, *, include_news=False):
+def prepare(out, root=ROOT, *, include_news=False, retain_public_dates=False):
     root, out = Path(root).resolve(), Path(out).resolve()
     if out.exists() or not out.is_relative_to(root / "outputs"):
         raise ValueError("Fresh ignored review-candidate directory required")
@@ -144,7 +146,7 @@ def prepare(out, root=ROOT, *, include_news=False):
             positions = complete = date_masked = news_masked = 0
             for period, path in input_files(root, run):
                 contexts, roster = {}, {}
-                if run == "A":
+                if run == "A" and not retain_public_dates:
                     contexts = read(path.parent / "contexts_private.json")
                     source_rows = read(path.parent / "roster_private.json")["rows"]
                     roster = source_rows if isinstance(source_rows, dict) else {r["agent_id"]: r for r in source_rows}
@@ -156,7 +158,8 @@ def prepare(out, root=ROOT, *, include_news=False):
                     context = contexts.get(aid, {})
                     projected, withheld, news_count = project(messages, run,
                         cutoff=context.get("as_of") or context.get("information_cutoff"),
-                        survey_date=roster.get(aid, {}).get("survey_date"), include_news=include_news)
+                        survey_date=roster.get(aid, {}).get("survey_date"), include_news=include_news,
+                        retain_public_dates=retain_public_dates)
                     fields = dict(run=run, period=period, household=identity,
                                   original_prompt_sha256=digest(messages))
                     delivered = digest(projected)
@@ -177,9 +180,9 @@ def prepare(out, root=ROOT, *, include_news=False):
                         earlier_belief_text=section(text, "Earlier belief state (expectations, not measured inflation):", "Question 1 (point estimate):"),
                         questionnaire_and_format_text=text[text.index("Question 1 (point estimate):"):],
                         **({"news_text": section(text, NEWS, POLICY)} if include_news else {}),
-                        actual_person_dates_removed=run == "A"))
+                        actual_person_dates_removed=run == "A" and not retain_public_dates))
                     if not withheld:
-                        if run == "A" or (news_count and not include_news) or projected != messages or delivered != fields["original_prompt_sha256"]:
+                        if (run == "A" and not retain_public_dates) or (news_count and not include_news) or projected != messages or delivered != fields["original_prompt_sha256"]:
                             raise ValueError("Invalid full-prompt candidate")
                         full.append(candidate)
                         complete += 1
@@ -203,16 +206,25 @@ def prepare(out, root=ROOT, *, include_news=False):
     shutil.copyfile(notice, out / "SCE_DATA_NOTICE.md")
     summary = dict(status="prepared_restricted_submission_inputs" if include_news else "prepared_candidates_not_installed_in_submission", runs=counts,
         full_prompt_rows=full.rows, template_rows=templates.rows, component_rows=components.rows,
+        all_frozen_request_messages_exact=full.rows == templates.rows,
+        exact_conditional_inputs_ready=bool(full.rows),
         reversible_in_memory_positions=templates.rows,
-        publisher_news_text_included=include_news, real_person_linked_date_values_written=False,
+        publisher_news_text_included=include_news, real_person_linked_date_values_written=retain_public_dates,
+        public_survey_derived_dates_retained=retain_public_dates,
         publisher_text_or_private_date_values_written=include_news, identity_map_included=False,
         credentials_read_or_written=False, new_API_calls=0,
         ready_for_full_historical_regeneration=False,
         complete_prompt_file=full_name,
         distribution_scope="confidential_competition_review_only_not_for_public_GitHub" if include_news else "shareable_candidates",
-        rights_basis="News excerpts included at author's explicit direction for confidential review; no publisher redistribution license is asserted. Real person-linked dates and private mappings withheld." if include_news else "Self-authored instructions, attributed public SCE-derived fields, BLS numerical inputs and attributed Federal Reserve Board policy excerpts; publisher news text and real per-person dates withheld",
+        rights_basis=("Selected news and exact public survey-derived cutoff dates included at author's explicit direction for confidential review; no publisher redistribution license is asserted. Original IDs, private mappings and credentials are excluded." if retain_public_dates else "News excerpts included at author's explicit direction for confidential review; no publisher redistribution license is asserted. Real person-linked dates and private mappings withheld.") if include_news else "Self-authored instructions, attributed public SCE-derived fields, BLS numerical inputs and attributed Federal Reserve Board policy excerpts; publisher news text and real per-person dates withheld",
         files={p.name:dict(bytes=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest())
                for p in out.iterdir() if p.is_file()})
+    if retain_public_dates:
+        # Avoid conflating complete archived request inputs with a newly
+        # generated autonomous chain or a full raw-source reconstruction.
+        summary.pop("ready_for_full_historical_regeneration")
+        summary["all_original_conditional_requests_supplied"] = full.rows == templates.rows
+        summary["fresh_autonomous_chain_regenerated_during_packaging"] = False
     (out / "candidate_manifest.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
     return summary
 
@@ -242,6 +254,7 @@ def validate_candidates(candidate, archived_outputs):
             r = json.loads(line)
             answers.add((r["run"], r["period"], r["household"], r["prompt_sha256"]))
     include_news = manifest.get("publisher_news_text_included", False)
+    retain_public_dates = manifest.get("public_survey_derived_dates_retained", False)
     keys, exact_keys, runs = set(), set(), {}
     for r in rows("prompt_templates.jsonl.gz"):
         key = (r["run"], r["period"], r["household"], r["original_prompt_sha256"])
@@ -259,7 +272,7 @@ def validate_candidates(candidate, archived_outputs):
         dates = [s for s in r["withheld"] if s["kind"] == "real_person_linked_date"]
         if bool(news) != (bool(r["original_news_articles"]) and not include_news):
             raise ValueError("Publisher-text mask missing")
-        if (r["run"] == "A") != bool(dates):
+        if (r["run"] == "A" and not retain_public_dates) != bool(dates):
             raise ValueError("Real-person date mask disagrees with input type")
         if not include_news and "- Online publication date " in "\n".join(m["content"] for m in r["messages"]):
             raise ValueError("Publisher news item remains")
@@ -298,6 +311,7 @@ def validate_candidates(candidate, archived_outputs):
                 exact_complete_positions=len(full_keys), component_positions=len(component_keys), runs=runs,
                 archived_output_joins=len(keys), complete_output_joins=len(full_keys),
                 manifest_file_hashes_checked=len(manifest["files"]), manifest_file_bytes=checked_bytes,
-                publisher_news_text_included=include_news, actual_person_dates_exported=False, credentials_read=False,
+                publisher_news_text_included=include_news, actual_person_dates_exported=retain_public_dates,
+                public_survey_derived_dates_retained=retain_public_dates, credentials_read=False,
                 identity_map_included=False, new_API_calls=0,
                 limitations="Local audit, not a new independent installation or live provider test")

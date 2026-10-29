@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from studies.sce_inflation_expectations.submission_tools.reviewer_single_request import MODEL, ROUTE, DESTINATION, load, run
+from studies.sce_inflation_expectations.submission_tools.reviewer_single_request import MODEL, ROUTE, DESTINATION, load, run, list_inputs
 
 
 def fixture(base):
@@ -47,6 +47,12 @@ class ReviewerRequestTests(unittest.TestCase):
             (inputs / "manifest.json").write_text(json.dumps(manifest))
             found, _, _ = load(inputs, run="B", period="202511", household="B_000001")
             self.assertEqual(found["messages"], sample["messages"])
+            with patch("os.environ.get", side_effect=AssertionError("Listing must not read credentials")):
+                listed = list_inputs(inputs, run="B", period="202511", limit=1)
+            self.assertEqual(listed["samples"][0]["household"], "B_000001")
+            self.assertEqual(listed["new_API_calls"], 0)
+            self.assertFalse(listed["credentials_read"])
+            self.assertNotIn("messages", listed["samples"][0])
             with self.assertRaisesRegex(ValueError, "No complete"):
                 load(inputs, run="A", period="201901", household="A_000001")
             with self.assertRaisesRegex(ValueError, "all three"):

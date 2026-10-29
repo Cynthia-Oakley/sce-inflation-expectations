@@ -1,6 +1,6 @@
 # 给评委的补充说明：外部模型、回答格式与密钥
 
-2026-10-29。随v10提交包提供，旧v09原件保留；历史答卷、研究参数和结果不变，本轮不调用API。
+2026-10-29。随v11提交包提供，旧v09原件保留；历史答卷、研究参数和结果不变，本轮不调用API。
 
 ## 本地运行与回答格式
 
@@ -50,7 +50,7 @@ export OPENROUTER_API_KEY
 
 ## 4. 解压即可预览的完整输入及单次再生成
 
-实际输入在 `studies/sce_inflation_expectations/reproduction_data/inputs/`：66,822个位置均含人口、先验、价格、政策和选中新闻摘录。24,852份B/月度/周度输入完整，按原消息哈希连接既有答卷；A的41,970份因真实个人日期遮蔽而只提供模板，不接受作为完整样本发送。
+实际输入在 `studies/sce_inflation_expectations/reproduction_data/inputs/`：66,822个位置均含人口、先验、价格、政策和选中新闻摘录。全部66,822份A/B/月度/周度输入完整，包含原Prompt实际使用的日期，按原消息哈希连接既有答卷。无需向作者索取日期或回填占位符。
 
 在包根执行，默认只打印真实Prompt和参数，不读取Key或联网：
 
@@ -71,9 +71,9 @@ python studies/sce_inflation_expectations/simulation/reviewer_request.py \
 
 入口在固定历史单价上界下计算保守预留，超过$0.01时拒绝发送，并附供应商单价和输出token上限；这不是服务端美元硬限额。供应商未来可能不可用、改价或返回不同模型身份，程序会记录并停止。网络失败可能已计费，不自动重发。新回答只存原文，正式概率校验、归一化与计分须走既有study流程，不冒称新回答自动成为论文结果。本轮只完成离线与注入验收，没有真实联网测试。
 
-## 4.1 完整历史与自主递推的边界
+## 4.1 完整输入与自主递推
 
-A的真实日期不附、原始ID和私人匹配对应表不附；公开层不承诺恢复全部A条件。完整库的自备Key批量运行仍需明确范围和预算。`run.py --mode generate`继续作为受控完整工作区委托入口，不等同于这个便携单次命令。
+A公开调查派生日期已原样提供；原始ID和私人匹配对应表不附。给定封存前态的全部请求均已完整提供，不依赖作者的私人键表。完整库的自备Key批量运行仍需明确范围和预算。`run.py --mode generate`继续作为受控完整工作区委托入口，不等同于这个便携单次命令。
 
 后月和后周的封存Prompt携带当年那次运行的模拟前态；原样重发只能重做给定前态的一步。新的自主链必须将本次新输出传给下期，另行执行时间规则、发布后重校准和失败字段保留机制。非零温度重新生成不会保证与历史原文逐字一致。
 
@@ -88,3 +88,13 @@ A的真实日期不附、原始ID和私人匹配对应表不附；公开层不�
 - 自定义模拟器适配：https://socioverse.fudan-disc.com/docs/zh/guides/wrap-legacy-model/
 
 来源核查日2026-10-29。赛事动态正文SHA256沿用已核对的dce3d93a9ceab1377cf27a5d93d6b5f3fdebaaa70ee6154606339c2fc09bee53。
+
+### 列出、预览、重新询问：无需回填输入
+
+在包根先列出A路线某月的完整样本（0API）：
+
+```sh
+python studies/sce_inflation_expectations/simulation/reviewer_request.py --candidate-dir studies/sce_inflation_expectations/reproduction_data/inputs --list --run A --period 201901 --limit 5
+```
+
+复制其中一个household编号，再把命令中的--list/--limit去掉，补上--household及该编号，即可预览该份完整输入；仅在决定付费时，再加--confirm-paid和全新的--out目录。A、B、monthly、weekly都走同一入口，无需联系作者恢复日期或提供Key。

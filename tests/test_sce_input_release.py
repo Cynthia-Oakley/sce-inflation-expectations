@@ -32,6 +32,18 @@ class InputReleaseTests(unittest.TestCase):
         self.assertEqual(count, 0)
         self.assertEqual(digest(projected), digest(messages))
 
+    def test_author_selected_public_dates_preserve_exact_full_A_input(self):
+        messages = [dict(role="user", content=("Cutoff January 22, 2019; survey 2019-01-23.\n"
+            "General news you encountered:\n- Online publication date 2019-01-22: ORIGINAL_NEWS\n"
+            "Public policy news brief (2018-12-19):\nPublic fact"))]
+        delivered, withheld, count = project(messages, "A", include_news=True, retain_public_dates=True)
+        self.assertEqual(delivered, messages)
+        self.assertEqual(withheld, [])
+        self.assertEqual(count, 1)
+        self.assertEqual(digest(delivered), digest(messages))
+        with self.assertRaisesRegex(ValueError, "restricted"):
+            project(messages, "A", retain_public_dates=True)
+
     def test_confidential_news_preserves_exact_B_and_only_masks_linked_A_date(self):
         text = ("Survey cutoff January 22, 2019; completed 2019-01-23.\n"
                 "General news you encountered:\n- Online publication date 2019-01-22: ORIGINAL_NEWS\n\n"
