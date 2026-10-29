@@ -62,3 +62,7 @@ SCE_PACKAGE_OUT="deliverables/research_package/v10_rebuild_$(date +%Y%m%dT%H%M%S
 ```
 
 唯一机器指针为[submission/latest_package.json](../submission/latest_package.json)。新版仅补输入和复现能力，没有重新生成科研答卷、重拟组合或修改论文指标。
+
+## GitHub备份
+
+代码、说明、作者定稿PDF/Word与最终MP4已同步到[既有私有工作分支](https://github.com/Cynthia-Oakley/socioverse-challenge-2026/tree/docs/deepseek-reuse-20261008)，默认main未改；[核对回执](../docs/workstreams/20261029_input_package_v10/GITHUB_BACKUP.json)。含新闻的赛事ZIP和实际输入数据不进入仓库，当前ZIP仍从本页本机链接取用。
