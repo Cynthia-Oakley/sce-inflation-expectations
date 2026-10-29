@@ -1,7 +1,9 @@
 """Create and materialize the offline source-data supplement for the SCE study.
 
-The supplement keeps repository-relative data paths, carries hashes and source
-roles, and excludes model-answer artifacts and individual current survey truth.
+The supplement keeps repository-relative data paths, hashes and source roles.
+Public survey workbooks may contain outcomes at rest; the generation pipeline
+reads only whitelisted population fields and strictly earlier belief records.
+Model-answer artifacts are supplied separately as explicitly archived evidence.
 It does not package Python source; the caller can add the source snapshot chosen
 for its own review separately.
 """

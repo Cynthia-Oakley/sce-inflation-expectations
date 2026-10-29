@@ -221,17 +221,19 @@ def _package_root_from_data(data: Path) -> Path:
 
 
 def _resolve_source_root(source_root, data_root: Path) -> Path:
-    if source_root is not None:
-        candidate = Path(source_root).expanduser().resolve()
-    else:
-        candidate = Path(__file__).resolve().parents[3]
-        if not (candidate / "scripts/analyze_sce_downstream_regression.py").is_file():
-            candidate = data_root.parent
     required = (
         Path("scripts/prepare_sce_downstream_data.py"),
         Path("scripts/analyze_sce_downstream_regression.py"),
         PROTOCOL,
     )
+    if source_root is not None:
+        candidate = Path(source_root).expanduser().resolve()
+    else:
+        # A reviewer workspace may contain the scripts but not the protocol
+        # at its root. Prefer the complete, hashed source inside the bundle.
+        candidates = (data_root.parent, Path(__file__).resolve().parents[3])
+        candidate = next((root for root in candidates
+                          if all((root / rel).is_file() for rel in required)), candidates[0])
     missing = [str(path) for path in required if not (candidate / path).is_file()]
     if missing:
         raise FileNotFoundError(f"source_root {candidate} is missing required files: {missing}")

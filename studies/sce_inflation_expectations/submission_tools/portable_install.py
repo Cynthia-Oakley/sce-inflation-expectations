@@ -55,7 +55,8 @@ def install(package, data, *, root):
     short_entry = package / "review.py"
     short_entry.write_text('"""Short entry for the packaged original-source workflow."""\n'
         'from pathlib import Path\nimport runpy\n'
-        'runpy.run_path(str(Path(__file__).resolve().parent / '
+        'if __name__ == "__main__":\n'
+        '    runpy.run_path(str(Path(__file__).resolve().parent / '
         '"studies/sce_inflation_expectations/simulation/reviewer_pipeline.py"), run_name="__main__")\n')
     index = read(package / "SOURCE_INDEX.json")
     index["exclusions"] = ["API Keys and genuine account/authentication/payment secrets", "entire third-party code repositories"]

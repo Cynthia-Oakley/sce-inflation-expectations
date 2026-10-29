@@ -5,6 +5,7 @@ import pytest
 
 from studies.sce_inflation_expectations.submission_tools.portable_downstream import (
     MANIFEST_NAME,
+    _resolve_source_root,
     _verify_bundle_manifest,
     export,
     replay,
@@ -12,6 +13,19 @@ from studies.sce_inflation_expectations.submission_tools.portable_downstream imp
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_default_source_uses_complete_bundle_instead_of_partial_workspace(tmp_path):
+    bundle = tmp_path / "portable/downstream"
+    data = bundle / "data"
+    data.mkdir(parents=True)
+    for relative in ("scripts/prepare_sce_downstream_data.py",
+                     "scripts/analyze_sce_downstream_regression.py",
+                     "docs/workstreams/20261026_downstream/regression_protocol.json"):
+        target = bundle / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text("fixture")
+    assert _resolve_source_root(None, data) == bundle
 
 
 def test_export_is_explicit_and_hashes_all_reproduction_inputs(tmp_path):
