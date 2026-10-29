@@ -37,6 +37,7 @@
 - [x] **论文PDF验收（2026-10-29）：**[v1.0 PDF](../deliverables/report/SCE研究报告_v1.0.pdf)为8页，署名/三处事实修正/主要数值/两种权重核验通过，无批注或修订标记，全部字体嵌入，87段较长正文与当前Word一致。八页图版已检，有一处第2–3页人口表首行拆词的可选美化；原PDF未改。三件套路径和SHA集中于deliverables/FINAL_FILES.json与CHECKSUMS.sha256，剩余按报名子赛道命名并由用户上传回执，0API。
 - [x] **官方六项要求与封包对账（2026-10-29）：**[提交清单](../deliverables/SUBMISSION_CHECKLIST.md)已说明PDF8页、MP4≤5分钟、标准study、赛道C额外仓库条件、种子/模型/调用成本及数据取得/隔离。v08仅补声明与旧措辞，28个复现文件和v07一致；独立ZIP72测试及答卷复算通过，0API。最终命名、作者上传回执及GitHub最后备份仍分别记录。
 - [x] **外部模型与Key说明核对（2026-10-29）：**[评委指南](../deliverables/research_package/v09/package/EXTERNAL_MODEL_AND_API.md)已纳入当前v09包，README开头明确本地OpenRouter→SiliconFlow FP8 V3.2、数值Q8＋十档JSON Q9、0API答卷复算、自备Key和受控生成条件，并修正CLI帮助。独立ZIP72测试及答卷复算通过；28个复现文件与v08一致，PDF/视频和研究逻辑未改，0API。完整历史输入恢复与便携单户联网仍有明确边界，不冒称只加Key即可全部重生成。
+- [x] **作者本机看包与复现（2026-10-29）：**从实际上传v09 ZIP新解压到[本地预览](../deliverables/本地复现预览/v09/index.html)，250清单文件、159隔离导入、72测试和完整答卷复算通过；[阅读说明](workstreams/20261029_package_walkthrough/README.md)区分研究包/study、20户工程例/正式答卷。已提供可重复运行.command及目录/README/匿名答卷HTML导览；本机已有隔离环境复用，未重新安装依赖，0API。预览不上传、不修改三件套。
 - [ ] **提交：**确认作者/导师、平台子赛道字段与文件名；锁定一致版本的PDF/ZIP/MP4及哈希；由用户审阅上传并保存回执。
 
 依赖顺序：先冻结主结论和核心图，论文/包可并行；视频用已冻结素材，最后统一验收。新增模拟不作为前提；Git历史清理与公开发布在赛事后单独处理，当前保持私有。

@@ -14,6 +14,8 @@
 
 ## 如何审查研究包
 
+- **作者本机先看：**[图文目录与运行导览](本地复现预览/v09/index.html)，可展开实际ZIP目录、查看README和一份真实脱敏答卷；[实际复算结果](本地复现预览/v09/verified_results/index.html)。这是实际上传ZIP的新解压练习副本，不作为额外上传材料。
+- **本机重复运行：**[运行复现.command](本地复现预览/v09/运行复现.command)，使用已安装Python，每次写新目录，0API；[关系与命令说明](../docs/workstreams/20261029_package_walkthrough/README.md)。正式ZIP、论文和视频不变。
 - [解压包README](research_package/v09/package/README.md)、[目录导航](research_package/v09/package/DIRECTORY_GUIDE.md)。
 - [论文数字口径对照](research_package/v09/package/studies/sce_inflation_expectations/reports/PAPER_METRIC_GUIDE.md)：区分描述组合/冻结组合、配对/全波次微观、Core/Normal和费用范围。
 - [模型原文与微观资料导读](research_package/v09/package/studies/sce_inflation_expectations/reproduction_data/micro/MICRO_DATA_GUIDE.md)。

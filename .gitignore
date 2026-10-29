@@ -44,6 +44,8 @@ proposal/build/
 submission/build/
 # Generated reviewer bundles live outside outputs; rebuild from tracked sources.
 deliverables/research_package/
+# Fresh ZIP extraction and local practice results are not submission sources.
+/deliverables/本地复现预览/
 # Upload copies are local; keep only instructions and fingerprints in Git.
 /deliverables/提交材料/*
 !/deliverables/提交材料/上传说明.txt
