@@ -1,0 +1,37 @@
+{
+  "checked_on_beijing": "2026-10-29",
+  "status": "three_artifacts_verified_pending_portal_naming_and_user_upload",
+  "files": [
+    {
+      "role": "paper",
+      "path": "deliverables/report/SCE研究报告_v1.0.pdf",
+      "sha256": "8539f2e45a2640fe4ba6fd5b96fe83c461fd65b93d9a3943dba76149401776fa",
+      "bytes": 1854896
+    },
+    {
+      "role": "research_package",
+      "path": "deliverables/research_package/v07/SCE_research_package_draft_v07.zip",
+      "sha256": "046fb2e95fe656b3276aecf8e58bde75f239c4891f7a98ae77fca77165551af2",
+      "bytes": 39110005
+    },
+    {
+      "role": "video",
+      "path": "deliverables/video/recordings/exports/assembled_v01/SCE_demo_v01.mp4",
+      "sha256": "9917baed9ad4ca88a363ab1bb28b1bee3db880044854a08542f8b24220b2e486",
+      "bytes": 19968199
+    }
+  ],
+  "author_Word": {
+    "path": "deliverables/report/SCE研究报告_v1.0.docx",
+    "sha256": "61e351452a442c80cb5523f3ad3d5ba8551b103bffafdc58bd1a8beb982e323d"
+  },
+  "paper_pages": 8,
+  "video_seconds": 267.891,
+  "official_portal_filenames_confirmed": false,
+  "submitted": false,
+  "new_API_calls": 0,
+  "remaining": [
+    "Rename upload copies using registered track/subtrack/team naming",
+    "User uploads PDF/ZIP/MP4 and saves confirmation receipt"
+  ]
+}

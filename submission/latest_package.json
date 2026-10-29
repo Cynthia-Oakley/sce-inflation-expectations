@@ -1,5 +1,5 @@
 {
-  "status": "local_submission_candidate_not_final_submitted",
+  "status": "three_artifacts_verified_pending_portal_naming_and_user_submission",
   "checked_on_beijing": "2026-10-29",
   "archive": "deliverables/research_package/v07/SCE_research_package_draft_v07.zip",
   "archive_sha256": "046fb2e95fe656b3276aecf8e58bde75f239c4891f7a98ae77fca77165551af2",
@@ -14,12 +14,11 @@
   "new_API_calls": 0,
   "ready_for_final_submission": false,
   "remaining": [
-    "Three factual paper corrections and project-fee estimate confirmation",
-    "Clean 4–8-page PDF export, visual review and final hash",
-    "Author/mentor and portal filenames confirmation; user upload and receipt"
+    "Confirm registered subtrack and rename the three upload copies using official naming",
+    "User submission and receipt"
   ],
   "research_report_html": null,
-  "research_report_pdf": null,
+  "research_report_pdf": "deliverables/report/SCE研究报告_v1.0.pdf",
   "paper_plan": "docs/workstreams/20261027_final_delivery/framework.md",
   "local_video_plan": "submission/package_templates/LOCAL_DEMO_PLAN.md",
   "package_version": "v07",
@@ -34,14 +33,23 @@
   "standard_artifacts_completed": true,
   "controlled_micro_reproduction_complete": true,
   "paper_inventory": "docs/workstreams/20261027_final_delivery/report_inventory.json",
-  "paper_status": "Author-reviewed v0.10.6 Word preserved; three factual edits, fee confirmation and clean 4–8-page PDF pending",
+  "paper_status": "WPS导出v1.0 PDF已验收：8页、无批注/修订标记、字体嵌入、87段正文一致；有一处可选表格跨页美化，不影响内容完整性",
   "paper_materials": "docs/workstreams/20261027_final_delivery/materials_v1/index.html",
   "paper_materials_numbers": "docs/workstreams/20261027_final_delivery/materials_v1/numbers.csv",
   "answer_level_reproduction_scope": "Four canonical final tasks plus A/B Normal; frozen density cache and independent 32500-vector numerical refit verified. Not regeneration of unavailable historical inputs.",
-  "research_report_docx": "docs/reports/final_report_draft_v10/SCE研究报告_作者审阅稿_v10.docx",
+  "research_report_docx": "deliverables/report/SCE研究报告_v1.0.docx",
   "video": "deliverables/video/recordings/exports/assembled_v01/SCE_demo_v01.mp4",
   "video_status": "Author playback accepted 2026-10-29",
   "no_system_site_venv_verified": true,
   "dependency_installation_performed_by_verifier": false,
-  "pre_delivery_audit": "docs/workstreams/20261029_delivery_audit/README.md"
+  "pre_delivery_audit": "docs/workstreams/20261029_delivery_audit/README.md",
+  "research_report_docx_draft": "docs/reports/final_report_draft_v10/SCE研究报告_作者审阅稿_v10.docx",
+  "research_report_docx_sha256": "61e351452a442c80cb5523f3ad3d5ba8551b103bffafdc58bd1a8beb982e323d",
+  "research_report_pdf_sha256": "8539f2e45a2640fe4ba6fd5b96fe83c461fd65b93d9a3943dba76149401776fa",
+  "paper_acceptance": "deliverables/report/acceptance.json",
+  "all_three_artifacts_present": true,
+  "content_ready_for_submission": true,
+  "final_filenames_confirmed": false,
+  "final_files_manifest": "deliverables/FINAL_FILES.json",
+  "prior_paper_export_readiness": "docs/workstreams/20261029_delivery_audit/word_export_readiness_20261029.json"
 }

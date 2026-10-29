@@ -1,0 +1,57 @@
+{
+  "status": "passed_with_nonblocking_layout_note",
+  "PDF": "deliverables/report/SCE研究报告_v1.0.pdf",
+  "PDF_sha256": "8539f2e45a2640fe4ba6fd5b96fe83c461fd65b93d9a3943dba76149401776fa",
+  "PDF_bytes": 1854896,
+  "DOCX": "deliverables/report/SCE研究报告_v1.0.docx",
+  "DOCX_sha256": "61e351452a442c80cb5523f3ad3d5ba8551b103bffafdc58bd1a8beb982e323d",
+  "pages": 8,
+  "annotation_types": {},
+  "font_names": [
+    "/KYFMFK+DejaVuMathTeXGyre-Regular",
+    "/TUTFAU+TimesNewRomanPS-BoldMT",
+    "/YPULQV+TimesNewRomanPSMT",
+    "/YWPBFM+HYKaiTiKW"
+  ],
+  "all_used_fonts_embedded": true,
+  "checks": {
+    "pages_4_to_8": true,
+    "signature": true,
+    "no_comment_annotations": true,
+    "new_grid_wording": true,
+    "2025_development_disclosure": true,
+    "midmonth_cutoff": true,
+    "distinct_combination_weights": true,
+    "main_metrics": true,
+    "no_draft_labels": true,
+    "no_unfilled_markers": true
+  },
+  "new_API_calls": 0,
+  "PDF_modified_by_audit": false,
+  "Word_modified_by_audit": false,
+  "visual_pages_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "visual_review": "All eight rendered pages inspected: no missing glyphs, overlapping figures, clipped equations or printed review comments.",
+  "text_to_Word": {
+    "normalized_long_paragraphs_checked": 87,
+    "missing_or_changed_paragraphs": 0
+  },
+  "layout_note": {
+    "severity": "optional_cosmetic",
+    "pages": [
+      2,
+      3
+    ],
+    "description": "First population-source table row continues across the page break, splitting 性别. Text complete; no change applied."
+  },
+  "original_PDF_preserved": true,
+  "ready_for_submission_content": true
+}

@@ -1,14 +1,14 @@
 # 当前交付入口
 
-当前研究包为 **v07**，由交付前口径审查生成。论文为作者手调v10 Word，视频为已确认成片；三者各自编号。旧v06及开发outputs不作为当前选包入口。
+当前研究包为 **v07**，由交付前口径审查生成。论文为作者定稿v1.0 PDF，视频为已确认成片；三者各自编号。旧v06及开发outputs不作为当前选包入口。
 
 ## 提交文件
 
 - **研究包 ZIP：**[SCE_research_package_draft_v07.zip](research_package/v07/SCE_research_package_draft_v07.zip)，约39MB。
 - **视频 MP4：**[SCE_demo_v01.mp4](video/recordings/exports/assembled_v01/SCE_demo_v01.mp4)，4分27.9秒，作者已确认。
-- **论文 PDF：尚未生成最终提交件。**请先按[论文修改及导出清单](../docs/workstreams/20261029_delivery_audit/README.md)完成三处事实修正、费用确认，再从[当前Word](../docs/reports/final_report_draft_v10/SCE研究报告_作者审阅稿_v10.docx)导出4—8页清洁PDF。不要上传旧v06论文PDF替代当前Word。
+- **论文 PDF：**[SCE研究报告_v1.0.pdf](report/SCE研究报告_v1.0.pdf)，8页、约1.85MB；署名、批注排除、字体和图表已核验。[Word存档](report/SCE研究报告_v1.0.docx)与[验收记录](report/acceptance.json)保留。
 
-上传前确认作者、导师和赛事文件命名；上传完成后保存回执。当前尚未代上传或公开GitHub。
+三件材料已齐。最终路径/字节/SHA256见[FINAL_FILES.json](FINAL_FILES.json)，校验见[CHECKSUMS.sha256](CHECKSUMS.sha256)。上传副本须按报名的赛道/子赛道/队伍命名，用户上传后保存回执；本轮未代上传或公开GitHub。论文第2–3页人口表首行有跨页拆词，可选美化，原PDF不改。
 
 ## 如何审查研究包
 
