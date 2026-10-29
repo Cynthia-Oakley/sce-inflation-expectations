@@ -1,12 +1,12 @@
 # 项目结构与目录职责
 
-更新：2026-10-27。本页维护目录职责，当前研究全貌见[DESIGN](DESIGN.md)，任务与日程分别见[NEXT_ACTIONS](NEXT_ACTIONS.md)、[ROADMAP](ROADMAP.md)。旧云端阶段说明已转入[历史文档](archive/2026-10/README.md)。
+更新：2026-10-29。本页维护目录职责，当前研究全貌见[DESIGN](DESIGN.md)，任务与日程分别见[NEXT_ACTIONS](NEXT_ACTIONS.md)、[ROADMAP](ROADMAP.md)。旧云端阶段说明已转入[历史文档](archive/2026-10/README.md)。
 
 ## 开发目录与提交包分开阅读
 
-`studies/sce_inflation_expectations/`是长期开发源码，不应直接整目录压缩提交。先读其[README](../studies/sce_inflation_expectations/README.md)和[文件导读](../studies/sce_inflation_expectations/FILE_GUIDE.md)。**正式审阅从[deliverables](../deliverables/README.md)进入**：当前v05在导出时实际按components/population、environment、behavior及runtime等重排，study根只有3个Python入口。159份主包源码、831份原始源码归档，标准工件和0API聚合复算保留。
+`studies/sce_inflation_expectations/`是长期开发源码，不应直接整目录压缩提交。先读其[README](../studies/sce_inflation_expectations/README.md)和[文件导读](../studies/sce_inflation_expectations/FILE_GUIDE.md)。**正式审阅从[deliverables](../deliverables/README.md)进入**：当前v12的主study按组件、运行和评价归类，study根只有3个Python入口；包根另有review.py快捷入口。168份主包源码、889份原始开发源码归档，实际原始输入输出与公开源快照分层。默认0API复算；自备Key使用原源码独立工作区，支持重建、批量、递推、评价与重拟，不借用作者相邻仓库。
 
-v04只做导读与依赖筛选，仍有大量平铺模块，现已由v05替代。开发仓库源码及冻结输入/旧ZIP保留原路径；导出有逐文件迁移及SHA映射，不维护第二套科研算法。[本轮实际整理与验收](workstreams/20261027_clean_release/README.md)，旧[逐文件目录](workstreams/20261027_study_layout/README.md)仅作历史审计。
+v04/v05是此前的布局整理阶段；当前v12沿用组件归类，并增加原工程独立全流程入口。开发仓库源码及冻结输入/旧ZIP保留原路径；导出有逐文件迁移及SHA映射，不维护第二套科研算法。[本轮实际整理与验收](workstreams/20261027_clean_release/README.md)，旧[逐文件目录](workstreams/20261027_study_layout/README.md)仅作历史审计。
 
 ## 唯一维护地与官方引擎
 

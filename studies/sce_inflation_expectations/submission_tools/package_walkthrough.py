@@ -155,7 +155,7 @@ select{max-width:100%;padding:10px;font:14px sans-serif;border:1px solid var(--l
 <a class='button' href='verified_results/index.html' target='_blank' rel='noopener'>打开真实复算结果</a><a class='button' href='acceptance.json' target='_blank' rel='noopener'>查看验收记录</a><a href='tests.log' target='_blank' rel='noopener'>TEST_COUNT项测试原始日志</a>
 <p class='long-hash'>源ZIP SHA256：HASH</p><p class='muted'>本次复用了已有无system-site-packages的隔离Python环境，没有重新联网安装依赖；研究包和上传原件未修改。</p></section>
 <section id='limits'><h2>哪些事情没有被混在一起</h2>
-<ul><li>复算历史回答与向DeepSeek重新提问分开。前者无需Key，后者需评审者自己的Key、合法完整输入及预算。</li><li>默认计分查用冻结密度缓存；加参数可重跑数值拟合。它不会把旧MAE直接当作新的微观计算。</li><li>近期B、月度和周度没有真人微观真值，不评价它们的微观准确性。下游部分重算封存预测的误差，没有重新拟合回归。</li><li>INPUT_LIMITS</li></ul>
+<ul><li>复算历史回答与向DeepSeek重新提问分开。前者无需Key，后者需评审者自己的Key、合法完整输入及预算。</li><li>默认计分查用冻结密度缓存；加参数可重跑数值拟合。它不会把旧MAE直接当作新的微观计算。</li><li>近期B、月度和周度没有真人微观真值，不评价它们的微观准确性。DOWNSTREAM_LIMITS</li><li>INPUT_LIMITS</li></ul>
 <p class='note'><b>提交仍使用原“提交材料”目录中的三件套。</b>本目录是查看与练习副本，打开或重复复算都不会改变正式ZIP、论文和视频。</p></section>
 </main></div><script>const docs=DOCUMENTS;const select=document.getElementById('docSelect');function showDoc(path){select.value=path;document.getElementById('docText').textContent=docs[path];}select.addEventListener('change',()=>showDoc(select.value));document.querySelectorAll('[data-doc]').forEach(b=>b.addEventListener('click',()=>{showDoc(b.dataset.doc);document.getElementById('docSelect').scrollIntoView({behavior:'smooth',block:'center'});}));showDoc('README.md');</script></html>"""
     replacements = {"VERSION": version, "TREE": _tree(paths, docs), "OPTIONS": doc_options,
@@ -166,6 +166,7 @@ select{max-width:100%;padding:10px;font:14px sans-serif;border:1px solid var(--l
                     "ZIP_MEMBERS": str(len(paths)), "VERIFIED_FILES": str(proof["verified_package_files"]),
                     "IMPORTED_MODULES": str(proof["study_modules_all_from_extracted_package"]),
                     "ARCHIVED_SOURCES": str(proof["archived_source_files_verified"]), "TEST_COUNT": test_match[1],
+                    "DOWNSTREAM_LIMITS": ("默认all只重算封存下游预测的误差；另用review.py downstream可从公共序列真实重建面板并重拟原回归，calibrate可重估原训练期组合/宏观模型。" if portable.exists() else "默认下游部分重算封存预测的误差，没有重新拟合回归。"),
                     "INPUT_LIMITS": ("本版补齐公开原始源快照、SCE匿名编号/内部编码、调查日期、新闻候选与标签及原始调用凭证。PORTABLE_REPRODUCTION.md给出自备Key批量A/B、新月度/周度递推、重新评价与回归拟合命令；不依赖作者旧目录。Key等真实账号秘密不提供。含新闻ZIP仅供赛事保密评审，不公开上传GitHub。" if portable.exists() else
                         ((f"本版另附66,822份实际输入与选中新闻摘录，{input_metadata['full_prompt_rows']:,}份完整输入可用自己的Key单次再生成；" + ("A公开调查派生日期也完整保留，无需回填；" if input_metadata.get("public_survey_derived_dates_retained") else "A真实日期仍遮蔽；") + "原始身份键和Key不提供。含新闻的ZIP只供赛事保密评审，不进入公开GitHub。") if inputs_manifest.exists() else "不包含原始身份键、真实完成日期、密钥、完整历史提示与新闻全文；完整付费再生成仍有输入恢复条件。")) }
     # Single-pass replacement prevents a token in source text being reinterpreted.

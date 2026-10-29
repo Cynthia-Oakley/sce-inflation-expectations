@@ -1,6 +1,6 @@
 # 当前模拟配置与已完成版本
 
-更新：2026-10-27。本页只列现行已完成配置；旧准备状态已移至[历史快照](archive/2026-10/current_overviews_before_20261027/README.md)。**A82、B11、两线Normal、月度递推和完整47周均已完成，不要重新启动。**精确参数以该批冻结协议为准；统一交付见[deliverables](../deliverables/README.md)，任务见[NEXT_ACTIONS](NEXT_ACTIONS.md)。
+更新：2026-10-29。本页只列现行已完成配置；旧准备状态已移至[历史快照](archive/2026-10/current_overviews_before_20261027/README.md)。**A82、B11、两线Normal、月度递推和完整47周均已完成，不要重新启动。**精确参数以该批冻结协议为准；统一交付见[deliverables](../deliverables/README.md)，任务见[NEXT_ACTIONS](NEXT_ACTIONS.md)。
 
 ## 1. 共同模型、接口与评价
 
@@ -75,4 +75,4 @@ Normal继承完整Q8/Q9答卷原子；54格＋入组分池，同格经验分布�
 
 旧共同截止3/8/20、早期B0.240815、Flash十二期、Qwen、心理/数理/财务与温度等均属机制发展记录。完整更新前配置页见[原字节快照](archive/2026-10/current_overviews_before_20261027/README.md)，各批workstream/协议/输入/结果不改。历史授权不自动授权新调用。
 
-当前研究包是[干净交付v05](../deliverables/README.md)，包中`simulation/research_runs.json`列A_T0、B_latest、monthly_recursion、weekly；Normal后处理另在research_scope和聚合复算记录中。正式论文仍为v05工作稿，[v06整合计划](workstreams/20261027_final_delivery/index.html)尚未执行；研究包与论文版本独立。此次仅纠正文档，不改模型、冻结配置、结果或已验收ZIP。
+当前研究包为[v12](../deliverables/README.md)，论文为作者确认的v1.0 PDF，视频为4分27.9秒成片，三者独立编号。simulation/research_runs.json列四个最终任务与portable_reexecution入口；A/B Normal单列。包根review.py支持评审自备Key生成新回答及重新评价/拟合，默认all继续0API复算封存结果。封包未新增模型调用、未修改上述配置或科研结果；不能将新随机回答强制断言为原论文分数。

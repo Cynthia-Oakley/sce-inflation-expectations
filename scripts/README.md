@@ -51,7 +51,7 @@
 - `prepare_sce_core_normal_scale_pilot.py`、`report_sce_core_normal_scale.py`：准备三期256/384/512共用Core＋共同留出审计名册，读取既有82月结果生成成本—精度图文；不调用API，不将理想真人Core误差当LLM拟合成绩。最终规模未定。
 - `analyze_sce_grid_dimensions.py`：八类人口特征的关联/GVIF/MCA、三/四维126候选和受访者/时间检查，评价层零API，不改模拟配置。
 - `analyze_sce_grid_joint_holdout.py`、`analyze_sce_grid_sensitivity.py`：同一真人Core的联合格留出、覆盖门槛及Q8保护敏感性；不是新的LLM实验或生产Bayes扩展。
-- `analyze_sce_grid_oversampling.py --out outputs/<新目录>`：仅从人口/权重比较12/36/54细格的保底过采样、实际抽中概率和比例校准；不读取问卷答案、不新增API，尚未接生产Normal。
+- `analyze_sce_grid_oversampling.py --out outputs/<新目录>`：仅从人口/权重比较12/36/54细格的保底过采样、实际抽中概率和比例校准；不读取问卷答案、不新增API；此入口只作抽样可行性检查，正式Normal与新回答评价见当前研究包review.py。
 - `report_sce_grid_dimensions.py --source <选择目录> --joint <联合目录> --sensitivity <敏感性目录> --out <新报告目录>`：读取聚合生成图文；不重拟合问卷或调用API。
 - `materialize_sce_fullperiod.py --out outputs/<新目录> --stage all`：复用现有缓存补全93月P/E，可用`--months`限定；无LLM调用，近期合成不自动取得严格B资格。
 - `complete_sce_policy_sources.py --delivery outputs/<物化目录>`：补公开美联储/Gallup材料并记录原文、日期和哈希，无付费API。
@@ -62,7 +62,7 @@
 - [prepare_sce_state_continuity_inputs.py](prepare_sce_state_continuity_inputs.py)：复用现有构建器组装本地E、过去信念及家庭字段，零API，新目录保存。
 - [prepare_sce_state_continuity_prompts.py](prepare_sce_state_continuity_prompts.py)：组装动态状态模板并作确定性接续回放，不生成模型结果。
 - [check_sce_state_continuity_core.py](check_sce_state_continuity_core.py)：复用frozen_batch.worker执行官方Core零API验收，独立记录检查与源码副本。
-- [prepare_sce_state_continuity.py](prepare_sce_state_continuity.py)：从物化P和历史信念准备三月固定名单/状态依赖，不读取本期真值，不调用API；产物明确尚未prompt-ready。
+- [prepare_sce_state_continuity.py](prepare_sce_state_continuity.py)：从物化P和历史信念准备三月固定名单/状态依赖，不读取本期真值，不调用API；本入口只构造人口/历史输入，提示与执行由后续接续模块完成。
 - [run_sce_state_continuity.py](run_sce_state_continuity.py)：冻结/授权/单次启动三月动态状态队列，复用SCEOpenAILLM，按月接续、逐槽日志及在途费用预占；不会自动重试或重启。
 - [evaluate_sce_state_continuity.py](evaluate_sce_state_continuity.py)：独立真值投影与缓存评价，复用冻结Q9/分位数/W1，Q8/Q9独立、基线覆盖单列。
 - [continue_sce_state_continuity.py](continue_sce_state_continuity.py)：仅在人工确认后续跑从未发送的状态位置，保留全部旧尝试及失败；源差异和不可改写的两段账本单独登记，原总预算不变。
@@ -464,7 +464,7 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 
 - `inspect_sce_weekly_readiness.py --out outputs/<fresh>`：零API清点候选周五日历、旧月度选稿截断数量、价格/政策/信心最后可得快照与月度先验可得日；不是周度执行包，不修改冻结月度运行。默认核202601/04/09，细节见周度设计工作流。
 
-- `prepare_sce_weekly_release_plan.py --out outputs/<fresh>`：零API生成周度公开SCE校准时钟与每月/7、14、21日提前期评分时钟。不是LLM执行包，方向/异常阈值尚未冻结；周度个人状态执行器仍待接。
+- `prepare_sce_weekly_release_plan.py --out outputs/<fresh>`：零API生成周度公开SCE校准时钟与每月/7、14、21日提前期评分时钟。本入口只构造时钟，不发送LLM；正式阈值与个人状态执行以周度冻结协议为准，当前便携全流程见研究包review.py。
 - `prepare_sce_weekly_preflight.py --out outputs/<fresh>`：零API按54格从512户根框架抽固定300户并恢复格质量，核对全47周候选新闻/基础标签、价格/信心快照与政策缺口；输出候选名单和逐周清单，不读取模型回答，不生成付费请求或最终执行授权。
 # 已完成月度递推的离线漂移分析
 
@@ -481,11 +481,11 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 
 - `build_sce_paper_materials.py --out docs/workstreams/20261027_final_delivery/<全新目录>`：从当前已验收研究包聚合与冻结A/网格证据构建作者审阅材料册（HTML/Markdown、数字CSV、图表、来源哈希），核对指标和固定组合；不拟参、不重跑API、不重写论文。当前入口见[材料册](../docs/workstreams/20261027_final_delivery/materials_v1/index.html)。
 
-- `build_sce_research_package.py --draft-version v11 --out <新目录> --public-log-registry <公开索引.json> --a-refresh-readout <新版A目录> --micro-data <冻结微观投影data目录> --input-data <冻结脱敏输入投影目录>`：当前v11按职责导出，保留四任务答卷/指标并补脱敏P/E/先验、选中新闻和完整Prompt。新闻ZIP仅供保密评审，不进入GitHub。完整命令见[统一交付入口](../deliverables/README.md)。旧v06保留，不能只改ZIP名称升级。
-- `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、源码导入审计、工程/聚合/微观复算及包内测试。v11通过独立无system-site-packages环境验收（78测试）；原文/答卷范围见micro导读。
+- `build_sce_research_package.py --draft-version v12 --out <新目录> --public-log-registry <公开索引.json> --a-refresh-readout <新版A目录> --micro-data <冻结微观投影data目录> --input-data <完整原样输入目录> --portable-data <冻结便携数据层>`：当前v12按职责导出，提供公开源快照、原样Prompt/原始回包和评审自备Key全流程。新闻ZIP仅供保密评审，不进入GitHub。完整命令见[统一交付入口](../deliverables/README.md)。旧v06保留，不能只改ZIP名称升级。
+- `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、源码导入审计、工程/聚合/微观复算及包内测试。v12通过独立无system-site-packages环境验收（78测试）；便携入口另有42定向测试；原文/答卷范围见micro导读。
 - 本机导览：验收完成后运行`python studies/sce_inflation_expectations/submission_tools/package_walkthrough.py --preview-dir <验收目录>`，在该目录生成HTML目录/README/答卷导览和可重复0API运行.command；不改冻结ZIP。
 
-- `catalog_sce_study.py --out <新目录>`：分类开发study文件，按当前入口计算静态依赖与补充归档，不执行实验。v04为此前的依赖筛选布局；当前交付使用构建器v11和`submission_tools/release_layout.py`，按组件/运行/评价实际归位源码。以[统一交付入口](../deliverables/README.md)和`submission/latest_package.json`选包，包内`DIRECTORY_GUIDE.md`及study的`FILE_GUIDE.md`解释读法。
+- `catalog_sce_study.py --out <新目录>`：分类开发study文件，按当前入口计算静态依赖与补充归档，不执行实验。v04为此前的依赖筛选布局；当前交付使用构建器v12和`submission_tools/release_layout.py`，按组件/运行/评价实际归位源码。以[统一交付入口](../deliverables/README.md)和`submission/latest_package.json`选包，包内`DIRECTORY_GUIDE.md`及study的`FILE_GUIDE.md`解释读法。
 
 ## 正式逐答卷与模型原文（2026-10-29）
 

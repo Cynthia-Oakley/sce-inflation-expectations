@@ -1,0 +1,108 @@
+{
+  "schema": "sce_v12_delivery_portable_acceptance/v1",
+  "status": "passed_independent_zip_and_portable_execution",
+  "checked_at_utc": "2026-10-29T11:07:49.461636+00:00",
+  "archive": "deliverables/research_package/v12/SCE_research_package_draft_v12.zip",
+  "archive_sha256": "b2118ffa0844104e3d684dd045a8aa4884226b991b7bdbbfae55d5fd31766b86",
+  "archive_bytes": 1153111309,
+  "package_tests_passed": 78,
+  "portable_targeted_tests_passed": 42,
+  "clean_environment": "Existing Python 3.11 venv without system-site-packages; SocioVerse2 0.2.0 noneditable",
+  "fresh_dependency_installation_this_turn": false,
+  "source_input_rebuild": {
+    "A_exact_messages": 41970,
+    "B_generation_files": 79,
+    "weekly_generation_files": 344,
+    "note": "Original algorithms rerun from bundled public snapshots; only object-key order differs in some outer JSON files"
+  },
+  "archived_raw_reply_closed_loop": {
+    "call_receipt_joins": 67147,
+    "canonical_input_positions": 66822,
+    "density_cache_hits": 19729,
+    "density_cache_misses": 0,
+    "density_cache_rows": 46675,
+    "prompt_hash_mismatches": 0,
+    "raw_response_records": 67147,
+    "raw_text_sha256_checked": 67147,
+    "task_rendered_messages": 67334,
+    "unique_canonical_inputs_referenced": 66822
+  },
+  "engineering_transport_check": {
+    "status": "passed_portable_original_workflow_offline_acceptance",
+    "checks": [
+      "all_four_tasks_run_with_fresh_dynamic_state",
+      "resume_sends_zero_completed_calls",
+      "monthly_changed_previous_answer_changes_successor_prompt",
+      "weekly_changed_previous_answer_changes_successor_prompt",
+      "budget_stops_before_network_dispatch",
+      "every_input_wave_hash_verified",
+      "all_imported_SCE_modules_from_this_source_workspace"
+    ],
+    "checked_input_waves": 151,
+    "fixture_answers": 16,
+    "fixture_attempts": 14,
+    "real_LLM_calls": 0
+  },
+  "downstream_refit": {
+    "status": "completed_and_verified",
+    "predictions": 4896,
+    "model_metrics": 192,
+    "paired_contrasts": 408
+  },
+  "calibration_refit": "matched_archived_calibration",
+  "archived_answer_metrics": {
+    "A": {
+      "n_months": 82,
+      "mae_pp": 0.29840671263598517,
+      "rmse_pp": 0.41512073273547,
+      "bias_pp": -0.013810829002062078,
+      "max_absolute_error_pp": 1.3805812768003651
+    },
+    "B": {
+      "n_months": 11,
+      "mae_pp": 0.34850875770999806,
+      "rmse_pp": 0.43283661203795376,
+      "bias_pp": 0.25875957034839137,
+      "max_absolute_error_pp": 0.8544204486382516
+    },
+    "monthly": {
+      "n_months": 10,
+      "mae_pp": 0.30575060130371906,
+      "rmse_pp": 0.38610694339623264,
+      "bias_pp": 0.25196394975917114,
+      "max_absolute_error_pp": 0.7525965471739418
+    },
+    "weekly": {
+      "n_months": 11,
+      "mae_pp": 0.15158064091501336,
+      "rmse_pp": 0.18894221449740906,
+      "bias_pp": 0.041650686736822505,
+      "max_absolute_error_pp": 0.4024593920537911
+    },
+    "A_Normal": {
+      "n_months": 82,
+      "mae_pp": 0.3014219106420097,
+      "rmse_pp": 0.4142361487147457,
+      "bias_pp": -0.009208348526508052,
+      "max_absolute_error_pp": 1.327727902028145
+    },
+    "B_Normal": {
+      "n_months": 11,
+      "mae_pp": 0.34616861601817855,
+      "rmse_pp": 0.4314491398495139,
+      "bias_pp": 0.2610997120402108,
+      "max_absolute_error_pp": 0.8544204486382516
+    }
+  },
+  "secrets_included": false,
+  "public_anonymous_source_ids_and_data_code_maps_included": true,
+  "paid_provider_availability_test_performed": false,
+  "new_model_API_calls": 0,
+  "retained_limits": [
+    "Fresh LLM responses are stochastic and may differ from paper scores",
+    "Provider availability/pricing require the reviewer own funded Key",
+    "Input timestamps/vintages and model-knowledge limits remain as disclosed",
+    "Source-to-input preparation reuses provided frozen news classification labels"
+  ],
+  "original_paper_and_video_changed": false
+}

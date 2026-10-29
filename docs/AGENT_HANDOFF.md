@@ -1,6 +1,6 @@
 # SCE 项目当前交接
 
-**最新v11（2026-10-29）：**作者明确要求公开SCE调查派生日期不再额外遮蔽。66,822份A/B/月度/周度Prompt全部原样、与原哈希一致，0日期/新闻占位符；原始ID、身份/供体映射和Key不提供。新增list→预览→自备Key单次生成的便携路径，A也无需回填。ZIP约256MB，仅供赛事保密评审，不进入GitHub。78测试及完整离线复算通过，20份原数值/答卷文件字节不变，0新模型调用。唯一指针为deliverables/README.md与submission/latest_package.json，本机预览v11；旧v10及以前的遮蔽说明仅为历史。
+**最新v12（2026-10-29）：**已补齐评委自有设备/Key的原工程全流程：公开源快照→人口/先验/环境/新闻匹配→四任务批量与新回答递推→独立评价/Normal→原组合/宏观及下游重拟。包根review.py提供install/prepare/check/plan/run/workflow/evaluate/calibrate/downstream/audit-inputs；不得把默认缓存复算冒称新API生成。全部原始公开编号/日期/数据代码映射、66,822份完整原样Prompt、67,147条原始回包与request ID/时间/usage保留，316个无返回ID失败为null；只排除实际账号秘密。ZIP约1.15GB，只供保密评审、不进入GitHub。独立ZIP78测试、42便携定向测试及67,334状态闭环0哈希差异；0新付费模型调用、论文/视频和科研指标不变。唯一入口deliverables/README.md、submission/latest_package.json，本机预览v12。旧v11及以前的缺输入/仅单步说明为历史，不覆盖当前能力。
 
 **上一检查点v10（2026-10-29）：**正式包已补66,822份实际输入与选中新闻、24,852份完整B/月度/周度Prompt及默认离线自备Key单次入口。A真实日期、身份/供体对应表、原始ID和Key不提供。ZIP约206MB，仅供赛事保密评审，不进入GitHub；GitHub只同步代码/文档/已确认报告和视频，保持私有。新ZIP独立76测试及完整复算通过，20份既有数值/答卷数据字节不变，0新模型调用。唯一指针为deliverables/README.md与submission/latest_package.json，本机预览为deliverables/本地复现预览/v10/index.html。下列v09及更早条目为历史检查点。
 

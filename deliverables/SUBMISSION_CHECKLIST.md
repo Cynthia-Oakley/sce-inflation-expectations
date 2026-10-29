@@ -8,8 +8,8 @@
 2. **视频：已由作者确认。**MP4时长267.891秒，展示设计、真实运行输入输出、单户执行和结果；1080p，原速。原片与制作记录留在video/，上传使用成片。
 3. **可复现实验文档：已提供。**研究包遵循studies/sce_inflation_expectations/布局；README给出环境安装和一条默认运行命令。正式模型答卷、逐字段修复、A配对/全波次微观评价和A/B Normal均可在声明范围内复算。
 4. **额外完整代码仓库：本项目不适用该条件。**官网针对赛道C以本地开发修改平台核心的情况另列此要求。本项目参加赛道A，平台以锁定依赖提供、study适配代码在研究包中。开发仓库与官方宿主并非额外必交件，GitHub链接也不能替代研究包ZIP。
-5. **可复现性声明：已集中整理。**包根EXTERNAL_MODEL_AND_API.md明确本地外部模型、数值/概率JSON、自备Key和真实生成前置条件；REPRODUCIBILITY.md说明种子、模型、调用/费用、工程例、答卷复算与付费再生成的区别。外部LLM不承诺单一seed逐字节重现。v11全部66,822份A/B/月度/周度输入完整原样，含公开调查派生日期和选中新闻，可自备Key做条件单步生成。没有待回填日期；新的自主链仍须重渲染新前态。
-6. **数据合规：提交范围与限制均有声明。**DATA_RELEASE_POLICY.json、TRUTH_ISOLATION_EVIDENCE.json及micro/SCE_DATA_NOTICE.md给出来源/使用条件、真值获取凭据与隔离、匿名化和排除项。无法确认的逐文件取得时刻/历史版本仍留空并披露；不由文件夹日期反推。严格事前B资格未完全认证，按回顾性回测呈现。
+5. **可复现性声明：已集中整理。**v12包根PORTABLE_REPRODUCTION.md与EXTERNAL_MODEL_AND_API.md区分封存复算和自备Key真实再生成。公开源重建、四任务批量、新状态月度/周度递推、独立评价/Normal、原训练期组合/宏观与下游回归重拟均有命令。默认0API；付费必须自备OpenRouter Key、显式预算和confirm-paid。固定种子/输入/模型不保证新LLM回答逐字一致。本次封包没有新增付费API服务连通测试。
+6. **数据合规：提交范围与限制均有声明。**DATA_RELEASE_POLICY.json、TRUTH_ISOLATION_EVIDENCE.json及micro/SCE_DATA_NOTICE.md给出来源/使用条件、真值获取凭据与隔离、公开匿名编号/日期保留及账号秘密排除项。无法确认的逐文件取得时刻/历史版本仍留空并披露；不由文件夹日期反推。严格事前B资格未完全认证，按回顾性回测呈现。
 
 官网：https://socioverse.fudan-disc.com/challenge/ 。2026-10-29复核动态正文SHA256：dce3d93a9ceab1377cf27a5d93d6b5f3fdebaaa70ee6154606339c2fc09bee53，与先前一致。
 
@@ -23,7 +23,7 @@
 - 唯一维护源码：该仓库`studies/sce_inflation_expectations/`。
 - 干净提交study：当前研究包`package/studies/sce_inflation_expectations/`；评委从包根README开始，不从开发源码平铺目录开始。
 - `../socioverse2_repo/`是官方依赖宿主/参考，不是SCE研究包。
-- 私有GitHub：https://github.com/Cynthia-Oakley/socioverse-challenge-2026 ，工作分支`docs/deepseek-reuse-20261008`。本轮初检时远端为d90d669，本地05f3755比该远端多13个提交；本次最终说明整理尚未推送。GitHub远端不能当作已含最新论文/微观研究包的副本。
+- 私有GitHub：https://github.com/Cynthia-Oakley/socioverse-challenge-2026 ，工作分支docs/deepseek-reuse-20261008。仅同步代码、说明、汇总验收、已确认论文和视频；v12 ZIP、完整输入输出与新闻/微观源不进入仓库。推送状态见latest_package.json与本轮备份回执，私有状态和默认main不改。
 
 ## Kimi复核重点
 
@@ -33,7 +33,7 @@
 4. 论文共同支持W1=2.219218与Core/全波次W1=2.197466使用不同支持；不要互相覆盖。
 5. 四个最终任务实报约50.94美元、全项目约108美元的作者估计，范围不同。
 6. 随机新闻四档4/8/16/32、CPI相关度1.5、警示权重1。A/B有Normal；月度递推和周度无Normal。周度47点对应11个月主真值。
-7. README明确默认0API复算，全文历史提示/新闻与新的付费再生成有条件；不得改成“只含聚合”或“全部原始输入已公开”。
+7. README明确默认0API复算；v12同时提供完整公开源与原样Prompt/原始回包、公开匿名编号/日期和数据代码映射，自备Key可批量及新状态递推。数据仅供保密评审，不是已在GitHub公开。
 
 ## 提交操作顺序
 
@@ -48,6 +48,10 @@
 论文第2—3页人口来源表首行有跨页拆词，内容完整，属于可选排版优化。研究结果仍有2021低估、微观分歧偏窄、月度递推漂移和下游用途局部性，这些已如实披露，不因提交封装再改配置或挑选结果。
 
 
-2026-10-29 v10输入补齐：含新闻的ZIP只用于赛事保密评审，不进入GitHub。私人身份/供体映射、真实作答日和Key不提供；版权声明见包内inputs/NEWS_REVIEW_NOTICE.md。报告与视频原件未变，最新哈希以FINAL_FILES.json为准。
+## v12复现验收（当前）
 
-2026-10-29 v11：按作者明确要求保留公开调查派生日期；全部Prompt完整，原始身份ID/映射/Key不附。78项包内测试和离线复算通过，当前提交ZIP见FINAL_FILES.json。
+完整四任务的66,822份原样Prompt、67,147条原始回包和67,334个有效状态均提供，并保留公开原始匿名编号、日期、数据编码映射与逐调用凭据。仅排除API Key、账号密码、认证头和付款秘密。第三方数据仅限赛事保密评审，不随GitHub公开。
+
+新ZIP独立解压后78项测试与逐答卷复算通过；42项便携定向测试通过，原始回包递推重建67,334份任务输入、0哈希差异。组合/宏观与下游回归从原数据实际重拟核对，非只读取旧预测重算误差。详docs/workstreams/20261029_portable_reproduction/acceptance_public.json。
+
+v10/v11的“日期/原始ID/映射不附、只支持条件单步”等说明仅为历史投影范围，已由v12补齐。论文/视频及科研结果不变，0新增付费模型调用。
