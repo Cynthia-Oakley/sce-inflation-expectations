@@ -1,6 +1,6 @@
 {
   "checked_on_beijing": "2026-10-29",
-  "status": "three_artifacts_verified_pending_portal_naming_and_user_upload",
+  "status": "submitted_user_confirmed_awaiting_platform_feedback",
   "files": [
     {
       "role": "paper",
@@ -31,11 +31,11 @@
   "paper_pages": 8,
   "video_seconds": 267.891,
   "official_portal_filenames_confirmed": false,
-  "submitted": false,
+  "submitted": true,
   "new_API_calls": 0,
   "remaining": [
-    "Check any separate subtrack naming required by the upload portal",
-    "User uploads PDF/ZIP/MP4 and saves confirmation receipt"
+    "Save the platform success receipt locally if available",
+    "Handle platform feedback; no new experiment planned"
   ],
   "requirements_checklist": "deliverables/SUBMISSION_CHECKLIST.md",
   "package_content_version": "v12",
@@ -45,5 +45,8 @@
   "external_model_and_api_guide": "deliverables/research_package/v12/package/EXTERNAL_MODEL_AND_API.md",
   "distribution_scope": "ZIP confidential competition review; GitHub code/report/video only",
   "portable_reproduction_guide": "deliverables/research_package/v12/package/PORTABLE_REPRODUCTION.md",
-  "portable_acceptance": "docs/workstreams/20261029_portable_reproduction/acceptance_public.json"
+  "portable_acceptance": "docs/workstreams/20261029_portable_reproduction/acceptance_public.json",
+  "submission_confirmation_basis": "Direct human statement in this chat: platform submission succeeded",
+  "submission_confirmed_on_beijing": "2026-10-29",
+  "submission_record": "submission/submission_record.json"
 }

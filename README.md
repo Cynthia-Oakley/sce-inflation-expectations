@@ -2,6 +2,8 @@
 
 更新：2026-10-29。赛道A“历史重建与未来预测”；研究对象为美国SCE居民未来12个月通胀预期。
 
+**平台提交已由作者确认成功，项目进入反馈维护阶段。**提交检查点为`submission-v1.0`，精确三件套以[提交归档](submission/submission_record.json)中的SHA256为准；[仓库收尾与赛后公开计划](docs/workstreams/20261029_repository_closeout/README.md)。
+
 ## 从这里开始
 
 1. [项目设计总纲](docs/DESIGN.md)：研究问题、P/E/B、信息边界、评价及主要结果。

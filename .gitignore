@@ -51,6 +51,8 @@ deliverables/research_package/
 /deliverables/提交材料/*
 !/deliverables/提交材料/上传说明.txt
 !/deliverables/提交材料/CHECKSUMS.sha256
+# Portal receipts stay local; the tracked submission record stores hashes/status.
+/deliverables/submission_receipts/
 
 # Local news review page contains cached full abstracts; curated labels are tracked.
 docs/literature/sce/news_selection/news_review_20261011.html

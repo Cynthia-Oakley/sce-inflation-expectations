@@ -1,0 +1,38 @@
+{
+  "status": "submitted_user_confirmed_awaiting_platform_feedback",
+  "confirmed_on_beijing": "2026-10-29",
+  "confirmation_basis": "Direct human statement in this chat: platform submission succeeded",
+  "portal_independently_inspected": false,
+  "exact_submitted_at": null,
+  "portal_submission_id": null,
+  "receipt_file": null,
+  "team": "水上挽月",
+  "track": "赛道A：历史重建与未来预测",
+  "title": "居民通胀预期的生成式社会模拟",
+  "code_checkpoint": "7ece55ac681036855d94c55a14a4ed159d76bf9f",
+  "submission_tag": "submission-v1.0",
+  "research_package_version": "v12",
+  "artifacts": [
+    {
+      "role": "paper",
+      "filename": "赛道A-历史重建与未来预测-水上挽月-居民通胀预期的生成式社会模拟.pdf",
+      "sha256": "8539f2e45a2640fe4ba6fd5b96fe83c461fd65b93d9a3943dba76149401776fa",
+      "bytes": 1854896
+    },
+    {
+      "role": "research_package",
+      "filename": "赛道A-历史重建与未来预测-水上挽月-代码.zip",
+      "sha256": "b2118ffa0844104e3d684dd045a8aa4884226b991b7bdbbfae55d5fd31766b86",
+      "bytes": 1153111309
+    },
+    {
+      "role": "video",
+      "filename": "赛道A-历史重建与未来预测-水上挽月-演示视频.mp4",
+      "sha256": "9917baed9ad4ca88a363ab1bb28b1bee3db880044854a08542f8b24220b2e486",
+      "bytes": 19968199
+    }
+  ],
+  "submitted_artifacts_changed": false,
+  "new_model_API_calls": 0,
+  "checkpoint_relation": "Repository checkpoint associated with submission; exact portal artifacts are identified by their SHA256, not by a rebuilt ZIP"
+}

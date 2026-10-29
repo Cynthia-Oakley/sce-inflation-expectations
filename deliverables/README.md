@@ -10,7 +10,7 @@
 - **论文：**[SCE研究报告_v1.0.pdf](report/SCE研究报告_v1.0.pdf)，8页；[Word存档](report/SCE研究报告_v1.0.docx)。
 - **视频：**[SCE_demo_v01.mp4](video/recordings/exports/assembled_v01/SCE_demo_v01.mp4)，4分27.9秒；[GitHub副本](video/final/SCE_demo_v1.0.mp4)内容相同。
 
-统一指纹见[CHECKSUMS.sha256](CHECKSUMS.sha256)，官方要求对账见[SUBMISSION_CHECKLIST.md](SUBMISSION_CHECKLIST.md)。本地封包和GitHub备份不等于已提交赛事，仍由作者上传并保存回执。
+统一指纹见[CHECKSUMS.sha256](CHECKSUMS.sha256)，官方要求对账见[SUBMISSION_CHECKLIST.md](SUBMISSION_CHECKLIST.md)。作者已于2026-10-29在本对话确认平台提交成功，当前等待评审反馈；[提交记录](../submission/submission_record.json)据此更新，回执文件及精确提交时间未提供，仍留空。
 
 ## 评委能够怎样复现
 
@@ -54,4 +54,4 @@ SCE_PACKAGE_OUT="deliverables/research_package/v12_rebuild_$(date +%Y%m%dT%H%M%S
 
 ## 分发与GitHub
 
-**ZIP仅供赛事保密评审。**第三方新闻保留来源及权利说明，不声明取得公开再分发许可。原始微观/新闻、完整输入输出及ZIP不进入GitHub；代码、说明、汇总验收、作者确认的论文和视频备份到[既有私有工作分支](https://github.com/Cynthia-Oakley/socioverse-challenge-2026/tree/docs/deepseek-reuse-20261008)。未来公开仓库前须另审历史记录中的数据范围。
+**ZIP仅供赛事保密评审。**第三方新闻保留来源及权利说明，不声明取得公开再分发许可。原始微观/新闻、完整输入输出及ZIP不进入GitHub；代码、说明、汇总验收、作者确认的论文和视频备份在既有私有仓库；完成版同步到main，原[开发分支](https://github.com/Cynthia-Oakley/socioverse-challenge-2026/tree/docs/deepseek-reuse-20261008)保留，提交检查点用submission-v1.0标记。未来公开仓库前须另审历史记录中的数据范围。
