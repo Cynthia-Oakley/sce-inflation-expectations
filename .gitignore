@@ -44,6 +44,10 @@ proposal/build/
 submission/build/
 # Generated reviewer bundles live outside outputs; rebuild from tracked sources.
 deliverables/research_package/
+# Upload copies are local; keep only instructions and fingerprints in Git.
+/deliverables/提交材料/*
+!/deliverables/提交材料/上传说明.txt
+!/deliverables/提交材料/CHECKSUMS.sha256
 
 # Local news review page contains cached full abstracts; curated labels are tracked.
 docs/literature/sce/news_selection/news_review_20261011.html

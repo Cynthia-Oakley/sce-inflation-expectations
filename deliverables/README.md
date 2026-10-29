@@ -1,10 +1,12 @@
 # 当前交付入口
 
-当前研究包为 **v07**，由交付前口径审查生成。论文为作者定稿v1.0 PDF，视频为已确认成片；三者各自编号。旧v06及开发outputs不作为当前选包入口。
+当前研究包为 **v08**，由交付前口径审查及官方六项要求对账生成。论文为作者定稿v1.0 PDF，视频为已确认成片；三者各自编号。旧v07/v06及开发outputs不作为当前选包入口。
 
 ## 提交文件
 
-- **研究包 ZIP：**[SCE_research_package_draft_v07.zip](research_package/v07/SCE_research_package_draft_v07.zip)，约39MB。
+**三个上传副本已汇集在[提交材料](提交材料/)目录**，与下列验收原件的SHA256完全相同。按作者确认的“赛道A：历史重建与未来预测”命名；若平台另要求子赛道字段，按实际选项调整外部文件名。
+
+- **研究包 ZIP：**[SCE_research_package_draft_v08.zip](research_package/v08/SCE_research_package_draft_v08.zip)，约39MB。
 - **视频 MP4：**[SCE_demo_v01.mp4](video/recordings/exports/assembled_v01/SCE_demo_v01.mp4)，4分27.9秒，作者已确认。
 - **论文 PDF：**[SCE研究报告_v1.0.pdf](report/SCE研究报告_v1.0.pdf)，8页、约1.85MB；署名、批注排除、字体和图表已核验。[Word存档](report/SCE研究报告_v1.0.docx)与[验收记录](report/acceptance.json)保留。
 
@@ -12,14 +14,16 @@
 
 ## 如何审查研究包
 
-- [解压包README](research_package/v07/package/README.md)、[目录导航](research_package/v07/package/DIRECTORY_GUIDE.md)。
-- [论文数字口径对照](research_package/v07/package/studies/sce_inflation_expectations/reports/PAPER_METRIC_GUIDE.md)：区分描述组合/冻结组合、配对/全波次微观、Core/Normal和费用范围。
-- [模型原文与微观资料导读](research_package/v07/package/studies/sce_inflation_expectations/reproduction_data/micro/MICRO_DATA_GUIDE.md)。
-- [独立ZIP验收](research_package/v07/verification/acceptance.json)、[实际复算结果](research_package/v07/verification/verified_results/index.html)、[ZIP哈希](research_package/v07/CHECKSUMS.sha256)。
+- [解压包README](research_package/v08/package/README.md)、[目录导航](research_package/v08/package/DIRECTORY_GUIDE.md)。
+- [论文数字口径对照](research_package/v08/package/studies/sce_inflation_expectations/reports/PAPER_METRIC_GUIDE.md)：区分描述组合/冻结组合、配对/全波次微观、Core/Normal和费用范围。
+- [模型原文与微观资料导读](research_package/v08/package/studies/sce_inflation_expectations/reproduction_data/micro/MICRO_DATA_GUIDE.md)。
+- [独立ZIP验收](research_package/v08/verification/acceptance.json)、[实际复算结果](research_package/v08/verification/verified_results/index.html)、[ZIP哈希](research_package/v08/CHECKSUMS.sha256)。
 
-v07修正旧版仅聚合的残留说明，从逐答卷增加论文41,042共同支持及两种组合的核验；72项包内测试通过。八份微观冻结资料及原12个CSV与v06逐字节一致，研究结果和原始模型回答未改，新增API为0。既有32,500向量数值拟合验收沿相同数据保留，本次不重复拟合。
+v08修正旧版仅聚合的残留说明，从逐答卷增加论文41,042共同支持及两种组合的核验；72项包内测试通过。八份微观冻结资料及原12个CSV与v06逐字节一致，研究结果和原始模型回答未改，新增API为0。既有32,500向量数值拟合验收沿相同数据保留，本次不重复拟合。
 
-唯一机器指针是[submission/latest_package.json](../submission/latest_package.json)。_build_history仅为构建检查历史；v06保留但不选作最新提交。
+本轮v08仅集中补全提交声明、链接既有真值取得/隔离证据并修正恢复输入的旧措辞；28个冻结复现文件与v07逐字节一致。六项官方要求、仓库职责、Kimi复核重点与上传步骤见[提交对账清单](SUBMISSION_CHECKLIST.md)；评委可读[包内复现声明](research_package/v08/package/REPRODUCIBILITY.md)。
+
+唯一机器指针是[submission/latest_package.json](../submission/latest_package.json)。_build_history仅为构建检查历史；v07/v06保留但不选作最新提交。
 
 ## 评委从ZIP运行
 
@@ -37,9 +41,9 @@ python studies/sce_inflation_expectations/run.py --mode all
 
 ```sh
 SCE_PYTHON='/Users/wushuyue/anaconda3/envs/socioverse/bin/python'
-SCE_PACKAGE_OUT="deliverables/research_package/v07_rebuild_$(date +%Y%m%dT%H%M%S)"
-"$SCE_PYTHON" scripts/build_sce_research_package.py --draft-version v07 --out "$SCE_PACKAGE_OUT" --public-log-registry outputs/sce_submission_experiment_logs_20261027_v4/experiment_registry_public.json --a-refresh-readout outputs/sce_full_a_t0_readout_20261026_v1 --micro-data outputs/sce_micro_reproduction_20261029_v3/data
-"$SCE_PYTHON" scripts/verify_sce_research_package.py --archive "$SCE_PACKAGE_OUT/SCE_research_package_draft_v07.zip" --out "$SCE_PACKAGE_OUT/verification"
+SCE_PACKAGE_OUT="deliverables/research_package/v08_rebuild_$(date +%Y%m%dT%H%M%S)"
+"$SCE_PYTHON" scripts/build_sce_research_package.py --draft-version v08 --out "$SCE_PACKAGE_OUT" --public-log-registry outputs/sce_submission_experiment_logs_20261027_v4/experiment_registry_public.json --a-refresh-readout outputs/sce_full_a_t0_readout_20261026_v1 --micro-data outputs/sce_micro_reproduction_20261029_v3/data
+"$SCE_PYTHON" scripts/verify_sce_research_package.py --archive "$SCE_PACKAGE_OUT/SCE_research_package_draft_v08.zip" --out "$SCE_PACKAGE_OUT/verification"
 ```
 
 微观投影不存在时先用scripts/export_sce_micro_reproduction.py --out <新目录>，它需要原始授权工作区。包本身可离线重算提交范围，但不包含完整新闻/提示或重新询问模型所需的全部历史输入。

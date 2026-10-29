@@ -6,19 +6,22 @@
       "role": "paper",
       "path": "deliverables/report/SCE研究报告_v1.0.pdf",
       "sha256": "8539f2e45a2640fe4ba6fd5b96fe83c461fd65b93d9a3943dba76149401776fa",
-      "bytes": 1854896
+      "bytes": 1854896,
+      "upload_copy": "deliverables/提交材料/赛道A-历史重建与未来预测-水上挽月-居民通胀预期的生成式社会模拟.pdf"
     },
     {
       "role": "research_package",
-      "path": "deliverables/research_package/v07/SCE_research_package_draft_v07.zip",
-      "sha256": "046fb2e95fe656b3276aecf8e58bde75f239c4891f7a98ae77fca77165551af2",
-      "bytes": 39110005
+      "path": "deliverables/research_package/v08/SCE_research_package_draft_v08.zip",
+      "sha256": "258997374d3c97233a83cc1a85d43236bedb8a4d888f79f04fe3f4b2d8848c77",
+      "bytes": 39114076,
+      "upload_copy": "deliverables/提交材料/赛道A-历史重建与未来预测-水上挽月-代码.zip"
     },
     {
       "role": "video",
       "path": "deliverables/video/recordings/exports/assembled_v01/SCE_demo_v01.mp4",
       "sha256": "9917baed9ad4ca88a363ab1bb28b1bee3db880044854a08542f8b24220b2e486",
-      "bytes": 19968199
+      "bytes": 19968199,
+      "upload_copy": "deliverables/提交材料/赛道A-历史重建与未来预测-水上挽月-演示视频.mp4"
     }
   ],
   "author_Word": {
@@ -31,7 +34,12 @@
   "submitted": false,
   "new_API_calls": 0,
   "remaining": [
-    "Rename upload copies using registered track/subtrack/team naming",
+    "Check any separate subtrack naming required by the upload portal",
     "User uploads PDF/ZIP/MP4 and saves confirmation receipt"
-  ]
+  ],
+  "requirements_checklist": "deliverables/SUBMISSION_CHECKLIST.md",
+  "package_content_version": "v08",
+  "registered_track_user_confirmed": "赛道A：历史重建与未来预测",
+  "upload_directory": "deliverables/提交材料",
+  "filename_note": "Copies use the human-confirmed track name; no separate subtrack number was invented. Check any separate portal subtrack naming before upload."
 }
