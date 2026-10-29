@@ -33,6 +33,7 @@
 - [ ] **研究包最终封版：**当前v07已完成逐答卷评分复现和独立验收，唯一入口deliverables/README.md。剩余是费用覆盖、论文/视频/包口径与署名统一、最终PDF和提交命名/回执；不将微观评分复现等同历史环境重建或付费LLM再生成。
 - [x] **视频录制与导出（2026-10-29作者确认）：**十段已拼接为[完整MP4](../deliverables/video/recordings/exports/assembled_v01/SCE_demo_v01.mp4)，267.891秒、约20MB、1920×1080/30fps，原速。作者观看后确认基本没有问题。顺序为方法→人口→环境→作答→真实样本→信息匹配→概率计分→Terminal→结果→拓展；选用有效麦克风音轨、统一响度，保留全画面及静态页末帧。完整解码、音轨连续性、20张抽帧与原片哈希检查通过；原片和未剪归档均保留，0API。本地[处理记录](../deliverables/video/recordings/exports/assembled_v01/acceptance.json)、[拼接入口](../studies/sce_inflation_expectations/reports/video_assembly_v1/README.md)；PPT与HTML仍在[视频v05](../deliverables/video/v05/index.html)。本段Terminal使用[单户真实流式调用](../deliverables/video/terminal_live_v01/README.md)，回放与新调用入口分开标示。视频质量确认不等于研究包已完成或赛事已提交。
 - [ ] **最终封版前清单（2026-10-29核查）：**最新Word v0.10.6与验收一致，仍待清洁PDF及逐页检查；视频已获作者确认，v06逐答卷数据与无API复算已完成。下一步统一PDF/ZIP/MP4及费用/署名/文件名，保留哈希并由用户上传保存回执；官网截止仍为10月31日23:59（北京时间）。不新增模拟，GitHub仍私有。
+- [x] **署名规则核查（2026-10-29）：**[官方要求记录](workstreams/20261029_delivery_audit/authorship_requirements_20261029.json)。官网明确实名参赛、报名及提交材料中的姓名/单位/联系方式真实有效；未发现论文必须匿名或首页署名模板的规定。建议正式稿用报名真实姓名＋单位＋队伍名。已只读查看deliverables/report/SCE研究报告_v1.0.docx，其标题块目前仅队伍名；未代填姓名或修改Word。
 - [ ] **提交：**确认作者/导师、平台子赛道字段与文件名；锁定一致版本的PDF/ZIP/MP4及哈希；由用户审阅上传并保存回执。
 
 依赖顺序：先冻结主结论和核心图，论文/包可并行；视频用已冻结素材，最后统一验收。新增模拟不作为前提；Git历史清理与公开发布在赛事后单独处理，当前保持私有。
