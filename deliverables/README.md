@@ -65,6 +65,6 @@ SCE_PACKAGE_OUT="deliverables/research_package/v11_rebuild_$(date +%Y%m%dT%H%M%S
 
 ## GitHub备份
 
-代码、说明、作者定稿PDF/Word与最终MP4已同步到[既有私有工作分支](https://github.com/Cynthia-Oakley/socioverse-challenge-2026/tree/docs/deepseek-reuse-20261008)，默认main未改；[核对回执](../docs/workstreams/20261029_input_package_v10/GITHUB_BACKUP.json)。含新闻的赛事ZIP和实际输入数据不进入仓库，当前ZIP仍从本页本机链接取用。
+代码、说明、作者定稿PDF/Word与最终MP4已同步到[既有私有工作分支](https://github.com/Cynthia-Oakley/socioverse-challenge-2026/tree/docs/deepseek-reuse-20261008)，默认main未改；[核对回执](../docs/workstreams/20261029_exact_inputs_v11/GITHUB_BACKUP.json)。含新闻的赛事ZIP和实际输入数据不进入仓库，当前ZIP仍从本页本机链接取用。
 
 列出A样本（0API）：在上面的reviewer_request.py命令后增加 `--list --run A --period 201901 --limit 5`；复制household键后去掉list/limit并增加household参数即可预览，决定付费再加confirm-paid与新的out。
