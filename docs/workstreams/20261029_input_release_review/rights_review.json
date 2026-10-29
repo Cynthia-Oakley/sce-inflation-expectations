@@ -1,0 +1,57 @@
+{
+  "schema": "sce_input_rights_review/v1",
+  "reviewed_at": "2026-10-29",
+  "status": "candidate_prepared_current_submission_unchanged",
+  "sources": [
+    {
+      "source": "NYFed SCE",
+      "url": "https://www.newyorkfed.org/privacy/termsofuse",
+      "basis": "Use, adaptation and distribution subject to attribution, modification notice, non-endorsement and stated terms",
+      "included": "Coarse deidentified model-visible profiles and historical beliefs; adapted questions; required notice",
+      "excluded": "Original IDs, private crosswalks, real individual completion/cutoff dates"
+    },
+    {
+      "source": "BLS",
+      "url": "https://www.bls.gov/bls/linksite.htm",
+      "basis": "Public-domain BLS publications except separately copyrighted material; attribution",
+      "included": "Numerical price inputs and synthetic CE/ATUS-derived assignments",
+      "excluded": "Original donor mappings and separately copyrighted imagery"
+    },
+    {
+      "source": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/disclaimer.htm",
+      "basis": "Official site information generally public domain unless otherwise indicated; attribution",
+      "included": "Official policy excerpts, source URLs and published metadata",
+      "excluded": "Third-party material and marks"
+    },
+    {
+      "source": "NYT Archive API",
+      "url": "https://github.com/nytimes/public_api_specs/blob/master/archive_api/archive_api.md",
+      "basis": "API specification requires API Terms of Use and Attribution Guidelines; bulk redistribution permission not established in this audit",
+      "included": "Explicit placeholder metadata and hashes only",
+      "excluded": "Publisher headlines, abstracts and snippets",
+      "terms_body_verified": false
+    },
+    {
+      "source": "Synthetic household attributes",
+      "basis": "Derived values labelled as synthetic, without original respondent-level mappings or source article/PDF redistribution",
+      "included": "Model-visible spending/role/confidence assignments",
+      "limitation": "Not a statement of wholesale third-party dataset licensing"
+    }
+  ],
+  "privacy": {
+    "pseudonyms": "Existing v09 published household keys",
+    "private_mapping_exported": false,
+    "actual_A_dates_masked": 41970,
+    "B_monthly_synthetic_dates_retained": true,
+    "weekly_public_cutoffs_retained": true,
+    "model_key_read": false
+  },
+  "new_API_calls": 0,
+  "not_claimed": [
+    "Full historical regeneration from current v09 ZIP alone",
+    "Permission to redistribute bulk NYT publisher text",
+    "Fresh autonomous chain from archived successor priors",
+    "Live provider availability or exact stochastic output reproduction"
+  ]
+}

@@ -14,6 +14,7 @@
 
 ## 如何审查研究包
 
+- **新增输入补齐核查（尚未装入v09）：**[完整Prompt与P/E候选、来源边界及自备Key入口](../docs/workstreams/20261029_input_release_review/README.md)。66,822份输入均已找到；1,343份无新增新闻摘录的周度原Prompt可完整提供，其余新闻/真实关联日期使用明确占位槽。候选与原答卷全部对接，0新API；当前正式ZIP及上传副本不变。
 - **作者本机先看：**[图文目录与运行导览](本地复现预览/v09/index.html)，可展开实际ZIP目录、查看README和一份真实脱敏答卷；[实际复算结果](本地复现预览/v09/verified_results/index.html)。这是实际上传ZIP的新解压练习副本，不作为额外上传材料。
 - **本机重复运行：**[运行复现.command](本地复现预览/v09/运行复现.command)，使用已安装Python，每次写新目录，0API；[关系与命令说明](../docs/workstreams/20261029_package_walkthrough/README.md)。正式ZIP、论文和视频不变。
 - [解压包README](research_package/v09/package/README.md)、[目录导航](research_package/v09/package/DIRECTORY_GUIDE.md)。

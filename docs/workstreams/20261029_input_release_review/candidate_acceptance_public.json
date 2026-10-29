@@ -1,0 +1,31 @@
+{
+  "status": "offline_candidate_validation_passed",
+  "template_positions": 66822,
+  "exact_complete_positions": 1343,
+  "component_positions": 66822,
+  "runs": {
+    "A": 41970,
+    "B": 5632,
+    "monthly": 5120,
+    "weekly": 14100
+  },
+  "archived_output_joins": 66822,
+  "complete_output_joins": 1343,
+  "manifest_file_hashes_checked": 6,
+  "manifest_file_bytes": 30746468,
+  "publisher_text_or_actual_person_dates_exported": false,
+  "credentials_read": false,
+  "identity_map_included": false,
+  "new_API_calls": 0,
+  "limitations": "Local audit, not a new independent installation or live provider test",
+  "directed_tests_passed": 11,
+  "portable_preview": {
+    "status": "offline_input_preview",
+    "new_API_calls": 0,
+    "credentials_read": false,
+    "invocation": "python3 -I run_single_request.py --candidate-dir <candidate-folder>",
+    "fresh_environment_installed": false,
+    "live_provider_tested": false
+  },
+  "formal_v09_archive_changed": false
+}
