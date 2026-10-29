@@ -1,0 +1,27 @@
+{
+  "checked_on_beijing": "2026-10-29",
+  "official_sources": [
+    "https://socioverse.fudan-disc.com/challenge/",
+    "https://socioverse.fudan-disc.com/docs/zh/faq/",
+    "https://socioverse.fudan-disc.com/docs/zh/guides/wrap-legacy-model/"
+  ],
+  "challenge_body_sha256": "dce3d93a9ceab1377cf27a5d93d6b5f3fdebaaa70ee6154606339c2fc09bee53",
+  "official_facts_checked": [
+    "Local development with user-provided API credentials is explicitly supported.",
+    "A custom simulator may be wrapped behind study interfaces; standard studies layout remains required.",
+    "The FAQ distinguishes reproducible scripted runs and stochastic nonzero-temperature live LLM outputs.",
+    "The challenge describes declared dry-run or rerun checks, scripts, seed, model and cost disclosure."
+  ],
+  "negative_search_scope": "No requirement was found in these examined pages that every local study must use the hosted MCP questionnaire endpoint or single-choice responses; this is not an assurance about unexamined private judging instructions.",
+  "project_implementation_checked": {
+    "provider": "OpenRouter -> fixed SiliconFlow FP8",
+    "model": "deepseek/deepseek-v3.2",
+    "output": "numeric point_pct and nested q9.bin1..bin10 JSON",
+    "credential_env": "OPENROUTER_API_KEY",
+    "default_reproduction": "offline scripted demo, archived aggregate and answer-level/Normal recomputation",
+    "paid_generate": "Delegates to an authorized data-complete source workspace; key alone is insufficient.",
+    "portable_single_historical_household_live_entry": false
+  },
+  "secret_values_read_or_exported": false,
+  "new_API_calls": 0
+}

@@ -1,8 +1,10 @@
-"""Portable offline study smoke run and real aggregate-result recomputation.
+"""Portable SCE reproduction: engineering demo, aggregates and archived answers.
 
-These two modes are deliberately different. Scripted Core trajectories are
-engineering fixtures; replay re-scores the archived monthly real-LLM aggregates.
-It does not claim to regenerate private micro trajectories or empirical W1.
+Default all mode needs no API key and makes no model calls. It runs a scripted
+Core engineering fixture, archived aggregate comparisons, and, when answer-level
+data are included, per-answer scoring, A micro W1/IQR and Normal reconstruction.
+Generate delegates paid calls to an authorized, data-complete source workspace;
+an API key alone does not restore its inputs.
 """
 import argparse
 from contextlib import contextmanager

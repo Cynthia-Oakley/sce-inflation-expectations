@@ -1,8 +1,6 @@
 # SCE 项目当前交接
 
-**三件套已验收（2026-10-29）：**用户从当前署名Word导出deliverables/report/SCE研究报告_v1.0.pdf。实际8页、无批注/修订、字体全部嵌入，87段长正文与当前Word一致，全部页图已看。可选小美化：第2–3页人口表首行跨页拆开“性别”，不影响完整性；不改用户PDF。PDF/ZIP/MP4及SHA集中deliverables/FINAL_FILES.json与CHECKSUMS.sha256，机器指针已更新；研究包仍v07，剩余按报名子赛道命名和用户上传回执。以下PDF待导出等为历史检查点。
-
-**官方六项对账封包（2026-10-29）：**当前研究包升v08，只新增根REPRODUCIBILITY.md并修复PRIVATE_INPUTS_REQUIRED的“只支持聚合”旧措辞；既有真值取得/隔离原始证据保留。独立ZIP72项测试、159模块导入、完整答卷/全国/Normal复算通过；28个冻结复现文件与v07逐字节一致，0API。PDF/MP4未改，当前三件套指纹见deliverables/FINAL_FILES.json；作者与Kimi先读deliverables/SUBMISSION_CHECKLIST.md。主赛道A不适用赛道C额外平台核心仓库条件；报名子赛道与上传回执仍待用户确认。GitHub私有远端初检仍在d90d669，本地最终13个提交及本轮尚未推送，不能用远端当作最新提交包。
+**当前三件套（2026-10-29）：**论文v1.0 PDF已验收8页，视频4分27.9秒已确认；研究包当前v09，三个上传副本在deliverables/提交材料，唯一指纹见FINAL_FILES.json。v09仅补包根EXTERNAL_MODEL_AND_API.md、README自备Key/JSON回答提示并修正CLI帮助，独立ZIP72测试及逐答卷复算通过；28份复现文件与v08相同，论文/视频/研究参数不改，0API。v08原件保留。评委无需密钥即可复算；新的付费生成需要自己的OpenRouter Key和合法完整输入，当前没有只凭ZIP/Key就能生成一户正式历史家庭的便携命令，不冒称已实现。用户已确认赛道A“历史重建与未来预测”；若平台另列子赛道据实命名，由用户上传并保存回执。GitHub最新本地提交尚未推送，保持私有。以下为历史交接检查点，不覆盖当前指针。
 
 **交付前检查（2026-10-29）：**当前唯一候选升为v07（deliverables/README.md、submission/latest_package.json），v06及作者v10 Word未覆盖。修复包内“仅聚合复算”残留及v05错误指针，新增论文41,042共同支持、两种组合与费用范围核验；独立ZIP72测试通过，八份微观数据/原12个CSV与v06一致，0API。论文需作者修正地区网格、2023年机制截止、统一月末三处表述，确认约$108全项目估计，再导出清洁4—8页PDF。完整替换建议与文件路径见docs/workstreams/20261029_delivery_audit/README.md；视频4分28秒已确认，不重录。尚未上传或公开GitHub。下文v06为上一检查点。
 
