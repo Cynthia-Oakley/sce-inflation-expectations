@@ -16,9 +16,10 @@ if __name__ == "__main__":
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--public-log-registry", type=Path, required=True)
     parser.add_argument("--a-refresh-readout", type=Path)
-    parser.add_argument("--draft-version", choices=("v01", "v02", "v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11"), default="v01")
+    parser.add_argument("--draft-version", choices=("v01", "v02", "v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11", "v12"), default="v01")
     parser.add_argument("--micro-data",type=Path,help="Frozen answer-level projection required by v06-v11")
     parser.add_argument("--input-data",type=Path,help="Frozen deidentified confidential input projection required by v10-v11")
+    parser.add_argument("--portable-data",type=Path,help="Portable original-source, runtime and evidence bundle required by v12")
     args = parser.parse_args()
     print(json.dumps(build(args.out, public_log_registry=args.public_log_registry,
-        a_refresh=args.a_refresh_readout, draft_version=args.draft_version,micro_data=args.micro_data,input_data=args.input_data), ensure_ascii=False, indent=2))
+        a_refresh=args.a_refresh_readout, draft_version=args.draft_version,micro_data=args.micro_data,input_data=args.input_data,portable_data=args.portable_data), ensure_ascii=False, indent=2))

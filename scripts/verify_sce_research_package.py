@@ -150,8 +150,10 @@ origins.write_text(json.dumps(mods, indent=2))
     if (package/"studies/sce_inflation_expectations/reproduction_data/micro/manifest.json").exists():
         if not micro or micro.get("status")!="passed_answer_level_reproduction" or micro.get("actual_LLM_calls")!=0:
             raise ValueError("Answer-level packages must actually execute its answer-level reproduction")
+    with archive.open("rb") as archive_stream:
+        archive_digest = hashlib.file_digest(archive_stream, "sha256").hexdigest()
     acceptance = {"status": "passed_independent_zip_offline_execution", "checked_at_utc": datetime.now(timezone.utc).isoformat(),
-        "archive_sha256": hashlib.sha256(archive.read_bytes()).hexdigest(),
+        "archive_sha256": archive_digest,
         "verified_package_files": receipt["verification"]["files_verified"],
         "study_modules_all_from_extracted_package": len(imported),
         "main_source_files": source_index["source_file_count"],

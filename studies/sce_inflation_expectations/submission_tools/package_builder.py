@@ -18,7 +18,8 @@ B_SOURCE = ROOT / "outputs/sce_recent_b_readout_20261025_v2"
 
 
 def sha(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    with Path(path).open("rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
 def read(path):
@@ -196,19 +197,19 @@ def _production_references(package, a_refresh=None):
         "instructions": "Restore legal sources and per-person inputs in a new workspace, prepare a new frozen run and verify its hashes before paid regeneration. Original absolute-path packages are not portable as-is."})
 
 
-def build(out, *, public_log_registry, a_refresh=None, draft_version="v01", micro_data=None, input_data=None):
+def build(out, *, public_log_registry, a_refresh=None, draft_version="v01", micro_data=None, input_data=None, portable_data=None):
     out = Path(out).resolve(); registry = Path(public_log_registry).resolve()
-    if draft_version not in {"v01", "v02", "v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11"}:
+    if draft_version not in {"v01", "v02", "v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11", "v12"}:
         raise ValueError("Unknown review-bundle version")
     allowed_out = out.is_relative_to(ROOT / "outputs") or (
-        draft_version in {"v05", "v06", "v07", "v08", "v09", "v10", "v11"} and out.is_relative_to(ROOT / "deliverables/research_package"))
+        draft_version in {"v05", "v06", "v07", "v08", "v09", "v10", "v11", "v12"} and out.is_relative_to(ROOT / "deliverables/research_package"))
     if out.exists() or not allowed_out or not registry.is_file():
         raise ValueError("Fresh permitted project build directory and public log registry required")
     required = [TEMPLATES / "README.md", TEMPLATES / "study_README.md", TEMPLATES / "run.py",
                 ROOT / "submission/data_release_policy.json"]
     if not all(p.is_file() for p in required):
         raise ValueError("README/entry/data-release review materials are not complete")
-    if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11"} and (micro_data is None or not (Path(micro_data)/"manifest.json").is_file()):
+    if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11", "v12"} and (micro_data is None or not (Path(micro_data)/"manifest.json").is_file()):
         raise ValueError("v06-v11 requires a frozen --micro-data directory")
     out.mkdir(parents=True); package = out / "package"; package.mkdir()
     copied = {}
@@ -217,7 +218,7 @@ def build(out, *, public_log_registry, a_refresh=None, draft_version="v01", micr
         from .source_layout import layout
         source_plan = layout(ROOT)
     relocations = None
-    if draft_version in {"v05", "v06", "v07", "v08", "v09", "v10", "v11"}:
+    if draft_version in {"v05", "v06", "v07", "v08", "v09", "v10", "v11", "v12"}:
         from .release_layout import export
         release_plan, relocations, release_archive = export(package, root=ROOT, source_bytes=_source_bytes)
     else:
@@ -241,7 +242,7 @@ def build(out, *, public_log_registry, a_refresh=None, draft_version="v01", micr
     (target / "reports/README.md").write_text("Run the study entry to generate the offline receipt, metrics and index.html.\nFinal research PDF is submitted separately; aggregate_cases.json explicitly lists the completed A/B versions included in replay.\n")
     _demo_artifacts(package)
     _aggregate_evidence(package, a_refresh)
-    if draft_version in {"v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11"}:
+    if draft_version in {"v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11", "v12"}:
         from .release_evidence import export_v03
         export_v03(package)
     _dependency_lock(package)
@@ -254,14 +255,14 @@ def build(out, *, public_log_registry, a_refresh=None, draft_version="v01", micr
         shutil.copyfile(public_csv, package / "experiment_logs/registry_public.csv")
     # The internal receipt-to-source map is intentionally not public. A complete
     # log rebuild requires the original authorized metadata workspace.
-    evidence = ROOT / ("docs/sources/challenge_requirements_20261027.json" if draft_version in {"v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11"}
+    evidence = ROOT / ("docs/sources/challenge_requirements_20261027.json" if draft_version in {"v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11", "v12"}
                        else "docs/sources/challenge_requirements_20261026.json")
     if evidence.exists():
         shutil.copyfile(evidence, package / "OFFICIAL_REQUIREMENTS.json")
     truth_evidence = ROOT / "submission/truth_isolation_evidence.json"
     if truth_evidence.exists():
         shutil.copyfile(truth_evidence, package / "TRUTH_ISOLATION_EVIDENCE.json")
-    if draft_version in {"v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11"}:
+    if draft_version in {"v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11", "v12"}:
         # Acceptance tests are code, not copies of private caches/fixtures.
         for name in ("test_sce_submission_reproduce.py", "test_sce_submission_experiment_logs.py",
                      "test_sce_submission_release_evidence.py"):
@@ -271,7 +272,7 @@ def build(out, *, public_log_registry, a_refresh=None, draft_version="v01", micr
         (package / "pytest.ini").write_text("[pytest]\npythonpath = .\ntestpaths = tests\n")
         if source_plan:
             shutil.copyfile(ROOT / "tests/test_sce_source_layout.py", package / "tests/test_sce_source_layout.py")
-    if draft_version in {"v05", "v06", "v07", "v08", "v09", "v10", "v11"}:
+    if draft_version in {"v05", "v06", "v07", "v08", "v09", "v10", "v11", "v12"}:
         from .release_layout import complete_artifacts, relocate
         release_notes = complete_artifacts(package, root=ROOT)
         for name, dest in (("README.md", package / "README.md"),
@@ -302,23 +303,23 @@ def build(out, *, public_log_registry, a_refresh=None, draft_version="v01", micr
         "exclusions": ["all original outputs/raw data", "credentials", "individual population/Q8/Q9/weights", "NYT/full article text",
                        "real individual model trajectories", "entire third-party repositories"]}
     write(package / "SOURCE_INDEX.json", source_index)
-    if draft_version in {"v05", "v06", "v07", "v08", "v09", "v10", "v11"}:
+    if draft_version in {"v05", "v06", "v07", "v08", "v09", "v10", "v11", "v12"}:
         source_index.update(source_selection_basis="Current entry/import closure without obsolete eager registrations; physical topic directories; all original source archived.",
             source_relocations=relocations, source_entry_groups=release_plan["entries"],
             historical_source_scripts="All original development source in archive; not loaded at runtime.",
             packaging_adapters=source_index["packaging_adapters"] + ["physical import/path relocation", "explicit example fixture separation", "minimal registration scaffolding"],
             release_layout=release_notes)
         write(package / "SOURCE_INDEX.json", source_index)
-    if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11"}:
+    if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11", "v12"}:
         from .micro_export import install
         install(package,micro_data,package_version=draft_version)
         shutil.copyfile(ROOT/"tests/test_sce_micro_reproduction.py",package/"tests/test_sce_micro_reproduction.py")
-    if draft_version in {"v07", "v08", "v09", "v10", "v11"}:
+    if draft_version in {"v07", "v08", "v09", "v10", "v11", "v12"}:
         for name, dest in (("PAPER_METRIC_GUIDE.md", target / "reports/PAPER_METRIC_GUIDE.md"),
                            ("paper_metric_crosswalk.json", target / "reproduction_data/paper_metric_crosswalk.json"),
                            ("paper_A82_comparison.csv", target / "reproduction_data/paper_A82_comparison.csv")):
             shutil.copyfile(TEMPLATES / draft_version / name, dest)
-    if draft_version in {"v08", "v09", "v10", "v11"}:
+    if draft_version in {"v08", "v09", "v10", "v11", "v12"}:
         shutil.copyfile(TEMPLATES / draft_version / "REPRODUCIBILITY.md", package / "REPRODUCIBILITY.md")
         private_inputs = read(package / "PRIVATE_INPUTS_REQUIRED.json")
         private_inputs["instructions"] = (
@@ -327,28 +328,37 @@ def build(out, *, public_log_registry, a_refresh=None, draft_version="v01", micr
             "obtain legal sources and restore protected inputs in a new authorized workspace, freeze "
             "and validate a new run, and explicitly approve API costs. See REPRODUCIBILITY.md.")
         write(package / "PRIVATE_INPUTS_REQUIRED.json", private_inputs)
-    if draft_version in {"v09", "v10", "v11"}:
+    if draft_version in {"v09", "v10", "v11", "v12"}:
         shutil.copyfile(TEMPLATES / draft_version / "EXTERNAL_MODEL_AND_API.md", package / "EXTERNAL_MODEL_AND_API.md")
     input_acceptance = None
-    if draft_version in {"v10", "v11"}:
+    if draft_version in {"v10", "v11", "v12"}:
         if input_data is None:
             raise ValueError("v10-v11 requires a frozen --input-data directory")
         from .input_install import install as install_inputs
         input_acceptance = install_inputs(package, input_data, root=ROOT, package_version=draft_version)
         shutil.copyfile(ROOT / "tests/test_sce_packaged_inputs.py", package / "tests/test_sce_packaged_inputs.py")
+    portable_acceptance = None
+    if draft_version == "v12":
+        if portable_data is None:
+            raise ValueError("v12 requires the complete frozen --portable-data layer")
+        from .portable_install import install as install_portable
+        portable_acceptance = install_portable(package, portable_data, root=ROOT)
     files = {str(p.relative_to(package)): sha(p) for p in package.rglob("*") if p.is_file()}
     write(package / "PACKAGE_MANIFEST.json", {"schema": "sce_research_review_bundle/v1",
-        "status": "answer_level_review_candidate_pending_final_delivery" if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11"} else "development_review_not_final_submission_ready", "files_sha256": files,
+        "status": "answer_level_review_candidate_pending_final_delivery" if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11", "v12"} else "development_review_not_final_submission_ready", "files_sha256": files,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(), "new_API_calls": 0,
         "generation_input_acceptance": input_acceptance,
+        "portable_execution_acceptance": portable_acceptance,
         "distribution_scope": "confidential_competition_review_only_not_for_public_GitHub" if input_acceptance else "review_bundle",
-        "fully_runnable_offline_modes": ["official_Core_scripted_demo", "real_archived_national_aggregate_recompute"]+(["answer_level_micro_and_Normal_recompute"] if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11"} else []),
-        "micro_reproduction_scope": "Four canonical final tasks plus A/B Normal; raw replies, field overlays, A paired/full-wave W1/IQR and conditional metrics; no paid regeneration" if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11"} else None,
-        "answer_level_reproduction_included": draft_version in {"v06", "v07", "v08", "v09", "v10", "v11"},
+        "fully_runnable_offline_modes": ["official_Core_scripted_demo", "real_archived_national_aggregate_recompute"]+(["answer_level_micro_and_Normal_recompute"] if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11", "v12"} else []) + (["public_source_preparation", "four_task_state_transport_fixture", "original_macro_calibration_refit", "original_downstream_OLS_refit"] if draft_version == "v12" else []),
+        "fresh_paid_modes": ["A", "B", "monthly_new_state_recursion", "weekly_new_state_recursion"] if draft_version == "v12" else [],
+        "fresh_paid_modes_require_reviewer_key_and_explicit_budget": draft_version == "v12",
+        "micro_reproduction_scope": "Four canonical final tasks plus A/B Normal; raw replies, field overlays, A paired/full-wave W1/IQR and conditional metrics; no paid regeneration" if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11", "v12"} else None,
+        "answer_level_reproduction_included": draft_version in {"v06", "v07", "v08", "v09", "v10", "v11", "v12"},
         "latest_A_T0_results_included": a_refresh is not None,
-        "latest_extensions_included": draft_version in {"v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11"},
-        "reviewer_source_layout": "physically organised components with separate explicit examples" if draft_version in {"v05", "v06", "v07", "v08", "v09", "v10", "v11"} else ("main plus optional source archive" if source_plan else "full source tree"),
-        "not_claimed": ([("New independent model replies regenerated during packaging" if draft_version == "v11" else "Original complete generation inputs restored"), "all exploratory run outputs included", "all project invoices reconciled", "third-party news redistribution cleared"] if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11"} else
+        "latest_extensions_included": draft_version in {"v03", "v04", "v05", "v06", "v07", "v08", "v09", "v10", "v11", "v12"},
+        "reviewer_source_layout": "physically organised components with separate explicit examples" if draft_version in {"v05", "v06", "v07", "v08", "v09", "v10", "v11", "v12"} else ("main plus optional source archive" if source_plan else "full source tree"),
+        "not_claimed": ([("New independent model replies regenerated during packaging" if draft_version in {"v11", "v12"} else "Original complete generation inputs restored"), "all exploratory run outputs included", "all project invoices reconciled", "third-party news redistribution cleared"] if draft_version in {"v06", "v07", "v08", "v09", "v10", "v11", "v12"} else
                         ["full private micro trajectory reproduction", "all project invoices reconciled", "data redistribution clearance for raw inputs"])})
     archive = out / f"SCE_research_package_draft_{draft_version}.zip"
     with zipfile.ZipFile(archive, "x", compression=zipfile.ZIP_DEFLATED) as z:
@@ -356,7 +366,7 @@ def build(out, *, public_log_registry, a_refresh=None, draft_version="v01", micr
             if path.is_file():
                 z.write(path, path.relative_to(package))
     receipt = {"package": str(package), "archive": str(archive), "archive_sha256": sha(archive),
-               "file_count": len(files) + 1, "source_files": len(copied), "archive_bytes": archive.stat().st_size,
+               "file_count": len(files) + 1, "source_files": read(package / "SOURCE_INDEX.json")["source_file_count"], "archive_bytes": archive.stat().st_size,
                "new_API_calls": 0, "status": "built_review_bundle_awaiting_independent_execution"}
     write(out / "build_receipt.json", receipt)
     return receipt

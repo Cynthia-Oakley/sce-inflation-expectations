@@ -20,8 +20,8 @@ def install(package, data, *, root, package_version="v10"):
     m = read(data / "candidate_manifest.json")
     required = {"complete_prompts.jsonl.gz", "prompt_templates.jsonl.gz", "population_belief_environment.jsonl.gz",
                 "one_complete_prompt_example.json", "generation_settings.json", "SCE_DATA_NOTICE.md"}
-    retain_dates = package_version == "v11"
-    if (package_version not in ("v10", "v11") or set(m["files"]) != required or not m.get("publisher_news_text_included")
+    retain_dates = package_version in ("v11", "v12")
+    if (package_version not in ("v10", "v11", "v12") or set(m["files"]) != required or not m.get("publisher_news_text_included")
             or m.get("real_person_linked_date_values_written") is not retain_dates
             or m.get("identity_map_included") is not False or m.get("new_API_calls") != 0):
         raise ValueError("Unexpected confidential-input allowlist or privacy status")

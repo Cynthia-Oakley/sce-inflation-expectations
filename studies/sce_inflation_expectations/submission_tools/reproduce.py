@@ -3,8 +3,9 @@
 Default all mode needs no API key and makes no model calls. It runs a scripted
 Core engineering fixture, archived aggregate comparisons, and, when answer-level
 data are included, per-answer scoring, A micro W1/IQR and Normal reconstruction.
-Generate delegates paid calls to an authorized, data-complete source workspace;
-an API key alone does not restore its inputs.
+Legacy generate delegates paid calls to a prepared source workspace. The v12
+package supplies a portable original-source workspace and its complete inputs;
+review.py is the current entry for source preparation and fresh own-key runs.
 """
 import argparse
 from contextlib import contextmanager
@@ -32,7 +33,8 @@ def write(path, value):
 
 
 def sha(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    with Path(path).open("rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
 def checked_child(root, name):
