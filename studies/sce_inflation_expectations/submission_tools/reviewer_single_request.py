@@ -4,6 +4,7 @@ Standalone companion for the proposed input layer. It does not regenerate a
 recursive chain or alter archived results. Default operation reads no API key.
 """
 import argparse
+import gzip
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -26,14 +27,31 @@ def write(path, obj):
     Path(path).write_text(json.dumps(obj, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
 
 
-def load(candidate):
+def load(candidate, *, run=None, period=None, household=None):
     candidate = Path(candidate).resolve()
-    manifest = read(candidate / "candidate_manifest.json")
+    manifest = read(candidate / ("manifest.json" if (candidate / "manifest.json").exists() else "candidate_manifest.json"))
     for name in ("one_complete_prompt_example.json", "generation_settings.json"):
         path = candidate / name
         if path.is_symlink() or hashlib.sha256(path.read_bytes()).hexdigest() != manifest["files"][name]["sha256"]:
             raise ValueError("Frozen candidate file changed")
     sample = read(candidate / "one_complete_prompt_example.json")
+    if any(v is not None for v in (run, period, household)):
+        if not all(v is not None for v in (run, period, household)):
+            raise ValueError("Select all three of run, period and household")
+        name = manifest.get("complete_prompt_file", "complete_news_free_prompts.jsonl.gz")
+        path = candidate / name
+        if path.name != name or path.is_symlink() or hashlib.sha256(path.read_bytes()).hexdigest() != manifest["files"][name]["sha256"]:
+            raise ValueError("Complete prompt collection changed")
+        sample = None
+        with gzip.open(path, "rt", encoding="utf-8") as stream:
+            for line in stream:
+                row = json.loads(line)
+                if (row["run"], row["period"], row["household"]) == (run, period, household):
+                    if sample is not None:
+                        raise ValueError("Duplicate complete input")
+                    sample = row
+        if sample is None:
+            raise ValueError("No complete input for this selection; private-date A templates cannot be sent")
     settings = read(candidate / "generation_settings.json")
     messages = sample["messages"]
     if (sample.get("ready_for_exact_single_request") is not True or sample.get("withheld")
@@ -72,8 +90,8 @@ def send_once(messages, settings, key):
                 usage={k: getattr(usage, k, None) for k in ("prompt_tokens", "completion_tokens", "total_tokens", "cost")})
 
 
-def run(candidate, *, confirm_paid=False, out=None, sender=None):
-    sample, settings, reserve = load(candidate)
+def run(candidate, *, confirm_paid=False, out=None, sender=None, selection=None):
+    sample, settings, reserve = load(candidate, **(selection or {}))
     if not confirm_paid:
         return dict(status="offline_input_preview", model=MODEL, provider="SiliconFlow",
                     original_prompt_sha256=sample["original_prompt_sha256"], messages=sample["messages"],
@@ -132,8 +150,12 @@ if __name__ == "__main__":
     parser.add_argument("--candidate-dir", type=Path, required=True)
     parser.add_argument("--confirm-paid", action="store_true")
     parser.add_argument("--out", type=Path)
+    parser.add_argument("--run", choices=("A", "B", "monthly", "weekly"))
+    parser.add_argument("--period")
+    parser.add_argument("--household")
     args = parser.parse_args()
-    result = run(args.candidate_dir, confirm_paid=args.confirm_paid, out=args.out)
+    result = run(args.candidate_dir, confirm_paid=args.confirm_paid, out=args.out,
+                 selection=dict(run=args.run, period=args.period, household=args.household))
     print(json.dumps(result, ensure_ascii=False, indent=2))
     if result["status"] not in ("offline_input_preview", "model_reply_saved"):
         raise SystemExit(1)

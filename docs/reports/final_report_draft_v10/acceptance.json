@@ -1,8 +1,8 @@
 {
   "status": "docx_structural_and_numeric_acceptance_passed",
-  "date": "2026-10-27",
+  "date": "2026-10-29",
   "docx": "SCE研究报告_作者审阅稿_v10.docx",
-  "docx_sha256": "d14a71aa326db7f0327caf3b24d15575a2da39e94f9598cca39c6992aec06402",
+  "docx_sha256": "c1d50b1cf3f1e96d28a52c7acda39cb2930fd07dac6138221c6b63184830c088",
   "figures": 7,
   "tables": 5,
   "native_editable_equations": 3,
@@ -58,6 +58,8 @@
   },
   "new_model_calls": 0,
   "new_parameter_estimation": false,
-  "visual_acceptance": "pending_word_rendering",
-  "notes": "v0.10.2：在v0.10.1（Codex v09内容审阅修订＋全篇语言润色）基础上，插入Codex方法概览图v3为新图1（3840×2160，源文件docs/workstreams/20261027_final_delivery/overview_figure_v3/sce_framework_author_v3.png），原图1—图6顺延为图2—图7；正文10pt、行距按作者确认固化为1.25倍。Word为交付物，未生成新版PDF。"
+  "visual_acceptance": "author_confirmed_2026-10-28; v0.10.8 text-only edits",
+  "notes": "v0.10.8（2026-10-29）：作者在Word旧会话保存曾覆盖v0.10.7理论链段，本轮重新应用并保留作者17条批注（作者已从24删至17）。按Codex交付前口径审查完成三处事实修正：机制开发窗口改为'间隔抽取的月份中比较，部分新闻量对照包含2025年样本；后34个月用于冻结组合系数的时序检查，不视为全项目未触碰的盲测'（原'筛选截止2023-12'过强，新闻量机制对照实际用过2025年样本）；机制表信息截止行'统一月末'改'共同月中截止'；DeepSeek句补温度0.5。费用段补齐月度递推4.28美元，四个最终任务合计约50.94美元，全项目约108美元改为'按作者账单估计'口径。按作者修订，网格坐标句改为'年龄、收入、学历和数理'并补'地区不作为网格坐标，仅保留在画像与分组诊断中'（与Codex审计一致）。docx SHA由98856840变为c1d50b1c；manuscript.md双副本同步（sha256前16位5ef00914f68f0f5a）。正式稿deliverables/report/SCE研究报告_v1.0.docx由本版删除版本行生成（SHA 9978e026），批注17条保留待作者审阅后删除。v0.10.7（2026-10-29）：理论—文献链补写，集中扩充机制段过渡段为文献动机三段式（粘性信息[4,6]→随机新闻篇数；显著性与生活价格体验[3,5]→食品价格视图与CPI路由；经历学习与信念持续性[7]→历史起点与固定比例组合）；参数表述按作者意见改为'在文献提供的参考方向下……均由本项目的对照实验或历史拟合确定'；不写逐人作答日截止的文献归属。更早版本修订记录见git历史。",
+  "formal_docx": "../../deliverables/report/SCE研究报告_v1.0.docx",
+  "formal_docx_sha256": "9978e0263c2e027f2eaa00c6fd2ae1ec656a473687af7a306ce6eccaa5b72e4e"
 }

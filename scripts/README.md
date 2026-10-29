@@ -481,11 +481,11 @@ Q8单改已用共用runner完成384调用；结果见`docs/workstreams/20261019_
 
 - `build_sce_paper_materials.py --out docs/workstreams/20261027_final_delivery/<全新目录>`：从当前已验收研究包聚合与冻结A/网格证据构建作者审阅材料册（HTML/Markdown、数字CSV、图表、来源哈希），核对指标和固定组合；不拟参、不重跑API、不重写论文。当前入口见[材料册](../docs/workstreams/20261027_final_delivery/materials_v1/index.html)。
 
-- `build_sce_research_package.py --draft-version v09 --out <新目录> --public-log-registry <公开索引.json> --a-refresh-readout <新版A目录> --micro-data <冻结微观投影data目录>`：当前v09按职责导出，保留四任务微观资料并补论文数字/共同支持对照。完整命令见[统一交付入口](../deliverables/README.md)。旧v06保留，不能只改ZIP名称升级。
-- `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、源码导入审计、工程/聚合/微观复算及包内测试。v09通过独立无system-site-packages环境验收；原文/答卷范围见micro导读。
+- `build_sce_research_package.py --draft-version v10 --out <新目录> --public-log-registry <公开索引.json> --a-refresh-readout <新版A目录> --micro-data <冻结微观投影data目录> --input-data <冻结脱敏输入投影目录>`：当前v10按职责导出，保留四任务答卷/指标并补脱敏P/E/先验、选中新闻和完整Prompt。新闻ZIP仅供保密评审，不进入GitHub。完整命令见[统一交付入口](../deliverables/README.md)。旧v06保留，不能只改ZIP名称升级。
+- `verify_sce_research_package.py --archive <zip> --out <新目录>`：独立解压、隔离Python/异地cwd、源码导入审计、工程/聚合/微观复算及包内测试。v10通过独立无system-site-packages环境验收（76测试）；原文/答卷范围见micro导读。
 - 本机导览：验收完成后运行`python studies/sce_inflation_expectations/submission_tools/package_walkthrough.py --preview-dir <验收目录>`，在该目录生成HTML目录/README/答卷导览和可重复0API运行.command；不改冻结ZIP。
 
-- `catalog_sce_study.py --out <新目录>`：分类开发study文件，按当前入口计算静态依赖与补充归档，不执行实验。v04为此前的依赖筛选布局；当前交付使用构建器v09和`submission_tools/release_layout.py`，按组件/运行/评价实际归位源码。以[统一交付入口](../deliverables/README.md)和`submission/latest_package.json`选包，包内`DIRECTORY_GUIDE.md`及study的`FILE_GUIDE.md`解释读法。
+- `catalog_sce_study.py --out <新目录>`：分类开发study文件，按当前入口计算静态依赖与补充归档，不执行实验。v04为此前的依赖筛选布局；当前交付使用构建器v10和`submission_tools/release_layout.py`，按组件/运行/评价实际归位源码。以[统一交付入口](../deliverables/README.md)和`submission/latest_package.json`选包，包内`DIRECTORY_GUIDE.md`及study的`FILE_GUIDE.md`解释读法。
 
 ## 正式逐答卷与模型原文（2026-10-29）
 

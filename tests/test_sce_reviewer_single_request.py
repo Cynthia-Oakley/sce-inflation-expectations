@@ -1,5 +1,6 @@
 """No external requests: prove default preview, bounds, and credential handling."""
 import hashlib
+import gzip
 import json
 from pathlib import Path
 import tempfile
@@ -32,6 +33,25 @@ def refresh(folder):
 
 
 class ReviewerRequestTests(unittest.TestCase):
+    def test_select_complete_input_and_reject_missing_private_template(self):
+        with tempfile.TemporaryDirectory() as temp:
+            inputs = fixture(Path(temp))
+            sample = json.loads((inputs / "one_complete_prompt_example.json").read_text())
+            sample.update(run="B", period="202511", household="B_000001")
+            name = "complete_prompts.jsonl.gz"
+            with gzip.open(inputs / name, "wt") as stream:
+                stream.write(json.dumps(sample) + "\n")
+            manifest = json.loads((inputs / "candidate_manifest.json").read_text())
+            manifest.update(complete_prompt_file=name)
+            manifest["files"][name] = dict(sha256=hashlib.sha256((inputs / name).read_bytes()).hexdigest())
+            (inputs / "manifest.json").write_text(json.dumps(manifest))
+            found, _, _ = load(inputs, run="B", period="202511", household="B_000001")
+            self.assertEqual(found["messages"], sample["messages"])
+            with self.assertRaisesRegex(ValueError, "No complete"):
+                load(inputs, run="A", period="201901", household="A_000001")
+            with self.assertRaisesRegex(ValueError, "all three"):
+                load(inputs, run="B")
+
     def test_default_preview_does_not_read_credentials_or_invoke_sender(self):
         with tempfile.TemporaryDirectory() as temp:
             inputs = fixture(Path(temp))

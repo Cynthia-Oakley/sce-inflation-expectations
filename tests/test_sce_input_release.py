@@ -32,6 +32,21 @@ class InputReleaseTests(unittest.TestCase):
         self.assertEqual(count, 0)
         self.assertEqual(digest(projected), digest(messages))
 
+    def test_confidential_news_preserves_exact_B_and_only_masks_linked_A_date(self):
+        text = ("Survey cutoff January 22, 2019; completed 2019-01-23.\n"
+                "General news you encountered:\n- Online publication date 2019-01-22: ORIGINAL_NEWS\n\n"
+                "Public policy news brief (2018-12-19):\nPublic fact")
+        messages = [dict(role="user", content=text)]
+        b, withheld, count = project(messages, "B", include_news=True)
+        self.assertEqual(b, messages)
+        self.assertEqual(withheld, [])
+        self.assertEqual(count, 1)
+        a, withheld, count = project(messages, "A", "2019-01-22T23:59:59-05:00", "2019-01-23", include_news=True)
+        self.assertIn("- Online publication date 2019-01-22: ORIGINAL_NEWS", a[0]["content"])
+        self.assertNotIn("Survey cutoff January 22, 2019", a[0]["content"])
+        self.assertNotIn("completed 2019-01-23", a[0]["content"])
+        self.assertEqual({x["kind"] for x in withheld}, {"real_person_linked_date"})
+
     def test_unknown_layout_and_unmasked_credential_are_not_silently_released(self):
         with self.assertRaisesRegex(ValueError, "Unrecognized news"):
             project([dict(role="user", content="Some unknown layout")], "weekly")

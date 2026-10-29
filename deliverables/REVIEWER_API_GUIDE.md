@@ -1,6 +1,6 @@
 # 给评委的补充说明：外部模型、回答格式与密钥
 
-2026-10-29。随v09提交包提供，旧v08原件保留；历史答卷、研究参数和结果不变，本轮不调用API。
+2026-10-29。随v10提交包提供，旧v09原件保留；历史答卷、研究参数和结果不变，本轮不调用API。
 
 ## 本地运行与回答格式
 
@@ -48,23 +48,36 @@ export OPENROUTER_API_KEY
 
 运行适配器会读取该环境变量；原受控工作区也支持本地.env，但不得提交该文件。生成结束后可`unset OPENROUTER_API_KEY`。密钥不必发给作者或赛事联系人。
 
-## 4. 现有真实生成入口的条件与命令
+## 4. 解压即可预览的完整输入及单次再生成
 
-当前ZIP的`--mode generate`是受控工作区委托入口，不是“输入Key即可恢复所有历史资料”的独立下载器。先按包根PRIVATE_INPUTS_REQUIRED.json恢复合法的人口、历史匹配、环境/新闻与完整消息输入，另建独立数据完整工作区；完成原执行器要求的prepare、review、输入哈希和新批次预算授权。不得直接修改已经完成的原批次授权或日志。
+实际输入在 `studies/sce_inflation_expectations/reproduction_data/inputs/`：66,822个位置均含人口、先验、价格、政策和选中新闻摘录。24,852份B/月度/周度输入完整，按原消息哈希连接既有答卷；A的41,970份因真实个人日期遮蔽而只提供模板，不接受作为完整样本发送。
 
-满足这些前置条件后，可从解压包根执行下列命令模板。尖括号内容必须替换成真实存在、经过检查的新工作区与新运行目录；不应原样执行占位符：
+在包根执行，默认只打印真实Prompt和参数，不读取Key或联网：
 
 ```sh
-python studies/sce_inflation_expectations/run.py --mode generate \
-  --source-workspace <合法输入齐全的工作区绝对路径> \
-  --prepared-run outputs/<已prepare并授权的新运行目录> \
-  --executor full-a \
-  --confirm-paid
+python studies/sce_inflation_expectations/simulation/reviewer_request.py \
+  --candidate-dir studies/sce_inflation_expectations/reproduction_data/inputs
 ```
 
-`full-a`委托`scripts/run_sce_full_a_personal.py`；`recent-b`委托`scripts/run_sce_recent_b.py`。该入口先调用所选执行器的review，再调用run，保留原有范围、预算和归档保护；它不是统一的任意批次选择器。大批运行前应在独立测试配置下验证小规模调用，不能为省事直接启动82个月。
+确认需要付费生成后，先按第3节在自己的终端安全设置 `OPENROUTER_API_KEY`，再执行：
 
-**当前仍未提供的能力：**本包没有可以只凭ZIP和Key直接重新询问一户正式历史家庭的便携命令。视频中的单户演示在作者受控工作区运行，不能把该演示路径冒称评审解压后的通用命令。如需增加便携联网自检，应另加入已取得分享许可的完整小样本输入及专用限量脚本，离线验收后再封包；本稿不宣称该功能已经实现。
+```sh
+python studies/sce_inflation_expectations/simulation/reviewer_request.py \
+  --candidate-dir studies/sce_inflation_expectations/reproduction_data/inputs \
+  --confirm-paid --out reviewer_generated_01
+```
+
+这是一份完整历史输入的条件单步请求。每次最多发送一次、SDK不自动重试、不切换供应商，输出目录必须全新；保留输入、请求前意图、模型原文及脱敏回执。可同时增加 `--run`、`--period`、`--household` 选择完整集合中的另一份样本；匿名编号可从输入与model_outputs按run/period/household/原Prompt哈希对接。找不到完整记录或存在占位槽时，脚本拒绝发送。
+
+入口在固定历史单价上界下计算保守预留，超过$0.01时拒绝发送，并附供应商单价和输出token上限；这不是服务端美元硬限额。供应商未来可能不可用、改价或返回不同模型身份，程序会记录并停止。网络失败可能已计费，不自动重发。新回答只存原文，正式概率校验、归一化与计分须走既有study流程，不冒称新回答自动成为论文结果。本轮只完成离线与注入验收，没有真实联网测试。
+
+## 4.1 完整历史与自主递推的边界
+
+A的真实日期不附、原始ID和私人匹配对应表不附；公开层不承诺恢复全部A条件。完整库的自备Key批量运行仍需明确范围和预算。`run.py --mode generate`继续作为受控完整工作区委托入口，不等同于这个便携单次命令。
+
+后月和后周的封存Prompt携带当年那次运行的模拟前态；原样重发只能重做给定前态的一步。新的自主链必须将本次新输出传给下期，另行执行时间规则、发布后重校准和失败字段保留机制。非零温度重新生成不会保证与历史原文逐字一致。
+
+本包包含第三方选中新闻文字，仅按作者要求供赛事保密评审，不能随未来公开GitHub直接再分发。版权与使用范围见inputs/NEWS_REVIEW_NOTICE.md。作者Key无需也不得提交给评委。
 
 ## 5. 研究格式与官方依据
 

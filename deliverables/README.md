@@ -1,54 +1,64 @@
 # 当前交付入口
 
-当前研究包为 **v09**，由交付前口径审查及官方六项要求对账生成。论文为作者定稿v1.0 PDF，视频为已确认成片；三者各自编号。旧v08/v07/v06及开发outputs不作为当前选包入口。
+当前正式研究包为 **v10**，含实际人口、先验、环境/选中新闻和完整Prompt样本。论文为作者定稿v1.0 PDF，视频为作者确认成片；三者独立编号。旧v09及更早包保留，不从outputs或_build_history挑选提交文件。
 
-## 提交文件
+## 三个提交文件
 
-**三个上传副本已汇集在[提交材料](提交材料/)目录**，与下列验收原件的SHA256完全相同。按作者确认的“赛道A：历史重建与未来预测”命名；若平台另要求子赛道字段，按实际选项调整外部文件名。
+上传副本集中在[提交材料](提交材料/)，与以下原件逐字节一致：
 
-- **研究包 ZIP：**[SCE_research_package_draft_v09.zip](research_package/v09/SCE_research_package_draft_v09.zip)，约39MB。
-- **视频 MP4：**[SCE_demo_v01.mp4](video/recordings/exports/assembled_v01/SCE_demo_v01.mp4)，4分27.9秒，作者已确认。
-- **论文 PDF：**[SCE研究报告_v1.0.pdf](report/SCE研究报告_v1.0.pdf)，8页、约1.85MB；署名、批注排除、字体和图表已核验。[Word存档](report/SCE研究报告_v1.0.docx)与[验收记录](report/acceptance.json)保留。
+- **研究包 ZIP：**[SCE_research_package_draft_v10.zip](research_package/v10/SCE_research_package_draft_v10.zip)，206,059,457字节，约206 MB，低于2 GB。
+- **论文 PDF：**[SCE研究报告_v1.0.pdf](report/SCE研究报告_v1.0.pdf)，8页、已确认署名与版式；[Word存档](report/SCE研究报告_v1.0.docx)。
+- **视频 MP4：**[SCE_demo_v01.mp4](video/recordings/exports/assembled_v01/SCE_demo_v01.mp4)，4分27.9秒。[GitHub备份副本](video/final/SCE_demo_v1.0.mp4)与之完全相同。
 
-三件材料已齐。最终路径/字节/SHA256见[FINAL_FILES.json](FINAL_FILES.json)，校验见[CHECKSUMS.sha256](CHECKSUMS.sha256)。上传副本须按报名的赛道/子赛道/队伍命名，用户上传后保存回执；本轮未代上传或公开GitHub。论文第2–3页人口表首行有跨页拆词，可选美化，原PDF不改。
+指纹见[FINAL_FILES.json](FINAL_FILES.json)及[CHECKSUMS.sha256](CHECKSUMS.sha256)。由作者上传并保存回执，本机封包和GitHub备份不等于已提交赛事。文件按“赛道A：历史重建与未来预测／水上挽月”命名，平台若另有字段要求再核对外部文件名。
 
-## 如何审查研究包
+**研究包仅供赛事保密评审。**其中的NYT选中新闻摘录保留来源与第三方权利说明，不声明已获公开再分发许可，也不推送GitHub。GitHub同步代码、文档、作者确认的报告和视频，仓库保持私有；未来公开前应另审数据及历史记录。
 
-- **新增输入补齐核查（尚未装入v09）：**[完整Prompt与P/E候选、来源边界及自备Key入口](../docs/workstreams/20261029_input_release_review/README.md)。66,822份输入均已找到；1,343份无新增新闻摘录的周度原Prompt可完整提供，其余新闻/真实关联日期使用明确占位槽。候选与原答卷全部对接，0新API；当前正式ZIP及上传副本不变。
-- **作者本机先看：**[图文目录与运行导览](本地复现预览/v09/index.html)，可展开实际ZIP目录、查看README和一份真实脱敏答卷；[实际复算结果](本地复现预览/v09/verified_results/index.html)。这是实际上传ZIP的新解压练习副本，不作为额外上传材料。
-- **本机重复运行：**[运行复现.command](本地复现预览/v09/运行复现.command)，使用已安装Python，每次写新目录，0API；[关系与命令说明](../docs/workstreams/20261029_package_walkthrough/README.md)。正式ZIP、论文和视频不变。
-- [解压包README](research_package/v09/package/README.md)、[目录导航](research_package/v09/package/DIRECTORY_GUIDE.md)。
-- [论文数字口径对照](research_package/v09/package/studies/sce_inflation_expectations/reports/PAPER_METRIC_GUIDE.md)：区分描述组合/冻结组合、配对/全波次微观、Core/Normal和费用范围。
-- [模型原文与微观资料导读](research_package/v09/package/studies/sce_inflation_expectations/reproduction_data/micro/MICRO_DATA_GUIDE.md)。
-- [独立ZIP验收](research_package/v09/verification/acceptance.json)、[实际复算结果](research_package/v09/verification/verified_results/index.html)、[ZIP哈希](research_package/v09/CHECKSUMS.sha256)。
+## v10补齐了什么
 
-v09修正旧版仅聚合的残留说明，从逐答卷增加论文41,042共同支持及两种组合的核验；72项包内测试通过。八份微观冻结资料及原12个CSV与v06逐字节一致，研究结果和原始模型回答未改，新增API为0。既有32,500向量数值拟合验收沿相同数据保留，本次不重复拟合。
+- 66,822个实际输入位置：A41,970、B5,632、月度5,120、周度14,100；提供模型所见人口、合成属性、先验、价格、政策、问卷和选中新闻摘录。
+- 24,852份B/月度/周度Prompt完整原样提供，可与67,147条既有模型回复连接。A保留选中新闻，遮蔽能推回真实完成日的日期；原始ID、身份/供体映射和Key均不提供。
+- 新增默认离线的完整输入预览，以及显式使用评委自己Key的一次条件生成入口；不冒称一键重建全部A历史或新的自主递推链。
+- 旧答卷与主要数值不变；20份既有数值/答卷gz或CSV文件与v09逐字节一致。新ZIP独立解压后76项测试、163模块隔离导入、工程/聚合/逐答卷复算通过，0新模型调用。
 
-本轮v09仅集中补全提交声明、链接既有真值取得/隔离证据并修正恢复输入的旧措辞；28个冻结复现文件与v07逐字节一致。六项官方要求、仓库职责、Kimi复核重点与上传步骤见[提交对账清单](SUBMISSION_CHECKLIST.md)；评委可读[包内复现声明](research_package/v09/package/REPRODUCIBILITY.md)。
+具体输入范围、版权说明和源指纹见[输入导读](research_package/v10/package/studies/sce_inflation_expectations/reproduction_data/inputs/README.md)、[新闻评审范围](research_package/v10/package/studies/sce_inflation_expectations/reproduction_data/inputs/NEWS_REVIEW_NOTICE.md)及[本轮记录](../docs/workstreams/20261029_input_package_v10/README.md)。原新闻库、未选文章、所有开发试验原文不在此新增范围。
 
-唯一机器指针是[submission/latest_package.json](../submission/latest_package.json)。_build_history仅为构建检查历史；v08/v07/v06保留但不选作最新提交。
+## 作者本机审查
 
-外部模型、自备Key与Q8/Q9回答格式已纳入[包根专门说明](research_package/v09/package/EXTERNAL_MODEL_AND_API.md)，包根README开头直接提示。v09同时修正CLI帮助；72项包内测试和独立逐答卷复算通过，28个冻结复现文件与v08逐字节一致。完整历史再生成需要合法恢复输入，便携单户联网功能未宣称已实现。
+- [新版图文目录与运行预览](本地复现预览/v10/index.html)：实际新ZIP解压副本，含README、目录与真实答卷。
+- [运行复现.command](本地复现预览/v10/运行复现.command)：每次另写结果目录，0API。
+- [实际复算结果](本地复现预览/v10/verified_results/index.html)、[验收记录](research_package/v10/verification/acceptance.json)。隔离环境为本机既有无system-site-packages venv，本轮未重新安装。
+- [解压包README](research_package/v10/package/README.md)、[目录导航](research_package/v10/package/DIRECTORY_GUIDE.md)、[自备Key说明](research_package/v10/package/EXTERNAL_MODEL_AND_API.md)。
+
+本地预览目录不额外上传，旧v09预览仍保留。论文与视频原件不因新增输入层而改变。
 
 ## 评委从ZIP运行
 
-在解压包根安装requirements.lock.txt，然后执行：
+解压并安装requirements.lock.txt后，在包根执行：
 
 ```sh
 python studies/sce_inflation_expectations/run.py --mode all
 ```
 
-默认0API，依次运行20人两步工程例、聚合复算和正式逐答卷复算。只重算微观使用--mode micro；增加--refit-density可重新运行冻结数值拟合器，不调用LLM。输出写入新目录，打开其中index.html。
+默认禁止Python网络连接，不需要Key，运行20户两步工程例、聚合与正式逐答卷复算。只做答卷用--mode micro；--refit-density重新运行数值密度拟合，不调用LLM。
+
+预览一份完整实际输入：
+
+```sh
+python studies/sce_inflation_expectations/simulation/reviewer_request.py --candidate-dir studies/sce_inflation_expectations/reproduction_data/inputs
+```
+
+同样默认0API。自行配置OPENROUTER_API_KEY后，显式加--confirm-paid和新的--out目录才发送一次。支持指定run、period、household；有日期缺口的A模板拒绝发送。固定供应商、无自动重试/回退，保守预留不超过$0.01，不是服务端美元硬限额；未来服务可用性和随机答案不保证相同。后月/后周的封存前态只支持条件单步，不是新链。详包根EXTERNAL_MODEL_AND_API.md。
 
 ## 本地重建
 
-在项目根执行，必须使用新输出目录：
+构建需要作者数据完整工作区。使用新目录，不能只给旧ZIP改名：
 
 ```sh
 SCE_PYTHON='/Users/wushuyue/anaconda3/envs/socioverse/bin/python'
-SCE_PACKAGE_OUT="deliverables/research_package/v09_rebuild_$(date +%Y%m%dT%H%M%S)"
-"$SCE_PYTHON" scripts/build_sce_research_package.py --draft-version v09 --out "$SCE_PACKAGE_OUT" --public-log-registry outputs/sce_submission_experiment_logs_20261027_v4/experiment_registry_public.json --a-refresh-readout outputs/sce_full_a_t0_readout_20261026_v1 --micro-data outputs/sce_micro_reproduction_20261029_v3/data
-"$SCE_PYTHON" scripts/verify_sce_research_package.py --archive "$SCE_PACKAGE_OUT/SCE_research_package_draft_v09.zip" --out "$SCE_PACKAGE_OUT/verification"
+SCE_PACKAGE_OUT="deliverables/research_package/v10_rebuild_$(date +%Y%m%dT%H%M%S)"
+"$SCE_PYTHON" scripts/build_sce_research_package.py --draft-version v10 --out "$SCE_PACKAGE_OUT" --public-log-registry outputs/sce_submission_experiment_logs_20261027_v4/experiment_registry_public.json --a-refresh-readout outputs/sce_full_a_t0_readout_20261026_v1 --micro-data outputs/sce_micro_reproduction_20261029_v3/data --input-data outputs/sce_submission_inputs_confidential_20261029_v1
+"$SCE_PYTHON" scripts/verify_sce_research_package.py --archive "$SCE_PACKAGE_OUT/SCE_research_package_draft_v10.zip" --out "$SCE_PACKAGE_OUT/verification"
 ```
 
-微观投影不存在时先用scripts/export_sce_micro_reproduction.py --out <新目录>，它需要原始授权工作区。包本身可离线重算提交范围，但不包含完整新闻/提示或重新询问模型所需的全部历史输入。
+唯一机器指针为[submission/latest_package.json](../submission/latest_package.json)。新版仅补输入和复现能力，没有重新生成科研答卷、重拟组合或修改论文指标。

@@ -49,12 +49,17 @@ def build(preview, python=None):
     manifest = _read(package / "PACKAGE_MANIFEST.json")
     paths = sorted([*manifest["files_sha256"], "PACKAGE_MANIFEST.json"])
     test_log = (preview / "tests.log").read_text()
-    if "72 passed" not in test_log:
+    import re
+    test_match = re.search(r"(\d+) passed", test_log)
+    if not test_match or int(test_match[1]) < 72:
         raise ValueError("Expected packaged verification tests are missing")
     important = ["README.md", "DIRECTORY_GUIDE.md", "REPRODUCIBILITY.md", "EXTERNAL_MODEL_AND_API.md",
                  "requirements.lock.txt", f"{STUDY}/README.md", f"{STUDY}/FILE_GUIDE.md",
                  f"{STUDY}/simulation/research_runs.json", f"{STUDY}/reports/PAPER_METRIC_GUIDE.md",
                  f"{STUDY}/reproduction_data/micro/MICRO_DATA_GUIDE.md"]
+    inputs_manifest = package / STUDY / "reproduction_data/inputs/manifest.json"
+    if inputs_manifest.exists():
+        important.extend([f"{STUDY}/reproduction_data/inputs/README.md", f"{STUDY}/reproduction_data/inputs/NEWS_REVIEW_NOTICE.md"])
     docs = {name: (package / name).read_text() for name in important}
     data = package / STUDY / "reproduction_data/micro"
     with gzip.open(data / "effective_answers.jsonl.gz", "rt") as f:
@@ -121,7 +126,7 @@ select{max-width:100%;padding:10px;font:14px sans-serif;border:1px solid var(--l
 </style>
 <header><small>水上挽月 · SocioVerse Challenge · 仅供本机查看与练习</small>
 <h1>把提交ZIP拆开，看看它究竟如何运行</h1>
-<div>当前内容：VERSION · 251个ZIP文件 · 1个study · 本次新增模型调用0</div></header>
+<div>当前内容：VERSION · ZIP_MEMBERS个ZIP文件 · 1个study · 本次新增模型调用0</div></header>
 <div class='layout'><nav><a href='#relation'>1. 研究包与study</a><a href='#structure'>2. 包里有哪些东西</a><a href='#answers'>3. 真正的模型答卷</a><a href='#commands'>4. 评委怎样复现</a><a href='#proof'>5. 本机实际验收</a><a href='#limits'>6. 范围与边界</a></nav><main>
 <section id='relation'><h2>一个容器，一项研究</h2><p class='lead'><b>study是研究本身的标准目录；研究包是交给评委的完整交付容器。</b></p>
 <div class='route'><strong>研究包ZIP</strong><span>解压 →</span><strong>安装说明＋依赖＋证据</strong><span>＋</span><strong>studies/下的一个SCE study</strong></div>
@@ -129,7 +134,7 @@ select{max-width:100%;padding:10px;font:14px sans-serif;border:1px solid var(--l
 <p class='muted'>官方依据：<a href='https://socioverse.fudan-disc.com/docs/zh/concepts/study-anatomy/' target='_blank' rel='noopener'>一个Study的解剖</a>。这里的预览副本不是第二份正式源码，也不是新的提交版本。</p></section>
 <section id='structure'><h2>先看这四组，不必逐个读代码</h2>
 <div class='row'><div><h3>包根：从这里开始</h3><p><code>README.md</code>安装与默认命令；<code>requirements.lock.txt</code>锁定依赖；<code>DIRECTORY_GUIDE.md</code>目录导航。</p><h3>标准study：研究和实现</h3><p><code>study.yaml</code>说明装配；<code>population/</code>、<code>environment/</code>、<code>simulation/</code>是标准P/E/运行产物。实现按组件、实验、计分、评价和运行分目录。</p></div>
-<div><h3>复现数据：正式答卷在这里</h3><p><code>reproduction_data/</code>包含全国序列、逐答卷、评价参考和Normal材料。<code>simulation/research_runs.json</code>登记四个正式任务。</p><h3>审查与历史：按需阅读</h3><p><code>tests/</code>是包内测试；<code>experiment_logs/</code>是公开实验索引。<code>archive/</code>单独保存872份原始开发源码，不进入默认导入链。</p></div></div>
+<div><h3>复现数据：正式答卷在这里</h3><p><code>reproduction_data/</code>包含全国序列、逐答卷、评价参考和Normal材料。<code>simulation/research_runs.json</code>登记四个正式任务。</p><h3>审查与历史：按需阅读</h3><p><code>tests/</code>是包内测试；<code>experiment_logs/</code>是公开实验索引。<code>archive/</code>单独保存ARCHIVED_SOURCES份原始开发源码，不进入默认导入链。</p></div></div>
 <p class='note'><b>20户工程示例 ≠ 论文样本。</b>标准population/environment/simulation中的小示例用于检查官方接口；正式四批模型输出保存在micro数据层。<code>reports/report.md</code>是包内结果导读，8页论文和视频另交。</p>
 <details><summary><b>展开：ZIP真实完整目录（可点击说明文件）</b></summary><div class='tree-panel'>TREE</div></details>
 <h3>在页面内读原文件</h3><select id='docSelect'>OPTIONS</select><pre class='file-view' id='docText'></pre></section>
@@ -142,18 +147,22 @@ select{max-width:100%;padding:10px;font:14px sans-serif;border:1px solid var(--l
 <div class='row'><div class='box'><h3>你的Mac：已经准备好</h3><p>双击本预览目录中的<b>运行复现.command</b>，或复制下面这一行到Terminal。它使用本机已有Python，每次另存一份结果。</p><pre>LOCAL_COMMAND</pre></div><div class='box'><h3>它会依次做什么</h3><ol><li>校验包内文件哈希。</li><li>20户、两步官方Core工程示例。</li><li>全国、组合及下游误差复算。</li><li>逐答卷计分、A微观指标和Normal重建。</li></ol></div></div>
 <p>只做答卷复算：<code>--mode micro</code>；CPU重拟密度：<code>--mode micro --refit-density</code>。付费生成是另一条明确授权的入口，本预览command不会调用它。</p></section>
 <section id='proof'><h2>刚刚从上传ZIP独立运行的结果</h2><span class='badge'>验收通过 · CHECKED（北京时间）</span>
-<ul class='proof'><li>上传ZIP指纹与正式v09一致；250个清单文件校验通过，另有manifest本身，共251个ZIP成员。</li><li>159个study模块全部来自新解压目录，没有从开发study偷取实现。</li><li>72项包内测试通过；工程示例、聚合和正式逐答卷复算全部通过。</li><li>重算67,334个有效状态；本次新增API调用0，模型费用0。</li></ul>
-<a class='button' href='verified_results/index.html' target='_blank' rel='noopener'>打开真实复算结果</a><a class='button' href='acceptance.json' target='_blank' rel='noopener'>查看验收记录</a><a href='tests.log' target='_blank' rel='noopener'>72项测试原始日志</a>
+<ul class='proof'><li>上传ZIP指纹与当前正式版本一致；VERIFIED_FILES个清单文件校验通过，另有manifest本身，共ZIP_MEMBERS个ZIP成员。</li><li>IMPORTED_MODULES个study模块全部来自新解压目录，没有从开发study偷取实现。</li><li>TEST_COUNT项包内测试通过；工程示例、聚合和正式逐答卷复算全部通过。</li><li>重算67,334个有效状态；本次新增API调用0，模型费用0。</li></ul>
+<a class='button' href='verified_results/index.html' target='_blank' rel='noopener'>打开真实复算结果</a><a class='button' href='acceptance.json' target='_blank' rel='noopener'>查看验收记录</a><a href='tests.log' target='_blank' rel='noopener'>TEST_COUNT项测试原始日志</a>
 <p class='long-hash'>源ZIP SHA256：HASH</p><p class='muted'>本次复用了已有无system-site-packages的隔离Python环境，没有重新联网安装依赖；研究包和上传原件未修改。</p></section>
 <section id='limits'><h2>哪些事情没有被混在一起</h2>
-<ul><li>复算历史回答与向DeepSeek重新提问分开。前者无需Key，后者需评审者自己的Key、合法完整输入及预算。</li><li>默认计分查用冻结密度缓存；加参数可重跑数值拟合。它不会把旧MAE直接当作新的微观计算。</li><li>近期B、月度和周度没有真人微观真值，不评价它们的微观准确性。下游部分重算封存预测的误差，没有重新拟合回归。</li><li>不包含原始身份键、真实完成日期、密钥、完整历史提示与新闻全文；完整付费再生成仍有输入恢复条件。</li></ul>
+<ul><li>复算历史回答与向DeepSeek重新提问分开。前者无需Key，后者需评审者自己的Key、合法完整输入及预算。</li><li>默认计分查用冻结密度缓存；加参数可重跑数值拟合。它不会把旧MAE直接当作新的微观计算。</li><li>近期B、月度和周度没有真人微观真值，不评价它们的微观准确性。下游部分重算封存预测的误差，没有重新拟合回归。</li><li>INPUT_LIMITS</li></ul>
 <p class='note'><b>提交仍使用原“提交材料”目录中的三件套。</b>本目录是查看与练习副本，打开或重复复算都不会改变正式ZIP、论文和视频。</p></section>
 </main></div><script>const docs=DOCUMENTS;const select=document.getElementById('docSelect');function showDoc(path){select.value=path;document.getElementById('docText').textContent=docs[path];}select.addEventListener('change',()=>showDoc(select.value));document.querySelectorAll('[data-doc]').forEach(b=>b.addEventListener('click',()=>{showDoc(b.dataset.doc);document.getElementById('docSelect').scrollIntoView({behavior:'smooth',block:'center'});}));showDoc('README.md');</script></html>"""
     replacements = {"VERSION": version, "TREE": _tree(paths, docs), "OPTIONS": doc_options,
                     "SAMPLE_PERIOD": escape(effective["period"]), "SAMPLE_ID": escape(effective["household"]),
                     "RAW": escape(text), "EFFECTIVE": escape(sample), "GENERIC": escape(generic),
                     "LOCAL_COMMAND": escape(run_command), "CHECKED": checked.strftime("%Y-%m-%d %H:%M:%S"),
-                    "HASH": proof["archive_sha256"], "DOCUMENTS": document_json}
+                    "HASH": proof["archive_sha256"], "DOCUMENTS": document_json,
+                    "ZIP_MEMBERS": str(len(paths)), "VERIFIED_FILES": str(proof["verified_package_files"]),
+                    "IMPORTED_MODULES": str(proof["study_modules_all_from_extracted_package"]),
+                    "ARCHIVED_SOURCES": str(proof["archived_source_files_verified"]), "TEST_COUNT": test_match[1],
+                    "INPUT_LIMITS": ("本版另附66,822份实际输入与选中新闻摘录，24,852份完整输入可用自己的Key单次再生成；A真实日期仍遮蔽，身份键和Key不提供。含新闻的ZIP只供赛事保密评审，不进入公开GitHub。" if inputs_manifest.exists() else "不包含原始身份键、真实完成日期、密钥、完整历史提示与新闻全文；完整付费再生成仍有输入恢复条件。") }
     # Single-pass replacement prevents a token in source text being reinterpreted.
     import re
     page = re.sub("|".join(re.escape(k) for k in sorted(replacements, key=len, reverse=True)),
