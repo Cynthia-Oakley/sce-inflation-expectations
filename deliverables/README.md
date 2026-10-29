@@ -37,7 +37,7 @@
 - [独立ZIP验收](research_package/v12/verification/acceptance.json)与[便携全流程验收](../docs/workstreams/20261029_portable_reproduction/acceptance_public.json)：范围、证据和限制分列。
 - [目录地图](research_package/v12/package/DIRECTORY_GUIDE.md)、[论文指标口径](research_package/v12/package/studies/sce_inflation_expectations/reports/PAPER_METRIC_GUIDE.md)。
 
-验收使用已有无system-site-packages的Python虚拟环境，本轮没有重新联网安装依赖；付费API连通性没有在封包时新增调用验证。新LLM回答受温度与外部服务版本影响，不保证逐字相同或误差恰好等于论文。
+ZIP默认复算验收使用已有隔离Python；随后在全新venv从公开PyPI安装14项锁定依赖，pip check、独立运行和SDK请求格式/解析检查均通过，[全新环境记录](../docs/workstreams/20261029_portable_reproduction/fresh_dependencies_acceptance.json)。付费API连通性没有在封包时新增调用验证。新LLM回答受温度与外部服务版本影响，不保证逐字相同或误差恰好等于论文。
 
 ## 作者重建研究包
 

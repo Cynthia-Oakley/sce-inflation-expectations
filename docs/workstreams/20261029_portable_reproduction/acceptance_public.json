@@ -1,14 +1,14 @@
 {
   "schema": "sce_v12_delivery_portable_acceptance/v1",
   "status": "passed_independent_zip_and_portable_execution",
-  "checked_at_utc": "2026-10-29T11:07:49.461636+00:00",
+  "checked_at_utc": "2026-10-29T12:13:56.001063+00:00",
   "archive": "deliverables/research_package/v12/SCE_research_package_draft_v12.zip",
   "archive_sha256": "b2118ffa0844104e3d684dd045a8aa4884226b991b7bdbbfae55d5fd31766b86",
   "archive_bytes": 1153111309,
   "package_tests_passed": 78,
   "portable_targeted_tests_passed": 42,
   "clean_environment": "Existing Python 3.11 venv without system-site-packages; SocioVerse2 0.2.0 noneditable",
-  "fresh_dependency_installation_this_turn": false,
+  "fresh_dependency_installation_this_turn": true,
   "source_input_rebuild": {
     "A_exact_messages": 41970,
     "B_generation_files": 79,
@@ -104,5 +104,47 @@
     "Input timestamps/vintages and model-knowledge limits remain as disclosed",
     "Source-to-input preparation reuses provided frozen news classification labels"
   ],
-  "original_paper_and_video_changed": false
+  "original_paper_and_video_changed": false,
+  "original_scientific_common_csv_gz_byte_identical_to_v11": 23,
+  "new_answer_schema_to_refits_integration": {
+    "status": "passed",
+    "input_kind": "Archived real answers passed through the new-answer evaluation schema; no new LLM calls",
+    "phases": [
+      "new-answer-schema evaluation",
+      "original early-period calibration refit",
+      "original downstream refit using those newly written A/B CSVs"
+    ],
+    "all_six_downstream_reference_tables_match": true,
+    "rtol": 1e-10,
+    "atol": 1e-12
+  },
+  "guarded_source_rebuild": {
+    "status": "complete",
+    "all_expected_hashes_match": true,
+    "new_api_calls": 0,
+    "source_archive_sha256": "5f5f7a5d45ee9dade862cf6519626b58e056e87a7494522fbcba117664e0456a",
+    "prepare_module_matches_final_ZIP_source": true,
+    "forbidden_root_accesses": 0,
+    "blocked_roots": [
+      "/Users/wushuyue/Documents/科研/DISC/socioverse_challenge",
+      "/Users/wushuyue/Documents/科研/DISC/socioverse2_repo"
+    ],
+    "scope_note": "The hook blocked reads only under the two listed roots and checked subprocess argv/cwd for them. It did not trace every read outside the clean workspace; standard-library, installed SDK, runtime, system, and configuration reads were allowed.",
+    "receipt": "guarded_source_rebuild_acceptance.json",
+    "source_members": 1800,
+    "started_at_utc": "2026-10-29T10:38:27.647499+00:00",
+    "completed_at_utc": "2026-10-29T11:49:44.908770+00:00"
+  },
+  "fresh_dependency_installation": {
+    "status": "passed_public_pypi_runtime_install",
+    "receipt": "fresh_dependencies_acceptance.json",
+    "workflow_receipt": "fresh_environment_workflow_acceptance.json",
+    "system_site_packages": false,
+    "editable_packages": [],
+    "locked_pins_installed": 14,
+    "pip_check": "No broken requirements found.",
+    "SDK_mock_contract": "passed; httpx.MockTransport; zero real network requests",
+    "new_real_model_API_calls": 0,
+    "download_integrity_note": "An initial cached PyArrow transfer failed its hash. The official wheel was re-fetched and verified against official PyPI SHA256 before installation; hash validation was never disabled."
+  }
 }

@@ -80,17 +80,21 @@
   },
   "github_video": "deliverables/video/final/SCE_demo_v1.0.mp4",
   "github_backup": {
-    "status": "local_v12_changes_pending_push",
+    "status": "pushed_existing_private_work_branch",
     "repository": "https://github.com/Cynthia-Oakley/socioverse-challenge-2026",
     "branch": "docs/deepseek-reuse-20261008",
-    "content_commit": "1b42c53",
+    "content_commit": "5e77214f1380a3b4f0a3ebda080405bb11a9c80d",
     "private_verified": true,
     "default_branch_unchanged": "main",
-    "checked_at_utc": "2026-10-29T06:48:02.373980+00:00",
+    "checked_at_utc": "2026-10-29T11:14:12.333539+00:00",
     "package_version": "v12",
-    "scope": "Code, guides, aggregate acceptance, author-confirmed report/video only; no ZIP, raw source/news or individual prompts/replies",
+    "scope": "Portable reproduction source, documentation, aggregate verification and previously confirmed report/video; no ZIP, public raw news/microdata or individual prompts/replies",
     "new_model_API_calls": 0
   },
   "portable_acceptance_public": "docs/workstreams/20261029_portable_reproduction/acceptance_public.json",
-  "portable_reproduction_guide": "deliverables/research_package/v12/package/PORTABLE_REPRODUCTION.md"
+  "portable_reproduction_guide": "deliverables/research_package/v12/package/PORTABLE_REPRODUCTION.md",
+  "fresh_dependency_installation_verified": true,
+  "fresh_dependency_installation_acceptance_public": "docs/workstreams/20261029_portable_reproduction/fresh_dependencies_acceptance.json",
+  "fresh_environment_workflow_acceptance_public": "docs/workstreams/20261029_portable_reproduction/fresh_environment_workflow_acceptance.json",
+  "SDK_request_contract_fresh_environment_mock_verified": true
 }
